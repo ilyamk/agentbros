@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "assets-sfx-collection-by-kind-161-sounds-click-pop-whoosh-impact-chime-r-72612fc9",
+  "section": "assets",
+  "order": 50,
+  "asset": "SFX collection by kind (161 sounds: click, pop, whoosh, impact, chime, riser, sub-drop, tick, glass)",
+  "source": "Freesound API hq mp3 previews (116; IDs and URLs per file), Kenney packs above (17), synth pack (18), ElevenLabs sound generation (10; 242 credits by the `character-cost` header, per file in `notes`; called with curl, not recorded in the paid ledger)",
+  "licence": "Freesound: CC0-1.0 (76), CC-BY-4.0 (27), CC-BY-3.0 (13), attribution string per file; Kenney CC0; synth and ElevenLabs generated",
+  "evidence": "`public/shared/sfx/<kind>/manifest.json` (source, sourceUrl, author, licence, attribution); measured in `public/shared/sfx/sfx-index.json`",
+  "whereItLives": "`public/shared/sfx/<kind>/` (git-ignored, 3.7 MB; rebuilt by `pnpm sfx:fetch`, ElevenLabs takes need paid regeneration)",
+  "status": "Done 2026-11-11; unauditioned by a human ear. Credit the CC-BY files when a film uses them"
+}

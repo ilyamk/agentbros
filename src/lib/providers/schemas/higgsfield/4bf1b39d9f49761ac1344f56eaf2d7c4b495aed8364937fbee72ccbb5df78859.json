@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/happy-horse/image-to-video",
+  "title": "Happy Horse 1.0 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/happy-horse-1/image-to-video.md",
+  "usageNotes": [
+    "The prompt is optional. This endpoint accepts one first-frame image; it does not support a last-frame image."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483646,
+        "minimum": 1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 2
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

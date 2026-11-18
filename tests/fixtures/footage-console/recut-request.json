@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "workflow": "recording-edit",
+  "projectId": "talk-recut",
+  "name": "Recut of talk.mp4",
+  "profile": "recording-only",
+  "formats": [
+    "landscape",
+    "vertical"
+  ],
+  "source": {
+    "file": "public/projects/talk/assets/footage/talk.mp4",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "version": "1",
+    "fps": {
+      "num": 30,
+      "den": 1
+    }
+  },
+  "transcript": {
+    "version": "1",
+    "language": "en",
+    "words": [
+      {
+        "id": "w0",
+        "text": "so",
+        "startFrame": 3,
+        "endFrame": 6
+      }
+    ]
+  },
+  "keepSpans": [
+    {
+      "id": "K1",
+      "startFrame": 3,
+      "endFrame": 9,
+      "reason": "speech"
+    },
+    {
+      "id": "K2",
+      "startFrame": 12,
+      "endFrame": 27,
+      "reason": "speech"
+    }
+  ],
+  "cuts": [
+    {
+      "startFrame": 0,
+      "endFrame": 3,
+      "reason": "head"
+    },
+    {
+      "startFrame": 9,
+      "endFrame": 12,
+      "reason": "filler"
+    },
+    {
+      "startFrame": 27,
+      "endFrame": 30,
+      "reason": "tail"
+    }
+  ],
+  "protectedSpans": [],
+  "revision": 1
+}

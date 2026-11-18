@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "endpoint": "ideogram/v4.0",
+  "title": "Ideogram 4.0 — Generate API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/ideogram-4/generate.md",
+  "usageNotes": [
+    "Omit image_url for text-to-image; provide image_url for remix/editing.",
+    "image_weight controls preservation of the input image and applies to editing requests only; values are integers from 1 to 100.",
+    "The square 1:1 aspect ratio is applied by default, including when an input image is supplied.",
+    "rendering_speed values are case-sensitive: TURBO, DEFAULT, QUALITY. prompt must contain 2–2048 characters."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Ideogram 4.0 Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "maxLength": 2048,
+        "minLength": 2,
+        "description": "Write your prompt here"
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Input image",
+        "format": "uri"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "1:1",
+          "1:2",
+          "2:1",
+          "2:3",
+          "3:2",
+          "4:5",
+          "5:4",
+          "9:16",
+          "16:9",
+          "5:8",
+          "8:5",
+          "3:4",
+          "4:3",
+          "9:22",
+          "22:9",
+          "9:23",
+          "23:9",
+          "3:8",
+          "8:3",
+          "5:12",
+          "12:5",
+          "1:3",
+          "3:1"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "1:1"
+      },
+      "image_weight": {
+        "type": "integer",
+        "title": "Image weight",
+        "maximum": 100,
+        "minimum": 1,
+        "description": "How strongly the output should preserve the input image."
+      },
+      "rendering_speed": {
+        "enum": [
+          "TURBO",
+          "DEFAULT",
+          "QUALITY"
+        ],
+        "type": "string",
+        "title": "Rendering speed",
+        "default": "DEFAULT"
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

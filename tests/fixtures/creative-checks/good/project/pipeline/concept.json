@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "candidates": [
+    {
+      "id": "a",
+      "title": "a",
+      "premise": "p",
+      "coreImage": "c",
+      "openingFrame": "o",
+      "whyWatch": "w"
+    },
+    {
+      "id": "b",
+      "title": "b",
+      "premise": "p",
+      "coreImage": "c",
+      "openingFrame": "o",
+      "whyWatch": "w"
+    },
+    {
+      "id": "c",
+      "title": "c",
+      "premise": "p",
+      "coreImage": "c",
+      "openingFrame": "o",
+      "whyWatch": "w"
+    }
+  ],
+  "selectedId": "a",
+  "rejected": [
+    {
+      "id": "b",
+      "reason": "r"
+    },
+    {
+      "id": "c",
+      "reason": "r"
+    }
+  ],
+  "productTruth": {
+    "sources": [
+      "assets/app-recording.mp4"
+    ],
+    "claims": [
+      {
+        "text": "Sorts tasks",
+        "status": "working"
+      }
+    ]
+  }
+}

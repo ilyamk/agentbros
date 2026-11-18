@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "palette": {
+    "value": [
+      "#030303 near-black ground, about 80% of all frames",
+      "#021563 navy, the blink ground (exact, same value at F1, F63, F150, F287)",
+      "#fcfcfc white, flash and overexposed frames",
+      "#f6d1ff pale lavender, centre of the swelled disc",
+      "#362bc1 violet, edge of the swelled disc",
+      "#dc3da7 magenta, the drawn stroke (sampled values #c93395 to #e648b2)",
+      "#ea5585 to #d74f5b pink-to-coral, the orange gradient pill",
+      "cold cyan and grey on archival and scan footage (graded, not sampled)"
+    ],
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": ["pixel samples of frames F1, F7, F63, F75, F116, F150, F153, F287, F300 (3x3 px averages)", "visuals/contact-sheet-01.jpg"]
+  },
+  "typography": {
+    "value": [
+      { "role": "claim", "description": "Grotesque sans (system-UI-like, inferred), medium weight, sentence case with full stop, white on black, centred at (0.48, 0.52); OCR box 25% of width and 7% of height, so cap height is roughly 2.5-3% of frame height. Tiny on purpose. Entry: on at F11 after flashes; exit: 2-frame green glow flare." },
+      { "role": "drawn word", "description": "Same sans, lowercase, one word, magenta-to-violet horizontal gradient fill, about 6% of width, centred. Its letters are separate objects: they scatter and the first becomes a stroke." },
+      { "role": "hero word", "description": "Same sans, lowercase, outline only (thin grey stroke, no fill), OCR box 70% of width and 43% of height, centred at (0.48, 0.49), inside two dashed concentric circles. RGB-split jitter of about 1% width on some frames." },
+      { "role": "caption over footage", "description": "Small white lowercase sans, OCR box 25% of width and 6% of height, centred at (0.49, 0.50); fixed position across 9 shots; changes content once, same position." },
+      { "role": "HUD coordinate tag", "description": "Monospace-like micro labels in the form 'x: NNN y: NNN', OCR box about 8.6% of width and 3% of height, white, pinned just above the tracked object or icon; appear on the icon, the square, the knob and every tracking box." }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["speech-text.json screenText boxes", "visuals/a1/title-hold.jpg F26-F48", "visuals/a1/line.jpg F90-F98", "visuals/a1/chat.jpg F173-F186", "visuals/a1/archive.jpg F187-F197", "visuals/a1/glint.jpg F118-F123"]
+  },
+  "composition": {
+    "value": "One axis: frame centre (0.5, 0.5). Every hero object is centred there: the claim, the pill (about 68% width, 13% height), the icon (about 4% width), the disc that grows to fill the frame, the word and stroke, the lit square (22% then 10% of height), the knob and its rings, the reaction bar (about 62% width), the hero word (70% width), the caption, the final mark (about 4% width). Large empty black around small objects: the title and mark leave over 95% of the frame empty. Exceptions: the slider knob starts right of centre (x about 0.6) and is pulled to centre in 13 frames; the message bubble is centred but the flame reaction sits low-left on it. Footage shots are full-frame with subject roughly central, so the fixed caption lands on the subject.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/pill.jpg F56-F75", "visuals/a1/ring.jpg F136-F156", "visuals/a1/archive.jpg F187-F209", "visuals/a1/end.jpg F289-F306"]
+  },
+  "materials": {
+    "value": "Two families. (1) Flat digital: gradient pills, glowing discs, thin white guides and circles, dashed rings, light streaks with bloom, and a halftone or dither dot screen that objects switch to during navy blinks. (2) Found footage: archival photographs and film, thermal-violet false colour, medical scans, a keyboard macro with coloured backlight; each graded differently, overlaid with thin tracking boxes, connector lines and coordinate tags. Frequent one-frame overexposures and RGB-split smears tie the two together as one 'signal' look.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/glint.jpg F118-F135", "visuals/a1/archive.jpg F187-F209", "visuals/a1/scan.jpg F207-F230", "visuals/a1/tail.jpg F240-F257"]
+  },
+  "lighting": {
+    "value": "Self-lit objects on black: glows and blooms around the icon, knob and square (glow radius about 1-2x the object), a diagonal lens streak across the square, keyboard backlight dots out of focus behind the mark. No shading on flat elements; no environment.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["visuals/a1/glint.jpg F118-F128", "visuals/a1/ring.jpg F138-F149", "visuals/a1/pullback.jpg F256-F266"]
+  },
+  "styleSummary": "Black stage, everything at dead centre, small objects in large emptiness; digital UI pieces that glow and turn halftone; one navy ground blink as the house accent; archival footage made to look analysed with tracking boxes and coordinate tags."
+}

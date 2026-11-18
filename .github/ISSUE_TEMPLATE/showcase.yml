@@ -1,0 +1,32 @@
+name: Showcase submission
+description: Share a real harness-made film and its provenance.
+title: "[Showcase] "
+body:
+  - type: input
+    id: links
+    attributes:
+      label: Film and supporting links
+      description: Use public viewing links; do not attach private project material.
+    validations:
+      required: true
+  - type: input
+    id: manifest
+    attributes:
+      label: showcase.json path
+      description: Give the proposed showcases/slug/showcase.json path and a link to the entry if available.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance, costs and verification
+      description: Include playbook, harness/model, commit, delivery receipt/snapshot, declared costs and verification level.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights
+      options:
+        - label: I hold the rights to the submitted material and its publication, and have declared sources and the entry licence.
+          required: true

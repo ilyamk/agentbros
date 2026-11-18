@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "muse",
+  "techniques": [
+    {
+      "id": "t01",
+      "name": "promise-line word build with accent words",
+      "function": "hook",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 1.0
+        }
+      ],
+      "description": "The category promise builds one word at a time on the pale ground. Words land whole within one frame at F1, F3, F5 and F8 (line one) and from F21 (line two), then settle for 2-3 frames. The defining words are accent blue and the rest ink. The line re-centres as each word adds width: the first word starts at x about 0.06 and is at about 0.20 by F8. The camera pulls back throughout, so the single line, about 0.70 wide and 0.12 high, becomes a two-line block about 0.53 wide by F28. The repeat in every fifth frame comes from 24 fps delivered at 30.",
+      "route": "remotion",
+      "routeReason": "Type on a flat ground, driven by word cues. block:type-sentence-build already re-centres a flow layout word by word; accent colour per word is a style prop. The pull-back is a scale track on the type layer.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-sentence-build",
+        "splitWords",
+        "track"
+      ],
+      "timing": {
+        "durationSec": 0.93,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m01-type-build.jpg F0-F23",
+          "visuals/strips/s001.jpg F0-F28"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m01-type-build.jpg: each word is whole on its first frame (F1 diff 1.73, F3 1.68, F8 1.95)",
+          "motion.json s001 fit (power2.inOut, degenerate bezier [1,0.555,0.006,0.596]) rejected: it fits type arrival, not a camera move"
+        ]
+      },
+      "typography": {
+        "role": "hook promise line",
+        "entry": "word-by-word pop, 2-5 frames apart; line re-centres; accent words blue",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m01-type-build.jpg F0-F23",
+          "speech-text.json 0-2.517 boxes x 0.155-0.875"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t02",
+      "techniqueCardId": "noise-matte-wipe",
+      "name": "cloud-cover descent wipe",
+      "function": "transition",
+      "fromShot": 0,
+      "toShot": 1,
+      "spans": [
+        {
+          "startSec": 2.233,
+          "endSec": 2.833
+        }
+      ],
+      "description": "The camera tilts down through cloud. Cumulus rises from the bottom of the frame over the type (F67-F77), the type leaves top-right, cloud fills the whole frame F78-F80, and the floating island emerges beneath the cloud bank F81-F86. Strip diffs climb 5.4, 6.3, 6.8, 7.5, 8.8, 10.9, 12.8, 14.8 and ease off to 7.0 by F86: an S-curve with the peak in the full-cloud frames, where the change is hidden.",
+      "route": "blender",
+      "routeReason": "Volumetric cloud parting around a CG world needs real volumes and light. The nearest Remotion equivalent is a photographed cloud plate (licensed) on its own layer rising over the outgoing frame, a DepthLayer push, and the next shot behind it. That is cheaper, but the clouds will not part around the subject.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:blender-plate",
+        "DepthLayer",
+        "block:noise-matte-wipe"
+      ],
+      "timing": {
+        "durationSec": 0.6,
+        "startOffsetFromCutSec": -0.367,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m02-cloud-push.jpg F67-F86",
+          "audio.json beatsSec 2.763 is 0.163 s after the boundary"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m02-cloud-push.jpg diff ramp 5.4 to 14.8 (F68-F76) then 13.7 to 7.0 (F78-F86)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t03",
+      "name": "floating glass-dome world with orbiting icons",
+      "function": "reveal",
+      "spans": [
+        {
+          "startSec": 2.6,
+          "endSec": 4.733
+        }
+      ],
+      "description": "Establishing shot of the product's world: a matte white disc island hangs in a cloudscape. A glass dome with a rainbow thin-film rim covers the plush character at a small desk with a laptop, and five or six glassy app-icon tiles orbit just inside the dome (F90-F144). The camera pushes in slowly (motion.json s002 push z +0.645, mostly in the last 1.2 s). The subject stays centred at about 0.55 of frame width.",
+      "route": "blender",
+      "routeReason": "Glass refraction with thin-film colour, felted fabric and soft sky light are the point of the shot (blender-3d: glass, fabric, soft light). The character must be modelled once and reused in t08 and t18. A budgeted generated clip is the alternative if a model is not wanted, but the character would drift between shots.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:blender-plate",
+        "block:shaded-orb",
+        "block:orbit-ring",
+        "repo:scripts/blender/glass_dome.py",
+        "repo:scripts/blender/plush_character.py"
+      ],
+      "timing": {
+        "durationSec": 2.13,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/strips/s002.jpg F78-F144"
+        ]
+      },
+      "layers": 4,
+      "techniqueCardId": "glass-dome-world"
+    },
+    {
+      "id": "t04",
+      "name": "accelerate-into-cut",
+      "function": "transition",
+      "fromShot": 1,
+      "toShot": 2,
+      "spans": [
+        {
+          "startSec": 4.733,
+          "endSec": 5.133
+        }
+      ],
+      "description": "The establishing push speeds up for its last 4 drawn frames (diffs F143 10.1, F144 11.8, F145 24.1, F146 13.2), then a hard cut at F148 (4.933 s, diff 34.2) to the over-the-shoulder close-up. The close-up continues the push and brakes, its speed halving each frame (34.0, 17.1, 7.7, then 7.1 and 5.9 after a pulldown repeat).",
+      "route": "remotion",
+      "routeReason": "block:zoom-through is this move: the camera flies into a point of the outgoing scene, the next scene replaces it at the push's peak and lands out of the same depth. The 3D plates come from t03.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:zoom-through",
+        "VelocityBlur"
+      ],
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": -0.2,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m03-cut-closeup.jpg F142-F154",
+          "audio.json beatsSec 4.899: the cut is 34 ms after it"
+        ]
+      },
+      "ease": {
+        "name": "circ.in",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m03-cut-closeup.jpg accelerating diffs F143-F146",
+          "motion.json s002 camera.ease gsap circ.in, gsapRmse 0.040; bezier [1,0.366,1,0.419] is degenerate, so only the name's shape is used"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "An onset at 4.90 s and a beat at 4.899 s are measured 34 ms before the cut; that it is a musical hit is inferred",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 4.90, beatsSec 4.899"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t05",
+      "name": "bleach dissolve to the UI ground",
+      "function": "transition",
+      "fromShot": 2,
+      "toShot": 3,
+      "spans": [
+        {
+          "startSec": 6.267,
+          "endSec": 6.533
+        }
+      ],
+      "description": "The 3D close-up washes out to the pale-sky ground over 8 frames (F188-F195, diffs 5.1, 8.0, 11.9, 13.1, 10.5, 7.5, 5.3), from the right side first, while it keeps pushing. The first word of the invitation is simply there at F196. The 3D world and the flat UI ground share the colour #E4EFF7, so the bleach reads as the light of the world turning into the page.",
+      "route": "remotion",
+      "routeReason": "An opacity ramp of a ground-coloured layer (with a soft radial origin on the right) over the outgoing shot, then a hard-in of the type. The fade presentation from @remotion/transitions, or a layer with interpolate.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "@remotion/transitions fade",
+        "interpolate"
+      ],
+      "timing": {
+        "durationSec": 0.27,
+        "startOffsetFromCutSec": -0.133,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m04-whiteout-to-type.jpg F188-F196"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m04-whiteout-to-type.jpg diffs rise to 13.1 at F191 and fall to 5.3 at F195"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t06",
+      "name": "word-split-insert",
+      "function": "reveal",
+      "fromShot": 3,
+      "toShot": 4,
+      "spans": [
+        {
+          "startSec": 7.433,
+          "endSec": 7.967
+        }
+      ],
+      "description": "The centred two-word line pushes in slowly. At F223 a dot (about 1% of width) appears in the word gap; at F225 it is a small disc; at F226 the portrait disc is 0.32 of frame width (diff 17.5). At the same moment both words are scaled up and thrown to the frame edges, cropped. From F227 to F239 they drift outward on a decelerating curve (diffs 7.0, 3.9, 2.7, 2.0, 1.3, 1.1, 1.0, 0.6) and leave the frame. The disc holds centre, with the character inside. The music's onset stream stops 0.2 s later (7.73-8.64 s).",
+      "route": "remotion",
+      "routeReason": "Two words, a masked disc and transforms. block:impact-split pushes glyphs apart from a hit but bounces them back, so it is the nearest, not this. The insert itself needs a block that keeps the words leaving.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:impact-split",
+        "growRect",
+        "block:word-split-insert"
+      ],
+      "timing": {
+        "durationSec": 0.53,
+        "startOffsetFromCutSec": -0.1,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m05-words-part-avatar.jpg F223-F239",
+          "audio.json beatsSec 7.616 is 83 ms after the pop"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m05-words-part-avatar.jpg word drift diffs 6.96 to 0.6 over F228-F239; the disc itself is a one-frame pop (steps)"
+        ]
+      },
+      "typography": {
+        "role": "invitation imperative",
+        "entry": "two words pop whole (F196, F203), then split apart around the inserted disc",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m04-whiteout-to-type.jpg F196-F206",
+          "speech-text.json 6.517 box x 0.287-0.738"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t07",
+      "name": "hero disc snaps to header avatar",
+      "function": "transition",
+      "fromShot": 4,
+      "toShot": 5,
+      "spans": [
+        {
+          "startSec": 8.4,
+          "endSec": 8.533
+        }
+      ],
+      "description": "A cut on the same ground: the portrait disc at hero size (about 0.32 wide, centred) at F252 becomes the chat's header avatar (about 0.08 wide, at y 0.28, with a name pill) at F253, diff 6.8. It settles over 3 frames (diffs 0.5, 0.38, 0.28), and the first chat bubble lands at F258. The object stays the same; only its scale and role change. This is related to ace's punch-in-cut-settle, but here the cut shrinks the subject rather than the crop.",
+      "route": "remotion",
+      "routeReason": "A Sequence cut between two layouts that share the character image; the small settle is a spring on the avatar's scale.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:ui-chat-thread",
+        "Sequence",
+        "spring"
+      ],
+      "timing": {
+        "durationSec": 0.13,
+        "startOffsetFromCutSec": 0,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F252-F256",
+          "audio.json beatsSec 8.661 is 0.228 s after the cut"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F252-F253"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t08",
+      "name": "typing pill stretches into the answer card",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 10.833,
+          "endSec": 11.5
+        }
+      ],
+      "description": "The assistant's typing pill (three dots, about 0.07 wide) fills blue at F325-F326. From F328 it stretches sideways into a blue bar about 0.30 wide (F328-F333). The white answer card then wipes in from its left end through the blue as a soft gradient (F334-F338), and the card grows taller as its lines appear (F339-F344, then list items through about 12.7 s). The waiting state becomes the answer, so the answer feels produced, not pasted.",
+      "route": "remotion",
+      "routeReason": "A bubble width, a gradient mask and line reveals, all frame-driven. The chat blocks have typing dots, but not a pill that becomes the card.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:ui-chat-thread",
+        "block:ui-ai-chat",
+        "morphRect"
+      ],
+      "timing": {
+        "durationSec": 0.67,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m17-reply-morph.jpg F324-F344",
+          "visuals/a1/coarse-e.jpg F326-F382"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m17-reply-morph.jpg stretch diffs 0.84 at F328 then 0.29-0.32"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "typing-pill-to-card"
+    },
+    {
+      "id": "t09",
+      "name": "light chat thread at reading scale",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 8.433,
+          "endSec": 14.6
+        },
+        {
+          "startSec": 23.4,
+          "endSec": 28.2
+        }
+      ],
+      "description": "Chat on the pale ground, centred column about x 0.25-0.76 under a header avatar with a name pill. User bubbles are pale blue, on the right; assistant bubbles and cards are white with soft shadows, on the left. Each message lands whole in one frame and settles in 3 (question F258 diffs 1.47, 1.11, 0.78, 0.67). Arrivals are about 0.5-1.5 s apart (8.60, 9.0, 9.6 s with the typing dots, 11.0 s for the card). The camera drifts slowly up and right as the column grows. The second thread (23.4-28.2 s) repeats the grammar: the request, a short 'finished' reply with a green tick at 24.0 s, then a longer suggestion at 25.0 s ending in a pair of emoji eyes.",
+      "route": "remotion",
+      "routeReason": "Real product chat; per the product-interface rule it must match the real app or be captured from it. block:ui-chat-thread lands messages with typing dots; it needs a light theme and centred column to match.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:ui-chat-thread",
+        "block:ui-ai-chat",
+        "block:ui-camera-read"
+      ],
+      "timing": {
+        "durationSec": 6.17,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F253-F262",
+          "visuals/a1/coarse-e.jpg F270-F414",
+          "visuals/a1/coarse-g.jpg F713-F843"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F258-F262 settle diffs 1.47, 1.11, 0.78, 0.67"
+        ]
+      },
+      "typography": {
+        "role": "chat UI text",
+        "entry": "each bubble lands whole and settles over 3 frames",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json 8.517-15.017 and 23.517-28.517 boxes, line height 0.035-0.045"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t10",
+      "name": "camera scroll from answer card to input field",
+      "function": "transition",
+      "fromShot": 5,
+      "toShot": 6,
+      "spans": [
+        {
+          "startSec": 14.6,
+          "endSec": 15.133
+        }
+      ],
+      "description": "The camera moves away from the answer card: the card scales up and exits through the top-left with a slight blur (F438-F447, diffs 7-8 a frame). An arrow cursor enters from the bottom-left (F444). At F448 the input field slides in from the right at hero scale with the cursor already on it. The cursor becomes an I-beam at F451, and the motion settles (diffs 6.5, 3.9, 3.2, 3.3, 2.7). The music's onsets stop for this whole move (14.56-15.91 s).",
+      "route": "remotion",
+      "routeReason": "block:ui-camera-read does eased pans between stops with directional smear across UI; the cursor is the Cursor primitive.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:ui-camera-read",
+        "Cursor",
+        "RegionCamera"
+      ],
+      "timing": {
+        "durationSec": 0.53,
+        "startOffsetFromCutSec": -0.333,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m07-card-to-field.jpg F438-F454",
+          "audio.json beatsSec 15.093 is 0.16 s after the boundary"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m07-card-to-field.jpg near-constant diffs 7-8.3 F438-F447, then 6.5 down to 2.7 F448-F454"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t11",
+      "name": "caret-tracking-typewriter",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 15.733,
+          "endSec": 18.633
+        }
+      ],
+      "description": "Input field at hero scale (text 0.11 of frame height). The caret blinks in at F476 with a soft blue glow behind it. Then 31 characters type from about 16.1 s to 17.75 s, about 1.6 frames per character. The frame tracks right, keeping the caret near x 0.6-0.9, so the line runs off the left edge (OCR x 0.00, 0.81 wide at 17.5 s). The newest one or two words are accent blue and turn ink as the next word types. The caret then holds about 0.9 s after the question mark (17.75-18.63 s).",
+      "route": "remotion",
+      "routeReason": "block:ui-prompt-bar types with a live caret at hero size; wrapping it in block:ui-camera-read gives the tracking. The caret-anchored scroll (frame follows the caret) is not a parameter of either.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:ui-prompt-bar",
+        "block:ui-camera-read",
+        "TypedLine",
+        "block:type-caret-track"
+      ],
+      "timing": {
+        "durationSec": 2.9,
+        "startOffsetFromCutSec": 0.8,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coarse-b.jpg F476-F484",
+          "visuals/a1/coarse-f.jpg F480-F540",
+          "visuals/a1/m08-field-reframe.jpg F496-F508",
+          "visuals/a1/m09-field-to-send.jpg F552-F558"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m08-field-reframe.jpg steady diffs 2.0-2.9 per drawn frame while tracking"
+        ]
+      },
+      "typography": {
+        "role": "input text at hero scale",
+        "entry": "typewriter about 1.6 frames per character; newest word accent blue, then ink",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coarse-f.jpg F485-F540",
+          "speech-text.json 16.017-18.517 boxes"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t12",
+      "name": "reframe cut along the same element",
+      "function": "transition",
+      "fromShot": 6,
+      "toShot": 7,
+      "spans": [
+        {
+          "startSec": 18.6,
+          "endSec": 18.667
+        }
+      ],
+      "description": "A hard cut F558 to F559 (diff 12.3) from the end of the typed line to the far end of the same bar (mic and blue send button about 0.23 wide). The bar keeps its horizontal band (y about 0.40-0.60) and its leftward drift, so the cut reads as the camera skipping ahead along one object. It is the same idea as nexaa's ui-punch-in-reframe, but sideways instead of in.",
+      "route": "remotion",
+      "routeReason": "Two RegionCamera framings of one stage and a Sequence cut between them.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "block:ui-prompt-bar"
+      ],
+      "timing": {
+        "durationSec": 0.033,
+        "startOffsetFromCutSec": 0,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m09-field-to-send.jpg F558-F559",
+          "audio.json beatsSec 18.855 is 0.222 s after the cut"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m09-field-to-send.jpg F559 diff 12.3"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "An onset at 18.60 s is measured 33 ms before the cut; its source is inferred",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 18.60"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t13",
+      "techniqueCardId": "element-to-ground",
+      "name": "circle-carry-chain",
+      "function": "transition",
+      "fromShot": 7,
+      "toShot": 9,
+      "spans": [
+        {
+          "startSec": 19.633,
+          "endSec": 20.167
+        },
+        {
+          "startSec": 23.133,
+          "endSec": 23.767
+        }
+      ],
+      "description": "One disc carries three meanings. (1) The send button's blue drains to white top-down over 5 frames (F590-F594) while the mic fades, and the white disc drifts to centre (F594-F599). (2) The character rises into the disc from below, as into a window (F600-F605). The disc becomes the portrait (about 0.34 wide) for the headline in t14. (3) At F694-F701 a fast push-in with blur carries the headline off the top and bottom while the portrait floods to a glossy blue sphere about 0.22 wide at top centre. A name pill lands under it at F703, and by F713 the sphere is the chat's header avatar.",
+      "route": "remotion",
+      "routeReason": "Masks, fills and transforms on one circle, carried across layouts. block:shared-element-carry moves an element between scenes but does not change its fill or contents; block:caused-morph grows an element into a ground. The fill-drain and the character-rising-into-a-window step are missing.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:shared-element-carry",
+        "block:caused-morph",
+        "block:match-cut"
+      ],
+      "timing": {
+        "durationSec": 4.13,
+        "startOffsetFromCutSec": -0.1,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m10-send-to-circle.jpg F590-F605",
+          "visuals/a1/m12-to-sphere.jpg F694-F707",
+          "visuals/a1/coarse-g.jpg F713"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m12-to-sphere.jpg flood step diffs rise 5.1, 5.9, 6.8, 7.9, 9.3, 11.3, 13.2, 13.9 then fall 12.8, 12.0, 10.3 (F689-F701)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Measured: an onset at 19.74 s after a 0.49 s onset gap lands in the drain (F590-F594); the 0.5 s window from 19.5 s is -12.8 dBFS, among the loudest; the flood starts 17 ms before beat 23.150. That these are musical hits is inferred",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 19.25, 19.74; beatsSec 23.150",
+          "0.5 s RMS windows (scratch)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t14",
+      "name": "headline tucked behind the portrait disc",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 20.5,
+          "endSec": 23.133
+        }
+      ],
+      "description": "A two-line handoff line split around the portrait disc. Line one (box 0.51 wide, 0.17 high, y 0.16-0.33) sits behind the disc's top edge, partly hidden. Line two (0.55 wide, y 0.69-0.87) sits below it, with the product name in accent blue. Words appear whole, one at a time: line one's first word at F616 (20.53 s), its second at F620, line two's first word at 21.26 s and the name at 21.40 s. Everything pushes in about 12% until the break at 23.13 s.",
+      "route": "remotion",
+      "routeReason": "Layered type and a masked image with z-order; word cues from a fixed layout. block:type-sentence-build in 'fixed' layout places the words; the disc sits between the two lines in z.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-sentence-build",
+        "track"
+      ],
+      "timing": {
+        "durationSec": 2.63,
+        "startOffsetFromCutSec": 0.767,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m11-leave-it-part.jpg F616-F628",
+          "visuals/a1/coarse-d.jpg F618-F694"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/coarse-d.jpg steady scale growth F618-F694; not fitted"
+        ]
+      },
+      "typography": {
+        "role": "handoff headline",
+        "entry": "word by word, each whole on arrival; line one occluded by the disc",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json 20.517-23.517 boxes",
+          "visuals/a1/m11-leave-it-part.jpg F616-F628"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t15",
+      "name": "disc iris opens to the world",
+      "function": "transition",
+      "fromShot": 9,
+      "toShot": 10,
+      "spans": [
+        {
+          "startSec": 28.2,
+          "endSec": 28.767
+        }
+      ],
+      "description": "In the middle of the chat, over the header avatar's column, a disc about 0.25 wide appears at F846 (28.20 s), already showing the overhead scene. It grows on an S-curve to frame height by F853 and past the frame corners by about F862 (diffs 10.5, 9.5, 12.9, 18.2, 15.7, then 13.7 down to 7.3). The chat stays visible around it until covered. The overhead shot then pulls back slowly (t16). The onset stream, sparse since 25.98 s, resumes at 28.51 s, and audio.json starts a new section at 28.468 s.",
+      "route": "remotion",
+      "routeReason": "shapeWipe with a circle from a given origin is in src/motion/transitions; give it cutTiming. The overhead plate is t16.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "shapeWipe",
+        "cutTiming"
+      ],
+      "timing": {
+        "durationSec": 0.57,
+        "startOffsetFromCutSec": -0.233,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m13-bubble-iris.jpg F846-F862",
+          "audio.json beatsSec 28.003 and 28.514 bracket the start"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m13-bubble-iris.jpg diffs peak 18.2 at F850, then fall to 7.3 by F861"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Measured: onsets resume at 28.51 s after a 1.30 s gap, and audio.json sections change at 28.468 s, inside the iris. That this is a drop or hit is inferred",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 27.21, 28.51; sections 28.468"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t16",
+      "name": "overhead world breath",
+      "function": "breath",
+      "spans": [
+        {
+          "startSec": 28.767,
+          "endSec": 29.833
+        }
+      ],
+      "description": "A straight-down view of the glass dome floating on the ocean with cloud shadows. The character is visible through the dome at the desk, dead centre, about 0.18 of frame width. The camera pulls back slowly (motion.json s006: pull_out z -0.232 from 28.72 s over 1.21 s, power1.out, gsapRmse 0.0105) with nothing else moving except water texture. It is the film's only frame without UI or type, a breath between the second proof and the tagline.",
+      "route": "blender",
+      "routeReason": "Glass, water and the character from above; the same assets as t03. A budgeted generated clip is the alternative.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:blender-plate",
+        "block:shaded-orb",
+        "repo:scripts/blender/glass_dome.py",
+        "repo:scripts/blender/plush_character.py"
+      ],
+      "timing": {
+        "durationSec": 1.07,
+        "startOffsetFromCutSec": 0.333,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s006 camera startSec 28.716 durationSec 1.214",
+          "visuals/strips/s006.jpg F858-F898"
+        ]
+      },
+      "ease": {
+        "name": "power1.out",
+        "cubicBezier": [
+          0.383,
+          0.602,
+          0.522,
+          0.679
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s006 camera.ease gsap power1.out, gsapRmse 0.0105, bezierRmse 0.0059"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "glass-dome-world"
+    },
+    {
+      "id": "t17",
+      "name": "giant-word-pull-out",
+      "function": "transition",
+      "fromShot": 10,
+      "toShot": 11,
+      "spans": [
+        {
+          "startSec": 29.833,
+          "endSec": 30.933
+        }
+      ],
+      "description": "The tagline sweeps in from the left at about frame height (one lowercase letter spans all 640 px at F900-F902). It crosses the overhead shot fast (F896-F904) while shrinking: about 0.6 of frame height at F905, one line 0.63 wide by F913 (30.43 s). The third word comes the same way from the right (F908-F913). The ocean washes to the pale cloud ground underneath. The words start touching and space out to normal by F921, and they re-colour from accent blue #2876EF to ink by about F926 (30.86 s).",
+      "route": "remotion",
+      "routeReason": "Type flying through the lens with motion blur: the DollyStack and ZoomSmear primitives in src/motion/kinetic-type, and VelocityBlur for the lateral streak. The ground wash is an opacity ramp.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "DollyStack",
+        "ZoomSmear",
+        "VelocityBlur",
+        "interpolateColors"
+      ],
+      "timing": {
+        "durationSec": 1.1,
+        "startOffsetFromCutSec": -0.333,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/m14-letter-wipe.jpg F896-F913",
+          "audio.json beatsSec 30.140: full cover at F903 (30.10 s) is 40 ms before it"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m14-letter-wipe.jpg diffs 31.1, 31.0, 36.0, 29.5, 18.6, 9.5, 10.2, 10.4, 9.6, 7.1, 6.2 (F900-F913)",
+          "motion.json s007 fit (power2.out, 3.57 s) rejected: longer than the 1.8 s shot"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Measured: the 0.5 s window from 30.0 s is the loudest in the track (-12.5 dBFS) and an onset falls at 30.14 s. The hit is inferred",
+        "basis": "inferred",
+        "evidence": [
+          "0.5 s RMS windows (scratch)",
+          "audio.json onsetsSec 30.14"
+        ]
+      },
+      "typography": {
+        "role": "tagline",
+        "entry": "fly-in at frame height, shrink to one line, re-colour accent to ink",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m14-letter-wipe.jpg F900-F913",
+          "speech-text.json 30.517 box 0.633 wide"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t18",
+      "techniqueCardId": "brush-write-on",
+      "name": "brush-stroke monogram write-on and silent hold",
+      "function": "cta",
+      "fromShot": 11,
+      "toShot": 12,
+      "spans": [
+        {
+          "startSec": 31.733,
+          "endSec": 34.833
+        }
+      ],
+      "description": "The tagline shrinks and fades to about 25% opacity (F952-F957) as the clouds clear to the plain ground. At F958 a fat accent-blue brush stroke appears at full opacity, about 0.35 of frame height and motion-blurred. It writes the remaining strokes of a cursive monogram while shrinking to about 0.14 of frame height by F971 (32.37 s), diffs falling 10.0, 8.2, 5.5, 3.8, 2.6, 1.8, 1.4, 1.3, 1.2, 1.1, 0.9. The mark then holds, centred, with diffs of 0.02-0.04, for about 2.4 s to the last frame, with no fade. The audio is silent from 34.38 s, so the last 0.46 s is a held mark over silence.",
+      "route": "remotion",
+      "routeReason": "An SVG path drawn with DrawSVGPlugin through src/motion/gsap.ts, a scale track and a short blur on the first frames. block:kinetic-line-draw draws strokes with an ease into each end, but its strokes are uniform; a brush needs a variable-width outline revealed by a mask along the path.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:kinetic-line-draw",
+        "DrawSVGPlugin"
+      ],
+      "timing": {
+        "durationSec": 3.1,
+        "startOffsetFromCutSec": -0.233,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/m15-logo-draw.jpg F952-F971",
+          "visuals/a1/m16-end.jpg F1020-F1044"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/m15-logo-draw.jpg write-on diffs 10.0 to 0.9 over F958-F971",
+          "motion.json s008 fit (back.out) rejected: 5 moving frames"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "Measured: the track is silent from 34.376 s to the end, 0.46 s, while the mark holds",
+        "basis": "measured",
+        "evidence": [
+          "audio.json silence 34.376-34.837"
+        ]
+      },
+      "typography": {
+        "role": "brand monogram",
+        "entry": "brush write-on with shrink",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json 33.017 box x 0.408-0.592"
+        ]
+      },
+      "layers": 2
+    }
+  ]
+}

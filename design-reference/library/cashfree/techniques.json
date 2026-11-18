@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "techniques": [
+    {
+      "id": "typed-question-hook",
+      "techniqueCardId": "anchored-annotations",
+      "name": "Typed question carried across photographs",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 2.333
+        }
+      ],
+      "function": "hook",
+      "description": "0.00-0.57 s: pure white (#FFFFFF), a black caret and a huge grotesque word typing at about one character every 2-3 frames ('Wh' F9, 'Wha' F11, 'What' F14), centred, about 55% of frame width. Hard cut at 0.567 s to a warm overhead lifestyle photo with a white rounded search bar (about 43% wide, y 0.47, text height about 2.5% of frame) continuing the same question; at 1.333 s a second overhead photo where the question continues as two outline chips either side of the photographed phone. The question is never finished before the answer object appears.",
+      "route": "footage",
+      "routeReason": "Typing, bar and chips are Remotion (TypedLine, typingSchedule, ui-prompt-bar); the two overhead lifestyle photographs of hands with devices are people and products in use, so they must be licensed stills or a shoot (or budgeted generated stills).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "ui-prompt-bar",
+        "photo-move",
+        "block:ui-annotate"
+      ],
+      "timing": {
+        "durationSec": 2.333,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s002-type.jpg F9-F20",
+          "visuals/a1/s005-phone.jpg F60-F69"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s002-type.jpg F9-F16: characters cut on, no tween"
+        ]
+      },
+      "typography": {
+        "role": "hook question",
+        "entry": "typewriter with block caret, about 2-3 frames a character, carried from hero size on white into a small search bar on a photo",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s002-type.jpg F9-F20",
+          "speech-text.json screenText 0.52-1.52 box x 0.371 w 0.425"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "orb-match-cut",
+      "name": "Match cut on a small object from photo to flat ground",
+      "spans": [
+        {
+          "startSec": 2.2,
+          "endSec": 2.467
+        }
+      ],
+      "function": "transition",
+      "description": "The orb glowing on a photographed phone screen (about 5% of frame width at x 0.48, y 0.50) grows on the screen over F65-F69, then at F70 (2.333 s) the photograph is replaced by a flat dark green ground (#1D221E to #054B26) with a glossy 3D orb at the same position and size. Two small words type in either side of it from F72, so the orb becomes a word in a sentence.",
+      "route": "remotion",
+      "routeReason": "A hard cut with matched position; the glossy orb is a render (Blender or a three.js sphere) composited as a still or short sequence.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "match-cut",
+        "MatchCut",
+        "block:shaded-orb"
+      ],
+      "timing": {
+        "durationSec": 0.267,
+        "startOffsetFromCutSec": -0.133,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F65-F74"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F69-F70: 0-frame cut"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 2,
+      "toShot": 3,
+      "techniqueCardId": "shaded-orb"
+    },
+    {
+      "id": "orb-grows-to-ground",
+      "name": "Inline object grows to become the ground, then mark to wordmark",
+      "spans": [
+        {
+          "startSec": 3.7,
+          "endSec": 4.3
+        }
+      ],
+      "function": "reveal",
+      "description": "The flanking words fade in 1-2 frames (F111-F112). The orb, now showing the brand mark, grows from about 10% of frame width (F113) past the frame edges (F121), 8 frames, accelerating; its green fill becomes the ground. The mark then slides left as the wordmark wipes in from behind it (F123-F127, 4 frames), bold italic, about 53% of frame width, white on green.",
+      "route": "remotion",
+      "routeReason": "GrowToScene / caused-morph grows a circle to the frame; the orb render is a still under a circular mask; the wordmark wipe is a clip-path.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "caused-morph",
+        "GrowToScene",
+        "growRect",
+        "block:shaded-orb"
+      ],
+      "timing": {
+        "durationSec": 0.6,
+        "startOffsetFromCutSec": 1.367,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s007-orb.jpg F108-F131"
+        ]
+      },
+      "ease": {
+        "name": "circ.in",
+        "cubicBezier": [
+          0.57,
+          0.44,
+          0.79,
+          -0.31
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s006 camera: push_in z 0.837, start 3.80 s, span90 0.10 s, gsap circ.in, pick bezier"
+        ]
+      },
+      "typography": {
+        "role": "client wordmark",
+        "entry": "wipes in from behind the sliding mark in 4 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s007-orb.jpg F123-F127",
+          "speech-text.json screenText 4.02-5.02 box w 0.534-0.61"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "shaded-orb"
+    },
+    {
+      "id": "bloom-cut-into-screen",
+      "techniqueCardId": "pixel-resolve",
+      "name": "Overexposed bloom cut into full-frame screen content",
+      "spans": [
+        {
+          "startSec": 4.9,
+          "endSec": 5.333
+        }
+      ],
+      "function": "transition",
+      "description": "From the wordmark on green, three overexposed mint-white frames (F148-F150, 4.93-5.00 s) replace the frame; the next shot, the live site's 3D illustration at full frame, resolves out of a coarse pixelated blur over F151-F160 (0.33 s) before its headline fades in.",
+      "route": "remotion",
+      "routeReason": "light-burn covers the flash; the pixelated resolve is a scale-down/scale-up of the incoming frame with image-rendering pixelated, stepped per frame.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "light-burn",
+        "block:pixel-resolve"
+      ],
+      "timing": {
+        "durationSec": 0.433,
+        "startOffsetFromCutSec": -0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s008-word.jpg F146-F160"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s008-word.jpg F151-F160: diffs 8.5, 10.2, 0.2, 10.0, 11.4, 25.4, 10.1, 4.0, 0.02 then settle"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 3,
+      "toShot": 4
+    },
+    {
+      "id": "screen-pulls-back-to-device",
+      "name": "Full-frame page pulls back onto a monitor on a coloured sweep",
+      "spans": [
+        {
+          "startSec": 5.4,
+          "endSec": 6.2
+        }
+      ],
+      "function": "proof",
+      "description": "The real page is shown full frame for about 0.4 s with its headline fading in (F163-F167), then the frame pulls back onto the monitor screen: the monitor stands on a green studio sweep (#A7E4C0 at top to #053618 on the floor), a brand-colour studio rather than black. Frame to about 47% scale in 0.46 s, decelerating hard.",
+      "route": "blender",
+      "routeReason": "The monitor on a lit coloured sweep with a screen texture of a real page capture is a Blender plate (blender-plate / studio-product-stage only offers a dark sweep); the page itself must be a real capture under the real-UI rule. The pull-back can be done in Remotion by scaling the capture into the plate's screen corners.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "blender-plate",
+        "studio-product-stage",
+        "capture:app",
+        "block:spotlight-studio"
+      ],
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0.467,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s008 camera start 5.59 s span90 0.46 s",
+          "visuals/a1/s008-monitor.jpg F162-F185"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "cubicBezier": [
+          0.46,
+          0.76,
+          0.16,
+          0.83
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s008 camera: pull_out z -0.76, gsap power3.out, pick bezier, trackedShare 1.0"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "brand-sweep"
+    },
+    {
+      "id": "brand-chips-assemble",
+      "name": "Brand-system chips assemble on a gradient and drift out",
+      "spans": [
+        {
+          "startSec": 7.667,
+          "endSec": 10.333
+        }
+      ],
+      "function": "emphasis",
+      "description": "Green #0DC45E to lime #C5FF93 vertical gradient. A white rectangle grows into a white type chip ('chapter' label, OCR box 47% wide, 17% high, left), five palette dots below it, a round arrow icon at upper right that turns from right to down in one frame (F255-F256), then a dark green pill pops under it with overshoot (F259-F262, 3 frames) and a 3D cursor drifts in. At 9.4 s the whole layout drifts left and slightly down (motion.json s010 x 0.22 frame widths, power2.in) and a 3D fan of cards enters at right.",
+      "route": "remotion",
+      "routeReason": "Chips, dots and icon are divs and SVG; pop with spring() overshoot; the drift is a track on a parent.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "kinetic-headline-build",
+        "hierarchy",
+        "track",
+        "block:ui-annotate"
+      ],
+      "timing": {
+        "durationSec": 2.667,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s010-chip.jpg F253-F265",
+          "visuals/a1/s011-fan.jpg F303-F309"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "cubicBezier": [
+          0.48,
+          0.08,
+          0.72,
+          0.28
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s010 camera: move right 0.216, gsap power2.in, pick gsap"
+        ]
+      },
+      "typography": {
+        "role": "chapter title",
+        "entry": "chip grows from a white rectangle, word set inside; second word pops in a dark pill with overshoot",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s010-chip.jpg F258-F262",
+          "speech-text.json screenText 8.02 box x 0.116 w 0.47"
+        ]
+      },
+      "layers": 5
+    },
+    {
+      "id": "bento-assemble-around-hero",
+      "techniqueCardId": "hero-snap-to-card",
+      "name": "Bento assembles around a held hero photo",
+      "spans": [
+        {
+          "startSec": 10.333,
+          "endSec": 13.567
+        },
+        {
+          "startSec": 16.1,
+          "endSec": 18.633
+        }
+      ],
+      "function": "proof",
+      "description": "Two builds. 10.33-13.57 s: a slowly turning 3D fan of glossy cards fills the frame, a right column slides in from the edge in 4 frames (photo tile over a type-specimen tile), and the specimen label is replaced by a lower-case glyph that grows in 4 frames to fill its tile (OCR box 58% of frame height). 16.10-18.63 s: a full-frame people photo snaps in one frame to a card about 63% wide on black; tiles land around it every 1-2 frames with no tween (phone photo, lime tile, colour-bar tile growing segment by segment, orange counter chip), then tall panels slide in from both edges in one frame; 6-8 elements fill the frame by 17.2 s and hold to 18.63 s.",
+      "route": "remotion",
+      "routeReason": "scene-bento-collage covers landing tiles; it lands tiles with motion rather than cutting them on, and has no hero that snaps from full bleed to card, so set its tile entry to a cut and add the snap.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "scene-bento-collage",
+        "CollageGrid",
+        "collageCells",
+        "type-number-race",
+        "photo-move",
+        "block:scene-bento-collage"
+      ],
+      "timing": {
+        "durationSec": 2.533,
+        "startOffsetFromCutSec": -0.3,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F483-F506",
+          "visuals/a1/s016-bento.jpg F504-F518",
+          "visuals/a1/s012-tile.jpg F322-F334",
+          "visuals/a1/s013-a.jpg F348-F359"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F496-F506: tiles appear complete in one frame",
+          "visuals/a1/s016-bento.jpg F509-F510"
+        ]
+      },
+      "layers": 8
+    },
+    {
+      "id": "tile-counter-race",
+      "name": "Counters race inside tiles and on a number card",
+      "spans": [
+        {
+          "startSec": 13.567,
+          "endSec": 13.967
+        },
+        {
+          "startSec": 16.867,
+          "endSec": 17.267
+        },
+        {
+          "startSec": 31.567,
+          "endSec": 32.267
+        }
+      ],
+      "function": "proof",
+      "description": "Inside a bento a counter card climbs every frame for about 13 frames (13.57-13.96 s) and a chip from 149+ to 175+ (F506-F518), a percentage from 62.1 to 64.9. At 31.57 s a number card on pale mint (#F9FFF2-ish ground with green glass bars along the bottom) races a figure from 66 to 80 in 9 frames (F947-F955), green, about 73% of frame width with a small grey kicker above and unit line below, holds 10 frames, then pushes in and blurs.",
+      "route": "remotion",
+      "routeReason": "type-number-race and NumberRace / raceValue cover the race; the glass bars are a still render.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-number-race",
+        "NumberRace",
+        "raceValue",
+        "hero-stat-odometer"
+      ],
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s030-race.jpg F947-F955",
+          "visuals/a1/s013-bento.jpg F407-F419"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s030-race.jpg F947-F955: about one step a frame, roughly linear (66, 68, 68, 70, 70, 73, 75, 77, 80)"
+        ]
+      },
+      "typography": {
+        "role": "big stat",
+        "entry": "digits replaced every frame while the line stays put",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s030-race.jpg F947-F968",
+          "speech-text.json screenText 32.02 box x 0.146 w 0.729"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "canvas-type-becomes-live-page",
+      "name": "Design-canvas placeholder retyped, punched in and built into the live page",
+      "techniqueCardId": "delete-and-retype-line",
+      "spans": [
+        {
+          "startSec": 18.633,
+          "endSec": 23.6
+        }
+      ],
+      "function": "reveal",
+      "description": "White design canvas: bar caret in a thin blue selection box; a three-word line types a word at a time (F564, F570, F574); page parts and multiplayer cursor tags with names arrive; one word is drag-selected and restyled (F586-F611); after a 40-frame hold the line is backspaced by character, 19 characters in 9 frames (F614-F622, about 2.1 a frame), 6 empty frames, then the real headline types a word every 3.4 frames over two lines (F628-F652). From about F648 the frame punches in until the headline overflows both edges (OCR width 0.875), then the nav, a tilted button and 3D currency icons drop into place while the frame drifts left. Hard cut at 23.433 s wide to the finished page in a browser frame on green.",
+      "route": "remotion",
+      "routeReason": "Canvas chrome, selection boxes, cursor tags and typing are Remotion (TypedLine, typingSchedule, Cursor, RegionCamera for the punch-in); the finished page must be a real capture of the site (capture:app).",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "Cursor",
+        "RegionCamera",
+        "ui-camera-read",
+        "capture:app",
+        "block:type-caret-track",
+        "block:ui-annotate",
+        "retypeLinePlan"
+      ],
+      "timing": {
+        "durationSec": 4.967,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s018-type.jpg F559-F578",
+          "visuals/a1/s017-backspace.jpg F613-F637",
+          "visuals/a1/s017-headline.jpg F636-F659",
+          "visuals/a1/s017-headline2.jpg F660-F683",
+          "visuals/a1/s019-pull.jpg F701-F704"
+        ]
+      },
+      "ease": {
+        "name": "power1.inOut",
+        "cubicBezier": [
+          0.53,
+          0.39,
+          0.29,
+          0.99
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s018 camera: move right 0.256, push_in z 0.30 from 21.19 s, span90 0.83 s, gsap power1.inOut, trackedShare 0.83 (detector shot s018 covers 20.47-23.43 s)"
+        ]
+      },
+      "typography": {
+        "role": "headline being written",
+        "entry": "typed a word at a time inside a selection box, backspaced by character, retyped by word",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s017-backspace.jpg F613-F637",
+          "speech-text.json screenText 21.52 box x 0.067 w 0.875"
+        ]
+      },
+      "layers": 6,
+      "fromShot": 10,
+      "toShot": 11
+    },
+    {
+      "id": "device-carousel",
+      "name": "Finished page carried across three device frames",
+      "spans": [
+        {
+          "startSec": 23.433,
+          "endSec": 27.033
+        }
+      ],
+      "function": "proof",
+      "description": "Hard cuts at 23.43, 25.03 and 25.93 s: the page in a browser frame on a green gradient slowly pulling back (z -0.32 over 1.5 s), the page on a tablet held in two hands over green tilting, then an isometric array of phones on white each showing the app, the camera trucking right and down (x 0.25, y 0.14 frame widths, sine.inOut).",
+      "route": "blender",
+      "routeReason": "Tablet in hands is footage or a generated still; the phone array is a Blender instanced render; screens are real captures composited in.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "blender-plate",
+        "ui-phone-hero",
+        "capture:app",
+        "block:studio-product-stage",
+        "repo:scripts/blender/device_array.py"
+      ],
+      "timing": {
+        "durationSec": 3.6,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s019, s020, s021 camera",
+          "visuals/contact-sheet-01.jpg 19F-21L"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "cubicBezier": [
+          0.99,
+          0.83,
+          0.27,
+          1.31
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s021 camera: move right 0.247, down 0.142, pull_out, gsap sine.inOut, pick bezier, trackedShare 0.94"
+        ]
+      },
+      "layers": 2,
+      "techniqueCardId": "device-array"
+    },
+    {
+      "id": "ground-swap-mid-typing",
+      "name": "Ground and scale swap while a line keeps typing",
+      "spans": [
+        {
+          "startSec": 27.033,
+          "endSec": 28.033
+        }
+      ],
+      "function": "emphasis",
+      "description": "Near-black #1D221E ground, lime #D1FF98 type typing at about 2 frames a character, centred, about half the frame wide. At 27.633 s the ground swaps to lime and the type to dark green on the same frame, same size and place, typing continuing. At 27.867 s a hard cut to near-white #F9FFF2 shows the line at about a third of the size (OCR width 0.31), last words green, and photo and UI tiles fade in around it.",
+      "route": "remotion",
+      "routeReason": "ground-swap-cut plus TypedLine with one shared typing schedule across Sequences.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ground-swap-cut",
+        "TypedLine",
+        "typingSchedule",
+        "type-hero-word"
+      ],
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F823-F841"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F828-F829 and F835-F836: 0-frame swaps"
+        ]
+      },
+      "typography": {
+        "role": "chapter line",
+        "entry": "typewriter with caret, carried across two ground swaps and a scale drop",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F823-F841",
+          "speech-text.json screenText 27.52 box x 0.112 w 0.888; 28.02 box w 0.309"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 14,
+      "toShot": 16
+    },
+    {
+      "id": "stepped-grid-pullback",
+      "name": "Stepped pull-back through a grid of page cards",
+      "spans": [
+        {
+          "startSec": 29.6,
+          "endSec": 31.567
+        }
+      ],
+      "function": "proof",
+      "description": "Dark ground, one page card about 45% wide; after 0.5 s the grid retreats in one-frame steps (2 cards at 30.16 s, 4 at 30.46, 6 at 30.53, 9 at 30.86, 12 by 31.03 s), drifting gently between steps. Ends on a hard cut to a light number card.",
+      "route": "remotion",
+      "routeReason": "CollageGrid of captured page screenshots with a scale track that jumps on chosen frames (track with step segments); captures must be real pages.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "CollageGrid",
+        "collageCells",
+        "track",
+        "capture:app"
+      ],
+      "timing": {
+        "durationSec": 1.967,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s025-collage.jpg F888-F908",
+          "visuals/a1/s027-collage.jpg F909-F932"
+        ]
+      },
+      "ease": {
+        "name": "steps(6)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s025-collage.jpg F904-F905 diff 46.4",
+          "visuals/a1/s027-collage.jpg F913-F914 diff 31.1, F925-F926 diff 56.3, F927-F928 diff 67.5"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "icon-marquee-focal-tile",
+      "name": "Icon tile row slides under a sentence, centre tile enlarged, then carried as a panel icon",
+      "spans": [
+        {
+          "startSec": 32.967,
+          "endSec": 36.133
+        }
+      ],
+      "function": "transition",
+      "description": "Dark ground, a small sentence types in two parts (last words green). A row of rounded lime icon tiles rises in under it in one frame and slides left (0.43 frame widths, circ.out); the tile under the centre is about 1.3x larger. Hard cut at 35.667 s to a split frame: left green panel holding the same icon in a dark tile, right a warm photo of a person working with small UI chips popping in.",
+      "route": "remotion",
+      "routeReason": "Tile row is divs with a track; scale by distance to centre; the split frame is two panels; the photo is footage or a licensed still.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "stagger",
+        "shared-element-carry",
+        "photo-move",
+        "block:marquee-rows"
+      ],
+      "timing": {
+        "durationSec": 3.167,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s032-tiles.jpg F1009-F1027",
+          "visuals/a1/s033-grow.jpg F1060-F1078"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0.07,
+          0.81,
+          0.57,
+          1.23
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s032 camera: move right 0.431, gsap circ.out, pick gsap, trackedShare 1.0"
+        ]
+      },
+      "typography": {
+        "role": "section sentence",
+        "entry": "two-part type-on, last words in accent",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s032-tiles.jpg F1009-F1018"
+        ]
+      },
+      "layers": 4,
+      "fromShot": 19,
+      "toShot": 20
+    },
+    {
+      "id": "caption-anchor-over-footage-stutter",
+      "name": "Fixed caption over 0.3-0.5 s photo cuts",
+      "spans": [
+        {
+          "startSec": 44.033,
+          "endSec": 46.467
+        }
+      ],
+      "function": "emphasis",
+      "description": "Plates at 0.4 and 0.5 s (a stage screen, a billboard), then a photo card about 45% wide on white with one small white word at its centre; hard cut to the same photo full bleed (45.27 s), caption swaps to a two-word line with a small green arrow chip at the same spot (x 0.47, y 0.46, about 10% of frame width); two more photos cut under it at 45.67 and 45.97 s.",
+      "route": "footage",
+      "routeReason": "People at work in real places: licensed stock or a shoot (or budgeted generated stills); the caption and chip are Remotion.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "photo-move",
+        "speed-ramp-flurry",
+        "caption-clean-sentence"
+      ],
+      "timing": {
+        "durationSec": 2.433,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1347-F1364",
+          "visuals/a1/s046-caption.jpg F1366-F1384"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1357-F1358: card to full bleed in 0 frames"
+        ]
+      },
+      "typography": {
+        "role": "anchored caption",
+        "entry": "cut on, held at the same position across cuts",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s046-caption.jpg F1366-F1384",
+          "speech-text.json screenText 44.93-46.02"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 30,
+      "toShot": 31
+    },
+    {
+      "id": "word-frame-inset-swaps",
+      "name": "Two edge words frame an inset that cuts",
+      "spans": [
+        {
+          "startSec": 47.667,
+          "endSec": 51.8
+        }
+      ],
+      "function": "proof",
+      "description": "Forest green #054B26: a small word at the left edge (y 0.6) and another at the right (y 0.37) frame a centred inset about 45% wide; the inset cuts from a 3D card stack to a stage photo (48.17 s) to an audience photo (48.55 s) while the words hold. The pattern repeats twice with the same lead word and a new noun set large on lime and on a pastel gradient (49.33, 50.87 s), with a photo card or a growth chip racing a percentage.",
+      "route": "remotion",
+      "routeReason": "Layout and inset cuts are Sequences; inset images are footage or stills.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-word-rotate",
+        "ground-swap-cut",
+        "type-number-race"
+      ],
+      "timing": {
+        "durationSec": 4.133,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1440-F1460",
+          "visuals/contact-sheet-02.jpg 9F-12L"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1444-F1445, F1456-F1457: 0-frame inset cuts"
+        ]
+      },
+      "typography": {
+        "role": "anaphora triad",
+        "entry": "lead word repeated, noun changes per beat",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 47.52-52.02"
+        ]
+      },
+      "layers": 4,
+      "fromShot": 35,
+      "toShot": 37
+    },
+    {
+      "id": "question-card-to-cta-pill",
+      "name": "Question card collapses into a typed CTA pill, then mark fly-in end card",
+      "spans": [
+        {
+          "startSec": 51.8,
+          "endSec": 57.167
+        }
+      ],
+      "function": "cta",
+      "description": "Pastel gradient (#EFF8F0 to #F7F0E5): a question types small, then sits in a frosted card; the card shrinks over 2 frames (F1602-F1603) and at F1604 (53.47 s) becomes a white pill on a bright green gradient (#C3FF93 top to #11C55F bottom) with a faint globe grid; the CTA types into the pill at about 1 character a frame (F1604-F1616) and an arrow button fills. At 54.73 s a large 3D mark flies in from the lower left and shrinks and turns to centre over 9 frames (motion.json s054 fit expo.out, which here measures the mark, not a camera); header line, URL pill and a logo row appear; held through the closing silence (56.12-57.19 s).",
+      "route": "remotion",
+      "routeReason": "morphRect / caused-morph for card to pill, TypedLine for the CTA; the 3D mark is extruded-mark or a Blender render.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "caused-morph",
+        "morphRect",
+        "TypedLine",
+        "extruded-mark",
+        "scene-end-card"
+      ],
+      "timing": {
+        "durationSec": 5.367,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s054-cta.jpg F1602-F1622",
+          "visuals/a1/s054-end.jpg F1641-F1655"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "cubicBezier": [
+          0.34,
+          1.38,
+          0.77,
+          0.77
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s054 camera: pull_out z -0.70 from 54.77 s, span90 0.27 s (the mark shrinking, trackedShare 0.97)"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "The end card is held through 1.07 s of measured silence; what plays before it I cannot hear.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json silence 56.12-57.19",
+          "audio.json sections 55.40-56.38 energy 0.018"
+        ]
+      },
+      "typography": {
+        "role": "call to action",
+        "entry": "typewriter 1 character a frame inside a pill",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s054-cta.jpg F1604-F1616",
+          "speech-text.json screenText 54.02 box x 0.338 w 0.241"
+        ]
+      },
+      "layers": 4,
+      "fromShot": 40,
+      "toShot": 42
+    }
+  ]
+}

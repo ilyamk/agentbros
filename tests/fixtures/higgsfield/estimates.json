@@ -1,0 +1,220 @@
+{
+ "recordedAt": "2026-11-15",
+ "source": "POST https://api.higgsfield.ai/estimate/<endpoint> (documented, free; usage unchanged)",
+ "cases": [
+  {
+   "endpoint": "higgsfield-ai/soul/v2/standard",
+   "input": {
+    "prompt": "Editorial portrait in soft daylight"
+   },
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "0.050",
+    "usd": "0.004",
+    "discount": null
+   }
+  },
+  {
+   "endpoint": "higgsfield-ai/soul/v2/standard",
+   "input": {
+    "prompt": "Editorial portrait in soft daylight",
+    "num_images": 4
+   },
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "0.050",
+    "usd": "0.004",
+    "discount": null
+   }
+  },
+  {
+   "endpoint": "bytedance/seedance-2.5/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow",
+    "duration": 5
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 480p: $0.1177; 720p: $0.2647; 1080p: $0.6518. Total price = selected rate \u00d7 output duration in seconds."
+   }
+  },
+  {
+   "endpoint": "bytedance/seedance-2.5/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow",
+    "duration": 10
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 480p: $0.1177; 720p: $0.2647; 1080p: $0.6518. Total price = selected rate \u00d7 output duration in seconds."
+   }
+  },
+  {
+   "endpoint": "bytedance/seedance-2.5/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow",
+    "duration": 5,
+    "resolution": "1080p"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 480p: $0.1177; 720p: $0.2647; 1080p: $0.6518. Total price = selected rate \u00d7 output duration in seconds."
+   }
+  },
+  {
+   "endpoint": "kling-video/v3.0/std/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 720p: $0.0714. Total price = selected rate \u00d7 output duration in seconds. For explicit multi-shot requests, output duration is the sum of the shot durations."
+   }
+  },
+  {
+   "endpoint": "kling-video/v3.0/pro/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 1080p: $0.0962. Total price = selected rate \u00d7 output duration in seconds. For explicit multi-shot requests, output duration is the sum of the shot durations."
+   }
+  },
+  {
+   "endpoint": "pixverse/v6/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "4.080",
+    "usd": "0.255",
+    "discount": {
+     "percentage": "15.00",
+     "credits": "0.720",
+     "usd": "0.045"
+    }
+   }
+  },
+  {
+   "endpoint": "z-image/turbo",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "0.240",
+    "usd": "0.015",
+    "discount": null
+   }
+  },
+  {
+   "endpoint": "higgsfield/genjutsu/motion-transfer/v1.0",
+   "input": {
+    "video_url": "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/413e2fe3e34610d5f950e9f081896991d1891cf16836f7dd91b72cc421d8f5d0-video.mp4",
+    "image_urls": [
+     "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/74c63b88a889cb7f0f4389b8ae945592ff66d7cbcf41b48f9132fa341803a090-thumbnail.webp"
+    ],
+    "resolution": "480p"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 480p: $0.1540; 720p: $0.3446; 1080p: $0.8346. Billed duration is the source video duration rounded up to a whole second. Total price = selected rate \u00d7 billed duration in seconds."
+   }
+  },
+  {
+   "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+   "input": {
+    "video_url": "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/413e2fe3e34610d5f950e9f081896991d1891cf16836f7dd91b72cc421d8f5d0-video.mp4",
+    "image_urls": [
+     "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/74c63b88a889cb7f0f4389b8ae945592ff66d7cbcf41b48f9132fa341803a090-thumbnail.webp"
+    ],
+    "resolution": "480p"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Price per second (output): 480p \u2014 $0.0739; 720p \u2014 $0.1471; 1080p \u2014 $0.2936."
+   }
+  },
+  {
+   "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+   "input": {
+    "video_url": "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/413e2fe3e34610d5f950e9f081896991d1891cf16836f7dd91b72cc421d8f5d0-video.mp4",
+    "image_urls": [
+     "https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/74c63b88a889cb7f0f4389b8ae945592ff66d7cbcf41b48f9132fa341803a090-thumbnail.webp"
+    ]
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 480p: $0.1540; 720p: $0.3446; 1080p: $0.8346. Billed duration is the source video duration rounded up to a whole second. Total price = selected rate \u00d7 billed duration in seconds."
+   }
+  },
+  {
+   "endpoint": "higgsfield/cinema-studio/4.0",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Token-metered pricing. Billable video tokens = ceil((input video seconds + generated video seconds) \u00d7 output width \u00d7 output height \u00d7 24 fps / 1024). Image and audio references do not count as video input. At 480p or 720p, each 1,000 video tokens cost $0.0214 without video input or $0.01284 with video input (0.6\u00d7 the standard rate). With video references, both input and generated video durations are billable. Rates shown are before any applicable customer discount."
+   }
+  },
+  {
+   "endpoint": "higgsfield/ai-influencer",
+   "input": {},
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "0.800",
+    "usd": "0.050",
+    "discount": null
+   }
+  },
+  {
+   "endpoint": "kling-video/v4.0/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "description",
+    "pricing_description": "Standard self-serve rates in USD per video second: 720p: $0.1257; 1080p: $0.1879. Total price = selected rate \u00d7 output duration in seconds."
+   }
+  },
+  {
+   "endpoint": "kling-video/v4.0-flash/text-to-video",
+   "input": {
+    "prompt": "a red fox in snow"
+   },
+   "status": 200,
+   "response": {
+    "type": "estimate",
+    "credits": "15.040",
+    "usd": "0.940",
+    "discount": null
+   }
+  },
+  {
+   "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+   "input": {},
+   "status": 400,
+   "response": {
+    "detail": ": 'video_url' is a required property"
+   }
+  }
+ ]
+}

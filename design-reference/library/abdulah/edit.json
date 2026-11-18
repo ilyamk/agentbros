@@ -1,0 +1,1994 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "abdulah",
+  "rhythm": {
+    "value": "Corrected: 67 shots, 66 cuts in 69.83 s (56.7 cuts/min), median hold 0.83 s, p10 0.067 s, p90 2.56 s. Detector: 58 shots, 57 cuts (49.0/min), median 0.77 s. The median is pulled down by one 1.87 s flurry of 23 images; without it, 44 cuts, median hold 1.40 s (p10 0.16, p90 2.68). Pace by section: hook 5.43 s single shot; heritage 5.43-16.57 s ten shots, four of them 4-frame archive steps; list 21.33-30.97 s holds about 1.0-1.47 s; questions 36.53-47.1 s holds 1.7-2.6 s; flurry 2-3 frames; proof 0.5-1.67 s; close 1.03, 1.83, 2.73, 3.2, 4.77 s, the longest holds of the film. I cannot hear the film: tempo confidence is 0.04 and cuts land on beats, onsets and loudness swells at or below chance (below), so the cutting follows the words and the images, not a beat grid. Corrected cuts (66): on a beat ±80 ms 0.197 against chance 0.272 (lift 0.72); on an onset 0.545 against 0.630; within one frame of a downbeat 0.015 against 0.032. Without the flurry (44 cuts): beats 0.159, onsets 0.477, loudness swells (50 ms RMS peaks over 1.35x median, 69 found) ±0.1 s 0.114 against 0.20. Per loudness section 7.8-44.8 s: beats 0.167 vs 0.298, onsets 0.542 vs 0.691; 47.35-63.74 s: beats 0.212 vs 0.296, onsets 0.606 vs 0.670. Detector figures in sync.json agree: 0.211 vs 0.273, onsets 0.509 vs 0.633, lift 0.77, downbeat-frame lift 0.6, signed median +0.035 s. Onsets run 4.5 a second, so the onset ratios say nothing either way. Whisper word ends fall on whole seconds a third of the time, so word times are too coarse to test cuts against; the observed rule is order, not timing: each listed word arrives on the same frame as its own image (23.30, 24.30 s).",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "corrected shots: shots.json with edit.json corrections (correctedShots)",
+      "sync.json metrics",
+      "audio.json tempo",
+      "scratchpad recomputation from audio.json beatsSec, downbeatsSec, onsetsSec and media RMS"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook: thesis typed on black, deleted and retyped; first image withheld for 5.4 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/open-type.jpg F4-F47",
+          "visuals/a1/type-reset.jpg F111-F137"
+        ]
+      },
+      "technique": {
+        "value": "typewriter with word-chunk backspace and a slide-and-swap of the first word; archive portrait flicker beside the line 0.13-1.26 s",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/open-type.jpg F4-F47",
+          "visuals/a1/type-reset.jpg F111-F137"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "First image: an archive photo card on paper carrying the spoken verb; a second, tilted card stacks on at F177.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/card-build.jpg F163-F182"
+        ]
+      },
+      "technique": {
+        "value": "image card 25% of width on paper ground",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/card-build.jpg F163-F182"
+        ]
+      }
+    },
+    {
+      "shotId": "s003.1",
+      "purpose": {
+        "value": "Archive ladder: four images of one building, 4 frames each, through 1-frame grade/texture flashes.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F206-F221"
+        ]
+      },
+      "technique": {
+        "value": "era ladder to a match cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F206-F221"
+        ]
+      }
+    },
+    {
+      "shotId": "s003.2",
+      "purpose": {
+        "value": "Archive ladder: four images of one building, 4 frames each, through 1-frame grade/texture flashes.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F210-F213"
+        ]
+      },
+      "technique": {
+        "value": "era ladder to a match cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F210-F213"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.1",
+      "purpose": {
+        "value": "Archive ladder: four images of one building, 4 frames each, through 1-frame grade/texture flashes.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F214-F217"
+        ]
+      },
+      "technique": {
+        "value": "era ladder to a match cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F214-F217"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.2",
+      "purpose": {
+        "value": "Archive ladder: four images of one building, 4 frames each, through 1-frame grade/texture flashes.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F206-F221"
+        ]
+      },
+      "technique": {
+        "value": "era ladder to a match cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F206-F221"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Present-day colour hero location held 4.77 s under a left-set caption line typed in two lines.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F222-F227",
+          "visuals/a1/flash-blackboard.jpg F357-F362"
+        ]
+      },
+      "technique": {
+        "value": "era match cut; caption typed over plate",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/archive-match.jpg F222-F227",
+          "visuals/a1/flash-blackboard.jpg F357-F362"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Archive lecture at a chalkboard; entered through a 2-frame warm then green light leak.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/flash-blackboard.jpg F362-F374"
+        ]
+      },
+      "technique": {
+        "value": "light-leak flash cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/flash-blackboard.jpg F362-F374"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Archive hangar footage, 1.33 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 7F-7L"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Graded launch gantry, exits through a green grade and white flare (F493-F496).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/green-tail.jpg F486-F496"
+        ]
+      },
+      "technique": {
+        "value": "light-leak exit",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/green-tail.jpg F486-F496"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.1",
+      "purpose": {
+        "value": "One centred word on paper: the turn to the present.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-a.jpg F497-F511"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.2",
+      "purpose": {
+        "value": "Typed line with an inline image chip that rides the cursor; a second chip lands at F529.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-a.jpg F514-F521",
+          "visuals/a1/swap-b.jpg F522-F545"
+        ]
+      },
+      "technique": {
+        "value": "inline chip after the cursor",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-a.jpg F514-F521",
+          "visuals/a1/swap-b.jpg F522-F545"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.3",
+      "purpose": {
+        "value": "Next typed line, chip pushed right glyph by glyph, line fades out over F579-F581.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-c.jpg F554-F569",
+          "visuals/a1/swap-d.jpg F570-F581"
+        ]
+      },
+      "technique": {
+        "value": "inline chip after the cursor",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-c.jpg F554-F569",
+          "visuals/a1/swap-d.jpg F570-F581"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.4",
+      "purpose": {
+        "value": "Scattered words, then a collage of colourful cards popping in every 3-6 frames, then a 6-frame glitch exit.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-d.jpg F582-F593",
+          "visuals/a1/card-add.jpg F606-F629",
+          "visuals/a1/glitch-out.jpg F630-F639"
+        ]
+      },
+      "technique": {
+        "value": "collage pop build; glitch exit",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-d.jpg F582-F593",
+          "visuals/a1/card-add.jpg F606-F629",
+          "visuals/a1/glitch-out.jpg F630-F639"
+        ]
+      }
+    },
+    {
+      "shotId": "s013.1",
+      "purpose": {
+        "value": "Short type pages on paper carrying the subject of the list.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-e.jpg F642-F665"
+        ]
+      }
+    },
+    {
+      "shotId": "s013.2",
+      "purpose": {
+        "value": "Short type pages on paper carrying the subject of the list.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-e.jpg F659-F665"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Closed eye with a cyan/white leak: 0.2 s set-up for the open eye.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/eye-reveal.jpg F668-F673"
+        ]
+      },
+      "technique": {
+        "value": "light-leak flash cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/eye-reveal.jpg F668-F673"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "Open eye, five stepped punch-ins every 2-3 frames, keyword centred in the pupil.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/eye-reveal.jpg F674-F688"
+        ]
+      },
+      "technique": {
+        "value": "stepped punch-in",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/eye-reveal.jpg F674-F688"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Silhouette at a lamp-lit desk; keyword centred.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-01.jpg S017"
+        ]
+      },
+      "technique": {
+        "value": "one noun, one image",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-01.jpg S017"
+        ]
+      }
+    },
+    {
+      "shotId": "s018",
+      "purpose": {
+        "value": "Projector in the dark; keyword centred.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-01.jpg S018"
+        ]
+      },
+      "technique": {
+        "value": "one noun, one image",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-01.jpg S018"
+        ]
+      }
+    },
+    {
+      "shotId": "s019.1",
+      "purpose": {
+        "value": "Planet from orbit, then the same framing as a dot-screen render cycling colour every 3-5 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/halftone-fade.jpg F768-F791",
+          "visuals/a1/earth-to-card.jpg F790-F801"
+        ]
+      },
+      "technique": {
+        "value": "one noun, one image; dot-screen treatment",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/halftone-fade.jpg F768-F791",
+          "visuals/a1/earth-to-card.jpg F790-F801"
+        ]
+      }
+    },
+    {
+      "shotId": "s019.2",
+      "purpose": {
+        "value": "Small archive card on black with an italic caption typing beside a cursor; the card grows in three steps to full frame.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/earth-to-card.jpg F802-F803",
+          "visuals/a1/card-on-black.jpg F804-F817",
+          "visuals/a1/card-expand-photo.jpg F816-F827"
+        ]
+      },
+      "technique": {
+        "value": "typed card caption; stepped card growth",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/earth-to-card.jpg F802-F803",
+          "visuals/a1/card-on-black.jpg F804-F817",
+          "visuals/a1/card-expand-photo.jpg F816-F827"
+        ]
+      }
+    },
+    {
+      "shotId": "s023",
+      "purpose": {
+        "value": "Illustration revealed as an inset box after a duotone flash; slow 4.4% pull-out (circ.out).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/sepia-whip.jpg F839-F851",
+          "motion.json s023 camera"
+        ]
+      },
+      "technique": {
+        "value": "inset-box wipe",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/sepia-whip.jpg F839-F851",
+          "motion.json s023 camera"
+        ]
+      }
+    },
+    {
+      "shotId": "s024.1",
+      "purpose": {
+        "value": "Paper page with a small image card top right; the card grows to full bleed (F903-F911) and exits through a dot-screen stutter.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/card-grow-rocket.jpg F885-F911",
+          "visuals/a1/halftone-blackboard.jpg F918-F928"
+        ]
+      },
+      "technique": {
+        "value": "card grows to full bleed",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/card-grow-rocket.jpg F885-F911",
+          "visuals/a1/halftone-blackboard.jpg F918-F928"
+        ]
+      }
+    },
+    {
+      "shotId": "s024.2",
+      "purpose": {
+        "value": "Lecture at a chalkboard, 1.4 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/halftone-blackboard.jpg F929-F941"
+        ]
+      }
+    },
+    {
+      "shotId": "s027",
+      "purpose": {
+        "value": "Orbit view of clouds under a typed caption.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/moon-1.jpg F1017-F1019"
+        ]
+      }
+    },
+    {
+      "shotId": "s028",
+      "purpose": {
+        "value": "Moon time-lapse, phases cycling every ~0.5 s; a centred word line fills with the accent colour word by word.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/moon-1.jpg",
+          "visuals/a1/moon-2.jpg",
+          "visuals/a1/moon-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "karaoke colour fill",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/moon-1.jpg",
+          "visuals/a1/moon-2.jpg",
+          "visuals/a1/moon-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s032",
+      "purpose": {
+        "value": "Wide landscape held 1.7-2.6 s while the words of a question land at scattered positions.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scatter-a.jpg F1096-F1118",
+          "visuals/a1/scatter-b.jpg F1152-F1154"
+        ]
+      },
+      "technique": {
+        "value": "scattered words",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scatter-a.jpg F1096-F1118",
+          "visuals/a1/scatter-b.jpg F1152-F1154"
+        ]
+      }
+    },
+    {
+      "shotId": "s033",
+      "purpose": {
+        "value": "Wide landscape held 1.7-2.6 s while the words of a question land at scattered positions.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scatter-b.jpg F1155-F1175"
+        ]
+      },
+      "technique": {
+        "value": "scattered words",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scatter-b.jpg F1155-F1175"
+        ]
+      }
+    },
+    {
+      "shotId": "s034",
+      "purpose": {
+        "value": "Wide landscape held 1.7-2.6 s while the words of a question land at scattered positions.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 34F-34L (40.20-42.76)",
+          "visuals/boundaries-02.jpg S034"
+        ]
+      },
+      "technique": {
+        "value": "scattered words",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 34F-34L (40.20-42.76)",
+          "visuals/boundaries-02.jpg S034"
+        ]
+      }
+    },
+    {
+      "shotId": "s035",
+      "purpose": {
+        "value": "Handwritten question to the viewer typed on a paper ground; 2-frame navy and beige flashes at the change.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ground-swap.jpg F1338-F1367"
+        ]
+      },
+      "technique": {
+        "value": "handwriting register for direct address",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ground-swap.jpg F1338-F1367"
+        ]
+      }
+    },
+    {
+      "shotId": "s036",
+      "purpose": {
+        "value": "Handwritten question to the viewer typed on a paper ground; 2-frame navy and beige flashes at the change.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ground-swap.jpg F1362-F1367"
+        ]
+      },
+      "technique": {
+        "value": "handwriting register for direct address",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ground-swap.jpg F1362-F1367"
+        ]
+      }
+    },
+    {
+      "shotId": "s037",
+      "purpose": {
+        "value": "Dim empty office held 1.43 s: the stillness before the flurry.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg F1452-F1455"
+        ]
+      }
+    },
+    {
+      "shotId": "s038",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s039.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s039.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s040.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s040.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s041.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s041.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s042.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s042.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s043.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s043.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s044.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s044.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s045.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s045.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s046.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s046.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s047.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s047.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s048.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s048.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s049.1",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s049.2",
+      "purpose": {
+        "value": "Image flurry: banknotes, one image per 2-3 frames on a 3-2 cadence (12 images a second), 23 images in 1.87 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "image flurry",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-1.jpg",
+          "visuals/a1/money-2.jpg",
+          "visuals/a1/money-3.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s050",
+      "purpose": {
+        "value": "Night office tower, 1.67 s: a held breath after the flurry.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/money-3.jpg F1512-F1517"
+        ]
+      }
+    },
+    {
+      "shotId": "s051",
+      "purpose": {
+        "value": "Proof: real event photography (networking, stage, fireside, crowd, audience), 0.5-1.3 s each.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      },
+      "technique": {
+        "value": "event proof montage",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      }
+    },
+    {
+      "shotId": "s052",
+      "purpose": {
+        "value": "Proof: real event photography (networking, stage, fireside, crowd, audience), 0.5-1.3 s each.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      },
+      "technique": {
+        "value": "event proof montage",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      }
+    },
+    {
+      "shotId": "s053",
+      "purpose": {
+        "value": "Proof: real event photography (networking, stage, fireside, crowd, audience), 0.5-1.3 s each.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      },
+      "technique": {
+        "value": "event proof montage",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      }
+    },
+    {
+      "shotId": "s054",
+      "purpose": {
+        "value": "Proof: real event photography (networking, stage, fireside, crowd, audience), 0.5-1.3 s each.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      },
+      "technique": {
+        "value": "event proof montage",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      }
+    },
+    {
+      "shotId": "s055",
+      "purpose": {
+        "value": "Proof: real event photography (networking, stage, fireside, crowd, audience), 0.5-1.3 s each.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      },
+      "technique": {
+        "value": "event proof montage",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-15L"
+        ]
+      }
+    },
+    {
+      "shotId": "s056.1",
+      "purpose": {
+        "value": "Closing statement word by word on paper, each word fading on over 2 frames, centred.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-f.jpg",
+          "visuals/a1/swap-g.jpg",
+          "visuals/a1/swap-h.jpg"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word fade-on",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-f.jpg",
+          "visuals/a1/swap-g.jpg",
+          "visuals/a1/swap-h.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s056.2",
+      "purpose": {
+        "value": "Closing statement word by word on paper, each word fading on over 2 frames, centred.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-f.jpg",
+          "visuals/a1/swap-g.jpg",
+          "visuals/a1/swap-h.jpg"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word fade-on",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-f.jpg",
+          "visuals/a1/swap-g.jpg",
+          "visuals/a1/swap-h.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s056.3",
+      "purpose": {
+        "value": "Last clause; small portraits pop in around it every 4 frames under a slow push.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/portrait-pop.jpg F1774-F1793",
+          "visuals/a1/pop-b.jpg F1806-F1829",
+          "visuals/a1/end-cut.jpg F1851-F1855"
+        ]
+      },
+      "technique": {
+        "value": "portrait pop field",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/portrait-pop.jpg F1774-F1793",
+          "visuals/a1/pop-b.jpg F1806-F1829",
+          "visuals/a1/end-cut.jpg F1851-F1855"
+        ]
+      }
+    },
+    {
+      "shotId": "s057",
+      "purpose": {
+        "value": "Bookend: the colour hero location returns with the title; edition line types in at 63.13 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/end-cut.jpg F1856-F1868"
+        ]
+      },
+      "technique": {
+        "value": "bookend title",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/end-cut.jpg F1856-F1868"
+        ]
+      }
+    },
+    {
+      "shotId": "s058",
+      "purpose": {
+        "value": "Black end card held 4.77 s with title, edition and credits.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/endcard.jpg F1952-F1964"
+        ]
+      },
+      "technique": {
+        "value": "end card hold",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/endcard.jpg F1952-F1964"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 6.867,
+        "endSec": 7.4,
+        "name": "archive-ladder-match-cut",
+        "description": "Four images of one building, 4 frames each (F206, F210, F214, F218), each entered through a 1-2 frame grade or texture flash, then a match cut at F222 to the same building in present-day colour, held 4.77 s. Framing of the building stays in the same place across all five images.",
+        "why": "At 4 frames per image the eye cannot read each photo, only that the same shape persists while its age changes; the long colour hold after 0.53 s of flicker lands the location as the answer and gives the caption time to type."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/archive-match.jpg F204-F227",
+        "visuals/boundaries-01.jpg S003-S005"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 48.533,
+        "endSec": 50.4,
+        "name": "speed-ramp-flurry",
+        "description": "23 banknote images in 1.87 s on a 3-2-3-2 frame cadence (F1456, F1459, F1461, F1464 ... F1511), 12 images a second; the cadence is consistent with a 24 fps edit of 2-frame holds pulled down to 30 fps (inferred). Preceded by a 1.43 s still office hold and followed by a 1.67 s still tower hold. RMS over the flurry -13.6 dB against -15.8 dB in the 2.5 s before.",
+        "why": "The flurry is the only fast passage in the film and it carries what the event rejects; the still holds either side make the burst read as noise to be cut away, and the eye registers only the subject, never a single note."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/money-1.jpg F1452-F1475",
+        "visuals/a1/money-2.jpg F1476-F1499",
+        "visuals/a1/money-3.jpg F1500-F1517"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 0.133,
+        "endSec": 5.433,
+        "name": "typewriter-backspace-hook",
+        "description": "Small left-set serif line (x 0.18, line box 0.061 high) types on black from F4; a stack of archive portraits beside it changes every 5-6 frames until 1.26 s; at 3.73-4.10 s the line deletes backwards in word chunks (arrive, future, watching the, happen by, doesn't) one chunk every 2 frames (F114-F122); the first word slides right over F126-F129 and is hard-swapped to its replacement on F130; the rest of the counter-statement lands as spaced words.",
+        "why": "Writing and then deleting a claim on screen tells the viewer the film disagrees with the obvious statement before a single image is shown; a black ground with one small line holds attention on the words for 5.4 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open-type.jpg F4-F47",
+        "visuals/a1/type-reset.jpg F111-F137"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 12.1,
+        "endSec": 12.167,
+        "name": "light-leak-flash-cut",
+        "description": "Hard cuts between graded plates hide behind a 1-3 frame flash: overexposed warm frame then green-white leak (F363-F364) before the new plate at F365; the same family at 6.83-6.93 (texture overlay), 7.23-7.27, 16.43-16.53 (green grade and white flare), 22.26-22.33 (cyan, then white), 29.46-29.5 (navy flip, then white), 45.33-45.40 (navy, then beige).",
+        "why": "A flash saturates the eye for a frame, so the jump between unrelated archive and stock plates is felt as one continuous film roll rather than a slideshow."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/flash-blackboard.jpg F362-F365",
+        "visuals/a1/archive-match.jpg F206-F219",
+        "visuals/a1/green-tail.jpg F492-F497",
+        "visuals/a1/eye-reveal.jpg F668-F671",
+        "visuals/a1/card-grow-rocket.jpg F884-F886",
+        "visuals/a1/ground-swap.jpg F1360-F1363"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 30.067,
+        "endSec": 30.367,
+        "name": "caused-morph",
+        "description": "A small image card (0.11 of frame width, top right of a paper page, F886-F902) grows to full bleed over 9 frames (F903 0.18, F905 0.47, F907 0.88, F911 1.0 of width), the type staying put on the paper until covered; the same move on black at 27.23-27.40 s in three steps (F817, F819, F822).",
+        "why": "The card is already in view while the line types, so the eye is parked on it; its growth turns a thumbnail into the next scene without a cut, which keeps the list feeling continuous."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/card-grow-rocket.jpg F886-F911",
+        "visuals/a1/card-expand-photo.jpg F816-F827"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "A second archive image of the same building (scaffolded drum) replaces the first after 4 frames; the detector saw one shot. Part of a 4-frame archive ladder.",
+        "timeSec": 7.0,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/archive-match.jpg F209-F210"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "note": "Grey archive dome becomes a desaturated modern photo of the same dome in the same framing (F218 is the first new frame, through a 1-frame grade flash at F217).",
+        "timeSec": 7.267,
+        "transition": "match"
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/archive-match.jpg F216-F219"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s005"
+        ],
+        "note": "Same building, same framing, now full colour: an era match cut, not a plain cut.",
+        "transition": "match"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/archive-match.jpg F221-F222",
+        "visuals/boundaries-01.jpg S005"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s009"
+        ],
+        "note": "Light-leak tail of the gantry shot (green grade and a white flare over F493-F496), not a new shot."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/green-tail.jpg F492-F497"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Text swap on the flat off-white ground: the one-word line clears at F512 and a new typed line with an inline image chip starts at F514.",
+        "timeSec": 17.067,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/swap-a.jpg F511-F514"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Text swap on the flat ground: the line with two chips is replaced by a new typed line at F554.",
+        "timeSec": 18.467,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/swap-c.jpg F553-F554"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Text swap: the line fades out over F579-F581 while its chip slides off right; scattered single words begin at F582.",
+        "timeSec": 19.4,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/swap-d.jpg F579-F582"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s011"
+        ],
+        "note": "An image card added on the held layout (words stay put); collage build, not a cut."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/card-add.jpg F609-F610"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s012"
+        ],
+        "note": "Grade flip inside the collage glitch exit (F634-F639: halftone, colour shift, wave displacement); the real cut is s013 at F640."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/glitch-out.jpg F634-F640"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s013"
+        ],
+        "note": "Text swap on the flat ground: one-word line replaced by a two-word line at F659.",
+        "timeSec": 21.967,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/swap-e.jpg F658-F659"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s015"
+        ],
+        "note": "Closed eye (F673) to open eye (F674) on the same framing with no half-open frame: a jump cut on a held framing.",
+        "transition": "match"
+      },
+      "basis": "observed",
+      "confidence": 0.7,
+      "evidence": [
+        "visuals/a1/eye-reveal.jpg F673-F674"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s016"
+        ],
+        "note": "One of four stepped punch-ins on the same eye (F677, F679, F682, F684); treated as a stepped camera move inside the shot, as are the three the detector missed."
+      },
+      "basis": "observed",
+      "confidence": 0.7,
+      "evidence": [
+        "visuals/a1/eye-reveal.jpg F676-F687"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s020"
+        ],
+        "note": "Treatment flip over a held framing: the same planet framing turns into a dot-screen render at F772 and cycles colour every 3-5 frames; read as fade only because the dot version is near black. Consistent with s012 and s026."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/halftone-fade.jpg F771-F791"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s020"
+        ],
+        "note": "Missed cut: the dot-screen planet is replaced by a small image card on black with a typing cursor at F802.",
+        "timeSec": 26.733,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/earth-to-card.jpg F801-F802"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s021"
+        ],
+        "note": "Stepped growth of the card on black (F817, F819, F822); same shot."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/card-expand-photo.jpg F816-F822"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s022"
+        ],
+        "note": "Last step of the card growth to full frame at F822; same shot."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/card-expand-photo.jpg F821-F823"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s023"
+        ],
+        "note": "Not a whip: after a 2-frame duotone grade flash (F839-F841) the next image appears as an inset box that grows to full frame over 2 frames (F842-F844).",
+        "transition": "wipe"
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/sepia-whip.jpg F839-F844"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s025"
+        ],
+        "note": "Mid-growth of the small image card expanding to full bleed (F903-F911); same shot."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/card-grow-rocket.jpg F902-F911"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s026"
+        ],
+        "note": "Placed 2 frames early on the dot-screen exit frames of the previous shot (F923-F928)."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/halftone-blackboard.jpg F922-F929"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s026"
+        ],
+        "note": "Real cut to the chalkboard lecture at F929.",
+        "timeSec": 30.967,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/halftone-blackboard.jpg F928-F929"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s029"
+        ],
+        "note": "Moon phase time-lapse in one framing; phases change every ~0.5 s, not cuts."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/moon-1.jpg F1020-F1040"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s030"
+        ],
+        "note": "Same moon time-lapse."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/moon-2.jpg F1047-F1070"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s031"
+        ],
+        "note": "Same moon time-lapse."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/moon-3.jpg F1068-F1091"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s056"
+        ],
+        "note": "Text swap on the flat ground: the first line clears at F1719 and the next fades in from F1721.",
+        "timeSec": 57.3,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/swap-g.jpg F1718-F1721"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s056"
+        ],
+        "note": "Text swap: the line is replaced by the final line at F1774.",
+        "timeSec": 59.133,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/portrait-pop.jpg F1773-F1774"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s039"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 48.7,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-1.jpg F1460-F1461"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s040"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 48.867,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-1.jpg F1465-F1466"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s041"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.033,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-1.jpg F1470-F1471"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s042"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.2,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-2.jpg F1475-F1476"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s043"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.367,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-2.jpg F1480-F1481"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s044"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.533,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-2.jpg F1485-F1486"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s045"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.7,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-2.jpg F1490-F1491"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s046"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 49.867,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-2.jpg F1495-F1496"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s047"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 50.033,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-3.jpg F1500-F1501"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s048"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 50.2,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-3.jpg F1505-F1506"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s049"
+        ],
+        "note": "Missed cut in the image flurry: the detector caught every second change (5-frame spacing); the picture changes on a 3-2-3-2 frame cadence.",
+        "timeSec": 50.367,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/money-3.jpg F1510-F1511"
+      ]
+    }
+  ]
+}

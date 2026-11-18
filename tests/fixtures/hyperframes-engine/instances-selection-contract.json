@@ -1,0 +1,38 @@
+{
+  "status": "source-prepared-runtime-unavailable",
+  "contract": "private-owned-source-root-v1",
+  "profile": "static-local-instances-v1",
+  "source": "packages/core/src/runtime/compositionLoader.ts",
+  "originalSourceSha256": "e9227112014a471049466b1fe2dfbf34956f967d91c2830be5d27abb46bc61c7",
+  "original": "  const innerRoot = isHtmlElement(plan.innerRoot) ? plan.innerRoot : null;",
+  "replacement": "  const innerRoot = __avcClock.instanceMode === true ? (() => {\n    const sourceRootId = __avcClock.instanceSourceRootId(params.host, params.hostCompositionSrc);\n    const sourceRoots = Array.from(params.sourceNode.querySelectorAll(\"[data-composition-id]\"));\n    const sourceRoot = sourceRoots[0];\n    if (params.hasTemplate || sourceRoots.length !== 1 || !isHtmlElement(sourceRoot) ||\n        sourceRoot.tagName !== \"DIV\" || sourceRoot.parentElement !== params.sourceNode ||\n        sourceRoot.getAttribute(\"id\") !== sourceRootId ||\n        sourceRoot.getAttribute(\"data-composition-id\") !== sourceRootId) {\n      throw new Error(\"Private instance source root differs from authenticated selection\");\n    }\n    return sourceRoot;\n  })() : isHtmlElement(plan.innerRoot) ? plan.innerRoot : null;",
+  "hookCount": 23,
+  "patchCounts": {
+    "packages/core/src/compiler/compositionScoping.ts": 5,
+    "packages/core/src/runtime/clipTree.ts": 1,
+    "packages/core/src/runtime/compositionLoader.ts": 6,
+    "packages/core/src/runtime/timeline.ts": 10,
+    "packages/core/src/audioGroups.ts": 1
+  },
+  "predecessors": {
+    "prepare-instances-style.cjs": "9298850ccf7041d83cbf689b97bd9efceb5b4af37d62330a98eb3259b093562b",
+    "instances-style-provenance.json": "98f25707e7f5a5e7097e3bcf082d3a3c12c95aae059c63d139f11c2f02a9f584",
+    "instances-style-contract.json": "b90aaa716f4c30ed217fe009b46ce3f7750b842e531196d12f40bd1097067f6a",
+    "prepare-instances.cjs": "753a6d1b8fb0c49d4f19a4a43d9ec9d64082f62b26167341680687c0e12a3a73",
+    "instances-provenance.json": "a0424ba78fa6fd61df033fe400020ee818550badeb44be0c34259908658ca82d",
+    "prepare-tree.cjs": "998de1818c2ff1730c6500cb02bf375c0f649249632ad871d05a5e222d84ab9c",
+    "tree-provenance.json": "4e99d33491725d499879b27d7e036303d7236d4a1eedce6eefca1ca4d8632027"
+  },
+  "futureReceipt": "instances-selection-provenance.json",
+  "futureRuntimePin": "unavailable until separately allocated independently reviewed build",
+  "capability": {
+    "method": "instanceSourceRootId",
+    "arguments": [
+      "owned-host-Element",
+      "exact-pinned-source-string"
+    ],
+    "result": "authenticated-source-authoredId-primitive-string",
+    "noNewGlobalHook": true,
+    "preservePlanOutputs": true
+  }
+}

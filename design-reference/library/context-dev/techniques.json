@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "context-dev",
+  "techniques": [
+    {
+      "id": "t01-stepped-push-into-crowd",
+      "name": "stepped push into a halftone crowd",
+      "spans": [
+        {
+          "startSec": 0.033,
+          "endSec": 2.133
+        }
+      ],
+      "description": "A grid of about 14x10 portrait tiles in blue halftone appears at 18% of frame width on white (F1) and scales up past the frame edges in four frames (F1-F5), then the push decays over about 0.6 s (diff 49 at F5-F6 to 11 at F23). A second, smaller step jumps at F48 (1.600) and settles by about F64. The search overlay stays fixed in size and place while the grid moves.",
+      "route": "remotion",
+      "routeReason": "Flat grid of images scaled by a frame-driven track; two keyed steps. The halftone itself is not in the library: missing:halftone-treatment must render any photo as round dots on a fixed screen grid with dot size from luminance, a two-colour palette and per-frame seeded flicker. The second step is the snap-zoom block's jump-and-settle on a still grid.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:halftone-image",
+        "CollageGrid",
+        "track",
+        "curves",
+        "block:snap-zoom",
+        "random"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 0.77,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/open-grid-zoom.jpg F1-F23 (first step)",
+          "visuals/a1/zoom-step.jpg F48-F64 (second step, 0.53 s)"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/open-grid-zoom.jpg diffs 2.5, 4.2, 5.9, 29.8, 49.4, 49.4, 47.1, 44.1 ... 11.0 (F1-F23): a 4-frame ramp then a long exponential tail",
+          "motion.json s002/s003 fits rejected: their spans (0.728+1.557 s, 1.893+2.116 s) run past the shot ends"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Onsets at 0.093 and 0.186 s sit on the first step's ramp (F3-F6); the second step starts 21 ms after an onset at 1.579 s, in the sparse intro (1.8 onsets a second). What makes the onsets is inferred. Times are measured; the kind is a guess.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 0.093, 0.186, 1.579",
+          "visuals/a1/zoom-step.jpg F48"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t02-frosted-query-bar-typing",
+      "name": "frosted search field typing over the crowd",
+      "spans": [
+        {
+          "startSec": 0.333,
+          "endSec": 2.9
+        }
+      ],
+      "description": "A magnifier dot appears at frame centre (F10), stretches into a frosted translucent pill about 50% of frame width (F11-F19), and a long query types in from F22 at about one character a frame, finishing at about F78 (2.60). At F86-F87 the pill's outline brightens for two frames as a submit before the cut.",
+      "route": "remotion",
+      "routeReason": "The prompt-bar block covers a typing field; the frosted look needs a backdrop blur over the moving grid, and the pill must sit outside the camera so it does not scale.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:ui-prompt-bar",
+        "TypedLine",
+        "typingSchedule",
+        "growRect"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 2.57,
+        "startOffsetFromCutSec": 0.333,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/open-grid-zoom.jpg F10-F23",
+          "visuals/a1/grid-to-one.jpg F78-F87"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/open-grid-zoom.jpg F11-F19 pill widening, decelerating"
+        ]
+      },
+      "typography": {
+        "role": "query",
+        "entry": "typewriter, about 1 character per frame",
+        "alignment": "left",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json screenText 1.017-3.017 boxes x 0.221-0.272",
+          "visuals/a1/zoom-step.jpg F43-F64"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t03-crowd-to-one-cut",
+      "name": "crowd-to-one cut",
+      "spans": [
+        {
+          "startSec": 2.867,
+          "endSec": 3.0
+        }
+      ],
+      "description": "Two-frame submit flash on the search pill (F86-F87), then a hard cut at F88 (2.933) to white with a one-frame ghost of the grid, and one tile from the crowd at about 9% of frame width at centre, growing to 24% width by F90 and then almost still.",
+      "route": "remotion",
+      "routeReason": "A cut plus a two-frame scale pop; the ghost frame is a one-frame cross-fade. Nothing missing beyond the halftone.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "block:halftone-image"
+      ],
+      "function": "transition",
+      "fromShot": 0,
+      "toShot": 1,
+      "timing": {
+        "durationSec": 0.13,
+        "startOffsetFromCutSec": -0.067,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/grid-to-one.jpg F86-F90"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/grid-to-one.jpg tile width F88 about 9%, F89 about 17%, F90 about 24%, then near-still F90-F101 (diffs 5.9, 3.0, 2.7, 3.5 ...)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "A loudness swell peaks at 2.925 s, 8 ms before the cut; no onset nearer than 1.1 s. What the swell is, is inferred. Times are measured; the kind is a guess.",
+        "basis": "inferred",
+        "evidence": [
+          "swell scan 50 ms RMS, 2.925 s",
+          "audio.json onsetsSec"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t04-halftone-resolves-to-photo",
+      "name": "halftone resolves to photo with the name typing in",
+      "spans": [
+        {
+          "startSec": 3.533,
+          "endSec": 4.167
+        }
+      ],
+      "description": "The tile's halftone dots flicker frame to frame while the name types below it (one glyph a frame with a short blur-in, F107-F119) and the section label begins typing at top right, slower (about one glyph every three frames). F120-F125 (4.0-4.167) the halftone cross-fades to the real photo, still slightly blue at F125; a small verified badge pops at F122.",
+      "route": "remotion",
+      "routeReason": "An opacity cross-fade between a halftone render and the photo, plus per-glyph typed text with blur. The flicker needs the seeded halftone primitive.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:halftone-image",
+        "Glyphs",
+        "typingSchedule",
+        "typedCount",
+        "progress"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.17,
+        "startOffsetFromCutSec": 1.067,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/dither-resolve.jpg F120-F125",
+          "visuals/a1/push-to-summary.jpg F120-F126"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/push-to-summary.jpg diffs 0.99, 1.13, 1.15, 2.51, 2.77, 4.31 (F121-F126): the cross-fade speeds up towards its end"
+        ]
+      },
+      "typography": {
+        "role": "person name",
+        "entry": "per-glyph blur-in typewriter, 1 glyph per frame",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/dither-resolve.jpg F107-F119",
+          "speech-text.json screenText 3.517-4.517 box x 0.394-0.395"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t05-punch-in-on-typing-word",
+      "name": "punch-in cut on a word still typing",
+      "spans": [
+        {
+          "startSec": 4.333,
+          "endSec": 4.767
+        }
+      ],
+      "description": "F130 the section label has typed six letters with the seventh arriving (cap height 0.037 of frame height) at top right. F131 (4.367) hard-cuts to the word at hero size (cap height 0.165, about 4.4x), restarted two letters back (four letters, the fifth arriving) (word 57% of frame width when finished, left edge x 0.20), and typing continues: one more glyph about every two frames, each arriving blurred and sharpening over 2-3 frames; a light-grey body line types under it at about one glyph a frame.",
+      "route": "remotion",
+      "routeReason": "Two framings of one interface layer, switched on a frame, with a typing schedule each; the hero framing restarts about two letters behind the label, so the count steps back at the cut. The camera-read block or RegionCamera holds both framings of one stage; the one-frame re-set of typed text is block ui-prompt-bar's jumpAt (which keeps the count).",
+      "difficulty": "low",
+      "techniqueCardId": "prompt-scale-jump",
+      "requiredPrimitives": [
+        "block:ui-camera-read",
+        "RegionCamera",
+        "Glyphs",
+        "typingSchedule",
+        "typedCount"
+      ],
+      "function": "emphasis",
+      "fromShot": 1,
+      "toShot": 2,
+      "timing": {
+        "durationSec": 0.43,
+        "startOffsetFromCutSec": -0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/push-to-summary.jpg F130-F143"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/push-to-summary.jpg F130-F131 diff 26.45 on one frame, then 0.5"
+        ]
+      },
+      "typography": {
+        "role": "hero section label and body line",
+        "entry": "per-glyph blur-in typewriter, about 2 frames per glyph (label), 1 frame per glyph (body)",
+        "alignment": "left",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json screenText 4.517-5.017 box x 0.203 w 0.568 h 0.232",
+          "visuals/a1/push-to-summary.jpg F131-F143"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t06-alternating-column-reframes",
+      "name": "ui-punch-in-reframe: alternating-side reframes on one record",
+      "spans": [
+        {
+          "startSec": 5.233,
+          "endSec": 5.3
+        },
+        {
+          "startSec": 7.167,
+          "endSec": 7.233
+        },
+        {
+          "startSec": 8.4,
+          "endSec": 8.467
+        }
+      ],
+      "description": "Three more hard cuts on the same record, each made while the camera is moving: F158 (5.267) from the hero label mid-pan to the empty label column with the card's shadow at left; F216 (7.2) from the label column mid-tilt to the value column with the card edge at right; F253 (8.433) from a value close-up to a wider crop holding both columns. The side of the card on screen alternates, so the eye starts each shot from the opposite edge.",
+      "route": "remotion",
+      "routeReason": "One rendered record on a stage, several RegionCamera framings switched on cut frames; the moves inside each framing continue across the cut. Real product interface required: capture or rebuild the real record (product-interface rule).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "block:ui-camera-read",
+        "cutTiming"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.033,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/summary-to-fields.jpg F157-F158 diff 10.3",
+          "visuals/a1/values-jump.jpg F215-F216 diff 14.0",
+          "visuals/a1/pullback.jpg F252-F253 diff 13.65"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/values-jump.jpg F215-F216"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t07-rows-fill-as-camera-tilts",
+      "name": "record rows fill as the camera tilts to meet them",
+      "spans": [
+        {
+          "startSec": 5.267,
+          "endSec": 8.433
+        }
+      ],
+      "description": "In the label and value close-ups each row arrives just before the camera reaches it: the icon fades and scales in, then the label or value types at about one glyph a frame with a blur-in (e.g. a social row F180-F187, the next F185-F194). The view tilts down roughly half a frame height per shot on an in-out curve (motion.json otherMoves give 0.46, fitted across a cut), so a new row is always entering at the bottom third.",
+      "route": "remotion",
+      "routeReason": "Rows staggered against a camera keyed on the same frames; per-glyph typing. Must be the real interface (capture:app or the product's own components with test data).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "stagger",
+        "Glyphs",
+        "typingSchedule",
+        "track"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.3,
+        "startOffsetFromCutSec": 0.633,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/field-track.jpg F177-F200: tilt starts about F177 (5.9 s), speeds up to F191, still moving at the 7.2 cut",
+          "motion.json s005 otherMoves[1] (6.0 s, 1.31 s, y 0.456) straddles the corrected 7.2 cut because motion.json is fitted on detector shots; amount read as rough"
+        ]
+      },
+      "ease": {
+        "name": "power3.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/field-track.jpg diffs 0.41, 0.52, 0.88, 0.99, 1.09, 1.31, 1.54, 1.72, 2.16, 2.9, 4.06, 4.6, 4.97, 5.21, 4.97, 4.59 ... 2.87 (F178-F200)",
+          "motion.json s005 otherMoves[1] ease power3.inOut agrees in shape"
+        ]
+      },
+      "typography": {
+        "role": "field labels and values",
+        "entry": "icon fade-scale, then per-glyph blur-in typewriter",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/field-track.jpg F177-F200",
+          "speech-text.json screenText 6.017-8.517"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t08-populate-then-pull-out-reveal",
+      "name": "populate-then-pull-out-reveal",
+      "spans": [
+        {
+          "startSec": 8.433,
+          "endSec": 11.067
+        }
+      ],
+      "description": "From the 8.433 reframe the camera pulls out about 3.5x in scale (the same value line is 0.444 of frame width at 7.5-8.0 s and 0.125 on the settled card; F253 is at close-up scale) until the whole record sits centred on white (about 46% x 90% of frame) with a soft shadow; strip diffs climb from 2.9 to a peak of 12.7 at F268 (8.93) and fall to 6.4 by F275, settling around 9.5 s. Held still to 11.067 (1.47 s).",
+      "route": "remotion",
+      "routeReason": "A RegionCamera pull-out on the same stage as the close-ups; the curve comes straight from the fit. Real record material required.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "block:ui-camera-read",
+        "curves"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 1.62,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s005 camera startSec 8.433 durationSec 1.618 span90Sec 0.644 amount z -1.3765 trackedShare 0.93",
+          "visuals/a1/pullback.jpg F253-F275",
+          "scale check: speech-text.json screenText value line width 0.444 (7.517-8.017) vs 0.125 (9.017-11.017); motion.json z -1.38 (about 4x) slightly overstates it"
+        ]
+      },
+      "ease": {
+        "name": "expo.inOut",
+        "cubicBezier": [
+          0.65,
+          0.083,
+          0.046,
+          1.151
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s005 camera.ease gsap expo.inOut (rmse 0.006), bezier rmse 0.0008, pick bezier"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t09-hold-the-finished-state",
+      "name": "hold the finished state before transforming it",
+      "spans": [
+        {
+          "startSec": 9.6,
+          "endSec": 11.067
+        },
+        {
+          "startSec": 13.667,
+          "endSec": 14.133
+        },
+        {
+          "startSec": 17.967,
+          "endSec": 18.133
+        }
+      ],
+      "description": "Three deliberate rests: 1.47 s on the whole record after the pull-out, 0.47 s on the still card grid before the ripple, five empty white frames before the sign-off. Each precedes a change of state, so the change reads against a still image.",
+      "route": "remotion",
+      "routeReason": "Timing only.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 1.47,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/card-to-grid.jpg F324-F331",
+          "visuals/a1/glyphs-hold.jpg F409-F413 diffs 0.02-0.07",
+          "visuals/a1/line-out.jpg F539-F544 diffs 0"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "t10-one-becomes-crowd-pull-out",
+      "name": "one becomes the crowd: cut and two-stage pull-out",
+      "spans": [
+        {
+          "startSec": 11.067,
+          "endSec": 13.667
+        }
+      ],
+      "description": "Hard cut at F332 (11.067) from the full record to a grid of copies of that card in blue halftone (the opening's texture), three columns visible. Pull-out stage one: diffs ramp from 8 to 24.7 over F333-F340 and decay to about 2 by F357, while the halftone cross-fades to pale #C5D3ED cards over F341-F345. Stage two from F365 (12.16): immediate peak (16.8 at F366) and a long settle to F409 (13.63). Final grid about 14 columns at 64% of frame width.",
+      "route": "remotion",
+      "routeReason": "A grid of card renders with a track on scale; a halftone layer cross-faded out. Needs the halftone primitive for the first 0.4 s. The first-stage curve is read off the strip; the second uses the motion.json fit.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "CollageGrid",
+        "track",
+        "curves",
+        "block:halftone-image"
+      ],
+      "function": "transition",
+      "fromShot": 5,
+      "toShot": 6,
+      "timing": {
+        "durationSec": 2.6,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/card-to-grid.jpg F332-F347",
+          "visuals/a1/grid-pullout.jpg F348-F371",
+          "visuals/a1/grid-to-glyphs.jpg F369-F392",
+          "visuals/a1/glyphs-hold.jpg F393-F410"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0.148,
+          0.096,
+          0,
+          0.856
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s006 camera startSec 12.127 durationSec 1.282 ease circ.out (gsap rmse 0.0119, bezier rmse 0.0074)",
+          "first stage from the strip: peak speed at about 25% of 1.07 s (F333-F364)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The cut is 9 ms before an onset at 11.076 s and 58 ms before a swell at 11.125 s: the one measured sync point in the loud section. Beat and downbeat at 11.076 come from a grid of low confidence. Times are measured; the kind is a guess.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec 11.076",
+          "swell scan 11.125 s",
+          "sync.json events 11.067"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t11-cards-ripple-to-dots",
+      "name": "cards ripple into particles from the centre",
+      "spans": [
+        {
+          "startSec": 14.133,
+          "endSec": 14.9
+        }
+      ],
+      "description": "From F424 (14.13) a ring of change spreads from the grid centre: each small card is replaced by a flat cobalt dot of one of three or four sizes, at its own grid position with a small jitter. By F447 (14.9) every card is a dot. The camera does not move.",
+      "route": "remotion",
+      "routeReason": "Per-cell switch timed by distance from centre, seeded size and jitter, drawn on a canvas or as SVG circles. The library's particle-assemble is a weak match (glowing points in a dark depth field, the opposite look): missing:grid-to-particle-field must swap each grid cell for a flat disc on a radial stagger and hand the discs to the stream that follows.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:dot-field",
+        "stagger",
+        "random"
+      ],
+      "techniqueCardId": "dot-field",
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.77,
+        "startOffsetFromCutSec": 3.067,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/grid-to-dots.jpg F424-F437",
+          "visuals/a1/dots-scatter.jpg F438-F447"
+        ]
+      },
+      "ease": {
+        "name": "power1.in",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/grid-to-dots.jpg diffs 0.08, 0.07, 0.11, 0.13, 0.23, 0.24, 0.41 ... 0.63 (F424-F434): the ring widens faster as it grows"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t12-particles-write-the-line",
+      "name": "particle stream writes a two-part line",
+      "spans": [
+        {
+          "startSec": 15.0,
+          "endSec": 16.933
+        }
+      ],
+      "description": "The dot field converges to a point at frame right, accelerating (F450-F461), then flattens into a band at mid-height that streams right and off frame (F462-F485). The first phrase types in at x 0.14 at the band's trailing edge (from F467); the second types inside the stream at x 0.67 as its tail exits (F493-F507). Both phrases sit on one baseline at y 0.50, small (about 4.7% of frame height).",
+      "route": "remotion",
+      "routeReason": "Particles on paths (seeded per-dot offsets, a shared flow towards a line), with type revealed behind the stream's tail. The camera fit at 15.4 s in motion.json (move_left, push_in, circ.in) is the dots converging, not a camera. missing:particle-stream-to-text must move a dot field along a converging flow into a band and expose glyphs where the band has passed.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:dot-field",
+        "random",
+        "TypedLine",
+        "typingSchedule",
+        "block:particle-assemble"
+      ],
+      "techniqueCardId": "dot-field",
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.93,
+        "startOffsetFromCutSec": 3.933,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/dots-scatter.jpg F450-F461",
+          "visuals/a1/dots-stream.jpg F462-F485",
+          "visuals/a1/stream-to-second-line.jpg F489-F507"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/dots-scatter.jpg diffs 0.36, 0.48, 0.62, 0.77, 0.94, 1.16, 1.47, 1.73, 2.04, 2.31, 2.54 (F451-F461)"
+        ]
+      },
+      "typography": {
+        "role": "two-part claim line",
+        "entry": "typewriter at the particle stream's trailing edge",
+        "alignment": "left",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json screenText 16.517-18.017 boxes x 0.144 and x 0.67, y 0.50",
+          "visuals/a1/dots-stream.jpg F467-F485"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t13-blur-fade-through-white-sign-off",
+      "name": "blur-fade through white to a baseline-matched sign-off",
+      "spans": [
+        {
+          "startSec": 17.767,
+          "endSec": 18.567
+        },
+        {
+          "startSec": 19.467,
+          "endSec": 19.767
+        }
+      ],
+      "description": "The two phrases blur and fade out together over F533-F539 (0.2 s); five frames of white; the product label blurs in at the left anchor (F545-F548) and the mark and wordmark at the right anchor (F546-F556), on the same baseline and x positions as the line they replace. Held about 0.9 s; everything blurs out over F584-F590 and the film ends on three white frames.",
+      "route": "remotion",
+      "routeReason": "Opacity with a filter blur keyed per element; the shared baseline is a layout decision.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "progress"
+      ],
+      "function": "cta",
+      "fromShot": 6,
+      "toShot": 7,
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": -0.167,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/line-out.jpg F533-F548",
+          "visuals/a1/lockup-in.jpg F543-F557",
+          "visuals/a1/end-lockup.jpg F584-F592"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/lockup-in.jpg diffs 0.07, 0.07, 0.08, 0.11, 0.21, 0.26, 0.17, 0.11 (F548-F555): slow start, peak, slow settle"
+        ]
+      },
+      "typography": {
+        "role": "product label and wordmark",
+        "entry": "blur-in, label first, mark one frame later",
+        "alignment": "left",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json screenText 18.017-19.517 boxes x 0.142 and x 0.703, y 0.48"
+        ]
+      },
+      "layers": 2
+    }
+  ]
+}

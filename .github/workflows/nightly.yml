@@ -1,0 +1,93 @@
+name: nightly
+
+on:
+  schedule:
+    - cron: '43 2 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  reports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Install workflow fixture tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Workflow contract regression reports
+        run: pnpm bench:workflow --action run --suite bench/workflows/v4/suite.json --mode contract --no-spend
+      - run: pnpm metrics
+      - name: Build the needs board and its data
+        run: |
+          mkdir -p out/contrib
+          pnpm contrib:scout --markdown out/contrib/needs.md > out/contrib/scout-report.json
+          jq '.metadata' out/contrib/scout-report.json > out/contrib/needs.json
+      - name: Dependency audit (no provider calls)
+        continue-on-error: true
+        run: pnpm audit --prod --json > out/dependency-audit.json
+      - run: pnpm licenses list --prod --json > out/dependency-licences.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: nightly-reports
+          path: out/
+          retention-days: 7
+  leak-scan:
+    # Whole tracked tree against the generic public patterns only (no maintainer-local pattern file).
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - run: pnpm leak:check --mode tree --dry-run
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: { contents: write }
+    # Repository variable; see ai-triage.yml. Disabled triage never requests the environment.
+    if: vars.TRIAGE_ENABLED == 'true'
+    environment: triage
+    concurrency:
+      group: triage-spend-ledger
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Capped instruction audit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRIAGE_ANTHROPIC_API_KEY: ${{ secrets.TRIAGE_ANTHROPIC_API_KEY }}
+          TRIAGE_OPENAI_API_KEY: ${{ secrets.TRIAGE_OPENAI_API_KEY }}
+          TRIAGE_OPENROUTER_API_KEY: ${{ secrets.TRIAGE_OPENROUTER_API_KEY }}
+        run: pnpm github:triage-budget --mode audit
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: instruction-audit
+          path: out/context/
+          retention-days: 7

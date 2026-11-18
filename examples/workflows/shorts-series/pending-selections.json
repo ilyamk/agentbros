@@ -1,0 +1,35 @@
+{
+  "status": "pending-human-review-not-a-production-request",
+  "source": "synthetic-local-fixture-only; replace with actual inspected project",
+  "timebase": { "num": 30, "den": 1 },
+  "episodes": [
+    {
+      "id": "hook",
+      "purpose": "Supplied fixture hook",
+      "ranges": [
+        { "start": { "num": 0, "den": 1 }, "end": { "num": 30, "den": 1 } }
+      ],
+      "suppliedCaptionLabels": ["Пример"],
+      "approval": null
+    },
+    {
+      "id": "caveat",
+      "purpose": "Keep negation and required qualification together",
+      "ranges": [
+        { "start": { "num": 30, "den": 1 }, "end": { "num": 90, "den": 1 } }
+      ],
+      "suppliedCaptionLabels": ["Это", "не", "гарантия", "Зависит от условий"],
+      "requiredContext": ["negation", "condition"],
+      "approval": null
+    },
+    {
+      "id": "conclusion",
+      "purpose": "Supplied condition and source-check labels",
+      "ranges": [
+        { "start": { "num": 60, "den": 1 }, "end": { "num": 120, "den": 1 } }
+      ],
+      "suppliedCaptionLabels": ["Зависит от условий", "Проверьте источник"],
+      "approval": null
+    }
+  ]
+}

@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "rhythm": {
+    "value": "Detector: 23 shots, 22 cuts, median 0.467 s, 128.6 cuts/min. Corrected: 19 shots, 18 cuts, median 0.30 s, 105 cuts/min over 10.27 s. The film has three speeds. (1) 0-5.77 s, the design-object section: 8 shots, median 0.60 s (0.30, 1.57, 1.13, 0.93, 0.60, 0.60, 0.20, 0.43 s); each shot is one centred object changing state inside the shot, so the eye never leaves frame centre. (2) 5.77-8.00 s, the argument: one 0.47 s outline-word card, then 9 footage shots, 8 of them 3-6 frames (0.10-0.20 s, median 0.133 s), under one caption that never moves. (3) 8.00-10.27 s: one 2.27 s hold on the mark while its backdrop dies to black. Fast-in-the-middle, still-at-the-end: the only shot over 1.6 s is the last. A second, independent clock runs over the cuts: a 3-frame navy (#021563) ground blink at F0, F62, F110, F129, F150, F157, F220, F267, F286 and a 1-frame one at F307 (last frame). Gaps 62, 48, 19, 21 | 7 | 63, 47, 19, 21 frames: the same 150-frame (5.0 s) figure runs twice, offsets 0, 62, 110, 129, 150 then 157, 220, 267, 286, 307. SOUND WAS NOT HEARD, and here there is nothing to hear: audio.json reports one silence span 0-10.325 s, no onsets, loudness range 0 LU, and sync.json carries only cutCount 22. No tempo, so cutsOnBeatRatio/cutsOnBeatChance, cutsOnOnsetRatio/cutsOnOnsetChance and every v2 lift figure cannot be computed: there is no evidence either way about picture-to-music sync. The Whisper word 'you' at 0-2.06 s is a hallucination on silence and is rejected. The repeating blink figure is the strongest hint that the original cut was made to a music phrase that this file does not carry (this clause alone is inferred, confidence 0.4).",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json summary",
+      "audio.json silence 0-10.325, onsetsSec []",
+      "sync.json metrics",
+      "visuals/a1/open.jpg F0-F2",
+      "visuals/a1/pill.jpg F62-F64",
+      "visuals/a1/line.jpg F110-F112",
+      "visuals/a1/glint.jpg F129-F131",
+      "visuals/a1/ring.jpg F150-F152, F157-F159",
+      "visuals/a1/scan.jpg F220-F221",
+      "visuals/a1/pullback.jpg F267-F269",
+      "visuals/a1/end.jpg F286-F288, F307"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Corrected shot 0 (0-0.30 s, F0-F8, merged with s002): pre-roll of full-frame flashes, navy F0-F2, black F3-F5, white F6-F8. Wakes the eye before any content.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F0-F8"
+        ]
+      },
+      "technique": {
+        "value": "Ground blink then polarity flash, 3 frames each.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F0-F8"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Part of corrected shot 0 (black and white flash frames F3-F8).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F3-F8"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Corrected shot 1 (0.30-1.867 s, F9-F55, merged with s004): the claim as a tiny line of white type centred on black. Title on at F11, polarity flips at F16 (white ground, faint title) and back at F23 with an RGB-split smear F24-F25, clean from F26; static hold F26-F46 (0.70 s); green glow flare F47-F48; gone at F49; black F49-F55.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F9-F26",
+          "visuals/a1/title-hold.jpg F26-F51"
+        ]
+      },
+      "technique": {
+        "value": "Polarity strobe entry, long still hold, glow-flare exit.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/title-hold.jpg F46-F49"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Part of corrected shot 1; the 0.767 s boundary is the F23 polarity flip inside the title hold.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F22-F26"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Corrected shot 2 (1.867-3.00 s, F56-F89, merged with s006 and s007): a wide gradient pill (about 68% frame width) with an icon at its centre recolours purple to magenta (F59), shrinks (F61), blinks navy (F62-F64) and leaves only the icon (F65, about 4% of width); a violet disc swells out of the icon F68-F75 until it is the ground; then a square, circles, crosshair guides and coordinate tags build on that ground F76-F89.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/pill.jpg F56-F75",
+          "visuals/a1/orb.jpg F72-F89"
+        ]
+      },
+      "technique": {
+        "value": "Container collapses to its icon, icon swells to become the ground.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/pill.jpg F61-F75"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Part of corrected shot 2; the 2.167 s boundary is the exit of the navy blink F62-F64.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/pill.jpg F62-F65"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Part of corrected shot 2; the 2.467 s boundary falls inside a continuous swell (disc at F73 already near full height, fills by F75).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/orb.jpg F72-F76"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Corrected shot 3 (3.00-3.933 s, F90-F117, merged with s009): one small gradient word, centred, breaks apart and its first letter becomes a magenta stroke that tilts to about 35 degrees from vertical; the thing named is drawn by the word.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/orb.jpg F90-F95",
+          "visuals/a1/line.jpg F90-F117"
+        ]
+      },
+      "technique": {
+        "value": "Word becomes shape.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/line.jpg F95-F113"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Part of corrected shot 3; the 3.767 s boundary is the exit of navy blink F110-F112 while the stroke keeps rotating.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/line.jpg F110-F116"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "Corrected shot 4 (3.933-4.533 s, F118-F135): a lit square with a diagonal light streak at the stroke's angle (match on angle), pulled back from about 22% to 10% of frame height, then re-rendered as a halftone dot square during a navy blink (F129-F131), dissolving to a dithered disc (F135).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/glint.jpg F118-F135"
+        ]
+      },
+      "technique": {
+        "value": "Angle-match cut in; expo-out pull-back; material swap to halftone.",
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "motion.json s010 camera.ease expo.out, span90Sec 0.203",
+          "visuals/a1/glint.jpg F118-F128"
+        ]
+      }
+    },
+    {
+      "shotId": "s011",
+      "purpose": {
+        "value": "Split: F132-F135 belong to corrected shot 4; from F136 (4.533 s) corrected shot 5: a dark slider track with a glowing icon knob on its right, track retracts left while two rings expand around the knob (F138-F149), navy blink with halftone pink pill (F150-F152), ends as an orange gradient pill inside rings (F153).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/glint.jpg F132-F137",
+          "visuals/a1/ring.jpg F138-F153"
+        ]
+      },
+      "technique": {
+        "value": "UI control resolves into a target: rings ripple outward from the knob.",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/ring.jpg F143-F149"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "Navy blink F150-F152 inside corrected shot 5; not a shot.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ring.jpg F150-F152"
+        ]
+      }
+    },
+    {
+      "shotId": "s013",
+      "purpose": {
+        "value": "F153 belongs to corrected shot 5; from F154 (5.133 s) corrected shot 6: a reaction bar of six icons on a dark capsule, held F154-F156, then a navy blink F157-F159 in which the others dim and only the flame icon remains (F159).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ring.jpg F153-F159"
+        ]
+      },
+      "technique": {
+        "value": "Isolate one element of a set during the blink.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ring.jpg F157-F159"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Corrected shot 7 (5.333-5.767 s, F160-F172, merged with s015 F160-F172): the isolated flame, now large and glowing, over a blurred message bubble; three overexposed frames (F163-F165), then the view pulls back and down to show the whole bubble with avatar, text and time stamp, the flame sitting on it as a reaction.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/chat.jpg F160-F172"
+        ]
+      },
+      "technique": {
+        "value": "Match on the carried element, then pull back to context.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/chat.jpg F160-F168"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "Split: F160-F172 are corrected shot 7; from F173 (5.767 s) corrected shot 8: one large outline word (OCR box 70% width, 43% height, centred) inside two dashed concentric circles, with RGB-split jitter F179-F185.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/chat.jpg F172-F186",
+          "speech-text.json screenText item 3 box"
+        ]
+      },
+      "technique": {
+        "value": "Outline hero word, chromatic jitter.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/chat.jpg F179-F185"
+        ]
+      }
+    },
+    {
+      "shotId": "s016",
+      "purpose": {
+        "value": "Corrected shot 9 (6.233-6.333 s, F187-F189): archival portrait footage, grey, torn by vertical scan bars; the small caption appears centred and from here does not move.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/archive.jpg F187-F189"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Split in three: corrected shot 10 (6.333-6.433 s, F190-F192) thermal-violet footage with tracking boxes and tags; shot 11 (6.433-6.60 s, F193-F197) the caption alone on near-black; shot 12 (6.60-6.80 s, F198-F203) medical scan imagery with the caption over it.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/archive.jpg F190-F203"
+        ]
+      }
+    },
+    {
+      "shotId": "s018",
+      "purpose": {
+        "value": "Corrected shot 13 (6.80-6.933 s, F204-F207): archival portrait with an old computer, tracking box over the machine, caption unchanged.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/archive.jpg F204-F207"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "Split in four: shot 14 (6.933-7.067 s, F208-F211) a desktop computer on a desk; shot 15 (7.067-7.20 s, F212-F215) a laptop from above, caption swapped to the second word at F212; shot 16 (7.20-7.333 s, F216-F219) a hand holding a card; shot 17 begins F220 with navy blink. Overexposed single frames at F211, F215, F219 close each shot.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scan.jpg F207-F221"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "Corrected shot 17 (7.333-8.00 s, F220-F239): medical scan with two side views, caption over it; corrected shot 17 begins at F220 inside navy blink F220-F221; the detector cut at 7.40 is the blink exit.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/scan.jpg F222-F230",
+          "visuals/a1/tail.jpg F237-F239"
+        ]
+      }
+    },
+    {
+      "shotId": "s021",
+      "purpose": {
+        "value": "Corrected shot 18 (8.00-10.267 s, merged with s022 and s023): the brand mark, centred and small (about 4% width), on a macro of a lit keyboard; slow pull-back; the keyboard dims to black by F284 while the mark holds; mark blinks and glitches at the end.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/tail.jpg F240-F257",
+          "visuals/a1/pullback.jpg F256-F284",
+          "visuals/a1/end.jpg F282-F307"
+        ]
+      },
+      "technique": {
+        "value": "Backdrop falls away, mark remains; back.out pull-back.",
+        "basis": "measured",
+        "confidence": 0.85,
+        "evidence": [
+          "motion.json s021 camera.ease back.out gsapRmse 0.0061, z -0.2335, t5 8.045 t95 9.289"
+        ]
+      }
+    },
+    {
+      "shotId": "s022",
+      "purpose": {
+        "value": "Part of corrected shot 18; 9.633 s is the exit of navy blink F286-F288 on the same centred mark.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/end.jpg F285-F290"
+        ]
+      }
+    },
+    {
+      "shotId": "s023",
+      "purpose": {
+        "value": "Part of corrected shot 18: the last frame (F307) is a one-frame navy blink, so the loop/thumbnail frame is navy with the mark.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/end.jpg F306-F307"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "name": "polarity-strobe-title",
+        "startSec": 0,
+        "endSec": 1.633,
+        "description": "Full-frame flashes in 3-frame blocks (navy F0-F2, black F3-F5, white F6-F8), then a tiny white sentence centred on black at F11 (OCR box 25% width, 7% height). The whole frame inverts every 7 frames: white ground with a faint tinted title F16-F22, black again F23 with an RGB-split smear F24-F25, clean F26. Then nothing moves for 21 frames (F26-F46, 0.70 s). Exit: the type flares green with a glow for 2 frames (F47-F48) and is gone at F49; 7 black frames before the next object.",
+        "why": "The flashes buy attention without content, then the type is so small in so much black that the eye must go to centre and read; the long still hold after the strobe makes the claim feel settled. The flare exit is a full stop, not a fade."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open.jpg F0-F26",
+        "visuals/a1/title-hold.jpg F26-F51"
+      ]
+    },
+    {
+      "value": {
+        "name": "icon-swell-to-ground",
+        "startSec": 1.867,
+        "endSec": 2.533,
+        "description": "A gradient pill (about 68% width) recolours (F59), shrinks (F61), blinks navy (F62-F64) and leaves only its 4%-wide icon (F65). Two frames of stillness, then a violet disc grows out of the icon F68-F75, slow then fast: about 8% width at F68, 14% at F71, 25% at F73, full frame height at F74, the ground by F75. Fitted curve on this push: expo.in-like bezier (0.562, 0.338, 0.88, -0.462).",
+        "why": "The eye has been parked on frame centre by the title; the object arrives exactly there, collapses to its smallest form and then becomes the whole frame, so the next scene grows out of the last one with no cut."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/pill.jpg F56-F75",
+        "motion.json s006 camera.ease"
+      ]
+    },
+    {
+      "value": {
+        "name": "word-becomes-shape",
+        "startSec": 3.0,
+        "endSec": 3.967,
+        "description": "Hard cut to one small lowercase word in a magenta-to-violet gradient, centred (F90). Held 5 frames. F95-F98 its letters scatter vertically (one letter rises, two drop); F99-F101 all but the first letter fade; F102-F107 the remaining upright stroke stands alone and lengthens; F108-F113 it rotates to about 35 degrees off vertical and grows to about 46% of frame height, decelerating, with a navy blink F110-F112 underneath; held F113-F117. Hard cut at F118 to a lit square whose diagonal light streak runs at the same angle and position as the stroke.",
+        "why": "The word is literally drawn by its own letter, which proves craft in 0.6 s. The streak in the next shot continues the stroke's angle, so the eye follows a diagonal across the cut and never notices it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/line.jpg F90-F117",
+        "visuals/a1/glint.jpg F114-F119"
+      ]
+    },
+    {
+      "value": {
+        "name": "ground-blink-punctuation",
+        "startSec": 0,
+        "endSec": 10.267,
+        "description": "Ten times, the black ground is replaced by flat navy #021563 for 3 frames (the last one for 1 frame) while the foreground stays put, re-rendered as pink or white halftone. Blinks at F0, F62, F110, F129, F150, F157, F220, F267, F286, F307; gaps 62, 48, 19, 21, 7, 63, 47, 19, 21 frames: one 150-frame figure played twice. Six of them sit on the last frames before a change of state (F65 icon alone, F113 stroke tilted, F132 halftone square, F160 cut, F289, end).",
+        "why": "A ground swap is louder than any move but costs no layout: the object stays where the eye is. It works as an accent on a beat that this silent file does not carry, and as a seam that hides each state change."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/open.jpg F0-F2",
+        "visuals/a1/pill.jpg F62-F64",
+        "visuals/a1/line.jpg F110-F112",
+        "visuals/a1/glint.jpg F129-F131",
+        "visuals/a1/ring.jpg F150-F152, F157-F159",
+        "visuals/a1/scan.jpg F220-F221",
+        "visuals/a1/pullback.jpg F267-F269",
+        "visuals/a1/end.jpg F286-F288, F307"
+      ]
+    },
+    {
+      "value": {
+        "name": "caption-anchor-over-footage-stutter",
+        "startSec": 6.233,
+        "endSec": 8.0,
+        "description": "One small white lowercase caption (OCR box 25% width, 6% height, centred at 0.49, 0.50) holds in exactly the same place over 9 shots of 3-6 frames each (F187-F239): archival portraits, thermal-violet footage, a desk computer, a laptop from above, a hand with a card, medical scans. Each shot carries thin tracking boxes with coordinate tags on its subject and is graded differently (scan bars, thermal violet, halftone, cold cyan). The caption swaps to its second word once, at F212, in the same position. Overexposed single frames at F211, F215, F219 punctuate.",
+        "why": "The eye reads the fixed caption and lets the pictures flicker in the periphery, so 9 images in 1.77 s feel like one thought, not chaos. The tracking boxes make history look like data being analysed, which ties archival pictures to the design work before it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/archive.jpg F187-F209",
+        "visuals/a1/scan.jpg F207-F230",
+        "speech-text.json screenText items 4-6 boxes"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s001",
+          "s002"
+        ],
+        "note": "s001 is a 3-frame navy ground blink (F0-F2); with s002's black and white flash frames it is one pre-roll of flashes, corrected shot 0."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/open.jpg F0-F8"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s003"
+        ],
+        "transition": "cut",
+        "note": "0.30 s is black flash frames giving way to the title on black (title on at F11); no shared shape with the white flash before it, so a cut, not a match."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/open.jpg F6-F11"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s003",
+          "s004"
+        ],
+        "note": "Boundary at 0.767 s is the F23 polarity flip and RGB smear inside one title hold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open.jpg F22-F26"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s005",
+          "s006",
+          "s007"
+        ],
+        "note": "2.167 s is the exit of navy blink F62-F64 (same icon, same position); 2.467 s falls inside the disc swell F68-F75. One continuous object, corrected shot 2."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/pill.jpg F61-F75",
+        "visuals/a1/orb.jpg F72-F76"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s008",
+          "s009"
+        ],
+        "note": "3.767 s is the exit of navy blink F110-F112; the stroke keeps rotating through it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/line.jpg F108-F116"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s010"
+        ],
+        "transition": "match",
+        "note": "Hard cut F117-F118 but the incoming light streak continues the outgoing stroke's angle and position: a match on angle."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/glint.jpg F114-F119"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s011"
+        ],
+        "timeSec": 4.4,
+        "note": "4.4 s is the exit of navy blink F129-F131; the same square continues as halftone F132-F134."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/glint.jpg F128-F134"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s011"
+        ],
+        "timeSec": 4.533,
+        "transition": "cut",
+        "note": "Dithered disc F135 replaced by the slider track with knob F136: a new layout, missed."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/glint.jpg F134-F137"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s012"
+        ],
+        "timeSec": 5.0,
+        "note": "s012 is navy blink F150-F152 over the same pill and rings, not a shot."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/ring.jpg F149-F153"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s013"
+        ],
+        "timeSec": 5.1,
+        "note": "Boundary at 5.1 s is the blink exit with the pill recoloured orange; same layout."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/ring.jpg F152-F153"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s013"
+        ],
+        "timeSec": 5.133,
+        "transition": "cut",
+        "note": "Real cut F153-F154 to the reaction bar, missed."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/ring.jpg F153-F154"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s015"
+        ],
+        "timeSec": 5.533,
+        "note": "5.533 s is the end of three overexposed frames F163-F165 inside the flame-to-bubble pull-back."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/chat.jpg F162-F168"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s015"
+        ],
+        "timeSec": 5.767,
+        "transition": "cut",
+        "note": "Cut F172-F173 from the message bubble to the outline word, missed."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/chat.jpg F172-F174"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s017"
+        ],
+        "timeSec": 6.433,
+        "transition": "cut",
+        "note": "Thermal footage F192 to caption alone on near-black F193, missed."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/archive.jpg F192-F193"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s017"
+        ],
+        "timeSec": 6.6,
+        "transition": "cut",
+        "note": "Caption alone F197 to medical scan F198, missed (dark ground and the unmoving caption hid it)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/archive.jpg F197-F198"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s019"
+        ],
+        "timeSec": 7.067,
+        "transition": "cut",
+        "note": "Desk computer to laptop from above at F212 (after overexposed F211); caption swaps on the same frame."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/scan.jpg F210-F212"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s019"
+        ],
+        "timeSec": 7.2,
+        "transition": "cut",
+        "note": "Laptop to hand holding a card at F216 (after overexposed F215)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/scan.jpg F214-F216"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s019"
+        ],
+        "timeSec": 7.333,
+        "transition": "cut",
+        "note": "Hand to medical scan at F220 (after overexposed F219), arriving inside navy blink F220-F221."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/scan.jpg F218-F222"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s020"
+        ],
+        "timeSec": 7.4,
+        "note": "7.4 s is the exit of navy blink F220-F221; the scan continues."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/scan.jpg F220-F223"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s021",
+          "s022",
+          "s023"
+        ],
+        "note": "9.633 s is the exit of navy blink F286-F288 and s023 is the one-frame blink F307; the mark never moves. One 2.27 s end hold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/end.jpg F282-F307"
+      ]
+    }
+  ]
+}

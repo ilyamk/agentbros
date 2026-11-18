@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "endpoint": "v1/custom-references",
+  "title": "Soul ID — Create character API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-id/create-character.md",
+  "usageNotes": [
+    "Soul ID trains a reusable character reference. This is not an image-generation endpoint; do not POST to /soul-id.",
+    "Use POST /v1/custom-references with application/json. name has a maximum length of 100; input_images must contain 1–100 {\"type\":\"image_url\",\"image_url\":\"...\"} objects.",
+    "model_version accepts v1, v2, cinema; its default is v1. Choose the matching generation family.",
+    "The creation response returns id and status. Poll GET /v1/custom-references/{id}; statuses are not_ready, queued, in_progress, completed, and failed.",
+    "After completion, pass the returned id as custom_reference_id to the matching Soul generation endpoint. References are scoped to the account that created them.",
+    "When the account already has the maximum number of references in training, creation returns 429 Too Many Requests with a Retry-After header. Retry after that delay; nothing is charged for the rejected request."
+  ],
+  "schema": {
+    "$defs": {
+      "ImageUrlInputImageSchema": {
+        "properties": {
+          "type": {
+            "const": "image_url",
+            "title": "Type",
+            "type": "string"
+          },
+          "image_url": {
+            "format": "uri",
+            "maxLength": 2083,
+            "minLength": 1,
+            "title": "Image Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "image_url"
+        ],
+        "title": "ImageUrlInputImageSchema",
+        "type": "object"
+      },
+      "SoulModelVersion": {
+        "enum": [
+          "v1",
+          "v2",
+          "cinema"
+        ],
+        "title": "SoulModelVersion",
+        "type": "string"
+      }
+    },
+    "properties": {
+      "name": {
+        "maxLength": 100,
+        "title": "Name",
+        "type": "string"
+      },
+      "model_version": {
+        "$ref": "#/$defs/SoulModelVersion",
+        "default": "v1"
+      },
+      "input_images": {
+        "items": {
+          "$ref": "#/$defs/ImageUrlInputImageSchema"
+        },
+        "maxItems": 100,
+        "minItems": 1,
+        "title": "Input Images",
+        "type": "array"
+      }
+    },
+    "required": [
+      "name",
+      "input_images"
+    ],
+    "title": "CreateCustomReferenceSchema",
+    "type": "object"
+  },
+  "asOf": "2026-11-15"
+}

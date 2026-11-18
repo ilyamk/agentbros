@@ -1,0 +1,116 @@
+{
+  "scenes": [
+    {
+      "id": "s01-hook",
+      "beatId": "hook",
+      "headline": "Это не провал",
+      "voiceoverText": "Пропущенный урок — это пауза.",
+      "durationSec": 3.5,
+      "leftPanel": {
+        "kind": "aiImage",
+        "caption": "Пропуск — это пауза",
+        "entrance": "fade",
+        "imageUrl": "projects/daily-practice/assets/images/hook-paused.png",
+        "kenBurns": false
+      },
+      "presenterStartSec": 0,
+      "presenterEndSec": 3.5,
+      "characterIds": ["presenter"],
+      "musicIntensity": "low",
+      "transitionToNext": "fade"
+    },
+    {
+      "id": "s02-pain",
+      "beatId": "pain",
+      "headline": "Бросил курс?",
+      "voiceoverText": "Сбился с графика — бросаешь курс в досаде?",
+      "durationSec": 3.5,
+      "leftPanel": {
+        "kind": "text",
+        "entrance": "fade",
+        "text": "Сбился с графика.\nБросил в досаде?",
+        "align": "center",
+        "size": "headline"
+      },
+      "presenterStartSec": 3.5,
+      "presenterEndSec": 7,
+      "characterIds": ["presenter"],
+      "musicIntensity": "medium",
+      "transitionToNext": "fade"
+    },
+    {
+      "id": "s03-proof",
+      "beatId": "proof",
+      "headline": "Практика обогнала 95%",
+      "subtext": "10 лет практики vs занятия рывками",
+      "voiceoverText": "Учись понемногу каждый день. За десять лет такие ученики обогнали девяносто пять процентов остальных.",
+      "durationSec": 6,
+      "leftPanel": {
+        "kind": "chart",
+        "entrance": "fade",
+        "chartType": "line",
+        "title": "Ежедневная практика против занятий рывками",
+        "yUnit": "%",
+        "yAxisLabel": "Прогресс",
+        "xAxisLabel": "Год",
+        "color": "#3A86FF",
+        "series": [
+          {
+            "label": "Каждый день",
+            "isHero": true,
+            "color": "#3A86FF",
+            "data": [
+              { "label": "2015", "value": 8 },
+              { "label": "2017", "value": 22 },
+              { "label": "2019", "value": 35 },
+              { "label": "2021", "value": 62 },
+              { "label": "2023", "value": 78 },
+              { "label": "2025", "value": 96 }
+            ]
+          },
+          {
+            "label": "Рывками",
+            "color": "#5A5A60",
+            "data": [
+              { "label": "2015", "value": 8 },
+              { "label": "2017", "value": 14 },
+              { "label": "2019", "value": 18 },
+              { "label": "2021", "value": 22 },
+              { "label": "2023", "value": 24 },
+              { "label": "2025", "value": 25 }
+            ]
+          }
+        ],
+        "callout": {
+          "value": "+95%",
+          "label": "Практика выиграла"
+        },
+        "annotations": []
+      },
+      "presenterStartSec": 7,
+      "presenterEndSec": 13,
+      "characterIds": ["presenter"],
+      "musicIntensity": "medium",
+      "transitionToNext": "fade"
+    },
+    {
+      "id": "s04-cta",
+      "beatId": "cta",
+      "headline": "Пропуск — это пауза",
+      "voiceoverText": "Подпишись — будем учиться спокойно.",
+      "durationSec": 2,
+      "leftPanel": {
+        "kind": "text",
+        "entrance": "fade",
+        "text": "Пропуск — это\nне провал.\nЭто пауза.",
+        "align": "center",
+        "size": "hero"
+      },
+      "presenterStartSec": 13,
+      "presenterEndSec": 15,
+      "characterIds": ["presenter"],
+      "musicIntensity": "low",
+      "transitionToNext": "cut"
+    }
+  ]
+}

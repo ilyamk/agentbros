@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "repositories-earshot",
+  "section": "repositories",
+  "order": 91,
+  "source": "Earshot",
+  "url": "https://github.com/Leonxlnx/earshot",
+  "pinnedCommit": "4ac3d2ac2b151e1c23376f9ce7f3047a17050013",
+  "licence": "MIT code; bank source recordings and model weights retain separate licences",
+  "whatWeTook": "Optional pinned runtime API for shipped bank synthesis, source-segment search and advisory SFX checks, used by sfx:audition (hero sounds from measured candidates), sfx:map (a reference's sound events by family) and saved-audit evidence for film:measure and critic packs; no upstream MCP server or arbitrary forge recipes",
+  "whereItLives": "src/lib/audio/earshot*.ts, sfx-audition.ts, sfx-map.ts, review-evidence.ts; scripts/workers/earshot.py; scripts/sfx-audition.ts, sfx-map.ts; pyproject.toml and uv.lock (earshot group)",
+  "why": "Measured seeded SFX and source-clock proposals within existing audio ownership and review",
+  "date": "2026-11-15"
+}

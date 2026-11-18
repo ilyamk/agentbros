@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ugc-app",
+  "techniques": [
+    {
+      "id": "typed-query",
+      "name": "Typed search that jumps in scale",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 2.1
+        }
+      ],
+      "description": "Bar scales up slowly for 0.7 s. Characters appear 2-3 frames apart from 1.1 s; bar vanishes at F46-F48 with text 3.5x larger, centred; cursor blinks; grain at F60.",
+      "route": "remotion",
+      "routeReason": "Text states by frame; no asset needed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:ui-prompt-bar",
+        "splitGraphemes",
+        "track",
+        "FilmGrain"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 2.1,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-typed-query-a.jpg F0-F23 (bar widens fast to F9, then creeps)",
+          "visuals/a1/b3-typed-query-b.jpg F33-F46 typing, F47 jump, F60 grain, F63 cut"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.6,
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.77
+          },
+          {
+            "part": "main",
+            "name": "none",
+            "durationSec": 0.47
+          },
+          {
+            "part": "settle",
+            "name": "steps(1)",
+            "durationSec": 0.033
+          }
+        ],
+        "evidence": [
+          "visuals/a1/b3-typed-query-a.jpg F0-F23: diffs 0.11-0.13 to F4, falling to 0.03 by F23",
+          "visuals/a1/b3-typed-query-b.jpg F33-F46 a character every 1-2 frames; F46→F47 one-frame jump (diff 2.22)"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "measured",
+        "confidence": 0.5,
+        "note": "Waveform is low and flat to about 4 s; nothing establishes a sound on the type or the jump. Not heard.",
+        "evidence": [
+          "visuals/edit-map.png 0-2.1 s"
+        ]
+      },
+      "typography": [
+        {
+          "role": "query in the bar",
+          "entry": "typed, a character every 1-2 frames, with a caret",
+          "alignment": "left",
+          "size": 0.03,
+          "basis": "observed",
+          "confidence": 0.5,
+          "evidence": [
+            "visuals/a1/b3-typed-query-b.jpg F33-F46 (glyph height read off the strip, not OCR)"
+          ]
+        },
+        {
+          "role": "query after the jump",
+          "entry": "bar drops away and the text re-sets at about 3.5x in one frame; caret blinks",
+          "alignment": "centre",
+          "size": 0.101,
+          "basis": "measured",
+          "confidence": 0.7,
+          "evidence": [
+            "speech-text.json screenText 1.52-2.02 s box height 0.101 (OCR line box, not cap height)",
+            "visuals/a1/b3-typed-query-b.jpg F47-F59"
+          ]
+        }
+      ],
+      "layers": 3,
+      "shots": [
+        "s001"
+      ],
+      "techniqueCardId": "prompt-scale-jump"
+    },
+    {
+      "id": "highlight-lock",
+      "techniqueCardId": "aligned-burst",
+      "name": "Highlight-locked smash cut",
+      "spans": [
+        {
+          "startSec": 2.1,
+          "endSec": 2.9
+        }
+      ],
+      "description": "N pages, each scaled and translated so that the highlighted phrase hits one target box. 2-4 frames each.",
+      "route": "remotion",
+      "routeReason": "Position must be exact to the pixel and repeatable, so pages should be our own React or screenshots with known phrase boxes. Page text must be truthful or visibly illustrative.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "regionTransform",
+        "layoutSeries",
+        "block:caption-over-flash-montage"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/b3-page-cuts.jpg page changes at F63, F67, F69, F72, F75, F78, F82, F84; F87 next shot"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "measured",
+        "confidence": 0.5,
+        "note": "Waveform is quiet and even through 2.1-2.9 s; no onset pattern establishes a hit per page. Not heard.",
+        "evidence": [
+          "visuals/edit-map.png 2.1-2.9 s"
+        ]
+      },
+      "typography": {
+        "role": "highlighted phrase",
+        "entry": "already on at each cut; the page is scaled so the highlight stays at one screen point",
+        "alignment": "free",
+        "size": 0.096,
+        "basis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json screenText 2.52-3.02 s box height 0.096 (OCR line box)",
+          "visuals/a1/b3-page-cuts.jpg F63-F86"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s002",
+        "s003.1",
+        "s003.2",
+        "s003.3",
+        "s003.4",
+        "s004",
+        "s005.1",
+        "s005.2"
+      ]
+    },
+    {
+      "id": "lips-to-card",
+      "name": "Crop opening to a person",
+      "spans": [
+        {
+          "startSec": 2.9,
+          "endSec": 3.2
+        }
+      ],
+      "description": "Rounded mask starts on the mouth and grows to the full 9:16 card in 6 frames, with the video playing.",
+      "route": "remotion",
+      "routeReason": "A mask and a track over real footage.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ScreenPlayback",
+        "track",
+        "curves"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-lips-open.jpg F87-F93: mask grows from a crop of the mouth to the full card"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "confidence": 0.55,
+        "evidence": [
+          "visuals/a1/b3-lips-open.jpg diffs 8.37, 6.11, 3.81, 2.97 over F89-F93: fast start, slow finish"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "inferred",
+        "confidence": 0.3,
+        "note": "Not established; not heard."
+      },
+      "layers": 2,
+      "fromShot": 8,
+      "toShot": 9
+    },
+    {
+      "id": "person-wall",
+      "techniqueCardId": "video-wall",
+      "name": "One column widens into a wall of real people",
+      "spans": [
+        {
+          "startSec": 2.9,
+          "endSec": 6.9
+        }
+      ],
+      "description": "Column scrolls; neighbours appear as soft white blocks resolving into clips, outward from the centre; pull back to about 16 columns. Depends on dozens of real clips.",
+      "route": "footage",
+      "routeReason": "The scene's meaning is that these are real people. Faces cannot be generated and presented as proof, and we need consented clips. The layout itself is Remotion, but the cost is the material. Decoding about 100 videos needs low-resolution proxies.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "Camera",
+        "ScreenPlayback",
+        "block:populate-pull-out",
+        "block:placeholder-resolve"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 4.0,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-wall-tiles.jpg F132-F155: white blurred tiles F133-F141 resolve to clips by about F148",
+          "visuals/a1/b3-wall-pull.jpg F156-F208: pull-back until the cut at F207"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.5,
+        "truncated": true,
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.5
+          },
+          {
+            "part": "main",
+            "name": "power1.out",
+            "durationSec": 1.7
+          }
+        ],
+        "evidence": [
+          "visuals/a1/b3-wall-tiles.jpg diffs 36.9, 68.2, 36.4 at F133-F135, then about 25-38",
+          "visuals/a1/b3-wall-pull.jpg diffs fall evenly from about 22 (F157) to 11.6 (F205); still moving at the cut"
+        ]
+      },
+      "sound": {
+        "kind": "music-bed",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "inferred",
+        "confidence": 0.4,
+        "note": "Level lifts near 4.2 s (audio.json sections), about 0.2 s before the tiles appear at 4.43 s. What makes the sound is not known; not heard.",
+        "evidence": [
+          "audio.json sections (energy 0.21 then 0.50)",
+          "visuals/edit-map.png 4.0-4.5 s"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s006"
+      ]
+    },
+    {
+      "id": "locked-line",
+      "name": "Centred sentence with cooling words and a travelling pill",
+      "spans": [
+        {
+          "startSec": 6.9,
+          "endSec": 13.07
+        }
+      ],
+      "description": "Line recentres as each word arrives; colour from yellow to white in 9 frames; pill opens empty, fills, then snaps to a chosen word group; source line types itself; words delete in groups while the rest hold position.",
+      "route": "remotion",
+      "routeReason": "Text driven from data with exact timing. Measuring word widths gives both the recentring as words arrive and stable positions as they delete.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track",
+        "useFittedFontSize",
+        "block:type-sentence-build",
+        "block:type-marker-highlight",
+        "repo:TypedLine"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 6.17,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-line-cool.jpg F207-F229",
+          "visuals/a1/b3-pill-snap.jpg F306-F317",
+          "visuals/a1/b3-delete-black.jpg F337-F341 words delete in groups while the rest hold, ground goes black; cut F342"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.5,
+        "phases": [
+          {
+            "part": "entry",
+            "durationSec": 0.3
+          },
+          {
+            "part": "main",
+            "name": "steps(1)",
+            "durationSec": 0.033
+          }
+        ],
+        "evidence": [
+          "visuals/a1/b3-line-cool.jpg F210-F219: a new word is yellow on arrival and white about 9 frames later (curve not readable)",
+          "visuals/a1/b3-pill-snap.jpg F308→F309: pill jumps to the figure in one frame (diff 7.99), none between"
+        ]
+      },
+      "sound": {
+        "kind": "music-bed",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "inferred",
+        "confidence": 0.4,
+        "note": "The cut in at 6.9 s and the change at 11.4 s fall within 0.1 s of 50 ms RMS swells (7.0, 11.45 s), but those changes were picked after seeing the peaks (chance about 24%). Not heard.",
+        "evidence": [
+          "edit.json rhythm (RMS peaks list)"
+        ]
+      },
+      "typography": [
+        {
+          "role": "stat line",
+          "entry": "word by word; each word arrives yellow and cools to white in about 9 frames; the line recentres as it grows and holds position as words delete",
+          "alignment": "centre",
+          "size": 0.065,
+          "basis": "measured",
+          "confidence": 0.7,
+          "evidence": [
+            "speech-text.json screenText 7.02-12.52 s box heights 0.057-0.079 (OCR line box)",
+            "visuals/a1/b3-line-cool.jpg F210-F229"
+          ]
+        },
+        {
+          "role": "citation line",
+          "entry": "types itself under the line",
+          "alignment": "centre",
+          "size": 0.044,
+          "basis": "measured",
+          "confidence": 0.6,
+          "evidence": [
+            "speech-text.json screenText 9.52-12.52 s box y 0.844-0.853, height 0.034-0.044 (OCR line box)"
+          ]
+        }
+      ],
+      "layers": 4,
+      "shots": [
+        "s008.1",
+        "s008.2",
+        "s008.3",
+        "s008.4",
+        "s008.5",
+        "s009.1",
+        "s009.2",
+        "s009.3",
+        "s009.4",
+        "s009.5",
+        "s009.6",
+        "s009.7",
+        "s010",
+        "s011"
+      ]
+    },
+    {
+      "id": "dim-background-cuts",
+      "name": "Dim footage cutting behind text",
+      "spans": [
+        {
+          "startSec": 6.9,
+          "endSec": 13.07
+        }
+      ],
+      "description": "B-roll at about 25% brightness with a vignette, cut quickly. Images unrelated to the text except for the scale image at the end.",
+      "route": "footage",
+      "routeReason": "Stock or our own footage, with licence recorded through resource-discovery. Generated video could do it, but it is paid and detail at 25% brightness is not important.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "ScreenPlayback"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 6.17,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-line-cool.jpg background cuts at F207, F209, F212, F214, F217, F219 (grey frame), F220, F222",
+          "edit.json corrections (splits 6.97-11.07 s)"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "measured",
+        "confidence": 0.5,
+        "note": "Onsets are too dense to tie the 2-3 frame cuts to sound. Not heard.",
+        "evidence": [
+          "sync.json cutsOnOnsetRatio 0.923 vs chance 0.706"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s008.1",
+        "s008.2",
+        "s008.3",
+        "s008.4",
+        "s008.5",
+        "s009.1",
+        "s009.2",
+        "s009.3",
+        "s009.4",
+        "s009.5",
+        "s009.6",
+        "s009.7",
+        "s010",
+        "s011"
+      ]
+    },
+    {
+      "id": "pass-through-type",
+      "name": "Big words pass a lens, small words wait",
+      "spans": [
+        {
+          "startSec": 13.07,
+          "endSec": 16.17
+        }
+      ],
+      "description": "Horizontal track, words on one layer; focus depends on distance from frame centre; soft colour bloom and slight chromatic edge.",
+      "route": "remotion",
+      "routeReason": "Camera and DepthLayer give a focus falloff, but it is per layer: per-word blur from screen position needs a small addition. Bloom via CSS filter should be tested for banding: use grain.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Camera",
+        "DepthLayer",
+        "Shutter",
+        "FilmGrain",
+        "block:type-hero-word",
+        "block:marquee-rows",
+        "repo:TextBloom"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 3.1,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b3-lens-track.jpg F392-F413",
+          "visuals/a1/b3-small-hold.jpg F414-F451",
+          "visuals/a1/b3-better-way.jpg F452-F484"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.55,
+        "phases": [
+          {
+            "part": "main",
+            "name": "none",
+            "durationSec": 1.0
+          },
+          {
+            "part": "settle",
+            "name": "power2.out",
+            "durationSec": 0.8
+          },
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.1
+          },
+          {
+            "part": "exit",
+            "name": "power2.in",
+            "durationSec": 0.75
+          }
+        ],
+        "evidence": [
+          "visuals/a1/b3-lens-track.jpg diffs steady at 13-17 per frame F395-F413: big words cross at constant speed",
+          "visuals/a1/b3-small-hold.jpg diffs 2.2 falling to 0.2 over F428-F449: small words drift and settle",
+          "visuals/a1/b3-better-way.jpg F452-F455 bloom flash settles in 3 frames; diffs 4.4 rising to 17 over F462-F482: the key word accelerates out to the left"
+        ]
+      },
+      "sound": {
+        "kind": "music-bed",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "inferred",
+        "confidence": 0.4,
+        "note": "The cuts at 13.07 and 15.07 s fall within 0.1 s of RMS swells (13.05, 15.15 s), picked after seeing the peaks. Not heard.",
+        "evidence": [
+          "edit.json rhythm (RMS peaks list)"
+        ]
+      },
+      "typography": [
+        {
+          "role": "big passing words",
+          "entry": "track in from the right edge, sharpen near centre, blur out at the left",
+          "alignment": "free",
+          "size": 0.33,
+          "basis": "measured",
+          "confidence": 0.6,
+          "evidence": [
+            "speech-text.json screenText 13.02-14.02 s box height 0.326-0.34 (OCR line box)",
+            "visuals/a1/b3-lens-track.jpg F392-F413"
+          ]
+        },
+        {
+          "role": "small waiting words",
+          "entry": "appear one at a time near centre, nearly still",
+          "alignment": "centre",
+          "size": 0.055,
+          "basis": "measured",
+          "confidence": 0.6,
+          "evidence": [
+            "speech-text.json screenText 14.02-15.02 s box height 0.053-0.057 (OCR line box)",
+            "visuals/a1/b3-small-hold.jpg F422-F451"
+          ]
+        },
+        {
+          "role": "key word",
+          "entry": "hard cut in with a bloom flash that settles over 3 frames",
+          "alignment": "free",
+          "size": 0.42,
+          "basis": "measured",
+          "confidence": 0.6,
+          "evidence": [
+            "speech-text.json screenText 15.02-16.02 s box x 0, width 0.895, height 0.423 (OCR line box)",
+            "visuals/a1/b3-better-way.jpg F452-F455"
+          ]
+        }
+      ],
+      "layers": 2,
+      "shots": [
+        "s012",
+        "s013"
+      ]
+    },
+    {
+      "id": "corner-liquid-light",
+      "name": "Blue light rising in a corner",
+      "spans": [
+        {
+          "startSec": 16.5,
+          "endSec": 17.0
+        }
+      ],
+      "description": "A soft shape with a dark core and refractive rim, growing from bottom right. Not clear from four frames what happens next because the file ends.",
+      "route": "hyperframes",
+      "routeReason": "A shader look that matters more than its parameters, per engine-selection. No specific block has been tested for this, and if none fits it should go to Blender or be dropped. This route is my best guess.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:liquid-light"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.57,
+        "startOffsetFromCutSec": 0.27,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b3-corner-light.jpg light first visible at F493 (16.43 s), grows to the file end F509"
+        ]
+      },
+      "ease": {
+        "source": "inferred",
+        "confidence": 0.3,
+        "truncated": true,
+        "evidence": [
+          "visuals/a1/b3-corner-light.jpg F493-F509: still growing when the file ends"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "inferred",
+        "confidence": 0.3,
+        "note": "Not established; not heard."
+      },
+      "typography": {
+        "role": "final word",
+        "entry": "slides in from the right and settles in about 4 frames after a hard cut",
+        "alignment": "free",
+        "size": 0.47,
+        "basis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json screenText 16.02-17.0 s box height 0.473 (OCR line box)",
+          "visuals/a1/b3-corner-light.jpg F485-F489"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s014"
+      ],
+      "techniqueCardId": "liquid-light"
+    }
+  ]
+}

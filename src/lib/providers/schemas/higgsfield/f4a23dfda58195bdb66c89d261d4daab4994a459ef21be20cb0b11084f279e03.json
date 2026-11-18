@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "endpoint": "minimax/hailuo-2.3/standard/text-to-video",
+  "title": "Hailuo 2.3 — Standard text to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/hailuo-2-3/standard-text-to-video.md",
+  "usageNotes": [
+    "This Standard endpoint uses a fixed 768P output resolution; resolution is not a configurable field in the production schema."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Minimax Hailuo 2.3 Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          6,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 6
+      },
+      "prompt_optimizer": {
+        "type": "boolean",
+        "title": "Prompt optimizer",
+        "default": true
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

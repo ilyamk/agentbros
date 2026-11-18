@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flame",
+  "rhythm": {
+    "value": "22.6 s, 12 corrected shots (detector: 6), 11 picture changes of which 4 are hard cuts (8.05, 9.84, 13.51, 15.27) and 7 are continuous morphs. Holds: 1.75, 1.71, 1.46, 1.73, 1.40, 1.79, 1.67, 2.00, 1.75, 0.96, 1.92, 4.46 s; median 1.74 s, 29 changes per minute. Every hold but two sits between 1.4 and 2.0 s, one scene per spoken sentence or clause; the type-only sentence is the one short hold (0.96 s) and the end card the one long one (4.46 s, of which 2.3 s after the last typed character). Clock: the voice, not the music. 6 of 11 changes fall within 0.25 s of a sentence start (chance 20%), 5 of those 6 before the word (picture leads by 0.04-0.22 s); 3 of 11 within 0.1 s (chance 8%). The windows were chosen after looking, so this suggests a method and does not prove one. Against the beat grid the corrected changes are at chance: 36% on beat vs 31%, 64% on onset vs 74%, 0 of 11 within a frame of a downbeat vs 4%. I cannot hear the film; all of this is from audio.json, speech-text.json and the strips.",
+    "basis": "measured",
+    "confidence": 0.7,
+    "evidence": [
+      "shots.json with corrections below",
+      "audio.json beatsSec, onsetsSec, downbeatsSec",
+      "speech-text.json speech.words sentence starts 0.10, 2.96, 5.12, 6.72, 9.88, 13.44, 16.44, 18.28",
+      "sync.json metrics (detector cuts)"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001.1",
+      "purpose": {
+        "value": "Hook: a layout sketch. Crosshair hairlines with four node dots; three words land one by one between them, each tinted green for 2-3 frames then black, each ahead of or with its spoken word.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F0-F19"
+        ]
+      },
+      "technique": {
+        "value": "wireframe-type-open, tinted word arrival",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F3-F13"
+        ]
+      }
+    },
+    {
+      "shotId": "s001.2",
+      "purpose": {
+        "value": "Raw material: the guide box pushes past the frame and a centre dot grows into a brushed-metal tile (20% of width), which rounds its corners while it holds.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t01-frame-to-square.jpg F42-F56",
+          "visuals/a1/t02-square-to-spheres.jpg F75-F80"
+        ]
+      },
+      "technique": {
+        "value": "guide-frame-opens-to-object",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t01-frame-to-square.jpg F38-F49"
+        ]
+      }
+    },
+    {
+      "shotId": "s001.3",
+      "purpose": {
+        "value": "Problem: the tile shrinks to a point, a ring of dots expands, iridescent spheres fly in from the edges and the problem phrase types into the clear centre.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t02-square-to-spheres.jpg F83-F94",
+          "visuals/a1/t03-spheres-collapse.jpg F113-F117"
+        ]
+      },
+      "technique": {
+        "value": "collapse-to-point-burst",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t02-square-to-spheres.jpg F78-F90"
+        ]
+      }
+    },
+    {
+      "shotId": "s002.1",
+      "purpose": {
+        "value": "Answer: spheres implode into a cluster (5 frames), shrink with chromatic blur and fade; an embossed white maze ground appears and the wordmark types on.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t03-spheres-collapse.jpg F118-F134",
+          "visuals/a1/t04-wordmark-type.jpg F131-F151"
+        ]
+      },
+      "technique": {
+        "value": "implode-and-blur out, letter-by-letter wordmark in",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t03-spheres-collapse.jpg F118-F130"
+        ]
+      }
+    },
+    {
+      "shotId": "s002.2",
+      "purpose": {
+        "value": "Product proof: a gradient pill behind the wordmark grows to a full-bleed card in 4 frames; interface panels fly in from the edges over 0.33 s; the card then shrinks with rounding corners.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t05-card-to-collage.jpg F157-F172",
+          "visuals/a1/t06-collage-to-globe.jpg F185-F192"
+        ]
+      },
+      "technique": {
+        "value": "element-grows-to-ground, staggered edge fly-in",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t05-card-to-collage.jpg F159-F172"
+        ]
+      }
+    },
+    {
+      "shotId": "s002.3",
+      "purpose": {
+        "value": "Aspiration: hard cut to a pastel particle globe inside a circle; two words pinned to the far left and right edges frame it; the circle eases out (pull-out).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t06-collage-to-globe.jpg F193-F204",
+          "visuals/a1/t07-globe-to-square.jpg F230-F235"
+        ]
+      },
+      "technique": {
+        "value": "shrink-then-cut in, flank-words-at-frame-sides",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t06-collage-to-globe.jpg F189-F197"
+        ]
+      }
+    },
+    {
+      "shotId": "s002.4",
+      "purpose": {
+        "value": "Second pass: hard cut to a small grey tile on a pale grid with faint red guides; slow push in as it grows from about 4% to 20% of width.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t07-globe-to-square.jpg F236-F249",
+          "visuals/a1/t08-square-to-site.jpg F266-F270"
+        ]
+      },
+      "technique": {
+        "value": "callback object",
+        "basis": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 1M and 3M"
+        ]
+      }
+    },
+    {
+      "shotId": "s002.5",
+      "purpose": {
+        "value": "Payoff: the tile widens and tints blue, becomes a dark landing page (about 62% of width) whose headline types on in 4 frames.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t08-square-to-site.jpg F276-F285",
+          "visuals/a1/t09-cut-to-pills.jpg F318-F323"
+        ]
+      },
+      "technique": {
+        "value": "material-becomes-interface",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t08-square-to-site.jpg F270-F281"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Offer: hard cut to two stacked glossy buttons; the front one springs from 33% to 53% of width with overshoot, then the back one rises over it (6 frames).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t09-cut-to-pills.jpg F324-F338",
+          "visuals/a1/t10-pill-swap.jpg F342-F357"
+        ]
+      },
+      "technique": {
+        "value": "spring-pop-on-cut, card-shuffle swap",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "motion.json s004 camera.ease",
+          "visuals/a1/t10-pill-swap.jpg F342-F348"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.1",
+      "purpose": {
+        "value": "Ownership line: hard cut to a centred sentence on white that builds word by word, recentring each time and brightening from navy to blue.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t11-cut-to-type.jpg F366-F378"
+        ]
+      },
+      "technique": {
+        "value": "recentring word-by-word line",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t11-cut-to-type.jpg F366-F376",
+          "speech-text.json screenText 15.0-16.0 boxes x 0.40 to 0.325"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.2",
+      "purpose": {
+        "value": "CTA: the sentence collapses into a small pill which goes pale, snaps to a larger saturated navy button in one frame, then grows towards full frame.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t12-type-to-pill.jpg F389-F401",
+          "visuals/a1/t13-pill-grows.jpg F407-F426"
+        ]
+      },
+      "technique": {
+        "value": "sentence-collapses-to-button",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t12-type-to-pill.jpg F386-F391",
+          "visuals/a1/t13-pill-grows.jpg F411-F412"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Sign-off: the button is now the end card (navy-to-sky ramp); label fades, wordmark types on, slides left for an address pill that types on; held still with only a slow drift to the end.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t14-fill-to-endcard.jpg F436-F445",
+          "visuals/a1/t15-url-pill.jpg F467-F486",
+          "visuals/strips/s006.jpg"
+        ]
+      },
+      "technique": {
+        "value": "element-grows-to-ground, wordmark-slides-for-address",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t15-url-pill.jpg F468-F486"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 17.1,
+        "endSec": 18.35,
+        "name": "element-grows-to-ground",
+        "description": "The CTA button becomes the end card. The navy button (48% of width at F412, 17.18 s) grows on an accelerating curve (motion.json s005 sine.in, 17.11-18.02 s), reaches 59% at F426 (17.76 s), 88% at F431 (17.97 s) and full bleed at F436 (18.18 s), its top sheen arc becoming the dark rim of the end card. Label fades F437-F440 (18.22-18.35 s) and the wordmark types on from F441. The same move opens the product beat at 6.54-6.84 s: a gradient pill behind the wordmark (F157) grows to a full card in 4 frames (F159-F162).",
+        "why": "The eye is already on the button at centre; as it grows it becomes the room, so the end card arrives with no cut and the brand is read as the inside of the thing the viewer was asked to press. Acceleration (slow, then fast) holds the label readable for the first 0.6 s and spends speed only once the reading is done.",
+        "spans": [
+          {
+            "startSec": 6.54,
+            "endSec": 6.84
+          },
+          {
+            "startSec": 17.1,
+            "endSec": 18.35
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t13-pill-grows.jpg F411-F426",
+        "visuals/a1/t14-fill-to-endcard.jpg F426-F445",
+        "visuals/a1/t05-card-to-collage.jpg F157-F163",
+        "motion.json s005 camera.ease"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.1,
+        "endSec": 17.18,
+        "name": "sentence-collapses-to-button",
+        "description": "The finished sentence fades out from its first word (F386-F388, 16.10-16.18 s); a 12%-wide pill appears at the middle word (F389, 16.22 s) and slides right over the last word, which stays visible beside it until F397 (16.55 s). The pill then pales to a light-blue ghost over 13 frames (F393-F405) and at F411 to F412 (17.14 to 17.18 s) snaps in a single frame to a saturated navy button four times the area (48% of width).",
+        "why": "The spoken line becomes the thing to press; the eye stays on one spot from the last line to the CTA. The pale ghost lowers contrast for half a second, so the one-frame snap to saturated navy lands as an accent with no cut or flash."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t12-type-to-pill.jpg F382-F401",
+        "visuals/a1/t13-pill-grows.jpg F407-F416"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 3.25,
+        "endSec": 3.75,
+        "name": "collapse-to-point-burst",
+        "description": "The metal tile rounds into a disc (F78-F81, 3.25-3.37 s), shrinks to a dot (F82-F84, 3.42-3.50 s) while a ring of 8 dots around it expands into a sparse dot field (F81-F86); iridescent spheres then enter from all four edges (F86-F90, 3.58-3.75 s), the first saturated colour of the film, and the phrase types into the clear centre from F91 (3.79 s).",
+        "why": "Shrinking to a point concentrates the eye exactly where the next word will appear, then the burst fills the periphery with colour while leaving that point empty. The contrast (grey, nothing, full colour in 12 frames) marks the switch from premise to problem."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t02-square-to-spheres.jpg F75-F94"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 11.26,
+        "endSec": 11.88,
+        "name": "material-becomes-interface",
+        "description": "The grey tile (20% of width) widens to about 33% and tints from grey to pale blue in 6 frames (F270-F276, 11.26-11.51 s), the horizon line in its gradient staying put; at F277 (11.55 s) it is a dark-blue landing page with a white sheen arc and a small button below; it widens to about 60% by F281 (11.72 s) and the headline types in over F282-F285 (11.76-11.88 s).",
+        "why": "The horizon line inside the metal gradient becomes the page's light arc, so the eye reads one object finishing itself: raw material to finished interface, exactly the claim of the voice line under it."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t08-square-to-site.jpg F266-F285"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 1.54,
+        "endSec": 2.04,
+        "name": "guide-frame-opens-to-object",
+        "description": "The guide box made by the crosshair hairlines grows outward past all four frame edges in 12 frames (F37-F49, 1.54-2.04 s) on an accelerating curve (motion.json s001 power1.in, 1.50-2.40 s). The words split apart with it (the first to the left, the rest to the right) and fade, and a dot at the exact centre grows into a 20%-wide metal tile.",
+        "why": "The sketch literally opens out of frame to reveal the object it was drafting; the centre dot is the only thing not moving outward, so the eye lands on it as the lines leave."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t01-frame-to-square.jpg F37-F56",
+        "motion.json s001 camera.ease"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 1.75,
+        "transition": "continuous",
+        "note": "s001 (0-4.92) is three scenes. The guide box pushes out and a metal tile grows from the centre dot, F38-F49 (1.58-2.04 s); the middle of the morph, F42, is the boundary."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t01-frame-to-square.jpg F37-F56"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 3.46,
+        "transition": "continuous",
+        "note": "Tile collapses to a point and the sphere field bursts in, F78-F90 (3.25-3.75 s); boundary at F83 when the tile has become a dot and the dot field appears."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t02-square-to-spheres.jpg F75-F94"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "The detector's continuous boundary at 7.38 s (span 6.67-8.09) falls in the middle of the interface panels flying in on an already-present card. The real events are the card growing to full frame at 6.63-6.80 s and the hard cut to the globe at 8.05 s; both are added as splits."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t05-card-to-collage.jpg F157-F172",
+        "visuals/a1/t06-collage-to-globe.jpg F185-F197"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 6.65,
+        "transition": "continuous",
+        "note": "A gradient pill behind the wordmark (F157) grows to a full-bleed card F159-F162 (6.63-6.75 s); new ground, new scene."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t05-card-to-collage.jpg F157-F163"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 8.05,
+        "transition": "cut",
+        "note": "Missed hard cut. The card shrinks with rounding corners F185-F192 (7.71-8.00 s), then a single-frame change to the globe at F193 (8.05 s), strip diff 34. The detector folded it into its 6.67-8.09 continuous span."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t06-collage-to-globe.jpg F189-F194"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 9.843,
+        "transition": "cut",
+        "note": "Missed hard cut on a white ground: globe at F235 (9.80 s), small grey tile on a grid at F236 (9.84 s). Strip diff only 2.9 because both frames are mostly white."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t07-globe-to-square.jpg F234-F237"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 11.512,
+        "transition": "continuous",
+        "note": "Tile widens and tints, becoming a landing page at F276-F277 (11.51-11.55 s); morph read as one shot."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t08-square-to-site.jpg F270-F281"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 16.225,
+        "transition": "continuous",
+        "note": "Type-only sentence collapses into a CTA pill at F389 (16.22 s); different subject and role, read as one shot by the detector."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t12-type-to-pill.jpg F386-F391"
+      ]
+    }
+  ]
+}

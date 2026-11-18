@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "repositories-birefnet-zheng-et-al-caai-air-2024-general-lite-model-49a6ebeb",
+  "section": "repositories",
+  "order": 440,
+  "source": "BiRefNet (Zheng et al., CAAI AIR 2024), general lite model",
+  "url": "https://github.com/ZhengPeng7/BiRefNet",
+  "pinnedCommit": "release `v1` asset `BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx` (224,005,088 bytes, sha256 `56000243…`); LICENSE blob `485921e8` at commit `f7079632`",
+  "licence": "MIT (repository LICENSE, read through the GitHub API 2026-11-15)",
+  "whatWeTook": "Model weights only, the author's own ONNX export; fetched by `pnpm assets:sync --id models:birefnet-general-lite` into `~/.cache/agentbros/matte/`, never committed; pre- and post-processing (ImageNet normalisation, 1024 input, sigmoid) written from the model's I/O",
+  "whereItLives": "`src/lib/matte/models.json`, `scripts/workers/frame-matte-onnx.py`, `src/lib/matte/onnx.ts`",
+  "why": "Free cross-platform subject cut-outs for `pnpm matte` (the same model family the paid `rmbg` calls on fal)",
+  "date": "2026-11-15"
+}

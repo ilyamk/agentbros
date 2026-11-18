@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "abdulah",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "durationSec": 69.833,
+  "slots": [
+    {
+      "id": "b01",
+      "role": "hook",
+      "startSec": 0.0,
+      "durationSec": 5.433,
+      "visualRecipe": "Black ground. One small serif line left-set at x 0.18, y 0.47, line box 0.06 of height. A small portrait card (0.05 of width) beside it at x 0.72 for the first 1.1 s. End state: a short counter-statement in spaced words on the same baseline.",
+      "motionRecipe": "Type on from frame 4 on twos, about 2 frames a glyph in voice-paced bursts, no caret; portrait swaps every 5-6 frames until 1.26 s; hold 16 frames, grey the last word one step, then at 3.8 s erase the line in word chunks, one every 2 frames (7 words in 10 frames); slide the first word right over 4 frames and hard-swap it to its replacement; land the rest word by word. No camera.",
+      "soundRecipe": "Narration starts on frame 3; a quiet music bed. Nothing marks the deletion.",
+      "copySlot": {
+        "purpose": "A common belief, then its correction",
+        "maxWords": 14
+      },
+      "techniqueIds": [
+        "t01-typewriter-backspace-hook"
+      ]
+    },
+    {
+      "id": "b02",
+      "role": "first image and era ladder",
+      "startSec": 5.433,
+      "durationSec": 1.967,
+      "visualRecipe": "Paper ground #F8F6F2 with one photo card 0.25 of width in the right third, the spoken verb on it; a second card stacks behind at a 3 degree tilt. Then four full-bleed archive images of one subject in identical framing, 4 frames each.",
+      "motionRecipe": "Hard cut to paper; second card on at +14 frames. Each archive image enters through a 1-2 frame grade or texture flash. End on the frame before the colour image.",
+      "soundRecipe": "Voice continues; any accent on the ladder is optional and unproven.",
+      "copySlot": {
+        "purpose": "The verb of the correction",
+        "maxWords": 3
+      },
+      "techniqueIds": [
+        "t04-image-card-on-paper",
+        "t02-archive-ladder-match-cut",
+        "t03-light-leak-flash-cut"
+      ]
+    },
+    {
+      "id": "b03",
+      "role": "heritage",
+      "startSec": 7.4,
+      "durationSec": 9.167,
+      "visualRecipe": "Match cut to the same subject in present-day colour, same framing, held 4.8 s with a left-set caption typed in two lines at the lower middle. Then three archive or graded plates of 1.3-1.6 s: a person at work, a workshop, a tall structure, each with no type.",
+      "motionRecipe": "Caption types at about one glyph a frame. Each plate swap sits on the brightest frame of a 1-3 frame light leak; the last plate exits through a 4-frame green grade and white flare.",
+      "soundRecipe": "Voice-led; leaks may carry a soft whoosh (inferred, optional).",
+      "copySlot": {
+        "purpose": "Where the tradition comes from",
+        "maxWords": 12
+      },
+      "techniqueIds": [
+        "t02-archive-ladder-match-cut",
+        "t03-light-leak-flash-cut"
+      ]
+    },
+    {
+      "id": "b04",
+      "role": "turn to the present",
+      "startSec": 16.567,
+      "durationSec": 4.766,
+      "visualRecipe": "Paper pages: one centred word; then left-set typed lines (x 0.21) with a small square image chip after the cursor; then four single words scattered over the page; then 6-8 colourful cards popping on over them until the page is mostly covered.",
+      "motionRecipe": "Page swaps on the frame the old line clears. Chip pushed right glyph by glyph; line fades over 3 frames while the chip slides off. Scattered words cut on at their own positions. Cards on in single frames, 1-6 frames apart. Exit: 6-frame glitch (dot screen, colour flip, wave displacement), hard cut.",
+      "soundRecipe": "Voice-led. Glitch may take a short digital burst (inferred).",
+      "copySlot": {
+        "purpose": "The new capability, as a statement",
+        "maxWords": 12
+      },
+      "techniqueIds": [
+        "t07-inline-chip-typing",
+        "t08-scattered-words",
+        "t09-collage-pop-on",
+        "t10-glitch-exit"
+      ]
+    },
+    {
+      "id": "b05",
+      "role": "capability list",
+      "startSec": 21.333,
+      "durationSec": 5.4,
+      "visualRecipe": "Two short centred type pages on paper, then one full-bleed plate for each listed verb, each verb in small italic serif centred on it. Plates dark and contrasty.",
+      "motionRecipe": "Each plate and its word land on the same frame, holds 0.8-1.3 s. First plate enters through a 2-frame cyan then white leak and pushes in five stepped jumps every 2-3 frames, each smaller. Last plate flips to a dot-screen render cycling colour every 3-5 frames for 1.0 s.",
+      "soundRecipe": "Voice lists the verbs; one plate for each word, in order.",
+      "copySlot": {
+        "purpose": "The list of capabilities, one verb on each plate",
+        "maxWords": 5
+      },
+      "techniqueIds": [
+        "t11-one-word-one-image",
+        "t12-stepped-punch-in",
+        "t13-dot-screen-treatment",
+        "t03-light-leak-flash-cut"
+      ]
+    },
+    {
+      "id": "b06",
+      "role": "escalation",
+      "startSec": 26.733,
+      "durationSec": 4.234,
+      "visualRecipe": "Black ground with a small photo card top left and an italic caption typing at its bottom edge beside a cursor; then a full-bleed illustration; then a paper page with a small card top right and a centred line.",
+      "motionRecipe": "Card on black grows to full frame in three steps (+16, +18, +21 frames). Outgoing plate flips to two duotones for 3 frames, the next appears as a centred inset box growing to full in 2 frames, then pulls out 4% over 1.1 s, circ.out. On paper, the card grows to full bleed over 9 frames (0.11, 0.18, 0.47, 0.88, 1.0 of width) and exits through 5 frames of dot-screen stutter.",
+      "soundRecipe": "Voice-led; a 2-frame white flash before the paper page.",
+      "copySlot": {
+        "purpose": "The step up, then the framing issue",
+        "maxWords": 10
+      },
+      "techniqueIds": [
+        "t04-image-card-on-paper",
+        "t05-card-grows-to-fullbleed",
+        "t06-inset-box-wipe",
+        "t13-dot-screen-treatment"
+      ]
+    },
+    {
+      "id": "b07",
+      "role": "the real issue",
+      "startSec": 30.967,
+      "durationSec": 5.566,
+      "visualRecipe": "A plate of a teacher at work, an orbit view with a caption, then a time-lapse of a cycling celestial body on near-black #131718 with a centred line of 4-5 evenly spaced words.",
+      "motionRecipe": "Static plates 1.4-1.6 s. On the time-lapse each word switches from white to the accent #C54A76 in one frame as spoken; the second clause replaces the line and fills the same way.",
+      "soundRecipe": "Voice-led.",
+      "copySlot": {
+        "purpose": "The reframed issue",
+        "maxWords": 12
+      },
+      "techniqueIds": [
+        "t14-karaoke-colour-fill"
+      ]
+    },
+    {
+      "id": "b08",
+      "role": "open queries",
+      "startSec": 36.533,
+      "durationSec": 6.267,
+      "visualRecipe": "Three wide landscapes, dark skies and water, held 1.7-2.6 s; the words of each line scattered across the sky and ground.",
+      "motionRecipe": "Hard cut in. Each word cuts on at its own position as spoken; no motion.",
+      "soundRecipe": "Voice-led.",
+      "copySlot": {
+        "purpose": "Open queries the audience might raise",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "t08-scattered-words"
+      ]
+    },
+    {
+      "id": "b09",
+      "role": "direct address",
+      "startSec": 42.8,
+      "durationSec": 4.3,
+      "visualRecipe": "Paper ground, one centred line in a thin handwritten face, ink #120F0D; the only handwriting in the film.",
+      "motionRecipe": "Typed letter by letter; 2-frame navy then 1-frame beige ground flash before the second line.",
+      "soundRecipe": "Voice addresses the viewer directly.",
+      "copySlot": {
+        "purpose": "A direct query to the viewer, then an offer",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "t15-handwriting-direct-address",
+        "t03-light-leak-flash-cut"
+      ]
+    },
+    {
+      "id": "b10",
+      "role": "rejection",
+      "startSec": 47.1,
+      "durationSec": 3.3,
+      "visualRecipe": "A dim, empty, still plate for 1.4 s; then 23 images of the thing being rejected, framing alternating between stacked and scattered compositions.",
+      "motionRecipe": "Still hold, then hard cuts on a 3-2 frame cadence (12 images a second) for 1.87 s.",
+      "soundRecipe": "Voice lists what the offer is not; level rises about 2 dB through the flurry (measured on the reference).",
+      "copySlot": {
+        "purpose": "What the offer is not",
+        "maxWords": 9
+      },
+      "techniqueIds": [
+        "t16-image-flurry-12fps"
+      ]
+    },
+    {
+      "id": "b11",
+      "role": "proof",
+      "startSec": 50.4,
+      "durationSec": 5.867,
+      "visualRecipe": "Exterior at night held 1.7 s, then five documentary photos or clips of the real event: conversation, stage, seated talk, crowd, audience reaction. Natural colour.",
+      "motionRecipe": "Hard cuts, holds 0.5-1.3 s, near-static camera.",
+      "soundRecipe": "Voice lists what the offer is.",
+      "copySlot": {
+        "purpose": "What the offer is",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "t17-event-proof-montage"
+      ]
+    },
+    {
+      "id": "b12",
+      "role": "closing statement",
+      "startSec": 56.267,
+      "durationSec": 5.6,
+      "visualRecipe": "Paper ground; centred serif line built word by word in three clauses; on the last clause 15-20 small portraits pop on around it and off the edges, never over the text.",
+      "motionRecipe": "Words fade on over 2 frames as spoken; each clause clears for 2 frames. Portraits on in single frames every 4 frames from +13 frames into the last clause; slow linear push about 4% over 2 s.",
+      "soundRecipe": "Quieter close, about 2 dB under the middle of the film (measured on the reference).",
+      "copySlot": {
+        "purpose": "The thesis restated as an invitation to take part",
+        "maxWords": 12
+      },
+      "techniqueIds": [
+        "t18-word-fade-on-close",
+        "t19-portrait-pop-field"
+      ]
+    },
+    {
+      "id": "b13",
+      "role": "name",
+      "startSec": 61.867,
+      "durationSec": 3.2,
+      "visualRecipe": "The present-day location plate from slot b03 in the same framing, with the name in serif capitals centred (0.44 x 0.08 of frame) and an italic edition line under it.",
+      "motionRecipe": "Hard cut in; edition line types in after 1.3 s; plate holds 3.2 s.",
+      "soundRecipe": "Voice says the name.",
+      "copySlot": {
+        "purpose": "Name of the offer",
+        "maxWords": 4
+      },
+      "techniqueIds": [
+        "t20-bookend-title-endcard"
+      ]
+    },
+    {
+      "id": "b14",
+      "role": "end card",
+      "startSec": 65.067,
+      "durationSec": 4.766,
+      "visualRecipe": "Black ground, the name block centred with two small credit lines below; nothing else.",
+      "motionRecipe": "Hard cut in; hold 4.77 s, no fade on the last frame.",
+      "soundRecipe": "Sound falls away to a quiet tail (about -30 dB RMS on the reference).",
+      "copySlot": {
+        "purpose": "Organiser and edition details",
+        "maxWords": 16
+      },
+      "techniqueIds": [
+        "t20-bookend-title-endcard"
+      ]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: tempo confidence 0.04 and cuts sit at or below chance on beats, onsets and swells. Cut on the words and on the images: one plate for each listed word, text pages swap on the frame the old line clears. Holds: 4-frame archive steps, 0.8-1.5 s list plates, 1.7-2.6 s open-line plates, one flurry at 2-3 frames, 0.5-1.7 s proof, 1.0-4.8 s close. Median hold about 1.4 s outside the flurry."
+  },
+  "style": "Small serif type on black and off-white paper, cut against graded archive and stock plates with 1-3 frame leaks and treatments; one handwritten passage for direct address; one 12-images-a-second flurry; a slow close that gathers portraits; bookend location for the name.",
+  "transferRules": {
+    "keep": [
+      "Hook that types a claim and deletes it before the first image",
+      "Archive ladder of one subject at 4 frames an image into a match cut to the present",
+      "1-3 frame light leaks on every plate swap",
+      "One plate for each listed word, word centred small on it",
+      "Inline image chip riding the typing cursor",
+      "Card that grows into the next scene",
+      "Word-by-word colour fill on a time-lapse",
+      "Handwritten register reserved for lines addressed to the viewer",
+      "Still hold, 12 images a second flurry, still hold",
+      "Real footage of the real audience as proof",
+      "Closing line surrounded by portraits popping every 4 frames",
+      "Bookend: the opening location returns with the name",
+      "Black end card held about 4.8 s, no fade"
+    ],
+    "mustChange": [
+      "branding",
+      "music",
+      "graphics",
+      "copy",
+      "all footage and photographs",
+      "names of persons, places, organisers and editions",
+      "the specific subjects of the archive ladder and the flurry",
+      "fonts and the accent colour"
+    ]
+  }
+}

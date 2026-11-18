@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gamma",
+  "detector": { "name": "fixture" },
+  "shots": [
+    { "id": "s001", "startSec": 0, "endSec": 1, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s002", "startSec": 1, "endSec": 2, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s003", "startSec": 2, "endSec": 12, "transitionIn": "cut", "transitionConfidence": 1 }
+  ],
+  "summary": { "count": 3, "medianDurationSec": 1, "cutsPerMinute": 10 }
+}

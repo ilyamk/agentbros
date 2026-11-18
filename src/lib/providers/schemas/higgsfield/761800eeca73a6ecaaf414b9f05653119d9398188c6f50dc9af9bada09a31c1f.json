@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "endpoint": "bytedance/seedance-2.5/video-edit",
+  "title": "Seedance 2.5 — Video edit API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/seedance-2-5/video-edit.md",
+  "usageNotes": [
+    "Use publicly accessible media URLs; asset:// references are rejected for these endpoints.",
+    "The source video_url counts toward the 10-video limit, so include at most 9 additional video_urls. At most 50 media items are accepted across the source video and all reference arrays.",
+    "Videos and audio may be trimmed or padded during preprocessing to fit their respective 30-second total budgets. Output framing follows the source video.",
+    "Do not send duration: this endpoint derives output duration from the processed source video. The main video is normalized to at least 4 seconds."
+  ],
+  "schema": {
+    "type": "object",
+    "required": [
+      "prompt",
+      "video_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "video_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "maxItems": 10,
+        "minItems": 1
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "maxItems": 30,
+        "minItems": 1
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "maxItems": 10,
+        "minItems": 1
+      },
+      "bitrate_mode": {
+        "enum": [
+          "standard",
+          "high"
+        ],
+        "type": "string",
+        "default": "high"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

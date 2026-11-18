@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "paper-style",
+  "palette": {
+    "value": [
+      "#EEE9DD and #E8E3D7 warm paper panels",
+      "#DCD2BD parchment panel",
+      "Kraft panel about #C9A26E (estimated, not sampled)",
+      "#131209 near-black ink and engraved figures",
+      "Red about #C8202A for stamps, pins and accents (estimated)",
+      "Blue label about #2F4E8C and yellow label for the last chapter (estimated)",
+      "Vignette: panel corners fall to about #AAA79C"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "frames sampled at 1.5, 8, 20, 44, 50 s",
+      "visuals/a1/p-today.jpg",
+      "visuals/a1/l-mass.jpg"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Chapter label",
+        "description": "Small roman-numeral label in spaced capitals on a pale paper strip, top left in every panel, at about 7% of width. It is the film's only constant type."
+      },
+      {
+        "role": "Period headline",
+        "description": "Changes per chapter. Scraps of mixed faces, blackletter, a heavy newspaper Didone, condensed slab capitals in red, and finally a stacked wide sans with colour misregistration. About 30-45% of frame width."
+      },
+      {
+        "role": "Hand script",
+        "description": "Italic pen script written on with a quill for one line; a circle drawn by hand round the last word."
+      },
+      {
+        "role": "Date stamps",
+        "description": "Red condensed numerals in a rough rectangle, rotated about 8 degrees, about 7% of width. These slam on."
+      },
+      {
+        "role": "Captions",
+        "description": "Small typewriter or condensed text on white torn paper strips, always rotated by a few degrees and offset from the object they label."
+      },
+      {
+        "role": "Big numbers",
+        "description": "Black heavy condensed figures on a torn white strip, about 40% of width, with a small label beneath."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/b-build.jpg",
+      "visuals/a1/f-mainz.jpg",
+      "visuals/a1/j-steam.jpg",
+      "visuals/a1/l-mass.jpg",
+      "visuals/a1/p-today.jpg"
+    ]
+  },
+  "composition": {
+    "value": "Scrapbook on a page. A subject cut-out, generally about 40% of the frame's height and off-centre, with the rest placed around it during the chapter until the panel is full. Nothing is aligned on a grid: objects sit at small angles, each with a thin white sticker edge and a soft shadow. Each panel has a printed frame line, and a gutter of about 3% of width separates panels. Final sheet is 4 by 2 panels under a masthead.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/q-zoomout.jpg F1608-F1626",
+      "visuals/a1/r-end.jpg F1716",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "materials": {
+    "value": "Grainy aged paper with folds and stains, different in each panel. Engraving-style black and white figures with white die-cut edges. Photograph-like colour objects only near the end of the story. Red ink spatter. Tape on the top edge of some pieces.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/f-mainz.jpg F699-F753",
+      "visuals/a1/n-copy.jpg",
+      "visuals/a1/a-open.jpg"
+    ]
+  },
+  "lighting": {
+    "value": "No light moves. A fixed soft vignette and a shadow under each piece; the paper texture does not move with its pieces, as far as these frames show. One heat effect: the tiles and block glow orange at 13.5-14.7 s.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/d-china.jpg F405-F441"
+    ]
+  },
+  "styleSummary": "An eight-panel paper scrapbook that fills itself in time with the voice. Engraved cut-outs, real-looking paper, red stamps and typography that changes with the era."
+}

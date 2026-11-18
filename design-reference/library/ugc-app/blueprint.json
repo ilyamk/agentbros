@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ugc-app",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "durationSec": 17,
+  "slots": [
+    {
+      "id": "plant-topic",
+      "role": "Plant the topic with a typed query",
+      "startSec": 0,
+      "durationSec": 2.1,
+      "visualRecipe": "White ground. Empty search bar at 16% of width growing to 30%. After typing, text alone at 22% of width, centred.",
+      "motionRecipe": "Bar grows slowly for 0.7 s. Characters at 2-3 frame intervals from 1.1 s. At 1.55 s, bar disappears and text scales 3.5x in 2 frames. Cursor blinks. Paper grain cuts in 3 frames before the end.",
+      "soundRecipe": "Inferred: very quiet; soft ticks of keys could fit. Measured level stays low until 4.2 s.",
+      "techniqueIds": [
+        "typed-query"
+      ],
+      "copySlot": {
+        "purpose": "The topic, as a search phrase",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "everywhere",
+      "role": "Prove the topic is everywhere",
+      "startSec": 2.1,
+      "durationSec": 0.8,
+      "visualRecipe": "Eight real-looking pages of different types, each with the phrase in a yellow highlight at one fixed frame point.",
+      "motionRecipe": "Hard cuts with 4, 2, 3, 3, 3, 4, 2, 3 frames. No motion within a page.",
+      "soundRecipe": "Inferred: a rising pulse or rapid ticks. Do not try to place a hit on each page.",
+      "techniqueIds": [
+        "highlight-lock"
+      ],
+      "copySlot": {
+        "purpose": "The same phrase highlighted on every page",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "one-person",
+      "role": "One real person",
+      "startSec": 2.9,
+      "durationSec": 1.57,
+      "visualRecipe": "Black ground, 9:16 clips with rounded corners at 18% of width, centred in a column.",
+      "motionRecipe": "Opens from a crop of lips in 6 frames. Holds 0.3 s. The column scrolls up smoothly to the next clip, slowing and shrinking.",
+      "soundRecipe": "Inferred: level rises at about 4.2 s; start this slot still quiet.",
+      "techniqueIds": [
+        "lips-to-card",
+        "person-wall"
+      ]
+    },
+    {
+      "id": "the-crowd",
+      "role": "Then a crowd",
+      "startSec": 4.47,
+      "durationSec": 2.43,
+      "visualRecipe": "Wall of clips covering the frame, 6 columns growing to 16, vignette at the edges.",
+      "motionRecipe": "Neighbours arrive as soft white blocks and resolve outward from the centre in 0.4 s. Continuous pull-back to the end.",
+      "soundRecipe": "Measured in the reference audio: level lifts near 4.2 s, then an uneven swell figure repeats about every 3.7 s (+0, +0.7, +1.6, +3.0 s). Inferred: this is a rhythmic backing. Land main picture changes on its swells.",
+      "techniqueIds": [
+        "person-wall"
+      ]
+    },
+    {
+      "id": "figure-one",
+      "role": "First figure, with citation",
+      "startSec": 6.9,
+      "durationSec": 2.1,
+      "visualRecipe": "Previous wall at 25% brightness, then dim footage. Medium white sentence on one line, 45% of width, centred. Yellow pill on the figure. Small citation line at 80% height.",
+      "motionRecipe": "Wall dims in one frame. Words arrive 3-6 frames apart, yellow cooling to white in 9 frames, while the line stays centred. Background cuts every 2-3 frames for 0.5 s, then every 30-60. One grey frame at 7.3 s. Hold 0.8 s. Words delete in groups from the left; the rest hold position.",
+      "soundRecipe": "Inferred: swells carry it. Cut backgrounds to transients, not the words.",
+      "techniqueIds": [
+        "locked-line",
+        "dim-background-cuts"
+      ],
+      "copySlot": {
+        "purpose": "A true, sourced figure about the problem",
+        "maxWords": 10
+      }
+    },
+    {
+      "id": "figure-two",
+      "role": "Second figure, about the cost",
+      "startSec": 9.0,
+      "durationSec": 2.4,
+      "visualRecipe": "Same system. Pill first on the subject of the sentence, then jumps to the figure.",
+      "motionRecipe": "Pill snaps at 10.3 s. Hold. Middle words delete, background drops to black for 4 frames at the end.",
+      "soundRecipe": "Inferred: same backing.",
+      "techniqueIds": [
+        "locked-line",
+        "dim-background-cuts"
+      ],
+      "copySlot": {
+        "purpose": "A true, sourced figure about the cost",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "figure-three",
+      "role": "The largest figure over a picture of scale",
+      "startSec": 11.4,
+      "durationSec": 1.67,
+      "visualRecipe": "A single wide shot of something huge at 30% brightness. Line and pill at the centre.",
+      "motionRecipe": "Pill with the figure arrives early, the rest around it. Almost no background cuts: this one is meant to sink in.",
+      "soundRecipe": "Measured in the reference audio: the cut in falls on a swell, within 0.05 s.",
+      "techniqueIds": [
+        "locked-line",
+        "dim-background-cuts"
+      ],
+      "copySlot": {
+        "purpose": "The figure added up",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "question-start",
+      "role": "Start the question, large then tiny",
+      "startSec": 13.07,
+      "durationSec": 2.0,
+      "visualRecipe": "Black ground. Two large words at 64% of width in one lit colour. Then a tiny phrase at 16-20% of width.",
+      "motionRecipe": "Words track right to left for 1 s, in focus at the centre only. The tiny phrase hardly moves and holds for 0.7 s.",
+      "soundRecipe": "Inferred: pull back the level on the tiny phrase if the mix allows; data can't confirm this was done.",
+      "techniqueIds": [
+        "pass-through-type"
+      ],
+      "copySlot": {
+        "purpose": "First part of the question, then filler words",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "key-word",
+      "role": "The word that matters",
+      "startSec": 15.07,
+      "durationSec": 1.1,
+      "visualRecipe": "Accent colour with bloom on black, 83% of width on arrival.",
+      "motionRecipe": "Hard cut in at 83% of width, shrinking to 72% while drifting left, then exits at the frame's edge.",
+      "soundRecipe": "Measured in the reference audio: the cut falls within 0.08 s of a swell. That it is the largest sound is not established.",
+      "techniqueIds": [
+        "pass-through-type"
+      ],
+      "copySlot": {
+        "purpose": "One word",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "open-ending",
+      "role": "End on an open promise",
+      "startSec": 16.17,
+      "durationSec": 0.83,
+      "visualRecipe": "White word with accent punctuation, 51% of width. Accent light grows in a corner.",
+      "motionRecipe": "Continues the rightward-to-left travel. Light grows from 16.5 s. Do not resolve: cut to what comes next.",
+      "soundRecipe": "Inferred: unresolved; the film has no end in this file.",
+      "techniqueIds": [
+        "pass-through-type",
+        "corner-liquid-light"
+      ],
+      "copySlot": {
+        "purpose": "Last word of the question",
+        "maxWords": 1
+      }
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No regular cut grid. Main picture changes land on an uneven swell figure repeating about every 3.7 s; the tempo reading of 128 has low confidence (0.456). Three speeds: one long take, a burst at 2-4 frames a shot, one 4 s continuous move, reading-speed holds, then four word-shots. The contrast between speeds is the rhythm."
+  },
+  "style": "Starts as calm white web pages with a yellow highlighter, moves to real phone video, then to dim footage with small confident text, ending in large lit words on black.",
+  "transferRules": {
+    "keep": [
+      "Query, proof, person, crowd, cost, question: this order",
+      "One fixed point through the smash cut",
+      "Speed contrast",
+      "One short centred line over a dim changing picture",
+      "Every figure with a visible citation",
+      "Big word, tiny word, biggest word"
+    ],
+    "mustChange": [
+      "All logos, marks and names",
+      "All copy and figures, which must be true, with their real citations",
+      "Music and sound",
+      "All graphics, pages and interface shown",
+      "All faces and clips: consented material only",
+      "All background footage, licensed by us",
+      "Palette and fonts"
+    ]
+  }
+}

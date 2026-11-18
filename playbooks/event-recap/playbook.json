@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "id": "event-recap",
+  "title": "Event recap",
+  "status": "draft",
+  "reviewedAt": "2026-11-13",
+  "summary": "An aftermovie or recap of an event the user filmed (conference, meetup, party, wedding, concert, offsite): many clips from several devices cut to music, a few soundbites, 30 s to 3 min, plus vertical cut-downs.",
+  "triggers": {
+    "en": [
+      "aftermovie",
+      "after movie",
+      "event recap",
+      "recap video",
+      "recap of our",
+      "conference recap",
+      "conference video",
+      "meetup video",
+      "event highlights",
+      "highlights video",
+      "event footage",
+      "event video",
+      "wedding video",
+      "wedding film",
+      "concert footage",
+      "festival video",
+      "party video",
+      "offsite video",
+      "festival clips",
+      "festival aftermovie",
+      "our festival",
+      "our meetup",
+      "our offsite",
+      "our party",
+      "our wedding",
+      "wedding clips",
+      "soundbites",
+      "speaker soundbites",
+      "event clips",
+      "meetup aftermovie",
+      "clips from our phones",
+      "footage we shot",
+      "highlight reel from",
+      "hackathon",
+      "we filmed"
+    ],
+    "ru": [
+      "афтермуви",
+      "афтер муви",
+      "с мероприятия",
+      "с конференции",
+      "с концерта",
+      "с фестиваля",
+      "со свадьбы",
+      "свадебн",
+      "с корпоратива",
+      "корпоратив",
+      "с митапа",
+      "с выезда",
+      "с ивента",
+      "видеоотч",
+      "итоги мероприятия",
+      "ролик о мероприятии",
+      "из наших видео",
+      "из наших роликов",
+      "видео с конференции",
+      "ролик с корпоратива",
+      "свадебный клип",
+      "клип со свадьбы",
+      "нарезку с мероприятия",
+      "видео с митапа",
+      "ролик с митапа",
+      "митап",
+      "клипов с телефона",
+      "клипы с телефона"
+    ],
+    "zh": [
+      "活动回顾",
+      "活动视频",
+      "活动花絮",
+      "花絮",
+      "活动现场",
+      "年会",
+      "年会视频",
+      "年会回顾",
+      "团建视频",
+      "团建",
+      "聚会视频",
+      "会议回顾",
+      "发布会回顾",
+      "婚礼视频",
+      "婚礼快剪",
+      "演唱会",
+      "音乐节",
+      "晚会",
+      "回顾视频",
+      "手机拍的素材",
+      "现场素材",
+      "大家拍的",
+      "精彩瞬间"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "a montage from licensed stock or supplied b-roll that is not footage of an event the user held or attended",
+      "use": "stock-montage"
+    },
+    {
+      "when": "clips cut out of one long recording of a talk, a stream or a podcast",
+      "use": "shorts-from-long"
+    },
+    {
+      "when": "one speaker's recording to tidy, caption or reframe",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a film announcing an event that has not happened yet",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "footage",
+    "start": "pnpm film:init --project <id> --type footage --playbook event-recap --product <path>"
+  },
+  "alternatives": [],
+  "agents": [],
+  "skills": [
+    "editorial-storytelling",
+    "cinematography",
+    "sound-design-and-mix",
+    "harness-asset-import",
+    "captions-and-localization"
+  ],
+  "library": {
+    "categories": [
+      "typography",
+      "finish",
+      "captions"
+    ],
+    "blocks": [
+      "type-hero-word",
+      "type-number-race",
+      "type-lower-third",
+      "film-finish",
+      "caption-clean-sentence",
+      "clip-fill"
+    ]
+  },
+  "commands": [
+    "flash:check",
+    "asset:import",
+    "footage:shots",
+    "motion:strip",
+    "speech:local",
+    "media:ingest",
+    "media:selects",
+    "multicam:sync",
+    "reframe:track",
+    "audio:map",
+    "edit:plan",
+    "edit:snap",
+    "music:backtime",
+    "audio:mix",
+    "film:targets",
+    "film:render",
+    "delivery"
+  ],
+  "read": [],
+  "stepRead": {
+    "script-variants": [
+      "design-reference/craft-rules.md"
+    ],
+    "script": [
+      "design-reference/craft-rules.md"
+    ],
+    "material": [
+      "docs/footage-shots.md"
+    ],
+    "build": [
+      "docs/footage-shots.md"
+    ]
+  },
+  "qa": [
+    "No person who opted out, no child without a parent's consent and no private moment appears identifiably",
+    "Clips from different devices read as one grade: matched white balance, contrast and black level across every cut",
+    "Each soundbite is a whole thought, intelligible over the ducked music, captioned, with the speaker's name spelled as on the programme",
+    "Music from the venue or the performers is not left under the film's track unless its rights are cleared for every placement",
+    "Every vertical cut-down is re-edited from vertical-safe selects, not a centre crop of the master"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Where are the clips, who shot them on which devices, and may every contributor's footage be published?",
+      "why": "Selects start from the full set; a guest's phone clip needs that guest's permission like any outside footage."
+    },
+    {
+      "ask": "How were attendees told about filming (notice at the entrance, ticket terms, lanyards), and did anyone opt out or were children present?",
+      "why": "Decides which faces may appear: notice and legitimate interest at a large event, consent at a small one, a parent's consent for children."
+    },
+    {
+      "ask": "Which names, numbers and moments must appear (programme, speakers, sponsors, attendance), with names spelled as published?",
+      "why": "The facts and the chronology come from the organiser, not from guessing at the footage.",
+      "default": "No names or numbers on screen beyond the event's name and date."
+    },
+    {
+      "ask": "Where will it be published, and is the music to be one track licensed for every placement or each platform's own library?",
+      "why": "A track from TikTok's or Meta's library is licensed only on that platform; a Short over one minute with a music claim is blocked.",
+      "default": "One track from the sound-director's shortlist, licensed for every placement."
+    },
+    {
+      "ask": "Who may be heard: which speakers, toasts or interviews are soundbites, and in which language?",
+      "why": "Soundbites need a clear recording and the speaker's agreement to be quoted; they set where the music ducks.",
+      "default": "No soundbites: music and the crowd's own sound only."
+    },
+    {
+      "ask": "Which lengths and formats: the master and its cut-downs?",
+      "why": "A cut-down is re-edited from its own selects, so each one is planned, not cropped afterwards.",
+      "default": "A 60 s landscape master and a 30 s vertical cut-down."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 90
+      },
+      "captions": "clean-sentence",
+      "note": "Reels run to 3 min; under 90 s is a house rule. Business accounts keep to Meta's Sound Collection or a track licensed for Meta."
+    },
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "clean-sentence",
+      "note": "Businesses may not use the general music library: the Commercial Music Library or an own licensed track."
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "clean-sentence",
+      "note": "Shorts run to 3 min, but one over 1 min with an active Content ID claim is blocked worldwide: venue music counts."
+    },
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 180
+      },
+      "captions": "none",
+      "note": "Clean master with an SRT from the soundbites; the full aftermovie lives here."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 90
+      },
+      "captions": "clean-sentence",
+      "note": "Conference and offsite recaps; LinkedIn accepts 1:2.4 to 2.4:1 up to 15 min, the band is a house rule."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 180
+      },
+      "captions": "none",
+      "note": "Event page or next year's sales page; house rule: the first 5 s read without sound, in case the player starts muted."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "type-hero-word",
+      "type-number-race",
+      "type-lower-third",
+      "caption-clean-sentence",
+      "film-finish"
+    ],
+    "note": "Picture is the footage; library type only for the event's name, one number, each soundbite speaker's lower third and soundbite captions, inside one film-finish."
+  },
+  "variants": [
+    {
+      "id": "wedding",
+      "title": "Wedding film",
+      "triggers": {
+        "en": [
+          "wedding video",
+          "wedding film",
+          "wedding highlights"
+        ],
+        "ru": [
+          "свадебн",
+          "со свадьбы"
+        ],
+        "zh": [
+          "婚礼视频",
+          "婚礼快剪",
+          "婚礼花絮",
+          "婚礼当天",
+          "婚礼mv"
+        ]
+      },
+      "changes": "A private event: the couple approves every guest shown and the soundbites (vows, toasts) carry the story; a 3-5 min film plus a 60 s teaser; music the couple chooses, licensed for where they post it."
+    },
+    {
+      "id": "conference",
+      "title": "Conference or meetup recap",
+      "triggers": {
+        "en": [
+          "conference recap",
+          "conference video",
+          "meetup video",
+          "our meetup"
+        ],
+        "ru": [
+          "с конференции",
+          "с митапа",
+          "митап"
+        ],
+        "zh": [
+          "会议回顾",
+          "峰会",
+          "大会视频",
+          "发布会回顾",
+          "沙龙",
+          "线下活动"
+        ]
+      },
+      "changes": "Speaker soundbites and the programme's names on screen; one or two numbers (attendees, talks); a filming notice usually covers the crowd, but speakers agree to be quoted; LinkedIn and the event site are the main placements."
+    },
+    {
+      "id": "concert",
+      "title": "Concert or festival aftermovie",
+      "triggers": {
+        "en": [
+          "concert footage",
+          "festival video",
+          "concert aftermovie"
+        ],
+        "ru": [
+          "с концерта",
+          "с фестиваля",
+          "афтермуви с концерта"
+        ],
+        "zh": [
+          "演唱会",
+          "音乐节",
+          "现场演出",
+          "livehouse",
+          "演出现场"
+        ]
+      },
+      "changes": "The performance is the music: its recording rights come from the artist and label, not the organiser; otherwise cut to a licensed track and keep live crowd sound under it. Energy builds to a peak late in the film."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "postiz",
+  "palette": {
+    "value": [
+      "#F8F4EC warm cream ground of title cards, result scenes and end card (about 86-95% of those frames)",
+      "#FDFBF7 lighter cream of the calendar board ground",
+      "#FFFFFF card faces on the result scenes",
+      "#1A191E charcoal ground of the loader interstitials and the hook's card faces",
+      "#0A0A0C near-black ground of the hook and the chat scene",
+      "#141316 chat bubble fill on the near-black ground",
+      "#3D3C41 hairline card borders on the dark hook",
+      "#1A151A ink of the serif titles",
+      "#D97656 terracotta accent: the assistant's disc, avatar and named-cursor flag",
+      "#602BD3 violet accent: the partner disc and the hero calendar event",
+      "#CADDF1 pale blue text selection behind the verb before a swap",
+      "#306A52 green user avatar in the chat"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "pixel means of colour bins in frames at 1.8, 6.4, 10.1, 13.8, 23.5, 29.6 and 33.0 s extracted from media/source.mp4",
+      "shots.json colour L: light shots 86.9-95.1, dark shots 4.0-11.2"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "title and claim lines",
+        "description": "Book-weight transitional serif (font inferred, not identified), sentence case, ink #1A151A on cream, one centred line: OCR line box 10.6-12.1% of frame height and 70-85% of frame width (positioning line x 0.155-0.850, y 0.42-0.53; summary line up to x 0.079-0.926). Two-line benefit lines use a smaller size, line box 8.1% each with about 1% leading gap. Builds by word groups in final position (no reflow) with a 3-frame opacity fade."
+      },
+      {
+        "role": "caption under an interface object",
+        "description": "Same serif at about 7.5-8% line box, two centred lines below the source card (y 0.61 and 0.70), ink on cream, fading in by line (F340, F345)."
+      },
+      {
+        "role": "chat bubble text",
+        "description": "Neo-grotesque sans, regular, sentence case, white on a dark rounded bubble (#141316 or near-black), left aligned inside the bubble; on title cards the bubble text box is about 4.2% of frame height and the bubble sits top right (x 0.61-0.92, y 0.11) for the user and bottom left (x 0.17-0.46, y 0.78) for the reply; in the chat scene the bubble is centred and its text box is about 6% of height. A tiny bold sender name sits above the message."
+      },
+      {
+        "role": "loader status label",
+        "description": "Sans, medium weight, white on charcoal, centred under the mark (y 0.67-0.75, line box about 7-8% of height), building word by word."
+      },
+      {
+        "role": "interface type",
+        "description": "Small sans in the replica interfaces (card handles, post text, time stamps, chips), 1.4-3.5% of frame height; channel colour lives in small icons and chips, not in the type."
+      },
+      {
+        "role": "named cursor flag",
+        "description": "Tiny white sans label on a terracotta #D97656 rounded tag attached to a pointer or caret; it is the assistant's presence in every interface and in the summary line."
+      },
+      {
+        "role": "end card",
+        "description": "Bold custom wordmark with a square mark, centred, about 36% of frame width and 24% line box including the mark; one small sans tagline line beneath at 4.4% line box, centred, grey-ink."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json boxes at 4.017, 6.017, 8.517, 9.517, 11.517, 16.517, 17.017, 27.517, 31.517, 33.517, 37.017, 37.517 s",
+      "visuals/a1/s02-title-words.jpg F117-F140",
+      "visuals/a1/s04-cut-grid.jpg F340-F350",
+      "visuals/a1/s10-verb-swap1.jpg F984-F1004",
+      "visuals/a1/s10-logo.jpg F1111-F1124"
+    ]
+  },
+  "composition": {
+    "value": "Landscape 1280x720 at 30 fps. Title and claim cards: one centred line at mid-height (centre y about 0.47-0.49), at least 7% side margin, everything else empty cream, with chat bubbles pinned to the corners (top right for the user, bottom left for the reply) so the centre line is never covered. Loader: a single mark about 18% of frame width at centre (y about 0.40) with its label below and a small chip anchored bottom left (x 0.05, y 0.88). Result scenes: a faint square grid on cream; one hero object centred, then a 3x2 grid of cards filling about 85% of width; the calendar fills the frame and after the pull-back sits inside a rounded panel with about 4% cream margin. Chat scene: one centred column of bubbles about 38% of width. End card: mark and wordmark centred with the tagline beneath. The hook's 3x2 dark grid occupies about 90% of the frame.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "speech-text.json box centres cx 0.500-0.504 for every title, caption and label",
+      "visuals/a1/s08-zoomout.jpg F762-F770",
+      "visuals/a1/s09-cut-chat.jpg F838"
+    ]
+  },
+  "materials": {
+    "value": "Flat graphic interface replicas: white rounded cards with soft drop shadows on cream, dark rounded cards with hairline borders on charcoal, pill chips in channel colours, a faint square grid on light result grounds. No photography, no 3D, no texture or grain; the only illustrative element is the two-disc mark joined by a looping white stroke.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/s04-toast.jpg F462", "visuals/a1/s03-cut-loader.jpg F283-F296", "visuals/a1/s01-open.jpg F9"]
+  },
+  "lighting": {
+    "value": "No light: flat fills only. Depth comes from soft card shadows on cream and from the swap between light (L 87-95) and dark (L 4-11) grounds shot to shot.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": ["shots.json colour L per shot"]
+  },
+  "styleSummary": "Warm-cream editorial meets dark product chrome: a calm book serif for every claim, small sans interface replicas for every proof, two accents (terracotta for the assistant, violet for the partner) and hard cuts alternating light and dark grounds on a 4-beat grid."
+}

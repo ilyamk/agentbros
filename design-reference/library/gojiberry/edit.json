@@ -1,0 +1,1166 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gojiberry",
+  "rhythm": {
+    "value": "Detector: 29 shots, 28 cuts, median 1.27 s. Corrected (by looking): 36 shots, 35 cuts, median 0.73 s, 37.2 cuts a minute, but the film is two tempos. Outside the montage the 16 shots have a median of 2.39 s (long typed holds of 2-5 s and one 15.7 s closing plate). The 6.73-14.07 s montage is 20 shots with a median of 0.14 s and a near-monotonic accelerando: 1.47, 1.53, 0.88, 0.62, 0.45, 0.45, 0.47, 0.25, 0.17, 0.15, 0.12, 0.13, 0.12, 0.10, 0.10, 0.07, 0.10, 0.03, 0.03, 0.10 s (small reversals at the 2nd, 7th, 12th and last steps). The film is bracketed by black: 7 frames at 4.73 s and 0.57 s at 16.93 s. I cannot hear the film. audio.json tempo is 141.3 BPM at confidence 0.153 (beatRegularity 0.947): too weak to build a grid on. Detector sync: cutsOnBeatRatio 0.286 vs chance 0.362 (lift 0.79), cutsOnOnsetRatio 0.679 vs chance 0.513 (lift 1.32), cutsOnDownbeatFrameRatio 0.071 vs 0.021 (lift 3.38, but that is 2 of 28 cuts), signedMedianCutToBeatSec -0.005. Recomputed on the 35 corrected cuts: on beat 9/35 = 0.257 vs 0.362, on onset 24/35 = 0.686 vs 0.512, on a downbeat within 1 frame 1/35 vs 0.019. Onsets run at 3.77 a second (median gap 0.185 s), above the one-per-0.3 s limit, so the onset ratios mean nothing; per section the montage has 5.1 onsets a second and 15 of 22 cuts near one against 69% chance. Loudness swells (50 ms RMS, local maximum over ±0.3 s, above 1.35x median): 51 found, 5 of 35 cuts within 0.1 s of one against 18% chance. No evidence the cuts follow the music. The one measured sound-picture link is quiet under black: RMS about -69 dB at 16.0-16.5 s while the word holds, audio.json silence 16.98-17.45 s while the picture is black (16.93-17.5 s), and RMS -34 to -27 dB at 3.5-5.0 s around the first cut to black. The speech layer returned no words, so no voice is established.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json summary",
+      "sync.json metrics",
+      "audio.json tempo, onsetsSec, silence",
+      "Recomputed in the analyst's scratch folder on edit.json corrections applied with src/lib/reference/corrected.ts",
+      "visuals/edit-map.png"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "0.000-1.933 s (1.93 s). Hook: a long query types in a white field, camera tracking the caret right and pushing in (motion.json x 0.91, z 0.445 over 1.79 s).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s01-type-to-bar.jpg F93-F114"
+        ]
+      },
+      "technique": {
+        "value": "cursor-anchored typewriter",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s01-type-to-bar.jpg F93-F114"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "1.933-4.733 s (2.80 s). The query shrinks to a pill above a seated person on a white cyc; 2.8 s of near-stillness after the speed.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s01-type-to-bar.jpg F116-F134",
+          "visuals/contact-sheet-01.jpg 2F-2L"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "4.733-5.567 s (0.83 s). Black, 7 empty frames, then the question types; newest word red for 6-7 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s03-black-typewriter.jpg F284-F323"
+        ]
+      },
+      "technique": {
+        "value": "typewriter on black",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s03-black-typewriter.jpg F284-F323"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "5.567-6.733 s (1.17 s). Same line punched in about 1.7x through a 4-frame polarity flash; slow push (z 0.077, power4.out) to the glitch-out.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s04-type-punch.jpg F330-F356",
+          "visuals/a1/s05-glitch-to-desk.jpg F387-F403"
+        ]
+      },
+      "technique": {
+        "value": "type punch-in",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s04-type-punch.jpg F330-F356"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "6.733-8.200 s (1.47 s). First result: glitch-in to a seated person, count 1 left, singular label right, name card.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s05-glitch-to-desk.jpg F404-F425"
+        ]
+      },
+      "technique": {
+        "value": "slice glitch in",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s05-glitch-to-desk.jpg F404-F425"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.1",
+      "purpose": {
+        "value": "8.200-9.733 s (1.53 s). Count 2: new subject through a 4-frame dark ghost; label turns plural. Longest hold of the montage, 1.53 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s08-wipe-swap.jpg F492-F506"
+        ]
+      },
+      "technique": {
+        "value": "flash-frame swap",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s08-wipe-swap.jpg F492-F506"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.2",
+      "purpose": {
+        "value": "9.733-10.617 s (0.88 s). Count 4, 0.88 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s08c-montage-b.jpg F584"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.3",
+      "purpose": {
+        "value": "10.617-11.233 s (0.62 s). Count 8, 0.62 s, two x-ray flashes on the same subject.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s09-xray-flash.jpg F637-F673"
+        ]
+      },
+      "technique": {
+        "value": "x-ray flash",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s09-xray-flash.jpg F637-F673"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.4",
+      "purpose": {
+        "value": "11.233-11.683 s (0.45 s). Count 16, 0.45 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s09-xray-flash.jpg F674-F677",
+          "visuals/a1/s10b-montage-c.jpg F678-F700"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.5",
+      "purpose": {
+        "value": "11.683-12.133 s (0.45 s). Count 32, 0.45 s; picture cuts 3 frames before the odometer roll.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10b-montage-c.jpg F701-F708"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.6",
+      "purpose": {
+        "value": "12.133-12.600 s (0.47 s). Count 64, 0.47 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10c-montage-d.jpg F728-F755"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.7",
+      "purpose": {
+        "value": "12.600-12.850 s (0.25 s). Count 128, 0.25 s: the acceleration starts.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10c-montage-d.jpg F756-F770"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.8",
+      "purpose": {
+        "value": "12.850-13.017 s (0.17 s). Count 256, 0.17 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10c-montage-d.jpg F771-F773",
+          "visuals/a1/s10-counter-run.jpg F774-F780"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.9",
+      "purpose": {
+        "value": "13.017-13.167 s (0.15 s). Count 512, 0.15 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10-counter-run.jpg F781-F789"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.10",
+      "purpose": {
+        "value": "13.167-13.283 s (0.12 s). Count 1 024, entered under a dark flash, 0.12 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10-counter-run.jpg F790-F796"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.11",
+      "purpose": {
+        "value": "13.283-13.417 s (0.13 s). Count 2 048, 0.13 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10-counter-run.jpg F797-F804"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.12",
+      "purpose": {
+        "value": "13.417-13.533 s (0.12 s). Count 4 096 with a slice glitch on the subject, 0.12 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s10-counter-run.jpg F805-F811"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "13.533-13.633 s (0.10 s). Count 8 192, 6 frames, glitch builds at its end.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F812-F816"
+        ]
+      }
+    },
+    {
+      "shotId": "s013.1",
+      "purpose": {
+        "value": "13.633-13.733 s (0.10 s). Slice glitch resolving to count 32 768, 6 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F817-F823"
+        ]
+      }
+    },
+    {
+      "shotId": "s013.2",
+      "purpose": {
+        "value": "13.733-13.800 s (0.07 s). Count 65 536, 4 frames, with a dark flash.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F824-F827"
+        ]
+      }
+    },
+    {
+      "shotId": "s013.3",
+      "purpose": {
+        "value": "13.800-13.900 s (0.10 s). Count 131 072, 6 frames: dark flash then clean.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F828-F833"
+        ]
+      }
+    },
+    {
+      "shotId": "s015.1",
+      "purpose": {
+        "value": "13.900-13.933 s (0.03 s). Count 262 144, 2 frames.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F834-F835"
+        ]
+      }
+    },
+    {
+      "shotId": "s015.2",
+      "purpose": {
+        "value": "13.933-13.967 s (0.03 s). Count stays, new subject, 2 frames.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F836-F837"
+        ]
+      }
+    },
+    {
+      "shotId": "s015.3",
+      "purpose": {
+        "value": "13.967-14.067 s (0.10 s). Count 524 288, then the picture tears: slice glitch F839-F841, two white frames with a red bar F842-F843.",
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F838-F843"
+        ]
+      },
+      "technique": {
+        "value": "slice glitch out",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F838-F843"
+        ]
+      }
+    },
+    {
+      "shotId": "s016",
+      "purpose": {
+        "value": "14.067-15.067 s (1.00 s). Black; a two-word requirement types, the second word red for 6 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F844-F848",
+          "visuals/a1/s16-must-be.jpg F858-F897"
+        ]
+      },
+      "technique": {
+        "value": "typewriter on black",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s12-counter-glitch.jpg F844-F848"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "15.067-16.933 s (1.87 s). The one-word answer: glitch-swapped in, case flips letter by letter, holds 1.2 s upright, then polarity flips, corrupts into symbols and smears to black.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s16-must-be.jpg F898-F905",
+          "visuals/a1/s17b-simple-caps.jpg F912-F941",
+          "visuals/a1/s17-simple-glitch.jpg F996-F1016"
+        ]
+      },
+      "technique": {
+        "value": "word corruption",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s16-must-be.jpg F898-F905"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "16.933-17.500 s (0.57 s). 0.57 s of black under near-silence: the reset.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s17-simple-glitch.jpg F1016-F1025",
+          "audio.json silence 16.98-17.45"
+        ]
+      },
+      "technique": {
+        "value": "black breath",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s17-simple-glitch.jpg F1016-F1025"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "17.500-18.500 s (1.00 s). 3D mark glitches in at extreme close-up and pulls back with a counter-clockwise roll (motion.json z -1.76, r -0.69 rad, power2.out).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s20-heart-pull.jpg F1050-F1094"
+        ]
+      },
+      "technique": {
+        "value": "3D mark pull-back",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s20-heart-pull.jpg F1050-F1094"
+        ]
+      }
+    },
+    {
+      "shotId": "s021",
+      "purpose": {
+        "value": "18.500-22.100 s (3.60 s). Cut to white: a pixel-mosaic ring blooms from the mark over a warm gradient; the wordmark types on at 20.2 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s21-flash-logo.jpg F1110-F1151",
+          "visuals/a1/s21b-logo-type.jpg F1214-F1235"
+        ]
+      },
+      "technique": {
+        "value": "mosaic ring reveal",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s21-flash-logo.jpg F1110-F1151"
+        ]
+      }
+    },
+    {
+      "shotId": "s022.1",
+      "purpose": {
+        "value": "22.100-24.600 s (2.50 s). Interface close-up: the query field slides in from the right, a sparkle icon draws, then the query types while the camera tracks the caret.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s22-bar-enter.jpg F1325-F1367",
+          "visuals/a1/s23-bar-wipe.jpg F1398-F1445"
+        ]
+      },
+      "technique": {
+        "value": "caret-tracking camera",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s22-bar-enter.jpg F1325-F1367"
+        ]
+      }
+    },
+    {
+      "shotId": "s022.2",
+      "purpose": {
+        "value": "24.600-28.100 s (3.50 s). Wide interface: query, submit control, the result count races up to about 12 500 over a dot-matrix result visual.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s23b-pull-wide.jpg F1476-F1499",
+          "speech-text.json screenText 26.27-28.0"
+        ]
+      }
+    },
+    {
+      "shotId": "s024",
+      "purpose": {
+        "value": "28.100-30.467 s (2.37 s). Punch-in to the caret: a bracketed placeholder clause is filled (headcount band); push 1.44x, circ.out.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s24-punch-cut.jpg F1685-F1706",
+          "motion.json s024"
+        ]
+      },
+      "technique": {
+        "value": "punch-in cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s24-punch-cut.jpg F1685-F1706"
+        ]
+      }
+    },
+    {
+      "shotId": "s025",
+      "purpose": {
+        "value": "30.467-33.100 s (2.63 s). Wide again with a lower count (about 2 300), then the next placeholder clause (software used).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-01.jpg S025-S026",
+          "speech-text.json screenText 30.47-33.0"
+        ]
+      }
+    },
+    {
+      "shotId": "s026",
+      "purpose": {
+        "value": "33.100-35.517 s (2.42 s). Close on the last clause, then the camera pushes to the submit control (z 0.565, power2.inOut) for the press.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s27-click-blur.jpg F2091-F2100",
+          "motion.json s026"
+        ]
+      }
+    },
+    {
+      "shotId": "s027",
+      "purpose": {
+        "value": "35.517-40.867 s (5.35 s). Press, pink wash, ripple ring, result resolves; the count ticks from about 211 to 132; an instruction line drifts across.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s27-click-blur.jpg F2100-F2138",
+          "visuals/a1/s27b-results-dissolve.jpg F2139-F2186",
+          "visuals/a1/s28-and-cut.jpg F2436-F2451"
+        ]
+      },
+      "technique": {
+        "value": "submit wash",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s27-click-blur.jpg F2100-F2138"
+        ]
+      }
+    },
+    {
+      "shotId": "s028",
+      "purpose": {
+        "value": "40.867-56.533 s (15.67 s). Payoff and end card in one plate: the line completes on white, the camera tilts down to a seated person (power4.out, 2.67 s), a thumbs-up and a counting match badge, he stands and walks out, the plate defocuses and the mark and offer type on.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s28-and-cut.jpg F2452-F2471",
+          "visuals/a1/s28b-text-to-desk.jpg F2538-F2585",
+          "visuals/a1/s28c-badge.jpg F2643-F2669",
+          "visuals/a1/s29-walk-whip.jpg",
+          "visuals/a1/s29b-walk-whip2.jpg",
+          "visuals/a1/s29c-blur-to-end.jpg F2928-F2975"
+        ]
+      },
+      "technique": {
+        "value": "tilt reveal, defocus end card",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s28-and-cut.jpg F2452-F2471"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "name": "doubling-counter-accelerando",
+        "startSec": 6.733,
+        "endSec": 14.067,
+        "description": "A held layout (query strip, count, seated subject, plural label, name card) where every cut swaps the subject and doubles the count, 1 to 524 288 over 20 shots in 7.33 s. Holds 1.47, 1.53, 0.88, 0.62, 0.45, 0.45, 0.47, 0.25, 0.17, 0.15, 0.12, 0.13, 0.12, 0.10, 0.10, 0.07, 0.10, 0.03, 0.03, 0.10 s: falling, with small reversals. The picture cut leads the number: the new face lands 1-3 frames before the odometer roll starts (F584 vs F585, F701 vs F704, F728 vs F730, F756 vs F757, F771 vs F773), and each roll takes 4-5 frames. Some swaps pass through 2-4 frame flashes of a dark-ground ghost, an inverted plate or a cyan x-ray of the subject.",
+        "why": "The eye never travels: face, number and card sit in the same places every cut, so a 2-frame shot still reads as one more result. Leading the number with the face makes the viewer see a person first and the count second, and the shrinking holds turn growth into felt pressure until the picture tears."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s05-glitch-to-desk.jpg F404-F416",
+        "visuals/a1/s08-wipe-swap.jpg F492-F499",
+        "visuals/a1/s08b-montage-a.jpg F507-F566 (one subject held)",
+        "visuals/a1/s08c-montage-b.jpg F584-F589",
+        "visuals/a1/s10b-montage-c.jpg F700-F708",
+        "visuals/a1/s10c-montage-d.jpg F728-F773",
+        "visuals/a1/s10-counter-run.jpg F774-F812",
+        "visuals/a1/s12-counter-glitch.jpg F812-F843"
+      ]
+    },
+    {
+      "value": {
+        "name": "caret-tracking-typewriter",
+        "startSec": 0,
+        "endSec": 1.933,
+        "description": "Text types at about 2 frames a character (10 characters in F93-F114) while the frame follows the caret: the field is framed so tight that the line overflows the left edge (OCR box x 0.00), the block caret stays near x 0.30-0.40. The newest word is accent red for 6-7 frames before turning to the base colour (F292-F298, F304-F309, F864-F869). Reused at 4.73-6.73 s on black, at 14.07-14.97 s, and in the interface at 22.1-24.6 s and 28.1-35.0 s.",
+        "why": "The caret is the only place to look, so the reader reads at the typing speed and no eye travel is needed; the red flag on the last word marks what was just added, which is what each clause of a query is.",
+        "spans": [
+          {
+            "startSec": 0,
+            "endSec": 1.933
+          },
+          {
+            "startSec": 4.733,
+            "endSec": 6.733
+          },
+          {
+            "startSec": 14.067,
+            "endSec": 14.967
+          },
+          {
+            "startSec": 22.1,
+            "endSec": 24.6
+          },
+          {
+            "startSec": 28.1,
+            "endSec": 35.0
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s01-type-to-bar.jpg F93-F114",
+        "visuals/a1/s03-black-typewriter.jpg F292-F323",
+        "visuals/a1/s23-bar-wipe.jpg F1398-F1445",
+        "speech-text.json screenText boxes x 0.00 at 0.42-1.72 s and 23.8-24.6 s"
+      ]
+    },
+    {
+      "value": {
+        "name": "polarity-slice-glitch-cut",
+        "startSec": 6.533,
+        "endSec": 6.933,
+        "description": "Changes of section go through one-frame polarity flips (black ground to white and back) and horizontal slice displacement: 6.53-6.93 s is 24 frames (white F392-F394, slices F395-F399, white F400-F402, sliced person F404-F415, clean F416). Short forms: 1 frame at 1.92 s (F115), 4 frames at 5.50 s (F330-F333, with a scale jump), 7 frames at 14.97 s (F898-F905), 18 frames at 16.63-16.93 s ending in black.",
+        "why": "A flip to the opposite ground is the strongest possible change in a single frame, so it reads as a hit even without sound; slicing the incoming image keeps the next subject unreadable for a moment, which makes its clean frame land as an arrival.",
+        "spans": [
+          {
+            "startSec": 1.917,
+            "endSec": 1.933
+          },
+          {
+            "startSec": 5.5,
+            "endSec": 5.567
+          },
+          {
+            "startSec": 6.533,
+            "endSec": 6.933
+          },
+          {
+            "startSec": 14.967,
+            "endSec": 15.083
+          },
+          {
+            "startSec": 16.633,
+            "endSec": 16.933
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s05-glitch-to-desk.jpg F387-F425",
+        "visuals/a1/s01-type-to-bar.jpg F114-F116",
+        "visuals/a1/s04-type-punch.jpg F330-F334",
+        "visuals/a1/s16-must-be.jpg F898-F905",
+        "visuals/a1/s17-simple-glitch.jpg F996-F1016"
+      ]
+    },
+    {
+      "value": {
+        "name": "black-silence-reset",
+        "startSec": 16.933,
+        "endSec": 17.5,
+        "description": "After the corrupted word smears out (last white frame F1015), 0.57 s of pure black (F1016-F1049) sits on the film's only measured silence (16.98-17.45 s); the brand mark glitches in at F1050 (17.50).",
+        "why": "After 7 s of acceleration the viewer needs an empty frame to separate problem from answer; black plus silence resets attention so the first brand frame is read as a new chapter."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s17-simple-glitch.jpg F1015-F1025",
+        "visuals/a1/s20-heart-pull.jpg F1047-F1050",
+        "audio.json silence 16.98-17.45"
+      ]
+    },
+    {
+      "value": {
+        "name": "defocus-to-end-card",
+        "startSec": 48.3,
+        "endSec": 50.5,
+        "description": "No cut into the end card: the person stands and walks out to the right in the same plate, the whole frame defocuses from about 48.3 s (chair and wall soften with him), and the mark pops in at F2936 (48.93) and the wordmark types on at about 3 frames a letter (F2954-F2975) over the blur; the offer pill follows at 50.4 s.",
+        "why": "The payoff subject leaves the frame instead of being cut away, so the brand takes the place he held; the blur keeps the studio as a calm ground without competing with the type."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s29b-walk-whip2.jpg F2880-F2927",
+        "visuals/a1/s29c-blur-to-end.jpg F2928-F2975",
+        "speech-text.json screenText 49.57-56.5"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s004"
+        ],
+        "note": "Not a match: a punch-in on the same typed line. Two inverted white-ground frames F330-F331 ('Searching for a' small), two white frames with the line at about 1.7x (F332-F333), black again from F334. The cut sits in the flash; detector time 5.567 is 4 frames after the flash starts (5.50).",
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s04-type-punch.jpg F330-F334"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s005"
+        ],
+        "note": "6.600 is a one-frame polarity flip (white ground, F392-F395 and F400-F402) inside the text's glitch-out, not a new shot."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s05-glitch-to-desk.jpg F392-F403"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s006",
+          "s007"
+        ],
+        "note": "The person shot starts at F404 (6.733) behind horizontal slice-displacement; the glitch resolves at F416 (6.933). 6.933 is the effect ending, same person and framing."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s05-glitch-to-desk.jpg F404-F416"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s008"
+        ],
+        "note": "Not a wipe: a hard cut through a 4-frame dark-ground ghost of another person (F492-F495), new subject clean from F496.",
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s08-wipe-swap.jpg F492-F496"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "note": "Missed subject swap on the held counter layout: new person at F584 (diff 18.1), counter rolls 2 to 4 just after.",
+        "timeSec": 9.733,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s08c-montage-b.jpg F583-F589",
+        "visuals/a1/s08b-montage-a.jpg F507-F566 (no swap before it)"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "note": "Missed subject swap through a 2-frame slice glitch (F629-F631 glitch on the old subject, new subject F637).",
+        "timeSec": 10.617,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s08d-montage-b2.jpg F629-F637",
+        "visuals/a1/s09-xray-flash.jpg F637-F643"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s009"
+        ],
+        "note": "10.733 is a 4-frame x-ray (cyan skeleton, dark ground) flash on the same woman (F644-F647); she is back at F648."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s09-xray-flash.jpg F644-F648"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "11.167 is the same x-ray flash on the same woman (F670-F673); the person actually changes at F674 (inverted) / F676 (clean). Retimed by the split at 11.233."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s09-xray-flash.jpg F670-F676"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Real subject change under the x-ray/inverted flash: new man from F674 (11.233), clean at F676.",
+        "timeSec": 11.233,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s09-xray-flash.jpg F674-F677"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Missed subject swap (F701, diff 7.6); counter rolls 16 to 32 three frames later (F704-F708).",
+        "timeSec": 11.683,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10b-montage-c.jpg F700-F708"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Missed subject swap (F728, diff 8.4); counter rolls 32 to 64 at F730-F734.",
+        "timeSec": 12.133,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10c-montage-d.jpg F728-F734"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Missed subject swap (F756, diff 14.9); counter rolls 64 to 128 at F757-F760.",
+        "timeSec": 12.6,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10c-montage-d.jpg F756-F760"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Missed subject swap (F771, diff 17.9); counter rolls 128 to 256 at F773.",
+        "timeSec": 12.85,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10c-montage-d.jpg F771-F773"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Missed subject swap (F781, diff 7.8); counter 256 to 512 at F783.",
+        "timeSec": 13.017,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F781-F784"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s011"
+        ],
+        "note": "13.200 is the dark-ground flash ending (F792). The person changes under the flash at F790 (13.167); retimed by the split."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F788-F792"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Subject change under a dark-ground flash: F788-F789 old man darkened, F790 new man darkened, F792 clean.",
+        "timeSec": 13.167,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F788-F792"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s011"
+        ],
+        "note": "Missed subject swap (F797, diff 16.1).",
+        "timeSec": 13.283,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F797"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s011"
+        ],
+        "note": "Missed subject swap (F805, diff 9.2); a slice glitch follows on the same woman F807-F811.",
+        "timeSec": 13.417,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F805-F811",
+        "visuals/a1/s12-counter-glitch.jpg F807-F811"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s012",
+          "s015"
+        ],
+        "note": "Not matches: each is a new person on the held counter layout (F812 at 13.533; F834 at 13.900). Layout identity is why edge similarity was high.",
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-counter-run.jpg F812",
+        "visuals/a1/s12-counter-glitch.jpg F834"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s013"
+        ],
+        "note": "Missed subject swap (F824).",
+        "timeSec": 13.733,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s12-counter-glitch.jpg F824"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s014"
+        ],
+        "note": "13.767 is a 2-frame dark-ground flash on the same man (F826-F827)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s12-counter-glitch.jpg F826-F827"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s014"
+        ],
+        "note": "Subject change under the dark flash at F828 (name card changes); clean at F830.",
+        "timeSec": 13.8,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.7,
+      "evidence": [
+        "visuals/a1/s12-counter-glitch.jpg F828-F830"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s015"
+        ],
+        "note": "Missed subject swap (F836, diff 7.7).",
+        "timeSec": 13.933,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.7,
+      "evidence": [
+        "visuals/a1/s12-counter-glitch.jpg F836"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s015"
+        ],
+        "note": "Missed subject swap (F838, two frames before the closing glitch F839-F843).",
+        "timeSec": 13.967,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.7,
+      "evidence": [
+        "visuals/a1/s12-counter-glitch.jpg F838-F843"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s017"
+        ],
+        "note": "Not a match: the word is replaced through a glitch with polarity flips (F898 white ground, F899-F901 slice smear, F902 new word on white, F904 black). Starts 14.967, 6 frames before the detector time.",
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s16-must-be.jpg F898-F905"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s018"
+        ],
+        "note": "16.767 is the glitch-out of the same word: polarity flips F998-F1001, corrupted glyphs F1006-F1007, smeared blocks F1008-F1015. One shot until black at F1016."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s17-simple-glitch.jpg F996-F1016"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s023"
+        ],
+        "note": "Not a wipe: 23.367-24.617 is the camera tracking the caret as the line types (text moves left while it grows), inside one close shot that began at 22.1."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s23-bar-wipe.jpg F1398-F1445",
+        "visuals/a1/s23b-pull-wide.jpg F1452-F1475"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s023"
+        ],
+        "note": "The real cut is at F1476 (24.600, diff 16.4): from the 2x close-up on the caret to the wide interface.",
+        "timeSec": 24.6,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s23b-pull-wide.jpg F1475-F1477"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Not continuous: after the press (F2100, 35.00) a pink wash rises over the interface, a ripple ring grows at the pointer and a dot-matrix result resolves out of the wash by F2160 (36.00). Reads as a dissolve through a colour field.",
+        "transition": "dissolve"
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/s27-click-blur.jpg F2100-F2138",
+        "visuals/a1/s27b-results-dissolve.jpg F2139-F2186"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s029"
+        ],
+        "note": "No cut at 47.783: the same man stands and walks off right in continuous footage (held on twos), the whole plate defocuses from about 48.3 s and the mark types on over the blur from F2936 (48.93). One shot from 40.867 to the end."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s29-walk-whip.jpg F2832-F2879",
+        "visuals/a1/s29b-walk-whip2.jpg F2880-F2927",
+        "visuals/a1/s29c-blur-to-end.jpg F2928-F2975"
+      ]
+    }
+  ]
+}

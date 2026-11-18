@@ -1,0 +1,1606 @@
+{
+  "v": 1,
+  "generatedFrom": "src/lib/cli/commands.ts",
+  "aliases": {
+    "campaign:production": {
+      "script": "scripts/campaign-production.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "campaign:next": {
+      "script": "scripts/campaign-next.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "campaign:brief": {
+      "script": "scripts/campaign-brief.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "campaign:approve": {
+      "script": "scripts/campaign-approve.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "campaign:execute": {
+      "script": "scripts/campaign-execute.ts",
+      "spend": "may-spend",
+      "guarded": false
+    },
+    "bench:workflow": {
+      "script": "scripts/bench-workflow.ts",
+      "spend": "may-spend",
+      "guarded": false
+    },
+    "vork:setup": {
+      "script": "scripts/vork-setup.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vork:scene": {
+      "script": "scripts/vork-scene.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "vork:render": {
+      "script": "scripts/vork-render.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "vork:recipe": {
+      "script": "scripts/vork-recipe.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "vork:bridge": {
+      "script": "scripts/vork-bridge.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vork:vfx": {
+      "script": "scripts/vork-vfx.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vork:eval": {
+      "script": "scripts/vork-eval.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:pick": {
+      "script": "scripts/models-pick.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:slots": {
+      "script": "scripts/models-slots.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:slot": {
+      "script": "scripts/models-slot.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:verdict": {
+      "script": "scripts/models-verdict.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:stats": {
+      "script": "scripts/models-stats.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "model:prepare": {
+      "script": "scripts/model-prepare.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "refs:derive": {
+      "script": "scripts/refs-derive.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "refs:pack": {
+      "script": "scripts/refs-pack.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "refs:plan": {
+      "script": "scripts/refs-plan.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "refs:profiles": {
+      "script": "scripts/refs-profiles.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "motion:library": {
+      "script": "scripts/motion-library.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "viz:list": {
+      "script": "scripts/viz-list.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:prepare": {
+      "script": "scripts/viz-prepare.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:inspect": {
+      "script": "scripts/viz-inspect.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:preview": {
+      "script": "scripts/viz-preview.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:render": {
+      "script": "scripts/viz-render.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:mount": {
+      "script": "scripts/viz-mount.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "viz:check": {
+      "script": "scripts/viz-check.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "python:check": {
+      "script": "scripts/python-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "python:audit": {
+      "script": "scripts/python-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "runtime:check": {
+      "script": "scripts/runtime-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "local:verify": {
+      "script": "scripts/local-verify.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "local:capabilities": {
+      "script": "scripts/local-capabilities.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "local:policy": {
+      "script": "scripts/local-policy.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "text:analyse": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "text:translate": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "voiceover:local": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:events": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:vision": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "text:assist": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "image:describe": {
+      "script": "scripts/local-task.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources:icons": {
+      "script": "scripts/icons.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "resources:icons:read": {
+      "script": "scripts/icons.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "resources:logos": {
+      "script": "scripts/logos.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "resources:logos:read": {
+      "script": "scripts/logos.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "resources:icon-profile": {
+      "script": "scripts/icon-profile.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources:icon-profile:read": {
+      "script": "scripts/icon-profile.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources:icons:verify": {
+      "script": "scripts/icons-verify.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "deps:check": {
+      "script": "scripts/deps-check.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "deps:licences": {
+      "script": "scripts/licences.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "bench:export": {
+      "script": "scripts/bench-export.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "showcase:fetch-media": {
+      "script": "scripts/showcase-fetch-media.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "bench:fetch-bundle": {
+      "script": "scripts/bench-fetch-bundle.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:bench-report": {
+      "script": "scripts/github/gh-bench-report.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "showcase:add": {
+      "script": "scripts/showcase-add.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "showcase:media": {
+      "script": "scripts/showcase-media.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "showcase:readme": {
+      "script": "scripts/showcase-readme.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "site:build": {
+      "script": "scripts/site-build.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "field:report": {
+      "script": "scripts/field-report.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "contrib:scout": {
+      "script": "scripts/contrib-scout.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "contrib:check": {
+      "script": "scripts/contrib-check.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "contrib:fails-on-base": {
+      "script": "scripts/contrib-fails-on-base.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "contrib:novelty": {
+      "script": "scripts/contrib-novelty.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "contrib:pr": {
+      "script": "scripts/contrib-pr.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "regen": {
+      "script": "scripts/regen.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:category-gates": {
+      "script": "scripts/github/gh-category-gates.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:triage-budget": {
+      "script": "scripts/github/gh-triage-budget.ts",
+      "spend": "may-spend",
+      "guarded": false
+    },
+    "github:triage": {
+      "script": "scripts/github/gh-apply-triage.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:facts": {
+      "script": "scripts/github/gh-pr-facts.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:intake": {
+      "script": "scripts/github/gh-apply-intake.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:autoclose": {
+      "script": "scripts/github/gh-autoclose.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:commands": {
+      "script": "scripts/github/gh-commands.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:cla": {
+      "script": "scripts/github/gh-cla.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:labels": {
+      "script": "scripts/github/gh-labels.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "github:codeowners": {
+      "script": "scripts/github/codeowners.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "triage:local": {
+      "script": "scripts/triage-local.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "triage:pr": {
+      "script": "scripts/triage-pr.ts",
+      "spend": "paid",
+      "guarded": false
+    },
+    "instructions:audit": {
+      "script": "scripts/instructions-audit.ts",
+      "spend": "paid",
+      "guarded": false
+    },
+    "release:plan": {
+      "script": "scripts/release-plan.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "release:notes": {
+      "script": "scripts/release-notes.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "release:apply": {
+      "script": "scripts/release-apply.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "credits:write-doc": {
+      "script": "scripts/credits-write-doc.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "regen:post-merge": {
+      "script": "scripts/regen-post-merge.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "change:add": {
+      "script": "scripts/change-add.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "contrib:intake": {
+      "script": "scripts/contrib-intake.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "context:probe": {
+      "script": "scripts/context-probe.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "context:budget": {
+      "script": "scripts/context-budget.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "docs:audit": {
+      "script": "scripts/docs-audit.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "repo:hygiene": {
+      "script": "scripts/repo-hygiene.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "instructions:lint": {
+      "script": "scripts/instructions-lint.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "instructions:security": {
+      "script": "scripts/instructions-security.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:fetch": {
+      "script": "scripts/media-fetch.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "preflight": {
+      "script": "scripts/doctor.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "bootstrap": {
+      "script": "scripts/bootstrap.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "harness:setup": {
+      "script": "scripts/harness-setup.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "keys": {
+      "script": "scripts/keys.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "projects": {
+      "script": "scripts/list-projects.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "next": {
+      "script": "scripts/next.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "playbook": {
+      "script": "scripts/playbook.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "memory": {
+      "script": "scripts/memory.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "memory:upstream": {
+      "script": "scripts/memory-upstream.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "project:new": {
+      "script": "scripts/create-project.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "project:remove": {
+      "script": "scripts/project-remove.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "workspace:clean": {
+      "script": "scripts/workspace-clean.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "assets:sync": {
+      "script": "scripts/assets-sync.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "review:ui": {
+      "script": "scripts/review-ui.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "console": {
+      "script": "scripts/console.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "console:wait": {
+      "script": "scripts/console-wait.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "console:card": {
+      "script": "scripts/console-card.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "console:control": {
+      "script": "scripts/console-control.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "studio:open": {
+      "script": "scripts/studio-open.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "console:snapshot": {
+      "script": "scripts/console-snapshot.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "narration:check": {
+      "script": "scripts/narration-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:route": {
+      "script": "scripts/film-route.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:init": {
+      "script": "scripts/film-init.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:status": {
+      "script": "scripts/film-status.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:next": {
+      "script": "scripts/film-next.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:brief": {
+      "script": "scripts/film-brief.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:show": {
+      "script": "scripts/film-show.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:done": {
+      "script": "scripts/film-done.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:approve": {
+      "script": "scripts/film-approve.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:rights": {
+      "script": "scripts/film-rights.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:policy": {
+      "script": "scripts/film-policy.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:revert": {
+      "script": "scripts/film-revert.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "step:unlock": {
+      "script": "scripts/step-unlock.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "step:violations": {
+      "script": "scripts/step-violations.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "feedback": {
+      "script": "scripts/feedback.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "creative:stimuli": {
+      "script": "scripts/creative-stimuli.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "creative:pool": {
+      "script": "scripts/creative-pool.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "creative:rank": {
+      "script": "scripts/creative-rank.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "creative:pick": {
+      "script": "scripts/creative-pick.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "creative:bench": {
+      "script": "scripts/creative-bench.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "concept:boards": {
+      "script": "scripts/concept-boards.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:targets": {
+      "script": "scripts/film-targets.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "plan:check": {
+      "script": "scripts/plan-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:stills": {
+      "script": "scripts/film-stills.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:render": {
+      "script": "scripts/film-render.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:versions": {
+      "script": "scripts/film-versions.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "film:measure": {
+      "script": "scripts/film-measure.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "shot:tournament": {
+      "script": "scripts/shot-tournament.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "critic:pack": {
+      "script": "scripts/critic-pack.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "footage:next": {
+      "script": "scripts/footage-next.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "footage:policy-apply": {
+      "script": "scripts/footage-policy-apply.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "transcribe": {
+      "script": "scripts/transcribe.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "speech:local": {
+      "script": "scripts/speech-local.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "footage:shots": {
+      "script": "scripts/footage-shots.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "recut:plan": {
+      "script": "scripts/recut-plan.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "shorts:prepare": {
+      "script": "scripts/shorts-prepare.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "shorts:rank": {
+      "script": "scripts/shorts-rank.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "shorts:calibrate": {
+      "script": "scripts/shorts-calibrate.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "shorts:request": {
+      "script": "scripts/shorts-request.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "multicam:sync": {
+      "script": "scripts/multicam-sync.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "multicam:angles": {
+      "script": "scripts/multicam-angles.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "reframe:track": {
+      "script": "scripts/reframe-track.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "photo:focus": {
+      "script": "scripts/photo-focus.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "matte": {
+      "script": "scripts/matte.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:ingest": {
+      "script": "scripts/media-ingest.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:selects": {
+      "script": "scripts/media-selects.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:broll": {
+      "script": "scripts/media-broll.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:words": {
+      "script": "scripts/media-words.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:local": {
+      "script": "scripts/media-local.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:ocr": {
+      "script": "scripts/media-ocr.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:visual": {
+      "script": "scripts/media-visual.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:category": {
+      "script": "scripts/media-category.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:prepare": {
+      "script": "scripts/media-prepare.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "media:corpus": {
+      "script": "scripts/media-corpus.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "captions:export": {
+      "script": "scripts/export-captions.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "captions:place": {
+      "script": "scripts/caption-place.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "video:longform": {
+      "script": "scripts/longform.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:add": {
+      "script": "scripts/ref-add.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:analyze": {
+      "script": "scripts/ref-analyze.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:validate": {
+      "script": "scripts/ref-validate.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:redact": {
+      "script": "scripts/ref-redact.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:contribute": {
+      "script": "scripts/ref-contribute.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:corpus": {
+      "script": "scripts/ref-corpus.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:degrade": {
+      "script": "scripts/ref-degrade.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:rate": {
+      "script": "scripts/ref-rate.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:compare": {
+      "script": "scripts/ref-compare.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "ref:replica-check": {
+      "script": "scripts/ref-replica-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "music": {
+      "script": "scripts/music.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "music:backtime": {
+      "script": "scripts/music-backtime.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "elevenlabs:capabilities": {
+      "script": "scripts/elevenlabs-capabilities.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "voices": {
+      "script": "scripts/voices.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "voices:manage": {
+      "script": "scripts/voices-manage.ts",
+      "spend": "may-spend",
+      "guarded": false
+    },
+    "generate:dialogue": {
+      "script": "scripts/generate-dialogue.ts",
+      "spend": "paid",
+      "guarded": false
+    },
+    "audio:transform": {
+      "script": "scripts/audio-transform.ts",
+      "spend": "paid",
+      "guarded": false
+    },
+    "speech:replace": {
+      "script": "scripts/speech-replace.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "dubbing:conform": {
+      "script": "scripts/dubbing-conform.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "dubbing": {
+      "script": "scripts/dubbing.ts",
+      "spend": "may-spend",
+      "guarded": false
+    },
+    "sfx:find-segment": {
+      "script": "scripts/sfx-find-segment.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:map": {
+      "script": "scripts/sfx-map.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:audition": {
+      "script": "scripts/sfx-audition.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:review": {
+      "script": "scripts/audio-review.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:map": {
+      "script": "scripts/audio-map.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:curves": {
+      "script": "scripts/audio-curves.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:stems": {
+      "script": "scripts/audio-stems.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:describe": {
+      "script": "scripts/audio-describe.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:analyze": {
+      "script": "scripts/analyze-audio.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:mix": {
+      "script": "scripts/mix-audio.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:master": {
+      "script": "scripts/master-audio.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:masking": {
+      "script": "scripts/audio-masking.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:syncmap": {
+      "script": "scripts/audio-syncmap.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:editorial": {
+      "script": "scripts/editorial-audio.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "audio:repair": {
+      "script": "scripts/repair-render-audio.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "edit:snap": {
+      "script": "scripts/edit-snap.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "edit:plan": {
+      "script": "scripts/edit-plan.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:synth": {
+      "script": "scripts/sfx-synth.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:generate": {
+      "script": "scripts/sfx-generate.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "sfx:cues": {
+      "script": "scripts/sfx-cues.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:index": {
+      "script": "scripts/sfx-index.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:find": {
+      "script": "scripts/sfx-find.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:fetch": {
+      "script": "scripts/sfx-fetch.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "sfx:library": {
+      "script": "scripts/sfx-library.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "library:usage": {
+      "script": "scripts/library-usage.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "library:list": {
+      "script": "scripts/library-list.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "library:preview": {
+      "script": "scripts/library-preview.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "library:catalogue": {
+      "script": "scripts/library-catalogue.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "render": {
+      "script": "scripts/render-project.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "timeline:edit": {
+      "script": "scripts/timeline-edit.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "motion:render": {
+      "script": "scripts/motion-render.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "motion:still": {
+      "script": "scripts/motion-still.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "test:render": {
+      "script": "scripts/smoke-render.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hyperframes:render": {
+      "script": "scripts/hyperframes-render.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:city": {
+      "script": "scripts/blender-city.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:improve": {
+      "script": "scripts/blender-improve.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:arsenal": {
+      "script": "scripts/blender-arsenal.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:ext": {
+      "script": "scripts/blender-ext.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:assets": {
+      "script": "scripts/blender-assets.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:run": {
+      "script": "scripts/blender-run.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:live": {
+      "script": "scripts/blender-live.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:recipe": {
+      "script": "scripts/blender-recipe.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "blender:scene": {
+      "script": "scripts/blender-scene.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "backend": {
+      "script": "scripts/backend.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "capture:html": {
+      "script": "scripts/capture-html.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "capture:app": {
+      "script": "scripts/capture-app.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resolve:handoff": {
+      "script": "scripts/resolve-handoff.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "motion:strip": {
+      "script": "scripts/motion-strip.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "flash:check": {
+      "script": "scripts/flash-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "judge:calibrate": {
+      "script": "scripts/judge-calibrate.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "motion:check": {
+      "script": "scripts/motion-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vision:evaluate": {
+      "script": "scripts/vision-evaluate.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vision:pack": {
+      "script": "scripts/vision-pack.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "vision:inspect": {
+      "script": "scripts/vision-inspect.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "review:sheet": {
+      "script": "scripts/review-sheet.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "qa:screenshots": {
+      "script": "scripts/qa-screenshots.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "qa:evidence": {
+      "script": "scripts/qa-evidence.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "qa:editorial": {
+      "script": "scripts/editorial-qa.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "validate:render": {
+      "script": "scripts/validate-render.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "chart:inspect": {
+      "script": "scripts/chart-inspect.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "craft:evaluate": {
+      "script": "scripts/craft-evaluation.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "delivery": {
+      "script": "scripts/delivery.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "store:conform": {
+      "script": "scripts/store-conform.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "pipeline:check": {
+      "script": "scripts/pipeline-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "align:captions": {
+      "script": "scripts/align-captions.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "edit:captions": {
+      "script": "scripts/edit-captions.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "measure:durations": {
+      "script": "scripts/measure-audio-durations.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "slice:talking-head": {
+      "script": "scripts/slice-talking-head.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "asset:fetch": {
+      "script": "scripts/asset-fetch.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "asset:fetch-all": {
+      "script": "scripts/asset-fetch-all.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "video:recipe": {
+      "script": "scripts/video-recipe.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "video:workflow": {
+      "script": "scripts/video-workflow.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "campaign": {
+      "script": "scripts/campaign.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "asset:import": {
+      "script": "scripts/import-asset.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "harness:assets": {
+      "script": "scripts/harness-assets.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "asset:board": {
+      "script": "scripts/asset-board.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "entity:card": {
+      "script": "scripts/entity-card.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources": {
+      "script": "scripts/resources.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources:poly-haven": {
+      "script": "scripts/poly-haven.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "resources:font": {
+      "script": "scripts/import-font-resource.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fetch:sfx": {
+      "script": "scripts/fetch-sound-effects.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fetch:lottie": {
+      "script": "scripts/fetch-lottie.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:batch": {
+      "script": "scripts/fal-batch.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "model:result": {
+      "script": "scripts/model-result.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:quote": {
+      "script": "scripts/fal-quote.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "generate:model": {
+      "script": "scripts/generate-model.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:image": {
+      "script": "scripts/generate-image.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:meme": {
+      "script": "scripts/generate-image.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:video": {
+      "script": "scripts/generate-video.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:voiceover": {
+      "script": "scripts/generate-voiceover.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:music": {
+      "script": "scripts/generate-music.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:stream": {
+      "script": "scripts/generate-stream.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "generate:realtime": {
+      "script": "scripts/realtime-session.ts",
+      "spend": "paid",
+      "guarded": false
+    },
+    "realtime:editor": {
+      "script": "scripts/realtime-editor.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "rmbg": {
+      "script": "scripts/rmbg.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "upscale": {
+      "script": "scripts/upscale.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "fal:find": {
+      "script": "scripts/fal-find.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:capabilities": {
+      "script": "scripts/models-capabilities.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:scaffold": {
+      "script": "scripts/fal-scaffold.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:models": {
+      "script": "scripts/fal-models.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:prices": {
+      "script": "scripts/models-prices.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:compare": {
+      "script": "scripts/models-compare.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "models:refresh": {
+      "script": "scripts/models-refresh.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hf:sync": {
+      "script": "scripts/hf-sync.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:sync": {
+      "script": "scripts/fal-sync.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:doctor": {
+      "script": "scripts/fal-doctor.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hf:pricing": {
+      "script": "scripts/hf-pricing.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hf:media": {
+      "script": "scripts/hf-media.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hf:quote": {
+      "script": "scripts/hf-quote.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "hf:usage": {
+      "script": "scripts/hf-usage.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "fal:pricing": {
+      "script": "scripts/fal-pricing.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "budget": {
+      "script": "scripts/budget.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "job:cancel": {
+      "script": "scripts/job-cancel.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "cost:report": {
+      "script": "scripts/cost-report.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "commands": {
+      "script": "scripts/commands.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "lint": {
+      "script": "scripts/lint-project.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "console:build": {
+      "script": "scripts/console-build.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "test:fast": {
+      "script": "scripts/test-fast.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "mcp:stdio": {
+      "script": "src/mcp/stdio.ts",
+      "spend": "none",
+      "guarded": false
+    },
+    "export:public": {
+      "script": "scripts/export-public.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "leak:check": {
+      "script": "scripts/leak-check.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "metrics": {
+      "script": "scripts/metrics.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "api:surface": {
+      "script": "scripts/api-surface.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "bench:run": {
+      "script": "scripts/bench-run.ts",
+      "spend": "may-spend",
+      "guarded": true
+    },
+    "bench:sign": {
+      "script": "scripts/bench-sign.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "bench:verify": {
+      "script": "scripts/bench-verify.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "bench:judge": {
+      "script": "scripts/bench-judge.ts",
+      "spend": "paid",
+      "guarded": true
+    },
+    "bench:rate": {
+      "script": "scripts/bench-rate.ts",
+      "spend": "none",
+      "guarded": true
+    }
+  }
+}

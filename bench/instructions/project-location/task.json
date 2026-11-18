@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "project-location",
+  "playbook": "motion-design",
+  "tier": "no-spend",
+  "brief": "Name the permitted project media footprint for project example. Write bench-result.json as {\"directory\":\"<relative directory>\",\"commitMedia\":false}.",
+  "material": [
+    {
+      "path": "bench/instructions/project-location/answers.json",
+      "sha256": "e41571accafa325e5c5fade855758f6cfdf2a89db33567e44b693d4856547319",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/instructions/project-location/check.mjs",
+      "sha256": "fe2dc32efaa9ce96d46d782bdd1adc0e3d8f37ead86384fdae1b7869cc36fe23",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      0,
+      20
+    ]
+  },
+  "answers": "bench/instructions/project-location/answers.json",
+  "criteria": [
+    {
+      "id": "automatic-check",
+      "kind": "process",
+      "check": {
+        "type": "script",
+        "path": "bench/instructions/project-location/check.mjs"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

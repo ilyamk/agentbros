@@ -1,0 +1,7 @@
+extend = "../../workers/ruff.toml"
+target-version = "py311"
+
+[lint]
+# bpy's dynamic RNA has no complete stubs; node graphs are long, numerical scene descriptions.
+# Lazy bpy imports keep cache maths and catalogue validation usable without Blender.
+extend-ignore = ["ANN401", "PLC0415", "PLR2004", "PLR0915", "C901", "S311", "FBT001", "TC003"]

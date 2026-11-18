@@ -1,0 +1,1022 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flame",
+  "techniques": [
+    {
+      "id": "wireframe-type-open",
+      "name": "Wireframe type open",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 1.54
+        }
+      ],
+      "function": "hook",
+      "description": "White ground with a layout guide: two horizontal and two vertical hairlines (very light grey, about 1 px at 720p) crossing to make a box about 25% wide and 4% high at centre, with a black node dot at each crossing. The premise words appear one at a time inside the box, each on its own frame (F3, F7, F11: one word every 4 frames, 0.17 s), centred, small (cap height about 1.6% of frame height). The guide box drifts slightly wider as the words arrive. Nothing else on screen.",
+      "route": "remotion",
+      "routeReason": "Hairlines and dots are divs; words are per-frame visibility from a schedule. No missing primitive.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track",
+        "curves"
+      ],
+      "timing": {
+        "durationSec": 1.54,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F0-F19",
+          "visuals/a1/t01-frame-to-square.jpg F37"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F0-F19"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "The first word appears 0.02 s after it is spoken (F3 0.12 s vs 0.10 s); the next two appear 0.21 s and 0.47 s before their words.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 0.10, 0.50, 0.92",
+          "visuals/a1/t00-type-open.jpg F3, F7, F11"
+        ]
+      },
+      "typography": {
+        "role": "premise words",
+        "entry": "word-by-word cut-on, each tinted green for 2-3 frames then black",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F3-F13",
+          "speech-text.json screenText 0.5-1.5 box x 0.386 w 0.23"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "guide-frame-opens-to-object",
+      "name": "Guide frame opens to an object",
+      "spans": [
+        {
+          "startSec": 1.54,
+          "endSec": 2.04
+        }
+      ],
+      "function": "transition",
+      "fromShot": 0,
+      "toShot": 1,
+      "description": "The guide box grows outward on all sides past the frame edges in 12 frames (F37-F49) while its hairlines thicken slightly with motion; the words split apart with it (first word to the left, the rest to the right) and fade by F47; a dot at the exact centre, visible from F37, grows into a brushed-metal tile, 6% of width at F46 and 20% by F56. The tile is the only thing moving inward against the outward lines.",
+      "route": "remotion",
+      "routeReason": "growRect for the box, scale on the tile, opacity on the words. The metal finish is a linear-gradient with a diagonal highlight band; a real brushed texture would need missing:brushedMetalFill (a seeded noise stripe layer). Blender is not needed for a flat tile.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "growRect",
+        "track",
+        "curves",
+        "block:material-fill"
+      ],
+      "timing": {
+        "durationSec": 0.5,
+        "startOffsetFromCutSec": -0.21,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t01-frame-to-square.jpg F37-F49"
+        ]
+      },
+      "ease": {
+        "name": "power1.in",
+        "cubicBezier": [
+          0.999,
+          0.7,
+          0.612,
+          0.087
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s001 camera 1.50-2.40 s push_in, ease.gsap power1.in, bezierRmse 0.031"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Runs under a five-word voice line about the raw starting point; the tile appears as the voice reaches its last two words (2.08-2.96).",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 1.34-2.96"
+        ]
+      },
+      "layers": 4,
+      "techniqueCardId": "material-fill"
+    },
+    {
+      "id": "collapse-to-point-burst",
+      "name": "Collapse to a point, then burst",
+      "spans": [
+        {
+          "startSec": 3.25,
+          "endSec": 3.75
+        }
+      ],
+      "function": "transition",
+      "fromShot": 1,
+      "toShot": 2,
+      "description": "The tile rounds its corners into a disc (F78-F81), shrinks on an accelerating curve to a 1% dot (F82-F84) while a ring of 8 small dots expands from around it into a sparse dot field (F81-F86); iridescent spheres of 5-30% frame width enter from all four edges over 5 frames (F86-F90), settling around the edges and leaving the centre clear; the problem phrase types in at that clear centre from F91. Ease: power2.in on the shrink; the spheres' entry reads as expo.out.",
+      "route": "remotion",
+      "routeReason": "Scale and border-radius on the tile, a seeded ring of dots, spheres as radial plus conic gradients with blur by depth. Missing a ready iridescent sphere: missing:iridescentSphere. Blender would give truer glass but the spheres are on screen 1.6 s; not worth it.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "stagger",
+        "random",
+        "block:shaded-orb"
+      ],
+      "timing": {
+        "durationSec": 0.5,
+        "startOffsetFromCutSec": -0.21,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t02-square-to-spheres.jpg F78-F90"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t02-square-to-spheres.jpg F78-F84 width 19%, 15%, 9%, 5%, 2%, 1%",
+          "visuals/a1/t02-square-to-spheres.jpg F86-F90 spheres near final by F88"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Under the problem sentence; onsets at 3.27 and 3.74 s bracket the move but onsets are 5.3 per second here, so that proves nothing. Any whoosh is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 3.274, 3.738",
+          "speech-text.json words 2.96-4.44"
+        ]
+      },
+      "layers": 4,
+      "techniqueCardId": "shaded-orb"
+    },
+    {
+      "id": "tinted-word-arrival",
+      "name": "Tinted word arrival ahead of the voice",
+      "spans": [
+        {
+          "startSec": 0.12,
+          "endSec": 0.54
+        },
+        {
+          "startSec": 3.79,
+          "endSec": 3.96
+        }
+      ],
+      "function": "emphasis",
+      "description": "Each word cuts on in a tint (green on the premise, red on the problem phrase) and settles to black ink over 2-3 frames. Words land a median 0.18 s before they are spoken (9 word pairs timed on the strips, range -0.81 to +0.04 s).",
+      "route": "remotion",
+      "routeReason": "Per-word colour interpolate over 3 frames from a word schedule.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track"
+      ],
+      "timing": {
+        "durationSec": 0.13,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F3-F5, F7-F9, F11-F13",
+          "visuals/a1/t02-square-to-spheres.jpg F91-F93"
+        ]
+      },
+      "ease": {
+        "name": "steps(3)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F3-F5"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Text leads voice (strip times minus word starts): Every +0.02, great -0.21, video -0.47, past -0.18, agency -0.40, level -0.81, Make +0.04, it -0.17, yours -0.09 s.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json speech.words",
+          "visuals/a1/t00-type-open.jpg",
+          "visuals/a1/t11-cut-to-type.jpg F366-F375"
+        ]
+      },
+      "typography": {
+        "role": "small body line",
+        "entry": "cut-on in a tint, settle to ink in 2-3 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t00-type-open.jpg F3-F13",
+          "visuals/a1/t02-square-to-spheres.jpg F91-F94"
+        ]
+      },
+      "layers": 1,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 0.12,
+            "endSec": 0.54
+          },
+          "shots": [
+            "s001.1"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 3.79,
+            "endSec": 3.96
+          },
+          "shots": [
+            "s001.3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "implode-and-blur",
+      "name": "Implode and blur away",
+      "spans": [
+        {
+          "startSec": 4.92,
+          "endSec": 5.46
+        }
+      ],
+      "function": "transition",
+      "fromShot": 2,
+      "toShot": 3,
+      "description": "The phrase leaves word by word from the front (F117-F119). The sphere field pulls into a tight ring at centre in 5 frames (F118-F122), overlaps into a cluster about 15% wide, then shrinks to about 5% while gaining a chromatic, defocused halo and fading (F122-F130). The embossed white maze ground fades in under the last wisp at F131 and the first wordmark letter appears at F132.",
+      "route": "remotion",
+      "routeReason": "Position track per sphere towards centre, then group scale with blur and an RGB-split filter. Shutter for motion blur during the 5-frame pull.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "Shutter",
+        "block:shaded-orb",
+        "block:material-fill"
+      ],
+      "timing": {
+        "durationSec": 0.54,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t03-spheres-collapse.jpg F118-F131"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0.138,
+          0.867,
+          0,
+          0.515
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s002 camera 5.14-5.82 s pull_out, ease.gsap circ.out, bezierRmse 0.010"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "The brand name is spoken at 5.12 s, in the middle of the collapse; the wordmark appears 0.38 s after it.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 5.12",
+          "visuals/a1/t04-wordmark-type.jpg F132"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "shaded-orb"
+    },
+    {
+      "id": "letter-by-letter-wordmark",
+      "name": "Letter-by-letter wordmark",
+      "spans": [
+        {
+          "startSec": 5.5,
+          "endSec": 6.29
+        },
+        {
+          "startSec": 18.39,
+          "endSec": 18.62
+        }
+      ],
+      "function": "reveal",
+      "description": "The wordmark types on left to right, centred, each letter fading in over about 2 frames, 9 letters in 19 frames (F132-F151); the first letter flashes green as the premise words did. On the end card the same type-on runs faster (about 1 letter per frame, F441-F446) in white.",
+      "route": "remotion",
+      "routeReason": "typingSchedule and typedCount give letters per frame; library caption-typewriter or TypedLine.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "typingSchedule",
+        "typedCount",
+        "TypedLine"
+      ],
+      "timing": {
+        "durationSec": 0.79,
+        "startOffsetFromCutSec": 0.58,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t04-wordmark-type.jpg F132-F151",
+          "visuals/a1/t14-fill-to-endcard.jpg F441-F445"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t04-wordmark-type.jpg F140-F151"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Starts 0.38 s after the name is spoken the first time and 0.11 s after the second time.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 5.12, 18.28"
+        ]
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "typewriter, left to right, about 2 frames per letter, soft 2-frame fade per letter",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t04-wordmark-type.jpg F132-F151",
+          "speech-text.json screenText 6.0 box x 0.434 w 0.145"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 5.5,
+            "endSec": 6.29
+          },
+          "shots": [
+            "s002.1"
+          ],
+          "timing": {
+            "durationSec": 0.79,
+            "startOffsetFromCutSec": 0.58,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t04-wordmark-type.jpg F132-F151"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 18.39,
+            "endSec": 18.62
+          },
+          "shots": [
+            "s006"
+          ],
+          "timing": {
+            "durationSec": 0.23,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t14-fill-to-endcard.jpg F441-F446 (24 fps, about 1 letter a frame)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "element-grows-to-ground",
+      "name": "Element grows into the next ground",
+      "spans": [
+        {
+          "startSec": 6.54,
+          "endSec": 6.84
+        },
+        {
+          "startSec": 17.1,
+          "endSec": 18.35
+        }
+      ],
+      "function": "transition",
+      "fromShot": 10,
+      "toShot": 11,
+      "description": "A capsule at centre becomes the next scene's ground. Product beat: a pink-teal gradient pill fills behind the wordmark at F157 and grows to a 93%-wide card in 4 frames (F159-F162), the ground pattern fading under it. CTA: the navy button grows from 48% (F412) through 59% (F426) and 88% (F431) to full bleed at F436, slow then fast; its top sheen becomes the dark rim of the end card; the label fades F437-F440.",
+      "route": "remotion",
+      "routeReason": "Exactly the library's caused-morph (rect mode) and GrowToScene; the end card is the button's own gradient scaled, so no second asset.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "GrowToScene",
+        "LayoutMorph",
+        "growRect",
+        "causedMorph",
+        "mesh-gradient (library block) for the pink-teal ground"
+      ],
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": -0.96,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t13-pill-grows.jpg F412-F426",
+          "visuals/a1/t14-fill-to-endcard.jpg F426-F440",
+          "visuals/a1/t05-card-to-collage.jpg F157-F163"
+        ]
+      },
+      "ease": {
+        "name": "sine.in",
+        "cubicBezier": [
+          0.993,
+          1.176,
+          0.037,
+          0.949
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s005 camera 17.11-18.02 s push_in, ease.gsap sine.in"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Runs under 'starts tonight' (17.31-18.10); full bleed at 18.18 s, 0.10 s before the brand name is spoken again. An onset at 18.065 s; what made it is unknown. The growth starts 0.09 s from a tracked beat; tempo confidence 0.12, so no beat claim.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 17.31-18.71",
+          "audio.json onsetsSec 18.065"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 6.54,
+            "endSec": 6.84
+          },
+          "fromShot": 3,
+          "toShot": 4,
+          "timing": {
+            "durationSec": 0.167,
+            "startOffsetFromCutSec": -0.025,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t05-card-to-collage.jpg F157-F163 (grows F159-F162, 4 frames at 24 fps)"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 17.1,
+            "endSec": 18.35
+          },
+          "fromShot": 10,
+          "toShot": 11,
+          "timing": {
+            "durationSec": 1.0,
+            "startOffsetFromCutSec": -0.96,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t13-pill-grows.jpg F412-F426",
+              "visuals/a1/t14-fill-to-endcard.jpg F426-F440"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "staggered-border-fly-in",
+      "name": "Interface panels fly in from the edges",
+      "spans": [
+        {
+          "startSec": 6.84,
+          "endSec": 7.17
+        }
+      ],
+      "function": "proof",
+      "description": "Onto the full gradient card, six dark interface panels (each 10-25% of width) slide in from the right, bottom, left and top edges, one every 1-2 frames over 8 frames (F164-F172), overlapping the card's edges so the card reads as a desk of real screens; a central button stays still at centre.",
+      "route": "remotion",
+      "routeReason": "Panels must be the real product's screens (capture:app, never generic stand-ins), placed with collageCells and a per-panel stagger.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "collageCells",
+        "stagger",
+        "track",
+        "WindowFrame",
+        "capture:app"
+      ],
+      "timing": {
+        "durationSec": 0.33,
+        "startOffsetFromCutSec": 0.19,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t05-card-to-collage.jpg F164-F172"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t05-card-to-collage.jpg F164-F172 panels near rest one frame after entry"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Under the words naming the audience (6.72-8.00).",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 6.72-8.00"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "shrink-then-cut",
+      "name": "Shrink, then cut",
+      "spans": [
+        {
+          "startSec": 7.71,
+          "endSec": 8.05
+        }
+      ],
+      "function": "transition",
+      "fromShot": 4,
+      "toShot": 5,
+      "description": "The full card shrinks towards centre with growing corner radius, from about 91% to 63% wide in 8 frames (F185-F192), accelerating, then a hard cut at F193 to the globe scene whose circle outline is already larger than the frame and pulls out.",
+      "route": "remotion",
+      "routeReason": "Scale and border-radius track on the outgoing scene, then a plain cut in TransitionSeries.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "morphRect"
+      ],
+      "timing": {
+        "durationSec": 0.34,
+        "startOffsetFromCutSec": -0.34,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t06-collage-to-globe.jpg F185-F193"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t06-collage-to-globe.jpg F189-F192 widths 82%, 79%, 73%, 63%"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Cut lands 0.05 s before the word after the audience noun. Nearest beat 0.23 s away (tempo confidence 0.12; no beat claim).",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 8.00",
+          "audio.json beatsSec 7.825, 8.313"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "flank-words-at-frame-sides",
+      "name": "Two words flanking the image at the frame edges",
+      "spans": [
+        {
+          "startSec": 8.05,
+          "endSec": 9.84
+        }
+      ],
+      "function": "emphasis",
+      "description": "Two small words are pinned at the far left (x 0.056) and far right (x 0.873) of the frame at mid height, with a pastel dotted globe (about 30% of width) inside a thin circle between them. The circle pulls out after the cut (expo.out, fitted 8.12-8.80 s on the detector shot that now covers this scene); the globe colours drift from pink to blue while it rotates slowly.",
+      "route": "remotion",
+      "routeReason": "Words are absolutely placed; the globe is points on a sphere projected per frame (ThreeCanvas with useCurrentFrame, or a 2D projection). No ready block: missing:dotGlobe.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "ThreeCanvas",
+        "block:point-sphere"
+      ],
+      "timing": {
+        "durationSec": 1.79,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t06-collage-to-globe.jpg F193-F204",
+          "visuals/a1/t07-globe-to-square.jpg F230-F235"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "cubicBezier": [
+          0.126,
+          0.841,
+          0.304,
+          0.797
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s003 camera 8.12-8.80 s pull_out (fitted on detector s003; the move is the globe circle in corrected shot s002.3)"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Both words are on screen 0.40 s before the first is spoken and 0.81 s before the second.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 8.45, 8.86",
+          "visuals/a1/t06-collage-to-globe.jpg F193"
+        ]
+      },
+      "typography": {
+        "role": "key words",
+        "entry": "cut on with the scene, both at once, at opposite edges",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 8.0-10.0 boxes x 0.056 and 0.873",
+          "visuals/a1/t06-collage-to-globe.jpg F193"
+        ]
+      },
+      "layers": 4,
+      "techniqueCardId": "point-sphere"
+    },
+    {
+      "id": "material-becomes-interface",
+      "name": "Raw material becomes the finished interface",
+      "spans": [
+        {
+          "startSec": 11.26,
+          "endSec": 11.88
+        }
+      ],
+      "function": "reveal",
+      "fromShot": 6,
+      "toShot": 7,
+      "description": "The grey tile, split by a horizon line in its gradient, widens from 20% to about 33% and tints from grey to pale blue over 6 frames (F270-F276); at F277 it is a dark-blue landing page whose white sheen arc sits where the horizon was, with a small button hanging under its bottom edge; it widens to about 60% by F281 and its headline types in over 4 frames (F282-F285).",
+      "route": "remotion",
+      "routeReason": "morphRect for the size, a colour track for the tint, crossfade into a real page capture (capture:app or the product's own repo) inside the same rect. The page must be the real one.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "morphRect",
+        "track",
+        "curves",
+        "ScreenPlayback",
+        "capture:app"
+      ],
+      "timing": {
+        "durationSec": 0.62,
+        "startOffsetFromCutSec": -0.25,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t08-square-to-site.jpg F270-F285"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t08-square-to-site.jpg F276-F281 widths 44%, 50%, 54%, 57%, 58%, 60%"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Under a six-word voice line about work people want to watch (11.00-12.82).",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 11.00-12.82"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "spring-pop-on-cut",
+      "name": "Spring pop on the cut",
+      "spans": [
+        {
+          "startSec": 13.513,
+          "endSec": 13.84
+        }
+      ],
+      "function": "emphasis",
+      "description": "Hard cut to two stacked glossy buttons at 33% of width; the front button springs to about 53% with roughly 10% overshoot and settles within 8 frames (F324-F332), its colour moving from dark navy to bright blue as it grows. Fitted spring: stiffness 13.8, damping 2.33, mass 1.",
+      "route": "remotion",
+      "routeReason": "Remotion spring() with the fitted constants.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "spring",
+        "track"
+      ],
+      "timing": {
+        "durationSec": 0.33,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t09-cut-to-pills.jpg F323-F332"
+        ]
+      },
+      "ease": {
+        "name": "back.out",
+        "cubicBezier": [
+          0.42,
+          1.593,
+          0.719,
+          1.04
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s004 camera 13.52-13.65 s, pick spring, overshoot 0.103"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "The cut is 0.07 s after the sentence's first word starts (13.44 s). Nearest tracked beat 0.07 s away, but the tempo estimate has confidence 0.12, so no beat claim.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 13.44"
+        ]
+      },
+      "typography": {
+        "role": "button label",
+        "entry": "rides with the button",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t09-cut-to-pills.jpg F324-F338"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "card-shuffle-swap",
+      "name": "Card shuffle swap",
+      "spans": [
+        {
+          "startSec": 14.26,
+          "endSec": 14.51
+        }
+      ],
+      "function": "proof",
+      "description": "The rear button (grey, half hidden above) rises and comes forward over the front one in 6 frames (F342-F348) while the front button drops, shrinks and darkens to navy behind it; the swap lands on the second offer item's verb.",
+      "route": "remotion",
+      "routeReason": "z-order flip at the midpoint with y, scale and colour tracks; close to the library's ui-toast-stack.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "ui-toast-stack (library block)"
+      ],
+      "timing": {
+        "durationSec": 0.25,
+        "startOffsetFromCutSec": 0.75,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t10-pill-swap.jpg F342-F348"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t10-pill-swap.jpg F342-F352"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Starts with the spoken verb at 14.28 s.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 14.28"
+        ]
+      },
+      "typography": {
+        "role": "button label",
+        "entry": "rides with the button",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t10-pill-swap.jpg F342-F357"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "recentring-word-line",
+      "name": "Recentring word-by-word line",
+      "spans": [
+        {
+          "startSec": 15.265,
+          "endSec": 15.68
+        }
+      ],
+      "function": "emphasis",
+      "description": "After a hard cut to plain white, a short sentence builds word by word (F366, F369, F375), the line recentring at each word (OCR box x 0.40 for one word, 0.325 for four), colour moving from navy #00257D to blue #408BF6 over the first 3 frames. Four words fill about 36% of width.",
+      "route": "remotion",
+      "routeReason": "Library type-sentence-build or BuildingCaption with a per-word schedule and centred layout.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-sentence-build (library block)",
+        "splitWords",
+        "stagger"
+      ],
+      "timing": {
+        "durationSec": 0.42,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t11-cut-to-type.jpg F366-F376"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t11-cut-to-type.jpg F368-F376"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Cut 0.045 s after the first spoken word; words land +0.04, -0.17, -0.09 s against speech.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words 15.22, 15.56, 15.73"
+        ]
+      },
+      "typography": {
+        "role": "ownership sentence",
+        "entry": "word by word, line recentres",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t11-cut-to-type.jpg F366-F378",
+          "speech-text.json screenText 15.0-16.0"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "sentence-collapses-to-button",
+      "name": "Sentence collapses into the button",
+      "spans": [
+        {
+          "startSec": 16.1,
+          "endSec": 17.18
+        }
+      ],
+      "function": "cta",
+      "description": "The sentence fades out from its first word (F386-F388); a 12%-wide blue pill appears at the middle word (F389) and slides right over the last word (F389-F397); it pales to a light-blue ghost (F393-F405) and at F412 snaps in one frame to a saturated navy button 48% wide carrying the CTA label, then grows on. Ease: power2.out on the slide; the colour snap is a one-frame step.",
+      "route": "remotion",
+      "routeReason": "Per-word opacity, a morphRect pill, a colour track, and a one-frame state change. No missing primitive.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "morphRect",
+        "track",
+        "curves",
+        "LayoutMorph"
+      ],
+      "timing": {
+        "durationSec": 1.08,
+        "startOffsetFromCutSec": -0.125,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t12-type-to-pill.jpg F386-F401",
+          "visuals/a1/t13-pill-grows.jpg F407-F412"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t12-type-to-pill.jpg F389-F392",
+          "visuals/a1/t13-pill-grows.jpg F411-F412"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice"
+        ],
+        "note": "The snap (17.18 s) is 0.07 s after an onset at 17.113 s and between spoken words; whether a sound effect marks it is inferred, not heard.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 17.113",
+          "speech-text.json words 16.44-17.66"
+        ]
+      },
+      "typography": {
+        "role": "CTA label",
+        "entry": "appears inside the pill at the snap",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t13-pill-grows.jpg F412"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "wordmark-slides-for-address",
+      "name": "Wordmark slides aside for the address",
+      "spans": [
+        {
+          "startSec": 19.52,
+          "endSec": 20.3
+        }
+      ],
+      "function": "cta",
+      "description": "On the end card the centred white wordmark slides left by about 13% of width over 9 frames (F468-F477); from F473 a white capsule grows from a thin bar to its right, and the address types into it one character per frame (F474-F486), blue-grey on white.",
+      "route": "remotion",
+      "routeReason": "track for the slide, growRect for the capsule, typingSchedule for the address; library scene-end-card is the nearest block.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "growRect",
+        "typingSchedule",
+        "scene-end-card (library block)"
+      ],
+      "timing": {
+        "durationSec": 0.78,
+        "startOffsetFromCutSec": 1.38,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t15-url-pill.jpg F468-F486"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t15-url-pill.jpg F468-F477"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "No speech after 18.9 s; the last audio section (19.11-22.66) has energy 0.13 against 0.44 before, and one onset at 20.92 s. Whether music continues quietly cannot be told without hearing.",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json words end 18.71",
+          "audio.json sections 3-quiet"
+        ]
+      },
+      "typography": {
+        "role": "address",
+        "entry": "capsule grows, then typewriter one character per frame",
+        "alignment": "right",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t15-url-pill.jpg F473-F486",
+          "speech-text.json screenText 20.52 box x 0.607"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "quiet-end-hold",
+      "name": "Quiet end-card hold",
+      "spans": [
+        {
+          "startSec": 20.3,
+          "endSec": 22.607
+        }
+      ],
+      "function": "breath",
+      "description": "After the address finishes typing, the end card holds 2.3 s with no new element: only a very slow drift of the card (motion.json s006 linear, 19.67-22.53 s) under wordmark and address. The final frame is the full end card with no fade.",
+      "route": "remotion",
+      "routeReason": "A still composition with a linear drift track.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track"
+      ],
+      "timing": {
+        "durationSec": 2.31,
+        "startOffsetFromCutSec": 2.16,
+        "basis": "observed",
+        "evidence": [
+          "visuals/strips/s006.jpg F489-F534",
+          "visuals/contact-sheet-01.jpg 6L"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s006 camera 19.67-22.53 s, ease.gsap none"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "No voice; quiet section. Any music tail is unheard.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json sections 3-quiet energy 0.13"
+        ]
+      },
+      "layers": 3
+    }
+  ]
+}

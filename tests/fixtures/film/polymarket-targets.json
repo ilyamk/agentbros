@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "source": "reference",
+  "measuredFrom": {
+    "durationSec": 36.03,
+    "detectedCuts": 22,
+    "detectedMedianShotSec": 1.167,
+    "detectedCutsPerMinute": 36.6,
+    "variety": 3.19,
+    "softBoundaryShare": 0.045,
+    "stillShare": 0.058,
+    "longestStillSec": 1.6,
+    "frozenSpans": 2,
+    "judgedCuts": 29,
+    "judgedMedianShotSec": 0.951,
+    "judgedCutsPerMinute": 48.3,
+    "detectorCutError": 7,
+    "integratedLufs": -12.1,
+    "truePeakDb": -0.7,
+    "longestSoundSilenceSec": 0,
+    "endCardDropDb": 3.7,
+    "cutsOnAudioRatio": 0.545,
+    "cutsOnAudioChance": 0.346,
+    "cutsOnAudioLift": 0.199,
+    "cutsOnAudioFullMap": 0
+  },
+  "medianShotSec": {
+    "min": 0.57,
+    "max": 1.83
+  },
+  "shotLengthVariety": {
+    "min": 1.59
+  },
+  "cutsPerMinute": {
+    "min": 24.5,
+    "max": 72.4
+  },
+  "stillShare": {
+    "max": 0.137
+  },
+  "longestStillSec": {
+    "max": 2.3
+  },
+  "audioRequired": true,
+  "loudnessLufs": {
+    "min": -17,
+    "max": -8.1
+  },
+  "cutsOnAudioRatio": {
+    "min": 0.446
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "provider": "higgsfield",
+  "category": "image-to-image",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "alibaba/qwen-image-3/edit",
+      "category": "image-to-image",
+      "displayName": "Qwen Image 3 — Edit images API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4d334e7c9675be4b61bef8c36009fe76115f00802097f998b31025ab1c868316",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/qwen-image-3/edit.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "7:9",
+            "9:7",
+            "9:16",
+            "16:9",
+            "21:9"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "enable_thinking",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "min": 1,
+          "max": 3,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "prompt_extend",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt_extend_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "direct"
+          ],
+          "default": "direct"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k"
+          ],
+          "default": "1k"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "description": "Generates images from English or Chinese text, with enhanced prompts and resolution up to 2K.",
+      "exclusive": false,
+      "family": {
+        "slug": "qwen-image-3",
+        "title": "Qwen Image 3",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/qwen-image-3/edit.md"
+    }
+  ]
+}

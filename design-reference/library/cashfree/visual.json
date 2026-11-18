@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "palette": {
+    "value": [
+      "#FFFFFF",
+      "#1D221E",
+      "#054B26",
+      "#0DC45E",
+      "#11C55F",
+      "#C5FF93",
+      "#D1FF98",
+      "#F9FFF2",
+      "#A7E4C0",
+      "#053618",
+      "#C0E8D1",
+      "#FBE7B9"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "median 12x12 px samples from media/source.mp4: 0.2 s white; 3.0 s #1D221E top, #054B26 bottom; 8.2 s #0DC45E top, #C5FF93 bottom; 11.9 s #D1FF98 glyph, #1D221E tile; 27.7 s #D1FF98 ground; 28.5 s #F9FFF2; 6.5 s #A7E4C0 sweep top, #053618 floor; 48.0 s #054B26; 51.0 s #C0E8D1 and #FBE7B9 gradient corners; 55.5 s #C3FF93 top, #11C55F bottom"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "hook and chapter lines (typed)",
+        "description": "Geometric grotesque in the DM Sans class (the film names this face on a specimen tile), regular weight, sentence case, centred. Hero size on flat grounds: about 50-55% of frame width for one word (0.0-0.57 s, 27.0-27.9 s; OCR box 0.888 wide by 0.251 high for two words). Typed with a thin caret at 1-3 frames a character."
+      },
+      {
+        "role": "small lines over images and canvases",
+        "description": "Same face, regular, sentence case, 2.5-6% of frame height, centred: search-bar query (OCR h 0.067), canvas line, the small 'crafted' line (OCR w 0.31), anchored photo caption (about 10% of width, white), CTA in a pill (OCR w 0.24)."
+      },
+      {
+        "role": "chips and labels",
+        "description": "Same face in white chips with a thin dark keyline or dark green pills with lime or white text, chip height about 17% of frame for chapter titles (OCR box 0.47 x 0.17), left-set."
+      },
+      {
+        "role": "stats",
+        "description": "Same face, regular, accent green #0DC45E on pale mint, about 73% of frame width (OCR 0.729 x 0.237), small grey kicker above and unit line below; counters in tiles at 6-10% of frame height."
+      },
+      {
+        "role": "accent words",
+        "description": "Last words of a line set in the accent green while the rest stays ink or white (canvas line, 'crafted' line, icon-row sentence)."
+      },
+      {
+        "role": "wordmark",
+        "description": "Client wordmark bold italic, white on green, about 53% of frame width; seen once at 4.1-4.9 s. Fonts are inferred from shapes except the named specimen."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/s002-type.jpg",
+      "visuals/a1/s023-ground.jpg",
+      "visuals/a1/s030-race.jpg",
+      "visuals/a1/s010-chip.jpg",
+      "visuals/a1/s054-cta.jpg",
+      "speech-text.json screenText boxes 8.02, 27.52, 28.02, 32.02, 54.02"
+    ]
+  },
+  "composition": {
+    "value": "Two modes. (1) Single centred subject on a flat or gradient ground with lots of air: typed lines at centre (y 0.45-0.5), a monitor or tablet at centre, the number card at centre; type 25-90% of width depending on whether type is the picture. (2) Dense collage: 6-12 elements in a bento or grid with thin gutters (about 1-2% of width), a held hero element at or near centre (a photo card about 63% wide; a page card about 45% wide) and everything else arriving around it. Split frames for features: left panel about 40% wide with one icon tile, right a photo with small UI chips. Word frames: two small words at the left and right edges framing a centred inset about 45% wide. Nothing is cropped tight except during the canvas punch-in, where the headline overflows both edges on purpose.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/contact-sheet-02.jpg",
+      "visuals/a1/s015-pull.jpg F492",
+      "visuals/a1/s025-collage.jpg F888",
+      "visuals/a1/s050-inset.jpg F1440"
+    ]
+  },
+  "materials": {
+    "value": "A deliberate mix bound by the palette: warm overhead and portrait lifestyle photography (hands with devices, people at work, logistics); glossy 3D renders (an iridescent orb, a fan of glass cards, a currency glyph, phones in an isometric array, a monitor on a green studio sweep, a 3D bolt mark); real web page captures shown full frame, in a browser, on a monitor, tablet and phones; flat UI components (chips, pills, tab controls, chat bubbles, checkout cards); a design-tool canvas with selection boxes and named cursors; pastel mesh gradients and a faint globe grid on the final green.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/contact-sheet-02.jpg",
+      "visuals/a1/s017-headline2.jpg"
+    ]
+  },
+  "lighting": {
+    "value": "Flat, high-key graphic grounds for type; renders lit as soft studio product shots with glossy highlights and green-tinted reflections; the monitor sits on a brand-green studio sweep with a darker floor (#A7E4C0 to #053618) rather than on black; photography is natural daylight or warm interior light, never graded dark. Overexposed mint-white bloom frames used once as a cut device.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/s008-monitor.jpg F172-F185",
+      "visuals/a1/s008-word.jpg F148-F150",
+      "visuals/contact-sheet-02.jpg 3F-7L"
+    ]
+  },
+  "styleSummary": "Fresh green fintech brand case study: lime, signal green and forest green with white and near-black, one geometric grotesque in sentence case, and a mix of lifestyle photos, glossy renders and real page captures composed either as one calm centred object or as a dense bento that assembles around a held hero."
+}

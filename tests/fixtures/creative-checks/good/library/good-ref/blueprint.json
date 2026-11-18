@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "good-ref",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "durationSec": 10,
+  "slots": [
+    {
+      "id": "s",
+      "role": "hook",
+      "startSec": 0,
+      "durationSec": 10,
+      "visualRecipe": "v",
+      "motionRecipe": "m",
+      "soundRecipe": "s"
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "free"
+  },
+  "style": "poster",
+  "transferRules": {
+    "keep": [
+      "k"
+    ],
+    "mustChange": [
+      "m"
+    ]
+  }
+}

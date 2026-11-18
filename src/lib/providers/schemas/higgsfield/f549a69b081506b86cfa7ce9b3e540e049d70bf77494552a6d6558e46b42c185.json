@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/v3.0-turbo/text-to-video",
+  "title": "Kling 3.0 — Turbo · Text to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/turbo-text-to-video.md",
+  "usageNotes": [
+    "duration accepts integers from 3 to 15 seconds. resolution accepts 720p or 1080p and defaults to 720p.",
+    "This endpoint has no sound, multi_shots, elements, or last-frame field.",
+    "aspect_ratio accepts 16:9, 9:16, or 1:1 and defaults to 16:9.",
+    "Keep prompt within 3,072 characters; longer prompts are truncated."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Turbo",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 3
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "720p"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "16:9"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

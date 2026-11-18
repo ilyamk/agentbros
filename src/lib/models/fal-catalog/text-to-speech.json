@@ -1,0 +1,3981 @@
+{
+  "version": 1,
+  "category": "text-to-speech",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "alibaba/qwen-audio-3-tts",
+      "category": "text-to-speech",
+      "displayName": "Qwen Audio 3.0 TTS (Flash)",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "fd9b59baee5fe4a3ad5220b1939441ad4302a2d9fdc8712ff4d08ef4e34afdf2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=alibaba%2Fqwen-audio-3-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "Chinese",
+            "English",
+            "Spanish",
+            "Russian",
+            "Italian",
+            "French",
+            "Korean",
+            "Japanese",
+            "German",
+            "Portuguese"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 2000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Cherry",
+            "Serena",
+            "Ethan",
+            "Chelsie",
+            "Momo",
+            "Vivian",
+            "Moon",
+            "Maia",
+            "Kai",
+            "Nofish",
+            "Bella",
+            "Jennifer",
+            "Ryan",
+            "Katerina",
+            "Aiden",
+            "Mia",
+            "Mochi",
+            "Bellona",
+            "Vincent",
+            "Bunny",
+            "Neil",
+            "Elias",
+            "Arthur",
+            "Nini",
+            "Seren",
+            "Pip",
+            "Stella",
+            "Bodega",
+            "Sonrisa",
+            "Alek",
+            "Dolce",
+            "Sohee",
+            "Lenn",
+            "Emilien",
+            "Andre",
+            "Jada",
+            "Dylan",
+            "Li",
+            "Marcus",
+            "Roy",
+            "Peter",
+            "Sunny",
+            "Eric",
+            "Rocky",
+            "Kiki"
+          ],
+          "default": "Cherry"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "audio",
+        "speech-synthesis",
+        "multilingual"
+      ]
+    },
+    {
+      "endpoint": "async/tts-pro/v1.0",
+      "category": "text-to-speech",
+      "displayName": "Async Text to Speech Pro V1.0",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "078a07a9f6fb5e685c849dcaeb7de7dcec3db6085d230fd0b3e59acfee296df1",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=async%2Ftts-pro%2Fv1.0&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "en",
+            "fr",
+            "es",
+            "de",
+            "it",
+            "pt"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "transcript",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "voice",
+          "type": "object",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "voice-clone",
+        "lipsync"
+      ]
+    },
+    {
+      "endpoint": "elevenlabs/tts/eleven-v4",
+      "category": "text-to-speech",
+      "displayName": "Eleven v4",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "09c2efa46a23697a328e439572ab3087c6dc9d09c0c5ca763ef0332b63566c6d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=elevenlabs%2Ftts%2Feleven-v4&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "apply_text_normalization",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "on",
+            "off"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_code",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3_22050_32",
+            "mp3_44100_32",
+            "mp3_44100_64",
+            "mp3_44100_96",
+            "mp3_44100_128",
+            "mp3_44100_192",
+            "pcm_8000",
+            "pcm_16000",
+            "pcm_22050",
+            "pcm_24000",
+            "pcm_44100",
+            "pcm_48000",
+            "ulaw_8000",
+            "alaw_8000",
+            "opus_48000_32",
+            "opus_48000_64",
+            "opus_48000_96",
+            "opus_48000_128",
+            "opus_48000_192"
+          ],
+          "default": "mp3_44100_128"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 4294967295
+        },
+        {
+          "name": "similarity_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.75
+        },
+        {
+          "name": "stability",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "timestamps",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "Rachel"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "timestamps"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "audio",
+        "text-to-speech",
+        "voiceover"
+      ]
+    },
+    {
+      "endpoint": "elevenlabs/tts/eleven-v4-turbo",
+      "category": "text-to-speech",
+      "displayName": "Eleven v4 Turbo",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7009581b82a310709659d7b2a2f600daf0a24d650746d81660ea87f900368684",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=elevenlabs%2Ftts%2Feleven-v4-turbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "apply_text_normalization",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "on",
+            "off"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_code",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3_22050_32",
+            "mp3_44100_32",
+            "mp3_44100_64",
+            "mp3_44100_96",
+            "mp3_44100_128",
+            "mp3_44100_192",
+            "pcm_8000",
+            "pcm_16000",
+            "pcm_22050",
+            "pcm_24000",
+            "pcm_44100",
+            "pcm_48000",
+            "ulaw_8000",
+            "alaw_8000",
+            "opus_48000_32",
+            "opus_48000_64",
+            "opus_48000_96",
+            "opus_48000_128",
+            "opus_48000_192"
+          ],
+          "default": "mp3_44100_128"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 4294967295
+        },
+        {
+          "name": "similarity_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.75
+        },
+        {
+          "name": "stability",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "timestamps",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "Rachel"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "timestamps"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio",
+        "text-to-speech",
+        "voiceover"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/bytedance/seed-speech/tts/v2",
+      "category": "text-to-speech",
+      "displayName": "Bytedance Seed Speech Text to Speech",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "39e2765f544f1ffdb640f255a618a4c5aeb14e245b5640aeb1b38b95d619fb68",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fbytedance%2Fseed-speech%2Ftts%2Fv2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "zh",
+            "en",
+            "ja",
+            "es-mx",
+            "id",
+            "pt-br",
+            "ko",
+            "it",
+            "de",
+            "fr"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "opus"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "pitch",
+          "type": "integer",
+          "required": false,
+          "min": -12,
+          "max": 12,
+          "default": 0
+        },
+        {
+          "name": "sample_rate",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            8000,
+            16000,
+            22050,
+            24000,
+            32000,
+            44100,
+            48000
+          ],
+          "default": 24000
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "min": 0.5,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "max": 5000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "vivi_mixed_en_zh_ja_es_id",
+            "mindy_en_es_id_pt_zh",
+            "stokie_en",
+            "dacey_en",
+            "tim_en",
+            "kian_en_zh",
+            "cedric_en_zh",
+            "sophie_en_zh",
+            "jean_en_zh",
+            "magnus_en_zh",
+            "mabel_en_zh",
+            "nadia_en_zh",
+            "opal_en_zh",
+            "pearl_en_zh",
+            "quentin_en_zh",
+            "vienna_mixed_en_zh",
+            "alina_mixed_en_zh",
+            "corinne_mixed_en_zh",
+            "esther_mixed_en_zh",
+            "freya_mixed_en_zh",
+            "gigi_mixed_en_zh",
+            "holly_mixed_en_zh",
+            "lyla_mixed_en_zh",
+            "daisy_mixed_en_zh",
+            "tracy_es_zh",
+            "jess_ja_es_id_pt_en_zh",
+            "pinky_es_ko_mixed_en_zh",
+            "sweety_ja_es",
+            "sandy_es_mixed_en_zh",
+            "sven_de",
+            "minimi_ja",
+            "usseau_fr",
+            "felipe_es",
+            "han_id",
+            "martins_pt",
+            "enzo_it",
+            "shane_ko",
+            "bonnie_zh",
+            "felix_zh",
+            "celeste_zh",
+            "monkey_king_zh"
+          ],
+          "default": "stokie_en"
+        },
+        {
+          "name": "voice_instruction",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "volume",
+          "type": "number",
+          "required": false,
+          "min": 0.5,
+          "max": 2,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lipsync"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/chatterbox/text-to-speech",
+      "category": "text-to-speech",
+      "displayName": "Chatterbox",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f850a5faa0a270bf1c569ca99418d6b09108228da0af5a5bf8eb299ede7356d0",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fchatterbox%2Ftext-to-speech&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "default": "https://storage.googleapis.com/chatterbox-demo-samples/prompts/male_rickmorty.mp3",
+          "media": "audio"
+        },
+        {
+          "name": "cfg",
+          "type": "number",
+          "required": false,
+          "min": 0.1,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "exaggeration",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.25
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0.05,
+          "max": 2,
+          "default": 0.7
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/chatterbox/text-to-speech/multilingual",
+      "category": "text-to-speech",
+      "displayName": "Chatterbox",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "43f5bec33555779e3733275aa0bd1bf4b0a61f8185e224257282ccaa4d742ebd",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fchatterbox%2Ftext-to-speech%2Fmultilingual&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "custom_audio_language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "english",
+            "arabic",
+            "danish",
+            "german",
+            "greek",
+            "spanish",
+            "finnish",
+            "french",
+            "hebrew",
+            "hindi",
+            "italian",
+            "japanese",
+            "korean",
+            "malay",
+            "dutch",
+            "norwegian",
+            "polish",
+            "portuguese",
+            "russian",
+            "swedish",
+            "swahili",
+            "turkish",
+            "chinese"
+          ]
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "exaggeration",
+          "type": "number",
+          "required": false,
+          "min": 0.25,
+          "max": 2,
+          "default": 0.5
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0.05,
+          "max": 2,
+          "default": 0.8
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "max": 300
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "english"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "multilingual"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/dia-tts",
+      "category": "text-to-speech",
+      "displayName": "Dia",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/tts/turbo-v2.5",
+      "category": "text-to-speech",
+      "displayName": "ElevenLabs TTS Turbo v2.5",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4e52d62c91fc0e53b4db476e71b6af83b3b4080a5c92dad5b09b578dabfdfdca",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Ftts%2Fturbo-v2.5&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "apply_text_normalization",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "on",
+            "off"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_code",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "next_text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "previous_text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "similarity_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.75
+        },
+        {
+          "name": "speed",
+          "type": "number",
+          "required": false,
+          "min": 0.7,
+          "max": 1.2,
+          "default": 1
+        },
+        {
+          "name": "stability",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "style",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "timestamps",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "Rachel"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "timestamps"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/gemini-3.1-flash-tts",
+      "category": "text-to-speech",
+      "displayName": "Gemini 3.1 Flash Tts",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "78afcb6864a4519198219ed139351413e9b503b8b3bbd47aa70baa125861533f",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fgemini-3.1-flash-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_code",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3",
+            "ogg_opus"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 50000
+        },
+        {
+          "name": "speakers",
+          "type": "array",
+          "required": false,
+          "min": 2,
+          "max": 10,
+          "array": true
+        },
+        {
+          "name": "style_instructions",
+          "type": "string",
+          "required": false,
+          "max": 4000
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Achernar",
+            "Achird",
+            "Algenib",
+            "Algieba",
+            "Alnilam",
+            "Aoede",
+            "Autonoe",
+            "Callirrhoe",
+            "Charon",
+            "Despina",
+            "Enceladus",
+            "Erinome",
+            "Fenrir",
+            "Gacrux",
+            "Iapetus",
+            "Kore",
+            "Laomedeia",
+            "Leda",
+            "Orus",
+            "Pulcherrima",
+            "Puck",
+            "Rasalgethi",
+            "Sadachbia",
+            "Sadaltager",
+            "Schedar",
+            "Sulafat",
+            "Umbriel",
+            "Vindemiatrix",
+            "Zephyr",
+            "Zubenelgenubi"
+          ],
+          "default": "Kore"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "lipsync",
+        "avatar",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/index-tts-2/text-to-speech",
+      "category": "text-to-speech",
+      "displayName": "Index TTS 2.0",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6f4ee8cb8f3030106800cad81f1e041d2a70ad6977dcff318f278afe73a8cbf6",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Findex-tts-2%2Ftext-to-speech&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "emotion_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "emotional_audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "emotional_strengths",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "should_use_prompt_for_emotion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/inworld-tts",
+      "category": "text-to-speech",
+      "displayName": "Inworld TTS-1.5 Max",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f9ecafcfaf550b1293662fc568e492296e68e10a697f01fc1b50a597e03379de",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Finworld-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "sample_rate_hertz",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            8000,
+            16000,
+            24000,
+            32000,
+            40000,
+            48000
+          ],
+          "default": 48000
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "max": 2000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "Craig (en)"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "inworld",
+        "tts"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/kling-video/v1/tts",
+      "category": "text-to-speech",
+      "displayName": "Kling TTS",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0ccc8a53efb53adb00303c788f7d68e070d3c935ab1248762f2a1aa72abba27a",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv1%2Ftts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "max": 500
+        },
+        {
+          "name": "voice_id",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "genshin_vindi2",
+            "zhinen_xuesheng",
+            "AOT",
+            "ai_shatang",
+            "genshin_klee2",
+            "genshin_kirara",
+            "ai_kaiya",
+            "oversea_male1",
+            "ai_chenjiahao_712",
+            "girlfriend_4_speech02",
+            "chat1_female_new-3",
+            "chat_0407_5-1",
+            "cartoon-boy-07",
+            "uk_boy1",
+            "cartoon-girl-01",
+            "PeppaPig_platform",
+            "ai_huangzhong_712",
+            "ai_huangyaoshi_712",
+            "ai_laoguowang_712",
+            "chengshu_jiejie",
+            "you_pingjing",
+            "calm_story1",
+            "uk_man2",
+            "laopopo_speech02",
+            "heainainai_speech02",
+            "reader_en_m-v1",
+            "commercial_lady_en_f-v1",
+            "tiyuxi_xuedi",
+            "tiexin_nanyou",
+            "girlfriend_1_speech02",
+            "girlfriend_2_speech02",
+            "zhuxi_speech02",
+            "uk_oldman3",
+            "dongbeilaotie_speech02",
+            "chongqingxiaohuo_speech02",
+            "chuanmeizi_speech02",
+            "chaoshandashu_speech02",
+            "ai_taiwan_man2_speech02",
+            "xianzhanggui_speech02",
+            "tianjinjiejie_speech02",
+            "diyinnansang_DB_CN_M_04-v2",
+            "yizhipiannan-v1",
+            "guanxiaofang-v2",
+            "tianmeixuemei-v1",
+            "daopianyansang-v1",
+            "mengwa-v1"
+          ],
+          "default": "genshin_vindi2"
+        },
+        {
+          "name": "voice_speed",
+          "type": "number",
+          "required": false,
+          "min": 0.8,
+          "max": 2,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/preview/speech-2.5-hd",
+      "category": "text-to-speech",
+      "displayName": "Minimax",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8149fd561d0069b24ee35d1dfa6d7554669ae25404f188e40cec711635619a74",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fpreview%2Fspeech-2.5-hd&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Persian",
+            "Filipino",
+            "Tamil",
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/preview/speech-2.5-turbo",
+      "category": "text-to-speech",
+      "displayName": "Minimax",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8e431595c76c7ce3a9f7c8ea2bf93a242b214f69a372daabe94211d8f1279cd9",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fpreview%2Fspeech-2.5-turbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Persian",
+            "Filipino",
+            "Tamil",
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-02-hd",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech-02 HD",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7aa21a0ea2ba7d792c6911c361ccb8704f3df74e666cef0386df41707ae6f007",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-02-hd&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-02-turbo",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech-02 Turbo",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7f59bc9ad9629ff678edf2d31d125d203046052696f9426de4dedde5a1747965",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-02-turbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-2.6-hd",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech 2.6 [HD]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a1d21b799ab024f6240e6526227b4a1bf307718a845e398b857cf5a71b8870cc",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-2.6-hd&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "normalization_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-2.6-turbo",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech 2.6 [Turbo]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e06889545c1c60e127dc15f8206f23944c41e534c63fefd22b4b2e9a4d87ee08",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-2.6-turbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "normalization_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-2.8-hd",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech 2.8 [HD]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d9d653ad26f0204530f43bd109e4e885138fc3b1a66547af9e2bde0da765f6ae",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-2.8-hd&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "normalization_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_modify",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/minimax/speech-2.8-turbo",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Speech 2.8 [Turbo]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f123c7bad79b53dce9a8e9916b977861b4e4ef83ddad48fd3dd8bf6831267f6b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fspeech-2.8-turbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language_boost",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Chinese",
+            "Chinese,Yue",
+            "English",
+            "Arabic",
+            "Russian",
+            "Spanish",
+            "French",
+            "Portuguese",
+            "German",
+            "Turkish",
+            "Dutch",
+            "Ukrainian",
+            "Vietnamese",
+            "Indonesian",
+            "Japanese",
+            "Italian",
+            "Korean",
+            "Thai",
+            "Polish",
+            "Romanian",
+            "Greek",
+            "Czech",
+            "Finnish",
+            "Hindi",
+            "Bulgarian",
+            "Danish",
+            "Hebrew",
+            "Malay",
+            "Slovak",
+            "Swedish",
+            "Croatian",
+            "Hungarian",
+            "Norwegian",
+            "Slovenian",
+            "Catalan",
+            "Nynorsk",
+            "Afrikaans",
+            "auto"
+          ]
+        },
+        {
+          "name": "normalization_setting",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "url",
+            "hex"
+          ],
+          "default": "hex"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "pronunciation_dict",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_modify",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "voice_setting",
+          "type": "object",
+          "required": false,
+          "default": {
+            "vol": 1,
+            "voice_id": "Wise_Woman",
+            "english_normalization": false,
+            "speed": 1,
+            "pitch": 0
+          }
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/minimax/voice-clone",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Voice Cloning",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6ba3bf93209a23d3409b9fcafb0739763dacb99a2e25b1c8bfdb4b74aae1ea86",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fvoice-clone&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "accuracy",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "speech-02-hd",
+            "speech-02-turbo",
+            "speech-01-hd",
+            "speech-01-turbo"
+          ],
+          "default": "speech-02-hd"
+        },
+        {
+          "name": "need_volume_normalization",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "noise_reduction",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "max": 1000,
+          "default": "Hello, this is a preview of your cloned voice! I hope you like it!"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/minimax/voice-design",
+      "category": "text-to-speech",
+      "displayName": "MiniMax Voice Design",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d541ff66e51ca70488bd35ed8e80b0479ef6190d92cda67cd7534260cc8fbfcd",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fvoice-design&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "preview_text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 500
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 2000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/orpheus-tts",
+      "category": "text-to-speech",
+      "displayName": "Orpheus TTS",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "791f653fcb3cb9bc343fd721bc64590560714bea4fe5c54e67b9f4a2d288d242",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Forpheus-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "repetition_penalty",
+          "type": "number",
+          "required": false,
+          "min": 1.1,
+          "max": 2,
+          "default": 1.2
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 0.7
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "tara",
+            "leah",
+            "jess",
+            "leo",
+            "dan",
+            "mia",
+            "zac",
+            "zoe"
+          ],
+          "default": "tara"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text to speech",
+        "voice synthesis",
+        "high-fidelity"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/text-to-speech/0.6b",
+      "category": "text-to-speech",
+      "displayName": "Qwen 3 TTS - Text to Speech [0.6B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "efed3fb943175fb51c3ac52a216d3eca413a764a72f2175b67f40fcbb134e709",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Ftext-to-speech%2F0.6b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "English",
+            "Chinese",
+            "Spanish",
+            "French",
+            "German",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Portuguese",
+            "Russian"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "max_new_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 8192,
+          "default": 200
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "reference_text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "repetition_penalty",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.05
+        },
+        {
+          "name": "speaker_voice_embedding_file_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "subtalker_dosample",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "subtalker_temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "subtalker_top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "subtalker_top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Vivian",
+            "Serena",
+            "Uncle_Fu",
+            "Dylan",
+            "Eric",
+            "Ryan",
+            "Aiden",
+            "Ono_Anna",
+            "Sohee"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/text-to-speech/1.7b",
+      "category": "text-to-speech",
+      "displayName": "Qwen 3 TTS - Text to Speech [1.7B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a0baad42841f6e3de5063dffe75cb2feb599e642939d3060a4d88488b3e7af9f",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Ftext-to-speech%2F1.7b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "English",
+            "Chinese",
+            "Spanish",
+            "French",
+            "German",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Portuguese",
+            "Russian"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "max_new_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 8192,
+          "default": 200
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "reference_text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "repetition_penalty",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.05
+        },
+        {
+          "name": "speaker_voice_embedding_file_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "subtalker_dosample",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "subtalker_temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "subtalker_top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "subtalker_top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Vivian",
+            "Serena",
+            "Uncle_Fu",
+            "Dylan",
+            "Eric",
+            "Ryan",
+            "Aiden",
+            "Ono_Anna",
+            "Sohee"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "text-to-speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/voice-design/1.7b",
+      "category": "text-to-speech",
+      "displayName": "Qwen 3 TTS - Voice Design [1.7B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3600aefd2e2ac4c5afef0fec15b289225efcfa9827a98f2214b0a535e639aab2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Fvoice-design%2F1.7b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "English",
+            "Chinese",
+            "Spanish",
+            "French",
+            "German",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Portuguese",
+            "Russian"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "max_new_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 8192,
+          "default": 200
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "repetition_penalty",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.05
+        },
+        {
+          "name": "subtalker_dosample",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "subtalker_temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "subtalker_top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "subtalker_top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 50
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "voice-design"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/vibevoice",
+      "category": "text-to-speech",
+      "displayName": "VibeVoice 1.5B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5823648c6f0c4b0b076e113c36bb402c605274baef2a2957f67363d4b32ba6a8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvibevoice&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 2,
+          "default": 1.3
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "script",
+          "type": "string",
+          "required": true,
+          "max": 90000
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "speakers",
+          "type": "array",
+          "required": true,
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "multi-speaker",
+        "podcast"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/vibevoice/0.5b",
+      "category": "text-to-speech",
+      "displayName": "Vibevoice",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "eb051905d1f4fdc2d732ca8bfaff6677e436ff3d16b4db326fe9d81dc26348fd",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvibevoice%2F0.5b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 2,
+          "default": 1.3
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "script",
+          "type": "string",
+          "required": true,
+          "max": 90000
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "speaker",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "Frank",
+            "Wayne",
+            "Carter",
+            "Emma",
+            "Grace",
+            "Mike"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "vibevoice",
+        "fast"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/vibevoice/7b",
+      "category": "text-to-speech",
+      "displayName": "VibeVoice 7B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "95292182a7aafbe9d54944ec04ce08189b03810d0b459f7d6a6059a3c6708753",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvibevoice%2F7b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 2,
+          "default": 1.3
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "script",
+          "type": "string",
+          "required": true,
+          "max": 30000
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "speakers",
+          "type": "array",
+          "required": true,
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "multi-speaker",
+        "podcast"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/zonos2",
+      "category": "text-to-speech",
+      "displayName": "Zonos2 Text to Speech",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cfcb1e29f3419367c6f04ac20fa6c35a70568add4101126590eed1eae486fc7c",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fzonos2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "accurate_mode",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "clean_speaker_background",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "default": "en_us"
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 6144
+        },
+        {
+          "name": "min_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.18
+        },
+        {
+          "name": "reference_audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1.15
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "default": "\"Fal\" is the fastest solution for your audio generation."
+        },
+        {
+          "name": "top_k",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2048,
+          "default": 106
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "tts",
+        "voice cloning"
+      ]
+    },
+    {
+      "endpoint": "google/gemini-3.8-flash-lite-tts",
+      "category": "text-to-speech",
+      "displayName": "Gemini 3.8 Flash Lite TTS",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6887909fe86c7374cde89b3f31b4e055f13eb73631327204d2588a1b51d1ddf2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=google%2Fgemini-3.8-flash-lite-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "speakers",
+          "type": "array",
+          "required": false,
+          "min": 2,
+          "max": 2,
+          "array": true
+        },
+        {
+          "name": "style_instructions",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "turns",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "array": true
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Achernar",
+            "Achird",
+            "Algenib",
+            "Algieba",
+            "Alnilam",
+            "Aoede",
+            "Autonoe",
+            "Callirrhoe",
+            "Charon",
+            "Despina",
+            "Enceladus",
+            "Erinome",
+            "Fenrir",
+            "Gacrux",
+            "Iapetus",
+            "Kore",
+            "Laomedeia",
+            "Leda",
+            "Orus",
+            "Pulcherrima",
+            "Puck",
+            "Rasalgethi",
+            "Sadachbia",
+            "Sadaltager",
+            "Schedar",
+            "Sulafat",
+            "Umbriel",
+            "Vindemiatrix",
+            "Zephyr",
+            "Zubenelgenubi"
+          ],
+          "default": "Kore"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "audio",
+        "dialogue",
+        "voiceover"
+      ]
+    },
+    {
+      "endpoint": "google/gemini-3.8-flash-tts",
+      "category": "text-to-speech",
+      "displayName": "Gemini 3.8 Flash TTS",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "792467f449ffe00e5b336d6efdc995226be4224b90ae40f7ed639df229d6ca30",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=google%2Fgemini-3.8-flash-tts&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "speakers",
+          "type": "array",
+          "required": false,
+          "min": 2,
+          "max": 2,
+          "array": true
+        },
+        {
+          "name": "style_instructions",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "turns",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "array": true
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Achernar",
+            "Achird",
+            "Algenib",
+            "Algieba",
+            "Alnilam",
+            "Aoede",
+            "Autonoe",
+            "Callirrhoe",
+            "Charon",
+            "Despina",
+            "Enceladus",
+            "Erinome",
+            "Fenrir",
+            "Gacrux",
+            "Iapetus",
+            "Kore",
+            "Laomedeia",
+            "Leda",
+            "Orus",
+            "Pulcherrima",
+            "Puck",
+            "Rasalgethi",
+            "Sadachbia",
+            "Sadaltager",
+            "Schedar",
+            "Sulafat",
+            "Umbriel",
+            "Vindemiatrix",
+            "Zephyr",
+            "Zubenelgenubi"
+          ],
+          "default": "Kore"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-speech",
+        "audio",
+        "dialogue",
+        "voiceover"
+      ]
+    },
+    {
+      "endpoint": "heygen/heygen-voice",
+      "category": "text-to-speech",
+      "displayName": "HeyGen Voice",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c17378fea27701e9715f8a9760dd1336238776e60ffc846ced4769a336daafd4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=heygen%2Fheygen-voice&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "expressiveness_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ar",
+            "be",
+            "bg",
+            "ca",
+            "cs",
+            "da",
+            "de",
+            "el",
+            "en",
+            "es",
+            "fa",
+            "fi",
+            "fr",
+            "he",
+            "hi",
+            "hr",
+            "hu",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "mk",
+            "ms",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "sk",
+            "sl",
+            "sr",
+            "sv",
+            "ta",
+            "th",
+            "tl",
+            "tr",
+            "uk",
+            "vi",
+            "zh"
+          ]
+        },
+        {
+          "name": "reference_audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Jonah",
+            "Nadine",
+            "Tabitha",
+            "Soren",
+            "Elowen",
+            "Vincent",
+            "Jocelyn",
+            "Marielle",
+            "Corinne",
+            "Lucian",
+            "Kieran",
+            "Hugh",
+            "Noelle",
+            "Bram",
+            "Ewan",
+            "Iona",
+            "Cecily",
+            "Simon",
+            "Weston",
+            "Felicity",
+            "Gareth",
+            "Rory",
+            "Meredith",
+            "Sabrina"
+          ],
+          "default": "Jonah"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "heygen",
+        "text-to-speech",
+        "tts",
+        "voice cloning"
+      ]
+    },
+    {
+      "endpoint": "heygen/heygen-voice/turbo",
+      "category": "text-to-speech",
+      "displayName": "HeyGen Voice Turbo",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "2369a9e126de11224f272380322c4379867d3ba065a8625c9a1123fc7d328e32",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=heygen%2Fheygen-voice%2Fturbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "expressiveness_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ar",
+            "be",
+            "bg",
+            "ca",
+            "cs",
+            "da",
+            "de",
+            "el",
+            "en",
+            "es",
+            "fa",
+            "fi",
+            "fr",
+            "he",
+            "hi",
+            "hr",
+            "hu",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "mk",
+            "ms",
+            "nl",
+            "pl",
+            "pt",
+            "ro",
+            "ru",
+            "sk",
+            "sl",
+            "sr",
+            "sv",
+            "ta",
+            "th",
+            "tl",
+            "tr",
+            "uk",
+            "vi",
+            "zh"
+          ]
+        },
+        {
+          "name": "reference_audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Jonah",
+            "Nadine",
+            "Tabitha",
+            "Soren",
+            "Elowen",
+            "Vincent",
+            "Jocelyn",
+            "Marielle",
+            "Corinne",
+            "Lucian",
+            "Kieran",
+            "Hugh",
+            "Noelle",
+            "Bram",
+            "Ewan",
+            "Iona",
+            "Cecily",
+            "Simon",
+            "Weston",
+            "Felicity",
+            "Gareth",
+            "Rory",
+            "Meredith",
+            "Sabrina"
+          ],
+          "default": "Jonah"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "heygen",
+        "text-to-speech",
+        "tts",
+        "voice cloning",
+        "turbo"
+      ]
+    },
+    {
+      "endpoint": "kotoba-technologies/kotoba-tts/v2/tts/ws",
+      "category": "text-to-speech",
+      "displayName": "Kotoba Text-to-Speech",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5ad7c28022812096108ec727d59a02d916d63411c728f144e914e1118acc4897",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=kotoba-technologies%2Fkotoba-tts%2Fv2%2Ftts%2Fws&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "language",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "ja"
+          ]
+        },
+        {
+          "name": "speaker_id",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "male-01",
+            "female-01"
+          ]
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 400
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "text"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "commercial-use",
+        "text-to-speech",
+        "japanese",
+        "streaming"
+      ]
+    },
+    {
+      "endpoint": "resemble-ai/chatterboxhd/text-to-speech",
+      "category": "text-to-speech",
+      "displayName": "Chatterboxhd",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d24822fec06d9a894534c2d534a604c97b171846f3fed290d12fa9d27f321556",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=resemble-ai%2Fchatterboxhd%2Ftext-to-speech&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "cfg",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "exaggeration",
+          "type": "number",
+          "required": false,
+          "min": 0.25,
+          "max": 2,
+          "default": 0.5
+        },
+        {
+          "name": "high_quality_audio",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "default": 0
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0.05,
+          "max": 5,
+          "default": 0.8
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "default": "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions and loyal servant to the true emperor, Marcus Aurelius. Father to a murdered son, husband to a murdered wife. And I will have my vengeance, in this life or the next."
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Aurora",
+            "Blade",
+            "Britney",
+            "Carl",
+            "Cliff",
+            "Richard",
+            "Rico",
+            "Siobhan",
+            "Vicky"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "xai/tts/v1",
+      "category": "text-to-speech",
+      "displayName": "xAI Text to Speech",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "425091ef8e5e1102b675b0472c9aa198c2589440e71ecf9ddae70c6dc021aba5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=xai%2Ftts%2Fv1&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "en",
+            "ar-EG",
+            "ar-SA",
+            "ar-AE",
+            "bn",
+            "zh",
+            "fr",
+            "de",
+            "hi",
+            "id",
+            "it",
+            "ja",
+            "ko",
+            "pt-BR",
+            "pt-PT",
+            "ru",
+            "es-MX",
+            "es-ES",
+            "tr",
+            "vi"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "output_format",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 15000
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "carina",
+            "zagan",
+            "helix",
+            "orion",
+            "luna",
+            "iris",
+            "altair",
+            "zenith",
+            "perseus",
+            "helios",
+            "lux",
+            "kepler",
+            "rigel",
+            "cosmo",
+            "celeste",
+            "ursa",
+            "sirius",
+            "lumen",
+            "castor",
+            "naksh",
+            "atlas",
+            "aurora",
+            "liora",
+            "ara",
+            "eve",
+            "leo",
+            "rex",
+            "sal"
+          ],
+          "default": "eve"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

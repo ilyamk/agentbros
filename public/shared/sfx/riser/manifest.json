@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "kind": "riser",
+  "entries": [
+    {
+      "file": "synth-riser-1-5s.mp3",
+      "source": "synth",
+      "sourceId": "riser-1-5s",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "riser-s3-45f30.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "1.5 s, mono; pnpm sfx:synth seed 3",
+      "sha256": "26906bb0e4b33d21e195d40d294f0ff38e21f891961bd8a5dc52287d67503443",
+      "bytes": 18691,
+      "recipe": {
+        "type": "synth",
+        "kind": "riser",
+        "seed": 3,
+        "rootHz": 55,
+        "lengthFrames": 45,
+        "fps": 30,
+        "sha256": "947020ed0c91e8b4b8de40e161681fbf93e231da41401736df78fbc299537919"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-376575-riser-ominous.mp3",
+      "source": "freesound",
+      "sourceId": "376575",
+      "sourceUrl": "https://freesound.org/s/376575/",
+      "title": "Riser Ominous",
+      "author": "original_sound",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"Riser Ominous\" by original_sound (freesound.org/s/376575), CC BY 3.0",
+      "notes": "1.7 s, stereo; Freesound HQ preview; found by \"riser\"",
+      "sha256": "2b91b699684634274eeba25d090ade89376b5076d8896973d04ae06b6f14416b",
+      "bytes": 27596,
+      "recipe": {
+        "type": "freesound",
+        "id": 376575,
+        "url": "https://cdn.freesound.org/previews/376/376575_6687700-hq.mp3",
+        "sha256": "b6bf872052a3f78db995d6914fda5b9765063e860fd1483408fa0af43af40707"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-561207-riser.mp3",
+      "source": "freesound",
+      "sourceId": "561207",
+      "sourceUrl": "https://freesound.org/s/561207/",
+      "title": "Riser",
+      "author": "Rizzard",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "1.8 s, stereo; Freesound HQ preview; found by \"riser\"",
+      "sha256": "445da5298ba2bfd8317ec92e1094bae1e393c063bf8c6f3fe77a108dca50ba89",
+      "bytes": 35261,
+      "recipe": {
+        "type": "freesound",
+        "id": 561207,
+        "url": "https://cdn.freesound.org/previews/561/561207_10825267-hq.mp3",
+        "sha256": "c512a725e9c866277b3fa0f8e7f8f311d5cca619bb0fac2e3620958f2a8b7e49"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-522095-energy-riser.mp3",
+      "source": "freesound",
+      "sourceId": "522095",
+      "sourceUrl": "https://freesound.org/s/522095/",
+      "title": "Energy Riser",
+      "author": "magnuswaker",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "1.9 s, stereo; Freesound HQ preview; found by \"riser\"",
+      "sha256": "553eedff6354733ea914eb415abfb022632db5304afdf8aec916b2109853faa9",
+      "bytes": 37137,
+      "recipe": {
+        "type": "freesound",
+        "id": 522095,
+        "url": "https://cdn.freesound.org/previews/522/522095_11537497-hq.mp3",
+        "sha256": "44947e7d15eb5c16d90ba3d363d8d6c478d1302d6751ace01eba24f5576a7609"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-riser-2s.mp3",
+      "source": "synth",
+      "sourceId": "riser-2s",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "riser.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "2.0 s, mono; pnpm sfx:synth seed 1",
+      "sha256": "64f255d7d8649a02061feed1e2268c9eddd9a373560bf88bf492d899f0ffdeca",
+      "bytes": 25422,
+      "recipe": {
+        "type": "synth",
+        "kind": "riser",
+        "seed": 1,
+        "rootHz": 55,
+        "lengthFrames": 60,
+        "fps": 30,
+        "sha256": "50b8b983492e88300fec800340a3532c1996e6f51318f66e9e05803d6fae1fd5"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-176046-chiptune-style-riser-fx-110bpm.mp3",
+      "source": "freesound",
+      "sourceId": "176046",
+      "sourceUrl": "https://freesound.org/s/176046/",
+      "title": "chiptune_style_riser_fx_110bpm.wav",
+      "author": "fawkes027",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.1 s, mono; Freesound HQ preview; found by \"riser\"",
+      "sha256": "8215b568a503633e53ee5280c6ded1514154653e474a804e216f13d043624977",
+      "bytes": 28861,
+      "recipe": {
+        "type": "freesound",
+        "id": 176046,
+        "url": "https://cdn.freesound.org/previews/176/176046_3232871-hq.mp3",
+        "sha256": "d79820765b10e7484adf6289c0fe901b17ed482610ca721877d7469832ff178d"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-503815-sweep.mp3",
+      "source": "freesound",
+      "sourceId": "503815",
+      "sourceUrl": "https://freesound.org/s/503815/",
+      "title": "sweep.wav",
+      "author": "reathance",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.4 s, stereo; Freesound HQ preview; found by \"riser build up\"",
+      "sha256": "3a52e79dc2b6f7af48b0ddd216ce826752306a16344f938f956d999accc68802",
+      "bytes": 28266,
+      "recipe": {
+        "type": "freesound",
+        "id": 503815,
+        "url": "https://cdn.freesound.org/previews/503/503815_9637845-hq.mp3",
+        "sha256": "acfd3c738fda6eff06dc5dd2f9a1e634ef0d3e41bafa8f0a3aee8d75f0aaca5a"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "elevenlabs-03-short-tension-riser.mp3",
+      "source": "elevenlabs",
+      "sourceId": "03",
+      "sourceUrl": "https://api.elevenlabs.io/v1/sound-generation",
+      "title": "Short synth tension riser, fast upward sweep",
+      "author": "ElevenLabs sound generation",
+      "licence": "generated",
+      "licenceUrl": "https://elevenlabs.io/terms-of-use",
+      "notes": "2.5 s, stereo; ElevenLabs sound-generation, 25 credits, requested 2.5 s",
+      "sha256": "01fe55c3d638990c084fedbca9c515b2a7d95cb8ee6f5525c3125a8670075c98",
+      "bytes": 43968,
+      "recipe": {
+        "type": "elevenlabs",
+        "endpoint": "POST https://api.elevenlabs.io/v1/sound-generation",
+        "model": "API default (no model_id sent), 2026-11-11",
+        "prompt": "Short synth tension riser, fast upward sweep",
+        "durationSeconds": 2.5,
+        "credits": 25,
+        "sha256": "46eac386c8e5096365562289660f9ff3c717d4d378273fab75aaab172671643f"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-840719-simple-riser.mp3",
+      "source": "freesound",
+      "sourceId": "840719",
+      "sourceUrl": "https://freesound.org/s/840719/",
+      "title": "Simple Riser",
+      "author": "SoundEffectsForAll",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.9 s, stereo; Freesound HQ preview; found by \"tension riser\"",
+      "sha256": "a293e193698f81da20fb5f648852ab0359efa1b12d900471155351c4f10b5e8c",
+      "bytes": 50588,
+      "recipe": {
+        "type": "freesound",
+        "id": 840719,
+        "url": "https://cdn.freesound.org/previews/840/840719_17848526-hq.mp3",
+        "sha256": "4b38c0526f51b7cefcd7a61154913923fcef799655b1b891ca38e874a50953ed"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-376574-riser-quick-1.mp3",
+      "source": "freesound",
+      "sourceId": "376574",
+      "sourceUrl": "https://freesound.org/s/376574/",
+      "title": "Riser Quick 1",
+      "author": "original_sound",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"Riser Quick 1\" by original_sound (freesound.org/s/376574), CC BY 3.0",
+      "notes": "3.0 s, stereo; Freesound HQ preview; found by \"riser build up\"",
+      "sha256": "b3b7674947fcfba8cd4725370c3b1d6f9e0a21a14d0ce02e9c209657ba468417",
+      "bytes": 63903,
+      "recipe": {
+        "type": "freesound",
+        "id": 376574,
+        "url": "https://cdn.freesound.org/previews/376/376574_6687700-hq.mp3",
+        "sha256": "b2e193e1f5c193c229d626a89a8d07cfd68f31418e7400f3683a68352f0480bf"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-376576-riser-quick-2.mp3",
+      "source": "freesound",
+      "sourceId": "376576",
+      "sourceUrl": "https://freesound.org/s/376576/",
+      "title": "Riser Quick 2",
+      "author": "original_sound",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"Riser Quick 2\" by original_sound (freesound.org/s/376576), CC BY 3.0",
+      "notes": "3.0 s, stereo; Freesound HQ preview; found by \"riser build up\"",
+      "sha256": "aaf7156d5fdd217fd1736f992f6607ba6eb1c2f542724c73c50c2a6d613eb65b",
+      "bytes": 50742,
+      "recipe": {
+        "type": "freesound",
+        "id": 376576,
+        "url": "https://cdn.freesound.org/previews/376/376576_6687700-hq.mp3",
+        "sha256": "af2dfa590f2080c7eb86e3c5c84a9e433a07003ab944eabf8ff9ac83cd14d46b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-riser-4s.mp3",
+      "source": "synth",
+      "sourceId": "riser-4s",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "riser-120f30.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "4.0 s, mono; pnpm sfx:synth seed 1",
+      "sha256": "ac35955fd8ee46b44c07574b7f44fd70fb0e214d5329815b643f59fc80eccb6a",
+      "bytes": 49029,
+      "recipe": {
+        "type": "synth",
+        "kind": "riser",
+        "seed": 1,
+        "rootHz": 55,
+        "lengthFrames": 120,
+        "fps": 30,
+        "sha256": "362c4f8074c0dce7b2fa92ec81d9f15767b616f5e716029386c9af039d081bcd"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-494981-risers-horror-whooshes-tension-build.mp3",
+      "source": "freesound",
+      "sourceId": "494981",
+      "sourceUrl": "https://freesound.org/s/494981/",
+      "title": "Risers - Horror Whooshes Tension Builder 1.mp3",
+      "author": "original_sound",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"Risers - Horror Whooshes Tension Builder 1.mp3\" by original_sound (freesound.org/s/494981), CC BY 3.0",
+      "notes": "4.1 s, stereo; Freesound HQ preview; found by \"tension riser\"",
+      "sha256": "624961f756deb39ca8e7ecdb22444fef8dfded04ada37168bd79df36033dd6b3",
+      "bytes": 92676,
+      "recipe": {
+        "type": "freesound",
+        "id": 494981,
+        "url": "https://cdn.freesound.org/previews/494/494981_6687700-hq.mp3",
+        "sha256": "39d8541eb29798bd752ba0fe6ac78ed7e896ea25a37cf5693c77609ea45d35b0"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-451653-metallic-riser.mp3",
+      "source": "freesound",
+      "sourceId": "451653",
+      "sourceUrl": "https://freesound.org/s/451653/",
+      "title": "Metallic Riser.wav",
+      "author": "HenryRichard",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "5.7 s, mono; Freesound HQ preview; found by \"riser build up\"",
+      "sha256": "9c09c29acf9a5261b7f794e642ff0c7cf56dc1c51f1085538f92a38fe72ea95a",
+      "bytes": 49819,
+      "recipe": {
+        "type": "freesound",
+        "id": 451653,
+        "url": "https://cdn.freesound.org/previews/451/451653_8282364-hq.mp3",
+        "sha256": "991c562418c2ca68456f8bd917bb932d2edd415e409e21b40baee42bdcfb300e"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "elevenlabs-02-cinematic-riser.mp3",
+      "source": "elevenlabs",
+      "sourceId": "02",
+      "sourceUrl": "https://api.elevenlabs.io/v1/sound-generation",
+      "title": "Long cinematic riser building tension, rising pitch and noise sweep, ending at peak",
+      "author": "ElevenLabs sound generation",
+      "licence": "generated",
+      "licenceUrl": "https://elevenlabs.io/terms-of-use",
+      "notes": "5.9 s, stereo; ElevenLabs sound-generation, 60 credits, requested 6 s",
+      "sha256": "36a45875a85027c668e7aa743bd5c0667b7810dad67a32e5e9dbc935c57a74f4",
+      "bytes": 89558,
+      "recipe": {
+        "type": "elevenlabs",
+        "endpoint": "POST https://api.elevenlabs.io/v1/sound-generation",
+        "model": "API default (no model_id sent), 2026-11-11",
+        "prompt": "Long cinematic riser building tension, rising pitch and noise sweep, ending at peak",
+        "durationSeconds": 6,
+        "credits": 60,
+        "sha256": "d279dae6f84c7734aebaff94cd404ddd07a2224d32ab04f1cc28383b045fad8b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-riser-8s.mp3",
+      "source": "synth",
+      "sourceId": "riser-8s",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "riser-s2-240f30.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "8.0 s, mono; pnpm sfx:synth seed 2",
+      "sha256": "fc19888eb73945dd66d034c193f8309e1000024c8306eb16d12b8c432989c854",
+      "bytes": 96606,
+      "recipe": {
+        "type": "synth",
+        "kind": "riser",
+        "seed": 2,
+        "rootHz": 55,
+        "lengthFrames": 240,
+        "fps": 30,
+        "sha256": "4237c0e6d553f055ab5b4dba6165ad38bf2b715a923b552253a115433a26f0d0"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-334525-rise5.mp3",
+      "source": "freesound",
+      "sourceId": "334525",
+      "sourceUrl": "https://freesound.org/s/334525/",
+      "title": "rise5.wav",
+      "author": "soneproject",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "8.0 s, stereo; Freesound HQ preview; found by \"riser build up\"",
+      "sha256": "b70a9f7bd7939eb3af8b7eeee6fb99b4330b07978d48a1e539502edd579a0f5d",
+      "bytes": 222897,
+      "recipe": {
+        "type": "freesound",
+        "id": 334525,
+        "url": "https://cdn.freesound.org/previews/334/334525_2127539-hq.mp3",
+        "sha256": "3dee96f50126b3085152dce7639c93c042c051412d84773df6f6da7413c6d12f"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    }
+  ]
+}

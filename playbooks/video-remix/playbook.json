@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "id": "video-remix",
+  "title": "Video remix",
+  "status": "draft",
+  "summary": "Remix an authorised source clip with approved character, object or style references: local substitution, motion transfer or restyling through an immutable Genjutsu preparation.",
+  "triggers": {
+    "en": [
+      "genjutsu",
+      "video remix",
+      "character swap",
+      "replace a person in a video",
+      "replace one person",
+      "face swap in video",
+      "object swap",
+      "motion transfer",
+      "restyle video",
+      "swap the character",
+      "character in this clip",
+      "restyle this",
+      "replace in this video",
+      "swap in this clip"
+    ],
+    "ru": [
+      "genjutsu",
+      "гендзюцу",
+      "ремикс видео",
+      "заменить человека в видео",
+      "заменить персонажа в клипе",
+      "заменить лицо в видео",
+      "заменить предмет в видео",
+      "перенести движение",
+      "стилизовать видео",
+      "замени в этом видео",
+      "замени в видео"
+    ],
+    "zh": [
+      "换人",
+      "换脸",
+      "视频换脸",
+      "ai换脸",
+      "替换人物",
+      "替换角色",
+      "换成别人",
+      "换主角",
+      "替换物体",
+      "替换物品",
+      "动作迁移",
+      "动作模仿",
+      "动作驱动",
+      "视频风格化",
+      "风格化",
+      "风格迁移",
+      "转绘",
+      "视频重绘",
+      "转动漫",
+      "视频二创",
+      "里的人换成",
+      "人物换成",
+      "转绘成",
+      "转成动漫",
+      "动漫风格",
+      "换成我们的",
+      "换成我的",
+      "换成"
+    ],
+    "generic": [
+      "视频二创",
+      "动漫风格",
+      "换成"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "a new film generated shot by shot without a source performance",
+      "use": "ai-film"
+    },
+    {
+      "when": "tightening a recorded talk or adding its subtitles",
+      "use": "footage-edit"
+    },
+    {
+      "when": "borrowing a reference film's craft for a new product story",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "ai-video",
+    "start": "pnpm film:init --project <id> --playbook video-remix --product <path>"
+  },
+  "alternatives": [],
+  "agents": [
+    "asset-planner"
+  ],
+  "skills": [
+    "model-and-asset-production",
+    "world-and-entity-bible",
+    "resource-discovery",
+    "editorial-storytelling",
+    "qa-and-delivery",
+    "reference-preparation"
+  ],
+  "library": {
+    "categories": [
+      "finish"
+    ],
+    "blocks": [
+      "film-finish"
+    ]
+  },
+  "commands": [
+    "film:next",
+    "film:rights",
+    "film:approve",
+    "model:prepare",
+    "motion:library",
+    "fal:find",
+    "fal:scaffold",
+    "hf:media",
+    "hf:quote",
+    "generate:model",
+    "entity:card",
+    "asset:board",
+    "asset:import",
+    "media:fetch",
+    "resources",
+    "budget",
+    "cost:report",
+    "delivery",
+    "vision:pack",
+    "vision:inspect",
+    "refs:profiles",
+    "refs:plan",
+    "refs:derive",
+    "refs:pack"
+  ],
+  "read": [
+    "docs/entity-workflow.md",
+    "docs/media-fetch.md"
+  ],
+  "stepRead": {
+    "material": [
+      "docs/higgsfield.md",
+      "docs/higgsfield-prompting.md",
+      "docs/agent-vision.md",
+      ".agents/skills/reference-preparation/SKILL.md"
+    ],
+    "critic": [
+      "docs/agent-vision.md"
+    ]
+  },
+  "qa": [
+    "The correct mode follows the requested operation",
+    "All markers resolve to their exact one-based attachments",
+    "Originals, selected segment, entity revisions and prompt match the approved preparation",
+    "Input review, source-use rights and generation budget are current",
+    "The exact result has a recorded comparison review; a reshoot requires the user's decision",
+    "Source music and likeness permissions are separate from a clip's popularity"
+  ],
+  "benchmarks": [],
+  "reviewedAt": "2026-11-15",
+  "intake": [
+    {
+      "ask": "Which element changes, and what must remain unchanged?",
+      "why": "Selects object-swap, motion-transfer or restyle and identifies the target"
+    },
+    {
+      "ask": "Do you have an authorised source clip and approved identity references?",
+      "why": "Missing originals are sourced or prepared before generation; a preview is not an original"
+    },
+    {
+      "ask": "Which segment, crop, audio policy, placements and generation budget are authorised?",
+      "why": "Pins the measured input, source-use permissions and paid attempt bounds"
+    }
+  ],
+  "variants": [
+    {
+      "id": "object-swap",
+      "title": "Local replacement",
+      "triggers": {
+        "en": [
+          "object swap",
+          "character swap",
+          "replace one person"
+        ],
+        "ru": [
+          "заменить человека",
+          "заменить персонажа",
+          "заменить предмет"
+        ],
+        "zh": [
+          "换人",
+          "换脸",
+          "替换人物",
+          "替换角色",
+          "替换物体",
+          "换成别人",
+          "里的人换成"
+        ]
+      },
+      "changes": "Describe the selected target unambiguously; preserve the other subjects, environment, action and camera. A face-only replacement preserves the source outfit unless explicitly changed."
+    },
+    {
+      "id": "motion-transfer",
+      "title": "Rebuild around motion",
+      "triggers": {
+        "en": [
+          "motion transfer",
+          "rebuild scene"
+        ],
+        "ru": [
+          "перенести движение",
+          "перенос движения",
+          "перестроить сцену"
+        ],
+        "zh": [
+          "动作迁移",
+          "动作模仿",
+          "动作驱动",
+          "重建场景"
+        ]
+      },
+      "changes": "Use source movement and camera as the performance; specify the new characters and scene from approved references. Do not promise that the old background remains intact."
+    },
+    {
+      "id": "restyle",
+      "title": "Visual restyling",
+      "triggers": {
+        "en": [
+          "restyle video",
+          "restyle a video"
+        ],
+        "ru": [
+          "стилизовать видео",
+          "рестайл видео"
+        ],
+        "zh": [
+          "风格化",
+          "风格迁移",
+          "转绘",
+          "视频重绘",
+          "转动漫"
+        ]
+      },
+      "changes": "Use a current preset UUID; optional character references; retain composition and motion, and inspect any changed cadence and audio."
+    }
+  ]
+}

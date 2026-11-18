@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "artifactVersion": "c24-private-script-host-v1",
+  "status": "source-prepared-runtime-unavailable",
+  "contract": "private-owned-script-host-v1",
+  "profile": "static-local-instances-v1",
+  "source": "packages/core/src/runtime/compositionLoader.ts",
+  "inheritedFinalPrivateHookCount": 23,
+  "correctiveSourceReplacementCount": 1,
+  "predecessorSourceSha256": "92c6a14ff30e16dfdc1e2c571c8eda69e300197649c53dd006b6fad547321873",
+  "original": "        if (__avcClock.instanceMode === true) __avcClock.instanceArmScript(host, injectedScript);",
+  "replacement": "        if (__avcClock.instanceMode === true) __avcClock.instanceArmScript(params.host, injectedScript);",
+  "predecessors": {
+    "prepare-instances-selection.cjs": "2b12cc798584052c52e6a2672f8bd2020a5ecf3e31276e85f75cc13cb8cb48c1",
+    "instances-selection-provenance.json": "a965b37cdc9c8adb7df96ea67656c9430ea0c3ae9558dc2d2e54d2a4f08304d2",
+    "instances-selection-contract.json": "5c3882a193714b74af5e0c6d95b6c47fad909aa06fe4a69b8e6d60ab7602c535",
+    "tree-provenance.json": "4e99d33491725d499879b27d7e036303d7236d4a1eedce6eefca1ca4d8632027",
+    "provenance.json": "1b47fb8cb6eebe5c6fc9c8b2c62a1e25090aab4dd6f0e9326b93d1b6dff25158"
+  },
+  "predecessorRuntimeSha256": "5a33249f292aa6e9192d5f93a831e425fda423e08b4087d4cf72deae28043cd1",
+  "futureReceipt": "instances-script-host-provenance.json",
+  "futureRuntime": "not materialized; separate root build allocation required",
+  "activation": "unchanged C23 product; separate review after generated derivative receipt",
+  "sourceFixtures": {
+    "instances-script-host-original-loader.ts.txt": "e9227112014a471049466b1fe2dfbf34956f967d91c2830be5d27abb46bc61c7",
+    "instances-script-host-consumer.json": "e2a39f0911774bfdbc9fe5992e0872a32d8e1b66bcc9017b2817128f7938be84"
+  }
+}

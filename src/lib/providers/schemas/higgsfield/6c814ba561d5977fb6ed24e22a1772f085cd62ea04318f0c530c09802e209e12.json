@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "endpoint": "recraft/v4.1/text-to-image",
+  "title": "Recraft V4.1 — Text to image API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/recraft-v4-1/text-to-image.md",
+  "usageNotes": [
+    "This variant accepts only resolution=1k; use the separate standard/Pro endpoint for the other resolution tier.",
+    "colors is an array of objects shaped as {\"rgb\": [R, G, B]}; background_color is one such object. Every RGB value is an integer 0–255, with exactly three entries.",
+    "output_format is jpg, png, or webp; default is jpg. No reference-image input is declared.",
+    "prompt must contain 1–10000 characters. Fourteen aspect-ratio values are listed in the schema, including 6:10, 14:10, and 10:14."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Recraft V4.1 Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "colors": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "rgb"
+          ],
+          "properties": {
+            "rgb": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "maximum": 255,
+                "minimum": 0
+              },
+              "maxItems": 3,
+              "minItems": 3
+            }
+          }
+        },
+        "title": "Colors"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "maxLength": 10000,
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "resolution": {
+        "enum": [
+          "1k"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "1k"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "1:1",
+          "2:1",
+          "1:2",
+          "3:2",
+          "2:3",
+          "4:3",
+          "3:4",
+          "5:4",
+          "4:5",
+          "6:10",
+          "14:10",
+          "10:14",
+          "16:9",
+          "9:16"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "1:1"
+      },
+      "output_format": {
+        "enum": [
+          "jpg",
+          "png",
+          "webp"
+        ],
+        "type": "string",
+        "title": "Output format",
+        "default": "jpg"
+      },
+      "background_color": {
+        "type": "object",
+        "title": "Background color",
+        "required": [
+          "rgb"
+        ],
+        "properties": {
+          "rgb": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maximum": 255,
+              "minimum": 0
+            },
+            "maxItems": 3,
+            "minItems": 3
+          }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

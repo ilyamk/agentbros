@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capture fixture</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px -apple-system, system-ui, sans-serif; background: #f6f6f4; color: #111; }
+  header { height: 64px; display: flex; align-items: center; gap: 16px; padding: 0 24px; background: #fff; border-bottom: 1px solid #ddd; }
+  #status { color: #888; }
+  #status.ready { color: #0a7f3f; }
+  #go { padding: 10px 18px; border: 0; border-radius: 8px; background: #2f5bff; color: #fff; font: inherit; transition: background-color 400ms ease, transform 400ms ease; }
+  #go.pressed { background: #0a7f3f; transform: translateX(120px); }
+  #ticker { font-variant-numeric: tabular-nums; }
+  #panel { width: 240px; height: 40px; margin: 24px; border-radius: 8px; background: #2f5bff; animation: slide 2s linear infinite alternate; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(400px); } }
+  input { margin: 0 24px; width: 520px; padding: 12px; font: inherit; border: 1px solid #ccc; border-radius: 8px; }
+  #list { margin: 24px; height: 300px; overflow: auto; border: 1px solid #ddd; background: #fff; }
+  #list div { padding: 12px 16px; border-bottom: 1px solid #eee; }
+</style>
+</head>
+<body>
+<header><strong>Fixture</strong><span id="status">loading</span><span id="ticker">0</span><button id="go">Run</button></header>
+<div id="panel"></div>
+<input id="q" placeholder="Ask anything">
+<div id="list"></div>
+<script>
+  const list = document.getElementById("list");
+  for (let i = 1; i <= 60; i++) { const row = document.createElement("div"); row.textContent = "Row " + i; list.appendChild(row); }
+  setTimeout(() => { const s = document.getElementById("status"); s.textContent = "ready"; s.className = "ready"; }, 500);
+  const start = performance.now();
+  const tick = () => { document.getElementById("ticker").textContent = String(Math.floor(performance.now() - start)); requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  document.getElementById("go").addEventListener("click", (e) => e.currentTarget.classList.add("pressed"));
+</script>
+</body>
+</html>

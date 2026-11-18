@@ -1,0 +1,1457 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "status": {
+    "available": true,
+    "engine": "ffmpeg-scene-score",
+    "unavailableReason": "Fell back from PySceneDetect, so gradual transitions are not classified. reference-analysis shots failed: error: Request failed after 3 retries in 5.6s\n  cause: Failed to fetch: https://pypi.org/simple/scipy/\n  cause: error sending request for url (https://pypi.org/simple/scipy/)\n  cause: client error (Connect)\n  cause: dns error\n  cause: error resolving DNS\n  cause: failed to lookup address information: nodename nor servname provided, or not known",
+    "fix": "Check network access for the first uv package download, then rerun ref:analyze for this layer."
+  },
+  "detector": {
+    "name": "ffmpeg-scene-score",
+    "params": {
+      "relativeFloor": "median + 10 MAD, minimum 0.03",
+      "minimumGapSec": 0.4
+    }
+  },
+  "shots": [
+    {
+      "startSec": 0,
+      "endSec": 1.167,
+      "id": "s001",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0,
+      "thumbnailPath": "visuals/thumbs/s001.jpg",
+      "stripPath": "visuals/strips/s001.jpg",
+      "colour": {
+        "L": 94,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 1.167,
+      "endSec": 1.567,
+      "id": "s002",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s002.jpg",
+      "stripPath": "visuals/strips/s002.jpg",
+      "colour": {
+        "L": 16.1,
+        "a": -0.6,
+        "b": 4.1,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            26.6
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            24
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 1.567,
+      "endSec": 2.2,
+      "id": "s003",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.094
+      },
+      "thumbnailPath": "visuals/thumbs/s003.jpg",
+      "stripPath": "visuals/strips/s003.jpg",
+      "colour": {
+        "L": 69.5,
+        "a": 3.3,
+        "b": -4.6,
+        "percentiles": {
+          "L": [
+            42.2,
+            73.4,
+            89.1
+          ],
+          "a": [
+            -8,
+            0,
+            24
+          ],
+          "b": [
+            -16,
+            -8,
+            16
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 2.2,
+      "endSec": 2.9,
+      "id": "s004",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s004.jpg",
+      "stripPath": "visuals/strips/s004.jpg",
+      "colour": {
+        "L": 55.8,
+        "a": -0.4,
+        "b": 6.6,
+        "percentiles": {
+          "L": [
+            10.9,
+            79.7,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            8
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 2.9,
+      "endSec": 3.467,
+      "id": "s005",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.503,
+      "transitionMeasures": {
+        "sceneScore": 0.103
+      },
+      "thumbnailPath": "visuals/thumbs/s005.jpg",
+      "stripPath": "visuals/strips/s005.jpg",
+      "colour": {
+        "L": 81.4,
+        "a": 0.9,
+        "b": 8.5,
+        "percentiles": {
+          "L": [
+            39.1,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 3.467,
+      "endSec": 4.4,
+      "id": "s006",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.044
+      },
+      "thumbnailPath": "visuals/thumbs/s006.jpg",
+      "stripPath": "visuals/strips/s006.jpg",
+      "colour": {
+        "L": 79.8,
+        "a": 1.3,
+        "b": 8.8,
+        "percentiles": {
+          "L": [
+            32.8,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            8,
+            8,
+            16
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 4.4,
+      "endSec": 6.767,
+      "id": "s007",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s007.jpg",
+      "stripPath": "visuals/strips/s007.jpg",
+      "colour": {
+        "L": 16.6,
+        "a": -0.1,
+        "b": 0.2,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            14.1
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 9
+      }
+    },
+    {
+      "startSec": 6.767,
+      "endSec": 8.1,
+      "id": "s008",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s008.jpg",
+      "stripPath": "visuals/strips/s008.jpg",
+      "colour": {
+        "L": 94,
+        "a": 0,
+        "b": 7.9,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 5
+      }
+    },
+    {
+      "startSec": 8.1,
+      "endSec": 9.433,
+      "id": "s009",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.67962,
+      "transitionMeasures": {
+        "sceneScore": 0.28
+      },
+      "thumbnailPath": "visuals/thumbs/s009.jpg",
+      "stripPath": "visuals/strips/s009.jpg",
+      "colour": {
+        "L": 83.9,
+        "a": 0.3,
+        "b": 7.4,
+        "percentiles": {
+          "L": [
+            51.6,
+            92.2,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 9.433,
+      "endSec": 10.4,
+      "id": "s010",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.184
+      },
+      "thumbnailPath": "visuals/thumbs/s010.jpg",
+      "stripPath": "visuals/strips/s010.jpg",
+      "colour": {
+        "L": 92.4,
+        "a": 0,
+        "b": 1.1,
+        "percentiles": {
+          "L": [
+            85.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 10.4,
+      "endSec": 12.433,
+      "id": "s011",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.46075,
+      "transitionMeasures": {
+        "sceneScore": 0.061
+      },
+      "thumbnailPath": "visuals/thumbs/s011.jpg",
+      "stripPath": "visuals/strips/s011.jpg",
+      "colour": {
+        "L": 96,
+        "a": 0.1,
+        "b": 0.8,
+        "percentiles": {
+          "L": [
+            92.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 8
+      }
+    },
+    {
+      "startSec": 12.433,
+      "endSec": 13.6,
+      "id": "s012",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s012.jpg",
+      "stripPath": "visuals/strips/s012.jpg",
+      "colour": {
+        "L": 21.9,
+        "a": -0.9,
+        "b": 5.1,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            73.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            24
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 13.6,
+      "endSec": 14.7,
+      "id": "s013",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.627192,
+      "transitionMeasures": {
+        "sceneScore": 0.227
+      },
+      "thumbnailPath": "visuals/thumbs/s013.jpg",
+      "stripPath": "visuals/strips/s013.jpg",
+      "colour": {
+        "L": 22.3,
+        "a": -0.8,
+        "b": 5.1,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            76.6
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            16
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 14.7,
+      "endSec": 15.9,
+      "id": "s014",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.6191070000000001,
+      "transitionMeasures": {
+        "sceneScore": 0.219
+      },
+      "thumbnailPath": "visuals/thumbs/s014.jpg",
+      "stripPath": "visuals/strips/s014.jpg",
+      "colour": {
+        "L": 13.1,
+        "a": 0,
+        "b": 0.5,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            10.9
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 15.9,
+      "endSec": 16.633,
+      "id": "s015",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s015.jpg",
+      "stripPath": "visuals/strips/s015.jpg",
+      "colour": {
+        "L": 77.3,
+        "a": 1.9,
+        "b": 8.5,
+        "percentiles": {
+          "L": [
+            26.6,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            0,
+            8,
+            16
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 16.633,
+      "endSec": 17.533,
+      "id": "s016",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.6609160000000001,
+      "transitionMeasures": {
+        "sceneScore": 0.261
+      },
+      "thumbnailPath": "visuals/thumbs/s016.jpg",
+      "stripPath": "visuals/strips/s016.jpg",
+      "colour": {
+        "L": 93.5,
+        "a": 0,
+        "b": 7.9,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 17.533,
+      "endSec": 18.333,
+      "id": "s017",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.447629,
+      "transitionMeasures": {
+        "sceneScore": 0.048
+      },
+      "thumbnailPath": "visuals/thumbs/s017.jpg",
+      "stripPath": "visuals/strips/s017.jpg",
+      "colour": {
+        "L": 95.6,
+        "a": 0,
+        "b": 0.7,
+        "percentiles": {
+          "L": [
+            92.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 18.333,
+      "endSec": 19.233,
+      "id": "s018",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.435024,
+      "transitionMeasures": {
+        "sceneScore": 0.035
+      },
+      "thumbnailPath": "visuals/thumbs/s018.jpg",
+      "stripPath": "visuals/strips/s018.jpg",
+      "colour": {
+        "L": 95.1,
+        "a": 0,
+        "b": 1.4,
+        "percentiles": {
+          "L": [
+            92.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 19.233,
+      "endSec": 22.3,
+      "id": "s019",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.408
+      },
+      "thumbnailPath": "visuals/thumbs/s019.jpg",
+      "stripPath": "visuals/strips/s019.jpg",
+      "colour": {
+        "L": 81.6,
+        "a": 0,
+        "b": 0.1,
+        "percentiles": {
+          "L": [
+            10.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 13
+      }
+    },
+    {
+      "startSec": 22.3,
+      "endSec": 23.067,
+      "id": "s020",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.367
+      },
+      "thumbnailPath": "visuals/thumbs/s020.jpg",
+      "stripPath": "visuals/strips/s020.jpg",
+      "colour": {
+        "L": 88.2,
+        "a": 0,
+        "b": 0.1,
+        "percentiles": {
+          "L": [
+            39.1,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 23.067,
+      "endSec": 23.867,
+      "id": "s021",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.479456,
+      "transitionMeasures": {
+        "sceneScore": 0.079
+      },
+      "thumbnailPath": "visuals/thumbs/s021.jpg",
+      "stripPath": "visuals/strips/s021.jpg",
+      "colour": {
+        "L": 76.6,
+        "a": 0,
+        "b": 0.3,
+        "percentiles": {
+          "L": [
+            10.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 23.867,
+      "endSec": 24.667,
+      "id": "s022",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.323
+      },
+      "thumbnailPath": "visuals/thumbs/s022.jpg",
+      "stripPath": "visuals/strips/s022.jpg",
+      "colour": {
+        "L": 89.5,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            60.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 24.667,
+      "endSec": 25.567,
+      "id": "s023",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.508737,
+      "transitionMeasures": {
+        "sceneScore": 0.109
+      },
+      "thumbnailPath": "visuals/thumbs/s023.jpg",
+      "stripPath": "visuals/strips/s023.jpg",
+      "colour": {
+        "L": 76.7,
+        "a": 0,
+        "b": 0.2,
+        "percentiles": {
+          "L": [
+            10.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 25.567,
+      "endSec": 26.267,
+      "id": "s024",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.835
+      },
+      "thumbnailPath": "visuals/thumbs/s024.jpg",
+      "stripPath": "visuals/strips/s024.jpg",
+      "colour": {
+        "L": 82.3,
+        "a": -0.3,
+        "b": 0.3,
+        "percentiles": {
+          "L": [
+            10.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 26.267,
+      "endSec": 27.233,
+      "id": "s025",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.052
+      },
+      "thumbnailPath": "visuals/thumbs/s025.jpg",
+      "stripPath": "visuals/strips/s025.jpg",
+      "colour": {
+        "L": 95.9,
+        "a": -0.2,
+        "b": 0.2,
+        "percentiles": {
+          "L": [
+            92.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 27.233,
+      "endSec": 28.133,
+      "id": "s026",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s026.jpg",
+      "stripPath": "visuals/strips/s026.jpg",
+      "colour": {
+        "L": 26.3,
+        "a": 1.8,
+        "b": 2.3,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            85.9
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 28.133,
+      "endSec": 29.233,
+      "id": "s027",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.306
+      },
+      "thumbnailPath": "visuals/thumbs/s027.jpg",
+      "stripPath": "visuals/strips/s027.jpg",
+      "colour": {
+        "L": 56.3,
+        "a": 2.6,
+        "b": 4.1,
+        "percentiles": {
+          "L": [
+            10.9,
+            64.1,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 29.233,
+      "endSec": 30.033,
+      "id": "s028",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 0.956
+      },
+      "thumbnailPath": "visuals/thumbs/s028.jpg",
+      "stripPath": "visuals/strips/s028.jpg",
+      "colour": {
+        "L": 94.4,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 30.033,
+      "endSec": 31,
+      "id": "s029",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.44065400000000005,
+      "transitionMeasures": {
+        "sceneScore": 0.041
+      },
+      "thumbnailPath": "visuals/thumbs/s029.jpg",
+      "stripPath": "visuals/strips/s029.jpg",
+      "colour": {
+        "L": 93.9,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 31,
+      "endSec": 31.967,
+      "id": "s030",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s030.jpg",
+      "stripPath": "visuals/strips/s030.jpg",
+      "colour": {
+        "L": 36.5,
+        "a": -0.5,
+        "b": 3.6,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            16
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 31.967,
+      "endSec": 32.7,
+      "id": "s031",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s031.jpg",
+      "stripPath": "visuals/strips/s031.jpg",
+      "colour": {
+        "L": 93.1,
+        "a": 0,
+        "b": 7.8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 32.7,
+      "endSec": 33.667,
+      "id": "s032",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s032.jpg",
+      "stripPath": "visuals/strips/s032.jpg",
+      "colour": {
+        "L": 20.1,
+        "a": 0.8,
+        "b": 2.6,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            51.6
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 33.667,
+      "endSec": 34.067,
+      "id": "s033",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.089
+      },
+      "thumbnailPath": "visuals/thumbs/s033.jpg",
+      "stripPath": "visuals/strips/s033.jpg",
+      "colour": {
+        "L": 14.4,
+        "a": -0.1,
+        "b": 1.9,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            20.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 34.067,
+      "endSec": 34.533,
+      "id": "s034",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.439282,
+      "transitionMeasures": {
+        "sceneScore": 0.039
+      },
+      "thumbnailPath": "visuals/thumbs/s034.jpg",
+      "stripPath": "visuals/strips/s034.jpg",
+      "colour": {
+        "L": 14.8,
+        "a": -0.1,
+        "b": 2.2,
+        "percentiles": {
+          "L": [
+            10.9,
+            10.9,
+            23.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 34.533,
+      "endSec": 36.167,
+      "id": "s035",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s035.jpg",
+      "stripPath": "visuals/strips/s035.jpg",
+      "colour": {
+        "L": 96.1,
+        "a": -0.2,
+        "b": 0.2,
+        "percentiles": {
+          "L": [
+            95.3,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 6
+      }
+    },
+    {
+      "startSec": 36.167,
+      "endSec": 36.867,
+      "id": "s036",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.6312490000000001,
+      "transitionMeasures": {
+        "sceneScore": 0.231
+      },
+      "thumbnailPath": "visuals/thumbs/s036.jpg",
+      "stripPath": "visuals/strips/s036.jpg",
+      "colour": {
+        "L": 82.6,
+        "a": 0,
+        "b": 0.2,
+        "percentiles": {
+          "L": [
+            10.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 36.867,
+      "endSec": 38.867,
+      "id": "s037",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0.25,
+      "transitionMeasures": {
+        "sceneScore": 0.038
+      },
+      "thumbnailPath": "visuals/thumbs/s037.jpg",
+      "stripPath": "visuals/strips/s037.jpg",
+      "colour": {
+        "L": 90.1,
+        "a": -0.2,
+        "b": 0.5,
+        "percentiles": {
+          "L": [
+            67.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 8
+      }
+    },
+    {
+      "startSec": 38.867,
+      "endSec": 41.533,
+      "id": "s038",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.540116,
+      "transitionMeasures": {
+        "sceneScore": 0.14
+      },
+      "thumbnailPath": "visuals/thumbs/s038.jpg",
+      "stripPath": "visuals/strips/s038.jpg",
+      "colour": {
+        "L": 93.6,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 11
+      }
+    },
+    {
+      "startSec": 41.533,
+      "endSec": 42.333,
+      "id": "s039",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s039.jpg",
+      "stripPath": "visuals/strips/s039.jpg",
+      "colour": {
+        "L": 33.3,
+        "a": -1.5,
+        "b": 13.9,
+        "percentiles": {
+          "L": [
+            10.9,
+            23.4,
+            73.4
+          ],
+          "a": [
+            -8,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            8,
+            32
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 42.333,
+      "endSec": 44.433,
+      "id": "s040",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.7,
+      "transitionMeasures": {
+        "sceneScore": 1
+      },
+      "thumbnailPath": "visuals/thumbs/s040.jpg",
+      "stripPath": "visuals/strips/s040.jpg",
+      "colour": {
+        "L": 93.5,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 8
+      }
+    },
+    {
+      "startSec": 44.433,
+      "endSec": 46.167,
+      "id": "s041",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.43859200000000004,
+      "transitionMeasures": {
+        "sceneScore": 0.039
+      },
+      "thumbnailPath": "visuals/thumbs/s041.jpg",
+      "stripPath": "visuals/strips/s041.jpg",
+      "colour": {
+        "L": 94.9,
+        "a": 0,
+        "b": 8,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            8,
+            8,
+            8
+          ]
+        },
+        "samples": 7
+      }
+    }
+  ],
+  "candidates": [],
+  "summary": {
+    "count": 41,
+    "medianDurationSec": 0.933,
+    "cutsPerMinute": 51.985
+  }
+}

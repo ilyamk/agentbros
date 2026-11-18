@@ -1,0 +1,8 @@
+{
+  "steps": [
+    { "at": 4, "action": "click", "selector": "#go" },
+    { "at": 10, "action": "type", "selector": "#q", "text": "Find sales leaders", "framesPerChar": 1 },
+    { "time": 1.1, "action": "scroll", "selector": "#list", "dy": 600, "durationFrames": 12 },
+    { "at": 44, "action": "key", "key": "Enter" }
+  ]
+}

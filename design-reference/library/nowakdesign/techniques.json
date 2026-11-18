@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "techniques": [
+    {
+      "id": "polarity-strobe-title",
+      "name": "Flash pre-roll and polarity-strobed tiny title",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 0.867
+        }
+      ],
+      "description": "Three 3-frame full-frame flashes with no content (navy, black, white), then a tiny centred sentence on black at F11; the frame inverts to white with faint tinted type F16-F22, back to black at F23 with an RGB-split smear of the type F24-F25, clean at F26. The whole frame flips every 7 frames.",
+      "route": "remotion",
+      "routeReason": "Flat colour, one text element and per-frame inversion are pure functions of the frame; colour split exists as scrambleChroma. A frame-list strobe helper does not exist.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "scrambleChroma",
+        "track",
+        "block:grade-step-flash"
+      ],
+      "techniqueCardId": "grade-step-flash",
+      "function": "hook",
+      "timing": {
+        "durationSec": 0.867,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/open.jpg F0-F26"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/open.jpg F0-F26: every change is a hard frame swap"
+        ]
+      },
+      "typography": {
+        "role": "claim",
+        "entry": "hard on after flashes, then whole-frame polarity flips every 7 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText item 1 box x 0.356 w 0.248",
+          "visuals/a1/open.jpg F11-F26"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "still-hold-glow-exit",
+      "name": "Dead-still hold, then a 2-frame glow flare as exit",
+      "spans": [
+        {
+          "startSec": 0.867,
+          "endSec": 1.867
+        }
+      ],
+      "description": "After the strobe the title does not move at all for 21 frames (F26-F46). At F47-F48 the type turns green with a soft glow about twice its height; at F49 it is gone; 7 black frames (F49-F55) before the next object.",
+      "route": "remotion",
+      "routeReason": "Text colour and CSS drop-shadow glow set per frame.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "cutTiming"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": 0.567,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/title-hold.jpg F26-F55"
+        ]
+      },
+      "typography": {
+        "role": "claim",
+        "entry": "already on; exits by glow flare",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/title-hold.jpg F46-F49"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "icon-swell-to-ground",
+      "name": "Container collapses to its icon, icon swells to become the ground",
+      "spans": [
+        {
+          "startSec": 1.867,
+          "endSec": 2.533
+        }
+      ],
+      "description": "Gradient pill at about 68% width recolours F59, shrinks F61, blinks navy F62-F64, leaves only the 4%-wide icon F65; 2 frames still; a violet disc grows from the icon F68-F75, accelerating (8% width F68, 14% F71, 25% F73, full height F74, ground F75). Then guides and circles build on the new ground.",
+      "route": "remotion",
+      "routeReason": "Shapes and gradients scaling about frame centre; GrowToScene and the caused-morph library block already make an element become the next ground.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "GrowToScene",
+        "caused-morph (library block)",
+        "curves",
+        "track"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.233,
+        "startOffsetFromCutSec": 0.4,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/pill.jpg F68-F75"
+        ]
+      },
+      "ease": {
+        "name": "expo.in",
+        "cubicBezier": [
+          0.562,
+          0.338,
+          0.88,
+          -0.462
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s006 camera push_in 2.30-2.433 s, bezier pick, bezierRmse 0, gsap expo.in rmse 0.064"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "word-becomes-shape",
+      "name": "A word breaks apart and its letter becomes the shape it names",
+      "spans": [
+        {
+          "startSec": 3.0,
+          "endSec": 3.9
+        }
+      ],
+      "description": "Small gradient word centred, held 5 frames (F90-F94). F95-F98 letters scatter vertically; F99-F101 all but the first letter fade; F102-F107 the upright stroke stands alone and lengthens; F108-F113 it rotates to about 35 degrees off vertical and extends to about 46% of frame height, decelerating; held F113-F117.",
+      "route": "remotion",
+      "routeReason": "Per-glyph transforms (splitGraphemes, Glyphs) and one rect or SVG path for the stroke; GSAP SplitText and MorphSVGPlugin cover the letter-to-path step. No block does glyph-to-stroke.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "splitGraphemes",
+        "Glyphs",
+        "track",
+        "curves",
+        "SplitText",
+        "MorphSVGPlugin",
+        "block:glyph-to-shape"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.6,
+        "startOffsetFromCutSec": 0.167,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/line.jpg F95-F113"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/line.jpg F108-F113: rotation steps shrink frame to frame"
+        ]
+      },
+      "typography": {
+        "role": "drawn word",
+        "entry": "hard cut on, letters scatter after 5 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/line.jpg F90-F98"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "angle-match-cut",
+      "name": "Hard cut matched on a diagonal's angle",
+      "spans": [
+        {
+          "startSec": 3.867,
+          "endSec": 3.967
+        }
+      ],
+      "description": "The tilted magenta stroke is held still for 4 frames (F114-F117); at F118 a hard cut to a lit square whose diagonal lens streak runs at the same angle through the same point of the frame. The eye follows the diagonal across the cut.",
+      "route": "remotion",
+      "routeReason": "Both sides are drawn graphics; MatchCut and cutTiming handle the frame; the angle is a shared constant.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MatchCut",
+        "cutTiming",
+        "match-cut (library block)"
+      ],
+      "function": "transition",
+      "fromShot": 3,
+      "toShot": 4,
+      "timing": {
+        "durationSec": 0.033,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/glint.jpg F114-F119"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/glint.jpg F117-F118"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "glint-square-pull-back",
+      "name": "Lit square pulled back fast under a lens streak",
+      "spans": [
+        {
+          "startSec": 3.933,
+          "endSec": 4.3
+        }
+      ],
+      "description": "The square arrives at about 22% of frame height with a full-frame diagonal streak and bloom, and recedes to about 10% in about 6 frames, fast then settling; the streak fades with it. Then it switches to halftone dots in a navy blink.",
+      "route": "remotion",
+      "routeReason": "Scale on a flat square plus a gradient streak; the halftone is the texture-overlay block clipped to the shape. A lens streak primitive does not exist.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "curves",
+        "track",
+        "texture-overlay (library block)",
+        "block:flare-pulse"
+      ],
+      "techniqueCardId": "lens-streak",
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.203,
+        "startOffsetFromCutSec": 0.004,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s010 camera t5Sec 3.937 t95Sec 4.14 span90Sec 0.203"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "cubicBezier": [
+          0.098,
+          1.167,
+          0.516,
+          0.926
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s010 camera.ease gsap expo.out rmse 0.032"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "knob-ring-ripple",
+      "name": "Slider knob slides to centre and rings ripple out from it",
+      "spans": [
+        {
+          "startSec": 4.533,
+          "endSec": 5.133
+        }
+      ],
+      "description": "A dark track with a glowing icon knob at its right end (x about 0.6); the track retracts left behind the knob over F143-F147 while one then two thin gradient rings expand around it (to about 40% of frame height by F149); navy blink F150-F152 shows the pill in pink halftone; F153 the knob is an orange-to-pink gradient pill inside the rings.",
+      "route": "remotion",
+      "routeReason": "Rounded rects, circles and gradients; ShockRing and shockRingAt give the expanding rings.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ShockRing",
+        "shockRingAt",
+        "track",
+        "curves",
+        "LayoutMorph"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": 0.233,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/ring.jpg F143-F153"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/ring.jpg F143-F149: ring growth slows; motion.json s011 fit rejected (rmse 0.64)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "ground-blink",
+      "name": "Three-frame navy ground blink with halftone foreground",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 0.1
+        },
+        {
+          "startSec": 2.067,
+          "endSec": 2.167
+        },
+        {
+          "startSec": 3.667,
+          "endSec": 3.767
+        },
+        {
+          "startSec": 4.3,
+          "endSec": 4.4
+        },
+        {
+          "startSec": 5.0,
+          "endSec": 5.1
+        },
+        {
+          "startSec": 5.233,
+          "endSec": 5.333
+        },
+        {
+          "startSec": 7.333,
+          "endSec": 7.4
+        },
+        {
+          "startSec": 8.9,
+          "endSec": 9.0
+        },
+        {
+          "startSec": 9.533,
+          "endSec": 9.633
+        },
+        {
+          "startSec": 10.233,
+          "endSec": 10.267
+        }
+      ],
+      "description": "The black ground becomes flat navy #021563 for 3 frames (1 frame at the end, 2 at F220-F221) while the foreground holds its position and is re-rendered as pink or white halftone dots. Ten blinks at F0, F62, F110, F129, F150, F157, F220, F267, F286, F307; gaps 62, 48, 19, 21, 7, 63, 47, 19, 21 frames: one 150-frame figure played twice. Most end on the frame where the object changes state.",
+      "route": "remotion",
+      "routeReason": "A ground colour on a frame list plus the texture-overlay halftone on the foreground; no block schedules blinks from a list or cue sheet.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "texture-overlay (library block)",
+        "cueFrames",
+        "block:grade-step-flash"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.1,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/pill.jpg F62-F65",
+          "visuals/a1/line.jpg F110-F113",
+          "visuals/a1/glint.jpg F129-F132",
+          "visuals/a1/ring.jpg F157-F160",
+          "visuals/a1/end.jpg F286-F289"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/pill.jpg F61-F65"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "hud-coordinate-tags",
+      "techniqueCardId": "anchored-annotations",
+      "name": "Coordinate tags and tracking boxes on every object",
+      "spans": [
+        {
+          "startSec": 2.5,
+          "endSec": 3.0
+        },
+        {
+          "startSec": 3.933,
+          "endSec": 4.3
+        },
+        {
+          "startSec": 6.333,
+          "endSec": 8.6
+        }
+      ],
+      "description": "Micro labels 'x: NNN y: NNN' (about 3% of frame height) pinned just above the icon, the lit square and each tracked subject; on footage, thin white boxes around subjects joined by connector lines with dots, like an object tracker or a design tool's selection. Values change between shots.",
+      "route": "remotion",
+      "routeReason": "Text and thin SVG rects positioned per frame; on footage the box positions need hand-placed or tracked keyframes (trackPoint).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "trackPoint",
+        "track",
+        "block:ui-annotate"
+      ],
+      "function": "emphasis",
+      "typography": {
+        "role": "HUD coordinate tag",
+        "entry": "present from the object's first frame, values update per shot",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText items 2 and 5 boxes (w 0.086, h 0.03)",
+          "visuals/a1/orb.jpg F82-F89",
+          "visuals/a1/archive.jpg F190-F192"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "isolate-and-carry",
+      "name": "One element of a set is isolated, then carried into the next context",
+      "spans": [
+        {
+          "startSec": 5.233,
+          "endSec": 5.567
+        }
+      ],
+      "description": "A row of six reaction icons on a capsule (about 62% width). In a navy blink F157-F159 the others dim and disappear, leaving only the flame. Cut at F160: the flame, now large and glowing, over a blurred message bubble; three overexposed frames F163-F165; by F166 the view has pulled back and down to show the bubble whole, the flame sitting on it as a reaction.",
+      "route": "remotion",
+      "routeReason": "Real interface pieces animated per frame; the set fade-out and carried element are stagger plus MatchCut. Interface must be the new product's real one (real-UI rule).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "stagger",
+        "MatchCut",
+        "Camera",
+        "ScreenPlayback"
+      ],
+      "function": "transition",
+      "fromShot": 6,
+      "toShot": 7,
+      "timing": {
+        "durationSec": 0.333,
+        "startOffsetFromCutSec": -0.1,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/ring.jpg F154-F159",
+          "visuals/a1/chat.jpg F159-F168"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/chat.jpg F166-F172: most of the pull-back is done in one frame; motion.json s015 fit rejected (gsap rmse 3.14)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "outline-hero-word",
+      "name": "Huge outline word in dashed concentric circles",
+      "spans": [
+        {
+          "startSec": 5.767,
+          "endSec": 6.233
+        }
+      ],
+      "description": "Hard cut to one lowercase word drawn as a thin grey outline with no fill, 70% of frame width, centred, inside two dashed circles (outer about 95% of frame height). On F179-F185 it jitters with a pink and cyan channel split of about 1% width; no scale move.",
+      "route": "remotion",
+      "routeReason": "Text stroke and dashed SVG circles; the type-hero-word block sizes a word to frame width and scrambleChroma gives the split.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-hero-word (library block)",
+        "FittedLine",
+        "scrambleChroma"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.467,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/chat.jpg F173-F186"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "hard cut, outline only, chromatic jitter",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText item 3 box x 0.132 w 0.70",
+          "visuals/a1/chat.jpg F173-F186"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "caption-anchor-footage-stutter",
+      "name": "Fixed caption over a 3-6-frame footage stutter",
+      "spans": [
+        {
+          "startSec": 6.233,
+          "endSec": 8.0
+        }
+      ],
+      "description": "A small centred caption holds in one position over 9 full-frame footage shots of 3, 3, 5, 6, 4, 4, 4, 4 and 20 frames: archival portraits, thermal false colour, a desk computer, a laptop from above, a hand with a card, medical scans. Each shot has its own grade (scan bars, violet thermal, halftone, cold cyan) and tracking boxes. The caption changes content once (F212) in the same place. Single overexposed frames at F211, F215, F219 close shots.",
+      "route": "footage",
+      "routeReason": "The pictures are licensed archival and stock footage; grading, flashes, caption and boxes are Remotion on top. Archival people must be cleared, not imitated.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "cutTiming",
+        "texture-overlay (library block)",
+        "film-finish (library block)",
+        "block:ui-annotate"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.767,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/archive.jpg F187-F209",
+          "visuals/a1/scan.jpg F207-F239"
+        ]
+      },
+      "typography": {
+        "role": "caption over footage",
+        "entry": "on with the first footage frame, fixed",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText item 4 box x 0.362 w 0.254",
+          "visuals/a1/archive.jpg F187-F197"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "backdrop-falls-away",
+      "name": "Mark holds while its backdrop pulls back and dies to black",
+      "spans": [
+        {
+          "startSec": 8.0,
+          "endSec": 10.267
+        }
+      ],
+      "description": "Small centred mark (about 4% width) over a shallow-focus macro of a backlit keyboard with tracking lines. Slow pull-back of the backdrop, overshooting slightly; bloom flashes at F259 and F264-F266; navy blink F267-F269; backdrop dims to near black by F284 while the mark stays constant; navy blink F286-F288; mark glitches to halftone at F291-F292 and F297; last frame F307 is a 1-frame navy blink.",
+      "route": "footage",
+      "routeReason": "The keyboard macro is shot or licensed footage; the pull-back, dimming and mark are Remotion. A drawn backdrop could replace it as a remotion route.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Camera",
+        "curves",
+        "track",
+        "texture-overlay (library block)"
+      ],
+      "function": "cta",
+      "timing": {
+        "durationSec": 1.244,
+        "startOffsetFromCutSec": 0.045,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s021 camera t5Sec 8.045 t95Sec 9.289 span90Sec 1.244, pull_out z -0.2335"
+        ]
+      },
+      "ease": {
+        "name": "back.out",
+        "cubicBezier": [
+          0.181,
+          0.512,
+          0.333,
+          1.303
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s021 camera.ease gsap back.out rmse 0.0061, overshoot 0.08"
+        ]
+      },
+      "layers": 3
+    }
+  ]
+}

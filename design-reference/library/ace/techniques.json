@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "techniques": [
+    {
+      "id": "t01-quad-split-four-films",
+      "techniqueCardId": "quad-split",
+      "name": "Four films in a gutterless 2×2 grid",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 11.617
+        }
+      ],
+      "description": "The frame is split into four 50% × 50% cells with no gutter or border; each cell plays its own complete promo with its own ground, palette and cuts. Every cell is mid-motion on every frame of the first second (TL words become dots F3–F17, TR collage pops F2–F53, BL cursor drifts then punch-cuts at F49, BR word glides under a light streak F9–F66), which is the hook. Each cell's hero sits at 45–55% of its own width, so the four focal points form an even rectangle.",
+      "route": "remotion",
+      "routeReason": "Four `<Sequence>` stacks inside absolutely positioned 960×540 boxes (at 1920×1080), each with its own `layoutSeries`. What is missing is a stage that owns the four timelines and checks the stagger rule (no more than two cell changes within 0.1 s). Product screens inside the cells fall under the real-UI rule: capture them with capture:app or rebuild them pixel-faithfully, never as generic components.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "cutTiming",
+        "block:quad-split"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 1.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tl-text-to-dots.jpg F3-F17",
+          "visuals/a1/tr-collage-build.jpg F2-F53",
+          "visuals/a1/bl-push-in.jpg F48-F49",
+          "visuals/a1/quad-br.jpg F9-F63"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "The bed is nearly silent for the first 2.9 s (50 ms RMS about 1 000 against 6 600 after); what it is, if anything, is inferred. The hook works on picture alone.",
+        "basis": "measured",
+        "evidence": [
+          "visuals/edit-map.png waveform 0-2.9 s",
+          "50 ms RMS by half-second from media/source.mp4"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t02-diagonal-paired-stagger",
+      "techniqueCardId": "quad-split",
+      "name": "Staggered cell cuts, paired on diagonals",
+      "spans": [
+        {
+          "startSec": 5.017,
+          "endSec": 5.167
+        },
+        {
+          "startSec": 7.633,
+          "endSec": 7.65
+        },
+        {
+          "startSec": 10.067,
+          "endSec": 10.083
+        }
+      ],
+      "description": "16 boundaries across the four cells, median gap 0.517 s, never more than two within 0.1 s. Coinciding changes sit on opposite corners: TR and BL at 7.633/7.650 and at 10.067/10.083 (one frame apart each time), BR and TL at 5.017/5.167. The top row mostly morphs while the bottom row cuts.",
+      "route": "remotion",
+      "routeReason": "This is a timing rule, not an effect: plan each cell's cut list, then offset pairs by 1 frame on a diagonal. A planner for it does not exist.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "cutTiming",
+        "block:quad-split"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.017,
+        "startOffsetFromCutSec": 0,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/tr-smoke-wipe.jpg F458",
+          "visuals/a1/bl-cut-mountain.jpg F459",
+          "visuals/a1/tr-logo-swap.jpg F604",
+          "visuals/a1/bl-cut-request.jpg F605",
+          "audio.json beatsSec: nearest beats 7.895 and 9.985/10.519, so not on the tracker's beats"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The 7.633/7.650 pair lands +8/+25 ms from a loudness swell at 7.625 s; the 10.067/10.083 pair does not (about −0.2 s). That a swell is a drum hit is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS swells 7.625 and 10.275 s"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t03-punch-in-cut-settle",
+      "name": "Punch-in cut with a short settle",
+      "spans": [
+        {
+          "startSec": 0.817,
+          "endSec": 1.05
+        },
+        {
+          "startSec": 2.317,
+          "endSec": 2.55
+        },
+        {
+          "startSec": 4.117,
+          "endSec": 4.35
+        },
+        {
+          "startSec": 6.083,
+          "endSec": 6.3
+        },
+        {
+          "startSec": 9.183,
+          "endSec": 9.45
+        }
+      ],
+      "description": "A hard cut to a tighter crop of the same interface (or back out, or reframed to show a sidebar), then a small settle that decays: at F551 a difference of 35.2, then 5.11, 3.63, 2.63, 1.78, 1.47, 1.16, 0.83 on the following drawings, finishing in 16 frames (0.27 s). It targets whatever is about to change: the caret (BL F49, TL F365), the action button (BL F247), the sidebar (BL F551). Settle travel is small, estimated at 2–4% of cell width.",
+      "route": "remotion",
+      "routeReason": "`RegionCamera` cut between two regions of one captured screen, with `settle` applied to the region transform on the incoming side. The `snap-zoom` block is close but adds blur and rings on a beat; here there is no blur.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "settle",
+        "library:snap-zoom",
+        "library:ui-prompt-bar"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.27,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/bl-pan-right.jpg F551-F567",
+          "visuals/a1/bl-pull-out.jpg F139-F147",
+          "visuals/a1/bl-push-button.jpg F247-F255"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "cubicBezier": [
+          0.19,
+          1,
+          0.22,
+          1
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/bl-pan-right.jpg F551-F567: per-drawing difference halves about every 4 frames"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "t04-tilt-fly-match-cut",
+      "name": "Click, tilt and fly into a match cut on a circle",
+      "spans": [
+        {
+          "startSec": 4.45,
+          "endSec": 5.03
+        }
+      ],
+      "description": "The cursor clicks the round button; a white ring ripples out (F267–F275, 0.13 s). From F277 the pill tilts in 3D (left end receding) and pushes towards the lens, accelerating (difference 7.0 at F277 → 11.1 at F299, 0.4 s). Hard cut at F301 to a white ground where a round avatar sits in the button's place (cell centre, within about 2% of cell width).",
+      "route": "remotion",
+      "routeReason": "A CSS 3D transform (rotateY plus translateZ per frame) on the pill, `shockRingAt` for the click ring, `Cursor` for the pointer, then `MatchCut` on the shared circle position. `VelocityBlur` is optional; the strip shows little blur.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Cursor",
+        "shockRingAt",
+        "MatchCut",
+        "VelocityBlur",
+        "library:ui-cursor-click"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.567,
+        "startOffsetFromCutSec": -0.567,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/br-pill-fly-cut.jpg F267-F301"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "cubicBezier": [
+          0.55,
+          0.055,
+          0.675,
+          0.19
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/br-pill-fly-cut.jpg F277-F299: per-drawing difference rises 7.03, 7.01, 7.05, 7.19, 7.21, 7.63, 8.0, 8.6, 8.33, 8.14, 9.04, 11.06"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The cut (5.017) lands 8 ms before a loudness swell (5.025). Not on the tracker's beat (nearest 5.271). The hit itself is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS swell 5.025 s",
+          "audio.json beatsSec"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 4,
+      "toShot": 5
+    },
+    {
+      "id": "t05-dots-to-character-morph",
+      "name": "Words to dots to a character",
+      "spans": [
+        {
+          "startSec": 0.05,
+          "endSec": 0.3
+        },
+        {
+          "startSec": 2.45,
+          "endSec": 3.4
+        }
+      ],
+      "description": "Opening: each word of a short line fades as a dot pops in its place, left to right, about every 2–3 frames (F3–F17), leaving a row of five dots. Later the dots, now in a ring, converge, accelerating (F148–F155), and merge into one blob at F158 (about 12% of cell height). The blob inflates into a glossy sphere about 40% of cell height by F180 (0.37 s, near-even steps), shifts towards cyan (F180–F188), gains two eyes (F190–F196) and is flooded mint from the bottom (F198–F203, 5 frames).",
+      "route": "remotion",
+      "routeReason": "Dots are circles moved by `track`; convergence uses `stagger`; the sphere is a radial-gradient circle scaled per frame with a clip-path rising for the colour flood. `kinetic-morph-mark` covers dot-to-shape morphing but not words-to-dots or a face.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "stagger",
+        "library:kinetic-morph-mark",
+        "block:dot-field",
+        "block:shaded-orb",
+        "repo:scripts/blender/glossy_orb.py"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.883,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tl-dots-collapse.jpg F150-F179",
+          "visuals/a1/tl-sphere-to-face.jpg F180-F203",
+          "visuals/a1/tl-text-to-dots.jpg F3-F17"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "cubicBezier": [
+          0.55,
+          0.055,
+          0.675,
+          0.19
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tl-dots-collapse.jpg F148-F155: differences 1.85, 2.64, 3.98, 5.46 into the merge"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The pulse enters while the sphere inflates: first loudness swell at 2.975 s, 0.02 s before the sphere reaches full size (F179). Whether it was placed there is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS swell 2.975 s",
+          "visuals/a1/tl-dots-collapse.jpg F179"
+        ]
+      },
+      "layers": 2,
+      "techniqueCardId": "shaded-orb"
+    },
+    {
+      "id": "t06-smoke-wipe-to-dark",
+      "techniqueCardId": "noise-matte-wipe",
+      "name": "Smoke wipe from light to dark",
+      "spans": [
+        {
+          "startSec": 7.633,
+          "endSec": 7.93
+        }
+      ],
+      "description": "Soft-edged dark smoke rises from the bottom-right corner over a light ground with one line of serif text, covering the cell in 18 frames (F458–F476, 0.30 s). The incoming scene's small orb fades in inside the dark at F468, before the smoke has finished.",
+      "route": "remotion",
+      "routeReason": "A luma matte from per-frame noise (an SVG feTurbulence mask whose threshold is set from the frame, which is deterministic) reveals the dark scene. Alternatively, a licensed smoke plate used as a matte (footage). Nearest library blocks: `ripple-drain` (geometric) and `light-burn` (light, not ink).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "library:ripple-drain",
+        "library:light-burn",
+        "block:noise-matte-wipe"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tr-smoke-wipe.jpg F458-F476"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "cubicBezier": [
+          0.215,
+          0.61,
+          0.355,
+          1
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tr-smoke-wipe.jpg F458-F476: differences 33, 38, 30, 31, 30, 20, 12, 7, 4"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Starts 8 ms after a loudness swell (7.625). A whoosh or swell under it is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS swell 7.625 s"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 8,
+      "toShot": 9
+    },
+    {
+      "id": "t07-accelerating-card-cascade",
+      "name": "Accelerating stack of message cards",
+      "spans": [
+        {
+          "startSec": 10.48,
+          "endSec": 11.617
+        }
+      ],
+      "description": "The centred title fades out (F629) as the first translucent card fades in at about the same height (F631). Further cards land one above the other at shrinking intervals (about 10, 10, 6, 4, 4, 4, 2 frames) and the stack spreads, with per-drawing difference rising from 4.9 to 54 by F673. The film ends mid-cascade.",
+      "route": "remotion",
+      "routeReason": "`ui-toast-stack` already lands cards one after another and pushes the older ones; feed it arrival frames on an ease-in schedule. Card content is product UI: capture it or rebuild it pixel-faithfully.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "library:ui-toast-stack",
+        "stagger",
+        "curves"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.137,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/br-card-stack.jpg F629-F674"
+        ]
+      },
+      "ease": {
+        "name": "power3.in",
+        "cubicBezier": [
+          0.895,
+          0.03,
+          0.685,
+          0.22
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/br-card-stack.jpg: arrival intervals shrink from about 10 to 2 frames"
+        ]
+      },
+      "typography": {
+        "role": "list rows, interface micro text",
+        "entry": "whole card fades and drops in",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/br-card-stack.jpg F651-F674"
+        ]
+      },
+      "layers": 2,
+      "sound": {
+        "kind": "music-hit",
+        "note": "An onset at 10.495 s lands 12 ms after the title begins to fade (F629, 10.483). Loudness swells at 10.775 and 11.325 fall inside the cascade, but card arrivals are not locked to them. The source of the onset is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 10.495",
+          "visuals/a1/br-card-stack.jpg F629"
+        ]
+      }
+    },
+    {
+      "id": "t08-collage-pop-on-twos",
+      "name": "Collage built by hard pops on twos",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 0.9
+        },
+        {
+          "startSec": 2.5,
+          "endSec": 3.45
+        }
+      ],
+      "description": "On a flat cool-grey ground, pastel rectangles and cut-out photos appear one at a time with no ease: each pops in whole on a new drawing, a new element every 2–6 frames (F2 lime block, F12 photo, F16 coral block, F24 butter block, F28 cyan…). A serif headline is added a word at a time (F20, F28, F38). The exit reverses the logic: the collage slides left in steps while new colour blocks pop over it and become the next collage of photos (F150–F209).",
+      "route": "remotion",
+      "routeReason": "`paper-collage-assemble` is stop-motion collage on twos; `collageCells` places the pieces. Photos are licensed stills (footage); pops are hard on/off per drawing, no interpolation.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "library:paper-collage-assemble",
+        "collageCells",
+        "library:scene-bento-collage"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 0.9,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tr-collage-build.jpg F2-F53",
+          "visuals/a1/tr-block-sweep-a.jpg F150-F182",
+          "visuals/a1/tr-block-sweep-b.jpg F183-F209"
+        ]
+      },
+      "ease": {
+        "name": "steps",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tr-collage-build.jpg: elements appear complete on single drawings, no in-between frames"
+        ]
+      },
+      "typography": {
+        "role": "promise headline, serif",
+        "entry": "word by word, one word per pop (F20, F28, F38)",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tr-collage-build.jpg F20-F38",
+          "speech-text.json box x 0.557 w 0.171 (starts 11% into the cell)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t09-light-leak-wipe-to-white",
+      "name": "Overexposed light leak to white",
+      "spans": [
+        {
+          "startSec": 4.45,
+          "endSec": 5.18
+        }
+      ],
+      "description": "Photos slide right while a soft overexposed white glow spreads from the left and erases them, ending on a clean ground at F311 (0.73 s from F267). On that white, the next line fades in left to right with a gradient on the key words from F314.",
+      "route": "remotion",
+      "routeReason": "`light-burn` sweeps a front of light across the frame; set it white and let it hold instead of cutting at the peak. `photo-move` slides the stills.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "library:light-burn",
+        "library:photo-move"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.73,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tr-whiteout-a.jpg F267-F299",
+          "visuals/a1/tr-whiteout-b.jpg F300-F311"
+        ]
+      },
+      "ease": {
+        "name": "power1.out",
+        "cubicBezier": [
+          0.25,
+          0.46,
+          0.45,
+          0.94
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tr-whiteout-a.jpg and tr-whiteout-b.jpg: differences about 12–18 per drawing to F298, then 12.2, 8.95, 6.06, 2.84, 1.27"
+        ]
+      },
+      "layers": 2,
+      "sound": {
+        "kind": "music-hit",
+        "note": "The wash begins 25 ms before a loudness swell (4.475) and 31 ms before an onset (4.481). The hit itself is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS swell 4.475 s",
+          "audio.json onsetsSec 4.481"
+        ]
+      }
+    },
+    {
+      "id": "t10-caret-anchored-typing-scroll",
+      "name": "Typing with the field scrolling under a fixed caret",
+      "spans": [
+        {
+          "startSec": 8.0,
+          "endSec": 8.8
+        },
+        {
+          "startSec": 3.05,
+          "endSec": 3.45
+        }
+      ],
+      "description": "A question is typed in close-up at 12–15% of cell height. Once the line reaches about 60% of the field width, every new character pushes the whole line left by its own width, so the caret stays at a fixed x and the start of the sentence slides off the left edge (TL F480–F527). BR does the same with motion blur on the line (F185–F197), and the send button slides in from the right as the question ends (F195–F206).",
+      "route": "remotion",
+      "routeReason": "`TypedLine` with `typingSchedule` for character times; the scroll is translateX = min(0, fieldWidth × 0.6 − measured text width) each frame, which no primitive does yet. The field must be the real product's (capture:app or a pixel-faithful rebuild).",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "typedCount",
+        "library:ui-prompt-bar",
+        "block:type-caret-track"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.8,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tl-caret-pan.jpg F480-F527",
+          "visuals/a1/br-text-scroll.jpg F183-F206"
+        ]
+      },
+      "typography": {
+        "role": "typed input",
+        "entry": "typewriter, a character about every 2–4 frames at 60 fps, caret visible",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tl-caret-pan.jpg F480-F527",
+          "speech-text.json box x 0 h 0.061-0.074 once scrolled"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t11-cut-on-motion-blur",
+      "name": "Cut hidden in a blurred glide",
+      "spans": [
+        {
+          "startSec": 1.1,
+          "endSec": 1.53
+        }
+      ],
+      "description": "A large word on navy glides left with growing horizontal blur while a light streak sweeps right (F66–F78, per-drawing difference 12.4 → 20). The cut lands on the most blurred frame (F79): the incoming glass pill is itself sliding left and blurred, and it settles by about F92.",
+      "route": "remotion",
+      "routeReason": "`VelocityBlur` on both sides, matched speed, cut at peak blur with `cutTiming`; the light streak is a `LightPath`.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "VelocityBlur",
+        "cutTiming",
+        "LightPath",
+        "library:motion-blur"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.43,
+        "startOffsetFromCutSec": -0.2,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/br-word-to-pill.jpg F66-F92"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "cubicBezier": [
+          0.645,
+          0.045,
+          0.355,
+          1
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/br-word-to-pill.jpg: differences 12.4, 12.8, 13.0, 15.0, 20.0 into the cut, then 5.4, 4.8, 4.3, 4.0, 3.8, 3.5 after"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "Falls in the near-silent opening (RMS about 1 000); no swell nearby.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS 1.0-1.5 s"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 1,
+      "toShot": 2
+    },
+    {
+      "id": "t12-placeholder-to-ui-resolve",
+      "techniqueCardId": "placeholder-resolve",
+      "name": "Dissolve to a gradient placeholder that resolves into the interface",
+      "spans": [
+        {
+          "startSec": 5.7,
+          "endSec": 7.05
+        }
+      ],
+      "description": "After the action button is pressed, a 7-frame dissolve (F342–F349) lands on a screen whose content cells are soft warm gradients (#F25A57 to #F49666). The cells then resolve into real content one at a time, each over about 0.2 s and staggered about 0.2 s: lower left first (F375–F393), then upper right (F399–F410), then upper left (F411–F422). It reads as 'generating'.",
+      "route": "remotion",
+      "routeReason": "Crossfade per cell between a gradient fill and the captured screen's crop, scheduled with `stagger`. `ui-dashboard-assemble` builds a screen piece by piece but from empty, not from placeholders.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "stagger",
+        "library:ui-dashboard-assemble",
+        "library:mesh-gradient",
+        "block:placeholder-resolve"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 1.35,
+        "startOffsetFromCutSec": -0.05,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/bl-cut-orange.jpg F342-F356",
+          "visuals/a1/bl-field-resolve.jpg F375-F422"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/bl-cut-orange.jpg F342-F349: differences 27.0, 24.5, 22.9, 22.1 per drawing, close to linear"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 6,
+      "toShot": 7,
+      "sound": {
+        "kind": "music-hit",
+        "note": "The dissolve midpoint (5.75) is 32 ms before an onset (5.782) and 225 ms after a swell, so it is not on a pulse peak. The onset source is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 5.782",
+          "50 ms RMS swell 5.525 s"
+        ]
+      }
+    },
+    {
+      "id": "t13-press-state-refill",
+      "name": "Button press: snap to black, refill from the bottom",
+      "spans": [
+        {
+          "startSec": 10.6,
+          "endSec": 11.17
+        }
+      ],
+      "description": "The cursor sits on the mint send button. On the press it snaps to black in one drawing (F642), holds black for 0.35 s while the mascot hops up to the top right, then the mint fill rises from the bottom over F663–F670 (0.12 s) and the button returns.",
+      "route": "remotion",
+      "routeReason": "`Cursor` for the press; the black state is a hard swap; the refill is `growRect` from the bottom edge. `ui-cursor-click` gives the pointer arc.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Cursor",
+        "growRect",
+        "library:ui-cursor-click"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.57,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tl-send-press.jpg F636-F671"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "cubicBezier": [
+          0.215,
+          0.61,
+          0.355,
+          1
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tl-send-press.jpg F663-F670: differences 1.05, 1.95, 0.91, 0.33"
+        ]
+      },
+      "layers": 3,
+      "sound": {
+        "kind": "music-hit",
+        "note": "The press (F642, 10.70) is 74–75 ms before an onset (10.774) and a swell (10.775): inside 80 ms, but loose. Inferred.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 10.774",
+          "50 ms RMS swell 10.775 s",
+          "visuals/a1/tl-send-press.jpg F642"
+        ]
+      }
+    },
+    {
+      "id": "t14-still-cell-rest",
+      "techniqueCardId": "quad-split",
+      "name": "One cell holds still while the others cut",
+      "spans": [
+        {
+          "startSec": 5.7,
+          "endSec": 7.6
+        }
+      ],
+      "description": "Top right holds one centred serif line, unchanged for 1.9 s (F342–F457), while the other three cells change four times between them (5.75 BL, 6.083 TL, and the running typing and chat). The line sits on #EAECF0, 77% of cell width, centred, its key words in a blue-to-lilac gradient.",
+      "route": "remotion",
+      "routeReason": "A held text layer; the craft is the scheduling, so the quad stage must allow one cell to rest during another cell's busiest stretch.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MaskedLine",
+        "block:quad-split"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 1.9,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/quad-tr.jpg F342-F450",
+          "visuals/a1/tr-smoke-wipe.jpg F453-F457"
+        ]
+      },
+      "typography": {
+        "role": "promise line, serif",
+        "entry": "fade in left to right with a gradient on key words over 0.47 s (F314-F342)",
+        "alignment": "centre",
+        "basis": "measured",
+        "evidence": [
+          "speech-text.json box x 0.558 w 0.386: centre 0.751 against cell centre 0.75",
+          "visuals/a1/tr-whiteout-b.jpg F314-F329"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t15-tile-opens-to-app",
+      "name": "App tile opens into the full app",
+      "spans": [
+        {
+          "startSec": 10.6,
+          "endSec": 10.95
+        }
+      ],
+      "description": "After a held white mark on dark, a cut (F636) to a blue rounded app tile at the left of the cell. The app window grows out of the tile to the right behind a white bloom edge, and the full calendar screen is in place by about F657 (0.35 s). Diffs stay 18–30 per drawing throughout, so it is fast and nearly even.",
+      "route": "remotion",
+      "routeReason": "`GrowToScene` (or the `caused-morph` block) grows an element into the next ground; the bloom edge is a blurred white gradient riding the leading edge. The app screen must be a real capture.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "GrowToScene",
+        "library:caused-morph",
+        "library:ui-app-window"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.35,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/tr-tile-to-ui.jpg F636-F657"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/tr-tile-to-ui.jpg F640-F665: differences 18.2, 27.4, 30.4, 23.2, 19.8, 18.6, 18.4, 18.4, 19.5, 19.2"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 14,
+      "toShot": 15
+    }
+  ]
+}

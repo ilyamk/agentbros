@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "paper-style",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "durationSec": 60,
+  "slots": [
+    {
+      "id": "cold-open",
+      "role": "One image of the starting state, already in motion",
+      "startSec": 0,
+      "durationSec": 1.6,
+      "visualRecipe": "Close crop of one cut-out subject at about 90% of frame height, on textured ground. No title.",
+      "motionRecipe": "A single part of the subject rocks from frame 20. Pull-back at about 1.5 s.",
+      "soundRecipe": "Measured in the source: voice from frame 2, one short silence at 1.78-2.14 s. Keep that gap and let the pull-back finish in it.",
+      "techniqueIds": [
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "First half of the opening sentence, spoken only",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "chapter-one",
+      "role": "Chapter 1, in which each line is made by what it means",
+      "startSec": 1.6,
+      "durationSec": 4.06,
+      "visualRecipe": "Subject left at 40% of the frame. Headline upper right at 40% of width. Secondary line under it, small object right, caption strip low.",
+      "motionRecipe": "Label at 1.7 s. Letters one by one from the first word, then a line written, a shape drawn, a typed strip. Each is timed to the words.",
+      "soundRecipe": "Voice leads. Inferred: small material sounds could follow the actions; not established from the data.",
+      "techniqueIds": [
+        "pasted-letters",
+        "pen-writing",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "A plain claim about the starting state, split into three phrases",
+        "maxWords": 12
+      }
+    },
+    {
+      "id": "chapter-two",
+      "role": "Chapter 2: what came earlier, shown as objects with years",
+      "startSec": 5.66,
+      "durationSec": 9.87,
+      "visualRecipe": "Slide to an empty panel of a different texture. Objects fill it left to right, each with a date stamp and caption. A grid of many small units in the lower half.",
+      "motionRecipe": "Move of 10 frames, eased. Empty at least 5 frames. Objects drop in on spoken dates. Grid units stagger in row by row, then change state together.",
+      "soundRecipe": "Voice leads. One whoosh is plausible on the move; inferred.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "blank-landing",
+        "stamp-slam",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "Date and short caption per object",
+        "maxWords": 30
+      }
+    },
+    {
+      "id": "chapter-three",
+      "role": "Chapter 3: the breakthrough as a sum of parts",
+      "startSec": 15.53,
+      "durationSec": 9.8,
+      "visualRecipe": "Heading first, upper right, in a period face. Subject portrait left at 50% height. Three small objects joined by plus signs, then a flash to the result on the same place.",
+      "motionRecipe": "Heading written in, portrait pops at 17.9 s. Each part arrives on its word, 0.6 s apart. Fade or flash at 23.5 s to the result, with spatter marks.",
+      "soundRecipe": "Voice leads.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "blank-landing",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "Name, place, three parts, a line about the result",
+        "maxWords": 25
+      }
+    },
+    {
+      "id": "chapter-four",
+      "role": "Chapter 4: growth that resists an attempt to halt it",
+      "startSec": 25.33,
+      "durationSec": 7.17,
+      "visualRecipe": "A full panel map or similar field. Tag upper left. Number on a torn strip lower left, 40% of width. Small repeating objects stacked beside it. Attempted-halt mark centre right.",
+      "motionRecipe": "Slide, 15 frames. Points pop from one origin outward. Counter climbs across about 1.2 s on the spoken figure. Loose pieces fly between points, then one physical mark lands and leaves.",
+      "soundRecipe": "Voice leads. Counter could take a rising tick; inferred.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "pin-spread",
+        "object-stamp",
+        "stamp-slam"
+      ],
+      "copySlot": {
+        "purpose": "When, how much, what it beat",
+        "maxWords": 14
+      }
+    },
+    {
+      "id": "break-pattern",
+      "role": "Chapter 5: the pattern breaks once",
+      "startSec": 32.5,
+      "durationSec": 4.36,
+      "visualRecipe": "A full-frame document arrives, then the principal subject right, a measuring dial left, small moving parts in the corners.",
+      "motionRecipe": "Throw instead of a slide, in 0.5 s, overshoots by about 10%, then settles. Gauge needle follows a true value and shows the figure within about 0.5 s of it being spoken. Small parts rotate throughout.",
+      "soundRecipe": "Voice leads. Impact on landing is plausible; inferred.",
+      "techniqueIds": [
+        "thrown-sheet",
+        "stamp-slam",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "Headline, one figure",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "chapter-six",
+      "role": "Chapter 6: scale",
+      "startSec": 36.86,
+      "durationSec": 4.07,
+      "visualRecipe": "Warm rough ground. One big subject in the centre, a second one left, a figure right, accent-coloured headline at the top, placed last.",
+      "motionRecipe": "Slide, 10 frames. Object enters stepping on twos and threes. Dates slam; headline slams last at 40.3 s.",
+      "soundRecipe": "Voice leads.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "blank-landing",
+        "stepped-object-motion",
+        "stamp-slam"
+      ],
+      "copySlot": {
+        "purpose": "Short headline, two dates, two captions",
+        "maxWords": 15
+      }
+    },
+    {
+      "id": "chapter-seven",
+      "role": "Chapter 7: getting smaller and closer",
+      "startSec": 40.93,
+      "durationSec": 4.1,
+      "visualRecipe": "White panel. Each generation of the subject is smaller than the last. A row of many small items along the bottom.",
+      "motionRecipe": "Slide, 10 frames. First device, then its note, then each smaller device on its spoken name, about 1 s apart. Row staggers across the bottom.",
+      "soundRecipe": "Voice leads.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "blank-landing",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "Two dates, two captions",
+        "maxWords": 12
+      }
+    },
+    {
+      "id": "chapter-eight",
+      "role": "Chapter 8: the present, with type made by the process",
+      "startSec": 45.03,
+      "durationSec": 5.57,
+      "visualRecipe": "Lively labels: new colours appear only here. Big word left at 30% of width, new subject at the centre, three result objects on the right.",
+      "motionRecipe": "Slide, 10 frames. Subject falls from above at 46 s. Word builds with a rising scan line at 46.8 s. Results appear on their words, 0.8 s apart. Hold.",
+      "soundRecipe": "Voice leads. List ends; leave a beat.",
+      "techniqueIds": [
+        "single-sheet-camera",
+        "blank-landing",
+        "layered-print-type",
+        "sticker-cutouts"
+      ],
+      "copySlot": {
+        "purpose": "Big word and three results",
+        "maxWords": 10
+      }
+    },
+    {
+      "id": "the-reveal",
+      "role": "Pull back to show the entire sheet",
+      "startSec": 50.6,
+      "durationSec": 4.1,
+      "visualRecipe": "All eight panels in a 4 by 2 grid with a faint title. Viewer sees everything they have watched, in order.",
+      "motionRecipe": "4.1 s symmetric eased pull-back (power2.inOut, from rest, fastest about 2 s in) with a tilt of about 5 degrees that straightens slowly. No new objects arrive.",
+      "soundRecipe": "Voice holds the closing sentence. A swell may suit it; inferred.",
+      "techniqueIds": [
+        "sheet-reveal",
+        "single-sheet-camera"
+      ]
+    },
+    {
+      "id": "sign-off",
+      "role": "Title darkens to full contrast, then one small stamp",
+      "startSec": 54.7,
+      "durationSec": 5.3,
+      "visualRecipe": "Same frame, title in full contrast at 30% of width, small line under, one small tagline at the bottom, stamp upper right.",
+      "motionRecipe": "Almost still. Title snaps from faint to solid at 55.9 s under a 12-frame whole-frame flicker. Subtitle types on. Stamp slams at 58.0 s. Hold to the end.",
+      "soundRecipe": "Measured: silence in the last 0.9 s of the source.",
+      "techniqueIds": [
+        "sheet-reveal",
+        "stamp-slam"
+      ],
+      "copySlot": {
+        "purpose": "Title that doubles as the last spoken word, one line, end stamp",
+        "maxWords": 15
+      }
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid (source tempo has confidence 0.11). Voice sets all timing: start objects on their words, and start each slide in the pause after a sentence, so that the first word of the next chapter arrives as the move settles. Chapters 4 to 10 s. Internal events every 0.3 to 1.5 s."
+  },
+  "style": "One large sheet with panels in a 4 by 2 grid, die-cut engraved figures with white rims on aged textured grounds, red stamps, torn strips and lettering that changes period by period.",
+  "transferRules": {
+    "keep": [
+      "A single sheet with one camera and a closing reveal",
+      "Chapters with one texture each",
+      "Blank panel before each chapter fills",
+      "Objects cued from word times",
+      "Slides in sentence gaps",
+      "One pattern break at the midpoint",
+      "Lettering that shows the meaning",
+      "Closing title doubling as the last word"
+    ],
+    "mustChange": [
+      "Topic and every fact",
+      "All branding and titles",
+      "Voice and any music",
+      "All graphics and illustrations",
+      "All copy",
+      "Period lettering, chosen for the new subject",
+      "Textures and palette"
+    ]
+  }
+}

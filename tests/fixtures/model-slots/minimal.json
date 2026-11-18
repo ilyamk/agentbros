@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-15",
+  "catalogueOnlyConcepts": [
+    "world",
+    "structured-data",
+    "text-json",
+    "image-json",
+    "rewrite",
+    "llm",
+    "workflow"
+  ],
+  "slots": [
+    {
+      "id": "image.generate",
+      "title": "Generate images",
+      "description": "Create images from a text prompt.",
+      "concepts": [
+        "text-to-image"
+      ],
+      "categories": [
+        "text-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": []
+    }
+  ]
+}

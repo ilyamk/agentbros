@@ -1,0 +1,192 @@
+/*
+ * Studio console styles (RFC 0004 §10.1): Tailwind v4 with shadcn/ui CSS variables. Colours map the brand palettes in
+ * src/lib/design-tokens.ts (dark = darkTech, light = minimalLight; lib/theme.ts). Dark ("studio") is the default.
+ * Fonts are system stacks: no network at runtime and no font files in the bundle.
+ */
+@import "tailwindcss" source(".");
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --radius: 0.75rem;
+  /* light: palettes.minimalLight */
+  --background: #fafafa;
+  --foreground: #1a1a2e;
+  --card: #ffffff;
+  --card-foreground: #1a1a2e;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a2e;
+  --primary: #6c5ce7;
+  --primary-foreground: #ffffff;
+  --secondary: #ececf3;
+  --secondary-foreground: #1a1a2e;
+  --muted: #ececf3;
+  --muted-foreground: #5b5b72;
+  --accent: #e9e6fc;
+  --accent-foreground: #1a1a2e;
+  --destructive: #d63031;
+  --border: #dcdce6;
+  --input: #dcdce6;
+  --ring: #6c5ce7;
+  --chart-1: #6c5ce7;
+  --chart-2: #00cec9;
+  --chart-3: #ff9f43;
+  --chart-4: #00b894;
+  --chart-5: #e84393;
+  --sidebar: #f2f2f6;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #6c5ce7;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9e6fc;
+  --sidebar-accent-foreground: #1a1a2e;
+  --sidebar-border: #dcdce6;
+  --sidebar-ring: #6c5ce7;
+  --destructive-foreground: #ffffff;
+  --link: #5443d6;
+  /* status colours (always paired with an icon); light shades keep 4.5:1 on background, card and muted */
+  --status-done: #00805c;
+  --status-current: #6c5ce7;
+  --status-blocked: #c62828;
+  --status-stale: #b8461b;
+  --status-skipped: #6b6b80;
+  --status-invalid: #ad1a6b;
+  --status-paused: #9a6200;
+  --status-waiting: #a85400;
+}
+
+.dark {
+  /* dark "studio": palettes.darkTech */
+  --background: #0f0f0f;
+  --foreground: #ffffff;
+  --card: #171717;
+  --card-foreground: #ffffff;
+  --popover: #171717;
+  --popover-foreground: #ffffff;
+  --primary: #6c5ce7;
+  --primary-foreground: #ffffff;
+  --secondary: #222226;
+  --secondary-foreground: #ffffff;
+  --muted: #222226;
+  --muted-foreground: #a1a1aa;
+  --accent: #2a2540;
+  --accent-foreground: #ffffff;
+  --destructive: #ff6b6b;
+  --border: #2a2a2e;
+  --input: #2a2a2e;
+  --ring: #8e80f0;
+  --sidebar: #131313;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #6c5ce7;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a2540;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2a2a2e;
+  --sidebar-ring: #8e80f0;
+  --destructive-foreground: #0f0f0f;
+  --link: #9d91f5;
+  --chart-1: #8e80f0;
+  --chart-2: #00cec9;
+  --chart-3: #ff9f43;
+  --chart-4: #00b894;
+  --chart-5: #e84393;
+  --status-done: #00b894;
+  --status-current: #9d91f5;
+  --status-blocked: #ff6b6b;
+  --status-stale: #f0845f;
+  --status-skipped: #8a8aa0;
+  --status-invalid: #f06aa8;
+  --status-paused: #fdcb6e;
+  --status-waiting: #ffa94d;
+}
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-link: var(--link);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-status-done: var(--status-done);
+  --color-status-current: var(--status-current);
+  --color-status-blocked: var(--status-blocked);
+  --color-status-stale: var(--status-stale);
+  --color-status-skipped: var(--status-skipped);
+  --color-status-paused: var(--status-paused);
+  --color-status-invalid: var(--status-invalid);
+  --color-status-waiting: var(--status-waiting);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+    /* The app bar is sticky: scrolling to an anchor or a focused control keeps it clear of the bar (WCAG 2.4.11). */
+    scroll-padding-top: 4rem;
+  }
+  html:not(.dark) {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+  /* Motion (RFC 0004 §10.1): CSS transitions of 150–250 ms with one standard ease; no keyframe animation. */
+  :where(button, a, input, textarea, [role="tab"], [role="option"], [role="menuitem"]) {
+    transition-timing-function: var(--ease-standard);
+  }
+}
+
+@utility focus-ring {
+  outline: 2px solid transparent;
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

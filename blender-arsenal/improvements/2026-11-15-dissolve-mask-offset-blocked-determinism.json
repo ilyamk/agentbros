@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "date": "2026-11-15",
+  "slug": "dissolve-mask-offset-blocked-determinism",
+  "recordedAt": "2026-11-15T10:13:00.869Z",
+  "target": "dissolve",
+  "reference": "A premium material-transformation promo: a grounded solid metal form reads clearly before a thin warm ember boundary eats progressively through it; warm rim contrasts a dark tactile surface, holes reveal physical volume, disappearance has a legible middle and controlled finish. Composition stays readable at mobile size; no broad glowing blobs, no instant vanishing, no generic teal plastic sphere.",
+  "weakness": "The warm ember edge never appears; the sphere is already absent at frame 28. Baseline warm-pixel counts at frames 12/28/44: 0/0/0.",
+  "diagnosis": "System cause: Blender GREATER_THAN input[1] defaults to 0.5. Visibility requires noise-threshold > 0.5 while the ember requires abs(noise-threshold) < 0.045, so their masks cannot overlap. Measured comparator 0.5 at frames 12/28/44; threshold at frame 28 is 0.3968527913. A separate exact-determinism failure prevents adoption.",
+  "cause": "system",
+  "change": {
+    "type": "recipe-default",
+    "description": "Trial only: set visible.inputs[1].default_value = 0.0 in dissolve.apply; reverted after the sensor guard failed.",
+    "expectedEffect": "Align the visible surface with the zero-centred ember boundary, reveal the warm edge and preserve the intermediate form at frame 28."
+  },
+  "ab": {
+    "version": 1,
+    "verdict": "revert",
+    "agreed": true,
+    "winner": "candidate",
+    "reviews": 2,
+    "baseline": {
+      "composition": 3,
+      "light": 2,
+      "material": 2,
+      "motion": 1,
+      "realism": 2
+    },
+    "candidate": {
+      "composition": 3,
+      "light": 3,
+      "material": 2,
+      "motion": 3,
+      "realism": 2
+    },
+    "delta": {
+      "composition": 0,
+      "light": 1,
+      "material": 0,
+      "motion": 2,
+      "realism": 0
+    },
+    "experimental": true,
+    "checks": {
+      "sensors": {
+        "pass": false,
+        "evidence": [
+          "out/qa/blender-improve-loop/sensors.json"
+        ]
+      },
+      "tests": {
+        "pass": true,
+        "evidence": [
+          "out/qa/blender-improve-loop/tests.json"
+        ]
+      }
+    },
+    "checkHashes": {
+      "sensors": [
+        "04300a13651ce59823f61f361e4517b5302fdc98689f4d7ed267a6823aa03a68"
+      ],
+      "tests": [
+        "506a550a1a134ce1745b1d731e03e39667ef968de5cce84ccacb1e382409e9fd"
+      ]
+    },
+    "packetHashes": [
+      "5f9fa3b1b888557b4fcd8cdc81553608049bb1aa1d75bccf1e5e720df985bf67",
+      "00fedca0a3149d4eab35f9102ad582cc40471701a7cebc38f21434d74c53b7ad"
+    ],
+    "critiqueHashes": [
+      "d9d4f9ef229470b0d4a4e70d8c3445d583c45b7f1a58abf1d850b811e2a34775",
+      "3824d785ec3333a3fb2782b14af8b439e6eb8aab4c188b68235caedc64fe5006"
+    ]
+  },
+  "decision": "reverted",
+  "gaps": [
+    {
+      "id": "dissolve-range-determinism",
+      "target": "dissolve",
+      "summary": "Candidate exact CPU frame equality failed at frame 28: maxAbsDiff 10, PSNR 63.1901742883 dB. Diagnose render history, sampling and denoising before retrying the mask change; no tolerance was relaxed.",
+      "capability": "determinism",
+      "severity": 5,
+      "status": "open"
+    },
+    {
+      "id": "dissolve-ember-mask",
+      "target": "dissolve",
+      "summary": "The zero comparator trial won both blind orders and produced 842 warm edge pixels at frame 28, but was reverted because exact determinism failed. Retry only after that blocker is resolved.",
+      "capability": "materials",
+      "severity": 4,
+      "status": "open"
+    },
+    {
+      "id": "dissolve-full-motion-proof",
+      "target": "dissolve",
+      "summary": "Three sampled frames and a three-frame sensor interval cannot establish full continuous erosion, weight or settle; both critics marked sampled-frames.",
+      "capability": "motion",
+      "severity": 3,
+      "status": "open"
+    },
+    {
+      "id": "dissolve-material-realism",
+      "target": "dissolve",
+      "summary": "Both critics scored material and realism 2/5 in both variants; teal glossy sphere and generic grey staging remain experimental.",
+      "capability": "materials",
+      "severity": 3,
+      "status": "open"
+    }
+  ]
+}

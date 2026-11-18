@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "repositories-opencv-zoo-yunet-face-detector-dda1fbf4",
+  "section": "repositories",
+  "order": 430,
+  "source": "OpenCV Zoo YuNet face detector",
+  "url": "https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet",
+  "pinnedCommit": "`f12e1279`, sha256 `8f2383e4…`",
+  "licence": "MIT (model directory LICENSE, Shiqi Yu); run by OpenCV (Apache-2.0)",
+  "whatWeTook": "Model weights, downloaded to `~/.cache/agentbros/reframe` at use; OpenCV's built-in HOG people detector as fallback",
+  "whereItLives": "`src/lib/multicam/models.ts`, `scripts/workers/multicam.py`",
+  "why": "Face and person detection for `reframe:track`, `captions:place` and `photo:focus`",
+  "date": "2026-11-13"
+}

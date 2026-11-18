@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "id": "avatar-presenter",
+  "title": "AI presenter",
+  "status": "draft",
+  "reviewedAt": "2026-11-15",
+  "summary": "A generated or digital presenter speaking to camera (AI avatar, talking photo, voice over a still, cartoon mascot) for an explainer, onboarding, outreach or a localised version, with consent and AI labels.",
+  "triggers": {
+    "en": [
+      "ai avatar",
+      "talking avatar",
+      "avatar video",
+      "avatar explainer",
+      "ai presenter",
+      "digital presenter",
+      "virtual presenter",
+      "ai host",
+      "ai spokesperson",
+      "digital twin",
+      "talking photo",
+      "talking portrait",
+      "animate my photo",
+      "lip sync",
+      "lipsync",
+      "voice clone",
+      "clone my voice",
+      "mascot presenter",
+      "ai influencer",
+      "spokesperson",
+      "digital spokesperson"
+    ],
+    "ru": [
+      "аватар",
+      "с ai ведущ",
+      "с ии ведущ",
+      "с виртуальным ведущ",
+      "с цифровым ведущ",
+      "ai ведущ",
+      "ии ведущ",
+      "ии-ведущ",
+      "ai-ведущ",
+      "цифровой ведущ",
+      "цифровым ведущ",
+      "виртуальный ведущ",
+      "виртуальным ведущ",
+      "сгенерированный ведущ",
+      "говорящий аватар",
+      "говорящее фото",
+      "оживи фото",
+      "оживить фото",
+      "цифровой двойник",
+      "цифрового двойника",
+      "клон голоса",
+      "клонировать голос",
+      "клонируй голос",
+      "липсинк",
+      "маскот"
+    ],
+    "zh": [
+      "数字人",
+      "数字人口播",
+      "用数字人",
+      "数字人讲解",
+      "ai数字人",
+      "数字人主播",
+      "ai口播",
+      "虚拟主播",
+      "虚拟人",
+      "ai主播",
+      "ai主持人",
+      "虚拟形象",
+      "数字分身",
+      "照片说话",
+      "让照片说话",
+      "照片开口说话",
+      "会说话的照片",
+      "对口型",
+      "口型同步",
+      "声音克隆",
+      "克隆声音",
+      "克隆我的声音",
+      "吉祥物",
+      "卡通主持人"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the user recorded themselves speaking and wants it cut, captioned or reframed",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a dub or translated subtitles of a real recording, with no generated face",
+      "use": "localise"
+    },
+    {
+      "when": "generated shots tell a story and nobody speaks to camera",
+      "use": "ai-film"
+    },
+    {
+      "when": "a voice over diagrams, with no presenter on screen",
+      "use": "explainer"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "talking-head",
+    "secondaryFilmType": "ai-video",
+    "start": "pnpm film:init --project <id> --type talking-head --secondary ai-video --playbook avatar-presenter --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "the user decides to record themselves instead of a generated presenter",
+      "route": {
+        "kind": "footage",
+        "footageGoals": [
+          "recut",
+          "captions"
+        ],
+        "start": "pnpm footage:next --project <id> --playbook footage-edit --source <file> --goal recut,captions"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "world-and-entity-bible",
+    "directing-and-performance",
+    "model-and-asset-production",
+    "harness-asset-import",
+    "cinematography",
+    "editorial-storytelling",
+    "captions-and-localization",
+    "sound-design-and-mix",
+    "reference-preparation"
+  ],
+  "library": {
+    "categories": [
+      "captions",
+      "finish",
+      "transitions",
+      "ui",
+      "data"
+    ],
+    "blocks": [
+      "film-finish",
+      "caption-clean-sentence",
+      "caption-line-box",
+      "ui-camera-read",
+      "slice-panels"
+    ]
+  },
+  "commands": [
+    "film:next",
+    "film:approve",
+    "entity:card",
+    "asset:board",
+    "asset:import",
+    "generate:image",
+    "generate:model",
+    "fal:models",
+    "fal:find",
+    "fal:scaffold",
+    "generate:voiceover",
+    "speech:local",
+    "align:captions",
+    "budget",
+    "cost:report",
+    "capture:app",
+    "music",
+    "sfx:cues",
+    "sfx:generate",
+    "film:measure",
+    "shot:tournament",
+    "library:usage",
+    "delivery",
+    "sfx:find-segment",
+    "audio:review",
+    "sfx:synth",
+    "voices",
+    "voices:manage",
+    "elevenlabs:capabilities",
+    "audio:transform",
+    "generate:dialogue",
+    "refs:profiles",
+    "refs:plan",
+    "refs:derive",
+    "refs:pack"
+  ],
+  "read": [
+    "docs/entity-workflow.md"
+  ],
+  "stepRead": {
+    "script-variants": [
+      "src/templates/AGENTS.md"
+    ],
+    "script": [
+      "src/templates/AGENTS.md"
+    ],
+    "material": [
+      "docs/production-model-routing.md",
+      ".agents/skills/reference-preparation/SKILL.md"
+    ],
+    "build": [
+      "src/templates/AGENTS.md"
+    ]
+  },
+  "qa": [
+    "The presenter's entity card is user-approved, with likeness and voice consent documented, or not-applicable for an invented or cartoon presenter",
+    "Lips match the words on every presenter shot, checked frame by frame at the plosives (p, b, m); a shot that slips is cut to an insert, never shipped",
+    "One voice owner per line: the model's native speech or the voiceover, never both",
+    "No presenter shot held into drift: face, teeth, hands and eyes stable for the whole shot, and no joint between generated segments left on screen",
+    "The AI label for each target platform and the on-screen or end-card disclosure for EU audiences are listed for the user's upload"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Who is the presenter: an invented person, a cartoon or mascot, or a real person's face (yours or someone else's)?",
+      "why": "A real face needs that person's documented consent; a cartoon needs no YouTube label; it decides the entity card and the model."
+    },
+    {
+      "ask": "Whose voice: a stock voice you pick, the video model's own voice, or a clone of a real voice, and whose?",
+      "why": "A clone needs the owner's consent and ElevenLabs clones only the account holder's own voice; native speech decides which models fit.",
+      "default": "A stock ElevenLabs voice from a shortlist the user approves by ear"
+    },
+    {
+      "ask": "Which languages will the presenter speak?",
+      "why": "Inspect the selected video.avatar endpoint language policy through models:pick and its exact schema; unsupported languages go voice-first.",
+      "default": "The language of the request, voice-first"
+    },
+    {
+      "ask": "What carries the middle of the film besides the presenter: product screens, diagrams, b-roll?",
+      "why": "Cutaways hide generation seams and avatar tells; without material for them the presenter must hold longer than models stay stable.",
+      "default": "Presenter opens and closes; inserts from library blocks or real screens carry the middle"
+    },
+    {
+      "ask": "Is it an organic post, a paid ad, or sent one-to-one (sales outreach)?",
+      "why": "Ads and outreach name a real company and person to strangers: disclosure, consent scope and platform ad rules tighten.",
+      "default": "Organic post on the named platforms"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 300
+      },
+      "captions": "clean-sentence",
+      "note": "Realistic presenter: set 'AI use' in Studio; a cartoon presenter is exempt. Length band is a house rule, starting point."
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "line-box",
+      "note": "Shorts run up to 3 minutes, square or vertical; the 60 s ceiling is a house rule for a presenter, starting point."
+    },
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "line-box",
+      "note": "Label AI-generated content showing realistic people; unlabelled posts may be removed or restricted. Length is a house rule."
+    },
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "line-box",
+      "note": "Meta may require the AI info label on photorealistic video or realistic audio; Reels up to 3 min. Length is a house rule."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 120
+      },
+      "captions": "clean-sentence",
+      "note": "LinkedIn takes 3 s to 15 min, ratio 1:2.4 to 2.4:1; the 30-120 s band for onboarding or outreach is a house rule."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 180
+      },
+      "captions": "clean-sentence",
+      "note": "EU visitors: disclose a deep fake presenter no later than first exposure (AI Act Art. 50, from 2 Aug 2026). Length is a house rule."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "film-finish",
+      "caption-clean-sentence",
+      "ui-camera-read",
+      "slice-panels"
+    ],
+    "note": "One shared grain ties generated presenter shots to inserts; ui-camera-read carries real product screens between presenter shots; TalkingHeadLayout and TalkingHeadVideo in src/templates/talkinghead hold a split or stacked presenter."
+  },
+  "variants": [
+    {
+      "id": "talking-photo",
+      "title": "Talking photo",
+      "triggers": {
+        "en": [
+          "talking photo",
+          "talking portrait",
+          "animate my photo"
+        ],
+        "ru": [
+          "говорящее фото",
+          "оживи фото",
+          "оживить фото"
+        ],
+        "zh": [
+          "照片说话",
+          "让照片说话",
+          "照片开口说话",
+          "会说话的照片"
+        ]
+      },
+      "changes": "One supplied still is the key frame; voice first, then a reference-to-video request with the still and the voice as references. Consent for that face is checked before anything is generated."
+    },
+    {
+      "id": "mascot",
+      "title": "Cartoon or mascot presenter",
+      "triggers": {
+        "en": [
+          "mascot presenter",
+          "cartoon presenter",
+          "animated host"
+        ],
+        "ru": [
+          "маскот",
+          "мультяшный ведущ",
+          "персонаж-ведущ"
+        ],
+        "zh": [
+          "吉祥物",
+          "卡通形象",
+          "卡通主持人",
+          "ip形象"
+        ]
+      },
+      "changes": "Stylised character card, no likeness consent (not-applicable) unless drawn from a real person; YouTube exempts animated content from the AI label. May be built in code from library blocks with no generated video at all."
+    },
+    {
+      "id": "digital-twin",
+      "title": "The user's own digital twin",
+      "triggers": {
+        "en": [
+          "digital twin",
+          "clone my voice",
+          "my avatar"
+        ],
+        "ru": [
+          "цифровой двойник",
+          "цифрового двойника",
+          "мой аватар",
+          "клонировать мой голос"
+        ],
+        "zh": [
+          "数字分身",
+          "克隆我自己",
+          "我的数字人",
+          "克隆我的声音",
+          "形象克隆"
+        ]
+      },
+      "changes": "The user's own face and voice: likeness and voice consent are documented by the user on the card; a voice clone is made by the user in their own provider account and shared, never by the agent; YouTube treats cloning one's own voice for voice-overs as a minor edit."
+    },
+    {
+      "id": "localised-presenter",
+      "title": "One presenter in several languages",
+      "triggers": {
+        "en": [
+          "presenter in several languages",
+          "multilingual avatar"
+        ],
+        "ru": [
+          "аватар на нескольких языках",
+          "ведущий на разных языках"
+        ],
+        "zh": [
+          "多语种数字人",
+          "多语言数字人",
+          "多语言口播",
+          "不同语言的数字人"
+        ]
+      },
+      "changes": "One approved card and key frame, a reviewed translation per language, a voice per language from generate:voiceover, and a presenter clip per language driven by that voice; word timings per language, never reused."
+    }
+  ]
+}

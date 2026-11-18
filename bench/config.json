@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "minRuns": 3,
+  "limits": {
+    "wallTimeSec": 1800,
+    "tokens": 150000,
+    "maxFileBytes": 67108864,
+    "maxBundleBytes": 536870912,
+    "maxTranscriptBytes": 33554432
+  },
+  "judging": {
+    "monthlyCapUsd": null,
+    "campaignCapUsd": 10,
+    "models": [
+      {
+        "vendor": "anthropic",
+        "model": "<maintainer-selects-model>"
+      },
+      {
+        "vendor": "openai",
+        "model": "<maintainer-selects-model>"
+      }
+    ],
+    "calibration": {
+      "originalWinRate": null,
+      "humanAgreement": null,
+      "minSamples": 10
+    }
+  },
+  "noise": {
+    "floor": null,
+    "bootstrapSamples": 1000,
+    "seed": 20261115
+  }
+}

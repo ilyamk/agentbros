@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "motionfly",
+  "idea": {
+    "value": "A product that turns one typed sentence into a finished launch film sells itself by being exactly such a film: the promise is typed on screen in the first two seconds, then the product's own toolbox of moves (typed lines, iris wipes, a 3D phone, an orbit of thumbnails) is performed in front of the viewer, and the prompt-to-result demo sits in the middle as proof.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      "speech-text.json screenText 0.30-1.37 s: the promise line builds word by word",
+      "speech-text.json screenText 10.27-13.27 s: the prompt typed in the product asks for a 30-second launch film",
+      "visuals/contact-sheet-01.jpg: every shot after 9.43 s is either the product UI or a move the checklist at 14.1-16.8 s claims the product makes (script, 3D phone mockups, animated text and logo, music)"
+    ]
+  },
+  "audience": {
+    "value": "Founders and indie app makers who need a launch film and would otherwise open professional editing suites or hire a motion designer.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": [
+      "visuals/strips/s004.jpg F94-F164: a dock of professional editing and compositing app icons slides past before the product mark takes the selection",
+      "speech-text.json screenText 10.83 s: the example prompt is for a habit-tracker app launch",
+      "speech-text.json screenText 27.93 s: free-start call to action, a self-serve tool"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.0,
+      "device": "The whole promise as one short line built word by word on a white ground, a new word every 10 frames, each word arriving pale lilac, turning raspberry, then teal, and settling to ink about 5 frames later, inside four corner dots that spread with the line like a selection box; at 1.80-1.97 s the two halves of the line drift apart, then a hard cut to a cinematic plate.",
+      "description": "The first frame already holds a word; the line answers 'what is this' in 1.4 s with no logo. The selection-box dots read as an editor's frame, so the viewer is primed for 'something is being made'. The split of the line at 1.8 s opens a gap that the hard cut to a photographic plate fills."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59",
+      "visuals/a1/m02-card-shrink.jpg F57-F60",
+      "speech-text.json screenText onsets 0.30, 0.667, 1.30, 1.367 s"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.0,
+        "purpose": "Promise",
+        "retentionDevice": "An unfinished sentence: each word is a small event every 0.33 s",
+        "content": "One-line promise typed word by word in a corner-dot frame; the line splits into its two phrases before the cut."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59"]
+    },
+    {
+      "value": {
+        "startSec": 2.0,
+        "endSec": 5.53,
+        "purpose": "Context: the tools people use today, then the product singled out among them",
+        "retentionDevice": "A black card collapsing into a selection underline; a punch-in; the selection travelling along a dock",
+        "content": "Coastal plate with a bridge; a black card shrinks into the underline of a floating icon dock; punch-in with background defocus; the dock slides left until the product's mark is the last icon and the others blur."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/m02-card-shrink.jpg F60-F81", "visuals/a1/m03-push-cut.jpg F94-F105", "visuals/strips/s004.jpg F94-F164", "visuals/a1/m04-iris-close.jpg F156-F166"]
+    },
+    {
+      "value": {
+        "startSec": 5.53,
+        "endSec": 9.43,
+        "purpose": "Introduction of the product name",
+        "retentionDevice": "Three different reveals in 3.9 s: iris to dark, word on an arc, mark-plus-wordmark lockup",
+        "content": "A dark disc sweeps over everything except the mark; the name types under it in small capitals; hard cut to white with 'Introducing' rising on an arc; hard cut to the mark, the wordmark slides out from behind it; the mark detaches and rises to the top."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m04-iris-close.jpg F166-F179", "visuals/a1/m05-black-to-arc.jpg F180-F203", "visuals/a1/m06-arc-unwind.jpg F203-F224", "visuals/a1/m07-word-to-mark.jpg F235-F251", "visuals/a1/m08-mark-to-word.jpg F256-F275"]
+    },
+    {
+      "value": {
+        "startSec": 9.43,
+        "endSec": 16.83,
+        "purpose": "Proof: the product in use, from prompt to generation",
+        "retentionDevice": "The caret and the progress rows: something is always being written",
+        "content": "A circle opens around the mark into the product's prompt screen on a pastel ground; the prompt types; punch-in on the field; a cursor goes to send; hard cut to the chat view; a six-step checklist ticks off."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m09-circle-open.jpg F283-F302", "visuals/a1/m10-punch-in.jpg F345-F359", "visuals/a1/m18-send-to-chat.jpg F387-F410", "visuals/a1/m11-list-tilt.jpg F417-F440", "visuals/strips/s013.jpg F453-F503"]
+    },
+    {
+      "value": {
+        "startSec": 16.83,
+        "endSec": 21.1,
+        "purpose": "Result and range",
+        "retentionDevice": "Depth: a 3D device, then a ring of thumbnails orbiting the line",
+        "content": "The generated app shown in a tilted 3D phone; then a ring of about 30 photo thumbnails orbits a centred line about range, and flies outward past the frame."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/m12-to-phone.jpg F505-F518", "visuals/a1/m13-phone-to-ring.jpg F565-F578", "visuals/a1/m14-ring-spin.jpg F588-F611", "visuals/a1/m15-ring-out.jpg F621-F633"]
+    },
+    {
+      "value": {
+        "startSec": 21.1,
+        "endSec": 24.53,
+        "purpose": "Value claim",
+        "retentionDevice": "Second line typed with a visible caret under a held headline; four coloured chips drift",
+        "content": "Large headline about speed with four small feature chips floating around it; a grey second line typed under it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m15-ring-out.jpg F634-F644", "visuals/a1/m16-tilt-out.jpg F720-F735"]
+    },
+    {
+      "value": {
+        "startSec": 24.53,
+        "endSec": 30.167,
+        "purpose": "Brand and call to action",
+        "retentionDevice": "The headline rolls away into a spinning mark that settles; the name types in tinted letters",
+        "content": "Large rotated mark settles small and square; the wordmark types beside it; a dark button and the address fade up; still hold with silence for the last 0.83 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m16-tilt-out.jpg F735-F743", "visuals/a1/m17-endcard.jpg F786-F845", "visuals/strips/s019.jpg F736-F901", "audio.json silence 29.334-30.187 s"]
+    }
+  ],
+  "payoff": {
+    "value": "The headline claims a polished film in minutes; the viewer has just watched 30 s of the very moves the checklist promised, so the claim lands as already demonstrated.",
+    "basis": "inferred",
+    "confidence": 0.65,
+    "evidence": ["speech-text.json screenText 14.17-16.8 s checklist rows", "speech-text.json screenText 21.13-23.02 s headline and second line"]
+  },
+  "callToAction": {
+    "value": "Free-start button and web address under the centred mark-plus-wordmark lockup, held still for 2.2 s, the last 0.83 s in silence.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/a1/m17-endcard.jpg F837-F845", "speech-text.json screenText onset 27.933 s", "audio.json silence 29.334-30.187 s"]
+  },
+  "whyItWorks": [
+    "The medium is the proof: every move after the demo is a move the product claims to make, so no testimonial is needed.",
+    "One persistent object, the mark, is carried through five boundaries (5.7, 7.83, 9.43 s and back at 24.53 s); the eye always knows where to look after a change.",
+    "Text is always being written: words arrive tinted and settle to ink, a caret types, checklist rows append. Reading rhythm replaces voiceover.",
+    "Ground alternates white, photographic, dark, white, pastel, white: each section is recognisable by its ground, and the only dark shot is the name reveal.",
+    "The demo shows the actual interaction (type, click, wait), not a summary of it, at a scale a viewer can read thanks to the punch-in."
+  ]
+}

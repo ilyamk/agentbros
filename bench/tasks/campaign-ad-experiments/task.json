@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "id": "campaign-ad-experiments",
+  "playbook": "ad-experiments",
+  "tier": "no-spend",
+  "brief": "Create a reviewable no-spend campaign plan for 20 ad-experiments members. Use labelled synthetic inputs where no product material is supplied. Choose explicit combinations, immutable input pins and valid child adapters; preserve the human approval gate. Save the exact plan and next-step response, then write their paths and plan hash into bench-result.json. This benchmark measures planning, not video completion or creative quality.",
+  "material": [
+    {
+      "path": "bench/answers/campaign-ad-experiments.json",
+      "sha256": "c0881893ef4d2a4b4866b7cc37de93258b655e1e893ad4b3029ce746dd7a44e2",
+      "licence": "Repository-authored synthetic contract fixture; BUSL-1.1. No real products, performance metrics or human approval."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      1,
+      1200
+    ]
+  },
+  "answers": "bench/answers/campaign-ad-experiments.json",
+  "criteria": [
+    {
+      "id": "reviewable-plan",
+      "kind": "process",
+      "check": {
+        "type": "file",
+        "path": "bench-result.json",
+        "contains": "planHash"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

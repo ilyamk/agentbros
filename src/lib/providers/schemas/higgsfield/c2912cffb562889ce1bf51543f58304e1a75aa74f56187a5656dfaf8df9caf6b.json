@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/v2.5-turbo/pro/image-to-video",
+  "title": "Kling 2.5 Turbo — Pro image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-2-5-turbo/pro-image-to-video.md",
+  "usageNotes": [
+    "duration accepts 5 or 10 seconds; 5 is the default.",
+    "This endpoint does not expose a sound or aspect_ratio field.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling 2.5 Playground",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "cfg_scale": {
+        "type": "number",
+        "title": "CFG Scale",
+        "default": 0.5,
+        "maximum": 1,
+        "minimum": 0,
+        "multipleOf": 0.01
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "title": "Negative Prompt",
+        "default": ""
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

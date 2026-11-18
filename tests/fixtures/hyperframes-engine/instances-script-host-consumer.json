@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "status": "exact-existing-C23-consumer-functions-not-new-runtime",
+  "parentRuntimeSha256": "5a33249f292aa6e9192d5f93a831e425fda423e08b4087d4cf72deae28043cd1",
+  "parentRuntimeBytes": 518855,
+  "licence": "Apache-2.0; vendor/hyperframes/LICENSE + retained notices",
+  "functions": {
+    "Ch": {
+      "start": 184226,
+      "end": 184917,
+      "sha256": "963343a6240fdb0026831e3f1d1af199a541a4994316402f4ddc287f871f8f8e",
+      "source": "function Ch(e){let{contentNode:t,head:n,documentElement:r,hasTemplate:i,compositionId:o}=e,a=nn(t.querySelectorAll(E_)),s=o?a.find(d=>d.getAttribute(eu)===o)??null:a[0]??null,l=(s??a[0])?.getAttribute(eu)?.trim()||\"\",u=i?null:n??null,f=s?Zl(s):[];return{innerRoot:s,authoredCompositionId:o||l||null,scriptCompositionId:l||o||null,authoredRootId:s?.getAttribute(\"id\")?.trim()||null,styleSources:[...nn(u?.querySelectorAll(tu)),...nn(t.querySelectorAll(tu))],scriptSources:[...ru(u),...ru(t)],linkSources:[...nn(n?.querySelectorAll(nu)),...nn(t.querySelectorAll(nu))],inertScriptsOutsideRoot:[...Zl(u),...s?Zl(t).filter(d=>!f.includes(d)):[]],variableDefaultCarriers:[r,s].filter(d=>d!=null)}}"
+    },
+    "Wu": {
+      "start": 220098,
+      "end": 220177,
+      "sha256": "4dea9d62ada19d7600e656463147df56b1afc989f00cee253b3b778d7d1e20d1",
+      "source": "function Wu(e){for(;e.firstChild;)e.removeChild(e.firstChild);e.textContent=\"\"}"
+    },
+    "Bu": {
+      "start": 220177,
+      "end": 220222,
+      "sha256": "99506cd4475e9aa2f7a8572ddd6f00ca690ba4cd697c77c0d338617c6b50e378",
+      "source": "function Bu(e){for(let t of wh(e))t.remove()}"
+    },
+    "F1": {
+      "start": 220222,
+      "end": 220438,
+      "sha256": "6555773b80d32cdd2fe9509e43942b252c9e4e84e422116e81b74d435988dad2",
+      "source": "function F1(e){let t=document.importNode(e,!0);x0(t);let n=Ln(t.getAttribute(\"data-width\")),r=Ln(t.getAttribute(\"data-height\"));return t.style.width=n===null?\"100%\":`${n}px`,t.style.height=r===null?\"100%\":`${r}px`,t}"
+    },
+    "Gi": {
+      "start": 221473,
+      "end": 221640,
+      "sha256": "6212562b3a333956047b9b613daabc74becd3520b7a772be9dc0750a15da6900",
+      "source": "function Gi(){return Array.from(document.querySelectorAll(\"[data-composition-src], [data-composition-id]\")).filter(t=>t.hasAttribute(\"data-composition-src\")?!0:T0(t))}"
+    },
+    "Vu": {
+      "start": 221640,
+      "end": 221820,
+      "sha256": "9e2c7021978b7cc20638cef17efba4b32d1391fca7e9024ef666b60468ca6ba7",
+      "source": "function Vu(){let e=window.__hfVariablesByComp;if(!e)return;let t=new Set(Gi().map(n=>Hi(n).runtimeCompositionId).filter(n=>!!n));for(let n of Object.keys(e))t.has(n)||delete e[n]}"
+    },
+    "R0": {
+      "start": 221820,
+      "end": 222562,
+      "sha256": "dd35fcc0d391486d796d31b19477e4938d0ee8eef8331ee9ad245c7334e0151e",
+      "source": "function R0(e,t){let n=I1(e),r=new Set(e.flatMap(a=>{let s=Hi(a),l=s.authoredCompositionId?[s.authoredCompositionId]:[];return(t.has(a)||!E0(a))&&s.runtimeCompositionId&&l.push(s.runtimeCompositionId),l})),i=new Map,o=new Map;for(let a of e){let{authoredCompositionId:s,runtimeCompositionId:l}=Hi(a),u=!t.has(a)&&E0(a);if(!s){o.set(a,{authoredCompositionId:null,runtimeCompositionId:l});continue}let f=(n.get(s)||0)>1,d=l||s;if(u){let m=f?(i.get(s)||0)+1:0;if(f){for(;r.has(y0(s,m));)m+=1;i.set(s,m)}d=f?y0(s,m):s,r.add(d),f?a.setAttribute(\"data-hf-original-composition-id\",s):a.removeAttribute(\"data-hf-original-composition-id\"),a.setAttribute(\"data-composition-id\",d)}o.set(a,{authoredCompositionId:s,runtimeCompositionId:d})}return Vu(),o}"
+    },
+    "k0": {
+      "start": 222562,
+      "end": 226306,
+      "sha256": "0b65bdfb253740f4852ba8561ff4c1250fa84184eceef9fe48e55a738810f5c3",
+      "source": "async function k0(e){let t=Ch({contentNode:e.sourceNode,head:e.head,hasTemplate:e.hasTemplate,compositionId:e.authoredCompositionId}),n=D.instanceMode===!0?(()=>{let b=D.instanceSourceRootId(e.host,e.hostCompositionSrc),x=Array.from(e.sourceNode.querySelectorAll(\"[data-composition-id]\")),v=x[0];if(e.hasTemplate||x.length!==1||!be(v)||v.tagName!==\"DIV\"||v.parentElement!==e.sourceNode||v.getAttribute(\"id\")!==b||v.getAttribute(\"data-composition-id\")!==b)throw new Error(\"Private instance source root differs from authenticated selection\");return v})():be(t.innerRoot)?t.innerRoot:null,r=n??e.sourceNode,i=t.authoredCompositionId,o=t.scriptCompositionId,a=e.runtimeCompositionId||null,s=t.authoredRootId,l=a?`[data-composition-id=\"${CSS.escape(a)}\"]`:void 0;for(let b of t.linkSources){let x=(b.getAttribute(\"href\")||\"\").trim();if(!x)continue;let v=e.compositionUrl?new URL(x,e.compositionUrl).href:x;if(e.compositionUrl&&v0(v,e.compositionUrl))continue;let E=b.cloneNode(!0);mf(E)&&(E.href=v,!d0(document.head,E)&&(document.head.appendChild(E),e.injectedLinks.push(E)))}let u=[];(b=>{for(let x of b){let v=x.cloneNode(!0);if(!ff(v))continue;i&&(v.textContent=t0(v.textContent||\"\",i,l,s,{scopeRootSelectors:!0})),document.head.appendChild(v),e.injectedStyles.push(v);let E=v.textContent||\"\";u.push({element:v,authored:E,applied:E})}})(t.styleSources);let d=b=>{let x=b.getAttribute(\"type\")?.trim()??\"\",v=b.getAttribute(\"src\")?.trim()??\"\";if(v){let A=S0(v,e.compositionUrl);return e.compositionUrl&&v0(A,e.compositionUrl)?null:{kind:\"external\",src:A,type:x}}let E=b.textContent?.trim()??\"\";return E?{kind:\"inline\",content:E,type:x,scopeCompositionId:o}:null},m=t.scriptSources.map(d).filter(b=>b!==null);if(n){let b=n.getAttribute(\"data-width\"),x=n.getAttribute(\"data-height\"),v=e.parseDimensionPx(b),E=e.parseDimensionPx(x);b&&e.host.setAttribute(\"data-width\",b),x&&e.host.setAttribute(\"data-height\",x),v&&be(e.host)&&(e.host.style.width=v),E&&be(e.host)&&(e.host.style.height=E),n.hasAttribute(\"data-timeline-locked\")&&e.host.setAttribute(\"data-timeline-locked\",\"\");let A=F1(n);!e.authoredCompositionId&&i&&A.setAttribute(\"data-composition-id\",i),Bu(A),e.host.appendChild(A)}else if(e.hasTemplate){let b=document.importNode(r,!0);Bu(b),e.host.appendChild(b)}else e.host.innerHTML=e.fallbackBodyInnerHtml,Bu(e.host);for(let b of t.inertScriptsOutsideRoot)e.host.appendChild(document.importNode(b,!0));a&&O1(e,r,a);let g=Array.from(e.host.childNodes),S=()=>e.host.isConnected&&(g.length>0||e.host.childNodes.length===0)&&g.every(b=>b.parentNode===e.host);return{host:e.host,namespace:a||i||\"\",styles:u,isCurrent:S,runScripts:async()=>{if(m.length>0&&await Gu(),!!S())for(let b of m){let x=document.createElement(\"script\");if(b.type&&(x.type=b.type),x.async=!1,b.kind===\"external\")x.src=b.src;else if(b.type.toLowerCase()===\"importmap\"){let v=o0(b.content,E=>S0(E,e.compositionUrl));x.textContent=v?JSON.stringify(v):b.content}else if(b.type.toLowerCase()===\"module\"){let v=b.scopeCompositionId?r0(a||b.scopeCompositionId,e.compositionUrl?.href):\"\";x.textContent=v+b.content}else b.scopeCompositionId?x.textContent=Iu(b.content,b.scopeCompositionId,\"[HyperFrames] composition script error:\",l,a||b.scopeCompositionId,s,e.compositionUrl?.href,D.instanceMode===!0):x.textContent=`(function(){${b.content}})();`;if(D.instanceMode===!0&&D.instanceArmScript(host,x),document.body.appendChild(x),e.injectedScripts.push(x),b.kind===\"external\"){let v=await N1(x);v.status!==\"load\"&&e.onDiagnostic?.({code:\"external_composition_script_load_issue\",details:{hostCompositionId:e.authoredCompositionId,runtimeCompositionId:e.runtimeCompositionId,hostCompositionSrc:e.hostCompositionSrc,resolvedScriptSrc:b.src,loadStatus:v.status,elapsedMs:v.elapsedMs}})}}}}}"
+    },
+    "P1": {
+      "start": 227148,
+      "end": 229104,
+      "sha256": "875168442deb28552e1facfcf7a1c4b57342ae987c87801715af31d737af2d9b",
+      "source": "async function P1(e,t=new Set){let n=Gi();if(Vu(),n.length===0)return[];let r=R0(n,t),i=n.filter(a=>a.hasAttribute(\"data-composition-src\")&&!t.has(a));return D.treeGuard(\"before-mount\",i),(await Promise.all(i.map(async a=>{let s=a.getAttribute(\"data-composition-src\");if(!s)return null;let l=r.get(a),u=l?.authoredCompositionId||null,f=l?.runtimeCompositionId||u||null,d=null;try{d=new URL(s,document.baseURI)}catch{d=null}Wu(a);let m=S=>{e.onDiagnostic?.({code:\"external_composition_load_failed\",details:{hostCompositionId:u,runtimeCompositionId:f,hostCompositionSrc:s,errorMessage:S instanceof Error?S.message:\"unknown_error\"}}),Wu(a)},g=async S=>{let b=await k0(S),x=b.runScripts;return b.runScripts=async()=>{try{await x()}catch(v){m(v)}},b};try{let S=u!=null?document.querySelector(`template#${CSS.escape(u)}-template`):null;if(S)return await g({host:a,authoredCompositionId:u,runtimeCompositionId:f,hostCompositionSrc:s,sourceNode:S.content,hasTemplate:!0,fallbackBodyInnerHtml:\"\",compositionUrl:d,injectedStyles:e.injectedStyles,injectedScripts:e.injectedScripts,injectedLinks:e.injectedLinks,parseDimensionPx:e.parseDimensionPx,onDiagnostic:e.onDiagnostic});let b=await(D.instanceMode===!0?D.instanceFetch(a,s):D.fetch(s));if(!b.ok)throw new Error(`HTTP ${b.status}`);let x=await b.text(),E=new DOMParser().parseFromString(x,\"text/html\");C0(E,d);let A=(u?E.querySelector(`template#${CSS.escape(u)}-template`):null)??E.querySelector(\"template\"),F=A?A.content:E.body;return await g({host:a,authoredCompositionId:u,runtimeCompositionId:f,hostCompositionSrc:s,sourceNode:F,hasTemplate:!!A,fallbackBodyInnerHtml:E.body.innerHTML,compositionUrl:d,injectedStyles:e.injectedStyles,injectedScripts:e.injectedScripts,injectedLinks:e.injectedLinks,parseDimensionPx:e.parseDimensionPx,head:E.head,declaredVariableDefaults:ni(E.documentElement),variableDeclarer:E.documentElement,onDiagnostic:e.onDiagnostic})}catch(S){return m(S),null}}))).filter(a=>a!==null)}"
+    },
+    "M0": {
+      "start": 229104,
+      "end": 230334,
+      "sha256": "c2e953d1b4c108a0dab7d8bd80fcd8d80601767d9daf8789370bdea845f769c7",
+      "source": "async function M0(e){let t=new Set,n={host:document.documentElement,namespace:\"\",referenceTarget:\"document\",styles:[...document.querySelectorAll(\"style\")].map(m=>({element:m,authored:m.textContent??\"\",applied:m.textContent??\"\"}))},r=[],i=new Set;for(let m=0;m<3;m++){let g=await P1(e,i);if(!g.length)break;for(let S of g)i.add(S.host);if(i.size>16)throw Error(\"Static tree loaded host count bound\");r.push(...g)}if(Gi().some(m=>m.hasAttribute(\"data-composition-src\")&&!i.has(m)))throw Error(\"Static tree unmounted external host/depth bound\");D.treeGuard(\"mounted\",[...i]),D.instanceMode===!0&&D.instancePrepareMedia(Um);let o=await A0(e,new Set(r.map(({host:m})=>m))),a=[...r,...o];Uu([...a,n],t);for(let m of r)await m.runScripts();D.treeGuard(\"scripts-complete\",[...i]);let s=o.filter(m=>{if(m.isCurrent())return!0;for(let g of m.styles)g.element.remove();return window.__hfVariablesByComp&&delete window.__hfVariablesByComp[m.namespace],!1}),l=[...r.filter(m=>m.host.isConnected),...s],u=await A0(e,new Set(l.map(({host:m})=>m)));u.length&&Uu([...l,...u,n],t);let f=new Map([...s,...u].map(m=>[m.host,m]));for(let m of Gi()){let g=f.get(m);g&&await g.runScripts()}let d=[...l,...u].filter(m=>m.host.isConnected);Uu([...d,n],t)}"
+    },
+    "ke": {
+      "start": 60885,
+      "end": 60931,
+      "sha256": "30e3cc971296dc89d1d10fb502bf1fbea52b1bc306505afd6e605fbaf2a6b2e1",
+      "source": "function ke(e){return e!=null&&e.nodeType===1}"
+    },
+    "be": {
+      "start": 60931,
+      "end": 60980,
+      "sha256": "fac8a906144ee8aad2848431eb5dd553a5c936b0534767fef1753429b5ef45ee",
+      "source": "function be(e){return ke(e)&&e.namespaceURI===df}"
+    },
+    "Ln": {
+      "start": 167238,
+      "end": 167356,
+      "sha256": "9f8a2b75e2ea82d9d9dc2a2f30e3ad83db5c64235abbc224d8cc3857a7510cc4",
+      "source": "function Ln(e){if(e==null||e.trim()===\"\")return null;let t=Number.parseFloat(e);return Number.isFinite(t)&&t>0?t:null}"
+    },
+    "Th": {
+      "start": 192030,
+      "end": 192054,
+      "sha256": "473d3379dc6387badd4413f39441bf1db9a3de63ce60f1f9e4a3488986ec6c3b",
+      "source": "function Th(){return w_}"
+    },
+    "Nu": {
+      "start": 192728,
+      "end": 192790,
+      "sha256": "dcac4811030fd3d508ebeabc783b16d10f2b192db4e1ca4a5829e8df52db2e90",
+      "source": "function Nu(e){return e.replace(/[.*+?^${}()|[\\]\\\\]/g,\"\\\\$&\")}"
+    },
+    "ot": {
+      "start": 194496,
+      "end": 194560,
+      "sha256": "ac337420603900caa519508a089c44b62e353ac8680bdce65caf6015ab5eaedb",
+      "source": "function ot(e){return JSON.stringify(e).replace(/</g,\"\\\\u003c\")}"
+    },
+    "Iu": {
+      "start": 195317,
+      "end": 209837,
+      "sha256": "906d53b66c4252526e075cb065b929bad93e53425f48726c88bc32014ab7baaf",
+      "source": "function Iu(e,t,n=\"[HyperFrames] composition script error:\",r,i=t,o,a,s=!1){let l=ot(t),u=ot(i),f=ot(n),d=Nu(t),m=ot(o?.trim()||null),g=ot(r??null),S=ot(String.raw`\\[\\s*data-composition-id\\s*=\\s*(?:\"${d}\"|'${d}')\\s*\\]`),b=ot(String.raw`\\s*\\[\\s*data-(?:start|duration)\\s*=\\s*(?:\"[^\"]*\"|'[^']*')\\s*\\]`);return`(function(){\n  ${`(function(){ ${Th()} })();`}\n  var __hfInstanceAuthority = null;\n  if (${s?\"true\":\"false\"}) {\n    var __hfAcquire = window.__avcPrivateInstanceAcquire;\n    delete window.__avcPrivateInstanceAcquire;\n    if (typeof __hfAcquire !== \"function\") throw Error(\"Missing private instance authority\");\n    __hfInstanceAuthority = __hfAcquire(document.currentScript);\n    if (!__hfInstanceAuthority || !__hfInstanceAuthority.registry || typeof __hfInstanceAuthority.fail !== \"function\") throw Error(\"Invalid private instance authority\");\n  }\n  var __hfCompId = ${l};\n  var __hfTimelineCompId = ${u};\n  var __hfErrorLabel = ${f};\n  var __hfAuthoredRootId = ${m};\n  var __hfCompositionSrc = ${ot(a?.trim()||null)};\n  var __hfAuthoredRootAttr = ${ot(Lu)};\n  var __hfEscapeAttr = function(value) {\n    return (value + \"\").replace(/\\\\\\\\/g, \"\\\\\\\\\\\\\\\\\").replace(/\"/g, \"\\\\\\\\\\\\\"\");\n  };\n  var __hfRootSelector = ${g} || (__hfCompId\n    ? '[data-composition-id=\"' + __hfEscapeAttr(__hfCompId) + '\"]'\n    : \"\");\n  var __hfRoot = null;\n  var __hfRootSelectorPattern = ${S};\n  var __hfTimingSelectorPattern = ${b};\n  var __hfAuthoredRootSelector = __hfAuthoredRootId\n    ? \"[\" + __hfAuthoredRootAttr + '=\"' + __hfEscapeAttr(__hfAuthoredRootId) + '\"]'\n    : \"\";\n  var __hfAuthoredRootEntries = __hfAuthoredRootSelector\n    ? [{ id: __hfAuthoredRootId, replacement: __hfAuthoredRootSelector }]\n    : [];\n  var __hfNormalizeSelector = function(selector) {\n    if (!__hfCompId || typeof selector !== \"string\") return selector;\n    var normalized = selector\n      .replace(new RegExp(__hfRootSelectorPattern + '(?:' + __hfTimingSelectorPattern + ')+', 'g'), __hfRootSelector)\n      .replace(new RegExp('(?:' + __hfTimingSelectorPattern + ')+' + __hfRootSelectorPattern, 'g'), __hfRootSelector);\n    return window.__hfSvgSelectorAliases.rewrite(normalized, __hfAuthoredRootEntries);\n  };\n  var __hfFindRoot = function() {\n    if (!__hfRoot && __hfRootSelector) {\n      __hfRoot = window.document.querySelector(__hfRootSelector);\n    }\n    return __hfRoot;\n  };\n  var __hfContains = function(node) {\n    var root = __hfFindRoot();\n    return !root || node === root || root.contains(node);\n  };\n  var __hfQueryAll = function(selector) {\n    var root = __hfFindRoot();\n    if (!root || typeof selector !== \"string\") {\n      return window.document.querySelectorAll(selector);\n    }\n    return Array.prototype.filter.call(window.document.querySelectorAll(__hfNormalizeSelector(selector)), function(node) {\n      return __hfContains(node);\n    });\n  };\n  var __hfQueryOne = function(selector) {\n    var matches = __hfQueryAll(selector);\n    return matches[0] || null;\n  };\n  var __hfGetElementById = function(id) {\n    var found = window.document.getElementById(id);\n    if (found && __hfContains(found)) return found;\n    var root = __hfFindRoot();\n    if (!root) return found || null;\n    var idValue = id + \"\";\n    if (__hfAuthoredRootId && __hfAuthoredRootId === idValue && root.getAttribute && root.getAttribute(__hfAuthoredRootAttr) === idValue) {\n      return root;\n    }\n    if (root.id === idValue) return root;\n    if (typeof root.querySelector !== \"function\") return null;\n    try {\n      var authoredRootMatch = root.querySelector('[' + __hfAuthoredRootAttr + '=\"' + __hfEscapeAttr(idValue) + '\"]');\n      if (authoredRootMatch) return authoredRootMatch;\n    } catch {}\n    if (typeof CSS !== \"undefined\" && CSS && typeof CSS.escape === \"function\") {\n      try {\n        return root.querySelector(\"#\" + CSS.escape(idValue)) || null;\n      } catch {}\n    }\n    try {\n      return root.querySelector('[id=\"' + __hfEscapeAttr(idValue) + '\"]') || null;\n    } catch {}\n    return null;\n  };\n  var __hfScopedDocument = typeof Proxy === \"function\"\n    ? new Proxy(window.document, {\n        get: function(target, prop, receiver) {\n          if (prop === \"querySelector\") return __hfQueryOne;\n          if (prop === \"querySelectorAll\") return __hfQueryAll;\n          if (prop === \"getElementById\") return __hfGetElementById;\n          var value = Reflect.get(target, prop, target);\n          return typeof value === \"function\" ? value.bind(target) : value;\n        },\n      })\n    : window.document;\n  var __hfTimelineRegistryProxy = null;\n  var __hfGetTimelineRegistry = function() {\n    if (__hfInstanceAuthority) return __hfInstanceAuthority.registry;\n    window.__timelines = window.__timelines || {};\n    if (!__hfCompId || __hfCompId === __hfTimelineCompId || typeof Proxy !== \"function\") {\n      return window.__timelines;\n    }\n    if (!__hfTimelineRegistryProxy) {\n      __hfTimelineRegistryProxy = new Proxy(window.__timelines, {\n        get: function(target, prop, receiver) {\n          if (prop !== __hfCompId) {\n            return Reflect.get(target, prop, target);\n          }\n          var authoredValue = Reflect.get(target, prop, target);\n          return authoredValue === undefined\n            ? Reflect.get(target, __hfTimelineCompId, target)\n            : authoredValue;\n        },\n        set: function(target, prop, value, receiver) {\n          if (prop !== __hfCompId) {\n            return Reflect.set(target, prop, value, target);\n          }\n          // The authored node remains in the compiled DOM when its local id\n          // differs from the runtime mount id, so readiness legitimately sees\n          // both compositions. Publish the same timeline under both identities\n          // instead of replacing one with the other.\n          var authoredSet = Reflect.set(target, __hfCompId, value, target);\n          var runtimeSet = Reflect.set(target, __hfTimelineCompId, value, target);\n          return authoredSet && runtimeSet;\n        },\n      });\n    }\n    return __hfTimelineRegistryProxy;\n  };\n  var __hfScopedWindow = typeof Proxy === \"function\"\n    ? new Proxy(window, {\n        get: function(target, prop, receiver) {\n          if (prop === \"__timelines\") return __hfGetTimelineRegistry();\n          // Inside a sub-composition, __hyperframes is passed as a bare script\n          // param bound to the SCOPED variant (per-comp getVariables). But\n          // authors routinely write the documented window.__hyperframes.\n          // getVariables() form, which would otherwise fall through to the host\n          // page's base __hyperframes and return the WRONG (or empty) variables\n          // for this instance. Route it to the scoped variant too so both\n          // spellings resolve to this composition's own variables.\n          // (__hfScopedHyperframes is a hoisted var assigned below, before any\n          // sub-comp script -- the only code that reads this -- runs.)\n          if (prop === \"__hyperframes\") return __hfScopedHyperframes;\n          // Native window methods must stay bound to the real window. Handed\n          // back unbound, \"this\" at call time is this Proxy and Chrome rejects\n          // it with \"Illegal invocation\", which broke window.addEventListener,\n          // setTimeout, matchMedia and getComputedStyle inside every\n          // sub-composition -- including the window.addEventListener(\"hf-seek\",\n          // ...) form the Three.js and TypeGPU adapters document. The sibling\n          // document and gsap proxies here already bind.\n          //\n          // Only bind non-constructors. Function.prototype.bind drops static\n          // members, so binding a class exposed on window (window.Texts and\n          // friends) would silently strip its statics. Built-in methods have\n          // no .prototype; classes and constructor functions do.\n          var value = Reflect.get(target, prop, target);\n          return typeof value === \"function\" && value.prototype === undefined\n            ? value.bind(target)\n            : value;\n        },\n        set: function(target, prop, value, receiver) {\n          if (prop === \"__timelines\") {\n            if (__hfInstanceAuthority) return __hfInstanceAuthority.fail(\"Instance registry replacement unsupported\");\n            // Common authoring boilerplate assigns the registry back to\n            // itself (window.__timelines = window.__timelines || {}). The\n            // getter above returns our proxy; do not replace the canonical\n            // registry with that proxy or later wrappers will stack proxies.\n            if (value === __hfTimelineRegistryProxy) return true;\n            target.__timelines = value || {};\n            __hfTimelineRegistryProxy = null;\n            return true;\n          }\n          return Reflect.set(target, prop, value, target);\n        },\n      })\n    : window;\n  var __hfResolveGsapTarget = function(target) {\n    if (typeof target === \"string\") return __hfQueryAll(target);\n    if (!Array.isArray(target)) return target;\n    return target.reduce(function(resolved, item) {\n      if (typeof item === \"string\") {\n        return resolved.concat(Array.prototype.slice.call(__hfQueryAll(item)));\n      }\n      resolved.push(item);\n      return resolved;\n    }, []);\n\n  };\n  var __hfScopeTimeline = function(timeline) {\n    if (!timeline || timeline.__hfScopedCompositionRoot === __hfFindRoot()) return timeline;\n    [\"to\", \"from\", \"fromTo\", \"set\"].forEach(function(method) {\n      var original = timeline[method];\n      if (typeof original !== \"function\") return;\n      timeline[method] = function(target) {\n        var args = Array.prototype.slice.call(arguments);\n        args[0] = __hfResolveGsapTarget(target);\n        return original.apply(timeline, args);\n      };\n    });\n    try {\n      Object.defineProperty(timeline, \"__hfScopedCompositionRoot\", {\n        value: __hfFindRoot(),\n        configurable: true,\n      });\n    } catch {\n      // Best-effort: timelines coming from user code may have a frozen target\n      // or a non-extensible defineProperty path. Swallow \\u2014 the scoped root\n      // is an enrichment, not a correctness invariant for playback.\n    }\n    return timeline;\n  };\n  var __hfBaseGsap = typeof gsap === \"undefined\" ? window.gsap : gsap;\n  var __hfScopedGsap = !__hfBaseGsap || typeof Proxy !== \"function\"\n    ? __hfBaseGsap\n    : new Proxy(__hfBaseGsap, {\n        get: function(target, prop, receiver) {\n          if (prop === \"timeline\") {\n            return function() {\n              return __hfScopeTimeline(target.timeline.apply(target, arguments));\n            };\n          }\n          if (prop === \"to\" || prop === \"from\" || prop === \"fromTo\" || prop === \"set\") {\n            return function(firstArg) {\n              var args = Array.prototype.slice.call(arguments);\n              args[0] = __hfResolveGsapTarget(firstArg);\n              return target[prop].apply(target, args);\n            };\n          }\n          if (prop === \"utils\" && target.utils && typeof Proxy === \"function\") {\n            return new Proxy(target.utils, {\n              get: function(utilsTarget, utilsProp, utilsReceiver) {\n                if (utilsProp === \"toArray\") {\n                  return function(firstArg) {\n                    var args = Array.prototype.slice.call(arguments);\n                    args[0] = __hfResolveGsapTarget(firstArg);\n                    return utilsTarget.toArray.apply(utilsTarget, args);\n                  };\n                }\n                if (utilsProp === \"selector\") {\n                  return function(base) {\n                    var baseEl = typeof base === \"string\" ? __hfQueryOne(base) : base;\n                    var root = baseEl || __hfFindRoot();\n                    return function(selector) {\n                      if (!root || typeof selector !== \"string\") return [];\n                      return Array.prototype.filter.call(\n                        window.document.querySelectorAll(__hfNormalizeSelector(selector)),\n                        function(node) {\n                          return node === root || (typeof root.contains === \"function\" && root.contains(node));\n                        },\n                      );\n                    };\n                  };\n                }\n                var value = Reflect.get(utilsTarget, utilsProp, utilsTarget);\n                return typeof value === \"function\" ? value.bind(utilsTarget) : value;\n              },\n            });\n          }\n          var value = Reflect.get(target, prop, target);\n          return typeof value === \"function\" ? value.bind(target) : value;\n        },\n      });\n  var __hfBaseHyperframes = window.__hyperframes;\n  var __hfScopedHyperframes = ${n0};\n  var __hfRun = function() {\n    try {\n      (function(document, gsap, window, __hyperframes) {\n${e.replace(/<\\/(script)/gi,\"<\\\\/$1\")}\n      }).call(window, __hfScopedDocument, __hfScopedGsap, __hfScopedWindow, __hfScopedHyperframes);\n    } catch (_err) {\n      if (__hfInstanceAuthority) __hfInstanceAuthority.fail(_err);\n      console.error(__hfErrorLabel, __hfCompId, _err);\n    }\n  };\n  // What the script started on the global gsap timeline, by any route, for a scene swap to revert.\n  // Only a page with a scene manifest can swap; elsewhere the first script stores null and none records.\n  var __hfRecordAnimations = function(run) {\n    if (window.__hfSceneAnimations === undefined) {\n      window.__hfSceneAnimations = window.document.querySelector(${ot(`meta[name=\"${Oi}\"]`)})\n        ? {}\n        : null;\n    }\n    var byComp = window.__hfSceneAnimations;\n    var globalTimeline = __hfBaseGsap && __hfBaseGsap.globalTimeline;\n    if (!byComp || !globalTimeline || !__hfTimelineCompId) return run();\n    var before = globalTimeline.getChildren(false);\n    // A set completes as it is made and would leave the timeline before the diff below.\n    var autoRemove = globalTimeline.autoRemoveChildren;\n    globalTimeline.autoRemoveChildren = false;\n    run();\n    globalTimeline.autoRemoveChildren = autoRemove;\n    var recorded = (byComp[__hfTimelineCompId] = byComp[__hfTimelineCompId] || []);\n    globalTimeline.getChildren(false).forEach(function(animation) {\n      if (before.indexOf(animation) >= 0) return;\n      recorded.push(animation);\n      // Dropped as the timeline drops a finished tween (it keeps a paused one); moved back, a tween re-adds itself.\n      if (autoRemove && !animation.getChildren && animation.totalProgress() === 1) globalTimeline.remove(animation);\n    });\n  };\n  __hfFindRoot();\n  __hfRecordAnimations(__hfRun);\n})();`}"
+    },
+    "x0": {
+      "start": 218420,
+      "end": 218620,
+      "sha256": "f83cde57819afa8d37a5dd58984fc28ab96e36cc04168af6b147091e69ad7b62",
+      "source": "function x0(e){let t=e.getAttribute(\"id\")?.trim();for(let n of A1)e.removeAttribute(n);t&&(e.removeAttribute(\"id\"),e.setAttribute(\"data-hf-authored-id\",t)),e.setAttribute(\"data-hf-inner-root\",\"true\")}"
+    },
+    "y0": {
+      "start": 219770,
+      "end": 219808,
+      "sha256": "be34acb0e00577237efbeefd765592c82adce643074f419008d034163d782d36",
+      "source": "function y0(e,t){return`${e}__hf${t}`}"
+    },
+    "Hi": {
+      "start": 220801,
+      "end": 221004,
+      "sha256": "cb695bae1f466dad8bcfeb3d23d001b0b1ab9e8044d913bb09c94b5e55c3b3f9",
+      "source": "function Hi(e){let t=(e.getAttribute(\"data-composition-id\")||\"\").trim()||null;return{authoredCompositionId:(e.getAttribute(\"data-hf-original-composition-id\")||t||\"\").trim()||null,runtimeCompositionId:t}}"
+    },
+    "I1": {
+      "start": 221004,
+      "end": 221124,
+      "sha256": "3a1770bc190b4c10c93d6eed79b41d5d05d7ba78fd1d0e6377ce4f2d047f4759",
+      "source": "function I1(e){let t=new Map;for(let n of e){let r=Hi(n).authoredCompositionId||\"\";r&&t.set(r,(t.get(r)||0)+1)}return t}"
+    },
+    "T0": {
+      "start": 221124,
+      "end": 221248,
+      "sha256": "99ac02bfde311380c684d7a77f852fd94dca5feafef2d8238b644a5c4fc33d70",
+      "source": "function T0(e){let t=Hi(e).authoredCompositionId;return t?!!document.querySelector(`template#${CSS.escape(t)}-template`):!1}"
+    },
+    "E0": {
+      "start": 221318,
+      "end": 221473,
+      "sha256": "a00813c8aaebac77dd87d2b679a57f767a3181e7baed9db4fd875f0e3aae261e",
+      "source": "function E0(e){return e.hasAttribute(\"data-composition-src\")?!0:T0(e)?e.children.length===0||e.hasAttribute(\"data-hf-original-composition-id\")?!0:D1(e):!1}"
+    }
+  },
+  "variables": {
+    "df": {
+      "start": 60851,
+      "end": 60884,
+      "sha256": "a695f3b56fd3ab882d8619b8784df054d11211b706c9e2363c01d982f1fcd976",
+      "source": "df=\"http://www.w3.org/1999/xhtml\""
+    },
+    "eu": {
+      "start": 183306,
+      "end": 183330,
+      "sha256": "3b5783cac13afb0c59fbda5088a99995b137b9a85bac4b50bc0594332ae1665b",
+      "source": "eu=\"data-composition-id\""
+    },
+    "E_": {
+      "start": 183357,
+      "end": 183369,
+      "sha256": "68e101072ec779376c00f307ed9c90b11179755bc88fd3dc6c375ef711bd4421",
+      "source": "E_=`[${eu}]`"
+    },
+    "tu": {
+      "start": 183383,
+      "end": 183393,
+      "sha256": "4bffdeb6a0556ece0d1e3ec4f3f5c23548583294225e8bb31c3d863253b1abd4",
+      "source": "tu=\"style\""
+    },
+    "nu": {
+      "start": 183406,
+      "end": 183457,
+      "sha256": "cf30932639869fcd2c9312b755d8d128f9f86f8e7d6ca21cacb8b8236926c9e7",
+      "source": "nu='link[rel=\"stylesheet\"], link[rel=\"preconnect\"]'"
+    },
+    "w_": {
+      "start": 184921,
+      "end": 192029,
+      "sha256": "8a51b71c68032a09f5ff01d6d0e622bd46f38f92a24727324d7e539617164749",
+      "source": "w_='\"use strict\";(()=>{function I(e){return e?/[\\\\w-]/.test(e)||e.charCodeAt(0)>=128:!1}function _(e){return e===\" \"||e===\"\t\"||e===`\\n`||e===\"\\\\r\"||e===\"\\\\f\"}var j=/^[0-9a-fA-F]{1,6}/;function G(e){let n=e>=55296&&e<=57343;return e===0||e>1114111||n?65533:e}function $(e,n){return e[n]===\"\\\\r\"&&e[n+1]===`\\n`?n+2:_(e[n])?n+1:n}function R(e,n){let t=e[n+1];if(t===void 0||/[\\\\n\\\\r\\\\f]/.test(t))return null;let i=j.exec(e.slice(n+1,n+7));if(!i)return{value:t,end:n+2};let o=G(Number.parseInt(i[0],16));return{value:String.fromCodePoint(o),end:$(e,n+1+i[0].length)}}function H(e,n){let t=o=>I(o)&&!/[0-9-]/.test(o),i=o=>e[o]===\"\\\\\\\\\"&&R(e,o)!==null;return e[n]===\"-\"?e[n+1]===\"-\"||t(e[n+1])||i(n+1):t(e[n])||i(n)}function y(e,n){let t=n;for(;e.startsWith(\"/*\",t);){let i=e.indexOf(\"*/\",t+2);t=i<0?e.length:i+2}return t}function A(e,n){let t=y(e,n);for(;_(e[t]);)t=y(e,t+1);return t}function h(e,n){if(!H(e,n))return null;let t=n,i=\"\";for(;t<e.length;){let o=e[t];if(o===\"\\\\\\\\\"){let a=R(e,t);if(!a)break;i+=a.value,t=a.end;continue}if(!I(o))break;i+=o,t+=1}return t===n?null:{value:i,end:t}}var C=45;function T(e){return e>=48&&e<=57}function z(e){return e>=128||e===C||e===95||T(e)||e>=65&&e<=90||e>=97&&e<=122}function J(e,n){let t=e.charCodeAt(n);return t>=1&&t<=31||t===127?!0:T(t)?n===0||n===1&&e.charCodeAt(0)===C:!1}function k(e){let n=\"\";for(let t=0;t<e.length;t+=1){let i=e.charCodeAt(t),o=e[t];i===0?n+=\"\\\\uFFFD\":J(e,t)?n+=`\\\\\\\\${i.toString(16)} `:t===0&&e.length===1&&i===C?n+=`\\\\\\\\${o}`:z(i)?n+=o:n+=`\\\\\\\\${o}`}return n}var W=/\\\\/\\\\*(?:[^*]|\\\\*(?!\\\\/))*\\\\*\\\\/|\\\\\\\\(?:[0-9a-fA-F]{1,6}(?:\\\\r\\\\n|[ \\\\t\\\\r\\\\n\\\\f])?|[\\\\s\\\\S])|\"(?:[^\"\\\\\\\\]|\\\\\\\\[\\\\s\\\\S])*\"|\\'(?:[^\\'\\\\\\\\]|\\\\\\\\[\\\\s\\\\S])*\\'|\\\\[(?:\\\\/\\\\*(?:[^*]|\\\\*(?!\\\\/))*\\\\*\\\\/|\\\\\\\\[\\\\s\\\\S]|\"(?:[^\"\\\\\\\\]|\\\\\\\\[\\\\s\\\\S])*\"|\\'(?:[^\\'\\\\\\\\]|\\\\\\\\[\\\\s\\\\S])*\\'|[^\\\\]\"\\'\\\\\\\\/]|\\\\/(?!\\\\*))*\\\\]/g;function Q(e){let n=new Array(e.length).fill(!0);for(let t of e.matchAll(W)){let i=t.index;n.fill(!1,i,i+t[0].length)}return n}function q(e,n,t){if(n.length===0||!e.includes(\"#\"))return e;let i=new Set(n),o=Q(e),a=\"\",u=0;for(;u<e.length;){let d=o[u]&&e[u]===\"#\"?h(e,u+1):null;d&&i.has(d.value)?(a+=t(d.value),u=d.end):(a+=e[u],u+=1)}return a}function X(e){let n=\"\";for(let t=0;t<e.length;t+=1){if(e[t]===\"\\\\\\\\\"){let i=e[t+1];if(i!==void 0&&/[\\\\n\\\\r\\\\f]/.test(i)){t=$(e,t+1)-1;continue}let o=R(e,t);if(o){n+=o.value,t=o.end-1;continue}}n+=e[t]}return n}function N(e){return Array.from(e,n=>{let t=n.charCodeAt(0);return t===0?\"\\\\uFFFD\":t<32||t===127?`\\\\\\\\${t.toString(16)} `:n===\\'\"\\'||n===\"\\\\\\\\\"?`\\\\\\\\${n}`:n}).join(\"\")}function Y(e,n){return e?{kind:\"any\"}:n===void 0?{kind:\"none\"}:{kind:\"named\",prefix:n}}function Z(e,n){return e[n]===\"|\"&&e[n+1]!==\"=\"}function B(e,n){let t=e[n]===\"*\",i=t?{value:\"*\",end:n+1}:h(e,n),o=y(e,i?.end??n);if(!Z(e,o))return t?null:i?{token:i,namespace:{kind:\"none\"}}:null;let a=h(e,y(e,o+1));return a?{token:a,namespace:Y(t,i?.value)}:null}function K(e){if(e[0]!==\"[\")return null;let n=A(e,1),t=B(e,n);if(!t)return null;let{token:i,namespace:o}=t;return{name:i.value,rawName:e.slice(n,i.end),namespace:o,end:i.end}}function ee(e,n){let t=/^(?:\"((?:\\\\\\\\[\\\\s\\\\S]|[^\"\\\\\\\\])*)\"|\\'((?:\\\\\\\\[\\\\s\\\\S]|[^\\'\\\\\\\\])*)\\')/.exec(e.slice(n));return t?{value:X(t[1]??t[2]),end:n+t[0].length}:h(e,n)}function ne(e,n){let t=A(e,n),i=h(e,t);if(i){if(!/^[is]$/i.test(i.value))return null;t=A(e,i.end)}return e[t]!==\"]\"||t!==e.length-1?null:{flag:i?.value}}function F(e){let n=K(e);if(!n)return null;let t=A(e,n.end),o=[\"=\",\"~=\",\"|=\",\"^=\",\"$=\",\"*=\"].find(d=>e.startsWith(d,t));if(!o)return null;let a=ee(e,A(e,t+o.length));if(!a)return null;let u=ne(e,a.end);return u?{name:n.name,rawName:n.rawName,namespace:n.namespace,operator:o,value:a.value,flag:u.flag}:null}function E(e,n){return e.replace(W,t=>t.startsWith(\"[\")?n(t):t)}var re=\"data-hf-svg-reference-aliases\";function O(e,n,t,i){let o={\"=\":(s,r)=>s===r,\"~=\":(s,r)=>s.split(/[ \\\\t\\\\r\\\\n\\\\f]+/).includes(r),\"|=\":(s,r)=>s===r||s.startsWith(r+\"-\"),\"^=\":(s,r)=>s.startsWith(r),\"$=\":(s,r)=>s.endsWith(r),\"*=\":(s,r)=>s.includes(r)},a=(s,r,l)=>!r&&l!==\"=\"&&l!==\"|=\"?!1:o[l](s,r),u=s=>s.replace(/[A-Z]/g,r=>r.toLowerCase()),d=s=>{let r=F(s);if(!r)return s;let{name:l,rawName:g,namespace:m,operator:b,value:D,flag:w}=r;if(m.kind===\"named\"!=(i!==void 0))return s;let x=w?.toLowerCase()===\"i\"?u:S=>S,L=u(l),P=t.filter(S=>{let V=m.kind===\"none\"?S.name:S.localName,U=m.kind===\"named\"?i.get(m.prefix):null;return(m.kind===\"any\"||S.namespaceURI===U)&&u(V)===L}),v=new Set([s]);for(let S of P)a(x(S.before),x(D),b)&&v.add(`[${g}=\"${N(S.after)}\"${w?` ${w}`:\"\"}]`);return v.size===1?s:`:is(${[...v].join(\", \")})`};if(i)return E(e,d);let p=new Map(n.map(({id:s,replacement:r})=>[s,r])),f=new Map;for(let s of t){if(s.name!==\"id\"||s.before===s.after||p.has(s.before))continue;let r=f.get(s.before);r||(r=new Set([`#${k(s.before)}`]),f.set(s.before,r)),r.add(`#${k(s.after)}`)}for(let[s,r]of f)p.set(s,`:is(${[...r].join(\", \")})`);let c=q(e,[...p.keys()],s=>p.get(s));return E(c,d)}function se(e,n,t=!0){let i=[],a=(t?[...e.querySelectorAll(`[${n}]`)]:[]).map(d=>d.getAttribute(n)),u=e.getAttribute?.(n);u&&a.unshift(u);for(let d of a){let p;try{p=JSON.parse(d)}catch{continue}if(!Array.isArray(p))continue;let f=p;for(let c of f){if(!ie(c))continue;let{name:s,localName:r,namespaceURI:l,before:g,after:m}=c;i.push({name:s,localName:r,namespaceURI:l,before:g,after:m})}}return i}function ie(e){if(!e||typeof e!=\"object\")return!1;let{name:n,localName:t,namespaceURI:i,before:o,after:a}=e;return typeof n==\"string\"&&typeof t==\"string\"&&(i===null||typeof i==\"string\")&&typeof o==\"string\"&&typeof a==\"string\"}function oe(e){let n=[],t=[],i=!1,o,a=new WeakMap,u=(f,c)=>{for(let s of f){if(\"selectorText\"in s){let r=s,l=a.get(r),g=r.selectorText,m=l?.applied===g?l.authored:g,b=O(m,[],t,c);b!==g&&(r.selectorText=b),b===m?a.delete(r):a.set(r,{authored:m,applied:r.selectorText})}\"cssRules\"in s&&u(s.cssRules,c)}},d=()=>{if(t.length)for(let f of e.document.styleSheets){let c;try{c=f.cssRules}catch{continue}let s=new Map;for(let r of c){if(!(\"namespaceURI\"in r))continue;let{prefix:l,namespaceURI:g}=r;l&&s.set(l,g||null)}s.size&&u(c,s)}},p={rewrite:(f,c=[])=>{if(typeof f!=\"string\"||!f.includes(\"#\")&&!f.includes(\"[\"))return f;let s=O(f,c.length?[...c,...n]:n,t);if(s!==f){if(!o){let r=e.document.createElement(\"div\");o=r.matches.bind(r)}o(f)}return s},refresh(){t=se(e.document,re).filter(r=>r.before!==r.after);let f=new Set(t.filter(r=>r.name===\"id\").map(r=>r.before)),c=new Set;n=[];for(let r of e.document.querySelectorAll(\"[data-hf-authored-id][id]\")){let l=r.getAttribute(\"data-hf-authored-id\");if(!l||l===r.id||c.has(l)||f.has(l))continue;c.add(l);let g=N(l);n.push({id:l,replacement:`:is(#${k(l)}, [data-hf-authored-id=\"${g}\"])`})}if(d(),i||!n.length&&!t.length)return;let s=e.Element.prototype;s.querySelector=new Proxy(s.querySelector,{apply(r,l,g){return Reflect.apply(r,l,[p.rewrite(g[0])])}}),s.querySelectorAll=new Proxy(s.querySelectorAll,{apply(r,l,g){return Reflect.apply(r,l,[p.rewrite(g[0])])}}),i=!0}};e.__hfSvgSelectorAliases=p,p.refresh()}function M(){let e=window;e.__hfSvgSelectorAliases||oe(e)}M();})();\\n'"
+    },
+    "Oi": {
+      "start": 192628,
+      "end": 192647,
+      "sha256": "6dbe00b28171a963b7078db85e6480415d6c124a87ed19d274ace7ad0bc8daf0",
+      "source": "Oi=\"hf-scene-parts\""
+    },
+    "Lu": {
+      "start": 192679,
+      "end": 192703,
+      "sha256": "c43a466424c58f8c8c4afdfa2c63cdfde394f4acda2b5d580232ea1674adaf02",
+      "source": "Lu=\"data-hf-authored-id\""
+    },
+    "n0": {
+      "start": 194564,
+      "end": 195107,
+      "sha256": "f1fa292c4cbe81b1c4665be7e965344e83ed70b9a65b35dfbf074ab2bf4ab1b6",
+      "source": "n0=`!__hfBaseHyperframes\n    ? __hfBaseHyperframes\n    : Object.assign({}, __hfBaseHyperframes, {\n        assetUrl: function(path) {\n          var page = window.document.baseURI;\n          return new URL(path, __hfCompositionSrc ? new URL(__hfCompositionSrc, page) : page).href;\n        },\n        getVariables: function() {\n          var byComp = window.__hfVariablesByComp;\n          var scoped = byComp && __hfTimelineCompId ? byComp[__hfTimelineCompId] : null;\n          return scoped ? Object.assign({}, scoped) : {};\n        },\n      })`"
+    },
+    "A1": {
+      "start": 218223,
+      "end": 218419,
+      "sha256": "e69f206d519aaa2da1020edbf21e6b4eb7b692e3bb4319a7b6bbc616a17425c1",
+      "source": "A1=[\"data-composition-id\",\"data-composition-file\",\"data-start\",\"data-duration\",\"data-end\",\"data-track-index\",\"data-track\",\"data-composition-src\",\"data-hf-authored-duration\",\"data-hf-authored-end\"]"
+    }
+  },
+  "positionUnit": "javascript-utf16-code-units",
+  "hashEncoding": "utf8"
+}

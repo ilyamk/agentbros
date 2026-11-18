@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gojiberry",
+  "palette": {
+    "value": ["#F4F4F6", "#000000", "#10161C", "#E8485C", "#F9F3EE", "#F0C0A0", "#F0A898", "#EF806F", "#FA9A98"],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "Pixels sampled from source frames: studio white #ECEEF0-#F6F6F6 at 0.5 s, 7.6 s, 44.0 s; black #000000 at 5.7 s and 18.0 s; ink #10161C (text and end-card pill) at 30.0 s and 52.6 s",
+      "Accent red #E7485C-#E9485D on the newest typed word at 5.60 s and on the mark at 52.6 s",
+      "Warm gradient ground #F9F3EE (top left) to #F0C0A0 and #F0A898 (bottom right) at 20.5 s and 26.3 s; submit control #EF806F at 30.0 s; submit wash #FA9A98 at 35.5 s"
+    ]
+  },
+  "typography": {
+    "value": [
+      { "role": "typed query / caret line (hook, demo)", "description": "Neo-grotesque or geometric sans (inferred), regular weight, sentence case, left-aligned and anchored at the caret: the line grows rightward and the frame follows, so older text exits the left edge (OCR box x = 0.00 at 0.42-1.72 s, 23.8-24.6 s, 28.1-35.1 s). Cap box about 8% of frame height in the hook close-up, 9-13% in demo close-ups. Block caret the height of the x-height plus ascender, solid, no blink during typing. Rate about 2 frames a character (10 characters in 21 frames, F93-F114)." },
+      { "role": "question line on black", "description": "Same sans, white on black, sentence case, left-anchored at the caret. Line box 11.6% of frame height before the punch-in (4.73 s), 22-24% after (5.5 s), so about 1.7-2x. The word just typed is accent red for 6-7 frames (F292-F298, F304-F309, F332-F337) and then turns white." },
+      { "role": "statement word (turn)", "description": "Same sans, white on black, centred (box centre x 0.47). Two-word line at 18.7% height, the single adjective at 27% height. First as a slanted lower-case form, then each letter flips to upper case on its own, one every 2-3 frames (F915-F924), then glyphs are swapped for symbols (F1006-F1007) before smearing out." },
+      { "role": "counter numeral (montage)", "description": "Same sans, regular, ink on white, tabular with a thin-space thousands separator; box height 10.6-12.8%, right edge fixed at about x 0.38 so the number grows leftward from 1 digit to 6. Each change is an odometer roll: old value slides down and out while the new one slides down from above, 4-5 frames (F704-F708, F730-F734)." },
+      { "role": "found label (montage)", "description": "Same sans, regular, ink, about 10.9% height, left edge fixed at x 0.61; turns plural as soon as the count passes 1 (8.2 s)." },
+      { "role": "name card (montage)", "description": "Small white rounded card under the label: a bold name line about 3.9% high, then a grey company line with a red figure about 3% high. Changes with every subject cut." },
+      { "role": "result count (demo)", "description": "Same sans, ink, centred under the query, 5-6% height; counts up through intermediate values and settles (1 040, 4 506, 7 973, 11 440 then 12 480 across 26.27-28.0 s)." },
+      { "role": "wordmark and end-card", "description": "Lower-case wordmark in a rounded sans, ink, 14-17% height, centred at x 0.31-0.70, preceded by the red mark; types on at about 3 frames a letter (F2954-F2975). The demo offer sits in a black pill at y 0.58, 6.4% height, white text with the address in red." },
+      { "role": "match badge", "description": "Green dot plus small dark text in a pale green pill, top centre at y 0.075, 2.8% height; grows from the dot over about 12 frames and counts a percentage up to a full match (F2653-F2669)." }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json screenText boxes (heights and x as shares of 1280x720)", "visuals/a1/s01-type-to-bar.jpg F93-F114", "visuals/a1/s03-black-typewriter.jpg F292-F323", "visuals/a1/s17b-simple-caps.jpg F912-F941", "visuals/a1/s10b-montage-c.jpg F700-F708", "visuals/a1/s29c-blur-to-end.jpg F2954-F2975", "visuals/a1/s28c-badge.jpg F2653-F2669"]
+  },
+  "composition": {
+    "value": "Three stages. (1) Studio: seamless near-white cyclorama, one person centred at a white desk, head at y 0.30-0.40, body filling the lower 60%; a query pill spans x 0.17-0.74 at y 0.13-0.19. In the montage the layout is a fixed grid: count right-aligned to x 0.38 at eye height (y 0.40), the person between x 0.39 and 0.60, the plural label from x 0.61 at the same height, name card below it at y 0.55-0.63. Only face, number and card change, so a 2-frame cut still reads. (2) Black: one line of type on pure black, centred or caret-anchored, no other element. (3) Interface: a white rounded query field across the upper third on a warm diagonal gradient, filmed by a virtual camera that pushes to 1.4-1.8x on the caret and the submit control, then cuts back wide.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/contact-sheet-01.jpg", "speech-text.json screenText boxes 7.33-13.77", "motion.json s024 camera.amount z 0.362, s026 z 0.565"]
+  },
+  "materials": {
+    "value": "Live-action studio plates of real people (footage held on twos, 30 fps in a 60 fps master: alternating diff 4-9 and 0.02-0.2 in visuals/a1/s29-walk-whip.jpg) with flat UI overlays composited on top; flash variants of the same plates (dark-ground, inverted, cyan x-ray skeleton) used as 2-4 frame inserts; a glossy red extruded 3D mark with soft speculars; a pixel-mosaic ring; the product's own interface rendered crisp over a soft warm gradient.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["visuals/a1/s29-walk-whip.jpg F2832-F2879", "motion.json s029 cadence on twos", "visuals/a1/s09-xray-flash.jpg F644-F647", "visuals/a1/s20-heart-pull.jpg F1060-F1094", "visuals/a1/s21-flash-logo.jpg F1110-F1151"]
+  },
+  "lighting": {
+    "value": "High-key, shadowless studio light on the people (ground around L 94); hard alternation with pure black for type sections; the brand and demo sections move to a warm pastel gradient with a soft bright spot top left. Contrast is made by switching grounds, not by lighting inside a shot.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["shots.json colour L: s002 84.2, s003 2.8, s007 85.5, s016 3.6, s019 1.6, s021 91.5, s024 86.5"]
+  },
+  "styleSummary": "Clean SaaS studio look broken by digital violence: near-white plates and caret-led type, interrupted by polarity flips, slice glitches and an accelerating face montage, then resolved into a warm, calm interface and a still end card."
+}

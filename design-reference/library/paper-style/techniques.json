@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "paper-style",
+  "techniques": [
+    {
+      "id": "single-sheet-camera",
+      "name": "One sheet, one camera",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 54.67
+        }
+      ],
+      "description": "All panels laid out on one big stage in a 4 by 2 grid. A single camera transform moves between regions with a heavy ease; motion blur only during moves. Allows the reveal at the end at no extra cost.",
+      "route": "remotion",
+      "routeReason": "RegionCamera and regionTransform map regions to a stage already; Shutter gives blur only in the move windows. whipPan does not fit, because it is a transition between two separate scenes and could not reveal a shared sheet. Rendering all eight panels each frame could be slow; cull those off screen.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "Shutter",
+        "track",
+        "curves"
+      ],
+      "function": "transition",
+      "shots": [
+        "s001.2",
+        "s002",
+        "s003.1",
+        "s003.2",
+        "s004",
+        "s005",
+        "s006",
+        "s007",
+        "s008",
+        "s009"
+      ],
+      "timing": {
+        "durationSec": 0.4,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t-slide1.jpg F169-F181",
+          "visuals/a1/t-slide2.jpg F464-F476",
+          "visuals/a1/t-slide3.jpg F758-F777",
+          "visuals/a1/t-slide4.jpg F1103-F1116",
+          "visuals/a1/t-slide5.jpg F1226-F1238",
+          "visuals/a1/t-slide6.jpg F1350-F1361"
+        ]
+      },
+      "ease": {
+        "name": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "cubicBezier": [
+          0.4,
+          0,
+          0.2,
+          1
+        ],
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/t-slide1.jpg F169-F181 diff 11.8, 19.6, 22.8, 25.1, 24.5, 24.7, 22.6, 16.4, 13.6, 11.4, 10.6, 8.3, 5.7: peak speed by the 4th frame, then a decay twice as long"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Each slide starts after the last word of a sentence has begun and the next chapter's first word falls in the slide's last frames. Whether music sits under the voice was not established.",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "inferred",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json words 5.31/5.97, 15.18/15.80, 36.76/36.92, 40.25/41.14, 44.95/45.29"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 5.633,
+            "endSec": 6.033
+          },
+          "fromShot": 1,
+          "toShot": 2,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.2,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-slide1.jpg F169-F181"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 15.467,
+            "endSec": 15.867
+          },
+          "fromShot": 2,
+          "toShot": 3,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.167,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-slide2.jpg F464-F476"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 25.267,
+            "endSec": 25.933
+          },
+          "fromShot": 4,
+          "toShot": 5,
+          "timing": {
+            "durationSec": 0.633,
+            "startOffsetFromCutSec": -0.3,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-slide3.jpg F758-F777"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 36.767,
+            "endSec": 37.2
+          },
+          "fromShot": 6,
+          "toShot": 7,
+          "timing": {
+            "durationSec": 0.433,
+            "startOffsetFromCutSec": -0.267,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-slide4.jpg F1103-F1116"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 40.867,
+            "endSec": 41.267
+          },
+          "fromShot": 7,
+          "toShot": 8,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.167,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-slide5.jpg F1226-F1238"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 45.0,
+            "endSec": 45.367
+          },
+          "fromShot": 8,
+          "toShot": 9,
+          "timing": {
+            "durationSec": 0.367,
+            "startOffsetFromCutSec": -0.167,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-slide6.jpg F1350-F1361"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "blank-landing",
+      "name": "Land on the empty panel",
+      "spans": [
+        {
+          "startSec": 6.033,
+          "endSec": 6.2
+        },
+        {
+          "startSec": 15.867,
+          "endSec": 16.5
+        },
+        {
+          "startSec": 37.2,
+          "endSec": 37.25
+        },
+        {
+          "startSec": 41.267,
+          "endSec": 41.7
+        },
+        {
+          "startSec": 45.367,
+          "endSec": 45.9
+        }
+      ],
+      "description": "Next panel is empty when the move ends. First object appears 5 to 20 frames later, once the new sentence has started.",
+      "route": "remotion",
+      "routeReason": "Only timing: cue objects from word times.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "activeCue",
+        "repo:beatCues"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 0.167,
+        "startOffsetFromCutSec": 0.2,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t-slide1.jpg F181-F186: panel settles empty at F181, first object enters at F186 (6.20 s)"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "The first object follows the first word of the new sentence (5.97 s word, 6.20 s object).",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json word 5.97",
+          "visuals/a1/t-slide1.jpg F186"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 6.033,
+            "endSec": 6.2
+          },
+          "shots": [
+            "s002"
+          ],
+          "timing": {
+            "durationSec": 0.167,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-slide1.jpg F181-F186"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 15.867,
+            "endSec": 16.5
+          },
+          "shots": [
+            "s003.1"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 37.2,
+            "endSec": 37.25
+          },
+          "shots": [
+            "s006"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 41.267,
+            "endSec": 41.7
+          },
+          "shots": [
+            "s007"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 45.367,
+            "endSec": 45.9
+          },
+          "shots": [
+            "s008"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sticker-cutouts",
+      "name": "Die-cut figures with a white edge and shadow",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 60
+        }
+      ],
+      "description": "Black-and-white engraving-style subjects with a white die-cut rim and small shadow, placed at slight angles. Puppet motion on a single limb.",
+      "route": "generated",
+      "routeReason": "The art is the expensive part, and it must look like one hand. It likely needs generated images with a fixed style, at a cost, or public-domain engravings via resource-discovery. Rim and shadow are simple in Remotion using SVG filters. Consistency of generated images across the set is untested here. The block paper-collage-assemble already gives cut-outs a keyline and a paper shadow on twos; the rim width and the one-limb puppet are still missing.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:paper-collage-assemble"
+      ],
+      "techniqueCardId": "stop-motion-steps",
+      "function": "emphasis",
+      "layers": 3
+    },
+    {
+      "id": "stamp-slam",
+      "name": "Stamp slam",
+      "spans": [
+        {
+          "startSec": 33.83,
+          "endSec": 33.97
+        },
+        {
+          "startSec": 37.6,
+          "endSec": 38.0
+        },
+        {
+          "startSec": 40.3,
+          "endSec": 40.7
+        }
+      ],
+      "description": "Big and translucent to small and solid in 4 frames (F1015-F1019 for the first), rotated, with no bounce visible. Ink colour multiplies on the paper. On the first, the whole frame shifts for about 4 frames after contact (F1019-F1022, diff 15-19 across every edge), read as an impact jolt; that reading is inferred. The second and third were not stripped frame by frame.",
+      "route": "remotion",
+      "routeReason": "A track on scale and opacity; mix-blend-mode multiply.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "block:print-type"
+      ],
+      "function": "emphasis",
+      "layers": 2,
+      "timing": {
+        "durationSec": 0.133,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-stamp1.jpg F1015-F1019: faint and large at F1015, solid and small by F1019"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "inferred",
+        "confidence": 0.4,
+        "evidence": [
+          "visuals/a1/t-stamp1.jpg F1015-F1019 diff 3.0, 0.6, 1.5, 1.4: too few frames to fit"
+        ]
+      },
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 33.83,
+            "endSec": 33.97
+          },
+          "shots": [
+            "s005"
+          ],
+          "timing": {
+            "durationSec": 0.133,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-stamp1.jpg F1015-F1019"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 37.6,
+            "endSec": 38.0
+          },
+          "shots": [
+            "s006"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 40.3,
+            "endSec": 40.7
+          },
+          "shots": [
+            "s006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "object-stamp",
+      "name": "A physical stamp hits and leaves",
+      "spans": [
+        {
+          "startSec": 31.8,
+          "endSec": 32.3
+        }
+      ],
+      "description": "A wooden stamp is already low at F957, leaving the mark, then rises out of frame by F969. The mark stays.",
+      "route": "remotion",
+      "routeReason": "A cut-out moved by a track.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track"
+      ],
+      "function": "emphasis",
+      "layers": 2,
+      "timing": {
+        "durationSec": 0.4,
+        "basis": "measured",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/h-map.jpg F957-F969"
+        ]
+      }
+    },
+    {
+      "id": "pasted-letters",
+      "name": "Pasted scrap lettering",
+      "spans": [
+        {
+          "startSec": 2.033,
+          "endSec": 2.633
+        }
+      ],
+      "description": "Each letter on its own scrap with its own face and colour, landing with slight rotation 2-3 frames apart.",
+      "route": "remotion",
+      "routeReason": "Glyphs handle splitting and stagger. Faces must have Cyrillic if used in Russian, so fonts need checking.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Glyphs",
+        "stagger",
+        "block:print-type"
+      ],
+      "function": "hook",
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.6,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-letters.jpg F61-F79: diff 8-10 per frame while scraps land, decaying to under 1 by F82"
+        ]
+      },
+      "typography": {
+        "role": "hero line",
+        "entry": "one letter per pasted scrap, 2-3 frames apart, slight rotation",
+        "alignment": "free",
+        "size": 0.15,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 3.02-3.52 box x 0.408 w 0.556 h 0.150",
+          "visuals/a1/t-letters.jpg F61-F79"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Starts on the spoken word.",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json words 2.15-2.60"
+        ]
+      }
+    },
+    {
+      "id": "pen-writing",
+      "techniqueCardId": "brush-write-on",
+      "name": "Quill writing and hand circle",
+      "spans": [
+        {
+          "startSec": 2.8,
+          "endSec": 4.0
+        }
+      ],
+      "description": "A pen follows the writing as script appears along its path; a circle is then drawn in red.",
+      "route": "remotion",
+      "routeReason": "Needs stroked paths of the script, as a font alone will not reveal in stroke order. This takes prepared SVG per line.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:kinetic-line-draw"
+      ],
+      "function": "hook",
+      "layers": 3,
+      "typography": {
+        "role": "script line",
+        "entry": "written in stroke order behind a pen, in step with the voice",
+        "alignment": "free",
+        "size": 0.15,
+        "basis": "observed",
+        "confidence": 0.75,
+        "evidence": [
+          "speech-text.json screenText 4.02-4.52 box x 0.487 w 0.384 h 0.158",
+          "visuals/a1/b-build.jpg"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Writing runs 2.8-3.7 s against words at 2.87-3.53 s.",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json words 2.87-3.53"
+        ]
+      }
+    },
+    {
+      "id": "parts-converge-flash",
+      "name": "Parts converge, white flash, the product appears",
+      "function": "reveal",
+      "spans": [
+        {
+          "startSec": 23.5,
+          "endSec": 24.3
+        }
+      ],
+      "fromShot": 3,
+      "toShot": 4,
+      "layers": 3,
+      "description": "Three part-objects with plus signs between them slide together onto the third (F705-F715), the product page replaces them at F716, the whole frame bleaches nearly to white for one frame (F717, diff 37.6) and returns over two (F718-F719), then the page flickers into place by F729. Portrait and heading never move.",
+      "route": "remotion",
+      "routeReason": "Three translations and a one-frame white overlay with a short decay; the swap happens under the flash so no morph is needed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "block:grade-step-flash"
+      ],
+      "techniqueCardId": "grade-step-flash",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": -0.4,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s003-flash.jpg F705-F729"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.6,
+        "phases": [
+          {
+            "part": "exit",
+            "name": "power2.in",
+            "durationSec": 0.333
+          },
+          {
+            "part": "main",
+            "name": "steps(1)",
+            "durationSec": 0.033
+          },
+          {
+            "part": "settle",
+            "name": "power2.out",
+            "durationSec": 0.4
+          }
+        ],
+        "evidence": [
+          "visuals/a1/s003-flash.jpg diff 1.4 (F705) to 9.7 (F715), 21.2, 37.6 (F717), 11.5, 14.0, then 9-16 to F728, 3.9 (F729)"
+        ]
+      }
+    },
+    {
+      "id": "pin-spread",
+      "name": "Pins spreading from one point",
+      "spans": [
+        {
+          "startSec": 27.0,
+          "endSec": 28.6
+        }
+      ],
+      "description": "One pin at F810 (27.0 s), a 0.6 s pause, then more pins from F829 (27.63 s) every 2-3 frames outward to at least F856 (28.53 s), each a single-frame pop with no scale animation. Diffs about 4 on pop frames against 0.5 elsewhere.",
+      "route": "remotion",
+      "routeReason": "Dots on a map from data, ordered by distance.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "repo:stagger",
+        "repo:radialOrder"
+      ],
+      "techniqueCardId": "radial-spread",
+      "function": "proof",
+      "layers": 3,
+      "timing": {
+        "durationSec": 1.6,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-pins.jpg F810 first pin; F829-F856 pops every 2-3 frames (diff about 4 on pop frames, 0.5 between)"
+        ]
+      },
+      "ease": {
+        "name": "steps(14)",
+        "source": "strip",
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/a1/t-pins.jpg F829, F832, F835, F840, F842, F844, F846, F848, F850, F852, F854, F856: each pin a one-frame pop"
+        ]
+      }
+    },
+    {
+      "id": "thrown-sheet",
+      "name": "Thrown full-frame sheet",
+      "spans": [
+        {
+          "startSec": 32.57,
+          "endSec": 33.1
+        }
+      ],
+      "description": "Rotating, growing past the frame, then settling. Used as a one-off break.",
+      "route": "remotion",
+      "routeReason": "2D or light 3D transform plus Shutter.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "Shutter"
+      ],
+      "function": "transition",
+      "fromShot": 5,
+      "toShot": 6,
+      "layers": 2,
+      "timing": {
+        "durationSec": 0.533,
+        "startOffsetFromCutSec": -0.333,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t-throw.jpg F977-F993"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.65,
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power2.in",
+            "durationSec": 0.333
+          },
+          {
+            "part": "overshoot",
+            "durationSec": 0.1
+          },
+          {
+            "part": "settle",
+            "name": "power2.out",
+            "durationSec": 0.1
+          }
+        ],
+        "evidence": [
+          "visuals/a1/t-throw.jpg diff 1.1 (F977), 3.4, 6.3, 12.9, 18.6, 19.2 (F987), 14.9, 16.3, 19.1, 14.4 (F991), 4.9 (F992)"
+        ]
+      }
+    },
+    {
+      "id": "layered-print-type",
+      "name": "Word building up from a rising scan line",
+      "spans": [
+        {
+          "startSec": 46.6,
+          "endSec": 47.9
+        }
+      ],
+      "description": "A thin coloured scan line rises from low in the word (F1404) at an even rate, drawing on twos, leaving the finished letters behind with an offset colour misregistration; complete in about 32 frames.",
+      "route": "remotion",
+      "routeReason": "Clip-path plus text layers.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "block:print-type"
+      ],
+      "function": "emphasis",
+      "layers": 3,
+      "timing": {
+        "durationSec": 1.07,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-scan.jpg F1404-F1436"
+        ]
+      },
+      "ease": {
+        "name": "steps(16)",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/t-scan.jpg F1407-F1435: diff alternates about 1.0 and 0.3, a new drawing every second frame at an even rate (linear on twos)"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "built upward behind a rising scan line, on twos, with colour misregistration",
+        "alignment": "left",
+        "size": 0.3,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 47.52-48.02 box x 0.064 w 0.323 h 0.297",
+          "visuals/a1/p-today.jpg F1404-F1440"
+        ]
+      }
+    },
+    {
+      "id": "sheet-reveal",
+      "name": "Pull-back with a tilt, and a title that inks in",
+      "spans": [
+        {
+          "startSec": 50.57,
+          "endSec": 56.33
+        }
+      ],
+      "description": "An eased pull-back with a tilt of about 5 degrees that straightens slowly: starts from rest at F1517 (50.57 s), peaks at 52.6 s and settles by F1640 (54.67 s), about 4.1 s, symmetric. The title sits faint (about 15% contrast) across the pull-back, then snaps to full black at F1678 (55.93 s) under a 12-frame whole-frame flicker.",
+      "route": "remotion",
+      "routeReason": "Same camera as the rest, if the single-sheet approach is built first. It is hard to retrofit.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "track",
+        "curves",
+        "block:print-type"
+      ],
+      "function": "reveal",
+      "fromShot": 9,
+      "toShot": 10,
+      "shots": [
+        "s008",
+        "s009"
+      ],
+      "layers": 3,
+      "timing": {
+        "durationSec": 4.1,
+        "startOffsetFromCutSec": -1.9,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-pullback-0.jpg F1517-F1544",
+          "visuals/a1/t-pullback-a.jpg F1543-F1601",
+          "visuals/a1/t-pullback-b.jpg F1603-F1640"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "diff 0.7 (F1517), 2.1 (F1525), 8.4 (F1536), 16.4 (F1548), 27.7 (F1578 peak, 52.6 s), 16.3 (F1593), 10.2 (F1608), 5.2 (F1619), 2.0 (F1628), 0.5 (F1640)"
+        ]
+      },
+      "typography": {
+        "role": "title",
+        "entry": "faint to full black in one frame (F1678), then a 12-frame whole-frame flicker settling by F1690",
+        "alignment": "centre",
+        "size": 0.127,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-inkin.jpg F1677-F1691",
+          "speech-text.json screenText 58.02-60.02 box x 0.301 w 0.402 h 0.127"
+        ]
+      }
+    },
+    {
+      "id": "stepped-object-motion",
+      "name": "Objects moving on twos and threes under a smooth camera",
+      "spans": [
+        {
+          "startSec": 37.2,
+          "endSec": 37.45
+        }
+      ],
+      "description": "The machine's entrance changes only on F1117, F1119, F1122, F1125 and F1127, with near-zero differences between (diffMean under 0.7), and then the whole frame settles smoothly. Only checked on this object; other entrances in the film might differ, as the opening's motion changes every frame.",
+      "route": "remotion",
+      "routeReason": "Quantise frame for that element.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:paper-collage-assemble",
+        "repo:onSteps"
+      ],
+      "techniqueCardId": "stop-motion-steps",
+      "function": "emphasis",
+      "layers": 2,
+      "timing": {
+        "durationSec": 0.2,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-slide4.jpg F1116-F1122"
+        ]
+      },
+      "ease": {
+        "name": "steps(3)",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/t-slide4.jpg diff 9.6 (F1117), 6.9, 15.6 (F1119), 0.0, 0.4, 16.1 (F1122), 0.7"
+        ]
+      }
+    }
+  ]
+}

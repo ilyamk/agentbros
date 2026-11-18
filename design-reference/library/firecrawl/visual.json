@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "palette": {
+    "value": ["#FFFFFF", "#FCFEFB", "#F6F9F6", "#262626", "#E94D1C", "#FAFAF6", "#3066EE", "#E6ECF8"],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": ["Mode of saturated interior pixels on frames 40, 100, 150, 200, 260, 340 at 30 fps", "pilot-spec.md section 2"]
+  },
+  "typography": {
+    "value": [
+      { "role": "Body sentence", "description": "Neutral grotesque, medium weight, mixed case, tight tracking, ink #262626 on white. Cap height 9.2%H (font about 12.6%H = 7.1%W), line pitch 15.8%H, block about 77%W, left edge fixed at 11.5%W. Fonts inferred: SF Pro Display or Suisse class; Inter Display Medium at -2.5% is the free equivalent." },
+      { "role": "Accent number in a sentence", "description": "Same face and size as the body, in #EA4C1C, the ground orange." },
+      { "role": "Hero number", "description": "Semibold figures with the percent sign in #FAFAF6 on #E94D1C, centred. Enters at 89.5%W (figure height 54.6%H), settles at 34.8%W (21.4%H)." },
+      { "role": "Claim line on orange", "description": "Medium weight, one line, centred, 81%W at rest, cap height 10.3%H. A shorter qualifier line reaches 60.5%W, cap height about 23.5%H, with a subline at 55% opacity, font about 6.5%H." },
+      { "role": "Interface", "description": "Real product UI at 1:1: about 1.5-1.9%H caps, regular and semibold, dark and light greys, link blue, a blue send button #3066EE." }
+    ],
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": ["pilot-stills/p1-F040.jpg", "pilot-stills/p3-F121.jpg", "pilot-stills/p4-F180.jpg", "pilot-stills/p5-F205.jpg", "pilot-stills/p6-F295.jpg"]
+  },
+  "composition": {
+    "value": "One element at a time, centred on the frame's horizontal axis, vertical centre near 50%H. Type blocks span 60-90%W, so the frame is either one big block of words or one interface; nothing small floats around them. The interface window takes 84%W and bleeds off the bottom. A hero number at 90%W on a single colour field is the densest frame.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": ["pilot-spec.md section 3", "visuals/contact-sheet-01.jpg"]
+  },
+  "materials": {
+    "value": "Flat: solid colour grounds, vector type, a real light-theme interface with soft shadows. No texture, gradient, grain, 3D or photography.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/contact-sheet-01.jpg"]
+  },
+  "lighting": {
+    "value": "None simulated. The only depth cue is the faint drop shadow under the prompt bar and the window.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["pilot-stills/p6-F262.jpg", "pilot-stills/p7-F340.jpg"]
+  },
+  "styleSummary": "Light, flat and typographic: near-white grounds, dark neutral grotesque, one orange that marks numbers and becomes the ground once on the drop, then a real light-theme interface at reading scale. Speed is shown with motion blur, never with effects."
+}

@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/o3/image-reference",
+  "title": "Kling O3 — Image reference API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-o3/image-reference.md",
+  "usageNotes": [
+    "Supply image_urls for visual references. Reference images are optional in the schema.",
+    "For a single shot, set multi_shots to false and provide prompt. For multiple shots, set multi_shots to true and provide 1–6 multi_prompt objects, each containing prompt and a positive integer duration.",
+    "Always include a non-empty top-level prompt, including when using multi_prompt.",
+    "Each shot prompt is limited to 512 characters. Custom-shot durations are summed for generation and billing; the top-level duration does not override that sum.",
+    "Native audio uses sound: on or off and defaults to off.",
+    "A multi_prompt shot must last at least 1 second; zero-second shots are rejected even though the schema permits zero.",
+    "When multi_shots is true, multi_prompt is required even with shot_type set to intelligent.",
+    "Keep the top-level prompt within 2,500 characters; longer prompts are truncated.",
+    "elements contains Kling element IDs as decimal strings. Each ID must belong to the account making the request; arbitrary provider IDs are rejected.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "if": {
+      "properties": {
+        "multi_shots": {
+          "const": true
+        }
+      }
+    },
+    "else": {
+      "required": [
+        "prompt"
+      ]
+    },
+    "then": {
+      "required": [
+        "multi_prompt"
+      ]
+    },
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "properties": {
+      "mode": {
+        "enum": [
+          "std",
+          "pro",
+          "4k"
+        ],
+        "type": "string",
+        "default": "std"
+      },
+      "sound": {
+        "enum": [
+          "on",
+          "off"
+        ],
+        "type": "string",
+        "default": "off"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 3
+      },
+      "elements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "shot_type": {
+        "enum": [
+          "customize",
+          "intelligent"
+        ],
+        "type": "string",
+        "default": "customize"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Image URL",
+          "format": "uri"
+        }
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": false
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "type": "string"
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "maxLength": 512
+            },
+            "duration": {
+              "type": "integer",
+              "maximum": 15,
+              "minimum": 0
+            }
+          }
+        },
+        "maxItems": 6,
+        "minItems": 1
+      },
+      "last_frame_url": {
+        "type": "string",
+        "title": "Last frame URL",
+        "format": "uri"
+      },
+      "first_frame_url": {
+        "type": "string",
+        "title": "First frame URL",
+        "format": "uri"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

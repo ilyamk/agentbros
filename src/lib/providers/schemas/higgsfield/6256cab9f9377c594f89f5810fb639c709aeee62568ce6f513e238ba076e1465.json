@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "endpoint": "marketing-studio/image/sunburst",
+  "title": "Marketing Studio Image — 2.5 Sunburst API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/sunburst.md",
+  "usageNotes": [
+    "Omit image_urls for text-to-image; provide up to 16 URLs for editing when enhance_prompt=false.",
+    "enhance_prompt=true requires an existing preset_id and 1–2 image URLs: product first, optional person/model reference second. Discover presets with GET /marketing-studio/image/presets.",
+    "Reference images must be valid JPEG, PNG, or WebP. Oversized supported images are normalized before rendering.",
+    "With enhancement enabled, aspect_ratio=auto uses the preset ratio. With enhancement disabled, current production mappings use square output for auto.",
+    "The 1k/2k/4k values are resolution tiers; exact pixel dimensions depend on the aspect ratio.",
+    "quality accepts low, medium, high, xhigh, max and remains selectable with enhancement enabled."
+  ],
+  "schema": {
+    "type": "object",
+    "allOf": [
+      {
+        "if": {
+          "required": [
+            "enhance_prompt"
+          ],
+          "properties": {
+            "enhance_prompt": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "preset_id",
+            "image_urls"
+          ],
+          "properties": {
+            "image_urls": {
+              "maxItems": 2,
+              "minItems": 1
+            }
+          }
+        }
+      }
+    ],
+    "title": "Marketing Studio Image 2.5 Sunburst",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "maxLength": 5000,
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "quality": {
+        "enum": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "type": "string",
+        "title": "Quality",
+        "default": "high"
+      },
+      "preset_id": {
+        "type": "string",
+        "title": "Preset ID",
+        "format": "uuid"
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Image URLs",
+        "maxItems": 16,
+        "minItems": 0
+      },
+      "moderation": {
+        "enum": [
+          "auto",
+          "low"
+        ],
+        "type": "string",
+        "default": "auto"
+      },
+      "resolution": {
+        "enum": [
+          "1k",
+          "2k",
+          "4k"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "2k"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "auto",
+          "1:1",
+          "3:2",
+          "2:3",
+          "4:3",
+          "3:4",
+          "16:9",
+          "9:16",
+          "21:9"
+        ],
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "auto"
+      },
+      "enhance_prompt": {
+        "type": "boolean",
+        "title": "Enhance prompt",
+        "default": false
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

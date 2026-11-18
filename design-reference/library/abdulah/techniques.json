@@ -1,0 +1,1112 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "abdulah",
+  "techniques": [
+    {
+      "id": "t01-typewriter-backspace-hook",
+      "name": "Typed thesis, deleted and retyped",
+      "techniqueCardId": "delete-and-retype-line",
+      "spans": [
+        {
+          "startSec": 0.133,
+          "endSec": 5.433
+        }
+      ],
+      "description": "Black ground, one small serif line left-set at x 0.18, y 0.47 (line box 0.061 of height), no caret in any frame, animated on twos. It types by character in bursts that follow the voice from F4 to F96 (46 characters in 92 frames), each new glyph grey for one step. Beside it a small archive portrait card (about 0.05 of width, x 0.72) changes every 5-6 frames (F4, F10, F15, F21, F27, F33) until 1.26 s. Held 16 frames; the last word greys for one step (F112), then the line deletes backwards in five chunks of one or two words, one every 2 frames (F114-F122, 7 words in 10 frames). The first word holds 4 frames, slides right accelerating (F126-F129) and is hard-swapped to its replacement on F130 (no scramble); the counter-statement then lands one word at a time at advancing positions on the same baseline (x 0.36, 0.41, 0.66).",
+      "route": "remotion",
+      "routeReason": "Type and timing are props; deletion and the swap are deterministic key schedules. Portrait stills are licensed archive images.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "typedCount",
+        "block:type-caret-track",
+        "retypeLinePlan"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 5.3,
+        "startOffsetFromCutSec": 0.133,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/open-type.jpg F4",
+          "visuals/a1/type-reset.jpg F111-F137",
+          "visuals/a1/retype-typing.jpg F3-F99 (keys on twos, grey new glyph) and visuals/a1/retype-delete.jpg F108-F137 (grey step F112, chunks F114-F122, slide F126-F129, swap F130)",
+          "Cut and beat ratios are at or below chance (edit.json rhythm), so not on a beat."
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "keys and deletions cut on (steps); a new glyph shows grey for one step before full white, F6-F7; visuals/a1/open-type.jpg F4-F47"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear. audio.json onsets at 3.808, 3.878, 4.017 and 4.087 s fall on four of the five deletion steps (F114, F116, F120, F122; none on F118); one at 4.156 s (F124.7) falls in the kept word's hold before its slide.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 0.11-7.0",
+          "audio.json onsetsSec 3.808-4.156"
+        ]
+      },
+      "typography": {
+        "role": "opening thesis",
+        "entry": "typewriter by character on twos, backspace by word chunk, first word slid and swapped",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 0-3.02 box x 0.18",
+          "visuals/a1/type-reset.jpg F111-F130"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t02-archive-ladder-match-cut",
+      "name": "Archive ladder into an era match cut",
+      "spans": [
+        {
+          "startSec": 6.867,
+          "endSec": 7.4
+        }
+      ],
+      "description": "Four images of one building at 4 frames each (F206, F210, F214, F218), same framing, black-and-white to desaturated, each entered through a 1-2 frame texture or grade flash (F206-F208 text-texture overlay, F217 grade flip); match cut at F222 to the present-day colour photo in the same framing, held 4.77 s while a caption types in two lines.",
+      "route": "footage",
+      "routeReason": "Needs real archive and present-day photographs of the same place; assembly and flashes in Remotion.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "MatchCut",
+        "FilmGrain",
+        "light-burn"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.533,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/archive-match.jpg F206-F222"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 6.3-9.0"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 2,
+      "toShot": 6
+    },
+    {
+      "id": "t03-light-leak-flash-cut",
+      "techniqueCardId": "leak-flash",
+      "name": "Light-leak flash on the cut",
+      "spans": [
+        {
+          "startSec": 6.833,
+          "endSec": 6.933
+        },
+        {
+          "startSec": 7.233,
+          "endSec": 7.267
+        },
+        {
+          "startSec": 12.1,
+          "endSec": 12.167
+        },
+        {
+          "startSec": 16.433,
+          "endSec": 16.567
+        },
+        {
+          "startSec": 22.267,
+          "endSec": 22.333
+        },
+        {
+          "startSec": 29.467,
+          "endSec": 29.5
+        },
+        {
+          "startSec": 45.333,
+          "endSec": 45.4
+        }
+      ],
+      "description": "Every change between graded plates hides behind 1-3 frames of flash: overexposed warm frame then a green-white leak (F363-F364), a green grade and white flare (F493-F496), cyan then bleached white (F668-F670), a navy grade flip then white (F884-F885), navy then beige ground (F1360-F1362). The new plate starts on the frame after the brightest flash frame.",
+      "route": "remotion",
+      "routeReason": "A flash over two frames is a colour matrix and an additive gradient; the library light-burn block already cuts at the peak of a light front.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "light-burn",
+        "film-damage",
+        "FilmGrain",
+        "block:light-burn"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.067,
+        "startOffsetFromCutSec": -0.067,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/flash-blackboard.jpg F363-F365",
+          "visuals/a1/green-tail.jpg F493-F497",
+          "visuals/a1/eye-reveal.jpg F668-F670",
+          "visuals/a1/card-grow-rocket.jpg F884-F886",
+          "visuals/a1/ground-swap.jpg F1360-F1363"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "1-3 flash frames with no tween; visuals/a1/flash-blackboard.jpg F363-F364"
+        ]
+      },
+      "sound": {
+        "kind": "sfx",
+        "layers": [
+          "voice"
+        ],
+        "note": "Any whoosh or hit under the flashes is a guess; no onset analysis supports one (onsets 4.5/s).",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 6,
+      "toShot": 7
+    },
+    {
+      "id": "t04-image-card-on-paper",
+      "techniqueCardId": "image-card",
+      "name": "Image card with its word on a paper ground",
+      "spans": [
+        {
+          "startSec": 5.433,
+          "endSec": 6.867
+        },
+        {
+          "startSec": 26.733,
+          "endSec": 27.233
+        }
+      ],
+      "description": "Off-white #F8F6F2 ground; one archive photo card about 0.25 of width x 0.45 of height, right third (x 0.56-0.81), the spoken verb in small serif set on the card; at F177 a second card stacks behind it, rotated about 3 degrees and offset. On black: a card 0.13 wide top left with an italic caption typing at its bottom edge beside a thin cursor bar.",
+      "route": "remotion",
+      "routeReason": "Flat layout with stills; stacking is two rotated images.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "TypedLine",
+        "block:photo-move"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.433,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/card-build.jpg F163-F182",
+          "visuals/a1/card-on-black.jpg F804-F817"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 5.61-7.0"
+        ]
+      },
+      "typography": {
+        "role": "spoken verb on the card",
+        "entry": "cut on with the card, second word typed",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 5.52 box x 0.658"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t05-card-grows-to-fullbleed",
+      "name": "Card grows into the next scene",
+      "spans": [
+        {
+          "startSec": 27.233,
+          "endSec": 27.4
+        },
+        {
+          "startSec": 30.067,
+          "endSec": 30.367
+        }
+      ],
+      "description": "A card already on screen while the line types grows to full bleed: on paper, from 0.11 of width at F902 to 0.18 (F903), 0.47 (F905), 0.88 (F907) and 1.0 (F911), anchored top right, the type staying on the paper until covered; on black, three steps F817, F819, F822. The scene behind the card becomes the next shot without a cut. A cutless transition: the growth happens inside one corrected shot, so it has no from/to shot.",
+      "route": "remotion",
+      "routeReason": "A rect that grows from a set box to the frame; the library caused-morph block does this.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "caused-morph",
+        "GrowToScene",
+        "growRect"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0.567,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/card-grow-rocket.jpg F902-F911",
+          "visuals/a1/card-expand-photo.jpg F816-F822"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "cubicBezier": [
+          0.45,
+          0,
+          0.55,
+          1
+        ],
+        "source": "strip",
+        "evidence": [
+          "card width read from five frames: 0.11 F902, 0.18 F903, 0.47 F905, 0.88 F907, 1.0 F911; visuals/a1/card-grow-rocket.jpg"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 29.11-31.0"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t06-inset-box-wipe",
+      "name": "Duotone flash then inset-box reveal",
+      "spans": [
+        {
+          "startSec": 27.967,
+          "endSec": 28.133
+        }
+      ],
+      "description": "The outgoing photo flips to a blue duotone (F839) and a sepia duotone (F840-F841); the next image appears as an inset rectangle about 0.6 wide in the centre (F842), grows to 0.8 (F843) and to full frame (F844). Then a slow pull-out on the new image, 4.4% over 1.08 s (circ.out).",
+      "route": "remotion",
+      "routeReason": "A rectangular shape wipe from the centre plus a two-frame colour matrix.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "shapeWipe",
+        "cutTiming",
+        "block:grade-step-flash"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.167,
+        "startOffsetFromCutSec": -0.1,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/sepia-whip.jpg F839-F844"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0,
+          0.639,
+          0.544,
+          1.103
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s023 camera.ease, the pull-out after the wipe (trackedShare 0.905, z -0.045, span90 1.076 s)"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 26.52-29.0"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 21,
+      "toShot": 22
+    },
+    {
+      "id": "t07-inline-chip-typing",
+      "name": "Typed line with an image chip riding the cursor",
+      "spans": [
+        {
+          "startSec": 17.067,
+          "endSec": 19.4
+        }
+      ],
+      "description": "On the paper ground a serif line types from x 0.21; a small square image chip (about 0.03 of width) sits just after the last glyph and is pushed right by each new glyph; a second chip lands at F529 and the next word types after it. At F579-F581 the line fades to grey and off while the chip slides out right.",
+      "route": "remotion",
+      "routeReason": "Glyph schedule with an element attached to the measured line end.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "typedCount",
+        "block:type-caret-track"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 2.333,
+        "startOffsetFromCutSec": 0.067,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/swap-a.jpg F514-F521",
+          "visuals/a1/swap-b.jpg F522-F545",
+          "visuals/a1/swap-c.jpg F554-F569",
+          "visuals/a1/swap-d.jpg F570-F581"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "one glyph a frame; visuals/a1/swap-c.jpg F555-F569"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 16.43-19.77"
+        ]
+      },
+      "typography": {
+        "role": "statement line",
+        "entry": "typewriter, chip after cursor",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 17.2-19.3 box x 0.21"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t08-scattered-words",
+      "name": "Words placed across the frame as spoken",
+      "spans": [
+        {
+          "startSec": 19.4,
+          "endSec": 20.333
+        },
+        {
+          "startSec": 36.533,
+          "endSec": 42.8
+        }
+      ],
+      "description": "Each word of a short sentence cuts on at its own position, no motion and no fade: on paper at (0.20,0.31), (0.37,0.28), (0.52,0.50), (0.70,0.64); over landscapes at (0.12,0.36), (0.31,0.44), (0.51,0.62), (0.62,0.48), (0.75,0.33). Words stay until the shot ends, so the sentence assembles as a constellation.",
+      "route": "remotion",
+      "routeReason": "Positions are data; each word is a cut-on at its frame.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "captionWords",
+        "block:scatter-field"
+      ],
+      "techniqueCardId": "scatter-field",
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.933,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/swap-d.jpg F582-F593",
+          "visuals/a1/scatter-a.jpg F1097-F1118"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 19.77-21.0, 37.0-43.0"
+        ]
+      },
+      "typography": {
+        "role": "scattered words",
+        "entry": "cut on in place",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 19.52-20.52 and 36.52-43.02 boxes"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t09-collage-pop-on",
+      "name": "Collage cards pop onto the page",
+      "spans": [
+        {
+          "startSec": 20.333,
+          "endSec": 21.133
+        }
+      ],
+      "description": "Over the scattered words, colourful cards (0.12-0.2 of width) pop on in single frames at F610, F615, F621, F622, F626, F629, F635 (every 1-6 frames), overlapping, until the paper is mostly covered; earlier words stay visible between cards.",
+      "route": "remotion",
+      "routeReason": "Cells and arrival frames are data.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "CollageGrid",
+        "collageCells",
+        "paper-collage-assemble"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0.933,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/card-add.jpg F610-F629",
+          "visuals/a1/glitch-out.jpg F635"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 20.41-21.0"
+        ]
+      },
+      "layers": 8
+    },
+    {
+      "id": "t10-glitch-exit",
+      "name": "Glitch exit: grade flip, dot screen, wave displacement",
+      "spans": [
+        {
+          "startSec": 21.133,
+          "endSec": 21.333
+        }
+      ],
+      "description": "Six frames: the collage flips to a dark dot-screen grade (F634), returns with one more card (F635), dot-screen again (F636-F637), horizontal sine-wave displacement with colour shift (F638-F639), hard cut to a clean paper page (F640).",
+      "route": "hyperframes",
+      "routeReason": "A displacement shader whose look matters more than its parameters; a hyperframes shader transition or a custom shader clip, imported.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:grade-step-flash"
+      ],
+      "techniqueCardId": "grade-step-flash",
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": -0.2,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/glitch-out.jpg F634-F640"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "one look per 1-2 frames; visuals/a1/glitch-out.jpg F634-F639"
+        ]
+      },
+      "sound": {
+        "kind": "sfx",
+        "note": "A glitch sound is plausible but unheard and unmeasured.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 13,
+      "toShot": 14
+    },
+    {
+      "id": "t11-one-word-one-image",
+      "name": "One spoken word, one full-bleed image",
+      "spans": [
+        {
+          "startSec": 22.267,
+          "endSec": 26.733
+        }
+      ],
+      "description": "Each item of a spoken list gets its own full-bleed plate with the word in small italic serif centred (OCR x-centre 0.50, line box 0.036-0.047 of height); word and plate arrive on the same frame (23.30, 24.30 s; on-screen word onsets 23.3 and 24.3 in speech-text.json). Holds 0.83, 1.0, 1.1, 1.33 s.",
+      "route": "footage",
+      "routeReason": "Needs real or licensed plates that literally show each word.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "captionWords"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/boundaries-01.jpg S017, S018",
+          "speech-text.json screenText onsetSec 23.3, 24.3"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Each listed word is spoken during its own plate; Whisper times are coarse, so this is order, not timing.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 22.58-26.21"
+        ]
+      },
+      "typography": {
+        "role": "keyword over image",
+        "entry": "cut on with the plate",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 22.52-26.02 boxes x 0.44-0.48, width 0.04-0.12"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 17,
+      "toShot": 18
+    },
+    {
+      "id": "t12-stepped-punch-in",
+      "name": "Stepped punch-in on a held subject",
+      "spans": [
+        {
+          "startSec": 22.467,
+          "endSec": 22.933
+        }
+      ],
+      "description": "A blink (closed F673, open F674) then five scale jumps on the same eye at F677, F679, F682, F684, F687, each 2-3 frames apart and smaller than the last (frame differences 17.6, 18.3, 11.7, 6.7, 6.3), so the push reads as a stutter that settles.",
+      "route": "remotion",
+      "routeReason": "Scale keys on a still or clip; snap-zoom covers a single punch.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "snap-zoom",
+        "track"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.467,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/eye-reveal.jpg F673-F688"
+        ]
+      },
+      "ease": {
+        "name": "steps(5)",
+        "source": "strip",
+        "evidence": [
+          "five jumps with decreasing size (diffs 17.6, 18.3, 11.7, 6.7, 6.3): a stepped ease-out; visuals/a1/eye-reveal.jpg F677-F687"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 22.58-23.11"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t13-dot-screen-treatment",
+      "name": "Dot-screen treatment flip",
+      "spans": [
+        {
+          "startSec": 25.733,
+          "endSec": 26.733
+        },
+        {
+          "startSec": 30.767,
+          "endSec": 30.933
+        }
+      ],
+      "description": "The plate in the same framing is re-rendered as a coarse dot screen on black and its colour cycles every 3-5 frames (yellow F772, magenta F782, grey F792); as an exit, the launch plate alternates dot screen and bright colour every 1-2 frames for 5 frames before the cut (F923-F928).",
+      "route": "remotion",
+      "routeReason": "A dot-screen filter over a plate, colour from a per-frame lookup.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:halftone-image"
+      ],
+      "techniqueCardId": "halftone-treatment",
+      "function": "transition",
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": 0.333,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/halftone-fade.jpg F771-F791",
+          "visuals/a1/halftone-blackboard.jpg F922-F929"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "colour changes at F772, F782, F792; visuals/a1/halftone-fade.jpg"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 23,
+      "toShot": 24,
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "No onset or swell analysis ties the treatment to sound; any glitch sound is a guess.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec",
+          "edit.json rhythm"
+        ]
+      }
+    },
+    {
+      "id": "t14-karaoke-colour-fill",
+      "name": "Word-by-word colour fill on a time-lapse",
+      "spans": [
+        {
+          "startSec": 34.0,
+          "endSec": 36.533
+        }
+      ],
+      "description": "Moon time-lapse on #131718, phases cycling about every 0.5 s on held frames. A centred line of 4-5 small serif words with even gaps (about 0.04 of width) starts #FAFBFF; each word turns accent #C54A76 in one frame as it is spoken; at F1058 the line is replaced by the next clause, which fills the same way.",
+      "route": "remotion",
+      "routeReason": "Type state per word is data; the time-lapse is a licensed plate.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "captionWords",
+        "caption-clean-sentence",
+        "block:caption-clean-sentence"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 2.533,
+        "startOffsetFromCutSec": 0.067,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/moon-1.jpg F1020-F1040",
+          "visuals/a1/moon-2.jpg F1047-F1070"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "colour switches in one frame; visuals/a1/moon-1.jpg F1021-F1024"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 34.0-37.0"
+        ]
+      },
+      "typography": {
+        "role": "accent line",
+        "entry": "present in white, fill word by word",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 34.02 boxes x 0.28-0.72"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t15-handwriting-direct-address",
+      "name": "Handwritten register for questions to the viewer",
+      "spans": [
+        {
+          "startSec": 42.8,
+          "endSec": 47.1
+        }
+      ],
+      "description": "Type changes register for the only lines addressed to the viewer: thin marker script, centred, #120F0D on paper, typed letter by letter; the second question follows after a 2-frame navy (#313246) and a 1-frame beige (#F1DAB0) ground flash.",
+      "route": "remotion",
+      "routeReason": "A font and a typing schedule.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "ground-swap-cut"
+      ],
+      "function": "cta",
+      "timing": {
+        "durationSec": 4.3,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/ground-swap.jpg F1338-F1367"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 43.0-47.0"
+        ]
+      },
+      "typography": {
+        "role": "direct address",
+        "entry": "typewriter, handwritten face",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 42.8-46.02 box x 0.26-0.74"
+        ]
+      },
+      "layers": 2,
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "letters appear without fades; visuals/a1/ground-swap.jpg F1363-F1367"
+        ]
+      }
+    },
+    {
+      "id": "t16-image-flurry-12fps",
+      "name": "Image flurry at 12 images a second",
+      "spans": [
+        {
+          "startSec": 48.533,
+          "endSec": 50.4
+        }
+      ],
+      "description": "23 images of one subject in 1.87 s on a 3-2-3-2 frame cadence (consistent with, not proven to be, a 24 fps edit with 2-frame holds pulled down to 30 fps), framing changing every image between stacked and scattered compositions; a 1.43 s still hold before and a 1.67 s still hold after.",
+      "route": "footage",
+      "routeReason": "Needs many licensed clips or stills of the subject; the cut list is data in Remotion.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "speed-ramp-flurry",
+        "cutTiming",
+        "layoutSeries"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.867,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/money-1.jpg F1456-F1474",
+          "visuals/a1/money-2.jpg F1476-F1499",
+          "visuals/a1/money-3.jpg F1501-F1512"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "RMS over the flurry is -13.6 dB against -15.8 dB in the 2.5 s before and -17.3 dB after (measured); what rises is unknown. 9 onsets in 1.87 s, fewer than the 23 cuts, so cuts are not on onsets.",
+        "basis": "measured",
+        "evidence": [
+          "media RMS 46.0-52.0 s",
+          "audio.json onsetsSec 48.53-50.4"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 32,
+      "toShot": 33
+    },
+    {
+      "id": "t17-event-proof-montage",
+      "name": "Real event proof montage",
+      "spans": [
+        {
+          "startSec": 50.4,
+          "endSec": 56.267
+        }
+      ],
+      "description": "Six documentary shots of the real event, 0.5-1.67 s each: an exterior at night, networking under a banner, a speaker on stage, a seated conversation, a crowd with badges, a laughing audience. Natural colour, static or lightly handheld (camera moves under 4% of width).",
+      "route": "footage",
+      "routeReason": "People at a real event are proof; nothing generated counts.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "photo-move"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 5.867,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 10F-15L",
+          "motion.json s051-s055 camera.amount"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 52.0-56.0"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "t18-word-fade-on-close",
+      "name": "Slow word-by-word fade-on line",
+      "spans": [
+        {
+          "startSec": 56.267,
+          "endSec": 59.133
+        }
+      ],
+      "description": "The closing statement on paper #F9FAF3: each word fades from light grey to ink over 2 frames as it is spoken, the centred line re-centring as it grows; each clause clears to an empty page for 2 frames before the next. Holds 1.03 and 1.83 s, the longest text holds since the hook.",
+      "route": "remotion",
+      "routeReason": "Per-word opacity at word times.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "captionWords",
+        "BuildingCaption",
+        "caption-clean-sentence"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 2.867,
+        "startOffsetFromCutSec": 0.033,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/swap-f.jpg F1689-F1712",
+          "visuals/a1/swap-g.jpg F1713-F1736",
+          "visuals/a1/swap-h.jpg F1737-F1760"
+        ]
+      },
+      "ease": {
+        "name": "linear",
+        "source": "strip",
+        "evidence": [
+          "2-frame fade per word; visuals/a1/swap-f.jpg F1690-F1691"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "RMS -16.4 dB over 56.3-62 s against -14.6 dB in the middle of the film (measured): quieter close.",
+        "basis": "measured",
+        "evidence": [
+          "media RMS windows"
+        ]
+      },
+      "typography": {
+        "role": "closing statement",
+        "entry": "word fade-on, line re-centres",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 56.52-59.02 boxes"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t19-portrait-pop-field",
+      "name": "Portrait pop field around a held line",
+      "spans": [
+        {
+          "startSec": 59.567,
+          "endSec": 61.867
+        }
+      ],
+      "description": "With the final line held centred on paper, small portrait photos (0.03-0.06 of width) pop on in single frames exactly every 4 frames (F1787, F1791 ... F1807, F1811, F1815, F1819, F1823, F1827), scattered around the line and off the edges, until about 18 surround it; the whole page creeps in (about 4% over 2 s, read from per-frame differences).",
+      "route": "remotion",
+      "routeReason": "Arrival frames and positions are data; photos are real attendees, licensed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "collageCells",
+        "CollageGrid",
+        "Camera",
+        "block:scatter-field"
+      ],
+      "techniqueCardId": "scatter-field",
+      "function": "reveal",
+      "timing": {
+        "durationSec": 2.3,
+        "startOffsetFromCutSec": 0.433,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/portrait-pop.jpg F1787-F1791",
+          "visuals/a1/pop-b.jpg F1807-F1827",
+          "visuals/a1/end-cut.jpg F1851"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "inferred",
+        "evidence": [
+          "motion.json s056 camera push_in z 0.043 over 2.04 s, ease none, trackedShare 0.41 so rough"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "layers": [
+          "voice",
+          "music bed (inferred)"
+        ],
+        "note": "Narration runs under it; I cannot hear, the word order comes from speech-text.json.",
+        "basis": "inferred",
+        "evidence": [
+          "speech-text.json words 59.0-61.0"
+        ]
+      },
+      "typography": {
+        "role": "final line",
+        "entry": "held",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 59.02 box x 0.34-0.66"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t20-bookend-title-endcard",
+      "name": "Bookend location title, then a black end card",
+      "spans": [
+        {
+          "startSec": 61.867,
+          "endSec": 69.833
+        }
+      ],
+      "description": "The present-day colour location from 7.40 s returns in the same framing with the title in serif capitals centred (0.44 x 0.083 of frame) and an italic edition line typed in under it at 63.13 s; hard cut at 65.07 s to black with the title block and two small credit lines, held 4.77 s while sound falls to -30 dB RMS.",
+      "route": "remotion",
+      "routeReason": "Title over a plate and an end card; scene-end-card covers the hold.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MatchCut",
+        "scene-end-card",
+        "TypedLine"
+      ],
+      "function": "cta",
+      "timing": {
+        "durationSec": 7.967,
+        "startOffsetFromCutSec": 0.0,
+        "onBeat": false,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/end-cut.jpg F1856-F1868",
+          "visuals/a1/endcard.jpg F1951-F1964"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "layers": [
+          "tail of voice and music (inferred)"
+        ],
+        "note": "RMS -30.1 dB over 65-69.8 s against -17.2 dB over the title plate; 4 onsets in 4.8 s (measured). Not true silence.",
+        "basis": "measured",
+        "evidence": [
+          "media RMS",
+          "audio.json onsetsSec"
+        ]
+      },
+      "typography": {
+        "role": "title",
+        "entry": "cut on with the plate; edition line typed",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 62.02-69.87 boxes"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 64,
+      "toShot": 65
+    }
+  ]
+}

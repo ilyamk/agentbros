@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "hero-dust",
+      "brief": "A metal product lands on a plinth with a dust impact, then settles into a premium hero hold.",
+      "expected": {
+        "recipes": [
+          "dust-burst"
+        ],
+        "collections": [
+          "studio-product"
+        ],
+        "extensions": [],
+        "builtins": [
+          "seeded-particles",
+          "geometry-nodes"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "logo-shatter",
+      "brief": "A logo shatters outwards to reveal the product. Use clipped shards and a readable final silhouette.",
+      "expected": {
+        "recipes": [
+          "shatter"
+        ],
+        "collections": [],
+        "extensions": [
+          "cell_fracture"
+        ],
+        "builtins": [
+          "voronoi-cells",
+          "geometry-nodes"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "cosy-desk",
+      "brief": "A laptop on a cosy wooden desk at dusk; reveal its real product screen with warm tactile surroundings.",
+      "expected": {
+        "recipes": [
+          "studio-floor"
+        ],
+        "collections": [
+          "cosy-desk"
+        ],
+        "extensions": [],
+        "builtins": [
+          "procedural-materials",
+          "essentials"
+        ],
+        "commands": [
+          "blender:assets",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "neon-tech",
+      "brief": "A neon tech background draws itself behind the product without overpowering the logo.",
+      "expected": {
+        "recipes": [
+          "neon-glow"
+        ],
+        "collections": [
+          "abstract-tech"
+        ],
+        "extensions": [],
+        "builtins": [
+          "emission-curves",
+          "geometry-nodes"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "kinetic-title",
+      "brief": "A bevelled 3D kinetic title lands word by word with anticipation and a final CTA hold.",
+      "expected": {
+        "recipes": [
+          "text-3d"
+        ],
+        "collections": [],
+        "extensions": [],
+        "builtins": [
+          "font-objects",
+          "string-to-curves"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "glass-caustics",
+      "brief": "A glass perfume product on a studio floor; let its caustic pattern reveal the glass thickness.",
+      "expected": {
+        "recipes": [
+          "caustics-glass"
+        ],
+        "collections": [
+          "studio-product"
+        ],
+        "extensions": [],
+        "builtins": [
+          "cycles-caustics"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "confetti-cta",
+      "brief": "Foil confetti celebrates a CTA while keeping the headline and end frame readable.",
+      "expected": {
+        "recipes": [
+          "confetti"
+        ],
+        "collections": [],
+        "extensions": [],
+        "builtins": [
+          "seeded-particles",
+          "geometry-nodes"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "fabric-reveal",
+      "brief": "A satin fabric drape falls over a grounded product, then slips aside to reveal its shape.",
+      "expected": {
+        "recipes": [
+          "cloth-drape"
+        ],
+        "collections": [],
+        "extensions": [],
+        "builtins": [
+          "cloth-simulation"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": true,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "abstract-loop",
+      "brief": "Create a seamlessly looping abstract field of metallic instances with a calm visual rhythm.",
+      "expected": {
+        "recipes": [
+          "abstract-field"
+        ],
+        "collections": [
+          "abstract-tech"
+        ],
+        "extensions": [],
+        "builtins": [
+          "geometry-nodes",
+          "scene-time",
+          "linked-mesh-instances"
+        ],
+        "commands": [
+          "blender:recipe",
+          "blender:run"
+        ],
+        "requiresBake": false,
+        "requiresCredit": false
+      }
+    },
+    {
+      "id": "handheld-device",
+      "brief": "A handheld-feel close-up travels across a device showing real UI. A supplied CC-BY-4.0 desk prop is credited to its creator; preserve that credit. Avoid arbitrary camera jitter.",
+      "expected": {
+        "recipes": [
+          "light-sweep"
+        ],
+        "collections": [
+          "cosy-desk"
+        ],
+        "extensions": [
+          "camera_shakify"
+        ],
+        "builtins": [
+          "kit-camera-handheld",
+          "fcurve-noise"
+        ],
+        "commands": [
+          "blender:run",
+          "blender:ext"
+        ],
+        "requiresBake": false,
+        "requiresCredit": true
+      }
+    }
+  ]
+}

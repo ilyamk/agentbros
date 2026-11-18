@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "alpha",
+  "status": { "available": true, "engine": "opencv-farneback" },
+  "method": "opencv-farneback every 15 frames",
+  "shots": [
+    {
+      "shotId": "s001",
+      "meanEnergy": 0.02,
+      "peakEnergy": 0.05,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": ["push_in"],
+        "amount": { "x": 0, "y": 0, "z": 0.2, "r": 0 },
+        "moves": 1,
+        "ease": {
+          "gsap": "power2.out",
+          "gsapRmse": 0.01,
+          "cubicBezier": [0.25, 0.46, 0.45, 0.94],
+          "css": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          "bezierRmse": 0.01,
+          "spring": { "omega": 10, "zeta": 1, "settleSec": 0.6, "remotion": { "mass": 1, "stiffness": 100, "damping": 20 } },
+          "springRmse": 0.02,
+          "best": "gsap",
+          "pick": "gsap",
+          "overshoot": 0
+        }
+      }
+    }
+  ],
+  "energyCurve": [
+    { "timeSec": 0.5, "energy": 0.02 },
+    { "timeSec": 1, "energy": 0.0002 },
+    { "timeSec": 1.5, "energy": 0.0002 },
+    { "timeSec": 2, "energy": 0.0002 },
+    { "timeSec": 2.5, "energy": 0.0002 },
+    { "timeSec": 3, "energy": 0.03 },
+    { "timeSec": 3.5, "energy": 0.03 }
+  ]
+}

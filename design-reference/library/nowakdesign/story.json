@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "idea": {
+    "value": "A design studio's 10-second sizzle that proves its claim instead of explaining it: after one tiny line of type saying it gives shape to things, every following shot is a raw element (a pill, a stroke, a square, a knob) visibly becoming finished interface, then a burst of archival and scientific imagery under a fixed caption places the work in a longer history, and the mark is left alone on black.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": ["visuals/contact-sheet-01.jpg", "visuals/a1/line.jpg F90-F117", "visuals/a1/archive.jpg F187-F209", "visuals/a1/pullback.jpg F256-F284"]
+  },
+  "audience": {
+    "value": "Founders and product teams choosing a product-design partner, and other designers: the film shows interface pieces (toggle, reaction bar, chat bubble, app icon) with coordinate tags as if in a design tool, never explains a feature, and expects the viewer to read meaning from craft alone.",
+    "basis": "inferred",
+    "confidence": 0.55,
+    "evidence": ["visuals/a1/ring.jpg F136-F156", "visuals/a1/chat.jpg F166-F172", "speech-text.json screenText items 2 and 5 (coordinate tags)"]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 1.867,
+      "device": "Flash pre-roll, then a polarity-strobed tiny claim on black, then a long still hold.",
+      "description": "0-0.30 s: three full-frame 3-frame flashes (navy, black, white) with nothing on them. 0.37 s: a single short sentence in small white type appears dead centre, about a quarter of the frame wide. The whole frame inverts at F16 and back at F23 with a colour-split smear, then the sentence sits completely still for 0.70 s, flares green for 2 frames and vanishes at 1.63 s, leaving 0.23 s of black. The flashes demand attention, the small type in a black field forces the eye to the centre, and the first question is 'gives shape to what?', answered by every shot after."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/a1/open.jpg F0-F26", "visuals/a1/title-hold.jpg F26-F55"]
+  },
+  "beats": [
+    {
+      "value": { "startSec": 0, "endSec": 1.867, "purpose": "Claim", "retentionDevice": "Flash strobe then stillness", "content": "One-sentence claim, small type, centred on black." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/open.jpg F0-F26", "visuals/a1/title-hold.jpg F26-F55"]
+    },
+    {
+      "value": { "startSec": 1.867, "endSec": 5.767, "purpose": "Proof by demonstration: raw elements become interface", "retentionDevice": "Each shot is one object changing state in frame centre; a navy ground blink every 0.6-2 s", "content": "Gradient pill collapses to an icon that swells into a lit violet ground with guides; a word turns into a magenta stroke; the stroke's angle becomes a light streak on a square; the square turns halftone and becomes a slider knob with rippling rings; a reaction bar isolates one icon that lands on a message bubble." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/pill.jpg F56-F75", "visuals/a1/orb.jpg F72-F89", "visuals/a1/line.jpg F90-F117", "visuals/a1/glint.jpg F118-F137", "visuals/a1/ring.jpg F138-F159", "visuals/a1/chat.jpg F160-F172"]
+    },
+    {
+      "value": { "startSec": 5.767, "endSec": 8.0, "purpose": "Argument: place the work in a lineage", "retentionDevice": "Big outline word, then 3-6-frame footage stutter under one unmoving caption", "content": "One large outline word in dashed circles; then archival portraits, an old computer, a laptop, a hand with a card and medical scans, all tagged with tracking boxes, under a small two-part caption." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/chat.jpg F173-F186", "visuals/a1/archive.jpg F187-F209", "visuals/a1/scan.jpg F207-F239"]
+    },
+    {
+      "value": { "startSec": 8.0, "endSec": 10.267, "purpose": "Sign-off on the mark", "retentionDevice": "Only long hold in the film; backdrop dies, mark stays", "content": "Small app-style mark centred on a lit keyboard macro, slow pull-back, keyboard fades to black, mark blinks, last frame navy." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/tail.jpg F240-F257", "visuals/a1/pullback.jpg F256-F284", "visuals/a1/end.jpg F282-F307"]
+    }
+  ],
+  "payoff": {
+    "value": "The mark alone in the centre of a black frame for 2.27 s: everything shown before was made by whoever owns it. The film is the portfolio.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": ["visuals/a1/pullback.jpg F270-F284", "visuals/a1/end.jpg F289-F307"]
+  },
+  "callToAction": {
+    "value": "None in words: no address, handle or verb on screen. The mark is the only sign-off.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/end.jpg F282-F307", "speech-text.json screenText"]
+  },
+  "whyItWorks": [
+    "Everything happens at frame centre: the title, the icon, the stroke, the knob, the mark. The eye is parked once at 0.4 s and never has to search, which makes 18 cuts in 10 s readable.",
+    "It shows instead of tells: the only sentence is 4 words long and tiny; the claim is proven by objects transforming in front of the viewer (a word draws itself as a stroke in 0.6 s).",
+    "Contrast of speeds: 0.6 s states, then 0.13 s footage flicker, then one 2.27 s still hold, so the ending feels like a landing.",
+    "One accent device (a 3-frame navy ground blink) recurs ten times in a repeating 5 s figure, which gives a silent file a felt pulse and hides state changes.",
+    "Archival and scientific imagery tagged with tracking boxes lends weight and heritage without a single claim being made in words."
+  ]
+}

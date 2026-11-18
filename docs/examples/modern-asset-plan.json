@@ -1,0 +1,61 @@
+{
+  "assets": [
+    {
+      "id": "gpt-image-2.5-example",
+      "kind": "ai-image",
+      "source": "fal-model",
+      "targetPath": "assets/images/gpt-image-2.5.png",
+      "status": "pending",
+      "metadata": {
+        "operationRequest": {
+          "family": "gpt-image-2.5",
+          "variant": "flare",
+          "operation": "text-to-image",
+          "region": "global",
+          "transport": "queue",
+          "input": {
+            "prompt": "CHARACTER: a labelled reusable ceramic cup. ACTION: present the product clearly with the words DAILY CUP. SETTING: an uncluttered studio. LIGHT: soft daylight from the left. STYLE: restrained editorial product photography. CAMERA: a close frontal view with generous negative space."
+          }
+        }
+      }
+    },
+    {
+      "id": "nano-banana-2.1-example",
+      "kind": "ai-image",
+      "source": "fal-model",
+      "targetPath": "assets/images/nano-banana-2.1.png",
+      "status": "pending",
+      "metadata": {
+        "operationRequest": {
+          "family": "nano-banana-2.1",
+          "variant": "default",
+          "operation": "text-to-image",
+          "region": "global",
+          "transport": "queue",
+          "input": {
+            "prompt": "CHARACTER: a small friendly illustrated guide. ACTION: point towards three blank comparison cards. SETTING: a clean educational canvas. LIGHT: even soft illumination. STYLE: warm flat illustration with consistent shapes. CAMERA: a static medium composition leaving space for separately rendered readable labels."
+          }
+        }
+      }
+    },
+    {
+      "id": "seedance-2.5-example",
+      "kind": "ai-video",
+      "source": "fal-model",
+      "targetPath": "assets/videos/seedance-2.5.mp4",
+      "status": "pending",
+      "metadata": {
+        "operationRequest": {
+          "family": "seedance-2.5",
+          "variant": "default",
+          "operation": "text-to-video",
+          "region": "global",
+          "transport": "queue",
+          "input": {
+            "prompt": "CHARACTER: a reusable ceramic cup with a matte blue finish. ACTION: turn slowly as a hand places it on a table. SETTING: a calm kitchen. LIGHT: soft morning window light. STYLE: restrained product cinema. CAMERA: a steady close view with continuous framing."
+          }
+        }
+      }
+    }
+  ]
+}

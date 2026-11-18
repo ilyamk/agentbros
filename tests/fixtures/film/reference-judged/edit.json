@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "judged",
+  "rhythm": {
+    "value": "flat text swaps every second or so, which the detector does not see",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": []
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "fixture",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "fixture",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "fixture",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "fixture",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    }
+  ],
+  "signatureMoves": [],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 1.5,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 4.5,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 5.2,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 7.5,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 10.5,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 11.2,
+        "note": "flat swap"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": []
+    }
+  ]
+}

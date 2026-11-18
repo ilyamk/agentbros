@@ -1,0 +1,64 @@
+name: Python native acceptance
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '21 3 * * 1'
+permissions: {}
+jobs:
+  blender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Install pinned Blender and FFmpeg
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg libegl1 libxkbcommon0 libsm6
+          curl --fail --location --retry 2 --output "$RUNNER_TEMP/blender.tar.xz" https://download.blender.org/release/Blender4.5/blender-4.5.14-linux-x64.tar.xz
+          echo "9ba871ff2ecd36526b77432745980b7e6664ecd0c7ca11c48849073dcfe06da3  $RUNNER_TEMP/blender.tar.xz" | sha256sum --check
+          tar -xf "$RUNNER_TEMP/blender.tar.xz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/blender-4.5.14-linux-x64" >> "$GITHUB_PATH"
+      - run: pnpm python:check --mode native
+  models:
+    name: Public model (${{ matrix.profile }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions: { contents: read }
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [vad, stems, matte]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Install FFmpeg
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - env:
+          PROFILE: ${{ matrix.profile }}
+        run: pnpm python:check --mode models --profile "$PROFILE"

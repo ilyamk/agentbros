@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "kind": "click",
+  "entries": [
+    {
+      "file": "freesound-119415-rocker-switch.mp3",
+      "source": "freesound",
+      "sourceId": "119415",
+      "sourceUrl": "https://freesound.org/s/119415/",
+      "title": "rocker_switch.wav",
+      "author": "joedeshon",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"rocker_switch.wav\" by joedeshon (freesound.org/s/119415), CC BY 4.0",
+      "notes": "0.03 s, mono; Freesound HQ preview; found by \"switch click\"",
+      "sha256": "3f85fb6415f3e1388e0126f440626e88251420df8cc8930fc4f6e7b6c2a4fd34",
+      "bytes": 1687,
+      "recipe": {
+        "type": "freesound",
+        "id": 119415,
+        "url": "https://cdn.freesound.org/previews/119/119415_1218676-hq.mp3",
+        "sha256": "ec1e07c6ca728014883142159536e8cff9c6ea190056a3bf12fbcaed12483a4a"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-256116-click.mp3",
+      "source": "freesound",
+      "sourceId": "256116",
+      "sourceUrl": "https://freesound.org/s/256116/",
+      "title": "Click.wav",
+      "author": "kwahmah_02",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Freesound HQ preview; found by \"switch click\"",
+      "sha256": "513757abecb8e5d506da33892af8dbe8c5b9deb7380c78ca0dbec3ebb3e82128",
+      "bytes": 1582,
+      "recipe": {
+        "type": "freesound",
+        "id": 256116,
+        "url": "https://cdn.freesound.org/previews/256/256116_4486188-hq.mp3",
+        "sha256": "df1bc047a0be57183afed4ccec3b145211039851d354550cb6217972f64c799a"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-448080-wet-click.mp3",
+      "source": "freesound",
+      "sourceId": "448080",
+      "sourceUrl": "https://freesound.org/s/448080/",
+      "title": "Wet Click",
+      "author": "Breviceps",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Freesound HQ preview; found by \"mouse click\"",
+      "sha256": "849476a1df0650a5ef81a65e8932b74920cb64691f1c8b71e085d988358a1046",
+      "bytes": 2000,
+      "recipe": {
+        "type": "freesound",
+        "id": 448080,
+        "url": "https://cdn.freesound.org/previews/448/448080_9159316-hq.mp3",
+        "sha256": "099367ef18af93d5ba4af2cc5c9d398f6f385bae77d0a6d705fe4b71e0e94783"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "kenney-mouseclick1.mp3",
+      "source": "kenney",
+      "sourceId": "ui/mouseclick1",
+      "sourceUrl": "https://kenney.nl/assets/ui-audio",
+      "title": "mouseclick1.wav",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Kenney ui pack",
+      "sha256": "73b78f49db9f52d51248900554d51910e08939258d9804c75b27b545d8a8f0ad",
+      "bytes": 1948,
+      "recipe": {
+        "type": "kenney",
+        "pack": "ui",
+        "path": "kenney/ui/mouseclick1.wav",
+        "sha256": "d6841333ded83887f69d0cf1ef67e9f7204be6b3489490df5264a652fd00666b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-click.mp3",
+      "source": "synth",
+      "sourceId": "click",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "click.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "0.06 s, mono; pnpm sfx:synth seed 1",
+      "sha256": "cce5edf149b0436ab1921a2edfce67c85bfa205200fa17646bda5be7eb5444d6",
+      "bytes": 1373,
+      "recipe": {
+        "type": "synth",
+        "kind": "click",
+        "seed": 1,
+        "rootHz": 55,
+        "sha256": "a7e044d320b6905d0f9eb02f714b64095d3d6f4a02e4438e45124622bb17e248"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-215772-click.mp3",
+      "source": "freesound",
+      "sourceId": "215772",
+      "sourceUrl": "https://freesound.org/s/215772/",
+      "title": "click",
+      "author": "OtisJames",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.08 s, mono; Freesound HQ preview; found by \"switch click\"",
+      "sha256": "7dd29515e508a726202b95e7b539a31028725f479bde7508a27302ddda242898",
+      "bytes": 2626,
+      "recipe": {
+        "type": "freesound",
+        "id": 215772,
+        "url": "https://cdn.freesound.org/previews/215/215772_4027196-hq.mp3",
+        "sha256": "5fec7051b86f147f869fa6b76b902216db6b30737ad0ec0ea35a6f98530c91df"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "kenney-click3.mp3",
+      "source": "kenney",
+      "sourceId": "ui/click3",
+      "sourceUrl": "https://kenney.nl/assets/ui-audio",
+      "title": "click3.wav",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.09 s, mono; Kenney ui pack",
+      "sha256": "e226ff094da663670d75be375fb4b48709becdb7f48110ded7ba3f7a8091ccfe",
+      "bytes": 2261,
+      "recipe": {
+        "type": "kenney",
+        "pack": "ui",
+        "path": "kenney/ui/click3.wav",
+        "sha256": "9649d0ed86f2129e39568922eda43da25c287ca0d2905328ecddbd70d11fbb34"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-146721-menu-click.mp3",
+      "source": "freesound",
+      "sourceId": "146721",
+      "sourceUrl": "https://freesound.org/s/146721/",
+      "title": "menu click",
+      "author": "Leszek_Szary",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.09 s, mono; Freesound HQ preview; found by \"button click\"",
+      "sha256": "b6f1bb8bd36ed87fe3497c860fb6965e7fa7000bfa65349ea1342c3fa44cadeb",
+      "bytes": 1921,
+      "recipe": {
+        "type": "freesound",
+        "id": 146721,
+        "url": "https://cdn.freesound.org/previews/146/146721_2437358-hq.mp3",
+        "sha256": "fb57df70da39ffbd24fdebf984bef02d5c008a79ecafc80c159c46166ebe62dc"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-342200-videogame-menu-button-click.mp3",
+      "source": "freesound",
+      "sourceId": "342200",
+      "sourceUrl": "https://freesound.org/s/342200/",
+      "title": "Videogame Menu BUTTON CLICK",
+      "author": "Christopherderp",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.13 s, mono; Freesound HQ preview; found by \"button click\"",
+      "sha256": "c58831dc5309c6a9aa416ed95bafb16c6d8e524ee8b6a8b50eacae100e219ee8",
+      "bytes": 2626,
+      "recipe": {
+        "type": "freesound",
+        "id": 342200,
+        "url": "https://cdn.freesound.org/previews/342/342200_3908740-hq.mp3",
+        "sha256": "04852588dee217852f1f0e93a1d863c86ec1ac792de535848cc037e943035ebb"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-26777-btn402.mp3",
+      "source": "freesound",
+      "sourceId": "26777",
+      "sourceUrl": "https://freesound.org/s/26777/",
+      "title": "btn402.mp3",
+      "author": "junggle",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"btn402.mp3\" by junggle (freesound.org/s/26777), CC BY 4.0",
+      "notes": "0.15 s, mono; Freesound HQ preview; found by \"button click\"",
+      "sha256": "44a9535d715a8e9f905ae487a3cbbfbd8caa74fd8ef316c480178dbaf04ba283",
+      "bytes": 2260,
+      "recipe": {
+        "type": "freesound",
+        "id": 26777,
+        "url": "https://cdn.freesound.org/previews/26/26777_128404-hq.mp3",
+        "sha256": "a9d654d15f70ad49757d58c55bd9bc6f256ea7b556905d7192a86c30eee6d758"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-253168-sfx-ui-button-click.mp3",
+      "source": "freesound",
+      "sourceId": "253168",
+      "sourceUrl": "https://freesound.org/s/253168/",
+      "title": "SFX UI Button Click",
+      "author": "suntemple",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.16 s, mono; Freesound HQ preview; found by \"ui click\"",
+      "sha256": "488e1804df1d81f4e1db54e1ed86dd82c0553c55911917da3a9612aa279a5178",
+      "bytes": 2782,
+      "recipe": {
+        "type": "freesound",
+        "id": 253168,
+        "url": "https://cdn.freesound.org/previews/253/253168_4404552-hq.mp3",
+        "sha256": "8900ecddb6fe60ce3fa652dd0e9b9cee6ec02ab2bb8d462c409de3cf6dec0f9c"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-218115-switch-on-livingroom.mp3",
+      "source": "freesound",
+      "sourceId": "218115",
+      "sourceUrl": "https://freesound.org/s/218115/",
+      "title": "Switch ON - Livingroom.wav",
+      "author": "MastersDisaster",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Switch ON - Livingroom.wav\" by MastersDisaster (freesound.org/s/218115), CC BY 4.0",
+      "notes": "0.18 s, mono; Freesound HQ preview; found by \"switch click\"",
+      "sha256": "2a92c3e9306b784a5124a6bed6021ccf593e9227e5a3c71de7939418f5ea984d",
+      "bytes": 2939,
+      "recipe": {
+        "type": "freesound",
+        "id": 218115,
+        "url": "https://cdn.freesound.org/previews/218/218115_2366778-hq.mp3",
+        "sha256": "723c62a4cd5218710d5631e4b0f8ec3d778703df51c7ff46cbe326e839ef1bde"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-39562-mouse-click.mp3",
+      "source": "freesound",
+      "sourceId": "39562",
+      "sourceUrl": "https://freesound.org/s/39562/",
+      "title": "mouse click.wav",
+      "author": "THE_bizniss",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"mouse click.wav\" by THE_bizniss (freesound.org/s/39562), CC BY 3.0",
+      "notes": "0.21 s, mono; Freesound HQ preview; found by \"mouse click\"",
+      "sha256": "ea562c4c76f2e24322f7db922a6907ccce377ce5df04406ad7cec3e714c037af",
+      "bytes": 2702,
+      "recipe": {
+        "type": "freesound",
+        "id": 39562,
+        "url": "https://cdn.freesound.org/previews/39/39562_382028-hq.mp3",
+        "sha256": "99421a7943fc872f54329ccf192815d44daf9eb71a3b1c91f9c176ce19dc5649"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-171697-menu-selection-click.mp3",
+      "source": "freesound",
+      "sourceId": "171697",
+      "sourceUrl": "https://freesound.org/s/171697/",
+      "title": "Menu Selection Click",
+      "author": "NenadSimic",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.23 s, mono; Freesound HQ preview; found by \"button click\"",
+      "sha256": "b2e92a3ec13249bb8a42f8f30e14292c6b4aa877079f5c6f0bf6d2df239f42bb",
+      "bytes": 2676,
+      "recipe": {
+        "type": "freesound",
+        "id": 171697,
+        "url": "https://cdn.freesound.org/previews/171/171697_2514850-hq.mp3",
+        "sha256": "9524f331eb6dadfa2189b6a331a21ee411925a99fe0a8f4b5a9e440673d4cf71"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-528561-soft-ui-button-click.mp3",
+      "source": "freesound",
+      "sourceId": "528561",
+      "sourceUrl": "https://freesound.org/s/528561/",
+      "title": "Soft UI Button Click",
+      "author": "Jummit",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.24 s, mono; Freesound HQ preview; found by \"ui click\"",
+      "sha256": "e09153a4ebf8fb85cdc12f7ba7cb839c345ea29cb949bfda36ac0cde640ec826",
+      "bytes": 2832,
+      "recipe": {
+        "type": "freesound",
+        "id": 528561,
+        "url": "https://cdn.freesound.org/previews/528/528561_10360410-hq.mp3",
+        "sha256": "6f7f5551bf02803ca25eccb134388281a1e00e2756faf412082f7dffc5abf22e"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-536108-ui-click.mp3",
+      "source": "freesound",
+      "sourceId": "536108",
+      "sourceUrl": "https://freesound.org/s/536108/",
+      "title": "UI Click",
+      "author": "EminYILDIRIM",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"UI Click\" by EminYILDIRIM (freesound.org/s/536108), CC BY 4.0",
+      "notes": "0.24 s, mono; Freesound HQ preview; found by \"ui click\"",
+      "sha256": "861f8101bd986738e8296b631c1483071705b9a0eac7fe25ffd042d7e5501c14",
+      "bytes": 4139,
+      "recipe": {
+        "type": "freesound",
+        "id": 536108,
+        "url": "https://cdn.freesound.org/previews/536/536108_10912485-hq.mp3",
+        "sha256": "54bbcd13004dbfe1c0857a392e8cddf9d3b2e820851eaa33c1cbd0e3152eeecf"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-534103-mouse-click-single-00.mp3",
+      "source": "freesound",
+      "sourceId": "534103",
+      "sourceUrl": "https://freesound.org/s/534103/",
+      "title": "mouse-click-single-00.flac",
+      "author": "pbimal",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.28 s, mono; Freesound HQ preview; found by \"mouse click\"",
+      "sha256": "58587d8e00f8cf7672ff04033175af2d1166e2265a224403dc02d11318f76ee8",
+      "bytes": 4661,
+      "recipe": {
+        "type": "freesound",
+        "id": 534103,
+        "url": "https://cdn.freesound.org/previews/534/534103_11830391-hq.mp3",
+        "sha256": "63ce2e4f824f0884606a8731a10ec5589080725a529487100a7037f19205a289"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-256455-mouse-click.mp3",
+      "source": "freesound",
+      "sourceId": "256455",
+      "sourceUrl": "https://freesound.org/s/256455/",
+      "title": "Mouse Click",
+      "author": "HunteR4708",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.30 s, mono; Freesound HQ preview; found by \"mouse click\"",
+      "sha256": "dcc3e21ba0c64e4d8d9cf51a7e8b4e4dd1ffb93b5ba08b6773bb1de30a260393",
+      "bytes": 4320,
+      "recipe": {
+        "type": "freesound",
+        "id": 256455,
+        "url": "https://cdn.freesound.org/previews/256/256455_4772965-hq.mp3",
+        "sha256": "d93ffba38cecb1aa9364f445791ca231df8514bdf6263bad63fd8eb9dac5de4c"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "elevenlabs-01-soft-ui-click.mp3",
+      "source": "elevenlabs",
+      "sourceId": "01",
+      "sourceUrl": "https://api.elevenlabs.io/v1/sound-generation",
+      "title": "short soft UI click",
+      "author": "ElevenLabs sound generation",
+      "licence": "generated",
+      "licenceUrl": "https://elevenlabs.io/terms-of-use",
+      "notes": "0.48 s, mono; ElevenLabs sound-generation, 5 credits, requested 0.5 s",
+      "sha256": "9d064a69a292e94f7d856438ff44e139dedc83b40354d845df07b8c088790ca3",
+      "bytes": 6169,
+      "recipe": {
+        "type": "elevenlabs",
+        "endpoint": "POST https://api.elevenlabs.io/v1/sound-generation",
+        "model": "API default (no model_id sent), 2026-11-11",
+        "prompt": "short soft UI click",
+        "durationSeconds": 0.5,
+        "credits": 5,
+        "sha256": "428907c63ed8a3811f2ea4005edd6a95432ca0067eeafb934c0b8471dec7a61d"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "kenney-switch-003.mp3",
+      "source": "kenney",
+      "sourceId": "interface/switch_003",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "title": "switch_003.ogg",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.50 s, mono; Kenney interface pack",
+      "sha256": "57fcbb9516e55411c066df6439e26fe0f05856316ee18093bc5623c7d8c0c648",
+      "bytes": 4550,
+      "recipe": {
+        "type": "kenney",
+        "pack": "interface",
+        "path": "kenney/interface/switch_003.ogg",
+        "sha256": "ca12dd32103f401481d5aff56d5e9831174e99bb577139c09b07d046eb8b837e"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    }
+  ]
+}

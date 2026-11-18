@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flame",
+  "palette": {
+    "value": [
+      "#FFFFFF ground behind 10 of 12 shots until 18.1 s (shots.json L median 98.4 for every shot but the last)",
+      "#000000 ink of the opening words",
+      "#909090 / #A5A5A5 brushed-metal tile, mid grey with a diagonal highlight",
+      "#7C0026 wine, #4B25EF violet, #3FABF6 cyan, #CE4411 orange: iridescent spheres, the first saturated colour (3.5-5.4 s)",
+      "#FBE9F4 pink, #4783AA teal, #8D86C1 lilac: gradient card ground (6.7-8.0 s)",
+      "#2F2F2F / #444346 dark interface panels on the card",
+      "#0A0E12 / #071E44 dark landing-page plate",
+      "#00257D navy to #408BF6 blue: the type-only sentence",
+      "#08204A / #2D496D navy button with a white sheen arc",
+      "end card vertical ramp: #082458 navy top, #0850E5 royal, #4396F3, #87C9F4 sky, #F0FFFF white at the lower rim (shots.json s006 b mean -38.5)"
+    ],
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "pixels sampled from frames at 0.8, 2.5, 4.5, 7.5, 12.8, 15.8, 17.5, 18.0, 21.0 s",
+      "shots.json colour"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "premise words (0.1-2.0 s)",
+        "description": "geometric grotesque sans, regular to medium, sentence case, black, very small: the three-word line is about 23% of frame width, OCR line box 0.047 of frame height (cap height looks about 1.6%, by eye), centred on the crosshair gap. Words arrive one at a time, each tinted green for 2-3 frames before settling to black. Font inferred, not identified."
+      },
+      {
+        "role": "problem phrase (3.8-4.9 s)",
+        "description": "same face, small (about 14% of width for three words), centred among the spheres, words tinted red on arrival then black; leaves word by word from the front as the spheres implode (F117-F119)."
+      },
+      {
+        "role": "wordmark",
+        "description": "bold geometric sans in capitals with tight tracking, black on white at 5.5-6.6 s (about 15% of width), white on blue at 18.4-22.6 s (about 21% of width, OCR box 0.206 x 0.058). Typed on left to right, roughly one letter per 2 frames."
+      },
+      {
+        "role": "edge words (8.0-9.8 s)",
+        "description": "two single words, small regular sans, dark grey, pinned at the far left (x 0.056) and far right (x 0.873) of the frame at mid height, framing the globe between them; not centred."
+      },
+      {
+        "role": "button labels",
+        "description": "medium sans, sentence case, white on blue or grey pills; the label is about 40% of the pill width; pills 33-53% of frame width (13.5-15.2 s)."
+      },
+      {
+        "role": "ownership sentence (15.3-16.2 s)",
+        "description": "regular geometric sans, sentence case with a full stop, about 36% of width for four words, centred, recentring as each word arrives; colour moves from navy #00257D to blue #408BF6 over 3 frames."
+      },
+      {
+        "role": "address pill",
+        "description": "small lower-case address in blue-grey regular sans inside a white capsule to the right of the wordmark, typed one character per frame (F474-F486)."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/t00-type-open.jpg F3-F19",
+      "visuals/a1/t02-square-to-spheres.jpg F91-F94",
+      "visuals/a1/t04-wordmark-type.jpg F132-F151",
+      "visuals/a1/t06-collage-to-globe.jpg F193-F204",
+      "visuals/a1/t09-cut-to-pills.jpg F324-F338",
+      "visuals/a1/t11-cut-to-type.jpg F366-F378",
+      "visuals/a1/t15-url-pill.jpg F472-F486",
+      "speech-text.json screenText boxes"
+    ]
+  },
+  "composition": {
+    "value": "One object at frame centre on white for 10 of 12 shots. Object sizes measured on strip tiles: metal tile 20% of frame width; sphere field fills the edges and leaves a clear centre about 40% wide for the phrase; wordmark 15%; gradient card grows to about 93% wide with interface panels overlapping its edges; globe about 30% of width inside a circle larger than the frame height; landing-page plate about 62% wide with a small button hanging under its bottom edge; button stack 33% growing to 53%; CTA button 12% to 48% to full bleed. Only the edge words break the centre rule, pinned to the outer 6% at each side. Thin grid or guide lines (hairline, very light grey or pale red) sit behind the metal tiles and the opening type and read as a designer's canvas.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/t01-frame-to-square.jpg F56",
+      "visuals/a1/t05-card-to-collage.jpg F162-F172",
+      "visuals/a1/t09-cut-to-pills.jpg F318-F338",
+      "visuals/a1/t13-pill-grows.jpg F412-F426",
+      "visuals/a1/t14-fill-to-endcard.jpg F431-F436"
+    ]
+  },
+  "materials": {
+    "value": "Three registers, each with one finish: brushed metal (grey tile with a diagonal specular band, later a horizontal horizon split), glossy iridescent spheres with soft blur at the frame edge (depth of field), and glassy UI capsules with an inner top sheen and soft drop shadow. A white embossed maze pattern (bevel by light and shadow, no colour) is the only textured ground. Everything else is flat white or a smooth gradient.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/t02-square-to-spheres.jpg F75-F94",
+      "visuals/a1/t04-wordmark-type.jpg F136-F151",
+      "visuals/a1/t10-pill-swap.jpg F342-F357",
+      "visuals/a1/t13-pill-grows.jpg F417-F426"
+    ]
+  },
+  "lighting": {
+    "value": "Studio top light everywhere: highlights sit on the upper edge of every capsule and as an arc across the top of the CTA button, which survives as the dark rim at the top of the end card. The end card reads as the inside of that lit button, dark at the top and white at the bottom.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/t13-pill-grows.jpg F417-F426",
+      "visuals/a1/t14-fill-to-endcard.jpg F431-F440"
+    ]
+  },
+  "styleSummary": "Clean white product-design canvas where every element is a material sample (metal, iridescent glass, glossy capsule) and each one turns into the next; small type, one object at centre, colour rationed until a saturated blue end card that is the CTA button blown up to full frame."
+}

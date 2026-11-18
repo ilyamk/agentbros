@@ -1,0 +1,26 @@
+{
+  "character": {
+    "required": ["front"],
+    "recommended": ["three-quarter-left|three-quarter-right", "profile-left|profile-right", "face-closeup"],
+    "optional": ["back", "full-body", "hands", "expression:*", "outfit:*", "voice-sample", "performance-clip"],
+    "rules": ["minDistinctYawDeg:45", "background:neutral", "lighting:even", "oneOutfitPerSheet", "handsEmptyOnTurnaround"]
+  },
+  "object": {
+    "required": ["packshot-front"],
+    "recommended": ["packshot-three-quarter", "label-detail"],
+    "optional": ["packshot-back", "palette"],
+    "rules": ["background:neutral", "lighting:even"]
+  },
+  "location": {
+    "required": ["plate-wide"],
+    "recommended": ["plate-reverse", "plate-medium"],
+    "optional": ["plate:*", "lighting:*"],
+    "rules": ["onePlatePerLighting", "noUnintendedPeople"]
+  },
+  "style": {
+    "required": ["style-board"],
+    "optional": ["palette"],
+    "rules": ["styleWithoutSubject"]
+  },
+  "scene": {}
+}

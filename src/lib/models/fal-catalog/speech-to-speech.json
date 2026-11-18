@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "category": "speech-to-speech",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/chatterbox/speech-to-speech",
+      "category": "speech-to-speech",
+      "displayName": "Chatterbox",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3d6502b36192637724a29df57eae9525094d3f18abb22d72ef97ad7c99dfce12",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fchatterbox%2Fspeech-to-speech&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "source_audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "target_voice_audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech-to-speech"
+      ]
+    },
+    {
+      "endpoint": "kotoba-technologies/kotoba-sts/v1/realtime_voice",
+      "category": "speech-to-speech",
+      "displayName": "Kotoba Realtime Speech Translation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "realtime",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "commercial-use",
+        "speech-to-speech",
+        "translation",
+        "japanese",
+        "realtime",
+        "streaming"
+      ]
+    },
+    {
+      "endpoint": "resemble-ai/chatterboxhd/speech-to-speech",
+      "category": "speech-to-speech",
+      "displayName": "Chatterboxhd",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "908cbece35ac00c30ce392a9650ab7d88d528218dbcc7fd75c444d646a0efa5c",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=resemble-ai%2Fchatterboxhd%2Fspeech-to-speech&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "high_quality_audio",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "source_audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "target_voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Aurora",
+            "Blade",
+            "Britney",
+            "Carl",
+            "Cliff",
+            "Richard",
+            "Rico",
+            "Siobhan",
+            "Vicky"
+          ]
+        },
+        {
+          "name": "target_voice_audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": []
+    },
+    {
+      "endpoint": "xai/grok-voice",
+      "category": "speech-to-speech",
+      "displayName": "Grok Voice",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e5ffa92ccd5ebe26d13f98f90abe5f104dcf2eac8cbd99dc8d1a197b5287fefb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=xai%2Fgrok-voice&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 20000
+        },
+        {
+          "name": "tools",
+          "type": "object",
+          "required": false,
+          "default": {
+            "mcp_servers": [],
+            "web_search": {
+              "enabled": false
+            },
+            "x_search": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "carina",
+            "zagan",
+            "helix",
+            "orion",
+            "luna",
+            "iris",
+            "altair",
+            "zenith",
+            "perseus",
+            "helios",
+            "lux",
+            "kepler",
+            "rigel",
+            "cosmo",
+            "celeste",
+            "ursa",
+            "sirius",
+            "lumen",
+            "castor",
+            "naksh",
+            "atlas",
+            "aurora",
+            "liora",
+            "ara",
+            "eve",
+            "leo",
+            "rex",
+            "sal"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "text"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "xai",
+        "grok",
+        "voice",
+        "agent"
+      ]
+    },
+    {
+      "endpoint": "xai/grok-voice/realtime",
+      "category": "speech-to-speech",
+      "displayName": "Grok Voice",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e8944b3294702403d077a2f2ea2b19d28205f862b3004a98e8689f9614d6f41b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=xai%2Fgrok-voice%2Frealtime&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 20000
+        },
+        {
+          "name": "tools",
+          "type": "object",
+          "required": false,
+          "default": {
+            "mcp_servers": [],
+            "web_search": {
+              "enabled": false
+            },
+            "x_search": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "carina",
+            "zagan",
+            "helix",
+            "orion",
+            "luna",
+            "iris",
+            "altair",
+            "zenith",
+            "perseus",
+            "helios",
+            "lux",
+            "kepler",
+            "rigel",
+            "cosmo",
+            "celeste",
+            "ursa",
+            "sirius",
+            "lumen",
+            "castor",
+            "naksh",
+            "atlas",
+            "aurora",
+            "liora",
+            "ara",
+            "eve",
+            "leo",
+            "rex",
+            "sal"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "text"
+        ]
+      },
+      "transport": "realtime",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "xai",
+        "grok",
+        "voice",
+        "agent",
+        "realtime",
+        "websocket"
+      ]
+    }
+  ]
+}

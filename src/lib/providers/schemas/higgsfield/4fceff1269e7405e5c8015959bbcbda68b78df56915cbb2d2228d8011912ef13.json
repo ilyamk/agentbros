@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/v2.6/pro/text-to-video",
+  "title": "Kling 2.6 — Pro text to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-2-6/pro-text-to-video.md",
+  "usageNotes": [
+    "duration accepts 5 or 10 seconds; 5 is the default.",
+    "Native audio uses sound: on or off and defaults to on."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling 2.6 Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "sound": {
+        "enum": [
+          "on",
+          "off"
+        ],
+        "type": "string",
+        "title": "Generate sound",
+        "default": "on"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "cfg_scale": {
+        "type": "number",
+        "title": "CFG Scale",
+        "default": 0.5,
+        "maximum": 1,
+        "minimum": 0,
+        "multipleOf": 0.01
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "16:9"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

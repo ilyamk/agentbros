@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flex",
+  "palette": {
+    "value": [
+      "#091f15 deep brand green ground (thesis, stat)",
+      "#f7f3ef warm off-white ground (product object, form, phone)",
+      "#ffffff pure white ground (interface, final line, sign-off)",
+      "#22593b product object green, mid-tone of the metal",
+      "#6e9b81 lit green of the action button",
+      "#3b7755 accent green on the final value word",
+      "#1b1b1b near-black wordmark on white",
+      "#a5b2c0 storm-cloud blue-grey plate"
+    ],
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": ["8×8 px samples via ffmpeg: 3.0 s (60,60) #091f15; 7.0 s (60,60) #f7f3ef; 19.0 s and 40.0 s #ffffff; 8.6 s card centre #22593b; 7.5 s button #6e9b81; 37.0 s darkest glyph pixel of the final value word #3b7755; 40.0 s wordmark #1b1b1b; 14.0 s cloud #a5b2c0", "shots.json colour: s002 L 11, a −11.6; s005 L 94.1; s020 L 98.1"]
+  },
+  "typography": {
+    "value": [
+      { "role": "thesis / promise / journey / stat lines", "description": "Neo-grotesque sans, light to regular weight, sentence case, single line, centred (journey line left-anchored at x ≈ 0.12). Line box height 0.09–0.13 of frame height; line width 0.37–0.76 of frame width. White on the green, cloud and aerial grounds. Font inferred: a light grotesque in the family of Inter or Neue Haas Grotesk." },
+      { "role": "anthem slogan", "description": "Two voices on one centred line at y ≈ 0.46: lead phrase in the same light sans, value word in an italic transitional serif at the same size; line box height 0.08–0.11 of frame height, width 0.26–0.54. White over photo plates; dark grey lead and brand-green (#3b7755) italic on the final white plate." },
+      { "role": "wordmark", "description": "Italic serif wordmark, centred, about 0.15 of frame width and 0.10 of height at the close; white over the opening photo plate, near-black #1b1b1b on white at the close." },
+      { "role": "call to action", "description": "Small light sans line under the wordmark at y ≈ 0.85, width 0.17 of frame, box height 0.035; grey on white." },
+      { "role": "product interface text", "description": "The product's own UI type inside captures: small serif-headed panel titles with sans body; never re-set by the film." }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json boxes at 4.017, 14.017, 23.017, 26.017, 31.017–36.517, 38.517, 39.517 s", "visuals/contact-sheet-01.jpg 2L, 6M, 15M–20M", "visuals/a1/s19-to-white-you.jpg F1097"]
+  },
+  "composition": {
+    "value": "Everything that carries a message sits on the horizontal centre band (y 0.44–0.47 of height). Type is small for a commercial — lines are 0.09–0.13 of frame height and never fill more than 0.76 of the width — so plates and objects carry the frame and the type reads as a caption over them. Objects are centred: the slab at about 40% of width, the button about 25–30%, the phone rising to fill about 25% of width from the bottom edge, the sphere about 45% of height. The interface is framed whole with 10–15% margins, then the camera moves in. Headlines above a device sit at y ≈ 0.11–0.22.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json boxes", "visuals/a1/s02-shrink-to-card.jpg F174–F182", "visuals/a1/s13-dissolve-phone.jpg F851", "visuals/a1/s05-ui-zoomout.jpg F542"]
+  },
+  "materials": {
+    "value": "Three families: (1) flat brand grounds with thin line art (ring figure, particle-stroke sphere) in muted green; (2) a photoreal brushed-metal product object in green and silver, with specular sweeps and soft shadows on a warm off-white sweep; (3) graded stock plates (architecture, clouds, aerial cities, fence, clock, light trails, golden hour, skyline) and the real product interface on white with small 3D-rendered illustrations.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/s03-card-spin.jpg", "visuals/a1/s12-to-globe.jpg", "visuals/contact-sheet-01.jpg"]
+  },
+  "lighting": {
+    "value": "Studio key from top-left on the metal object with a moving specular band; a soft diagonal sheen crosses the shrinking slab; plates are bright daylight except the storm clouds, the clock interior and the night traffic, which supply the only dark moments outside the brand green.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": ["visuals/a1/s02-shrink-to-card.jpg F166–F178", "visuals/a1/s03-card-spin.jpg F288–F311"]
+  },
+  "styleSummary": "Quiet premium fintech: deep green, warm off-white and white grounds; light sans with an italic serif accent; one photoreal metal product object; a calm first half of transforming shapes and rising sheets, then a faster second half of hard cuts and 1 s anthem plates."
+}

@@ -1,0 +1,5218 @@
+{
+  "version": 1,
+  "category": "image-to-3d",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/pro/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan 3D Pro Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7def5d0e7ce113f21478b9d0981eb7898d2ac75cf222ce8ebbbece15d6fed640",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fpro%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "bottom_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 40000,
+          "max": 1500000,
+          "default": 500000
+        },
+        {
+          "name": "generate_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Normal",
+            "Geometry"
+          ],
+          "default": "Normal"
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "left_front_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "right_front_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "right_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "top_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "hunyuan",
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/rapid/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan 3D Rapid Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6fb3d632e966d75efb314297e5afdf2602f13eaf28ab17b4f9ee4ac415dac6f9",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Frapid%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_geometry",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "material_mtl",
+          "model_glb",
+          "model_urls",
+          "texture",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "hunyuan",
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d-v3/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3d V3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "898d46e5c587c43229163193410a3aa4a554f859eef318ebe2d4345436aca9eb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d-v3%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 40000,
+          "max": 1500000,
+          "default": 500000
+        },
+        {
+          "name": "generate_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Normal",
+            "LowPoly",
+            "Geometry"
+          ],
+          "default": "Normal"
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "polygon_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "triangle",
+            "quadrilateral"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "right_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "de33ab49970e571c129b4e4403d9f2d62af3b524547bbbf269e4dc4bbfdba8bf",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2/mini",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "608e8490795c1579179c20a8be1b389ec8706848c41be99739a930eb9f513468",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2%2Fmini&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2/mini/turbo",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4912b0eb26ba062f2fe1a39e9c03c0a40c6744a3a49eb0749b5d3ff038dbc9fb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2%2Fmini%2Fturbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2/multi-view",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4154e9c614915ccb46b28f72635182b329220d477fc901ca0e664dc7778d5a9b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2%2Fmulti-view&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "front_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2/multi-view/turbo",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3f7fffecc860066d644387cd1ebadaf9da006e480aa1ff4e104a244fe0731192",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2%2Fmulti-view%2Fturbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "front_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d/v2/turbo",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "be6ec6149c3b0b13ecb36c7dd7275fe009467d7316489e8492dcbc20d5590d8b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d%2Fv2%2Fturbo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 7.5
+        },
+        {
+          "name": "input_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "octree_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1024,
+          "default": 256
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "textured_mesh",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan_world/image-to-world",
+      "category": "image-to-3d",
+      "displayName": "Hunyuan World",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin",
+      "category": "image-to-3d",
+      "displayName": "Hyper3D Rodin",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "76d218eb2560d9c6f0f0cdc9315062618c0d1c52c0753ac1a0792feb3e6bd856",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "addons",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "condition_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fuse",
+            "concat"
+          ],
+          "default": "concat"
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "input_image_urls",
+          "type": "array",
+          "required": false,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded"
+          ],
+          "default": "PBR"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 1024,
+          "default": ""
+        },
+        {
+          "name": "quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            "extra-low"
+          ],
+          "default": "medium"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Regular",
+            "Sketch"
+          ],
+          "default": "Regular"
+        },
+        {
+          "name": "use_hyper",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin/v2",
+      "category": "image-to-3d",
+      "displayName": "Hyper3d",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "bd282a3c71d183b4a9b63bd7c99e1b5b01ed29ed100a0bf524a1bf288d35005f",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin%2Fv2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "addons",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "input_image_urls",
+          "type": "array",
+          "required": false,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded",
+            "All"
+          ],
+          "default": "All"
+        },
+        {
+          "name": "preview_render",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 1024,
+          "default": ""
+        },
+        {
+          "name": "quality_mesh_option",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "4K Quad",
+            "8K Quad",
+            "18K Quad",
+            "50K Quad",
+            "2K Triangle",
+            "20K Triangle",
+            "150K Triangle",
+            "500K Triangle"
+          ],
+          "default": "500K Triangle"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "use_original_alpha",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_meshes",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin/v2.5",
+      "category": "image-to-3d",
+      "displayName": "Hyper3D - Rodin V2.5 - Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "01683b4e259fcd65eda9792b51d5e4357d360f96368d4dcbc0487d46517b3203",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin%2Fv2.5&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "addons",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_creative_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "hd_texture",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 5,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "is_micro",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded",
+            "All",
+            "None"
+          ],
+          "default": "All"
+        },
+        {
+          "name": "preview_render",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 1024,
+          "default": ""
+        },
+        {
+          "name": "quality_mesh_option",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "4K Quad",
+            "8K Quad",
+            "18K Quad",
+            "50K Quad",
+            "100K Quad",
+            "200K Quad",
+            "2K Triangle",
+            "20K Triangle",
+            "50K Triangle",
+            "150K Triangle",
+            "500K Triangle",
+            "1M Triangle",
+            "2M Triangle"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "texture_delight",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "legacy",
+            "extreme-low",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Gen-2.5-Minimum",
+            "Gen-2.5-Extreme-Low",
+            "Gen-2.5-Low",
+            "Gen-2.5-Medium",
+            "Gen-2.5-High",
+            "Gen-2.5-Extreme-High"
+          ],
+          "default": "Gen-2.5-High"
+        },
+        {
+          "name": "use_original_alpha",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_meshes",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin/v2.5/fast",
+      "category": "image-to-3d",
+      "displayName": "Hyper3D - Rodin V2.5 - Image to 3D - Fast",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "bf617fd05b2d360ad31cf4266a41d41c2a37dc58aa71aa5be19e45bfc05f6711",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin%2Fv2.5%2Ffast&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_creative_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "hd_texture",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 5,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "is_micro",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded",
+            "All",
+            "None"
+          ],
+          "default": "Shaded"
+        },
+        {
+          "name": "preview_render",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "max": 1024,
+          "default": ""
+        },
+        {
+          "name": "quality_mesh_option",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "1K Quad",
+            "4K Quad",
+            "8K Quad",
+            "18K Quad",
+            "20K Quad",
+            "2K Triangle",
+            "4K Triangle",
+            "8K Triangle",
+            "10K Triangle",
+            "20K Triangle"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "texture_delight",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "legacy",
+            "extreme-low",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Gen-2.5-Minimum",
+            "Gen-2.5-Extreme-Low",
+            "Gen-2.5-Low"
+          ],
+          "default": "Gen-2.5-Extreme-Low"
+        },
+        {
+          "name": "use_original_alpha",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_meshes",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/v6-preview/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy 6 Preview",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3cb8b66f66ce15f8866d157f343e026e1f63b887c33734c581bb9b7ae5cb5ea7",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Fv6-preview%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/v6/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy 6",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9240dec2ec67047ec68a4b5de847a200de3df6c0484937a01dba423db8cc4385",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Fv6%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/pixal3d",
+      "category": "image-to-3d",
+      "displayName": "Pixal3d",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/reconviagen-0.5",
+      "category": "image-to-3d",
+      "displayName": "ReconViaGen 0.5",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multi-view",
+        "3d-reconstruction"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-3/3d-body",
+      "category": "image-to-3d",
+      "displayName": "Sam 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c8ead0d912603cdb3a7a6d53ca374ab30c64738cda91654d0b70530927280f84",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-3%2F3d-body&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "export_meshes",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_3d_keypoints",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "include_mhr_params",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "mask_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "meshes",
+          "metadata",
+          "model_glb",
+          "visualization"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "human",
+        "pose"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-3/3d-objects",
+      "category": "image-to-3d",
+      "displayName": "Sam 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cb250f798b7d40db1efd31f7c2d9214f14ca7a9c04f658ed048a44b9e0217723",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-3%2F3d-objects&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "box_prompts",
+          "type": "array",
+          "required": false,
+          "default": [],
+          "array": true
+        },
+        {
+          "name": "detection_threshold",
+          "type": "number",
+          "required": false,
+          "min": 0.1,
+          "max": 1
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_textured_glb",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "mask_urls",
+          "type": "array",
+          "required": false,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "point_prompts",
+          "type": "array",
+          "required": false,
+          "default": [],
+          "array": true
+        },
+        {
+          "name": "pointmap_url",
+          "type": "string",
+          "required": false,
+          "media": "file"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "default": "car"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "artifacts_zip",
+          "gaussian_splat",
+          "individual_glbs",
+          "individual_splats",
+          "metadata",
+          "model_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "object"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/trellis",
+      "category": "image-to-3d",
+      "displayName": "Trellis",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "77425f5161b3be277023e125c7d74010e37c2bcef9460bd3c4c89d1d38dacbb4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ftrellis&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "mesh_simplify",
+          "type": "number",
+          "required": false,
+          "min": 0.9,
+          "max": 0.98,
+          "default": 0.95
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "slat_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "slat_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "ss_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 7.5
+        },
+        {
+          "name": "ss_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "texture_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            512,
+            1024,
+            2048
+          ],
+          "default": 1024
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/trellis-2",
+      "category": "image-to-3d",
+      "displayName": "Trellis 2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "71330298514c265523dce3efa18db95adfbafeb7d1b19ae2a18c0db675e09d9e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ftrellis-2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "decimation_target",
+          "type": "integer",
+          "required": false,
+          "min": 5000,
+          "max": 2000000,
+          "default": 500000
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "remesh_band",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 4,
+          "default": 1
+        },
+        {
+          "name": "remesh_project",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "resolution",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            512,
+            1024,
+            1536
+          ],
+          "default": 1024
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "shape_slat_guidance_interval_end",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "shape_slat_guidance_interval_start",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        },
+        {
+          "name": "shape_slat_guidance_rescale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "shape_slat_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 7.5
+        },
+        {
+          "name": "shape_slat_rescale_t",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 6,
+          "default": 3
+        },
+        {
+          "name": "shape_slat_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "ss_guidance_interval_end",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "ss_guidance_interval_start",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        },
+        {
+          "name": "ss_guidance_rescale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "ss_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 7.5
+        },
+        {
+          "name": "ss_rescale_t",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 6,
+          "default": 5
+        },
+        {
+          "name": "ss_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "tex_slat_guidance_interval_end",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "tex_slat_guidance_interval_start",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        },
+        {
+          "name": "tex_slat_guidance_rescale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "tex_slat_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1
+        },
+        {
+          "name": "tex_slat_rescale_t",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 6,
+          "default": 3
+        },
+        {
+          "name": "tex_slat_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "texture_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            1024,
+            2048,
+            4096
+          ],
+          "default": 2048
+        },
+        {
+          "name": "uv_unwrap_angle_threshold_deg",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 180,
+          "default": 90
+        },
+        {
+          "name": "uv_unwrap_global_iterations",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 1
+        },
+        {
+          "name": "uv_unwrap_refine_iterations",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 0
+        },
+        {
+          "name": "uv_unwrap_smooth_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3D"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/trellis/multi",
+      "category": "image-to-3d",
+      "displayName": "Trellis",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f36672048c0d66e501888307e8813444edb33f8e96a009ce6f6a68bf4cca42c2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ftrellis%2Fmulti&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "min": 1,
+          "max": 8,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "mesh_simplify",
+          "type": "number",
+          "required": false,
+          "min": 0.9,
+          "max": 0.98,
+          "default": 0.95
+        },
+        {
+          "name": "multiimage_algo",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "stochastic",
+            "multidiffusion"
+          ],
+          "default": "stochastic"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "slat_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "slat_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "ss_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 7.5
+        },
+        {
+          "name": "ss_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "texture_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            512,
+            1024,
+            2048
+          ],
+          "default": 1024
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hi3D Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7d3d018570ded7243c567e9fe5481c7f2c2601d9bc6568b0a5fbb41d40604eb1",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 100000,
+          "max": 2000000
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "hitem3dv1.5",
+            "hitem3dv2.0",
+            "hitem3dv2.1",
+            "scene-portraitv1.5",
+            "scene-portraitv2.0",
+            "scene-portraitv2.1"
+          ],
+          "default": "hitem3dv2.1"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "512",
+            "1024",
+            "1536",
+            "1536pro",
+            "1536fast",
+            "1536profast"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "3d",
+        "mesh"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/multi-view-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hi3D Multiview to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f97fb2b9153cb48e60196ac97e0083c0ccee262724e4ce230fb35e305f52c023",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fmulti-view-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 100000,
+          "max": 2000000
+        },
+        {
+          "name": "front_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "hitem3dv1.5",
+            "hitem3dv2.0",
+            "hitem3dv2.1",
+            "scene-portraitv1.5",
+            "scene-portraitv2.0",
+            "scene-portraitv2.1"
+          ],
+          "default": "hitem3dv2.1"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "512",
+            "1024",
+            "1536",
+            "1536pro",
+            "1536fast",
+            "1536profast"
+          ]
+        },
+        {
+          "name": "right_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "multiview-to-3d",
+        "3d"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/v3.0/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hi3D Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "bae3ad0d44fea3ca8c9ef7ee4859ae3ef985490edb68c57b64132971c0df2afc",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fv3.0%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 100000,
+          "max": 5000000
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "default": "hi3dv3.0"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2048quality",
+            "2048master"
+          ],
+          "default": "2048quality"
+        },
+        {
+          "name": "shading",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "3d",
+        "mesh"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/v3.0/multi-view-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Hi3D Multiview to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0050eb925dd9d1b8be1b305422d2517a0b17ed6ea50bc8157b9fb72b961f31b3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fv3.0%2Fmulti-view-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 100000,
+          "max": 5000000
+        },
+        {
+          "name": "front_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "default": "hi3dv3.0"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2048quality",
+            "2048master"
+          ],
+          "default": "2048quality"
+        },
+        {
+          "name": "right_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "shading",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "multiview-to-3d",
+        "3d"
+      ]
+    },
+    {
+      "endpoint": "meshy/relief",
+      "category": "image-to-3d",
+      "displayName": "Meshy Relief",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4b4d888241f4f15d04285bd6951ebe978b4bcf091acb31b24e2cff9992e5f9fc",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Frelief&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "base_thickness_mm",
+          "type": "number",
+          "required": false,
+          "min": 0.1,
+          "max": 10
+        },
+        {
+          "name": "bend_angle",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 360,
+          "default": 60
+        },
+        {
+          "name": "bend_axis",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "xz",
+            "yz"
+          ],
+          "default": "xz"
+        },
+        {
+          "name": "bend_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "convex",
+            "concave"
+          ],
+          "default": "off"
+        },
+        {
+          "name": "carving_depth_mm",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 60
+        },
+        {
+          "name": "carving_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "emboss",
+            "engrave"
+          ],
+          "default": "emboss"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "mesh_resolution",
+          "type": "integer",
+          "required": false,
+          "min": 512,
+          "max": 2048,
+          "default": 1024
+        },
+        {
+          "name": "removal_threshold",
+          "type": "number",
+          "required": false,
+          "min": 0.01,
+          "max": 1
+        },
+        {
+          "name": "remove_base",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "should_generate_model",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "size_mm",
+          "type": "number",
+          "required": false,
+          "min": 20,
+          "max": 250,
+          "default": 60
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "high"
+          ],
+          "default": "low"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "depth_map",
+          "model_glb",
+          "model_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "relief",
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "meshy/t2.5/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy T2.5 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9304604760c61943ab2307d8e174f74a2a6912a86553c0544ab8b1366f609f17",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Ft2.5%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 30000,
+          "default": 15000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "smart-topology",
+        "low-poly",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/t2/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy T2 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9d0a31abc003ef633e043fa75a3d92588994958f445dcb496db16ec2177311e2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Ft2%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 15000,
+          "default": 4000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "smart-topology",
+        "low-poly",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7.1/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy 7.1 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "66aa70b5552b26d78fbe28532d9917129b70771122c3a3c14a66bab5991f2696",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k",
+            "4k"
+          ]
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "ultra_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7.1/multi-image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Meshy 7.1 Multi Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3c3cd558869ba977d52a03a846bda1782e933799d44ff5964d1820a9f6b7feef",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Fmulti-image-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k"
+          ]
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_image_urls",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 4,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "multi-image",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "V7 Image to 3D",
+      "status": "active",
+      "retiresAt": "2026-12-31T08:00:00.000Z",
+      "replacement": "meshy/v7.1/image-to-3d",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "659a85102bd69c520a87399409d2a5353c7a0eb2c76c17a029c80856b993c1c2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k"
+          ]
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1",
+            "meshy-6-lite"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "ultra_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7/multi-image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "V7 Multi Image to 3D",
+      "status": "active",
+      "retiresAt": "2026-12-31T08:00:00.000Z",
+      "replacement": "meshy/v7.1/multi-image-to-3d",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "2cb45d89389532c92a8b754e85ecc34593ff560387e4e7754707f903880775e8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7%2Fmulti-image-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k"
+          ]
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "should_texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_image_urls",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 4,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7",
+            "meshy-n1"
+          ]
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    },
+    {
+      "endpoint": "microsoft/moge-2",
+      "category": "image-to-3d",
+      "displayName": "MoGe-2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e8dfce479440f0f835600d2b44f6f7c43a68e2fbfd562075dcc3ca70afe5313f",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=microsoft%2Fmoge-2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "apply_mask",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "edge_threshold",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.04
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_glb",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_ply",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "fov_x",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 179
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "default": "https://storage.googleapis.com/falserverless/example_inputs/dog.png",
+          "media": "image"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "vitl-normal",
+            "vitl",
+            "vitb-normal",
+            "vits-normal"
+          ],
+          "default": "vitl-normal"
+        },
+        {
+          "name": "resolution_level",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 9,
+          "default": 9
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "depth_map",
+          "intrinsics",
+          "mask",
+          "model_mesh",
+          "normal_map",
+          "point_cloud"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "depth-estimation",
+        "monocular-geometry",
+        "point-cloud",
+        "surface-normals",
+        "3d-reconstruction"
+      ]
+    },
+    {
+      "endpoint": "microsoft/moge-3",
+      "category": "image-to-3d",
+      "displayName": "MoGe-3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "310188e07b5e9094484f898e2cc18992968c1aed98251478a022214b7a3c5fa3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=microsoft%2Fmoge-3&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "apply_mask",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "edge_threshold",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.04
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_glb",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_ply",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "fov_x",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 179
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "default": "https://storage.googleapis.com/falserverless/example_inputs/dog.png",
+          "media": "image"
+        },
+        {
+          "name": "num_refinement_steps",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 5,
+          "default": 3
+        },
+        {
+          "name": "resolution_level",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 9,
+          "default": 9
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "depth_map",
+          "intrinsics",
+          "mask",
+          "model_mesh",
+          "normal_map",
+          "point_cloud"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "depth-estimation",
+        "monocular-geometry",
+        "point-cloud",
+        "surface-normals",
+        "3d-reconstruction"
+      ]
+    },
+    {
+      "endpoint": "speridlabs/idol",
+      "category": "image-to-3d",
+      "displayName": "Sperid Labs Idol",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5ec0e61bef9394cafd40c0c0ae022ccffc54fae5690ce2a389a5b8e9a1fb1f83",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=speridlabs%2Fidol&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "image_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "synthetic",
+            "real"
+          ],
+          "default": "synthetic"
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "num_gaussians",
+          "type": "integer",
+          "required": false,
+          "min": 32768,
+          "max": 1048576,
+          "default": 262144
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 50
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "camera",
+          "model_glb",
+          "model_mesh",
+          "preprocessed_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3D",
+        "gaussian-splat",
+        "image-to-3d"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/h3.1/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo H3.1 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d7be00c710b78220d59359a2a25275f7dad370854bc98e78886f3ea995defcad",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fh3.1%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 1000,
+          "max": 2000000
+        },
+        {
+          "name": "geometry_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "align_image"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "texture_alignment",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "original_image",
+            "geometry"
+          ],
+          "default": "original_image"
+        },
+        {
+          "name": "texture_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "3d-generation",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/h3.1/multiview-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo H3.1 Multiview to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0294e798ea82371ea15c1eba7410178191f2fc72cf67d6ec990bf0627987f4c0",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fh3.1%2Fmultiview-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 1000,
+          "max": 2000000
+        },
+        {
+          "name": "geometry_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "min": 2,
+          "max": 4,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "align_image"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "texture_alignment",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "original_image",
+            "geometry"
+          ],
+          "default": "original_image"
+        },
+        {
+          "name": "texture_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "multiview-to-3d",
+        "3d-generation",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/p1/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo P1 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "95b820ab76ef97646c0345573a54f549d3dd21640902052cac712c7b30208b32",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fp1%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 48,
+          "max": 20000
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "3d-generation",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/p2/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo P2 Image to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "13a7bb17bd4fda5bbf6cc71e97ca96bd85089c91a7793768d248804f991679cd",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fp2%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "delight",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "+x",
+            "-x",
+            "-y",
+            "+y"
+          ]
+        },
+        {
+          "name": "export_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 48,
+          "max": 50000
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "texture_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "standard",
+            "detailed",
+            "extreme"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "texture_version",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "v3.5-20260815",
+            "v3.0-20250812",
+            "v2.5-20250123"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "image-to-3d",
+        "3d-generation",
+        "low-poly",
+        "pbr",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/tripo/v2.5/image-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "ec67643cbf22932819232b9e13cc3e8145c500256f9024771e9dc16b20e7bf50",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Ftripo%2Fv2.5%2Fimage-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "align_image"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "style",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "person:person2cartoon",
+            "object:clay",
+            "object:steampunk",
+            "animal:venom",
+            "object:barbie",
+            "object:christmas",
+            "gold",
+            "ancient_bronze"
+          ]
+        },
+        {
+          "name": "texture",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "no",
+            "standard",
+            "HD"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_alignment",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "original_image",
+            "geometry"
+          ],
+          "default": "original_image"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "file"
+        ],
+        "fields": [
+          "base_model",
+          "model_mesh",
+          "pbr_model",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-3d",
+        "stylized"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/tripo/v2.5/multiview-to-3d",
+      "category": "image-to-3d",
+      "displayName": "Tripo3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "041d290b8cc3cdf211237e81fe4d8d4dd64d329dd7700b50a2bed5ac7c99985e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Ftripo%2Fv2.5%2Fmultiview-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "back_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "front_image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "left_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "default",
+            "align_image"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "right_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "style",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "person:person2cartoon",
+            "object:clay",
+            "object:steampunk",
+            "animal:venom",
+            "object:barbie",
+            "object:christmas",
+            "gold",
+            "ancient_bronze"
+          ]
+        },
+        {
+          "name": "texture",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "no",
+            "standard",
+            "HD"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_alignment",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "original_image",
+            "geometry"
+          ],
+          "default": "original_image"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "file"
+        ],
+        "fields": [
+          "base_model",
+          "model_mesh",
+          "pbr_model",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "multiview"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/triposplat",
+      "category": "image-to-3d",
+      "displayName": "Triposplat",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3D",
+        "gaussian-splat",
+        ""
+      ]
+    }
+  ]
+}

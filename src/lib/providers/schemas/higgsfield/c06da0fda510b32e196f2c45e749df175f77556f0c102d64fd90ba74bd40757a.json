@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "endpoint": "higgsfield-ai/soul/v2/standard",
+  "title": "SOUL V2 — Text to image API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md",
+  "usageNotes": [
+    "batch_size is 1 or 4 only. A custom_reference_id must belong to the calling account and have completed training.",
+    "aspect_ratio defaults to 1:1 and enhance_prompt defaults to false. seed defaults to a random integer from 1 to 1000000; explicit null is invalid.",
+    "style_id defaults to 3db34ab5-3439-4317-9e03-08dc30852e69. style_strength is accepted by the request schema but currently has no effect on generation.",
+    "Short prompts using the general style can be enhanced automatically even when enhance_prompt=false.",
+    "When using custom_reference_id, set custom_reference_strength to a value greater than 0 and no greater than 1. The schema accepts 0, but the current runtime fails to process it for a character reference."
+  ],
+  "schema": {
+    "properties": {
+      "prompt": {
+        "title": "Prompt",
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "default": "1:1",
+        "enum": [
+          "9:16",
+          "16:9",
+          "4:3",
+          "3:4",
+          "1:1",
+          "2:3",
+          "3:2"
+        ],
+        "title": "Aspect Ratio",
+        "type": "string"
+      },
+      "resolution": {
+        "default": "720p",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "type": "string"
+      },
+      "enhance_prompt": {
+        "default": false,
+        "title": "Enhance Prompt",
+        "type": "boolean"
+      },
+      "custom_reference_id": {
+        "anyOf": [
+          {
+            "format": "uuid",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Custom Reference Id"
+      },
+      "custom_reference_strength": {
+        "default": 1,
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Custom Reference Strength",
+        "type": "number"
+      },
+      "style_id": {
+        "default": "3db34ab5-3439-4317-9e03-08dc30852e69",
+        "format": "uuid",
+        "title": "Style Id",
+        "type": "string"
+      },
+      "style_strength": {
+        "default": 1,
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Style Strength",
+        "type": "number"
+      },
+      "seed": {
+        "maximum": 1000000,
+        "minimum": 1,
+        "title": "Seed",
+        "type": "integer"
+      },
+      "batch_size": {
+        "default": 1,
+        "enum": [
+          1,
+          4
+        ],
+        "title": "Batch Size",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "prompt"
+    ],
+    "title": "SoulV2ParamsSchema",
+    "type": "object"
+  },
+  "asOf": "2026-11-15"
+}

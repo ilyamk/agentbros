@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "plan-first-gate",
+  "playbook": "product-promo",
+  "tier": "no-spend",
+  "brief": "Start a 20-second product promo in the supplied project ID using product-promo. Stop at the first required user gate, write the project spine, and record the blocked gate in bench-result.json. Do not generate assets or fabricate approvals.",
+  "material": [
+    {
+      "path": "bench/instructions/plan-first-gate/answers.json",
+      "sha256": "e41571accafa325e5c5fade855758f6cfdf2a89db33567e44b693d4856547319",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/instructions/plan-first-gate/check.mjs",
+      "sha256": "3d0f782f4692320d4b0b3280f0afc43b1c64849b130eed37ea377e6a30c870be",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      0,
+      20
+    ]
+  },
+  "answers": "bench/instructions/plan-first-gate/answers.json",
+  "criteria": [
+    {
+      "id": "automatic-check",
+      "kind": "process",
+      "check": {
+        "type": "script",
+        "path": "bench/instructions/plan-first-gate/check.mjs"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

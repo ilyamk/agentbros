@@ -1,0 +1,316 @@
+{
+  "intake-dispatch": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "intake",
+    "title": "Intake",
+    "why": "brief.topic is empty brief.audience is empty brief.tone is empty brief.productName is empty",
+    "orchestratorChecks": {
+      "before": [
+        "Pass on what the user said about the goal and the audience, in their words, with --note. Do not propose a topic."
+      ],
+      "after": [
+        "Read the brief as the user would: does anything in it come from you rather than from them? Remove it before asking."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Choosing the topic to fit footage or a clip that already exists."
+    ],
+    "action": "dispatch",
+    "agent": "brief-collector",
+    "definition": {
+      "path": ".agents/agents/brief-collector.md",
+      "exists": true
+    },
+    "briefCommand": "pnpm film:brief --project film --step intake",
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "docs/film-types.md"
+    ]
+  },
+  "intake-ask": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "intake",
+    "title": "Intake",
+    "why": "Needs the user's approval of this exact artefact.",
+    "orchestratorChecks": {
+      "before": [
+        "Pass on what the user said about the goal and the audience, in their words, with --note. Do not propose a topic."
+      ],
+      "after": [
+        "Read the brief as the user would: does anything in it come from you rather than from them? Remove it before asking."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Choosing the topic to fit footage or a clip that already exists."
+    ],
+    "action": "ask",
+    "question": "Is this the film you want: its goal, audience, length and format?",
+    "show": [
+      "public/projects/film/pipeline/brief.json"
+    ],
+    "thenRun": [
+      "pnpm film:approve --project film --step intake --answer \"<the user's words>\""
+    ],
+    "benchmarkProxy": "pnpm film:approve --project film --step intake --proxy benchmark --reason \"<why the benchmark goes on>\"",
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "docs/film-types.md"
+    ],
+    "capture": {
+      "moment": "verdict",
+      "hint": "At the user's answer, record only the user's own words; acceptance without words is an episode, not a lesson. Leaf agents propose; the orchestrator writes.",
+      "commands": [
+        "pnpm memory --add --type <decision|preference|lesson> --summary \"<one line, no brand>\" --quote \"<the user's words>\" --step intake"
+      ]
+    }
+  },
+  "strategy-ask": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "strategy",
+    "title": "Strategy",
+    "why": "Needs the user's approval of this exact artefact.",
+    "orchestratorChecks": {
+      "before": [
+        "The brief is approved and the reference numbers exist. Pass on only the user's words."
+      ],
+      "after": [
+        "Is the proposition one sentence a viewer could repeat? Two claims joined by 'and' are two films: send it back."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Writing ideas, lines or pictures into the strategy: it says what the film must do, not how."
+    ],
+    "action": "ask",
+    "question": "Is this the strategy: who it is for and when, the one thing the film proves, the platform and the hook? Say what is wrong.",
+    "show": [
+      "public/projects/film/pipeline/strategy.md",
+      "public/projects/film/pipeline/strategy.json"
+    ],
+    "thenRun": [
+      "pnpm film:approve --project film --step strategy --answer \"<the user's words>\""
+    ],
+    "benchmarkProxy": "pnpm film:approve --project film --step strategy --proxy benchmark --reason \"<why the benchmark goes on>\"",
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "docs/production-chain/creative-department.md",
+      "design-reference/creative-standards.md",
+      "design-reference/creative-lessons.md"
+    ],
+    "capture": {
+      "moment": "verdict",
+      "hint": "At the user's answer, record only the user's own words; acceptance without words is an episode, not a lesson. Leaf agents propose; the orchestrator writes.",
+      "commands": [
+        "pnpm memory --add --type <decision|preference|lesson> --summary \"<one line, no brand>\" --quote \"<the user's words>\" --step strategy --platform instagram-reels"
+      ]
+    }
+  },
+  "concept-ask": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "concept",
+    "title": "Concept",
+    "why": "Needs the user's approval of this exact artefact.",
+    "orchestratorChecks": {
+      "before": [
+        "The review passed, or the user chose to go on past the round limit."
+      ],
+      "after": [
+        "Open the contact sheet. If two hook frames look alike, say so to the user rather than reorder the ideas."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Showing the user one idea with two weaker ones around it.",
+      "Changing the director's order or its arguments."
+    ],
+    "action": "ask",
+    "question": "Which of the three ideas do we make? The boards show each one's hook and last frame. Say what you would change.",
+    "show": [
+      "public/projects/film/pipeline/concept.md",
+      "public/projects/film/pipeline/boards/boards.jpg",
+      "public/projects/film/pipeline/concept.json"
+    ],
+    "thenRun": [
+      "pnpm film:approve --project film --step concept --answer \"<the user's words>\""
+    ],
+    "benchmarkProxy": "pnpm film:approve --project film --step concept --proxy benchmark --reason \"<why the benchmark goes on>\"",
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "docs/production-chain/creative-department.md",
+      "src/motion/library/AGENTS.md"
+    ],
+    "capture": {
+      "moment": "choice",
+      "hint": "If the choice should hold for later films, record only the user's own words; acceptance without words is an episode, not a lesson. Leaf agents propose; the orchestrator writes.",
+      "commands": [
+        "pnpm memory --add --type <decision|preference> --summary \"<one line, no brand>\" --quote \"<the user's words>\" --step concept --platform instagram-reels"
+      ]
+    }
+  },
+  "music-first-ask": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "music",
+    "title": "Music",
+    "why": "The shortlist is ready: the user chooses by ear.",
+    "orchestratorChecks": {
+      "before": [
+        "The route is the user's: reference track, free stock, trending, generated, their own, synth or none. Do not narrow it for them.",
+        "A paid generation needs an authorised budget."
+      ],
+      "after": [
+        "Has the user actually heard it? A licence that is unknown blocks delivery, and a study-only track blocks release: say so now."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Choosing the music without asking.",
+      "Treating silence as a default: it needs the user's reason.",
+      "Embedding a trending track: it is added on the platform."
+    ],
+    "action": "ask",
+    "benchmarkProxy": "pnpm music --action record --project film --route <route> --candidate <candidate-id> --answer \"proxy (benchmark): <why>\" --reason \"benchmark proxy\"",
+    "question": "Listen to the shortlist. Which track do we cut to, or would you rather use your own, generate one, or go without music?",
+    "show": [
+      "public/projects/film/pipeline/music-shortlist.json"
+    ],
+    "thenRun": [
+      "pnpm music --action record --project film --route <route> --candidate <candidate-id> --answer <the user's words> --reason <why, from the user>",
+      "pnpm film:done --project film --step music"
+    ],
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "src/lib/audio/AGENTS.md",
+      "docs/audio-integrations.md",
+      ".agents/skills/sound-design-and-mix/SKILL.md"
+    ],
+    "capture": {
+      "moment": "choice",
+      "hint": "If the choice should hold for later films, record only the user's own words; acceptance without words is an episode, not a lesson. Leaf agents propose; the orchestrator writes.",
+      "commands": [
+        "pnpm memory --add --type <decision|preference> --summary \"<one line, no brand>\" --quote \"<the user's words>\" --step music --platform instagram-reels"
+      ]
+    }
+  },
+  "music-answered": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "music",
+    "title": "Music",
+    "why": "Needs the user's approval of this exact artefact. The user already answered, in {dir}/pipeline/music-decision.json.",
+    "orchestratorChecks": {
+      "before": [
+        "The route is the user's: reference track, free stock, trending, generated, their own, synth or none. Do not narrow it for them.",
+        "A paid generation needs an authorised budget."
+      ],
+      "after": [
+        "Has the user actually heard it? A licence that is unknown blocks delivery, and a study-only track blocks release: say so now."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Choosing the music without asking.",
+      "Treating silence as a default: it needs the user's reason.",
+      "Embedding a trending track: it is added on the platform."
+    ],
+    "action": "run",
+    "commands": [
+      "pnpm film:approve --project film --step music --answer \"the first one, it lifts at the end\""
+    ],
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "src/lib/audio/AGENTS.md",
+      "docs/audio-integrations.md",
+      ".agents/skills/sound-design-and-mix/SKILL.md"
+    ]
+  },
+  "human-ask": {
+    "filmType": "motion-graphics",
+    "advisories": [
+      "intake: brief.filmType is not set, so the film is routed as motion-graphics. Ask the user for the type."
+    ],
+    "step": "human",
+    "title": "Human verdict",
+    "why": "Needs the user's verdict.",
+    "orchestratorChecks": {
+      "before": [
+        "Show the film itself, and say plainly what you did and did not look at or listen to."
+      ],
+      "after": [
+        "Only what the user confirms goes to design-reference/creative-lessons.md.",
+        "A change the user asks for goes through `pnpm feedback --file <items.json>`, quoted in their words: show them its preview, and add --confirm only on their yes."
+      ]
+    },
+    "forbidden": [
+      "An orchestrator must not write or edit a subagent's prompt: start the subagent with film:brief's metadata.dispatch line, and add only the user's words with --note.",
+      "An orchestrator must not add technique lists, effect counts, a fixed topic or an existing clip to justify to a brief.",
+      "Nobody may approve for the user, or turn silence, a missing reference or a failed gate into a decision the user did not make.",
+      "Reading a critic's approval as the user's."
+    ],
+    "action": "ask",
+    "question": "Watch the film. Do you accept it, what should change, and what should we remember for the next one?",
+    "show": [
+      "out/film/film.mp4"
+    ],
+    "thenRun": [
+      "pnpm film:approve --project film --step human --answer \"<the user's words>\""
+    ],
+    "playbook": null,
+    "playbookHint": "bind one: pnpm playbook --match \"<request>\" then pnpm playbook --use <id> --project film",
+    "read": [
+      "docs/production-chain.md",
+      "docs/delivery.md",
+      "docs/production-chain/feedback.md",
+      ".agents/skills/creative-postmortem/SKILL.md"
+    ],
+    "capture": {
+      "moment": "verdict",
+      "hint": "At the user's answer, record only the user's own words; acceptance without words is an episode, not a lesson. Leaf agents propose; the orchestrator writes.",
+      "commands": [
+        "pnpm memory --add --type <decision|preference|lesson> --summary \"<one line, no brand>\" --quote \"<the user's words>\" --step human --platform instagram-reels"
+      ]
+    }
+  }
+}

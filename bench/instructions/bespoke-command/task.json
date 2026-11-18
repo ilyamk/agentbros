@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "id": "bespoke-command",
+  "playbook": "motion-design",
+  "tier": "no-spend",
+  "brief": "Name the repository command that renders a bespoke film. Write bench-result.json as {\"command\":\"<alias>\"}.",
+  "material": [
+    {
+      "path": "bench/instructions/bespoke-command/answers.json",
+      "sha256": "e41571accafa325e5c5fade855758f6cfdf2a89db33567e44b693d4856547319",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/instructions/bespoke-command/check.mjs",
+      "sha256": "aade08b19b7b7078e475fab49937fd4c5f02afbbe3402303f2db9cdaf03fa473",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      0,
+      20
+    ]
+  },
+  "answers": "bench/instructions/bespoke-command/answers.json",
+  "criteria": [
+    {
+      "id": "automatic-check",
+      "kind": "process",
+      "check": {
+        "type": "script",
+        "path": "bench/instructions/bespoke-command/check.mjs"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

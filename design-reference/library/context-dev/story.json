@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "context-dev",
+  "idea": {
+    "value": "A typed query pulls one complete person out of a faceless crowd, shows every field it knows about them, and then shows that every face in the crowd is just as complete.",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": ["visuals/contact-sheet-01.jpg", "speech-text.json screenText 1.017-3.017 (query), 4.017-11.017 (record fields), 16.517-18.017 (line)"]
+  },
+  "audience": {
+    "value": "Technical buyers who need contact data in their own tools: developers and growth or sales teams at small software companies. The query names founders of small developer-tool companies, the record lists email, social handles and city, and the sign-off names a people-search product.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": ["speech-text.json screenText 2.517-3.017", "speech-text.json screenText 9.017-11.017", "speech-text.json screenText 18.017-19.517"]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.933,
+      "device": "A white frame becomes a crowd in five frames, and a search field types a precise, slightly ironic query over it.",
+      "description": "F0 white; F1-F5 a grid of about 140 blue halftone portraits scales up to overfill the frame; a frosted pill opens at centre (F10-F19) and types a long, specific query at about one character a frame (F22-F78). The crowd gives the problem in one image; the query's specificity makes the viewer wait for its answer, which the cut at 2.933 delivers."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/a1/open-grid-zoom.jpg F0-F23", "visuals/a1/zoom-step.jpg F43-F64", "visuals/a1/grid-to-one.jpg F78-F88"]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.933,
+        "purpose": "Problem and question: a crowd, and a query that narrows it.",
+        "retentionDevice": "Typing in progress: an unfinished sentence keeps the eye on it.",
+        "content": "Halftone portrait wall pushed in twice; search pill typing."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/open-grid-zoom.jpg F0-F23", "visuals/a1/zoom-step.jpg F43-F64"]
+    },
+    {
+      "value": {
+        "startSec": 2.933,
+        "endSec": 4.367,
+        "purpose": "Answer: one person survives the query and becomes real.",
+        "retentionDevice": "Halftone held 1 s, then resolved to a photo: a delayed reveal.",
+        "content": "Single tile on white, name typing below, halftone to photo at 4.0-4.17."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/grid-to-one.jpg F88-F101", "visuals/a1/dither-resolve.jpg F102-F125"]
+    },
+    {
+      "value": {
+        "startSec": 4.367,
+        "endSec": 8.433,
+        "purpose": "Proof by depth: the record is read field by field at a legible size.",
+        "retentionDevice": "Each cut reveals a new field typing in; the viewer keeps reading.",
+        "content": "Hero-size section label and bio line, then label column and value column in alternating close-ups."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/push-to-summary.jpg F131-F143", "visuals/a1/field-track.jpg F177-F200", "visuals/a1/values-jump.jpg F216-F226"]
+    },
+    {
+      "value": {
+        "startSec": 8.433,
+        "endSec": 11.067,
+        "purpose": "Payoff of the single result: the whole record at once, with a count of further hidden fields.",
+        "retentionDevice": "Scale release after close-ups; a 1.47 s hold.",
+        "content": "Pull-out to the full card on white with soft shadow."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/pullback.jpg F253-F275", "visuals/a1/card-to-grid.jpg F324-F331"]
+    },
+    {
+      "value": {
+        "startSec": 11.067,
+        "endSec": 14.133,
+        "purpose": "Scale: the single result was one of many.",
+        "retentionDevice": "The opening's halftone returns, so the viewer recognises the crowd from the hook.",
+        "content": "Cut to a halftone grid of cards, two-stage pull-out to about 150 small cards, hold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/card-to-grid.jpg F332-F347", "visuals/a1/grid-pullout.jpg F348-F371", "visuals/a1/glyphs-hold.jpg F393-F413"]
+    },
+    {
+      "value": {
+        "startSec": 14.133,
+        "endSec": 17.933,
+        "purpose": "Claim: the method in one two-part line, made out of the crowd itself.",
+        "retentionDevice": "Matter morph: cards become dots become a stream that writes words.",
+        "content": "Centre-out ripple to dots, cone, stream; two short phrases left and right on one baseline."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/grid-to-dots.jpg F424-F437", "visuals/a1/dots-scatter.jpg F450-F461", "visuals/a1/dots-stream.jpg F462-F485", "visuals/a1/stream-to-second-line.jpg F489-F512"]
+    },
+    {
+      "value": {
+        "startSec": 17.933,
+        "endSec": 19.767,
+        "purpose": "Sign-off: product label and mark on the same baseline as the line.",
+        "retentionDevice": "Empty white beat before it, so the mark arrives on silence of the picture.",
+        "content": "Product label left, mark and wordmark right; blur in, hold, blur out to white."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/lockup-in.jpg F543-F560", "visuals/a1/end-lockup.jpg F570-F592"]
+    }
+  ],
+  "payoff": {
+    "value": "The full record pulled back into view (8.4-11.07 s), then revealed to be one tile of a crowd of equally full records (11.07-13.66 s).",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/pullback.jpg F253-F275", "visuals/a1/card-to-grid.jpg F332-F347"]
+  },
+  "callToAction": {
+    "value": "Soft: a product label and the mark, small (about 3-5% of frame height) on white, with no URL, button or offer; the final three frames are empty white.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/a1/lockup-in.jpg F545-F560", "visuals/a1/end-lockup.jpg F570-F592", "speech-text.json screenText 18.017-19.517"]
+  },
+  "whyItWorks": [
+    "One object carried through every state (crowd tile, person, record, crowd tile, dot, letter), so 19.8 s feel like a single thought rather than a list of features.",
+    "Bookended structure: two stepped push-ins from crowd to one at the start, two stepped pull-outs from one to crowd at 11-13.7 s, with the same blue halftone as the hinge. The return makes the scale claim without a number.",
+    "Interface shown at reading size: field labels at about 6% cap height and the section label at 57% of frame width, cut in close-ups, so each field is legible for about a second instead of being a mock at 1% text height.",
+    "Every cut lands on something already moving (a glyph typing, a pan, a tilt), which hides the jump and keeps attention on the content.",
+    "Restraint in palette and type: white, light grey and one cobalt; one neutral grotesque in mixed case; small type everywhere except the one hero word. The density comes from the product, not from decoration.",
+    "Breaths before each transformation (1.47 s on the full record, 0.47 s on the still grid, five white frames before the sign-off) give each new state a clean start."
+  ]
+}

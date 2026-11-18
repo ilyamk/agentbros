@@ -1,0 +1,49 @@
+name: cla
+
+on:
+  pull_request:
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions: { contents: read, pull-requests: read }
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Check authors without writes or secrets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: pnpm github:facts --check
+  signature:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: { contents: write, pull-requests: write, actions: write }
+    # Only comments that look like a signature (gh-cla.ts SIGNATURE_ATTEMPT) start a job. No concurrency
+    # group: a shared one would drop pending signers; the registry append retries on SHA conflicts instead.
+    if: github.event_name == 'issue_comment' && github.event.issue.pull_request && (contains(github.event.comment.body, 'I have read the CLA') || contains(github.event.comment.body, 'I have read the Individual Contributor Licence Agreement'))
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Append acceptance to cla-signatures only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: pnpm github:cla

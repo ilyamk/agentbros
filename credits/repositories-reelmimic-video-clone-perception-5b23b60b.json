@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "repositories-reelmimic-video-clone-perception-5b23b60b",
+  "section": "repositories",
+  "order": 350,
+  "source": "ReelMimic (video-clone perception)",
+  "url": "https://github.com/edenfunf/reelmimic",
+  "pinnedCommit": "`74fc0c50`",
+  "licence": "MIT (`app/`, `.claude/skills/video-clone/`)",
+  "whatWeTook": "Code translated, with its MIT notice: `analyze.py` detect_crop and ui_strip_crop; `perception/video.py` static_mask; `perception/camera.py` estimate and photometric_ok; `perception/curves.py` timed ease fits (GSAP, cubic-bezier, spring) and move description; `perception/fingerprint.py` held_frames, spread_over_holds, cadence; `perception/distance.py` dtw, look_pair, palette_component and camera-finding thresholds; `perception/look.py` Lab histograms and Wasserstein; `perception/tension.py` curve, JND and dead zones, peak shape; `clip_strip.py --vs` layout. Method rewritten in our words: `app/server/prompts.ts` climax duel (director's key frame against the reference's hit, critic's peak-against-reference strip and verdict), made advisory instead of a pass/fail rule. Not taken: style_distance as a score or gate, its shot detector, rhythm metric, motion_check, optimiser",
+  "whereItLives": "`scripts/workers/reference-moves.py`, `scripts/workers/reference-analysis.py`, `src/lib/reference/{crop,align,findings}.ts`, `src/lib/film/tension.ts`, `src/lib/vision/versus.ts`, `.agents/skills/creative-studio/references/climax-duel.md`",
+  "why": "Reference measurements a replica can be built and checked against",
+  "date": "2026-11-13"
+}

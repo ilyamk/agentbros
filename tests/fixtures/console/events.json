@@ -1,0 +1,232 @@
+[
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000001",
+    "at": "2026-11-17T09:00:00Z",
+    "project": "promo-acme",
+    "kind": "cli.start",
+    "runId": "run-001",
+    "alias": "film:next",
+    "argv": [
+      "--project",
+      "promo-acme"
+    ],
+    "actor": "agent",
+    "channel": "cli",
+    "step": "build",
+    "data": {
+      "cwd": "."
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000002",
+    "at": "2026-11-17T09:01:00Z",
+    "project": "promo-acme",
+    "kind": "cli.end",
+    "runId": "run-001",
+    "alias": "film:next",
+    "ok": true,
+    "elapsedMs": 812,
+    "outputs": [
+      "pipeline/session/lease.json"
+    ],
+    "actor": "agent",
+    "channel": "cli",
+    "step": "build"
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000003",
+    "at": "2026-11-17T09:02:00Z",
+    "project": "promo-acme",
+    "kind": "cli.progress",
+    "runId": "run-002",
+    "parentRunId": "run-001",
+    "alias": "film:render",
+    "data": {
+      "text": "Rendering frames 120/540"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000004",
+    "at": "2026-11-17T09:03:00Z",
+    "project": "promo-acme",
+    "kind": "agent.dispatch",
+    "step": "build",
+    "agent": {
+      "name": "motion-engineer",
+      "role": "owner",
+      "harness": "claude-code"
+    },
+    "actor": "agent",
+    "channel": "cli",
+    "data": {
+      "brief": "pipeline/briefs/build-motion-engineer.md",
+      "lane": "scene-3"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000005",
+    "at": "2026-11-17T09:04:00Z",
+    "project": "promo-acme",
+    "kind": "agent.start",
+    "agent": {
+      "name": "motion-engineer",
+      "harness": "claude-code",
+      "sessionId": "sess-a1"
+    },
+    "channel": "hook",
+    "data": {
+      "agentId": "agent-7f3",
+      "agentType": "motion-engineer",
+      "scope": "subagent"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000006",
+    "at": "2026-11-17T09:10:00Z",
+    "project": "promo-acme",
+    "kind": "agent.end",
+    "agent": {
+      "name": "motion-engineer",
+      "harness": "claude-code",
+      "sessionId": "sess-a1"
+    },
+    "channel": "hook",
+    "data": {
+      "agentId": "agent-7f3",
+      "durationMs": 360000,
+      "outcome": "done"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000007",
+    "at": "2026-11-17T09:11:00Z",
+    "project": "promo-acme",
+    "kind": "agent.notification",
+    "agent": {
+      "harness": "codex",
+      "sessionId": "sess-b2"
+    },
+    "channel": "hook",
+    "data": {
+      "type": "permission_prompt",
+      "text": "The agent waits for permission in the terminal."
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000008",
+    "at": "2026-11-17T09:12:00Z",
+    "project": "promo-acme",
+    "kind": "decision.applied",
+    "alias": "film:approve",
+    "argv": [
+      "--project",
+      "promo-acme",
+      "--step",
+      "script",
+      "--answer",
+      "B, but a shorter hook.",
+      "--expect",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "ok": true,
+    "actor": "user",
+    "channel": "console",
+    "step": "script",
+    "data": {
+      "decisionId": "dec-script-001",
+      "decisionKind": "gate",
+      "answer": "B, but a shorter hook."
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000009",
+    "at": "2026-11-17T09:13:00Z",
+    "project": "promo-acme",
+    "kind": "decision.refused",
+    "alias": "film:approve",
+    "ok": false,
+    "error": "VALIDATION",
+    "message": "The script changed since you saw it.",
+    "actor": "user",
+    "channel": "console",
+    "step": "script",
+    "data": {
+      "decisionId": "dec-script-000",
+      "decisionKind": "gate",
+      "answer": "Approve script A."
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000010",
+    "at": "2026-11-17T09:14:00Z",
+    "project": "promo-acme",
+    "kind": "control.changed",
+    "actor": "user",
+    "channel": "console",
+    "data": {
+      "state": "paused",
+      "previous": "running"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000011",
+    "at": "2026-11-17T09:15:00Z",
+    "project": "promo-acme",
+    "kind": "card.posted",
+    "agent": {
+      "name": "creative-critic"
+    },
+    "actor": "agent",
+    "channel": "cli",
+    "step": "build",
+    "data": {
+      "cardId": "card-endings",
+      "cardKind": "compare"
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000012",
+    "at": "2026-11-17T09:16:00Z",
+    "project": "promo-acme",
+    "kind": "card.answered",
+    "actor": "user",
+    "channel": "console",
+    "step": "build",
+    "data": {
+      "cardId": "card-endings",
+      "choice": "b",
+      "text": "B lands the logo better."
+    }
+  },
+  {
+    "v": 1,
+    "id": "01KA7Z00000000000000000013",
+    "at": "2026-11-17T09:17:00Z",
+    "project": "promo-acme",
+    "kind": "job.state",
+    "step": "narration",
+    "costUsd": 1.4,
+    "actor": "system",
+    "channel": "cli",
+    "data": {
+      "jobId": "job-narration-01",
+      "state": "published",
+      "provider": "elevenlabs",
+      "endpoint": "eleven_v3",
+      "reservedUsd": 1.4,
+      "costUsd": 1.4
+    }
+  }
+]

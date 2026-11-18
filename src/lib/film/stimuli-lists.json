@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "killFirst10": [
+    "the product floating on a gradient, turning slowly",
+    "a smiling person looking at a phone screen",
+    "a feature tour: three screens, three captions",
+    "before and after split screen",
+    "a stat card: a big number counting up",
+    "a testimonial face saying how much time it saves",
+    "a logo reveal with a whoosh",
+    "a city at night with data lines connecting buildings",
+    "a frustrated person at a desk, then relieved",
+    "a hand tapping a button, confetti",
+    "a countdown to launch",
+    "a glowing network of nodes",
+    "a montage of busy people, then calm",
+    "the founder speaking to camera",
+    "a robot or friendly assistant character",
+    "a sunrise as the new beginning",
+    "a clock spinning to show time saved",
+    "a notification popping up with good news",
+    "a team high-fiving around a laptop",
+    "a question in large type, then the product as the answer"
+  ],
+  "zwicky": {
+    "picture": ["one object, very close", "a crowded place with one exception", "an empty room", "a single repeated gesture", "a map or plan seen from above", "a mirror or reflection"],
+    "conflict": ["too much versus too little", "waiting versus acting", "noise versus one clear signal", "rule versus exception", "the old habit versus the new move", "being seen versus being ignored"],
+    "pointOfView": ["the person in the audience's moment", "the object itself", "a bystander who notices", "the thing that is lost", "the clock or calendar", "nobody: a locked-off camera"],
+    "timeStructure": ["one continuous take", "the same moment, repeated with one change", "backwards, from the result", "a day compressed into seconds", "a held pause, then everything at once", "two moments intercut"],
+    "productRole": ["absent until the turn", "the cause of the turn", "the quiet witness", "the thing removed to show its absence", "a detail in the corner that grows", "the last frame only"]
+  },
+  "randomWords": ["anchor", "bread", "candle", "chalk", "drawer", "echo", "envelope", "feather", "fence", "fog", "glove", "harbour", "hinge", "honey", "kettle", "ladder", "lantern", "lighthouse", "magnet", "map", "marble", "mirror", "needle", "orchard", "paper boat", "pendulum", "pocket", "puddle", "queue", "receipt", "ribbon", "rope", "salt", "scaffold", "seed", "shadow", "shoe", "sieve", "snow", "spoon", "staircase", "stamp", "string", "suitcase", "thermometer", "thread", "ticket", "tide", "umbrella", "valve", "whistle", "window", "zip"],
+  "poProvocations": [
+    { "kind": "reversal", "template": "PO: the viewer does the {focus} job and the product watches" },
+    { "kind": "exaggeration", "template": "PO: every {focus} in the world happens at the same second" },
+    { "kind": "escape", "template": "PO: the film has no {focus} at all" },
+    { "kind": "distortion", "template": "PO: the {focus} happens before its cause" },
+    { "kind": "wishful", "template": "PO: the {focus} finishes itself overnight" },
+    { "kind": "absence", "template": "PO: the product is never shown, only what it leaves behind after the {focus}" }
+  ],
+  "provocationFocus": ["waiting", "reply", "mistake", "first step", "search", "handover", "promise", "deadline", "habit", "result"],
+  "scamper": [
+    { "op": "substitute", "prompt": "Substitute: replace the convention's main object with something from another room of life" },
+    { "op": "combine", "prompt": "Combine: merge the convention with an opposite convention of another category" },
+    { "op": "adapt", "prompt": "Adapt: borrow the convention's shape from a ritual, a game or a trade" },
+    { "op": "modify", "prompt": "Modify: change its scale, speed or duration until it becomes strange" },
+    { "op": "put-to-other-use", "prompt": "Put to other use: let the convention's prop do a different job in the frame" },
+    { "op": "eliminate", "prompt": "Eliminate: remove the element the convention depends on and film what remains" },
+    { "op": "reverse", "prompt": "Reverse: play the convention in the opposite order or from the opposite side" }
+  ],
+  "categoryConventions": ["the product on a clean ground", "a person reacting to a screen", "a list of features", "a problem then a solution", "a number that grows", "a logo at the end", "a happy customer", "a fast montage to music"],
+  "triz": {
+    "contradictions": [
+      "the film must show the product working, but must not look like a demo",
+      "the film must be fast enough for the feed, but must let one moment breathe",
+      "the film must explain, but must carry no more than one line of copy",
+      "the film must feel personal, but must show no real person or data",
+      "the film must show a problem, but must not feel negative",
+      "the film must be calm, but must stop a scrolling thumb",
+      "the film must show the result, but must keep a reason to watch to the end",
+      "the film must show a complex system, but read as one image"
+    ],
+    "separations": [
+      { "by": "time", "prompt": "Separate in time: one half of the film is X, the other is not-X; name the frame where it flips" },
+      { "by": "space", "prompt": "Separate in space: X in one part of the frame, not-X in the other; name what divides them" },
+      { "by": "scale", "prompt": "Separate in scale: X up close, not-X from far away (or the reverse); name the move between them" }
+    ]
+  },
+  "remoteDomains": ["beekeeping", "air traffic control", "tide tables", "bread baking", "bell ringing", "glassblowing", "mountain rescue", "lighthouse keeping", "seed banks", "orchestra tuning", "railway signalling", "origami", "migration of birds", "post office sorting", "theatre prompting", "weather forecasting", "ice fishing", "lock keeping on a canal", "watch repair", "sheepdog trials"]
+}

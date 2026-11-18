@@ -1,0 +1,41 @@
+name: Large change proposal
+description: Request a design decision before size L work.
+title: "[RFC] "
+body:
+  - type: markdown
+    attributes:
+      value: "Use docs/rfcs/NNNN-slug.md; wait for the maintainer's design-approved label before implementation."
+  - type: input
+    id: rfc
+    attributes:
+      label: RFC draft link and path
+      description: Link the draft and give its docs/rfcs/NNNN-slug.md path.
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category and size
+      description: Give one registry category and explain why this is size L.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Problem, design and alternatives
+      description: Explain current behaviour, proposed behaviour and rejected alternatives.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Compatibility, dependencies, costs and risks
+      description: Declare protected paths, contract changes and any budget implications without spending.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done and verification
+    validations:
+      required: true

@@ -1,0 +1,22 @@
+{
+  "provenance": "documented",
+  "source": "https://code.claude.com/docs/en/hooks",
+  "checked": "2026-11-17",
+  "note": "Every field follows the documented input of this event (source); built by hand, not recorded from a live session.",
+  "payload": {
+    "session_id": "5f0c2a1e-8d3b-4c6a-9e7f-2b1d0c9a8e71",
+    "transcript_path": "~/.claude/projects/-workspace/5f0c2a1e-8d3b-4c6a-9e7f-2b1d0c9a8e71.jsonl",
+    "cwd": "/workspace",
+    "permission_mode": "default",
+    "hook_event_name": "PreToolUse",
+    "prompt_id": "550e8400-e29b-41d4-a716-446655440000",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "pnpm film:measure --project demo-film",
+      "description": "Measure the film",
+      "timeout": 120000,
+      "run_in_background": false
+    },
+    "tool_use_id": "toolu_01ABC123"
+  }
+}

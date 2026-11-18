@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "palette": {
+    "value": [
+      "#F2F4E9 cream: the main ground for lines (23 of 39 shots are on a light ground)",
+      "#201A16 near-black warm brown: the second ground and the ink of all text on cream",
+      "#F6E977 soft yellow: hero words on dark, symbol trails, chart fill, the highlight sweep and the cursor",
+      "#F6F6F6 interface white: product screens and windows",
+      "#DBECFD pale blue: the brand disc; also a portrait plate tint",
+      "#F6CCFC pale pink and pale green #ACE699: symbol discs and portrait plates, used one at a time",
+      "#FFFFFF: text on the dark ground",
+      "dim olive-yellow at about 35% over #201A16 (approx. #5A5230): the blurred counter behind a word"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "pixels sampled at 0.3, 1.4, 4.7, 5.0, 12.8, 12.9, 20.0, 34.7, 42.0 s by the analyst",
+      "shots.json colour"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "line text (most of the film)",
+        "description": "Neo-grotesque sans (looks like Inter or a close relative; inferred), regular to medium weight, sentence case, tight default tracking. Centred, one line of 2-5 words; OCR box height 0.10-0.16 of frame height (cap height about 0.05-0.07). Dark ink #201A16 on cream, white on dark. Words appear every 2 frames, each rising about 2% of frame height into place over 3-4 frames, in their final layout positions (the line does not re-centre as it grows)."
+      },
+      {
+        "role": "hero word",
+        "description": "Same family, medium weight, lower case, 0.2-0.5 of frame height box (about 0.58 frame width for a 6-letter word); yellow #F6E977 or white on dark. Used for the key word of the hook, the verb of feature 3 and the payoff word."
+      },
+      {
+        "role": "landing first word",
+        "description": "A line's first word sometimes lands about 1.3x and settles to line size in 4 frames as the next word joins (F203-F206, F80-F81)."
+      },
+      {
+        "role": "interface caption",
+        "description": "Same family, regular, sentence case, 1-2 lines, left-aligned at bottom left (x 0.08-0.13, y 0.6-0.8) or on the right beside a shifted window; box height about 0.06 per line; dark ink over the white interface."
+      },
+      {
+        "role": "wordmark",
+        "description": "Heavy geometric sans in capitals with a full stop, about 0.5 frame width; a tiny sentence-case sub-line under its right half. Brand-specific; not to be copied."
+      },
+      {
+        "role": "end card address",
+        "description": "Same family, regular, lower case, about 0.05 frame height box, centred alone on cream."
+      },
+      {
+        "role": "inline chips",
+        "description": "Outlined pills (hairline, about 0.07 frame height) holding round flag icons with a three-letter code, or an arrow; sit on the text baseline as if they were words."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/hook-g-global.jpg",
+      "visuals/a1/spend-swaps.jpg F1194-F1220",
+      "visuals/a1/growing-to-end.jpg F1270-F1275",
+      "visuals/a1/logo-to-manage.jpg F191-F206",
+      "speech-text.json screenText boxes"
+    ]
+  },
+  "composition": {
+    "value": "Centre-weighted single lines at y 0.42-0.50 for type shots; left/right splits when an object joins (text at x 0.06 with the object at 0.6-0.9, then mirrored on the next cut). Interface fills 85-95% of width, cropped 1.0-1.6x, often bleeding off the top or right edge, with captions in the lower-left quarter. Hero words fill 0.55-0.75 of frame width. Collages are sparse: 4 cards or plates at the four corners, each 0.1-0.25 of frame height, leaving the centre clear for the line. Large empty margins everywhere else: at least 35% of every type shot is bare ground.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "speech-text.json screenText boxes",
+      "visuals/a1/cards-pop.jpg F92-F101",
+      "visuals/a1/portraits-in.jpg F478",
+      "visuals/a1/coin-to-euro.jpg F401, F411",
+      "visuals/a1/punch-in-ui.jpg F550"
+    ]
+  },
+  "materials": {
+    "value": "Flat vector: solid grounds, no texture or grain visible at this resolution; soft gradients only inside the chart fill and the warm bloom over one interface shot; photographs used as flat full-frame plates or as rounded cut-out cards; interface as flat screenshots or recordings with soft shadows; one interface card tilted in 3D for 5 frames.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/growing-chart.jpg F1246",
+      "visuals/a1/ui-pullback.jpg F313-F316",
+      "visuals/a1/move-split.jpg F931-F936"
+    ]
+  },
+  "lighting": {
+    "value": "No simulated light except a warm yellow bloom from the top right as one interface fades in (10.4 s), a glow pulse on the zero of the countdown, and a soft yellow highlight sweep across interface rows (37.4 s).",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/ui-pullback.jpg F312-F318",
+      "visuals/a1/countdown.jpg F1022-F1031",
+      "visuals/a1/live-rates.jpg F1123-F1128"
+    ]
+  },
+  "styleSummary": "Calm, editorial fintech: a cream page and a warm near-black page alternating on hard cuts, one line of plain sentence-case grotesk at a time, a single soft yellow accent, and literal small graphics (symbol discs, flag chips, a countdown, an area chart) that turn each phrase into a picture; real interface in between."
+}

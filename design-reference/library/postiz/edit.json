@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "postiz",
+  "rhythm": {
+    "value": "Ten judged shots in 40.03 s (detector 11 shots and 10 cuts; judged 10 shots and 9 cuts), 13.5 cuts a minute, median shot 3.70 s. Every judged shot from 3.7 s to 36.93 s lasts 55, 111 or 166 frames (1.83, 3.70 or 5.53 s): 4, 8 or 12 beats at the measured 129.3 BPM (beat 0.464 s; 1.834 s = 3.95 beats, 3.70 s = 7.97, 5.533 s = 11.92). The film alternates three kinds of shot: a light title or headline card with a chat bubble (8 or 12 beats), a dark one-bar loader interstitial (4 beats, twice), and a light interface result (12 beats). Inside shots the accents also come in whole bars: the three verb swaps of the closing line are 55 frames apart (F943, F998, F1053) and the end card arrives one bar after the last swap (F1108). I cannot hear the soundtrack; every sound statement here comes from audio.json, sync.json and a loudness curve computed from the media. sync.json, taken on detector cuts against the tracked beats, gives cutsOnBeatRatio 0.10 against a chance of 0.328 (lift 0.30), cutsOnOnsetRatio 0.80 against 0.679 (lift 1.18), cutsOnDownbeatFrameRatio 0 against 0.035, signedMedianCutToBeatSec +0.173. Those beat figures are an artefact: the tracker's beats line up with 50 ms loudness swells from 0 to 4.25 s (swell minus beat +0.01 to +0.04 s) but slip by about 0.2 s between 5.6 and 8.1 s (beat intervals 0.49-0.51 s instead of 0.464) and stay 0.20-0.23 s late for the rest of the film, while the swells keep a steady 0.46 s pulse to 36.55 s. Against the swells, 8 of the 9 judged cuts land 0.07-0.10 s (2-3 frames) before a swell peak, and from 9.233 s on every cut sits 0.03-0.07 s (1-2 frames) before a detected onset. Onsets run at 4.65 a second, denser than one per 0.3 s, so the onset ratio on its own carries no evidence; downbeat confidence is 0.058, so no claim is made about bars or downbeats, only about counts of 4 beats.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "shots.json s001-s011 start and end times",
+      "audio.json tempo bpm 129.32, confidence 0.737, beatRegularity 0.973, downbeatConfidence 0.058, 186 onsets",
+      "sync.json metrics cutsOnBeatRatio 0.1, cutsOnBeatChance 0.328, cutsOnOnsetRatio 0.8, cutsOnOnsetChance 0.679, signedMedianCutToBeatSec 0.173",
+      "loudness swells (50 ms RMS, local maximum over ±0.3 s, above 1.35x median) computed from media/source.mp4: 75 peaks, interval 0.46 s from 8.39 to 36.55 s",
+      "corrected cuts 3.700, 9.233, 11.067, 16.600, 20.300, 22.167, 27.700, 31.400 against swell peaks 3.77, 9.32, 11.16, 16.70, 20.39, 22.25, 27.77, 31.46 (cut minus peak -0.07 to -0.10); 36.933 is the exception (nearest swell 36.55)",
+      "visuals/edit-map.png",
+      "visuals/a1/s10-verb-swap1.jpg F998",
+      "visuals/a1/s10-verb-swap2.jpg F1053",
+      "visuals/a1/s10-logo.jpg F1108"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook, 0-3.70 s (111 frames, 8 beats): the problem with no words. On a near-black ground (#0A0A0C/#1A191E) six composer cards in a 3x2 grid appear in 9 frames (F1-F9), a cursor visits them in turn, lines of draft text fill each card and a coloured warning chip (red or amber) lands under each, roughly one every half second; by F105 every card carries a red or amber outline. A slow push-in (about 14% over 3.4 s) tightens the mess. The viewer sees six separate jobs failing before any product or promise is named.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s01-open.jpg F0-F23",
+          "visuals/a1/s01-error-chips.jpg F39-F62",
+          "visuals/a1/s01-cut-dark-to-title.jpg F105-F110",
+          "motion.json s001 camera push_in z 0.133 over span90 3.38 s",
+          "speech-text.json warning chips with onsets 0.517-3.017 s"
+        ]
+      },
+      "technique": {
+        "value": "warning-chip-grid hook; screen-design replica of a composer, cursor path, staggered chips",
+        "basis": "inferred",
+        "confidence": 0.6,
+        "evidence": ["visuals/a1/s01-error-chips.jpg F47-F62"]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Positioning and first ask, 3.70-9.23 s (166 frames, 12 beats). Hard cut to cream #F8F4EC: one blank frame (F111), then a centred serif line builds in two word groups in their final positions (F112-F114, F118-F121), so the category is named before any interface. At F134 a dark chat bubble lands top right and a request types into it; at F242 a reply bubble rises bottom left and streams its answer a word every two frames (F246-F256). Light ground and big type give the eye a rest after the dark hook.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/s01-cut-dark-to-title.jpg F111-F128",
+          "visuals/a1/s02-title-words.jpg F117-F140",
+          "visuals/a1/s02-reply-in.jpg F237-F260"
+        ]
+      },
+      "technique": {
+        "value": "blank-frame-then-fade title; chat bubbles over a title card",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/a1/s02-title-words.jpg F134-F140"]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Thinking interstitial, 9.23-11.07 s (55 frames, 4 beats). Dark #1A191E ground: a dot (F277), an orange disc (#D97656, F278), a white stroke loops through it and a purple disc (#602BD3) grows beside it (F279-F282), then a two-word status label builds under the mark (F281, F285); a small attribution chip sits bottom left. It is the beat of anticipation between the ask and the result, and it inverts the ground so the following result reads as new.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": ["visuals/a1/s03-cut-loader.jpg F273-F296", "visuals/boundaries-01.jpg S003 F276-F278"]
+      },
+      "technique": {
+        "value": "dark-loader-interstitial",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/a1/s03-cut-loader.jpg F278-F285"]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Result one, 11.07-16.60 s (166 frames, 12 beats): one source post becomes six channel versions. On a cream ground with a faint square grid, one post card fades and scales in (F333-F336), an orange named-cursor flag reaches its corner (F339) and a two-line serif caption builds below (F340, F345). At F384-F386 the caption fades, at F388 the source card dissolves and six cards spring out from it one after another (F389, F397, F401, F403 ...), each a different shape for its channel; checkmark chips appear on them and a dark toast rises at the bottom (F457-F462).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s04-cut-grid.jpg F332-F350",
+          "visuals/a1/s04-fanout.jpg F381-F404",
+          "visuals/a1/s04-toast.jpg F447-F470"
+        ]
+      },
+      "technique": {
+        "value": "one-to-many-card-fanout, then toast confirmation",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/a1/s04-fanout.jpg F388-F404"]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Benefit line and second ask, 16.60-20.30 s (111 frames, 8 beats): same title-card grammar as s002 (blank cream frame F498, line fading in F499), a two-line centred serif benefit, then a second request types into a bubble top right. Repeating the layout makes the second ask readable at a glance.",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": ["visuals/boundaries-01.jpg S005 F497-F499", "visuals/contact-sheet-01.jpg 5M 00:18.43, 5L 00:20.26"]
+      },
+      "technique": {
+        "value": "blank-frame-then-fade title; chat bubble",
+        "basis": "observed",
+        "confidence": 0.75,
+        "evidence": ["visuals/boundaries-01.jpg S005 F498-F499"]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Second thinking interstitial, 20.30-22.17 s (56 frames, 4 beats): identical layout to s003 with a different status label. The repeat turns the loader into a recognisable chapter mark.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/boundaries-01.jpg S006 F608-F610", "visuals/a1/s07-calendar-fill.jpg F663-F664"]
+      },
+      "technique": {
+        "value": "dark-loader-interstitial (repeat)",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": ["visuals/contact-sheet-01.jpg 6M 00:21.23"]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Result two, 22.17-27.70 s (166 frames, 12 beats; detector shots s007 and s008 merged): a week calendar fills. Empty grid (F665), board fades in (F666-F667), the orange cursor flag places a purple hero event (F669-F671) and then smaller channel-coloured events every 4-6 frames while a counter top right climbs; the view drifts slowly right and in (linear), then at F748-F763 pulls back to show the whole week, filled, inside a rounded panel.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s07-calendar-fill.jpg F665-F686",
+          "visuals/a1/s08-zoomout.jpg F747-F770",
+          "motion.json s007 camera move_right x 0.165, push_in z 0.040, ease none, span90 2.39 s"
+        ]
+      },
+      "technique": {
+        "value": "populate-then-pull-out-reveal",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/a1/s08-zoomout.jpg F748-F763"]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Third ask, answered at once, 27.70-31.40 s (111 frames, 8 beats). Darker ground #0A0A0C: one user bubble rises into the centre (F832-F838), a reply bubble enters below it and pushes it up (F887-F893); three small status chips then appear in the reply. No loader this time: the speed of the answer is the point.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s09-cut-chat.jpg F830-F851",
+          "visuals/a1/s09-reply.jpg F884-F902",
+          "visuals/a1/s10-cut-title.jpg F939-F941"
+        ]
+      },
+      "technique": {
+        "value": "chat thread push-up",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": ["visuals/a1/s09-reply.jpg F887-F893"]
+      }
+    },
+    {
+      "shotId": "s010.1",
+      "purpose": {
+        "value": "Summary claim, 31.40-36.93 s (166 frames, 12 beats): one centred serif line on cream whose first word (a verb) is replaced twice, a bar apart. Each swap is shown as an edit: the verb is selected (pale blue #CADDF1), an orange named-cursor flag sits at the caret, the selection is deleted and the new verb types in at a letter a frame while the line recentres. Three verbs equal the three asks the film has shown.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/s10-cut-title.jpg F942-F962",
+          "visuals/a1/s10-verb-swap1.jpg F984-F1007",
+          "visuals/a1/s10-verb-swap2.jpg F1044-F1067"
+        ]
+      },
+      "technique": {
+        "value": "select-retype-word-swap",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": ["visuals/a1/s10-verb-swap1.jpg F997-F1004"]
+      }
+    },
+    {
+      "shotId": "s010.2",
+      "purpose": {
+        "value": "End card, 36.93-40.03 s (93 frames): the line clears to an empty cream frame (F1108), the mark and wordmark pop in at the centre with a small overshoot (F1109-F1121) and a one-line tagline with the address sits below; from F1185 the whole frame fades to black, fully black by F1198.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": ["visuals/a1/s10-logo.jpg F1107-F1124", "visuals/a1/s11-end.jpg F1179-F1200", "motion.json s010 camera main move at 37.0 s, back.out, overshoot 0.29"]
+      },
+      "technique": {
+        "value": "end-card logo pop then fade to black",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": ["visuals/a1/s11-end.jpg F1184-F1198"]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "name": "one-to-many-card-fanout",
+        "startSec": 12.8,
+        "endSec": 13.5,
+        "description": "A single source card becomes several channel-specific cards. F384-F386 (12.80-12.87): the caption under the source card fades out in 3 frames. F388 (12.93): the source card starts to dissolve in place. F389 (12.97): the first new card springs out of the source card's position towards the top left, growing from about a third of its final size; F397, F401 and F403 add the second, third and fourth cards (to the right, far right and below), each about 4 frames after the last, all growing out of the same origin, while an orange named-cursor flag travels between them. By about 13.5 s six cards sit in a 3x2 grid filling about 85% of the frame width. motion.json fits this as a 0.26 s back.out burst at 13.06 s with overshoot 0.27 (element motion read as camera).",
+        "why": "Every new card visibly comes out of the one before it, so the eye never has to search: it follows the burst from the origin outwards, and the transformation (one becomes many) is shown, not stated. Staggering at 4 frames keeps each card readable as an individual arrival while the whole happens inside one beat and a half."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s04-fanout.jpg F381-F404",
+        "motion.json s004 camera startSec 13.063, durationSec 0.26, ease back.out, overshoot 0.268"
+      ]
+    },
+    {
+      "value": {
+        "name": "select-retype-word-swap",
+        "startSec": 32.93,
+        "endSec": 35.4,
+        "description": "A held centred serif line (about 74-85% of frame width, line box 11-12% of frame height) changes its first word as if edited live. For about 0.5 s before each swap the verb sits in a pale blue selection #CADDF1 with an orange flag labelled with the assistant's name above the caret. On the swap frame (F998 at 33.27 s; F1053 at 35.10 s) the selection is deleted and the first letters of the new verb are already in; the rest types at one letter a frame (F998-F1004 for an 8-letter word, F1053-F1059 for 7), and the whole line recentres on every frame as the word grows (OCR box x 0.133 to 0.079). Swaps fall 55 frames apart (F943 line in, F998, F1053), then F1108 clears for the end card.",
+        "why": "The eye stays on one spot (the start of the line) while only the meaning changes; the selection and named cursor make it read as the assistant doing the edit, which is the product's claim acted out in type. Equal bar-long holds turn three verbs into a list without bullets."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s10-verb-swap1.jpg F984-F1007",
+        "visuals/a1/s10-verb-swap2.jpg F1044-F1067",
+        "speech-text.json boxes at 31.517 s (x 0.133, w 0.741) and 33.517 s (x 0.079, w 0.847)",
+        "motion.json s010 otherMoves at 33.233 s and 35.085 s (line recentring read as camera move_left)"
+      ]
+    },
+    {
+      "value": {
+        "name": "populate-then-pull-out-reveal",
+        "startSec": 22.17,
+        "endSec": 25.43,
+        "description": "A planning board fills while the view is close, then the camera pulls back to show the full result. F665 (22.17): empty cream grid. F666-F667: the board header and columns fade in. From F669 a cursor flag drops events one at a time, every 4-6 frames, while the view drifts right and in at constant speed (motion.json: x 0.165 frame widths, zoom about 4%, linear, 2.39 s). F748-F763 (24.93-25.43): a pull-back of about 1.2x to 1.0x (judged from columns and margins) that is fastest at F750-F752 and decays over the next 10 frames, revealing the whole week inside a rounded panel with a margin of cream on all sides. The detector read this as a whip at 25.1 s.",
+        "why": "While close, the viewer watches individual events land; the pull-back converts many small arrivals into one picture of a full week, the payoff of the ask. The decelerating end lets the eye settle on the whole board instead of on any one card."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/s07-calendar-fill.jpg F665-F686",
+        "visuals/a1/s08-zoomout.jpg F747-F770 (per-frame diff 1.72, 1.96, 8.65, 10.73, 8.91, 7.07, 5.50, 4.13, 3.27, 2.41, 1.79, 1.34, 0.95, 0.63, 0.49)",
+        "motion.json s007 camera move_right x 0.1646, z 0.0396, ease none, span90 2.386 s"
+      ]
+    },
+    {
+      "value": {
+        "name": "dark-loader-interstitial",
+        "startSec": 9.23,
+        "endSec": 11.07,
+        "description": "Between each ask and its result, a hard cut to a dark ground (#1A191E) holds exactly 4 beats (55-56 frames). A pinpoint dot shows on the first frame (F277); on the next an orange disc stands at frame centre-left; within 4 frames a white stroke loops through it and a second, purple disc grows to its right (F279-F282), forming a joined two-part mark about 18% of frame width at 40% height; a status label (sans, about 7% line box) builds under it word by word (F281, F285); the stroke keeps looping until the cut. A small attribution chip sits bottom left (x 0.05, y 0.88). Used twice (9.23 and 20.30 s) with only the label changed.",
+        "why": "It turns waiting into a beat of anticipation and a chapter break, and the ground inversion (light ask, dark wait, light result) guarantees that the result reads as a new picture even though both are cream interface scenes."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s03-cut-loader.jpg F273-F296",
+        "visuals/a1/s04-cut-grid.jpg F327-F331",
+        "visuals/boundaries-01.jpg S006 F608-F610",
+        "speech-text.json status label box y 0.672, h 0.078 at 9.517 s"
+      ]
+    },
+    {
+      "value": {
+        "name": "cut-ahead-of-kick-on-4-beat-grid",
+        "startSec": 3.7,
+        "endSec": 36.93,
+        "description": "Every judged cut from 3.70 s to 36.93 s falls after a whole number of 4-beat groups (55, 111 or 166 frames at 129.3 BPM), and 8 of the 9 sit 2-3 frames before a loudness swell peak (1-2 frames before the detected onset from 9.23 s on). Accents inside shots keep the same grid (verb swaps 55 frames apart).",
+        "why": "Cutting a frame or two ahead of the hit lets the new picture be on screen when the sound lands, so picture and music feel locked; fixed 4/8/12-beat shot lengths make the film feel metred without any visible beat effects."
+      },
+      "basis": "measured",
+      "confidence": 0.75,
+      "evidence": [
+        "shots.json cut times",
+        "audio.json bpm 129.32, beatRegularity 0.973",
+        "loudness swells from media/source.mp4 (cut minus swell peak -0.07 to -0.10 s for 8 of 9 cuts)",
+        "audio.json onsetsSec: onset minus cut +0.031 to +0.072 s for the 8 cuts from 9.233 s"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": ["s007", "s008"],
+        "timeSec": 25.1,
+        "note": "Not a whip and not a cut: the same calendar continues across 25.1 s while the camera pulls back from about 1.2x to 1.0x over F748-F763. Every event card on the board is present before and after; the per-frame difference peaks at F750-F752 because the whole board moves at once. Detector s007 and s008 are one shot, 22.167-27.700 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s08-zoomout.jpg F747-F770", "visuals/boundaries-01.jpg S008 F752-F758"]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": ["s010", "s011"],
+        "timeSec": 39.933,
+        "note": "s011 (39.933-40.033 s, three frames) is the black tail of the end-card fade, not a new shot: the end card darkens from F1185 and reaches black at F1198."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s11-end.jpg F1184-F1200", "visuals/boundaries-01.jpg S011 F1197-F1199"]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": ["s010"],
+        "timeSec": 36.933,
+        "transition": "cut",
+        "note": "Missed scene change on a flat ground: the summary line holds to F1107 (36.90 s), F1108 (36.93 s) is an empty cream frame and the end card's mark pops in from F1109. Same ground colour on both sides, so the detector saw no cut. Parts: s010.1 31.400-36.933 (summary line), s010.2 36.933-40.033 (end card)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s10-logo.jpg F1101-F1124"]
+    }
+  ]
+}

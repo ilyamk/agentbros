@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "motionfly",
+  "format": { "width": 1280, "height": 720, "fps": 30 },
+  "durationSec": 30.167,
+  "slots": [
+    {
+      "id": "b01-promise-line",
+      "role": "Hook: the whole promise as a single short line, assembled on screen",
+      "startSec": 0,
+      "durationSec": 2.0,
+      "visualRecipe": "Near-white ground (#FEFEFE). A single centred line in a semibold neo-grotesque, line box about 9% of frame height, about 78% of width when complete. Four small ink dots about 4% outside the corners of the line's box. End state: the line complete, its two phrases pushed about 5% apart.",
+      "motionRecipe": "A word appears whole each 10 frames; each arrives pale, turns a saturated warm hue, then a contrasting cool hue, and settles to ink about 5 frames after appearing; the line recentres on each arrival and the corner dots spread to the new corners over 5-8 frames. Frames 54-59: open the gap between the phrases. Exit: hard cut on frame 60.",
+      "soundRecipe": "Unknown in the reference (cannot hear). Suggested: a soft tick per word arrival, under a quiet bed; nothing measured ties the arrivals to the beat.",
+      "copySlot": { "purpose": "The offer stated as cause and result, in two short phrases", "maxWords": 6 },
+      "techniqueIds": ["t01-word-assembly-tinted-arrival"]
+    },
+    {
+      "id": "b02-context-plate",
+      "role": "Context: the world before the offer, entered through a collapsing dark card",
+      "startSec": 2.0,
+      "durationSec": 1.133,
+      "visualRecipe": "Frame-filling photographic landscape plate in natural late light. A soft-edged black rounded card about 92% x 85% of the frame on the first frame. End state: a row of small rounded tool icons floating at about 43% height with a thin white underline under the first.",
+      "motionRecipe": "Card shrinks over 12 frames, power3.out, into the underline's rect; icons fade in around it from frame 10 of the shot. Slow drift of the row to the left begins. Exit: hard cut to a closer framing.",
+      "soundRecipe": "Unknown (cannot hear). A low swell under the card collapse would suit; inferred, not measured.",
+      "techniqueIds": ["t02-card-collapses-to-underline"]
+    },
+    {
+      "id": "b03-tool-row",
+      "role": "The familiar tools pass by, the selection lands on the offer's mark",
+      "startSec": 3.133,
+      "durationSec": 2.567,
+      "visualRecipe": "Same plate about 1.9x closer, strongly defocused; the icon row sharp, icons about 5% of frame width, 13% apart, neutral tool glyphs (never real third-party icons). The last icon is the offer's mark in solid ink. End state: other icons blurred, the mark sharp at the right third.",
+      "motionRecipe": "Constant-speed slide left (linear) for about 2.4 s, the underline passing along; on arrival the other icons blur over 5 frames. Exit: a soft-edged dark disc grows from the lower-left corner over 10 frames, sine.inOut, sparing the mark, which stays on top.",
+      "soundRecipe": "Unknown (cannot hear). Suggested: a single rising whoosh under the disc; inferred.",
+      "techniqueIds": ["t03-punch-in-defocus-cut", "t04-dock-selection-to-mark", "t05-iris-close-spares-mark"]
+    },
+    {
+      "id": "b04-dark-name",
+      "role": "Name, first and quiet: the only dark ground",
+      "startSec": 5.7,
+      "durationSec": 1.067,
+      "visualRecipe": "Ground #0D0D15. The mark, white-outlined, centred at about 45% height; under it the name in tracked capitals about 2.5% of frame height.",
+      "motionRecipe": "Name types a letter each 2-3 frames; the mark pulses about 5% larger over the last 5 frames. Exit: hard cut to white.",
+      "soundRecipe": "Unknown (cannot hear). Suggested: drop the bed's high end while dark; inferred.",
+      "copySlot": { "purpose": "The offer's name", "maxWords": 1 },
+      "techniqueIds": ["t06-small-caps-name-typed"]
+    },
+    {
+      "id": "b05-announce",
+      "role": "Announcement word",
+      "startSec": 6.767,
+      "durationSec": 1.066,
+      "visualRecipe": "White ground. A single word, regular weight, line box about 12% of frame height, settling to a mid purple (#884295-like) at centre.",
+      "motionRecipe": "Enters from below on an upward-curving baseline and straightens while rising to centre in 9 frames, power2.out; holds with a slow shrink and a 2-frame snap smaller just before the exit. Exit: hard cut.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "copySlot": { "purpose": "A word that announces something new", "maxWords": 1 },
+      "techniqueIds": ["t07-word-on-arc-straightens"]
+    },
+    {
+      "id": "b06-lockup",
+      "role": "Mark and wordmark lockup, then the mark detaches",
+      "startSec": 7.833,
+      "durationSec": 1.6,
+      "visualRecipe": "White ground. Mark at about 11% of frame width on entry, about 6% in the lockup; wordmark in medium sans beside it; lockup about 33% of width, centred. End state: the mark alone at top centre (0.5, 0.2), about 4% of width.",
+      "motionRecipe": "Mark cuts in large, shrinks in 3 frames while the wordmark slides out from behind it in 6 frames, power3.out; slow push-in. Then the mark tumbles a quarter turn and rises (11 frames) while the wordmark exits right, accelerating. Hold 16 frames.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "copySlot": { "purpose": "The offer's name as wordmark", "maxWords": 1 },
+      "techniqueIds": ["t08-mark-then-wordmark-lockup", "t09-mark-carry-iris-open"]
+    },
+    {
+      "id": "b07-interface-open",
+      "role": "Proof begins: the real interface opens around the mark",
+      "startSec": 9.433,
+      "durationSec": 2.1,
+      "visualRecipe": "A circle about 45% of frame width around the mark opens to the real interface's input screen on a pastel violet-pink gradient ground with a faint square grid; the mark becomes the screen's header at the same position. Input card about 55% of frame width, centred at 55% height.",
+      "motionRecipe": "Circle opens past the frame in 6 frames, expo.out (shapeWipe from the mark's position). The request is keyed into the field at the interface's real speed. Exit: a single frame of blur, then a hard punch-in.",
+      "soundRecipe": "Unknown (cannot hear). Suggested: soft keystrokes; inferred.",
+      "copySlot": { "purpose": "A realistic request a customer would enter", "maxWords": 14 },
+      "techniqueIds": ["t09-mark-carry-iris-open", "t10-request-typed-punch-in-send"]
+    },
+    {
+      "id": "b08-input-closeup",
+      "role": "Make the request legible and send it",
+      "startSec": 11.533,
+      "durationSec": 1.7,
+      "visualRecipe": "About 2.6x on the input field, cropped off the left edge (field from x 0 to 0.64) so its words are about 7% of frame height; header words cropped at the top-left. A cursor arrow about 5% of frame height.",
+      "motionRecipe": "Sharpen over 2 frames after the cut; typing finishes; cursor enters bottom right and travels to the send button; on the press the button flips accent colour; slow pull-out for 6 frames. Exit: hard cut.",
+      "soundRecipe": "Unknown (cannot hear). Suggested: a click on the press frame; inferred.",
+      "techniqueIds": ["t10-request-typed-punch-in-send"]
+    },
+    {
+      "id": "b09-progress",
+      "role": "The work happening: a checklist of what the offer does",
+      "startSec": 13.233,
+      "durationSec": 3.6,
+      "visualRecipe": "White ground, the real interface's thread view: the request as a right-aligned grey bubble at the top right, a status line with spinner, then up to six rows left-aligned at x 0.06-0.08, each about 4.5% of frame height with a spinner or tick.",
+      "motionRecipe": "Bubble slides up into place; status appears after 5 frames; rows append at gaps of 6-17 frames, each tinted then settling, spinner turning to a tick; the list scrolls so the newest row sits in the lower middle; the last two stay pending. Exit: hard cut.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "copySlot": { "purpose": "Each row names a step the offer performs, as a gerund phrase", "maxWords": 30 },
+      "techniqueIds": ["t11-checklist-rows-tick"]
+    },
+    {
+      "id": "b10-device",
+      "role": "The result on a real device",
+      "startSec": 16.833,
+      "durationSec": 2.0,
+      "visualRecipe": "White ground; a 3D handset with a black bezel, tilted about 20 degrees clockwise, filling the frame height, cropped at the bottom, its screen showing the real result.",
+      "motionRecipe": "Pull out about 29% with a further 11 degrees clockwise roll over 1.14 s, circ.out, then drift. Exit: hard cut.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "techniqueIds": ["t12-device-drift"]
+    },
+    {
+      "id": "b11-range-ring",
+      "role": "Range: many outcomes orbit a single claim",
+      "startSec": 18.833,
+      "durationSec": 2.267,
+      "visualRecipe": "White ground; about 30 rounded photo cards (7-9% of width, soft shadows) on a tilted ellipse about 70% x 85% of the frame around a centred short line (line box about 5.6% of height).",
+      "motionRecipe": "Ring contracts into place from beyond the frame and orbits at constant speed; the line is keyed word by word. Exit: ring expands off all edges in 12 frames, power2.in, leaving the line alone for a frame, then a hard cut.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "copySlot": { "purpose": "Breadth of what the offer covers", "maxWords": 4 },
+      "techniqueIds": ["t13-orbit-ring-around-line", "t14-ring-flies-past-frame"]
+    },
+    {
+      "id": "b12-claim",
+      "role": "Value claim",
+      "startSec": 21.1,
+      "durationSec": 3.433,
+      "visualRecipe": "White ground; headline in medium sans, ink, about 84% of frame width at 37-50% height; a grey (#666666) sub-line under it about 64% wide; four small coloured pills floating off the corners.",
+      "motionRecipe": "Headline cuts in whole; the sub-line is keyed with a thin caret over about 1.9 s; pills drift a few pixels. Exit: the block rolls clockwise and scales up over 11 frames, power2.in, into a hard cut.",
+      "soundRecipe": "Unknown (cannot hear).",
+      "copySlot": { "purpose": "Headline: the benefit; sub-line: the contrast with the old way", "maxWords": 10 },
+      "techniqueIds": ["t15-headline-chips-typed-subline", "t16-roll-exit-to-spinning-mark"]
+    },
+    {
+      "id": "b13-end",
+      "role": "Brand and call to action, held",
+      "startSec": 24.533,
+      "durationSec": 5.634,
+      "visualRecipe": "White ground. Mark enters at about 27% of frame height, rotated about 20 degrees, settling square at about 7% of width; wordmark beside it; lockup about 31% of width, centred. Below: dark #333333 pill button 19% of width at 64% height and a small grey address at 73%.",
+      "motionRecipe": "Mark unrotates and shrinks, expo.out, about 1.5 s. Wordmark types a letter each 3 frames with tint settle, lockup recentring. Button and address fade and rise over 8 frames. Still hold for the last 2.2 s; no fade on the final frame.",
+      "soundRecipe": "Silence for the last 0.83 s (measured in the reference). What precedes it is unknown (cannot hear).",
+      "copySlot": { "purpose": "Action label on the button and the address", "maxWords": 5 },
+      "techniqueIds": ["t16-roll-exit-to-spinning-mark", "t17-end-card-typed-wordmark"]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: the reference's tempo is low confidence and its cuts land on beats, onsets and loudness swells at about chance. The clock is the animation: words each 10 frames, letters each 2-3 frames, rows each 6-17 frames. 13 shots, 12 boundaries (10 hard cuts, 2 circle wipes), median shot 2.0 s; fastest in the name section (three shots of 1.07-1.6 s), longest at the end (5.6 s)."
+  },
+  "style": "Clean white release film: a single neo-grotesque sans in ink on near-white, colour used only as an arrival tint on new words and a few accents; a single dark shot, a single photographic plate, a single pastel interface ground. Something is always being written or carried, and the mark persists across boundaries.",
+  "transferRules": {
+    "keep": [
+      "Words, letters and rows arrive whole and tinted, then settle to ink in about 5 frames",
+      "The opening states the promise in a single assembled line before any name or mark",
+      "A single persistent element (the mark) carried across most boundaries: spared by the iris, landing in the lockup, becoming the interface header, returning at the end",
+      "Each section owns its ground: white, photographic, dark, white, pastel interface, white",
+      "Real interface proof in the middle: key in the request, punch in to legibility, press, wait through a checklist",
+      "Transitions continue movement across the cut (collapse into an element, iris around the mark, ring expanding out, roll into a spinning mark)",
+      "Timing from the animation clock, not a beat grid",
+      "Still end card with a silent final 0.8 s; no fade on the final frame"
+    ],
+    "mustChange": [
+      "All branding: name, mark, wordmark, address, colours tied to the brand",
+      "All score and audio: a new bed and new cues",
+      "All graphics: the landscape plate, tool icons (never real third-party icons), thumbnails, device model, interface captures of the new offer",
+      "All copy: each on-screen line, request, checklist row, chip label and button label",
+      "The specific example request and the result shown on the device"
+    ]
+  }
+}

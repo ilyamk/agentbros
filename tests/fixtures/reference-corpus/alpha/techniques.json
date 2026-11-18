@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "alpha",
+  "techniques": [
+    {
+      "id": "t1",
+      "name": "Hero word slam",
+      "spans": [{ "startSec": 0, "endSec": 1.5 }],
+      "description": "One word lands centred on a hit.",
+      "route": "remotion",
+      "routeReason": "Type and a scale ease.",
+      "difficulty": "low",
+      "requiredPrimitives": ["HeroWord", "missing:foo-bar, which does a thing"],
+      "function": "hook",
+      "timing": { "durationSec": 0.4, "startOffsetFromCutSec": 0, "onBeat": true, "basis": "measured", "evidence": ["sync.json"] },
+      "ease": { "name": "power2.out", "cubicBezier": [0.25, 0.46, 0.45, 0.94], "source": "motion.json" },
+      "sound": { "kind": "sfx", "layers": ["impact"], "basis": "inferred" },
+      "typography": { "role": "headline", "entry": "scale-down slam", "alignment": "centre", "basis": "observed" },
+      "layers": 2
+    },
+    {
+      "id": "t2",
+      "name": "Whip to UI",
+      "spans": [{ "startSec": 4.8, "endSec": 5.2 }],
+      "description": "A whip pan into the product screen.",
+      "route": "remotion",
+      "routeReason": "Motion blur and a translate.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["MotionBlur"],
+      "function": "transition",
+      "fromShot": 0,
+      "toShot": 1
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "url": "http://127.0.0.1:4317/",
+  "pending": 1,
+  "appliedSince": [
+    {
+      "v": 1,
+      "id": "dec-script-001",
+      "project": "promo-acme",
+      "kind": "gate",
+      "step": "script",
+      "title": "Approve script",
+      "bindTo": [
+        {
+          "path": "pipeline/script.json",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ],
+      "answer": "B, but a shorter hook.",
+      "argv": [
+        "pnpm",
+        "film:approve",
+        "--project",
+        "promo-acme",
+        "--step",
+        "script",
+        "--answer",
+        "B, but a shorter hook.",
+        "--expect",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "actor": "user",
+      "channel": "console",
+      "status": "applied",
+      "createdAt": "2026-11-17T09:10:00Z",
+      "decidedAt": "2026-11-17T09:12:00Z",
+      "result": {
+        "ok": true,
+        "outputs": [],
+        "metadata": {
+          "step": "script",
+          "approved": true
+        },
+        "elapsedMs": 640
+      }
+    }
+  ]
+}

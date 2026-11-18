@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "kind": "tick",
+  "entries": [
+    {
+      "file": "kenney-tick-002.mp3",
+      "source": "kenney",
+      "sourceId": "interface/tick_002",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "title": "tick_002.ogg",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.02 s, mono; Kenney interface pack",
+      "sha256": "e4ba0ee5ee4a0d2c61c7155e0c10a26f00ced7ee026228e9da1c73b318384b57",
+      "bytes": 1322,
+      "recipe": {
+        "type": "kenney",
+        "pack": "interface",
+        "path": "kenney/interface/tick_002.ogg",
+        "sha256": "869442f54214be902ec7437f79e400dc91c1bfd90d18a6dd2d5b7e41ffbf457b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-201766-tick.mp3",
+      "source": "freesound",
+      "sourceId": "201766",
+      "sourceUrl": "https://freesound.org/s/201766/",
+      "title": "tick __",
+      "author": "waveplaySFX",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.02 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "81e6389f8ce7abdef2490e54062c7198cfe5d5eedb9c526448d8570218633102",
+      "bytes": 1374,
+      "recipe": {
+        "type": "freesound",
+        "id": 201766,
+        "url": "https://cdn.freesound.org/previews/201/201766_1676145-hq.mp3",
+        "sha256": "271f562dbe9ea1ea7479551d2d24391ecbab56588f6723bc6eef58207b091f32"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "kenney-tick-001.mp3",
+      "source": "kenney",
+      "sourceId": "interface/tick_001",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "title": "tick_001.ogg",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Kenney interface pack",
+      "sha256": "be47f8bc4479aa5fd29beb98d848f38d2f5bd19a5f853542671d4f7a9b43c724",
+      "bytes": 1373,
+      "recipe": {
+        "type": "kenney",
+        "pack": "interface",
+        "path": "kenney/interface/tick_001.ogg",
+        "sha256": "9d057b918024c787bbe6c00beed13a7ef72a3fa0c259add3cef36582792f4230"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-tick.mp3",
+      "source": "synth",
+      "sourceId": "tick",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "tick.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "0.05 s, mono; pnpm sfx:synth seed 1",
+      "sha256": "4fec1aa1a6d7d19affd672a9ac00f019e6cb80c91420a9445e4bf75b1295de4c",
+      "bytes": 1269,
+      "recipe": {
+        "type": "synth",
+        "kind": "tick",
+        "seed": 1,
+        "rootHz": 55,
+        "sha256": "fb2294d9ce63bbfb31c070d889e8eed7b27373edc7ccca4c1039c4f73282e8ae"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-243749-metronome-1khz-weak-pulse.mp3",
+      "source": "freesound",
+      "sourceId": "243749",
+      "sourceUrl": "https://freesound.org/s/243749/",
+      "title": "Metronome 1kHz (weak pulse)",
+      "author": "unfa",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "ed2ae218c37aeac2d9585e20906b226c260debe35dd48b6ddf4d5bdce149cb4e",
+      "bytes": 1269,
+      "recipe": {
+        "type": "freesound",
+        "id": 243749,
+        "url": "https://cdn.freesound.org/previews/243/243749_1038806-hq.mp3",
+        "sha256": "399b4629fe02c90a0153342834afc481ad20ac8a4eff5716a6251c05c355a039"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-243748-metronome-2khz-strong-pulse.mp3",
+      "source": "freesound",
+      "sourceId": "243748",
+      "sourceUrl": "https://freesound.org/s/243748/",
+      "title": "Metronome 2kHz (strong pulse)",
+      "author": "unfa",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.05 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "ba31be1e96f6d40ae81fc3aa348fa0e959e943bdb842da7bc3ec551515dbf371",
+      "bytes": 1269,
+      "recipe": {
+        "type": "freesound",
+        "id": 243748,
+        "url": "https://cdn.freesound.org/previews/243/243748_1038806-hq.mp3",
+        "sha256": "4e8edbb7ae7b35846003c71ac3ead20f00e64c01f4e6ca1bf52cab601fc6b13b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "kenney-tick-004.mp3",
+      "source": "kenney",
+      "sourceId": "interface/tick_004",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "title": "tick_004.ogg",
+      "author": "Kenney",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.06 s, mono; Kenney interface pack",
+      "sha256": "9af21dbfd0deef7a833900b4ccd3755886ae22c287b783a5267f5254681cfb2a",
+      "bytes": 2314,
+      "recipe": {
+        "type": "kenney",
+        "pack": "interface",
+        "path": "kenney/interface/tick_004.ogg",
+        "sha256": "0253d5f7d8d2afbbc370eac2a4539bb844239f0c98343e516d376b137c06d27c"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-384187-click-tick.mp3",
+      "source": "freesound",
+      "sourceId": "384187",
+      "sourceUrl": "https://freesound.org/s/384187/",
+      "title": "Click Tick.wav",
+      "author": "malle99",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.11 s, mono; Freesound HQ preview; found by \"ui tick\"",
+      "sha256": "70bd4642ea077af3ddf6bb71ef74366711b3444cedc95639886a517d5b1252cb",
+      "bytes": 2574,
+      "recipe": {
+        "type": "freesound",
+        "id": 384187,
+        "url": "https://cdn.freesound.org/previews/384/384187_6712901-hq.mp3",
+        "sha256": "ac0696b50f19f82bc693dc7c3b8987878fd201c188cef90d340c318ddd1387eb"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-57211-mab-clock-tick-1-20080713.mp3",
+      "source": "freesound",
+      "sourceId": "57211",
+      "sourceUrl": "https://freesound.org/s/57211/",
+      "title": "mab-clock-tick-1-20080713.wav",
+      "author": "mab",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"mab-clock-tick-1-20080713.wav\" by mab (freesound.org/s/57211), CC BY 3.0",
+      "notes": "0.14 s, mono; Freesound HQ preview; found by \"clock tick\"",
+      "sha256": "08d9f79d93dd5edb256d2b59dae76c768efbc84e740f3b1e7007f0467ee04177",
+      "bytes": 2730,
+      "recipe": {
+        "type": "freesound",
+        "id": 57211,
+        "url": "https://cdn.freesound.org/previews/57/57211_127220-hq.mp3",
+        "sha256": "236caccda516f0876925dae440425816263d94f733c26a7965d0d4267cd26e45"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-185611-metal-tick-1.mp3",
+      "source": "freesound",
+      "sourceId": "185611",
+      "sourceUrl": "https://freesound.org/s/185611/",
+      "title": "Metal tick 1",
+      "author": "kubawolanin",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.15 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "b7d9376db18821888cd6b09d95355a1aec11a8a30b41f2e14b6de4f56ae31c06",
+      "bytes": 3095,
+      "recipe": {
+        "type": "freesound",
+        "id": 185611,
+        "url": "https://cdn.freesound.org/previews/185/185611_349289-hq.mp3",
+        "sha256": "afc7027bf6de7fee61a2d70017c64e0032f491f039e7d3cbc7a3c3582a9272c4"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-160052-metal-short-tick.mp3",
+      "source": "freesound",
+      "sourceId": "160052",
+      "sourceUrl": "https://freesound.org/s/160052/",
+      "title": "Metal short tick",
+      "author": "jorickhoofd",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Metal short tick\" by jorickhoofd (freesound.org/s/160052), CC BY 4.0",
+      "notes": "0.16 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "ac1997158b442a3e3113010afba233b38bcabaadaa7d4c41b5456a48050322b9",
+      "bytes": 2887,
+      "recipe": {
+        "type": "freesound",
+        "id": 160052,
+        "url": "https://cdn.freesound.org/previews/160/160052_2888453-hq.mp3",
+        "sha256": "cbffb0890e9a51c673598a3a0356590b4c24a3a152584120e650704d32319e23"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-268108-button-tick.mp3",
+      "source": "freesound",
+      "sourceId": "268108",
+      "sourceUrl": "https://freesound.org/s/268108/",
+      "title": "Button Tick",
+      "author": "NenadSimic",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.22 s, mono; Freesound HQ preview; found by \"tick\"",
+      "sha256": "4cafcf3ffd56b08b1310fef064106afc1b0f8eb61729694b2932d3866561cec8",
+      "bytes": 2310,
+      "recipe": {
+        "type": "freesound",
+        "id": 268108,
+        "url": "https://cdn.freesound.org/previews/268/268108_2514850-hq.mp3",
+        "sha256": "3285c2a68d566a16733184eb47611dd4d73c9b92deecca5a081d2a8530e051ea"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-174721-watch-tick.mp3",
+      "source": "freesound",
+      "sourceId": "174721",
+      "sourceUrl": "https://freesound.org/s/174721/",
+      "title": "Watch tick",
+      "author": "DrMinky",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"Watch tick\" by DrMinky (freesound.org/s/174721), CC BY 4.0",
+      "notes": "0.26 s, mono; Freesound HQ preview; found by \"clock tick\"",
+      "sha256": "6cf9a47ecd2055d933756db124af1d0039859aff464e6a452a8f99ecf2f03f8f",
+      "bytes": 4529,
+      "recipe": {
+        "type": "freesound",
+        "id": 174721,
+        "url": "https://cdn.freesound.org/previews/174/174721_3034894-hq.mp3",
+        "sha256": "ab8b48d73f8caa545a0293dcbc1f6f5c16ed3f14ed11f52b694ad42d151f771b"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-534094-clock-tick-01.mp3",
+      "source": "freesound",
+      "sourceId": "534094",
+      "sourceUrl": "https://freesound.org/s/534094/",
+      "title": "clock-tick-01.flac",
+      "author": "pbimal",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "0.45 s, mono; Freesound HQ preview; found by \"clock tick\"",
+      "sha256": "3dafd9eb166bfef4c71c2d52c70c3e963f7209d46ce81a83f4ced7bcfe6620f3",
+      "bytes": 3926,
+      "recipe": {
+        "type": "freesound",
+        "id": 534094,
+        "url": "https://cdn.freesound.org/previews/534/534094_11830391-hq.mp3",
+        "sha256": "8a46a0b0568dc5218ce8e4cfbb199c292573fbd6ca85f7cd0773ecbbbe7658db"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-265577-tick-tock-clock-01.mp3",
+      "source": "freesound",
+      "sourceId": "265577",
+      "sourceUrl": "https://freesound.org/s/265577/",
+      "title": "Tick Tock Clock 01",
+      "author": "aglinder",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.0 s, mono; Freesound HQ preview; found by \"clock ticking\"",
+      "sha256": "4ad44d48126416bf3a3f6afaccb964acddec7c9fa280a93d04268910f59cc0b3",
+      "bytes": 25398,
+      "recipe": {
+        "type": "freesound",
+        "id": 265577,
+        "url": "https://cdn.freesound.org/previews/265/265577_1042839-hq.mp3",
+        "sha256": "65525ef0714cf2aceeabd63240b22495de6e45c9a98905dcb55cc66a9d4d4ab6"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-54848-ticking-clock.mp3",
+      "source": "freesound",
+      "sourceId": "54848",
+      "sourceUrl": "https://freesound.org/s/54848/",
+      "title": "Ticking Clock.wav",
+      "author": "Izkhanilov",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.0 s, mono; Freesound HQ preview; found by \"clock ticking\"",
+      "sha256": "84640d3199c1c02e63abda4d22dcad5e48f202973527156bfdcf22d3bc095314",
+      "bytes": 19423,
+      "recipe": {
+        "type": "freesound",
+        "id": 54848,
+        "url": "https://cdn.freesound.org/previews/54/54848_673516-hq.mp3",
+        "sha256": "5ca75667f2fb4f7322ae4134a83b0b6461baa4e6f26ed54da876999103d2814c"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-188033-ticking-clock.mp3",
+      "source": "freesound",
+      "sourceId": "188033",
+      "sourceUrl": "https://freesound.org/s/188033/",
+      "title": "Ticking Clock",
+      "author": "AntumDeluge",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "3.5 s, mono; Freesound HQ preview; found by \"clock ticking\"",
+      "sha256": "b72173dbbc47cb5d3db031224a8eac6e24feb682319a3dd34e0f87433918b74c",
+      "bytes": 24766,
+      "recipe": {
+        "type": "freesound",
+        "id": 188033,
+        "url": "https://cdn.freesound.org/previews/188/188033_3403708-hq.mp3",
+        "sha256": "d77edaf7177cce78bdca271881e936c3c5526a497f981b1570ad3b83ddfb2f11"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-212181-loopable-ticking-clock.mp3",
+      "source": "freesound",
+      "sourceId": "212181",
+      "sourceUrl": "https://freesound.org/s/212181/",
+      "title": "Loopable Ticking Clock",
+      "author": "OwlStorm",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "3.7 s, mono; Freesound HQ preview; found by \"clock ticking\"",
+      "sha256": "6971e790f1b18a8534ada951bdb5407b9202901a8cd36b85c7c2f95c0e5c2f96",
+      "bytes": 44078,
+      "recipe": {
+        "type": "freesound",
+        "id": 212181,
+        "url": "https://cdn.freesound.org/previews/212/212181_140737-hq.mp3",
+        "sha256": "d78ecd92668aa5f62ae3fc78489e0ac71f4a9bd32993ca8e5a79780289b99cd4"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": 1,
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    }
+  ]
+}

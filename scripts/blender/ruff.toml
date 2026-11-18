@@ -1,0 +1,8 @@
+extend = "../../pyproject.toml"
+# Blender 4.x embeds Python 3.11; the host interpreter is pinned separately.
+target-version = "py311"
+
+[lint]
+# Positional scene APIs are retained for existing shot scripts. Numerical constants
+# describe geometry; graphs and bake orchestration intentionally remain linear.
+extend-ignore = ["PLR2004", "PLR0913", "PLR0917", "PLR0915", "FBT001", "FBT002", "FBT003"]

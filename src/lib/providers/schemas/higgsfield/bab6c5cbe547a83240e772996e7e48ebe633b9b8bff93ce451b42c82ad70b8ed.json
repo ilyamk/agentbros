@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/wan-3.0-prime/reference-to-video",
+  "title": "Wan 3.0 Prime — Reference to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-3-prime/reference-to-video.md",
+  "usageNotes": [
+    "Reference media are optional in the stored schema: only prompt is required. The example includes an image to demonstrate reference mode.",
+    "Send either file_url or link_url. A document or web-page reference automatically enables thinking; when both are sent, file_url takes precedence.",
+    "Reference video clips must be 1–30 seconds each and total at most 30 seconds. Reference audio must be WAV or MP3 and total at most 30 seconds, as specified in the production schema.",
+    "The schema accepts seed=0, but the current implementation only forwards a nonzero seed."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Prime Reference to Video",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "title": "Seed",
+        "maximum": 2147483647,
+        "minimum": 0
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration (sec)",
+        "default": 5,
+        "maximum": 30,
+        "minimum": 2,
+        "description": "2-30 seconds."
+      },
+      "file_url": {
+        "type": "string",
+        "title": "Reference Document",
+        "format": "uri",
+        "description": "One document (docx/xlsx/pptx/pdf/md). Forces deep thinking."
+      },
+      "link_url": {
+        "type": "string",
+        "title": "Reference Web Page",
+        "format": "uri",
+        "description": "One public page. Forces deep thinking. Not combinable with file_url."
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference Audio",
+        "maxItems": 5,
+        "description": "Up to 5 files, 30s total. WAV or MP3."
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference Images",
+        "maxItems": 10
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "1080p"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference Videos",
+        "maxItems": 5,
+        "description": "Up to 5 clips, 30s total, each 1-30s."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "adaptive"
+        ],
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "adaptive"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "title": "Sound",
+        "default": true
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "title": "Deep Thinking",
+        "default": false
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

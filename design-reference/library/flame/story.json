@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flame",
+  "idea": {
+    "value": "The film performs its own promise: a drafting grid and raw chrome tiles are pushed, morph by morph, into a polished interface, so the product's promise, a rough draft turned into finished work, is shown as one continuous transformation rather than claimed.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/t00-type-open.jpg F0-F19",
+      "visuals/a1/t01-frame-to-square.jpg F37-F56",
+      "visuals/a1/t08-square-to-site.jpg F266-F285",
+      "speech-text.json words 0.10-4.44"
+    ]
+  },
+  "audience": {
+    "value": "Solo video editors and motion designers who want results that look studio-made; the offer is a subscription to editable project files plus tutorials.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "speech-text.json words 6.72-9.88 (voice names solo editors wanting studio-level results)",
+      "speech-text.json screenText 13.51-15.02 (pill labels for tutorials and project files)",
+      "visuals/strips/s004.jpg"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 1.75,
+      "device": "wireframe layout guide: crosshair lines with node dots, words typed into the gap one by one, then the guide frame pulls outward and a metal tile grows out of its centre",
+      "description": "0.00-1.54 s the frame is a white layout sketch: two horizontal and two vertical hairlines with four node dots, and the first three spoken words land between them, each flashing a tint for two to three frames before settling to black. At 1.58 s the guide box starts expanding past the frame edges, the words part to left and right, and a dot at the centre grows into a chrome tile by 2.00 s. The viewer is shown a sketch becoming an object in the first two seconds, which is the whole film in miniature."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/t00-type-open.jpg F0-F19",
+      "visuals/a1/t01-frame-to-square.jpg F37-F56"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 1.75,
+        "purpose": "hook: set the premise (every piece starts rough) on a literal sketch",
+        "retentionDevice": "words appear ahead of the voice inside a drafting grid; empty white invites the eye to the centre",
+        "content": "crosshair layout lines, three words typed between the nodes"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t00-type-open.jpg F0-F19"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 1.75,
+        "endSec": 3.46,
+        "purpose": "the raw idea as an object: unfinished material",
+        "retentionDevice": "the tile grows and rounds its corners, a slow change that keeps the eye on the centre",
+        "content": "grey brushed-metal tile on a faint grid, alone in white"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/strips/s001.jpg F50-F80",
+        "visuals/a1/t02-square-to-spheres.jpg F75-F82"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 3.46,
+        "endSec": 4.922,
+        "purpose": "problem: most ideas stall at the sketch stage",
+        "retentionDevice": "the tile implodes to a point and bursts into a field of saturated spheres: the first colour in the film",
+        "content": "iridescent spheres crowding the frame edges, a three-word phrase small at centre"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t02-square-to-spheres.jpg F82-F94",
+        "visuals/a1/t03-spheres-collapse.jpg F113-F117"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.922,
+        "endSec": 6.65,
+        "purpose": "the brand arrives as the answer to the problem",
+        "retentionDevice": "the colour collapses inward and vanishes, leaving a quiet embossed ground; the wordmark types on letter by letter",
+        "content": "white embossed maze ground, wordmark typed at centre"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t03-spheres-collapse.jpg F118-F134",
+        "visuals/a1/t04-wordmark-type.jpg F131-F151"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 6.65,
+        "endSec": 8.05,
+        "purpose": "proof of product: the brand opens into the library itself",
+        "retentionDevice": "a pill behind the wordmark grows into a full-bleed gradient card, and interface panels fly in from every edge within 0.3 s",
+        "content": "pink-teal gradient card, central button, dark interface panels at the edges"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t05-card-to-collage.jpg F157-F172",
+        "visuals/a1/t06-collage-to-globe.jpg F185-F192"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 8.05,
+        "endSec": 9.843,
+        "purpose": "aspiration: name the level of result the audience wants",
+        "retentionDevice": "two words pinned to the extreme left and right edges frame a dotted globe; the eye travels across the whole width",
+        "content": "pastel particle globe inside a thin circle, one word at each edge"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t06-collage-to-globe.jpg F193-F204",
+        "visuals/a1/t07-globe-to-square.jpg F230-F235"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 9.843,
+        "endSec": 11.512,
+        "purpose": "restart the transformation: back to raw material for the second pass",
+        "retentionDevice": "callback to the opening tile: same grey object, new grid colour",
+        "content": "grey gradient tile on a pale grid with faint red guide lines"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t07-globe-to-square.jpg F236-F249",
+        "visuals/a1/t08-square-to-site.jpg F266-F270"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 11.512,
+        "endSec": 13.513,
+        "purpose": "payoff of the transformation: the raw tile becomes a finished, watchable interface",
+        "retentionDevice": "the tile widens, tints blue and turns into a dark landing page whose headline types on",
+        "content": "dark blue website mock-up at about 62% frame width with a small button under it"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t08-square-to-site.jpg F270-F285",
+        "visuals/a1/t09-cut-to-pills.jpg F318-F323"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 13.513,
+        "endSec": 15.265,
+        "purpose": "what you get: two offer items, shown as stacked buttons",
+        "retentionDevice": "hard cut on the next sentence, a spring pop, then the back button rises over the front one",
+        "content": "two stacked rounded buttons, blue in front then grey in front"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t09-cut-to-pills.jpg F324-F338",
+        "visuals/a1/t10-pill-swap.jpg F342-F357"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.265,
+        "endSec": 16.225,
+        "purpose": "ownership line: the emotional close",
+        "retentionDevice": "the only type-only beat: a short centred sentence builds word by word, darkening to bright blue",
+        "content": "one short sentence, centred, blue"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t11-cut-to-type.jpg F366-F378"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.225,
+        "endSec": 18.143,
+        "purpose": "call to action as an object: the sentence collapses into a button, which grows",
+        "retentionDevice": "the words fade from the left into a small pill; the pill goes pale, then snaps saturated and larger, then grows",
+        "content": "subscribe button growing from 10% to full frame width"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t12-type-to-pill.jpg F386-F401",
+        "visuals/a1/t13-pill-grows.jpg F407-F426",
+        "visuals/a1/t14-fill-to-endcard.jpg F426-F436"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 18.143,
+        "endSec": 22.607,
+        "purpose": "sign-off: brand and address, held long enough to read",
+        "retentionDevice": "the button has become the end card; wordmark types on, slides left, and an address pill types on beside it; then 2.3 s of still hold with no voice",
+        "content": "navy-to-sky vertical gradient, white wordmark, white address pill"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t14-fill-to-endcard.jpg F436-F445",
+        "visuals/a1/t15-url-pill.jpg F467-F486",
+        "visuals/strips/s006.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "11.51-13.51 s: the same grey tile the film opened with becomes a finished dark landing page; the promise 'rough to finished' is completed on screen, on the line about a piece people actually watch.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/t08-square-to-site.jpg F270-F285",
+      "speech-text.json words 9.88-12.82"
+    ]
+  },
+  "callToAction": {
+    "value": "Subscribe button (16.22-18.14 s) that grows into the end card; then wordmark and web address held 18.4-22.6 s. The CTA is never a separate card: it is made from the last sentence and becomes the final ground.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/t12-type-to-pill.jpg F389-F401",
+      "visuals/a1/t14-fill-to-endcard.jpg F426-F445",
+      "visuals/a1/t15-url-pill.jpg F472-F486"
+    ]
+  },
+  "whyItWorks": [
+    "Form is the argument: every scene is made out of the previous one (frame to tile, tile to spheres, wordmark to card, tile to site, sentence to button, button to end card), so the viewer watches rough material being finished and never needs the claim explained.",
+    "One idea per spoken sentence, about 1.7 s each (median corrected hold 1.74 s), with 6 of 11 picture changes within 0.25 s of a sentence start against 20% by chance (window chosen after looking, so suggestive, not proof): the picture turns the page when the voice does.",
+    "On-screen words run about 0.18 s ahead of the voice (median of 9 word pairs timed on the strips), so reading confirms hearing instead of chasing it.",
+    "Almost all of it sits on a white ground with one object at frame centre; the eye never searches. Colour is rationed: the spheres at 3.5 s and the gradient card at 6.7 s are the only saturated full frames before the blue end card.",
+    "The CTA is built from the last line and becomes the end card, so the final 4.5 s are brand and address on the colour the film has been heading towards since the website beat."
+  ]
+}

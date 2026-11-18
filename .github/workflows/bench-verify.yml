@@ -1,0 +1,76 @@
+name: bench-verify
+
+on:
+  issues:
+    types: [labeled]
+
+permissions: {}
+
+jobs:
+  verify:
+    if: github.event.label.name == 'bench:submitted'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Download and safely extract issue attachments
+        id: fetch
+        continue-on-error: true
+        run: pnpm bench:fetch-bundle --out out/bench-bundle
+      - name: Verify the signed bundle against the issue author's GitHub keys
+        id: verify
+        if: steps.fetch.outcome == 'success'
+        continue-on-error: true
+        env:
+          SUBMITTER: ${{ github.event.issue.user.login }}
+        run: pnpm --silent bench:verify --bundle out/bench-bundle --github-user "$SUBMITTER" --online > out/bench-verification.json
+      - name: Prepare schema-validated verification summary
+        if: always()
+        env:
+          FETCH_OUTCOME: ${{ steps.fetch.outcome }}
+        run: |
+          mkdir -p out/bench-report
+          if [ "$FETCH_OUTCOME" = success ]; then
+            pnpm github:bench-report --result out/bench-verification.json --fetch-succeeded --out out/bench-report/result.json
+          else
+            pnpm github:bench-report --out out/bench-report/result.json
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: bench-verification
+          path: out/bench-report/result.json
+          if-no-files-found: error
+          retention-days: 7
+  report:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: { contents: read, issues: write }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: bench-verification
+          path: out/untrusted-bench
+      - name: Publish the validated result as one comment and a label
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: pnpm github:bench-report --artefact out/untrusted-bench/result.json

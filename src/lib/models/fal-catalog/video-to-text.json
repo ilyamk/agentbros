@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "category": "video-to-text",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "nvidia/nemotron-3-5-super/video",
+      "category": "video-to-text",
+      "displayName": "NVIDIA Nemotron 3.5 Super Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5a6dcf7506343c8a38d4a836093eacc826c0556fa8b5adcf499f0a57776ffdde",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-5-super%2Fvideo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 32000,
+          "default": 1024
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "think",
+            "no_think"
+          ],
+          "default": "no_think"
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.95
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "reasoning",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "video-understanding",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-nano-omni/video",
+      "category": "video-to-text",
+      "displayName": "Nemotron 3 Nano Omni",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "1d1a6df5c479b332531a1d950cdce47a784288572b15857e37821b426eb14ec0",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-nano-omni%2Fvideo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 20000,
+          "default": 1024
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "think",
+            "no_think"
+          ],
+          "default": "no_think"
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 0.7
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.95
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "nemotron",
+        "nvidia",
+        "video-to-text",
+        "video-understanding",
+        "video-reasoning",
+        "reasoning",
+        "agentic",
+        "agents",
+        "open-weights",
+        "hybrid-moe",
+        "mamba",
+        "30b-a3b"
+      ]
+    },
+    {
+      "endpoint": "openrouter/router/video",
+      "category": "video-to-text",
+      "displayName": "OpenRouter [Video]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f795958268f34ae4a3a514818f38ea35129f408434fac4f146c7dd6f636ba853",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=openrouter%2Frouter%2Fvideo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_web_search",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reasoning",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "video_urls",
+          "type": "array",
+          "required": false,
+          "media": "video",
+          "array": true
+        },
+        {
+          "name": "web_search_options",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "openrouter/router/video/enterprise",
+      "category": "video-to-text",
+      "displayName": "OpenRouter [Video][Enterprise]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "61aa39f6ddaa4e91e9e5009512469d0ba537108b298621526263d7a494932e6b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=openrouter%2Frouter%2Fvideo%2Fenterprise&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_web_search",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reasoning",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "video_urls",
+          "type": "array",
+          "required": false,
+          "media": "video",
+          "array": true
+        },
+        {
+          "name": "web_search_options",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

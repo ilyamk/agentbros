@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "id": "teaser-trailer",
+  "title": "Teaser or trailer",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "A teaser or trailer of 6-60 s that builds anticipation for something not yet out or revealed: a coming-soon product, an event or conference, a course or channel, a countdown; ends on a title card with the date and where.",
+  "triggers": {
+    "en": ["trailer for my", "teaser for my", "trailer for", "teaser for", "teaser", "trailer", "teaser trailer", "coming soon", "coming soon teaser", "launch teaser", "product teaser", "pre-launch", "prelaunch", "before launch", "ahead of launch", "before the launch", "event trailer", "conference trailer", "summit trailer", "festival trailer", "course trailer", "channel trailer", "announce trailer", "reveal trailer", "countdown", "save the date", "sneak peek", "hype video", "hype trailer", "stay tuned", "teaser for our", "teaser announcing", "teaser for the", "next month", "next week", "upcoming launch", "upcoming event", "upcoming conference", "upcoming course", "upcoming release"],
+    "ru": ["нового сезона", "трейлер нового", "анонс конференции", "анонс мероприятия", "трейлер мое", "тизер", "трейлер", "тизер-трейлер", "скоро запуск", "скоро выйдет", "скоро выходит", "скоро релиз", "скоро старт", "скоро открыт", "до запуска", "перед запуском", "до релиза", "перед релизом", "тизер запуска", "тизер продукта", "трейлер конференции", "трейлер мероприятия", "трейлер ивента", "трейлер события", "трейлер фестиваля", "трейлер курса", "трейлер канала", "трейлер для канала", "обратный отсчет", "отсчет до", "сохрани дату", "сохраните дату", "интриг", "анонс даты", "тизер нашего", "тизер нашей", "тизер для нашего", "тизер к нашему", "тизер нашего мероприятия", "тизер нашего приложения", "тизер нашего продукта", "тизер нашей конференции", "тизер мероприятия", "тизер конференции", "тизер курса", "тизер нового продукта", "тизер нового приложения", "предстоящ", "в следующем месяце", "на следующей неделе"],
+    "zh": ["预告片", "预告", "预告视频", "先导片", "先导预告", "抢先看", "即将上线", "即将发布", "即将推出", "即将开幕", "敬请期待", "上线前", "发布前", "预热视频", "预热", "定档", "悬念", "揭幕"]
+  },
+  "notFor": [
+    { "when": "the product is out (or is being shown in full now) and the film sells it with its mechanism and proof", "use": "product-promo" },
+    { "when": "the film looks back on an event that already happened: an aftermovie or recap", "use": "event-recap" },
+    { "when": "a mood or brand montage of stock or supplied footage with no reveal or date", "use": "stock-montage" },
+    { "when": "a feature or update that ships now, announced to existing users", "use": "feature-update" },
+    { "when": "an animated piece with nothing to reveal or announce: a logo ident, kinetic type, a title sequence", "use": "motion-design" },
+    { "when": "the film teaches the course's subject itself rather than selling the course", "use": "explainer" }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "motion-graphics",
+    "start": "pnpm film:init --project <id> --type motion-graphics --playbook teaser-trailer --profile promo --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "real event, venue, speaker or course footage carries the film (last year's conference, recorded lessons)",
+      "route": { "kind": "film", "filmType": "footage", "start": "pnpm film:init --project <id> --type footage --playbook teaser-trailer --profile promo --product <path>" }
+    },
+    {
+      "when": "an essential mystery shot no library block, capture or Blender scene can make, and the user has authorised a budget",
+      "route": { "kind": "film", "filmType": "motion-graphics", "secondaryFilmType": "ai-video", "start": "pnpm film:init --project <id> --type motion-graphics --secondary ai-video --playbook teaser-trailer --profile promo --product <path>" }
+    }
+  ],
+  "agents": [],
+  "skills": ["motion-library", "motion-and-typography", "sound-design-and-mix", "copywriter", "editorial-storytelling", "engine-selection", "qa-and-delivery", "reference-preparation"],
+  "library": {
+    "categories": ["kinetic", "typography", "transitions", "finish", "effects", "camera", "backgrounds"],
+    "blocks": ["kinetic-decode", "type-scramble-hero", "type-hero-word", "type-word-pulse", "type-odometer-stat", "type-impact-slam", "focus-pull", "snap-zoom", "ground-swap-cut", "speed-ramp-flurry", "light-burn", "zoom-through", "flare-pulse", "light-rays", "spotlight-studio", "scene-end-card", "film-finish", "speed-ramp", "match-cut", "chroma-edge", "grade-step-flash", "caption-over-flash-montage", "orbit-ring", "giant-word-pull-out", "lead-plus-value-word", "accelerate-into-cut", "pixel-resolve", "glyph-to-shape", "print-type", "word-backdrop", "liquid-light"]
+  },
+  "commands": ["film:init", "film:next", "music", "audio:map", "edit:plan", "edit:snap", "music:backtime", "sfx:synth", "sfx:cues", "sfx:generate", "motion:strip", "film:targets", "film:measure", "shot:tournament", "library:usage", "capture:app", "asset:import", "render", "delivery", "model:prepare", "motion:library", "film:rights", "refs:profiles", "refs:plan", "refs:derive", "refs:pack"],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "script-variants": [
+      "design-reference/craft-rules.md"
+    ],
+    "script": [
+      "design-reference/craft-rules.md"
+    ],
+    "beat-sheet": [
+      ".agents/skills/motion-and-typography/references/carry-and-rhythm.md"
+    ],
+    "build": [
+      ".agents/skills/motion-and-typography/references/carry-and-rhythm.md"
+    ]
+  },
+  "qa": [
+    "The title card's date, time zone and where (URL, store, venue, handle) match the intake answer character for character and read with sound off for at least their reading time",
+    "Nothing withheld is replaced by a stand-in: every partial shot is a crop, detail, silhouette or blur of the real product, venue or footage",
+    "The build shortens shot by shot into the drop, the drop is followed by a planned rest or silence in a quiet bar of the audio map, and the title card lands on a downbeat or the cue's final hit",
+    "Bursts (light-burn, flare-pulse, ground swaps) keep to at most three flashes in any one second: film:measure's flash-risk leg passes",
+    "The button after the title, if any, is under 3 s and never pushes the date card off the final frame"
+  ],
+  "benchmarks": [],
+  "intake": [
+    { "ask": "What is revealed, when (date, time zone) and where to go (URL, store, venue, handle, register link)?", "why": "The date and where are the film's whole call to action; an invented or approximate date is a false claim." },
+    { "ask": "How much may be shown before the reveal: everything, parts only (details, crops, silhouette), or nothing but the name?", "why": "Withholding is the craft; it sets which shots exist and whether the product appears at all.", "default": "Parts only: details and crops of the real thing, the whole only on or after the title card" },
+    { "ask": "What real material exists: product files, renders or a build; past event or venue footage; speaker photos; course recordings?", "why": "Decides the film type (motion-graphics or footage) and rules out stand-ins.", "default": "Only the logo and copy: motion-graphics with type, the real mark and abstract grounds" },
+    { "ask": "Where does it run and at what length: a 6 s bumper, a 15-34 s social cut, a 60 s site or channel trailer?", "why": "A teaser and a trailer differ in structure (two acts or three), not only in length.", "default": "One vertical 20-30 s cut for Reels, Shorts and TikTok" },
+    { "ask": "Does someone speak (a host, a speaker's line, a voiceover), or is it music, sound and type only?", "why": "A voice adds captions and a dialogue mix; most teasers have none.", "default": "No voice: music, sound design and type" },
+    { "ask": "One film, or a countdown series (for example T-7, T-3, T-1, today)?", "why": "A series shares one system and reveals a little more each part.", "default": "One film" }
+  ],
+  "profiles": [
+    { "platform": "instagram-reels", "formats": ["vertical"], "durationSec": { "min": 6, "max": 60 }, "captions": "none", "note": "Reels ads must be under 90 s at 9:16; keep the date, CTA and logo out of the bottom 35%." },
+    { "platform": "tiktok", "formats": ["vertical"], "durationSec": { "min": 21, "max": 34 }, "captions": "none", "note": "In-feed allows up to 60 s and 21-34 s performs best; the hook in the first 3 s, no long logo intro, text inside the safe zones." },
+    { "platform": "youtube-shorts", "formats": ["vertical"], "durationSec": { "min": 6, "max": 60 }, "captions": "none", "note": "A vertical or square video up to 3 min is a Short; this task stays under 60 s." },
+    { "platform": "youtube", "formats": ["landscape"], "durationSec": { "min": 5, "max": 6 }, "captions": "none", "note": "Bumper ad: non-skippable, 5-6 s. One mystery shot, one hit, the title and date." },
+    { "platform": "youtube", "formats": ["landscape"], "durationSec": { "min": 15, "max": 60 }, "captions": "clean-sentence", "note": "Channel or course trailer: shown only to non-subscribers, once; show, don't tell; shorter is better (band: house rule, starting point); one subscribe or enrol action." },
+    { "platform": "linkedin", "formats": ["square", "landscape"], "durationSec": { "min": 15, "max": 30 }, "captions": "clean-sentence", "note": "LinkedIn recommends 15-30 s video ads and subtitles; an event or conference trailer for professionals." }
+  ],
+  "starter": {
+    "blocks": ["kinetic-decode", "focus-pull", "snap-zoom", "ground-swap-cut", "light-burn", "type-hero-word", "type-odometer-stat", "scene-end-card", "film-finish"],
+    "style": "keynote-dark",
+    "note": "Mystery (decode, a slow focus pull on a detail), escalation (snap-zoom, ground swaps), the drop (light-burn), title and date (hero word, odometer for a countdown, end card). keynote-dark lights the product locally and keeps the rest unseen."
+  },
+  "variants": [
+    { "id": "coming-soon", "title": "Coming-soon product teaser", "triggers": { "en": ["coming soon", "launch teaser", "product teaser"], "ru": ["скоро запуск", "тизер продукта", "тизер запуска"], "zh": ["新品预告", "产品预告", "上市预告", "新品即将"] }, "changes": "Two acts: mystery shots of real details, then one set piece and the title with the date. The product is never shown whole before the title; truth claims stay as unrevealed facts the user approves." },
+    { "id": "event-trailer", "title": "Event or conference trailer", "triggers": { "en": ["event trailer", "conference trailer", "summit trailer"], "ru": ["трейлер конференции", "трейлер мероприятия", "трейлер ивента"], "zh": ["活动预告", "大会预告", "峰会预告", "发布会预告", "展会预告", "音乐节预告"] }, "changes": "Three acts with footage when it exists (--type footage): place, people, then the headline speakers or acts as name cards; the end card carries dates, city, venue and the registration link." },
+    { "id": "course-channel-trailer", "title": "Course or channel trailer", "triggers": { "en": ["course trailer", "channel trailer"], "ru": ["трейлер курса", "трейлер канала"], "zh": ["课程预告", "频道预告", "网课预告", "专栏预告", "栏目预告"] }, "changes": "Shows what the viewer gets, in real lessons or videos, with the host's voice when there is one (clean-sentence captions); ends on subscribe or enrol and where; up to 60 s landscape for the channel page." },
+    { "id": "countdown", "title": "Countdown", "triggers": { "en": ["countdown", "days to go"], "ru": ["обратный отсчет", "отсчет до", "дней до"], "zh": ["倒计时", "倒数", "距离开幕"] }, "changes": "A series on one system: the same grid, type and sound, the number on type-odometer-stat or type-hero-word, each part revealing one more detail; every part ends on the same date card." }
+  ]
+}

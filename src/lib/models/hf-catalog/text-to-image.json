@@ -1,0 +1,1634 @@
+{
+  "version": 1,
+  "provider": "higgsfield",
+  "category": "text-to-image",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "alibaba/qwen-image-3/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Qwen Image 3 — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "352b180fcfab81852eb7977987ed7891793b40be92b1bfbd64ed546c725679d2",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/qwen-image-3/text-to-image.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "7:9",
+            "9:7",
+            "9:16",
+            "16:9",
+            "21:9"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "enable_thinking",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "prompt_extend",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt_extend_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "direct",
+            "agent"
+          ],
+          "default": "direct"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k"
+          ],
+          "default": "1k"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "description": "Generates images from English or Chinese text, with enhanced prompts and resolution up to 2K.",
+      "exclusive": false,
+      "family": {
+        "slug": "qwen-image-3",
+        "title": "Qwen Image 3",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/qwen-image-3/text-to-image.md"
+    },
+    {
+      "endpoint": "higgsfield-ai/soul/cinema",
+      "category": "text-to-image",
+      "displayName": "SOUL Cinema — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "79ce3c420f054e576c61e311001d2e4179b67af040874eacd785f2d88449406e",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "9:16",
+            "16:9",
+            "4:3",
+            "3:4",
+            "1:1",
+            "2:3",
+            "3:2"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "batch_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            1,
+            4
+          ],
+          "default": 1
+        },
+        {
+          "name": "custom_reference_id",
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        {
+          "name": "custom_reference_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1000000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [],
+      "provider": "higgsfield",
+      "family": {
+        "slug": "soul-cinema",
+        "title": "soul-cinema"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md"
+    },
+    {
+      "endpoint": "higgsfield-ai/soul/standard",
+      "category": "text-to-image",
+      "displayName": "SOUL — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "50854662b15e18916a7a990618ddf348ce7272932540d8bb057be8d7739c2867",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/soul-standard/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "9:16",
+            "16:9",
+            "4:3",
+            "3:4",
+            "1:1",
+            "2:3",
+            "3:2"
+          ],
+          "default": "4:3"
+        },
+        {
+          "name": "batch_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            1,
+            4
+          ],
+          "default": 1
+        },
+        {
+          "name": "custom_reference_id",
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        {
+          "name": "custom_reference_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_reference_url",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 2083,
+          "default": null,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1000000,
+          "default": null
+        },
+        {
+          "name": "style_id",
+          "type": "string",
+          "required": false,
+          "default": "464ea177-8d40-4940-8d9d-b438bab269c7"
+        },
+        {
+          "name": "style_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2025-06-01",
+      "description": "Generates fashion and lifestyle photos from text, with style presets for editorial and social content.",
+      "exclusive": true,
+      "family": {
+        "slug": "higgsfield-ai/soul/standard",
+        "title": "Soul Standard",
+        "company": "Higgsfield"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-standard/generate.md"
+    },
+    {
+      "endpoint": "higgsfield-ai/soul/v2/standard",
+      "category": "text-to-image",
+      "displayName": "SOUL V2 — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c06da0fda510b32e196f2c45e749df175f77556f0c102d64fd90ba74bd40757a",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "9:16",
+            "16:9",
+            "4:3",
+            "3:4",
+            "1:1",
+            "2:3",
+            "3:2"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "batch_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            1,
+            4
+          ],
+          "default": 1
+        },
+        {
+          "name": "custom_reference_id",
+          "type": "string",
+          "required": false,
+          "default": null
+        },
+        {
+          "name": "custom_reference_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1000000
+        },
+        {
+          "name": "style_id",
+          "type": "string",
+          "required": false,
+          "default": "3db34ab5-3439-4317-9e03-08dc30852e69"
+        },
+        {
+          "name": "style_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-02-01",
+      "description": "Generates realistic portraits and fashion images, with natural textures and curated editorial styles.",
+      "exclusive": true,
+      "family": {
+        "slug": "soul-2",
+        "title": "Soul 2",
+        "company": "Higgsfield"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md"
+    },
+    {
+      "endpoint": "higgsfield/ads-studio/v1.0",
+      "category": "text-to-image",
+      "displayName": "Ads Studio — Generate ads API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "82c04c1144ab2a9d1cd6c7723e150740e55ab16c2695f95c74593e56e86843de",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/ads-studio/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "4:5",
+            "5:4",
+            "16:9",
+            "9:16",
+            "4:3",
+            "3:4",
+            "21:9",
+            "3:2",
+            "2:3",
+            "2:1",
+            "1:2",
+            "3:1",
+            "1:3"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "batch_size",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 8,
+          "default": 1
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "max": 10,
+          "default": [],
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "max": 80,
+          "default": ""
+        },
+        {
+          "name": "niche",
+          "type": "string",
+          "required": false,
+          "max": 1000,
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 8000
+        },
+        {
+          "name": "target_audience",
+          "type": "string",
+          "required": false,
+          "max": 2000,
+          "default": ""
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "ads-studio",
+        "workflows/ads-studio"
+      ],
+      "provider": "higgsfield",
+      "family": {
+        "slug": "ads-studio",
+        "title": "ads-studio"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/ads-studio/generate.md"
+    },
+    {
+      "endpoint": "higgsfield/ai-influencer",
+      "category": "text-to-image",
+      "displayName": "AI Influencer",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-10-05",
+      "description": "Create one AI influencer character sheet. Human and animal modes. $0.05 per sheet.",
+      "exclusive": true,
+      "family": {
+        "slug": "higgsfield/ai-influencer",
+        "title": "AI Influencer",
+        "company": "Higgsfield"
+      }
+    },
+    {
+      "endpoint": "ideogram/v4.0",
+      "category": "text-to-image",
+      "displayName": "Ideogram 4.0 — Generate API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e2e2f43b426689ba368c3e7e540a29555bc5c388ba9f07be751c27c895a77252",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/ideogram-4/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:3",
+            "3:2",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "5:8",
+            "8:5",
+            "3:4",
+            "4:3",
+            "9:22",
+            "22:9",
+            "9:23",
+            "23:9",
+            "3:8",
+            "8:3",
+            "5:12",
+            "12:5",
+            "1:3",
+            "3:1"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "image_weight",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 2,
+          "max": 2048
+        },
+        {
+          "name": "rendering_speed",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "TURBO",
+            "DEFAULT",
+            "QUALITY"
+          ],
+          "default": "DEFAULT"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates and edits images with multilingual text for posters, packaging and other graphic layouts.",
+      "exclusive": false,
+      "family": {
+        "slug": "ideogram/v4.0",
+        "title": "Ideogram 4.0",
+        "company": "Ideogram"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/ideogram-4/generate.md"
+    },
+    {
+      "endpoint": "marketing-studio/image",
+      "category": "text-to-image",
+      "displayName": "Marketing Studio Image — 2.0 Alpha API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "72885ff5c63b68b9244901bc5fdb12bebc8d24eeb8cebdc11290d8f3e8566ff7",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/generate-and-edit.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 16,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "moderation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "low"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "preset_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k",
+            "4k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "graphic-ads",
+        "marketplace-design",
+        "product-shots",
+        "trending",
+        "workflows/graphic-ads",
+        "workflows/marketplace-design",
+        "workflows/product-shots"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-09-01",
+      "description": "Creates and edits campaign images up to 4K from text or images.",
+      "exclusive": false,
+      "family": {
+        "slug": "marketing-studio-image",
+        "title": "Marketing Studio Image",
+        "company": "Higgsfield"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/generate-and-edit.md"
+    },
+    {
+      "endpoint": "marketing-studio/image/flare",
+      "category": "text-to-image",
+      "displayName": "Marketing Studio Image — 2.5 Flare API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c9d098521227ffeafdaeaf210daf5813883a52bc1089d46d579d5a2ad3bb85dc",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/flare.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 16,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "moderation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "low"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "preset_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k",
+            "4k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-09-01",
+      "description": "Creates and edits campaign images up to 4K from text or images.",
+      "exclusive": false,
+      "family": {
+        "slug": "marketing-studio-image",
+        "title": "Marketing Studio Image",
+        "company": "Higgsfield"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/flare.md"
+    },
+    {
+      "endpoint": "marketing-studio/image/sunburst",
+      "category": "text-to-image",
+      "displayName": "Marketing Studio Image — 2.5 Sunburst API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6256cab9f9377c594f89f5810fb639c709aeee62568ce6f513e238ba076e1465",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/sunburst.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "enhance_prompt",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 16,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "moderation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "low"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "preset_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k",
+            "4k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-09-01",
+      "description": "Creates and edits campaign images up to 4K from text or images.",
+      "exclusive": false,
+      "family": {
+        "slug": "marketing-studio-image",
+        "title": "Marketing Studio Image",
+        "company": "Higgsfield"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/sunburst.md"
+    },
+    {
+      "endpoint": "recraft/v4.1/pro/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Recraft V4.1 Pro — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "33ab75273e97d291ebe7da0c613a6d221ee5cd253579b426e4032cbba41b6a22",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-pro/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:1",
+            "1:2",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "5:4",
+            "4:5",
+            "6:10",
+            "14:10",
+            "10:14",
+            "16:9",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "background_color",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "jpg",
+            "png",
+            "webp"
+          ],
+          "default": "jpg"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-05-01",
+      "description": "Generates images and illustrations using custom palettes and background colors to fit your brand.",
+      "exclusive": false,
+      "family": {
+        "slug": "recraft-4-1",
+        "title": "Recraft 4.1",
+        "company": "Recraft"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-pro/generate.md"
+    },
+    {
+      "endpoint": "recraft/v4.1/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Recraft V4.1 — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6c814ba561d5977fb6ed24e22a1772f085cd62ea04318f0c530c09802e209e12",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1/text-to-image.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:1",
+            "1:2",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "5:4",
+            "4:5",
+            "6:10",
+            "14:10",
+            "10:14",
+            "16:9",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "background_color",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "jpg",
+            "png",
+            "webp"
+          ],
+          "default": "jpg"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k"
+          ],
+          "default": "1k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-05-01",
+      "description": "Generates images and illustrations using custom palettes and background colors to fit your brand.",
+      "exclusive": false,
+      "family": {
+        "slug": "recraft-4-1",
+        "title": "Recraft 4.1",
+        "company": "Recraft"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/recraft-v4-1/text-to-image.md"
+    },
+    {
+      "endpoint": "recraft/v4.1/utility/pro/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Recraft V4.1 Utility Pro — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9abdb0f62e07888934decb539e5380505c2077415cad35b6c03eb700acea74a3",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility-pro/text-to-image.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:1",
+            "1:2",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "5:4",
+            "4:5",
+            "6:10",
+            "14:10",
+            "10:14",
+            "16:9",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "background_color",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "jpg",
+            "png",
+            "webp"
+          ],
+          "default": "jpg"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-05-01",
+      "description": "Generates images and illustrations using custom palettes and background colors to fit your brand.",
+      "exclusive": false,
+      "family": {
+        "slug": "recraft-4-1",
+        "title": "Recraft 4.1",
+        "company": "Recraft"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility-pro/text-to-image.md"
+    },
+    {
+      "endpoint": "recraft/v4.1/utility/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Recraft V4.1 Utility — Text to image API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "1eaaec0e35403284635ba6ce1a7b13f8feba7f526b4ed8ad073682f8c27b51f9",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility/text-to-image.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:1",
+            "1:2",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "5:4",
+            "4:5",
+            "6:10",
+            "14:10",
+            "10:14",
+            "16:9",
+            "9:16"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "background_color",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "colors",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "jpg",
+            "png",
+            "webp"
+          ],
+          "default": "jpg"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k"
+          ],
+          "default": "1k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-05-01",
+      "description": "Generates images and illustrations using custom palettes and background colors to fit your brand.",
+      "exclusive": false,
+      "family": {
+        "slug": "recraft-4-1",
+        "title": "Recraft 4.1",
+        "company": "Recraft"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility/text-to-image.md"
+    },
+    {
+      "endpoint": "xai/grok-imagine-image-2.0",
+      "category": "text-to-image",
+      "displayName": "Grok Image 2.0 — Generate and edit API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b31989e979ae9670bc39cd6a444199adc0ee03914f0b69f392ae02e2e951f3fb",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/grok-image-2/generate-and-edit.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "1:1",
+            "1:2",
+            "2:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium"
+          ],
+          "default": "medium"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k"
+          ],
+          "default": "1k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-08-01",
+      "description": "Generates images and makes precise edits while preserving image details and visual consistency.",
+      "exclusive": false,
+      "family": {
+        "slug": "xai/grok-imagine-image-2.0",
+        "title": "Grok Imagine 2.0",
+        "company": "xAI"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/grok-image-2/generate-and-edit.md"
+    },
+    {
+      "endpoint": "z-image/turbo",
+      "category": "text-to-image",
+      "displayName": "Z-Image Turbo — Generate API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d3479337516f95c840cf1e866e232d180300ca13f2ed8128e426c6f02683e7ce",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/z-image-turbo/generate.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "7:9",
+            "9:7",
+            "9:16",
+            "16:9",
+            "21:9"
+          ],
+          "default": "1:1"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 800
+        },
+        {
+          "name": "prompt_extend",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "1k",
+            "2k"
+          ],
+          "default": "1k"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "description": "Generates images quickly with clear Chinese and English text rendering and PNG output up to 2K.",
+      "exclusive": false,
+      "family": {
+        "slug": "z-image/turbo",
+        "title": "Z-Image Turbo",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/z-image-turbo/generate.md"
+    }
+  ]
+}

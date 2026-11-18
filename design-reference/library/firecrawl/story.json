@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "idea": {
+    "value": "A launch said in four moves: what it is and what it works with, how big it is, why it is cheaper, then the product doing the job on screen and the breadth of sources behind it.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/contact-sheet-01.jpg", "visuals/a1/hook-words.jpg", "visuals/a1/drop-cut-4.00.jpg", "visuals/a1/send-cut-10.03.jpg"]
+  },
+  "audience": {
+    "value": "Developers and growth engineers who build AI agents and enrichment pipelines, and who already know the incumbent the product is compared with. Evidence: the hook names agent tools as inline icons, the comparison names a competitor without explaining it, and the demo is a chat assistant calling a tool.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": ["visuals/a1/hook-words.jpg F34-F47", "visuals/a1/swap-5.30.jpg", "visuals/a1/chat-answer.jpg"]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 4.0,
+      "device": "Announcement sentence built word by word, with partner icons as words, then a scale sentence with accent numbers, over a quiet intro that is building to a drop",
+      "description": "Two dark sentences on white, each in about 1.7-2.3 s. The quiet intro and the upward-accelerating exits create anticipation that the drop at 4.0 s releases."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/hook-words.jpg", "visuals/a1/stat-words.jpg", "audiomap.json sections low 0-4.05"]
+  },
+  "beats": [
+    { "value": { "startSec": 0, "endSec": 2.3, "purpose": "Announce and position", "retentionDevice": "Words arriving every 0.133 s; recognisable icons inside the sentence", "content": "Launch line naming the product and the agent tools it serves" }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/hook-words.jpg"] },
+    { "value": { "startSec": 2.3, "endSec": 4.0, "purpose": "Scale", "retentionDevice": "Two numbers in the accent colour", "content": "Searchable people and companies, in millions" }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/stat-words.jpg"] },
+    { "value": { "startSec": 4.0, "endSec": 7.43, "purpose": "Price advantage on the drop", "retentionDevice": "Ground swap to orange, hero percentage, then two swaps on the beat", "content": "Percentage cheaper than the incumbent, per enriched record, at scale" }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/drop-cut-4.00.jpg", "visuals/a1/swap-5.30.jpg", "visuals/a1/swap-6.17.jpg"] },
+    { "value": { "startSec": 7.43, "endSec": 10.02, "purpose": "Show the input", "retentionDevice": "Typing in a familiar prompt bar; a cursor click and freeze", "content": "A natural-language request for a list of leads" }, "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/bar-entry.jpg", "visuals/a1/send-cut-10.03.jpg"] },
+    { "value": { "startSec": 10.02, "endSec": 15.95, "purpose": "Show the result", "retentionDevice": "Answer streams in, table fills, fast blurred scroll shows volume", "content": "Assistant answer with a table of names, titles, companies and work emails" }, "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/chat-answer.jpg", "visuals/a1/table-fill.jpg", "visuals/a1/scroll-blur.jpg"] },
+    { "value": { "startSec": 15.95, "endSec": 21.5, "purpose": "Breadth of data sources", "retentionDevice": "A centred sentence, then a wall of named source chips pushing in and one picked", "content": "A centred line on the scale of the data sources (one among thousands); source chips" }, "basis": "observed", "confidence": 0.6, "evidence": ["visuals/a1/fade-table.jpg", "visuals/a1/chip-wall.jpg", "visuals/a1/chip-pick.jpg"] },
+    { "value": { "startSec": 21.5, "endSec": 22.9, "purpose": "Sign-off", "retentionDevice": "Flat logo with crop marks; sound stops dead", "content": "Logo" }, "basis": "observed", "confidence": 0.7, "evidence": ["visuals/a1/logo-end.jpg", "audiomap.json keyMoments hard-stop 22.419"] }
+  ],
+  "payoff": { "value": "The table of real-looking leads scrolling past at speed: the claim of scale and price becomes a visible result.", "basis": "inferred", "confidence": 0.6, "evidence": ["visuals/a1/scroll-blur.jpg"] },
+  "callToAction": { "value": "None spoken or written; the logo alone closes the film.", "basis": "observed", "confidence": 0.7, "evidence": ["visuals/a1/logo-end.jpg"] },
+  "whyItWorks": [
+    "The quiet four-second intro is spent on two dense sentences, so the drop arrives with the strongest claim exactly when attention peaks.",
+    "Exits accelerate on the hits and cuts land on the beat (all six within 24 ms), so the picture feels pulled by the music.",
+    "Scale alone does the hierarchy: 12.6%H body type, a 75%H hero number, under 3%H interface text; no effects compete.",
+    "The product is shown as a real interface at reading scale, with a freeze after the click, so cause and effect read.",
+    "One accent colour means numbers and claims: first as text colour, then once as the whole ground."
+  ]
+}

@@ -1,0 +1,1797 @@
+{
+  "version": 1,
+  "provider": "higgsfield",
+  "category": "text-to-video",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "alibaba/happy-horse/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Happy Horse 1.0 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0377db5a2bdd8dd5317573fcead89207f27f4fbb1c06ac1a573fc1831c6026dd",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/happy-horse-1/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 2147483646
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-04-01",
+      "description": "Generates videos from text or image references with clips up to 15 seconds and 1080p resolution.",
+      "exclusive": false,
+      "family": {
+        "slug": "happy-horse-1-0",
+        "title": "Happy Horse 1.0",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/happy-horse-1/text-to-video.md"
+    },
+    {
+      "endpoint": "alibaba/happy-horse/v1.1/text-to-video",
+      "category": "text-to-video",
+      "displayName": "HappyHorse 1.1 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "361b22fa619e0aab9e976dce048902e1a6ab725dd408b3cf2fb948d04d7e98d3",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/happy-horse-1-1/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "1080p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 2147483646
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates videos from text or image references with output at 1080p and clips up to 15 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "happy-horse-1-1",
+        "title": "Happy Horse 1.1",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/happy-horse-1-1/text-to-video.md"
+    },
+    {
+      "endpoint": "alibaba/wan-3.0-prime/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Wan 3.0 Prime — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cbce043ebe901a09f871591316a2d3e8854b11a5410bda6f5abf3705b7158ddc",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/wan-3-prime/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "adaptive"
+          ],
+          "default": "adaptive"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 2,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "enable_thinking",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "default": "1080p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-08-24",
+      "description": "Generates videos from text or media references with fast processing and clips up to 30 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "wan-3-0-prime",
+        "title": "Wan 3.0 Prime",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-3-prime/text-to-video.md"
+    },
+    {
+      "endpoint": "alibaba/wan-3.0/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Wan 3.0 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f08319519839a21230cd7b0079002d0a10ba27413ee5c7ce470abd1a762875b5",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/wan-3/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "adaptive"
+          ],
+          "default": "adaptive"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 2,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "enable_thinking",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "default": "1080p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-08-24",
+      "description": "Generates videos from text or images with native audio and adjustable duration up to 30 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "wan-3-0",
+        "title": "Wan 3.0",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-3/text-to-video.md"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.0/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Seedance 2.0 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3689f8cf805cff36b513483140cc151cc7158c168e687b2df87adbd175a8e600",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/seedance-2/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "21:9"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 4,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "480p",
+            "720p",
+            "1080p",
+            "4k"
+          ],
+          "default": "720p"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-02-01",
+      "description": "Creates 4K video from text or media references. Supports up to 15 seconds with optional sound.",
+      "exclusive": false,
+      "family": {
+        "slug": "bytedance-seedance-2-0",
+        "title": "Seedance 2.0",
+        "company": "ByteDance"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/seedance-2/text-to-video.md"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.5/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Seedance 2.5 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0cdf1dd2d1c8c9e7ddf5dd816c7dc836ab3055099aba82861915ce45678664ad",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16",
+            "21:9"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "bitrate_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "high"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 4,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp4",
+            "mov"
+          ],
+          "default": "mp4"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "480p",
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-07-01",
+      "description": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "exclusive": false,
+      "family": {
+        "slug": "bytedance-seedance-2-5",
+        "title": "Seedance 2.5",
+        "company": "ByteDance"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/seedance-2-5/text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v2.5-turbo/pro/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 2.5 Turbo — Pro text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b0ecabf1ccf92accced3b5f0cd98fda113662eb4c9d31324cc2e504c0bb8daba",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-2-5-turbo/pro-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            5,
+            10
+          ],
+          "default": 5
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2025-09-01",
+      "description": "Generates videos from text prompts and images, with fast generation and precise prompt control.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-2-5",
+        "title": "Kling 2.5",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-2-5-turbo/pro-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v2.6/pro/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 2.6 — Pro text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4fceff1269e7405e5c8015959bbcbda68b78df56915cbb2d2228d8011912ef13",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-2-6/pro-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            5,
+            10
+          ],
+          "default": 5
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sound",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "on",
+            "off"
+          ],
+          "default": "on"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2025-12-01",
+      "description": "Generates videos and sound from text or images, including dialogue, sound effects and ambience.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-2-6",
+        "title": "Kling 2.6",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-2-6/pro-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v3.0-turbo/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 3.0 — Turbo · Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f549a69b081506b86cfa7ce9b3e540e049d70bf77494552a6d6558e46b42c185",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-3/turbo-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-3-0",
+        "title": "Kling 3.0",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/turbo-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v3.0/4k/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 3.0 — 4K · Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "934a411cc13b93e63ecb7f4782209503bad59e76627b5a5124613020d7761f1d",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-3/4k-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "elements",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "multi_prompt",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 6,
+          "array": true
+        },
+        {
+          "name": "multi_shots",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sound",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "on",
+            "off"
+          ],
+          "default": "on"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-3-0",
+        "title": "Kling 3.0",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/4k-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v3.0/pro/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 3.0 — Pro · Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "934a411cc13b93e63ecb7f4782209503bad59e76627b5a5124613020d7761f1d",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-3/pro-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "elements",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "multi_prompt",
+          "type": "array",
+          "required": false,
+          "min": 0,
+          "max": 6,
+          "array": true
+        },
+        {
+          "name": "multi_shots",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sound",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "on",
+            "off"
+          ],
+          "default": "on"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-3-0",
+        "title": "Kling 3.0",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/pro-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v3.0/std/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 3.0 — Standard · Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "338833f42421bebd324b261b2d8d5572c9a11b10ae89a80159a3a1a095597237",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/kling-3/standard-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "elements",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "multi_prompt",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 6,
+          "array": true
+        },
+        {
+          "name": "multi_shots",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sound",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "on",
+            "off"
+          ],
+          "default": "on"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-06-01",
+      "description": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-3-0",
+        "title": "Kling 3.0",
+        "company": "Kling"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/standard-text-to-video.md"
+    },
+    {
+      "endpoint": "kling-video/v4.0-flash/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 4.0 Flash",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-11-04",
+      "description": "Generate 720p videos from text prompts with Kling 4.0 Flash. Choose a duration from 3 to 20 seconds and an aspect ratio of 21:9, 16:9, 9:16, or 1:1.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling4-flash",
+        "title": "Kling 4.0 Flash",
+        "company": "Kling"
+      }
+    },
+    {
+      "endpoint": "kling-video/v4.0/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Kling 4.0",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-10-23",
+      "description": "Create videos with Kling 4.0 from text, images, and video references. Generate up to 30-second clips in 1080p, guide keyframes, and edit existing videos.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling4",
+        "title": "Kling 4.0",
+        "company": "Kling"
+      }
+    },
+    {
+      "endpoint": "lightricks/ltx-2.5/text-to-video/fast",
+      "category": "text-to-video",
+      "displayName": "LTX-2.5 — Text to video fast API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "36ef2baba66354f90762c8a22822a55036f8d9319f1df6f7c63ae4cfc052949f",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/ltx-2-5/text-to-video-fast.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "camera_movement",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "focus_shift"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": true,
+          "enum": [
+            6,
+            8,
+            10
+          ],
+          "default": 6
+        },
+        {
+          "name": "fps",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            24,
+            25,
+            48,
+            50
+          ],
+          "default": 25
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 2,
+          "max": 5000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p",
+            "2k",
+            "4k"
+          ],
+          "default": "720p"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-08-01",
+      "description": "Generates videos from text or images with native audio, camera motion controls and 4K resolution.",
+      "exclusive": false,
+      "family": {
+        "slug": "ltx-2-5-fast",
+        "title": "LTX 2.5 Fast",
+        "company": "Lightricks"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/ltx-2-5/text-to-video-fast.md"
+    },
+    {
+      "endpoint": "lightricks/ltx-2.5/text-to-video/pro",
+      "category": "text-to-video",
+      "displayName": "LTX-2.5 — Text to video pro API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "27ef0613e9ef57e780b06452b444f5e80946d53ce325158bb92a8f449f3e671f",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/ltx-2-5/text-to-video-pro.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "camera_movement",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "focus_shift"
+          ]
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": true,
+          "enum": [
+            6,
+            8,
+            10
+          ],
+          "default": 6
+        },
+        {
+          "name": "fps",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            24,
+            25,
+            50
+          ],
+          "default": 25
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 2,
+          "max": 5000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-08-01",
+      "description": "Generates videos from text or images with native audio, camera motion controls and 1080p output.",
+      "exclusive": false,
+      "family": {
+        "slug": "ltx-2-5-pro",
+        "title": "LTX 2.5 Pro",
+        "company": "Lightricks"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/ltx-2-5/text-to-video-pro.md"
+    },
+    {
+      "endpoint": "minimax/h3/text-to-video",
+      "category": "text-to-video",
+      "displayName": "MiniMax H3 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8dbfba2c599200f7f39e7104b4e45e8fefc6a2b829c908fa6dcd11dad273b094",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/minimax-h3/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aigc_watermark",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "adaptive",
+            "21:9",
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 5,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2K"
+          ],
+          "default": "2K"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-07-01",
+      "description": "Generates 2K videos up to 15 seconds using text, image, video, and optional audio reference files.",
+      "exclusive": false,
+      "family": {
+        "slug": "minimax-h3",
+        "title": "MiniMax H3",
+        "company": "MiniMax"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/minimax-h3/text-to-video.md"
+    },
+    {
+      "endpoint": "minimax/hailuo-2.3/standard/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Hailuo 2.3 — Standard text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f4a23dfda58195bdb66c89d261d4daab4994a459ef21be20cb0b11084f279e03",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/hailuo-2-3/standard-text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            6,
+            10
+          ],
+          "default": 6
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt_optimizer",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2025-10-01",
+      "description": "Generates short videos from text or images with fluid body motion and natural facial expressions.",
+      "exclusive": false,
+      "family": {
+        "slug": "minimax-hailuo-2-3",
+        "title": "MiniMax Hailuo 2.3",
+        "company": "MiniMax"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/hailuo-2-3/standard-text-to-video.md"
+    },
+    {
+      "endpoint": "pixverse/v6/text-to-video",
+      "category": "text-to-video",
+      "displayName": "PixVerse V6 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "691a46ad9fc30d791daa62ca4ca3bf67ae6e428880b29c925f7cad412e6fc964",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/pixverse-v6/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "4:3",
+            "1:1",
+            "3:4",
+            "9:16"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 2048
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "360p",
+            "540p",
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 2147483647
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-03-01",
+      "description": "Generates videos from text or images with native sound and control over the first and last frames.",
+      "exclusive": false,
+      "family": {
+        "slug": "pixverse-6",
+        "title": "PixVerse 6",
+        "company": "PixVerse"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/pixverse-v6/text-to-video.md"
+    },
+    {
+      "endpoint": "wan/v2.6/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Wan 2.6 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "047d72da7822ae37a5d7367c41862d82c5123c6db6155113272b4d6374d436dc",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/wan-2-6/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            5,
+            10,
+            15
+          ],
+          "default": 5
+        },
+        {
+          "name": "multi_shots",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt_extend",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": -1,
+          "max": 10000000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2025-12-01",
+      "description": "Generates multi-shot videos from text or images with native sound and optional video references.",
+      "exclusive": false,
+      "family": {
+        "slug": "wan-2-6",
+        "title": "Wan 2.6",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-6/text-to-video.md"
+    },
+    {
+      "endpoint": "wan/v2.7/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Wan 2.7 — Text to video API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "31135bd2b73d9ad5fb8c123ad975e6947fa7999f9ddd22dd553f70d03af59968",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/wan-2-7/text-to-video.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "required": false,
+          "min": 2,
+          "max": 15,
+          "default": 5
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt_extend",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 2147483646
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "releasedOn": "2026-07-01",
+      "description": "Generates videos from text or images with native audio and consistent characters across scenes.",
+      "exclusive": false,
+      "family": {
+        "slug": "wan-2-7",
+        "title": "Wan 2.7",
+        "company": "Alibaba"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-7/text-to-video.md"
+    }
+  ]
+}

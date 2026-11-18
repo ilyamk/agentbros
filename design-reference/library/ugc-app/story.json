@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ugc-app",
+  "idea": {
+    "value": "Set up a problem by scale alone: the topic is everywhere, the people doing it are countless, and the work costs them hundreds of hours. Then ask one question and stop. The file holds only this set-up: no product, no answer.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/stat3.jpg",
+      "visuals/a1/end2.jpg"
+    ]
+  },
+  "audience": {
+    "value": "Creators or small brands who make short videos themselves: the stats are about creators' own hours, and the wall is made of the format they make. The film's id suggests a user-generated film, but it is a motion-graphics film that uses such clips as material.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": [
+      "visuals/a1/grid-pull.jpg",
+      "visuals/a1/stat-hold.jpg"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.9,
+      "device": "A search being typed, then eight documents at 2-4 frames each with the same highlighted phrase held at the same point of the frame.",
+      "description": "An empty search bar grows on white (0-0.7 s), and the two words are typed slowly (1.1-1.5 s). The cursor blinks at the end while the white gains a paper grain at F60. Then at 2.10 s the film breaks speed: eight different pages in 0.8 s, each with the yellow phrase at the centre, so the eye stays still and the world changes around it. Slow then instantly fast is the hook; 'it's everywhere' is proved without being said."
+    },
+    "basis": "observed",
+    "confidence": 0.95,
+    "evidence": [
+      "visuals/a1/open.jpg F0-F63",
+      "visuals/a1/search-cuts.jpg F63-F86"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.1,
+        "purpose": "Plant the topic",
+        "retentionDevice": "Anticipation: something is being typed",
+        "content": "Search bar, 'UGC Content'"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/open.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.1,
+        "endSec": 2.9,
+        "purpose": "Prove it is everywhere",
+        "retentionDevice": "Eight hard cuts in 0.8 s with one fixed point",
+        "content": "Article, podcast, post, marketplace, video, forum, search results, email: each with the phrase highlighted"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.9,
+        "endSec": 4.47,
+        "purpose": "Give it a human face",
+        "retentionDevice": "A mouth opening out to a person, then the column scrolls to the next person",
+        "content": "Vertical clips of creators in one column"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/grid-in.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.47,
+        "endSec": 6.9,
+        "purpose": "Then too many faces to count",
+        "retentionDevice": "Sudden widening: tiles arrive as white blurs and resolve; the wall keeps shrinking",
+        "content": "Wall of vertical clips, from about 6 to about 16 columns"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/grid-pull.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 6.9,
+        "endSec": 13.07,
+        "purpose": "Name the cost in three sourced figures",
+        "retentionDevice": "Word-by-word sentences read at reading pace; dim background cuts keep the frame alive; the highlight points to the figure",
+        "content": "three statistic cards (a share of creators with their monthly video count, a share with their weekly hours, a yearly total of hours), each with a source line"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/stat1.jpg",
+        "visuals/a1/stat-hold.jpg",
+        "visuals/a1/stat2.jpg",
+        "visuals/a1/stat3.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 13.07,
+        "endSec": 17,
+        "purpose": "Pose the question",
+        "retentionDevice": "Big lit words pass through the frame and small ones between them, so the size acts out which words matter",
+        "content": "'What if' 'there was a' 'better' 'way?'; blue light rising bottom right"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/ending.jpg",
+        "visuals/a1/end2.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "None in this file. The last frame is mid-motion: type is still travelling and a blue light is still growing at F507. It may be cut from a longer film or be a teaser.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/end2.jpg F495-F507"
+    ]
+  },
+  "whyItWorks": [
+    "The eye does not have to move during the smash cuts, so eight pages read as one idea instead of noise. At 2-4 frames per page, no one can read them; they only need to recognise the phrase.",
+    "Three sizes of proof escalate: documents, then one person, then a crowd. The stats would be abstract without them.",
+    "Speed drops sharply at 6.9 s. After 2.8 s of fast motion the sentence reads at the natural pace, so the reader feels it as a change of mood.",
+    "'520 hours a year' is shown over a giant stadium: a scale picture beside a number. The link between picture and figure is mine to infer; nothing in the frame states it.",
+    "Ending on a word and a growing light promises the answer rather than giving it."
+  ]
+}

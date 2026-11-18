@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "content": "structure",
+  "speech": {
+    "available": true,
+    "engine": "whisper.cpp",
+    "words": [
+      {
+        "startSec": 0,
+        "endSec": 2.06,
+        "chars": 3
+      }
+    ]
+  },
+  "screenText": {
+    "available": true,
+    "engine": "apple-vision",
+    "items": [
+      {
+        "startSec": 0.517,
+        "endSec": 1.517,
+        "textId": 0,
+        "chars": 12,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "onsetSec": 0.3,
+        "box": {
+          "x": 0.356,
+          "y": 0.483,
+          "width": 0.248,
+          "height": 0.069
+        }
+      },
+      {
+        "startSec": 4.017,
+        "endSec": 4.517,
+        "textId": 1,
+        "chars": 8,
+        "words": 4,
+        "case": "lower",
+        "confidence": 1,
+        "onsetSec": 3.933,
+        "box": {
+          "x": 0.441,
+          "y": 0.352,
+          "width": 0.086,
+          "height": 0.029
+        }
+      },
+      {
+        "startSec": 5.517,
+        "endSec": 6.017,
+        "textId": 2,
+        "chars": 7,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "onsetSec": 5.433,
+        "box": {
+          "x": 0.132,
+          "y": 0.272,
+          "width": 0.7,
+          "height": 0.431
+        }
+      },
+      {
+        "startSec": 6.017,
+        "endSec": 6.517,
+        "textId": 3,
+        "chars": 18,
+        "words": 4,
+        "case": "lower",
+        "confidence": 1,
+        "onsetSec": 6.233,
+        "box": {
+          "x": 0.362,
+          "y": 0.468,
+          "width": 0.254,
+          "height": 0.06
+        }
+      },
+      {
+        "startSec": 7.017,
+        "endSec": 7.517,
+        "textId": 4,
+        "chars": 8,
+        "words": 4,
+        "case": "mixed",
+        "confidence": 0.3,
+        "onsetSec": 7.2,
+        "box": {
+          "x": 0.381,
+          "y": 0.461,
+          "width": 0.086,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 7.017,
+        "endSec": 7.517,
+        "textId": 5,
+        "chars": 10,
+        "words": 1,
+        "case": "lower",
+        "confidence": 0.5,
+        "onsetSec": 7.3,
+        "box": {
+          "x": 0.398,
+          "y": 0.475,
+          "width": 0.142,
+          "height": 0.047
+        }
+      }
+    ]
+  }
+}

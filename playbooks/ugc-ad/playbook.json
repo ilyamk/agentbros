@@ -1,0 +1,374 @@
+{
+  "version": 1,
+  "id": "ugc-ad",
+  "title": "UGC ad or testimonial",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "A person on camera talks about the product in a native, creator-style vertical video (hook, problem, product in use, proof, CTA), 15-60 s, for TikTok, Reels and Shorts ads or organic posts.",
+  "triggers": {
+    "en": [
+      "ugc",
+      "ugc ad",
+      "ugc video",
+      "ugc style",
+      "user generated",
+      "creator ad",
+      "creator video",
+      "influencer",
+      "influencer ad",
+      "spark ad",
+      "spark ads",
+      "partnership ad",
+      "paid partnership",
+      "whitelisted",
+      "unboxing",
+      "creator brief",
+      "brief for a creator",
+      "script for a creator",
+      "review of our product",
+      "talking about our product",
+      "talks about our product",
+      "ugc ad for our",
+      "ugc video for",
+      "ugc video about",
+      "testimonial ad",
+      "ugc testimonial",
+      "selfie testimonial",
+      "influencer video",
+      "talking to camera about",
+      "selfie style",
+      "talks about our app",
+      "talking about our app",
+      "creator talks",
+      "creator style",
+      "a creator",
+      "creator reviews",
+      "tiktok ad"
+    ],
+    "ru": [
+      "ugc",
+      "юджиси",
+      "ugc реклам",
+      "ugc ролик",
+      "блогер",
+      "ролик с блогер",
+      "инфлюенсер",
+      "креатор",
+      "нативная реклам",
+      "нативный ролик",
+      "распаковк",
+      "спарк",
+      "сценарий для блогер",
+      "тз для блогер",
+      "бриф для блогер",
+      "рассказывает о продукт",
+      "говорит о продукт",
+      "интеграци",
+      "ugc видео",
+      "ugc реклам для",
+      "ugc ролик для",
+      "отзыв для реклам",
+      "отзыв в стиле ugc",
+      "отзыв для тикток",
+      "отзыв блогер",
+      "селфи отзыв",
+      "отзыв селфи",
+      "в стиле селфи",
+      "рассказывает о приложени",
+      "блогер рассказывает",
+      "от лица блогера",
+      "обзор от покупателя",
+      "отзыв покупателя",
+      "реального человека",
+      "в формате отзыва"
+    ],
+    "zh": [
+      "ugc",
+      "ugc广告",
+      "ugc视频",
+      "ugc风格",
+      "达人视频",
+      "达人广告",
+      "达人口播",
+      "博主",
+      "网红",
+      "kol",
+      "koc",
+      "种草",
+      "种草视频",
+      "种草笔记",
+      "开箱",
+      "口播广告",
+      "真人口播",
+      "真人出镜",
+      "测评视频",
+      "原生广告",
+      "自拍风格",
+      "证言广告",
+      "买家秀",
+      "达人脚本"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the user wants their recording cut, captioned or reframed with no ad structure (hook, proof, CTA) and nothing to sell",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a recorded customer interview built into a story (situation, problem, what changed) of 60 s or more, with cut-downs",
+      "use": "case-study"
+    },
+    {
+      "when": "a promo built in motion design around the product with no person talking to camera",
+      "use": "product-promo"
+    },
+    {
+      "when": "several short clips cut out of a long recording such as a podcast or webinar",
+      "use": "shorts-from-long"
+    },
+    {
+      "when": "teaching how to use the product step by step on its screens",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "nobody was filmed and the user wants a generated presenter or avatar to speak (never as a customer testimonial)",
+      "use": "avatar-presenter"
+    }
+  ],
+  "route": {
+    "kind": "footage",
+    "footageGoals": [
+      "recut",
+      "captions",
+      "vertical"
+    ],
+    "start": "pnpm footage:next --project <id> --playbook ugc-ad --source <file> --goal recut,captions,vertical"
+  },
+  "alternatives": [
+    {
+      "when": "the takes, word timings, music and a sourced proof claim are supplied and the user wants a headline on every beat and an end card (hook, problem, demo, proof, CTA)",
+      "route": {
+        "kind": "workflow",
+        "workflow": "product-ad",
+        "start": "pnpm video:workflow --scenario product-ad --action plan --request <file>"
+      }
+    }
+  ],
+  "agents": [
+    "footage-editor"
+  ],
+  "skills": [
+    "recording-recut",
+    "captions-and-localization",
+    "ugc-content-creator",
+    "copywriter",
+    "recording-guide",
+    "directing-and-performance",
+    "editorial-storytelling"
+  ],
+  "library": {
+    "categories": [
+      "captions",
+      "typography"
+    ],
+    "blocks": [
+      "caption-outline-pop",
+      "caption-italic-shadow",
+      "caption-keyword-colour",
+      "type-hero-word"
+    ]
+  },
+  "commands": [
+    "footage:next",
+    "project:new",
+    "speech:local",
+    "transcribe",
+    "recut:plan",
+    "timeline:edit",
+    "captions:place",
+    "captions:export",
+    "reframe:track",
+    "footage:shots",
+    "capture:app",
+    "media:ingest",
+    "media:broll",
+    "video:workflow",
+    "render",
+    "delivery",
+    "asset:import",
+    "refs:profiles",
+    "refs:plan",
+    "refs:derive",
+    "refs:pack"
+  ],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "3-recut-plan": [
+      ".agents/skills/recording-recut/references/analysis-and-broll.md"
+    ],
+    "4-create": [
+      ".agents/skills/recording-recut/references/analysis-and-broll.md"
+    ]
+  },
+  "qa": [
+    "The first 3 s carry the hook and name or show the product or its proposition; no logo intro",
+    "When the speaker has a material connection (paid, gifted, employee, affiliate), Ad or Paid partnership is said and shown (burned captions) in the first seconds, plus the platform label",
+    "Every claim is the speaker's own experience in their own words; no splice puts words in their mouth; results beyond the typical carry what is typical",
+    "Product screens are the real product; inserted B-roll has checked advertising rights",
+    "For a paid placement, captions clear the ad interface (footage:next --placement ad passes captions:place --placement ad); an on-screen CTA is checked on the platform's ad safe-zone template",
+    "Paid ads carry only commercially licensed music, never a trending sound taken from the feed"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Is the video already recorded? Who is on camera: you, a hired creator, or a real customer?",
+      "why": "No footage means a creator brief, not a film; a customer testimonial needs consent and unscripted words"
+    },
+    {
+      "ask": "What ties the speaker to the brand: paid, gifted product, employee, affiliate code, or nothing?",
+      "why": "Any material connection needs an upfront Ad or Paid partnership label (FTC Endorsement Guides, ASA/CAP)"
+    },
+    {
+      "ask": "Paid ad or organic post, and on which of TikTok, Reels and Shorts?",
+      "why": "Ads reserve a larger bottom band, need licensed music and the creator's ad authorisation (Spark code, partnership ad)",
+      "default": "Organic on TikTok, Reels and Shorts, one vertical cut"
+    },
+    {
+      "ask": "Which claims will the speaker make, and what proves each one?",
+      "why": "Testimonials may not imply atypical results; the proof beat needs a source",
+      "default": "Only the speaker's own experience, no numbers or comparisons"
+    },
+    {
+      "ask": "What is the one action at the end, in its exact words (link, code, install)?",
+      "why": "One CTA, spoken and on screen, matching the platform's button",
+      "default": "The platform CTA button, with a short spoken CTA"
+    },
+    {
+      "ask": "Should real product screens be inserted? Which app or site, and a test account?",
+      "why": "Screens must be the real product (capture:app), not a stand-in",
+      "default": "No inserts; the product is shown in the speaker's hands"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "outline-pop",
+      "note": "TikTok recommends 21-34 s for most ads, a hook in the first 3 s and the proposition in the first 3 s; use the Commercial Music Library in ads"
+    },
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "italic-shadow",
+      "note": "Meta's Reels ads guide: 9:16, with audio, captions and CTA inside the safe zone; branded content carries the Paid partnership label"
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "outline-pop",
+      "note": "Shorts run up to 3 min (YouTube Help), but the ad keeps the 15-60 s band; tick paid promotion so YouTube shows its disclosure label at the start"
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "caption-outline-pop",
+      "caption-italic-shadow",
+      "caption-keyword-colour"
+    ],
+    "note": "The creator-content caption presets: outline pop and yellow italic shadow for loud talking heads, key-word colour to land the product name or the number"
+  },
+  "variants": [
+    {
+      "id": "customer-testimonial",
+      "title": "Customer testimonial as a native ad",
+      "triggers": {
+        "en": [
+          "testimonial ad",
+          "ugc testimonial",
+          "selfie testimonial"
+        ],
+        "ru": [
+          "отзыв для реклам",
+          "отзыв в стиле ugc",
+          "отзыв для тикток"
+        ],
+        "zh": [
+          "证言广告",
+          "买家秀",
+          "用户好评",
+          "真实用户评价",
+          "用户证言"
+        ]
+      },
+      "changes": "The speaker is a real customer: written consent and usage rights before cutting, no script handed to them, recut:plan cuts only waste (no reordering), a typical-results line when their result is exceptional, and an insider or incentive disclosed (FTC 16 CFR 465)."
+    },
+    {
+      "id": "creator-brief",
+      "title": "Brief for a creator, before the shoot",
+      "triggers": {
+        "en": [
+          "creator brief",
+          "brief for a creator",
+          "script for a creator",
+          "shot list"
+        ],
+        "ru": [
+          "тз для блогер",
+          "бриф для блогер",
+          "сценарий для блогер"
+        ],
+        "zh": [
+          "达人脚本",
+          "博主脚本",
+          "拍摄脚本",
+          "达人brief",
+          "分镜清单"
+        ]
+      },
+      "changes": "No footage yet: the deliverable is a brief, not a film. Hook variants and a 15/30/60 s script (copywriter, ugc-content-creator), a shot list and recording spec (recording-guide), performance notes (directing-and-performance), the disclosure said to camera in the first seconds, and usage rights. The footage route starts when the takes arrive."
+    },
+    {
+      "id": "hook-variants",
+      "title": "Several hooks over one body",
+      "triggers": {
+        "en": [
+          "hook variants",
+          "several hooks",
+          "a/b test"
+        ],
+        "ru": [
+          "несколько хуков",
+          "варианты хука",
+          "разные хуки"
+        ],
+        "zh": [
+          "多个钩子",
+          "几个开头",
+          "不同开头",
+          "多个开头"
+        ]
+      },
+      "changes": "The creator records the whole script once per hook. Each take is its own source project and recut (project:new, then footage:next --project <id>-hook-b --playbook ugc-ad --source <take>), so no hook is spliced onto another take's body; 3-5 variants per ad group is TikTok's guidance."
+    }
+  ]
+}

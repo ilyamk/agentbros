@@ -1,0 +1,919 @@
+{
+  "v": 1,
+  "revision": 3,
+  "generatedAt": "2026-11-17T09:40:00Z",
+  "project": {
+    "id": "talk-recut",
+    "route": "footage",
+    "playbook": "talk-recut",
+    "formats": [
+      "landscape",
+      "vertical"
+    ],
+    "createdAt": "2026-11-15T12:00:00Z"
+  },
+  "control": {
+    "state": "running"
+  },
+  "autonomy": {
+    "mode": "interactive",
+    "ceilingUsd": 2,
+    "source": "budget"
+  },
+  "steps": [
+    {
+      "id": "setup",
+      "title": "Project and goals",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:00:00Z",
+      "closedAt": "2026-11-17T09:01:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "0-source",
+      "title": "Source check",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:01:00Z",
+      "closedAt": "2026-11-17T09:02:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "1-transcript",
+      "title": "Transcript",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:02:00Z",
+      "closedAt": "2026-11-17T09:03:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "1-speech-mask",
+      "title": "Speech mask",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:03:00Z",
+      "closedAt": "2026-11-17T09:04:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "2-shots",
+      "title": "Shots",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:04:00Z",
+      "closedAt": "2026-11-17T09:05:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "3-recut-plan",
+      "title": "Recut plan",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:05:00Z",
+      "closedAt": "2026-11-17T09:06:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "4-approve",
+      "title": "Approval of the edit hash",
+      "status": "awaiting-gate",
+      "reasons": [
+        "the recut plan waits for your approval of its hash"
+      ],
+      "gate": true
+    },
+    {
+      "id": "4-create",
+      "title": "Create the recut project",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "5-captions",
+      "title": "Caption style",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "6-shorts",
+      "title": "Shorts",
+      "status": "pending",
+      "reasons": [],
+      "skippable": true
+    },
+    {
+      "id": "7-cameras",
+      "title": "Several cameras",
+      "status": "pending",
+      "reasons": [],
+      "skippable": true
+    },
+    {
+      "id": "8-reframe",
+      "title": "Reframe",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "9-render",
+      "title": "Render",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "done",
+      "title": "Done",
+      "status": "pending",
+      "reasons": []
+    }
+  ],
+  "current": {
+    "step": "4-approve",
+    "next": {
+      "argv": [
+        "pnpm",
+        "footage:next",
+        "--project",
+        "talk-recut"
+      ],
+      "why": "Approve the recut plan's hash to continue."
+    }
+  },
+  "waiting": [
+    {
+      "v": 1,
+      "id": "dec-recut-plan",
+      "project": "talk-recut",
+      "kind": "gate",
+      "step": "4-approve",
+      "title": "Approve the recut plan (edit hash 5f0c1d2e3a4b)",
+      "summary": "Removes 11 cuts: pauses, fillers and false starts; 18:20 becomes 14:51.\n\nApproving records that you watched the whole source and that no cut changes the meaning.",
+      "bindTo": [
+        {
+          "path": "pipeline/footage/talk/recut-plan.md",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        {
+          "path": "pipeline/footage/talk/recut-request.json",
+          "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-17T09:35:00Z",
+      "options": [
+        {
+          "id": "approve",
+          "label": "Approve the edit hash",
+          "argv": [
+            "pnpm",
+            "recut:plan",
+            "--project",
+            "talk-recut",
+            "--approve",
+            "5f0c1d2e3a4b59687a8b9cadbecfd0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7081",
+            "--answer",
+            "<the user's words>"
+          ]
+        }
+      ]
+    }
+  ],
+  "agents": {
+    "today": []
+  },
+  "money": {
+    "ceilingUsd": 2,
+    "reservedUsd": 0,
+    "spentUsd": 0.42,
+    "unknownPriced": 0,
+    "byProvider": [
+      {
+        "provider": "elevenlabs",
+        "spentUsd": 0.42,
+        "reservedUsd": 0,
+        "jobs": 1,
+        "unknownPriced": 0
+      }
+    ],
+    "jobs": [
+      {
+        "id": "job-scribe-01",
+        "provider": "elevenlabs",
+        "endpoint": "scribe_v1",
+        "step": "1-transcript",
+        "state": "published",
+        "costUsd": 0.42,
+        "priceKnown": true
+      }
+    ]
+  },
+  "media": {
+    "latestRender": {
+      "root": "project",
+      "path": "source/talk.mp4",
+      "kind": "video",
+      "durationSec": 1100,
+      "width": 1920,
+      "height": 1080,
+      "fps": 25
+    }
+  },
+  "assets": [
+    {
+      "id": "talk",
+      "kind": "video",
+      "path": "source/talk.mp4",
+      "origin": "user",
+      "usedIn": [
+        "timeline"
+      ]
+    }
+  ],
+  "qa": {
+    "findings": []
+  },
+  "cards": [],
+  "advisories": [],
+  "footage": {
+    "source": {
+      "media": {
+        "root": "project",
+        "path": "source/talk.mp4",
+        "kind": "video",
+        "durationSec": 1100,
+        "width": 1920,
+        "height": 1080,
+        "fps": 25
+      },
+      "file": "public/projects/talk-recut/source/talk.mp4",
+      "durationSec": 1100,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "problems": []
+    },
+    "transcript": {
+      "provider": "elevenlabs",
+      "model": "scribe_v1",
+      "language": "en",
+      "verbatim": true,
+      "diarized": true,
+      "speakers": [
+        {
+          "id": "speaker_0",
+          "label": "Host",
+          "words": 2210
+        },
+        {
+          "id": "speaker_1",
+          "words": 388
+        }
+      ],
+      "wordCount": 2598,
+      "durationSec": 1100,
+      "words": [
+        {
+          "text": "So",
+          "start": 1.2,
+          "end": 1.52,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "today",
+          "start": 1.6,
+          "end": 1.92,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "I",
+          "start": 2.0,
+          "end": 2.32,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "want",
+          "start": 2.4,
+          "end": 2.72,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "to",
+          "start": 2.8,
+          "end": 3.12,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "talk",
+          "start": 3.2,
+          "end": 3.52,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "about",
+          "start": 3.6,
+          "end": 3.92,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "um",
+          "start": 4.0,
+          "end": 4.18,
+          "speaker": "speaker_0",
+          "kind": "filler"
+        },
+        {
+          "text": "how",
+          "start": 4.26,
+          "end": 4.58,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "we",
+          "start": 4.66,
+          "end": 4.98,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "cut",
+          "start": 5.06,
+          "end": 5.38,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "a",
+          "start": 5.46,
+          "end": 5.78,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "long",
+          "start": 5.86,
+          "end": 6.18,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "recording",
+          "start": 6.26,
+          "end": 6.58,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "into",
+          "start": 6.66,
+          "end": 6.98,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "something",
+          "start": 7.06,
+          "end": 7.38,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "people",
+          "start": 7.46,
+          "end": 7.78,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "actually",
+          "start": 7.86,
+          "end": 8.18,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "watch.",
+          "start": 8.26,
+          "end": 8.58,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "The",
+          "start": 8.66,
+          "end": 8.98,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "the",
+          "start": 9.06,
+          "end": 9.38,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "first",
+          "start": 9.46,
+          "end": 9.78,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "thing",
+          "start": 9.86,
+          "end": 10.18,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "is",
+          "start": 10.26,
+          "end": 10.58,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "silence.",
+          "start": 10.66,
+          "end": 10.98,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "Uh",
+          "start": 11.06,
+          "end": 11.24,
+          "speaker": "speaker_0",
+          "kind": "filler"
+        },
+        {
+          "text": "pauses",
+          "start": 11.32,
+          "end": 11.64,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "feel",
+          "start": 11.72,
+          "end": 12.04,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "longer",
+          "start": 12.12,
+          "end": 12.44,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "on",
+          "start": 12.52,
+          "end": 12.84,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "laughter",
+          "start": 27.32,
+          "end": 27.92,
+          "speaker": "speaker_1",
+          "kind": "event"
+        },
+        {
+          "text": "screen",
+          "start": 12.92,
+          "end": 13.24,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "than",
+          "start": 13.32,
+          "end": 13.64,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "in",
+          "start": 13.72,
+          "end": 14.04,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "the",
+          "start": 14.12,
+          "end": 14.44,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "room.",
+          "start": 14.52,
+          "end": 14.84,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "Then",
+          "start": 14.92,
+          "end": 15.24,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "there",
+          "start": 15.32,
+          "end": 15.64,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "are",
+          "start": 15.72,
+          "end": 16.04,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "false",
+          "start": 16.12,
+          "end": 16.44,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "starts",
+          "start": 16.52,
+          "end": 16.84,
+          "speaker": "speaker_0",
+          "kind": "word"
+        },
+        {
+          "text": "where",
+          "start": 16.92,
+          "end": 17.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "you",
+          "start": 17.32,
+          "end": 17.64,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "begin",
+          "start": 17.72,
+          "end": 18.04,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "a",
+          "start": 18.12,
+          "end": 18.44,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "sentence,",
+          "start": 18.52,
+          "end": 18.84,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "stop,",
+          "start": 18.92,
+          "end": 19.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "and",
+          "start": 19.32,
+          "end": 19.64,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "begin",
+          "start": 19.72,
+          "end": 20.04,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "again.",
+          "start": 20.12,
+          "end": 20.44,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "We",
+          "start": 20.52,
+          "end": 20.84,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "keep",
+          "start": 20.92,
+          "end": 21.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "every",
+          "start": 21.32,
+          "end": 21.64,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "statement",
+          "start": 21.72,
+          "end": 22.04,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "that",
+          "start": 22.12,
+          "end": 22.44,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "carries",
+          "start": 22.52,
+          "end": 22.84,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "meaning,",
+          "start": 22.92,
+          "end": 23.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "and",
+          "start": 23.32,
+          "end": 23.64,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "we",
+          "start": 23.72,
+          "end": 24.04,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "never",
+          "start": 24.12,
+          "end": 24.44,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "cut",
+          "start": 24.52,
+          "end": 24.84,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "inside",
+          "start": 24.92,
+          "end": 25.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "a",
+          "start": 25.32,
+          "end": 25.64,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "caveat",
+          "start": 25.72,
+          "end": 26.04,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "or",
+          "start": 26.12,
+          "end": 26.44,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "a",
+          "start": 26.52,
+          "end": 26.84,
+          "speaker": "speaker_1",
+          "kind": "word"
+        },
+        {
+          "text": "negation.",
+          "start": 26.92,
+          "end": 27.24,
+          "speaker": "speaker_1",
+          "kind": "word"
+        }
+      ],
+      "truncated": true,
+      "glued": []
+    },
+    "plan": {
+      "doc": {
+        "root": "project",
+        "path": "pipeline/footage/talk/recut-plan.md",
+        "kind": "document",
+        "label": "recut-plan.md"
+      },
+      "recutProject": "talk-recut-v1",
+      "editHash": "5f0c1d2e3a4b59687a8b9cadbecfd0e1f2a3b4c5d6e7f8091a2b3c4d5e6f7081",
+      "approvedEditHash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "sourceSec": 1100,
+      "outputSec": 891.68,
+      "removedSec": 208.32,
+      "cuts": [
+        {
+          "id": "C1",
+          "kind": "head",
+          "startSec": 0,
+          "endSec": 1.1,
+          "text": "[leading silence] So today I want…",
+          "reason": "leading silence before the first word"
+        },
+        {
+          "id": "C2",
+          "kind": "filler",
+          "startSec": 4.6,
+          "endSec": 4.82,
+          "text": "…talk about ~~um~~ how we cut…",
+          "reason": "marked filler in a verbatim transcript"
+        },
+        {
+          "id": "C3",
+          "kind": "pause",
+          "startSec": 38.2,
+          "endSec": 40.9,
+          "text": "…people actually watch. [pause shortened] The the first…",
+          "reason": "pause of 2.9 s between sentences shortened to 0.3 s"
+        },
+        {
+          "id": "C4",
+          "kind": "retake",
+          "startSec": 41.0,
+          "endSec": 41.4,
+          "text": "…[pause] ~~The~~ the first thing is silence…",
+          "reason": "repeated word: a false start"
+        },
+        {
+          "id": "C5",
+          "kind": "filler",
+          "startSec": 96.3,
+          "endSec": 96.5,
+          "text": "…is silence. ~~Uh~~ pauses feel longer…",
+          "reason": "marked filler in a verbatim transcript"
+        },
+        {
+          "id": "C6",
+          "kind": "pause",
+          "startSec": 210.4,
+          "endSec": 214.9,
+          "text": "…than in the room. [pause shortened] Then there are…",
+          "reason": "pause of 4.8 s shortened to 0.35 s"
+        },
+        {
+          "id": "C7",
+          "kind": "retake",
+          "startSec": 402.0,
+          "endSec": 409.6,
+          "text": "…where you ~~begin a sentence, stop, and~~ begin again…",
+          "reason": "abandoned take repeated in full right after"
+        },
+        {
+          "id": "C8",
+          "kind": "pause",
+          "startSec": 611.2,
+          "endSec": 676.0,
+          "text": "…carries meaning. [pause shortened] and we never…",
+          "reason": "long pause (break in the recording) shortened"
+        },
+        {
+          "id": "C9",
+          "kind": "pause",
+          "startSec": 802.5,
+          "endSec": 830.0,
+          "text": "…a caveat. [pause shortened] So that is…",
+          "reason": "pause shortened"
+        },
+        {
+          "id": "C10",
+          "kind": "filler",
+          "startSec": 951.1,
+          "endSec": 951.4,
+          "text": "…and ~~um~~ that is how…",
+          "reason": "marked filler"
+        },
+        {
+          "id": "C11",
+          "kind": "tail",
+          "startSec": 1001.0,
+          "endSec": 1100.0,
+          "text": "…thanks for watching. [trailing silence]",
+          "reason": "trailing silence after the last word"
+        }
+      ],
+      "keep": [
+        {
+          "startSec": 1.1,
+          "endSec": 4.6
+        },
+        {
+          "startSec": 4.82,
+          "endSec": 38.2
+        },
+        {
+          "startSec": 40.9,
+          "endSec": 41.0
+        },
+        {
+          "startSec": 41.4,
+          "endSec": 96.3
+        },
+        {
+          "startSec": 96.5,
+          "endSec": 210.4
+        },
+        {
+          "startSec": 214.9,
+          "endSec": 402.0
+        },
+        {
+          "startSec": 409.6,
+          "endSec": 611.2
+        },
+        {
+          "startSec": 676.0,
+          "endSec": 802.5
+        },
+        {
+          "startSec": 830.0,
+          "endSec": 951.1
+        },
+        {
+          "startSec": 951.4,
+          "endSec": 1001.0
+        }
+      ],
+      "protectedCount": 3
+    },
+    "captions": {
+      "wanted": "outline-pop",
+      "placed": false,
+      "choices": [
+        "outline-pop",
+        "italic-shadow",
+        "keyword-colour",
+        "word-box",
+        "line-box",
+        "chunky-stack",
+        "editorial-mix",
+        "clean-sentence",
+        "single-punch",
+        "typewriter",
+        "karaoke"
+      ]
+    }
+  }
+}

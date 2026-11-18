@@ -1,0 +1,877 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flex",
+  "techniques": [
+    {
+      "id": "t01-wordmark-reveal-rtl",
+      "name": "Wordmark soft reveal from the right",
+      "spans": [
+        {
+          "startSec": 0.033,
+          "endSec": 0.5
+        },
+        {
+          "startSec": 38.267,
+          "endSec": 38.633
+        }
+      ],
+      "description": "The italic serif wordmark appears centred, last letter first: a soft-edged mask travels right to left while opacity ramps, 14 frames at the open over a photo plate (F1–F15), 11 frames at the close on white (F1149–F1159). Same move bookends the film, so the close reads as a return.",
+      "route": "remotion",
+      "routeReason": "A masked, eased reveal on a vector mark; MaskedLine with a horizontal gradient mask set per frame reproduces it, no 3D or shader needed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MaskedLine",
+        "progress",
+        "curves"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 0.467,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s01-logo-in.jpg F1–F15",
+          "visuals/a1/s20-logo-resolve.jpg F1148–F1159"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s01-logo-in.jpg DIFF 0.96–1.40 roughly flat F1–F10, falling after F13"
+        ]
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "right-to-left soft mask with opacity ramp, 11–14 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json box x 0.423–0.577 at 38.5 s",
+          "visuals/a1/s01-logo-in.jpg F3 (last glyph only)"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 0.033,
+            "endSec": 0.5
+          },
+          "shots": [
+            "s001"
+          ],
+          "timing": {
+            "durationSec": 0.467,
+            "startOffsetFromCutSec": 0.033,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/s01-logo-in.jpg F1–F15 (14 frames)"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 38.267,
+            "endSec": 38.633
+          },
+          "shots": [
+            "s020.2"
+          ],
+          "timing": {
+            "durationSec": 0.367,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/s20-logo-resolve.jpg F1149–F1159 (11 frames)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "t02-rising-sheet-wipe",
+      "techniqueCardId": "rising-sheet",
+      "name": "Rising sheet wipe with long tail",
+      "spans": [
+        {
+          "startSec": 1.667,
+          "endSec": 2.5
+        },
+        {
+          "startSec": 14.8,
+          "endSec": 16.233
+        }
+      ],
+      "description": "A flat sheet of the next ground (dark green, later off-white) rises from the bottom over a still plate. Fast first third (6% → 55% of height between F52 and F56), then a long tail; a sliver of the old plate stays at the top until F74 (green) or F488 (off-white). The next scene's first element (a stroke ring, then interface panels) starts drawing on the sheet before it is finished.",
+      "route": "remotion",
+      "routeReason": "A clip-path inset animated per frame over two layers; the existing transitions do not include a bottom-up cover with an eased front and an unfinished tail, so it is a short custom presentation.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "block:slice-panels"
+      ],
+      "function": "transition",
+      "fromShot": 0,
+      "toShot": 1,
+      "timing": {
+        "durationSec": 0.833,
+        "startOffsetFromCutSec": -0.3,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s01-wipe-up.jpg F50–F71",
+          "visuals/a1/s02-wipe-tail.jpg F69–F74",
+          "shots.json s002 transitionStartSec 1.667"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s01-wipe-up.jpg front at ≈6% F52, 34% F54, 55% F56, 72% F59, 86% F64, ≈100% F74"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 1.667,
+            "endSec": 2.5
+          },
+          "fromShot": 0,
+          "toShot": 1,
+          "timing": {
+            "durationSec": 0.833,
+            "startOffsetFromCutSec": -0.3,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/s01-wipe-up.jpg F50–F71",
+              "visuals/a1/s02-wipe-tail.jpg F69–F74"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 14.8,
+            "endSec": 16.233
+          },
+          "fromShot": 3,
+          "toShot": 4
+        }
+      ]
+    },
+    {
+      "id": "t03-word-by-word-centred-line",
+      "name": "Word-by-word line that stays centred",
+      "spans": [
+        {
+          "startSec": 2.167,
+          "endSec": 4.2
+        },
+        {
+          "startSec": 13.567,
+          "endSec": 14.2
+        },
+        {
+          "startSec": 25.9,
+          "endSec": 26.4
+        }
+      ],
+      "description": "A single light-weight sans line is built one word at a time. Each word fades in and rises a few pixels over about 5 frames; the line as a whole slides so that the growing sentence stays near frame centre (OCR line centre 0.40 → 0.50 → 0.41 → 0.51 of width as words arrive). Gaps: 9 frames, 28 frames, 13 frames on the thesis line; 2, 5, 5, 6 frames on the promise line; 9 frames between number and noun on the stat.",
+      "route": "remotion",
+      "routeReason": "Per-word timing driven from a cue list; HeadlineBuild or SplitText can stagger words, and the re-centring is a measured line width interpolated per frame.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "kinetic-headline-build",
+        "splitWords",
+        "stagger",
+        "useFittedFontSize"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 2.033,
+        "startOffsetFromCutSec": 0.2,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s02-word-build.jpg F65",
+          "visuals/a1/s02-wipe-tail.jpg F74",
+          "visuals/a1/s02-word-build-b.jpg F102, F115",
+          "visuals/a1/s04-card-to-sky.jpg F407, F409, F414, F419"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s02-wipe-tail.jpg F74–F79 word settles upward in about 5 frames"
+        ]
+      },
+      "typography": {
+        "role": "thesis / promise line",
+        "entry": "word by word, fade + 4–6 px rise over 5 frames, line re-centres",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json boxes 2.017–4.017 s: x 0.295/0.313/0.159/0.147, width 0.201/0.372/0.506/0.733"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 2.167,
+            "endSec": 4.2
+          },
+          "shots": [
+            "s002"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 13.567,
+            "endSec": 14.2
+          },
+          "shots": [
+            "s003.2"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 25.9,
+            "endSec": 26.4
+          },
+          "shots": [
+            "s013"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t04-frame-shrinks-to-object",
+      "name": "Whole frame shrinks into the product object",
+      "spans": [
+        {
+          "startSec": 5.433,
+          "endSec": 6.333
+        }
+      ],
+      "description": "The full-frame titled shot gains a thin off-white border and shrinks, keeping its 16:9 proportion, to a slab about 40% of frame width on a warm off-white ground; a diagonal sheen crosses it; its text fades as it shrinks. Then the slab narrows to button proportions and an icon spins in.",
+      "route": "remotion",
+      "routeReason": "A layout morph between a full-frame scene and a rounded rectangle; GrowToScene run in reverse, or LayoutMorph, holds the scene inside the morphing rectangle.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "LayoutMorph",
+        "GrowToScene",
+        "morphRect",
+        "track"
+      ],
+      "function": "transition",
+      "fromShot": 1,
+      "toShot": 2,
+      "timing": {
+        "durationSec": 0.9,
+        "startOffsetFromCutSec": -0.267,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s02-shrink-to-card.jpg F163–F182",
+          "visuals/a1/s03-slab-to-button.jpg F180–F190"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s02-shrink-to-card.jpg DIFF rises 0.59 → 25.62 (F171) then falls to 2.04 (F182)"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t05-button-types-and-flips",
+      "name": "Action button types its label, then flips open as the product",
+      "spans": [
+        {
+          "startSec": 6.2,
+          "endSec": 8.667
+        }
+      ],
+      "description": "The button's label types in one letter per about 2 frames (F189–F212) behind a spinning plus icon; the button then holds about 1 s, rotates on its horizontal axis to edge-on (F241–F245), and opens from the other side as the full product object in perspective (F246–F251), settling by F260.",
+      "route": "remotion",
+      "routeReason": "The typing is TypedLine; the flip is a per-frame rotateX on two faces with backface hidden, then back to a 2D transform once settled (the motion AGENTS trap on 3D transforms). The object's metal face is a rendered still from the Blender stage (t06).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "track",
+        "block:frame-to-object"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.333,
+        "startOffsetFromCutSec": 2.333,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s03-card-flip.jpg F241–F251"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s03-card-flip.jpg DIFF 0.08–0.97 F238–F244, 3.7 at F246, decaying to 0.99 at F256"
+        ]
+      },
+      "typography": {
+        "role": "button label",
+        "entry": "typewriter, about 1 letter per 2 frames",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s03-button-to-card.jpg F189–F212"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t06-metal-object-fan-orbit",
+      "name": "Rendered product object fanned and orbited",
+      "spans": [
+        {
+          "startSec": 8.667,
+          "endSec": 13.433
+        }
+      ],
+      "description": "Photoreal brushed-metal objects (green and silver variants) close to camera, slowly rotating; the green one fans into a stack of a dozen copies that spread like a deck (F327–F380). Strong specular sweeps across the surface; shallow depth of field. Motion energy peaks around 10–12 s from the object, not from editing.",
+      "route": "blender",
+      "routeReason": "Believable metal, specular sweeps and soft shadow are the point of the shot (blender-3d: for a shot the viewer should take for a photograph). Played back through the blender-plate block. A three.js fan is the cheaper fallback if the material may look graphic.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "blender-plate",
+        "block:depth-card-flythrough",
+        "repo:scripts/blender/card_fan.py"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 4.767,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s03-card-spin.jpg F288–F311",
+          "visuals/a1/s03-card-mid.jpg F327–F347",
+          "visuals/a1/s03-card-flythrough.jpg F357–F380"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "inferred",
+        "evidence": [
+          "motion.json s003 trackedShare 0.223, too low to use its fitted ease"
+        ]
+      },
+      "layers": 2,
+      "techniqueCardId": "fanned-stack"
+    },
+    {
+      "id": "t07-organic-matte-reveal",
+      "techniqueCardId": "noise-matte-wipe",
+      "name": "Soft organic matte to an atmospheric plate",
+      "spans": [
+        {
+          "startSec": 13.4,
+          "endSec": 13.767
+        }
+      ],
+      "description": "A cloud-shaped, soft-edged matte opens from the right over the moving object shot, revealing a storm-cloud plate in 11 frames (F403–F413); the edge carries a slight chromatic fringe; the first word of the next line appears at F407, inside the revealed area.",
+      "route": "hyperframes",
+      "routeReason": "An organic luma-matte transition is a shader look whose shape matters more than its parameters; a Hyperframes shader transition (domain warp or noise dissolve) fits. In Remotion the nearest equivalent is a large blurred radial mask animated across the frame.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:noise-matte-wipe"
+      ],
+      "function": "transition",
+      "fromShot": 2,
+      "toShot": 3,
+      "timing": {
+        "durationSec": 0.367,
+        "startOffsetFromCutSec": -0.167,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/s04-card-to-sky.jpg F403–F413",
+          "audio.json beat 13.398 within 0.035 s of the start"
+        ]
+      },
+      "ease": {
+        "name": "power1.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s04-card-to-sky.jpg DIFF 23.9 → 36.9 (F403) → 17.3 (F410) → 7.4 (F413)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Start sits 0.035 s from a beat and an onset (measured); whether a hit or whoosh is there is not known. Not heard.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json beatsSec 13.398",
+          "audio.json onsetsSec ≈13.398"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t08-ui-panels-grow-from-sliver",
+      "name": "Interface panels grow from a sliver, staggered",
+      "spans": [
+        {
+          "startSec": 15.267,
+          "endSec": 16.867
+        }
+      ],
+      "description": "Inside the rising off-white sheet, the first panel appears as a 1-pixel vertical line (F458), opens to a portrait card (F465) and then to a landscape card (F472); the panels below follow 3–4 frames apart; then each panel's illustration and text fade in (F469–F506).",
+      "route": "remotion",
+      "routeReason": "The panels are the real product interface (real-UI rule: capture the actual page with capture:app); the growth is a per-panel clip or scale animation on the capture's regions, which DashboardAssemble already stages.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ui-dashboard-assemble",
+        "growRect",
+        "stagger",
+        "ScreenPlayback"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.6,
+        "startOffsetFromCutSec": 0.167,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s05-white-to-ui.jpg F458–F485",
+          "visuals/a1/s05-white-tail.jpg F483–F506"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s05-white-to-ui.jpg panel width ≈1 px F458 → card F465 → landscape F472, then small changes"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "t09-ui-pullback-and-tilt",
+      "name": "Camera pull-back and tilt across a real dashboard",
+      "spans": [
+        {
+          "startSec": 17.4,
+          "endSec": 20.733
+        }
+      ],
+      "description": "Camera on the interface capture pulls back from the panel column to reveal the sidebar and frame (17.4–18.1 s), then tilts down to the fourth panel (18.73–19.92 s), ending zoomed on it before a hard cut to the form.",
+      "route": "remotion",
+      "routeReason": "RegionCamera over a real capture; the fitted ease is directly usable.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "WindowFrame",
+        "ui-camera-read"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.194,
+        "startOffsetFromCutSec": 3.628,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s005 camera startSec 18.728, durationSec 1.194, span90Sec 0.818",
+          "visuals/a1/s05-ui-tilt.jpg F552–F575"
+        ]
+      },
+      "ease": {
+        "name": "power1.inOut",
+        "cubicBezier": [
+          0.508,
+          0.002,
+          0.287,
+          0.779
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s005 ease gsap power1.inOut, trackedShare 0.951"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t10-glyph-soft-reveal",
+      "name": "Glyph-by-glyph soft reveal over aerial",
+      "spans": [
+        {
+          "startSec": 22.6,
+          "endSec": 23.167
+        },
+        {
+          "startSec": 38.867,
+          "endSec": 39.6
+        }
+      ],
+      "description": "A line reveals left to right a glyph at a time with a feathered leading edge, about 1.4 glyphs per frame (24 glyphs over 17 frames), the first word plus one glyph already visible on the cut frame; the same reveal, slower (about 0.8 glyph per frame), types the small call-to-action line under the closing wordmark.",
+      "route": "remotion",
+      "routeReason": "Per-glyph opacity from a schedule; TypedLine or Glyphs with a soft ramp.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "TypedLine",
+        "Glyphs",
+        "typedCount"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.567,
+        "startOffsetFromCutSec": 0,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/s06-sf-type.jpg F678–F695",
+          "audio.json beat 22.593, 0.007 s from the cut"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s06-sf-type.jpg about one glyph added per frame at an even rate"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The cut that starts it is 0.007 s from a detected beat (measured). Not heard.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json beatsSec 22.593"
+        ]
+      },
+      "typography": {
+        "role": "journey line, origin half",
+        "entry": "soft glyph reveal left to right, ≈1.4 glyphs per frame",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json box x 0.115 width 0.764 at 23.0 s",
+          "visuals/a1/s06-sf-type.jpg F678–F695"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 22.6,
+            "endSec": 23.167
+          },
+          "shots": [
+            "s006"
+          ],
+          "timing": {
+            "durationSec": 0.567,
+            "startOffsetFromCutSec": 0,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/s06-sf-type.jpg F678–F695"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 38.867,
+            "endSec": 39.6
+          },
+          "shots": [
+            "s020.2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t11-flash-montage-continuous-caption",
+      "name": "Flash montage under one continuous caption",
+      "spans": [
+        {
+          "startSec": 23.867,
+          "endSec": 25.733
+        }
+      ],
+      "description": "Five destination plates cut every 4 frames (one of 3), then a sixth held 37 frames. One caption at a fixed position (y ≈ 0.45 of height, starting x ≈ 0.19 of width): only the place name changes per plate, and the trailing words keep revealing across the cuts so the sentence completes on the last flash.",
+      "route": "footage",
+      "routeReason": "Real places from the air: stock aerials with licence evidence (engine-selection: places are footage). The caption over them is Remotion.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Sequence",
+        "TypedLine",
+        "layoutSeries"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.633,
+        "startOffsetFromCutSec": 0,
+        "onBeat": false,
+        "basis": "measured",
+        "evidence": [
+          "shots.json s007–s011 durations 0.133/0.133/0.134/0.100/0.133",
+          "visuals/a1/s06-city-flash.jpg F716–F735",
+          "recomputed: 2 of 7 montage cuts on a beat vs 0.29 chance"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s06-city-flash.jpg hard cuts, DIFF 53–71 on each cut frame"
+        ]
+      },
+      "typography": {
+        "role": "journey line, destination half",
+        "entry": "fixed position; one word swaps per cut while the tail keeps revealing",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json 24.017–25.517 boxes",
+          "visuals/a1/s06-city-flash.jpg F716–F735"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s007",
+        "s008",
+        "s009",
+        "s010",
+        "s011",
+        "s012"
+      ]
+    },
+    {
+      "id": "t12-stat-over-particle-sphere",
+      "name": "Stat line over a pulling-out line-particle sphere",
+      "spans": [
+        {
+          "startSec": 25.733,
+          "endSec": 28.2
+        }
+      ],
+      "description": "Hard cut to the dark brand green; a sphere drawn from short curved green strokes pulls out (z −0.62) and turns; the number fades in at +5 frames, the noun at +14 frames, line re-centring as it grows; held 2.5 s.",
+      "route": "remotion",
+      "routeReason": "Seeded strokes on a sphere projected per frame (three.js through @remotion/three or 2D projection); a flat green ground and light type keep it browser-cheap.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ThreeCanvas",
+        "random",
+        "particle-assemble",
+        "block:point-sphere"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.829,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s013 camera startSec 25.733, durationSec 0.829",
+          "visuals/a1/s12-to-globe.jpg F772–F791"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0.171,
+          0.418,
+          0.147,
+          0.866
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s013 ease gsap circ.out, trackedShare 0.945"
+        ]
+      },
+      "typography": {
+        "role": "stat",
+        "entry": "number then noun, fade, 9 frames apart",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s12-to-globe.jpg F777, F786"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "point-sphere"
+    },
+    {
+      "id": "t13-radial-bloom-dissolve-device-rise",
+      "techniqueCardId": "leak-flash",
+      "name": "Edge-in light bloom to off-white while a device rises",
+      "spans": [
+        {
+          "startSec": 28.067,
+          "endSec": 28.4
+        }
+      ],
+      "description": "The dark green frame brightens from the edges inward like an overexposed vignette (centre stays green longest) to an off-white ground in 10 frames (F842–F851), while a phone rises from the bottom edge; the headline then slides down into the top of frame.",
+      "route": "remotion",
+      "routeReason": "A radial-gradient mask whose inner radius closes per frame over the outgoing scene, plus a translate on the device layer; the device screen itself is a third-party wallet sheet and must be a pixel-faithful replica from a dated screenshot (real-UI rule).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ui-phone-hero",
+        "DeviceFrame",
+        "track",
+        "block:light-burn"
+      ],
+      "function": "transition",
+      "fromShot": 13,
+      "toShot": 14,
+      "timing": {
+        "durationSec": 0.333,
+        "startOffsetFromCutSec": -0.133,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/s13-dissolve-phone.jpg F842–F851",
+          "audio.json beat 28.003, 0.064 s before the start"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s13-dissolve-phone.jpg DIFF 4.3 (F842), 34.5–44.3 (F843–F845), 37.2, 28.1, 20.9, 14.8, 11.4, 6.5 (F846–F851): fast front, decaying tail; the motion.json s014 power4.out fit belongs to the 2.6 s device rise, not to the bloom"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Within 0.064 s of a beat (measured, inside the 80 ms tolerance). Not heard.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json beatsSec 28.003"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t14-anthem-lead-plus-italic-word",
+      "name": "Anthem run: fixed lead phrase, italic value word per plate",
+      "spans": [
+        {
+          "startSec": 31.233,
+          "endSec": 38.2
+        }
+      ],
+      "description": "Six plates, 29–36 frames each, hard cuts. Centred one-line slogan: upright light sans lead (on screen at the cut) plus an italic serif value word that fades up over about 8 frames. The lead changes once (negation, then affirmation); the last plate is pure white with the value word in brand green, held 49 frames, faded out over 10 frames.",
+      "route": "footage",
+      "routeReason": "Five evocative stock plates (fence, clock, traffic trails, golden hour, skyline) carry the meanings; the type is Remotion. The white final plate is pure Remotion.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-word-rotate",
+        "Sequence",
+        "layoutSeries",
+        "progress"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 6.967,
+        "startOffsetFromCutSec": 0,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "shots.json s015–s020 starts 31.233, 32.433, 33.433, 34.6, 35.6, 36.567",
+          "recomputed: 5 of 7 anthem cuts within 80 ms of a beat vs 0.29 chance, n = 7"
+        ]
+      },
+      "ease": {
+        "name": "power1.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s15-tagline-cuts.jpg F973–F980 DIFF 2.7 → 0.79 on the value word"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Inferred pattern: holds 0.97–1.20 s sit near two beats at 111 BPM (1.08 s) and 5/7 cuts are on a beat. Small sample; tempo confidence 0.57. Not heard.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json tempo 110.99 BPM, confidence 0.571",
+          "sync.json cutsOnBeatChance 0.293"
+        ]
+      },
+      "typography": {
+        "role": "anthem slogan",
+        "entry": "lead on the cut frame, italic value word fades up over about 8 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json boxes 31.017–38.017 s, y 0.452–0.461",
+          "visuals/a1/s15-tagline-cuts.jpg F973–F980"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s015",
+        "s016",
+        "s017",
+        "s018",
+        "s019",
+        "s020.1"
+      ]
+    },
+    {
+      "id": "t15-fade-to-white-signoff",
+      "name": "Fade the last line to empty white, then wordmark and small CTA",
+      "spans": [
+        {
+          "startSec": 37.833,
+          "endSec": 42.033
+        }
+      ],
+      "description": "The final slogan fades out over 10 frames to an empty white frame (about 4 frames), the wordmark reveals right-to-left (t01) at frame centre, and 18 frames later a small one-line call to action types in below it at y ≈ 0.85; the frame holds 2.4 s without a fade.",
+      "route": "remotion",
+      "routeReason": "Opacity, mask and typed line on a flat ground.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "scene-end-card",
+        "TypedLine",
+        "MaskedLine"
+      ],
+      "function": "cta",
+      "fromShot": 20,
+      "toShot": 21,
+      "timing": {
+        "durationSec": 1.733,
+        "startOffsetFromCutSec": -0.367,
+        "onBeat": true,
+        "basis": "measured",
+        "evidence": [
+          "visuals/a1/s20-logo-resolve.jpg F1135–F1159",
+          "visuals/a1/s20-cta-sub.jpg F1166–F1187",
+          "audio.json beat 38.243, 0.024 s from the wordmark start"
+        ]
+      },
+      "ease": {
+        "name": "power1.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s20-logo-resolve.jpg DIFF 0.23–0.26 F1135–F1138 then 0.19, 0.14, 0.09, 0.06, 0.03"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Wordmark starts 0.024 s from a beat (measured). Not heard; the music may or may not resolve here.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json beatsSec 38.243"
+        ]
+      },
+      "typography": {
+        "role": "wordmark + call to action",
+        "entry": "mark right-to-left soft mask; CTA soft typewriter ≈0.8 glyph per frame",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json CTA box x 0.412 width 0.171 y 0.849"
+        ]
+      },
+      "layers": 3
+    }
+  ]
+}

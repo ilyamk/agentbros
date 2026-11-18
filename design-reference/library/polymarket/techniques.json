@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "techniques": [
+    {
+      "id": "chart-as-wipe",
+      "name": "Rising chart wipes to the next ground",
+      "spans": [
+        {
+          "startSec": 3.433,
+          "endSec": 4.067
+        }
+      ],
+      "description": "Five bars: staggered entry from the bottom, plateau, surge to full height. Colour matches the next ground exactly, so nothing has to cut.",
+      "route": "remotion",
+      "routeReason": "Rectangles on a track; exact colour match to the next scene is simple in the same composition.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "stagger",
+        "curves",
+        "block:caused-morph"
+      ],
+      "function": "transition",
+      "fromShot": 4,
+      "toShot": 5,
+      "layers": 2,
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": -0.333,
+        "basis": "measured",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t-bars.jpg F103-F115"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "confidence": 0.7,
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.133
+          },
+          {
+            "part": "hold",
+            "durationSec": 0.133
+          },
+          {
+            "part": "exit",
+            "name": "power2.in",
+            "durationSec": 0.133
+          },
+          {
+            "part": "entry",
+            "name": "power3.out",
+            "durationSec": 0.267
+          }
+        ],
+        "evidence": [
+          "visuals/a1/t-bars.jpg diff 4.0, 15.3, 19.5, 14.5 (F103-F106), 7.8, 5.2, 4.4, 5.2 (F107-F110 plateau), 7.8, 12.7, 24.2, 13.4 (F111-F114 surge), 17.2, 9.0, 5.6, 3.9, 2.9, 2.3, 1.9, 1.6 (F115-F122 next line rising)"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "basis": "inferred",
+        "confidence": 0.3,
+        "note": "Not checked against onsets for this move."
+      }
+    },
+    {
+      "id": "eased-rollup",
+      "name": "Value rollup as the film's main verb",
+      "spans": [
+        {
+          "startSec": 2.9,
+          "endSec": 3.2
+        },
+        {
+          "startSec": 13.2,
+          "endSec": 13.867
+        },
+        {
+          "startSec": 16.367,
+          "endSec": 17.133
+        },
+        {
+          "startSec": 19.367,
+          "endSec": 19.833
+        },
+        {
+          "startSec": 20.833,
+          "endSec": 21.3
+        },
+        {
+          "startSec": 23.833,
+          "endSec": 25.167
+        },
+        {
+          "startSec": 27.0,
+          "endSec": 27.667
+        }
+      ],
+      "description": "Value driven by a curve, whole units, a new value every frame, no tween between digits. Two curves: target figures front-load (gauge 2K to 100K: 61% of the way by the 5th of 20 frames, power3.out; threshold 10 to 50 nearly even then slowing in its last 4 frames, power1.out), running figures are linear (gain about 1062 a frame; first prize tick). Proportional figures, so the width changes with the digits.",
+      "route": "remotion",
+      "routeReason": "Pure function of frame, follows props. A new number is a prop change.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "block:type-number-race"
+      ],
+      "function": "proof",
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 2.9,
+            "endSec": 3.2
+          },
+          "shots": [
+            "s003"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 13.2,
+            "endSec": 13.867
+          },
+          "shots": [
+            "s008"
+          ],
+          "timing": {
+            "durationSec": 0.667,
+            "startOffsetFromCutSec": 0,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-gauge.jpg F396-F416"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 16.367,
+            "endSec": 17.133
+          },
+          "shots": [
+            "s010"
+          ],
+          "timing": {
+            "durationSec": 0.733,
+            "startOffsetFromCutSec": 0,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-pnl.jpg F491-F513"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 19.367,
+            "endSec": 19.833
+          },
+          "shots": [
+            "s013"
+          ],
+          "timing": {
+            "durationSec": 0.467,
+            "startOffsetFromCutSec": 0,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-topcount.jpg F581-F595"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 20.833,
+            "endSec": 21.3
+          },
+          "shots": [
+            "s015"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 23.833,
+            "endSec": 25.167
+          },
+          "shots": [
+            "s017"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 27.0,
+            "endSec": 27.667
+          },
+          "shots": [
+            "s019"
+          ]
+        }
+      ],
+      "typography": {
+        "role": "figure",
+        "entry": "value rolls per frame with a curve",
+        "alignment": "centre",
+        "size": 0.2,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 13.02-13.52 box x 0.314 w 0.347 h 0.202; 27.02-27.52 h 0.131"
+        ]
+      }
+    },
+    {
+      "id": "radial-tick-gauge",
+      "name": "Radial tick gauge tied to a counter",
+      "spans": [
+        {
+          "startSec": 13.2,
+          "endSec": 14.367
+        }
+      ],
+      "description": "Roughly 90-100 ticks on a half circle extending past the frame; grey until passed, then blue. Fill position equals counter progress.",
+      "route": "remotion",
+      "routeReason": "The block type-number-race already races a figure with an arc of ticks lighting with it and stops dead; it was built from this move.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-number-race"
+      ],
+      "function": "proof",
+      "shots": [
+        "s008"
+      ],
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.667,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/t-gauge.jpg F396-F416"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/a1/t-gauge.jpg values by frame F396-F416: 2, 7, 25, 41, 52, 61, 68, 74, 78, 82, 86, 88, 91, 93, 95, 96, 97, 98, 99, 99, 100 (K)"
+        ]
+      },
+      "typography": {
+        "role": "figure",
+        "entry": "per-frame value roll inside the arc",
+        "alignment": "centre",
+        "size": 0.2,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 13.02-13.52 box h 0.202"
+        ]
+      }
+    },
+    {
+      "id": "button-swallow",
+      "techniqueCardId": "element-to-ground",
+      "name": "Interface button grows to hide the interface",
+      "spans": [
+        {
+          "startSec": 12.633,
+          "endSec": 13.2
+        }
+      ],
+      "description": "A rebuilt form scrolls upward; button lightens with a band from each edge; label scales down as the button scales up; hard cut before it fills.",
+      "route": "remotion",
+      "routeReason": "The form must be our own product's interface, either a rebuilt React layout or a recording; button state sits above it.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "ScreenPlayback",
+        "WindowFrame",
+        "track",
+        "block:caused-morph"
+      ],
+      "function": "transition",
+      "fromShot": 9,
+      "toShot": 10,
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.567,
+        "startOffsetFromCutSec": -0.567,
+        "basis": "measured",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t-button.jpg F379-F396"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/t-button.jpg diff 6.3-8.6 F384-F392, 9.1, 12.0, 19.6 (F393-F395), cut F396"
+        ]
+      }
+    },
+    {
+      "id": "pinned-row-ranking",
+      "name": "Blurred ranking with one pinned row",
+      "spans": [
+        {
+          "startSec": 17.133,
+          "endSec": 19.367
+        }
+      ],
+      "description": "Long table translated vertically, motion blurred while fast; one wider row stays still; a punch-in by hard cut; a soft sheen on the top row.",
+      "route": "remotion",
+      "routeReason": "Data-driven table. Blur only while moving.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Shutter",
+        "Trail",
+        "track",
+        "regionTransform",
+        "block:ui-data-table"
+      ],
+      "function": "proof",
+      "shots": [
+        "s011",
+        "s012"
+      ],
+      "fromShot": 15,
+      "toShot": 16,
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.9,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/a1/t-board.jpg F515-F541 stream and settle; F541-F556 slow drift; F557 punch-in cut"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/a1/t-board.jpg diff 4-8 F515-F529, peak 10.5-11.3 F530-F532, then 9.0, 7.2, 4.9, 4.1, 3.8, 3.3, 3.1, 3.0, 2.5 to F541"
+        ]
+      },
+      "typography": {
+        "role": "table rows",
+        "entry": "streamed vertically under motion blur",
+        "alignment": "left",
+        "size": 0.024,
+        "basis": "observed",
+        "confidence": 0.7,
+        "evidence": [
+          "speech-text.json screenText 17.52-18.52 row labels box h 0.021-0.026, x 0.256-0.265"
+        ]
+      },
+      "techniqueCardId": "pinned-row-stream"
+    },
+    {
+      "id": "object-into-slot",
+      "name": "Spinning object lands as an icon",
+      "spans": [
+        {
+          "startSec": 6.5,
+          "endSec": 7.2
+        }
+      ],
+      "description": "Disc enters oversized at the right edge under strong motion blur, spins round its vertical axis past edge-on, decelerates, shrinks and lands on the icon slot of a card.",
+      "route": "remotion",
+      "routeReason": "A thick stylised disc via three.js in @remotion/three stays editable and is what engine-selection says for a simple 3D object. Glossy highlight is the risk: if it looks plastic, render it in Blender with alpha as an imported clip.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "Shutter",
+        "track",
+        "block:symbol-disc",
+        "block:shared-element-carry"
+      ],
+      "techniqueCardId": "symbol-disc",
+      "function": "reveal",
+      "shots": [
+        "s006"
+      ],
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.667,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-coin.jpg F195-F215"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "confidence": 0.55,
+        "evidence": [
+          "visuals/a1/t-coin.jpg diff 29.9 (F196), 15.6, 15.4, 12.8, 18.3, 12.0, 11.2, 16.3, 8.8 ... 8.3 (F214), 4.4, 1.4, 0.4 (F217)"
+        ]
+      }
+    },
+    {
+      "id": "card-rotator",
+      "techniqueCardId": "ticker-card",
+      "name": "One card, cycling content, then pull-back to a row",
+      "spans": [
+        {
+          "startSec": 7.2,
+          "endSec": 10.53
+        }
+      ],
+      "description": "Card holds position, its asset swaps every 6-12 frames, line chart redraws with it; at 8.46 s a soft blurred scale-down reveals neighbours with depth of field; the row slides left continuously.",
+      "route": "remotion",
+      "routeReason": "Data-driven cards; depth via layers.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Camera",
+        "DepthLayer",
+        "track",
+        "block:ticker-card"
+      ],
+      "function": "proof",
+      "shots": [
+        "s006"
+      ],
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.667,
+        "basis": "measured",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/t-pullout.jpg F248-F268 pull-back"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "strip",
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/a1/t-pullout.jpg diff 0.4-0.9 (F249-F253), 1.3-3.0 rising to F259-F260, falling to 0.7 by F268"
+        ]
+      }
+    },
+    {
+      "id": "printing-slip",
+      "name": "Paper slip prints the list",
+      "spans": [
+        {
+          "startSec": 22.0,
+          "endSec": 23.83
+        }
+      ],
+      "description": "A curled sheet with a torn edge on black: bottom unrolls as rows appear about every 2 frames; the sheet tilts and drifts back, with a slow sheen.",
+      "route": "blender",
+      "routeReason": "Paper curl plus sheen is the point of the shot, and blender-3d lists material-driven shots. A flat CSS skew loses the curl, which is what makes it read as an object. Needs user approval under the skill, and the text must be baked per version.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:printing-slip",
+        "repo:scripts/blender/printing_slip.py"
+      ],
+      "function": "proof",
+      "shots": [
+        "s016"
+      ],
+      "layers": 3,
+      "timing": {
+        "durationSec": 0.967,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/a1/t-receipt.jpg F660-F689"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "confidence": 0.55,
+        "evidence": [
+          "visuals/a1/t-receipt.jpg diff 18.0, 10.9, 8.3, 7.0, 5.8, 4.9, 4.3, 3.7 ... 1.0 (F661-F686)"
+        ]
+      },
+      "typography": {
+        "role": "list rows",
+        "entry": "one row about every 2 frames as the slip unrolls",
+        "alignment": "split-edges",
+        "size": 0.045,
+        "basis": "observed",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json screenText 22.02-24.02 rank labels x 0.31-0.34, amounts x 0.52-0.58, box h 0.034-0.065"
+        ]
+      },
+      "techniqueCardId": "printing-slip"
+    },
+    {
+      "id": "field-backdrops",
+      "name": "One faint layer behind each word",
+      "spans": [
+        {
+          "startSec": 2.1,
+          "endSec": 2.9
+        },
+        {
+          "startSec": 19.37,
+          "endSec": 20.83
+        },
+        {
+          "startSec": 20.83,
+          "endSec": 22.0
+        },
+        {
+          "startSec": 25.4,
+          "endSec": 27.0
+        },
+        {
+          "startSec": 30.1,
+          "endSec": 31.73
+        }
+      ],
+      "description": "Rings expanding from the centre, an engraved note, a trophy, a cropped ghost of the word, or a grid of rounded tiles lit at random; 6-12% contrast, always moving a little.",
+      "route": "remotion",
+      "routeReason": "All flat layers. The note and trophy images need our own licensed or generated art.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "block:word-backdrop"
+      ],
+      "function": "emphasis",
+      "layers": 3,
+      "shots": [
+        "s002",
+        "s013",
+        "s014",
+        "s015",
+        "s018.1",
+        "s018.2",
+        "s022"
+      ],
+      "techniqueCardId": "word-backdrop"
+    },
+    {
+      "id": "stillness-before-the-ask",
+      "name": "Stop moving before the question",
+      "spans": [
+        {
+          "startSec": 27.0,
+          "endSec": 30.1
+        }
+      ],
+      "description": "After 27 s of drift, motion falls to near zero (meanEnergy 0.003-0.007) while the cuts continue.",
+      "route": "remotion",
+      "routeReason": "Just the absence of animation, stated here because it is deliberate.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "layoutSeries"
+      ],
+      "function": "breath",
+      "shots": [
+        "s019",
+        "s020",
+        "s021"
+      ],
+      "layers": 2,
+      "timing": {
+        "durationSec": 3.1,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/a1/t-stillness.jpg F811-F844: diff 2-3 while the figure rolls, then 0.5-0.8 from F829",
+          "motion.json meanEnergy s019-s021 0.003-0.007"
+        ]
+      }
+    },
+    {
+      "id": "accelerate-into-cut",
+      "name": "Accelerating drift into a hard cut",
+      "function": "transition",
+      "description": "A held shot whose slow camera move speeds up through its last 10-14 frames and is cut at full speed: the gauge's pull-back after the figure lands (diff 1.9 at F417 rising to 8.6 at F429, cut F431) and the countdown's push-in on zero (0.1 at F750 to 4.8 at F761, cut F762). The button's growth before its cut has the same shape. The cut takes the shot away while it still has momentum.",
+      "spans": [
+        {
+          "startSec": 12.8,
+          "endSec": 13.2
+        },
+        {
+          "startSec": 13.9,
+          "endSec": 14.367
+        },
+        {
+          "startSec": 25.03,
+          "endSec": 25.4
+        }
+      ],
+      "route": "remotion",
+      "routeReason": "A scale track with an ease-in that ends on the cut frame; nothing new.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves"
+      ],
+      "timing": {
+        "durationSec": 0.467,
+        "startOffsetFromCutSec": -0.467,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t-gauge.jpg F417-F431"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "truncated": true,
+        "confidence": 0.65,
+        "evidence": [
+          "visuals/a1/t-gauge.jpg diff 1.9, 2.1, 2.3, 2.7, 2.9, 3.2, 3.6, 4.1, 4.6, 5.3, 6.1, 7.3, 8.6 (F417-F429)",
+          "visuals/a1/t-zero.jpg diff 0.13, 0.23, 0.36, 0.51, 0.67, 0.9, 1.21, 1.64, 2.29, 3.45, 4.79 (F751-F761)"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 12.8,
+            "endSec": 13.2
+          },
+          "fromShot": 9,
+          "toShot": 10,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.4,
+            "basis": "measured",
+            "evidence": [
+              "visuals/a1/t-button.jpg F384-F396"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 13.9,
+            "endSec": 14.367
+          },
+          "fromShot": 10,
+          "toShot": 11,
+          "timing": {
+            "durationSec": 0.467,
+            "startOffsetFromCutSec": -0.467,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-gauge.jpg F417-F431"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 25.03,
+            "endSec": 25.4
+          },
+          "fromShot": 21,
+          "toShot": 22,
+          "timing": {
+            "durationSec": 0.367,
+            "startOffsetFromCutSec": -0.367,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/t-zero.jpg F751-F762"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cut-on-transient",
+      "name": "Cuts locked to transients after the music enters",
+      "spans": [
+        {
+          "startSec": 10.53,
+          "endSec": 34.9
+        }
+      ],
+      "description": "19 of 21 cuts within 0.08 s of an onset (chance 0.70). Whether these are music or sound effects placed on cuts was not determined; the method is to line up cuts and impacts.",
+      "route": "remotion",
+      "routeReason": "Timeline and audio live in Remotion, but no helper snaps cuts to measured onsets. Sound itself must be our own.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "beatCues",
+        "activeCue",
+        "repo:snapFrame"
+      ],
+      "function": "transition",
+      "sound": {
+        "kind": "unknown",
+        "note": "19 of 21 corrected cuts after 10.5 s fall within 0.08 s of an audio onset (local chance 0.70). Whether those onsets are music hits the cuts follow or effects placed on cuts cannot be separated without hearing.",
+        "basis": "measured",
+        "timingBasis": "measured",
+        "sourceBasis": "inferred",
+        "confidence": 0.5,
+        "evidence": [
+          "audio.json onsets",
+          "sync.json metrics cutsOnOnsetRatio 0.727 vs chance 0.543 (detector cuts)"
+        ]
+      },
+      "timing": {
+        "durationSec": 0,
+        "onBeat": false,
+        "basis": "measured",
+        "confidence": 0.5,
+        "evidence": [
+          "audio.json beats: 9 of 21 corrected cuts after 10.5 s within 0.08 s of a beat, chance 0.35"
+        ]
+      }
+    }
+  ]
+}

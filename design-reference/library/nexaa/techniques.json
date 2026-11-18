@@ -1,0 +1,809 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "techniques": [
+    {
+      "id": "giant-word-pull-out",
+      "name": "Giant word pulled back to reading size",
+      "function": "hook",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 0.708
+        }
+      ],
+      "description": "One short word, centred, starts at about 2.5x so it overflows both frame edges, and scales down to 43% of frame width on expo.out (90% of travel in 0.43 s, settled by F14). A blurred blue light sits at the left edge. Hold 2-3 frames, then hard cut.",
+      "route": "remotion",
+      "routeReason": "A scale track on one text element; the light is a blurred radial div. No missing primitive.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "intentCurves",
+        "useFittedFontSize",
+        "LivingLight"
+      ],
+      "timing": {
+        "durationSec": 0.583,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t01-open-pullout.jpg F0-F14"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "cubicBezier": [
+          0.288,
+          0.264,
+          0.032,
+          1.108
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s001 camera.ease, t5Sec 0.068 to t95Sec 0.496, z -0.90",
+          "visuals/a1/t01-open-pullout.jpg F1-F14"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "scale-down from 2.5x, expo.out 14f",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t01-open-pullout.jpg F0-F14",
+          "speech-text.json screenText 0-0.5 box centre x 0.507"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "light-blob-name-reveal",
+      "name": "Soft light slides off the name",
+      "function": "reveal",
+      "spans": [
+        {
+          "startSec": 0.708,
+          "endSec": 1.083
+        }
+      ],
+      "description": "On a hard cut the two-word name line appears with a large blurred blue light (#3599F5) covering its second half; the light slides right and off frame in 9 frames (F17-F26), uncovering the brand-coloured word. Line 52% of frame width, centred, first word navy, second brand blue.",
+      "route": "remotion",
+      "routeReason": "A blurred radial gradient translated over static type; no masking needed because the light is opaque enough to hide the word.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "LivingLight"
+      ],
+      "timing": {
+        "durationSec": 0.375,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t02-light-sweep.jpg F17-F26"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t02-light-sweep.jpg F18-F26 diff 4.7, 12.3, 17.0, 15.2, 12.9, 9.2, 3.7, 1.5, 0.6"
+        ]
+      },
+      "typography": {
+        "role": "name line",
+        "entry": "uncovered by a sliding light",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t02-light-sweep.jpg F17-F26"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "word-build-on-ground-swap",
+      "name": "Word-by-word line on a saturated ground",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 1.625,
+          "endSec": 3.375
+        }
+      ],
+      "description": "Hard cut to a saturated blue ground (#0966F6). White words cut on one at a time (F39 first word, F41 a dash, F45 the second word), centred, glyph height 13.6% of frame height; the line drifts slightly. At F67 the whole line is replaced by one noun (12.2%), held 14 frames, then a hard cut back to white.",
+      "route": "remotion",
+      "routeReason": "Per-word visibility from a schedule on a flat ground.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track",
+        "type-sentence-build",
+        "ground-swap-cut"
+      ],
+      "timing": {
+        "durationSec": 1.75,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t03-cut-to-blue.jpg F39-F50",
+          "visuals/a1/t04-blue-to-white.jpg F64-F81"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t03-cut-to-blue.jpg F40-F45"
+        ]
+      },
+      "typography": {
+        "role": "premise phrase",
+        "entry": "word-by-word cut-on, 2-4 frames apart, then whole-line swap",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t03-cut-to-blue.jpg F39-F45",
+          "full-frame bbox F60 centre x 0.495"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "type-steps-down-to-ui-scale",
+      "name": "Type steps down to the interface's size, then dissolves into it",
+      "function": "transition",
+      "spans": [
+        {
+          "startSec": 3.375,
+          "endSec": 5.917
+        }
+      ],
+      "description": "Each premise line is smaller than the last: glyph height 16.1% (name), 13.6%, 12.2%, 9.7%, 6.7% of frame height. The last sentence (57% of width) is at the scale of the interface title that replaces it. Words of that sentence arrive pale blue and darken over 3-4 frames, about 3-4 frames apart (F106, F109, F113, F116). Then the sentence fades out from left to right as the interface fades in at the same place, F127-F142 (0.63 s).",
+      "route": "remotion",
+      "routeReason": "Font sizes from a list, a per-word opacity and colour track, and a gradient mask crossfade between the type layer and the interface capture. Interface shots must be a real capture of the new product (capture:app or a screen recording), never a generic mock-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track",
+        "hierarchy",
+        "ScreenPlayback"
+      ],
+      "timing": {
+        "durationSec": 0.625,
+        "startOffsetFromCutSec": -0.313,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t06-text-to-ui.jpg F127-F142"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t06-text-to-ui.jpg F123-F142 diffs flat 0.15-0.8"
+        ]
+      },
+      "typography": {
+        "role": "premise sentence",
+        "entry": "per-word fade from pale blue to navy, 3-4 frames each",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t05-words-build.jpg F106-F121",
+          "full-frame bbox F121 centre x 0.505"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 5,
+      "toShot": 6
+    },
+    {
+      "id": "ui-punch-in-reframe",
+      "name": "Hard punch-ins on the interface while typing",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 6.583,
+          "endSec": 8.083
+        },
+        {
+          "startSec": 8.083,
+          "endSec": 9.667
+        },
+        {
+          "startSec": 9.667,
+          "endSec": 11.125
+        },
+        {
+          "startSec": 16.625,
+          "endSec": 17.792
+        }
+      ],
+      "description": "Cut from wide to about 1.8x on the prompt field as the first character is typed (F158), cut back to wide when the line overflows the close frame (F194), cut to a 7x macro of the send button (F232). In the later headline-size prompt the same idea moves sideways: one frame (F399) jumps the view to the field's right end at the same scale so the cursor and send button are in frame. Typing runs at roughly one character per frame. Close shots drift slowly; scale is never animated.",
+      "route": "remotion",
+      "routeReason": "Three crops of one high-resolution capture of the real interface with a typed-text overlay or a recorded typing pass; hard cuts between crops. Capture at 2x or more for the macro. Interface shots must be a real capture of the new product (capture:app or a screen recording), never a generic mock-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "ScreenPlayback",
+        "TypedLine",
+        "ui-prompt-bar",
+        "ui-camera-read"
+      ],
+      "timing": {
+        "durationSec": 1.5,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t07-ui-reframe.jpg F157-F170",
+          "visuals/a1/t08-ui-pullback.jpg F193-F194",
+          "visuals/a1/t09-cut-to-send.jpg F231-F232",
+          "visuals/a1/t23-s008-reframe.jpg F398-F399"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t07-ui-reframe.jpg F157-F158",
+          "visuals/a1/t08-ui-pullback.jpg F193-F194"
+        ]
+      },
+      "typography": {
+        "role": "typed prompt",
+        "entry": "typewriter, about 1 character per frame, caret visible",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t07-ui-reframe.jpg F159-F170"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 6,
+      "toShot": 7,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 6.583,
+            "endSec": 8.083
+          },
+          "fromShot": 6,
+          "toShot": 7
+        },
+        {
+          "span": {
+            "startSec": 8.083,
+            "endSec": 9.667
+          },
+          "fromShot": 7,
+          "toShot": 8
+        },
+        {
+          "span": {
+            "startSec": 9.667,
+            "endSec": 11.125
+          },
+          "fromShot": 8,
+          "toShot": 9
+        },
+        {
+          "span": {
+            "startSec": 16.625,
+            "endSec": 17.792
+          },
+          "fromShot": 11,
+          "toShot": 12
+        }
+      ]
+    },
+    {
+      "id": "accelerate-into-cut",
+      "name": "Accelerating drift into a hard cut, continued after it",
+      "function": "transition",
+      "spans": [
+        {
+          "startSec": 10.917,
+          "endSec": 11.292
+        },
+        {
+          "startSec": 14.917,
+          "endSec": 15.292
+        },
+        {
+          "startSec": 17.417,
+          "endSec": 18.042
+        },
+        {
+          "startSec": 18.829,
+          "endSec": 19.25
+        },
+        {
+          "startSec": 21.25,
+          "endSec": 21.833
+        }
+      ],
+      "description": "The last 0.3-0.5 s of a shot drifts (up, or left) with rising speed and hard-cuts at peak speed; the next shot's main element moves the same way and settles in 4-6 frames. Seen five times; the clearest are the table drifting left into 15.292 (circ.in, 0.40 s, motion.json s007), the benefit card panning left into 19.25, and the clicked field drifting up into a card that rises and settles (F418-F433).",
+      "route": "remotion",
+      "routeReason": "A y or x track with an ease-in on the outgoing shot and an ease-out on the incoming one, optional VelocityBlur keyed to speed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "intentCurves",
+        "velocity",
+        "VelocityBlur",
+        "motion-blur"
+      ],
+      "timing": {
+        "durationSec": 0.398,
+        "startOffsetFromCutSec": -0.448,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s007 camera t5Sec 14.844 to t95Sec 15.242, cut 15.292",
+          "visuals/a1/t15-checks.jpg F454-F458",
+          "visuals/a1/t16-cut-to-typing.jpg F459-F462"
+        ]
+      },
+      "ease": {
+        "name": "circ.in",
+        "cubicBezier": [
+          0.5,
+          0.148,
+          0.754,
+          0.245
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s007 camera.ease (table drift into 15.292, not suspect)",
+          "visuals/a1/t15-checks.jpg F454-F458 diff 2.5, 3.1, 3.7, 4.1, 4.3"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Of the four cuts in the loud half (17.792, 19.25, 21.667 and the 15.292 entry) three land 24-29 ms after a tracked beat; 11.125 in the quiet half is 142 ms off. Tempo confidence 0.55; whether a hit sounds there is inferred, I cannot hear.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json tempo.beatsSec 17.763, 19.226, 21.641",
+          "edit.json rhythm"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 10,
+      "toShot": 11,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 10.917,
+            "endSec": 11.292
+          },
+          "fromShot": 9,
+          "toShot": 10
+        },
+        {
+          "span": {
+            "startSec": 14.917,
+            "endSec": 15.292
+          },
+          "fromShot": 10,
+          "toShot": 11
+        },
+        {
+          "span": {
+            "startSec": 17.417,
+            "endSec": 18.042
+          },
+          "fromShot": 12,
+          "toShot": 13
+        },
+        {
+          "span": {
+            "startSec": 18.829,
+            "endSec": 19.25
+          },
+          "fromShot": 13,
+          "toShot": 14
+        },
+        {
+          "span": {
+            "startSec": 21.25,
+            "endSec": 21.833
+          },
+          "fromShot": 14,
+          "toShot": 15
+        }
+      ]
+    },
+    {
+      "id": "skeleton-shimmer-to-content",
+      "name": "Shimmer placeholder grows into the answer",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 13.667,
+          "endSec": 14.583
+        }
+      ],
+      "description": "A purple-to-lilac vertical-band gradient grows from a dot at the start of the reply line to the answer's full size in 12 frames (F328-F340) while the chat scrolls up; its bands slide sideways; the answer's text dissolves in through it over 6 frames (F344-F350) as the gradient fades to the table's header colour.",
+      "route": "remotion",
+      "routeReason": "A rounded rect with a scrolling linear-gradient fill, a size track from the reply line's origin, then a crossfade to a capture of the real answer. Interface shots must be a real capture of the new product (capture:app or a screen recording), never a generic mock-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "growRect",
+        "ScreenPlayback",
+        "ui-ai-chat",
+        "block:placeholder-resolve"
+      ],
+      "timing": {
+        "durationSec": 0.917,
+        "startOffsetFromCutSec": 2.542,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t11-gradient-table.jpg F328-F350"
+        ]
+      },
+      "ease": {
+        "name": "power2.inOut",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t11-gradient-table.jpg F329-F350 diff 2.3 rising to 8.2 at F336, falling to 3.0 at F350"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "placeholder-resolve"
+    },
+    {
+      "id": "silence-gap-before-drop",
+      "name": "Near-silence under the proof, cut ahead of the return",
+      "function": "breath",
+      "spans": [
+        {
+          "startSec": 14.5,
+          "endSec": 15.583
+        }
+      ],
+      "description": "After the answer resolves the music drops to near silence for about 0.7 s (RMS about 50 vs a quiet-section median of 1322), rises from 15.18 s, the picture cuts to a new ground at 15.292 and the music reaches full level at about 15.55 s (6 frames after the cut). The second half is about 3.5x the energy of the first.",
+      "route": "remotion",
+      "routeReason": "An edit decision on a licensed or original track: place a stop and a riser, cut 6 frames before the hit (cueFrame with a negative lead).",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "cueFrame",
+        "snapFrame",
+        "beatGridFromMap"
+      ],
+      "timing": {
+        "durationSec": 1.083,
+        "startOffsetFromCutSec": -0.792,
+        "basis": "measured",
+        "evidence": [
+          "audio.json silence 14.751-15.208",
+          "media/source.mp4 RMS 25 ms 14.6-15.8 s",
+          "visuals/a1/t12-silence-drop.jpg F366-F367"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "layers": [
+          "music stop",
+          "riser (inferred)",
+          "music re-entry (inferred)"
+        ],
+        "note": "Gap and re-entry times are measured from RMS; what plays is inferred. I cannot hear the film.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json silence 14.751-15.208",
+          "audio.json sections 3-quiet energy 0.034, 4-medium energy 0.481"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 10,
+      "toShot": 11
+    },
+    {
+      "id": "follow-caret-typing-close-up",
+      "name": "Question typed at headline size, camera following the caret",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 15.292,
+          "endSec": 17.792
+        },
+        {
+          "startSec": 19.25,
+          "endSec": 21.667
+        }
+      ],
+      "description": "The prompt field fills the frame width at headline size on a pale ground (OCR box height 0.09-0.15 of frame against 0.037 in the wide interface shots); characters arrive about one per frame and the camera tracks right to keep the caret right of centre; the field runs off the left edge (OCR boxes at x=0). In the first prompt one jump reframe (F399) brings the field's end and send button into frame; a cursor clicks send (button turns grey at F415) and the shot drifts up into the cut. In the second the product name is typed in brand blue.",
+      "route": "remotion",
+      "routeReason": "A typed line in a field component built to the real interface, inside a camera that tracks the caret position; a cursor with a click. The field must match the real product. Interface shots must be a real capture of the new product (capture:app or a screen recording), never a generic mock-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "RegionCamera",
+        "Cursor",
+        "ui-prompt-bar",
+        "ui-cursor-click"
+      ],
+      "timing": {
+        "durationSec": 2.417,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t16-cut-to-typing.jpg F462-F475",
+          "visuals/a1/t13-click-send.jpg F403-F422"
+        ]
+      },
+      "typography": {
+        "role": "typed question",
+        "entry": "typewriter about 1 character per frame, brand word in accent colour",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t16-cut-to-typing.jpg F463-F475",
+          "visuals/a1/t12-silence-drop.jpg F367-F371",
+          "speech-text.json screenText 15.5-17.0 and 19.5-21.5 boxes at x=0"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s008.1",
+        "s008.2",
+        "s009.2"
+      ]
+    },
+    {
+      "id": "sequential-check-fill",
+      "name": "Benefit rows ticked one after another",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 17.792,
+          "endSec": 19.25
+        }
+      ],
+      "description": "A white rounded card (about 60% of frame width) rises onto a pale-blue gradient and settles in 6 frames; three rows each have a title, a grey subline and an empty circle. Each circle fills black with a radial clock wipe in 3-4 frames and shows a white tick: row 1 F435-F438, row 2 F444-F447, row 3 F451-F454 (9 then 7 frames apart).",
+      "route": "remotion",
+      "routeReason": "Three conic-gradient fills on a schedule; the card is plain layout. No checklist block exists in the library.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "stagger",
+        "track",
+        "evolvePath",
+        "block:ui-check-list"
+      ],
+      "timing": {
+        "durationSec": 0.792,
+        "startOffsetFromCutSec": 0.333,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t14-cut-to-checklist.jpg F435-F439",
+          "visuals/a1/t15-checks.jpg F444-F454",
+          "audio.json tempo.beatsSec 18.251, 18.739"
+        ]
+      },
+      "ease": {
+        "name": "linear",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t14-cut-to-checklist.jpg F435-F438",
+          "visuals/a1/t15-checks.jpg F451-F454"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Row 1 is filled at F438 (18.25 s) on a tracked beat (18.251); row 2 at F444 (18.50) falls on the half-beat; row 3 starts at F451 (18.79), 50 ms after the beat at 18.739. Tempo confidence 0.55, so this is not a grid; a sound at each tick is inferred.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json tempo.beatsSec 18.251, 18.739",
+          "visuals/a1/t15-checks.jpg F444-F454"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s009.1"
+      ],
+      "techniqueCardId": "check-row-list"
+    },
+    {
+      "id": "streamed-answer",
+      "name": "Working indicator, then the answer streams in",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 11.125,
+          "endSec": 13.667
+        },
+        {
+          "startSec": 21.667,
+          "endSec": 25.333
+        }
+      ],
+      "description": "The sent question sits top right in a pale bubble with an avatar; a small blue dot pulses with a shimmering status word for 1.8-2.5 s; then the answer appears line by line at body size (about 2% glyph height) with a fading leading edge. The view slowly pushes and drifts up as text accumulates.",
+      "route": "remotion",
+      "routeReason": "A capture of the real assistant answering, sped up, or the real UI rebuilt with a streamed-text schedule. Interface shots must be a real capture of the new product (capture:app or a screen recording), never a generic mock-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ScreenPlayback",
+        "RegionCamera",
+        "ui-ai-chat",
+        "typedCount"
+      ],
+      "timing": {
+        "durationSec": 3.667,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coarse-s010.jpg F520-F604",
+          "visuals/a1/t10-send-to-chat.jpg F267-F275"
+        ]
+      },
+      "typography": {
+        "role": "answer body",
+        "entry": "streamed line by line",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coarse-s010.jpg F568-F604"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s006",
+        "s009.3"
+      ]
+    },
+    {
+      "id": "glow-ground-word-fade-up",
+      "name": "Benefit sentence fades up word by word over a corner glow",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 25.333,
+          "endSec": 27.375
+        }
+      ],
+      "description": "The chat fades through white as a blue glow grows into the bottom-right corner (F612-F619); then a single centred sentence (57% width, 6.4% glyph height, navy) arrives word by word, each word fading from pale blue and rising a few pixels into the baseline over about 4 frames, about 5 frames apart (F620 first word, F625 second).",
+      "route": "remotion",
+      "routeReason": "Corner radial gradient plus per-word opacity and y tracks; the corner light is block liquid-light without its rim (a plain soft glow).",
+      "difficulty": "low",
+      "techniqueCardId": "liquid-light",
+      "requiredPrimitives": [
+        "splitWords",
+        "stagger",
+        "track",
+        "intentCurves",
+        "type-sentence-build",
+        "LivingLight"
+      ],
+      "timing": {
+        "durationSec": 0.313,
+        "startOffsetFromCutSec": -0.146,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t18-chat-to-gradient.jpg F612-F619"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t18-chat-to-gradient.jpg F620-F626"
+        ]
+      },
+      "typography": {
+        "role": "benefit sentence",
+        "entry": "word fade-up from pale blue, about 4 frames, 5 frames apart",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t18-chat-to-gradient.jpg F620-F626",
+          "full-frame bbox F650 centre x 0.500"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 15,
+      "toShot": 16
+    },
+    {
+      "id": "wordmark-soft-wipe",
+      "name": "Wordmark revealed left to right, tagline beneath",
+      "function": "reveal",
+      "spans": [
+        {
+          "startSec": 27.375,
+          "endSec": 29.583
+        }
+      ],
+      "description": "Hard cut to the lower-case bold wordmark in cyan (#2FBAFA), about 40% of width with its tagline, revealed by a soft-edged left-to-right wipe over 10 frames (F657-F667); a small navy tagline appears beneath in two parts (first clause at F667, second about 0.5 s later). Corner glow and faint floating squares stay.",
+      "route": "remotion",
+      "routeReason": "A linear-gradient mask whose position is tracked across the wordmark; tagline clauses on a schedule. Use the new brand's own wordmark file.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MaskedLine",
+        "track",
+        "curves",
+        "stagger"
+      ],
+      "timing": {
+        "durationSec": 0.417,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t19-wordmark.jpg F657-F667"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t19-wordmark.jpg F658-F667 diff 1.2, 0.9, 1.1, 0.8, 0.6, 0.7, 0.5"
+        ]
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "soft-edge wipe left to right, 10 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t19-wordmark.jpg F657-F671",
+          "full-frame bbox F700 centre x 0.505"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "held-ground-text-swap-end",
+      "name": "Two text swaps on a held ground to close",
+      "function": "cta",
+      "spans": [
+        {
+          "startSec": 29.583,
+          "endSec": 31.542
+        }
+      ],
+      "description": "The ground, glow and floating squares stay; the centre text is replaced on a single frame twice: a two-word imperative (3.6% glyph height, 13% of width) for 22 frames, then a one-line location statement (5% glyph height, 46% of width) held 25 frames to the last frame. No fade at the end.",
+      "route": "remotion",
+      "routeReason": "Two Sequences on one background; the last frame is the thumbnail.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ground-swap-cut"
+      ],
+      "timing": {
+        "durationSec": 0.917,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t20-tagline-swap.jpg F709-F716",
+          "visuals/a1/t21-endcard.jpg F731-F739"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/t20-tagline-swap.jpg F709-F710",
+          "visuals/a1/t21-endcard.jpg F731-F732"
+        ]
+      },
+      "typography": {
+        "role": "call to action",
+        "entry": "single-frame swap",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/t20-tagline-swap.jpg F710",
+          "visuals/a1/t21-endcard.jpg F732",
+          "full-frame bbox F720 and F745 centre x 0.50"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 17,
+      "toShot": 18
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/wan-3.0/image-to-video",
+  "title": "Wan 3.0 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-3/image-to-video.md",
+  "usageNotes": [
+    "Use image_url for the first frame and optional end_image_url for the last frame. Reference arrays belong to the reference-to-video endpoint.",
+    "The schema accepts seed=0, but the current implementation only forwards a nonzero seed."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 3.0 Image to Video",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "title": "Seed",
+        "maximum": 2147483647,
+        "minimum": 0
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration (sec)",
+        "default": 5,
+        "maximum": 30,
+        "minimum": 2,
+        "description": "2-30 seconds."
+      },
+      "image_url": {
+        "type": "string",
+        "title": "First Frame",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "1080p"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16",
+          "adaptive"
+        ],
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "adaptive"
+      },
+      "end_image_url": {
+        "type": "string",
+        "title": "Last Frame",
+        "format": "uri"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "title": "Sound",
+        "default": true
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "title": "Deep Thinking",
+        "default": false
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

@@ -1,0 +1,234 @@
+{
+  "v": 1,
+  "revision": 0,
+  "generatedAt": "2026-11-17T09:00:00Z",
+  "project": {
+    "id": "replica-launch",
+    "route": "replica",
+    "title": "Launch film replica",
+    "filmType": "replica",
+    "createdAt": "2026-11-16T08:00:00Z"
+  },
+  "control": {
+    "state": "running"
+  },
+  "autonomy": {
+    "mode": "interactive",
+    "source": "none"
+  },
+  "steps": [
+    {
+      "id": "intake",
+      "title": "Intake",
+      "status": "done",
+      "reasons": [],
+      "durationMs": 60000
+    },
+    {
+      "id": "rights",
+      "title": "Rights",
+      "status": "done",
+      "reasons": [],
+      "durationMs": 120000
+    },
+    {
+      "id": "replica-reference",
+      "title": "Replica reference",
+      "status": "done",
+      "reasons": [],
+      "durationMs": 300000
+    },
+    {
+      "id": "replica-spec",
+      "title": "Replica spec",
+      "status": "done",
+      "reasons": [],
+      "durationMs": 900000,
+      "gate": true
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "status": "done",
+      "reasons": []
+    },
+    {
+      "id": "audio-map",
+      "title": "Audio map",
+      "status": "done",
+      "reasons": []
+    },
+    {
+      "id": "material",
+      "title": "Material",
+      "status": "done",
+      "reasons": []
+    },
+    {
+      "id": "build",
+      "title": "Build",
+      "status": "done",
+      "reasons": []
+    },
+    {
+      "id": "sound",
+      "title": "Sound",
+      "status": "done",
+      "reasons": []
+    },
+    {
+      "id": "replica-compare",
+      "title": "Replica compare",
+      "status": "failing",
+      "reasons": [
+        "cuts: 1 shot(s) outside the replica tolerance; its findings are in the result"
+      ]
+    },
+    {
+      "id": "human",
+      "title": "Human verdict",
+      "status": "pending",
+      "reasons": []
+    }
+  ],
+  "waiting": [],
+  "agents": {
+    "today": []
+  },
+  "money": {
+    "reservedUsd": 0,
+    "spentUsd": 0,
+    "unknownPriced": 0,
+    "byProvider": [],
+    "jobs": []
+  },
+  "media": {},
+  "assets": [],
+  "qa": {
+    "findings": []
+  },
+  "cards": [],
+  "advisories": [],
+  "current": {
+    "step": "replica-compare",
+    "next": {
+      "argv": [
+        "pnpm",
+        "ref:compare",
+        "--project",
+        "replica-launch",
+        "--tolerance",
+        "replica"
+      ],
+      "why": "Hold the film to the reference shot by shot."
+    }
+  },
+  "replica": {
+    "rights": {
+      "status": "study-only",
+      "userStatement": "It is a practice copy of a film I like; keep it private.",
+      "askedAt": "2026-11-16T08:05:00Z"
+    },
+    "spec": {
+      "reference": "firecrawl",
+      "fps": 30,
+      "format": "vertical",
+      "shots": [
+        {
+          "id": "r1",
+          "referenceShot": "s001",
+          "startFrame": 0,
+          "durationFrames": 36,
+          "content": "Hero number on a hard cut to orange",
+          "confidence": "measured",
+          "camera": "static",
+          "transitionIn": "cut",
+          "blocks": [
+            "type-hero-word"
+          ]
+        },
+        {
+          "id": "r2",
+          "referenceShot": "s002",
+          "startFrame": 36,
+          "durationFrames": 48,
+          "content": "Sentence builds word by word with icon chips",
+          "confidence": "observed",
+          "camera": "push_in",
+          "transitionIn": "cut",
+          "blocks": [
+            "type-sentence-build"
+          ]
+        },
+        {
+          "id": "r3",
+          "referenceShot": "s003",
+          "startFrame": 84,
+          "durationFrames": 30,
+          "content": "Logo lock-up",
+          "confidence": "rough",
+          "blocks": [],
+          "unreachable": "end-card glow: a 2-frame bloom the library cannot reach"
+        }
+      ],
+      "swaps": [
+        {
+          "what": "logo",
+          "from": "the reference's logo",
+          "to": "a plain wordmark",
+          "why": "another owner's brand is never copied",
+          "shots": [
+            "r3"
+          ]
+        }
+      ],
+      "rounds": [
+        {
+          "round": 1,
+          "fixed": [
+            "r2 starts 4 frames late"
+          ],
+          "remains": [
+            "r1 cut lands 2 frames early"
+          ]
+        }
+      ],
+      "doc": {
+        "path": "pipeline/replica-spec.md",
+        "kind": "document",
+        "label": "replica-spec.md"
+      }
+    },
+    "check": {
+      "ok": true,
+      "passed": true,
+      "issues": []
+    },
+    "compare": {
+      "ok": true,
+      "measures": [
+        {
+          "measure": "cuts",
+          "held": 2,
+          "failed": 1,
+          "notMeasured": 0,
+          "exempt": 0
+        },
+        {
+          "measure": "shotDuration",
+          "held": 3,
+          "failed": 0,
+          "notMeasured": 0,
+          "exempt": 0
+        },
+        {
+          "measure": "colour",
+          "held": 2,
+          "failed": 0,
+          "notMeasured": 0,
+          "exempt": 1
+        }
+      ]
+    }
+  }
+}

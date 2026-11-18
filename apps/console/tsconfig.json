@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./*"],
+      "@contract": ["../../src/types/console.ts"],
+      "@tokens": ["../../src/lib/design-tokens.ts"],
+      "@review/*": ["../../src/lib/review-ui/*"],
+      "@fixtures/*": ["../../tests/fixtures/console/*"]
+    }
+  },
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.mts"],
+  "exclude": ["node_modules"]
+}

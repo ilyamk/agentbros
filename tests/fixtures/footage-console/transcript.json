@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "source": {
+    "file": "public/projects/talk/assets/footage/talk.mp4",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "durationSec": 1.0
+  },
+  "engine": {
+    "provider": "elevenlabs",
+    "model": "scribe_v1",
+    "verbatim": true,
+    "diarized": true,
+    "timing": "native"
+  },
+  "language": "en",
+  "speakers": [
+    {
+      "id": "speaker_0",
+      "label": "Host"
+    },
+    {
+      "id": "speaker_1"
+    }
+  ],
+  "words": [
+    {
+      "id": "w0",
+      "text": "so",
+      "kind": "word",
+      "startSec": 0.1,
+      "endSec": 0.18,
+      "speaker": "speaker_0",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w1",
+      "text": "um",
+      "kind": "filler",
+      "startSec": 0.2,
+      "endSec": 0.28,
+      "speaker": "speaker_0",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w2",
+      "text": "today",
+      "kind": "word",
+      "startSec": 0.3,
+      "endSec": 0.38,
+      "speaker": "speaker_0",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w3",
+      "text": "we",
+      "kind": "word",
+      "startSec": 0.4,
+      "endSec": 0.48,
+      "speaker": "speaker_0",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w4",
+      "text": "cut",
+      "kind": "word",
+      "startSec": 0.5,
+      "endSec": 0.58,
+      "speaker": "speaker_0",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w5",
+      "text": "the",
+      "kind": "word",
+      "startSec": 0.6,
+      "endSec": 0.68,
+      "speaker": "speaker_1",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w6",
+      "text": "the",
+      "kind": "word",
+      "startSec": 0.7,
+      "endSec": 0.78,
+      "speaker": "speaker_1",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w7",
+      "text": "recording",
+      "kind": "word",
+      "startSec": 0.8,
+      "endSec": 0.88,
+      "speaker": "speaker_1",
+      "channel": null,
+      "confidence": 0.9
+    },
+    {
+      "id": "w99",
+      "text": "(laughs)",
+      "kind": "event",
+      "startSec": 0.95,
+      "endSec": 0.99,
+      "speaker": "speaker_1",
+      "channel": null,
+      "confidence": null
+    }
+  ],
+  "sentences": [
+    {
+      "id": "s0",
+      "firstWordId": "w0",
+      "lastWordId": "w7",
+      "text": "so um today we cut the the recording",
+      "startSec": 0.1,
+      "endSec": 0.88,
+      "speaker": "speaker_0"
+    }
+  ]
+}

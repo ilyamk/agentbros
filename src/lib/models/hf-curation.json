@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic",
+        "reference"
+      ],
+      "notes": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/image-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/reference-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic",
+        "reference"
+      ],
+      "notes": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/reference-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic",
+        "reference"
+      ],
+      "notes": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/text-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/video-edit",
+      "category": "video-to-video",
+      "roles": [
+        "cinematic",
+        "reference"
+      ],
+      "notes": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/video-edit.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/video-extend",
+      "category": "video-to-video",
+      "roles": [
+        "cinematic",
+        "reference"
+      ],
+      "notes": "Generates videos up to 30 seconds from text, image, video, or audio.",
+      "source": "https://docs.higgsfield.ai/docs/models/seedance-2-5/video-extend.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield-ai/soul/cinema",
+      "category": "text-to-image",
+      "roles": [
+        "character",
+        "cinematic"
+      ],
+      "notes": "Soul Cinema image generation with custom references and aspect/resolution controls.",
+      "source": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield-ai/soul/v2/standard",
+      "category": "text-to-image",
+      "roles": [
+        "character"
+      ],
+      "notes": "Generates realistic portraits and fashion images, with natural textures and curated editorial styles.",
+      "source": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/ads-studio/v1.0",
+      "category": "text-to-image",
+      "roles": [
+        "ads"
+      ],
+      "notes": "Ads Studio image generation with niche, target audience and language inputs.",
+      "source": "https://docs.higgsfield.ai/docs/models/ads-studio/generate.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/ai-influencer",
+      "category": "text-to-image",
+      "roles": [
+        "character"
+      ],
+      "notes": "Create one AI influencer character sheet. Human and animal modes. $0.05 per sheet. Catalogue-only, no schema, tier discovered; validate a separately prepared request with hf:quote --provider-estimate (/estimate), or wait for a schema.",
+      "source": "tests/fixtures/higgsfield/catalog-models.json",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/cinema-studio/4.0",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates cinematic videos up to 30 seconds with automatic scene direction.",
+      "source": "https://docs.higgsfield.ai/docs/models/cinema-studio-4/generate.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+      "category": "video-to-video",
+      "roles": [
+        "motion-transfer",
+        "character-swap"
+      ],
+      "notes": "Transfer motion to reference characters and scenes. Uses the first 15 seconds of the source video and preserves source audio. Catalogue-only, no schema, tier discovered; validate a separately prepared request with hf:quote --provider-estimate (/estimate), or wait for a schema.",
+      "source": "tests/fixtures/higgsfield/catalog-models.json",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/motion-transfer/v1.0",
+      "category": "video-to-video",
+      "roles": [
+        "motion-transfer"
+      ],
+      "notes": "Rebuilds a scene around source motion and camera using image references. For a local person/object replacement that must preserve the scene, choose object-swap.",
+      "source": "https://docs.higgsfield.ai/docs/models/genjutsu/motion-transfer.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+      "category": "video-to-video",
+      "roles": [
+        "edit",
+        "reference",
+        "character-swap"
+      ],
+      "notes": "Locally replaces a selected person, face, outfit or object while preserving the rest of the source shot. Prepare an unambiguous target and approved image references.",
+      "source": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/restyle/v1.0",
+      "category": "video-to-video",
+      "roles": [
+        "restyle"
+      ],
+      "notes": "Swaps characters, locations, and styles in a video, keeping its motion. Usage notes require a preset_id.",
+      "source": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/4k/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/4k-image-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/4k/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/4k-text-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/pro/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/pro-image-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/pro/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/pro-text-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/std/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/standard-image-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/std/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generates multi-shot videos from text or images, with native audio and durations up to 15 seconds.",
+      "source": "https://docs.higgsfield.ai/docs/models/kling-3/standard-text-to-video.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v4.0-flash/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Generate 720p videos from text prompts with Kling 4.0 Flash. Choose a duration from 3 to 20 seconds and an aspect ratio of 21:9, 16:9, 9:16, or 1:1. Catalogue-only, no schema, tier discovered; validate a separately prepared request with hf:quote --provider-estimate (/estimate), or wait for a schema.",
+      "source": "tests/fixtures/higgsfield/catalog-models.json",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v4.0/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "cinematic"
+      ],
+      "notes": "Create videos with Kling 4.0 from text, images, and video references. Generate up to 30-second clips in 1080p, guide keyframes, and edit existing videos. Catalogue-only, no schema, tier discovered; validate a separately prepared request with hf:quote --provider-estimate (/estimate), or wait for a schema.",
+      "source": "tests/fixtures/higgsfield/catalog-models.json",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "marketing-studio/image",
+      "category": "text-to-image",
+      "roles": [
+        "ads",
+        "edit"
+      ],
+      "notes": "Creates and edits campaign images up to 4K from text or images.",
+      "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/generate-and-edit.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "marketing-studio/image/flare",
+      "category": "text-to-image",
+      "roles": [
+        "ads",
+        "edit"
+      ],
+      "notes": "Creates and edits campaign images up to 4K from text or images.",
+      "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/flare.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "provider": "higgsfield",
+      "endpoint": "marketing-studio/image/sunburst",
+      "category": "text-to-image",
+      "roles": [
+        "ads",
+        "edit"
+      ],
+      "notes": "Creates and edits campaign images up to 4K from text or images.",
+      "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/sunburst.md",
+      "reviewedAt": "2026-11-15"
+    }
+  ]
+}

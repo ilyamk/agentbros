@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "shorts-from-long",
+  "playbook": "shorts-from-long",
+  "tier": "no-spend",
+  "brief": "Prepare one 8\u201315 second vertical short from the 25-second synthetic test pattern. Run node tests/fixtures/bench/prepare.mjs. Treat the supplied dialogue words as synthetic timed editorial material, not ASR evidence. Follow shorts-from-long, propose a self-contained selection and keep fixed gate decisions separate from human-only approvals. No paid transcription.",
+  "material": [
+    {
+      "path": "tests/fixtures/speech/dialogue-diarisation.json",
+      "sha256": "0b9873d6ddccab9d1e6bdff5715e25f2f912648b52812f03f8347b2062c89334",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/answers/shorts-from-long.json",
+      "sha256": "b4f014cfae76cf0b6da453c0b227747ddbc15924b55a9f3044c54d3fef1a27ea",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "tests/fixtures/bench/prepare.mjs",
+      "sha256": "85417252a5e90f8f8e6da9538510c98e0ad5e1557feb68f1dbeadad8cecec3f8",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      8,
+      15
+    ]
+  },
+  "answers": "bench/answers/shorts-from-long.json",
+  "criteria": [
+    {
+      "id": "outcome",
+      "kind": "process",
+      "check": {
+        "type": "file",
+        "path": "bench-result.json"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    },
+    {
+      "id": "delivery",
+      "kind": "technical",
+      "check": {
+        "type": "delivery"
+      }
+    },
+    {
+      "id": "task-constraints",
+      "kind": "technical",
+      "check": {
+        "type": "constraints"
+      }
+    },
+    {
+      "id": "file-sensors",
+      "kind": "technical",
+      "check": {
+        "type": "file-sensors"
+      }
+    }
+  ]
+}

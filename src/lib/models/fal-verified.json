@@ -1,0 +1,545 @@
+{
+  "version": 1,
+  "pins": {
+    "fal-ai/bytedance/omnihuman/v1.5": {
+      "catalogSha256": "0ebce1499ae17304e843182b11cc3a30683f1c8969ee4709250549eb2b22f92c",
+      "since": "2026-11-18"
+    },
+    "bytedance/seedance-2.5/draft/complete": {
+      "catalogSha256": "f5994edc0130a4a902f85921eac2b133d2f76f9b7fc6a41087655b6d53e4cd16",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/image-to-video": {
+      "catalogSha256": "9cd7765556890f237ca498f0a0c07b3fc74da96150df6d178c318615ada34c81",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/reference-to-video": {
+      "catalogSha256": "0387dd4b49be5f1e550194fb017d111315c1af406d4c8936fa823cf8e4732c32",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/text-to-video": {
+      "catalogSha256": "914bcf66b6ea3f4f650c51c81cd1e3f3c89d4f9a6f3d7137ec7e3dff11ec7493",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/us/image-to-video": {
+      "catalogSha256": "a54e8bc9737cade1c86923794770d2473f303b9910f23d7099be433ccffacdb1",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/us/reference-to-video": {
+      "catalogSha256": "42f03cfff3156f2e01b4df067d2a2581358dacd15ce02e32d434eed595c2e32b",
+      "since": "2026-11-15"
+    },
+    "bytedance/seedance-2.5/us/text-to-video": {
+      "catalogSha256": "8213777f0161a9623439c379f9d575a74b61771f52bfef449043a5527308cc6d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/aura-sr": {
+      "catalogSha256": "2f22e035f6a284ebca4f1e59b3023c57a43683b88f7799263d3abcf54d97285a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/birefnet": {
+      "catalogSha256": "2415f70f81bf3610ffeabbfa9c1a65edf986dff08afb67fd6a8dd27776d0867c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/birefnet/v2": {
+      "catalogSha256": "943eec69b8d9bb7c29a1a337e90204d828d7a800e68e9c86ac61399218ffd9d9",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2": {
+      "catalogSha256": "2fdafdfcd8718635fbe261a9d7092017204ec8c2412576c49ac430473a1ac223",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-flex": {
+      "catalogSha256": "1df98d29aa28e23e89da587f18b8da7860e9d23a2c89f386d54526ce4f06c5c6",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-flex/edit": {
+      "catalogSha256": "4d2a89763f9bf37253e7ba41bd1b503a3785c7ba48daed39f5eb3c018ce50eee",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-klein-4b-base-trainer": {
+      "catalogSha256": null,
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-klein-4b-base-trainer/edit": {
+      "catalogSha256": null,
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-klein-9b-base-trainer": {
+      "catalogSha256": "b4baad1eae0382f3011fddab7570815b94eed903619bf1fcda0d06ea7064df6c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-klein-9b-base-trainer/edit": {
+      "catalogSha256": "49f82f8cb858341dac446efea8deaed8546319606b826743a8deaf57a407420c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/add-background": {
+      "catalogSha256": "71f966c2bc1512dbdb9d2806e4742a418dc578d3d02959135b8fc5b7b6f12b66",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/apartment-staging": {
+      "catalogSha256": "7c18f4bd5e2d6888ea3d9c0ba2725738842e478932d7a929e1f9eae39a0d853f",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch": {
+      "catalogSha256": "0a32b60f733a67d733a4b7b82493ea4c26ec24862fc7043b4c972d609f57672f",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/digital-comic-art": {
+      "catalogSha256": "950b1648b9c37922022598a9fac0d4178a7cfb235c4658f7fb86611826a346cf",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/face-to-full-portrait": {
+      "catalogSha256": "69b56ac3a5e24b6ae2261bf39d7f7a63cd7d037fd94012db9535487757ba45e1",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/hdr-style": {
+      "catalogSha256": "398bfdcaf528038c9cee79723b1e315011da3e0c120f0d0c3ecc04c235a09fc3",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/multiple-angles": {
+      "catalogSha256": "80220b9b35c197e0fef7781c6016b53adc85ed5c92474d072db71ebc6a4f8653",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/realism": {
+      "catalogSha256": "87e8beb167f4a2b69da674af5784e74f308a97df7f570cbd8bf15e2d889aa022",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/satellite-view-style": {
+      "catalogSha256": "9727bd59a58c240fe098e83ddf915e842763c667abcbfe4a98685ec28b44f369",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/sepia-vintage": {
+      "catalogSha256": "bb1fbb20d6af3a375466be68758988d9f62f462c03806fcbb0a7a3ab4f0bccc8",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-lora-gallery/virtual-tryon": {
+      "catalogSha256": "82771ced21ed6e9298c0a3ac136da2691c90c98251ec62081965c60c9a96b094",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-max": {
+      "catalogSha256": "d9e4f44b96267ce1ec961d52881ef482418e57170e52cbf65f93b4a3892448ce",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-max/edit": {
+      "catalogSha256": "c5776012acec0bc31ae395a024be4aa20f086957e7bb29dd7bd069e83dc6db5e",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-pro": {
+      "catalogSha256": "3e5d10a6f1e4a775567e3800610e2ec598d0c5de23177ab2b88e3269a8cfae27",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-pro/edit": {
+      "catalogSha256": "b83b32ed90cb225161ab2220190a55a6f3ebc43e42c13b751cf0a1906cff96ab",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-pro/outpaint": {
+      "catalogSha256": "5f98d2a8a4c140afda2ff774b6c65ba9edcd413d9b08146a74f6ce5d03d3e031",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-trainer": {
+      "catalogSha256": "2e5f3f5f312ef761c02824d7b4e61f27f25519058277c917deecd2f3e74e7a0d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-trainer-v2": {
+      "catalogSha256": "05d66c2764522128ef9fbcd8af3e5469a3024c2f3938141b4811e79eea0ac0b3",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-trainer-v2/edit": {
+      "catalogSha256": "2c33aeb234c5e8a5679eec9c21acd50fdcd3090a0ec3e0c85ca0452490c6152c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2-trainer/edit": {
+      "catalogSha256": "8c0398c08921c43e1e1ac2c5549fb3c31a65ceac75baa96c2b5eaf5ffb45212c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/edit": {
+      "catalogSha256": "326a41f7557554fdf4ddc97bdc44233a897d6ff5e23389ce7bb36b8231adc881",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/flash": {
+      "catalogSha256": "8d069e8d0b818a99b551b3c711ce869422cd9b1a530a1d9e0e1669d9b388aa8a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/flash/edit": {
+      "catalogSha256": "16fe94c45e4bf0698b4b5600b1cdb89633631e1750d3f11ba78949ec99652233",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b": {
+      "catalogSha256": "bd066b6439afbea490ab01f130cb0978839bb96862886af6143451e290ff83d0",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/base": {
+      "catalogSha256": "7dcb4e5ad6cbc07f9a85ef4db0272c6a8cf5c0bab16d11bc801e72cc575e622b",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/base/edit": {
+      "catalogSha256": "f73cd6547f79d330e0df356b21311e96a14952365b4ec2f245ae77ba050395b8",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/base/edit/lora": {
+      "catalogSha256": "a4cc516feb2f0ebd5c7cc6c6c91bc0792cd30fe4dce63842142edfbf998bed0c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/base/lora": {
+      "catalogSha256": "335e9106de3d25d1d72e79f21df8aef11db92ae18c0211d8134f21ab337757ca",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/edit": {
+      "catalogSha256": "7f0dc017e93ed9e352e3d5434c16194e75a3da268486dd40930e965db2633bef",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/edit/lora": {
+      "catalogSha256": "f4f7babcf685daf82ae77e7738266540b4f51002b85f321309963ed185706b0d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/4b/lora": {
+      "catalogSha256": "90c56f6844d5ef9ac8c22273e496c8ef8aef2e0324ed74988ae13cc26eb7f658",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b": {
+      "catalogSha256": "324a6620212ad4d8e8711f937941b53dcbe9e102b32b751d48896158678808a9",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/base": {
+      "catalogSha256": "1f63bef2d0a0b5632be35cabf1be4fe14770accd5bf72fa98592de400386e555",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/base/edit": {
+      "catalogSha256": "fedd8df512ee25ad3c276b72de0e35fe52d6f5db4d1c2336b1fd3d037773e507",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/base/edit/lora": {
+      "catalogSha256": "c0bf4bf0c050ab694a08622246b542afa25a5d4a439ef4b0aa9d860c56af648d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/base/lora": {
+      "catalogSha256": "161616fbe93bc837156fedebd97fa02f001c7b5f9a53f7162e1a58065d21035b",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/edit": {
+      "catalogSha256": "30e5de27836462dc17688b051480bc6c24271d85e1b072007d4f722c80670726",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/edit/lora": {
+      "catalogSha256": "f1335f62c69dd4189d561d5fb1d89652e3c90818695dcdffffa46a586de00894",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/9b/lora": {
+      "catalogSha256": "47fb00540b37114c26c6894c08be6c3081e816b4e552827d5edde281e758b2db",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/klein/realtime": {
+      "catalogSha256": null,
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/lora": {
+      "catalogSha256": "d6ce96c4570c046fa4da215545b8086b6ee4ff14865c64df665cc9282708e0b4",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/lora/edit": {
+      "catalogSha256": "808406945e152295bf0f28057b964783bf4ad883cbe1426cf9e62a2b51480154",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/turbo": {
+      "catalogSha256": "7a0dee6d6263b975aee9644cfd85d0e377caf2f31a7b907d7c1824476bb25886",
+      "since": "2026-11-15"
+    },
+    "fal-ai/flux-2/turbo/edit": {
+      "catalogSha256": "0ec58684c6b4ded19e6673ef56975556d5bb8f5f6c6a71e778d4a56654de5fcb",
+      "since": "2026-11-15"
+    },
+    "fal-ai/image-apps-v2/outpaint": {
+      "catalogSha256": "e9e58c57df21627f5a755a65b5f8b860e997b6444e874847c73be89c7a9f74fc",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/create-voice": {
+      "catalogSha256": "d7e7d678e964f587690560835b29af3d9d13cd2f4901f153440fec9b864c3811",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/4k/image-to-video": {
+      "catalogSha256": "828e49044fb2d770949f085ea770fd2244a8c24aeb2ac6fc6ff2056030615197",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/4k/reference-to-video": {
+      "catalogSha256": "8aaccf1e34e66bfdbaf243c78adb86bb662082a99ce2e8d8aa8926cf468b5740",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/4k/text-to-video": {
+      "catalogSha256": "e7063f67f67babe0b0406773cc087a60f712909968f50a0ca9cbb83fb5bf2f96",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/4k/video-to-video/edit": {
+      "catalogSha256": "8c03aaf388500c0344262de9aef6c0f6019585c428a6bdeb4dc8e4a0b4fc07b8",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/4k/video-to-video/reference": {
+      "catalogSha256": "b3664e89ccb92dddca954d3f88a122d73590b059bb606dd1b54936e855fa1269",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/pro/image-to-video": {
+      "catalogSha256": "c8ed84b9f2d3ac7f2fa87fd07b0b67e8081c4e63c2f745ac5abb3869d6c8bfae",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/pro/reference-to-video": {
+      "catalogSha256": "05c76df3bcda80167358ddcf123185bfb6e2c7d0ec4c40428ddebaabaa6d9fe2",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/pro/text-to-video": {
+      "catalogSha256": "0aa3a0924e80cba935042aa01485a98f4aa089d978789418b016e0bc3e408891",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/pro/video-to-video/edit": {
+      "catalogSha256": "311dd166f2e9de5625627322760720108cc330d9a07b1ad58244dd7bb2c2ac8a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/pro/video-to-video/reference": {
+      "catalogSha256": "4bb51036c44aade63bea9543bcd559c3128c90b8ae6c0adf8d22c29f25111439",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/standard/image-to-video": {
+      "catalogSha256": "1b8e645a61aa2d7aa8b9086e642ce0c8e23ca1c002f0ef7123f6740580cf2664",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/standard/reference-to-video": {
+      "catalogSha256": "956cf63cda54b81431551c0ade368f61c5632a5abde2c550a0c2b8f454d0c38a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/standard/text-to-video": {
+      "catalogSha256": "1387e90ff96ba59a16cc4599e90694aab24c6a48ad1f57cb0fec5553b54f6fbf",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/standard/video-to-video/edit": {
+      "catalogSha256": "9b56fc745eab7585fa82626918c5093fd847ed39446a1a0a39f25ee42fb3859d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/o3/standard/video-to-video/reference": {
+      "catalogSha256": "1e39c5c179cc7e9046993cccc2787823361c736bb64fb577314c483bd9a7b8a9",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/4k/image-to-video": {
+      "catalogSha256": "8b836fdc54e286803d15b500e170629d891a0978610203021ec0cbef20f2d79a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/4k/text-to-video": {
+      "catalogSha256": "99c91603fe8a764d23558add9b8b9526f58cd9931fdafab8b97a3beb25cd28ed",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/pro/image-to-video": {
+      "catalogSha256": "77ac043203cee580f0158f6de2ca2b9976ec6c6f5b5858e148a4c0c4f337c172",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/pro/motion-control": {
+      "catalogSha256": "34df2251761e3aa5a507dd40962261abcfbc2bcd79dcc075a5cb96f0fed21306",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/pro/text-to-video": {
+      "catalogSha256": "f113f1d345e0f40497dbb0e3a448eb00eaa6a7416cf5dc4bf51b476180fe4ed8",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/standard/image-to-video": {
+      "catalogSha256": "f9db1800a61d3feb3f643e754b0401a5453c3bebfa6b18b84166ab54689d3de7",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/standard/motion-control": {
+      "catalogSha256": "b1560002705296d31a7f4b4fc595d89245a8870b6d3130790cb2154af1a66d95",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/standard/text-to-video": {
+      "catalogSha256": "aa0dabafcf3c4c2d2f910e34fdebe8fbb9aadd7f066d6fcc71cac07951d08cb7",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/turbo/pro/image-to-video": {
+      "catalogSha256": "8760994129b6cdee83ee8628b3a6706796695dbd3522918ea944b4b7d4d1e387",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/turbo/pro/text-to-video": {
+      "catalogSha256": "275514e3054795f934b5f29ba0d0ec948e45c6038af3ee3660dfda79fb0669d6",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/turbo/standard/image-to-video": {
+      "catalogSha256": "29b2aa693e6f92621a1643b7dcb3b71c35a9e0dbaee2b210f0c7eccff28a4735",
+      "since": "2026-11-15"
+    },
+    "fal-ai/kling-video/v3/turbo/standard/text-to-video": {
+      "catalogSha256": "0c4eca31b71776756db009823f31cad205327a36276d6c03976fef422daf95d2",
+      "since": "2026-11-15"
+    },
+    "fal-ai/latentsync": {
+      "catalogSha256": "43d9b3f5152ffc8245dbbf4ac6cabb3685de58083dbbf0eaeabe9c03aca45e78",
+      "since": "2026-11-15"
+    },
+    "fal-ai/qwen-image-edit/inpaint": {
+      "catalogSha256": "04eda7b6485b7930d1f16acd1a8bf5c393cc28cb5a560cf4ebda9f8467d4a8b2",
+      "since": "2026-11-15"
+    },
+    "fal-ai/seedvr/upscale/image": {
+      "catalogSha256": "1068d54a58c29162bf6ebd224fdd74046439e498c452ec7b9e16fa71a8584394",
+      "since": "2026-11-15"
+    },
+    "fal-ai/seedvr/upscale/video": {
+      "catalogSha256": "229304a92cd3416fe588a0b9755284c550b96130a8fd545667d324b2a0e8a0eb",
+      "since": "2026-11-15"
+    },
+    "fal-ai/sync-lipsync": {
+      "catalogSha256": "049bc94e2f19ee5e42705c56be8fc069bb7ee5f03b52d18cdc34751e0c9ee4ee",
+      "since": "2026-11-15"
+    },
+    "fal-ai/sync-lipsync/v3": {
+      "catalogSha256": "2931d65bd5dae8b3938dfa9bcf4d26ed8ff65e2c451e04f1a84611ff5f10f7d8",
+      "since": "2026-11-15"
+    },
+    "google/nano-banana-2.1": {
+      "catalogSha256": "d69a00afef159bb74d837fa0ab7dff15b70ba30ad8d392603930449b04bda4cb",
+      "since": "2026-11-15"
+    },
+    "google/nano-banana-2.1/edit": {
+      "catalogSha256": "1b71654a4e4bb73600b25c20b9df1e633b36a6c10073d079533eccabb57db155",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.5/flare/edit": {
+      "catalogSha256": "6d97b2f947b3b363311ee45d669aa9fc8eba604f5838a4888be2e53c28014f54",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.5/flare/text-to-image": {
+      "catalogSha256": "138645dcdccd833c89502f12278ae522e255785a81f9daf2cf35abe854adefa2",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.5/sunburst/edit": {
+      "catalogSha256": "ecd64e1186f9dfe45488189be8cbb2c399c5da65dfc41267b93bfbe97278abb4",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.5/sunburst/text-to-image": {
+      "catalogSha256": "c0adfcef7f17b884026ab68cf1ecbe80dedd0c209470082ac0b6aff9d1ad297e",
+      "since": "2026-11-15"
+    },
+    "topaz/interpolate/video": {
+      "catalogSha256": "124df9cbb05cfbc83ea6edf00cbd3535bc5747dc2030d2c825ec2d291f149228",
+      "since": "2026-11-15"
+    },
+    "veed/avatars/audio-to-video": {
+      "catalogSha256": "e45565b64ce5c552d90a0868f44afa61ca15127d4ed0e376ee785fd0e96c2678",
+      "since": "2026-11-15"
+    },
+    "elevenlabs/tts/eleven-v4": {
+      "catalogSha256": "09c2efa46a23697a328e439572ab3087c6dc9d09c0c5ca763ef0332b63566c6d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/elevenlabs/speech-to-text/scribe-v2": {
+      "catalogSha256": "add09b235503df94f1a14f7be059edeac9790ed9fd7fe21be947d0178b991036",
+      "since": "2026-11-15"
+    },
+    "fal-ai/qwen-3-tts/text-to-speech/1.7b": {
+      "catalogSha256": "a0baad42841f6e3de5063dffe75cb2feb599e642939d3060a4d88488b3e7af9f",
+      "since": "2026-11-15"
+    },
+    "fal-ai/wizper": {
+      "catalogSha256": "62ef9569fa8244da5010e8f0676a21c3b1623ce90336d7dc47b278a273f3b7dc",
+      "since": "2026-11-15"
+    },
+    "nvidia/nemotron-3-nano-omni/audio": {
+      "catalogSha256": "d18430b82879d24cf77a1a4f7af3e961d10872b0e011fede0c292efe887a72c1",
+      "since": "2026-11-15"
+    },
+    "resemble-ai/chatterboxhd/speech-to-speech": {
+      "catalogSha256": "908cbece35ac00c30ce392a9650ab7d88d528218dbcc7fd75c444d646a0efa5c",
+      "since": "2026-11-15"
+    },
+    "fal-ai/hunyuan-3d/v3.1/smart-topology": {
+      "catalogSha256": "9c1c3a63c54d1fac8c9cedcb64dfbf195de2146f23ca87f86481aec3c1a4f726",
+      "since": "2026-11-15"
+    },
+    "meshy/n1/retexture": {
+      "catalogSha256": "be8d51d55391433aaa72cd42e347969ac20afb947b727ae480f993cd71c65598",
+      "since": "2026-11-15"
+    },
+    "meshy/rigging": {
+      "catalogSha256": "17b1760c766b205963f8100dfe6f33f309daf1a50e4b7d641a1e5c3694764617",
+      "since": "2026-11-15"
+    },
+    "meshy/v7.1/image-to-3d": {
+      "catalogSha256": "66aa70b5552b26d78fbe28532d9917129b70771122c3a3c14a66bab5991f2696",
+      "since": "2026-11-15"
+    },
+    "meshy/v7.1/text-to-3d": {
+      "catalogSha256": "25bb9b20f5df040da8769969acd47fee6d70aa6bf177933d347124b86f096eae",
+      "since": "2026-11-15"
+    },
+    "blackforestlabs/flux-3/klein/base/trainer": {
+      "catalogSha256": "5a309872648cbdc1a33bae7905f8a62fba9f961635074806af1e35de5e8d7135",
+      "since": "2026-11-15"
+    },
+    "bria/ad-delayer": {
+      "catalogSha256": "e83c9ca30b3b7e4b554f0e36e40b33e74e1b10dd255b17b831d3488706fb8278",
+      "since": "2026-11-15"
+    },
+    "bria/fibo-lite/generate/structured_prompt": {
+      "catalogSha256": "d6c7e18653027597c5c8682e53812724ecffe0f4a2dcf7bfdf0783861669f2d2",
+      "since": "2026-11-15"
+    },
+    "fal-ai/bytedance/seed/v2/mini": {
+      "catalogSha256": "d384c6e4c85c4d2132a0cfc0c44d17d096473125eb53ae87dfbb94ed745618a8",
+      "since": "2026-11-15"
+    },
+    "fal-ai/florence-2-large/caption": {
+      "catalogSha256": "9c2f8a76c08c1945f6d6a1f4cfeeb16459b8a744abfd9cb3cc8990b375051179",
+      "since": "2026-11-15"
+    },
+    "nvidia/nemotron-3-5-super/video": {
+      "catalogSha256": "5a6dcf7506343c8a38d4a836093eacc826c0556fa8b5adcf499f0a57776ffdde",
+      "since": "2026-11-15"
+    },
+    "nvidia/nemotron-3-5-super/vision": {
+      "catalogSha256": "28dee6c3f9919f5afae4e142a326db4a45b1be35338973a16481c70e0d239544",
+      "since": "2026-11-15"
+    },
+    "elevenlabs/sound-effects/v3": {
+      "catalogSha256": "b12ff32fe81b5cb5aa209abc466199504a4450b95aedf42c93d547754ce7b434",
+      "since": "2026-11-15"
+    },
+    "fal-ai/deepfilternet3": {
+      "catalogSha256": "94936c3ade9dc5010618fe1cd64f0c7dc17e0d3a02ab87587f777d63b8b90c0f",
+      "since": "2026-11-15"
+    },
+    "fal-ai/demucs": {
+      "catalogSha256": "fad692db258db2933cc41419ec29bce70badda5d063f0a2ebcb0c5ba2cfea19a",
+      "since": "2026-11-15"
+    },
+    "fal-ai/elevenlabs/voice-changer": {
+      "catalogSha256": "003e8aec0bd395f5bccad18f915c4d4ceb429b355baed42945c6bd9034bc418d",
+      "since": "2026-11-15"
+    },
+    "fal-ai/stable-audio-3/small/sfx/text-to-audio": {
+      "catalogSha256": "ce8fab122c019d3ae180cf07cad74764f5a4d4b67c75f2c2275580dc82221fcb",
+      "since": "2026-11-15"
+    },
+    "mirelo-ai/sfx2.0/video-to-audio": {
+      "catalogSha256": "22ff0d57ea5858c1b816e337ef89b846c74118d1e53fd42dd1495aa189578abc",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.6/flare/edit": {
+      "catalogSha256": "5569b06644b38cadeecc9c2176bbc221eda6aff62bf1636a60a0f04c476b7345",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.6/sunburst/edit": {
+      "catalogSha256": "ca3a4ec78f58daee456f2f5d6c919c191d03e74a5a6e4c46bcca664ecf0721d1",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.6/flare/text-to-image": {
+      "catalogSha256": "c8c26c8a05cf5c6265f4fc384c5f2275a5b07e85dd272c19ae247b6bbade1336",
+      "since": "2026-11-15"
+    },
+    "openai/gpt-image-2.6/sunburst/text-to-image": {
+      "catalogSha256": "daf4b1cfd4e749f644494dc6004e61804d01039f2ec85d5e2f28ca9fa766fc6b",
+      "since": "2026-11-15"
+    },
+    "fal-ai/stable-audio-3/small/music/text-to-audio": {
+      "catalogSha256": "7036e275b539c6de91611d023eb628f62564dc608b587036473a42d5e63436f5",
+      "since": "2026-11-15"
+    },
+    "minimax/music-3": {
+      "catalogSha256": "2b90ba6bfc565146a73fe32ac8a4ff6ab0be9d5081228d9c125896efd3b34e8e",
+      "since": "2026-11-15"
+    }
+  }
+}

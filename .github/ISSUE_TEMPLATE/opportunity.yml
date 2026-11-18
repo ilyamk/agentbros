@@ -1,0 +1,67 @@
+name: Opportunity
+description: Propose one useful, checkable contribution. A maintainer reviews it before it reaches the needs board.
+title: "[Opportunity] "
+labels: [needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: A maintainer reviews each opportunity and replaces `needs-triage` with `agent-ready` before it appears on the public needs board. You may still `/claim` it.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - bench
+        - sensor
+        - library
+        - playbook
+        - provider
+        - command
+        - worker
+        - audio
+        - reference
+        - agent-skill
+        - instructions
+        - harness
+        - template
+        - asset
+        - test-ci
+        - lesson
+        - fix
+        - docs
+        - showcase
+        - security
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      description: S up to 300 changed lines; M up to 1000; L needs an approved proposal.
+      options:
+        - S
+        - M
+        - L
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and evidence
+      description: Name affected paths and show the missing capability or defect.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Give checkable outcomes, category evidence and verification commands.
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: Related work and constraints
+      description: Link existing issues/PRs; state protected paths, no-spend constraints and prerequisites.
+    validations:
+      required: true

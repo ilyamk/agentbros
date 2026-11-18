@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "palmier",
+  "palette": {
+    "value": [
+      "#000000 cards",
+      "#1a1a1a interface ground",
+      "#5d5b5a wall in the opening",
+      "#20231d dark background of a reaction shot",
+      "White captions",
+      "Purple and teal timeline clips, seen but not sampled"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "ffmpeg 8x8 crop samples at 0.2, 7.5, 14.3, 27.0 s from media/source.mp4"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Caption",
+        "description": "White medium grotesque, lower case, no shadow visible, centred on the frame. Small: about 8-11% of width for one word (OCR 0.109), about 67% for a long sentence on black (OCR 0.67). Same style throughout."
+      },
+      {
+        "role": "Interface text",
+        "description": "The software's own type, unchanged, read by cropping rather than by re-setting."
+      },
+      {
+        "role": "Name",
+        "description": "Same caption face, about 22% of width (address 30%, OCR 0.296), on black."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "speech-text.json screenText boxes",
+      "visuals/a1/h-end.jpg F917-F939"
+    ]
+  },
+  "composition": {
+    "value": "Caption stays at frame centre over everything, including faces. Interface shots are cropped so one element dominates or left wide when the whole app is the point. Faces in the burst keep the eye line at frame centre.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/i-eye-burst-a.jpg F860-F881"
+    ]
+  },
+  "materials": {
+    "value": "Real camera footage with shallow focus, real screen recordings, generated images with strong grades (teal, sepia, high-contrast monochrome). Whether a given person shot is camera or generated is not certain (inferred).",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "lighting": {
+    "value": "Soft practical room light, warm monitor glow at the pull-out, reaction shots with coloured background blur.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/d-pullout-monitor.jpg F591-F599"
+    ]
+  },
+  "styleSummary": "Quiet documentary demo: small white centred text, real people and real screens, one violent burst at the end."
+}

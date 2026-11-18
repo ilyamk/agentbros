@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "palette": {
+    "value": [
+      "#0A0708",
+      "#0C0F0C",
+      "#101D1B",
+      "#1C3942",
+      "#240046",
+      "#062477",
+      "#2A4583",
+      "#0F1C49",
+      "#CFD4BD",
+      "#ADACA0",
+      "#FFFFFF"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "ffmpeg 1x1 area-average samples: final ground 8.0 s #0A0708; drawing ground 5.25 s #0C0F0C; eye teal 0.70 s #101D1B; crescent glow 1.7 s #1C3942; eye magenta 0.47 s #240046; ultramarine ring ground 0.24 s #062477; blue card edge 5.40 s #2A4583; navy grade 5.60 s #0F1C49; cream grade 2.54 s #CFD4BD; paper 2.90 s #ADACA0; white flash 0.33 s #FFFFFF",
+      "caption pixels peak at 255 (8.0 s crop)"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "caption (the only type role)",
+        "description": "Neutral grotesque, Inter/SF class (font inferred), regular weight, sentence case as spoken, starting lower case when the sentence continues ('isn't an idea yet.'), straight apostrophe, full stop only on sentence ends. White #FFFFFF, no shadow or box. Measured by row scan: capital A at 6.3 s spans rows 519-551, cap height 33 px of 1080 (3.0%); x-height about 25 px (2.3%) and glyph span 518-560 px at 8.0 s; implied font size about 46 px (4.2% of height) for an Inter-class face (inferred); OCR line box 0.038-0.046 of height. Width 12.7% ('It's obvious.') to 34.4% (the 30-character line) of frame width. Centred on x 0.50, baseline-centre at y 0.50 on every line. Appears and disappears in one frame, no animation."
+      },
+      {
+        "role": "HUD labels",
+        "description": "Tiny monospaced-looking dimension labels ('314x211', '13x13') beside thin rectangles, about 0.021 of height (OCR boxes), white or tinted with the plate's grade; drawn on over 4 frames F10-F13 and tracked to the eye."
+      },
+      {
+        "role": "technical readout",
+        "description": "Degree readouts on the drawing (two values, the larger at x 0.50 y 0.23, OCR height 0.043) that count up frame by frame (170.4 to 172.1 over F155-F160) as the arc grows. Scattered single digits 0-9 in a light italic grotesque fly across F150-F154."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json screenText boxes",
+      "visuals/a1/w-k.jpg F240 (caption crop measured at 8.0 s)",
+      "visuals/a1/w-i.jpg F189 (capital measured at 6.3 s)",
+      "visuals/a1/w-a.jpg F10-F14",
+      "visuals/a1/w-g.jpg F150-F160"
+    ]
+  },
+  "composition": {
+    "value": "Everything converges on frame centre. Captions sit on the exact centre (x 0.50, y 0.50); subjects are placed so that the caption overlaps their brightest part (the crescent's tip at about x 0.50 y 0.50, the caret through the middle of the line, the HUD cluster just below and right of centre at x 0.44-0.63, y 0.55-0.80). Plates are heavily vignetted, so 40-60% of every frame is near-black and the eye cannot leave the centre. The only off-centre elements are the HUD boxes and the technical drawing, whose crosshair sits at x 0.21 y 0.24 and whose lines run to the frame edges.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "speech-text.json screenText boxes"
+    ]
+  },
+  "materials": {
+    "value": "Macro footage or CG with optical character (shallow depth of field, grain, chromatic fringing on grade steps): an eye, a light crescent on a dark sphere, a pen nib on paper, a hand on a keyboard, a droplet, glass domes, sparks. Graphic layers: a dot-matrix ring, thin-line HUD boxes, a line-art technical drawing, flat colour cards with a soft lighter rectangle, a thin glowing vertical caret. Whether the plates are filmed or rendered cannot be told from frames (inferred).",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/w-f.jpg F119-F142",
+      "visuals/a1/w-g.jpg F143-F150"
+    ]
+  },
+  "lighting": {
+    "value": "Low-key, single source per plate with heavy vignette; highlights clip on purpose (crescent core, droplet, caret glow). Grades jump between teal, magenta, monochrome, negative and cream, always as hard 1-3 frame steps, never as a dissolve. The caret carries a soft green-white bloom (#454B46 around a white core).",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/w-d.jpg F69-F78",
+      "visuals/a1/w-h.jpg F170-F179"
+    ]
+  },
+  "styleSummary": "Dark cinematic teaser: tiny white centred captions over vignetted macro plates that are annotated, measured and re-graded in hard frame steps; one burst of 4-frame plates, then the picture empties to a caret on black."
+}

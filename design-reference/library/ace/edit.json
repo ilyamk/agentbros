@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "rhythm": {
+    "value": "Four independent timelines in a 2×2 grid. Shots are counted per cell; the corrected film has 20 cell shots and 16 boundaries (14 hard cuts, 1 dissolve, 1 smoke wipe), against the detector's 6 shots and 5 boundaries. Indices: techniques.json fromShot/toShot follow the schema, so they index the 17 whole-frame intervals between the 16 judged cuts (shots.json with these corrections), and a transition at cut k runs from k−1 to k. Cell shot ids (TL-1 … BR-4) in `shots` below are descriptive labels; they sort by start time, ties broken TL, TR, BL, BR. Hold lengths per cell (s): TL 5.167/0.917/5.534; TR 7.633/2.433/0.533/1.017; BL 0.817/1.500/1.800/1.633/1.900/1.533/0.900/1.367/0.167 (cut off by the end); BR 1.317/3.700/4.633/1.967. The median of all 20 is 1.583 s. BL is the fast cell (median 1.500 s); the top row hardly cuts and changes by morphing instead. Across the whole frame the 16 boundaries fall at 0.817, 1.317, 2.317, 4.117, 5.017, 5.167, 5.750, 6.083, 7.633, 7.650, 9.183, 9.650, 10.067, 10.083, 10.600 and 11.450 s. The median gap is 0.517 s, never more than two land within 0.1 s, and the longest stretch with no boundary anywhere (2.317–4.117, 1.8 s) is filled by the two top-row morphs. Density per second: 0.8 in 0–5.0 s, 2.2 in 5.0–7.7 s, 1.5 in 7.7–11.6 s. Drawing cadence: frame differences alternate large and near zero on almost every strip (e.g. br-pill-fly-cut 7.03/0.33/7.01/0.28…), so the animation is drawn on twos, 30 drawings a second in a 60 fps file. motion.json reports 'on ones' because it samples every 4th frame and cannot see twos. SOUND, NOT HEARD: I cannot hear this film. Figures come from audio.json, the waveform and my own 50 ms RMS. The bed is almost silent until 2.9 s (RMS about 1 000 against 6 600 after), then loudness swells repeat every 0.50/0.55 s (mean 0.522 s, about 115 BPM) from 2.975 s. The tracker reports 114.7 BPM at confidence 0.255 (low) with beatRegularity 0.967, but its beats sit about 0.25 s, half a beat, off the loudness swells, so build no grid on its beat phase. Detector sync (5 cuts): cutsOnBeatRatio 0 vs chance 0.289, cutsOnOnsetRatio 0 vs 0.411, cutsOnBeatLift 0, cutsOnDownbeatFrameRatio 0 vs 0.019 (lift 0), signedMedianCutToBeatSec +0.199: no evidence. Recomputed on the 16 corrected boundaries (±80 ms): beats 1/16 = 0.06 vs chance 0.29, onsets 4/16 = 0.25 vs 0.41, both below chance. After the pulse enters (13 boundaries), 6 of 13 (0.46) fall within 80 ms of a loudness swell, against chance 0.31. 4 of 13 fall within 25 ms: BR cut to white −8 ms, TL punch-in +8 ms, TR smoke wipe start +8 ms, BL cut +25 ms. Chance at ±25 ms is about 0.10. This is weak evidence that the strongest change in each wave is put on a pulse peak while the rest run free.",
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/quad-tl.jpg, quad-tr.jpg, quad-bl.jpg, quad-br.jpg (each cell stripped every 9 frames)",
+      "Per-cell frame-difference peaks computed from media/source.mp4 at 320×180",
+      "visuals/edit-map.png waveform: flat to about 2.9 s, then a pulse",
+      "sync.json metrics; audio.json tempo and onsetsSec",
+      "50 ms RMS swells (local max ±0.3 s, > 1.35× median 5 550): 2.975, 3.475, 3.975, 4.475, 5.025, 5.525, 6.075, 6.575, 7.125, 7.625, 8.175, 8.675, 9.225, 9.725, 10.275, 10.775, 11.325 s"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "TL-1",
+      "purpose": {
+        "value": "TL opening, 0–5.167 s (F0–F309), no cut: the statement line becomes 5 dots (F3–F17), the dots wait in a row, then turn in a ring (1.3–2.5 s), collapse and inflate into the mint assistant face (F150–F203), and the face idles and blinks to 5.167 s.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tl-text-to-dots.jpg F3-F17",
+          "visuals/a1/tl-dots-collapse.jpg F150-F179",
+          "visuals/a1/tl-sphere-to-face.jpg F180-F209"
+        ]
+      },
+      "technique": {
+        "value": "dots-to-character-morph",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tl-dots-collapse.jpg F150-F158"
+        ]
+      }
+    },
+    {
+      "shotId": "TR-1",
+      "purpose": {
+        "value": "TR opening, 0–7.633 s (F0–F457), changing by motion rather than cuts: a collage of pastel blocks and photos pops in on twos with a serif headline typed word by word (F2–F53); it slides out behind a sweep of colour blocks to photos of stressed office workers (F150–F209); a white light leak washes them out (F267–F311); the promise line fades in (F314–F342) and holds still for 2.2 s.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tr-collage-build.jpg F2-F53",
+          "visuals/a1/tr-block-sweep-a.jpg F150-F182",
+          "visuals/a1/tr-block-sweep-b.jpg F183-F209",
+          "visuals/a1/tr-whiteout-a.jpg F267-F299",
+          "visuals/a1/tr-whiteout-b.jpg F300-F329"
+        ]
+      },
+      "technique": {
+        "value": "collage-pop-on-twos, light-leak-wipe-to-white, still-cell-rest",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/tr-collage-build.jpg F2-F53"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-1",
+      "purpose": {
+        "value": "BL wide, 0–0.817 s: a glass prompt card on sky with its placeholder; the cursor drifts in to set up the typing.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-push-in.jpg F42-F48"
+        ]
+      }
+    },
+    {
+      "shotId": "BR-1",
+      "purpose": {
+        "value": "BR opening, 0–1.317 s: a large display word glides left under a sweeping blue light streak on navy; the cut to BR-2 is hidden inside the motion blur.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/br-word-to-pill.jpg F66-F78"
+        ]
+      },
+      "technique": {
+        "value": "cut-on-motion-blur",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/br-word-to-pill.jpg F78-F79"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-2",
+      "purpose": {
+        "value": "BL close-up, 0.817–2.317 s: a hard punch-in to the caret, with the prompt typed large (about 12% of cell height).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-push-in.jpg F49-F62"
+        ]
+      },
+      "technique": {
+        "value": "punch-in-cut-settle",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-push-in.jpg F48-F49"
+        ]
+      }
+    },
+    {
+      "shotId": "BR-2",
+      "purpose": {
+        "value": "BR input pill, 1.317–5.017 s: a line is typed, deleted and retyped as a question. The field scrolls to keep the caret fixed (F185–F206), a send button slides in, the cursor clicks with a ring ripple (F267–F275), and the pill tilts and flies at the lens (F276–F300).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/br-text-scroll.jpg F183-F206",
+          "visuals/a1/br-pill-fly-cut.jpg F264-F300"
+        ]
+      },
+      "technique": {
+        "value": "caret-anchored-typing-scroll, tilt-fly-match-cut",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/br-pill-fly-cut.jpg F276-F300"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-3",
+      "purpose": {
+        "value": "BL wide again, 2.317–4.117 s: a hard pull-out to the whole card shows the long prompt finishing in small type.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-pull-out.jpg F138-F149"
+        ]
+      },
+      "technique": {
+        "value": "punch-in-cut-settle (reverse: pull-out)",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/bl-pull-out.jpg F139-F149"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-4",
+      "purpose": {
+        "value": "BL detail, 4.117–5.75 s: a punch-in to the action button; the cursor hovers and presses.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-push-button.jpg F246-F260",
+          "visuals/a1/bl-cut-orange.jpg F336-F342"
+        ]
+      },
+      "technique": {
+        "value": "punch-in-cut-settle",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-push-button.jpg F246-F247"
+        ]
+      }
+    },
+    {
+      "shotId": "BR-3",
+      "purpose": {
+        "value": "BR chat, 5.017–9.65 s: a white conversation in which the avatar sits where the send button was; replies with avatars and typing dots pile up, then the view drifts out.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/br-pill-fly-cut.jpg F301-F311",
+          "visuals/a1/quad-br.jpg F306-F576"
+        ]
+      }
+    },
+    {
+      "shotId": "TL-2",
+      "purpose": {
+        "value": "TL wide, 5.167–6.083 s: a hard cut from the face to a minimal assistant search bar seen whole, with the cursor in it.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tl-face-to-bar.jpg F309-F320"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-5",
+      "purpose": {
+        "value": "BL generated draft, 5.75–7.65 s: a 7-frame dissolve (F342–F349) from the pressed button to a warm gradient placeholder screen, which resolves cell by cell into real content (F375–F422).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-cut-orange.jpg F342-F356",
+          "visuals/a1/bl-field-resolve.jpg F375-F422"
+        ]
+      },
+      "technique": {
+        "value": "placeholder-to-ui-resolve",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/bl-field-resolve.jpg F387-F422"
+        ]
+      }
+    },
+    {
+      "shotId": "TL-3",
+      "purpose": {
+        "value": "TL close-up, 6.083–11.617 s: a punch-in on the bar's icon and caret. The question is typed with the field scrolling to keep the caret fixed (8.0–8.8 s); the send button appears, the character hops above it, and the button is pressed (turns black at F642, refills green from the bottom F663–F670).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tl-push-bar.jpg F364-F377",
+          "visuals/a1/tl-caret-pan.jpg F480-F527",
+          "visuals/a1/tl-send-press.jpg F636-F671"
+        ]
+      },
+      "technique": {
+        "value": "punch-in-cut-settle, caret-anchored-typing-scroll",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/tl-push-bar.jpg F365"
+        ]
+      }
+    },
+    {
+      "shotId": "TR-2",
+      "purpose": {
+        "value": "TR answer, 7.633–10.067 s: dark smoke covers the promise line from the bottom right (F458–F476); a small orb fades in inside the dark (F468) and a short answer line types on beside it.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tr-smoke-wipe.jpg F458-F485",
+          "visuals/a1/quad-tr.jpg F495-F594"
+        ]
+      },
+      "technique": {
+        "value": "smoke-wipe-to-dark",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tr-smoke-wipe.jpg F458-F476"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-6",
+      "purpose": {
+        "value": "BL finished screen, 7.65–9.183 s: a hard cut to an image-rich finished dashboard, with a settle.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-cut-mountain.jpg F458-F467"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-7",
+      "purpose": {
+        "value": "BL reframe, 9.183–10.083 s: a hard jump to a wider framing that reveals the app sidebar, with a 16-frame settle.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-pan-right.jpg F550-F575"
+        ]
+      },
+      "technique": {
+        "value": "punch-in-cut-settle (reframe)",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-pan-right.jpg F551-F567"
+        ]
+      }
+    },
+    {
+      "shotId": "BR-4",
+      "purpose": {
+        "value": "BR closing, 9.65–11.617 s: a hard cut to a navy title card whose text settles. From F629 the title fades into the first card and an accelerating cascade of email cards fills the cell.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/br-cut-emails.jpg F578-F587",
+          "visuals/a1/br-card-stack.jpg F627-F674"
+        ]
+      },
+      "technique": {
+        "value": "accelerating-card-cascade",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/br-card-stack.jpg F629-F674"
+        ]
+      }
+    },
+    {
+      "shotId": "TR-3",
+      "purpose": {
+        "value": "TR mark, 10.067–10.6 s: a hard cut from the answer line to a white logo mark centred on dark, held 0.53 s.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tr-logo-swap.jpg F603-F617"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-8",
+      "purpose": {
+        "value": "BL change request, 10.083–11.45 s: a hard cut to a near-empty 'request' field; the cursor moves to and clicks a yellow chip.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-cut-request.jpg F604-F611",
+          "visuals/a1/bl-cut-clouds.jpg F681-F686"
+        ]
+      }
+    },
+    {
+      "shotId": "TR-4",
+      "purpose": {
+        "value": "TR app, 10.6–11.617 s: a cut to a blue app tile that opens rightwards into a full calendar app behind a white bloom edge (F636–F665).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/tr-tile-to-ui.jpg F636-F665"
+        ]
+      }
+    },
+    {
+      "shotId": "BL-9",
+      "purpose": {
+        "value": "BL final, 11.45–11.617 s: a hard cut to sky with a results table and cursor, cut short by the end of the file after 10 frames.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/bl-cut-clouds.jpg F686-F696"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 11.617,
+        "name": "quad-grid-diagonal-stagger",
+        "description": "Four films in a 2×2 grid with no gutter, whose cuts are staggered: 16 boundaries in 11.6 s, median gap 0.517 s, never more than two within 0.1 s. When two do coincide they are on a diagonal: TR wipe and BL cut at 7.633/7.650 (1 frame apart), TR and BL cuts at 10.067/10.083 (1 frame apart), and the other diagonal, BR and TL, 0.15 s apart at 5.017/5.167. The top row changes by morphing (TL 0–5.167, TR 0–7.633 without a cut) while the bottom row cuts.",
+        "why": "Each boundary moves only a quarter of the frame, so the viewer keeps three anchors while the fourth changes, and the eye has a reason to jump every half-second without the whole picture ever resetting. Pairing changes on a diagonal keeps visual weight balanced across the centre, and pairing them within one frame makes the pair read as a single beat."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/quad-tr.jpg",
+        "visuals/a1/quad-bl.jpg",
+        "visuals/a1/tr-smoke-wipe.jpg F458",
+        "visuals/a1/bl-cut-mountain.jpg F459",
+        "visuals/a1/tr-logo-swap.jpg F604",
+        "visuals/a1/bl-cut-request.jpg F605"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 9.183,
+        "endSec": 9.45,
+        "name": "punch-in-cut-settle",
+        "description": "A hard cut to a tighter (or wider) crop of the same interface, which then settles. At BL 9.183 s (F551) the cut frame differs by 35.2 and the following drawings by 5.11, 3.63, 2.63, 1.78, 1.47, 1.16 and 0.83 (F553–F565): a decay that halves about every 4 frames and ends within 16 frames (0.27 s). The same move appears at BL 0.817 (F49, in to the caret), BL 2.317 (F139, back out; 30.3 then 5.88, 3.12, 2.18, 1.51), BL 4.117 (F247, in to the button; 26.3 then 7.24, 3.45, 2.58, 1.83) and TL 6.083 (F365, in to the icon and caret).",
+        "why": "The cut takes the eye straight to the detail that is about to change (caret, button, sidebar) with no travel time, and the short eased settle gives the cut a camera's weight, so it reads as a move rather than a jump. In a cell only a quarter of the frame, a punch-in is the only way to make 3% text readable."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/bl-pan-right.jpg F551-F567",
+        "visuals/a1/bl-push-in.jpg F49",
+        "visuals/a1/bl-pull-out.jpg F139-F147",
+        "visuals/a1/bl-push-button.jpg F247-F255",
+        "visuals/a1/tl-push-bar.jpg F365-F373"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.45,
+        "endSec": 5.03,
+        "name": "tilt-fly-match-cut",
+        "description": "BR: the cursor clicks the round send button and a white ring ripples out from it (F267–F275, 0.13 s). From F277 the pill tilts in 3D (left end receding) and pushes towards the lens, accelerating (per-drawing difference rising from 7.0 at F277 to 11.1 at F299; 0.4 s). Hard cut at F301 to a white chat whose round avatar sits where the round button was (cell centre, within about 2% of the cell width). The cut lands 8 ms before a loudness swell (5.025 s).",
+        "why": "The click and ripple tell the eye where to look; the acceleration builds speed into the cut, so the cut feels like arrival rather than interruption. The round button and round avatar share a place, so the eye does not search after the cut, while the ground flips from navy to white for maximum contrast."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/br-pill-fly-cut.jpg F264-F311",
+        "50 ms RMS swell at 5.025 s"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.45,
+        "endSec": 3.45,
+        "name": "dots-to-character-morph",
+        "description": "TL: five dots in a ring converge, accelerating (differences 1.85 → 2.64 → 3.98 → 5.46, F148–F155), and merge into one small blob at F158 (about 12% of cell height). The blob inflates into a glossy sphere about 40% of cell height by F180 (0.37 s, near-even steps). Its colour drifts to cyan (F180–F188), two eyes fade in (F190–F196), and mint floods it from the bottom (F198–F203, 5 frames). The cell's opening uses the same logic in reverse: each word of a statement line is replaced by a dot, left to right, about every 2–3 frames (F3–F17).",
+        "why": "One object never leaves the centre of the cell, so attention stays put while the meaning changes from statement, to 'thinking', to an assistant with a face. That makes it the calm anchor of the grid while the bottom row cuts."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/tl-dots-collapse.jpg F147-F179",
+        "visuals/a1/tl-sphere-to-face.jpg F180-F209",
+        "visuals/a1/tl-text-to-dots.jpg F3-F17"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 10.48,
+        "endSec": 11.617,
+        "name": "accelerating-card-cascade",
+        "description": "BR: the centred title fades (F629) as the first translucent email card fades in at about the same height (F631). Further cards arrive one above another at shrinking intervals (about 10, 10, 6, 4, 4, 4, then 2 frames). The stack grows and spreads as the per-drawing difference rises from 4.9 to 54 (F631–F673), and the film ends mid-cascade.",
+        "why": "'Too many messages' is shown, not said: the acceleration turns a list into a pile-up. Ending mid-acceleration leaves the film open, which suits a loop."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/br-card-stack.jpg F627-F674"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 0.817,
+        "transition": "cut",
+        "note": "BL-only punch-in cut to the caret (F48→F49, difference 18.5), missed because three cells did not change."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-push-in.jpg F48-F49"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 1.317,
+        "transition": "cut",
+        "note": "BR-only cut hidden in motion blur, from the display word to the input pill (F78→F79, difference 33.0)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/br-word-to-pill.jpg F78-F79"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 2.317,
+        "transition": "cut",
+        "note": "BL-only pull-out cut back to the whole card (F138→F139, difference 30.3)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-pull-out.jpg F138-F139"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 4.117,
+        "transition": "cut",
+        "note": "BL-only punch-in cut to the action button (F246→F247, difference 26.3)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-push-button.jpg F246-F247"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 5.167,
+        "transition": "cut",
+        "note": "TL-only cut from the character to the search bar (F309→F310, difference 19.0)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/tl-face-to-bar.jpg F309-F310"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 5.75,
+        "transition": "dissolve",
+        "note": "BL-only 7-frame dissolve from the pressed button to the gradient placeholder screen (F342–F349, centred at F345)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-cut-orange.jpg F342-F349"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 6.083,
+        "transition": "cut",
+        "note": "TL-only punch-in on the bar (F364→F365); a small whole-frame difference because only the top-left quarter changes."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/tl-push-bar.jpg F364-F365"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "No whip at 7.717 s. The detector merged two events into one 'whip' (7.617–7.817): the TR smoke wipe starting at F458 and the BL hard cut at F459. Its time is 67 ms late for both. Replaced by the two splits that follow."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/tr-smoke-wipe.jpg F458-F476",
+        "visuals/a1/bl-cut-mountain.jpg F458-F459",
+        "visuals/boundaries-01.jpg S003"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 7.633,
+        "transition": "wipe",
+        "note": "TR smoke wipe to dark, F458–F476 (0.30 s), starting at the bottom right."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/tr-smoke-wipe.jpg F458-F476"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 7.65,
+        "transition": "cut",
+        "note": "BL hard cut from the draft screen to the finished screen (F458→F459, difference 46.6)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-cut-mountain.jpg F458-F459"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 9.183,
+        "transition": "cut",
+        "note": "BL-only reframe cut that reveals the sidebar (F550→F551, difference 35.2), followed by a 16-frame settle."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-pan-right.jpg F550-F567"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s004"
+        ],
+        "transition": "cut",
+        "note": "Not a match: BR-only hard cut from the white chat to the navy title (F578→F579); no element is shared."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/br-cut-emails.jpg F578-F579"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 10.067,
+        "transition": "cut",
+        "note": "TR-only cut from the answer line to the logo mark (F603→F604)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/tr-logo-swap.jpg F603-F604"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 10.083,
+        "transition": "cut",
+        "note": "BL-only cut to the change-request field (F604→F605, difference 33.8), one frame after the TR cut: a diagonal pair."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-cut-request.jpg F604-F605"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 10.6,
+        "transition": "cut",
+        "note": "TR-only cut from the logo to the app tile (F635→F636), which then opens into the calendar app."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/tr-tile-to-ui.jpg F635-F636"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s005"
+        ],
+        "transition": "cut",
+        "note": "Not a match: BL-only hard cut to sky with a results table (F686→F687, difference 71.2)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-cut-clouds.jpg F686-F687"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s006"
+        ],
+        "note": "A one-frame black tail (F697, mean luma 0.0 against 176.4 on F696): an export or loop artefact, not a shot. It also made `ref:analyze --layers visuals` fail ('Shot 6 selects no frames'); the visuals were produced from a scratch copy without it."
+      },
+      "basis": "measured",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/bl-cut-clouds.jpg F696-F697"
+      ]
+    }
+  ]
+}

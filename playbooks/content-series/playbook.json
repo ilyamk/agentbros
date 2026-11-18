@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "id": "content-series",
+  "title": "Content series",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Plan dated episodes with pinned identities and design while giving every episode its own content.",
+  "triggers": {
+    "en": [
+      "content series",
+      "month of videos",
+      "daily episodes",
+      "video series",
+      "series of videos",
+      "episodes",
+      "weekly episodes",
+      "weekly videos",
+      "weekly series",
+      "recurring series",
+      "recurring segment",
+      "content calendar",
+      "content plan",
+      "one video a day",
+      "30 days of"
+    ],
+    "ru": [
+      "месяц выпусков",
+      "контент серия",
+      "серия с персонажем",
+      "серия видео",
+      "серию видео",
+      "серия роликов",
+      "серию роликов",
+      "эпизод",
+      "рубрик",
+      "контент-план",
+      "контент план",
+      "еженедельн",
+      "каждую неделю",
+      "регулярные ролики",
+      "ролик каждый день"
+    ],
+    "zh": [
+      "系列视频",
+      "系列短视频",
+      "一系列视频",
+      "系列内容",
+      "每期",
+      "每一期",
+      "每集",
+      "固定栏目",
+      "栏目",
+      "日更",
+      "周更",
+      "每周更新",
+      "每天一条",
+      "一个月的内容",
+      "一个月的视频",
+      "内容日历",
+      "内容排期",
+      "选题规划",
+      "账号规划",
+      "连载",
+      "同一个人设",
+      "统一风格"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "one independent product film",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "campaign",
+    "scenario": "content-series",
+    "start": "pnpm campaign:production --project <id> --action init --request <file>"
+  },
+  "alternatives": [],
+  "agents": [
+    "campaign-producer",
+    "creative-critic",
+    "fixer"
+  ],
+  "skills": [
+    "creative-strategy",
+    "copywriter",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "scenes",
+      "typography"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "campaign:production",
+    "campaign:next",
+    "campaign:brief",
+    "campaign:approve",
+    "campaign:execute",
+    "models:pick",
+    "asset:import",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/campaign-production.md"
+  ],
+  "qa": [
+    "Every member has independently bound source facts, exact media and current output receipts.",
+    "Changed dialogue invalidates speech, word timing and dependent cues.",
+    "No model, human approval, invoice or publication rights are inferred from fixture success."
+  ],
+  "benchmarks": [
+    "campaign-content-series"
+  ],
+  "intake": [
+    {
+      "ask": "Which exact variants or catalogue rows should be produced?",
+      "why": "Freeze the selected set before material and render work."
+    },
+    {
+      "ask": "Which materials and facts are authorised for reuse?",
+      "why": "Reuse pins bytes, rights and entity revisions rather than copying claims."
+    },
+    {
+      "ask": "What spending is authorised?",
+      "why": "No-spend is inherited by every task.",
+      "default": "No paid calls; use supplied or local assets and leave paid needs pending."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 1,
+        "max": 1200
+      },
+      "captions": "clean-sentence",
+      "note": "House production bounds; use the child playbook and requested placement for publication specifications."
+    }
+  ],
+  "variants": [],
+  "evidence": []
+}

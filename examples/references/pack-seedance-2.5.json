@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "pack-s1",
+  "shotId": "s1",
+  "endpoint": "bytedance/seedance-2.5/reference-to-video",
+  "profileFamily": "seedance-2.5",
+  "attachments": [
+    { "requirementKey": "mara-front", "source": { "assetId": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }, "slot": "images", "order": 1, "roleSentence": "the face, hair and build of Mara (front view)" },
+    { "requirementKey": "ivo-front", "source": { "assetId": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }, "slot": "images", "order": 2, "roleSentence": "the face, hair and build of Ivo (front view)" },
+    { "requirementKey": "market-plate-wide", "source": { "assetId": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }, "slot": "images", "order": 3, "roleSentence": "the place and light of the night market, without its people" },
+    { "requirementKey": "mara-voice", "source": { "assetId": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" }, "slot": "audio", "order": 1, "roleSentence": "the voice of Mara: timbre and delivery, not the words of the sample" }
+  ],
+  "prompt": {
+    "action": "Mara and Ivo meet between the stalls as the lamps come on; Mara turns and greets him.",
+    "invariants": ["Mara wears a rust-red raincoat and a silver ear cuff."],
+    "camera": "Slow push-in at eye level.",
+    "audio": "Mara says: \"You are late again.\"",
+    "preserve": ["the stall layout of the market"]
+  },
+  "params": {},
+  "audioPolicy": "native"
+}

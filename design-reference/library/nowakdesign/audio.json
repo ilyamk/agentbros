@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "status": {
+    "available": true,
+    "engine": "librosa-1.0.0+ffmpeg-loudnorm"
+  },
+  "hasAudio": true,
+  "onsetsSec": [],
+  "sections": [
+    {
+      "startSec": 0,
+      "endSec": 5.944,
+      "label": "1-quiet",
+      "energy": 0
+    },
+    {
+      "startSec": 5.944,
+      "endSec": 10.325,
+      "label": "2-quiet",
+      "energy": 0
+    }
+  ],
+  "loudness": {
+    "loudnessRangeLu": 0
+  },
+  "silence": [
+    {
+      "startSec": 0,
+      "endSec": 10.325333
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "category": "workflow",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/workflow-utilities/pick-image-by-index",
+      "category": "workflow",
+      "displayName": "Workflow Utilities Pick Image By Index",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "dd64b21e947ce8ce901b81c195f0d394ba35d0e34b336bb5700d8f49ca4d15e8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fworkflow-utilities%2Fpick-image-by-index&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "fallback_index",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "first-image",
+            "last-image"
+          ],
+          "default": "first-image"
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "index",
+          "type": "integer",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "image",
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

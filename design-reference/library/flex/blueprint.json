@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flex",
+  "format": { "width": 1280, "height": 720, "fps": 30 },
+  "durationSec": 42.033,
+  "slots": [
+    {
+      "id": "b01-establish",
+      "role": "hook: the category's old symbol",
+      "startSec": 0,
+      "durationSec": 1.967,
+      "visualRecipe": "One still stock plate that stands for the old way of the category, low angle, full bleed. Wordmark centred at y ≈ 0.45, about 0.15 of frame width, white.",
+      "motionRecipe": "Plate static. Wordmark revealed last glyph first by a soft right-to-left mask with opacity ramp, frames 1–15, power2.out. From frame 50 the next slot's sheet rises over this plate (t02).",
+      "soundRecipe": "Music starts on frame 0 at medium level; no voice. Unheard in the reference: choose by listening.",
+      "copySlot": { "purpose": "brand wordmark only", "maxWords": 1 },
+      "techniqueIds": ["t01-wordmark-reveal-rtl", "t02-rising-sheet-wipe"]
+    },
+    {
+      "id": "b02-thesis",
+      "role": "thesis line on the brand ground",
+      "startSec": 1.967,
+      "durationSec": 3.733,
+      "visualRecipe": "Deep brand-colour flat ground; a thin line-art figure (rings) drawing at centre at low contrast; one light neo-grotesque line at y ≈ 0.46, line height ≈ 0.09 of frame height, final width ≤ 0.75; a row of three small chips at y ≈ 0.78.",
+      "motionRecipe": "Ground arrives as a sheet rising from the bottom: 6% of height at +2 frames, 55% at +6, 86% at +14, complete at +24 (power3.out, long tail). Line art draws on as the sheet settles. Words fade and rise 4–6 px over 5 frames each at +6, +15, +43, +56 frames from the shot start; the line slides to stay centred as it grows.",
+      "soundRecipe": "Music only. Do not cut words to beats (the reference shows no such alignment).",
+      "copySlot": { "purpose": "the twist: old category collides with the new thing", "maxWords": 5 },
+      "techniqueIds": ["t02-rising-sheet-wipe", "t03-word-by-word-centred-line"]
+    },
+    {
+      "id": "b03-idea-becomes-object",
+      "role": "transition into the hero product object, then call to act",
+      "startSec": 5.7,
+      "durationSec": 2.3,
+      "visualRecipe": "Warm off-white ground. The previous full frame becomes a slab about 40% of frame width, then narrows to a button about 25% of width with an icon at its left and a short action label.",
+      "motionRecipe": "Starting 8 frames before this slot, the full frame gains a 1–2 px light outline and shrinks over 19 frames (power2.inOut) with a diagonal sheen crossing it; its text fades as it shrinks. Slab narrows to button over 10 frames while the icon spins in. Label types one letter per 2 frames. Dwell about 1 s.",
+      "soundRecipe": "Music only; a soft movement sound under the shrink is optional (unheard in the reference).",
+      "copySlot": { "purpose": "action verb label on the button", "maxWords": 2 },
+      "techniqueIds": ["t04-frame-shrinks-to-object", "t05-button-types-and-flips"]
+    },
+    {
+      "id": "b04-hero-object",
+      "role": "hero product object in photoreal 3D",
+      "startSec": 8.0,
+      "durationSec": 5.567,
+      "visualRecipe": "The button flips into the hero object at centre (about 18% of width at first), then a photoreal close study: brushed material, studio key from top-left, specular bands, shallow depth of field; variants of the object fan into a stack of about a dozen copies.",
+      "motionRecipe": "Flip on the horizontal axis, edge-on at +4 frames, open by +10, settle by +19 (power2.inOut). Then slow continuous orbit and fan-out for about 4.5 s with no cut.",
+      "soundRecipe": "Music only (unheard).",
+      "copySlot": { "purpose": "none: the object carries this slot" },
+      "techniqueIds": ["t05-button-types-and-flips", "t06-metal-object-fan-orbit", "t07-organic-matte-reveal"]
+    },
+    {
+      "id": "b05-promise",
+      "role": "promise line over an atmospheric plate",
+      "startSec": 13.567,
+      "durationSec": 1.533,
+      "visualRecipe": "Dramatic natural plate (sky or weather), full bleed. Light neo-grotesque line centred at y ≈ 0.46, width ≤ 0.6 of frame.",
+      "motionRecipe": "Arrives through a soft organic matte opening from the right over 11 frames with a faint chromatic edge; first word appears mid-reveal; words every 2–5 frames, fade in. From +37 frames the next slot's off-white sheet starts rising.",
+      "soundRecipe": "Matte start close to a beat in the reference (measured, 0.035 s); anything there is unheard.",
+      "copySlot": { "purpose": "promise about pace or ease", "maxWords": 5 },
+      "techniqueIds": ["t07-organic-matte-reveal", "t03-word-by-word-centred-line", "t02-rising-sheet-wipe"]
+    },
+    {
+      "id": "b06-real-interface",
+      "role": "proof in the real product interface",
+      "startSec": 15.1,
+      "durationSec": 5.667,
+      "visualRecipe": "Captured real interface on white: a column of four offer panels with small illustrations, then the full window with sidebar at 10–15% margins.",
+      "motionRecipe": "Panels grow from a 1 px vertical sliver to full width over about 14 frames each, 3–4 frames apart (power3.out); contents fade in after. Camera pull-back for 0.7 s, then tilt down for 1.19 s on power1.inOut (bezier 0.508, 0.002, 0.287, 0.779), ending close on one panel.",
+      "soundRecipe": "Music only (unheard). Interface clicks optional.",
+      "copySlot": { "purpose": "none added: the interface's own labels only" },
+      "techniqueIds": ["t02-rising-sheet-wipe", "t08-ui-panels-grow-from-sliver", "t09-ui-pullback-and-tilt"]
+    },
+    {
+      "id": "b07-single-action",
+      "role": "the one action the product makes easy",
+      "startSec": 20.767,
+      "durationSec": 1.833,
+      "visualRecipe": "Warm off-white ground; one real form panel centred, about 40% of width.",
+      "motionRecipe": "Hard cut in; panel fades and its rows fill over 9 frames; dwell.",
+      "soundRecipe": "Music only (unheard).",
+      "copySlot": { "purpose": "none added: the form's own labels only" },
+      "techniqueIds": []
+    },
+    {
+      "id": "b08-origin",
+      "role": "start of the journey sentence",
+      "startSec": 22.6,
+      "durationSec": 1.267,
+      "visualRecipe": "Aerial plate of the location where the action starts. Light neo-grotesque line at y ≈ 0.45, left-anchored at x ≈ 0.12, width up to 0.76.",
+      "motionRecipe": "Hard cut (on a beat in the reference); line reveals glyph by glyph with a feathered edge, about 1.4 glyphs per frame, the first word plus one glyph visible on the cut frame; dwell 21 frames complete.",
+      "soundRecipe": "Cut on a beat (measured in the reference, 0.007 s).",
+      "copySlot": { "purpose": "first half of a journey sentence naming the origin", "maxWords": 4 },
+      "techniqueIds": ["t10-glyph-soft-reveal"]
+    },
+    {
+      "id": "b09-flash-destinations",
+      "role": "the main claimed quality, shown by the cutting rate",
+      "startSec": 23.867,
+      "durationSec": 0.633,
+      "visualRecipe": "Five aerial destination plates, different palettes. Caption at the same position as b08's line.",
+      "motionRecipe": "Hard cuts every 4 frames (one plate of 3). Only the location word changes per cut; the trailing words keep revealing left to right across cuts.",
+      "soundRecipe": "Do not force onto beats: the reference montage is off-beat (2 of 7 on a beat). Unheard.",
+      "copySlot": { "purpose": "location name per plate plus the shared tail of the sentence", "maxWords": 5 },
+      "techniqueIds": ["t11-flash-montage-continuous-caption"]
+    },
+    {
+      "id": "b10-landing",
+      "role": "landing destination",
+      "startSec": 24.5,
+      "durationSec": 1.233,
+      "visualRecipe": "Final destination aerial; the sentence complete.",
+      "motionRecipe": "Hard cut; dwell 37 frames; no new motion.",
+      "soundRecipe": "Music only (unheard).",
+      "copySlot": { "purpose": "the completed journey sentence", "maxWords": 5 },
+      "techniqueIds": ["t11-flash-montage-continuous-caption"]
+    },
+    {
+      "id": "b11-scale-stat",
+      "role": "one scale number",
+      "startSec": 25.733,
+      "durationSec": 2.467,
+      "visualRecipe": "Deep brand-colour ground; a sphere of short curved strokes, about 45% of frame height, centred; stat line centred at y ≈ 0.46.",
+      "motionRecipe": "Hard cut; sphere pulls out and turns (circ.out, 0.83 s, bezier 0.171, 0.418, 0.147, 0.866); number fades in at +5 frames, noun at +14 frames, line re-centres.",
+      "soundRecipe": "Music only (unheard).",
+      "copySlot": { "purpose": "number + noun", "maxWords": 2 },
+      "techniqueIds": ["t12-stat-over-particle-sphere", "t03-word-by-word-centred-line"]
+    },
+    {
+      "id": "b12-in-the-hand",
+      "role": "everyday use on a phone",
+      "startSec": 28.2,
+      "durationSec": 3.033,
+      "visualRecipe": "Warm off-white ground; phone rising from the bottom edge to about 25% of frame width, screen showing a faithful wallet sheet with the hero object; two-line headline at y ≈ 0.11–0.22.",
+      "motionRecipe": "Starts 4 frames before the cut: the dark ground brightens from the edges inward to off-white over 10 frames while the phone rises (power4.out, 2.6 s); headline slides down from the top; a confirmation tick replaces the prompt at +49 frames.",
+      "soundRecipe": "Transition close to a beat in the reference (0.064 s). A confirmation sound is optional (unheard).",
+      "copySlot": { "purpose": "where or how the product is used daily", "maxWords": 6 },
+      "techniqueIds": ["t13-radial-bloom-dissolve-device-rise"]
+    },
+    {
+      "id": "b13-anthem",
+      "role": "values run",
+      "startSec": 31.233,
+      "durationSec": 5.334,
+      "visualRecipe": "Five evocative stock plates, one meaning each (two obstacles, then three qualities). Centred one-line slogan at y ≈ 0.46: light neo-grotesque lead + italic serif value word at the same size, white.",
+      "motionRecipe": "Hard cuts, dwells of 29–36 frames (about two beats each). Lead visible on the cut frame; italic word fades up over 8 frames. Lead phrase changes once, from negation to affirmation.",
+      "soundRecipe": "Cut on beats, about every other beat (5 of 7 on a beat in the reference; small sample, inferred).",
+      "copySlot": { "purpose": "lead phrase + one value word per plate", "maxWords": 3 },
+      "techniqueIds": ["t14-anthem-lead-plus-italic-word"]
+    },
+    {
+      "id": "b14-anthem-turn",
+      "role": "the turn to the viewer",
+      "startSec": 36.567,
+      "durationSec": 1.633,
+      "visualRecipe": "Pure white ground; same slogan form, lead in dark grey, value word in the accent brand colour.",
+      "motionRecipe": "Hard cut on a beat; dwell 38 frames; fade the line out over 10 frames to an empty white frame.",
+      "soundRecipe": "Music continues (unheard).",
+      "copySlot": { "purpose": "lead phrase + the value word that addresses the viewer", "maxWords": 3 },
+      "techniqueIds": ["t14-anthem-lead-plus-italic-word", "t15-fade-to-white-signoff"]
+    },
+    {
+      "id": "b15-signoff",
+      "role": "wordmark and call to action",
+      "startSec": 38.2,
+      "durationSec": 3.833,
+      "visualRecipe": "Pure white ground; wordmark centred, about 0.15 of frame width, near-black; small grey call-to-action line at y ≈ 0.85, about 0.17 of width.",
+      "motionRecipe": "Empty white for 4 frames; wordmark reveals right-to-left as in b01 over 11 frames; call to action types in from +20 frames at about 0.8 glyph per frame; dwell to the last frame, no fade-out.",
+      "soundRecipe": "Wordmark lands close to a beat in the reference (0.024 s). End of music unheard.",
+      "copySlot": { "purpose": "wordmark + short invitation", "maxWords": 5 },
+      "techniqueIds": ["t01-wordmark-reveal-rtl", "t15-fade-to-white-signoff"]
+    }
+  ],
+  "rhythm": {
+    "bpm": 111,
+    "cutGrid": "No strict grid. First 22.6 s: six long shots (median 2.85 s) joined by constructed transitions. Then a 38-frame origin, five 3–4 frame flashes, a 37-frame landing, a 2.5 s stat, a 3 s device shot, and an anthem of 29–36 frame plates cut on about every other beat. Tempo confidence 0.57: use the beat only for the anthem and the wordmark."
+  },
+  "style": "Premium, calm: deep brand-colour, warm off-white and white grounds; light neo-grotesque plus italic serif accent; one photoreal hero object; real interface; graded stock plates; small type on the centre band.",
+  "transferRules": {
+    "keep": [
+      "Open on the category's old symbol and overturn it with one line within 6 s",
+      "Grow the hero object out of the thesis frame with no cut (frame → slab → action button → object)",
+      "Rising-sheet wipes with a long tail for changes of ground",
+      "Proof order: real interface, one real action, locations, use in the hand",
+      "Flash montage of 3–4 frame plates under one caption that keeps revealing",
+      "Anthem of about 1 s plates with a fixed lead phrase and an italic value word, ending on the viewer in the accent colour",
+      "Wordmark move repeated at open and close",
+      "Three grounds, one neo-grotesque, one italic serif, one accent colour; type small on the centre band"
+    ],
+    "mustChange": [
+      "branding: wordmark, product object design, colours chosen for the new brand",
+      "music: a new licensed track; time cuts by your own beat map",
+      "graphics: line-art figures, chips, sphere and all illustrations redrawn",
+      "copy: every line written new for the new product",
+      "interface: the new product's own captured interface, never a stand-in",
+      "footage: new licensed plates for every location and value",
+      "the wallet sheet: rebuilt from a fresh, dated screenshot of whatever platform the new product uses"
+    ]
+  }
+}

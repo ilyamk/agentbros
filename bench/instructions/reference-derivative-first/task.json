@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "id": "reference-derivative-first",
+  "playbook": "ai-film",
+  "tier": "no-spend",
+  "brief": "First create the fixture project: pnpm exec tsx tests/fixtures/bench/reference-project.ts --project bench-reference-derivative-first --variant derivative (synthetic ffmpeg media, character and location cards supplied approved as fixture data, pipeline/shot-list.json and pipeline/material.json). The project already exists: work only on its reference inputs (pipeline/references.json, derivatives and packs); do not run film:init, project:new or a render. The Kling motion-control shot in pipeline/shot-list.json comes with a 40-second performance clip. Plan its references with refs:plan, make what the plan proposes with refs:derive (run its local, free steps), use the result as the source, then prepare the pack with refs:pack and stop before approval. Do not pass the original clip, and do not edit reference profiles, limits or any tracked file. Write bench-result.json as {\"derivativeId\": \"<the derivative id>\"}.",
+  "material": [
+    {
+      "path": "bench/instructions/reference-derivative-first/answers.json",
+      "sha256": "e41571accafa325e5c5fade855758f6cfdf2a89db33567e44b693d4856547319",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/instructions/reference-derivative-first/check.mjs",
+      "sha256": "6e4e653e69c1ac08644c8f019e14ee7ed2c3052237873c04f5ffcb0d9279f0ee",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "tests/fixtures/bench/reference-project.ts",
+      "sha256": "a75e1d90b615c92db695786c8360c9b2d05b762f18e2bdb7e78667377a2fb990",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      0,
+      20
+    ]
+  },
+  "answers": "bench/instructions/reference-derivative-first/answers.json",
+  "criteria": [
+    {
+      "id": "automatic-check",
+      "kind": "process",
+      "check": {
+        "type": "script",
+        "path": "bench/instructions/reference-derivative-first/check.mjs"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": ["prompt", "duration", "resolution", "aspect_ratio"],
+  "additionalProperties": false,
+  "properties": {
+    "prompt": {"type": "string", "default": "a red fox in snow"},
+    "duration": {"type": "integer", "minimum": 5, "maximum": 10, "default": 5},
+    "resolution": {"type": "string", "enum": ["720p", "1080p"], "default": "720p"},
+    "aspect_ratio": {"type": "string", "enum": ["16:9", "9:16"], "default": "16:9"},
+    "generate_audio": {"type": "boolean", "default": false}
+  }
+}

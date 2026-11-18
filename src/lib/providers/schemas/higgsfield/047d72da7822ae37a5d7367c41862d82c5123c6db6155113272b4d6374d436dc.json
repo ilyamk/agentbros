@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "endpoint": "wan/v2.6/text-to-video",
+  "title": "Wan 2.6 — Text to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-6/text-to-video.md",
+  "usageNotes": [
+    "Setting multi_shots=true also enables prompt_extend, even if prompt_extend was false."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 10000000,
+        "minimum": -1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10,
+          15
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "audio_url": {
+        "type": "string",
+        "title": "Audio URL",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": false
+      },
+      "prompt_extend": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

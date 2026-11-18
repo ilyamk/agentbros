@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "format": { "width": 1280, "height": 720, "fps": 60 },
+  "durationSec": 11.633,
+  "slots": [
+    {
+      "id": "b1-four-openings",
+      "role": "Hook: four premises start at once, one per cell",
+      "startSec": 0,
+      "durationSec": 2.9,
+      "visualRecipe": "2×2 grid of four 50% × 50% cells, no gutter or border; cells differ only by ground colour. Top row light (off-white #F8F8F8-like and cool grey #EAECF0-like), bottom row saturated (photographic sky behind a frosted glass card) and dark (deep navy). Each cell's hero sits at 45–55% of its own width. TL: one short line in small grey sans, centred. TR: empty flat ground that fills with pastel blocks and cut-out photos. BL: a glass input card at about 70% of cell width with a placeholder and an action button. BR: one large sans line at about 21% of cell height, left-aligned, white on navy.",
+      "motionRecipe": "Each cell moves on each frame; drawings on twos (30 a second in a 60 fps file). TL: words fade one by one left to right, each replaced by a dot popping in at its centre, 2–3 frames apart; the dots then idle in a row and turn into a slowly rotating ring. TR: elements pop in whole with no ease, one per 2–6 frames; a serif line is added a word per pop. BL: the cursor drifts in for 0.8 s, then a hard punch-in to the caret (text at 12% of cell height) with an expo.out settle over 16 frames; text types a character per 2–4 frames; at about 2.3 s a hard pull-out to the whole card. BR: the line glides left with growing horizontal blur under a light streak for 0.2 s; cut on the most blurred frame to a dark glass input pill sliding in, settling in 13 frames; text types in, is deleted and retyped.",
+      "soundRecipe": "Near-silent bed (in the reference, loudness about a sixth of what follows). Optional faint texture; keep it quiet so the pulse at the end of this slot is felt as an arrival. Unheard in the reference: all character inferred.",
+      "copySlot": { "purpose": "TL: one short claim that will dissolve into dots; TR: a 3–5-word headline built word by word; BL: a user prompt typed into the input; BR: a large two-word lead-in, then a short question typed into the pill", "maxWords": 12 },
+      "techniqueIds": ["t01-quad-split-four-films", "t05-dots-to-character-morph", "t08-collage-pop-on-twos", "t03-punch-in-cut-settle", "t11-cut-on-motion-blur"]
+    },
+    {
+      "id": "b2-pulse-and-problem",
+      "role": "Pulse enters; each cell reaches its character or problem",
+      "startSec": 2.9,
+      "durationSec": 2.1,
+      "visualRecipe": "TL: the dots become one glossy sphere about 40% of cell height (radial gradient, specular highlight upper left) that gains two short vertical eyes and turns mint (#36E69A-like). TR: the collage gives way to a collage of people photos showing the problem, then everything washes to white. BL: a close-up of the action button (yellow on sky-blue glass) with the cursor on it. BR: the pill shows the question, with a round blue send button at its right end and the cursor over it.",
+      "motionRecipe": "TL: the ring converges on power2.in in about 8 frames, merges into a blob, inflates over 0.37 s, colour drifts, eyes fade in over 6 frames, and a mint flood rises from the bottom in 5 frames. TR: the collage slides left in steps while new colour blocks pop over it for about 0.95 s; photos slide right as an overexposed white glow spreads from the left on power1.out over 0.73 s. BL: hard punch-in to the button with the identical 16-frame settle. BR: the line scrolls to keep the caret fixed, the send button slides in from the right in about 0.2 s; click with a white ring ripple (8 frames); the pill tilts in 3D and pushes at the lens on power2.in for 0.4 s and is cut at its fastest frame (end of slot).",
+      "soundRecipe": "A steady pulse enters at the start of this slot (about 115 BPM in the reference, loudness peaks each 0.50–0.55 s). Put the cut out of the flying pill on a pulse peak (in the reference 8 ms before one). Do not reuse the reference's music.",
+      "copySlot": { "purpose": "BR question completes; BL prompt completes; TR has no new copy (pictures only)", "maxWords": 10 },
+      "techniqueIds": ["t05-dots-to-character-morph", "t09-light-leak-wipe-to-white", "t10-caret-anchored-typing-scroll", "t04-tilt-fly-match-cut", "t03-punch-in-cut-settle"]
+    },
+    {
+      "id": "b3-first-product-wave",
+      "role": "First wave of product reveals, staggered across three cells",
+      "startSec": 5.0,
+      "durationSec": 2.6,
+      "visualRecipe": "BR: a white chat whose round avatar sits exactly where the round send button was; replies land with avatars and typing dots. TL: a minimal assistant input bar seen whole on off-white, then a close-up of its round mascot icon and caret. BL: a screen whose content regions are soft warm gradients (coral to peach) that turn into real interface regions. TR: one centred serif line at 77% of cell width on cool grey, key words in a blue-to-lilac gradient; it then holds still. All product screens are real captures of the product being shown.",
+      "motionRecipe": "Boundaries at slot start +0.017 (BR hard match cut), +0.167 (TL hard cut), +0.75 (BL 7-frame dissolve), +1.083 (TL punch-in with settle): never two within 0.1 s. BL placeholder regions resolve singly, each over about 0.2 s, staggered about 0.2 s. TR line fades in left to right over 0.47 s, then holds 1.9 s untouched (the resting cell). TL begins typing a long question once punched in; chat bubbles in BR arrive roughly each 0.5 s.",
+      "soundRecipe": "Pulse continues. Place the TL punch-in on a pulse peak (in the reference +8 ms). Optional soft UI ticks on bubble arrivals (inferred, the reference was not heard).",
+      "copySlot": { "purpose": "TR: the one-line promise (gradient on 2–3 key words); TL: the start of a long user question; BR: two short chat lines", "maxWords": 22 },
+      "techniqueIds": ["t04-tilt-fly-match-cut", "t02-diagonal-paired-stagger", "t12-placeholder-to-ui-resolve", "t14-still-cell-rest", "t03-punch-in-cut-settle"]
+    },
+    {
+      "id": "b4-answer-wave",
+      "role": "Second wave: the products answer",
+      "startSec": 7.6,
+      "durationSec": 2.1,
+      "visualRecipe": "TR: dark ground (#181818-like) with a small iridescent orb, and a short answer line beside it in small white sans. BL: the finished, image-rich version of the screen from b3, then a wider framing that shows its sidebar. TL: the question keeps growing at 12–15% of cell height, its start sliding off the left edge; a mint send button appears at the right. BR: the chat grows, then a navy title card with one short line centred.",
+      "motionRecipe": "Diagonal pair at slot start +0.033/+0.05: TR smoke wipe from the bottom-right corner on power2.out over 0.30 s (the orb fades in at the halfway point) and a BL hard cut with settle, one frame later. TR answer line types on word by word. TL: caret-anchored scroll, a character per 2–4 frames. BL: reframe cut at +1.58 s with a 16-frame expo.out settle. BR: chat drifts out slightly, hard cut at +2.05 s to the title, which settles in about 8 frames.",
+      "soundRecipe": "Pulse continues. Put the diagonal pair on a pulse peak (in the reference +8 and +25 ms). A soft swell or whoosh under the smoke is optional and inferred.",
+      "copySlot": { "purpose": "TR: a short answer line naming what the product gives; TL: the rest of the user question; BR: a short title naming the pain the last cell shows", "maxWords": 18 },
+      "techniqueIds": ["t06-smoke-wipe-to-dark", "t02-diagonal-paired-stagger", "t10-caret-anchored-typing-scroll", "t03-punch-in-cut-settle"]
+    },
+    {
+      "id": "b5-density-climax",
+      "role": "Climax: all four cells end on a full, busy product interface",
+      "startSec": 9.7,
+      "durationSec": 1.933,
+      "visualRecipe": "TR: a white brand glyph centred on dark, then an app tile that opens into the full app screen. BL: a near-empty prompt field with a yellow chip, then a cut to a photographic sky with a results table overlapping it. TL: the send button pressed, the mascot hopping above it. BR: translucent message cards stacking on navy. End state: all four cells are dense real interfaces at once; no end card, no fade; the last frame is the loop frame.",
+      "motionRecipe": "Diagonal pair at slot start +0.367/+0.383 (TR cut to the glyph, BL cut to the field, one frame apart). TR: the glyph holds 0.53 s, then cuts to the tile, which grows rightwards into the app over 0.35 s behind a white bloom edge. TL: the button snaps black on the press, holds 0.35 s, and refills from the bottom in 7 frames. BR: the title fades as the first card fades in at its height; further cards land at shrinking intervals (10 → 2 frames, power3.in). BL: hard cut at +1.75 s with a settle. The film ends mid-cascade.",
+      "soundRecipe": "Pulse to the end; no designed ending in the reference (the last swell is about 0.3 s before the end). Let the last bar loop cleanly into the first frame. Unheard: inferred.",
+      "copySlot": { "purpose": "Interface text only: real labels inside the captured screens; no headline", "maxWords": 1 },
+      "techniqueIds": ["t15-tile-opens-to-app", "t13-press-state-refill", "t07-accelerating-card-cascade", "t02-diagonal-paired-stagger"]
+    }
+  ],
+  "rhythm": {
+    "bpm": 115,
+    "cutGrid": "Per cell, not per frame: 20 cell shots, median hold 1.58 s; across the frame 16 boundaries, median gap 0.52 s, never more than two within 0.1 s, and coinciding pairs only on diagonals (TR+BL, BR+TL), one frame apart. The bottom row cuts (one cell at about 1.5 s holds); the top row shifts by morph and wipe. The pulse (about 115 BPM, from loudness peaks; the reference's beat tracker was low-confidence and half a beat out of phase) begins at 2.9 s. Put the strongest boundary of each wave on a pulse peak and leave the rest free; in the reference only 4 of 13 boundaries were within 25 ms of a peak."
+  },
+  "style": "Four clean interface promos side by side: light interface style, frosted glass, soft gradients, one glossy mascot, a stop-motion collage and a dark glass cell. Drawn on twos. Each line typed or built on screen; each product screen real.",
+  "transferRules": {
+    "keep": [
+      "Gutterless 2×2 grid of four independent films, each with its own ground, and each film's hero at its cell's centre",
+      "Stagger: no more than two cell boundaries within 0.1 s; coinciding boundaries on a diagonal, one frame apart",
+      "Each cell runs one shared arc: abstract opening, then character or problem, then real interface",
+      "Bottom row cuts with punch-ins and settles, top row shifts by morph and wipe; one cell always rests during the densest stretch",
+      "Each line typed or built on screen; the field scrolls to keep the caret fixed",
+      "Drawings on twos inside a 60 fps file",
+      "Near-silent opening, pulse from about 2.9 s, the strongest boundary of each wave on a pulse peak",
+      "No end card; the last frame is a full grid and the loop point"
+    ],
+    "mustChange": [
+      "All branding: product names, logos, emblems, app names and any mascot character",
+      "All music and sound: commission or license a new pulse bed",
+      "All graphics: collage photos, illustrations, interface screens (use the new product's real captures), colour palette specifics",
+      "All copy: each on-screen line, question, answer and interface label",
+      "The specific products and use cases in each cell"
+    ]
+  }
+}

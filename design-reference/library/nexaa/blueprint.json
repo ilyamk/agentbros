@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24
+  },
+  "durationSec": 31.542,
+  "slots": [
+    {
+      "id": "open-word",
+      "role": "hook",
+      "startSec": 0,
+      "durationSec": 0.708,
+      "visualRecipe": "Near-white ground; one short word centred, settling at about 43% of frame width; blurred brand-light blob at the left edge.",
+      "motionRecipe": "Scale from about 2.5x to 1x, expo.out, 90% of travel in 0.43 s; settled by frame 14; hard cut at frame 17.",
+      "soundRecipe": "Quiet music bed starts with the opening frame.",
+      "techniqueIds": [
+        "giant-word-pull-out"
+      ],
+      "copySlot": {
+        "purpose": "Greeting or opener",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "name-reveal",
+      "role": "hook",
+      "startSec": 0.708,
+      "durationSec": 0.917,
+      "visualRecipe": "Same ground; 2-word name line 52% of width, centred, opening word dark, second word in the accent colour, partly hidden under the blurred light.",
+      "motionRecipe": "Light slides right and off in 9 frames (quadratic ease-out, cubic-bezier(0.33, 1, 0.68, 1)); hold to the cut.",
+      "soundRecipe": "Bed continues; nothing marks the cut.",
+      "techniqueIds": [
+        "light-blob-name-reveal"
+      ],
+      "copySlot": {
+        "purpose": "Brand name",
+        "maxWords": 2
+      }
+    },
+    {
+      "id": "premise-a",
+      "role": "premise",
+      "startSec": 1.625,
+      "durationSec": 1.167,
+      "visualRecipe": "Hard cut to a saturated accent ground; light words centred at about 14% glyph height.",
+      "motionRecipe": "Words cut on one at a time, 2-4 frames apart; slight drift.",
+      "soundRecipe": "Bed; cut on or near a beat is not needed.",
+      "techniqueIds": [
+        "word-build-on-ground-swap"
+      ],
+      "copySlot": {
+        "purpose": "Category of the brand",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "premise-b",
+      "role": "premise",
+      "startSec": 2.792,
+      "durationSec": 0.583,
+      "visualRecipe": "Same ground; one word replaces the line at about 12% glyph height.",
+      "motionRecipe": "One-frame text swap; hold 14 frames.",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "word-build-on-ground-swap"
+      ],
+      "copySlot": {
+        "purpose": "Key noun of the category",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "premise-c",
+      "role": "premise",
+      "startSec": 3.375,
+      "durationSec": 1.042,
+      "visualRecipe": "Hard cut back to the light ground; dark lettering at about 10% glyph height, centred.",
+      "motionRecipe": "Second word added on a cut about 1 s in.",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "type-steps-down-to-ui-scale"
+      ],
+      "copySlot": {
+        "purpose": "Audience",
+        "maxWords": 2
+      }
+    },
+    {
+      "id": "premise-d",
+      "role": "premise",
+      "startSec": 4.417,
+      "durationSec": 1.187,
+      "visualRecipe": "Same ground; a sentence at the interface's own lettering size (about 6.7% glyph height, 57% of width), last words in a lighter accent.",
+      "motionRecipe": "Words arrive pale and darken over 3-4 frames, 3-4 frames apart; then the sentence fades out left to right as the interface fades in over 0.63 s.",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "type-steps-down-to-ui-scale"
+      ],
+      "copySlot": {
+        "purpose": "Where the brand lives",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "ui-wide",
+      "role": "demo",
+      "startSec": 5.604,
+      "durationSec": 0.979,
+      "visualRecipe": "The new offering's real screen, wide: start view with its title and an empty prompt field, about 70% of frame width, white margins with faint floating squares.",
+      "motionRecipe": "Hold; very slow drift.",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "type-steps-down-to-ui-scale"
+      ]
+    },
+    {
+      "id": "ui-punch-in",
+      "role": "demo",
+      "startSec": 6.583,
+      "durationSec": 1.5,
+      "visualRecipe": "Hard crop to about 1.8x on the prompt field; opening question typed.",
+      "motionRecipe": "Typewriter about 1 character a frame; slow drift; hard cut back out when the line overflows.",
+      "soundRecipe": "Bed; optional key clicks.",
+      "techniqueIds": [
+        "ui-punch-in-reframe"
+      ],
+      "copySlot": {
+        "purpose": "Opening question, typed",
+        "maxWords": 12
+      }
+    },
+    {
+      "id": "ui-punch-out",
+      "role": "demo",
+      "startSec": 8.083,
+      "durationSec": 1.584,
+      "visualRecipe": "Back to the wide crop; question finishes; the send button turns active.",
+      "motionRecipe": "Typing continues; hold.",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "ui-punch-in-reframe"
+      ]
+    },
+    {
+      "id": "send-macro",
+      "role": "demo",
+      "startSec": 9.667,
+      "durationSec": 1.458,
+      "visualRecipe": "Macro (about 7x) of the send button and the field corner.",
+      "motionRecipe": "Hold, then an accelerating upward drift into the cut (ease-in).",
+      "soundRecipe": "Bed.",
+      "techniqueIds": [
+        "ui-punch-in-reframe",
+        "accelerate-into-cut"
+      ]
+    },
+    {
+      "id": "answer-one",
+      "role": "proof",
+      "startSec": 11.125,
+      "durationSec": 4.167,
+      "visualRecipe": "Real conversation view: question bubble top right, status indicator, then a placeholder that grows from the reply line into the whole answer (a table or another dense result).",
+      "motionRecipe": "Bubble continues the upward move and settles; status holds about 2.5 s; placeholder grows from a dot to final size in 12 frames (quadratic ease-in-out, cubic-bezier(0.45, 0, 0.55, 1)) with sliding gradient bands, answer dissolves in over 6 frames; final 0.4 s accelerating sideways drift into the cut.",
+      "soundRecipe": "Bed until the answer resolves, then about 0.7 s near-silence, then a riser starting about 0.1 s before the cut.",
+      "techniqueIds": [
+        "streamed-answer",
+        "skeleton-shimmer-to-content",
+        "silence-gap-before-drop",
+        "accelerate-into-cut"
+      ]
+    },
+    {
+      "id": "prompt-close-up",
+      "role": "turn",
+      "startSec": 15.292,
+      "durationSec": 1.333,
+      "visualRecipe": "New pale gradient ground; the prompt field at headline size (field box about 3x its height in the wide interface shots), running off the left edge.",
+      "motionRecipe": "Short line typed about 1 character a frame while the camera tracks right with the caret.",
+      "soundRecipe": "Louder music returns at peak level about 6 frames after the cut.",
+      "techniqueIds": [
+        "follow-caret-typing-close-up"
+      ],
+      "copySlot": {
+        "purpose": "Invitation to query",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "prompt-send",
+      "role": "turn",
+      "startSec": 16.625,
+      "durationSec": 1.167,
+      "visualRecipe": "Same ground and scale; the view jumps sideways in one frame to the field's right end with the send button and a cursor.",
+      "motionRecipe": "One-frame lateral jump reframe; cursor arrives and clicks send; upward accelerating drift into the cut.",
+      "soundRecipe": "Loud bed; the jump is not on a beat.",
+      "techniqueIds": [
+        "ui-punch-in-reframe",
+        "follow-caret-typing-close-up",
+        "accelerate-into-cut"
+      ]
+    },
+    {
+      "id": "benefit-list",
+      "role": "proof",
+      "startSec": 17.792,
+      "durationSec": 1.458,
+      "visualRecipe": "White rounded panel on the pale gradient; three rows, each a bold title, a grey subline and an empty circle.",
+      "motionRecipe": "Panel rises and settles in 6 frames; circles fill with a radial wipe and a tick, 3-4 frames each, 9 and 7 frames apart; panel pans left, accelerating, into the cut (circular ease-in, 0.4 s).",
+      "soundRecipe": "Loud bed; ticks might sit on beat and half-beat.",
+      "techniqueIds": [
+        "sequential-check-fill",
+        "accelerate-into-cut"
+      ],
+      "copySlot": {
+        "purpose": "Three advantages, title and one line each",
+        "maxWords": 24
+      }
+    },
+    {
+      "id": "question-two",
+      "role": "demo",
+      "startSec": 19.25,
+      "durationSec": 2.417,
+      "visualRecipe": "Prompt field at headline size on white with faint floating squares.",
+      "motionRecipe": "Second question typed about 1 character a frame, camera tracking the caret; brand word in the accent colour; field rises and blurs into the cut.",
+      "soundRecipe": "Loud bed.",
+      "techniqueIds": [
+        "follow-caret-typing-close-up",
+        "accelerate-into-cut"
+      ],
+      "copySlot": {
+        "purpose": "Second, shorter question",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "answer-two",
+      "role": "proof",
+      "startSec": 21.667,
+      "durationSec": 3.979,
+      "visualRecipe": "Real conversation view: question bubble, status indicator, then a short plain-language answer at body size.",
+      "motionRecipe": "Status holds about 1.8 s; answer streams line by line; slow drift up; fade to white at the end.",
+      "soundRecipe": "Loud bed.",
+      "techniqueIds": [
+        "streamed-answer"
+      ]
+    },
+    {
+      "id": "pain-removed",
+      "role": "benefit",
+      "startSec": 25.646,
+      "durationSec": 1.729,
+      "visualRecipe": "Near-white ground with a blurred accent glow in the bottom-right corner; one centred sentence, 57% of width, about 6.4% glyph height.",
+      "motionRecipe": "Words fade up from pale accent and rise into the baseline, about 4 frames each, 5 frames apart.",
+      "soundRecipe": "Loud bed.",
+      "techniqueIds": [
+        "glow-ground-word-fade-up"
+      ],
+      "copySlot": {
+        "purpose": "The chore the brand removes",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "wordmark",
+      "role": "brand",
+      "startSec": 27.375,
+      "durationSec": 2.208,
+      "visualRecipe": "Same ground; the new brand's wordmark in its accent colour, about 40% of width with the tagline; small dark tagline beneath.",
+      "motionRecipe": "Hard cut; wordmark wiped on left to right with a soft edge over 10 frames (quadratic ease-out, cubic-bezier(0.33, 1, 0.68, 1)); tagline in 2 steps about 0.5 s apart.",
+      "soundRecipe": "Loud bed.",
+      "techniqueIds": [
+        "wordmark-soft-wipe"
+      ],
+      "copySlot": {
+        "purpose": "Tagline in 2 short clauses",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "cta",
+      "role": "cta",
+      "startSec": 29.583,
+      "durationSec": 0.917,
+      "visualRecipe": "Same ground; a small centred imperative, about 3.6% glyph height.",
+      "motionRecipe": "One-frame text swap; hold 22 frames.",
+      "soundRecipe": "Loud bed.",
+      "techniqueIds": [
+        "held-ground-text-swap-end"
+      ],
+      "copySlot": {
+        "purpose": "Imperative call to action",
+        "maxWords": 2
+      }
+    },
+    {
+      "id": "close",
+      "role": "cta",
+      "startSec": 30.5,
+      "durationSec": 1.042,
+      "visualRecipe": "Same ground; one centred line, about 5% glyph height, 46% of width.",
+      "motionRecipe": "One-frame text swap; held to the last frame; no fade.",
+      "soundRecipe": "Music tails out by the last frame.",
+      "techniqueIds": [
+        "held-ground-text-swap-end"
+      ],
+      "copySlot": {
+        "purpose": "Where to locate the brand",
+        "maxWords": 6
+      }
+    }
+  ],
+  "rhythm": {
+    "bpm": 123,
+    "cutGrid": "No reliable grid (tempo confidence 0.55, downbeat confidence 0.17). Opening half (to the turn): holds of 0.6-1.6 s on lettering and interface, cut on the text, not the beat. After the near-silence and re-entry: holds of 0.9-4 s; place hard cuts within 80 ms after a beat when nothing else decides them, and one cut about 6 frames before the music re-enters at peak level."
+  },
+  "style": "Light, cool, centred: near-white grounds, one saturated accent ground, dark navy lettering and an accent colour on the brand word, a blurred accent light as the sole ornament; real interface at reading scale with hard punch-ins; a loading shimmer in a contrasting hue is the one off-palette accent.",
+  "transferRules": {
+    "keep": [
+      "Hook by scale: one word pulled back from about 2.5x to reading size on expo.out in 14 frames, then a light that uncovers the name",
+      "Premise split into one-line phrases, each smaller than the last, landing at the interface's own lettering size before dissolving into it",
+      "Interface shown by hard reframes (about 1.8x, then wide, then a macro of the next button, later a same-scale sideways jump) instead of animated zooms",
+      "Accelerating drift out of a shot and the same direction continued into the next",
+      "Proof as the answer arriving: status hold, then a placeholder that grows from the reply point into the whole result",
+      "Near-silence under the opening proof and a cut within the riser, about 6 frames before the music returns",
+      "Benefit rows ticked in turn, 7-9 frames apart",
+      "Last frame held with text, no fade"
+    ],
+    "mustChange": [
+      "Branding: wordmark, name, colours if they are the reference brand's, watermark",
+      "Music: use a licensed or original track; recreate solely the stop-and-return structure",
+      "Graphics: the interface must be the new offering's own screens, captured for real; do not reuse the reference's screens, placeholder gradient colours or floating squares as-is",
+      "Copy: every line, prompt and answer written for the new brand",
+      "Typeface choice if it is the reference's identity face"
+    ]
+  }
+}

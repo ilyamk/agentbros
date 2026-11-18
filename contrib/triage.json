@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "enabled": false,
+  "judges": [
+    { "label": "Claude", "provider": "openrouter", "model": "anthropic/claude-haiku-5.5" },
+    { "label": "GPT", "provider": "openrouter", "model": "openai/gpt-6-luna" }
+  ],
+  "perPrCapUsd": 0.25,
+  "monthlyCapUsd": 10,
+  "maxDiffBytes": 61440,
+  "maxRunsPerPr": 2,
+  "minTierForAutoTriage": 1,
+  "perOwnerMonthlyRuns": 4,
+  "pricing": {}
+}

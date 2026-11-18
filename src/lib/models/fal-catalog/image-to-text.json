@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "category": "image-to-text",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "nvidia/nemotron-3-5-super/vision",
+      "category": "image-to-text",
+      "displayName": "NVIDIA Nemotron 3.5 Super Vision",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "28dee6c3f9919f5afae4e142a326db4a45b1be35338973a16481c70e0d239544",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-5-super%2Fvision&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 32000,
+          "default": 1024
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "think",
+            "no_think"
+          ],
+          "default": "no_think"
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.95
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "reasoning",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "vision",
+        "multimodal",
+        "reasoning"
+      ]
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-nano-omni/vision",
+      "category": "image-to-text",
+      "displayName": "Nemotron 3 Nano Omni",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e5d101952768db2a738eb0cb7c35a5158dbe204edce0da94d0a2cbeec9e359f8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-nano-omni%2Fvision&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 20000,
+          "default": 1024
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "think",
+            "no_think"
+          ],
+          "default": "no_think"
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 0.7
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.95
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "nemotron",
+        "nvidia",
+        "image-to-text",
+        "vision-language",
+        "vision-reasoning",
+        "reasoning",
+        "agentic",
+        "agents",
+        "open-weights",
+        "hybrid-moe",
+        "mamba",
+        "30b-a3b"
+      ]
+    }
+  ]
+}

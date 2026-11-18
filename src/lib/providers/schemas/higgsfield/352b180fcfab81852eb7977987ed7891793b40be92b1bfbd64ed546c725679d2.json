@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/qwen-image-3/text-to-image",
+  "title": "Qwen Image 3 — Text to image API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/qwen-image-3/text-to-image.md",
+  "usageNotes": [
+    "prompt must contain non-whitespace text. The schema imposes no character maximum; its 4,500-token guidance is advisory.",
+    "enable_thinking defaults to true and requires prompt_extend=true. Set both to false to disable enhancement.",
+    "prompt_extend_mode supports direct or agent. No reference images are accepted by this endpoint.",
+    "resolution is a tier; 2k square maps to 1536 by 1536 pixels, not 2048 by 2048."
+  ],
+  "schema": {
+    "type": "object",
+    "allOf": [
+      {
+        "if": {
+          "required": [
+            "enable_thinking"
+          ],
+          "properties": {
+            "enable_thinking": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "prompt_extend"
+          ],
+          "properties": {
+            "prompt_extend": {
+              "const": true
+            }
+          }
+        }
+      }
+    ],
+    "title": "Qwen Image 3 Text to Image",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483647,
+        "minimum": 0,
+        "description": "Optional random seed for similar, reproducible results."
+      },
+      "prompt": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Positive prompt or editing instruction in Chinese or English. Alibaba recommends at most 4,500 tokens."
+      },
+      "resolution": {
+        "enum": [
+          "1k",
+          "2k"
+        ],
+        "type": "string",
+        "default": "1k",
+        "description": "Output resolution tier. Both tiers produce PNG images."
+      },
+      "aspect_ratio": {
+        "enum": [
+          "1:1",
+          "2:3",
+          "3:2",
+          "3:4",
+          "4:3",
+          "7:9",
+          "9:7",
+          "9:16",
+          "16:9",
+          "21:9"
+        ],
+        "type": "string",
+        "default": "1:1",
+        "description": "Output aspect ratio. Exact provider-recommended dimensions are selected automatically."
+      },
+      "prompt_extend": {
+        "type": "boolean",
+        "default": true,
+        "description": "Improve the prompt before generation. Required when thinking mode is enabled."
+      },
+      "enable_thinking": {
+        "type": "boolean",
+        "default": true,
+        "description": "Use model reasoning to improve image quality. Requires prompt enhancement."
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "Content, styles, or artifacts to avoid in the output."
+      },
+      "prompt_extend_mode": {
+        "enum": [
+          "direct",
+          "agent"
+        ],
+        "type": "string",
+        "default": "direct",
+        "description": "Direct enhancement is available for every request; agent enhancement is text-to-image only."
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

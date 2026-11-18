@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "sync": {
+    "file": "sync.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "method": "mic-energy",
+  "rules": {
+    "minShotSec": 2,
+    "overlapWideSec": 1,
+    "sentenceSnapSec": 0.5,
+    "dominanceDb": 6,
+    "hopSec": 0.1
+  },
+  "fps": {
+    "num": 30,
+    "den": 1
+  },
+  "focusSource": null,
+  "segments": [
+    {
+      "startFrame": 0,
+      "endFrame": 15,
+      "angle": "wide",
+      "speaker": null,
+      "reason": "fallback-wide",
+      "focus": null
+    },
+    {
+      "startFrame": 15,
+      "endFrame": 30,
+      "angle": "host",
+      "speaker": "speaker_0",
+      "reason": "speaker",
+      "focus": null
+    }
+  ],
+  "notes": []
+}

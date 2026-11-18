@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "category": "unknown",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/workflow-utilities/interleave-video",
+      "category": "unknown",
+      "displayName": "Workflow Utilities Interleave Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "25ccdcdc12b9771c1e8ab3d020d2ff4ad154d227218784200c90e93032082758",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fworkflow-utilities%2Finterleave-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "frames_per_second",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 120
+        },
+        {
+          "name": "video_urls",
+          "type": "array",
+          "required": true,
+          "media": "video",
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "mureka/api/files/upload",
+      "category": "unknown",
+      "displayName": "Mureka Upload File",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "780627526da6a663c4bb0257231efc58579425124aa32e54e02632f1ec8dfbff",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Ffiles%2Fupload&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "file_url",
+          "type": "string",
+          "required": true,
+          "media": "file"
+        },
+        {
+          "name": "purpose",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "reference",
+            "melody",
+            "instrumental",
+            "voice",
+            "audio",
+            "remix",
+            "soundtrack",
+            "lyrics-video"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "bytes",
+          "created_at",
+          "filename",
+          "id",
+          "purpose"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "openrouter/router/audio",
+      "category": "unknown",
+      "displayName": "OpenRouter [Audio]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4f3d96b57e560379250f9e871f871bc32c65f424577378dec603b0153fa06838",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=openrouter%2Frouter%2Faudio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_web_search",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reasoning",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "web_search_options",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

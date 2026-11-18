@@ -1,0 +1,8169 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "status": {
+    "available": true,
+    "engine": "opencv-farneback"
+  },
+  "method": "opencv-farneback every 2 frames",
+  "shots": [
+    {
+      "shotId": "s001",
+      "meanEnergy": 0.09285,
+      "peakEnergy": 0.202,
+      "peakSec": 0.467,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "static"
+        ],
+        "amount": {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "r": -0.0001
+        },
+        "moves": 0,
+        "trackedShare": 0.538
+      },
+      "cadence": {
+        "movingFrames": 11
+      }
+    },
+    {
+      "shotId": "s002",
+      "meanEnergy": 0,
+      "peakEnergy": 0,
+      "cameraEstimate": "unknown",
+      "cadence": {
+        "movingFrames": 3
+      }
+    },
+    {
+      "shotId": "s003",
+      "meanEnergy": 0.03755,
+      "peakEnergy": 0.0499,
+      "peakSec": 1,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_left"
+        ],
+        "amount": {
+          "x": -0.0191,
+          "y": 0.0016,
+          "z": 0.0086,
+          "r": -0.0045
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "x",
+        "snap": false,
+        "startSec": 0.567,
+        "endSec": 1.3,
+        "durationSec": 0.884,
+        "span90Sec": 0.569,
+        "t5Sec": 0.657,
+        "t95Sec": 1.226,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.0526,
+        "cutOff": true,
+        "leadInSec": 0.059,
+        "ease": {
+          "gsap": "power1.inOut",
+          "gsapRmse": 0.0149,
+          "cubicBezier": [
+            0.711,
+            0.384,
+            0.439,
+            0.729
+          ],
+          "css": "cubic-bezier(0.711, 0.384, 0.439, 0.729)",
+          "bezierRmse": 0.0126,
+          "spring": {
+            "omega": 4.11,
+            "zeta": 0.05,
+            "settleSec": 19.453,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 16.9,
+              "damping": 0.41
+            }
+          },
+          "springRmse": 0.0176,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0274,
+          0.0595,
+          0.0964,
+          0.138,
+          0.1844,
+          0.2355,
+          0.2914,
+          0.352,
+          0.4174,
+          0.4875,
+          0.5598,
+          0.6277,
+          0.6908,
+          0.7492,
+          0.8029,
+          0.8518,
+          0.896,
+          0.9354,
+          0.9701,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 6
+      }
+    },
+    {
+      "shotId": "s004",
+      "meanEnergy": 0.03803,
+      "peakEnergy": 0.22239,
+      "peakSec": 2.2,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "push_in"
+        ],
+        "amount": {
+          "x": -0.003,
+          "y": 0.0028,
+          "z": 0.0185,
+          "r": 0.001
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": true,
+        "startSec": 1.333,
+        "endSec": 2.167,
+        "durationSec": 1.255,
+        "span90Sec": 0.067,
+        "t5Sec": 2.097,
+        "t95Sec": 2.164,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.3906,
+        "cutOff": true,
+        "leadInSec": 0.005,
+        "ease": {
+          "gsap": "back.in",
+          "gsapRmse": 0.1011,
+          "cubicBezier": [
+            1,
+            -0.415,
+            0.413,
+            0.446
+          ],
+          "css": "cubic-bezier(1, -0.415, 0.413, 0.446)",
+          "bezierRmse": 0.0076,
+          "spring": {
+            "omega": 2.27,
+            "zeta": 0.05,
+            "settleSec": 35.194,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 5.2,
+              "damping": 0.23
+            }
+          },
+          "springRmse": 0.0328,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0293,
+          0.06,
+          0.0922,
+          0.1261,
+          0.1617,
+          0.1991,
+          0.2386,
+          0.2802,
+          0.324,
+          0.3703,
+          0.4192,
+          0.4709,
+          0.5255,
+          0.5832,
+          0.6442,
+          0.7086,
+          0.7764,
+          0.8476,
+          0.9222,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 8
+      }
+    },
+    {
+      "shotId": "s005",
+      "meanEnergy": 0,
+      "peakEnergy": 0,
+      "cameraEstimate": "unknown",
+      "cadence": {
+        "movingFrames": 3
+      }
+    },
+    {
+      "shotId": "s006",
+      "meanEnergy": 0.0287,
+      "peakEnergy": 0.16503,
+      "peakSec": 3.933,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "push_in",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": -0.0466,
+          "y": 0.0022,
+          "z": 0.8365,
+          "r": -0.0158
+        },
+        "moves": 2,
+        "trackedShare": 0.979,
+        "axis": "z",
+        "snap": true,
+        "startSec": 3.801,
+        "endSec": 3.911,
+        "durationSec": 0.11,
+        "span90Sec": 0.102,
+        "t5Sec": 3.808,
+        "t95Sec": 3.91,
+        "holdBeforeSec": 0.401,
+        "holdAfterSec": 0.023,
+        "peakSpeed": 8.6191,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.1289,
+          "cubicBezier": [
+            0.569,
+            0.439,
+            0.785,
+            -0.314
+          ],
+          "css": "cubic-bezier(0.569, 0.439, 0.785, -0.314)",
+          "bezierRmse": 0.1074,
+          "spring": {
+            "omega": 10.11,
+            "zeta": 0.91,
+            "settleSec": 0.435,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 102.3,
+              "damping": 18.4
+            }
+          },
+          "springRmse": 0.1126,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0015
+        },
+        "progress": [
+          0,
+          0.0305,
+          0.0561,
+          0.0774,
+          0.0943,
+          0.1069,
+          0.1159,
+          0.1213,
+          0.124,
+          0.125,
+          0.1257,
+          0.1277,
+          0.1339,
+          0.1478,
+          0.173,
+          0.2181,
+          0.2878,
+          0.393,
+          0.5446,
+          0.7484,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.0314,
+          "y": 0.003,
+          "z": 0.3478,
+          "r": -0.0181
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "push_in"
+            ],
+            "axis": "z",
+            "startSec": 2.365,
+            "durationSec": 0.718,
+            "amount": {
+              "x": -0.0147,
+              "y": -0.0001,
+              "z": 0.2549,
+              "r": 0.0034
+            },
+            "ease": "power3.out"
+          }
+        ],
+        "drift": {
+          "z": 0.2338
+        }
+      },
+      "cadence": {
+        "movingFrames": 11
+      }
+    },
+    {
+      "shotId": "s007",
+      "meanEnergy": 0.04104,
+      "peakEnergy": 0.14422,
+      "peakSec": 4.067,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0661,
+          "y": 0.0022,
+          "z": -0.0825,
+          "r": -0.0103
+        },
+        "moves": 1,
+        "trackedShare": 0.679,
+        "axis": "z",
+        "snap": false,
+        "startSec": 4.125,
+        "endSec": 4.714,
+        "durationSec": 0.589,
+        "span90Sec": 0.513,
+        "t5Sec": 4.138,
+        "t95Sec": 4.651,
+        "holdBeforeSec": 0.158,
+        "holdAfterSec": 0.186,
+        "peakSpeed": 0.3774,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0282,
+          "cubicBezier": [
+            0.419,
+            0.888,
+            0.044,
+            0.543
+          ],
+          "css": "cubic-bezier(0.419, 0.888, 0.044, 0.543)",
+          "bezierRmse": 0.0179,
+          "spring": {
+            "omega": 9.31,
+            "zeta": 0.999,
+            "settleSec": 0.43,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 86.7,
+              "damping": 18.61
+            }
+          },
+          "springRmse": 0.0369,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1068,
+          0.2186,
+          0.3365,
+          0.4601,
+          0.5785,
+          0.6617,
+          0.7087,
+          0.7397,
+          0.7645,
+          0.7868,
+          0.8079,
+          0.8287,
+          0.8494,
+          0.8702,
+          0.8912,
+          0.9124,
+          0.9339,
+          0.9556,
+          0.9777,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 21,
+        "heldShare": 0.19,
+        "framesPerDrawing": 1.24,
+        "drawingsPerSecond": 24.3,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s008",
+      "meanEnergy": 0.14098,
+      "peakEnergy": 0.91061,
+      "peakSec": 5.8,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "move_down",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0067,
+          "y": 0.2173,
+          "z": -0.7598,
+          "r": -0.0305
+        },
+        "moves": 3,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 5.592,
+        "endSec": 6.202,
+        "durationSec": 0.611,
+        "span90Sec": 0.455,
+        "t5Sec": 5.61,
+        "t95Sec": 6.065,
+        "holdBeforeSec": 0.192,
+        "holdAfterSec": 0.064,
+        "peakSpeed": 2.1813,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power3.out",
+          "gsapRmse": 0.0184,
+          "cubicBezier": [
+            0.464,
+            0.755,
+            0.156,
+            0.83
+          ],
+          "css": "cubic-bezier(0.464, 0.755, 0.156, 0.83)",
+          "bezierRmse": 0.0091,
+          "spring": {
+            "omega": 10.72,
+            "zeta": 0.994,
+            "settleSec": 0.375,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 114.8,
+              "damping": 21.31
+            }
+          },
+          "springRmse": 0.015,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0121
+        },
+        "progress": [
+          0,
+          0.0715,
+          0.1467,
+          0.2264,
+          0.3114,
+          0.4026,
+          0.4995,
+          0.5979,
+          0.6872,
+          0.7574,
+          0.8088,
+          0.8468,
+          0.8762,
+          0.8999,
+          0.9197,
+          0.9368,
+          0.9518,
+          0.9654,
+          0.9778,
+          0.9893,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0081,
+          "y": 0.1048,
+          "z": -0.7909,
+          "r": -0.0497
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_down",
+              "pull_out",
+              "roll_cw"
+            ],
+            "axis": "y",
+            "startSec": 4.954,
+            "durationSec": 0.096,
+            "amount": {
+              "x": -0.0004,
+              "y": 0.1729,
+              "z": -0.0584,
+              "r": 0.017
+            },
+            "ease": "expo.out"
+          },
+          {
+            "kind": [
+              "push_in"
+            ],
+            "axis": "z",
+            "startSec": 6.53,
+            "durationSec": 0.192,
+            "amount": {
+              "x": -0.0001,
+              "y": 0.0016,
+              "z": 0.0855,
+              "r": 0.0012
+            },
+            "ease": "power3.in"
+          }
+        ],
+        "drift": {
+          "y": -0.0621
+        }
+      },
+      "cadence": {
+        "movingFrames": 58,
+        "heldShare": 0.138,
+        "framesPerDrawing": 1.16,
+        "drawingsPerSecond": 25.9,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s009",
+      "meanEnergy": 0.11297,
+      "peakEnergy": 0.36242,
+      "peakSec": 8.2,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "push_in",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0856,
+          "y": 0.0153,
+          "z": 0.0564,
+          "r": -0.018
+        },
+        "moves": 1,
+        "trackedShare": 0.929,
+        "axis": "x",
+        "snap": true,
+        "startSec": 7.733,
+        "endSec": 8.206,
+        "durationSec": 0.472,
+        "span90Sec": 0.042,
+        "t5Sec": 8.164,
+        "t95Sec": 8.205,
+        "holdBeforeSec": 0.067,
+        "holdAfterSec": 0.394,
+        "peakSpeed": 1.5349,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "back.in",
+          "gsapRmse": 0.2482,
+          "cubicBezier": [
+            0.117,
+            -0.995,
+            0.999,
+            -1
+          ],
+          "css": "cubic-bezier(0.117, -0.995, 0.999, -1)",
+          "bezierRmse": 0.0642,
+          "spring": {
+            "omega": 44.43,
+            "zeta": 0.999,
+            "settleSec": 0.09,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 1974.3,
+              "damping": 88.78
+            }
+          },
+          "springRmse": 0.1542,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0111
+        },
+        "progress": [
+          0,
+          0.0224,
+          0.0454,
+          0.0694,
+          0.0945,
+          0.1204,
+          0.1478,
+          0.1765,
+          0.2062,
+          0.2382,
+          0.2718,
+          0.3069,
+          0.3459,
+          0.3872,
+          0.4313,
+          0.482,
+          0.5375,
+          0.6004,
+          0.6819,
+          0.7987,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 25,
+        "heldShare": 0.16,
+        "framesPerDrawing": 1.19,
+        "drawingsPerSecond": 25.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s010",
+      "meanEnergy": 0.19721,
+      "peakEnergy": 0.82738,
+      "peakSec": 10.2,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": 0.2157,
+          "y": 0.0441,
+          "z": -0.1282,
+          "r": 0.0679
+        },
+        "moves": 1,
+        "trackedShare": 0.98,
+        "axis": "x",
+        "snap": false,
+        "startSec": 9.439,
+        "endSec": 10.269,
+        "durationSec": 0.83,
+        "span90Sec": 0.51,
+        "t5Sec": 9.745,
+        "t95Sec": 10.254,
+        "holdBeforeSec": 0.806,
+        "holdAfterSec": 0.031,
+        "peakSpeed": 1.1113,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.in",
+          "gsapRmse": 0.0281,
+          "cubicBezier": [
+            0.477,
+            0.077,
+            0.716,
+            0.282
+          ],
+          "css": "cubic-bezier(0.477, 0.077, 0.716, 0.282)",
+          "bezierRmse": 0.0262,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0305,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0151,
+          0.0327,
+          0.053,
+          0.0762,
+          0.1025,
+          0.1321,
+          0.1652,
+          0.202,
+          0.2426,
+          0.2873,
+          0.3362,
+          0.3896,
+          0.4476,
+          0.5105,
+          0.5784,
+          0.6515,
+          0.73,
+          0.8141,
+          0.9041,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 40,
+        "heldShare": 0.15,
+        "framesPerDrawing": 1.18,
+        "drawingsPerSecond": 25.5,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s011",
+      "meanEnergy": 0.51033,
+      "peakEnergy": 1.14695,
+      "peakSec": 10.4,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_down",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": -0.1727,
+          "y": 0.0228,
+          "z": -0.1573,
+          "r": -0.5186
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "r",
+        "snap": false,
+        "startSec": 10.358,
+        "endSec": 10.833,
+        "durationSec": 0.862,
+        "span90Sec": 0.426,
+        "t5Sec": 10.359,
+        "t95Sec": 10.785,
+        "holdBeforeSec": 0.025,
+        "holdAfterSec": 0,
+        "peakSpeed": 2.6333,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0232,
+          "cubicBezier": [
+            0.001,
+            0.471,
+            0.542,
+            0.718
+          ],
+          "css": "cubic-bezier(0.001, 0.471, 0.542, 0.718)",
+          "bezierRmse": 0.0164,
+          "spring": {
+            "omega": 4.86,
+            "zeta": 0.999,
+            "settleSec": 0.824,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 23.6,
+              "damping": 9.71
+            }
+          },
+          "springRmse": 0.0265,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.207,
+          0.3065,
+          0.3819,
+          0.4446,
+          0.4992,
+          0.5481,
+          0.5928,
+          0.634,
+          0.6725,
+          0.7088,
+          0.7431,
+          0.7759,
+          0.8073,
+          0.8374,
+          0.8665,
+          0.8947,
+          0.922,
+          0.9486,
+          0.9746,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 16,
+        "heldShare": 0.125,
+        "framesPerDrawing": 1.14,
+        "drawingsPerSecond": 26.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s012",
+      "meanEnergy": 0.16955,
+      "peakEnergy": 0.53807,
+      "peakSec": 11.8,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0197,
+          "y": 0.0212,
+          "z": -0.1674,
+          "r": -0.0422
+        },
+        "moves": 1,
+        "trackedShare": 0.963,
+        "axis": "z",
+        "snap": false,
+        "startSec": 10.931,
+        "endSec": 11.767,
+        "durationSec": 1.545,
+        "span90Sec": 0.798,
+        "t5Sec": 10.933,
+        "t95Sec": 11.731,
+        "holdBeforeSec": 0.064,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.5234,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.out",
+          "gsapRmse": 0.0505,
+          "cubicBezier": [
+            0.006,
+            0.288,
+            0.451,
+            -0.009
+          ],
+          "css": "cubic-bezier(0.006, 0.288, 0.451, -0.009)",
+          "bezierRmse": 0.0143,
+          "spring": {
+            "omega": 1.3,
+            "zeta": 0.999,
+            "settleSec": 3.083,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 1.7,
+              "damping": 2.6
+            }
+          },
+          "springRmse": 0.0408,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.2039,
+          0.2771,
+          0.3255,
+          0.3632,
+          0.3957,
+          0.4258,
+          0.4552,
+          0.4847,
+          0.5151,
+          0.547,
+          0.5807,
+          0.6165,
+          0.6546,
+          0.6953,
+          0.7386,
+          0.7848,
+          0.8339,
+          0.8861,
+          0.9414,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 28,
+        "heldShare": 0.179,
+        "framesPerDrawing": 1.22,
+        "drawingsPerSecond": 24.6,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s013",
+      "meanEnergy": 0.15504,
+      "peakEnergy": 1.11853,
+      "peakSec": 13.6,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_up",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0398,
+          "y": -0.038,
+          "z": -0.3978,
+          "r": -0.1766
+        },
+        "moves": 1,
+        "trackedShare": 0.922,
+        "axis": "z",
+        "snap": false,
+        "startSec": 11.979,
+        "endSec": 13.747,
+        "durationSec": 1.768,
+        "span90Sec": 1.666,
+        "t5Sec": 12.033,
+        "t95Sec": 13.699,
+        "holdBeforeSec": 0.179,
+        "holdAfterSec": 1.886,
+        "peakSpeed": 0.6558,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.in",
+          "gsapRmse": 0.0186,
+          "cubicBezier": [
+            0.129,
+            0.277,
+            0.311,
+            -0.263
+          ],
+          "css": "cubic-bezier(0.129, 0.277, 0.311, -0.263)",
+          "bezierRmse": 0.0127,
+          "spring": {
+            "omega": 1.93,
+            "zeta": 0.592,
+            "settleSec": 3.499,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 3.7,
+              "damping": 2.29
+            }
+          },
+          "springRmse": 0.0408,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0075
+        },
+        "progress": [
+          0,
+          0.0395,
+          0.0525,
+          0.0586,
+          0.0664,
+          0.0798,
+          0.1,
+          0.1275,
+          0.1622,
+          0.2036,
+          0.2514,
+          0.3052,
+          0.3645,
+          0.429,
+          0.4984,
+          0.5722,
+          0.6503,
+          0.7324,
+          0.8181,
+          0.9074,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 79,
+        "heldShare": 0.165,
+        "framesPerDrawing": 1.2,
+        "drawingsPerSecond": 25.1,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s014",
+      "meanEnergy": 0.13138,
+      "peakEnergy": 0.577,
+      "peakSec": 15.8,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "push_in"
+        ],
+        "amount": {
+          "x": -0.0023,
+          "y": 0.0011,
+          "z": 0.0906,
+          "r": -0.0145
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": true,
+        "startSec": 15.712,
+        "endSec": 16.367,
+        "durationSec": 0.655,
+        "span90Sec": 0.071,
+        "t5Sec": 15.712,
+        "t95Sec": 15.783,
+        "holdBeforeSec": 0.045,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.5402,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "back.out",
+          "gsapRmse": 0.1715,
+          "cubicBezier": [
+            0.008,
+            1.674,
+            0.742,
+            1.989
+          ],
+          "css": "cubic-bezier(0.008, 1.674, 0.742, 1.989)",
+          "bezierRmse": 0.0351,
+          "spring": {
+            "omega": 27.21,
+            "zeta": 0.999,
+            "settleSec": 0.147,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 740.4,
+              "damping": 54.37
+            }
+          },
+          "springRmse": 0.1058,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.1264
+        },
+        "progress": [
+          0,
+          0.2018,
+          0.3061,
+          0.385,
+          0.4506,
+          0.5076,
+          0.5585,
+          0.6046,
+          0.6467,
+          0.6858,
+          0.7224,
+          0.7568,
+          0.7892,
+          0.82,
+          0.8493,
+          0.8772,
+          0.9039,
+          0.9294,
+          0.9538,
+          0.9774,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 22,
+        "heldShare": 0.136,
+        "framesPerDrawing": 1.16,
+        "drawingsPerSecond": 25.9,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s015",
+      "meanEnergy": 0.08271,
+      "peakEnergy": 0.1793,
+      "peakSec": 16.467,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.004,
+          "y": -0.0015,
+          "z": -0.187,
+          "r": -0.0031
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 16.435,
+        "endSec": 16.824,
+        "durationSec": 0.389,
+        "span90Sec": 0.267,
+        "t5Sec": 16.436,
+        "t95Sec": 16.703,
+        "holdBeforeSec": 0.035,
+        "holdAfterSec": 0.142,
+        "peakSpeed": 1.3193,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.017,
+          "cubicBezier": [
+            0.033,
+            0.606,
+            0.487,
+            1.031
+          ],
+          "css": "cubic-bezier(0.033, 0.606, 0.487, 1.031)",
+          "bezierRmse": 0.017,
+          "spring": {
+            "omega": 16.91,
+            "zeta": 0.999,
+            "settleSec": 0.237,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 285.8,
+              "damping": 33.78
+            }
+          },
+          "springRmse": 0.038,
+          "best": "gsap",
+          "pick": "gsap",
+          "overshoot": 0.0073
+        },
+        "progress": [
+          0,
+          0.2416,
+          0.3551,
+          0.4403,
+          0.5102,
+          0.5701,
+          0.6227,
+          0.6694,
+          0.7114,
+          0.7494,
+          0.784,
+          0.8156,
+          0.8444,
+          0.8708,
+          0.8949,
+          0.917,
+          0.9371,
+          0.9553,
+          0.9718,
+          0.9867,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 18,
+        "heldShare": 0.167,
+        "framesPerDrawing": 1.2,
+        "drawingsPerSecond": 25,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s016",
+      "meanEnergy": 0.02541,
+      "peakEnergy": 0.1956,
+      "peakSec": 17.067,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "push_in",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0001,
+          "y": 0.0057,
+          "z": 0.0217,
+          "r": -0.0274
+        },
+        "moves": 2,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 18.381,
+        "endSec": 18.6,
+        "durationSec": 0.253,
+        "span90Sec": 0.18,
+        "t5Sec": 18.418,
+        "t95Sec": 18.598,
+        "holdBeforeSec": 0.081,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.4747,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0238,
+          "cubicBezier": [
+            0.841,
+            0.168,
+            0.697,
+            0.048
+          ],
+          "css": "cubic-bezier(0.841, 0.168, 0.697, 0.048)",
+          "bezierRmse": 0.0049,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0578,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0209
+        },
+        "progress": [
+          0,
+          0.0132,
+          0.0264,
+          0.0396,
+          0.0529,
+          0.0665,
+          0.0803,
+          0.0948,
+          0.1101,
+          0.1266,
+          0.1449,
+          0.1658,
+          0.1904,
+          0.2204,
+          0.2586,
+          0.309,
+          0.3784,
+          0.4759,
+          0.6118,
+          0.7895,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.0001,
+          "y": 0.0002,
+          "z": 0.0277,
+          "r": 0.0001
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "roll_ccw"
+            ],
+            "axis": "r",
+            "startSec": 17,
+            "durationSec": 0.9,
+            "amount": {
+              "x": 0.0005,
+              "y": 0.0041,
+              "z": -0.0036,
+              "r": -0.0268
+            },
+            "ease": "power4.inOut"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 15,
+        "heldShare": 0.2,
+        "framesPerDrawing": 1.25,
+        "drawingsPerSecond": 24,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s017",
+      "meanEnergy": 0.09375,
+      "peakEnergy": 0.54627,
+      "peakSec": 19.8,
+      "cameraEstimate": "handheld",
+      "camera": {
+        "kind": [
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": -0.0039,
+          "y": -0.0061,
+          "z": 0.0148,
+          "r": -0.0242
+        },
+        "moves": 1,
+        "trackedShare": 0.741,
+        "axis": "z",
+        "snap": false,
+        "startSec": 19.818,
+        "endSec": 20.433,
+        "durationSec": 1.218,
+        "span90Sec": 0.221,
+        "t5Sec": 20.197,
+        "t95Sec": 20.418,
+        "holdBeforeSec": 1.185,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.1694,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "back.in",
+          "gsapRmse": 0.1806,
+          "cubicBezier": [
+            0.322,
+            -1,
+            0.004,
+            0.212
+          ],
+          "css": "cubic-bezier(0.322, -1, 0.004, 0.212)",
+          "bezierRmse": 0.0179,
+          "spring": {
+            "omega": 16.7,
+            "zeta": 0.999,
+            "settleSec": 0.24,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 278.9,
+              "damping": 33.37
+            }
+          },
+          "springRmse": 0.0536,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0625,
+          0.1233,
+          0.1826,
+          0.2402,
+          0.2964,
+          0.3512,
+          0.4047,
+          0.4568,
+          0.5077,
+          0.5575,
+          0.6061,
+          0.6536,
+          0.7001,
+          0.7456,
+          0.7902,
+          0.8338,
+          0.8766,
+          0.9185,
+          0.9597,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 31,
+        "heldShare": 0.161,
+        "framesPerDrawing": 1.19,
+        "drawingsPerSecond": 25.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s018",
+      "meanEnergy": 0.20582,
+      "peakEnergy": 0.63187,
+      "peakSec": 22.4,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "push_in",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.2563,
+          "y": 0.0545,
+          "z": 0.3024,
+          "r": -0.059
+        },
+        "moves": 3,
+        "trackedShare": 0.83,
+        "axis": "z",
+        "snap": false,
+        "startSec": 21.189,
+        "endSec": 22.409,
+        "durationSec": 1.22,
+        "span90Sec": 0.834,
+        "t5Sec": 21.382,
+        "t95Sec": 22.216,
+        "holdBeforeSec": 0.322,
+        "holdAfterSec": 0.324,
+        "peakSpeed": 1.6917,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.inOut",
+          "gsapRmse": 0.0142,
+          "cubicBezier": [
+            0.529,
+            0.394,
+            0.295,
+            0.99
+          ],
+          "css": "cubic-bezier(0.529, 0.394, 0.295, 0.99)",
+          "bezierRmse": 0.0122,
+          "spring": {
+            "omega": 2.96,
+            "zeta": 0.488,
+            "settleSec": 2.774,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 8.7,
+              "damping": 2.88
+            }
+          },
+          "springRmse": 0.0203,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0.0206
+        },
+        "progress": [
+          0,
+          0.0266,
+          0.0584,
+          0.0955,
+          0.1377,
+          0.1851,
+          0.2377,
+          0.2955,
+          0.3584,
+          0.4266,
+          0.5,
+          0.5734,
+          0.6416,
+          0.7045,
+          0.7623,
+          0.8149,
+          0.8623,
+          0.9045,
+          0.9416,
+          0.9734,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.3244,
+          "y": -0.0275,
+          "z": 0.6315,
+          "r": -0.016
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_down",
+              "pull_out",
+              "roll_ccw"
+            ],
+            "axis": "z",
+            "startSec": 20.526,
+            "durationSec": 0.065,
+            "amount": {
+              "x": 0.0028,
+              "y": 0.0424,
+              "z": -0.1838,
+              "r": -0.0375
+            },
+            "ease": "back.in"
+          },
+          {
+            "kind": [
+              "move_left",
+              "move_down",
+              "pull_out"
+            ],
+            "axis": "z",
+            "startSec": 23.156,
+            "durationSec": 0.354,
+            "amount": {
+              "x": -0.0693,
+              "y": 0.0416,
+              "z": -0.1576,
+              "r": 0.0006
+            },
+            "ease": "circ.in"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 75,
+        "heldShare": 0.16,
+        "framesPerDrawing": 1.19,
+        "drawingsPerSecond": 25.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s019",
+      "meanEnergy": 0.10295,
+      "peakEnergy": 0.34471,
+      "peakSec": 25,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_down",
+          "pull_out",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0173,
+          "y": 0.0307,
+          "z": -0.3183,
+          "r": 0.0618
+        },
+        "moves": 1,
+        "trackedShare": 0.979,
+        "axis": "z",
+        "snap": false,
+        "startSec": 23.433,
+        "endSec": 25,
+        "durationSec": 1.715,
+        "span90Sec": 1.505,
+        "t5Sec": 23.454,
+        "t95Sec": 24.959,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.9538,
+        "cutOff": true,
+        "leadInSec": 0.002,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.0542,
+          "cubicBezier": [
+            0.184,
+            0.689,
+            0.68,
+            0.179
+          ],
+          "css": "cubic-bezier(0.184, 0.689, 0.68, 0.179)",
+          "bezierRmse": 0.0151,
+          "spring": {
+            "omega": 0.9,
+            "zeta": 0.999,
+            "settleSec": 4.43,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.8,
+              "damping": 1.81
+            }
+          },
+          "springRmse": 0.0714,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0585
+        },
+        "progress": [
+          0,
+          0.155,
+          0.2598,
+          0.3348,
+          0.3902,
+          0.4323,
+          0.4652,
+          0.4918,
+          0.5143,
+          0.5346,
+          0.5542,
+          0.5744,
+          0.5965,
+          0.6217,
+          0.6513,
+          0.6864,
+          0.7284,
+          0.7789,
+          0.8396,
+          0.9124,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 28,
+        "heldShare": 0.179,
+        "framesPerDrawing": 1.22,
+        "drawingsPerSecond": 24.6,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s020",
+      "meanEnergy": 0.10826,
+      "peakEnergy": 0.32953,
+      "peakSec": 25.867,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0118,
+          "y": 0.007,
+          "z": -0.2539,
+          "r": -0.0019
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 25.033,
+        "endSec": 25.867,
+        "durationSec": 0.927,
+        "span90Sec": 0.81,
+        "t5Sec": 25.052,
+        "t95Sec": 25.862,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0.033,
+        "peakSpeed": 1.0719,
+        "cutOff": false,
+        "leadInSec": 0.094,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0543,
+          "cubicBezier": [
+            0.005,
+            1.019,
+            0.889,
+            0.373
+          ],
+          "css": "cubic-bezier(0.005, 1.019, 0.889, 0.373)",
+          "bezierRmse": 0.0117,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0891,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0222
+        },
+        "progress": [
+          0,
+          0.0954,
+          0.1653,
+          0.2181,
+          0.2588,
+          0.2907,
+          0.316,
+          0.3365,
+          0.3536,
+          0.3687,
+          0.3828,
+          0.3971,
+          0.4128,
+          0.4312,
+          0.454,
+          0.4832,
+          0.522,
+          0.575,
+          0.6509,
+          0.7685,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 24,
+        "heldShare": 0.125,
+        "framesPerDrawing": 1.14,
+        "drawingsPerSecond": 26.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s021",
+      "meanEnergy": 0.28813,
+      "peakEnergy": 0.74587,
+      "peakSec": 27,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.2467,
+          "y": 0.1418,
+          "z": -0.1517,
+          "r": 0.009
+        },
+        "moves": 1,
+        "trackedShare": 0.938,
+        "axis": "x",
+        "snap": false,
+        "startSec": 25.933,
+        "endSec": 27,
+        "durationSec": 1.8,
+        "span90Sec": 0.952,
+        "t5Sec": 26.032,
+        "t95Sec": 26.984,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.8512,
+        "cutOff": true,
+        "leadInSec": 0.021,
+        "ease": {
+          "gsap": "sine.inOut",
+          "gsapRmse": 0.0577,
+          "cubicBezier": [
+            0.993,
+            0.829,
+            0.27,
+            1.309
+          ],
+          "css": "cubic-bezier(0.993, 0.829, 0.27, 1.309)",
+          "bezierRmse": 0.0406,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0441,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0279,
+          0.0566,
+          0.0861,
+          0.1166,
+          0.1481,
+          0.1806,
+          0.2144,
+          0.2496,
+          0.2863,
+          0.3248,
+          0.3654,
+          0.4083,
+          0.4541,
+          0.5034,
+          0.5571,
+          0.6166,
+          0.6839,
+          0.7632,
+          0.8625,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 33,
+        "heldShare": 0.182,
+        "framesPerDrawing": 1.22,
+        "drawingsPerSecond": 24.5,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s022",
+      "meanEnergy": 0.09261,
+      "peakEnergy": 0.26913,
+      "peakSec": 27.467,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right"
+        ],
+        "amount": {
+          "x": 0.0785,
+          "y": 0.0001,
+          "z": 0.0018,
+          "r": 0.0005
+        },
+        "moves": 1,
+        "trackedShare": 0.529,
+        "axis": "x",
+        "snap": true,
+        "startSec": 27.372,
+        "endSec": 27.433,
+        "durationSec": 0.061,
+        "span90Sec": 0.055,
+        "t5Sec": 27.375,
+        "t95Sec": 27.43,
+        "holdBeforeSec": 0.339,
+        "holdAfterSec": 0.167,
+        "peakSpeed": 1.1786,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.0001,
+          "cubicBezier": [
+            0.228,
+            1.206,
+            0.23,
+            0.982
+          ],
+          "css": "cubic-bezier(0.228, 1.206, 0.23, 0.982)",
+          "bezierRmse": 0.0001,
+          "spring": {
+            "omega": 153.46,
+            "zeta": 0.911,
+            "settleSec": 0.029,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 23550.2,
+              "damping": 279.5
+            }
+          },
+          "springRmse": 0.0001,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 18,
+        "heldShare": 0.389,
+        "framesPerDrawing": 1.64,
+        "drawingsPerSecond": 18.3,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s023",
+      "meanEnergy": 0.15182,
+      "peakEnergy": 0.20592,
+      "peakSec": 27.8,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right"
+        ],
+        "amount": {
+          "x": 0.0566,
+          "y": -0.0001,
+          "z": 0.0011,
+          "r": -0.0007
+        },
+        "moves": 1,
+        "trackedShare": 0.833,
+        "axis": "x",
+        "snap": false,
+        "startSec": 27.633,
+        "endSec": 27.767,
+        "durationSec": 0.138,
+        "span90Sec": 0.129,
+        "t5Sec": 27.636,
+        "t95Sec": 27.765,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0.067,
+        "peakSpeed": 0.8084,
+        "cutOff": false,
+        "leadInSec": 0.005,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.1199,
+          "cubicBezier": [
+            0.456,
+            1.318,
+            0.582,
+            -0.234
+          ],
+          "css": "cubic-bezier(0.456, 1.318, 0.582, -0.234)",
+          "bezierRmse": 0,
+          "spring": {
+            "omega": 188.68,
+            "zeta": 0.05,
+            "settleSec": 0.424,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 35601.4,
+              "damping": 18.87
+            }
+          },
+          "springRmse": 0.1279,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1372,
+          0.2547,
+          0.3518,
+          0.4277,
+          0.4817,
+          0.5136,
+          0.5249,
+          0.5187,
+          0.4994,
+          0.4726,
+          0.4455,
+          0.4254,
+          0.4189,
+          0.4309,
+          0.4657,
+          0.5249,
+          0.6086,
+          0.7162,
+          0.8469,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 7
+      }
+    },
+    {
+      "shotId": "s024",
+      "meanEnergy": 0.0572,
+      "peakEnergy": 0.51714,
+      "peakSec": 29.6,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "move_down",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.0122,
+          "y": 0.043,
+          "z": -0.1084,
+          "r": -0.017
+        },
+        "moves": 2,
+        "trackedShare": 0.961,
+        "axis": "z",
+        "snap": false,
+        "startSec": 27.966,
+        "endSec": 28.436,
+        "durationSec": 0.469,
+        "span90Sec": 0.424,
+        "t5Sec": 27.966,
+        "t95Sec": 28.39,
+        "holdBeforeSec": 0.1,
+        "holdAfterSec": 0.064,
+        "peakSpeed": 0.5112,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0381,
+          "cubicBezier": [
+            0,
+            0.585,
+            0,
+            0.48
+          ],
+          "css": "cubic-bezier(0, 0.585, 0, 0.48)",
+          "bezierRmse": 0.0129,
+          "spring": {
+            "omega": 9.51,
+            "zeta": 0.999,
+            "settleSec": 0.421,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 90.4,
+              "damping": 19
+            }
+          },
+          "springRmse": 0.0591,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.4109,
+          0.4871,
+          0.5363,
+          0.575,
+          0.6083,
+          0.6386,
+          0.6669,
+          0.694,
+          0.7203,
+          0.7461,
+          0.7716,
+          0.7969,
+          0.8222,
+          0.8473,
+          0.8726,
+          0.8978,
+          0.9232,
+          0.9487,
+          0.9743,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0129,
+          "y": -0.001,
+          "z": -0.0493,
+          "r": -0.0033
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_down"
+            ],
+            "axis": "y",
+            "startSec": 29.393,
+            "durationSec": 0.338,
+            "amount": {
+              "x": -0.0001,
+              "y": 0.0433,
+              "z": 0.0021,
+              "r": -0.015
+            },
+            "ease": "circ.in"
+          }
+        ],
+        "drift": {
+          "z": -0.0612
+        }
+      },
+      "cadence": {
+        "movingFrames": 23,
+        "heldShare": 0.13,
+        "framesPerDrawing": 1.15,
+        "drawingsPerSecond": 26.1,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s025",
+      "meanEnergy": 0.03201,
+      "peakEnergy": 0.09649,
+      "peakSec": 30.067,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0204,
+          "y": 0.0393,
+          "z": -0.0273,
+          "r": -0.0008
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "y",
+        "snap": false,
+        "startSec": 29.6,
+        "endSec": 29.807,
+        "durationSec": 0.219,
+        "span90Sec": 0.177,
+        "t5Sec": 29.603,
+        "t95Sec": 29.78,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0.293,
+        "peakSpeed": 0.6524,
+        "cutOff": false,
+        "leadInSec": 0.013,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0195,
+          "cubicBezier": [
+            0.361,
+            0.95,
+            0.022,
+            0.657
+          ],
+          "css": "cubic-bezier(0.361, 0.95, 0.022, 0.657)",
+          "bezierRmse": 0.0043,
+          "spring": {
+            "omega": 21.13,
+            "zeta": 0.999,
+            "settleSec": 0.19,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 446.3,
+              "damping": 42.21
+            }
+          },
+          "springRmse": 0.0278,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0047
+        },
+        "progress": [
+          0,
+          0.1592,
+          0.3288,
+          0.4983,
+          0.6293,
+          0.7031,
+          0.7448,
+          0.773,
+          0.7952,
+          0.8144,
+          0.8319,
+          0.8487,
+          0.8651,
+          0.8814,
+          0.8978,
+          0.9142,
+          0.9309,
+          0.9478,
+          0.9649,
+          0.9823,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 6
+      }
+    },
+    {
+      "shotId": "s026",
+      "meanEnergy": 0.31537,
+      "peakEnergy": 0.68531,
+      "peakSec": 30.467,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.052,
+          "y": 0.0186,
+          "z": -0.1428,
+          "r": 0.0012
+        },
+        "moves": 1,
+        "trackedShare": 0.889,
+        "axis": "z",
+        "snap": false,
+        "startSec": 30.167,
+        "endSec": 30.433,
+        "durationSec": 0.283,
+        "span90Sec": 0.257,
+        "t5Sec": 30.173,
+        "t95Sec": 30.43,
+        "holdBeforeSec": 0.033,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.1797,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.out",
+          "gsapRmse": 0.0712,
+          "cubicBezier": [
+            0.521,
+            0.661,
+            1,
+            -0.102
+          ],
+          "css": "cubic-bezier(0.521, 0.661, 1, -0.102)",
+          "bezierRmse": 0.0093,
+          "spring": {
+            "omega": 3.36,
+            "zeta": 0.999,
+            "settleSec": 1.193,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 11.3,
+              "damping": 6.71
+            }
+          },
+          "springRmse": 0.0697,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1086,
+          0.2039,
+          0.2868,
+          0.3582,
+          0.4189,
+          0.4697,
+          0.5117,
+          0.5458,
+          0.5727,
+          0.5937,
+          0.6099,
+          0.6227,
+          0.6336,
+          0.6448,
+          0.6588,
+          0.6791,
+          0.711,
+          0.7627,
+          0.8486,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 10
+      }
+    },
+    {
+      "shotId": "s027",
+      "meanEnergy": 0.21771,
+      "peakEnergy": 0.45307,
+      "peakSec": 30.867,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "move_down",
+          "pull_out",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0056,
+          "y": 0.0396,
+          "z": -0.0969,
+          "r": 0.0235
+        },
+        "moves": 1,
+        "trackedShare": 0.909,
+        "axis": "z",
+        "snap": false,
+        "startSec": 30.501,
+        "endSec": 30.752,
+        "durationSec": 0.251,
+        "span90Sec": 0.185,
+        "t5Sec": 30.504,
+        "t95Sec": 30.689,
+        "holdBeforeSec": 0.034,
+        "holdAfterSec": 0.081,
+        "peakSpeed": 1.1681,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.out",
+          "gsapRmse": 0.0268,
+          "cubicBezier": [
+            0.239,
+            1.034,
+            0.001,
+            0.786
+          ],
+          "css": "cubic-bezier(0.239, 1.034, 0.001, 0.786)",
+          "bezierRmse": 0.0134,
+          "spring": {
+            "omega": 53.78,
+            "zeta": 0.999,
+            "settleSec": 0.074,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 2892.5,
+              "damping": 107.46
+            }
+          },
+          "springRmse": 0.0364,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0431
+        },
+        "progress": [
+          0,
+          0.1896,
+          0.3947,
+          0.5965,
+          0.7402,
+          0.8168,
+          0.8585,
+          0.8842,
+          0.9017,
+          0.9149,
+          0.9254,
+          0.9345,
+          0.9425,
+          0.9501,
+          0.9573,
+          0.9643,
+          0.9713,
+          0.9783,
+          0.9854,
+          0.9926,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 12
+      }
+    },
+    {
+      "shotId": "s028",
+      "meanEnergy": 0.27534,
+      "peakEnergy": 0.27534,
+      "peakSec": 31,
+      "cameraEstimate": "tilt",
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s029",
+      "meanEnergy": 0.09037,
+      "peakEnergy": 0.14888,
+      "peakSec": 31.533,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right"
+        ],
+        "amount": {
+          "x": 0.018,
+          "y": 0.0006,
+          "z": 0.0035,
+          "r": -0.0129
+        },
+        "moves": 1,
+        "trackedShare": 0.867,
+        "axis": "x",
+        "snap": false,
+        "startSec": 31.095,
+        "endSec": 31.467,
+        "durationSec": 0.372,
+        "span90Sec": 0.354,
+        "t5Sec": 31.103,
+        "t95Sec": 31.457,
+        "holdBeforeSec": 0.061,
+        "holdAfterSec": 0.067,
+        "peakSpeed": 0.0617,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.0283,
+          "cubicBezier": [
+            0.035,
+            0.194,
+            0.891,
+            0.721
+          ],
+          "css": "cubic-bezier(0.035, 0.194, 0.891, 0.721)",
+          "bezierRmse": 0.0226,
+          "spring": {
+            "omega": 4.5,
+            "zeta": 0.999,
+            "settleSec": 0.889,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 20.3,
+              "damping": 8.99
+            }
+          },
+          "springRmse": 0.0361,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0686,
+          0.1241,
+          0.1746,
+          0.2223,
+          0.2683,
+          0.3132,
+          0.3573,
+          0.401,
+          0.4446,
+          0.4881,
+          0.5319,
+          0.576,
+          0.6207,
+          0.6663,
+          0.7131,
+          0.7616,
+          0.8124,
+          0.8667,
+          0.927,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 16,
+        "heldShare": 0.188,
+        "framesPerDrawing": 1.23,
+        "drawingsPerSecond": 24.4,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s030",
+      "meanEnergy": 0.04287,
+      "peakEnergy": 0.16464,
+      "peakSec": 32.267,
+      "cameraEstimate": "tilt",
+      "camera": {
+        "kind": [
+          "move_down",
+          "push_in"
+        ],
+        "amount": {
+          "x": -0.0007,
+          "y": 0.1022,
+          "z": 0.0305,
+          "r": 0.0067
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "y",
+        "snap": false,
+        "startSec": 31.567,
+        "endSec": 32,
+        "durationSec": 0.529,
+        "span90Sec": 0.331,
+        "t5Sec": 31.568,
+        "t95Sec": 31.9,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.0629,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0226,
+          "cubicBezier": [
+            0,
+            0.484,
+            0.502,
+            1.124
+          ],
+          "css": "cubic-bezier(0, 0.484, 0.502, 1.124)",
+          "bezierRmse": 0.0184,
+          "spring": {
+            "omega": 7.95,
+            "zeta": 0.999,
+            "settleSec": 0.504,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 63.1,
+              "damping": 15.88
+            }
+          },
+          "springRmse": 0.0326,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.2001,
+          0.3037,
+          0.3853,
+          0.4547,
+          0.5157,
+          0.5705,
+          0.6203,
+          0.6659,
+          0.7078,
+          0.7466,
+          0.7824,
+          0.8156,
+          0.8462,
+          0.8745,
+          0.9006,
+          0.9245,
+          0.9464,
+          0.9662,
+          0.9841,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0006,
+          "y": 0.1005,
+          "z": 0.0063,
+          "r": 0.0085
+        },
+        "otherMoves": [],
+        "drift": {
+          "z": 0.0242
+        }
+      },
+      "cadence": {
+        "movingFrames": 8
+      }
+    },
+    {
+      "shotId": "s031",
+      "meanEnergy": 0.06401,
+      "peakEnergy": 0.41398,
+      "peakSec": 33.867,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_down",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0423,
+          "y": 0.0744,
+          "z": 0.0096,
+          "r": 0.1198
+        },
+        "moves": 1,
+        "trackedShare": 0.731,
+        "axis": "r",
+        "snap": false,
+        "startSec": 33.2,
+        "endSec": 33.833,
+        "durationSec": 1.051,
+        "span90Sec": 0.594,
+        "t5Sec": 33.231,
+        "t95Sec": 33.825,
+        "holdBeforeSec": 0.233,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.8902,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.inOut",
+          "gsapRmse": 0.1221,
+          "cubicBezier": [
+            0.666,
+            0.307,
+            0.217,
+            -0.452
+          ],
+          "css": "cubic-bezier(0.666, 0.307, 0.217, -0.452)",
+          "bezierRmse": 0.0334,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0653,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0497,
+          0.096,
+          0.1386,
+          0.1772,
+          0.2112,
+          0.24,
+          0.2629,
+          0.2792,
+          0.2879,
+          0.2878,
+          0.2782,
+          0.2591,
+          0.234,
+          0.2163,
+          0.2341,
+          0.3118,
+          0.444,
+          0.6116,
+          0.7998,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 9
+      }
+    },
+    {
+      "shotId": "s032",
+      "meanEnergy": 0.14861,
+      "peakEnergy": 0.65593,
+      "peakSec": 34,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.4315,
+          "y": 0.0319,
+          "z": -0.092,
+          "r": -0.0522
+        },
+        "moves": 2,
+        "trackedShare": 1,
+        "axis": "x",
+        "snap": false,
+        "startSec": 33.918,
+        "endSec": 34.967,
+        "durationSec": 1.246,
+        "span90Sec": 0.812,
+        "t5Sec": 33.92,
+        "t95Sec": 34.732,
+        "holdBeforeSec": 0.052,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.312,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0163,
+          "cubicBezier": [
+            0.067,
+            0.811,
+            0.566,
+            1.227
+          ],
+          "css": "cubic-bezier(0.067, 0.811, 0.566, 1.227)",
+          "bezierRmse": 0.0142,
+          "spring": {
+            "omega": 3.66,
+            "zeta": 0.999,
+            "settleSec": 1.093,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 13.4,
+              "damping": 7.32
+            }
+          },
+          "springRmse": 0.0209,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.2359,
+          0.3486,
+          0.4334,
+          0.503,
+          0.5628,
+          0.6152,
+          0.662,
+          0.7041,
+          0.7424,
+          0.7772,
+          0.8092,
+          0.8384,
+          0.8653,
+          0.89,
+          0.9127,
+          0.9335,
+          0.9525,
+          0.9699,
+          0.9857,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.3141,
+          "y": 0.0325,
+          "z": -0.0812,
+          "r": -0.0275
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_right",
+              "roll_ccw"
+            ],
+            "axis": "x",
+            "startSec": 35.05,
+            "durationSec": 1.048,
+            "amount": {
+              "x": 0.1138,
+              "y": -0.0007,
+              "z": -0.0117,
+              "r": -0.0227
+            },
+            "ease": "power1.inOut"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 54,
+        "heldShare": 0.278,
+        "framesPerDrawing": 1.38,
+        "drawingsPerSecond": 21.7,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s033",
+      "meanEnergy": 0.03754,
+      "peakEnergy": 0.08779,
+      "peakSec": 35.8,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "push_in"
+        ],
+        "amount": {
+          "x": 0.0055,
+          "y": 0.0006,
+          "z": 0.0294,
+          "r": 0.0022
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 35.711,
+        "endSec": 36.1,
+        "durationSec": 0.568,
+        "span90Sec": 0.362,
+        "t5Sec": 35.721,
+        "t95Sec": 36.083,
+        "holdBeforeSec": 0.045,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.1138,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.out",
+          "gsapRmse": 0.0356,
+          "cubicBezier": [
+            0.307,
+            0.49,
+            0.567,
+            0.213
+          ],
+          "css": "cubic-bezier(0.307, 0.49, 0.567, 0.213)",
+          "bezierRmse": 0.0199,
+          "spring": {
+            "omega": 2,
+            "zeta": 0.999,
+            "settleSec": 2.007,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 4,
+              "damping": 3.99
+            }
+          },
+          "springRmse": 0.0301,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0904,
+          0.1718,
+          0.2448,
+          0.31,
+          0.3682,
+          0.4203,
+          0.4672,
+          0.5098,
+          0.5491,
+          0.5859,
+          0.6212,
+          0.6559,
+          0.6909,
+          0.7269,
+          0.7646,
+          0.8048,
+          0.8479,
+          0.8945,
+          0.9451,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 7
+      }
+    },
+    {
+      "shotId": "s034",
+      "meanEnergy": 0.02685,
+      "peakEnergy": 0.06144,
+      "peakSec": 36.2,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "push_in"
+        ],
+        "amount": {
+          "x": 0.0065,
+          "y": 0.0027,
+          "z": 0.0296,
+          "r": 0.0089
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 36.138,
+        "endSec": 36.5,
+        "durationSec": 0.588,
+        "span90Sec": 0.338,
+        "t5Sec": 36.143,
+        "t95Sec": 36.481,
+        "holdBeforeSec": 0.005,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.2154,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0466,
+          "cubicBezier": [
+            0.115,
+            0.44,
+            0.451,
+            0.172
+          ],
+          "css": "cubic-bezier(0.115, 0.44, 0.451, 0.172)",
+          "bezierRmse": 0.0174,
+          "spring": {
+            "omega": 4.41,
+            "zeta": 0.999,
+            "settleSec": 0.907,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 19.5,
+              "damping": 8.82
+            }
+          },
+          "springRmse": 0.0394,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1546,
+          0.2593,
+          0.3359,
+          0.3957,
+          0.4445,
+          0.4862,
+          0.5232,
+          0.5573,
+          0.5896,
+          0.6213,
+          0.6529,
+          0.6851,
+          0.7182,
+          0.7527,
+          0.7888,
+          0.8267,
+          0.8666,
+          0.9087,
+          0.9532,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s035",
+      "meanEnergy": 0.04651,
+      "peakEnergy": 0.10234,
+      "peakSec": 36.6,
+      "cameraEstimate": "tilt",
+      "camera": {
+        "kind": [
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": 0.0049,
+          "y": 0.018,
+          "z": 0.0241,
+          "r": 0.0492
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "r",
+        "snap": false,
+        "startSec": 36.533,
+        "endSec": 36.933,
+        "durationSec": 0.734,
+        "span90Sec": 0.379,
+        "t5Sec": 36.539,
+        "t95Sec": 36.918,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.3813,
+        "cutOff": true,
+        "leadInSec": 0.045,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0541,
+          "cubicBezier": [
+            0.212,
+            0.725,
+            0.328,
+            -0.046
+          ],
+          "css": "cubic-bezier(0.212, 0.725, 0.328, -0.046)",
+          "bezierRmse": 0.012,
+          "spring": {
+            "omega": 4.73,
+            "zeta": 0.999,
+            "settleSec": 0.847,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 22.4,
+              "damping": 9.45
+            }
+          },
+          "springRmse": 0.0623,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1626,
+          0.2889,
+          0.3834,
+          0.4518,
+          0.4999,
+          0.5335,
+          0.5574,
+          0.5758,
+          0.592,
+          0.6083,
+          0.6267,
+          0.6483,
+          0.6741,
+          0.7047,
+          0.7404,
+          0.7815,
+          0.828,
+          0.88,
+          0.9373,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s036",
+      "meanEnergy": 0.01364,
+      "peakEnergy": 0.04199,
+      "peakSec": 37.467,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_down"
+        ],
+        "amount": {
+          "x": 0.0012,
+          "y": 0.0323,
+          "z": -0.01,
+          "r": -0.001
+        },
+        "moves": 1,
+        "trackedShare": 0.938,
+        "axis": "y",
+        "snap": false,
+        "startSec": 36.999,
+        "endSec": 37.453,
+        "durationSec": 0.454,
+        "span90Sec": 0.445,
+        "t5Sec": 37.008,
+        "t95Sec": 37.453,
+        "holdBeforeSec": 0.033,
+        "holdAfterSec": 0.047,
+        "peakSpeed": 0.2187,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.087,
+          "cubicBezier": [
+            0.245,
+            0.716,
+            0.997,
+            0.028
+          ],
+          "css": "cubic-bezier(0.245, 0.716, 0.997, 0.028)",
+          "bezierRmse": 0.0163,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.1193,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0041
+        },
+        "progress": [
+          0,
+          0.1069,
+          0.1808,
+          0.2344,
+          0.2742,
+          0.3041,
+          0.3268,
+          0.3441,
+          0.3576,
+          0.3685,
+          0.3779,
+          0.3869,
+          0.3964,
+          0.4078,
+          0.4225,
+          0.4425,
+          0.4704,
+          0.5109,
+          0.5727,
+          0.6778,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s037",
+      "meanEnergy": 0.05205,
+      "peakEnergy": 0.26852,
+      "peakSec": 38.333,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_down",
+          "pull_out"
+        ],
+        "amount": {
+          "x": -0.0117,
+          "y": 0.0155,
+          "z": -0.047,
+          "r": 0.0125
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 38.014,
+        "endSec": 38.967,
+        "durationSec": 1.015,
+        "span90Sec": 0.893,
+        "t5Sec": 38.065,
+        "t95Sec": 38.958,
+        "holdBeforeSec": 0.481,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.3612,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0529,
+          "cubicBezier": [
+            0.631,
+            0.417,
+            0.877,
+            -0.051
+          ],
+          "css": "cubic-bezier(0.631, 0.417, 0.877, -0.051)",
+          "bezierRmse": 0.0283,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0619,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0111
+        },
+        "progress": [
+          0,
+          0.0453,
+          0.0869,
+          0.1251,
+          0.1598,
+          0.1911,
+          0.2193,
+          0.2445,
+          0.267,
+          0.2874,
+          0.3063,
+          0.3244,
+          0.3429,
+          0.3636,
+          0.3886,
+          0.4213,
+          0.4664,
+          0.5312,
+          0.6271,
+          0.7726,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 26,
+        "heldShare": 0.269,
+        "framesPerDrawing": 1.37,
+        "drawingsPerSecond": 21.9,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s038",
+      "meanEnergy": 0.08079,
+      "peakEnergy": 0.28502,
+      "peakSec": 39.2,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0552,
+          "y": 0.0155,
+          "z": 0.0198,
+          "r": 0.0327
+        },
+        "moves": 1,
+        "trackedShare": 0.963,
+        "axis": "z",
+        "snap": true,
+        "startSec": 39.789,
+        "endSec": 39.883,
+        "durationSec": 0.094,
+        "span90Sec": 0.041,
+        "t5Sec": 39.818,
+        "t95Sec": 39.859,
+        "holdBeforeSec": 0.789,
+        "holdAfterSec": 0.017,
+        "peakSpeed": 0.8183,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "back.out",
+          "gsapRmse": 0.5412,
+          "cubicBezier": [
+            0.505,
+            -0.385,
+            0.437,
+            1.185
+          ],
+          "css": "cubic-bezier(0.505, -0.385, 0.437, 1.185)",
+          "bezierRmse": 0.2212,
+          "spring": {
+            "omega": 64.19,
+            "zeta": 0.664,
+            "settleSec": 0.094,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 4120.3,
+              "damping": 85.18
+            }
+          },
+          "springRmse": 0.2215,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.058
+        },
+        "progress": [
+          0,
+          0.0382,
+          0.0817,
+          0.1328,
+          0.1874,
+          0.2474,
+          0.3111,
+          0.3766,
+          0.4437,
+          0.5099,
+          0.5754,
+          0.6364,
+          0.6948,
+          0.7494,
+          0.7979,
+          0.8433,
+          0.8834,
+          0.9184,
+          0.9505,
+          0.977,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 15,
+        "heldShare": 0.133,
+        "framesPerDrawing": 1.15,
+        "drawingsPerSecond": 26,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s039",
+      "meanEnergy": 0.18852,
+      "peakEnergy": 0.58333,
+      "peakSec": 41.867,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0858,
+          "y": 0.0166,
+          "z": 0.0837,
+          "r": 1.9242
+        },
+        "moves": 1,
+        "trackedShare": 0.903,
+        "axis": "r",
+        "snap": false,
+        "startSec": 39.955,
+        "endSec": 41.761,
+        "durationSec": 1.806,
+        "span90Sec": 1.726,
+        "t5Sec": 39.992,
+        "t95Sec": 41.718,
+        "holdBeforeSec": 0.022,
+        "holdAfterSec": 0.239,
+        "peakSpeed": 3.0998,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.045,
+          "cubicBezier": [
+            0.253,
+            0.656,
+            0.702,
+            0.344
+          ],
+          "css": "cubic-bezier(0.253, 0.656, 0.702, 0.344)",
+          "bezierRmse": 0.0093,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.999,
+            "settleSec": 8.008,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 1
+            }
+          },
+          "springRmse": 0.0517,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0008
+        },
+        "progress": [
+          0,
+          0.1077,
+          0.192,
+          0.2592,
+          0.3136,
+          0.3584,
+          0.3959,
+          0.4281,
+          0.4566,
+          0.4829,
+          0.5082,
+          0.5338,
+          0.5607,
+          0.5903,
+          0.6237,
+          0.6624,
+          0.7078,
+          0.7618,
+          0.8266,
+          0.9048,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 63,
+        "heldShare": 0.19,
+        "framesPerDrawing": 1.24,
+        "drawingsPerSecond": 24.3,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s040",
+      "meanEnergy": 0.23587,
+      "peakEnergy": 2.47621,
+      "peakSec": 43.267,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_up",
+          "pull_out",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": 0.0802,
+          "y": -0.0289,
+          "z": -0.2517,
+          "r": 0.0295
+        },
+        "moves": 2,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 42.033,
+        "endSec": 42.733,
+        "durationSec": 1.433,
+        "span90Sec": 0.547,
+        "t5Sec": 42.047,
+        "t95Sec": 42.595,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 1.0348,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power4.out",
+          "gsapRmse": 0.0163,
+          "cubicBezier": [
+            0.156,
+            0.841,
+            0.439,
+            1.071
+          ],
+          "css": "cubic-bezier(0.156, 0.841, 0.439, 1.071)",
+          "bezierRmse": 0.0144,
+          "spring": {
+            "omega": 4.16,
+            "zeta": 0.999,
+            "settleSec": 0.963,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 17.3,
+              "damping": 8.31
+            }
+          },
+          "springRmse": 0.0151,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1017,
+          0.1956,
+          0.2824,
+          0.3623,
+          0.4358,
+          0.5033,
+          0.5651,
+          0.6217,
+          0.6734,
+          0.7204,
+          0.7632,
+          0.8019,
+          0.837,
+          0.8686,
+          0.8971,
+          0.9227,
+          0.9455,
+          0.9659,
+          0.984,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.0127,
+          "y": -0.0165,
+          "z": -0.2008,
+          "r": 0.0294
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_right",
+              "pull_out"
+            ],
+            "axis": "x",
+            "startSec": 42.946,
+            "durationSec": 0.301,
+            "amount": {
+              "x": 0.0928,
+              "y": -0.0143,
+              "z": -0.0507,
+              "r": -0.001
+            },
+            "ease": "circ.in"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 37,
+        "heldShare": 0.189,
+        "framesPerDrawing": 1.23,
+        "drawingsPerSecond": 24.3,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s041",
+      "meanEnergy": 0.06371,
+      "peakEnergy": 0.20926,
+      "peakSec": 43.4,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right"
+        ],
+        "amount": {
+          "x": 0.039,
+          "y": -0.0023,
+          "z": -0.0117,
+          "r": 0.012
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 43.763,
+        "endSec": 44,
+        "durationSec": 1.108,
+        "span90Sec": 0.199,
+        "t5Sec": 43.796,
+        "t95Sec": 43.995,
+        "holdBeforeSec": 0.496,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.4182,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.inOut",
+          "gsapRmse": 0.7463,
+          "cubicBezier": [
+            0.405,
+            0.251,
+            0.081,
+            1.736
+          ],
+          "css": "cubic-bezier(0.405, 0.251, 0.081, 1.736)",
+          "bezierRmse": 0.0017,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0017,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0203,
+          0.0425,
+          0.0666,
+          0.0929,
+          0.1214,
+          0.1524,
+          0.1861,
+          0.2227,
+          0.2624,
+          0.3055,
+          0.3523,
+          0.4031,
+          0.4583,
+          0.5182,
+          0.5833,
+          0.654,
+          0.7307,
+          0.8139,
+          0.9036,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 13
+      }
+    },
+    {
+      "shotId": "s042",
+      "meanEnergy": 0.02868,
+      "peakEnergy": 0.04292,
+      "peakSec": 44.2,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0006,
+          "y": 0.0003,
+          "z": -0.0462,
+          "r": 0.0002
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 44.033,
+        "endSec": 44.4,
+        "durationSec": 0.7,
+        "span90Sec": 0.315,
+        "t5Sec": 44.044,
+        "t95Sec": 44.359,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.3024,
+        "cutOff": true,
+        "leadInSec": 0.001,
+        "ease": {
+          "gsap": "power2.out",
+          "gsapRmse": 0.0232,
+          "cubicBezier": [
+            0.349,
+            1.349,
+            0.777,
+            1.414
+          ],
+          "css": "cubic-bezier(0.349, 1.349, 0.777, 1.414)",
+          "bezierRmse": 0.0214,
+          "spring": {
+            "omega": 3.22,
+            "zeta": 0.823,
+            "settleSec": 1.51,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 10.3,
+              "damping": 5.3
+            }
+          },
+          "springRmse": 0.0214,
+          "best": "spring",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0799,
+          0.1561,
+          0.2287,
+          0.2979,
+          0.3636,
+          0.426,
+          0.4852,
+          0.5413,
+          0.5943,
+          0.6443,
+          0.6915,
+          0.7358,
+          0.7774,
+          0.8164,
+          0.8529,
+          0.8869,
+          0.9185,
+          0.9478,
+          0.975,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 7
+      }
+    },
+    {
+      "shotId": "s043",
+      "meanEnergy": 0.03866,
+      "peakEnergy": 0.05122,
+      "peakSec": 44.667,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": -0.0004,
+          "y": 0,
+          "z": -0.0578,
+          "r": -0.003
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 44.433,
+        "endSec": 44.9,
+        "durationSec": 0.682,
+        "span90Sec": 0.417,
+        "t5Sec": 44.439,
+        "t95Sec": 44.855,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.4418,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.out",
+          "gsapRmse": 0.0316,
+          "cubicBezier": [
+            0.058,
+            0.45,
+            0.742,
+            1.037
+          ],
+          "css": "cubic-bezier(0.058, 0.45, 0.742, 1.037)",
+          "bezierRmse": 0.02,
+          "spring": {
+            "omega": 4.18,
+            "zeta": 0.999,
+            "settleSec": 0.957,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 17.5,
+              "damping": 8.36
+            }
+          },
+          "springRmse": 0.0292,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1283,
+          0.2172,
+          0.2909,
+          0.3558,
+          0.4148,
+          0.4692,
+          0.5201,
+          0.568,
+          0.6134,
+          0.6566,
+          0.6979,
+          0.7374,
+          0.7752,
+          0.8115,
+          0.8463,
+          0.8797,
+          0.9118,
+          0.9425,
+          0.9719,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 7
+      }
+    },
+    {
+      "shotId": "s044",
+      "meanEnergy": 0.08193,
+      "peakEnergy": 0.3142,
+      "peakSec": 45.267,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "static"
+        ],
+        "amount": {
+          "x": -0.0007,
+          "y": 0.0017,
+          "z": 0.0135,
+          "r": -0.0005
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": true,
+        "startSec": 45.16,
+        "endSec": 45.233,
+        "durationSec": 0.145,
+        "span90Sec": 0.053,
+        "t5Sec": 45.178,
+        "t95Sec": 45.231,
+        "holdBeforeSec": 0.227,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.6975,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.inOut",
+          "gsapRmse": 0.6253,
+          "cubicBezier": [
+            0.369,
+            -0.043,
+            0.425,
+            1.055
+          ],
+          "css": "cubic-bezier(0.369, -0.043, 0.425, 1.055)",
+          "bezierRmse": 0.2359,
+          "spring": {
+            "omega": 45.42,
+            "zeta": 0.934,
+            "settleSec": 0.094,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 2062.9,
+              "damping": 84.86
+            }
+          },
+          "springRmse": 0.2359,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0228,
+          0.0496,
+          0.0805,
+          0.1153,
+          0.154,
+          0.1969,
+          0.2438,
+          0.2942,
+          0.3475,
+          0.4035,
+          0.4616,
+          0.5215,
+          0.5826,
+          0.6444,
+          0.7062,
+          0.7675,
+          0.8279,
+          0.887,
+          0.9444,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s045",
+      "meanEnergy": 0.09131,
+      "peakEnergy": 0.3421,
+      "peakSec": 45.667,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "static"
+        ],
+        "amount": {
+          "x": -0.0035,
+          "y": 0.0003,
+          "z": -0.0134,
+          "r": -0.0005
+        },
+        "moves": 0,
+        "trackedShare": 1
+      },
+      "cadence": {
+        "movingFrames": 6
+      }
+    },
+    {
+      "shotId": "s046",
+      "meanEnergy": 0.03128,
+      "peakEnergy": 0.04544,
+      "peakSec": 45.8,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0011,
+          "y": -0.0003,
+          "z": -0.026,
+          "r": 0.0012
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 45.699,
+        "endSec": 45.933,
+        "durationSec": 0.261,
+        "span90Sec": 0.191,
+        "t5Sec": 45.706,
+        "t95Sec": 45.896,
+        "holdBeforeSec": 0.032,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.1755,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.out",
+          "gsapRmse": 0.009,
+          "cubicBezier": [
+            0.262,
+            0.552,
+            0.721,
+            1.044
+          ],
+          "css": "cubic-bezier(0.262, 0.552, 0.721, 1.044)",
+          "bezierRmse": 0.008,
+          "spring": {
+            "omega": 181.32,
+            "zeta": 0.07,
+            "settleSec": 0.316,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 32878,
+              "damping": 25.32
+            }
+          },
+          "springRmse": 0.0085,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0784,
+          0.1538,
+          0.2262,
+          0.2956,
+          0.3621,
+          0.4256,
+          0.486,
+          0.5435,
+          0.598,
+          0.6495,
+          0.698,
+          0.7435,
+          0.786,
+          0.8256,
+          0.8621,
+          0.8957,
+          0.9263,
+          0.9538,
+          0.9784,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 6
+      }
+    },
+    {
+      "shotId": "s047",
+      "meanEnergy": 0.08594,
+      "peakEnergy": 0.35358,
+      "peakSec": 46.467,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "push_in"
+        ],
+        "amount": {
+          "x": 0.0004,
+          "y": -0.0005,
+          "z": 0.062,
+          "r": 0.0001
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 46.154,
+        "endSec": 46.433,
+        "durationSec": 0.303,
+        "span90Sec": 0.254,
+        "t5Sec": 46.177,
+        "t95Sec": 46.431,
+        "holdBeforeSec": 0.188,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.9181,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0431,
+          "cubicBezier": [
+            0.532,
+            0.241,
+            0.838,
+            -0.069
+          ],
+          "css": "cubic-bezier(0.532, 0.241, 0.838, -0.069)",
+          "bezierRmse": 0.0321,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0699,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0031
+        },
+        "progress": [
+          0,
+          0.0271,
+          0.0514,
+          0.0732,
+          0.0928,
+          0.1105,
+          0.1269,
+          0.1424,
+          0.1578,
+          0.1738,
+          0.1915,
+          0.2121,
+          0.2372,
+          0.2685,
+          0.3085,
+          0.3604,
+          0.428,
+          0.5169,
+          0.6342,
+          0.7903,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 15,
+        "heldShare": 0.2,
+        "framesPerDrawing": 1.25,
+        "drawingsPerSecond": 24,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s048",
+      "meanEnergy": 0.09568,
+      "peakEnergy": 0.44205,
+      "peakSec": 47.667,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0116,
+          "y": 0.0167,
+          "z": 0.1054,
+          "r": 0.1005
+        },
+        "moves": 2,
+        "trackedShare": 0.914,
+        "axis": "z",
+        "snap": false,
+        "startSec": 46.575,
+        "endSec": 46.839,
+        "durationSec": 0.264,
+        "span90Sec": 0.237,
+        "t5Sec": 46.588,
+        "t95Sec": 46.826,
+        "holdBeforeSec": 0.109,
+        "holdAfterSec": 0.228,
+        "peakSpeed": 1.0633,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.0194,
+          "cubicBezier": [
+            0.13,
+            0.176,
+            0.868,
+            0.925
+          ],
+          "css": "cubic-bezier(0.13, 0.176, 0.868, 0.925)",
+          "bezierRmse": 0.0185,
+          "spring": {
+            "omega": 9.48,
+            "zeta": 0.555,
+            "settleSec": 0.76,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 89.9,
+              "damping": 10.52
+            }
+          },
+          "springRmse": 0.0253,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0.0162
+        },
+        "progress": [
+          0,
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.3,
+          0.35,
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.0538,
+          "y": 0.015,
+          "z": 0.203,
+          "r": 0.08
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_right",
+              "pull_out",
+              "roll_cw"
+            ],
+            "axis": "z",
+            "startSec": 47.279,
+            "durationSec": 0.583,
+            "amount": {
+              "x": 0.0423,
+              "y": 0.0015,
+              "z": -0.0976,
+              "r": 0.0206
+            },
+            "ease": "back.in"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 24,
+        "heldShare": 0.125,
+        "framesPerDrawing": 1.14,
+        "drawingsPerSecond": 26.2,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s049",
+      "meanEnergy": 0.12043,
+      "peakEnergy": 0.27811,
+      "peakSec": 47.8,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "push_in",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": -0.0216,
+          "y": -0.0057,
+          "z": 0.2813,
+          "r": -0.0256
+        },
+        "moves": 1,
+        "trackedShare": 0.929,
+        "axis": "z",
+        "snap": true,
+        "startSec": 47.736,
+        "endSec": 48.133,
+        "durationSec": 0.419,
+        "span90Sec": 0.008,
+        "t5Sec": 47.738,
+        "t95Sec": 47.745,
+        "holdBeforeSec": 0.07,
+        "holdAfterSec": 0,
+        "peakSpeed": 4.4608,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power1.out",
+          "gsapRmse": 0.052,
+          "cubicBezier": [
+            0.209,
+            0.526,
+            0.805,
+            1.148
+          ],
+          "css": "cubic-bezier(0.209, 0.526, 0.805, 1.148)",
+          "bezierRmse": 0.0445,
+          "spring": {
+            "omega": 179.77,
+            "zeta": 0.053,
+            "settleSec": 0.419,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 32317.2,
+              "damping": 19.11
+            }
+          },
+          "springRmse": 0.0428,
+          "best": "spring",
+          "pick": "spring",
+          "overshoot": 0.0543
+        },
+        "progress": [
+          0,
+          0.0103,
+          0.0206,
+          0.0394,
+          0.0846,
+          0.1298,
+          0.175,
+          0.2202,
+          0.2655,
+          0.3107,
+          0.3559,
+          0.4029,
+          0.4693,
+          0.5356,
+          0.602,
+          0.6683,
+          0.7346,
+          0.801,
+          0.8673,
+          0.9336,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 15,
+        "heldShare": 0.2,
+        "framesPerDrawing": 1.25,
+        "drawingsPerSecond": 24,
+        "label": "mixed ones and twos"
+      }
+    },
+    {
+      "shotId": "s050",
+      "meanEnergy": 0.03685,
+      "peakEnergy": 0.27158,
+      "peakSec": 49.267,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_up",
+          "pull_out"
+        ],
+        "amount": {
+          "x": -0.0284,
+          "y": -0.023,
+          "z": -0.0562,
+          "r": 0.0116
+        },
+        "moves": 1,
+        "trackedShare": 0.971,
+        "axis": "z",
+        "snap": false,
+        "startSec": 48.167,
+        "endSec": 49.3,
+        "durationSec": 1.355,
+        "span90Sec": 1.068,
+        "t5Sec": 48.201,
+        "t95Sec": 49.269,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.1208,
+        "cutOff": true,
+        "leadInSec": 0.016,
+        "ease": {
+          "gsap": "power1.out",
+          "gsapRmse": 0.033,
+          "cubicBezier": [
+            0.493,
+            0.602,
+            0.832,
+            0.214
+          ],
+          "css": "cubic-bezier(0.493, 0.602, 0.832, 0.214)",
+          "bezierRmse": 0.0131,
+          "spring": {
+            "omega": 1.35,
+            "zeta": 0.999,
+            "settleSec": 2.972,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 1.8,
+              "damping": 2.69
+            }
+          },
+          "springRmse": 0.0278,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0814,
+          0.1566,
+          0.226,
+          0.2897,
+          0.3481,
+          0.4013,
+          0.4498,
+          0.4939,
+          0.5341,
+          0.5711,
+          0.6053,
+          0.6377,
+          0.669,
+          0.7006,
+          0.7337,
+          0.7699,
+          0.8115,
+          0.8612,
+          0.9225,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 10
+      }
+    },
+    {
+      "shotId": "s051",
+      "meanEnergy": 0.06313,
+      "peakEnergy": 0.52082,
+      "peakSec": 50.867,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "move_up",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0193,
+          "y": -0.0152,
+          "z": 0.0038,
+          "r": 0.0432
+        },
+        "moves": 2,
+        "trackedShare": 0.867,
+        "axis": "r",
+        "snap": false,
+        "startSec": 50.343,
+        "endSec": 50.769,
+        "durationSec": 0.426,
+        "span90Sec": 0.262,
+        "t5Sec": 50.5,
+        "t95Sec": 50.762,
+        "holdBeforeSec": 0.043,
+        "holdAfterSec": 0.064,
+        "peakSpeed": 0.314,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.in",
+          "gsapRmse": 0.0237,
+          "cubicBezier": [
+            0.38,
+            0.05,
+            0.555,
+            -0.009
+          ],
+          "css": "cubic-bezier(0.38, 0.05, 0.555, -0.009)",
+          "bezierRmse": 0.0236,
+          "spring": {
+            "omega": 8.76,
+            "zeta": 0.05,
+            "settleSec": 9.129,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 76.8,
+              "damping": 0.88
+            }
+          },
+          "springRmse": 0.0383,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0151,
+          0.0327,
+          0.053,
+          0.0762,
+          0.1025,
+          0.1321,
+          0.1652,
+          0.202,
+          0.2426,
+          0.2872,
+          0.3362,
+          0.3896,
+          0.4476,
+          0.5105,
+          0.5783,
+          0.6514,
+          0.73,
+          0.8141,
+          0.9041,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0023,
+          "y": -0.0025,
+          "z": -0.0278,
+          "r": 0.0523
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_left",
+              "push_in"
+            ],
+            "axis": "z",
+            "startSec": 49.364,
+            "durationSec": 0.411,
+            "amount": {
+              "x": -0.021,
+              "y": -0.012,
+              "z": 0.0313,
+              "r": -0.0081
+            },
+            "ease": "circ.out"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 31,
+        "heldShare": 0.129,
+        "framesPerDrawing": 1.15,
+        "drawingsPerSecond": 26.1,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s052",
+      "meanEnergy": 0.03799,
+      "peakEnergy": 0.17996,
+      "peakSec": 51,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_left",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0443,
+          "y": 0.0073,
+          "z": 0.1304,
+          "r": 0.0989
+        },
+        "moves": 2,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 50.963,
+        "endSec": 51.217,
+        "durationSec": 0.254,
+        "span90Sec": 0.226,
+        "t5Sec": 50.969,
+        "t95Sec": 51.196,
+        "holdBeforeSec": 0.097,
+        "holdAfterSec": 0.15,
+        "peakSpeed": 1.2653,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.0142,
+          "cubicBezier": [
+            0.407,
+            0.915,
+            0.312,
+            0.581
+          ],
+          "css": "cubic-bezier(0.407, 0.915, 0.312, 0.581)",
+          "bezierRmse": 0.005,
+          "spring": {
+            "omega": 18.61,
+            "zeta": 0.999,
+            "settleSec": 0.215,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 346.4,
+              "damping": 37.18
+            }
+          },
+          "springRmse": 0.0267,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.11,
+          0.2177,
+          0.3216,
+          0.4197,
+          0.5087,
+          0.5853,
+          0.6468,
+          0.6936,
+          0.7288,
+          0.7566,
+          0.7805,
+          0.8028,
+          0.8247,
+          0.847,
+          0.87,
+          0.894,
+          0.919,
+          0.945,
+          0.972,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.0452,
+          "y": 0.0078,
+          "z": 0.1499,
+          "r": 0.0971
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "pull_out"
+            ],
+            "axis": "z",
+            "startSec": 51.595,
+            "durationSec": 0.178,
+            "amount": {
+              "x": 0.0009,
+              "y": -0.0004,
+              "z": -0.0194,
+              "r": 0.0019
+            },
+            "ease": "circ.in"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 12
+      }
+    },
+    {
+      "shotId": "s053",
+      "meanEnergy": 0.06039,
+      "peakEnergy": 1.03891,
+      "peakSec": 53.467,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": -0.0017,
+          "y": 0.002,
+          "z": -0.1168,
+          "r": -0.0276
+        },
+        "moves": 1,
+        "trackedShare": 0.939,
+        "axis": "z",
+        "snap": false,
+        "startSec": 52.032,
+        "endSec": 53.367,
+        "durationSec": 1.334,
+        "span90Sec": 1.26,
+        "t5Sec": 52.106,
+        "t95Sec": 53.366,
+        "holdBeforeSec": 0.232,
+        "holdAfterSec": 0.067,
+        "peakSpeed": 0.5497,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "none",
+          "gsapRmse": 0.0523,
+          "cubicBezier": [
+            0.961,
+            0.873,
+            0.998,
+            0.541
+          ],
+          "css": "cubic-bezier(0.961, 0.873, 0.998, 0.541)",
+          "bezierRmse": 0.0217,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0551,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.1293
+        },
+        "progress": [
+          0,
+          0.0465,
+          0.0923,
+          0.1374,
+          0.1817,
+          0.2251,
+          0.2677,
+          0.3094,
+          0.3501,
+          0.3898,
+          0.4285,
+          0.4662,
+          0.5027,
+          0.538,
+          0.5723,
+          0.6057,
+          0.6384,
+          0.6713,
+          0.707,
+          0.7549,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 8
+      }
+    },
+    {
+      "shotId": "s054",
+      "meanEnergy": 0.04284,
+      "peakEnergy": 0.38439,
+      "peakSec": 54.867,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_down",
+          "pull_out",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0119,
+          "y": 0.2158,
+          "z": -0.7043,
+          "r": 0.0386
+        },
+        "moves": 1,
+        "trackedShare": 0.973,
+        "axis": "z",
+        "snap": false,
+        "startSec": 54.767,
+        "endSec": 55.07,
+        "durationSec": 0.304,
+        "span90Sec": 0.274,
+        "t5Sec": 54.77,
+        "t95Sec": 55.045,
+        "holdBeforeSec": 0.2,
+        "holdAfterSec": 0.13,
+        "peakSpeed": 4.8264,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.out",
+          "gsapRmse": 0.0131,
+          "cubicBezier": [
+            0.344,
+            1.38,
+            0.769,
+            0.767
+          ],
+          "css": "cubic-bezier(0.344, 1.38, 0.769, 0.767)",
+          "bezierRmse": 0.005,
+          "spring": {
+            "omega": 27.69,
+            "zeta": 0.999,
+            "settleSec": 0.145,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 766.5,
+              "damping": 55.32
+            }
+          },
+          "springRmse": 0.019,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0127
+        },
+        "progress": [
+          0,
+          0.1796,
+          0.3342,
+          0.4666,
+          0.5792,
+          0.6741,
+          0.7534,
+          0.8185,
+          0.871,
+          0.9124,
+          0.9438,
+          0.9664,
+          0.9815,
+          0.9904,
+          0.9941,
+          0.9942,
+          0.9919,
+          0.9891,
+          0.9876,
+          0.9901,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0348,
+          "y": 0.2026,
+          "z": -0.7454,
+          "r": 0.032
+        },
+        "otherMoves": [],
+        "drift": {
+          "x": -0.0467,
+          "z": 0.0411
+        }
+      },
+      "cadence": {
+        "movingFrames": 30,
+        "heldShare": 0.1,
+        "framesPerDrawing": 1.11,
+        "drawingsPerSecond": 27,
+        "label": "on ones"
+      }
+    }
+  ],
+  "cadence": {
+    "movingFrames": 1083,
+    "heldShare": 0.168,
+    "framesPerDrawing": 1.2,
+    "drawingsPerSecond": 25,
+    "label": "on ones"
+  },
+  "staticOverlayShare": 0,
+  "energyCurve": [
+    {
+      "timeSec": 0.067,
+      "energy": 0
+    },
+    {
+      "timeSec": 0.133,
+      "energy": 0.09151
+    },
+    {
+      "timeSec": 0.2,
+      "energy": 0.00005
+    },
+    {
+      "timeSec": 0.267,
+      "energy": 0.17022
+    },
+    {
+      "timeSec": 0.333,
+      "energy": 0.0002
+    },
+    {
+      "timeSec": 0.4,
+      "energy": 0.18599
+    },
+    {
+      "timeSec": 0.467,
+      "energy": 0.202
+    },
+    {
+      "timeSec": 0.533,
+      "energy": 0.00094
+    },
+    {
+      "timeSec": 0.6,
+      "energy": 0.35192
+    },
+    {
+      "timeSec": 0.667,
+      "energy": 0.0481
+    },
+    {
+      "timeSec": 0.733,
+      "energy": 0.01769
+    },
+    {
+      "timeSec": 0.8,
+      "energy": 0.03572
+    },
+    {
+      "timeSec": 0.867,
+      "energy": 0.04147
+    },
+    {
+      "timeSec": 0.933,
+      "energy": 0.02648
+    },
+    {
+      "timeSec": 1,
+      "energy": 0.0499
+    },
+    {
+      "timeSec": 1.067,
+      "energy": 0.04717
+    },
+    {
+      "timeSec": 1.133,
+      "energy": 0.02416
+    },
+    {
+      "timeSec": 1.2,
+      "energy": 0.04608
+    },
+    {
+      "timeSec": 1.267,
+      "energy": 0.03879
+    },
+    {
+      "timeSec": 1.333,
+      "energy": 0.31166
+    },
+    {
+      "timeSec": 1.4,
+      "energy": 0.04924
+    },
+    {
+      "timeSec": 1.467,
+      "energy": 0.04548
+    },
+    {
+      "timeSec": 1.533,
+      "energy": 0.02207
+    },
+    {
+      "timeSec": 1.6,
+      "energy": 0.03662
+    },
+    {
+      "timeSec": 1.667,
+      "energy": 0.03004
+    },
+    {
+      "timeSec": 1.733,
+      "energy": 0.0071
+    },
+    {
+      "timeSec": 1.8,
+      "energy": 0.00285
+    },
+    {
+      "timeSec": 1.867,
+      "energy": 0.00214
+    },
+    {
+      "timeSec": 1.933,
+      "energy": 0.00236
+    },
+    {
+      "timeSec": 2,
+      "energy": 0.0055
+    },
+    {
+      "timeSec": 2.067,
+      "energy": 0.03259
+    },
+    {
+      "timeSec": 2.133,
+      "energy": 0.036
+    },
+    {
+      "timeSec": 2.2,
+      "energy": 0.22239
+    },
+    {
+      "timeSec": 2.267,
+      "energy": 0.00939
+    },
+    {
+      "timeSec": 2.333,
+      "energy": 0.2502
+    },
+    {
+      "timeSec": 2.4,
+      "energy": 0.02725
+    },
+    {
+      "timeSec": 2.467,
+      "energy": 0.03112
+    },
+    {
+      "timeSec": 2.533,
+      "energy": 0.01297
+    },
+    {
+      "timeSec": 2.6,
+      "energy": 0.02928
+    },
+    {
+      "timeSec": 2.667,
+      "energy": 0.01604
+    },
+    {
+      "timeSec": 2.733,
+      "energy": 0.00612
+    },
+    {
+      "timeSec": 2.8,
+      "energy": 0.01073
+    },
+    {
+      "timeSec": 2.867,
+      "energy": 0.00996
+    },
+    {
+      "timeSec": 2.933,
+      "energy": 0.00475
+    },
+    {
+      "timeSec": 3,
+      "energy": 0.00866
+    },
+    {
+      "timeSec": 3.067,
+      "energy": 0.00704
+    },
+    {
+      "timeSec": 3.133,
+      "energy": 0.00312
+    },
+    {
+      "timeSec": 3.2,
+      "energy": 0.00315
+    },
+    {
+      "timeSec": 3.267,
+      "energy": 0.00266
+    },
+    {
+      "timeSec": 3.333,
+      "energy": 0.00201
+    },
+    {
+      "timeSec": 3.4,
+      "energy": 0.00331
+    },
+    {
+      "timeSec": 3.467,
+      "energy": 0.00645
+    },
+    {
+      "timeSec": 3.533,
+      "energy": 0.00722
+    },
+    {
+      "timeSec": 3.6,
+      "energy": 0.02537
+    },
+    {
+      "timeSec": 3.667,
+      "energy": 0.04036
+    },
+    {
+      "timeSec": 3.733,
+      "energy": 0.07063
+    },
+    {
+      "timeSec": 3.8,
+      "energy": 0.03717
+    },
+    {
+      "timeSec": 3.867,
+      "energy": 0.15842
+    },
+    {
+      "timeSec": 3.933,
+      "energy": 0.16503
+    },
+    {
+      "timeSec": 4,
+      "energy": 0.61233
+    },
+    {
+      "timeSec": 4.067,
+      "energy": 0.14422
+    },
+    {
+      "timeSec": 4.133,
+      "energy": 0.07173
+    },
+    {
+      "timeSec": 4.2,
+      "energy": 0.11404
+    },
+    {
+      "timeSec": 4.267,
+      "energy": 0.09533
+    },
+    {
+      "timeSec": 4.333,
+      "energy": 0.02495
+    },
+    {
+      "timeSec": 4.4,
+      "energy": 0.02853
+    },
+    {
+      "timeSec": 4.467,
+      "energy": 0.01156
+    },
+    {
+      "timeSec": 4.533,
+      "energy": 0.00224
+    },
+    {
+      "timeSec": 4.6,
+      "energy": 0.00428
+    },
+    {
+      "timeSec": 4.667,
+      "energy": 0.00413
+    },
+    {
+      "timeSec": 4.733,
+      "energy": 0.00205
+    },
+    {
+      "timeSec": 4.8,
+      "energy": 0.01327
+    },
+    {
+      "timeSec": 4.867,
+      "energy": 0.01721
+    },
+    {
+      "timeSec": 4.933,
+      "energy": 0.08821
+    },
+    {
+      "timeSec": 5,
+      "energy": 0.11846
+    },
+    {
+      "timeSec": 5.067,
+      "energy": 0.05235
+    },
+    {
+      "timeSec": 5.133,
+      "energy": 0.02711
+    },
+    {
+      "timeSec": 5.2,
+      "energy": 0.09539
+    },
+    {
+      "timeSec": 5.267,
+      "energy": 0.03107
+    },
+    {
+      "timeSec": 5.333,
+      "energy": 0.03211
+    },
+    {
+      "timeSec": 5.4,
+      "energy": 0.04519
+    },
+    {
+      "timeSec": 5.467,
+      "energy": 0.12834
+    },
+    {
+      "timeSec": 5.533,
+      "energy": 0.04602
+    },
+    {
+      "timeSec": 5.6,
+      "energy": 0.07652
+    },
+    {
+      "timeSec": 5.667,
+      "energy": 0.70662
+    },
+    {
+      "timeSec": 5.733,
+      "energy": 0.70761
+    },
+    {
+      "timeSec": 5.8,
+      "energy": 0.91061
+    },
+    {
+      "timeSec": 5.867,
+      "energy": 0.41734
+    },
+    {
+      "timeSec": 5.933,
+      "energy": 0.1534
+    },
+    {
+      "timeSec": 6,
+      "energy": 0.22113
+    },
+    {
+      "timeSec": 6.067,
+      "energy": 0.14364
+    },
+    {
+      "timeSec": 6.133,
+      "energy": 0.0652
+    },
+    {
+      "timeSec": 6.2,
+      "energy": 0.08181
+    },
+    {
+      "timeSec": 6.267,
+      "energy": 0.04128
+    },
+    {
+      "timeSec": 6.333,
+      "energy": 0.00659
+    },
+    {
+      "timeSec": 6.4,
+      "energy": 0.00575
+    },
+    {
+      "timeSec": 6.467,
+      "energy": 0.00579
+    },
+    {
+      "timeSec": 6.533,
+      "energy": 0.00558
+    },
+    {
+      "timeSec": 6.6,
+      "energy": 0.00575
+    },
+    {
+      "timeSec": 6.667,
+      "energy": 0.06332
+    },
+    {
+      "timeSec": 6.733,
+      "energy": 0.16212
+    },
+    {
+      "timeSec": 6.8,
+      "energy": 0.01154
+    },
+    {
+      "timeSec": 6.867,
+      "energy": 0.00672
+    },
+    {
+      "timeSec": 6.933,
+      "energy": 0.00561
+    },
+    {
+      "timeSec": 7,
+      "energy": 0.00675
+    },
+    {
+      "timeSec": 7.067,
+      "energy": 0.00662
+    },
+    {
+      "timeSec": 7.133,
+      "energy": 0.0048
+    },
+    {
+      "timeSec": 7.2,
+      "energy": 0.04536
+    },
+    {
+      "timeSec": 7.267,
+      "energy": 0.24706
+    },
+    {
+      "timeSec": 7.333,
+      "energy": 0.00767
+    },
+    {
+      "timeSec": 7.4,
+      "energy": 0.01729
+    },
+    {
+      "timeSec": 7.467,
+      "energy": 0.07139
+    },
+    {
+      "timeSec": 7.533,
+      "energy": 0.0368
+    },
+    {
+      "timeSec": 7.6,
+      "energy": 0.1064
+    },
+    {
+      "timeSec": 7.667,
+      "energy": 0.85002
+    },
+    {
+      "timeSec": 7.733,
+      "energy": 0.06161
+    },
+    {
+      "timeSec": 7.8,
+      "energy": 0.26184
+    },
+    {
+      "timeSec": 7.867,
+      "energy": 0.12115
+    },
+    {
+      "timeSec": 7.933,
+      "energy": 0.03828
+    },
+    {
+      "timeSec": 8,
+      "energy": 0.04521
+    },
+    {
+      "timeSec": 8.067,
+      "energy": 0.06456
+    },
+    {
+      "timeSec": 8.133,
+      "energy": 0.07477
+    },
+    {
+      "timeSec": 8.2,
+      "energy": 0.36242
+    },
+    {
+      "timeSec": 8.267,
+      "energy": 0.19384
+    },
+    {
+      "timeSec": 8.333,
+      "energy": 0.04477
+    },
+    {
+      "timeSec": 8.4,
+      "energy": 0.04556
+    },
+    {
+      "timeSec": 8.467,
+      "energy": 0.02708
+    },
+    {
+      "timeSec": 8.533,
+      "energy": 0.04017
+    },
+    {
+      "timeSec": 8.6,
+      "energy": 0.14894
+    },
+    {
+      "timeSec": 8.667,
+      "energy": 0.66726
+    },
+    {
+      "timeSec": 8.733,
+      "energy": 0.15399
+    },
+    {
+      "timeSec": 8.8,
+      "energy": 0.16388
+    },
+    {
+      "timeSec": 8.867,
+      "energy": 0.13173
+    },
+    {
+      "timeSec": 8.933,
+      "energy": 0.10753
+    },
+    {
+      "timeSec": 9,
+      "energy": 0.20536
+    },
+    {
+      "timeSec": 9.067,
+      "energy": 0.12273
+    },
+    {
+      "timeSec": 9.133,
+      "energy": 0.04153
+    },
+    {
+      "timeSec": 9.2,
+      "energy": 0.03295
+    },
+    {
+      "timeSec": 9.267,
+      "energy": 0.05129
+    },
+    {
+      "timeSec": 9.333,
+      "energy": 0.02034
+    },
+    {
+      "timeSec": 9.4,
+      "energy": 0.03285
+    },
+    {
+      "timeSec": 9.467,
+      "energy": 0.02838
+    },
+    {
+      "timeSec": 9.533,
+      "energy": 0.01531
+    },
+    {
+      "timeSec": 9.6,
+      "energy": 0.04923
+    },
+    {
+      "timeSec": 9.667,
+      "energy": 0.13163
+    },
+    {
+      "timeSec": 9.733,
+      "energy": 0.07766
+    },
+    {
+      "timeSec": 9.8,
+      "energy": 0.21992
+    },
+    {
+      "timeSec": 9.867,
+      "energy": 0.26441
+    },
+    {
+      "timeSec": 9.933,
+      "energy": 0.12437
+    },
+    {
+      "timeSec": 10,
+      "energy": 0.38587
+    },
+    {
+      "timeSec": 10.067,
+      "energy": 0.52698
+    },
+    {
+      "timeSec": 10.133,
+      "energy": 0.31729
+    },
+    {
+      "timeSec": 10.2,
+      "energy": 0.82738
+    },
+    {
+      "timeSec": 10.267,
+      "energy": 0.70053
+    },
+    {
+      "timeSec": 10.333,
+      "energy": 0.33201
+    },
+    {
+      "timeSec": 10.4,
+      "energy": 1.14695
+    },
+    {
+      "timeSec": 10.467,
+      "energy": 0.64172
+    },
+    {
+      "timeSec": 10.533,
+      "energy": 0.20353
+    },
+    {
+      "timeSec": 10.6,
+      "energy": 0.53387
+    },
+    {
+      "timeSec": 10.667,
+      "energy": 0.32667
+    },
+    {
+      "timeSec": 10.733,
+      "energy": 0.10426
+    },
+    {
+      "timeSec": 10.8,
+      "energy": 0.2744
+    },
+    {
+      "timeSec": 10.867,
+      "energy": 0.85124
+    },
+    {
+      "timeSec": 10.933,
+      "energy": 0.36817
+    },
+    {
+      "timeSec": 11,
+      "energy": 0.36626
+    },
+    {
+      "timeSec": 11.067,
+      "energy": 0.1875
+    },
+    {
+      "timeSec": 11.133,
+      "energy": 0.06598
+    },
+    {
+      "timeSec": 11.2,
+      "energy": 0.12033
+    },
+    {
+      "timeSec": 11.267,
+      "energy": 0.09401
+    },
+    {
+      "timeSec": 11.333,
+      "energy": 0.04276
+    },
+    {
+      "timeSec": 11.4,
+      "energy": 0.12197
+    },
+    {
+      "timeSec": 11.467,
+      "energy": 0.11778
+    },
+    {
+      "timeSec": 11.533,
+      "energy": 0.10532
+    },
+    {
+      "timeSec": 11.6,
+      "energy": 0.10091
+    },
+    {
+      "timeSec": 11.667,
+      "energy": 0.2077
+    },
+    {
+      "timeSec": 11.733,
+      "energy": 0.13561
+    },
+    {
+      "timeSec": 11.8,
+      "energy": 0.53807
+    },
+    {
+      "timeSec": 11.867,
+      "energy": 0.26071
+    },
+    {
+      "timeSec": 11.933,
+      "energy": 0.10189
+    },
+    {
+      "timeSec": 12,
+      "energy": 0.13727
+    },
+    {
+      "timeSec": 12.067,
+      "energy": 0.12373
+    },
+    {
+      "timeSec": 12.133,
+      "energy": 0.06629
+    },
+    {
+      "timeSec": 12.2,
+      "energy": 0.18159
+    },
+    {
+      "timeSec": 12.267,
+      "energy": 0.21303
+    },
+    {
+      "timeSec": 12.333,
+      "energy": 0.15674
+    },
+    {
+      "timeSec": 12.4,
+      "energy": 0.4262
+    },
+    {
+      "timeSec": 12.467,
+      "energy": 0.31247
+    },
+    {
+      "timeSec": 12.533,
+      "energy": 0.08841
+    },
+    {
+      "timeSec": 12.6,
+      "energy": 0.17844
+    },
+    {
+      "timeSec": 12.667,
+      "energy": 0.1119
+    },
+    {
+      "timeSec": 12.733,
+      "energy": 0.05425
+    },
+    {
+      "timeSec": 12.8,
+      "energy": 0.10901
+    },
+    {
+      "timeSec": 12.867,
+      "energy": 0.10804
+    },
+    {
+      "timeSec": 12.933,
+      "energy": 0.06564
+    },
+    {
+      "timeSec": 13,
+      "energy": 0.14119
+    },
+    {
+      "timeSec": 13.067,
+      "energy": 0.11619
+    },
+    {
+      "timeSec": 13.133,
+      "energy": 0.0727
+    },
+    {
+      "timeSec": 13.2,
+      "energy": 0.15726
+    },
+    {
+      "timeSec": 13.267,
+      "energy": 0.2764
+    },
+    {
+      "timeSec": 13.333,
+      "energy": 0.13663
+    },
+    {
+      "timeSec": 13.4,
+      "energy": 0.48791
+    },
+    {
+      "timeSec": 13.467,
+      "energy": 0.6035
+    },
+    {
+      "timeSec": 13.533,
+      "energy": 0.33652
+    },
+    {
+      "timeSec": 13.6,
+      "energy": 1.11853
+    },
+    {
+      "timeSec": 13.667,
+      "energy": 0.98734
+    },
+    {
+      "timeSec": 13.733,
+      "energy": 0.19195
+    },
+    {
+      "timeSec": 13.8,
+      "energy": 0.27309
+    },
+    {
+      "timeSec": 13.867,
+      "energy": 0.19237
+    },
+    {
+      "timeSec": 13.933,
+      "energy": 0.07761
+    },
+    {
+      "timeSec": 14,
+      "energy": 0.07454
+    },
+    {
+      "timeSec": 14.067,
+      "energy": 0.01684
+    },
+    {
+      "timeSec": 14.133,
+      "energy": 0.00838
+    },
+    {
+      "timeSec": 14.2,
+      "energy": 0.00919
+    },
+    {
+      "timeSec": 14.267,
+      "energy": 0.014
+    },
+    {
+      "timeSec": 14.333,
+      "energy": 0.01041
+    },
+    {
+      "timeSec": 14.4,
+      "energy": 0.01065
+    },
+    {
+      "timeSec": 14.467,
+      "energy": 0.00832
+    },
+    {
+      "timeSec": 14.533,
+      "energy": 0.00698
+    },
+    {
+      "timeSec": 14.6,
+      "energy": 0.05067
+    },
+    {
+      "timeSec": 14.667,
+      "energy": 0.02471
+    },
+    {
+      "timeSec": 14.733,
+      "energy": 0.01053
+    },
+    {
+      "timeSec": 14.8,
+      "energy": 0.01168
+    },
+    {
+      "timeSec": 14.867,
+      "energy": 0.00778
+    },
+    {
+      "timeSec": 14.933,
+      "energy": 0.01019
+    },
+    {
+      "timeSec": 15,
+      "energy": 0.01396
+    },
+    {
+      "timeSec": 15.067,
+      "energy": 0.00934
+    },
+    {
+      "timeSec": 15.133,
+      "energy": 0.00588
+    },
+    {
+      "timeSec": 15.2,
+      "energy": 0.00598
+    },
+    {
+      "timeSec": 15.267,
+      "energy": 0.01135
+    },
+    {
+      "timeSec": 15.333,
+      "energy": 0.01839
+    },
+    {
+      "timeSec": 15.4,
+      "energy": 0.05228
+    },
+    {
+      "timeSec": 15.467,
+      "energy": 0.07263
+    },
+    {
+      "timeSec": 15.533,
+      "energy": 0.05875
+    },
+    {
+      "timeSec": 15.6,
+      "energy": 0.20289
+    },
+    {
+      "timeSec": 15.667,
+      "energy": 0.50685
+    },
+    {
+      "timeSec": 15.733,
+      "energy": 0.42235
+    },
+    {
+      "timeSec": 15.8,
+      "energy": 0.577
+    },
+    {
+      "timeSec": 15.867,
+      "energy": 0.13891
+    },
+    {
+      "timeSec": 15.933,
+      "energy": 0.08315
+    },
+    {
+      "timeSec": 16,
+      "energy": 0.05194
+    },
+    {
+      "timeSec": 16.067,
+      "energy": 0.05929
+    },
+    {
+      "timeSec": 16.133,
+      "energy": 0.03306
+    },
+    {
+      "timeSec": 16.2,
+      "energy": 0.05175
+    },
+    {
+      "timeSec": 16.267,
+      "energy": 0.09728
+    },
+    {
+      "timeSec": 16.333,
+      "energy": 0.09006
+    },
+    {
+      "timeSec": 16.4,
+      "energy": 1.08269
+    },
+    {
+      "timeSec": 16.467,
+      "energy": 0.1793
+    },
+    {
+      "timeSec": 16.533,
+      "energy": 0.09578
+    },
+    {
+      "timeSec": 16.6,
+      "energy": 0.09095
+    },
+    {
+      "timeSec": 16.667,
+      "energy": 0.06194
+    },
+    {
+      "timeSec": 16.733,
+      "energy": 0.04801
+    },
+    {
+      "timeSec": 16.8,
+      "energy": 0.08999
+    },
+    {
+      "timeSec": 16.867,
+      "energy": 0.07336
+    },
+    {
+      "timeSec": 16.933,
+      "energy": 0.0223
+    },
+    {
+      "timeSec": 17,
+      "energy": 0.16812
+    },
+    {
+      "timeSec": 17.067,
+      "energy": 0.1956
+    },
+    {
+      "timeSec": 17.133,
+      "energy": 0.04796
+    },
+    {
+      "timeSec": 17.2,
+      "energy": 0.06605
+    },
+    {
+      "timeSec": 17.267,
+      "energy": 0.03555
+    },
+    {
+      "timeSec": 17.333,
+      "energy": 0.0176
+    },
+    {
+      "timeSec": 17.4,
+      "energy": 0.04364
+    },
+    {
+      "timeSec": 17.467,
+      "energy": 0.0239
+    },
+    {
+      "timeSec": 17.533,
+      "energy": 0.01072
+    },
+    {
+      "timeSec": 17.6,
+      "energy": 0.01207
+    },
+    {
+      "timeSec": 17.667,
+      "energy": 0.00332
+    },
+    {
+      "timeSec": 17.733,
+      "energy": 0.00209
+    },
+    {
+      "timeSec": 17.8,
+      "energy": 0.00196
+    },
+    {
+      "timeSec": 17.867,
+      "energy": 0.00139
+    },
+    {
+      "timeSec": 17.933,
+      "energy": 0.00116
+    },
+    {
+      "timeSec": 18,
+      "energy": 0.00257
+    },
+    {
+      "timeSec": 18.067,
+      "energy": 0.00094
+    },
+    {
+      "timeSec": 18.133,
+      "energy": 0.00041
+    },
+    {
+      "timeSec": 18.2,
+      "energy": 0.00105
+    },
+    {
+      "timeSec": 18.267,
+      "energy": 0.0009
+    },
+    {
+      "timeSec": 18.333,
+      "energy": 0.00051
+    },
+    {
+      "timeSec": 18.4,
+      "energy": 0.0082
+    },
+    {
+      "timeSec": 18.467,
+      "energy": 0.01232
+    },
+    {
+      "timeSec": 18.533,
+      "energy": 0.01725
+    },
+    {
+      "timeSec": 18.6,
+      "energy": 0.10263
+    },
+    {
+      "timeSec": 18.667,
+      "energy": 0.19257
+    },
+    {
+      "timeSec": 18.733,
+      "energy": 0.0002
+    },
+    {
+      "timeSec": 18.8,
+      "energy": 0.0073
+    },
+    {
+      "timeSec": 18.867,
+      "energy": 0.00221
+    },
+    {
+      "timeSec": 18.933,
+      "energy": 0.00001
+    },
+    {
+      "timeSec": 19,
+      "energy": 0.02952
+    },
+    {
+      "timeSec": 19.067,
+      "energy": 0.00091
+    },
+    {
+      "timeSec": 19.133,
+      "energy": 0.07223
+    },
+    {
+      "timeSec": 19.2,
+      "energy": 0.00182
+    },
+    {
+      "timeSec": 19.267,
+      "energy": 0.00237
+    },
+    {
+      "timeSec": 19.333,
+      "energy": 0.00006
+    },
+    {
+      "timeSec": 19.4,
+      "energy": 0.00023
+    },
+    {
+      "timeSec": 19.467,
+      "energy": 0.0005
+    },
+    {
+      "timeSec": 19.533,
+      "energy": 0.0051
+    },
+    {
+      "timeSec": 19.6,
+      "energy": 0.09855
+    },
+    {
+      "timeSec": 19.667,
+      "energy": 0.0983
+    },
+    {
+      "timeSec": 19.733,
+      "energy": 0.20992
+    },
+    {
+      "timeSec": 19.8,
+      "energy": 0.54627
+    },
+    {
+      "timeSec": 19.867,
+      "energy": 0.21608
+    },
+    {
+      "timeSec": 19.933,
+      "energy": 0.05646
+    },
+    {
+      "timeSec": 20,
+      "energy": 0.12194
+    },
+    {
+      "timeSec": 20.067,
+      "energy": 0.13981
+    },
+    {
+      "timeSec": 20.133,
+      "energy": 0.05598
+    },
+    {
+      "timeSec": 20.2,
+      "energy": 0.10124
+    },
+    {
+      "timeSec": 20.267,
+      "energy": 0.0914
+    },
+    {
+      "timeSec": 20.333,
+      "energy": 0.06469
+    },
+    {
+      "timeSec": 20.4,
+      "energy": 0.21932
+    },
+    {
+      "timeSec": 20.467,
+      "energy": 0.38887
+    },
+    {
+      "timeSec": 20.533,
+      "energy": 0.0775
+    },
+    {
+      "timeSec": 20.6,
+      "energy": 0.3318
+    },
+    {
+      "timeSec": 20.667,
+      "energy": 0.08624
+    },
+    {
+      "timeSec": 20.733,
+      "energy": 0.01625
+    },
+    {
+      "timeSec": 20.8,
+      "energy": 0.00539
+    },
+    {
+      "timeSec": 20.867,
+      "energy": 0.00009
+    },
+    {
+      "timeSec": 20.933,
+      "energy": 0.01819
+    },
+    {
+      "timeSec": 21,
+      "energy": 0.02948
+    },
+    {
+      "timeSec": 21.067,
+      "energy": 0.15178
+    },
+    {
+      "timeSec": 21.133,
+      "energy": 0.11279
+    },
+    {
+      "timeSec": 21.2,
+      "energy": 0.32633
+    },
+    {
+      "timeSec": 21.267,
+      "energy": 0.20058
+    },
+    {
+      "timeSec": 21.333,
+      "energy": 0.10348
+    },
+    {
+      "timeSec": 21.4,
+      "energy": 0.21527
+    },
+    {
+      "timeSec": 21.467,
+      "energy": 0.28128
+    },
+    {
+      "timeSec": 21.533,
+      "energy": 0.09572
+    },
+    {
+      "timeSec": 21.6,
+      "energy": 0.20091
+    },
+    {
+      "timeSec": 21.667,
+      "energy": 0.1748
+    },
+    {
+      "timeSec": 21.733,
+      "energy": 0.11638
+    },
+    {
+      "timeSec": 21.8,
+      "energy": 0.15478
+    },
+    {
+      "timeSec": 21.867,
+      "energy": 0.15489
+    },
+    {
+      "timeSec": 21.933,
+      "energy": 0.07941
+    },
+    {
+      "timeSec": 22,
+      "energy": 0.16328
+    },
+    {
+      "timeSec": 22.067,
+      "energy": 0.25722
+    },
+    {
+      "timeSec": 22.133,
+      "energy": 0.1919
+    },
+    {
+      "timeSec": 22.2,
+      "energy": 0.50631
+    },
+    {
+      "timeSec": 22.267,
+      "energy": 0.49373
+    },
+    {
+      "timeSec": 22.333,
+      "energy": 0.24773
+    },
+    {
+      "timeSec": 22.4,
+      "energy": 0.63187
+    },
+    {
+      "timeSec": 22.467,
+      "energy": 0.62532
+    },
+    {
+      "timeSec": 22.533,
+      "energy": 0.27548
+    },
+    {
+      "timeSec": 22.6,
+      "energy": 0.52709
+    },
+    {
+      "timeSec": 22.667,
+      "energy": 0.44496
+    },
+    {
+      "timeSec": 22.733,
+      "energy": 0.14578
+    },
+    {
+      "timeSec": 22.8,
+      "energy": 0.27138
+    },
+    {
+      "timeSec": 22.867,
+      "energy": 0.08507
+    },
+    {
+      "timeSec": 22.933,
+      "energy": 0.03027
+    },
+    {
+      "timeSec": 23,
+      "energy": 0.12759
+    },
+    {
+      "timeSec": 23.067,
+      "energy": 0.13659
+    },
+    {
+      "timeSec": 23.133,
+      "energy": 0.01442
+    },
+    {
+      "timeSec": 23.2,
+      "energy": 0.0598
+    },
+    {
+      "timeSec": 23.267,
+      "energy": 0.14363
+    },
+    {
+      "timeSec": 23.333,
+      "energy": 0.12288
+    },
+    {
+      "timeSec": 23.4,
+      "energy": 0.49223
+    },
+    {
+      "timeSec": 23.467,
+      "energy": 0.88013
+    },
+    {
+      "timeSec": 23.533,
+      "energy": 0.23888
+    },
+    {
+      "timeSec": 23.6,
+      "energy": 0.25979
+    },
+    {
+      "timeSec": 23.667,
+      "energy": 0.12271
+    },
+    {
+      "timeSec": 23.733,
+      "energy": 0.00293
+    },
+    {
+      "timeSec": 23.8,
+      "energy": 0.11019
+    },
+    {
+      "timeSec": 23.867,
+      "energy": 0.09218
+    },
+    {
+      "timeSec": 23.933,
+      "energy": 0.03227
+    },
+    {
+      "timeSec": 24,
+      "energy": 0.05812
+    },
+    {
+      "timeSec": 24.067,
+      "energy": 0.04553
+    },
+    {
+      "timeSec": 24.133,
+      "energy": 0.02332
+    },
+    {
+      "timeSec": 24.2,
+      "energy": 0.03676
+    },
+    {
+      "timeSec": 24.267,
+      "energy": 0.03707
+    },
+    {
+      "timeSec": 24.333,
+      "energy": 0.02299
+    },
+    {
+      "timeSec": 24.4,
+      "energy": 0.04536
+    },
+    {
+      "timeSec": 24.467,
+      "energy": 0.0725
+    },
+    {
+      "timeSec": 24.533,
+      "energy": 0.04061
+    },
+    {
+      "timeSec": 24.6,
+      "energy": 0.10018
+    },
+    {
+      "timeSec": 24.667,
+      "energy": 0.12505
+    },
+    {
+      "timeSec": 24.733,
+      "energy": 0.074
+    },
+    {
+      "timeSec": 24.8,
+      "energy": 0.18729
+    },
+    {
+      "timeSec": 24.867,
+      "energy": 0.19789
+    },
+    {
+      "timeSec": 24.933,
+      "energy": 0.09745
+    },
+    {
+      "timeSec": 25,
+      "energy": 0.34471
+    },
+    {
+      "timeSec": 25.067,
+      "energy": 0.7855
+    },
+    {
+      "timeSec": 25.133,
+      "energy": 0.11869
+    },
+    {
+      "timeSec": 25.2,
+      "energy": 0.12789
+    },
+    {
+      "timeSec": 25.267,
+      "energy": 0.18455
+    },
+    {
+      "timeSec": 25.333,
+      "energy": 0.05442
+    },
+    {
+      "timeSec": 25.4,
+      "energy": 0.06433
+    },
+    {
+      "timeSec": 25.467,
+      "energy": 0.04459
+    },
+    {
+      "timeSec": 25.533,
+      "energy": 0.02532
+    },
+    {
+      "timeSec": 25.6,
+      "energy": 0.05361
+    },
+    {
+      "timeSec": 25.667,
+      "energy": 0.07604
+    },
+    {
+      "timeSec": 25.733,
+      "energy": 0.05506
+    },
+    {
+      "timeSec": 25.8,
+      "energy": 0.16505
+    },
+    {
+      "timeSec": 25.867,
+      "energy": 0.32953
+    },
+    {
+      "timeSec": 25.933,
+      "energy": 0.35645
+    },
+    {
+      "timeSec": 26,
+      "energy": 0.53701
+    },
+    {
+      "timeSec": 26.067,
+      "energy": 0.67862
+    },
+    {
+      "timeSec": 26.133,
+      "energy": 0.27993
+    },
+    {
+      "timeSec": 26.2,
+      "energy": 0.21814
+    },
+    {
+      "timeSec": 26.267,
+      "energy": 0.30707
+    },
+    {
+      "timeSec": 26.333,
+      "energy": 0.11633
+    },
+    {
+      "timeSec": 26.4,
+      "energy": 0.20876
+    },
+    {
+      "timeSec": 26.467,
+      "energy": 0.20509
+    },
+    {
+      "timeSec": 26.533,
+      "energy": 0.1054
+    },
+    {
+      "timeSec": 26.6,
+      "energy": 0.20143
+    },
+    {
+      "timeSec": 26.667,
+      "energy": 0.20151
+    },
+    {
+      "timeSec": 26.733,
+      "energy": 0.10172
+    },
+    {
+      "timeSec": 26.8,
+      "energy": 0.19876
+    },
+    {
+      "timeSec": 26.867,
+      "energy": 0.26709
+    },
+    {
+      "timeSec": 26.933,
+      "energy": 0.23728
+    },
+    {
+      "timeSec": 27,
+      "energy": 0.74587
+    },
+    {
+      "timeSec": 27.067,
+      "energy": 0.27141
+    },
+    {
+      "timeSec": 27.133,
+      "energy": 0.00001
+    },
+    {
+      "timeSec": 27.2,
+      "energy": 0.04436
+    },
+    {
+      "timeSec": 27.267,
+      "energy": 0.09709
+    },
+    {
+      "timeSec": 27.333,
+      "energy": 0.00016
+    },
+    {
+      "timeSec": 27.4,
+      "energy": 0.21705
+    },
+    {
+      "timeSec": 27.467,
+      "energy": 0.26913
+    },
+    {
+      "timeSec": 27.533,
+      "energy": 0.11286
+    },
+    {
+      "timeSec": 27.6,
+      "energy": 0.00024
+    },
+    {
+      "timeSec": 27.667,
+      "energy": 0.29467
+    },
+    {
+      "timeSec": 27.733,
+      "energy": 0.15765
+    },
+    {
+      "timeSec": 27.8,
+      "energy": 0.20592
+    },
+    {
+      "timeSec": 27.867,
+      "energy": 0.09188
+    },
+    {
+      "timeSec": 27.933,
+      "energy": 0.03193
+    },
+    {
+      "timeSec": 28,
+      "energy": 0.10572
+    },
+    {
+      "timeSec": 28.067,
+      "energy": 0.13656
+    },
+    {
+      "timeSec": 28.133,
+      "energy": 0.05359
+    },
+    {
+      "timeSec": 28.2,
+      "energy": 0.06785
+    },
+    {
+      "timeSec": 28.267,
+      "energy": 0.05653
+    },
+    {
+      "timeSec": 28.333,
+      "energy": 0.02531
+    },
+    {
+      "timeSec": 28.4,
+      "energy": 0.0439
+    },
+    {
+      "timeSec": 28.467,
+      "energy": 0.03111
+    },
+    {
+      "timeSec": 28.533,
+      "energy": 0.00894
+    },
+    {
+      "timeSec": 28.6,
+      "energy": 0.00756
+    },
+    {
+      "timeSec": 28.667,
+      "energy": 0.01167
+    },
+    {
+      "timeSec": 28.733,
+      "energy": 0.01433
+    },
+    {
+      "timeSec": 28.8,
+      "energy": 0.01512
+    },
+    {
+      "timeSec": 28.867,
+      "energy": 0.01415
+    },
+    {
+      "timeSec": 28.933,
+      "energy": 0.00824
+    },
+    {
+      "timeSec": 29,
+      "energy": 0.01045
+    },
+    {
+      "timeSec": 29.067,
+      "energy": 0.01115
+    },
+    {
+      "timeSec": 29.133,
+      "energy": 0.00939
+    },
+    {
+      "timeSec": 29.2,
+      "energy": 0.01195
+    },
+    {
+      "timeSec": 29.267,
+      "energy": 0.01233
+    },
+    {
+      "timeSec": 29.333,
+      "energy": 0.00853
+    },
+    {
+      "timeSec": 29.4,
+      "energy": 0.02023
+    },
+    {
+      "timeSec": 29.467,
+      "energy": 0.10898
+    },
+    {
+      "timeSec": 29.533,
+      "energy": 0.11926
+    },
+    {
+      "timeSec": 29.6,
+      "energy": 0.51714
+    },
+    {
+      "timeSec": 29.667,
+      "energy": 0.18722
+    },
+    {
+      "timeSec": 29.733,
+      "energy": 0.03248
+    },
+    {
+      "timeSec": 29.8,
+      "energy": 0.02848
+    },
+    {
+      "timeSec": 29.867,
+      "energy": 0.00568
+    },
+    {
+      "timeSec": 29.933,
+      "energy": 0.00298
+    },
+    {
+      "timeSec": 30,
+      "energy": 0.02597
+    },
+    {
+      "timeSec": 30.067,
+      "energy": 0.09649
+    },
+    {
+      "timeSec": 30.133,
+      "energy": 0.23408
+    },
+    {
+      "timeSec": 30.2,
+      "energy": 0.48377
+    },
+    {
+      "timeSec": 30.267,
+      "energy": 0.22269
+    },
+    {
+      "timeSec": 30.333,
+      "energy": 0.08242
+    },
+    {
+      "timeSec": 30.4,
+      "energy": 0.10266
+    },
+    {
+      "timeSec": 30.467,
+      "energy": 0.68531
+    },
+    {
+      "timeSec": 30.533,
+      "energy": 0.50039
+    },
+    {
+      "timeSec": 30.6,
+      "energy": 0.41929
+    },
+    {
+      "timeSec": 30.667,
+      "energy": 0.11364
+    },
+    {
+      "timeSec": 30.733,
+      "energy": 0.04178
+    },
+    {
+      "timeSec": 30.8,
+      "energy": 0.06076
+    },
+    {
+      "timeSec": 30.867,
+      "energy": 0.45307
+    },
+    {
+      "timeSec": 30.933,
+      "energy": 0.58711
+    },
+    {
+      "timeSec": 31,
+      "energy": 0.27534
+    },
+    {
+      "timeSec": 31.067,
+      "energy": 0.28871
+    },
+    {
+      "timeSec": 31.133,
+      "energy": 0.0632
+    },
+    {
+      "timeSec": 31.2,
+      "energy": 0.08705
+    },
+    {
+      "timeSec": 31.267,
+      "energy": 0.06068
+    },
+    {
+      "timeSec": 31.333,
+      "energy": 0.0289
+    },
+    {
+      "timeSec": 31.4,
+      "energy": 0.11054
+    },
+    {
+      "timeSec": 31.467,
+      "energy": 0.13335
+    },
+    {
+      "timeSec": 31.533,
+      "energy": 0.14888
+    },
+    {
+      "timeSec": 31.6,
+      "energy": 0.475
+    },
+    {
+      "timeSec": 31.667,
+      "energy": 0.15194
+    },
+    {
+      "timeSec": 31.733,
+      "energy": 0.11126
+    },
+    {
+      "timeSec": 31.8,
+      "energy": 0.14725
+    },
+    {
+      "timeSec": 31.867,
+      "energy": 0.05168
+    },
+    {
+      "timeSec": 31.933,
+      "energy": 0.03665
+    },
+    {
+      "timeSec": 32,
+      "energy": 0.04274
+    },
+    {
+      "timeSec": 32.067,
+      "energy": 0.01832
+    },
+    {
+      "timeSec": 32.133,
+      "energy": 0.00134
+    },
+    {
+      "timeSec": 32.2,
+      "energy": 0.07161
+    },
+    {
+      "timeSec": 32.267,
+      "energy": 0.16464
+    },
+    {
+      "timeSec": 32.333,
+      "energy": 0.02946
+    },
+    {
+      "timeSec": 32.4,
+      "energy": 0.0159
+    },
+    {
+      "timeSec": 32.467,
+      "energy": 0.00573
+    },
+    {
+      "timeSec": 32.533,
+      "energy": 0.0016
+    },
+    {
+      "timeSec": 32.6,
+      "energy": 0.00188
+    },
+    {
+      "timeSec": 32.667,
+      "energy": 0.00193
+    },
+    {
+      "timeSec": 32.733,
+      "energy": 0.00106
+    },
+    {
+      "timeSec": 32.8,
+      "energy": 0.00132
+    },
+    {
+      "timeSec": 32.867,
+      "energy": 0.00095
+    },
+    {
+      "timeSec": 32.933,
+      "energy": 0.00024
+    },
+    {
+      "timeSec": 33,
+      "energy": 0.21133
+    },
+    {
+      "timeSec": 33.067,
+      "energy": 0.01724
+    },
+    {
+      "timeSec": 33.133,
+      "energy": 0.00307
+    },
+    {
+      "timeSec": 33.2,
+      "energy": 0.03538
+    },
+    {
+      "timeSec": 33.267,
+      "energy": 0.04969
+    },
+    {
+      "timeSec": 33.333,
+      "energy": 0.00008
+    },
+    {
+      "timeSec": 33.4,
+      "energy": 0.03163
+    },
+    {
+      "timeSec": 33.467,
+      "energy": 0.02047
+    },
+    {
+      "timeSec": 33.533,
+      "energy": 0.03496
+    },
+    {
+      "timeSec": 33.6,
+      "energy": 0.06632
+    },
+    {
+      "timeSec": 33.667,
+      "energy": 0.07175
+    },
+    {
+      "timeSec": 33.733,
+      "energy": 0.03097
+    },
+    {
+      "timeSec": 33.8,
+      "energy": 0.05662
+    },
+    {
+      "timeSec": 33.867,
+      "energy": 0.41398
+    },
+    {
+      "timeSec": 33.933,
+      "energy": 0.55701
+    },
+    {
+      "timeSec": 34,
+      "energy": 0.65593
+    },
+    {
+      "timeSec": 34.067,
+      "energy": 0.21359
+    },
+    {
+      "timeSec": 34.133,
+      "energy": 0.18314
+    },
+    {
+      "timeSec": 34.2,
+      "energy": 0.29998
+    },
+    {
+      "timeSec": 34.267,
+      "energy": 0.12546
+    },
+    {
+      "timeSec": 34.333,
+      "energy": 0.11251
+    },
+    {
+      "timeSec": 34.4,
+      "energy": 0.19161
+    },
+    {
+      "timeSec": 34.467,
+      "energy": 0.16333
+    },
+    {
+      "timeSec": 34.533,
+      "energy": 0.00261
+    },
+    {
+      "timeSec": 34.6,
+      "energy": 0.14395
+    },
+    {
+      "timeSec": 34.667,
+      "energy": 0.10426
+    },
+    {
+      "timeSec": 34.733,
+      "energy": 0.04226
+    },
+    {
+      "timeSec": 34.8,
+      "energy": 0.03932
+    },
+    {
+      "timeSec": 34.867,
+      "energy": 0.07238
+    },
+    {
+      "timeSec": 34.933,
+      "energy": 0.03725
+    },
+    {
+      "timeSec": 35,
+      "energy": 0.07581
+    },
+    {
+      "timeSec": 35.067,
+      "energy": 0.04188
+    },
+    {
+      "timeSec": 35.133,
+      "energy": 0.04519
+    },
+    {
+      "timeSec": 35.2,
+      "energy": 0.09902
+    },
+    {
+      "timeSec": 35.267,
+      "energy": 0.0552
+    },
+    {
+      "timeSec": 35.333,
+      "energy": 0.06079
+    },
+    {
+      "timeSec": 35.4,
+      "energy": 0.13783
+    },
+    {
+      "timeSec": 35.467,
+      "energy": 0.17227
+    },
+    {
+      "timeSec": 35.533,
+      "energy": 0.00113
+    },
+    {
+      "timeSec": 35.6,
+      "energy": 0.23693
+    },
+    {
+      "timeSec": 35.667,
+      "energy": 0.55019
+    },
+    {
+      "timeSec": 35.733,
+      "energy": 0.07116
+    },
+    {
+      "timeSec": 35.8,
+      "energy": 0.08779
+    },
+    {
+      "timeSec": 35.867,
+      "energy": 0.03956
+    },
+    {
+      "timeSec": 35.933,
+      "energy": 0.01432
+    },
+    {
+      "timeSec": 36,
+      "energy": 0.01379
+    },
+    {
+      "timeSec": 36.067,
+      "energy": 0.03221
+    },
+    {
+      "timeSec": 36.133,
+      "energy": 0.35484
+    },
+    {
+      "timeSec": 36.2,
+      "energy": 0.06144
+    },
+    {
+      "timeSec": 36.267,
+      "energy": 0.02626
+    },
+    {
+      "timeSec": 36.333,
+      "energy": 0.00914
+    },
+    {
+      "timeSec": 36.4,
+      "energy": 0.01206
+    },
+    {
+      "timeSec": 36.467,
+      "energy": 0.02535
+    },
+    {
+      "timeSec": 36.533,
+      "energy": 0.3545
+    },
+    {
+      "timeSec": 36.6,
+      "energy": 0.10234
+    },
+    {
+      "timeSec": 36.667,
+      "energy": 0.0375
+    },
+    {
+      "timeSec": 36.733,
+      "energy": 0.02639
+    },
+    {
+      "timeSec": 36.8,
+      "energy": 0.04296
+    },
+    {
+      "timeSec": 36.867,
+      "energy": 0.03017
+    },
+    {
+      "timeSec": 36.933,
+      "energy": 0.0397
+    },
+    {
+      "timeSec": 37,
+      "energy": 0.79024
+    },
+    {
+      "timeSec": 37.067,
+      "energy": 0.02518
+    },
+    {
+      "timeSec": 37.133,
+      "energy": 0.00605
+    },
+    {
+      "timeSec": 37.2,
+      "energy": 0.00623
+    },
+    {
+      "timeSec": 37.267,
+      "energy": 0.0023
+    },
+    {
+      "timeSec": 37.333,
+      "energy": 0.00208
+    },
+    {
+      "timeSec": 37.4,
+      "energy": 0.01165
+    },
+    {
+      "timeSec": 37.467,
+      "energy": 0.04199
+    },
+    {
+      "timeSec": 37.533,
+      "energy": 0.80833
+    },
+    {
+      "timeSec": 37.6,
+      "energy": 0.09606
+    },
+    {
+      "timeSec": 37.667,
+      "energy": 0.0596
+    },
+    {
+      "timeSec": 37.733,
+      "energy": 0.04761
+    },
+    {
+      "timeSec": 37.8,
+      "energy": 0.04394
+    },
+    {
+      "timeSec": 37.867,
+      "energy": 0.01251
+    },
+    {
+      "timeSec": 37.933,
+      "energy": 0.00502
+    },
+    {
+      "timeSec": 38,
+      "energy": 0.01034
+    },
+    {
+      "timeSec": 38.067,
+      "energy": 0.01344
+    },
+    {
+      "timeSec": 38.133,
+      "energy": 0.01136
+    },
+    {
+      "timeSec": 38.2,
+      "energy": 0.04212
+    },
+    {
+      "timeSec": 38.267,
+      "energy": 0.11533
+    },
+    {
+      "timeSec": 38.333,
+      "energy": 0.26852
+    },
+    {
+      "timeSec": 38.4,
+      "energy": 0.09154
+    },
+    {
+      "timeSec": 38.467,
+      "energy": 0.01709
+    },
+    {
+      "timeSec": 38.533,
+      "energy": 0.04466
+    },
+    {
+      "timeSec": 38.6,
+      "energy": 0.01444
+    },
+    {
+      "timeSec": 38.667,
+      "energy": 0.02466
+    },
+    {
+      "timeSec": 38.733,
+      "energy": 0.02836
+    },
+    {
+      "timeSec": 38.8,
+      "energy": 0.03338
+    },
+    {
+      "timeSec": 38.867,
+      "energy": 0.05669
+    },
+    {
+      "timeSec": 38.933,
+      "energy": 0.05629
+    },
+    {
+      "timeSec": 39,
+      "energy": 0.52217
+    },
+    {
+      "timeSec": 39.067,
+      "energy": 0.1197
+    },
+    {
+      "timeSec": 39.133,
+      "energy": 0.06922
+    },
+    {
+      "timeSec": 39.2,
+      "energy": 0.28502
+    },
+    {
+      "timeSec": 39.267,
+      "energy": 0.17007
+    },
+    {
+      "timeSec": 39.333,
+      "energy": 0.02841
+    },
+    {
+      "timeSec": 39.4,
+      "energy": 0.01322
+    },
+    {
+      "timeSec": 39.467,
+      "energy": 0.00683
+    },
+    {
+      "timeSec": 39.533,
+      "energy": 0.00253
+    },
+    {
+      "timeSec": 39.6,
+      "energy": 0.011
+    },
+    {
+      "timeSec": 39.667,
+      "energy": 0.02837
+    },
+    {
+      "timeSec": 39.733,
+      "energy": 0.02476
+    },
+    {
+      "timeSec": 39.8,
+      "energy": 0.08648
+    },
+    {
+      "timeSec": 39.867,
+      "energy": 0.20465
+    },
+    {
+      "timeSec": 39.933,
+      "energy": 0.23278
+    },
+    {
+      "timeSec": 40,
+      "energy": 0.43482
+    },
+    {
+      "timeSec": 40.067,
+      "energy": 0.30705
+    },
+    {
+      "timeSec": 40.133,
+      "energy": 0.14198
+    },
+    {
+      "timeSec": 40.2,
+      "energy": 0.24415
+    },
+    {
+      "timeSec": 40.267,
+      "energy": 0.10462
+    },
+    {
+      "timeSec": 40.333,
+      "energy": 0.09884
+    },
+    {
+      "timeSec": 40.4,
+      "energy": 0.17507
+    },
+    {
+      "timeSec": 40.467,
+      "energy": 0.15277
+    },
+    {
+      "timeSec": 40.533,
+      "energy": 0.0713
+    },
+    {
+      "timeSec": 40.6,
+      "energy": 0.12545
+    },
+    {
+      "timeSec": 40.667,
+      "energy": 0.1124
+    },
+    {
+      "timeSec": 40.733,
+      "energy": 0.05464
+    },
+    {
+      "timeSec": 40.8,
+      "energy": 0.09184
+    },
+    {
+      "timeSec": 40.867,
+      "energy": 0.08312
+    },
+    {
+      "timeSec": 40.933,
+      "energy": 0.04244
+    },
+    {
+      "timeSec": 41,
+      "energy": 0.08944
+    },
+    {
+      "timeSec": 41.067,
+      "energy": 0.10498
+    },
+    {
+      "timeSec": 41.133,
+      "energy": 0.00274
+    },
+    {
+      "timeSec": 41.2,
+      "energy": 0.11981
+    },
+    {
+      "timeSec": 41.267,
+      "energy": 0.14492
+    },
+    {
+      "timeSec": 41.333,
+      "energy": 0.08297
+    },
+    {
+      "timeSec": 41.4,
+      "energy": 0.18051
+    },
+    {
+      "timeSec": 41.467,
+      "energy": 0.21005
+    },
+    {
+      "timeSec": 41.533,
+      "energy": 0.12251
+    },
+    {
+      "timeSec": 41.6,
+      "energy": 0.27114
+    },
+    {
+      "timeSec": 41.667,
+      "energy": 0.32382
+    },
+    {
+      "timeSec": 41.733,
+      "energy": 0.19009
+    },
+    {
+      "timeSec": 41.8,
+      "energy": 0.45691
+    },
+    {
+      "timeSec": 41.867,
+      "energy": 0.58333
+    },
+    {
+      "timeSec": 41.933,
+      "energy": 0.39051
+    },
+    {
+      "timeSec": 42,
+      "energy": 0.32983
+    },
+    {
+      "timeSec": 42.067,
+      "energy": 0.49328
+    },
+    {
+      "timeSec": 42.133,
+      "energy": 0.11234
+    },
+    {
+      "timeSec": 42.2,
+      "energy": 0.16161
+    },
+    {
+      "timeSec": 42.267,
+      "energy": 0.11326
+    },
+    {
+      "timeSec": 42.333,
+      "energy": 0.05189
+    },
+    {
+      "timeSec": 42.4,
+      "energy": 0.07969
+    },
+    {
+      "timeSec": 42.467,
+      "energy": 0.07389
+    },
+    {
+      "timeSec": 42.533,
+      "energy": 0.0414
+    },
+    {
+      "timeSec": 42.6,
+      "energy": 0.08686
+    },
+    {
+      "timeSec": 42.667,
+      "energy": 0.11089
+    },
+    {
+      "timeSec": 42.733,
+      "energy": 0.06308
+    },
+    {
+      "timeSec": 42.8,
+      "energy": 0.0817
+    },
+    {
+      "timeSec": 42.867,
+      "energy": 0.02844
+    },
+    {
+      "timeSec": 42.933,
+      "energy": 0.08151
+    },
+    {
+      "timeSec": 43,
+      "energy": 0.14525
+    },
+    {
+      "timeSec": 43.067,
+      "energy": 0.14072
+    },
+    {
+      "timeSec": 43.133,
+      "energy": 0.08363
+    },
+    {
+      "timeSec": 43.2,
+      "energy": 0.31329
+    },
+    {
+      "timeSec": 43.267,
+      "energy": 2.47621
+    },
+    {
+      "timeSec": 43.333,
+      "energy": 0.19544
+    },
+    {
+      "timeSec": 43.4,
+      "energy": 0.20926
+    },
+    {
+      "timeSec": 43.467,
+      "energy": 0.11519
+    },
+    {
+      "timeSec": 43.533,
+      "energy": 0.03649
+    },
+    {
+      "timeSec": 43.6,
+      "energy": 0.04038
+    },
+    {
+      "timeSec": 43.667,
+      "energy": 0.01281
+    },
+    {
+      "timeSec": 43.733,
+      "energy": 0.01664
+    },
+    {
+      "timeSec": 43.8,
+      "energy": 0.03476
+    },
+    {
+      "timeSec": 43.867,
+      "energy": 0.04423
+    },
+    {
+      "timeSec": 43.933,
+      "energy": 0.03124
+    },
+    {
+      "timeSec": 44,
+      "energy": 0.09608
+    },
+    {
+      "timeSec": 44.067,
+      "energy": 0.56681
+    },
+    {
+      "timeSec": 44.133,
+      "energy": 0.03216
+    },
+    {
+      "timeSec": 44.2,
+      "energy": 0.04292
+    },
+    {
+      "timeSec": 44.267,
+      "energy": 0.03213
+    },
+    {
+      "timeSec": 44.333,
+      "energy": 0.01464
+    },
+    {
+      "timeSec": 44.4,
+      "energy": 0.02154
+    },
+    {
+      "timeSec": 44.467,
+      "energy": 0.54752
+    },
+    {
+      "timeSec": 44.533,
+      "energy": 0.045
+    },
+    {
+      "timeSec": 44.6,
+      "energy": 0.03582
+    },
+    {
+      "timeSec": 44.667,
+      "energy": 0.05122
+    },
+    {
+      "timeSec": 44.733,
+      "energy": 0.02476
+    },
+    {
+      "timeSec": 44.8,
+      "energy": 0.03783
+    },
+    {
+      "timeSec": 44.867,
+      "energy": 0.03733
+    },
+    {
+      "timeSec": 44.933,
+      "energy": 0.55697
+    },
+    {
+      "timeSec": 45,
+      "energy": 0.04824
+    },
+    {
+      "timeSec": 45.067,
+      "energy": 0.0131
+    },
+    {
+      "timeSec": 45.133,
+      "energy": 0.00452
+    },
+    {
+      "timeSec": 45.2,
+      "energy": 0.02961
+    },
+    {
+      "timeSec": 45.267,
+      "energy": 0.3142
+    },
+    {
+      "timeSec": 45.333,
+      "energy": 0.02762
+    },
+    {
+      "timeSec": 45.4,
+      "energy": 0.03318
+    },
+    {
+      "timeSec": 45.467,
+      "energy": 0.04155
+    },
+    {
+      "timeSec": 45.533,
+      "energy": 0.01507
+    },
+    {
+      "timeSec": 45.6,
+      "energy": 0.02465
+    },
+    {
+      "timeSec": 45.667,
+      "energy": 0.3421
+    },
+    {
+      "timeSec": 45.733,
+      "energy": 0.03286
+    },
+    {
+      "timeSec": 45.8,
+      "energy": 0.04544
+    },
+    {
+      "timeSec": 45.867,
+      "energy": 0.03385
+    },
+    {
+      "timeSec": 45.933,
+      "energy": 0.01455
+    },
+    {
+      "timeSec": 46,
+      "energy": 0.44147
+    },
+    {
+      "timeSec": 46.067,
+      "energy": 0.02859
+    },
+    {
+      "timeSec": 46.133,
+      "energy": 0.01619
+    },
+    {
+      "timeSec": 46.2,
+      "energy": 0.03445
+    },
+    {
+      "timeSec": 46.267,
+      "energy": 0.02844
+    },
+    {
+      "timeSec": 46.333,
+      "energy": 0.03591
+    },
+    {
+      "timeSec": 46.4,
+      "energy": 0.10439
+    },
+    {
+      "timeSec": 46.467,
+      "energy": 0.35358
+    },
+    {
+      "timeSec": 46.533,
+      "energy": 0.01186
+    },
+    {
+      "timeSec": 46.6,
+      "energy": 0.03897
+    },
+    {
+      "timeSec": 46.667,
+      "energy": 0.23244
+    },
+    {
+      "timeSec": 46.733,
+      "energy": 0.09536
+    },
+    {
+      "timeSec": 46.8,
+      "energy": 0.1944
+    },
+    {
+      "timeSec": 46.867,
+      "energy": 0.0603
+    },
+    {
+      "timeSec": 46.933,
+      "energy": 0.02562
+    },
+    {
+      "timeSec": 47,
+      "energy": 0.0683
+    },
+    {
+      "timeSec": 47.067,
+      "energy": 0.05667
+    },
+    {
+      "timeSec": 47.133,
+      "energy": 0.00085
+    },
+    {
+      "timeSec": 47.2,
+      "energy": 0.0403
+    },
+    {
+      "timeSec": 47.267,
+      "energy": 0.01766
+    },
+    {
+      "timeSec": 47.333,
+      "energy": 0.05748
+    },
+    {
+      "timeSec": 47.4,
+      "energy": 0.07593
+    },
+    {
+      "timeSec": 47.467,
+      "energy": 0.0326
+    },
+    {
+      "timeSec": 47.533,
+      "energy": 0.03252
+    },
+    {
+      "timeSec": 47.6,
+      "energy": 0.15516
+    },
+    {
+      "timeSec": 47.667,
+      "energy": 0.44205
+    },
+    {
+      "timeSec": 47.733,
+      "energy": 0.25066
+    },
+    {
+      "timeSec": 47.8,
+      "energy": 0.27811
+    },
+    {
+      "timeSec": 47.867,
+      "energy": 0.14941
+    },
+    {
+      "timeSec": 47.933,
+      "energy": 0.05399
+    },
+    {
+      "timeSec": 48,
+      "energy": 0.06178
+    },
+    {
+      "timeSec": 48.067,
+      "energy": 0.09197
+    },
+    {
+      "timeSec": 48.133,
+      "energy": 0.08736
+    },
+    {
+      "timeSec": 48.2,
+      "energy": 0.34778
+    },
+    {
+      "timeSec": 48.267,
+      "energy": 0.0181
+    },
+    {
+      "timeSec": 48.333,
+      "energy": 0.00909
+    },
+    {
+      "timeSec": 48.4,
+      "energy": 0.01204
+    },
+    {
+      "timeSec": 48.467,
+      "energy": 0.01167
+    },
+    {
+      "timeSec": 48.533,
+      "energy": 0.0059
+    },
+    {
+      "timeSec": 48.6,
+      "energy": 0.11606
+    },
+    {
+      "timeSec": 48.667,
+      "energy": 0.00888
+    },
+    {
+      "timeSec": 48.733,
+      "energy": 0.00532
+    },
+    {
+      "timeSec": 48.8,
+      "energy": 0.00589
+    },
+    {
+      "timeSec": 48.867,
+      "energy": 0.00351
+    },
+    {
+      "timeSec": 48.933,
+      "energy": 0.00351
+    },
+    {
+      "timeSec": 49,
+      "energy": 0.00704
+    },
+    {
+      "timeSec": 49.067,
+      "energy": 0.07098
+    },
+    {
+      "timeSec": 49.133,
+      "energy": 0.00428
+    },
+    {
+      "timeSec": 49.2,
+      "energy": 0.0358
+    },
+    {
+      "timeSec": 49.267,
+      "energy": 0.27158
+    },
+    {
+      "timeSec": 49.333,
+      "energy": 0.22234
+    },
+    {
+      "timeSec": 49.4,
+      "energy": 0.1394
+    },
+    {
+      "timeSec": 49.467,
+      "energy": 0.04476
+    },
+    {
+      "timeSec": 49.533,
+      "energy": 0.02961
+    },
+    {
+      "timeSec": 49.6,
+      "energy": 0.07834
+    },
+    {
+      "timeSec": 49.667,
+      "energy": 0.04778
+    },
+    {
+      "timeSec": 49.733,
+      "energy": 0.00046
+    },
+    {
+      "timeSec": 49.8,
+      "energy": 0.01562
+    },
+    {
+      "timeSec": 49.867,
+      "energy": 0.00565
+    },
+    {
+      "timeSec": 49.933,
+      "energy": 0.00166
+    },
+    {
+      "timeSec": 50,
+      "energy": 0.00281
+    },
+    {
+      "timeSec": 50.067,
+      "energy": 0.01859
+    },
+    {
+      "timeSec": 50.133,
+      "energy": 0.02301
+    },
+    {
+      "timeSec": 50.2,
+      "energy": 0.06126
+    },
+    {
+      "timeSec": 50.267,
+      "energy": 0.03585
+    },
+    {
+      "timeSec": 50.333,
+      "energy": 0.01008
+    },
+    {
+      "timeSec": 50.4,
+      "energy": 0.01144
+    },
+    {
+      "timeSec": 50.467,
+      "energy": 0.0074
+    },
+    {
+      "timeSec": 50.533,
+      "energy": 0.01464
+    },
+    {
+      "timeSec": 50.6,
+      "energy": 0.02239
+    },
+    {
+      "timeSec": 50.667,
+      "energy": 0.07465
+    },
+    {
+      "timeSec": 50.733,
+      "energy": 0.06154
+    },
+    {
+      "timeSec": 50.8,
+      "energy": 0.22415
+    },
+    {
+      "timeSec": 50.867,
+      "energy": 0.52082
+    },
+    {
+      "timeSec": 50.933,
+      "energy": 0.14871
+    },
+    {
+      "timeSec": 51,
+      "energy": 0.17996
+    },
+    {
+      "timeSec": 51.067,
+      "energy": 0.10549
+    },
+    {
+      "timeSec": 51.133,
+      "energy": 0.05004
+    },
+    {
+      "timeSec": 51.2,
+      "energy": 0.07642
+    },
+    {
+      "timeSec": 51.267,
+      "energy": 0.0154
+    },
+    {
+      "timeSec": 51.333,
+      "energy": 0.00175
+    },
+    {
+      "timeSec": 51.4,
+      "energy": 0.00143
+    },
+    {
+      "timeSec": 51.467,
+      "energy": 0.00097
+    },
+    {
+      "timeSec": 51.533,
+      "energy": 0.00141
+    },
+    {
+      "timeSec": 51.6,
+      "energy": 0.00203
+    },
+    {
+      "timeSec": 51.667,
+      "energy": 0.00757
+    },
+    {
+      "timeSec": 51.733,
+      "energy": 0.01346
+    },
+    {
+      "timeSec": 51.8,
+      "energy": 0.15196
+    },
+    {
+      "timeSec": 51.867,
+      "energy": 0.02379
+    },
+    {
+      "timeSec": 51.933,
+      "energy": 0.00304
+    },
+    {
+      "timeSec": 52,
+      "energy": 0.0112
+    },
+    {
+      "timeSec": 52.067,
+      "energy": 0.00577
+    },
+    {
+      "timeSec": 52.133,
+      "energy": 0.00119
+    },
+    {
+      "timeSec": 52.2,
+      "energy": 0.01575
+    },
+    {
+      "timeSec": 52.267,
+      "energy": 0.00277
+    },
+    {
+      "timeSec": 52.333,
+      "energy": 0.00174
+    },
+    {
+      "timeSec": 52.4,
+      "energy": 0.00751
+    },
+    {
+      "timeSec": 52.467,
+      "energy": 0.00634
+    },
+    {
+      "timeSec": 52.533,
+      "energy": 0.00226
+    },
+    {
+      "timeSec": 52.6,
+      "energy": 0.00323
+    },
+    {
+      "timeSec": 52.667,
+      "energy": 0.00295
+    },
+    {
+      "timeSec": 52.733,
+      "energy": 0.00175
+    },
+    {
+      "timeSec": 52.8,
+      "energy": 0.00297
+    },
+    {
+      "timeSec": 52.867,
+      "energy": 0.00191
+    },
+    {
+      "timeSec": 52.933,
+      "energy": 0.00211
+    },
+    {
+      "timeSec": 53,
+      "energy": 0.00363
+    },
+    {
+      "timeSec": 53.067,
+      "energy": 0.00362
+    },
+    {
+      "timeSec": 53.133,
+      "energy": 0.00182
+    },
+    {
+      "timeSec": 53.2,
+      "energy": 0.00191
+    },
+    {
+      "timeSec": 53.267,
+      "energy": 0.03893
+    },
+    {
+      "timeSec": 53.333,
+      "energy": 0.04038
+    },
+    {
+      "timeSec": 53.4,
+      "energy": 0.28426
+    },
+    {
+      "timeSec": 53.467,
+      "energy": 1.03891
+    },
+    {
+      "timeSec": 53.533,
+      "energy": 0.06433
+    },
+    {
+      "timeSec": 53.6,
+      "energy": 0.07619
+    },
+    {
+      "timeSec": 53.667,
+      "energy": 0.04625
+    },
+    {
+      "timeSec": 53.733,
+      "energy": 0.02033
+    },
+    {
+      "timeSec": 53.8,
+      "energy": 0.02974
+    },
+    {
+      "timeSec": 53.867,
+      "energy": 0.01932
+    },
+    {
+      "timeSec": 53.933,
+      "energy": 0.00938
+    },
+    {
+      "timeSec": 54,
+      "energy": 0.00757
+    },
+    {
+      "timeSec": 54.067,
+      "energy": 0.00608
+    },
+    {
+      "timeSec": 54.133,
+      "energy": 0.0035
+    },
+    {
+      "timeSec": 54.2,
+      "energy": 0.00772
+    },
+    {
+      "timeSec": 54.267,
+      "energy": 0.00626
+    },
+    {
+      "timeSec": 54.333,
+      "energy": 0.00338
+    },
+    {
+      "timeSec": 54.4,
+      "energy": 0.00486
+    },
+    {
+      "timeSec": 54.467,
+      "energy": 0.00852
+    },
+    {
+      "timeSec": 54.533,
+      "energy": 0.00337
+    },
+    {
+      "timeSec": 54.6,
+      "energy": 0.0043
+    },
+    {
+      "timeSec": 54.667,
+      "energy": 0.00554
+    },
+    {
+      "timeSec": 54.733,
+      "energy": 0.19577
+    },
+    {
+      "timeSec": 54.8,
+      "energy": 0.38162
+    },
+    {
+      "timeSec": 54.867,
+      "energy": 0.38439
+    },
+    {
+      "timeSec": 54.933,
+      "energy": 0.05462
+    },
+    {
+      "timeSec": 55,
+      "energy": 0.11194
+    },
+    {
+      "timeSec": 55.067,
+      "energy": 0.28988
+    },
+    {
+      "timeSec": 55.133,
+      "energy": 0.09795
+    },
+    {
+      "timeSec": 55.2,
+      "energy": 0.17442
+    },
+    {
+      "timeSec": 55.267,
+      "energy": 0.15864
+    },
+    {
+      "timeSec": 55.333,
+      "energy": 0.0273
+    },
+    {
+      "timeSec": 55.4,
+      "energy": 0.04983
+    },
+    {
+      "timeSec": 55.467,
+      "energy": 0.02441
+    },
+    {
+      "timeSec": 55.533,
+      "energy": 0.00241
+    },
+    {
+      "timeSec": 55.6,
+      "energy": 0.00424
+    },
+    {
+      "timeSec": 55.667,
+      "energy": 0.00863
+    },
+    {
+      "timeSec": 55.733,
+      "energy": 0.0147
+    },
+    {
+      "timeSec": 55.8,
+      "energy": 0.02465
+    },
+    {
+      "timeSec": 55.867,
+      "energy": 0.00589
+    },
+    {
+      "timeSec": 55.933,
+      "energy": 0.0024
+    },
+    {
+      "timeSec": 56,
+      "energy": 0.00426
+    },
+    {
+      "timeSec": 56.067,
+      "energy": 0.0035
+    },
+    {
+      "timeSec": 56.133,
+      "energy": 0.00205
+    },
+    {
+      "timeSec": 56.2,
+      "energy": 0.00276
+    },
+    {
+      "timeSec": 56.267,
+      "energy": 0.00312
+    },
+    {
+      "timeSec": 56.333,
+      "energy": 0.00219
+    },
+    {
+      "timeSec": 56.4,
+      "energy": 0.00254
+    },
+    {
+      "timeSec": 56.467,
+      "energy": 0.00172
+    },
+    {
+      "timeSec": 56.533,
+      "energy": 0.00157
+    },
+    {
+      "timeSec": 56.6,
+      "energy": 0.00159
+    },
+    {
+      "timeSec": 56.667,
+      "energy": 0.00156
+    },
+    {
+      "timeSec": 56.733,
+      "energy": 0.00105
+    },
+    {
+      "timeSec": 56.8,
+      "energy": 0.00199
+    },
+    {
+      "timeSec": 56.867,
+      "energy": 0.00177
+    },
+    {
+      "timeSec": 56.933,
+      "energy": 0.00134
+    },
+    {
+      "timeSec": 57,
+      "energy": 0.00265
+    },
+    {
+      "timeSec": 57.067,
+      "energy": 0.00155
+    },
+    {
+      "timeSec": 57.133,
+      "energy": 0.00023
+    }
+  ]
+}

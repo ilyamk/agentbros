@@ -1,0 +1,688 @@
+{
+  "openai/gpt-image-2.5/flare/text-to-image": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=openai%2Fgpt-image-2.5%2Fflare%2Ftext-to-image",
+    "asOf": "2026-10-11",
+    "sha256": "39f01d0fec29006acaa211fa743f5d6dcc1ed8335732a42d392eeacb10a60102"
+  },
+  "openai/gpt-image-2.5/flare/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=openai%2Fgpt-image-2.5%2Fflare%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "4b79959ad77203a00ee98d53371adcf59196a3e8dcb6867039cfa5c6a617d226"
+  },
+  "openai/gpt-image-2.5/sunburst/text-to-image": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=openai%2Fgpt-image-2.5%2Fsunburst%2Ftext-to-image",
+    "asOf": "2026-10-11",
+    "sha256": "8ab250d984aacbd4e913062fac08ba0a2500541b82e2e02334b28737829c089e"
+  },
+  "openai/gpt-image-2.5/sunburst/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=openai%2Fgpt-image-2.5%2Fsunburst%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "afb7be1ad63c4eb2136a6e1e1db386928309aa04b9d452bb5440e4dcff121d2c"
+  },
+  "google/nano-banana-2.1": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=google%2Fnano-banana-2.1",
+    "asOf": "2026-10-11",
+    "sha256": "1c5ec483eb4aa2e6efbd59994755d1afaea973d23cda42c6269f43cd0772253b"
+  },
+  "google/nano-banana-2.1/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=google%2Fnano-banana-2.1%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "05484a53bb030d157a1f2afd93122309b94d686760de0cdb76359562a9a1c462"
+  },
+  "bytedance/seedance-2.5/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "c5da1d671b9723075394a8cf9fea76b0b801bb154a4ef2d64b591573b8c2d6c1"
+  },
+  "bytedance/seedance-2.5/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "d6b7e738a771931bbf532789549ce8948e8da5d616056a76d23ab726b2740e5a"
+  },
+  "bytedance/seedance-2.5/reference-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Freference-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "f695b851fca4db6d9d7d7f531eee1c5c6e51265290f6c91d5fc862236807ed62"
+  },
+  "bytedance/seedance-2.5/us/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Fus%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "70ff4253ff11c3623ff3554dd698086013041f5928038c829155c5867ebdbedb"
+  },
+  "bytedance/seedance-2.5/us/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Fus%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "fb9f26f8715043d853204d43c257091646789528e1d508dc461a19f3d1d2c4a1"
+  },
+  "bytedance/seedance-2.5/us/reference-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Fus%2Freference-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "b112e29f21a93d64bce9309bab547bda5cee7e4fde0483b2d8885b716efb7e78"
+  },
+  "bytedance/seedance-2.5/draft/complete": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=bytedance%2Fseedance-2.5%2Fdraft%2Fcomplete",
+    "asOf": "2026-10-11",
+    "sha256": "de327a9856661546150f4d3c5d7aff1851bbb24f27676fc1fea7ce92404dfaf0"
+  },
+  "fal-ai/kling-video/v3/standard/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "0f6045e0e02cf76f360415cabe77c51248a279bffb81d9b6a0990676ba07a3df"
+  },
+  "fal-ai/kling-video/v3/standard/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "e0b9b435a6b77d3c6ea6b719dd076ac8f82b54df62b4170493ef30f4a57d2b30"
+  },
+  "fal-ai/kling-video/v3/standard/motion-control": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Fmotion-control",
+    "asOf": "2026-10-11",
+    "sha256": "ba35670d1c00aeab518ec49459c4bee583cff3af135fe639897ce92ec3b05f73"
+  },
+  "fal-ai/kling-video/v3/pro/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "4d831388b20e9aaa6db193ca831350393347c36de223d1024fd6a40c1bc9da23"
+  },
+  "fal-ai/kling-video/v3/pro/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "a3f2f1901c8af2226efd794bb101c0e0c0c76ba1aad87525c845d5c972a0af75"
+  },
+  "fal-ai/kling-video/v3/pro/motion-control": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Fmotion-control",
+    "asOf": "2026-10-11",
+    "sha256": "3d1497387154ec999ea58ee3d9aaa4b11f4ff611f00bf478856e473ad611657c"
+  },
+  "fal-ai/kling-video/v3/turbo/standard/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fstandard%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "df6371ae0454c0ad17dbb6d9f0ad81f871d582a496fd15bdb5195a409609d17c"
+  },
+  "fal-ai/kling-video/v3/turbo/standard/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fstandard%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "b03dce01ef9e57bc5ac66b918e1952b690108bdf3f454a80fc5f10446d05255b"
+  },
+  "fal-ai/kling-video/v3/turbo/pro/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fpro%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "300b397d0c3f16892f434af38fddb65feaf19d043415daf13e6c44bc09d0e762"
+  },
+  "fal-ai/kling-video/v3/turbo/pro/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fpro%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "a324a4af23b7be98b72b3548a0d5533978b5740662b9d96c5ea0cfefcc132545"
+  },
+  "fal-ai/kling-video/v3/4k/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2F4k%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "807850a8511a75f52d2a5335109bcdcf7d3858fcbbbd93fdda691907cd120848"
+  },
+  "fal-ai/kling-video/v3/4k/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fv3%2F4k%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "0a1cf794a8bcbe98893a09602f3738ba9fe8c57ccc3f41ad30d502501b26f823"
+  },
+  "fal-ai/kling-video/o3/standard/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "26a274cd245d317bc732533b74ab85696ea86476ba186eb5ceb418e4c8532e42"
+  },
+  "fal-ai/kling-video/o3/standard/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "7ddb73f61ffffbd088ca1d158042c77d79399a0941ed0d58edd339a87f21b3a1"
+  },
+  "fal-ai/kling-video/o3/standard/reference-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Freference-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "cd6689620dc34a5a1f58c9da6f820489520187875c26a38995fe2b502c2c9e4b"
+  },
+  "fal-ai/kling-video/o3/standard/video-to-video/reference": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fvideo-to-video%2Freference",
+    "asOf": "2026-10-11",
+    "sha256": "d8015ad5f6a0f55e482f5c63670de7e247b9fd3a91ad00c79e99d2017f9a200b"
+  },
+  "fal-ai/kling-video/o3/standard/video-to-video/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fvideo-to-video%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "be04705b24213e5f78e399df8d849ff6e817d0aeb719591573b1ff1fd3a0cae8"
+  },
+  "fal-ai/kling-video/o3/pro/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "3f4b9a28b664695368708347fcc0c281dcb8a4c8af534415a6970c1c21b2ec5f"
+  },
+  "fal-ai/kling-video/o3/pro/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "ed1e21d63a68483a662888714f936b31e4213f63221bd1b4a213693dd993c972"
+  },
+  "fal-ai/kling-video/o3/pro/reference-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Freference-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "d505c809b5cc3c7918a39668dbb73203bb550b3ce1e22e019567a7b57333d37e"
+  },
+  "fal-ai/kling-video/o3/pro/video-to-video/reference": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fvideo-to-video%2Freference",
+    "asOf": "2026-10-11",
+    "sha256": "4949d1a331202c6026084b7e7077b540d53a9c1d72aaec052ca5ee95fb5346fc"
+  },
+  "fal-ai/kling-video/o3/pro/video-to-video/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fvideo-to-video%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "d44bc9b17fee6eb03d8d8310701a41573c26aa402b997511b86fbf21c4614f7a"
+  },
+  "fal-ai/kling-video/o3/4k/text-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Ftext-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "0a481b16aed7cf738f368df89f7b13caa2573871e6b2ac39b62c95d466c67abc"
+  },
+  "fal-ai/kling-video/o3/4k/image-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Fimage-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "b6c1c78eb0d5e577ec8f96b6586f3072eb0a13e00952405d661543b9707d4119"
+  },
+  "fal-ai/kling-video/o3/4k/reference-to-video": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Freference-to-video",
+    "asOf": "2026-10-11",
+    "sha256": "6822c9bfdafcbb7cf674dee5dbc1befbf39a1d2811b492b5f8c7557a36f99937"
+  },
+  "fal-ai/kling-video/o3/4k/video-to-video/reference": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Fvideo-to-video%2Freference",
+    "asOf": "2026-10-11",
+    "sha256": "293730ea6d09306190ea59c76c72c1f80f421b7f5e96b2dd2e38580290c436bb"
+  },
+  "fal-ai/kling-video/o3/4k/video-to-video/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Fvideo-to-video%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "ecd246b2adf8bb93e1129841d2344ccc28ff82cced268a44c28331831b97ea67"
+  },
+  "fal-ai/kling-video/create-voice": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fkling-video%2Fcreate-voice",
+    "asOf": "2026-10-11",
+    "sha256": "983f53ba60b7dad047cea151208f0aa4180a4062e127be746f422eaa26181d36"
+  },
+  "fal-ai/flux-2": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2",
+    "asOf": "2026-10-11",
+    "sha256": "fa91cb73a00ace90e658c1d9581d4be7a06a4de99f0ea495cae7cf38f41b1e12"
+  },
+  "fal-ai/flux-2/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "52d65920bc38c04c783a19ec0fbd7b1f4667401303a6433be3e7087d644e9fd4"
+  },
+  "fal-ai/flux-2-pro": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-pro",
+    "asOf": "2026-10-11",
+    "sha256": "9105c90ac7a66bff4b6b301da1faa7cdb60b5afdbbf53a67de9b6ae905b9b3d1"
+  },
+  "fal-ai/flux-2-pro/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-pro%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "55812164a6b7b24280eeeee7706ae4b3bf4fb3bc8d191d39fe56012fb9e32689"
+  },
+  "fal-ai/flux-2-pro/outpaint": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-pro%2Foutpaint",
+    "asOf": "2026-10-11",
+    "sha256": "c56f223ae1e5790b8064f0fe28a85dbcae5e39f724e3bc06d7063183f60e6e65"
+  },
+  "fal-ai/flux-2-flex": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-flex",
+    "asOf": "2026-10-11",
+    "sha256": "226766179055146556b6c26d03ccaf9c5b8b69a58834a42ed993f918e546e975"
+  },
+  "fal-ai/flux-2-flex/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-flex%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "5d7d1446a7af48dc00e12807654cc48ea995eb00e6119432d33ed51dae9dfa37"
+  },
+  "fal-ai/flux-2-max": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-max",
+    "asOf": "2026-10-11",
+    "sha256": "0a6333bc85a7f18de3163d6b8c026df4584ab03568a22199d5e7195df41dd775"
+  },
+  "fal-ai/flux-2-max/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-max%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "0f3183eac8768fd59b058d91d5c115a14807c51973113166b683592e97d7a8c7"
+  },
+  "fal-ai/flux-2/turbo": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fturbo",
+    "asOf": "2026-10-11",
+    "sha256": "b7d53d55e9692e12ad3af089ca8607161d0d21b087238accb0c3856153912b0e"
+  },
+  "fal-ai/flux-2/turbo/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fturbo%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "8aa1faa3ef51b3391d72cdf2ccdf6bdbd76b49dddb7a1884e2161393c04be233"
+  },
+  "fal-ai/flux-2/flash": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fflash",
+    "asOf": "2026-10-11",
+    "sha256": "ebbd517bd7bbc39984bc3ea8a3179a01f54bba86789b42d2bcb9ddbe9a6c5e30"
+  },
+  "fal-ai/flux-2/flash/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fflash%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "26dd422f7118984e5b356e3d9eb3863df33ab289cc610166707a00a8ac4e9431"
+  },
+  "fal-ai/flux-2/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "3079794f0adb343accdc9328732484ba2e629d2c60e6b063585b93f5777f4ca5"
+  },
+  "fal-ai/flux-2/edit/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fedit%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "81f43a24af087cfbb917ed13cf044e5680d638ad85e36c4677e9195bdf65cdf0"
+  },
+  "fal-ai/flux-2/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "0722b13242589c7243a2f7ed4a4d8f68890394b7bada936cd8dc4c4af45de16a"
+  },
+  "fal-ai/flux-2/lora/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Flora%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "cccdd21ce94c6c154e6ce9dbc54d4aa6ca65779274e09cd268674ea199e27b47"
+  },
+  "fal-ai/flux-2/lora/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Flora%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "8a43520a2cf8d2a10566fa9ba174080a893087f77d8754487bdacaad26b45bd7"
+  },
+  "fal-ai/flux-2/lora/edit/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Flora%2Fedit%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "5f8f7e412123fe3edddfb7dfeff7e8bdbab69c78324b5a388135c2370778f263"
+  },
+  "fal-ai/flux-2/klein/4b": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b",
+    "asOf": "2026-10-11",
+    "sha256": "e8dfcea18bb3f8b32180a9bbcd9234d0dcec8285f4c41c0150695110d68adfd2"
+  },
+  "fal-ai/flux-2/klein/4b/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "0655a7da28b285ccbf09058b562f733df0f74dbb1e9e42add279ee41ff3a7664"
+  },
+  "fal-ai/flux-2/klein/4b/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "013cbaac09ff9e0a968a74c5826f6b6530657265ba64623aba2360c8b5d69d99"
+  },
+  "fal-ai/flux-2/klein/4b/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "24f9c28e77b932ffc4a9c6e1d1449e1e95856d6a4d81a897bd70d9f1f12fcf41"
+  },
+  "fal-ai/flux-2/klein/4b/edit/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fedit%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "49ce68a0a234187cc9af4cc85fae64a969f2772d7163a86babac6e2079790030"
+  },
+  "fal-ai/flux-2/klein/4b/base": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fbase",
+    "asOf": "2026-10-11",
+    "sha256": "094c8ca6ff2a4101845ae0f82850eb21c06dc9de1f594bcf88cf94df9423070d"
+  },
+  "fal-ai/flux-2/klein/4b/base/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fbase%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "ab20bccb72e8e82c3f919244e60ce1a193ace3fa1c770612c3facd68bdef5a8e"
+  },
+  "fal-ai/flux-2/klein/4b/base/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fbase%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "bab0181b844820ccff424bb28f5dbbd9ca135658b2a7db342e6998edd515ca30"
+  },
+  "fal-ai/flux-2/klein/4b/base/edit/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fbase%2Fedit%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "029369a0bab74b1b7bd99bbb3af8974ef331655c01b0ca238613572c508c1911"
+  },
+  "fal-ai/flux-2/klein/9b": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b",
+    "asOf": "2026-10-11",
+    "sha256": "b65276bf2753e275eb6fe8a4311df682352f656577e473ae61dc1a42b4d4d767"
+  },
+  "fal-ai/flux-2/klein/9b/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "d1c9dd49859d79fdc03054ae527d4dc03ac056a3f3c1dc89e24e50d36eef7328"
+  },
+  "fal-ai/flux-2/klein/9b/stream": {
+    "transport": "stream",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fstream",
+    "asOf": "2026-10-11",
+    "sha256": "908a8569a68803081f6f7c2ad6cf79784306243055ebdfef681eaf6c57554934"
+  },
+  "fal-ai/flux-2/klein/9b/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "f3f35756e0761b07d25c90656b5de28ab352b88ac0c8da6ad9b539b2c79230fa"
+  },
+  "fal-ai/flux-2/klein/9b/edit/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fedit%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "b769257fc508a990c0ff5af84600afd4aa12a11abcaa1f814dec58f158ac3373"
+  },
+  "fal-ai/flux-2/klein/9b/base": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fbase",
+    "asOf": "2026-10-11",
+    "sha256": "541e813072d49f7e7b68c73e45e9faf3c36262ed0adf97bfa090a0b477d9ea46"
+  },
+  "fal-ai/flux-2/klein/9b/base/edit": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fbase%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "f4d663e91b14a5526e125c89426a9532bef7f2ab2441f5ecf1127c0707b1c705"
+  },
+  "fal-ai/flux-2/klein/9b/base/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fbase%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "34d7c6762f97f02903ca5c97f85e7c312635e31538e7a1627af32bd0c4855efb"
+  },
+  "fal-ai/flux-2/klein/9b/base/edit/lora": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F9b%2Fbase%2Fedit%2Flora",
+    "asOf": "2026-10-11",
+    "sha256": "ef1e88545cde84e2bfc855930df1f3d8d090f047afce1b249a7b2a44d3f80e52"
+  },
+  "fal-ai/flux-2/klein/realtime": {
+    "transport": "realtime",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2%2Fklein%2Frealtime",
+    "asOf": "2026-10-11",
+    "sha256": "f2cf09e85a96ce980165432e454a888912c1aabdadf86e0715e6face92bfb9c3"
+  },
+  "fal-ai/flux-2-trainer": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-trainer",
+    "asOf": "2026-10-11",
+    "sha256": "ff900b15ade1e2f2b8fc266627509d7600e4741b59e9563ae9efc983ddd5c949"
+  },
+  "fal-ai/flux-2-trainer/edit": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-trainer%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "26646b9b29a400d66f2c02d87d7810c295ecb02a2016e850916c29b4dc0b3eca"
+  },
+  "fal-ai/flux-2-trainer-v2": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-trainer-v2",
+    "asOf": "2026-10-11",
+    "sha256": "b82b93b62d4d3b932003a9c9f02970c9e838b30edd98f88edf13dea3c1243402"
+  },
+  "fal-ai/flux-2-trainer-v2/edit": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-trainer-v2%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "cfe5a6f082c4568a178574c86de321a06e490782a4619784e3dc073411ab8eb6"
+  },
+  "fal-ai/flux-2-klein-4b-base-trainer": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-klein-4b-base-trainer",
+    "asOf": "2026-10-11",
+    "sha256": "f384486fc6c94b7590d56c6b747bf1092ed99f60f7a7b27c792d5945e3405b58"
+  },
+  "fal-ai/flux-2-klein-4b-base-trainer/edit": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-klein-4b-base-trainer%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "5f3faf31627cd303c2c3a0e3a83a6c4bc2ac862b3fce2d8e1c36a4677b598b14"
+  },
+  "fal-ai/flux-2-klein-9b-base-trainer": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-klein-9b-base-trainer",
+    "asOf": "2026-10-11",
+    "sha256": "6eb5e4491eb0d5e2bfa9db2581360adf15d5f0e539744414830ce636e1a2f7bb"
+  },
+  "fal-ai/flux-2-klein-9b-base-trainer/edit": {
+    "transport": "training",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-klein-9b-base-trainer%2Fedit",
+    "asOf": "2026-10-11",
+    "sha256": "4a4039f4d7d279ecabba542b5c9120956b39e71d724457e80121c68ba676124b"
+  },
+  "fal-ai/flux-2-lora-gallery/add-background": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fadd-background",
+    "asOf": "2026-10-11",
+    "sha256": "e58f78645fb446d6ca104bf2eae8d06106acb7c4994aa8a49a7356160a0e92d7"
+  },
+  "fal-ai/flux-2-lora-gallery/apartment-staging": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fapartment-staging",
+    "asOf": "2026-10-11",
+    "sha256": "1477ec4a5126aec36d93ddb85d4765839f4d15051da9637b63eca62a487648e8"
+  },
+  "fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fballpoint-pen-sketch",
+    "asOf": "2026-10-11",
+    "sha256": "94b2e271e7ff3a93daa333e40e9817de099947dc4ab88424c408deee9bd7cadf"
+  },
+  "fal-ai/flux-2-lora-gallery/digital-comic-art": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fdigital-comic-art",
+    "asOf": "2026-10-11",
+    "sha256": "3ece4bb9f0e545cdfbf9a9fa7bc3080830ffd545b06e5cc1b180174794505be4"
+  },
+  "fal-ai/flux-2-lora-gallery/face-to-full-portrait": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fface-to-full-portrait",
+    "asOf": "2026-10-11",
+    "sha256": "0acb5460718de31b4deee714b4bf85a87a80e8f7d0ff8ee2757a694e503e3c45"
+  },
+  "fal-ai/flux-2-lora-gallery/hdr-style": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fhdr-style",
+    "asOf": "2026-10-11",
+    "sha256": "806a9a61eb5d550849398cdb96194c1eefc2e537090b1c107c12e85767bab2d2"
+  },
+  "fal-ai/flux-2-lora-gallery/multiple-angles": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fmultiple-angles",
+    "asOf": "2026-10-11",
+    "sha256": "1914584c3dfdfb8a3d464627786af7a8915b44768c65326cd32ab9a60963b987"
+  },
+  "fal-ai/flux-2-lora-gallery/realism": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Frealism",
+    "asOf": "2026-10-11",
+    "sha256": "d2e9005db1ac73692e307766be34e3fe1b0e44601a6fa065fbbad8041c38580f"
+  },
+  "fal-ai/flux-2-lora-gallery/satellite-view-style": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fsatellite-view-style",
+    "asOf": "2026-10-11",
+    "sha256": "a0eb05c1eee4026311a02e57afa59be7db0662b3d760c9ea9c569a24eccd9e11"
+  },
+  "fal-ai/flux-2-lora-gallery/sepia-vintage": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fsepia-vintage",
+    "asOf": "2026-10-11",
+    "sha256": "3463a7178470f0e9a86e3515a2f20c5d564c8108a5d4dcd75a3def4c6de715f9"
+  },
+  "fal-ai/flux-2-lora-gallery/virtual-tryon": {
+    "transport": "queue",
+    "schemaStatus": "verified",
+    "schemaSource": "https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fvirtual-tryon",
+    "asOf": "2026-10-11",
+    "sha256": "993b340c06b5e8b0832e257039c2346667d98159e27f0d7edaf22a95852a227b"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "id": "localise-campaign",
+  "title": "Localise a campaign",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Translate selected variants, replace speech and alignment, then reflow and review the actual language outputs.",
+  "triggers": {
+    "en": [
+      "localise campaign",
+      "campaign in languages",
+      "translate variants",
+      "localise the campaign",
+      "localize the campaign",
+      "translate the campaign",
+      "translate all the ads",
+      "translate our ads",
+      "all ad variants",
+      "every ad variant",
+      "translate all variants",
+      "multilingual campaign",
+      "campaign localisation",
+      "campaign localization",
+      "ads into several languages",
+      "localise all",
+      "localize all",
+      "campaign into",
+      "variant of the campaign",
+      "every variant",
+      "whole campaign",
+      "ad campaign"
+    ],
+    "ru": [
+      "локализация кампании",
+      "варианты на трёх языках",
+      "переведи кампанию",
+      "локализуй кампанию",
+      "локализовать кампанию",
+      "перевести кампанию",
+      "переведи все варианты",
+      "все варианты рекламы",
+      "все рекламные ролики на",
+      "все креативы на",
+      "рекламную кампанию на",
+      "кампанию на несколько языков",
+      "мультиязычная кампания",
+      "кампанию на английский",
+      "локализуй все",
+      "рекламную кампанию",
+      "всю кампанию",
+      "кампанию на",
+      "варианты кампании"
+    ],
+    "zh": [
+      "广告系列",
+      "整套广告",
+      "系列广告",
+      "所有广告",
+      "全部广告",
+      "广告版本",
+      "所有版本",
+      "全部版本",
+      "每个版本",
+      "批量翻译",
+      "批量本地化",
+      "多语种投放",
+      "多语言投放",
+      "多国投放",
+      "海外投放",
+      "营销活动",
+      "整个活动",
+      "活动本地化",
+      "投放素材",
+      "所有素材翻译",
+      "几种语言",
+      "多种语言",
+      "整个营销活动",
+      "活动的视频"
+    ],
+    "generic": [
+      "多种语言",
+      "营销活动"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "one independent product film",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "campaign",
+    "scenario": "localise-campaign",
+    "start": "pnpm campaign:production --project <id> --action init --request <file>"
+  },
+  "alternatives": [],
+  "agents": [
+    "campaign-producer",
+    "creative-critic",
+    "fixer"
+  ],
+  "skills": [
+    "creative-strategy",
+    "copywriter",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "scenes",
+      "typography"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "campaign:production",
+    "campaign:next",
+    "campaign:brief",
+    "campaign:approve",
+    "campaign:execute",
+    "models:pick",
+    "asset:import",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/campaign-production.md"
+  ],
+  "qa": [
+    "Every member has independently bound source facts, exact media and current output receipts.",
+    "Changed dialogue invalidates speech, word timing and dependent cues.",
+    "No model, human approval, invoice or publication rights are inferred from fixture success."
+  ],
+  "benchmarks": [
+    "campaign-localise-campaign"
+  ],
+  "intake": [
+    {
+      "ask": "Which exact variants or catalogue rows should be produced?",
+      "why": "Freeze the selected set before material and render work."
+    },
+    {
+      "ask": "Which materials and facts are authorised for reuse?",
+      "why": "Reuse pins bytes, rights and entity revisions rather than copying claims."
+    },
+    {
+      "ask": "What spending is authorised?",
+      "why": "No-spend is inherited by every task.",
+      "default": "No paid calls; use supplied or local assets and leave paid needs pending."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 1,
+        "max": 1200
+      },
+      "captions": "clean-sentence",
+      "note": "House production bounds; use the child playbook and requested placement for publication specifications."
+    }
+  ],
+  "variants": [],
+  "evidence": []
+}

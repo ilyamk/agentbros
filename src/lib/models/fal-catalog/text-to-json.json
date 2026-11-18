@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "category": "text-to-json",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "bria/fibo-edit/edit/structured_instruction",
+      "category": "text-to-json",
+      "displayName": "Fibo Edit [Structured Instruction]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d1ce64732e30c641803493a4ec2454e0279b7dd28b9c5fc88465f635bd6d0393",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=bria%2Ffibo-edit%2Fedit%2Fstructured_instruction&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "instruction",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "mask_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "default": 5555
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "aesthetics",
+          "lighting",
+          "objects",
+          "photographic_characteristics",
+          "text_render"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "structured-prompt-generation",
+        "fibo-edit",
+        "json"
+      ]
+    },
+    {
+      "endpoint": "bria/fibo-lite/generate/structured_prompt",
+      "category": "text-to-json",
+      "displayName": "Fibo Lite",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d6c7e18653027597c5c8682e53812724ecffe0f4a2dcf7bfdf0783861669f2d2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=bria%2Ffibo-lite%2Fgenerate%2Fstructured_prompt&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "default": 7
+        },
+        {
+          "name": "structured_prompt",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "aesthetics",
+          "lighting",
+          "objects",
+          "photographic_characteristics",
+          "text_render"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "bria",
+        "fibo",
+        "structured-prompt"
+      ]
+    },
+    {
+      "endpoint": "bria/fibo/generate/structured_prompt",
+      "category": "text-to-json",
+      "displayName": "Fibo",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a323b801922a9ba60ba81e6571a45bfb9301de9e45d8609ff923d4686694f654",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=bria%2Ffibo%2Fgenerate%2Fstructured_prompt&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "default": 5555
+        },
+        {
+          "name": "structured_prompt",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "bria",
+        "fibo",
+        "structured-prompting"
+      ]
+    }
+  ]
+}

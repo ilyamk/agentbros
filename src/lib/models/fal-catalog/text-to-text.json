@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "category": "text-to-text",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "mureka/api/generate/lyrics",
+      "category": "text-to-text",
+      "displayName": "Mureka Lyrics Generation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6bb7bc1cf8497829284b5132256101a534c9656b569e7878b22d1dfa0025abc4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fgenerate%2Flyrics&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "lyrics"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "lyrics",
+        "text generation"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/lyrics/extend",
+      "category": "text-to-text",
+      "displayName": "Mureka Lyrics Extension",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9870bf02336a11d8fa3aa9da670f61f77710324b00fb913a379afb53fbc56931",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Flyrics%2Fextend&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": true,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "lyrics"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "lyrics",
+        "text continuation"
+      ]
+    },
+    {
+      "endpoint": "openrouter/router/decisions",
+      "category": "text-to-text",
+      "displayName": "Router",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4821df8f887610b9f887a5c4e06cf1ba4e313fe1bedd79f98c933f19ce7615a4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=openrouter%2Frouter%2Fdecisions&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "default": "typesafe/jev-1.13"
+        },
+        {
+          "name": "questions",
+          "type": "object",
+          "required": true
+        },
+        {
+          "name": "session_id",
+          "type": "string",
+          "required": false,
+          "max": 256
+        },
+        {
+          "name": "state",
+          "type": "string|object|array",
+          "required": true,
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "answers",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        ""
+      ]
+    }
+  ]
+}

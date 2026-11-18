@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/omni/first-last-frame",
+  "title": "Kling Omni — First last frame API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-omni/first-last-frame.md",
+  "usageNotes": [
+    "first_frame_url supplies the starting frame; last_frame_url is optional. These names differ from the image_url and last_image_url fields on Kling 3.0 image-to-video.",
+    "Keep the top-level prompt within 2,500 characters; longer prompts are truncated.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+      "prompt",
+      "first_frame_url"
+    ],
+    "properties": {
+      "mode": {
+        "enum": [
+          "std",
+          "pro"
+        ],
+        "type": "string",
+        "default": "pro"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "type": "string",
+        "default": "16:9"
+      },
+      "last_frame_url": {
+        "type": "string",
+        "title": "Last frame URL",
+        "format": "uri"
+      },
+      "first_frame_url": {
+        "type": "string",
+        "title": "First frame URL",
+        "format": "uri"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

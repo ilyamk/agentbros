@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "durationSec": 8.667,
+  "slots": [
+    {
+      "id": "open-strobe",
+      "role": "hook",
+      "startSec": 0,
+      "durationSec": 0.3,
+      "visualRecipe": "A procedural ring of character cells, about 0.55 of frame height, centred on a near-black ground; on two frames a thin accent bar crosses it; the last two frames put the ring on a saturated accent ground. Caption centred from frame 4.",
+      "motionRecipe": "9 frames, layer visibility switched per frame (ring, black, ring, black, ring, black, ring on accent x2); no tweening anywhere.",
+      "soundRecipe": "Near-quiet bed (about -30 dB); the first spoken line starts 1-2 frames after the cut out of this slot (the caption is already up).",
+      "techniqueIds": [
+        "frame-strobe-graphic-open"
+      ],
+      "copySlot": {
+        "purpose": "statement of certainty, two words",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "annotated-plate",
+      "role": "hook",
+      "startSec": 0.3,
+      "durationSec": 0.833,
+      "visualRecipe": "Macro organic plate filling the frame, heavy vignette, the subject's centre a little below and right of frame centre; a cluster of thin measurement boxes with tiny dimension labels over the subject; the opening caption held, centred above it.",
+      "motionRecipe": "Enters as a full white frame; boxes draw on over frames 1-4 of the white; grade steps to a saturated cool-magenta (2 frames) then settles into a teal grade; plate pulls out about 3% with expo.out over 0.14 s.",
+      "soundRecipe": "The first spoken line runs through the slot and ends with the caption.",
+      "techniqueIds": [
+        "grade-step-on-held-plate",
+        "hud-measure-boxes-over-plate",
+        "flash-montage-under-continuous-caption"
+      ]
+    },
+    {
+      "id": "breath-hold-a",
+      "role": "breath",
+      "startSec": 1.133,
+      "durationSec": 1.467,
+      "visualRecipe": "Single bright light form on a dark sphere-like ground, centre frame, 40-60% of the frame near-black; caption centred on the brightest point from frame 28 of the slot.",
+      "motionRecipe": "Linear push of about 7% across the slot, cut off by the exit; exits through grade steps: monochrome (3 frames), negative (2), warm duotone with colour fringing (2).",
+      "soundRecipe": "Quietest stretch (about -30 dB), no voice, until the second line starts about 2 frames after its caption.",
+      "techniqueIds": [
+        "slow-push-macro-hold",
+        "grade-step-on-held-plate"
+      ],
+      "copySlot": {
+        "purpose": "place or context, two words",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "breath-hold-b",
+      "role": "breath",
+      "startSec": 2.6,
+      "durationSec": 0.933,
+      "visualRecipe": "Tactile macro of a tool making a mark on a surface, shallow focus, warm-neutral grade with vignette; caption carried over from the previous slot for its first 3 frames only.",
+      "motionRecipe": "Enters on one negative frame; 2-3 degree clockwise roll with a 2% push, power2.in over 0.6 s; one exposure step to a brighter neutral grade 6 frames before the exit.",
+      "soundRecipe": "Quiet gap between spoken lines (about -30 dB).",
+      "techniqueIds": [
+        "slow-push-macro-hold",
+        "grade-step-on-held-plate"
+      ]
+    },
+    {
+      "id": "burst-lead",
+      "role": "build",
+      "startSec": 3.533,
+      "durationSec": 0.3,
+      "visualRecipe": "Dark object with two hard highlights, low-key; new caption centred.",
+      "motionRecipe": "9 frames, one grade step (grey to teal) at frame 6; hard cut in and out.",
+      "soundRecipe": "The third spoken line starts 2 frames after the cut and its caption.",
+      "techniqueIds": [
+        "flash-montage-under-continuous-caption"
+      ],
+      "copySlot": {
+        "purpose": "second statement, continues the first",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "burst",
+      "role": "build",
+      "startSec": 3.833,
+      "durationSec": 1.334,
+      "visualRecipe": "Ten plates, each a different object or texture in a different grade (one black frame with caption only, an arc, sparks, a callback to the annotated plate, wireframe, glass, particles, a person's gesture at a device, a liquid form, scattered digits); caption held centred over the first five (and the lead slot), absent for the last five.",
+      "motionRecipe": "Exact 4-frame plates, hard cuts, no camera moves to follow; the callback plate goes monochrome on its last frame; the wireframe ring scales past frame on its last frame.",
+      "soundRecipe": "The spoken line ends just before the caption leaves; a rising bed starts 1-2 frames after the ninth plate; do not cut on onsets, the reference does not.",
+      "techniqueIds": [
+        "flash-montage-under-continuous-caption",
+        "grade-step-on-held-plate"
+      ]
+    },
+    {
+      "id": "measure",
+      "role": "proof",
+      "startSec": 5.167,
+      "durationSec": 0.2,
+      "visualRecipe": "Thin line drawing over near-black: crosshair at upper left third, a quarter arc, construction lines to the frame edges, two small numeric readouts; new caption centred on a faint soft card.",
+      "motionRecipe": "6 frames; the arc grows and the readout counts up with a slowing step; caption arrives one frame before the slot.",
+      "soundRecipe": "Inside the loud bed; no hit.",
+      "techniqueIds": [
+        "self-measuring-drawing"
+      ],
+      "copySlot": {
+        "purpose": "turn of the sentence: names what the closing line will reframe",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "ground-swap",
+      "role": "transition",
+      "startSec": 5.367,
+      "durationSec": 0.3,
+      "visualRecipe": "Same caption in the same place on a saturated accent card with a soft lighter rectangle behind it.",
+      "motionRecipe": "Lines removed on the cut; the card steps to a darker shade of the accent after 4 frames; hard cut to black at 9 frames.",
+      "soundRecipe": "Loud bed continues.",
+      "techniqueIds": [
+        "ground-swap-under-held-caption"
+      ]
+    },
+    {
+      "id": "caret-hold",
+      "role": "reveal",
+      "startSec": 5.667,
+      "durationSec": 1.666,
+      "visualRecipe": "Near-black ground with the faint soft card, caption centred, a thin glowing vertical caret through the middle of the line.",
+      "motionRecipe": "Caret blinks on a 19-frame cycle (on 10, off 9, on 9, 1-frame break-up, off 9, on 8); the line is removed whole after 41 frames; caret stays 8 frames alone; 4 empty frames.",
+      "soundRecipe": "Sound keeps climbing while the picture empties; no cue on the blinks.",
+      "techniqueIds": [
+        "blinking-caret-line-swap"
+      ]
+    },
+    {
+      "id": "closing-line",
+      "role": "payoff",
+      "startSec": 7.333,
+      "durationSec": 1.334,
+      "visualRecipe": "Closing caption alone, centred, on near-black; then black.",
+      "motionRecipe": "Hard on, held 34 frames, hard off; 6 black frames to the end, no fade.",
+      "soundRecipe": "Loudest part of the film; it does not stop to silence on the black.",
+      "techniqueIds": [
+        "last-line-to-black-tail"
+      ],
+      "copySlot": {
+        "purpose": "completion that reframes the previous line",
+        "maxWords": 5
+      }
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid (tempo confidence 0.164). Frame clock: 9-frame strobe, 25-frame plate, 44 and 28-frame holds, 9-frame lead, ten 4-frame plates, 6, 9, 50 and 40 frames. Captions keep their own clock (30, 19, 28, 54, 34 frames on screen), hard on and off."
+  },
+  "style": "Low-key cinematic teaser: tiny white centred captions in a neutral grotesque (cap height about 3% of frame height) over vignetted macro plates that are annotated and re-graded in hard 1-3 frame steps; one burst of 4-frame plates, then the picture empties to a caret on black.",
+  "transferRules": {
+    "keep": [
+      "One caption at a time, centred, small (about 3% cap height), white, hard on and off; the caption is the fixed point every cut happens under",
+      "Transitions made of whole-frame grade steps (monochrome, negative, duotone, white-out) on the held plate, 1-3 frames each, not dissolves or effects",
+      "Tempo shape: strobe hook, two long quiet holds, one burst of exact 4-frame plates with a callback to the first image, then an emptying ending",
+      "Annotation as proof: measurement boxes on a plate, a drawing whose readout counts",
+      "Caret blink, whole-line delete, four empty frames, next line: the last line lands as a correction",
+      "Ending on black without a fade or a mark, sound at full level"
+    ],
+    "mustChange": [
+      "Branding, names and any mark",
+      "Music and sound design (the reference's soundtrack is not reused or imitated note for note)",
+      "All graphics: the dot ring, HUD boxes, drawing, cards and their colours become our own",
+      "All copy and caption wording",
+      "Plate subjects: our own footage or licensed or generated plates of our own subjects",
+      "Palette accents (keep the method of one saturated accent ground, not its colour)"
+    ]
+  }
+}

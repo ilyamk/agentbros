@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "candidates": [
+    {
+      "id": "a",
+      "title": "Idea a",
+      "premise": "AUTHOR_REASONING_PREMISE",
+      "coreImage": "a falling stack of paper",
+      "openingFrame": "white page, one line",
+      "whyWatch": "w"
+    },
+    {
+      "id": "b",
+      "title": "Idea b",
+      "premise": "AUTHOR_REASONING_PREMISE",
+      "coreImage": "a clock unwinding",
+      "openingFrame": "a dial, close",
+      "whyWatch": "w"
+    },
+    {
+      "id": "c",
+      "title": "Idea c",
+      "premise": "AUTHOR_REASONING_PREMISE",
+      "coreImage": "a door closing on noise",
+      "openingFrame": "a dark corridor",
+      "whyWatch": "w"
+    }
+  ],
+  "selectedId": "a",
+  "rejected": [
+    {
+      "id": "b",
+      "reason": "AUTHOR_REASONING_REJECTED"
+    },
+    {
+      "id": "c",
+      "reason": "too slow"
+    }
+  ],
+  "productTruth": {
+    "sources": [
+      "product/notes.md"
+    ],
+    "claims": [
+      {
+        "text": "Sorts tasks by date",
+        "status": "working"
+      }
+    ]
+  }
+}

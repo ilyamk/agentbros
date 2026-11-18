@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "endpoint": "higgsfield-ai/soul/cinema",
+  "title": "SOUL Cinema — Text to image API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md",
+  "usageNotes": [
+    "batch_size is 1 or 4 only. A custom_reference_id must belong to the calling account and have completed training.",
+    "aspect_ratio defaults to 1:1 and enhance_prompt defaults to false. seed defaults to a random integer from 1 to 1000000; explicit null is invalid.",
+    "Providing a custom_reference_id enables prompt enhancement for the character reference, even if enhance_prompt is false.",
+    "Cinema uses a fixed style; client-supplied style_id is ignored.",
+    "This model may be absent from model discovery; authorized requests can use the endpoint ID directly."
+  ],
+  "schema": {
+    "properties": {
+      "prompt": {
+        "title": "Prompt",
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "default": "1:1",
+        "enum": [
+          "9:16",
+          "16:9",
+          "4:3",
+          "3:4",
+          "1:1",
+          "2:3",
+          "3:2"
+        ],
+        "title": "Aspect Ratio",
+        "type": "string"
+      },
+      "enhance_prompt": {
+        "default": false,
+        "title": "Enhance Prompt",
+        "type": "boolean"
+      },
+      "resolution": {
+        "default": "720p",
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "title": "Resolution",
+        "type": "string"
+      },
+      "custom_reference_id": {
+        "anyOf": [
+          {
+            "format": "uuid",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Custom Reference Id"
+      },
+      "custom_reference_strength": {
+        "default": 1,
+        "maximum": 1,
+        "minimum": 0,
+        "title": "Custom Reference Strength",
+        "type": "number"
+      },
+      "seed": {
+        "maximum": 1000000,
+        "minimum": 1,
+        "title": "Seed",
+        "type": "integer"
+      },
+      "batch_size": {
+        "default": 1,
+        "enum": [
+          1,
+          4
+        ],
+        "title": "Batch Size",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "prompt"
+    ],
+    "title": "SoulCinemaParamsSchema",
+    "type": "object"
+  },
+  "asOf": "2026-11-15"
+}

@@ -1,0 +1,480 @@
+{
+  "profile": "static-local-instances-v1",
+  "status": "source-build-only-not-product-enabled",
+  "inertStyleContract": "private-owned-inert-style-v1",
+  "inertStyleContractSha256": "b90aaa716f4c30ed217fe009b46ce3f7750b842e531196d12f40bd1097067f6a",
+  "c21ReceiptSha256": "a0424ba78fa6fd61df033fe400020ee818550badeb44be0c34259908658ca82d",
+  "c21RecipeSha256": "753a6d1b8fb0c49d4f19a4a43d9ec9d64082f62b26167341680687c0e12a3a73",
+  "c21RuntimeSha256": "1d16cc8a6c63241052d1804f08b2b765ba075f258c3c09e692c024d395b41fa7",
+  "originalReceiptSha256": "1b47fb8cb6eebe5c6fc9c8b2c62a1e25090aab4dd6f0e9326b93d1b6dff25158",
+  "predecessorReceiptSha256": "4e99d33491725d499879b27d7e036303d7236d4a1eedce6eefca1ca4d8632027",
+  "predecessorRuntimeSha256": "88f3e5288737e752468d1bb11ca9afe43a31404fefe5f827b5cac37866e585eb",
+  "sourceClosureSha256": "3fec9b5beb967a48a2762d66a91daeff40a76b5715934054a648853b00c93408",
+  "patchToolSha256": "9298850ccf7041d83cbf689b97bd9efceb5b4af37d62330a98eb3259b093562b",
+  "esbuild": {
+    "version": "0.28.2",
+    "nativeVersion": "0.28.2",
+    "apiSha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd",
+    "binarySha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+  },
+  "resolutionManifests": {
+    "dependencies/@chenglou/pretext/package.json": "8aeaee63b4a2e79c0319b6ff0dd16dd25d3c5bd4cc19a287dfe262981e95d06c",
+    "dependencies/acorn-walk/package.json": "73c77feaf1224859bc6995cefe976d51cfd2abcd1edc0362df3149d8bd3633e3",
+    "dependencies/acorn/package.json": "fa3612cc9493702b7520947eec276d7b4a73001dafd68c4a9dcb58791a4145c6",
+    "dependencies/nanoid/async/package.json": "0e02b9178f3638eba65e96c8643f3bf08ea192dcef7faadaf3c38c50a829b301",
+    "dependencies/nanoid/non-secure/package.json": "2f9b8c4bee9312538f388b49c13987f4565ac25d6756fabdbbb771d339945e3e",
+    "dependencies/nanoid/package.json": "e2a77185ded1c006171e4e2f8b316d0e3b4c51a135a190851cfc888ea428f6bf",
+    "dependencies/nanoid/url-alphabet/package.json": "2f9b8c4bee9312538f388b49c13987f4565ac25d6756fabdbbb771d339945e3e",
+    "dependencies/picocolors/package.json": "ef2ac226c4811d312e12c64214c453878653e834482125ae475f27cea60de737",
+    "dependencies/postcss/package.json": "057caa4908714fc394fba2430c85ab29fab3e841392753ec64ae15cb0bba6aa5",
+    "dependencies/source-map-js/package.json": "9f1ea63b1661d0f6e5fcd50b625d86cddd77de870a0019b23262360987b487f5",
+    "dependencies/typescript/package.json": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+    "esbuild-platform/package.json": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9",
+    "esbuild/package.json": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490",
+    "private-dependency-package.json": "486921374511c2a845b2244a43a69232bcad2d83469d473b830cfb63ea33c698",
+    "source/packages/core/package.json": "a2edcb41924d5270d5e5855f546a65745ef14f2fba1cbe82d1e98e4b667a34d2",
+    "source/packages/parsers/package.json": "1f15a66fa580ce8f4f19e08543a2e8e3d46fee51550dabbd2aed12f28b2ae5d9"
+  },
+  "virtualInputs": {
+    "./lib/terminal-highlight": {
+      "bytes": 0,
+      "imports": [],
+      "mappingManifest": "dependencies/postcss/package.json"
+    },
+    "fs": {
+      "bytes": 0,
+      "imports": [],
+      "mappingManifest": "dependencies/postcss/package.json"
+    },
+    "path": {
+      "bytes": 0,
+      "imports": [],
+      "mappingManifest": "dependencies/postcss/package.json"
+    },
+    "source-map-js": {
+      "bytes": 0,
+      "imports": [],
+      "mappingManifest": "dependencies/postcss/package.json"
+    },
+    "url": {
+      "bytes": 0,
+      "imports": [],
+      "mappingManifest": "dependencies/postcss/package.json"
+    }
+  },
+  "licences": {
+    "@chenglou/pretext": {
+      "license": "MIT",
+      "sha256": "e9355cb16457e81acd97dac2e50f2f8bbf2a9a464025f9c46db3680cf9598846"
+    },
+    "acorn": {
+      "license": "MIT",
+      "sha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7"
+    },
+    "acorn-walk": {
+      "license": "MIT",
+      "sha256": "c2d8184ea9becd063aa40be243e8c6ec2c4f72828fdfe4b0752664ef73e96ed3"
+    },
+    "hyperframes": {
+      "license": "Apache-2.0",
+      "sha256": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8"
+    },
+    "nanoid": {
+      "license": "MIT",
+      "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+    },
+    "picocolors": {
+      "license": "ISC",
+      "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+    },
+    "postcss": {
+      "license": "MIT",
+      "sha256": "c4630ac8b89cb317ac5bdd60ac5e4e185eab9bd5151a0c7b3afa41aa83d7ec9b"
+    },
+    "source-map-js": {
+      "license": "BSD-3-Clause",
+      "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+    }
+  },
+  "buildOptions": {
+    "bundle": true,
+    "metafile": true,
+    "write": false,
+    "platform": "browser",
+    "format": "iife",
+    "target": "es2020",
+    "minify": true,
+    "entry": "packages/core/src/runtime/entry.ts",
+    "parserAliases": [
+      ".",
+      "./asset-paths",
+      "./asset-resolution",
+      "./color-grading-contract",
+      "./composition",
+      "./composition-contract",
+      "./composition-duration",
+      "./ff-binaries",
+      "./gsap-constants",
+      "./gsap-parser",
+      "./gsap-parser-acorn",
+      "./gsap-parser-recast",
+      "./gsap-writer-acorn",
+      "./hf-ids",
+      "./html-attribute-spans",
+      "./media-duration",
+      "./media-duration-fixtures",
+      "./slideshow",
+      "./spring-ease",
+      "./sub-composition-validity",
+      "./top-level-elements"
+    ]
+  },
+  "engineSha256": "b856e7ed182437e84d9870aaac9599f73ea841f4040ca0c6e107adb7aaafbcc8",
+  "engineBytes": 518438,
+  "loaded": {
+    "dependencies/@chenglou/pretext/dist/analysis.js": "12e6894f6463188fd5c548dcd44e6174f50eb677065504f1cfdde6652269c31f",
+    "dependencies/@chenglou/pretext/dist/bidi.js": "e5fd7375f9622ededb11520cb3b58f614a9044a7a9f6fa9a48dfe5820a9a72ae",
+    "dependencies/@chenglou/pretext/dist/generated/bidi-data.js": "6b11aea8412576e6e4fd2c799d9131fc8ca40943a5864046d5e77cda5dd873c6",
+    "dependencies/@chenglou/pretext/dist/layout.js": "0a24c06edd17f6f55fe90ab61328d56af49b6897acb6a7fc78d1addfdfc8d97b",
+    "dependencies/@chenglou/pretext/dist/line-break.js": "627a9bc585c318e15bc2c4039d8433550ceddd93fdfd3e834dd05ec644043912",
+    "dependencies/@chenglou/pretext/dist/measurement.js": "41bf4f92b1e2aaef39ef29f706d722a1a75a7110aaf7d771bcfeeba1f28344dd",
+    "dependencies/acorn-walk/dist/walk.mjs": "24bc7ea73dcc319360090f4849746b7493bf234f951ea99ae0b89105981b1b42",
+    "dependencies/acorn/dist/acorn.mjs": "1cbcbf252a5800e496dc505c706f309a9dd4e1789392e12963c77ae9497ff6f7",
+    "dependencies/nanoid/non-secure/index.cjs": "73b3dc5bf17d98fc9b9894748907e338c536f47412ae495a5f8052565381ddb2",
+    "dependencies/picocolors/picocolors.browser.js": "a2e045ba16013e35c7045797ae940e3ea1c0e0ada13467bc73f7538690ea091a",
+    "dependencies/postcss/lib/at-rule.js": "33b932bda8f304e9838a70232673326b6c0fd5fa030df35071bf36c127042a0b",
+    "dependencies/postcss/lib/comment.js": "674385438f42526f2c05c19dfb66fcc521f5cf180ccc85b3215ad5c07ac21a40",
+    "dependencies/postcss/lib/container.js": "0f8aaa013a910e142be706c3d6f54a3ce04751a08df3f17ed3a61bb91f863c39",
+    "dependencies/postcss/lib/css-syntax-error.js": "904b4bb371539a6303e4e211f0a8991fde7bc94d8674253d627389ff291d0ec1",
+    "dependencies/postcss/lib/declaration.js": "2ccb78406c7a45aab26fc463a0fe5e3e855caf3ab1ba283616ae867046aa3b54",
+    "dependencies/postcss/lib/document.js": "f66f02fde48389fe1a361a8f71da7ee0236a49c94cf22378e70ba6a2e9f4fab1",
+    "dependencies/postcss/lib/fromJSON.js": "5087cfda6c555ac560cfec7f6c5904c07835da403e398e6b03f078f8107c129f",
+    "dependencies/postcss/lib/input.js": "4442c5ccd2c9e03ca36dc4d03cbe3144415fea7b4b055de1bf76b0127aa913b2",
+    "dependencies/postcss/lib/lazy-result.js": "299821a7481d314dafccf1a19919130a6c9592f560fa16911b4a8d024c06dfa3",
+    "dependencies/postcss/lib/list.js": "6df35bac40d4c449ae8e9078776e5c17c529337830a01472761902a546032f52",
+    "dependencies/postcss/lib/map-generator.js": "feccbc87472d5d1cc660c2bfd4958cbe5442173f03cbfa518808725f684a313c",
+    "dependencies/postcss/lib/no-work-result.js": "80dd2f6f88793bd989a131f56abf3e14cd9df84931767c2b0a9445217138b914",
+    "dependencies/postcss/lib/node.js": "a4cfc9d293a44d9d2a7966731532d39f65f3ef4ea232032b250fe272730eb098",
+    "dependencies/postcss/lib/parse.js": "7662c5ad1fd5f97a7c1615f0e5e7bc268e762916bcf6fb7bf9dda45537493764",
+    "dependencies/postcss/lib/parser.js": "d4f628a47b16f894d525461d6fc6a6834d45db31c519107b5155319707670d32",
+    "dependencies/postcss/lib/postcss.js": "8314c843f5dfa922e6f3fb9b8d8bf3e4b0be0d94b08075e1b4f3599f4276fb67",
+    "dependencies/postcss/lib/postcss.mjs": "986ebc2d661a3e93b6e026dd2e1925e18167efdcc963f4043a65e1859974664f",
+    "dependencies/postcss/lib/previous-map.js": "c65f892497d017eb21b0956e5feb5c3d11cbcd083307e57c908e59109d6bed32",
+    "dependencies/postcss/lib/processor.js": "6d6b73a3f57b12aed213991f3baa7ec1e683fa191182900f2628c47ecca8b492",
+    "dependencies/postcss/lib/result.js": "b4239438538d41187fc9a572c83bb89b09524301764ebd4f46c71fe31edd04dd",
+    "dependencies/postcss/lib/root.js": "66bf461dbd984702272d737e8dc86a254b0481ae7934162f4ce0b32d9a19ec76",
+    "dependencies/postcss/lib/rule.js": "216ca23a33b1a0145c7925daa442a34e33a9ea41c6f3bb58fca7c4fb355e0166",
+    "dependencies/postcss/lib/stringifier.js": "c29cb2393a49240b06b710a626120ce9097236e289adc9d876c5421f6e8b9fcb",
+    "dependencies/postcss/lib/stringify.js": "99229cdda200513f88f7fee46004d5c39c1492a73451509e66164d26dff34abc",
+    "dependencies/postcss/lib/symbols.js": "eb8ab8b9648d400ec3e8e37e75dc159734b97ba21137f12da11b4afc2547a1b4",
+    "dependencies/postcss/lib/tokenize.js": "fb29fa5e5432989bdba2b153952763356c0cb7ffeacc2ae14c3cabfb414afb4d",
+    "dependencies/postcss/lib/warn-once.js": "5683ff69eeb8e77373a4bd0e0b9da611c7575ee434ba3c458c0552ab4806464a",
+    "dependencies/postcss/lib/warning.js": "a969d1ec8a5025c028278ee037cc21c5c7b8129e80269ea3bd8d831a957474fa",
+    "source/packages/core/src/audibleVideo.ts": "847d81f87b04021b90dbfac53f9e0009586b48163a7961b8fd1a0baa3bc5aa80",
+    "source/packages/core/src/audio/audioFxAutomation.ts": "63ba61eab55820ac46f471e05b4b434acc3a4d34d327adf07638073ae3e2a47a",
+    "source/packages/core/src/audio/audioFxGraph.ts": "e5cf793fe6ee6fd1b4a0573811b5e1729df4600ed8e387273517a839a71a6579",
+    "source/packages/core/src/audio/audioFxTruePeak.ts": "976ebddab3d7eaa0f24457433476d9a2ac565e4da9e948d0cae7d46392bd4981",
+    "source/packages/core/src/audio/audioFxWorklets.ts": "b68c6bcb65829a57d3b2a8e1ac27456b0a2bc7fec4bb2de70b914f43fbb450a6",
+    "source/packages/core/src/audioAutomation.ts": "1fd616a862dce9aa8d43b98d5b66f30102c98c074ada3f2457f7038a3230727a",
+    "source/packages/core/src/audioFade.ts": "f5f0eb87c29b08361a769179e1554ea26f87110db4fb4811c3f5fa0fafd9b7e6",
+    "source/packages/core/src/audioFx.ts": "8d6d6bc74fd5caa4d13bd9fb81fb318afcbee7677a0e6d1edc28d6f4c0e36c8f",
+    "source/packages/core/src/audioGain.ts": "0880bb04140713db2482523ca30de4e1817e985750ca0b7bac8a07d2d51fcd4b",
+    "source/packages/core/src/audioGroups.ts": "20f9b111fb6ad52b755c5d51e093914f697a36a7d8a67024ca52cec8b077c38e",
+    "source/packages/core/src/clipFacts.ts": "feb4fc0bffc0f53e2b9de5d909ed64ec45c0d659c70347ae3ed90430b45af487",
+    "source/packages/core/src/colorGrading.ts": "803b647b217189fd27a705245e1d1146b2951703226641216f015542b050e55b",
+    "source/packages/core/src/colorGradingCurves.ts": "d394d603530b8962d0ce234d33c0c03ea0327b27bd8efbc62db3fd15eba0f559",
+    "source/packages/core/src/colorLuts.ts": "2434bb1b8e775234f9bfe6ec0b36b00b6f56838b58a4eef4bb3c3677096f041b",
+    "source/packages/core/src/compiler/compositionAssembly.ts": "ed28f6fad7917141def4750702d4ea3e4727269bb9ebc2baad0ed159d9ac9d85",
+    "source/packages/core/src/compiler/compositionScoping.ts": "cc5ddae5ce93ac54e4b653cb76481b0a0e5e1fe4e47268b44a926c82f57669c1",
+    "source/packages/core/src/compiler/importMaps.ts": "67d0a20fb77355b00a75fcc6e94fbce305be7a0ccea09ffd1a30e385f4d817da",
+    "source/packages/core/src/compiler/mediaRenderIds.ts": "0e936e0c3f9960904c690689489a1005692bb7f0a1dd2ba02d843d9e7fc07dc7",
+    "source/packages/core/src/compiler/scriptRuns.ts": "c08170a15710a011efa9ff37b4ee6e81b32d8a50d7f539b06dee77c3f9884cf1",
+    "source/packages/core/src/compiler/selectorIdTokens.ts": "17c2edd1cdb6024b6e2f73c9a92f7c1555c190a15c7627f3ccb37ee977a54f71",
+    "source/packages/core/src/compiler/svgIdNamespacing.ts": "4228061ed7e8fd9e23603f0aadb531633b0084ca19315c4a698b2982793a3728",
+    "source/packages/core/src/compiler/svgSelectorAliases.ts": "fe88697c53e671a1f99a31a47e1a844bc8e2f8d9118f334190965db7318d3488",
+    "source/packages/core/src/compositionContract.ts": "0352c1ea86be05eaf51ecbe261587aafa825a0cbba6c373cb75f8818dbaafdfe",
+    "source/packages/core/src/compositionReadiness.ts": "4702e6c0987275830a40b514f058f3af9a599803ddbc244f1aeeabf5a1e194b2",
+    "source/packages/core/src/editing/draftMarkers.ts": "6cb0b61a6534dfd13ee35632e0d8c6cc987c088e82c0eee7ddc160cb9edffe9a",
+    "source/packages/core/src/generated/svg-selector-aliases-inline.ts": "925b36a8766f97ead3ab7e5023d69924fdbea8751f5cf7474d76db2b3a545629",
+    "source/packages/core/src/inline-scripts/parityContract.ts": "6e26be7b7491d307335f4d66200235fda8eaa9b67a0068d09cac72b327e75324",
+    "source/packages/core/src/mediaTiming.ts": "2dcaf614b2699cc3fdce77488a862a213cb1b7bfec0889a21a48f32217b74d24",
+    "source/packages/core/src/parsers/springEase.ts": "096d504f84a2e85dd447ecb8a22a3823ec8d668ceede9d78b9e52e53ff964692",
+    "source/packages/core/src/playbackRateBounds.ts": "9a62379849d06f66d8977e70652e873b37379bd005e18fe7b59b339d121c7780",
+    "source/packages/core/src/previewProxyBox.ts": "9212ae0540045b0df25e7f06a7e049b4a30d246d160a3f7a6dd0c40a39bdcd87",
+    "source/packages/core/src/runtime/adapters/_readiness.ts": "c5fd7b32633cc4959425f70ca2a28927f437adaa36d76f8ef1967cf18d6de9eb",
+    "source/packages/core/src/runtime/adapters/animejs.ts": "95abd0483f4aaf7f31cb5c8568705ab2486e00c90d1d80d7ffd2f6593fab5de7",
+    "source/packages/core/src/runtime/adapters/css.ts": "ed48eae1e9712d819fec1111a4a78aa957d05e8e3f8c76ba7445d84b8566493a",
+    "source/packages/core/src/runtime/adapters/d3.ts": "07ad1f098e30c9b0efcba1cecd9ecbda1478ba422e8c4a266fb358550f6a5cdd",
+    "source/packages/core/src/runtime/adapters/google-maps.ts": "f18947d12f60b625ef60eb1bc8e9df63ad6fa94b3f439fb68f8d27608627ecdf",
+    "source/packages/core/src/runtime/adapters/gsap.ts": "94bda7b3003e96fcc101c4947eeca3a1d12ecad32c083638e1b8aa696501ca9d",
+    "source/packages/core/src/runtime/adapters/leaflet.ts": "b4ad1d1860e3171b309b8f225ced495b532fbb1e97473556b2b8eb0770713705",
+    "source/packages/core/src/runtime/adapters/lottie.ts": "750da4b2f3e516f728cf1412dc7d3d762c5a9e8ea3fde13e9d5263ce8b4bfb39",
+    "source/packages/core/src/runtime/adapters/mapbox.ts": "337081ae00e68332a671fbf8f10d0c1a4c4b830cb031d42bf47be68dd00944ea",
+    "source/packages/core/src/runtime/adapters/maplibre.ts": "33a1a78facfdbd7095a7e6c9c0c0df466abd694d7d984ebbb5317b9555a7f1a2",
+    "source/packages/core/src/runtime/adapters/seek-dispatch.ts": "d0471c651174a35475e09a06f9db45e7ca0c8f2ad8faf8963aeb4a9afa2f3325",
+    "source/packages/core/src/runtime/adapters/three.ts": "39a10556087cb4911408c02e285adf8e43a4b681bd3e936cb817cdf266c9e76a",
+    "source/packages/core/src/runtime/adapters/typegpu.ts": "35ccf1f593d4beaaeba96df93f32c912be3f2668fc5b6882d19c9a6691746d28",
+    "source/packages/core/src/runtime/adapters/video-texture-compat.ts": "8b04757425c744b535c564f275866b61e2882f4b55a2baab1f9c3950a4b57aab",
+    "source/packages/core/src/runtime/adapters/waapi.ts": "f32550507c4da9b188f8cfc6f16cf67f4f32905f76da499b8e259416aeda1cab",
+    "source/packages/core/src/runtime/afterFonts.ts": "bc9ede7f69e71095f4c578aed7858470f431769b7d1ed0fa47c5ec2c11e1945a",
+    "source/packages/core/src/runtime/analytics.ts": "040427534a56fed78c67831bf759f1e6b7b7fe8974cd960a45ed0a7545801529",
+    "source/packages/core/src/runtime/applyVariableBindings.ts": "95d0cbdb983ae419b66091f01024f58d8a1ca39d00e1e0c2d78e9dee2585abb7",
+    "source/packages/core/src/runtime/assetUrl.ts": "e87312fbc0b01490d34a7b8f053ceb3415fba9dbdb28211f080b81c2269df158",
+    "source/packages/core/src/runtime/audioAutomationVolume.ts": "ce6f094ccb1203f6b7ab240e49f7f99327c3891461f0155ebb0667c83cea8cb1",
+    "source/packages/core/src/runtime/audioFx.ts": "9b39461a8833d6e673290221eec12714efed557dee62c0731fa27c937edfa2e3",
+    "source/packages/core/src/runtime/authoredTiming.ts": "a466286e31de945d229835eb4188af219d75918359985b8be25418a505eacfc0",
+    "source/packages/core/src/runtime/bridge.ts": "a6c71912003d4f744c217a33224e347b522132d8aef97819f84f5f522542dd45",
+    "source/packages/core/src/runtime/captionOverrides.ts": "9c9efca4e36de6adaa5464b929fb3fe8b28494efbb4aa230330488da9291d1aa",
+    "source/packages/core/src/runtime/clipTree.ts": "f58e501f50b820f017a93b2377b138e24d80edc55e9921ea4aa0831510904e71",
+    "source/packages/core/src/runtime/clipWindow.ts": "d9a1fd8f81f70200c38acf71eaea8ee6e651b8c5f6087d039457cafb74dfb22a",
+    "source/packages/core/src/runtime/clock.ts": "a6ca448ff7fb04390185fbcb3a5cee96d757898c703cc61ec298aa06540c1378",
+    "source/packages/core/src/runtime/colorGrading.ts": "cc8c26983f6cb5064dc3574c5d2ea52e11f90db063406561b877457d65aaeced",
+    "source/packages/core/src/runtime/compositionDimension.ts": "2a357ebc762ef10813f1680d31b88eb1d118a907eb71dfb8f00d5150e54c2f58",
+    "source/packages/core/src/runtime/compositionLength.ts": "48fa5ca3d5a4b08d22b2f343d0cd5bea9252766c3919e51fb8d6292e93aba7aa",
+    "source/packages/core/src/runtime/compositionLoader.ts": "e9227112014a471049466b1fe2dfbf34956f967d91c2830be5d27abb46bc61c7",
+    "source/packages/core/src/runtime/customEase.ts": "12182c6e278d5496eb1262f989a7dd1787d45f911cdeea77e7f72ff7e4aa63fa",
+    "source/packages/core/src/runtime/diagnostics.ts": "1f3e66f4fc1d5f0a0de401917510c2099179efa54978c259e3ade5229d14753a",
+    "source/packages/core/src/runtime/domRealm.ts": "898092d0b45125cc32ba0c978b612882e38d838fc98033f9aca9d1e54d96fe11",
+    "source/packages/core/src/runtime/entry.ts": "0480b396070374a45833567432fafe4693e05d1391d096425c598d760a0d29f9",
+    "source/packages/core/src/runtime/filmBridge.ts": "f0da9db878ba08a0825304a7639f368de159d11cc04f2936c3d19c7b348de6a9",
+    "source/packages/core/src/runtime/flattenedRoot.ts": "1c01f37d1608acd6c36dd622be63cfc9637089f86a9c8fae95faba6fec5a076b",
+    "source/packages/core/src/runtime/frameSources.ts": "6cea974d604e32dea0be54cf88cf7af40e42ec10443bbfff5157bb64e5409a9e",
+    "source/packages/core/src/runtime/getVariables.ts": "a49909b4f2d7723a6f58a49beaee33bbb895f8db3eff91adbf48c0b44b4898fa",
+    "source/packages/core/src/runtime/globals.ts": "17b475ec6dd10b06e84c1df14f1f8fd21624909214fbf0d1753e97d5c85c631e",
+    "source/packages/core/src/runtime/init.ts": "14f882cc403568d7d12ded4f58dfe6145f16ceb430ee24cbd3845c226ecd6ba9",
+    "source/packages/core/src/runtime/levelTap.ts": "669d86ef41df41a9e2cf41a3b1e01838a2b488b0a4458ae4335c32e45a28157a",
+    "source/packages/core/src/runtime/manualEditGestureWatch.ts": "6f305c0c07389c5242c1aa0208a5a6f65d7d959dd49ae0776678d5cd7bcede57",
+    "source/packages/core/src/runtime/media.ts": "f8c5c8793caf5e8911344718a222b20944eeeff85ba853cd860b4ca926f9ef9c",
+    "source/packages/core/src/runtime/mediaProxy.ts": "74d51db0c79ba164e5e5965555fbf9f071f85985a5473ceb432390c753cf05db",
+    "source/packages/core/src/runtime/mediaVolumeEnvelope.ts": "846c9b5bb84581b3254fd2a9329729c3516333ef7cbef41414f6aec4171a90e7",
+    "source/packages/core/src/runtime/picker.ts": "96f72edfec73a8e5d3123cfce657a75554da26e7ba2f22604135744682f6f143",
+    "source/packages/core/src/runtime/pickerDrawn.ts": "cde11e6f546be265ed7d1ea67b1b63e6654806e423f78a9b5d0d3167cf8c85fc",
+    "source/packages/core/src/runtime/playbackRate.ts": "ca2fe010e9ab0949cbbc1ea30ad148e5de5e0d97c18ecef10c37e80db6922114",
+    "source/packages/core/src/runtime/player.ts": "8228cdea056e135c81a58e4b3fe28a156f661b52bf1537ff4a42ecf0a3356b44",
+    "source/packages/core/src/runtime/positionEdits.ts": "e3e52820cc649b99b606c8623731eb63d4af7c511be4aaf01b7319c17d4661a5",
+    "source/packages/core/src/runtime/preloadMedia.ts": "ecaa065e607b0690636e8832e02c767d2be41428da534afa018968afeb284de7",
+    "source/packages/core/src/runtime/previewRasterHints.ts": "716d806637bb1b93a6615291865db22d59757428065e666738cc8693de80f780",
+    "source/packages/core/src/runtime/protocol.ts": "07531a5f80b308c195239818fb4711bae0488b1dce76942f670c0a6355c176a0",
+    "source/packages/core/src/runtime/proxySrc.ts": "5fbfb292e0e9b7e5dbfd5e99d76f94af882b59aa03aaf894fd424cf8b3cdfbf7",
+    "source/packages/core/src/runtime/proxyWait.ts": "f7fa3130dfe05d671a605f85c96af4a0f7c8553828d1a4c2b4939e483bdd9ea4",
+    "source/packages/core/src/runtime/renderFrameSibling.ts": "5a0b8e895f3b5cca2895e3cc227b986ee9b1ff61df84c641dd9919943f786ebe",
+    "source/packages/core/src/runtime/runtimeData.ts": "a122d0d0e2d763144b4cd1a78258c422ce2f48b6c16fe304d81dbc778d595238",
+    "source/packages/core/src/runtime/stackingContext.ts": "654e4a2e29231d907460cf4563305a99abd47a7b31a28a2bb368b47660df3392",
+    "source/packages/core/src/runtime/startExpression.ts": "44f3f524065dd063dbd93dc5b6f19e719e2af2904f154ddc16dc1e7dfb7f4e80",
+    "source/packages/core/src/runtime/startResolver.ts": "ffa91302cebf75f798bc0fb7e3198514f15c9e486cc8c54e6ad2b02c676779ec",
+    "source/packages/core/src/runtime/state.ts": "90055ef5c6957e325257b67c534ba4b021e0864d03e11d5e9028b627f7888004",
+    "source/packages/core/src/runtime/timedClipHide.ts": "4e616c2525f9e6e925c1fa1c054bd591a324d9ef536ff6977ed76a9959a1f00b",
+    "source/packages/core/src/runtime/timeline.ts": "c11fb37bf6a8778f3808de647b6a34635c6765a8d912da231967f722d589e362",
+    "source/packages/core/src/runtime/timelineDuration.ts": "945e3a91796b0ec1c1fa354825ee6a7f0e52671b1119d02f01f5aeab3ae1445d",
+    "source/packages/core/src/runtime/timelineRebindPolicy.ts": "a1068c1f900acadc46626f8c95ebd9627f416b0703c5755b8e8b552249baac33",
+    "source/packages/core/src/runtime/variableScope.ts": "d0f7e79fa1d4094a0a3990b8c6fed547c901f6659164343f37bf6dc6c26f0efb",
+    "source/packages/core/src/runtime/vfx.ts": "0bdde1ef3ea785754a5f4f99da3d8d8b988dab939ac9de0aa6bcaca8d0dce4f6",
+    "source/packages/core/src/runtime/webAudioRoute.ts": "6968b64bc994df6f1898317a982f6c205f8ddb88cf584394097f1606f6018e49",
+    "source/packages/core/src/runtime/webAudioTransport.ts": "f2c6ae033346ee5fa8114b4a5f40786eb4aa71b5a3b8ba9c9585127d8da8a18f",
+    "source/packages/core/src/runtime/wiggleEase.ts": "492e6f6947ed933e591c34fa2c0244b25e349c3ce6d397361999c9e62b00d5fe",
+    "source/packages/core/src/sceneParts.ts": "4f84fb916defd589d27932000ee4a70a097217750e31865921265c2db4a43a7c",
+    "source/packages/core/src/slideshow/index.ts": "f849eec124b749a2b7b45393a5dbe98b2f67873feb5ae594cf4f66de9094ccbb",
+    "source/packages/core/src/speedRamp.ts": "1c94a2f668070887db5e93b9ddeaa36d18c47243f8abf5efbee429db9a4ac1b9",
+    "source/packages/core/src/studioPreviewMark.ts": "56bb069c26997c45e6503eb854a698f4093a439da46ea2a67294516686e1359a",
+    "source/packages/core/src/text/fitTextFontSize.ts": "fb89eb70ae934ae51df09895452880a0f7b9ea0eb01575007f0973fde2fe98d1",
+    "source/packages/core/src/text/pretext.ts": "f9a5981969c13245c5fa65b8e4fb9597562aa6e1bca5d9d2d251ef86f9326649",
+    "source/packages/core/src/tokenSlug.ts": "99dc09bc28817802ab533d47a7372b4689ed7531bcfd55435388dd32e0fce38e",
+    "source/packages/core/src/vfx.ts": "d7c240d97a8ae375d52124e1fb7eb6aeec220ccca1474f1f4ef2afef72978ce2",
+    "source/packages/core/src/vfx/displacementMap.frag.ts": "8a8864cd88e2c9c6bbed5b2700ef59efa308af3597b84ecbf956938cb36eb9ef",
+    "source/packages/core/src/vfx/fractalNoise.frag.ts": "c748123d4b5598a42a122b6f5e6cf57b6be0b413eba7d522f5f7a006ab68a4fe",
+    "source/packages/core/src/vfx/lumaMatte.frag.ts": "a0e4e7ca535b8ed20152bfa81561d24d5c58b7e65f942120863df5806302eae5",
+    "source/packages/core/src/vfx/noise.frag.ts": "72cdfba9d984dd99b5e081f12c1a6d537f6b9c563e76c89e545149449a1a183d",
+    "source/packages/core/src/vfx/waveWarp.frag.ts": "324aa665aeb242d71da94c1673960edcf9f0eea6e0c8014f4fa981543a777fed",
+    "source/packages/parsers/src/canvasScaffoldPatterns.ts": "3906faa5a976435ae4599992e49628f86b7e5cf28a7d60bf9e310ce95688a34b",
+    "source/packages/parsers/src/colorGradingContract.ts": "4914aea5bfd5345e0e6f2b93d9c28f0d5a53150f0c374054c2b1479285ad2b31",
+    "source/packages/parsers/src/composition.ts": "08872ea9fbedf3b9cd1522810f5cab66f58f9b459caddcd37afaa81e278e244c",
+    "source/packages/parsers/src/compositionContract.ts": "c23d03ac35692bc2e1549f82b7bd0222395243e9e554b6ec8fd5f5c1d85c9b3d",
+    "source/packages/parsers/src/compositionDuration.ts": "570352ec92434c2679474a2c04311e5302d2f6e445e1f05f01502d78d3d6615f",
+    "source/packages/parsers/src/compositionVariables.ts": "244154c4fa0fde36890a0211c48502806f97a1a8e3981904d1ed9e0b7b8253f5",
+    "source/packages/parsers/src/fontAliases.ts": "10f0f757a9d4689f8a64018d9e39646b058523156a5074de5e943ac5c5b30cb8",
+    "source/packages/parsers/src/mediaDuration.ts": "eae9d7b8ab755e8af49e91214c005dadc14b36596aad66f4e9a5d81b022cc9a8",
+    "source/packages/parsers/src/mediaSrcMutation.ts": "f7958cd85948a7d58970e69962523143197dcc7598dfb2b6e8023ed272ee2c68",
+    "source/packages/parsers/src/slideshow/index.ts": "3419efd5d2fad7138d90b57bc6e4ba2f52c58f8c96813fa48fe1c5ca15eb9f64",
+    "source/packages/parsers/src/slideshow/parseSlideshow.ts": "01a54b228cc54dcf32cd28dd577f596d1f06df4295bf7b3393f0f31eda0090be",
+    "source/packages/parsers/src/slideshow/sceneId.ts": "6eff3eb87caec610aa345518ecbc3fbeee20204969e27c91a5362fc033752a34",
+    "source/packages/parsers/src/slideshow/slideshow.types.ts": "30ab500ca773e6045bb0a95c993ce83d998c40ab5a1d5c34d11d02bf1c1859ec",
+    "source/packages/parsers/src/springEase.ts": "31dd54f79411cea65dc477ba8596c7781c71c98a4c153dd721a7b207223cd5a8",
+    "source/packages/parsers/src/types.ts": "bef8034be38c8555e77d0f3e2c3ba55d63edaf302e30bea64dfed6bb4d5f14af",
+    "source/packages/parsers/src/utils/urlPath.ts": "07693c3847345fc8422f0487736724cd2b3e4699d502320d4aade5f9e3f76d5a",
+    "source/packages/parsers/src/variableUsage.ts": "534f5946b7691d790aa0973b8c3ceb64e595a4ffc19e99f729dc1bfd4090d01d"
+  },
+  "patches": {
+    "packages/core/src/audioGroups.ts": {
+      "originalSha256": "20f9b111fb6ad52b755c5d51e093914f697a36a7d8a67024ca52cec8b077c38e",
+      "intermediateSha256": "20f9b111fb6ad52b755c5d51e093914f697a36a7d8a67024ca52cec8b077c38e",
+      "outputSha256": "79ba3618e367a248bf71ff523fcc998852003c813c56dc05a0c6175bca59d216",
+      "addedPrivateClockImport": true,
+      "replacements": [
+        {
+          "start": 10906,
+          "end": 10936,
+          "original": "  doc.head.appendChild(style);",
+          "text": "  if (__avcClock.instanceMode === true) __avcClock.instanceRegisterInertStyle(style);\n  doc.head.appendChild(style);"
+        }
+      ]
+    },
+    "packages/core/src/compiler/compositionScoping.ts": {
+      "originalSha256": "cc5ddae5ce93ac54e4b653cb76481b0a0e5e1fe4e47268b44a926c82f57669c1",
+      "intermediateSha256": "cc5ddae5ce93ac54e4b653cb76481b0a0e5e1fe4e47268b44a926c82f57669c1",
+      "outputSha256": "acc0c919c244179969cdbf57e0634e61b1338b67eb2fb67dcf5a7f869611e370",
+      "addedPrivateClockImport": true,
+      "replacements": [
+        {
+          "start": 11790,
+          "end": 11869,
+          "original": "  authoredRootId?: string | null,\n  compositionSrc?: string | null,\n): string {",
+          "text": "  authoredRootId?: string | null,\n  compositionSrc?: string | null,\n  instanceScoped = false,\n): string {"
+        },
+        {
+          "start": 12811,
+          "end": 12854,
+          "original": "  var __hfCompId = ${compositionIdLiteral};",
+          "text": "  var __hfInstanceAuthority = null;\n  if (${instanceScoped ? \"true\" : \"false\"}) {\n    var __hfAcquire = window.__avcPrivateInstanceAcquire;\n    delete window.__avcPrivateInstanceAcquire;\n    if (typeof __hfAcquire !== \"function\") throw Error(\"Missing private instance authority\");\n    __hfInstanceAuthority = __hfAcquire(document.currentScript);\n    if (!__hfInstanceAuthority || !__hfInstanceAuthority.registry || typeof __hfInstanceAuthority.fail !== \"function\") throw Error(\"Invalid private instance authority\");\n  }\n  var __hfCompId = ${compositionIdLiteral};"
+        },
+        {
+          "start": 17225,
+          "end": 17269,
+          "original": "  var __hfGetTimelineRegistry = function() {",
+          "text": "  var __hfGetTimelineRegistry = function() {\n    if (__hfInstanceAuthority) return __hfInstanceAuthority.registry;"
+        },
+        {
+          "start": 20765,
+          "end": 20804,
+          "original": "          if (prop === \"__timelines\") {",
+          "text": "          if (prop === \"__timelines\") {\n            if (__hfInstanceAuthority) return __hfInstanceAuthority.fail(\"Instance registry replacement unsupported\");"
+        },
+        {
+          "start": 25618,
+          "end": 25693,
+          "original": "    } catch (_err) {\n      console.error(__hfErrorLabel, __hfCompId, _err);",
+          "text": "    } catch (_err) {\n      if (__hfInstanceAuthority) __hfInstanceAuthority.fail(_err);\n      console.error(__hfErrorLabel, __hfCompId, _err);"
+        }
+      ]
+    },
+    "packages/core/src/runtime/clipTree.ts": {
+      "originalSha256": "f58e501f50b820f017a93b2377b138e24d80edc55e9921ea4aa0831510904e71",
+      "intermediateSha256": "f58e501f50b820f017a93b2377b138e24d80edc55e9921ea4aa0831510904e71",
+      "outputSha256": "b63ba6f52f9512d4da98a51364c641cc24ae20349121cd3d79812124add308c0",
+      "addedPrivateClockImport": true,
+      "replacements": [
+        {
+          "start": 1984,
+          "end": 2057,
+          "original": "  return (el as HTMLElement).id || el.getAttribute(\"data-hf-id\") || null;",
+          "text": "  if (__avcClock.instanceMode === true) {\n    const identity = __avcClock.instanceClipId(el);\n    if (identity !== null && (typeof identity !== \"string\" || !/^[A-Za-z][A-Za-z0-9_-]{0,63}$/.test(identity))) throw Error(\"Invalid private instance clip identity\");\n    return identity;\n  }\n  return (el as HTMLElement).id || el.getAttribute(\"data-hf-id\") || null;"
+        }
+      ]
+    },
+    "packages/core/src/runtime/compositionLoader.ts": {
+      "originalSha256": "e9227112014a471049466b1fe2dfbf34956f967d91c2830be5d27abb46bc61c7",
+      "intermediateSha256": "4d82c9ddea634d4d3402768b74ca4f5aa485f3dd529f05548755218b9c703e78",
+      "outputSha256": "b107dd0aac98e54cc7e494b2931899eebb4844e56b3f55f0dd41137078506355",
+      "addedPrivateClockImport": false,
+      "replacements": [
+        {
+          "start": 31740,
+          "end": 31785,
+          "original": "const response = await __avcClock.fetch(src);",
+          "text": "const response = await (__avcClock.instanceMode === true ? __avcClock.instanceFetch(host, src) : __avcClock.fetch(src));"
+        },
+        {
+          "start": 25953,
+          "end": 26006,
+          "original": "            params.compositionUrl?.href,\n          );",
+          "text": "            params.compositionUrl?.href,\n            __avcClock.instanceMode === true,\n          );"
+        },
+        {
+          "start": 26164,
+          "end": 26214,
+          "original": "        document.body.appendChild(injectedScript);",
+          "text": "        if (__avcClock.instanceMode === true) __avcClock.instanceArmScript(host, injectedScript);\n        document.body.appendChild(injectedScript);"
+        },
+        {
+          "start": 35381,
+          "end": 35434,
+          "original": "  __avcClock.treeGuard(\"mounted\", [...mountedHosts]);",
+          "text": "  __avcClock.treeGuard(\"mounted\", [...mountedHosts]);\n  if (__avcClock.instanceMode === true) __avcClock.instancePrepareMedia(assignMediaRenderIds);"
+        },
+        {
+          "start": 0,
+          "end": 43,
+          "original": "import __avcClock from \"avc-private-clock\";",
+          "text": "import __avcClock from \"avc-private-clock\";\nimport { assignMediaRenderIds } from \"../compiler/mediaRenderIds\";"
+        }
+      ]
+    },
+    "packages/core/src/runtime/timeline.ts": {
+      "originalSha256": "c11fb37bf6a8778f3808de647b6a34635c6765a8d912da231967f722d589e362",
+      "intermediateSha256": "c11fb37bf6a8778f3808de647b6a34635c6765a8d912da231967f722d589e362",
+      "outputSha256": "5d73d84351d3a0e59d76862c7bb900eda7c95a799de97bd891d230677599c424",
+      "addedPrivateClockImport": true,
+      "replacements": [
+        {
+          "start": 21003,
+          "end": 21039,
+          "original": "          if (!childEl.id) continue;",
+          "text": "          if (!(__avcClock.instanceMode === true ? stableClipId(childEl) : childEl.id)) continue;"
+        },
+        {
+          "start": 21243,
+          "end": 21323,
+          "original": "sceneElements.set(childEl, { id: childEl.id, start: Infinity, end: -Infinity });",
+          "text": "sceneElements.set(childEl, { id: (__avcClock.instanceMode === true ? stableClipId(childEl)! : childEl.id), start: Infinity, end: -Infinity });"
+        },
+        {
+          "start": 25755,
+          "end": 25792,
+          "original": "if (gsapClipIds.has(el.id)) continue;",
+          "text": "if (gsapClipIds.has(__avcClock.instanceMode === true ? stableClipId(el) : el.id)) continue;"
+        },
+        {
+          "start": 23303,
+          "end": 23340,
+          "original": "if (gsapClipIds.has(el.id)) continue;",
+          "text": "if (gsapClipIds.has(__avcClock.instanceMode === true ? stableClipId(el) : el.id)) continue;"
+        },
+        {
+          "start": 26574,
+          "end": 26584,
+          "original": "id: el.id,",
+          "text": "id: (__avcClock.instanceMode === true ? stableClipId(el)! : el.id),"
+        },
+        {
+          "start": 23732,
+          "end": 23742,
+          "original": "id: el.id,",
+          "text": "id: (__avcClock.instanceMode === true ? stableClipId(el)! : el.id),"
+        },
+        {
+          "start": 27753,
+          "end": 27776,
+          "original": "gsapClipIds.add(el.id);",
+          "text": "gsapClipIds.add(__avcClock.instanceMode === true ? stableClipId(el) : el.id);"
+        },
+        {
+          "start": 25025,
+          "end": 25048,
+          "original": "gsapClipIds.add(el.id);",
+          "text": "gsapClipIds.add(__avcClock.instanceMode === true ? stableClipId(el) : el.id);"
+        },
+        {
+          "start": 25886,
+          "end": 25913,
+          "original": "      if (!el.id) continue;",
+          "text": "      if (!(__avcClock.instanceMode === true ? stableClipId(el) : el.id)) continue;"
+        },
+        {
+          "start": 25215,
+          "end": 25262,
+          "original": "        swallow(\"runtime.timeline.site1\", err);",
+          "text": "        if (__avcClock.instanceMode === true) throw err;\n        swallow(\"runtime.timeline.site1\", err);"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/omni/video-edit",
+  "title": "Kling Omni — Video edit API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-omni/video-edit.md",
+  "usageNotes": [
+    "Supply exactly one source video from 3 to 10 seconds long and no larger than 200 MB. Duration is derived from the video; do not send a separate duration field.",
+    "You may also supply up to four image_urls and up to four elements.",
+    "Keep the top-level prompt within 2,500 characters; longer prompts are truncated.",
+    "elements contains Kling element IDs as decimal strings. Each ID must belong to the account making the request; arbitrary provider IDs are rejected.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling Omni Playground",
+    "required": [
+      "prompt",
+      "video_urls"
+    ],
+    "properties": {
+      "mode": {
+        "enum": [
+          "std",
+          "pro"
+        ],
+        "type": "string",
+        "default": "pro"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "elements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 4,
+        "minItems": 0
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Image URL",
+          "format": "uri"
+        },
+        "maxItems": 4,
+        "minItems": 0
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Video URL",
+          "format": "uri"
+        },
+        "maxItems": 1,
+        "minItems": 1
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

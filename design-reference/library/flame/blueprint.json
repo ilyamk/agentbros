@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flame",
+  "format": { "width": 1280, "height": 720, "fps": 23.975 },
+  "durationSec": 22.607,
+  "slots": [
+    {
+      "id": "premise-on-guides",
+      "role": "hook: state the premise on a literal drafting canvas",
+      "startSec": 0,
+      "durationSec": 1.75,
+      "visualRecipe": "White ground. Two horizontal and two vertical hairlines (very light grey, 1 px) crossing to form a box about 25% wide and 4% high at centre, a black dot at each crossing. Premise words small (cap height about 1.6% of frame height), centred in the box, about 23% of width once complete. End state: complete line inside the guides.",
+      "motionRecipe": "Words cut on one per 4 frames, each tinted for 2-3 frames then ink; the guide box drifts a few pixels wider, linear. Exit: the box begins growing outward at 1.54 s.",
+      "soundRecipe": "Voice-over begins at 0.1 s; words appear with or up to 0.2 s before they are spoken. Music bed under the voice, low; no hit on the first frame.",
+      "copySlot": { "purpose": "the premise: where all work begins", "maxWords": 3 },
+      "techniqueIds": ["wireframe-type-open", "tinted-word-arrival"]
+    },
+    {
+      "id": "rough-object",
+      "role": "the unfinished initial material as an object",
+      "startSec": 1.75,
+      "durationSec": 1.71,
+      "visualRecipe": "A single grey brushed-metal tile at centre, 20% of frame width, diagonal specular band, faint grid behind. End state: tile with rounded corners.",
+      "motionRecipe": "Entry: guide box grows beyond all frame bounds in 12 frames on power1.in while a centre dot grows into the tile and the words part left and right and fade. Hold: slow push in (tile 19% to 21%) and corner radius rising. Exit: collapse-to-point-burst from 3.25 s.",
+      "soundRecipe": "Voice finishes the premise sentence; the following sentence begins about 0.5 s before the exit.",
+      "copySlot": { "purpose": "none on screen; the voice finishes the premise" },
+      "techniqueIds": ["guide-frame-opens-to-object"]
+    },
+    {
+      "id": "problem-burst",
+      "role": "problem: the majority stall",
+      "startSec": 3.46,
+      "durationSec": 1.462,
+      "visualRecipe": "First saturated colour: iridescent spheres (5-30% of width; wine, violet, cyan, orange) crowding the four sides with depth blur, leaving a clear centre about 40% wide; a short phrase small at centre. End state: full sphere field and phrase.",
+      "motionRecipe": "Entry: the tile rounds to a disc and shrinks to a dot on power2.in (6 frames) as a ring of dots expands; spheres enter from the sides on expo.out (5 frames). Phrase words cut on with a red tint. Exit: phrase leaves word by word from the front, spheres implode.",
+      "soundRecipe": "Voice states the problem. No sound cue required on the burst; if one is added it is a soft swell, not a hit.",
+      "copySlot": { "purpose": "the end of the problem sentence, the stage where work stalls", "maxWords": 3 },
+      "techniqueIds": ["collapse-to-point-burst", "tinted-word-arrival"]
+    },
+    {
+      "id": "brand-answer",
+      "role": "the brand as the answer",
+      "startSec": 4.922,
+      "durationSec": 1.728,
+      "visualRecipe": "White embossed relief ground (a maze of rounded bevels drawn only with light and shadow); bold capitals wordmark at centre, about 15% of width. End state: wordmark complete, a gradient capsule beginning behind it.",
+      "motionRecipe": "Entry: spheres pull to centre in 5 frames, then shrink with chromatic blur and fade (circ.out, 0.54 s); ground fades in under the last wisp. Wordmark types on about 2 frames per letter. Exit: element-grows-to-ground.",
+      "soundRecipe": "Voice says the brand name in the middle of the collapse; wordmark begins about 0.4 s after it.",
+      "copySlot": { "purpose": "brand name", "maxWords": 1 },
+      "techniqueIds": ["implode-and-blur", "letter-by-letter-wordmark"]
+    },
+    {
+      "id": "product-desk",
+      "role": "proof: the product opens up",
+      "startSec": 6.65,
+      "durationSec": 1.4,
+      "visualRecipe": "A pink-teal mesh gradient card at 93% width with one white button at centre; six real product screens (10-25% of width each) overlapping its rim. End state before exit: full desk of screens.",
+      "motionRecipe": "Entry: capsule behind the wordmark grows to the card in 4 frames. Screens fly in from right, bottom, left, top, one per 1-2 frames on expo.out over 8 frames. Exit: card shrinks to about 63% wide with growing corner radius (8 frames, power2.in), then hard cut.",
+      "soundRecipe": "Voice names the audience. The cut out of the slot falls just before a word, not on a beat.",
+      "copySlot": { "purpose": "label of the central button: the main action in the product", "maxWords": 2 },
+      "techniqueIds": ["element-grows-to-ground", "staggered-border-fly-in", "shrink-then-cut"]
+    },
+    {
+      "id": "aspiration-flank",
+      "role": "aspiration: the standard the audience aims for",
+      "startSec": 8.05,
+      "durationSec": 1.793,
+      "visualRecipe": "White ground, pastel dotted globe about 30% of width inside a thin circle larger than the frame height, a ring of small dots around it; two single words pinned at the far left and far right sides at mid height. End state: same, globe rotated.",
+      "motionRecipe": "Hard cut in. Circle pulls out on expo.out (about 0.5 s); globe rotates slowly and shifts pink to blue. Exit: hard cut.",
+      "soundRecipe": "Both words on screen about 0.4 s before they are spoken. Cut out falls 0.04 s before the following sentence's first word.",
+      "copySlot": { "purpose": "two-word phrase for the quality standard, split across the two sides", "maxWords": 2 },
+      "techniqueIds": ["flank-words-at-frame-sides"]
+    },
+    {
+      "id": "rough-object-again",
+      "role": "second pass: back to unfinished material",
+      "startSec": 9.843,
+      "durationSec": 1.669,
+      "visualRecipe": "Grey tile with a horizon split in its gradient, on a pale grid with faint red guides; grows from 4% to 20% of width. End state: tile at 20%.",
+      "motionRecipe": "Hard cut in on a small tile; slow push in. Exit: tile widens and tints (material-becomes-interface).",
+      "soundRecipe": "Cut falls on the first word of the transformation sentence (within 0.05 s).",
+      "copySlot": { "purpose": "none on screen" },
+      "techniqueIds": []
+    },
+    {
+      "id": "finished-interface",
+      "role": "payoff: the finished outcome",
+      "startSec": 11.512,
+      "durationSec": 2.001,
+      "visualRecipe": "Dark blue page (the real product output, captured) about 60% of width with a white light arc where the tile's horizon was and a small white button under its bottom rim. End state: headline typed, page still.",
+      "motionRecipe": "Entry: tile widens 20% to 33% and tints grey to pale blue in 6 frames, becomes the page, widens to 60% on power2.out; headline types in over 4 frames. Exit: hard cut.",
+      "soundRecipe": "Voice finishes the transformation sentence over the page.",
+      "copySlot": { "purpose": "none added: the page's own content, captured" },
+      "techniqueIds": ["material-becomes-interface"]
+    },
+    {
+      "id": "offer-stack",
+      "role": "offer: two things the buyer gets",
+      "startSec": 13.513,
+      "durationSec": 1.752,
+      "visualRecipe": "Two stacked glossy capsules at centre on white: front blue, rear grey half hidden above; 33% growing to 53% of width. End state: grey in front, navy behind.",
+      "motionRecipe": "Hard cut in; front capsule springs to size (stiffness 13.8, damping 2.33, about 10% overshoot, settles in 8 frames). At +0.75 s the rear capsule rises over the front in 6 frames. Exit: hard cut.",
+      "soundRecipe": "Cut falls 0.07 s after the sentence's first word; the swap begins on the second verb.",
+      "copySlot": { "purpose": "two offer items, one per capsule", "maxWords": 2 },
+      "techniqueIds": ["spring-pop-on-cut", "card-shuffle-swap"]
+    },
+    {
+      "id": "ownership-line",
+      "role": "the emotional line",
+      "startSec": 15.265,
+      "durationSec": 0.96,
+      "visualRecipe": "Plain white, one short centred sentence in regular sans, about 36% of width, navy turning blue. End state: sentence complete.",
+      "motionRecipe": "Hard cut in. Words cut on one by one, the line recentring each time. Exit: words fade from the left as a pill appears.",
+      "soundRecipe": "Cut about 0.05 s after the first spoken word; each word falls with or just before its spoken word.",
+      "copySlot": { "purpose": "short ownership statement", "maxWords": 4 },
+      "techniqueIds": ["recentring-word-line"]
+    },
+    {
+      "id": "cta-button",
+      "role": "call to action as an object",
+      "startSec": 16.225,
+      "durationSec": 1.918,
+      "visualRecipe": "Small blue capsule (12% of width) over the last word, then a pale ghost, then a navy capsule 48% wide with a white sheen arc and the CTA label. End state: capsule covering the frame.",
+      "motionRecipe": "Capsule slides over the last word (power2.out), pales over 13 frames, snaps saturated and larger in one frame at +0.95 s, then grows slow-then-fast (sine.in) to full bleed in 1.0 s.",
+      "soundRecipe": "Voice delivers the urgency line under the growth. The one-frame snap may take a soft click; that is a choice, not taken from the reference.",
+      "copySlot": { "purpose": "CTA verb phrase on the button", "maxWords": 2 },
+      "techniqueIds": ["sentence-collapses-to-button", "element-grows-to-ground"]
+    },
+    {
+      "id": "end-card",
+      "role": "brand and address sign-off",
+      "startSec": 18.143,
+      "durationSec": 4.464,
+      "visualRecipe": "The button's gradient at full frame: navy at the top rim through royal blue to sky and white at the bottom. White bold capitals wordmark, about 21% of width; white address capsule to its right. End state (last frame, no fade): wordmark left of centre, capsule right of centre.",
+      "motionRecipe": "Label fades in 4 frames; wordmark types about 1 letter per frame; at +1.4 s it slides left about 13% of width over 9 frames while the capsule grows from the right and the address types 1 character per frame; then 2.3 s hold with only a linear drift.",
+      "soundRecipe": "Voice says the brand once as the wordmark appears, then stops; the last 3.7 s are quiet.",
+      "copySlot": { "purpose": "brand name and web address", "maxWords": 2 },
+      "techniqueIds": ["letter-by-letter-wordmark", "wordmark-slides-for-address", "quiet-end-hold"]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "One scene per spoken sentence or clause: holds of 1.4-2.0 s (median 1.74 s), one short 0.96 s type-only beat before the CTA, a 4.5 s end card. Switch scenes 0.05-0.2 s before a sentence's first word, or within 0.07 s after it on hard cuts. Do not derive a beat grid: the tempo estimate has confidence 0.12 and the picture switches are at chance against it. 7 of 11 switches are continuous morphs and 4 are hard cuts, all in the second half."
+  },
+  "style": "White product-design canvas, one object at centre, small type. Each object is a material sample (metal, iridescent glass, glossy capsule) and turns into the following one; colour is rationed until a saturated blue end card that is the CTA button grown to full frame.",
+  "transferRules": {
+    "keep": [
+      "Each scene made from the previous one's central object (frame to tile, tile to sphere burst, capsule to ground, tile to interface, sentence to button, button to end card); hard cuts only between sentences.",
+      "Hold lengths 1.4-2.0 s, one scene per spoken sentence; picture leads the sentence by 0.05-0.2 s.",
+      "On-screen words a little ahead of the voice (median 0.17 s), small, centred, cut on with a 2-3 frame tint.",
+      "White ground for the bulk of the film with one object at centre; saturated colour only in two short bursts before the end card.",
+      "CTA formed from the last spoken line and grown into the end card on an accelerating curve; final frame held, no fade.",
+      "Captured, real product screens for each interface shown."
+    ],
+    "mustChange": [
+      "branding: wordmark, name, address and the colour of the end card",
+      "music and voice",
+      "graphics: the specific metal tiles, sphere colours, relief pattern, globe and gradient card",
+      "copy: each on-screen word and each voice line",
+      "product screens: capture the new product's own interface"
+    ]
+  }
+}

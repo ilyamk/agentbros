@@ -1,0 +1,145 @@
+import React from "react";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, spring, staticFile, Img } from "remotion";
+import { displayFont, primaryFont } from "../lib/fonts";
+import { typography, spacing, animation, captionLayout } from "../lib/design-tokens";
+import type { FormatKey } from "../lib/design-tokens";
+
+type StockPhotoSceneProps = {
+  headline: string;
+  subtext?: string;
+  accentColor: string;
+  textColor: string;
+  captionReservePx?: number;
+  imageUrl: string;
+};
+
+export const StockPhotoScene: React.FC<StockPhotoSceneProps> = ({
+  headline,
+  subtext,
+  accentColor,
+  textColor,
+  captionReservePx = 0,
+  imageUrl,
+}) => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames, height, width } = useVideoConfig();
+  const fmt: FormatKey =
+    captionReservePx > 0
+      ? height > width
+        ? "vertical"
+        : width > height
+          ? "landscape"
+          : "square"
+      : height > width
+        ? "vertical"
+        : "square";
+  const headTypo = captionReservePx > 0 ? typography.bigTitle[fmt] : typography.headline[fmt];
+  const subTypo = typography.accentSub[fmt];
+
+  // Ken Burns zoom
+  const imgScale = interpolate(frame, [0, durationInFrames], [1, 1.08], {
+    extrapolateRight: "clamp",
+  });
+
+  // Frame 0-12: Headline fade + scale
+  const headlineOpacity = interpolate(frame, [0, 12], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+  const headlineScale = interpolate(spring({ frame, fps, config: animation.smooth }), [0, 1], [0.85, 1]);
+
+  // Short timeline scenes need a readable CTA before their exit fade.
+  const subtextOpacity = interpolate(
+    frame,
+    captionReservePx > 0 ? [captionLayout.mediaSubtextReveal.start, captionLayout.mediaSubtextReveal.end] : [20, 32],
+    [0, 1],
+    {
+      extrapolateRight: "clamp",
+      extrapolateLeft: "clamp",
+    },
+  );
+
+  // Exit fade — last 9 frames
+  const exitOpacity = interpolate(frame, [durationInFrames - 9, durationInFrames], [1, 0], {
+    extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+  });
+
+  return (
+    <AbsoluteFill style={{ opacity: exitOpacity }}>
+      {/* Full-bleed stock photo background */}
+      <AbsoluteFill
+        style={{
+          transform: `scale(${imgScale})`,
+          transformOrigin: "center center",
+        }}
+      >
+        <Img src={staticFile(imageUrl)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </AbsoluteFill>
+
+      {/* Dark gradient overlay for text readability */}
+      <AbsoluteFill
+        style={{
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.1) 60%, transparent 100%)",
+        }}
+      />
+
+      {/* Text content — bottom-aligned */}
+      <AbsoluteFill
+        className="flex flex-col items-center justify-end"
+        style={{
+          paddingLeft: spacing.sidePadding[fmt],
+          paddingRight: spacing.sidePadding[fmt],
+          paddingBottom:
+            captionReservePx > 0
+              ? spacing.safeBottom[fmt] + captionReservePx
+              : fmt === "vertical"
+                ? spacing.safeBottom.vertical + 40
+                : spacing.safeBottom.square + 20,
+        }}
+      >
+        {/* Headline */}
+        <div
+          data-avc-text-role="media-headline"
+          style={{
+            transform: `scale(${headlineScale})`,
+            opacity: headlineOpacity,
+            fontFamily: displayFont,
+            fontSize: headTypo.fontSize,
+            fontWeight: headTypo.fontWeight,
+            color: captionReservePx > 0 ? captionLayout.mediaTextColor : textColor,
+            textAlign: "center",
+            lineHeight: headTypo.lineHeight,
+            letterSpacing: -1,
+            whiteSpace: "pre-line",
+            textShadow: "0 4px 30px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)",
+          }}
+        >
+          {headline}
+        </div>
+
+        {/* Subtext */}
+        {subtext && (
+          <div
+            data-avc-text-role="media-subtext"
+            style={{
+              opacity: subtextOpacity,
+              fontFamily: primaryFont,
+              fontSize: subTypo.fontSize,
+              fontWeight: subTypo.fontWeight,
+              color: captionReservePx > 0 ? captionLayout.mediaTextColor : accentColor,
+              textAlign: "center",
+              marginTop: spacing.headlineGap + 8,
+              letterSpacing: subTypo.letterSpacing,
+              textTransform: subTypo.textTransform,
+              lineHeight: subTypo.lineHeight,
+              textShadow: "0 2px 16px rgba(0,0,0,0.5)",
+            }}
+          >
+            {subtext}
+          </div>
+        )}
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};

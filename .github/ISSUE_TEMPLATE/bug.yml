@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible defect without private data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Report vulnerabilities privately: https://github.com/ilyamk/agentbros/security/advisories/new"
+  - type: input
+    id: version
+    attributes:
+      label: Commit or version and platform
+      description: Include OS, Node version and harness version where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the command, fixture and steps; remove credentials and private project material.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour and evidence
+      description: Include relevant error output and preflight results.
+    validations:
+      required: true

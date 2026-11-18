@@ -1,0 +1,780 @@
+{
+  "deny": [
+    {
+      "glob": "memory/**",
+      "except": [
+        "memory/AGENTS.md"
+      ],
+      "reason": "a user's local memory: personal, git-ignored (memory/AGENTS.md)"
+    },
+    {
+      "glob": "docs/workstreams/**",
+      "reason": "private working notes"
+    },
+    {
+      "glob": "docs/verification/**",
+      "reason": "local verification records with machine paths"
+    },
+    {
+      "glob": "docs/*-plan.md",
+      "reason": "private working plan"
+    },
+    {
+      "glob": "docs/archive/**",
+      "reason": "private working notes"
+    },
+    {
+      "glob": "design-reference/bg-patterns/**",
+      "reason": "third-party reference imagery"
+    },
+    {
+      "glob": "design-reference/device-mockup/**",
+      "reason": "third-party reference imagery"
+    },
+    {
+      "glob": "design-reference/screenshots/**",
+      "reason": "third-party reference imagery"
+    },
+    {
+      "glob": "design-reference/videos/**",
+      "reason": "third-party reference media"
+    },
+    {
+      "glob": ".agents/skills/remotion-best-practices/**",
+      "reason": "third-party skill without a redistribution grant: installed from upstream (.agents/skills/THIRD_PARTY.md)"
+    },
+    {
+      "glob": "public/shared/**/*.hdr",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.glb",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.mp4",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.wav",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.mp3",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.ogg",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.png",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.jpg",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.jpeg",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.webp",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.ttf",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "public/shared/**/*.woff2",
+      "reason": "shared media: fetched by pnpm assets:sync from manifests (docs/assets.md)"
+    },
+    {
+      "glob": "leak-patterns.local.json",
+      "reason": "private leak patterns; local and git-ignored"
+    },
+    {
+      "glob": "tests/chart-*-proof-browser.test.ts",
+      "reason": "private verification against the owner's local project"
+    },
+    {
+      "glob": "docs/photoreal/look-exploded-*.jpg",
+      "reason": "renders of third-party device models (Apple-style trade dress)"
+    },
+    {
+      "glob": "docs/photoreal/screen-swap-*.jpg",
+      "reason": "renders of third-party device models (Apple-style trade dress)"
+    },
+    {
+      "glob": "docs/library/previews/_effects*.jpg",
+      "reason": "contact sheet includes a third-party phone mockup without licence evidence"
+    }
+  ],
+  "denyByContent": [
+    {
+      "within": "design-reference/library/*/speech-text.json",
+      "pattern": "\"text\"\\s*:",
+      "reason": "a reference's speech-text.json that still holds the film's words; the tracked layer is structure only (pnpm ref:redact)"
+    },
+    {
+      "within": "tests/**",
+      "pattern": "[/]Users[/][A-Za-z]|\\.codex[/]worktrees",
+      "reason": "test pins a local machine path"
+    }
+  ],
+  "leakPatterns": [
+    {
+      "name": "home-path",
+      "regex": "[/]Users[/]"
+    },
+    {
+      "name": "codex-worktree",
+      "regex": "\\.codex[/]worktrees"
+    },
+    {
+      "name": "email",
+      "regex": "[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}\\b"
+    },
+    {
+      "name": "provider-key",
+      "regex": "\\b(?:sk-(?:proj-|ant-api\\d+-)?[A-Za-z0-9_-]{20,}|AKIA[A-Z0-9]{16}|ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22,}|xox[bp]-[A-Za-z0-9-]{20,})\\b"
+    },
+    {
+      "name": "private-key",
+      "regex": "-----BEGIN [A-Z ]*PRIVATE KEY-----"
+    }
+  ],
+  "allowedHits": [
+    {
+      "glob": "tests/fixtures/hyperframes-engine/notices/*-LICENSE",
+      "pattern": "email",
+      "reason": "third-party licence notice; must be preserved"
+    },
+    {
+      "glob": "scripts/export-public.ts",
+      "pattern": "email",
+      "reason": "placeholder commit author noreply@example.com"
+    },
+    {
+      "glob": "tests/cleanup.test.ts",
+      "pattern": "email",
+      "reason": "synthetic git identity t@example.com"
+    },
+    {
+      "glob": "src/lib/leak-scan.ts",
+      "pattern": "email",
+      "reason": "placeholder commit author noreply@example.com",
+      "only": [
+        "noreply@example.com"
+      ]
+    },
+    {
+      "glob": "src/lib/memory/upstream.ts",
+      "pattern": "email",
+      "reason": "public placeholder and co-author addresses a patch may carry",
+      "only": [
+        "noreply@anthropic.com"
+      ]
+    },
+    {
+      "glob": "contrib/agent-coauthors.json",
+      "pattern": "email",
+      "reason": "public co-author addresses of coding agents, matched so their trailers count as the submitting human's Contribution",
+      "only": [
+        "codex@openai.com",
+        "copilot@github.com",
+        "cursoragent@cursor.com",
+        "noreply@anthropic.com",
+        "noreply@openai.com"
+      ]
+    },
+    {
+      "glob": "tests/memory-upstream.test.ts",
+      "pattern": "email",
+      "reason": "synthetic git identities and placeholder addresses"
+    },
+    {
+      "glob": "tests/agent-workflow-boundaries.test.ts",
+      "pattern": "email",
+      "reason": "synthetic git identity in a fixture commit",
+      "only": [
+        "fixture@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/hf-remote-catalogue.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address",
+      "only": [
+        "user:pass@example.com"
+      ]
+    },
+    {
+      "glob": "tests/hf-remote-media.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address",
+      "only": [
+        "user:pass@example.com"
+      ]
+    },
+    {
+      "glob": "tests/model-nonmedia.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address"
+    },
+    {
+      "glob": "tests/pricing-evidence.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address"
+    },
+    {
+      "glob": "tests/resource-response-bounds.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address"
+    },
+    {
+      "glob": "docs/publishing.md",
+      "pattern": "email",
+      "reason": "placeholder commit author noreply@example.com"
+    },
+    {
+      "glob": "design-reference/music-sources.md",
+      "pattern": "email",
+      "reason": "Jamendo's public licensing address, quoted from its terms"
+    },
+    {
+      "glob": "CLA.md",
+      "pattern": "email",
+      "reason": "the licensor's public commercial-licence contact, published on purpose"
+    },
+    {
+      "glob": "LICENSE",
+      "pattern": "email",
+      "reason": "the licensor's public licensing contact in the Business Source License parameters, published on purpose"
+    },
+    {
+      "glob": "TRADEMARKS.md",
+      "pattern": "email",
+      "reason": "the licensor's public trademark contact, published on purpose"
+    },
+    {
+      "glob": "COMMERCIAL-LICENSE.md",
+      "pattern": "email",
+      "reason": "the licensor's public commercial-licence contact, published on purpose"
+    },
+    {
+      "glob": "SECURITY.md",
+      "pattern": "email",
+      "reason": "the maintainer's public contact, the fallback private security channel, published on purpose",
+      "only": [
+        "hello@iliamax.com"
+      ]
+    },
+    {
+      "glob": "CONTRIBUTING.md",
+      "pattern": "email",
+      "reason": "the licensor's public commercial-licence contact, published on purpose"
+    },
+    {
+      "glob": "README*.md",
+      "pattern": "owner-handle",
+      "reason": "the author's public repository slug, published on purpose",
+      "only": [
+        "ilyamk",
+        "ilyamk/agentbros"
+      ]
+    },
+    {
+      "glob": "docs/install.md",
+      "pattern": "owner-handle",
+      "reason": "the author's public repository slug, published on purpose",
+      "only": [
+        "ilyamk/agentbros"
+      ]
+    },
+    {
+      "glob": "README*.md",
+      "pattern": "private-names",
+      "reason": "the author's name, site and product in the README author block, published on purpose",
+      "only": [
+        "Ilia Maksimenka",
+        "iliamax.com",
+        "isales.ai"
+      ]
+    },
+    {
+      "glob": "README*.md",
+      "pattern": "email",
+      "reason": "the licensor's public commercial-licence contact, published on purpose",
+      "only": [
+        "hello@iliamax.com"
+      ]
+    },
+    {
+      "glob": "public-export.json",
+      "pattern": "email",
+      "reason": "intentional public identity and placeholder allowlist literals",
+      "only": [
+        "alice@users.noreply.github.com",
+        "bob@users.noreply.github.com",
+        "codex@openai.com",
+        "copilot@github.com",
+        "cursoragent@cursor.com",
+        "fixture@example.com",
+        "fixture@example.invalid",
+        "fixture@example.test",
+        "fixture@invalid.test",
+        "hello@iliamax.com",
+        "https://user:pass@cdn.higgsfield.ai/x",
+        "noreply@anthropic.com",
+        "noreply@example.com",
+        "noreply@openai.com",
+        "noreply@users.noreply.github.com",
+        "pass@example.com",
+        "pass@github.com",
+        "person@example.com",
+        "pw@fal.media",
+        "t@example.com",
+        "test@example.com",
+        "test@example.invalid",
+        "user:pass@cdn.higgsfield.ai",
+        "user:pass@example.com",
+        "user@queue.fal.run"
+      ]
+    },
+    {
+      "glob": "public-export.json",
+      "pattern": "private-names",
+      "reason": "intentional public identity and placeholder allowlist literals",
+      "only": [
+        "Ilia Maksimenka",
+        "iliamax.com",
+        "isales.ai"
+      ]
+    },
+    {
+      "glob": "public-export.json",
+      "pattern": "owner-handle",
+      "reason": "intentional public identity and placeholder allowlist literals",
+      "only": [
+        "@ilyamk",
+        "ilyamk",
+        "ilyamk.github.io/agentbros/",
+        "ilyamk/agentbros"
+      ]
+    },
+    {
+      "glob": "docs/rfcs/0001-contribution-system.md",
+      "pattern": "owner-handle",
+      "reason": "intentional public repository, maintainer and Pages identity in the RFC",
+      "only": [
+        "@ilyamk",
+        "ilyamk.github.io/agentbros/",
+        "ilyamk/agentbros"
+      ]
+    },
+    {
+      "glob": ".changes/contribution-follow-ups-failing-on-base-proof-and.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".changes/webvtt-cue-identifiers-no-longer.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".github/CODEOWNERS",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".github/ISSUE_TEMPLATE/bug.yml",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".github/ISSUE_TEMPLATE/config.yml",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".github/workflows/models-refresh.yml",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "noreply@users.noreply.github.com"
+      ]
+    },
+    {
+      "glob": ".github/workflows/post-merge-regen.yml",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "noreply@users.noreply.github.com"
+      ]
+    },
+    {
+      "glob": ".github/workflows/release-pr.yml",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "noreply@users.noreply.github.com"
+      ]
+    },
+    {
+      "glob": ".github/workflows/showcase.yml",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "noreply@users.noreply.github.com"
+      ]
+    },
+    {
+      "glob": ".github/workflows/showcase.yml",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "CONTRIBUTING.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "DEPENDENCY_LICENCES.json",
+      "pattern": "email",
+      "reason": "Collected upstream licence attribution and package-author contacts in the generated dependency inventory: any address is explained here; credentials and keys are still scanned"
+    },
+    {
+      "glob": "GOVERNANCE.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "SECURITY.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "SUPPORT.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "contrib/AGENTS.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "docs/github.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "docs/showcases.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "scripts/github/codeowners.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "site/build.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "src/lib/release/index.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "src/lib/showcase/add.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "src/lib/showcase/readme.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "tests/automation-fetch.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "pass@github.com",
+        "test@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/bench.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/codeowners.test.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "tests/context-budget.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.com"
+      ]
+    },
+    {
+      "glob": "tests/context-probe.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.com"
+      ]
+    },
+    {
+      "glob": "tests/contrib-docs.test.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "tests/contrib-intake.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/contrib-tools-helpers.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/deps-check.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/fal-results-kinds.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "pw@fal.media",
+        "user@queue.fal.run"
+      ]
+    },
+    {
+      "glob": "tests/fixtures/github/responses.json",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "alice@users.noreply.github.com"
+      ]
+    },
+    {
+      "glob": "tests/fixtures/release/notes.md",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "tests/github-scripts.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "bob@users.noreply.github.com",
+        "fixture@example.com",
+        "person@example.com"
+      ]
+    },
+    {
+      "glob": "tests/instructions-security.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "test@example.com"
+      ]
+    },
+    {
+      "glob": "tests/media-fetch.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "pass@example.com"
+      ]
+    },
+    {
+      "glob": "tests/regen-post-merge.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "fixture@example.test"
+      ]
+    },
+    {
+      "glob": "tests/release.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "fixture@example.test"
+      ]
+    },
+    {
+      "glob": "tests/showcase-site.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "fixture@invalid.test"
+      ]
+    },
+    {
+      "glob": "tests/showcase.test.ts",
+      "pattern": "email",
+      "reason": "Synthetic test identities, rejected URL userinfo or public GitHub bot identity",
+      "only": [
+        "fixture@invalid.test"
+      ]
+    },
+    {
+      "glob": "tests/showcase.test.ts",
+      "pattern": "owner-handle",
+      "reason": "Public project maintainer, repository identity or contributor attribution",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": ".changes/*.md",
+      "pattern": "owner-handle",
+      "reason": "Public contributor attribution in release entries",
+      "only": [
+        "ilyamk"
+      ]
+    },
+    {
+      "glob": "contrib/licence-reviews.json",
+      "pattern": "email",
+      "reason": "Integrity-pinned upstream licence notices, package attribution and licensing contacts in the reviewed evidence: any address is explained here; credentials and keys are still scanned"
+    },
+    {
+      "glob": "tests/blender-arsenal-eval.test.ts",
+      "pattern": "email",
+      "reason": "synthetic git identity on a reserved .invalid domain; Synthetic git identity in an isolated extension-evaluation test",
+      "only": [
+        "fixture@example.invalid"
+      ]
+    },
+    {
+      "glob": "tests/hf-routing.test.ts",
+      "pattern": "email",
+      "reason": "URL userinfo in a rejection test, not an address; Rejected synthetic URL userinfo in a provider-routing test",
+      "only": [
+        "https://user:pass@cdn.higgsfield.ai/x",
+        "user:pass@cdn.higgsfield.ai"
+      ]
+    },
+    {
+      "glob": "src/lib/showcase/data.ts",
+      "pattern": "home-path",
+      "reason": "the home-path leak regex itself, used to scan showcase evidence",
+      "only": [
+        "/Users/"
+      ]
+    },
+    {
+      "glob": "public-export.json",
+      "pattern": "home-path",
+      "reason": "allowlist literal for the home-path regex in showcase evidence scanning",
+      "only": [
+        "/Users/"
+      ]
+    },
+    {
+      "glob": "**",
+      "pattern": "owner-handle",
+      "reason": "the public repository and maintainer handle (RFC 0001 D1: the project is published as ilyamk/agentbros); a bare handle elsewhere still fails",
+      "only": [
+        "ilyamk/agentbros",
+        "@ilyamk",
+        "ilyamk.github.io/agentbros/"
+      ]
+    }
+  ]
+}

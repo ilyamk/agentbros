@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/v3.0-turbo/image-to-video",
+  "title": "Kling 3.0 — Turbo · Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/turbo-image-to-video.md",
+  "usageNotes": [
+    "duration accepts integers from 3 to 15 seconds. resolution accepts 720p or 1080p and defaults to 720p.",
+    "This endpoint has no sound, multi_shots, elements, or last-frame field.",
+    "Keep prompt within 2,500 characters; longer prompts are truncated.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Turbo",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 3
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "720p"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

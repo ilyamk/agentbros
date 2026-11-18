@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "category": "worlds",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "alibaba/abot-world-0",
+      "category": "worlds",
+      "displayName": "Abot World 0",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5641cab8ba8671ebb16233d254c69b76c50efeb9ec93e3ff119c38de0c89434c",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=alibaba%2Fabot-world-0&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "credential_age_seconds",
+          "type": "number",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "ice_servers",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "ice_status",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sdp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "session_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "default": "offer"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "worlds",
+        "world-model",
+        "realtime",
+        "interactive",
+        "walkable",
+        "explorable",
+        "abot"
+      ]
+    },
+    {
+      "endpoint": "minimax/h3-max/director",
+      "category": "worlds",
+      "displayName": "H3 Max Director",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "minimax/h3-max/reference-director",
+      "category": "worlds",
+      "displayName": "H3 Max Reference Director",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "worlds",
+        "world-model",
+        "realtime",
+        "interactive",
+        "directable",
+        "reference-images",
+        "h3-max"
+      ]
+    },
+    {
+      "endpoint": "robbyant/lingbot-world-2",
+      "category": "worlds",
+      "displayName": "Lingbot World 2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "756767d2548f6583b2a7ef085a1e33ffd78ddd5540e763d219ff7a0e7831973d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=robbyant%2Flingbot-world-2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "credential_age_seconds",
+          "type": "number",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "ice_servers",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "ice_status",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sdp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "session_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "default": "offer"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "worlds",
+        "world-model",
+        "realtime",
+        "interactive",
+        "walkable",
+        "explorable",
+        "lingbot"
+      ]
+    },
+    {
+      "endpoint": "vast/eden-live-14b-game",
+      "category": "worlds",
+      "displayName": "Eden Live 14B Game",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "61849b46a2fa05e3e3aef17549da0cb401b9cc775228030f3340916294f2fc36",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=vast%2Feden-live-14b-game&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "credential_age_seconds",
+          "type": "number",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "ice_servers",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "ice_status",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sdp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "session_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "default": "offer"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "vast/eden-live-5b-game",
+      "category": "worlds",
+      "displayName": "Eden Live 5B Game",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8eb9290718d2a26e367044c0986d5075a8fa16c13f6520cec71710c8de5c8b08",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=vast%2Feden-live-5b-game&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "credential_age_seconds",
+          "type": "number",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "ice_servers",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "ice_status",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "sdp",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "session_id",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "default": "offer"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

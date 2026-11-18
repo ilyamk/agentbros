@@ -1,0 +1,10 @@
+# Feedback on a recording or a campaign
+
+Last updated: 2026-11-17
+
+`pnpm feedback` takes the same items file as for a film ([the user's feedback](production-chain/feedback.md)), and the same quote check. It detects the route (`detectRoute`); a timeline or template project is refused.
+
+- **The user's own recording** (`src/lib/feedback/footage.ts`, records in the source project's `pipeline/feedback/`; a recut or shorts episode id resolves to it). `watched` defaults to the recut's only render; with several, name it. Code routes cuts, pacing, length, words, hook-line, opening-picture and ending-cta to `recut-plan`; captions to `captions`, shorts to `shorts`, framing to `reframe` (each only when the goals include it), music, sfx-mix and voice to `mix` (timeline `audio-gain`); concept, audience, claim, material, look, shot and unclear ask. The open file keeps a baseline (the plan's edit hash, the recut's timeline revision, the shorts files): `footage:next` (and `pnpm next`) returns the step with the quotes until it moves, then settles the items `addressed`; new feedback on a step whose output already moved settles the earlier items first. A new plan goes under a new recut id, so the user approves its new hash; a new recut re-anchors the other open steps. `--step <s> --unchanged-because "<why>"` declines; the same aspect twice asks, and `--clarify` answers.
+- **A campaign** (`src/lib/feedback/campaign.ts`). The watched render names the variant (`watched.path`, or one `memberId`). An item reopens its variant; a `material` item or one with `materialId` reopens every active member using that material, through its dependencies. Reopening is a `fix` review draft in `selection.json` with the quotes verbatim (kind `user-feedback`), so `campaign:next` dispatches the campaign-producer's review-repair and the revised plan needs the user's decision again.
+
+Open: a campaign record's items stay `open` after the plan is revised (the review draft carries them), and a campaign has no repeated-objection check yet.

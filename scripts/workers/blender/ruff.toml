@@ -1,0 +1,10 @@
+extend = "../../../pyproject.toml"
+target-version = "py311"
+
+[lint]
+# These signatures mirror Blender RNA and the existing subprocess protocol.
+extend-ignore = ["FBT001", "FBT002", "FBT003", "PLR0913", "PLR0917"]
+
+[lint.flake8-errmsg]
+# Short machine-readable error codes are not human exception messages.
+max-string-length = 16

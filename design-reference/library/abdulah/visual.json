@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "abdulah",
+  "palette": {
+    "value": [
+      "#000000",
+      "#F8F6F2",
+      "#1F1D1A",
+      "#FFFFFF",
+      "#C54A76",
+      "#131718",
+      "#6B8276",
+      "#324F4D",
+      "#C9DCD9",
+      "#F1DAB0",
+      "#313246"
+    ],
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "ffmpeg frame samples: black ground 2.7 s and 67 s; paper ground 5.6/18/59 s; ink on paper 18.6 s; accent word 34.5 s; moon ground 34.3 s; gantry sky 15.5 s; banknotes 49.0 s; building sky 9.0 s; flashes 45.34 s and 45.40 s"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "caption line (main voice)",
+        "description": "Transitional book serif, regular weight, sentence case, small: OCR line box 0.061-0.075 of frame height (44-54 px of 720), one line, never more than 0.67 of frame width. On paper #1F1D1A, on footage and black #FFFFFF. Font family inferred (a Caslon/Garamond-like serif)."
+      },
+      {
+        "role": "typed card caption",
+        "description": "Same serif in italic with a thin text cursor bar after the last glyph (26.73-28.06 s), sitting at the bottom edge of the image card, left-set."
+      },
+      {
+        "role": "keyword over image",
+        "description": "One italic serif word centred (OCR x-centre 0.50, line box 0.036-0.047 of height) on full-bleed footage, one word per shot."
+      },
+      {
+        "role": "scattered words",
+        "description": "Single serif words placed at different x/y over the frame (e.g. 0.12/0.36, 0.31/0.44, 0.51/0.62, 0.75/0.33 for one sentence), each cut on at its own position with no motion."
+      },
+      {
+        "role": "accent fill",
+        "description": "Evenly spaced centred line of 4-5 words (gaps about 0.04 of width) that turn from #FAFBFF to #C54A76 one word at a time."
+      },
+      {
+        "role": "direct-address handwriting",
+        "description": "Thin marker-style script, sentence case, centred, line box 0.061 high and 0.48 wide, #120F0D on paper; used only for the two questions to the viewer (42.8-47.1 s)."
+      },
+      {
+        "role": "title",
+        "description": "Serif capitals, centred, OCR box 0.44 wide x 0.083 high, over the building plate and on black; italic serif edition line below (0.45 x 0.069); two small roman credit lines below (0.03-0.04 high)."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json screenText boxes",
+      "visuals/a1/open-type.jpg",
+      "visuals/a1/card-on-black.jpg F809-F817",
+      "visuals/a1/moon-1.jpg",
+      "visuals/a1/ground-swap.jpg",
+      "visuals/a1/scatter-a.jpg",
+      "visuals/a1/endcard.jpg"
+    ]
+  },
+  "composition": {
+    "value": "Type sits small at or near the vertical centre (OCR y 0.46-0.53) and leaves most of the frame empty; on paper grounds the only other element is an image card or chip of 3-25% of frame width. Opening and typed lines are left-set at x 0.16-0.21; single keywords and the closing lines are centred. Footage is full bleed and mostly static (camera moves under 13% of frame width in all tracked shots), so motion comes from the cuts, typing and treatments, not from the camera.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json screenText boxes",
+      "motion.json shots[].camera.amount",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "materials": {
+    "value": "Archive black-and-white photographs and film, stock footage graded teal-green (gantry sky #6B8276, notes #324F4D), event photography in natural colour, flat paper and black grounds; treatments: 1-3 frame light leaks and grade flashes, dot-screen render, wave displacement, duotone flash. All treatments inferred to be post effects.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/archive-match.jpg",
+      "visuals/a1/halftone-fade.jpg",
+      "visuals/a1/glitch-out.jpg",
+      "visuals/a1/sepia-whip.jpg"
+    ]
+  },
+  "lighting": {
+    "value": "Low-key, contrasty plates (night windows, a desk lamp in the dark, a projector beam, a moon on #131718) against bright flat paper pages; the film alternates dark and light grounds rather than lighting within a shot.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg 17F-20L",
+      "visuals/contact-sheet-02.jpg"
+    ]
+  },
+  "styleSummary": "Editorial manifesto: a small serif voice on paper or black, cut against graded archive and stock plates, every plate change roughened by a 1-3 frame leak, flash or treatment, with one burst of 12 images a second and a slow, people-filled close."
+}

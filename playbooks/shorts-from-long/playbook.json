@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "id": "shorts-from-long",
+  "title": "Shorts from a long recording",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "Cut standalone vertical shorts, reels and clips out of the user's own long recording: hook in 3 s, whole sentences, payoff at the end, the user approves each clip.",
+  "triggers": {
+    "en": ["vertical clips", "clips from", "make shorts", "cut into shorts", "highlights", "best moments", "tiktoks from", "podcast clips", "clip my video", "short clips", "into reels", "into shorts", "into clips", "into tiktoks", "tiktok clips", "clips for tiktok", "reels from", "reels", "shorts from", "recording into shorts", "podcast into shorts", "video into shorts"],
+    "ru": ["вертикальные клипы", "из моего стрима", "со стрима", "из стрима", "из вебинара", "коротких клипов", "шортс", "нарезк", "нарежь на", "клипы из", "лучшие моменты", "короткие ролики", "короткие видео", "хайлайт", "на шортс", "на рилс", "нарежь подкаст", "нарежь интервью", "нарежь видео", "нарежь запись", "нарежь стрим", "нарежь на тикток", "рилсы из", "шортсы из", "нарежь шортс", "рилс из", "нарежь из", "подкаст на шортс", "нарежь мой", "нарежь мою"], "zh": ["切成", "拆成几条", "讲座切", "切片", "直播切片", "长视频切片", "做成切片", "抖音切片", "长视频", "剪成短视频", "切成短视频", "拆成短视频", "拆条", "几条短视频", "多条短视频", "高光", "高光时刻", "精彩片段", "金句", "金句切片", "剪成几条", "切成几段", "抖音", "快手", "视频号"], "generic": ["короткие ролики", "короткие видео", "抖音", "快手", "视频号"]
+  },
+  "notFor": [
+    {"when": "the user wants the whole recording cut, captioned or reframed as one video", "use": "footage-edit"},
+    {"when": "a new film cut to music from stock or supplied b-roll, not from the user's speech", "use": "stock-montage"},
+    {"when": "cut-downs of a customer case study or testimonial interview, made with the case-study film", "use": "case-study"}
+  ],
+  "route": {
+    "kind": "footage",
+    "footageGoals": ["recut", "captions", "vertical", "shorts"],
+    "start": "pnpm footage:next --project <id> --playbook shorts-from-long --source <file> --goal recut,captions,vertical,shorts"
+  },
+  "alternatives": [
+    {
+      "when": "approved ShortSelections and a chapter manifest already exist for a timeline project",
+      "route": {"kind": "workflow", "workflow": "shorts-series", "start": "pnpm video:workflow --scenario shorts-series --action plan --request <file>"}
+    }
+  ],
+  "agents": ["footage-editor"],
+  "skills": ["recording-recut", "captions-and-localization", "ugc-content-creator", "editorial-storytelling"],
+  "library": {"categories": ["captions"], "blocks": ["caption-outline-pop", "caption-italic-shadow", "caption-keyword-colour", "caption-single-punch"]},
+  "commands": ["footage:next", "project:new", "speech:local", "transcribe", "recut:plan", "video:workflow", "timeline:edit", "captions:place", "reframe:track", "footage:shots", "shorts:prepare", "shorts:rank", "shorts:request", "shorts:calibrate", "render", "audio:events", "media:vision"],
+  "read": [],
+  "stepRead": {
+    "6-shorts": [
+      ".agents/skills/recording-recut/references/shorts-selection.md",
+      "docs/workflows/shorts-series.md"
+    ]
+  },
+  "qa": ["Each short's hook sentence starts within 3 s and the clip makes sense with no episode context", "Each short ends on its payoff with a hard end, no fade, and fits the length band of every platform it targets", "Captions in every short clear the face and the platform interface from the first page to the last", "Clips with third-party music stay at 60 s or less for YouTube"],
+  "benchmarks": ["shorts-from-long"],
+  "intake": [
+    {"ask": "Which platforms are the clips for: TikTok, Reels, Shorts, LinkedIn?", "why": "Each profile sets the length cap, the caption style and whether music must stay under 60 s", "default": "TikTok, Reels and Shorts, one vertical render each clip"},
+    {"ask": "How many clips do you want, and is there a topic, guest or moment you want included?", "why": "Sets shorts:prepare --count and lets the agent quote the moments the user already remembers", "default": "5 clips, the strongest by score"},
+    {"ask": "What is the source: podcast, interview, webinar or stream, talk, lesson?", "why": "Picks the variant: a webinar adds chapters and a summary clip; a podcast needs speaker labels and question-plus-answer clips", "default": "a single-speaker talk"},
+    {"ask": "May we pay for Scribe transcription (needed for clean filler cuts and speaker labels)?", "why": "speech:local is free but not verbatim and labels speakers only with a configured HF_TOKEN; Scribe needs the user's go-ahead"},
+    {"ask": "Is there music or other copyrighted material in the recording?", "why": "A YouTube Short over 1 minute with any copyright claim is blocked worldwide; such clips stay at 60 s or less", "default": "no third-party music"}
+  ],
+  "profiles": [
+    {"platform": "tiktok", "formats": ["vertical"], "durationSec": {"min": 20, "max": 90}, "captions": "outline-pop", "note": "Band from the shorts:prepare defaults (house rule); TikTok's ads spec page takes 9:16 up to 10 minutes; the band is ours"},
+    {"platform": "instagram-reels", "formats": ["vertical"], "durationSec": {"min": 20, "max": 90}, "captions": "outline-pop", "note": "Reels upload up to 3 minutes (January 2025); the 20-90 s band is the shorts:prepare house rule"},
+    {"platform": "youtube-shorts", "formats": ["vertical"], "durationSec": {"min": 20, "max": 60}, "captions": "outline-pop", "note": "Shorts run up to 3 minutes, but a Short over 1 minute with any copyright claim is blocked; 60 s keeps a claimed clip viewable"},
+    {"platform": "linkedin", "formats": ["vertical", "square"], "durationSec": {"min": 20, "max": 90}, "captions": "clean-sentence", "note": "LinkedIn takes 3 s to 15 min at 1:2.4 to 2.4:1; calm sentence captions for a professional, often muted feed (band is a house rule)"}
+  ],
+  "starter": {
+    "blocks": ["caption-outline-pop", "caption-single-punch", "caption-clean-sentence"],
+    "note": "outline-pop for most clips; single-punch for one loud speaker; clean-sentence for LinkedIn, lessons and two-person clips (caption styles table)"
+  },
+  "variants": [
+    {"id": "webinar", "title": "Webinar or stream repurposing", "triggers": {"en": ["my webinar", "webinar recording", "stream recording", "my livestream", "after the stream", "webinar"], "ru": ["запись вебинара", "мой вебинар", "запись стрима", "после стрима", "запись эфира", "вебинар"], "zh": ["直播回放", "直播录像", "录播", "的直播", "场直播", "线上分享", "讲座录像", "网络研讨会"]}, "changes": "Recut the dead air first (setup, 'can you see my screen', Q&A waits) and rank against the recut; chapters for the full replay from the recut's SRT; clips keep the screen when the point is on it (square or a static crop instead of a face track); one summary clip as a hand-written recording-edit request with chronological keepSpans"},
+    {"id": "podcast-clips", "title": "Podcast or interview clips", "triggers": {"en": ["podcast clips", "clips from my podcast", "interview clips"], "ru": ["нарежь подкаст", "нарежь интервью", "клипы из подкаста"], "zh": ["播客切片", "访谈切片", "采访切片", "播客剪成", "播客精彩片段", "播客金句"]}, "changes": "Speaker labels (--speakers N); a clip carries the question and the whole answer, and its hook may be the strongest line of the answer only when the clip still makes sense without the question; the vertical crop follows the speaker map or angles; captions break at speaker changes"}
+  ]
+}

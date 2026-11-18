@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "endpoint": "bytedance/seedance-2.0/image-to-video",
+  "title": "Seedance 2.0 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/seedance-2/image-to-video.md",
+  "usageNotes": [
+    "Use publicly accessible media URLs; asset:// references are rejected for these endpoints.",
+    "The prompt is optional. Output framing follows image_url; end_image_url is the optional last frame."
+  ],
+  "schema": {
+    "type": "object",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 4
+      },
+      "image_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p",
+          "4k"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "end_image_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

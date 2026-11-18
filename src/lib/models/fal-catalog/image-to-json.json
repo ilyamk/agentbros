@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "category": "image-to-json",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "bria/ad-delayer",
+      "category": "image-to-json",
+      "displayName": "Bria Ad Delayer: Convert Flat Ads into Editable Layers | fal",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e83c9ca30b3b7e4b554f0e36e40b33e74e1b10dd255b17b831d3488706fb8278",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=bria%2Fad-delayer&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "default": "https://bria-datasets.s3.amazonaws.com/ad-delayer/aurora_ad.png",
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "utility",
+        "editing"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/bagel/understand",
+      "category": "image-to-json",
+      "displayName": "Bagel",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-text",
+        "vlm"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/vggt-1b",
+      "category": "image-to-json",
+      "displayName": "VGGT-1B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b80857e28b2ba21604bd128491a8b64ccb56772258ea17f229d57b667c3e1780",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvggt-1b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "alpha_blend_onto",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "keep",
+            "white",
+            "black",
+            "mean"
+          ],
+          "default": "white"
+        },
+        {
+          "name": "array_encoding",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "base64",
+            "list"
+          ],
+          "default": "base64"
+        },
+        {
+          "name": "confidence_percentile",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "exclude_keys",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "export_depth_maps",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_point_cloud",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_prediction_data",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "frame_sampling_rate",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 1000,
+          "default": 24
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "max": 48,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "max_points",
+          "type": "integer",
+          "required": false,
+          "min": 1000,
+          "max": 5000000,
+          "default": 250000
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": false,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "depth_maps",
+          "depth_range",
+          "extrinsics",
+          "intrinsics",
+          "point_cloud",
+          "prediction_data"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    }
+  ]
+}

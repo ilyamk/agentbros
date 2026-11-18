@@ -1,0 +1,33 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+remote=${1:?Git must supply the remote name}
+zero=0000000000000000000000000000000000000000
+
+# When the shell's Node is another major than .nvmrc, switch to the repository's Node through nvm if it is installed.
+want=$(cut -d. -f1 .nvmrc 2>/dev/null || true)
+have=$(node -v 2>/dev/null | sed 's/^v//' | cut -d. -f1 || true)
+if [ -n "$want" ] && [ "$have" != "$want" ] && [ -s "${NVM_DIR:-$HOME/.nvm}/nvm.sh" ]; then
+  # shellcheck disable=SC1091
+  . "${NVM_DIR:-$HOME/.nvm}/nvm.sh" >/dev/null 2>&1 && nvm use >/dev/null 2>&1 || true
+fi
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" != "$zero" ] || continue
+  if base=$(git rev-parse --verify "${local_ref}@{upstream}" 2>/dev/null); then
+    :
+  elif [ "$remote_sha" != "$zero" ]; then
+    base=$remote_sha
+  elif base=$(git rev-parse --verify "refs/remotes/${remote}/HEAD" 2>/dev/null); then
+    :
+  else
+    echo "leak:check: no upstream or remote default branch; run a local tree check and configure an upstream before pushing" >&2
+    exit 1
+  fi
+  if ! out=$(pnpm leak:check --mode diff --local --base "$base" --head "$local_sha"); then
+    echo "pre-push: leak check failed for $local_ref; nothing was pushed." >&2
+    printf '%s\n' "$out" >&2
+    exit 1
+  fi
+done

@@ -1,0 +1,134 @@
+{
+  "name": "talking-head-demo",
+  "formats": ["landscape"],
+  "productName": "AI Code Demo",
+  "tagline": "AI writes its own code",
+  "colors": {
+    "accent": "#6C5CE7",
+    "background": "#F4B89C",
+    "text": "#111111"
+  },
+  "voice": "drew",
+  "musicPrompt": "Upbeat tech background, minimal, 30 seconds",
+  "musicVolume": 0,
+  "talkingHead": {
+    "enabled": true,
+    "presenterVideo": "",
+    "borderColor": "#F4B89C",
+    "borderRadius": 28,
+    "panelGap": 24,
+    "outerPadding": 40,
+    "rightPanelWidthFraction": 0.32,
+    "captionStyle": {
+      "activeColor": "#FFE600",
+      "inactiveColor": "#FFFFFF",
+      "strokeColor": "#000000",
+      "strokeWidth": 8,
+      "fontSize": 56,
+      "wordsInView": 3
+    }
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "text": "What if I told you AI now writes its own code?",
+      "visualType": "title",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "text",
+        "text": "What if I told you AI now writes its own code",
+        "align": "center",
+        "size": "bigTitle",
+        "entrance": "fade"
+      }
+    },
+    {
+      "id": "stat",
+      "text": "AI-assisted code commits have grown 400 percent in 18 months.",
+      "visualType": "title",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "chart",
+        "chartType": "line",
+        "color": "#6C5CE7",
+        "entrance": "fade",
+        "caption": "AI-assisted commits per month (thousands)",
+        "data": [
+          { "label": "Oct", "value": 12 },
+          { "label": "Dec", "value": 28 },
+          { "label": "Feb", "value": 55 },
+          { "label": "Apr", "value": 89 },
+          { "label": "Jun", "value": 140 },
+          { "label": "Aug", "value": 210 },
+          { "label": "Oct", "value": 310 },
+          { "label": "Dec", "value": 490 }
+        ],
+        "axisLabels": ["Oct '24", "Dec '25"]
+      }
+    },
+    {
+      "id": "sketch",
+      "text": "The old model: build it, ship it, maintain it forever.",
+      "visualType": "title",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "sketch",
+        "entrance": "fade",
+        "caption": "Traditional dev lifecycle",
+        "points": [
+          [0.05, 0.8],
+          [0.2, 0.55],
+          [0.4, 0.3],
+          [0.55, 0.25],
+          [0.65, 0.35],
+          [0.75, 0.55],
+          [0.85, 0.75],
+          [0.95, 0.9]
+        ],
+        "color": "#E63946",
+        "jitter": 3
+      }
+    },
+    {
+      "id": "tweet",
+      "text": "Even developers are shocked at how fast AI has changed the game.",
+      "visualType": "title",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "tweet",
+        "entrance": "scale",
+        "author": "Jordan Miles",
+        "handle": "@jordanbuilds",
+        "text": "Just shipped a full feature in 40 minutes using AI pair programming. Two years ago that would have taken a week. We are not ready for what comes next.",
+        "verified": true,
+        "darkMode": false
+      }
+    },
+    {
+      "id": "screenshot",
+      "text": "Here is what the new AI-first workflow actually looks like.",
+      "visualType": "title",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "text",
+        "text": "Spec → Generate → Review → Ship",
+        "align": "center",
+        "size": "headline",
+        "entrance": "clip"
+      }
+    },
+    {
+      "id": "cta",
+      "text": "Try it free at example dot com and build your first AI-generated feature today.",
+      "visualType": "cta",
+      "durationInFrames": 120,
+      "leftPanel": {
+        "kind": "text",
+        "text": "Try it free at example.com",
+        "align": "center",
+        "size": "bigTitle",
+        "entrance": "fade"
+      }
+    }
+  ]
+}

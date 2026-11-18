@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Четверг: заказ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=block&subset=cyrillic">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; background: #F4EEE2; color: #17110B; font-family: "Golos Text", sans-serif; }
+  .abs { position: absolute; }
+  #top { left: 0; top: 0; width: 1600px; height: 84px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; font-size: 28px; }
+  #logo { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; }
+  #deadline { left: 0; top: 84px; width: 1600px; height: 84px; background: #17110B; color: #F4EEE2; display: flex; align-items: center; gap: 28px; padding: 0 64px; font-size: 32px; }
+  #clock { font-weight: 700; font-size: 44px; font-variant-numeric: tabular-nums; color: #FF6A2B; }
+  #coffee { left: 64px; top: 216px; width: 720px; }
+  #coffee h1 { font-size: 92px; line-height: 1; font-weight: 800; letter-spacing: -0.035em; }
+  #notes { margin-top: 28px; font-size: 38px; line-height: 1.25; }
+  #price { margin-top: 44px; font-size: 56px; font-weight: 700; letter-spacing: -0.02em; }
+  #date { margin-top: 44px; font-size: 32px; line-height: 1.35; color: #5F5344; }
+  button { font: inherit; border: 0; cursor: pointer; }
+  .step { top: 212px; width: 100px; height: 100px; border-radius: 22px; font-size: 64px; font-weight: 500; background: #E7DDCB; color: #17110B; }
+  .step:hover { background: #D9CBB3; }
+  #minus { left: 880px; }
+  #plus { left: 1232px; }
+  #count { left: 980px; top: 212px; width: 252px; height: 100px; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  #buy { left: 880px; top: 360px; width: 656px; height: 140px; border-radius: 26px; background: #E5451A; color: #fff; font-size: 56px; font-weight: 800; letter-spacing: -0.02em; }
+  #buy:hover { background: #CF3A12; }
+  #buy.done { background: #17110B; color: #F4EEE2; font-size: 50px; }
+  #total { left: 1352px; top: 212px; width: 184px; height: 100px; display: flex; align-items: center; justify-content: flex-end; font-size: 40px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  #left-label { left: 880px; top: 540px; font-size: 38px; }
+  #left-value { left: 880px; top: 590px; font-size: 92px; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1.05; }
+  #bar { left: 880px; top: 716px; width: 656px; height: 32px; border-radius: 16px; background: #E7DDCB; overflow: hidden; }
+  #fill { height: 100%; background: #E5451A; }
+  #after { left: 880px; top: 768px; width: 656px; font-size: 34px; line-height: 1.25; }
+</style>
+</head>
+<body>
+  <div id="top" class="abs"><div id="logo">Четверг</div><div>Партия №1 · обжарка 12 ноября</div></div>
+  <div id="deadline" class="abs"><span>Приём заказов закроется через</span><span id="clock"></span></div>
+  <div id="coffee" class="abs">
+    <h1>Эфиопия, Гуджи</h1>
+    <div id="notes">Натуральная обработка.<br>Черника, чёрный чай.</div>
+    <div id="price">890 ₽ за 250 г</div>
+    <div id="date">Зерно обжарим только под заказы<br>этой партии. На склад не жарим.</div>
+  </div>
+  <button id="minus" class="abs step">−</button>
+  <div id="count" class="abs"></div>
+  <button id="plus" class="abs step">+</button>
+  <div id="total" class="abs"></div>
+  <button id="buy" class="abs"></button>
+  <div id="left-label" class="abs">В партии осталось</div>
+  <div id="left-value" class="abs"></div>
+  <div id="bar" class="abs"><div id="fill"></div></div>
+  <div id="after" class="abs"></div>
+<script>
+  // A working page: the buttons have real handlers. Time comes only from __seek, so a capture is repeatable.
+  const CAPACITY_KG = 12, TAKEN_KG = 8.6, PACK_KG = 0.25, PRICE = 890, CLOSES_IN_SEC = 7 * 3600 + 12 * 60 + 44;
+  const state = { quantity: 1, orderedAt: null, frame: 0 };
+  const $ = (id) => document.getElementById(id);
+  const rub = (n) => `${n.toLocaleString("ru-RU")} ₽`;
+  const kg = (n) => `${n.toFixed(2).replace(".", ",")} кг`;
+  const pad = (n) => String(n).padStart(2, "0");
+  function render() {
+    const left = CLOSES_IN_SEC - Math.floor(state.frame / 30);
+    $("clock").textContent = `${pad(Math.floor(left / 3600))}:${pad(Math.floor(left / 60) % 60)}:${pad(left % 60)}`;
+    $("count").textContent = state.quantity;
+    $("total").textContent = rub(state.quantity * PRICE);
+    const ordered = state.orderedAt !== null;
+    const travel = ordered ? Math.min((state.frame - state.orderedAt) / 18, 1) : 0;
+    const eased = 1 - (1 - travel) ** 3;
+    const mine = state.quantity * PACK_KG * eased;
+    $("left-value").textContent = `${kg(CAPACITY_KG - TAKEN_KG - mine)} из 12`;
+    $("fill").style.width = `${((TAKEN_KG + mine) / CAPACITY_KG) * 100}%`;
+    $("buy").textContent = ordered ? "Вы в партии №1" : "Заказать";
+    $("buy").classList.toggle("done", ordered);
+    $("after").textContent = ordered ? "Обжарим в\u00A0четверг. Отправим в\u00A0пятницу." : "";
+  }
+  $("plus").addEventListener("click", () => { state.quantity = Math.min(state.quantity + 1, 13); render(); });
+  $("minus").addEventListener("click", () => { state.quantity = Math.max(state.quantity - 1, 1); render(); });
+  $("buy").addEventListener("click", () => { if (state.orderedAt === null) { state.orderedAt = state.frame; render(); } });
+  window.__seek = (frame) => { state.frame = frame; render(); };
+  render();
+</script>
+</body>
+</html>

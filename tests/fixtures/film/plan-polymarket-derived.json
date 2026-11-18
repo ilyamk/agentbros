@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 1,
+  "projectId": "polymarket-derived",
+  "fps": 30,
+  "blueprintReferenceId": "polymarket",
+  "shots": [
+    {
+      "id": "announce",
+      "startFrame": 0,
+      "durationFrames": 63,
+      "intent": "Sender, subject, event: word by word",
+      "subject": "Sender, subject, event: word by word",
+      "framing": "as blueprint",
+      "camera": "slow push",
+      "composition": "centred small mark",
+      "entrance": "scale from 60% expo-out",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "layers": [
+        "ground",
+        "word"
+      ],
+      "subjectFill": 0.2,
+      "carry": "hard-cut: first colour jolt on the first accent",
+      "readingHoldSec": 1.2
+    },
+    {
+      "id": "urgency",
+      "startFrame": 63,
+      "durationFrames": 24,
+      "intent": "One word saying it is happening now",
+      "subject": "One word saying it is happening now",
+      "framing": "as blueprint",
+      "camera": "push then reverse drift",
+      "composition": "centred word on rings",
+      "entrance": "push from 60%",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "layers": [
+        "rings",
+        "word"
+      ],
+      "subjectFill": 0.45,
+      "carry": "hard-cut: second state, new ground"
+    },
+    {
+      "id": "stake",
+      "startFrame": 87,
+      "durationFrames": 29,
+      "intent": "The headline value, ending in a rising chart",
+      "subject": "The headline value, ending in a rising chart",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "centred number then bars",
+      "entrance": "number rollup",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup",
+        "chart-as-wipe"
+      ],
+      "layers": [
+        "number",
+        "bars"
+      ],
+      "subjectFill": 0.3,
+      "carry": "the bars grow until they fill the frame and become the next ground"
+    },
+    {
+      "id": "cadence",
+      "startFrame": 116,
+      "durationFrames": 31,
+      "intent": "How often or how it repeats",
+      "subject": "How often or how it repeats",
+      "framing": "as blueprint",
+      "camera": "slow drift up",
+      "composition": "wide centred capitals",
+      "entrance": "rise from below",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [],
+      "layers": [
+        "ground",
+        "line"
+      ],
+      "subjectFill": 0.6,
+      "carry": "hard-cut: drop to black for the quiet facts"
+    },
+    {
+      "id": "quiet-facts",
+      "startFrame": 147,
+      "durationFrames": 48,
+      "intent": "Two product facts on dark",
+      "subject": "Two product facts on dark",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "left aligned lines",
+      "entrance": "word by word",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup"
+      ],
+      "layers": [
+        "line",
+        "figure"
+      ],
+      "subjectFill": 0.4,
+      "carry": "the glossy object enters over the last fact and carries the eye right"
+    },
+    {
+      "id": "object-to-range",
+      "startFrame": 195,
+      "durationFrames": 121,
+      "intent": "A symbol of the category lands in a card, which shows the range",
+      "subject": "A symbol of the category lands in a card, which shows the range",
+      "framing": "as blueprint",
+      "camera": "tracks the object",
+      "composition": "object into card slot",
+      "entrance": "spin in oversized",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "object-into-slot",
+        "card-rotator"
+      ],
+      "layers": [
+        "object",
+        "card",
+        "values"
+      ],
+      "subjectFill": 0.7,
+      "carry": "hard-cut: first frame of the raised energy"
+    },
+    {
+      "id": "the-action",
+      "startFrame": 316,
+      "durationFrames": 80,
+      "intent": "Our own interface doing the one action",
+      "subject": "Our own interface doing the one action",
+      "framing": "as blueprint",
+      "camera": "scroll up",
+      "composition": "interface at natural size",
+      "entrance": "interface cut in",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "button-swallow",
+        "eased-rollup"
+      ],
+      "layers": [
+        "interface",
+        "values",
+        "cursor"
+      ],
+      "subjectFill": 0.6,
+      "carry": "the button fills until it becomes the next page"
+    },
+    {
+      "id": "potential",
+      "startFrame": 396,
+      "durationFrames": 35,
+      "intent": "What the action could reach",
+      "subject": "What the action could reach",
+      "framing": "as blueprint",
+      "camera": "slow pull",
+      "composition": "number over half circle",
+      "entrance": "dial rollup",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup",
+        "radial-tick-gauge"
+      ],
+      "layers": [
+        "ticks",
+        "number"
+      ],
+      "subjectFill": 0.5,
+      "carry": "hard-cut: on the drop into the rule"
+    },
+    {
+      "id": "rule",
+      "startFrame": 431,
+      "durationFrames": 60,
+      "intent": "Three-beat imperative",
+      "subject": "Three-beat imperative",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "stacked capitals",
+      "entrance": "hard word swap",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "cut-on-transient"
+      ],
+      "layers": [
+        "underline",
+        "word"
+      ],
+      "subjectFill": 0.6,
+      "carry": "hard-cut: a running number breaks the type"
+    },
+    {
+      "id": "running-gain",
+      "startFrame": 491,
+      "durationFrames": 23,
+      "intent": "A gain running up",
+      "subject": "A gain running up",
+      "framing": "as blueprint",
+      "camera": "slow pull",
+      "composition": "large number on white",
+      "entrance": "rollup from first frame",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup"
+      ],
+      "layers": [
+        "number",
+        "ground"
+      ],
+      "subjectFill": 0.45,
+      "carry": "the number keeps counting into the list row that replaces it"
+    },
+    {
+      "id": "you-win",
+      "startFrame": 514,
+      "durationFrames": 67,
+      "intent": "The viewer shown at the desired outcome, among others",
+      "subject": "The viewer shown at the desired outcome, among others",
+      "framing": "as blueprint",
+      "camera": "slide up then punch in",
+      "composition": "long list in a card",
+      "entrance": "list streams with blur",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "pinned-row-ranking"
+      ],
+      "layers": [
+        "list",
+        "pinned row",
+        "blur"
+      ],
+      "subjectFill": 0.75,
+      "carry": "hard-cut: punch out to the threshold"
+    },
+    {
+      "id": "threshold",
+      "startFrame": 581,
+      "durationFrames": 44,
+      "intent": "A threshold number, then what it means",
+      "subject": "A threshold number, then what it means",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "word and number",
+      "entrance": "word shifts as digits open",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup",
+        "field-backdrops"
+      ],
+      "layers": [
+        "picture",
+        "number"
+      ],
+      "subjectFill": 0.5,
+      "carry": "hard-cut: on the bar line"
+    },
+    {
+      "id": "peak-value",
+      "startFrame": 625,
+      "durationFrames": 35,
+      "intent": "The largest single value, with a tag",
+      "subject": "The largest single value, with a tag",
+      "framing": "as blueprint",
+      "camera": "slow drift",
+      "composition": "number over engraving",
+      "entrance": "tag wipe from left",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup",
+        "field-backdrops"
+      ],
+      "layers": [
+        "engraving",
+        "number",
+        "tag"
+      ],
+      "subjectFill": 0.4,
+      "carry": "hard-cut: to black for the itemised sheet"
+    },
+    {
+      "id": "itemised-object",
+      "startFrame": 660,
+      "durationFrames": 55,
+      "intent": "Full details on a physical object",
+      "subject": "Full details on a physical object",
+      "framing": "as blueprint",
+      "camera": "slow pull back",
+      "composition": "curled sheet, tilted",
+      "entrance": "unroll towards camera",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "printing-slip"
+      ],
+      "layers": [
+        "sheet",
+        "rows"
+      ],
+      "subjectFill": 0.8,
+      "carry": "hard-cut: clock takes over"
+    },
+    {
+      "id": "countdown",
+      "startFrame": 715,
+      "durationFrames": 47,
+      "intent": "Time collapses to zero",
+      "subject": "Time collapses to zero",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "three figures",
+      "entrance": "figures change every frame",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup"
+      ],
+      "layers": [
+        "figures",
+        "units"
+      ],
+      "subjectFill": 0.45,
+      "carry": "hard-cut: on the accent return"
+    },
+    {
+      "id": "event-name",
+      "startFrame": 762,
+      "durationFrames": 48,
+      "intent": "Name the event and its dates",
+      "subject": "Name the event and its dates",
+      "framing": "as blueprint",
+      "camera": "slow drift",
+      "composition": "wide capitals with ghost",
+      "entrance": "ghost drift and swap",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "layers": [
+        "ghost",
+        "word",
+        "tiles"
+      ],
+      "subjectFill": 0.7,
+      "carry": "hard-cut: the recap is the release"
+    },
+    {
+      "id": "still-recap",
+      "startFrame": 810,
+      "durationFrames": 65,
+      "intent": "Recap with motion stopped",
+      "subject": "Recap with motion stopped",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "small number then question",
+      "entrance": "rollup only",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "eased-rollup",
+        "stillness-before-the-ask"
+      ],
+      "layers": [
+        "number",
+        "line"
+      ],
+      "subjectFill": 0.3,
+      "carry": "the question stays and grows into the dare",
+      "readingHoldSec": 1.6
+    },
+    {
+      "id": "dare",
+      "startFrame": 875,
+      "durationFrames": 28,
+      "intent": "A direct question",
+      "subject": "A direct question",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "two line capitals",
+      "entrance": "none until last frames",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "stillness-before-the-ask"
+      ],
+      "layers": [
+        "type",
+        "ground"
+      ],
+      "subjectFill": 0.5,
+      "carry": "the rings from the urgency shot return around the answer"
+    },
+    {
+      "id": "call-to-action",
+      "startFrame": 903,
+      "durationFrames": 49,
+      "intent": "Call to action",
+      "subject": "Call to action",
+      "framing": "as blueprint",
+      "camera": "push",
+      "composition": "button word in rings",
+      "entrance": "push in with rings",
+      "exit": "hard cut",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "layers": [
+        "rings",
+        "chart",
+        "word"
+      ],
+      "subjectFill": 0.6,
+      "carry": "hard-cut: to the plain legal card"
+    },
+    {
+      "id": "end-card",
+      "startFrame": 952,
+      "durationFrames": 129,
+      "intent": "Product, address, mark, legal",
+      "subject": "Product, address, mark, legal",
+      "framing": "as blueprint",
+      "camera": "locked",
+      "composition": "accent word then mark",
+      "entrance": "hard swap",
+      "exit": "carried",
+      "curve": "expo-out",
+      "route": "remotion",
+      "techniqueIds": [],
+      "layers": [
+        "word",
+        "address"
+      ],
+      "subjectFill": 0.4,
+      "readingHoldSec": 2.0
+    }
+  ],
+  "onScreenCopy": [
+    {
+      "shotId": "announce",
+      "text": "Polymarket Perps Competition",
+      "required": false
+    },
+    {
+      "shotId": "urgency",
+      "text": "IS LIVE",
+      "required": false
+    },
+    {
+      "shotId": "stake",
+      "text": "$50,000",
+      "required": false
+    },
+    {
+      "shotId": "cadence",
+      "text": "EVERY 2 WEEKS",
+      "required": false
+    },
+    {
+      "shotId": "quiet-facts",
+      "text": "45x leverage",
+      "required": false
+    },
+    {
+      "shotId": "object-to-range",
+      "text": "Bitcoin Gold",
+      "required": false
+    },
+    {
+      "shotId": "the-action",
+      "text": "Long Short",
+      "required": false
+    },
+    {
+      "shotId": "potential",
+      "text": "$100K",
+      "required": false
+    },
+    {
+      "shotId": "rule",
+      "text": "START TRADING TO ENTER",
+      "required": false
+    },
+    {
+      "shotId": "running-gain",
+      "text": "+$460,504",
+      "required": false
+    },
+    {
+      "shotId": "you-win",
+      "text": "You",
+      "required": false
+    },
+    {
+      "shotId": "threshold",
+      "text": "TOP 50 TRADERS",
+      "required": false
+    },
+    {
+      "shotId": "peak-value",
+      "text": "$10K FOR 1ST PLACE",
+      "required": false
+    },
+    {
+      "shotId": "itemised-object",
+      "text": "Prize breakdown",
+      "required": false
+    },
+    {
+      "shotId": "countdown",
+      "text": "8D 3H 45M",
+      "required": false
+    },
+    {
+      "shotId": "event-name",
+      "text": "STARTS NOW",
+      "required": false
+    },
+    {
+      "shotId": "still-recap",
+      "text": "CAN YOU PLACE IN THE TOP 50?",
+      "required": false
+    },
+    {
+      "shotId": "call-to-action",
+      "text": "START TRADING",
+      "required": false
+    },
+    {
+      "shotId": "end-card",
+      "text": "POLYMARKET.COM/PERPS",
+      "required": false
+    }
+  ],
+  "finalFrameIntent": "hold"
+}

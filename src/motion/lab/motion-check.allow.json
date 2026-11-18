@@ -1,0 +1,53 @@
+[
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "echo-word",
+    "reason": "Outline ghosts are a mid layer that deliberately runs past both frame edges; aria-hidden and not meant to be read."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "dolly-word",
+    "reason": "Words passing the lens leave the frame on every side by design, already fading and blurred."
+  },
+  {
+    "code": "TEXT_OVERLAP",
+    "element": "dolly-word",
+    "reason": "Fly-through: the next word sits inside the one passing the lens, which is the whole mechanism."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "smear-word",
+    "frames": "34-40",
+    "reason": "The fast exit of the smear demo leaves the frame as a streak, with the word no longer legible."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "smear-word",
+    "frames": "74-80",
+    "reason": "The second exit of the smear demo, upwards, as a streak."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "lab-word",
+    "frames": "55-60",
+    "reason": "The first word's exit at speed to the left; settled, it sits inside the frame."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "lab-word",
+    "frames": "82-92",
+    "reason": "The second word's exit at speed upwards."
+  },
+  {
+    "code": "TEXT_OFF_STAGE",
+    "element": "lab-word",
+    "frames": "118-121",
+    "reason": "The third word zooming through the lens, where its counter becomes the way into the next scene."
+  },
+  {
+    "code": "TEXT_OVERLAP",
+    "element": "lab-word",
+    "frames": "60-70",
+    "reason": "Glyphs of one word tumbling into place: their rotated boxes touch for a few frames and clear when they settle."
+  }
+]

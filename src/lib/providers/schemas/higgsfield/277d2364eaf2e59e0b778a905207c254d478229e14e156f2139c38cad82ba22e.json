@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "endpoint": "wan/v2.6/image-to-video",
+  "title": "Wan 2.6 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-6/image-to-video.md",
+  "usageNotes": [
+    "Setting multi_shots=true also enables prompt_extend, even if prompt_extend was false.",
+    "Input images may be resized to fit a 1,440-pixel maximum dimension before generation. A last-frame input is unsupported."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 10000000,
+        "minimum": -1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10,
+          15
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "audio_url": {
+        "type": "string",
+        "title": "Audio URL",
+        "format": "uri"
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "480p",
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": false
+      },
+      "prompt_extend": {
+        "type": "boolean",
+        "default": false
+      },
+      "negative_prompt": {
+        "type": "string",
+        "title": "Negative prompt",
+        "default": ""
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

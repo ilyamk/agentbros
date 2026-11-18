@@ -1,0 +1,1190 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-15",
+  "useCases": [
+    {
+      "id": "hero-image",
+      "title": "Product hero image",
+      "playbooks": [
+        "product-promo",
+        "ugc-ad",
+        "teaser-trailer"
+      ],
+      "phrasings": {
+        "ru": [
+          "hero фото товара",
+          "фото товара"
+        ],
+        "en": [
+          "product hero image",
+          "product shot"
+        ]
+      },
+      "slots": [
+        "image.product",
+        "image.generate"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/ugc-ad/AGENTS.md, playbooks/teaser-trailer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "text-card",
+      "title": "Image with logo or lettering",
+      "playbooks": [
+        "product-promo",
+        "teaser-trailer",
+        "motion-design"
+      ],
+      "phrasings": {
+        "ru": [
+          "hero фото товара с надписью",
+          "фото с надписью",
+          "карточка с логотипом"
+        ],
+        "en": [
+          "logo text card",
+          "poster text",
+          "product image with lettering"
+        ]
+      },
+      "slots": [
+        "image.text-render",
+        "image.product"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/teaser-trailer/AGENTS.md, playbooks/motion-design/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "scene-image",
+      "title": "Scene concept still",
+      "playbooks": [
+        "ai-film",
+        "explainer"
+      ],
+      "phrasings": {
+        "ru": [
+          "концепт кадра",
+          "создать изображение"
+        ],
+        "en": [
+          "scene concept still",
+          "generate image"
+        ]
+      },
+      "slots": [
+        "image.generate"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/explainer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "edit-image",
+      "title": "Repair an image",
+      "playbooks": [
+        "product-promo",
+        "photo-slideshow"
+      ],
+      "phrasings": {
+        "ru": [
+          "редактировать фото",
+          "исправить изображение"
+        ],
+        "en": [
+          "edit image",
+          "repair image"
+        ]
+      },
+      "slots": [
+        "image.edit"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/photo-slideshow/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "character-sheet",
+      "title": "Consistent character references",
+      "playbooks": [
+        "ai-film",
+        "avatar-presenter",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "один персонаж во всех сценах",
+          "референс персонажа"
+        ],
+        "en": [
+          "consistent character",
+          "character reference sheet"
+        ]
+      },
+      "slots": [
+        "image.character",
+        "image.edit"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/avatar-presenter/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    },
+    {
+      "id": "influencer-photo",
+      "title": "Consented influencer portrait",
+      "playbooks": [
+        "ugc-ad",
+        "avatar-presenter"
+      ],
+      "phrasings": {
+        "ru": [
+          "фото инфлюенсера",
+          "портрет персонажа"
+        ],
+        "en": [
+          "influencer photo",
+          "persona photo"
+        ]
+      },
+      "slots": [
+        "image.character"
+      ],
+      "notes": "Production task derived from playbooks/ugc-ad/AGENTS.md, playbooks/avatar-presenter/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "upscale-image",
+      "title": "Upscale a delivery still",
+      "playbooks": [
+        "photo-slideshow",
+        "product-promo"
+      ],
+      "phrasings": {
+        "ru": [
+          "апскейл фото",
+          "увеличить разрешение фото"
+        ],
+        "en": [
+          "upscale image",
+          "upscale photo"
+        ]
+      },
+      "slots": [
+        "image.upscale"
+      ],
+      "notes": "Production task derived from playbooks/photo-slideshow/AGENTS.md, playbooks/product-promo/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "cutout-image",
+      "title": "Product cut-out",
+      "playbooks": [
+        "product-promo",
+        "motion-design"
+      ],
+      "phrasings": {
+        "ru": [
+          "удалить фон фото",
+          "вырезать товар"
+        ],
+        "en": [
+          "remove image background",
+          "product cutout"
+        ]
+      },
+      "slots": [
+        "image.cutout"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/motion-design/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "outpaint-image",
+      "title": "Extend a still for framing",
+      "playbooks": [
+        "photo-slideshow",
+        "product-promo"
+      ],
+      "phrasings": {
+        "ru": [
+          "расширить кадр",
+          "дорисовать края"
+        ],
+        "en": [
+          "extend image",
+          "outpaint image"
+        ]
+      },
+      "slots": [
+        "image.outpaint"
+      ],
+      "notes": "Production task derived from playbooks/photo-slideshow/AGENTS.md, playbooks/product-promo/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "inpaint-image",
+      "title": "Masked image repair",
+      "playbooks": [
+        "product-promo",
+        "ai-film"
+      ],
+      "phrasings": {
+        "ru": [
+          "заменить часть фото",
+          "закрасить область"
+        ],
+        "en": [
+          "inpaint image",
+          "masked image repair"
+        ]
+      },
+      "slots": [
+        "image.edit"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/ai-film/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "background-image",
+      "title": "Replace a still background",
+      "playbooks": [
+        "product-promo",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "заменить фон фото",
+          "сменить фон изображения"
+        ],
+        "en": [
+          "replace image background",
+          "change photo background"
+        ]
+      },
+      "slots": [
+        "image.background"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "denoise-image",
+      "title": "Restore a noisy still",
+      "playbooks": [
+        "photo-slideshow",
+        "event-recap"
+      ],
+      "phrasings": {
+        "ru": [
+          "убрать шум фото",
+          "очистить фотографию"
+        ],
+        "en": [
+          "denoise image",
+          "restore noisy photo"
+        ]
+      },
+      "slots": [
+        "image.denoise"
+      ],
+      "notes": "Production task derived from playbooks/photo-slideshow/AGENTS.md, playbooks/event-recap/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "try-on",
+      "title": "Clothing preview",
+      "playbooks": [
+        "ugc-ad",
+        "product-promo"
+      ],
+      "phrasings": {
+        "ru": [
+          "примерить одежду",
+          "виртуальная примерка"
+        ],
+        "en": [
+          "virtual try on",
+          "clothing preview"
+        ]
+      },
+      "slots": [
+        "image.try-on"
+      ],
+      "notes": "Production task derived from playbooks/ugc-ad/AGENTS.md, playbooks/product-promo/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "b-roll",
+      "title": "Generated b-roll shot",
+      "playbooks": [
+        "ai-film",
+        "stock-montage",
+        "teaser-trailer"
+      ],
+      "phrasings": {
+        "ru": [
+          "сгенерировать перебивку",
+          "видео по тексту"
+        ],
+        "en": [
+          "b roll shot",
+          "text to video"
+        ]
+      },
+      "slots": [
+        "video.text-to-video"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/stock-montage/AGENTS.md, playbooks/teaser-trailer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "photo-motion",
+      "title": "Animate a supplied photograph",
+      "playbooks": [
+        "photo-slideshow",
+        "product-promo",
+        "ai-film"
+      ],
+      "phrasings": {
+        "ru": [
+          "видео из фото",
+          "оживить фото"
+        ],
+        "en": [
+          "animate photo",
+          "video from photo"
+        ]
+      },
+      "slots": [
+        "video.image-to-video"
+      ],
+      "notes": "Production task derived from playbooks/photo-slideshow/AGENTS.md, playbooks/product-promo/AGENTS.md, playbooks/ai-film/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "reference-shot",
+      "title": "Shot from approved references",
+      "playbooks": [
+        "ai-film",
+        "teaser-trailer"
+      ],
+      "phrasings": {
+        "ru": [
+          "видео по референсу",
+          "кадр по референсам"
+        ],
+        "en": [
+          "reference to video",
+          "shot from references"
+        ]
+      },
+      "slots": [
+        "video.reference-to-video"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/teaser-trailer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    },
+    {
+      "id": "replace-person",
+      "title": "Replace a person in a clip",
+      "playbooks": [
+        "ai-film",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "заменить человека в клипе",
+          "заменить персонажа в видео"
+        ],
+        "en": [
+          "replace person in clip",
+          "character swap"
+        ]
+      },
+      "slots": [
+        "video.character-swap"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    },
+    {
+      "id": "restyle-clip",
+      "title": "Restyle supplied footage",
+      "playbooks": [
+        "ai-film",
+        "motion-design"
+      ],
+      "phrasings": {
+        "ru": [
+          "стилизовать видео",
+          "изменить стиль клипа"
+        ],
+        "en": [
+          "restyle video",
+          "restyle clip"
+        ]
+      },
+      "slots": [
+        "video.restyle"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/motion-design/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    },
+    {
+      "id": "edit-clip",
+      "title": "Edit an object or action",
+      "playbooks": [
+        "ai-film",
+        "product-promo"
+      ],
+      "phrasings": {
+        "ru": [
+          "редактировать видео",
+          "заменить объект в видео"
+        ],
+        "en": [
+          "edit video",
+          "replace object in video"
+        ]
+      },
+      "slots": [
+        "video.edit"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/product-promo/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "upscale-video",
+      "title": "Upscale a delivery clip",
+      "playbooks": [
+        "ai-film",
+        "event-recap"
+      ],
+      "phrasings": {
+        "ru": [
+          "апскейл видео",
+          "увеличить разрешение видео"
+        ],
+        "en": [
+          "upscale video",
+          "upscale delivery clip"
+        ]
+      },
+      "slots": [
+        "video.upscale"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/event-recap/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "slow-motion",
+      "title": "Interpolate footage",
+      "playbooks": [
+        "event-recap",
+        "ai-film"
+      ],
+      "phrasings": {
+        "ru": [
+          "интерполяция кадров",
+          "замедлить видео"
+        ],
+        "en": [
+          "frame interpolation",
+          "slow motion"
+        ]
+      },
+      "slots": [
+        "video.interpolate"
+      ],
+      "notes": "Production task derived from playbooks/event-recap/AGENTS.md, playbooks/ai-film/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "lip-sync",
+      "title": "Synchronise a face to audio",
+      "playbooks": [
+        "avatar-presenter",
+        "localise"
+      ],
+      "phrasings": {
+        "ru": [
+          "липсинк",
+          "синхронизировать губы"
+        ],
+        "en": [
+          "lip sync",
+          "synchronise lips"
+        ]
+      },
+      "slots": [
+        "video.lipsync"
+      ],
+      "notes": "Production task derived from playbooks/avatar-presenter/AGENTS.md, playbooks/localise/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    },
+    {
+      "id": "talking-presenter",
+      "title": "Talking presenter",
+      "playbooks": [
+        "avatar-presenter",
+        "explainer"
+      ],
+      "phrasings": {
+        "ru": [
+          "говорящий ведущий",
+          "говорящая голова"
+        ],
+        "en": [
+          "talking presenter",
+          "talking head"
+        ]
+      },
+      "slots": [
+        "video.avatar",
+        "video.lipsync"
+      ],
+      "notes": "Production task derived from playbooks/avatar-presenter/AGENTS.md, playbooks/explainer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "cutout-video",
+      "title": "Remove a clip background",
+      "playbooks": [
+        "ugc-ad",
+        "avatar-presenter"
+      ],
+      "phrasings": {
+        "ru": [
+          "удалить фон видео",
+          "вырезать человека из видео"
+        ],
+        "en": [
+          "remove video background",
+          "video cutout"
+        ]
+      },
+      "slots": [
+        "video.cutout"
+      ],
+      "notes": "Production task derived from playbooks/ugc-ad/AGENTS.md, playbooks/avatar-presenter/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "background-video",
+      "title": "Replace a clip background",
+      "playbooks": [
+        "ugc-ad",
+        "avatar-presenter"
+      ],
+      "phrasings": {
+        "ru": [
+          "заменить фон видео",
+          "сменить фон клипа"
+        ],
+        "en": [
+          "replace video background",
+          "change clip background"
+        ]
+      },
+      "slots": [
+        "video.background"
+      ],
+      "notes": "Production task derived from playbooks/ugc-ad/AGENTS.md, playbooks/avatar-presenter/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "denoise-video",
+      "title": "Restore noisy footage",
+      "playbooks": [
+        "event-recap",
+        "footage-edit"
+      ],
+      "phrasings": {
+        "ru": [
+          "убрать шум видео",
+          "очистить видео"
+        ],
+        "en": [
+          "denoise video",
+          "restore noisy footage"
+        ]
+      },
+      "slots": [
+        "video.denoise"
+      ],
+      "notes": "Production task derived from playbooks/event-recap/AGENTS.md, playbooks/footage-edit/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "explainer-voice",
+      "title": "Explainer narration",
+      "playbooks": [
+        "explainer",
+        "product-tutorial",
+        "product-promo"
+      ],
+      "phrasings": {
+        "ru": [
+          "озвучка объяснения",
+          "озвучить текст"
+        ],
+        "en": [
+          "explainer voiceover",
+          "narrate text"
+        ]
+      },
+      "slots": [
+        "audio.voiceover"
+      ],
+      "notes": "Production task derived from playbooks/explainer/AGENTS.md, playbooks/product-tutorial/AGENTS.md, playbooks/product-promo/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "clone-voice",
+      "title": "Consented voice clone",
+      "playbooks": [
+        "avatar-presenter",
+        "localise"
+      ],
+      "phrasings": {
+        "ru": [
+          "клонировать голос",
+          "клон голоса"
+        ],
+        "en": [
+          "clone voice",
+          "voice cloning"
+        ]
+      },
+      "slots": [
+        "audio.voice-clone"
+      ],
+      "notes": "Production task derived from playbooks/avatar-presenter/AGENTS.md, playbooks/localise/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "change-voice",
+      "title": "Convert a recorded voice",
+      "playbooks": [
+        "localise",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "изменить голос",
+          "заменить голос"
+        ],
+        "en": [
+          "change voice",
+          "voice conversion"
+        ]
+      },
+      "slots": [
+        "audio.voice-change"
+      ],
+      "notes": "Production task derived from playbooks/localise/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "music-bed",
+      "title": "Background music bed",
+      "playbooks": [
+        "product-promo",
+        "motion-design",
+        "ai-film",
+        "stock-montage"
+      ],
+      "phrasings": {
+        "ru": [
+          "фоновая музыка",
+          "музыкальная подложка"
+        ],
+        "en": [
+          "background music bed",
+          "music soundtrack"
+        ]
+      },
+      "slots": [
+        "audio.music"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/motion-design/AGENTS.md, playbooks/ai-film/AGENTS.md, playbooks/stock-montage/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "ui-cue",
+      "title": "UI or transition sound",
+      "playbooks": [
+        "motion-design",
+        "feature-update",
+        "product-tutorial"
+      ],
+      "phrasings": {
+        "ru": [
+          "звуковой эффект",
+          "звук интерфейса"
+        ],
+        "en": [
+          "ui sound cue",
+          "sound effect"
+        ]
+      },
+      "slots": [
+        "audio.sfx"
+      ],
+      "notes": "Production task derived from playbooks/motion-design/AGENTS.md, playbooks/feature-update/AGENTS.md, playbooks/product-tutorial/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "foley-action",
+      "title": "Foley following visible action",
+      "playbooks": [
+        "ai-film",
+        "event-recap"
+      ],
+      "phrasings": {
+        "ru": [
+          "фоли для видео",
+          "озвучить действия"
+        ],
+        "en": [
+          "video foley",
+          "foley for action"
+        ]
+      },
+      "slots": [
+        "audio.foley",
+        "audio.sfx"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/event-recap/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "clean-speech",
+      "title": "Clean recorded speech",
+      "playbooks": [
+        "footage-edit",
+        "case-study",
+        "localise"
+      ],
+      "phrasings": {
+        "ru": [
+          "очистить звук",
+          "убрать шум аудио"
+        ],
+        "en": [
+          "clean audio",
+          "denoise speech"
+        ]
+      },
+      "slots": [
+        "audio.denoise"
+      ],
+      "notes": "Production task derived from playbooks/footage-edit/AGENTS.md, playbooks/case-study/AGENTS.md, playbooks/localise/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "split-stems",
+      "title": "Separate music stems",
+      "playbooks": [
+        "motion-design",
+        "footage-edit"
+      ],
+      "phrasings": {
+        "ru": [
+          "отделить вокал",
+          "разделить дорожки"
+        ],
+        "en": [
+          "separate vocal",
+          "split stems"
+        ]
+      },
+      "slots": [
+        "audio.stems"
+      ],
+      "notes": "Production task derived from playbooks/motion-design/AGENTS.md, playbooks/footage-edit/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "subtitle-transcript",
+      "title": "Subtitle transcript",
+      "playbooks": [
+        "footage-edit",
+        "shorts-from-long",
+        "localise",
+        "case-study"
+      ],
+      "phrasings": {
+        "ru": [
+          "субтитры",
+          "транскрибация речи"
+        ],
+        "en": [
+          "subtitle transcript",
+          "transcribe speech"
+        ]
+      },
+      "slots": [
+        "text.transcribe"
+      ],
+      "notes": "Production task derived from playbooks/footage-edit/AGENTS.md, playbooks/shorts-from-long/AGENTS.md, playbooks/localise/AGENTS.md, playbooks/case-study/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "visual-analysis",
+      "title": "Describe source frames",
+      "playbooks": [
+        "ai-film",
+        "stock-montage",
+        "footage-edit"
+      ],
+      "phrasings": {
+        "ru": [
+          "описать изображение",
+          "описать видео"
+        ],
+        "en": [
+          "describe image",
+          "describe video"
+        ]
+      },
+      "slots": [
+        "vision.analyse"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/stock-montage/AGENTS.md, playbooks/footage-edit/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "mesh-image",
+      "title": "3D prop from a photograph",
+      "playbooks": [
+        "product-promo",
+        "motion-design"
+      ],
+      "phrasings": {
+        "ru": [
+          "3d модель из фото",
+          "меш из изображения"
+        ],
+        "en": [
+          "image to 3d",
+          "mesh from photo"
+        ]
+      },
+      "slots": [
+        "3d.from-image"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/motion-design/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "mesh-text",
+      "title": "3D prop from a description",
+      "playbooks": [
+        "motion-design",
+        "ai-film"
+      ],
+      "phrasings": {
+        "ru": [
+          "3d модель по тексту",
+          "меш по описанию"
+        ],
+        "en": [
+          "text to 3d",
+          "mesh from description"
+        ]
+      },
+      "slots": [
+        "3d.from-text"
+      ],
+      "notes": "Production task derived from playbooks/motion-design/AGENTS.md, playbooks/ai-film/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "mesh-edit",
+      "title": "Prepare a 3D prop",
+      "playbooks": [
+        "product-promo",
+        "motion-design"
+      ],
+      "phrasings": {
+        "ru": [
+          "ретопология модели",
+          "текстура 3d"
+        ],
+        "en": [
+          "edit 3d mesh",
+          "retexture model"
+        ]
+      },
+      "slots": [
+        "3d.edit"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/motion-design/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "train-identity",
+      "title": "Train approved identity or style",
+      "playbooks": [
+        "ai-film",
+        "avatar-presenter"
+      ],
+      "phrasings": {
+        "ru": [
+          "обучить lora",
+          "обучить стиль"
+        ],
+        "en": [
+          "train lora",
+          "train approved style"
+        ]
+      },
+      "slots": [
+        "train.lora"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/avatar-presenter/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "storyboard",
+      "title": "Storyboard exploration",
+      "playbooks": [
+        "ai-film",
+        "teaser-trailer"
+      ],
+      "phrasings": {
+        "ru": [
+          "кадры раскадровки",
+          "визуальная раскадровка"
+        ],
+        "en": [
+          "storyboard stills",
+          "visual storyboard"
+        ]
+      },
+      "slots": [
+        "image.generate",
+        "image.character"
+      ],
+      "notes": "Production task derived from playbooks/ai-film/AGENTS.md, playbooks/teaser-trailer/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "ad-variant",
+      "title": "Advertising image variation",
+      "playbooks": [
+        "product-promo",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "рекламный креатив",
+          "вариант рекламы"
+        ],
+        "en": [
+          "ad creative",
+          "advertising image variation"
+        ]
+      },
+      "slots": [
+        "image.product",
+        "image.edit"
+      ],
+      "notes": "Production task derived from playbooks/product-promo/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "portrait-motion",
+      "title": "Animate a portrait",
+      "playbooks": [
+        "avatar-presenter",
+        "ugc-ad"
+      ],
+      "phrasings": {
+        "ru": [
+          "оживить портрет",
+          "анимировать портрет"
+        ],
+        "en": [
+          "animate portrait",
+          "portrait motion"
+        ]
+      },
+      "slots": [
+        "video.image-to-video",
+        "video.avatar"
+      ],
+      "notes": "Production task derived from playbooks/avatar-presenter/AGENTS.md, playbooks/ugc-ad/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply."
+    },
+    {
+      "id": "trailer-world",
+      "title": "Trailer establishing shot",
+      "playbooks": [
+        "teaser-trailer",
+        "ai-film"
+      ],
+      "phrasings": {
+        "ru": [
+          "общий план для трейлера",
+          "установочный кадр"
+        ],
+        "en": [
+          "trailer establishing shot",
+          "establishing shot"
+        ]
+      },
+      "slots": [
+        "video.text-to-video",
+        "video.reference-to-video"
+      ],
+      "notes": "Production task derived from playbooks/teaser-trailer/AGENTS.md, playbooks/ai-film/AGENTS.md. Route selection is planning only; source-footage approvals and consent still apply.",
+      "references": "refs:plan"
+    }
+  ],
+  "categories": {
+    "3d-to-3d": {
+      "slots": [
+        "3d.edit"
+      ],
+      "why": "3d-to-3d accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "audio-to-audio": {
+      "slots": [
+        "audio.voice-clone",
+        "audio.voice-change",
+        "audio.denoise",
+        "audio.stems"
+      ],
+      "why": "audio-to-audio accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "audio-to-text": {
+      "slots": [
+        "text.transcribe"
+      ],
+      "why": "audio-to-text accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "audio-to-video": {
+      "slots": [
+        "video.lipsync",
+        "video.avatar"
+      ],
+      "why": "audio-to-video accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "image-to-3d": {
+      "slots": [
+        "3d.from-image"
+      ],
+      "why": "image-to-3d accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "image-to-image": {
+      "slots": [
+        "image.edit",
+        "image.text-render",
+        "image.product",
+        "image.character",
+        "image.upscale",
+        "image.cutout",
+        "image.outpaint",
+        "image.denoise",
+        "image.background",
+        "image.try-on",
+        "video.interpolate"
+      ],
+      "why": "image-to-image accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "image-to-json": {
+      "excluded": true,
+      "why": "Structured image extraction is catalogue-only; visual description uses vision slots."
+    },
+    "image-to-text": {
+      "slots": [
+        "vision.analyse"
+      ],
+      "why": "image-to-text accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "image-to-video": {
+      "slots": [
+        "video.image-to-video",
+        "video.reference-to-video",
+        "video.avatar"
+      ],
+      "why": "image-to-video accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "json": {
+      "excluded": true,
+      "why": "Generic JSON transformation is catalogue-only; production uses typed local artefacts."
+    },
+    "llm": {
+      "excluded": true,
+      "why": "General language inference stays with the configured harness."
+    },
+    "speech-to-speech": {
+      "slots": [
+        "audio.voice-change"
+      ],
+      "why": "speech-to-speech accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "speech-to-text": {
+      "slots": [
+        "text.transcribe"
+      ],
+      "why": "speech-to-text accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "text-to-3d": {
+      "slots": [
+        "3d.from-text"
+      ],
+      "why": "text-to-3d accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "text-to-audio": {
+      "slots": [
+        "audio.music",
+        "audio.sfx",
+        "audio.foley"
+      ],
+      "why": "text-to-audio accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "text-to-image": {
+      "slots": [
+        "image.generate",
+        "image.text-render",
+        "image.product",
+        "image.character"
+      ],
+      "why": "text-to-image accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "text-to-json": {
+      "excluded": true,
+      "why": "Structured text extraction is catalogue-only; no media slot consumes it."
+    },
+    "text-to-speech": {
+      "slots": [
+        "audio.voiceover",
+        "audio.voice-clone"
+      ],
+      "why": "text-to-speech accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "text-to-text": {
+      "excluded": true,
+      "why": "Writing and translation stay with the configured harness."
+    },
+    "text-to-video": {
+      "slots": [
+        "video.text-to-video",
+        "video.avatar"
+      ],
+      "why": "text-to-video accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "training": {
+      "slots": [
+        "train.lora"
+      ],
+      "why": "training accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "unknown": {
+      "excluded": true,
+      "why": "Unknown provider category has no validated production meaning."
+    },
+    "video-to-audio": {
+      "slots": [
+        "audio.foley"
+      ],
+      "why": "video-to-audio accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "video-to-text": {
+      "slots": [
+        "vision.analyse"
+      ],
+      "why": "video-to-text accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "video-to-video": {
+      "slots": [
+        "video.reference-to-video",
+        "video.character-swap",
+        "video.restyle",
+        "video.edit",
+        "video.upscale",
+        "video.interpolate",
+        "video.lipsync",
+        "video.cutout",
+        "video.background",
+        "video.denoise"
+      ],
+      "why": "video-to-video accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "vision": {
+      "slots": [
+        "vision.analyse"
+      ],
+      "why": "vision accepts the source medium and produces the artefact kinds needed by these slots; endpoint schemas further constrain references, duration, aspect and resolution. Applies to both providers where present."
+    },
+    "workflow": {
+      "excluded": true,
+      "why": "Provider workflow routing is catalogue-only, not an asset task."
+    },
+    "worlds": {
+      "excluded": true,
+      "why": "Interactive world generation is outside the current linear-video playbooks."
+    }
+  }
+}

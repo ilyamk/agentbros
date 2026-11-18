@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "family": "models",
+  "note": "Model weights for local engines. Targets under $MODELS/ resolve to the model cache (~/.cache/agentbros, or AGENTBROS_MODEL_CACHE), never the repository: Remotion bundles public/. BiRefNet lite: the author's own ONNX export of the general model with the Swin-v1-tiny backbone, 1024x1024 input, fp32, release v1 asset uploaded 2024-08-18; licence MIT, LICENSE blob 485921e8271834871ff2baafb892b79ef6a75e75 at commit f7079632d681ecf12161fcea8905682934e59e51 (checked 2026-11-15). Used by pnpm matte --engine onnx (docs/matte.md).",
+  "assets": [
+    {
+      "name": "birefnet-general-lite",
+      "target": "$MODELS/matte/birefnet-general-lite-swin-v1-tiny-epoch232.onnx",
+      "licence": "MIT (ZhengPeng7/BiRefNet, https://github.com/ZhengPeng7/BiRefNet/blob/f7079632d681ecf12161fcea8905682934e59e51/LICENSE)",
+      "sha256": "5600024376f572a557870a5eb0afb1e5961636bef4e1e22132025467d0f03333",
+      "size": 224005088,
+      "source": {
+        "kind": "url",
+        "url": "https://github.com/ZhengPeng7/BiRefNet/releases/download/v1/BiRefNet-general-bb_swin_v1_tiny-epoch_232.onnx",
+        "page": "https://github.com/ZhengPeng7/BiRefNet/releases/tag/v1"
+      }
+    }
+  ]
+}

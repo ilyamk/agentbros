@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "postiz",
+  "format": { "width": 1280, "height": 720, "fps": 30 },
+  "durationSec": 40.033,
+  "slots": [
+    {
+      "id": "problem-grid",
+      "role": "opener: the chore as a picture",
+      "startSec": 0,
+      "durationSec": 3.7,
+      "visualRecipe": "Near-black ground. A 3x2 grid of dark rounded cards, hairline borders, about 90% of the frame, one card per destination the audience juggles. Each card receives rough text rows and a small red or amber warning chip naming a different problem. End state: each card outlined in red or amber.",
+      "motionRecipe": "Cards appear on a 1-2 frame stagger over the first 9 frames. A pointer visits the cards in reading order; a chip lands under each roughly each half second. Slow push-in of about 14% over 3.4 s, power1.out. Last 5 frames: all outlines pulse. Hard cut out on the hit.",
+      "soundRecipe": "Music at a steady tempo starting on frame 0; optional small UI ticks as each chip lands. The cut out falls 2-3 frames ahead of a hit.",
+      "copySlot": { "purpose": "one short label per warning chip, each a different concrete obstacle", "maxWords": 4 },
+      "techniqueIds": ["warning-chip-grid-opener", "cut-ahead-of-kick-on-4-beat-grid"]
+    },
+    {
+      "id": "category-and-first-ask",
+      "role": "positioning sentence, then the first request and its reply",
+      "startSec": 3.7,
+      "durationSec": 5.533,
+      "visualRecipe": "Warm cream ground. One centred serif sentence in sentence case, text-box height about 11% of the frame and width about 70%, at mid-height. A dark rounded message bubble at top right (x 0.61-0.92, y 0.11) and a reply bubble at bottom left (x 0.17-0.46, y 0.78), each carrying a small avatar and sender name. End state: sentence and both bubbles on screen.",
+      "motionRecipe": "First frame empty; word groups fade in place over 3 frames each, 6 frames apart, no reflow. Slow push-in of about 6% across the slot, sine.inOut. At +0.76 s the request bubble fades in and its text types at about two words a second; at +4.36 s the reply bubble rises over 5 frames (power2.out) and streams a word each 2 frames.",
+      "soundRecipe": "Music continues; optional soft key ticks under the typing. The slot is 12 beats; the cut out lands 2-3 frames ahead of a hit.",
+      "copySlot": { "purpose": "the category the product claims, then a natural one-sentence request and a short confident reply", "maxWords": 12 },
+      "techniqueIds": ["blank-frame-then-fade-headline", "corner-message-bubbles"]
+    },
+    {
+      "id": "thinking-one",
+      "role": "anticipation interstitial",
+      "startSec": 9.233,
+      "durationSec": 1.834,
+      "visualRecipe": "Charcoal ground. The new film's own mark assembles at centre (about 18% of frame width, y about 0.40): two simple shapes joined by a drawn stroke. A two-word status label in white sans under it; a small attribution chip at bottom left. End state: the mark complete, its stroke still travelling.",
+      "motionRecipe": "Frame 1: a dot. Frames 2-8: shapes grow and the stroke draws on; the label builds word by word, 4 frames apart. The stroke keeps looping until the cut. Exactly 4 beats.",
+      "soundRecipe": "Music only; no effect needed. Cuts in and out land 2-3 frames ahead of hits.",
+      "copySlot": { "purpose": "what the assistant is doing right now", "maxWords": 3 },
+      "techniqueIds": ["dark-loader-interstitial"]
+    },
+    {
+      "id": "result-one-to-many",
+      "role": "proof: one input turns into many tailored outputs",
+      "startSec": 11.067,
+      "durationSec": 5.533,
+      "visualRecipe": "Cream ground, faint square grid. One source card at centre top and a two-row serif caption under it (text boxes about 8% of height). Then a 3x2 grid of white cards, each shaped for its destination, about 85% of frame width, carrying small green check chips. A dark pill notification at bottom centre (y 0.86-0.90). A small terracotta named pointer flag moves among the cards.",
+      "motionRecipe": "Source card fades and scales in over 4 frames; caption rows fade in 5 frames apart. At +1.73 s the caption fades over 3 frames, the source dissolves and the new cards spring out of its position about 4 frames apart, scaling up starting near 0.3 on an overshooting ease-out. Check chips appear in pointer order; at +4.17 s the notification rises over 5 frames (power2.out) and holds.",
+      "soundRecipe": "Music; the burst sits on a hit. Optional soft pops per card. The slot is 12 beats.",
+      "copySlot": { "purpose": "a caption stating the transformation in plain words, then a notification giving a count and a moment", "maxWords": 9 },
+      "techniqueIds": ["one-to-many-card-fanout", "toast-confirmation"]
+    },
+    {
+      "id": "benefit-and-second-ask",
+      "role": "benefit sentence, then a larger request",
+      "startSec": 16.6,
+      "durationSec": 3.7,
+      "visualRecipe": "Same cream card as the first ask: a two-row centred serif benefit (text boxes about 8-10% of height) and a single request bubble at top right.",
+      "motionRecipe": "Empty first frame, rows fade in place over 3 frames, a slow push-in of about 4% (sine.out). The request bubble appears at about +0.9 s and types at about two words a second.",
+      "soundRecipe": "Music continues; 8 beats; cut out 2-3 frames ahead of a hit.",
+      "copySlot": { "purpose": "a concrete, relatable saving of effort, then a request that widens the scope", "maxWords": 14 },
+      "techniqueIds": ["blank-frame-then-fade-headline", "corner-message-bubbles"]
+    },
+    {
+      "id": "thinking-two",
+      "role": "anticipation interstitial, repeated",
+      "startSec": 20.3,
+      "durationSec": 1.867,
+      "visualRecipe": "Identical to the first interstitial; only the status label changes.",
+      "motionRecipe": "Identical to the first interstitial, 4 beats.",
+      "soundRecipe": "Music only.",
+      "copySlot": { "purpose": "what the assistant is doing for the larger request", "maxWords": 4 },
+      "techniqueIds": ["dark-loader-interstitial"]
+    },
+    {
+      "id": "result-at-scale",
+      "role": "proof: the larger request fulfilled",
+      "startSec": 22.167,
+      "durationSec": 5.533,
+      "visualRecipe": "A planning board on light cream: columns, rows, a header holding a counter pill. Small coloured items populate it, plus one larger accent-coloured hero item. End state after the pull-out: the entire board inside a rounded panel, about 4% cream margin.",
+      "motionRecipe": "Board fades in over 2 frames; a named pointer flag places items each 4-6 frames while the view drifts right about 16% of a frame width and in about 4%, linear, for 2.4 s. At +2.77 s a pull-out of about 1.2x to 1.0x, expo.out over about 15 frames; the counter keeps climbing; hold to the cut.",
+      "soundRecipe": "Music; the pull-out starts on a hit. Optional soft ticks as items land. 12 beats.",
+      "copySlot": { "purpose": "item labels inside the board and a running total in the header", "maxWords": 3 },
+      "techniqueIds": ["populate-then-pull-out-reveal"]
+    },
+    {
+      "id": "instant-ask",
+      "role": "proof: immediacy, no waiting",
+      "startSec": 27.7,
+      "durationSec": 3.7,
+      "visualRecipe": "Near-black ground; one centred column of two message bubbles about 38% of frame width: the user's request on top, the assistant's reply under it carrying three small status chips.",
+      "motionRecipe": "Request bubble rises and settles in about 7 frames on an overshooting ease-out. At +1.86 s the reply enters underneath and both shift up over about 6 frames (power1.out); chips appear 1 s afterwards.",
+      "soundRecipe": "Music; the reply lands on a beat. 8 beats.",
+      "copySlot": { "purpose": "a one-sentence request for an immediate action and a two-sentence confirmation", "maxWords": 10 },
+      "techniqueIds": ["message-thread-push-up"]
+    },
+    {
+      "id": "summary-verbs",
+      "role": "summary claim acted out as an edit",
+      "startSec": 31.4,
+      "durationSec": 5.533,
+      "visualRecipe": "Cream ground, one centred serif sentence, text-box height 11-12% of the frame, 74-85% of width. The first word is the variable: ahead of each change it sits in a pale blue selection under a small terracotta caret flag.",
+      "motionRecipe": "Empty first frame, sentence fades in over 3 frames. At intervals of 55 frames (one group of 4 beats) the selected word is deleted and its replacement types at one letter a frame while the sentence recentres on each frame. Three variants in total, matching the three requests shown.",
+      "soundRecipe": "Music; each change lands 1-2 frames ahead of a hit.",
+      "copySlot": { "purpose": "one fixed sentence whose first word cycles through the three actions the film demonstrated", "maxWords": 6 },
+      "techniqueIds": ["select-retype-word-swap", "blank-frame-then-fade-headline"]
+    },
+    {
+      "id": "sign-off",
+      "role": "end card",
+      "startSec": 36.933,
+      "durationSec": 3.1,
+      "visualRecipe": "Cream ground, the new film's own mark and wordmark centred (about 36% of width), one small sans row under it giving the category and address. Final frames black.",
+      "motionRecipe": "One empty frame, then the mark fades and scales up starting near 85%, about 8% overshoot, settling in about 12 frames. Hold about 2 s. Fade to black over 13 frames at about 39.5 s; last 3 frames black.",
+      "soundRecipe": "Music resolves; near-silence after about 38.6 s.",
+      "copySlot": { "purpose": "category sentence and address", "maxWords": 8 },
+      "techniqueIds": ["end-card-pop-fade-black"]
+    }
+  ],
+  "rhythm": {
+    "bpm": 129.3,
+    "cutGrid": "Each shot lasts 4, 8 or 12 beats (55, 111 or 166 frames at 30 fps): 8, 12, 4, 12, 8, 4, 12, 8, 12, then a 3.1 s end card. Hard cuts only, each placed 2-3 frames ahead of the loudness peak of a hit. Light and dark grounds alternate around each interstitial. Accents inside the summary come at 4-beat intervals."
+  },
+  "style": "Warm cream editorial cards in a book serif, dark charcoal interstitials and replica interfaces as proof; two accents (one for the assistant, one for the partner mark), flat fills, soft card shadows, no texture.",
+  "transferRules": {
+    "keep": [
+      "A wordless problem picture first: many small failures in a grid, escalating, then a hard cut to a calm light card",
+      "The three-step loop: request on a light card, a 4-beat dark interstitial, the result on a light interface",
+      "Escalating proofs: one into many, then many at scale, then instant, no wait",
+      "Fast machine streaming against slow human typing in the message bubbles",
+      "The one-to-many burst out of a single origin on a 4-frame stagger",
+      "Populate a board at a near framing, then pull out on a fast-out ease to show it entire",
+      "Summary as an on-screen edit of one word, 4 beats apart",
+      "Shot lengths in multiples of 4 beats, cuts 2-3 frames ahead of the hit, no transition effects",
+      "Empty first frame on each light card, then a 3-frame fade in place"
+    ],
+    "mustChange": [
+      "branding: mark, wordmark, partner mark, accent colours tied to either brand, attribution chip",
+      "music: a new licensed track; rebuild the beat grid for it",
+      "graphics: each interface must be the new product's real interface or a faithful capture, never the reference's screens",
+      "copy: each sentence, request, reply, label, chip and handle",
+      "the example customer and their content",
+      "the destinations shown and their icons"
+    ]
+  }
+}

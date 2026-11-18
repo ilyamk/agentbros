@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "status": {
+    "available": true,
+    "engine": "librosa-1.0.0+ffmpeg-loudnorm"
+  },
+  "hasAudio": true,
+  "tempo": {
+    "bpm": 127.59,
+    "confidence": 0.164,
+    "beatRegularity": 0.945,
+    "beatsSec": [
+      0.093,
+      0.557,
+      1.091,
+      1.602,
+      2.067,
+      2.554,
+      3.019,
+      3.483,
+      3.947,
+      4.412,
+      4.876,
+      5.294,
+      5.759,
+      6.223,
+      6.711,
+      7.198,
+      7.709
+    ],
+    "downbeatsSec": [
+      0.093,
+      2.067,
+      3.947,
+      5.759,
+      7.709
+    ],
+    "downbeatConfidence": 0.276
+  },
+  "onsetsSec": [
+    0.093,
+    0.209,
+    0.395,
+    0.557,
+    0.859,
+    1.091,
+    1.393,
+    1.602,
+    1.858,
+    2.067,
+    2.206,
+    2.415,
+    3.019,
+    3.251,
+    3.483,
+    3.622,
+    3.738,
+    3.924,
+    4.412,
+    4.598,
+    4.667,
+    4.876,
+    4.992,
+    5.155,
+    5.294,
+    5.55,
+    5.944,
+    6.153,
+    6.455,
+    6.525,
+    6.711,
+    7.152,
+    7.407,
+    7.709,
+    7.848,
+    8.081,
+    8.638
+  ],
+  "sections": [
+    {
+      "startSec": 0,
+      "endSec": 3.576,
+      "label": "1-quiet",
+      "energy": 0.204
+    },
+    {
+      "startSec": 3.576,
+      "endSec": 8.725,
+      "label": "2-medium",
+      "energy": 0.543
+    }
+  ],
+  "loudness": {
+    "integratedLufs": -10,
+    "truePeakDb": 0.15,
+    "loudnessRangeLu": 5.4
+  },
+  "silence": []
+}

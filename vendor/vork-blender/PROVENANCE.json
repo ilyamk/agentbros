@@ -1,0 +1,38 @@
+{
+  "source": "https://github.com/voyager-so/vork/tree/011e3f12e6c17696b3d854c173dca37a8159c6c4/integrations/blender",
+  "licence": "GPL-3.0-or-later",
+  "licenceEvidence": {
+    "file": "integrations/blender/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "copiedAs": "LICENSE",
+    "statement": "integrations/blender/README.md, \"Licence boundary\": the Blender integration is GPL-3.0-or-later; the directory is a separate component and the marking does not relicense the renderer",
+    "checked": "2026-11-18"
+  },
+  "boundary": "Separate Blender subprocess; file interchange only. No Vork renderer code copied.",
+  "changes": [
+    "export.py: explicitly admit qualified Blender 5.3.0 and report build identity",
+    "export.py: strict material translation and full material reports"
+  ],
+  "files": {
+    "animation.py": "d51801c770dc68589877e725cacbf7223707b309648cf55330546b02f3cb6d2b",
+    "bake.py": "89fec89ed3db53bf57d31ea2b9e9db5cc7ae47bd33c237c90f62a27b00eba0d4",
+    "bake_uv.py": "00db587e37231694f636110ba10b069e56455975a6b4f13cd31a9147d547c1c8",
+    "blackbody.py": "e39dda177c47fb40941691a4f469a0e639fd24344aa66ebd493c950fc83c71df",
+    "camera.py": "d35c07ad4681b480c5899d2abbe0d68c46b495b8680ff202ed28dcbd94758a67",
+    "display.py": "bd740f150cda4735a4d3a2d4600b740aaf526559034471de90340594d994fb11",
+    "export.py": "b5a6a6870e1efa000aa1791df5f67b268110d46d2cb0714031874deda0047af7",
+    "geometry.py": "615c9b995bf011ca57e2a5717d883a6cd978589ca167b8c089b9fb169acc58a2",
+    "light_graph.py": "5b246e5f6d1b79f950bd3159c39c0ee9af1019ae560681e0b2f63b985eaa7b58",
+    "lights.py": "fc5dae811be21627fe2a8c76a7a0ff0b5d891ba5348b34dd45956aa670fae2f9",
+    "material_export.py": "c014a7b73f8158b7452a81efe6ce5d388a798e466006d9453b5fbe2a4ef24eae",
+    "materials.py": "77971c8951d805ae50fc08707c2e460e61e9b3d921f7667bc4c57b9f9d7af807",
+    "pose.py": "8975a4103dc0e3fcfc58e7c45710e0e7c5a299553c0f198397f847e2b4791c84",
+    "render_geometry.py": "cf7e83d93863a82daf96fd60a25737665d42ff531fb730e28be46cc34fd19412",
+    "view_curves.py": "abaa04d41271d8ee091ae1236900a85be4a57692fcac1ad520c80606f1be4cce",
+    "visibility.py": "8c55c6377dd6ad7b15948b8c5b7d72397f7ef119ded8546569c2cd4d68992f39",
+    "volume.py": "fc1af692e3941642a55431d49c28b3d7503f039a39187b900391593239f03af3",
+    "world.py": "62bd2bc0f62415ae799078abaa1c796a70ae53d5d56f2f2e409a192ba69e819a",
+    "world_bake.py": "7dc411ce29900c369d222cbc7cb6249331afc38b06786283a9c3724d5de23e3a",
+    "world_hdr.py": "f2f8956850d937b9924470f2d84c476e1b15fb0cc86dc671d8584c39511dc4a2"
+  }
+}

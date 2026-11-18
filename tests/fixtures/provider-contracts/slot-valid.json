@@ -1,0 +1,182 @@
+[
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield-ai/soul/v2/standard",
+      "input": {
+        "prompt": "Fixture portrait"
+      }
+    },
+    "result": {},
+    "schemaSha256": "c06da0fda510b32e196f2c45e749df175f77556f0c102d64fd90ba74bd40757a"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield-ai/soul/cinema",
+      "input": {
+        "prompt": "Fixture portrait"
+      }
+    },
+    "result": {},
+    "schemaSha256": "79ce3c420f054e576c61e311001d2e4179b67af040874eacd785f2d88449406e"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield-ai/soul/standard",
+      "input": {
+        "prompt": "Fixture portrait"
+      }
+    },
+    "result": {},
+    "schemaSha256": "50854662b15e18916a7a990618ddf348ce7272932540d8bb057be8d7739c2867"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/text-to-video",
+      "input": {
+        "prompt": "Fixture production direction"
+      }
+    },
+    "result": {},
+    "schemaSha256": "0cdf1dd2d1c8c9e7ddf5dd816c7dc836ab3055099aba82861915ce45678664ad"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/std/text-to-video",
+      "input": {}
+    },
+    "result": {},
+    "schemaSha256": "338833f42421bebd324b261b2d8d5572c9a11b10ae89a80159a3a1a095597237"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/image-to-video",
+      "input": {
+        "image_url": "https://example.com/fixture.png"
+      }
+    },
+    "result": {},
+    "schemaSha256": "2514186eca4b74060613713af830bde61f923ad4ff217649e0d827ee9d06a87a"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/v3.0/std/image-to-video",
+      "input": {
+        "image_url": "https://example.com/fixture.png"
+      }
+    },
+    "result": {},
+    "schemaSha256": "0a8bb1048eccb97cb6207d943c4cd69a10f3cdd0b3f757c2a8e77f68f1bdac0a"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "bytedance/seedance-2.5/reference-to-video",
+      "input": {
+        "audio_urls": [
+          "https://example.com/audio.mp3"
+        ],
+        "video_urls": [
+          "https://example.com/video.mp4"
+        ]
+      }
+    },
+    "result": {},
+    "schemaSha256": "ce65a6723f397c53a314d9e2fc3bfb85ec81b7b0dd33b69ae628dc84c4210e05"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/motion-transfer/v1.0",
+      "input": {
+        "video_url": "https://example.com/fixture.mp4",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    },
+    "result": {},
+    "schemaSha256": "decf2812a1357f6ecb4eb2531e39aa24fb0476643d4d6d41456af4cac6d9ba17"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/restyle/v1.0",
+      "input": {
+        "video_url": "https://example.com/fixture.mp4",
+        "preset_id": "c2143317-f28d-4c3c-a0b8-39bd547e08a7"
+      }
+    },
+    "result": {},
+    "schemaSha256": "b76d3af2c216c49fc9b0d3b159bd640da4d29b9a5532e2ea284a11a132f11573"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+      "input": {
+        "video_url": "https://example.com/fixture.mp4",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    },
+    "result": {},
+    "schemaSha256": "30ade8e409dd04afd1e6726c88436cd0323821245cbc1f653006e774346af4e9"
+  },
+  {
+    "request": {
+      "provider": "higgsfield",
+      "endpoint": "kling-video/o3/video-edit",
+      "input": {
+        "prompt": "Fixture production direction",
+        "video_urls": [
+          "https://example.com/fixture.mp4"
+        ]
+      }
+    },
+    "result": {},
+    "schemaSha256": "94d54f6ff67445e4ddc3783f830a467aac6c62bd9d6abebd0d3bbe86e28abb13"
+  },
+  {
+    "request": {
+      "provider": "fal",
+      "endpoint": "minimax/music-3",
+      "input": {
+        "prompt": "Fixture production direction",
+        "lyrics": "Fixture production direction"
+      }
+    },
+    "result": {
+      "audio": {
+        "url": "example"
+      },
+      "seed": 1,
+      "duration": 1
+    },
+    "schemaSha256": "2b90ba6bfc565146a73fe32ac8a4ff6ab0be9d5081228d9c125896efd3b34e8e"
+  },
+  {
+    "request": {
+      "provider": "fal",
+      "endpoint": "fal-ai/stable-audio-3/small/music/text-to-audio",
+      "input": {
+        "prompt": "Fixture production direction"
+      }
+    },
+    "result": {
+      "audio": {
+        "url": "example"
+      },
+      "seed": 1,
+      "prompt": "example"
+    },
+    "schemaSha256": "7036e275b539c6de91611d023eb628f62564dc608b587036473a42d5e63436f5"
+  }
+]

@@ -1,0 +1,4598 @@
+{
+  "version": 1,
+  "category": "audio-to-audio",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/ace-step/audio-inpaint",
+      "category": "audio-to-audio",
+      "displayName": "ACE Step Audio Inpaint",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6dcc7fb41dc66a78f56189bf1362d4969823b30582787255752cd95f94519963",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Face-step%2Faudio-inpaint&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "end_time",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 240,
+          "default": 30
+        },
+        {
+          "name": "end_time_relative_to",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "start",
+            "end"
+          ],
+          "default": "start"
+        },
+        {
+          "name": "granularity_scale",
+          "type": "integer",
+          "required": false,
+          "min": -100,
+          "max": 100,
+          "default": 10
+        },
+        {
+          "name": "guidance_interval",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "guidance_interval_decay",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 15
+        },
+        {
+          "name": "guidance_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "cfg",
+            "apg",
+            "cfg_star"
+          ],
+          "default": "apg"
+        },
+        {
+          "name": "lyric_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1.5
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "minimum_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 3
+        },
+        {
+          "name": "number_of_steps",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 60,
+          "default": 27
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "euler",
+            "heun"
+          ],
+          "default": "euler"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "start_time",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 240,
+          "default": 0
+        },
+        {
+          "name": "start_time_relative_to",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "start",
+            "end"
+          ],
+          "default": "start"
+        },
+        {
+          "name": "tag_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "tags",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "variance",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "lyrics"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-audio",
+        "audio-inpaint",
+        "audio-repaint"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ace-step/audio-outpaint",
+      "category": "audio-to-audio",
+      "displayName": "ACE Step Audio Outpaint",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c6f2aa3ab94b266aeaddde9b23939e28f8d64b5d1182faea5793943e62b88614",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Face-step%2Faudio-outpaint&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_after_duration",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 107,
+          "default": 30
+        },
+        {
+          "name": "extend_before_duration",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 107,
+          "default": 0
+        },
+        {
+          "name": "granularity_scale",
+          "type": "integer",
+          "required": false,
+          "min": -100,
+          "max": 100,
+          "default": 10
+        },
+        {
+          "name": "guidance_interval",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "guidance_interval_decay",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 15
+        },
+        {
+          "name": "guidance_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "cfg",
+            "apg",
+            "cfg_star"
+          ],
+          "default": "apg"
+        },
+        {
+          "name": "lyric_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1.5
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "minimum_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 3
+        },
+        {
+          "name": "number_of_steps",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 60,
+          "default": 27
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "euler",
+            "heun"
+          ],
+          "default": "euler"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "tag_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "tags",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "lyrics"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-audio",
+        "audio-outpaint",
+        "audio-extend"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ace-step/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "ACE Step Audio To Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "26434a3d3aba2758e87912edc542fc44534a7824ec37fd7272e4777fcd68d86c",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Face-step%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "edit_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "lyrics",
+            "remix"
+          ],
+          "default": "remix"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "granularity_scale",
+          "type": "integer",
+          "required": false,
+          "min": -100,
+          "max": 100,
+          "default": 10
+        },
+        {
+          "name": "guidance_interval",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "guidance_interval_decay",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 15
+        },
+        {
+          "name": "guidance_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "cfg",
+            "apg",
+            "cfg_star"
+          ],
+          "default": "apg"
+        },
+        {
+          "name": "lyric_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1.5
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "minimum_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 200,
+          "default": 3
+        },
+        {
+          "name": "number_of_steps",
+          "type": "integer",
+          "required": false,
+          "min": 3,
+          "max": 60,
+          "default": 27
+        },
+        {
+          "name": "original_lyrics",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "original_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "original_tags",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "euler",
+            "heun"
+          ],
+          "default": "euler"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "tag_guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "tags",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "lyrics"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-audio",
+        "audio-edit"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/audio-understanding",
+      "category": "audio-to-audio",
+      "displayName": "Audio Understanding",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a43ebc3adf6c7380921504ee969acf356aac424d80b027fd9fccca316f3ab5ae",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Faudio-understanding&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "detailed_analysis",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 10000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "utility",
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/deepfilternet3",
+      "category": "audio-to-audio",
+      "displayName": "DeepFilterNet 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "94936c3ade9dc5010618fe1cd64f0c7dc17e0d3a02ab87587f777d63b8b90c0f",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdeepfilternet3&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "aac",
+            "m4a",
+            "ogg",
+            "opus",
+            "flac",
+            "wav"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio_file"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "speech-enhancement"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/demucs",
+      "category": "audio-to-audio",
+      "displayName": "Demucs",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "fad692db258db2933cc41419ec29bce70badda5d063f0a2ebcb0c5ba2cfea19a",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdemucs&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "htdemucs",
+            "htdemucs_ft",
+            "htdemucs_6s",
+            "hdemucs_mmi",
+            "mdx",
+            "mdx_extra",
+            "mdx_q",
+            "mdx_extra_q"
+          ],
+          "default": "htdemucs_6s"
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "overlap",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.25
+        },
+        {
+          "name": "segment_length",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "shifts",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 1
+        },
+        {
+          "name": "stems",
+          "type": "array",
+          "required": false,
+          "default": [
+            "vocals",
+            "drums",
+            "bass",
+            "other",
+            "guitar",
+            "piano"
+          ],
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "file"
+        ],
+        "fields": [
+          "bass",
+          "drums",
+          "guitar",
+          "other",
+          "piano",
+          "vocals"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/dia-tts/voice-clone",
+      "category": "audio-to-audio",
+      "displayName": "Dia Tts",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/audio-isolation",
+      "category": "audio-to-audio",
+      "displayName": "ElevenLabs Audio Isolation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "371b5f2a573433adc5c53ac5f85c81ed6b92ac75bc13a241b70d43a99d7a81b5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Faudio-isolation&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": false,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "timestamps"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/voice-changer",
+      "category": "audio-to-audio",
+      "displayName": "ElevenLabs Voice Changer",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "003e8aec0bd395f5bccad18f915c4d4ceb429b355baed42945c6bd9034bc418d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Fvoice-changer&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "model_id",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "eleven_multilingual_sts_v2",
+            "eleven_english_sts_v2"
+          ],
+          "default": "eleven_multilingual_sts_v2"
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3_22050_32",
+            "mp3_44100_32",
+            "mp3_44100_64",
+            "mp3_44100_96",
+            "mp3_44100_128",
+            "mp3_44100_192",
+            "pcm_8000",
+            "pcm_16000",
+            "pcm_22050",
+            "pcm_24000",
+            "pcm_44100",
+            "pcm_48000",
+            "ulaw_8000",
+            "alaw_8000",
+            "opus_48000_32",
+            "opus_48000_64",
+            "opus_48000_96",
+            "opus_48000_128",
+            "opus_48000_192"
+          ],
+          "default": "mp3_44100_128"
+        },
+        {
+          "name": "remove_background_noise",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "similarity_boost",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "stability",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "style",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "use_speaker_boost",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "voice",
+          "type": "string",
+          "required": false,
+          "default": "Rachel"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "voice-change",
+        "audio-to-audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ffmpeg-api/merge-audios",
+      "category": "audio-to-audio",
+      "displayName": "FFmpeg API [Merge Audios]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3c2135e69f190775fa26eff842a051a19efa31b993ec0025a90e1965ae94ca1d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fffmpeg-api%2Fmerge-audios&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_urls",
+          "type": "array",
+          "required": true,
+          "min": 2,
+          "max": 5,
+          "media": "audio",
+          "array": true
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3_22050_32",
+            "mp3_44100_32",
+            "mp3_44100_64",
+            "mp3_44100_96",
+            "mp3_44100_128",
+            "mp3_44100_192",
+            "pcm_8000",
+            "pcm_16000",
+            "pcm_22050",
+            "pcm_24000",
+            "pcm_44100",
+            "pcm_48000",
+            "ulaw_8000",
+            "alaw_8000",
+            "opus_48000_32",
+            "opus_48000_64",
+            "opus_48000_96",
+            "opus_48000_128",
+            "opus_48000_192"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "ffmpeg"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/kling-video/create-voice",
+      "category": "audio-to-audio",
+      "displayName": "Kling Video Create Voice",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d7e7d678e964f587690560835b29af3d9d13cd2f4901f153440fec9b864c3811",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fcreate-voice&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "voice_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "voice_id"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "routing": {
+        "family": "kling-voice",
+        "variant": "default",
+        "operation": "create-voice",
+        "region": "global"
+      },
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/clone-voice/0.6b",
+      "category": "audio-to-audio",
+      "displayName": "Qwen 3 TTS - Clone Voice [0.6B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "919e79daf3d0550acf82c648867547db931db50f164f1834efcdac8aa0ddd15d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Fclone-voice%2F0.6b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "reference_text",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "file"
+        ],
+        "fields": [
+          "speaker_embedding"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "clone-voice",
+        "voice-clone"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/clone-voice/1.7b",
+      "category": "audio-to-audio",
+      "displayName": "Qwen 3 TTS - Clone Voice [1.7B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "1ff98ed1e135ac8d82e54856e9c072ad631bd6d5cd8e94ce050600c5c1fdbcff",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Fclone-voice%2F1.7b&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "reference_text",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "file"
+        ],
+        "fields": [
+          "speaker_embedding"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "clone-voice",
+        "voice-clone"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-audio/separate",
+      "category": "audio-to-audio",
+      "displayName": "Sam Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d7bd8b5f8dbd61a604f2e13309f6feb4ec6d01e0f4770d5492e8259895fbc9b7",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-audio%2Fseparate&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "quality"
+          ],
+          "default": "balanced"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "chunk_overlap",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "max_chunk_duration",
+          "type": "number",
+          "required": false,
+          "min": 10,
+          "max": 60,
+          "default": 60
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3"
+          ],
+          "default": "wav"
+        },
+        {
+          "name": "predict_spans",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reranking_candidates",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 7,
+          "default": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "residual",
+          "target"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-audio",
+        "sam-audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-audio/span-separate",
+      "category": "audio-to-audio",
+      "displayName": "Sam Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6679ec736ff4c843cae35b76bb474718e9b7292aff5cc256a5c824f8b15d77bf",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-audio%2Fspan-separate&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "quality"
+          ],
+          "default": "balanced"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "chunk_overlap",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "max_chunk_duration",
+          "type": "number",
+          "required": false,
+          "min": 10,
+          "max": 60,
+          "default": 60
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3"
+          ],
+          "default": "wav"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "reranking_candidates",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 7,
+          "default": 1
+        },
+        {
+          "name": "spans",
+          "type": "array",
+          "required": true,
+          "array": true
+        },
+        {
+          "name": "trim_to_span",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "use_sound_activity_ranking",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "residual",
+          "target"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-audio",
+        "sam-audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-25/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 2.5",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e8686f71a60eea674be3b2a4ada63a50e775ff94cf106377efae9897562f53da",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-25%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 4,
+          "max": 8,
+          "default": 8
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "strength",
+          "type": "number",
+          "required": false,
+          "min": 0.01,
+          "max": 1,
+          "default": 0.8
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "total_seconds",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 190
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-25/inpaint",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 25",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "2edfbb5a93e4748d229f6108751d6e424090f2d521eff248dc8f3952547dd502",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-25%2Finpaint&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "mask_end",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 190,
+          "default": 190
+        },
+        {
+          "name": "mask_start",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 190,
+          "default": 30
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 4,
+          "max": 8,
+          "default": 8
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seconds_total",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 190,
+          "default": 190
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a0e2879bfb4151e65ba7d361032badf7ef07e260d24e4e6d871925dc0e6adaec",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 380
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 380
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "45463bf53bdb91c483a131134738449939b2232a3c2a8f41bb3024070957c4fe",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 380,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 380,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Audio to Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f650357c07c6988d224674fba3b6ad1578ab449e21ee5b9bbbde270783dbfcf1",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 380,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "style-transfer",
+        "remix"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/base/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Base Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "40069b2e57dfe5692beaf16644d554cfedc88b5caf4fc9baae6fbb990076b8ba",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Fbase%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 380
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 380
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/base/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Base Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3f156041e222382bda7cac6f6dd0f79ef8315b580de8175e9039aa3f91e68708",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Fbase%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 380,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 380,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/medium/base/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Medium Base Audio to Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e0b230497cd5474d2ededd6077c54f2bf1c60a2177ed88b825d05e5cc82e3386",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fmedium%2Fbase%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 380,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "style-transfer",
+        "remix"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small Music Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e39e6065a7de4e2b9e28a9fb4c025360da6377c33ea4eb63679f92e5952873ca",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small Music Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a2dfbce224e432904ae2043476307755ea4aada2d366e83a97f87a0aaffb10d5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f29b1780bd7f9ab056411d46b83fc2fdf07970326118ae0f660f21f39c643473",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 120,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "style-transfer",
+        "remix"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/base/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small Music Base Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "15f4fc14d1dd950925b5d5e3517b9427b9445c9f7ba2fb4598134729bdc6e964",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Fbase%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small Music Base Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9fe6c4218e19d1f5ce9527566575a1ac520e1311d3d1bcb6157c51cc5edcab54",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Fbase%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/base/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small Music Base Audio to Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "bfecf7821887647e0327293ac881a68628744eb944b54a807a4d15d2e58ce2aa",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Fbase%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 120,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "style-transfer",
+        "remix"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small SFX Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9438e3dbe8fd37f0b5f3ff13eaf0506a5a9523a55dc5665b8dfc91381ccd9c14",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small SFX Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cf3c648db4265db2057e126e4c97e3f4e2e3be5267fed85ca61e67d2e1b05398",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3e72c8a4cfba887b8cafe15dc41bf5aa31115a24a23e40635cb86240cae1e020",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 120,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 1
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 8
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "sound-effects",
+        "style-transfer"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/base/audio-inpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small SFX Base Audio Inpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "99627bb130e406fcc0c4db73283b9d5752f9ec87d37e70786ef72966753e4058",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Fbase%2Faudio-inpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "mask_end_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "mask_start_seconds",
+          "type": "number",
+          "required": true,
+          "min": 0,
+          "max": 120
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "editing",
+        "restoration"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/base/audio-outpainting",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small SFX Base Audio Outpainting",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "45d735392cf51809282d320887370ba49939ec3868e11bd6b01b3b6f92d881cb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Fbase%2Faudio-outpainting&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_seconds_after",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "extend_seconds_before",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 120,
+          "default": 0
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "extension",
+        "continuation"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/base/audio-to-audio",
+      "category": "audio-to-audio",
+      "displayName": "Stable Audio 3 Small SFX Base Audio to Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cccf67b9430c12638a83cdaad8695499c171efb8edaaa4ee489fcaf3b9171594",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Fbase%2Faudio-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "bitrate",
+          "type": "string",
+          "required": false,
+          "default": "192k"
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 120,
+          "default": 30
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 25,
+          "default": 7
+        },
+        {
+          "name": "init_noise_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 100,
+          "default": 50
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp3",
+            "wav",
+            "flac",
+            "ogg",
+            "opus",
+            "m4a",
+            "aac"
+          ],
+          "default": "mp3"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "sound-effects",
+        "style-transfer"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/tada/1b/text-to-speech",
+      "category": "audio-to-audio",
+      "displayName": "Tada TTS 1B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/tada/3b/text-to-speech",
+      "category": "audio-to-audio",
+      "displayName": "Tada",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/workflow-utilities/audio-compressor",
+      "category": "audio-to-audio",
+      "displayName": "Workflow Utilities Audio Compressor",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6894db50d007cccf699cfe133022a77c8c752dab14604b6632b97b011a0ff3a4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fworkflow-utilities%2Faudio-compressor&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "attack",
+          "type": "number",
+          "required": false,
+          "min": 0.01,
+          "max": 2000,
+          "default": 5
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "knee",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 8,
+          "default": 2.83
+        },
+        {
+          "name": "makeup",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 64,
+          "default": 8
+        },
+        {
+          "name": "output_bitrate",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "128k",
+            "192k",
+            "256k",
+            "320k"
+          ],
+          "default": "192k"
+        },
+        {
+          "name": "ratio",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 3
+        },
+        {
+          "name": "release",
+          "type": "number",
+          "required": false,
+          "min": 0.01,
+          "max": 9000,
+          "default": 50
+        },
+        {
+          "name": "threshold",
+          "type": "number",
+          "required": false,
+          "min": -60,
+          "max": 0,
+          "default": -18
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/workflow-utilities/impulse-response",
+      "category": "audio-to-audio",
+      "displayName": "Workflow Utilities Impulse Response",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d52182a07ff3e032ce650c6277803a5704c65f6128bc645022fd410dcb3459c2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fworkflow-utilities%2Fimpulse-response&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "dry_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "impulse_response_url",
+          "type": "string",
+          "required": true,
+          "media": "file"
+        },
+        {
+          "name": "loudness_i",
+          "type": "number",
+          "required": false,
+          "min": -70,
+          "max": 0,
+          "default": -18
+        },
+        {
+          "name": "loudness_lra",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 8
+        },
+        {
+          "name": "loudness_tp",
+          "type": "number",
+          "required": false,
+          "min": -10,
+          "max": 0,
+          "default": -1.5
+        },
+        {
+          "name": "output_bitrate",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "128k",
+            "192k",
+            "256k",
+            "320k"
+          ],
+          "default": "192k"
+        },
+        {
+          "name": "wet_level",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.3
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "mureka/api/song/edit",
+      "category": "audio-to-audio",
+      "displayName": "Mureka Song Editing",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "ea47535ab3c9dad31f8b178cd5b3cd0895bb2e71ae36c9cd329a3ca58f4d31cc",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fsong%2Fedit&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "edit_end",
+          "type": "integer",
+          "required": true,
+          "min": 0
+        },
+        {
+          "name": "edit_start",
+          "type": "integer",
+          "required": true,
+          "min": 0
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 3000
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "audio editing",
+        "lyrics"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/song/stem",
+      "category": "audio-to-audio",
+      "displayName": "Mureka Stem Separation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b37c822f9a33e087b8f6781680262acd7a5f2612879479155c5168f18ded6f34",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fsong%2Fstem&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "audio-separation-1",
+            "audio-separation-2",
+            "audio-separation-3"
+          ],
+          "default": "audio-separation-3"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "midi_zip_url",
+          "zip_url"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "stem separation",
+        "midi"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/voice/clone",
+      "category": "audio-to-audio",
+      "displayName": "Mureka Voice Cloning",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e9fe8c832a83f7c74ca23a89094d30fd58bafd7ed89d20406c9c1ffd42978eb5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fvoice%2Fclone&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false,
+          "max": 1024
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "description"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "voice cloning",
+        "vocals",
+        "custom voice"
+      ]
+    },
+    {
+      "endpoint": "mureka/v8/generate/track",
+      "category": "audio-to-audio",
+      "displayName": "Mureka 8 Track Generation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "a331e5101b167f3af7c67afc5ba285d11d736cfbbc9212451839bdd035c57e6a",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv8%2Fgenerate%2Ftrack&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "generate_end",
+          "type": "integer",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "generate_start",
+          "type": "integer",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "generate_type",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "Vocals",
+            "Instrumental",
+            "Drums",
+            "Bass",
+            "Guitar",
+            "Keyboard",
+            "Percussion",
+            "Strings",
+            "Synth",
+            "FX",
+            "Brass",
+            "Woodwinds"
+          ]
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "vocal_gender",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "female",
+            "male"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "track generation",
+        "vocals",
+        "instruments"
+      ]
+    },
+    {
+      "endpoint": "mureka/v8/song/extend",
+      "category": "audio-to-audio",
+      "displayName": "Mureka 8 Song Extension",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d685a0fb55e46480813dd9a283ce927e74383abb50e33078c419c4c0fbe1e122",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv8%2Fsong%2Fextend&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "extend_at",
+          "type": "integer",
+          "required": true,
+          "min": 0
+        },
+        {
+          "name": "extend_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "tail",
+            "head"
+          ],
+          "default": "tail"
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 3000
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "audio extension",
+        "lyrics"
+      ]
+    },
+    {
+      "endpoint": "mureka/v8/song/remix",
+      "category": "audio-to-audio",
+      "displayName": "Mureka 8 Song Remix",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "1780cccee8dbf6ad7fd1787eec56deee2b7965e325192903cf6400a2f99a135d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv8%2Fsong%2Fremix&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "remix",
+        "audio to audio"
+      ]
+    },
+    {
+      "endpoint": "mureka/v9.5/song/remix",
+      "category": "audio-to-audio",
+      "displayName": "Mureka 9.5 Song Remix",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "66617405075f8163da47b4a6467b10f59426e2e77ca89d530d84fbcbb171b911",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv9.5%2Fsong%2Fremix&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "remix",
+        "audio to audio"
+      ]
+    },
+    {
+      "endpoint": "mureka/v9/generate/soundtrack",
+      "category": "audio-to-audio",
+      "displayName": "Mureka 9 Soundtrack Generation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "01a71d4d52d51f2a6904f199240cda7cfcc988c39bdf6b45482eda3e3f0881f6",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv9%2Fgenerate%2Fsoundtrack&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_end",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "audio_start",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "video_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "soundtrack",
+        "image to audio",
+        "video to audio"
+      ]
+    },
+    {
+      "endpoint": "veed/clean-audio",
+      "category": "audio-to-audio",
+      "displayName": "VEED Clean Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3f8cc8e2e454c23154709bed118d012461845f531cbab2157c41b778393ef575",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=veed%2Fclean-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "flac",
+            "wav"
+          ],
+          "default": "flac"
+        },
+        {
+          "name": "strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.874
+        },
+        {
+          "name": "target_lufs",
+          "type": "number",
+          "required": false,
+          "min": -40,
+          "max": -8,
+          "default": -19
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "speech enhancement",
+        "noise reduction",
+        "audio denoise"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: context-budget
+
+on:
+  pull_request:
+  merge_group:
+
+permissions: {}
+
+jobs:
+  context-budget:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Context and instruction checks
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+        run: |
+          pnpm context:budget --base "$BASE_SHA" --write --markdown out/pr-report/context.md
+          pnpm instructions:lint
+          pnpm instructions:security --base "$BASE_SHA"
+          pnpm leak:check --mode diff --base "$BASE_SHA" --dry-run
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: pr-report
+          path: out/pr-report
+          retention-days: 7

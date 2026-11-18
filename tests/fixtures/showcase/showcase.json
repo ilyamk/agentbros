@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1, "slug": "synthetic-film", "createdAt": "2026-11-15T00:00:00.000Z",
+  "title": "Synthetic film", "summary": "A local fixture film.", "language": "en", "format": "landscape", "durationSec": 1,
+  "playbook": "product-promo", "route": "template", "filmType": "product-promo", "libraryBlocks": ["sample-block"],
+  "harness": "codex", "model": "fixture-model", "harnessVersion": "v0.1.0", "wallTimeMin": 2, "rounds": 2, "userInterventions": 1,
+  "budget": {"totalUsd": 0, "byProvider": [], "subscriptionNote": "Subscription declared separately."},
+  "settings": {"briefExcerpt": "A synthetic film.", "musicRoute": "silence", "voice": null, "references": [{"kind":"reference","count":1}], "motionPlanChoices": ["Hold"]},
+  "author": {"handle":"fixture-author","displayName":"Fixture Author","links":["https://example.org/author"],"credits":"Fixture credit"},
+  "links": ["https://example.org/film"], "rights":"I hold the material and publication rights.", "licence":"CC-BY-4.0",
+  "evidence": {"deliveryReceiptHash":null,"snapshotId":null,"renderHash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "verification":"declared"
+}

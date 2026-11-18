@@ -1,0 +1,178 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.higgsfield.ai/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Happy Horse 1.0 — Image to video API
+
+> Image to video with Happy Horse 1.0: request parameters, examples and response handling.
+
+[← Happy Horse 1.0](https://docs.higgsfield.ai/docs/models/happy-horse-1.md)
+
+**Endpoint:** `POST https://api.higgsfield.ai/alibaba/happy-horse/image-to-video`
+
+**Endpoint ID:** `alibaba/happy-horse/image-to-video`
+
+[▶
+Open API PlaygroundHappy Horse 1.0 · Image to video
+↗](https://console.higgsfield.ai/models/alibaba%2Fhappy-horse%2Fimage-to-video/playground)
+
+## Usage notes
+
+* The prompt is optional. This endpoint accepts one first-frame image; it does not support a last-frame image.
+
+## Quick start
+
+Replace the example media URLs with publicly accessible URLs for your own files before submitting.
+
+```bash cURL theme={"theme":{"light":"github-light","dark":"github-dark"}}
+curl --request POST \
+  --url https://api.higgsfield.ai/alibaba/happy-horse/image-to-video \
+  --header "Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}" \
+  --header "Content-Type: application/json" \
+  --header "Idempotency-Key: ${IDEMPOTENCY_KEY}" \
+  --data '{
+  "image_url": "https://example.com/input.jpg"
+}'
+```
+
+```python Python theme={"theme":{"light":"github-light","dark":"github-dark"}}
+import higgsfield_client
+
+arguments = (
+    {'image_url': 'https://example.com/input.jpg'}
+)
+result = higgsfield_client.subscribe(
+    "alibaba/happy-horse/image-to-video",
+    arguments=arguments,
+)
+print(result["video"]["url"])
+```
+
+```typescript TypeScript theme={"theme":{"light":"github-light","dark":"github-dark"}}
+import { config, higgsfield } from "@higgsfield/client/v2";
+
+config({ credentials: process.env.HF_CREDENTIALS });
+
+const result = await higgsfield.subscribe("alibaba/happy-horse/image-to-video", {
+  input:
+    {
+      "image_url": "https://example.com/input.jpg"
+    },
+  withPolling: true,
+});
+
+if (result.status === "completed") {
+  console.log(result.video?.url);
+}
+```
+
+## Input schema
+
+**seed** `integer`
+
+Seed used to control generation randomness.
+Minimum: `1`.
+Maximum: `2147483646`.
+
+**prompt** `string`
+
+Write your prompt here
+
+**duration** `integer` (default: 5)
+
+Requested output duration in seconds.
+Minimum: `2`.
+Maximum: `15`.
+
+**image\_url** `string` *required*
+
+Public URL of the input image.
+Format: `uri`.
+
+**resolution** `string` (default: 720p)
+
+Output resolution tier.
+Allowed values: `"720p"`, `"1080p"`.
+
+> [accordion] Complete JSON schema
+>
+> ```json theme={"theme":{"light":"github-light","dark":"github-dark"}}
+> {
+>   "type": "object",
+>   "title": "Happy horse",
+>   "required": [
+>     "image_url"
+>   ],
+>   "properties": {
+>     "seed": {
+>       "type": "integer",
+>       "maximum": 2147483646,
+>       "minimum": 1
+>     },
+>     "prompt": {
+>       "type": "string",
+>       "title": "Prompt",
+>       "description": "Write your prompt here"
+>     },
+>     "duration": {
+>       "type": "integer",
+>       "title": "Duration",
+>       "default": 5,
+>       "maximum": 15,
+>       "minimum": 2
+>     },
+>     "image_url": {
+>       "type": "string",
+>       "title": "Image URL",
+>       "format": "uri"
+>     },
+>     "resolution": {
+>       "enum": [
+>         "720p",
+>         "1080p"
+>       ],
+>       "type": "string",
+>       "default": "720p"
+>     }
+>   }
+> }
+> ```
+
+## Response
+
+Submission returns a request handle. Poll `status_url` until `status` is `completed`, or use [webhooks](https://docs.higgsfield.ai/docs/how-to/webhooks.md).
+
+```json Accepted theme={"theme":{"light":"github-light","dark":"github-dark"}}
+{
+  "status": "queued",
+  "request_id": "REQUEST_ID",
+  "status_url": "https://api.higgsfield.ai/requests/REQUEST_ID/status",
+  "cancel_url": "https://api.higgsfield.ai/requests/REQUEST_ID/cancel"
+}
+```
+
+A completed response includes the following output fields:
+
+```json theme={"theme":{"light":"github-light","dark":"github-dark"}}
+{
+  "status": "completed",
+  "request_id": "REQUEST_ID",
+  "video": {
+    "url": "https://example.com/output.mp4"
+  }
+}
+```
+
+See [idempotent requests](https://docs.higgsfield.ai/docs/concepts/idempotency.md), [polling](https://docs.higgsfield.ai/docs/concepts/polling.md), [request errors](https://docs.higgsfield.ai/docs/concepts/errors.md) and [authentication](https://docs.higgsfield.ai/docs/authentication.md) for shared request handling.
+
+
+## Related topics
+
+- [Happy Horse 1.0 API](https://docs.higgsfield.ai/docs/models/happy-horse-1.md)
+- [Happy Horse 1.0 — Reference to video API](https://docs.higgsfield.ai/docs/models/happy-horse-1/reference-to-video.md)
+- [Happy Horse 1.0 — Text to video API](https://docs.higgsfield.ai/docs/models/happy-horse-1/text-to-video.md)
+- [HappyHorse 1.1 — Image to video API](https://docs.higgsfield.ai/docs/models/happy-horse-1-1/image-to-video.md)
+- [HappyHorse 1.1 — Reference to video API](https://docs.higgsfield.ai/docs/models/happy-horse-1-1/reference-to-video.md)
+
+
+This documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform.

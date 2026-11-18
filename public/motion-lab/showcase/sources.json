@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "family": "showcase",
+  "note": "Clips for the Motion Lab showcase composition (provenance: PROVENANCE.md beside this file). Own renders; a local re-render differs byte for byte.",
+  "assets": [
+    {
+      "name": "order-capture",
+      "target": "public/motion-lab/showcase/order-capture.mp4",
+      "licence": "Own headless Chrome capture",
+      "sha256": "992b9802e8a451279b8ef57d48cd4fcf2c7fe6f3d0359970f71bba596a95f0e0",
+      "size": 247882,
+      "source": { "kind": "recipe", "command": ["pnpm", "exec", "tsx", "src/motion/showcase/capture/capture-order.ts", "public/motion-lab/showcase/order-capture.mp4"], "requires": ["ffmpeg", "chromium"], "slow": true }
+    },
+    {
+      "name": "roast-shader",
+      "target": "public/motion-lab/showcase/roast-shader.mp4",
+      "licence": "Own Hyperframes render; the vendored GSAP is under Webflow's Standard licence, cleared by the owner on 2026-11-16 (docs/publishing.md)",
+      "sha256": "e2248e1b9276e0db33a9333a4dc3f583dd3b28672c22486354f63d4f851e7c54",
+      "size": 2334279,
+      "source": { "kind": "manual", "instructions": "Render src/motion/showcase/capture/roast-shader.html with the Hyperframes CLI (pnpm hyperframes:render, docs/html-capture.md) to public/motion-lab/showcase/roast-shader.mp4." }
+    },
+    {
+      "name": "coffee-pour",
+      "target": "public/motion-lab/showcase/coffee-pour.mp4",
+      "licence": "Own Blender render (task CREATIVE-B1)",
+      "sha256": "a8ecb5f3fc2d29a21a7970e8a8b6f8ae9a19f97c7c453b82833dd6733178a5d6",
+      "size": 4895087,
+      "source": { "kind": "none", "reason": "The Blender scene that rendered it is not in the repository. The showcase's pour scene stays blank without it." }
+    }
+  ]
+}

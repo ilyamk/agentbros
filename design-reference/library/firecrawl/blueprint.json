@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "format": { "width": 1280, "height": 720, "fps": 60 },
+  "durationSec": 22.9,
+  "slots": [
+    {
+      "id": "announce",
+      "role": "What launched and what it works with",
+      "startSec": 0,
+      "durationSec": 2.3,
+      "visualRecipe": "Near-white ground, dark grey ink. Two-line block laid out in its final position, left edge at 11.5%W, block about 77%W, font about 12.6%H, line pitch 15.8%H; second line carries about six small partner icons at cap height as words.",
+      "motionRecipe": "Blank for 4 frames (30 fps). Words switch on whole every 4 frames; icons stagger 2 frames apart with a 3-frame fade and scale. Block rises 8%H with cubic-out over 8 frames, then creeps 0.7%H. Exit: 12-frame quad-in rise of 7%H starting on a hit, hard cut on the beat.",
+      "soundRecipe": "Quiet sparse intro of syncopated hits on a sixteenth grid; first word on the first hit.",
+      "copySlot": { "purpose": "Verb of introduction, product name, 'for' plus the audience's tools as icons", "maxWords": 6 },
+      "techniqueIds": ["laid-out-word-reveal", "one-beat-accelerating-exit"]
+    },
+    {
+      "id": "scale",
+      "role": "How big it is",
+      "startSec": 2.3,
+      "durationSec": 1.7,
+      "visualRecipe": "Same grid and size as the previous slot, on a second near-white. Two numbers in the accent colour.",
+      "motionRecipe": "One blank frame; tokens on every 3-5 frames; ease-out rise; exit is a 12-frame accelerating rise that starts on the hit one beat before the drop and cuts on the drop.",
+      "soundRecipe": "Intro continues; the last hit (beat -1) starts the exit.",
+      "copySlot": { "purpose": "Two quantities joined by 'and'", "maxWords": 7 },
+      "techniqueIds": ["laid-out-word-reveal", "one-beat-accelerating-exit"]
+    },
+    {
+      "id": "drop-number",
+      "role": "The strongest claim as a number",
+      "startSec": 4.0,
+      "durationSec": 1.3,
+      "visualRecipe": "Full accent-colour ground, off-white semibold number at 90%W entering, 35%W at rest, centred.",
+      "motionRecipe": "Hard cut on the drop with upward carry-over drift (7.5%H, ease-out, 12 frames). On beat 1, shrink to 44%W in 8 frames with heavy motion blur, ease to 35%W; re-grow 6 frames before the swap on beat 3.",
+      "soundRecipe": "The drop: full, bass-heavy groove starts on this frame.",
+      "copySlot": { "purpose": "One number with a unit", "maxWords": 1 },
+      "techniqueIds": ["drop-ground-swap-hero"]
+    },
+    {
+      "id": "claim-lines",
+      "role": "Finish the claim",
+      "startSec": 5.3,
+      "durationSec": 2.13,
+      "visualRecipe": "Same accent ground. Line one at 81%W at rest, cap 10.3%H; line two shorter and bigger, 60.5%W, cap about 23.5%H, with a 55%-opacity subline at about 6.5%H font.",
+      "motionRecipe": "Text swaps on beats 3 and 5; each enters at about 80% of rest size, exponential ease-out over 10-14 frames; subline 4 frames later; exit grows 30% with exponential-in and blur over 10 frames into a hard cut on beat 8.",
+      "soundRecipe": "Groove; swaps and cut on beats.",
+      "copySlot": { "purpose": "Comparison, then a qualifier and its unit", "maxWords": 7 },
+      "techniqueIds": ["push-in-text-swaps", "one-beat-accelerating-exit"]
+    },
+    {
+      "id": "input",
+      "role": "The user asks",
+      "startSec": 7.43,
+      "durationSec": 2.59,
+      "visualRecipe": "White ground; one pill input at 69%W, about 7%H tall with a soft shadow, centred; small UI text about 1.9%H cap; blue round send button.",
+      "motionRecipe": "Bar rises 21%H with ease-out over 21 frames; request types with uneven rhythm; cursor glides to send with ease-out, clicks; 10 frames of total stillness; hard cut on beat 14.",
+      "soundRecipe": "Groove continues; the cut sits on a beat with no special hit.",
+      "copySlot": { "purpose": "A natural-language request", "maxWords": 9 },
+      "techniqueIds": ["prompt-bar-type-click-freeze"]
+    },
+    {
+      "id": "result",
+      "role": "The product answers",
+      "startSec": 10.02,
+      "durationSec": 5.93,
+      "visualRecipe": "Pale ground, light window card at 84%W bleeding off the bottom; the new product's real interface at 1:1; a table of results with one link-coloured column.",
+      "motionRecipe": "Window rises 10%H with ease-out over 17 frames; answer lines stream in with 4-frame fades; rows add every 4-5 frames; camera drifts and pushes in with acceleration from beat 19.6; vertical scroll with velocity-scaled blur from beat 21, landing sharp on downbeat 24; hold.",
+      "soundRecipe": "Groove; the scroll start and landing sit on beats.",
+      "copySlot": { "purpose": "Short answer summary above the result rows", "maxWords": 16 },
+      "techniqueIds": ["real-ui-camera-scroll"]
+    },
+    {
+      "id": "breadth-line",
+      "role": "Where the data comes from",
+      "startSec": 15.95,
+      "durationSec": 1.5,
+      "visualRecipe": "White ground, one centred two-line sentence in the body face, accent colour on the key noun with a small icon.",
+      "motionRecipe": "The interface fades to the empty ground over about 17 frames at 60 fps, the bare ground holds about 8 frames, then the sentence fades in word by word, one word every 2-4 frames; hold.",
+      "soundRecipe": "Groove continues.",
+      "copySlot": { "purpose": "A sentence placing one source among many", "maxWords": 7 },
+      "techniqueIds": ["fade-through-ground"]
+    },
+    {
+      "id": "source-wall",
+      "role": "Breadth as a wall of names",
+      "startSec": 17.45,
+      "durationSec": 4.05,
+      "visualRecipe": "Dense grid of small labelled chips, then legible; finally one chip alone with a badge.",
+      "motionRecipe": "Wall dissolves in tiny over about 16 frames, creeps, then pushes in to legible size on expo-out in about 0.95 s; the others fade over about 1.3 s and one chip holds still.",
+      "soundRecipe": "Groove, falling to a quieter tail from about 21 s.",
+      "copySlot": { "purpose": "Names of real sources the product uses", "maxWords": 40 },
+      "techniqueIds": ["source-wall-pick"]
+    },
+    {
+      "id": "sign-off",
+      "role": "Brand",
+      "startSec": 21.5,
+      "durationSec": 1.4,
+      "visualRecipe": "Small flat logo centred on white with faint corner crop marks.",
+      "motionRecipe": "The outgoing frame fades to the empty ground over about 20 frames, two bare frames, then the mark cuts on and the wordmark 4 frames later; hold to the end.",
+      "soundRecipe": "Music stops dead about 0.9 s into the slot; silence to the end.",
+      "copySlot": { "purpose": "Logo only", "maxWords": 2 },
+      "techniqueIds": ["fade-through-ground", "flat-logo-hard-stop"]
+    }
+  ],
+  "rhythm": {
+    "bpm": 140,
+    "cutGrid": "Anchor everything to the drop as beat 0 (beat = 12.857 frames at 30 fps). Intro of 9 1/3 beats before the drop. Cuts and swaps on beats -4, 0, 3, 5, 8, 14; motion starts on beats 1 and 21; landing on downbeat 24. Exits start on the hit one beat before their cut. Word reveals inside a sentence are free, every 4 frames."
+  },
+  "style": "Light flat grounds, a dark neutral grotesque in mixed case, one accent colour for numbers that becomes the ground once on the drop, scale as the only hierarchy, a real interface at reading scale, motion blur only on real speed, no effects.",
+  "transferRules": {
+    "keep": [
+      "Beat-relative timing of every cut, swap and motion start",
+      "Accelerating one-beat exits and ease-out entries carried across cuts",
+      "Pre-laid-out word reveal with inline icons",
+      "Accent colour used for numbers, then once as the ground on the drop",
+      "Scale ratios between body type, hero number and interface",
+      "Click, freeze, cut before the result",
+      "Blurred scroll landing on a downbeat",
+      "Flat end card and a hard stop"
+    ],
+    "mustChange": [
+      "All branding, marks, product and competitor names",
+      "Accent colour and fonts",
+      "Music and all sound",
+      "All graphics, icons and partner marks",
+      "All copy and numbers, which must be true for the new product",
+      "Interface: must be the new product's real one",
+      "Source names in the wall"
+    ]
+  }
+}

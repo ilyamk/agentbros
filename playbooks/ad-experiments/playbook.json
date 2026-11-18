@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "id": "ad-experiments",
+  "title": "Advertising experiments",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Change explicit hooks, arguments, offers and endings; preserve approved proof and disclosures.",
+  "triggers": {
+    "en": [
+      "ad experiments",
+      "hook variants",
+      "refresh creatives",
+      "a/b test",
+      "ab test",
+      "split test",
+      "test hooks",
+      "new hooks for",
+      "alternate endings",
+      "different endings",
+      "different offers",
+      "offer variants",
+      "cta variants",
+      "different cta",
+      "creative testing",
+      "ad variations",
+      "variations of our ad",
+      "iterate on the ad",
+      "variants of this ad",
+      "different hooks"
+    ],
+    "ru": [
+      "пакет рекламных экспериментов",
+      "20 вступлений",
+      "обновить креативы",
+      "a/b тест",
+      "аб тест",
+      "сплит тест",
+      "сплит-тест",
+      "другие хуки",
+      "новые хуки",
+      "варианты оффер",
+      "разные оффер",
+      "варианты концовк",
+      "разные концовки",
+      "варианты cta",
+      "варианты призыва",
+      "тест креатив",
+      "вариации реклам",
+      "креативные тесты",
+      "вариантов хука",
+      "варианты хука",
+      "разными офферами"
+    ],
+    "zh": [
+      "广告实验",
+      "广告变体",
+      "广告a/b测试",
+      "a/b测试",
+      "ab测试",
+      "创意测试",
+      "素材测试",
+      "钩子测试",
+      "换个开头",
+      "换几个开头",
+      "批量开头",
+      "20个开头",
+      "换个结尾",
+      "不同结尾",
+      "开头和结尾",
+      "现有广告",
+      "已有广告",
+      "不同优惠",
+      "优惠方案",
+      "行动号召",
+      "cta",
+      "多版本广告",
+      "刷新素材",
+      "更新素材",
+      "素材迭代",
+      "不同的优惠",
+      "做测试",
+      "换不同"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "one independent product film",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "campaign",
+    "scenario": "ad-experiments",
+    "start": "pnpm campaign:production --project <id> --action init --request <file>"
+  },
+  "alternatives": [],
+  "agents": [
+    "campaign-producer",
+    "creative-critic",
+    "fixer"
+  ],
+  "skills": [
+    "creative-strategy",
+    "copywriter",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "scenes",
+      "typography"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "campaign:production",
+    "campaign:next",
+    "campaign:brief",
+    "campaign:approve",
+    "campaign:execute",
+    "models:pick",
+    "asset:import",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/campaign-production.md"
+  ],
+  "qa": [
+    "Every member has independently bound source facts, exact media and current output receipts.",
+    "Changed dialogue invalidates speech, word timing and dependent cues.",
+    "No model, human approval, invoice or publication rights are inferred from fixture success."
+  ],
+  "benchmarks": [
+    "campaign-ad-experiments"
+  ],
+  "intake": [
+    {
+      "ask": "Which exact variants or catalogue rows should be produced?",
+      "why": "Freeze the selected set before material and render work."
+    },
+    {
+      "ask": "Which materials and facts are authorised for reuse?",
+      "why": "Reuse pins bytes, rights and entity revisions rather than copying claims."
+    },
+    {
+      "ask": "What spending is authorised?",
+      "why": "No-spend is inherited by every task.",
+      "default": "No paid calls; use supplied or local assets and leave paid needs pending."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 1,
+        "max": 1200
+      },
+      "captions": "clean-sentence",
+      "note": "House production bounds; use the child playbook and requested placement for publication specifications."
+    }
+  ],
+  "variants": [
+    {
+      "id": "creative-refresh",
+      "title": "Creative refresh",
+      "triggers": {
+        "en": [
+          "refresh creatives"
+        ],
+        "ru": [
+          "обновить креативы"
+        ],
+        "zh": [
+          "刷新素材",
+          "更新素材",
+          "素材迭代",
+          "素材疲劳",
+          "换新素材"
+        ]
+      },
+      "changes": "Replace selected modules, retain approved proof and source spans, and recheck dependent speech, cues and rights."
+    }
+  ],
+  "evidence": []
+}
