@@ -154,6 +154,8 @@ jobs:
           node-version-file: .nvmrc
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      # python:check verifies the lock offline, so the pinned interpreter (.python-version) must already be installed.
+      - run: uv python install
       - run: pnpm python:check
       - run: pnpm python:audit
   python-profiles:

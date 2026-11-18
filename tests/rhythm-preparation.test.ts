@@ -24,6 +24,13 @@ import {
   captureRhythmOwned,
   selectRhythmSignalTargets,
 } from "../src/lib/audio/rhythm-process";
+
+/** Rhythm analysis runs only on macOS (tools under sandbox-exec, workspace in /private/tmp); elsewhere these skip. */
+const macOsOnly = (t: { skip(message?: string): void }) => {
+  if (process.platform === "darwin") return false;
+  t.skip("Rhythm runs only on macOS");
+  return true;
+};
 const metadata = () => ({
   streams: [
     {
@@ -234,6 +241,7 @@ test("missing trusted installation resolver reports unavailable without executio
   }
 });
 test("complete preparation with explicitly fake trusted subprocess pins snapshot/commit/readback and refuses repeated publication", async (t) => {
+  if (macOsOnly(t)) return;
   const root = folder(t),
     project = path.join(root, "public/projects/demo");
   mkdirSync(path.join(project, "pipeline"), { recursive: true });
@@ -408,6 +416,7 @@ test("known reparented descendant exec stays owned but a new birth under known r
 });
 
 test("post-publication lease-finally refusal reports durable uncertainty and retains exact output/foreign lease", async (t) => {
+  if (macOsOnly(t)) return;
   const root = folder(t),
     project = path.join(root, "public/projects/demo");
   mkdirSync(path.join(project, "pipeline"), { recursive: true });

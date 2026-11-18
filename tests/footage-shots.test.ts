@@ -217,7 +217,7 @@ test("without TransNetV2 the reference detector runs, says so, and still places 
   chmodSync(fake, 0o755);
   const output = path.join(directory, "out");
   const run = runCli(["--input", input, "--output-dir", output], { ...process.env, FOOTAGE_UVX: fake });
-  assert.equal(run.status, 0, run.stderr.slice(-800));
+  assert.equal(run.status, 0, `${JSON.stringify(run.json)}\n${run.stderr.slice(-800)}`);
   assert.equal(run.json.metadata.engine, "reference");
   assert.match(run.json.metadata.fallback.reason, /TransNetV2 was unavailable/);
   const result = FootageShotsSchema.parse(JSON.parse(readFileSync(path.join(output, "shots.json"), "utf8")));

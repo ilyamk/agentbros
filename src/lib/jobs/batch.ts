@@ -161,7 +161,7 @@ export const generateModelExecutor: BatchExecutor = async (execution) => {
     path.join(codeRoot, "node_modules/tsx/dist/loader.mjs"),
     path.join(codeRoot, "scripts/generate-model.ts"),
     "--request",
-    materialised ? operation.requestFile : "/dev/stdin",
+    materialised ? operation.requestFile : "-",
     "--project",
     projectId,
     "--output",
