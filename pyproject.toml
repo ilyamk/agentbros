@@ -60,6 +60,7 @@ diarize = [
     "pyannote.audio==4.1.0",
     "torch==2.15.0",
     "torchaudio==2.11.0",
+    "torchcodec==0.17.0",
 ]
 sfx-index = [
     "pyloudnorm==0.2.0",
@@ -189,8 +190,8 @@ conflicts = [[
     { group = "yt-dlp" },
 ]]
 
-# torch-backend routes torch alone; torchaudio's Linux x64 wheels on PyPI are CUDA builds that need libcudart, so it
-# comes from the same CPU index as torch.
+# torch-backend routes torch alone; torchaudio and torchcodec Linux x64 wheels on PyPI are CUDA builds that need
+# libcudart or libnvrtc, so they come from the same CPU index as torch.
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
@@ -198,6 +199,7 @@ explicit = true
 
 [tool.uv.sources]
 torchaudio = { index = "pytorch-cpu" }
+torchcodec = { index = "pytorch-cpu" }
 
 [tool.pytest.ini_options]
 python_files = ["test_*.py", "*.test.py"]
