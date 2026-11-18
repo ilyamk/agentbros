@@ -1,6 +1,6 @@
 # Film engine — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-19
 
 Engine changes: routes, briefs and gates. Follow [the chain](../../../docs/production-chain.md) and `pnpm film:next`.
 
@@ -77,6 +77,7 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 [Types](../../types/AGENTS.md), [src/lib](../AGENTS.md), [agents index](../../../.agents/agents/README.md), [creative-studio skill](../../../.agents/skills/creative-studio/SKILL.md).
 
 Notes:
+- Music spend (2026-11-19): `generate:music` leased with `paidWhen: budget-ceiling`.
 - Speech (2026-11-18): narration after script is skippable. Paid takes need direction approval (`spendApproved`); `narration:check` writes `pipeline/narration.json`. AI material binds approved character lines to packs. [Narration](../../../docs/production-chain/narration.md)
 - Visualisation: prepared shot bindings are checked by plan:check and plan-passed; `viz:mount` never overwrites custom builds. Build records declare `localAssets` for native assets (`[]` for unused drafts); delivery binds their inputs and receipts. `vork` shots bind `renderTask` and receipt-bound plates.
 - Prepared remix (2026-11-15): material briefs read Genjutsu; check `modelPreparation` pins after plan approval; `film:rights --preparation ID` records source use ([recipe](../../../docs/higgsfield-prompting.md#prepared-genjutsu-workflow)). Critic packs: source-bound `reviewPack`; missing evidence is not approval.
