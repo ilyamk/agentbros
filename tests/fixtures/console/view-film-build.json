@@ -1,0 +1,1313 @@
+{
+  "v": 1,
+  "revision": 42,
+  "generatedAt": "2026-11-17T09:18:00Z",
+  "project": {
+    "id": "promo-acme",
+    "route": "film",
+    "title": "Acme launch promo",
+    "filmType": "promo",
+    "playbook": "product-promo",
+    "formats": [
+      "vertical"
+    ],
+    "createdAt": "2026-11-16T08:00:00Z"
+  },
+  "control": {
+    "state": "running"
+  },
+  "autonomy": {
+    "mode": "interactive",
+    "ceilingUsd": 10,
+    "source": "film:policy"
+  },
+  "steps": [
+    {
+      "id": "intake",
+      "title": "Intake",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:00:00Z",
+      "closedAt": "2026-11-17T09:01:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "strategy",
+      "title": "Strategy",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:01:00Z",
+      "closedAt": "2026-11-17T09:02:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "ideas",
+      "title": "Ideas",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:02:00Z",
+      "closedAt": "2026-11-17T09:03:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:03:00Z",
+      "closedAt": "2026-11-17T09:04:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "script",
+      "title": "Script",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:04:00Z",
+      "closedAt": "2026-11-17T09:05:00Z",
+      "durationMs": 60000,
+      "gate": true
+    },
+    {
+      "id": "look",
+      "title": "Look",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:05:00Z",
+      "closedAt": "2026-11-17T09:06:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "beats",
+      "title": "Beat sheet",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:06:00Z",
+      "closedAt": "2026-11-17T09:07:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "material",
+      "title": "Material",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:07:00Z",
+      "closedAt": "2026-11-17T09:08:00Z",
+      "durationMs": 60000,
+      "gate": true
+    },
+    {
+      "id": "narration",
+      "title": "Narration",
+      "status": "awaiting-gate",
+      "reasons": [
+        "the narration quote waits for your approval"
+      ],
+      "owner": "narrator-director",
+      "startedAt": "2026-11-17T09:08:00Z",
+      "closedAt": "2026-11-17T09:09:00Z",
+      "durationMs": 60000,
+      "gate": true
+    },
+    {
+      "id": "animatic",
+      "title": "Animatic",
+      "status": "done",
+      "reasons": [],
+      "startedAt": "2026-11-17T09:09:00Z",
+      "closedAt": "2026-11-17T09:10:00Z",
+      "durationMs": 60000
+    },
+    {
+      "id": "build",
+      "title": "Build",
+      "status": "ready",
+      "reasons": [
+        "scene 3 of 5 in progress"
+      ],
+      "owner": "motion-engineer",
+      "critic": {
+        "round": 2,
+        "score": 8.1,
+        "action": "review"
+      },
+      "startedAt": "2026-11-17T09:09:00Z"
+    },
+    {
+      "id": "critic",
+      "title": "Critic",
+      "status": "pending",
+      "reasons": [],
+      "skippable": true
+    },
+    {
+      "id": "qa",
+      "title": "QA",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "human",
+      "title": "Final verdict",
+      "status": "pending",
+      "reasons": [],
+      "gate": true
+    }
+  ],
+  "current": {
+    "step": "build",
+    "owner": "motion-engineer",
+    "next": {
+      "argv": [
+        "pnpm",
+        "film:brief",
+        "--project",
+        "promo-acme",
+        "--step",
+        "build"
+      ],
+      "why": "Scene 3 of 5 is in progress."
+    }
+  },
+  "waiting": [
+    {
+      "v": 1,
+      "id": "dec-narration-quote",
+      "project": "promo-acme",
+      "kind": "quote",
+      "step": "narration",
+      "title": "Narration quote",
+      "summary": "3 takes, 41 s total. The agent makes the takes after your yes.",
+      "recommendation": {
+        "by": "narrator-director",
+        "text": "Voice 2 matches the brief's warm, direct tone."
+      },
+      "bindTo": [
+        {
+          "path": "pipeline/narrator-direction.json",
+          "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        }
+      ],
+      "quote": {
+        "amountUsd": 1.4,
+        "provider": "elevenlabs",
+        "endpoint": "eleven_v3",
+        "maxAdmissibleUsd": 6.9,
+        "budgetAfterUsd": 4.5,
+        "ceilingUsd": 10,
+        "quoteHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "summary": "3 takes, 41 s"
+      },
+      "options": [
+        {
+          "id": "approve",
+          "label": "Approve",
+          "argv": [
+            "pnpm",
+            "film:approve",
+            "--project",
+            "promo-acme",
+            "--step",
+            "narration",
+            "--answer",
+            "<words>",
+            "--expect",
+            "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          ],
+          "consequential": true
+        },
+        {
+          "id": "change",
+          "label": "Change",
+          "argv": [
+            "pnpm",
+            "feedback",
+            "--project",
+            "promo-acme",
+            "--step",
+            "narration",
+            "--answer",
+            "<words>"
+          ]
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-17T09:08:00Z"
+    }
+  ],
+  "agents": {
+    "active": {
+      "id": "agent-7f3",
+      "name": "motion-engineer",
+      "role": "owner",
+      "harness": "claude-code",
+      "step": "build",
+      "startedAt": "2026-11-17T09:12:00Z",
+      "status": "running",
+      "source": "hook",
+      "commands": 4,
+      "lastAlias": "motion:check"
+    },
+    "today": [
+      {
+        "id": "agent-7f3",
+        "name": "motion-engineer",
+        "role": "owner",
+        "harness": "claude-code",
+        "step": "build",
+        "startedAt": "2026-11-17T09:12:00Z",
+        "status": "running",
+        "source": "hook",
+        "commands": 4,
+        "lastAlias": "motion:check"
+      },
+      {
+        "id": "agent-2c1",
+        "name": "creative-critic",
+        "role": "critic",
+        "harness": "claude-code",
+        "step": "build",
+        "startedAt": "2026-11-17T09:05:00Z",
+        "endedAt": "2026-11-17T09:09:00Z",
+        "durationMs": 240000,
+        "status": "done",
+        "source": "dispatch",
+        "commands": 4,
+        "lastAlias": "motion:check"
+      },
+      {
+        "id": "agent-1a0",
+        "name": "design-director",
+        "role": "owner",
+        "harness": "codex",
+        "step": "look",
+        "startedAt": "2026-11-17T09:01:00Z",
+        "endedAt": "2026-11-17T09:03:00Z",
+        "durationMs": 120000,
+        "status": "failed",
+        "source": "hook",
+        "commands": 4,
+        "lastAlias": "motion:check"
+      }
+    ]
+  },
+  "money": {
+    "ceilingUsd": 10,
+    "reservedUsd": 1.4,
+    "spentUsd": 3.1,
+    "unknownPriced": 1,
+    "byProvider": [
+      {
+        "provider": "fal",
+        "spentUsd": 2.6,
+        "reservedUsd": 0,
+        "jobs": 3,
+        "unknownPriced": 0
+      },
+      {
+        "provider": "elevenlabs",
+        "spentUsd": 0.5,
+        "reservedUsd": 1.4,
+        "jobs": 2,
+        "unknownPriced": 1
+      }
+    ],
+    "jobs": [
+      {
+        "id": "job-hero-01",
+        "provider": "fal",
+        "endpoint": "fal-ai/flux-pro/v1.1",
+        "step": "material",
+        "state": "published",
+        "costUsd": 0.8,
+        "priceKnown": true,
+        "submittedAt": "2026-11-17T09:03:00Z",
+        "finishedAt": "2026-11-17T09:04:00Z",
+        "outputs": [
+          "media/hero-01.png"
+        ]
+      },
+      {
+        "id": "job-narration-02",
+        "provider": "elevenlabs",
+        "endpoint": "eleven_v3",
+        "step": "narration",
+        "state": "reserved",
+        "reservedUsd": 1.4,
+        "priceKnown": true,
+        "cancellable": true
+      },
+      {
+        "id": "job-sfx-03",
+        "provider": "elevenlabs",
+        "endpoint": "sound-generation",
+        "step": "material",
+        "state": "running",
+        "priceKnown": false,
+        "submittedAt": "2026-11-17T09:15:00Z",
+        "cancellable": false,
+        "cancelReason": "provider elevenlabs offers no cancellation for this job"
+      }
+    ]
+  },
+  "media": {
+    "latestRender": {
+      "root": "out",
+      "path": "scenes/scene-3.mp4",
+      "kind": "video",
+      "label": "Scene 3",
+      "renderedAt": "2026-11-17T09:09:00Z",
+      "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "stale": true,
+      "durationSec": 4.2,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "animatic": {
+      "root": "out",
+      "path": "animatic/animatic-v3.mp4",
+      "kind": "video",
+      "label": "Animatic v3",
+      "renderedAt": "2026-11-17T09:05:00Z",
+      "sourceHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "stale": false,
+      "durationSec": 18,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "renders": [
+      {
+        "root": "out",
+        "path": "scenes/scene-3.mp4",
+        "kind": "video",
+        "label": "Scene 3",
+        "renderedAt": "2026-11-17T09:09:00Z",
+        "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "stale": true,
+        "durationSec": 4.2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      },
+      {
+        "root": "out",
+        "path": "strips/animatic-v3.png",
+        "kind": "strip",
+        "label": "Frame strip",
+        "width": 1600,
+        "height": 180
+      }
+    ],
+    "composition": {
+      "id": "promo-acme-main",
+      "entry": "src/projects/promo-acme/index.tsx",
+      "durationInFrames": 540,
+      "fps": 30,
+      "width": 1080,
+      "height": 1920
+    }
+  },
+  "assets": [
+    {
+      "id": "hero-01",
+      "kind": "image",
+      "path": "media/hero-01.png",
+      "origin": "generated",
+      "provider": "fal",
+      "costUsd": 0.8,
+      "usedIn": [
+        "scene-1",
+        "scene-5"
+      ],
+      "approved": true,
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "thumbnail": {
+        "path": "media/hero-01.png",
+        "kind": "image",
+        "width": 1080,
+        "height": 1920
+      }
+    },
+    {
+      "id": "track-02",
+      "kind": "audio",
+      "path": "music/track-02.mp3",
+      "origin": "stock",
+      "licence": {
+        "id": "pixabay",
+        "name": "Pixabay Content License",
+        "url": "https://pixabay.com/service/license-summary/",
+        "attribution": "Track 2 by an example artist"
+      },
+      "usedIn": [
+        "timeline"
+      ],
+      "approved": true
+    },
+    {
+      "id": "logo",
+      "kind": "image",
+      "path": "media/logo.svg",
+      "origin": "user",
+      "usedIn": [
+        "scene-5"
+      ]
+    }
+  ],
+  "qa": {
+    "findings": [
+      {
+        "id": "mc-3-212",
+        "severity": "warning",
+        "source": "motion:check",
+        "message": "Text leaves the safe zone.",
+        "step": "build",
+        "format": "vertical",
+        "frame": 212,
+        "timeSec": 7.07,
+        "evidence": [
+          {
+            "root": "out",
+            "path": "qa/scene-3-f212.png",
+            "kind": "image",
+            "width": 1080,
+            "height": 1920
+          }
+        ]
+      }
+    ]
+  },
+  "cards": [
+    {
+      "v": 1,
+      "id": "card-endings",
+      "project": "promo-acme",
+      "step": "build",
+      "from": {
+        "agent": "creative-critic",
+        "role": "critic"
+      },
+      "kind": "compare",
+      "title": "Two endings",
+      "body": "Which ending lands the **logo** better?",
+      "media": [
+        {
+          "root": "out",
+          "path": "endings/ending-a.mp4",
+          "kind": "video",
+          "label": "Ending A",
+          "durationSec": 3,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30
+        },
+        {
+          "root": "out",
+          "path": "endings/ending-b.mp4",
+          "kind": "video",
+          "label": "Ending B",
+          "durationSec": 3,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30
+        }
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "A"
+        },
+        {
+          "id": "b",
+          "label": "B"
+        }
+      ],
+      "expectsAnswer": true,
+      "createdAt": "2026-11-17T09:15:00Z"
+    },
+    {
+      "v": 1,
+      "id": "card-stock",
+      "project": "promo-acme",
+      "step": "build",
+      "from": {
+        "agent": "asset-planner"
+      },
+      "kind": "grid",
+      "title": "Stock candidates for scene 4",
+      "media": [
+        {
+          "path": "design/styleframes/sf-1.png",
+          "kind": "image",
+          "label": "Styleframe 1",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "path": "design/styleframes/sf-2.png",
+          "kind": "image",
+          "label": "Styleframe 2",
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "path": "design/styleframes/sf-3.png",
+          "kind": "image",
+          "label": "Styleframe 3",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "options": [
+        {
+          "id": "sf-1",
+          "label": "1"
+        },
+        {
+          "id": "sf-2",
+          "label": "2"
+        },
+        {
+          "id": "sf-3",
+          "label": "3"
+        }
+      ],
+      "expectsAnswer": true,
+      "createdAt": "2026-11-17T09:15:00Z"
+    },
+    {
+      "v": 1,
+      "id": "card-tagline",
+      "project": "promo-acme",
+      "step": "build",
+      "from": {
+        "agent": "motion-engineer"
+      },
+      "kind": "question",
+      "title": "Should the end card show the tagline?",
+      "expectsAnswer": true,
+      "createdAt": "2026-11-17T09:16:00Z"
+    },
+    {
+      "v": 1,
+      "id": "card-notes",
+      "project": "promo-acme",
+      "step": "build",
+      "from": {
+        "agent": "motion-engineer"
+      },
+      "kind": "markdown",
+      "title": "Build notes",
+      "body": "Scene 3 uses the `kinetic-type` block.\n\n- safe zone checked\n- one warning at frame 212",
+      "expectsAnswer": false,
+      "createdAt": "2026-11-17T09:16:00Z"
+    },
+    {
+      "v": 1,
+      "id": "card-scene-3",
+      "project": "promo-acme",
+      "step": "build",
+      "from": {
+        "agent": "motion-engineer"
+      },
+      "kind": "media",
+      "title": "Scene 3 draft",
+      "media": [
+        {
+          "root": "out",
+          "path": "scenes/scene-3.mp4",
+          "kind": "video",
+          "label": "Scene 3",
+          "renderedAt": "2026-11-17T09:09:00Z",
+          "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "stale": true,
+          "durationSec": 4.2,
+          "width": 1080,
+          "height": 1920,
+          "fps": 30
+        }
+      ],
+      "expectsAnswer": false,
+      "createdAt": "2026-11-17T09:16:00Z"
+    }
+  ],
+  "advisories": [
+    "Scene 3 render is older than its code; re-render before the critic round."
+  ],
+  "stepGuard": {
+    "violations": 1,
+    "last": {
+      "at": "2026-11-17T09:11:00Z",
+      "alias": "generate:model",
+      "step": "build",
+      "code": "paid"
+    }
+  },
+  "film": {
+    "brief": {
+      "excerpt": "# Brief\n\nAcme: a launch film for small teams. Audience: founders who live in their inbox. Tone: calm, exact, a little dry. Call to action: start free today.",
+      "doc": {
+        "path": "pipeline/brief.md",
+        "kind": "document",
+        "label": "brief.md"
+      },
+      "strategy": {
+        "proposition": "One list that empties itself as you work.",
+        "audience": {
+          "who": "founders of five-person teams",
+          "moment": "the first look at the phone in the morning"
+        },
+        "platform": "Reels · vertical · sound off",
+        "hook": {
+          "mechanic": "result first",
+          "firstTwoSeconds": "an empty inbox, then the day it replaced"
+        },
+        "tone": [
+          "calm",
+          "exact",
+          "dry"
+        ],
+        "mandatories": [
+          "product name on the end card",
+          "the real app, not a mock"
+        ],
+        "forbidden": [
+          "naming competitors",
+          "robot mascots"
+        ],
+        "successCriteria": [
+          "a viewer on mute can say what it does",
+          "the hook asks a question within 2 s"
+        ],
+        "filmType": "promo",
+        "language": "en"
+      },
+      "strategyExcerpt": "# Strategy\n\nOne single-minded proposition: One list that empties itself as you work.",
+      "strategyDoc": {
+        "path": "pipeline/strategy.md",
+        "kind": "document",
+        "label": "strategy.md"
+      }
+    },
+    "discovery": {
+      "category": "AI inbox assistants",
+      "cliches": [
+        {
+          "cliche": "The overflowing inbox counter",
+          "description": "A red badge climbing to 999.",
+          "seenIn": "Brand 1, Brand 4"
+        },
+        {
+          "cliche": "Robot hands typing",
+          "description": "A friendly robot answers mail.",
+          "seenIn": "Brand 2"
+        },
+        {
+          "cliche": "Founder asleep at the desk",
+          "seenIn": "Brand 3, Brand 6"
+        }
+      ],
+      "whiteSpace": [
+        "The reader's side of the reply",
+        "Silence as the result: nothing to do"
+      ],
+      "learn": [
+        "Show the reply landing in real time"
+      ],
+      "claims": [
+        {
+          "text": "Sorts a day's mail in under a minute",
+          "status": "working",
+          "source": "pipeline/sources/benchmarks.md"
+        },
+        {
+          "text": "Drafts replies in your voice",
+          "status": "working"
+        },
+        {
+          "text": "Calendar sync",
+          "status": "in-development"
+        },
+        {
+          "text": "Works across every mail provider",
+          "status": "horizon"
+        },
+        {
+          "text": "Saves two hours a day",
+          "status": "unverified"
+        }
+      ],
+      "publicRule": "Only working claims are said; in-development ones are shown as coming soon.",
+      "docs": [
+        {
+          "path": "pipeline/category-scan.json",
+          "kind": "document",
+          "label": "category-scan.json"
+        },
+        {
+          "path": "pipeline/product-truth.json",
+          "kind": "document",
+          "label": "product-truth.json"
+        }
+      ]
+    },
+    "ideas": {
+      "kind": "ideas",
+      "round": 1,
+      "rubricVersion": 2,
+      "axes": [
+        "picture",
+        "hook",
+        "distinctiveness",
+        "truth",
+        "feasibility",
+        "ambition",
+        "native"
+      ],
+      "items": [
+        {
+          "id": "I1",
+          "title": "The empty list",
+          "text": "A to-do list that empties itself while the day goes on.\nOpening: a full list, a hand lets go.",
+          "scores": {
+            "picture": 4,
+            "hook": 5,
+            "distinctiveness": 5,
+            "truth": 4,
+            "feasibility": 5,
+            "ambition": 5,
+            "native": 4
+          },
+          "mean": 4.57,
+          "passes": true
+        },
+        {
+          "id": "I2",
+          "title": "Morning, solved",
+          "text": "One morning seen twice: before and after.\nOpening: two phones side by side.",
+          "scores": {
+            "picture": 5,
+            "hook": 5,
+            "distinctiveness": 4,
+            "truth": 5,
+            "feasibility": 5,
+            "ambition": 4,
+            "native": 5
+          },
+          "mean": 4.71,
+          "passes": true
+        },
+        {
+          "id": "I3",
+          "title": "The reply lands",
+          "text": "We follow one reply from draft to the reader's smile.",
+          "scores": {
+            "picture": 5,
+            "hook": 4,
+            "distinctiveness": 5,
+            "truth": 5,
+            "feasibility": 4,
+            "ambition": 5,
+            "native": 5
+          },
+          "mean": 4.71,
+          "passes": true
+        },
+        {
+          "id": "I4",
+          "title": "Quiet office",
+          "text": "The loudest office in town goes silent at nine.",
+          "scores": {
+            "picture": 3,
+            "hook": 3,
+            "distinctiveness": 3,
+            "truth": 3,
+            "feasibility": 3,
+            "ambition": 3,
+            "native": 3
+          },
+          "mean": 3.0,
+          "passes": false
+        },
+        {
+          "id": "I5",
+          "title": "Inbox weather",
+          "text": "Mail as weather over a city; the product clears the sky.",
+          "scores": {
+            "picture": 3,
+            "hook": 3,
+            "distinctiveness": 3,
+            "truth": 3,
+            "feasibility": 3,
+            "ambition": 3,
+            "native": 3
+          },
+          "mean": 3.0,
+          "passes": false
+        },
+        {
+          "id": "I6",
+          "title": "Thirty seconds",
+          "text": "A stopwatch races the inbox; the inbox loses.",
+          "scores": {
+            "picture": 3,
+            "hook": 3,
+            "distinctiveness": 3,
+            "truth": 3,
+            "feasibility": 3,
+            "ambition": 3,
+            "native": 3
+          },
+          "mean": 3.0,
+          "passes": false
+        }
+      ],
+      "pairs": [
+        {
+          "a": "I1",
+          "b": "I2",
+          "winner": "I1",
+          "agreed": true
+        },
+        {
+          "a": "I1",
+          "b": "I3",
+          "winner": "I1",
+          "agreed": true
+        },
+        {
+          "a": "I2",
+          "b": "I3",
+          "winner": "I2",
+          "agreed": true
+        },
+        {
+          "a": "I1",
+          "b": "I4",
+          "agreed": false
+        }
+      ],
+      "top": [
+        "I1",
+        "I2",
+        "I3"
+      ],
+      "verdict": "pass",
+      "against": [
+        {
+          "id": "I1",
+          "argument": "The picture is clear, but the turn arrives late."
+        },
+        {
+          "id": "I2",
+          "argument": "The picture is clear, but the turn arrives late."
+        },
+        {
+          "id": "I3",
+          "argument": "The picture is clear, but the turn arrives late."
+        }
+      ],
+      "docs": [
+        {
+          "path": "pipeline/pools/ideas.json",
+          "kind": "document",
+          "label": "ideas.json"
+        },
+        {
+          "path": "pipeline/boards/boards.jpg",
+          "kind": "image",
+          "label": "boards.jpg"
+        }
+      ],
+      "chosen": "I1"
+    },
+    "scripts": {
+      "kind": "scripts",
+      "round": 1,
+      "rubricVersion": 2,
+      "axes": [
+        "hookLine",
+        "truth",
+        "reading",
+        "musicFit",
+        "oneMessage"
+      ],
+      "items": [
+        {
+          "id": "S1",
+          "title": "Your inbox, empty by nine.",
+          "text": "Your inbox, empty by nine.\nNo sorting. No drafts.\nJust replies that sound like you.\nStart free.",
+          "scores": {
+            "hookLine": 4,
+            "truth": 5,
+            "reading": 5,
+            "musicFit": 4,
+            "oneMessage": 5
+          },
+          "mean": 4.6,
+          "passes": true
+        },
+        {
+          "id": "S2",
+          "title": "What if mail answered itself?",
+          "text": "What if mail answered itself?\nIt nearly does now.\nStart free.",
+          "scores": {
+            "hookLine": 5,
+            "truth": 5,
+            "reading": 4,
+            "musicFit": 5,
+            "oneMessage": 5
+          },
+          "mean": 4.8,
+          "passes": true
+        },
+        {
+          "id": "S3",
+          "title": "Nine o'clock. Nothing to do.",
+          "text": "Nine o'clock. Nothing to do.\nThat's the point.\nStart free.",
+          "scores": {
+            "hookLine": 5,
+            "truth": 4,
+            "reading": 5,
+            "musicFit": 5,
+            "oneMessage": 4
+          },
+          "mean": 4.6,
+          "passes": true,
+          "overruns": 1
+        }
+      ],
+      "pairs": [
+        {
+          "a": "S1",
+          "b": "S2",
+          "winner": "S1",
+          "agreed": true
+        },
+        {
+          "a": "S1",
+          "b": "S3",
+          "winner": "S1",
+          "agreed": true
+        },
+        {
+          "a": "S2",
+          "b": "S3",
+          "winner": "S2",
+          "agreed": true
+        },
+        {
+          "a": "S1",
+          "b": "S3",
+          "agreed": false
+        }
+      ],
+      "top": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "verdict": "pass",
+      "against": [
+        {
+          "id": "S1",
+          "argument": "The picture is clear, but the turn arrives late."
+        },
+        {
+          "id": "S2",
+          "argument": "The picture is clear, but the turn arrives late."
+        },
+        {
+          "id": "S3",
+          "argument": "The picture is clear, but the turn arrives late."
+        }
+      ],
+      "docs": [
+        {
+          "path": "pipeline/pools/scripts.json",
+          "kind": "document",
+          "label": "scripts.json"
+        }
+      ],
+      "chosen": "S1"
+    },
+    "look": {
+      "styleframes": [
+        {
+          "media": {
+            "path": "pipeline/look/styleframes.png",
+            "kind": "image",
+            "label": "styleframes.png",
+            "width": 1600,
+            "height": 900
+          },
+          "rating": 4
+        },
+        {
+          "media": {
+            "path": "pipeline/look/frame-hook.png",
+            "kind": "image",
+            "label": "frame-hook.png",
+            "width": 1080,
+            "height": 1920
+          },
+          "rating": 5
+        },
+        {
+          "media": {
+            "path": "pipeline/look/frame-end.png",
+            "kind": "image",
+            "label": "frame-end.png",
+            "width": 1080,
+            "height": 1920
+          }
+        }
+      ],
+      "design": {
+        "path": "pipeline/design.json",
+        "kind": "document",
+        "label": "design.json"
+      }
+    },
+    "beats": {
+      "fps": 30,
+      "shots": [
+        {
+          "id": "hook",
+          "beatId": "hook",
+          "startFrame": 0,
+          "durationFrames": 90,
+          "intent": "An inbox at 999 lets go of every letter at once",
+          "subject": "inbox badge",
+          "transitionToNext": "match cut"
+        },
+        {
+          "id": "turn",
+          "beatId": "turn",
+          "startFrame": 90,
+          "durationFrames": 150,
+          "intent": "The replies land on the readers' phones",
+          "subject": "three phones",
+          "transitionToNext": "whip"
+        },
+        {
+          "id": "proof",
+          "beatId": "proof",
+          "startFrame": 240,
+          "durationFrames": 180,
+          "intent": "The real app sorts a real morning",
+          "subject": "app screen",
+          "transitionToNext": "cut"
+        },
+        {
+          "id": "end",
+          "beatId": "cta",
+          "startFrame": 420,
+          "durationFrames": 120,
+          "intent": "Product name and start free",
+          "subject": "end card"
+        }
+      ],
+      "cues": [
+        {
+          "id": "c1",
+          "kind": "cut",
+          "frame": 90,
+          "sec": 3.0,
+          "trackSec": 3.5,
+          "shotId": "hook",
+          "snap": "downbeat"
+        },
+        {
+          "id": "c2",
+          "kind": "hit",
+          "frame": 150,
+          "sec": 5.0,
+          "trackSec": 5.5,
+          "shotId": "turn",
+          "snap": "beat"
+        },
+        {
+          "id": "c3",
+          "kind": "cut",
+          "frame": 240,
+          "sec": 8.0,
+          "trackSec": 8.5,
+          "shotId": "turn",
+          "snap": "downbeat"
+        },
+        {
+          "id": "c4",
+          "kind": "drop",
+          "frame": 300,
+          "sec": 10.0,
+          "trackSec": 10.5,
+          "shotId": "proof",
+          "snap": "beat"
+        },
+        {
+          "id": "c5",
+          "kind": "cut",
+          "frame": 420,
+          "sec": 14.0,
+          "trackSec": 14.5,
+          "shotId": "proof",
+          "snap": "downbeat"
+        },
+        {
+          "id": "c6",
+          "kind": "hit",
+          "frame": 480,
+          "sec": 16.0,
+          "trackSec": 16.5,
+          "shotId": "end",
+          "snap": "beat"
+        }
+      ],
+      "track": {
+        "path": "music/track-02.mp3",
+        "kind": "audio",
+        "label": "track-02.mp3",
+        "durationSec": 18.5
+      },
+      "sections": [
+        {
+          "startSec": 0,
+          "endSec": 6,
+          "level": "low"
+        },
+        {
+          "startSec": 6,
+          "endSec": 14,
+          "level": "high"
+        },
+        {
+          "startSec": 14,
+          "endSec": 18.5,
+          "level": "mid"
+        }
+      ]
+    },
+    "narration": {
+      "route": "elevenlabs",
+      "voiceWhy": "Warm, direct and unhurried: the brief's calm tone for founders.",
+      "modelId": "eleven_v3",
+      "pacingNote": "Leave the music room after each line.",
+      "take": 1,
+      "direction": [
+        {
+          "beatId": "hook",
+          "text": "[calm] Your inbox, empty by nine.",
+          "emphasis": [
+            "empty"
+          ]
+        },
+        {
+          "beatId": "turn",
+          "text": "No sorting. [short pause] No drafts.",
+          "emphasis": []
+        },
+        {
+          "beatId": "cta",
+          "text": "[warm] Start free.",
+          "emphasis": [
+            "free"
+          ]
+        }
+      ],
+      "takes": [],
+      "words": []
+    },
+    "critic": {
+      "rounds": [
+        {
+          "step": "look",
+          "round": 1,
+          "verdict": "revise",
+          "total": 24,
+          "scores": {
+            "idea": 3,
+            "hook": 4,
+            "motion": 3,
+            "rhythm": 4,
+            "typography": 3,
+            "composition": 4,
+            "ending": 3
+          },
+          "fixes": [
+            "Raise the headline's contrast on the hook frame",
+            "Drop the gradient behind the app screen"
+          ],
+          "frames": [
+            {
+              "media": {
+                "path": "pipeline/look/frame-hook.png",
+                "kind": "image",
+                "label": "0.00 s",
+                "width": 1080,
+                "height": 1920
+              },
+              "timeSec": 0.0,
+              "note": "headline sinks into the background"
+            }
+          ]
+        },
+        {
+          "step": "look",
+          "round": 2,
+          "verdict": "approve-for-human",
+          "total": 31,
+          "scores": {
+            "idea": 4,
+            "hook": 5,
+            "motion": 4,
+            "rhythm": 5,
+            "typography": 4,
+            "composition": 5,
+            "ending": 4
+          },
+          "fixes": [],
+          "frames": [
+            {
+              "media": {
+                "path": "pipeline/look/frame-hook.png",
+                "kind": "image",
+                "label": "0.00 s",
+                "width": 1080,
+                "height": 1920
+              },
+              "timeSec": 0.0,
+              "note": "headline reads at phone size"
+            }
+          ]
+        }
+      ]
+    },
+    "human": {
+      "rubric": {
+        "version": 2,
+        "axes": [
+          "picture",
+          "hook",
+          "distinctiveness",
+          "truth",
+          "feasibility",
+          "ambition",
+          "native",
+          "hookLine",
+          "reading",
+          "musicFit",
+          "oneMessage"
+        ]
+      }
+    }
+  }
+}

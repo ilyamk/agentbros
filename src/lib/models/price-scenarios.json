@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "10s-480p",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "480p",
+        "aspect": "16:9",
+        "generateAudio": false
+      },
+      "oneCall": false,
+      "description": "10s-480p"
+    },
+    {
+      "id": "10s-480p-audio",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "480p",
+        "aspect": "16:9",
+        "generateAudio": true
+      },
+      "oneCall": false,
+      "description": "10s-480p-audio"
+    },
+    {
+      "id": "10s-720p",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "720p",
+        "aspect": "16:9",
+        "generateAudio": false
+      },
+      "oneCall": false,
+      "description": "10s-720p"
+    },
+    {
+      "id": "10s-720p-audio",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "720p",
+        "aspect": "16:9",
+        "generateAudio": true
+      },
+      "oneCall": false,
+      "description": "10s-720p-audio"
+    },
+    {
+      "id": "10s-1080p",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "1080p",
+        "aspect": "16:9",
+        "generateAudio": false
+      },
+      "oneCall": false,
+      "description": "10s-1080p"
+    },
+    {
+      "id": "10s-1080p-audio",
+      "setting": {
+        "durationSec": 10,
+        "resolution": "1080p",
+        "aspect": "16:9",
+        "generateAudio": true
+      },
+      "oneCall": false,
+      "description": "10s-1080p-audio"
+    },
+    {
+      "id": "1-image-1mp",
+      "setting": {
+        "images": 1,
+        "megapixels": 1
+      },
+      "oneCall": true,
+      "description": "One image; 1 MP planning size, historical average is not size-specific"
+    },
+    {
+      "id": "1-image-2mp",
+      "setting": {
+        "images": 1,
+        "megapixels": 2
+      },
+      "oneCall": true,
+      "description": "One image; 2 MP planning size, historical average is not size-specific"
+    },
+    {
+      "id": "1000-chars",
+      "setting": {
+        "inputCharacters": 1000
+      },
+      "oneCall": false,
+      "description": "1000-chars"
+    },
+    {
+      "id": "60s-audio",
+      "setting": {
+        "inputAudioSec": 60
+      },
+      "oneCall": false,
+      "description": "60s-audio"
+    },
+    {
+      "id": "30s",
+      "setting": {
+        "durationSec": 30
+      },
+      "oneCall": false,
+      "description": "30s"
+    },
+    {
+      "id": "5s",
+      "setting": {
+        "durationSec": 5
+      },
+      "oneCall": false,
+      "description": "5s"
+    },
+    {
+      "id": "10s",
+      "setting": {
+        "durationSec": 10
+      },
+      "oneCall": false,
+      "description": "10s"
+    },
+    {
+      "id": "1-model",
+      "setting": {},
+      "oneCall": true,
+      "description": "1-model"
+    },
+    {
+      "id": "1-call",
+      "setting": {},
+      "oneCall": false,
+      "description": "1-call"
+    }
+  ],
+  "slots": {
+    "image.generate": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.edit": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.text-render": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.product": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.character": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.upscale": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.cutout": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.outpaint": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.denoise": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.background": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "image.try-on": [
+      "1-image-1mp",
+      "1-image-2mp"
+    ],
+    "video.text-to-video": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.image-to-video": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.reference-to-video": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.character-swap": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.restyle": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.edit": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.upscale": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.interpolate": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.lipsync": [
+      "10s"
+    ],
+    "video.avatar": [
+      "10s"
+    ],
+    "video.cutout": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.background": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "video.denoise": [
+      "10s-480p",
+      "10s-480p-audio",
+      "10s-720p",
+      "10s-720p-audio",
+      "10s-1080p",
+      "10s-1080p-audio"
+    ],
+    "audio.voiceover": [
+      "1000-chars"
+    ],
+    "audio.voice-clone": [
+      "1000-chars"
+    ],
+    "audio.voice-change": [
+      "1-call"
+    ],
+    "audio.music": [
+      "30s"
+    ],
+    "audio.sfx": [
+      "5s"
+    ],
+    "audio.foley": [
+      "5s"
+    ],
+    "audio.denoise": [
+      "60s-audio"
+    ],
+    "audio.stems": [
+      "60s-audio"
+    ],
+    "text.transcribe": [
+      "60s-audio"
+    ],
+    "vision.analyse": [
+      "1-call"
+    ],
+    "3d.from-image": [
+      "1-model"
+    ],
+    "3d.from-text": [
+      "1-model"
+    ],
+    "3d.edit": [
+      "1-model"
+    ],
+    "train.lora": [
+      "1-call"
+    ]
+  }
+}

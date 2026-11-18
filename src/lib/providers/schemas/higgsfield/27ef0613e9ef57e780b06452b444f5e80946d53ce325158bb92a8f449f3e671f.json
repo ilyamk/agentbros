@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "endpoint": "lightricks/ltx-2.5/text-to-video/pro",
+  "title": "LTX-2.5 — Text to video pro API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/ltx-2-5/text-to-video-pro.md",
+  "usageNotes": [
+    "duration is marked required in the schema and has default 6; the API applies this top-level default before validation. The example includes it explicitly.",
+    "Pro supports 720p or 1080p and 24, 25 or 50 fps. Use the Fast endpoint for 2k, 4k or 48 fps."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "LTX-2.5 Pro Text to Video Playground",
+    "required": [
+      "prompt",
+      "duration"
+    ],
+    "properties": {
+      "fps": {
+        "enum": [
+          24,
+          25,
+          50
+        ],
+        "type": "integer",
+        "title": "Frames per second",
+        "default": 25
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "maxLength": 5000,
+        "minLength": 2,
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          6,
+          8,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 6
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "720p"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "16:9"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "title": "Generate audio",
+        "default": true
+      },
+      "camera_movement": {
+        "enum": [
+          "dolly_in",
+          "dolly_out",
+          "dolly_left",
+          "dolly_right",
+          "jib_up",
+          "jib_down",
+          "static",
+          "focus_shift"
+        ],
+        "type": "string",
+        "title": "Camera movement"
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

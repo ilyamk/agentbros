@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "alpha",
+  "speech": { "available": false, "unavailableReason": "fixture", "words": [] },
+  "screenText": {
+    "available": true,
+    "items": [
+      { "startSec": 0, "endSec": 0.5, "text": "Hello", "confidence": 1, "box": { "x": 0.4, "y": 0.45, "width": 0.2, "height": 0.1 } },
+      { "startSec": 0.5, "endSec": 1, "text": "hello!", "confidence": 1, "box": { "x": 0.4, "y": 0.45, "width": 0.2, "height": 0.1 } },
+      { "startSec": 1, "endSec": 1.5, "text": "Hello", "confidence": 1, "box": { "x": 0.4, "y": 0.45, "width": 0.2, "height": 0.1 } },
+      { "startSec": 5, "endSec": 5.5, "text": "World", "confidence": 1, "box": { "x": 0.05, "y": 0.2, "width": 0.2, "height": 0.1 } },
+      { "startSec": 6, "endSec": 6.5, "text": "x", "confidence": 1, "box": { "x": 0.45, "y": 0.2, "width": 0.1, "height": 0.1 } },
+      { "startSec": 7, "endSec": 7.5, "text": "Noise", "confidence": 0.2, "box": { "x": 0.45, "y": 0.2, "width": 0.1, "height": 0.1 } }
+    ]
+  }
+}

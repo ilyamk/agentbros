@@ -1,0 +1,102 @@
+# Coding-agent harnesses
+
+Last updated: 2026-11-17
+
+Agent Bros. Pictures runs inside whichever coding agent the user already has. There is one source of each thing:
+
+| What         | Canonical                                                    | Never                                                                          |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Instructions | `AGENTS.md` (root and per area)                              | a second instruction file with its own rules; `CLAUDE.md` is only `@AGENTS.md` |
+| Skills       | `.agents/skills/<name>/SKILL.md`                             | a copy in a harness folder                                                     |
+| Leaf agents  | `.agents/agents/<name>.md` (Claude front matter)             | hand-edited conversions                                                        |
+| Tools        | the CLIs (`pnpm …`) and the `agentbros` MCP server over them | ad hoc provider calls                                                          |
+
+`pnpm harness:setup` connects each harness to those sources. Where a harness reads `.agents/` or `.claude/` itself, it does nothing. Where the harness reads another folder, it creates a link. Where the agent format differs, it generates converted files. It also adds the MCP server to the file the harness reads. Generated files hold this machine's absolute paths (the pinned Node, the checkout) and are git-ignored. `.claude/skills` and `.claude/agents` are tracked links.
+
+```bash
+pnpm harness:setup                 # plan: detected harnesses (plus Claude Code and Codex) and what is left
+pnpm harness:setup --apply         # links, converted agents, project MCP configs (only inside this folder)
+pnpm harness:setup --apply --global   # also user-scope configs (Cline); keeps <file>.agentbros-backup
+pnpm harness:setup --harness cursor,amp --apply   # only these
+pnpm harness:setup --list          # every supported harness and how it finds AGENTS.md and skills
+pnpm harness:setup --snippet cline # the MCP entry to paste by hand
+```
+
+`pnpm bootstrap --apply` (and `./setup.sh --apply`) runs the project-scoped part as its `harness` step. `pnpm preflight` reports wiring that went stale (its `harness` line): a generated config whose Node is gone or outside the runtime policy, a `--root` that is no longer this checkout, agent files older than `.agents/agents`, or a link that does not resolve. `pnpm repo:hygiene --check` fails when a tracked `.claude/` link is not a link to `.agents/`, or a generated harness file is tracked. A `--global` write changes the user's home, so an agent asks first. Rerunning is safe: a matching config is `ok`. A file the tool cannot merge safely is reported as a `conflict` and left untouched, for example JSON with comments, a hand-written `agentbros` server in Codex TOML, a link that points elsewhere, or a real folder where a link belongs. After setup, restart the harness and approve the server when it asks.
+
+## Supported harnesses
+
+Documentation checked on 2026-11-17 (`checked` in `src/lib/harness/registry.ts`, sources in `docs`).
+
+| Harness                                 | AGENTS.md                             | Skills                                        | Agents                                | MCP config written                                     | Toolsets | Your step                             |
+| --------------------------------------- | ------------------------------------- | --------------------------------------------- | ------------------------------------- | ------------------------------------------------------ | -------- | ------------------------------------- |
+| Claude Code                             | `CLAUDE.md` imports it                | `.claude/skills` link                         | `.claude/agents` link                 | tracked `.mcp.json` (relative launch)                  | all      | approve `agentbros`                   |
+| OpenAI Codex                            | native (32 KiB cap)                   | `.agents/skills` native                       | generated `.codex/agents/*.toml`      | `.codex/config.toml`                                   | core     | trust the project                     |
+| Cursor                                  | native                                | `.agents/skills` native                       | reads `.claude/agents`                | `.cursor/mcp.json`                                     | core     | —                                     |
+| GitHub Copilot (VS Code, CLI)           | native                                | CLI native; VS Code via `.github/skills` link | generated `.github/agents/*.agent.md` | `.vscode/mcp.json`; the CLI reads `.mcp.json`          | core     | trust the folder (CLI)                |
+| Google Antigravity CLI                  | native                                | `.agents/skills` native                       | `.agents/agents` native               | `.agents/mcp_config.json`                              | core     | —                                     |
+| Gemini CLI (retired 2026-06-18)         | `context.fileName` set to `AGENTS.md` | `.agents/skills` native                       | not converted                         | `.gemini/settings.json`                                | core     | —                                     |
+| OpenCode                                | native                                | `.agents/skills` native                       | generated `.opencode/agents/*.md`     | `.opencode/opencode.json`                              | core     | —                                     |
+| Devin Desktop (was Windsurf), Devin CLI | native                                | `.agents/skills` native                       | `.agents/agents` native               | `.devin/mcp_config.json`                               | core     | —                                     |
+| Cline                                   | native                                | `.claude/skills`                              | none file-based                       | user `~/.cline/…/cline_mcp_settings.json` (`--global`) | core     | IDE: paste the snippet in MCP Servers |
+| Amp                                     | native                                | `.agents/skills` native                       | none file-based                       | `.amp/settings.json`                                   | core     | `amp mcp approve agentbros`           |
+| Kilo Code                               | native                                | `.agents/skills`                              | —                                     | `.kilo/kilo.jsonc`                                     | core     | —                                     |
+| Goose                                   | native                                | `.agents/skills` native                       | —                                     | none (YAML user config)                                | —        | `goose configure` → command extension |
+
+Roo Code shut down on 2026-05-15 and is not wired. A harness that is not listed still works through `AGENTS.md` and the CLIs. Converted agents leave out Claude's `model` and `tools` labels, so each harness uses its configured model and tools. They start with a `Generated by pnpm harness:setup` line. Edit the canonical `.agents/agents/<name>.md` and rerun; stale generated files are removed, hand-written ones kept.
+
+The tracked `.mcp.json` uses a relative launch (`node node_modules/tsx/dist/cli.mjs src/mcp/stdio.ts`), so start Claude Code and the Copilot CLI from the repository root, with Node 26 (or the reserve 24) first on `PATH`; the server refuses other versions. Generated configs use absolute paths and the Node that ran setup, so rerun `pnpm harness:setup --apply` after moving the checkout or changing Node.
+
+## Hooks
+
+The studio console ([RFC 0004](rfcs/0004-studio-console.md) §7.1) can use Claude Code and Codex hooks to see agent runs, refuse a command in a paused project before it starts, and tell the agent what the user decided in the console. One script serves both harnesses: `node scripts/hooks/agentbros-hook.mjs <claude|codex> <role>` (plain Node, no dependencies). Every console feature also works without hooks, through the journal, `pnpm next` and `console:wait`.
+
+```bash
+pnpm harness:setup --hooks                       # plan: the exact entries for .claude/settings.local.json and .codex/hooks.json
+pnpm harness:setup --hooks --apply               # install (after the user's yes); keeps <file>.agentbros-backup
+pnpm harness:setup --hooks --remove              # remove only our entries
+pnpm harness:setup --hooks --apply --harness codex   # one harness
+```
+
+Installing changes the user's harness settings, so an agent shows the plan and applies it only after the user agrees. Both files are git-ignored. The merge is surgical: our entries are the ones whose command contains `scripts/hooks/agentbros-hook.mjs` (the deprecated `claude-step-guard.mjs` entry is replaced); every other key, group and handler, the user's or another tool's, stays as it was, and our groups are appended after them. Rerunning is idempotent. The first change keeps the original as `<file>.agentbros-backup` (git-ignored) and later runs never overwrite it. A file that is not plain JSON (comments) is reported as a conflict and left untouched. Commands are relative: Claude Code runs `node "$CLAUDE_PROJECT_DIR"/scripts/hooks/agentbros-hook.mjs claude <role>`, Codex `node scripts/hooks/agentbros-hook.mjs codex <role>` from the session's directory (start Codex at the repository root).
+
+| Role      | Claude Code events                                                                                                                  | Codex events                                                                                                                                       | Bound                        | Does                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `observe` | SessionStart, SessionEnd, SubagentStart, SubagentStop, PostToolUse (`Agent`), PostToolUseFailure (`Bash\|Agent`), Stop, StopFailure | SessionStart, SessionEnd, SubagentStart, SubagentStop, PostToolUse (`spawn_agent`, matcher `^(Agent\|[A-Za-z0-9_]*spawn_agent)$`), Stop, Interrupt | async (SessionEnd 1 s, sync) | One journal line each: `agent.start`, `agent.end` with duration, `agent.notification` (`agent-link`, `turn-end`, `tool-failure`, `stop-failure`, `interrupt`)                                                                                                                                                                                                                                |
+| `guard`   | PreToolUse (`Bash`, `Read`, `Write`, `Edit`, `MultiEdit`, `NotebookEdit`, `Grep`)                                                   | PreToolUse (`Bash`, also shell and unified exec; `apply_patch`)                                                                                    | 5 s                          | Denies a command that `runScript` would refuse: the step lease in enforce mode and the pause check (`PAUSED`); and, for every project, any tool call or patch that reads or writes `out/console/session.json`, writes a project's `pipeline/inbox/`, names `AGENTBROS_CONSOLE_GRANT` (the console grant is the user's), sets `AGENTBROS_ACTOR`/`AGENTBROS_CHANNEL` or passes `--print-token` |
+| `orient`  | SessionStart, SubagentStart                                                                                                         | SessionStart, SubagentStart                                                                                                                        | 3 s                          | Facts: project, route, step and owner, what waits for the user, pause, console URL; an own subagent gets its lease                                                                                                                                                                                                                                                                           |
+| `relay`   | UserPromptSubmit                                                                                                                    | UserPromptSubmit                                                                                                                                   | 3 s                          | Console decisions, card answers and control changes since the session's last prompt, with the user's words                                                                                                                                                                                                                                                                                   |
+| `present` | PostToolUse (project commands through Bash or Agent Bros MCP) | Same | 3 s | Asks the main agent to open or focus the verified project in the desktop browser, once per project and console origin per session |
+| `surface` | Notification (`permission_prompt\|idle_prompt`)                                                                                     | —                                                                                                                                                  | async                        | An `agent.notification` line the console and its notifications show                                                                                                                                                                                                                                                                                                                          |
+| `wake`    | Stop (`async`, `asyncRewake`, 3,600 s)                                                                                              | —                                                                                                                                                  | async                        | When an approval, a card or a pause waits, waits up to 30 minutes (`AGENTBROS_HOOK_WAKE_MINUTES`) for the user's console decision and exits 2 with one line, which wakes Claude                                                                                                                                                                                                              |
+
+Rules the script keeps: it fails open (any error, an unknown payload, no project: exit 0, no output), except that `guard` denies, without a project, the console's session token and grant, a command that sets `AGENTBROS_ACTOR` or `AGENTBROS_CHANNEL`, `--print-token` on any command, and a Codex `apply_patch` that touches the session token or a project's `pipeline/inbox/` (an install from before shows `stale`); only `guard` denies and nothing blocks `Stop` or `SubagentStop`; it acts only when the session's directory is inside a checkout and a project resolves (the command's `--project`, the session's last project, the newest unexpired lease, `AGENTBROS_PROJECT`); it writes only `public/projects/<id>/pipeline/events.jsonl` and `out/console/hooks/<session>.json`; injected text is facts in English, at most 1,200 characters, prefixed `Agent Bros. console:`, injected once per change; subagents get context only when their type is one of `.agents/agents/*.md`. `AGENTBROS_HOOKS=off` disables every role, `AGENTBROS_HOOKS=observe` keeps only `observe` (benchmarks), `AGENTBROS_EVENTS=off` stops the journal lines, `AGENTBROS_STEP_GUARD` keeps its meaning for the lease check.
+
+After installing, complete the trust step for the harness. New Codex entries need their own review:
+
+- **Claude Code:** start it from this folder and accept the workspace trust dialog; hooks from settings files run only in a trusted folder (headless `-p` treats the folder as trusted). A running session picks the entries up after a restart.
+- **Codex:** trust the project, then review each `agentbros-hook` entry once in `/hooks` (CLI) or Settings > Hooks (app); the review is bound to the entry's hash.
+
+`hooksStatus(rootDir)` (`src/lib/harness/hooks.ts`) reports `installed`, `missing` or `stale` per harness for `pnpm next` and the console's Settings. Payload fixtures are in `tests/fixtures/hooks/` (synthetic, built from the [Claude Code](https://code.claude.com/docs/en/hooks) and [Codex](https://learn.chatgpt.com/docs/hooks) references on 2026-11-17).
+
+### Desktop browser handoff
+
+On project creation or the first next-step call, the command checks for a running Studio Console and returns the project route in `metadata.console.url`. With hooks enabled, `present` tells the main agent to focus the dashboard if the connected project is already visible. Otherwise it uses the pairing link in the existing tab, or in a fresh pane if none is open. The hook records the project and console origin in the session cursor so repeated next-step calls leave the tab alone. On session resume, `orient` asks the agent to run `pnpm next --project <id>` for the known project and re-enables the browser handoff for that check.
+
+In Codex Desktop the agent uses the in-app browser. In Claude Code Desktop it uses the Browser pane in a local session. The pane is supplied by the desktop harness. When it is unavailable, for example in a terminal-only session, the agent shares the project link. If the console could not start, the agent reports the error and continues. The rule in `AGENTS.md` covers project start and resume when hooks are missing. `AGENTBROS_CONSOLE=off` disables the dashboard handoff.
+
+## The MCP server
+
+The `agentbros` server ([MCP bridge](mcp.md)) runs the whitelisted CLIs with the same scope and spend checks as the command line. Two launcher choices matter for harnesses:
+
+- **`--toolsets`**: `all` lists all ~140 tools (about 27k tokens of schemas). Claude Code loads MCP tools on demand, so it gets `all`. Every other harness gets `core`: about twenty tools for the shared loop (`next`, `playbook`, film and footage steps, render, QA, delivery, budget). Cursor and Copilot cap the number of tools, and the rest front-load every schema. With `core`, the other tools are still reachable through `avc_call { tool, arguments }`, and `avc_capabilities` lists them (`listed: false`). A section name (`footage`, `audio`, `generation`, …) adds that section, e.g. `--toolsets core,footage`.
+- **`--root`**: the workspace. When omitted, it is `AGENTBROS_ROOT`, else this checkout, whatever directory the harness starts the server from.
+
+The server sends instructions with its handshake: start with `avc_next` or `avc_playbook`, and reach unlisted tools through `avc_call`. `avc_guide` serves skills and agent briefs from `.agents/`, for a harness that cannot read them from disk.
+
+## Adding or changing a harness
+
+1. Read its current documentation: the instruction file, the skills folder, the agent format and the MCP config path and shape.
+2. Add or change its entry in `src/lib/harness/registry.ts` with `docs` and today's `checked`. Prefer native discovery, then a link, then generation.
+3. Git-ignore every generated project path; `tests/harness-setup.test.ts` fails if one is not ignored.
+4. Update the table above.

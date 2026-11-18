@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "muse",
+  "palette": {
+    "value": [
+      "#E4EFF7 pale-sky ground: frame corners in every UI and type shot (0.1, 12.0, 21.8, 23.45, 33.5 s)",
+      "#A4CCF6 sky blue behind the 3D close-up (5.5 s corner)",
+      "#AEB6CA hazy cloud grey around the floating island (3.4 s)",
+      "#2876EF accent blue at full size: the giant tagline letters (30.05 s corner)",
+      "#6A93DE accent words in the hook line, blended with the ground by downscaling, so the true glyph colour is nearer #2876EF (1.6 s)",
+      "#68A4F1 send-button gradient, lighter at the top (18.9 s)",
+      "#2E75E4 to #1046BF monogram brush stroke, light to dark (33.5 s)",
+      "#5681B2 ocean in the overhead spectacle shot (29.3 s)",
+      "#D7B494 plush character, warm beige (21.8 s centre)",
+      "#363D3E ink: body type and headline words that are not accented (0.1 s darkest)"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "ffmpeg 98x64 rgb24 samples at 0.1, 1.6, 3.4, 5.5, 12.0, 18.9, 21.8, 23.45, 29.3, 30.05, 31.2, 33.5 s; corner = mean of the top-left 10x8 block, accent = mean of saturated blue pixels (hue 0.55-0.70, s > 0.45)",
+      "shots.json colour: s001 L 88.8, b -6.6; s004 pale UI ground"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "hook promise line",
+        "description": "Neo-grotesque system sans of the SF Pro class (the face is inferred from glyph shapes; sizes and colours are observed), medium weight about 500, mixed case, centred. It starts as one line about 0.70 of frame width and 0.12 high (OCR box at 0.27 s), then pulls back to a two-line block about 0.53 wide with tight leading (about 0.95). The defining words are accent blue and the rest ink. The line re-centres as each word arrives."
+      },
+      {
+        "role": "invitation imperative",
+        "description": "Two words, same face, medium, mixed case, centred. OCR box 0.45 wide by 0.13 high at y 0.42-0.55, so the cap height is about 0.09 of frame height. Ink only, no accent."
+      },
+      {
+        "role": "handoff headline",
+        "description": "Two lines split around a portrait disc: line one at y 0.16-0.33 (box 0.51 wide, 0.17 high), line two at y 0.69-0.87 (0.55 wide). The disc sits between them, about 0.34 of frame width (0.5 of height), and overlaps line one, so the top line reads as tucked behind it. The product name is accent blue. Medium weight, centred."
+      },
+      {
+        "role": "chat UI text",
+        "description": "Interface sans at reading scale: about 0.035-0.045 of frame height per line (OCR boxes), left-aligned inside bubbles. User bubbles are pale blue with a blue tint on the right; assistant bubbles and cards are white with a soft shadow on the left. There is a small name pill under the avatar."
+      },
+      {
+        "role": "input field at hero scale",
+        "description": "The field text is about 0.11 of frame height (OCR box at 17.5 s: 0.81 wide, 0.11 high, x 0.00). The bar runs off the left edge as the frame follows the caret. The newest word is set accent blue and settles to ink as the next word types."
+      },
+      {
+        "role": "tagline",
+        "description": "Three words in the same face. They enter at about frame height (one lowercase 'e' spans the full 640 px height at F900-F902) and settle to one line 0.63 wide, 0.14 high (30.5 s). They re-colour from accent blue to ink by about 30.9 s, then shrink to about 0.2 of width and fade to roughly 25% opacity by 31.9 s."
+      },
+      {
+        "role": "brand monogram",
+        "description": "A single cursive lowercase letter drawn as a variable-width brush stroke in accent blue, about 0.18 wide and 0.21 high at 33.0 s, centred, held with no wordmark."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "speech-text.json screenText boxes: 0-2.517, 6.517, 15.517-18.517, 20.517-23.517, 30.517, 33.017",
+      "visuals/a1/m01-type-build.jpg F0-F23",
+      "visuals/a1/m11-leave-it-part.jpg F616-F628",
+      "visuals/a1/coarse-f.jpg F480-F540",
+      "visuals/a1/m14-letter-wipe.jpg F900-F913",
+      "Font family is inferred from glyph shapes; no font metadata exists"
+    ]
+  },
+  "composition": {
+    "value": "Everything sits on a centre axis. Type and UI hold the middle third of the frame height (y 0.40-0.60 for the invitation, the field and the tagline). The chat column spans about x 0.25-0.76 under an avatar at y 0.28. The character disc is the recurring focal object, always on the vertical centre line: 0.32 of width at the reveal (F226), about 0.08 as a header avatar (F253), 0.23 as the send button at hero scale (F560), 0.34 as the portrait window (F610), 0.22-0.25 as the blue sphere (F701-F703), and about 0.25 when it opens the iris (F846); sizes are measured on strip tiles, ±0.02. The 3D shots use low, over-the-shoulder angles (4.9-6.4 s) and a straight-down overhead (28.4-30.2 s) with the subject dead centre. Negative space is large: in the UI scenes about 60-70% of the frame is empty ground.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/m05-words-part-avatar.jpg F226",
+      "visuals/a1/m06-avatar-shrink.jpg F253",
+      "visuals/a1/m09-field-to-send.jpg F560",
+      "visuals/a1/m12-to-sphere.jpg F701",
+      "visuals/a1/m13-bubble-iris.jpg F846-F853",
+      "speech-text.json boxes"
+    ]
+  },
+  "materials": {
+    "value": "Two material worlds share one palette. (1) Stylised 3D rendered like a feature-animation set: a felted, fuzzy plush character with blush cheeks; a glass dome with a rainbow thin-film rim; a matte white floating disc island; volumetric cumulus; a glossy ocean seen from above. App icons float as soft glassy tiles. (2) Flat frosted UI: white cards and bubbles with large radii (bubble radius about half the bubble height), soft diffuse shadows, pale blue user bubbles, and a gradient-blue circular send button. Transitions borrow both: a glossy blue sphere, and a pale veil that bleaches the 3D to the UI ground. Every fifth frame repeats (diff near 0 at F2, F7, F12, F17, F22, F67, F72, F77), which matches motion.json heldShare 0.18; inferred from this: a 24 fps master delivered at 30 fps. The 3D render pipeline itself is also inferred.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/strips/s002.jpg F90-F144",
+      "visuals/strips/s003.jpg",
+      "visuals/a1/m12-to-sphere.jpg F697-F707",
+      "visuals/a1/m01-type-build.jpg diff row (F2 0.02, F7 0.03, F12 0.08, F17 0.02, F22 0.09)",
+      "visuals/a1/m02-cloud-push.jpg (F72 0.04, F77 0.01, F82 0.01, F87 0.01)",
+      "motion.json cadence heldShare 0.179"
+    ]
+  },
+  "lighting": {
+    "value": "High-key and soft throughout. The 3D shots have a warm low sun from the right, rim-lighting the character (an orange-red glow on the head in the close-up, 4.9-6.3 s), and blue sky fill. The UI scenes are flat: the ground #E4EFF7 carries two very soft lighter radial blooms, so it is never perfectly flat. Shadows are diffuse with no hard edges. No dark frames anywhere; the darkest pixels are the ink type.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/strips/s003.jpg",
+      "visuals/strips/s001.jpg F0-F42",
+      "visuals/strips/s008.jpg"
+    ]
+  },
+  "styleSummary": "Bright pastel sky world: a near-white blue ground #E4EFF7, one saturated accent blue #2876EF, ink #363D3E, and a warm plush character in feature-animation 3D. Real chat UI is staged at reading scale and at hero scale. A single circle (portrait, avatar, send button, sphere, iris) carries the eye through morphs instead of cuts. Centred medium-weight system sans, accent colour on the defining words, generous empty space."
+}

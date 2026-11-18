@@ -1,0 +1,2599 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "status": {
+    "available": true,
+    "engine": "opencv-farneback"
+  },
+  "method": "opencv-farneback every 2 frames",
+  "shots": [
+    {
+      "shotId": "s001",
+      "meanEnergy": 0.18338,
+      "peakEnergy": 0.50424,
+      "peakSec": 0.25,
+      "cameraEstimate": "zoom",
+      "camera": {
+        "kind": [
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.0017,
+          "y": 0.0058,
+          "z": -0.9015,
+          "r": 0.0042
+        },
+        "moves": 1,
+        "trackedShare": 1,
+        "axis": "z",
+        "snap": false,
+        "startSec": 0.03,
+        "endSec": 0.667,
+        "durationSec": 0.884,
+        "span90Sec": 0.428,
+        "t5Sec": 0.068,
+        "t95Sec": 0.496,
+        "holdBeforeSec": 0.03,
+        "holdAfterSec": 0,
+        "peakSpeed": 2.3505,
+        "cutOff": true,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.out",
+          "gsapRmse": 0.0162,
+          "cubicBezier": [
+            0.288,
+            0.264,
+            0.032,
+            1.108
+          ],
+          "css": "cubic-bezier(0.288, 0.264, 0.032, 1.108)",
+          "bezierRmse": 0.0028,
+          "spring": {
+            "omega": 10.91,
+            "zeta": 0.999,
+            "settleSec": 0.367,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 119.1,
+              "damping": 21.81
+            }
+          },
+          "springRmse": 0.0101,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0425,
+          0.0969,
+          0.1668,
+          0.2546,
+          0.357,
+          0.461,
+          0.5539,
+          0.6316,
+          0.6957,
+          0.7489,
+          0.7936,
+          0.8315,
+          0.864,
+          0.8921,
+          0.9165,
+          0.9379,
+          0.9566,
+          0.973,
+          0.9874,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 17,
+        "heldShare": 0,
+        "framesPerDrawing": 1,
+        "drawingsPerSecond": 24,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s002",
+      "meanEnergy": 0.0366,
+      "peakEnergy": 0.14639,
+      "peakSec": 1.583,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.068,
+          "y": 0.0067,
+          "z": -0.0217,
+          "r": 0.0141
+        },
+        "moves": 2,
+        "trackedShare": 0.905,
+        "axis": "x",
+        "snap": false,
+        "startSec": 1.129,
+        "endSec": 1.583,
+        "durationSec": 0.456,
+        "span90Sec": 0.325,
+        "t5Sec": 1.253,
+        "t95Sec": 1.578,
+        "holdBeforeSec": 0.046,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.6519,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0066,
+          "cubicBezier": [
+            0.683,
+            0.073,
+            0.864,
+            0.397
+          ],
+          "css": "cubic-bezier(0.683, 0.073, 0.864, 0.397)",
+          "bezierRmse": 0.0012,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.037,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0018
+        },
+        "progress": [
+          0,
+          0.0116,
+          0.0245,
+          0.0389,
+          0.055,
+          0.0729,
+          0.093,
+          0.1154,
+          0.1405,
+          0.1688,
+          0.2008,
+          0.237,
+          0.2784,
+          0.3259,
+          0.3808,
+          0.4448,
+          0.5201,
+          0.6096,
+          0.7169,
+          0.846,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.0823,
+          "y": -0.0002,
+          "z": -0.0214,
+          "r": -0.0121
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "roll_cw"
+            ],
+            "axis": "r",
+            "startSec": 0.731,
+            "durationSec": 0.127,
+            "amount": {
+              "x": -0.0146,
+              "y": 0.0067,
+              "z": 0.004,
+              "r": 0.0261
+            },
+            "ease": "expo.out"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 17,
+        "heldShare": 0,
+        "framesPerDrawing": 1,
+        "drawingsPerSecond": 24,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s003",
+      "meanEnergy": 0.03557,
+      "peakEnergy": 0.10454,
+      "peakSec": 2.833,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.1917,
+          "y": 0.0133,
+          "z": -0.224,
+          "r": -0.0558
+        },
+        "moves": 1,
+        "trackedShare": 0.854,
+        "axis": "z",
+        "snap": false,
+        "startSec": 1.625,
+        "endSec": 3.333,
+        "durationSec": 3.341,
+        "span90Sec": 1.576,
+        "t5Sec": 1.712,
+        "t95Sec": 3.288,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.6804,
+        "cutOff": true,
+        "leadInSec": 1.376,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.0394,
+          "cubicBezier": [
+            0.001,
+            1.122,
+            0.515,
+            0.725
+          ],
+          "css": "cubic-bezier(0.001, 1.122, 0.515, 0.725)",
+          "bezierRmse": 0.0163,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.018,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0453,
+          0.0868,
+          0.1253,
+          0.1617,
+          0.1968,
+          0.2314,
+          0.2662,
+          0.3017,
+          0.3387,
+          0.3777,
+          0.4193,
+          0.464,
+          0.5125,
+          0.5652,
+          0.6226,
+          0.6853,
+          0.7539,
+          0.8288,
+          0.9107,
+          1
+        ],
+        "suspect": true,
+        "suspectReasons": [
+          "fitted 3.341 s in a 1.75 s shot"
+        ]
+      },
+      "cadence": {
+        "movingFrames": 20,
+        "heldShare": 0,
+        "framesPerDrawing": 1,
+        "drawingsPerSecond": 24,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s004",
+      "meanEnergy": 0.03571,
+      "peakEnergy": 0.19832,
+      "peakSec": 6.583,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.092,
+          "y": -0.004,
+          "z": -0.1419,
+          "r": -0.1116
+        },
+        "moves": 5,
+        "trackedShare": 0.846,
+        "axis": "x",
+        "snap": false,
+        "startSec": 6.147,
+        "endSec": 6.967,
+        "durationSec": 0.821,
+        "span90Sec": 0.44,
+        "t5Sec": 6.337,
+        "t95Sec": 6.777,
+        "holdBeforeSec": 0.022,
+        "holdAfterSec": 0.074,
+        "peakSpeed": 0.9977,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power2.inOut",
+          "gsapRmse": 0.0171,
+          "cubicBezier": [
+            0.54,
+            0.143,
+            0.202,
+            1.145
+          ],
+          "css": "cubic-bezier(0.54, 0.143, 0.202, 1.145)",
+          "bezierRmse": 0.0164,
+          "spring": {
+            "omega": 6.77,
+            "zeta": 0.629,
+            "settleSec": 0.939,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 45.8,
+              "damping": 8.52
+            }
+          },
+          "springRmse": 0.0242,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0.0107
+        },
+        "progress": [
+          0,
+          0.0216,
+          0.0481,
+          0.08,
+          0.118,
+          0.1624,
+          0.2139,
+          0.2729,
+          0.3399,
+          0.4154,
+          0.5,
+          0.5846,
+          0.6602,
+          0.7271,
+          0.7861,
+          0.8376,
+          0.882,
+          0.92,
+          0.952,
+          0.9784,
+          1
+        ],
+        "moveAmount": {
+          "x": -0.2694,
+          "y": -0.0068,
+          "z": 0.0813,
+          "r": 0.0255
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_right",
+              "pull_out",
+              "roll_ccw"
+            ],
+            "axis": "z",
+            "startSec": 3.708,
+            "durationSec": 2.497,
+            "amount": {
+              "x": 0.0837,
+              "y": 0.0012,
+              "z": -0.2004,
+              "r": -0.0646
+            },
+            "ease": "power2.in"
+          },
+          {
+            "kind": [
+              "move_right",
+              "pull_out",
+              "roll_ccw"
+            ],
+            "axis": "z",
+            "startSec": 5.581,
+            "durationSec": 0.406,
+            "amount": {
+              "x": 0.0384,
+              "y": -0.0049,
+              "z": -0.0302,
+              "r": -0.0568
+            },
+            "ease": "none"
+          },
+          {
+            "kind": [
+              "move_right",
+              "pull_out"
+            ],
+            "axis": "x",
+            "startSec": 7.625,
+            "durationSec": 1.085,
+            "amount": {
+              "x": 0.1509,
+              "y": 0.0048,
+              "z": -0.0426,
+              "r": -0.0067
+            },
+            "ease": "power2.inOut"
+          },
+          {
+            "kind": [
+              "move_right",
+              "push_in"
+            ],
+            "axis": "z",
+            "startSec": 9.042,
+            "durationSec": 0.506,
+            "amount": {
+              "x": 0.0222,
+              "y": 0.0007,
+              "z": 0.0493,
+              "r": -0.0038
+            },
+            "ease": "circ.in"
+          }
+        ],
+        "drift": {
+          "x": 0.0662
+        }
+      },
+      "cadence": {
+        "movingFrames": 8
+      }
+    },
+    {
+      "shotId": "s005",
+      "meanEnergy": 0.02451,
+      "peakEnergy": 0.05228,
+      "peakSec": 10.333,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "static"
+        ],
+        "amount": {
+          "x": 0.0119,
+          "y": 0.0086,
+          "z": 0.0006,
+          "r": -0.0113
+        },
+        "moves": 0,
+        "trackedShare": 0.742
+      },
+      "cadence": {
+        "movingFrames": 5
+      }
+    },
+    {
+      "shotId": "s006",
+      "meanEnergy": 0.00476,
+      "peakEnergy": 0.03826,
+      "peakSec": 13.667,
+      "cameraEstimate": "static",
+      "camera": {
+        "kind": [
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": -0.0052,
+          "y": 0.0273,
+          "z": 0.0183,
+          "r": 0.0457
+        },
+        "moves": 1,
+        "trackedShare": 0.779,
+        "axis": "r",
+        "snap": false,
+        "startSec": 11.187,
+        "endSec": 13.667,
+        "durationSec": 2.479,
+        "span90Sec": 2.473,
+        "t5Sec": 11.19,
+        "t95Sec": 13.663,
+        "holdBeforeSec": 0.229,
+        "holdAfterSec": 0.5,
+        "peakSpeed": 0.1551,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.out",
+          "gsapRmse": 0.1027,
+          "cubicBezier": [
+            0.017,
+            1.361,
+            1,
+            0.188
+          ],
+          "css": "cubic-bezier(0.017, 1.361, 1, 0.188)",
+          "bezierRmse": 0.0217,
+          "spring": {
+            "omega": 2.53,
+            "zeta": 0.999,
+            "settleSec": 1.583,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 6.4,
+              "damping": 5.06
+            }
+          },
+          "springRmse": 0.1328,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.1084
+        },
+        "progress": [
+          0,
+          0.4016,
+          0.536,
+          0.6145,
+          0.6644,
+          0.6966,
+          0.7166,
+          0.7278,
+          0.7327,
+          0.7328,
+          0.7295,
+          0.724,
+          0.7174,
+          0.7107,
+          0.7053,
+          0.7025,
+          0.7046,
+          0.7149,
+          0.7396,
+          0.7944,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 19,
+        "heldShare": 0,
+        "framesPerDrawing": 1,
+        "drawingsPerSecond": 24,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s007",
+      "meanEnergy": 0.08629,
+      "peakEnergy": 0.23578,
+      "peakSec": 15.25,
+      "cameraEstimate": "pan",
+      "camera": {
+        "kind": [
+          "move_right"
+        ],
+        "amount": {
+          "x": 0.0789,
+          "y": 0.0004,
+          "z": -0.0057,
+          "r": -0.0008
+        },
+        "moves": 1,
+        "trackedShare": 0.52,
+        "axis": "x",
+        "snap": false,
+        "startSec": 14.776,
+        "endSec": 15.25,
+        "durationSec": 0.507,
+        "span90Sec": 0.398,
+        "t5Sec": 14.844,
+        "t95Sec": 15.242,
+        "holdBeforeSec": 0.567,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.4411,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "circ.in",
+          "gsapRmse": 0.007,
+          "cubicBezier": [
+            0.5,
+            0.148,
+            0.754,
+            0.245
+          ],
+          "css": "cubic-bezier(0.5, 0.148, 0.754, 0.245)",
+          "bezierRmse": 0.0018,
+          "spring": {
+            "omega": 0.5,
+            "zeta": 0.05,
+            "settleSec": 160,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 0.3,
+              "damping": 0.05
+            }
+          },
+          "springRmse": 0.0235,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.0172,
+          0.0352,
+          0.0542,
+          0.0744,
+          0.0961,
+          0.1197,
+          0.1455,
+          0.174,
+          0.2057,
+          0.2413,
+          0.2813,
+          0.3265,
+          0.3779,
+          0.4364,
+          0.5031,
+          0.5791,
+          0.6656,
+          0.7638,
+          0.8749,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 13,
+        "heldShare": 0,
+        "framesPerDrawing": 1,
+        "drawingsPerSecond": 24,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s008",
+      "meanEnergy": 0.04855,
+      "peakEnergy": 0.29082,
+      "peakSec": 16.667,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_up",
+          "pull_out",
+          "roll_ccw"
+        ],
+        "amount": {
+          "x": 0.1489,
+          "y": -0.0303,
+          "z": -0.0339,
+          "r": -0.1847
+        },
+        "moves": 3,
+        "trackedShare": 0.915,
+        "axis": "x",
+        "snap": false,
+        "startSec": 16.183,
+        "endSec": 16.799,
+        "durationSec": 0.616,
+        "span90Sec": 0.472,
+        "t5Sec": 16.307,
+        "t95Sec": 16.779,
+        "holdBeforeSec": 0.016,
+        "holdAfterSec": 0.368,
+        "peakSpeed": 0.4275,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "sine.in",
+          "gsapRmse": 0.0193,
+          "cubicBezier": [
+            0.547,
+            0.044,
+            0.745,
+            0.926
+          ],
+          "css": "cubic-bezier(0.547, 0.044, 0.745, 0.926)",
+          "bezierRmse": 0.0169,
+          "spring": {
+            "omega": 4.79,
+            "zeta": 0.337,
+            "settleSec": 2.481,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 22.9,
+              "damping": 3.22
+            }
+          },
+          "springRmse": 0.0283,
+          "best": "bezier",
+          "pick": "gsap",
+          "overshoot": 0.0105
+        },
+        "progress": [
+          0,
+          0.0228,
+          0.0493,
+          0.0794,
+          0.1131,
+          0.1502,
+          0.1906,
+          0.2341,
+          0.2805,
+          0.3298,
+          0.3817,
+          0.436,
+          0.4926,
+          0.5512,
+          0.6117,
+          0.6737,
+          0.7371,
+          0.8017,
+          0.8672,
+          0.9334,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.1219,
+          "y": 0.0152,
+          "z": -0.0533,
+          "r": -0.008
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_right",
+              "pull_out",
+              "roll_ccw"
+            ],
+            "axis": "r",
+            "startSec": 15.642,
+            "durationSec": 0.877,
+            "amount": {
+              "x": 0.0316,
+              "y": -0.0077,
+              "z": -0.0311,
+              "r": -0.0461
+            },
+            "ease": "power4.out"
+          },
+          {
+            "kind": [
+              "move_left",
+              "move_up",
+              "push_in",
+              "roll_ccw"
+            ],
+            "axis": "r",
+            "startSec": 17.364,
+            "durationSec": 0.347,
+            "amount": {
+              "x": -0.0192,
+              "y": -0.0361,
+              "z": 0.0698,
+              "r": -0.1134
+            },
+            "ease": "back.out"
+          }
+        ]
+      },
+      "cadence": {
+        "movingFrames": 6
+      }
+    },
+    {
+      "shotId": "s009",
+      "meanEnergy": 0.03746,
+      "peakEnergy": 0.34355,
+      "peakSec": 19.25,
+      "cameraEstimate": "complex",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "push_in",
+          "roll_cw"
+        ],
+        "amount": {
+          "x": 0.5679,
+          "y": 0.2567,
+          "z": 0.0461,
+          "r": 0.1328
+        },
+        "moves": 6,
+        "trackedShare": 0.952,
+        "axis": "x",
+        "snap": false,
+        "startSec": 18.833,
+        "endSec": 20.917,
+        "durationSec": 3.984,
+        "span90Sec": 1.58,
+        "t5Sec": 19.092,
+        "t95Sec": 20.672,
+        "holdBeforeSec": 0,
+        "holdAfterSec": 0,
+        "peakSpeed": 0.7896,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "power4.inOut",
+          "gsapRmse": 0.0162,
+          "cubicBezier": [
+            0.738,
+            0.233,
+            0.054,
+            0.742
+          ],
+          "css": "cubic-bezier(0.738, 0.233, 0.054, 0.742)",
+          "bezierRmse": 0.0103,
+          "spring": {
+            "omega": 2.3,
+            "zeta": 0.505,
+            "settleSec": 3.442,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 5.3,
+              "damping": 2.32
+            }
+          },
+          "springRmse": 0.0305,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0.0075
+        },
+        "progress": [
+          0,
+          0.0208,
+          0.044,
+          0.0703,
+          0.1006,
+          0.1363,
+          0.1797,
+          0.235,
+          0.3103,
+          0.4192,
+          0.5515,
+          0.6564,
+          0.7306,
+          0.7866,
+          0.8317,
+          0.8694,
+          0.9018,
+          0.9304,
+          0.9559,
+          0.979,
+          1
+        ],
+        "moveAmount": {
+          "x": 0.5218,
+          "y": -0.0174,
+          "z": 0.1295,
+          "r": -0.0046
+        },
+        "otherMoves": [
+          {
+            "kind": [
+              "move_down"
+            ],
+            "axis": "y",
+            "startSec": 17.792,
+            "durationSec": 0.396,
+            "amount": {
+              "x": -0.0019,
+              "y": 0.0704,
+              "z": -0.0015,
+              "r": 0.0062
+            },
+            "ease": "circ.out"
+          },
+          {
+            "kind": [
+              "move_down",
+              "roll_cw"
+            ],
+            "axis": "y",
+            "startSec": 21.315,
+            "durationSec": 0.581,
+            "amount": {
+              "x": 0.0111,
+              "y": 0.0353,
+              "z": -0.0134,
+              "r": 0.0268
+            },
+            "ease": "power1.inOut"
+          },
+          {
+            "kind": [
+              "move_down",
+              "push_in",
+              "roll_cw"
+            ],
+            "axis": "r",
+            "startSec": 23.542,
+            "durationSec": 0.56,
+            "amount": {
+              "x": -0.0052,
+              "y": 0.0219,
+              "z": 0.0165,
+              "r": 0.0259
+            },
+            "ease": "sine.inOut"
+          },
+          {
+            "kind": [
+              "move_down"
+            ],
+            "axis": "y",
+            "startSec": 25.417,
+            "durationSec": 0.475,
+            "amount": {
+              "x": -0.0017,
+              "y": 0.0341,
+              "z": 0.0015,
+              "r": 0.0057
+            },
+            "ease": "circ.in"
+          },
+          {
+            "kind": [
+              "move_down",
+              "pull_out"
+            ],
+            "axis": "z",
+            "startSec": 26.064,
+            "durationSec": 1.21,
+            "amount": {
+              "x": 0.0113,
+              "y": 0.0149,
+              "z": -0.0838,
+              "r": 0.0087
+            },
+            "ease": "expo.out"
+          }
+        ],
+        "drift": {
+          "x": 0.0325,
+          "y": 0.0975,
+          "r": 0.064
+        }
+      },
+      "cadence": {
+        "movingFrames": 75,
+        "heldShare": 0.04,
+        "framesPerDrawing": 1.04,
+        "drawingsPerSecond": 23,
+        "label": "on ones"
+      }
+    },
+    {
+      "shotId": "s010",
+      "meanEnergy": 0.00512,
+      "peakEnergy": 0.07159,
+      "peakSec": 30.5,
+      "cameraEstimate": "static",
+      "camera": {
+        "kind": [
+          "move_right",
+          "move_down",
+          "pull_out"
+        ],
+        "amount": {
+          "x": 0.015,
+          "y": 0.0284,
+          "z": -0.1207,
+          "r": 0.0073
+        },
+        "moves": 1,
+        "trackedShare": 0.97,
+        "axis": "z",
+        "snap": false,
+        "startSec": 27.481,
+        "endSec": 29.079,
+        "durationSec": 1.598,
+        "span90Sec": 1.038,
+        "t5Sec": 27.504,
+        "t95Sec": 28.542,
+        "holdBeforeSec": 0.106,
+        "holdAfterSec": 2.421,
+        "peakSpeed": 0.2808,
+        "cutOff": false,
+        "leadInSec": 0,
+        "ease": {
+          "gsap": "expo.out",
+          "gsapRmse": 0.0081,
+          "cubicBezier": [
+            0.031,
+            0.018,
+            0.08,
+            1.006
+          ],
+          "css": "cubic-bezier(0.031, 0.018, 0.08, 1.006)",
+          "bezierRmse": 0.0038,
+          "spring": {
+            "omega": 3.94,
+            "zeta": 0.999,
+            "settleSec": 1.017,
+            "remotion": {
+              "mass": 1,
+              "stiffness": 15.5,
+              "damping": 7.87
+            }
+          },
+          "springRmse": 0.0131,
+          "best": "bezier",
+          "pick": "bezier",
+          "overshoot": 0
+        },
+        "progress": [
+          0,
+          0.1582,
+          0.2805,
+          0.3787,
+          0.4608,
+          0.5312,
+          0.5924,
+          0.6464,
+          0.6943,
+          0.7371,
+          0.7755,
+          0.8101,
+          0.8412,
+          0.8692,
+          0.8945,
+          0.9173,
+          0.9377,
+          0.9561,
+          0.9725,
+          0.9871,
+          1
+        ]
+      },
+      "cadence": {
+        "movingFrames": 4
+      }
+    }
+  ],
+  "cadence": {
+    "movingFrames": 188,
+    "heldShare": 0.027,
+    "framesPerDrawing": 1.03,
+    "drawingsPerSecond": 23.4,
+    "label": "on ones"
+  },
+  "staticOverlayShare": 0,
+  "energyCurve": [
+    {
+      "timeSec": 0.083,
+      "energy": 0.11212
+    },
+    {
+      "timeSec": 0.167,
+      "energy": 0.42013
+    },
+    {
+      "timeSec": 0.25,
+      "energy": 0.50424
+    },
+    {
+      "timeSec": 0.333,
+      "energy": 0.20225
+    },
+    {
+      "timeSec": 0.417,
+      "energy": 0.09229
+    },
+    {
+      "timeSec": 0.5,
+      "energy": 0.0494
+    },
+    {
+      "timeSec": 0.583,
+      "energy": 0.03752
+    },
+    {
+      "timeSec": 0.667,
+      "energy": 0.04912
+    },
+    {
+      "timeSec": 0.75,
+      "energy": 0.0828
+    },
+    {
+      "timeSec": 0.833,
+      "energy": 0.04428
+    },
+    {
+      "timeSec": 0.917,
+      "energy": 0.02881
+    },
+    {
+      "timeSec": 1,
+      "energy": 0.01119
+    },
+    {
+      "timeSec": 1.083,
+      "energy": 0.00502
+    },
+    {
+      "timeSec": 1.167,
+      "energy": 0.00397
+    },
+    {
+      "timeSec": 1.25,
+      "energy": 0.01001
+    },
+    {
+      "timeSec": 1.333,
+      "energy": 0.01918
+    },
+    {
+      "timeSec": 1.417,
+      "energy": 0.03345
+    },
+    {
+      "timeSec": 1.5,
+      "energy": 0.06373
+    },
+    {
+      "timeSec": 1.583,
+      "energy": 0.14639
+    },
+    {
+      "timeSec": 1.667,
+      "energy": 0.10877
+    },
+    {
+      "timeSec": 1.75,
+      "energy": 0.04788
+    },
+    {
+      "timeSec": 1.833,
+      "energy": 0.02638
+    },
+    {
+      "timeSec": 1.917,
+      "energy": 0.07315
+    },
+    {
+      "timeSec": 2,
+      "energy": 0.04081
+    },
+    {
+      "timeSec": 2.083,
+      "energy": 0.02186
+    },
+    {
+      "timeSec": 2.167,
+      "energy": 0.01675
+    },
+    {
+      "timeSec": 2.25,
+      "energy": 0.0124
+    },
+    {
+      "timeSec": 2.333,
+      "energy": 0.01095
+    },
+    {
+      "timeSec": 2.417,
+      "energy": 0.01212
+    },
+    {
+      "timeSec": 2.5,
+      "energy": 0.01593
+    },
+    {
+      "timeSec": 2.583,
+      "energy": 0.02264
+    },
+    {
+      "timeSec": 2.667,
+      "energy": 0.03912
+    },
+    {
+      "timeSec": 2.75,
+      "energy": 0.0866
+    },
+    {
+      "timeSec": 2.833,
+      "energy": 0.10454
+    },
+    {
+      "timeSec": 2.917,
+      "energy": 0.06468
+    },
+    {
+      "timeSec": 3,
+      "energy": 0.03411
+    },
+    {
+      "timeSec": 3.083,
+      "energy": 0.02267
+    },
+    {
+      "timeSec": 3.167,
+      "energy": 0.01618
+    },
+    {
+      "timeSec": 3.25,
+      "energy": 0.01587
+    },
+    {
+      "timeSec": 3.333,
+      "energy": 0.02668
+    },
+    {
+      "timeSec": 3.417,
+      "energy": 0.08717
+    },
+    {
+      "timeSec": 3.5,
+      "energy": 0.00438
+    },
+    {
+      "timeSec": 3.583,
+      "energy": 0.00185
+    },
+    {
+      "timeSec": 3.667,
+      "energy": 0.0008
+    },
+    {
+      "timeSec": 3.75,
+      "energy": 0.00059
+    },
+    {
+      "timeSec": 3.833,
+      "energy": 0.02066
+    },
+    {
+      "timeSec": 3.917,
+      "energy": 0.02045
+    },
+    {
+      "timeSec": 4,
+      "energy": 0.00922
+    },
+    {
+      "timeSec": 4.083,
+      "energy": 0.00582
+    },
+    {
+      "timeSec": 4.167,
+      "energy": 0.00459
+    },
+    {
+      "timeSec": 4.25,
+      "energy": 0.01117
+    },
+    {
+      "timeSec": 4.333,
+      "energy": 0.02819
+    },
+    {
+      "timeSec": 4.417,
+      "energy": 0.09425
+    },
+    {
+      "timeSec": 4.5,
+      "energy": 0.01662
+    },
+    {
+      "timeSec": 4.583,
+      "energy": 0.02022
+    },
+    {
+      "timeSec": 4.667,
+      "energy": 0.01225
+    },
+    {
+      "timeSec": 4.75,
+      "energy": 0.02241
+    },
+    {
+      "timeSec": 4.833,
+      "energy": 0.01555
+    },
+    {
+      "timeSec": 4.917,
+      "energy": 0.0252
+    },
+    {
+      "timeSec": 5,
+      "energy": 0.0123
+    },
+    {
+      "timeSec": 5.083,
+      "energy": 0.00669
+    },
+    {
+      "timeSec": 5.167,
+      "energy": 0.00603
+    },
+    {
+      "timeSec": 5.25,
+      "energy": 0.00186
+    },
+    {
+      "timeSec": 5.333,
+      "energy": 0.01087
+    },
+    {
+      "timeSec": 5.417,
+      "energy": 0.08592
+    },
+    {
+      "timeSec": 5.5,
+      "energy": 0.10563
+    },
+    {
+      "timeSec": 5.583,
+      "energy": 0.01842
+    },
+    {
+      "timeSec": 5.667,
+      "energy": 0.0258
+    },
+    {
+      "timeSec": 5.75,
+      "energy": 0.04957
+    },
+    {
+      "timeSec": 5.833,
+      "energy": 0.02678
+    },
+    {
+      "timeSec": 5.917,
+      "energy": 0.01832
+    },
+    {
+      "timeSec": 6,
+      "energy": 0.0171
+    },
+    {
+      "timeSec": 6.083,
+      "energy": 0.00835
+    },
+    {
+      "timeSec": 6.167,
+      "energy": 0.01139
+    },
+    {
+      "timeSec": 6.25,
+      "energy": 0.02156
+    },
+    {
+      "timeSec": 6.333,
+      "energy": 0.03696
+    },
+    {
+      "timeSec": 6.417,
+      "energy": 0.0669
+    },
+    {
+      "timeSec": 6.5,
+      "energy": 0.13335
+    },
+    {
+      "timeSec": 6.583,
+      "energy": 0.19832
+    },
+    {
+      "timeSec": 6.667,
+      "energy": 0.15463
+    },
+    {
+      "timeSec": 6.75,
+      "energy": 0.07379
+    },
+    {
+      "timeSec": 6.833,
+      "energy": 0.05479
+    },
+    {
+      "timeSec": 6.917,
+      "energy": 0.03049
+    },
+    {
+      "timeSec": 7,
+      "energy": 0.02064
+    },
+    {
+      "timeSec": 7.083,
+      "energy": 0.0191
+    },
+    {
+      "timeSec": 7.167,
+      "energy": 0.00641
+    },
+    {
+      "timeSec": 7.25,
+      "energy": 0.00411
+    },
+    {
+      "timeSec": 7.333,
+      "energy": 0.01057
+    },
+    {
+      "timeSec": 7.417,
+      "energy": 0.00826
+    },
+    {
+      "timeSec": 7.5,
+      "energy": 0.0106
+    },
+    {
+      "timeSec": 7.583,
+      "energy": 0.0152
+    },
+    {
+      "timeSec": 7.667,
+      "energy": 0.01985
+    },
+    {
+      "timeSec": 7.75,
+      "energy": 0.02422
+    },
+    {
+      "timeSec": 7.833,
+      "energy": 0.03287
+    },
+    {
+      "timeSec": 7.917,
+      "energy": 0.05422
+    },
+    {
+      "timeSec": 8,
+      "energy": 0.0772
+    },
+    {
+      "timeSec": 8.083,
+      "energy": 0.17257
+    },
+    {
+      "timeSec": 8.167,
+      "energy": 0.16017
+    },
+    {
+      "timeSec": 8.25,
+      "energy": 0.08886
+    },
+    {
+      "timeSec": 8.333,
+      "energy": 0.05651
+    },
+    {
+      "timeSec": 8.417,
+      "energy": 0.04191
+    },
+    {
+      "timeSec": 8.5,
+      "energy": 0.02925
+    },
+    {
+      "timeSec": 8.583,
+      "energy": 0.0202
+    },
+    {
+      "timeSec": 8.667,
+      "energy": 0.01598
+    },
+    {
+      "timeSec": 8.75,
+      "energy": 0.01402
+    },
+    {
+      "timeSec": 8.833,
+      "energy": 0.01344
+    },
+    {
+      "timeSec": 8.917,
+      "energy": 0.01
+    },
+    {
+      "timeSec": 9,
+      "energy": 0.01443
+    },
+    {
+      "timeSec": 9.083,
+      "energy": 0.01172
+    },
+    {
+      "timeSec": 9.167,
+      "energy": 0.01879
+    },
+    {
+      "timeSec": 9.25,
+      "energy": 0.02453
+    },
+    {
+      "timeSec": 9.333,
+      "energy": 0.03467
+    },
+    {
+      "timeSec": 9.417,
+      "energy": 0.05071
+    },
+    {
+      "timeSec": 9.5,
+      "energy": 0.08514
+    },
+    {
+      "timeSec": 9.583,
+      "energy": 0.15996
+    },
+    {
+      "timeSec": 9.667,
+      "energy": 0.20894
+    },
+    {
+      "timeSec": 9.75,
+      "energy": 0.08619
+    },
+    {
+      "timeSec": 9.833,
+      "energy": 0.04342
+    },
+    {
+      "timeSec": 9.917,
+      "energy": 0.03064
+    },
+    {
+      "timeSec": 10,
+      "energy": 0.03179
+    },
+    {
+      "timeSec": 10.083,
+      "energy": 0.01735
+    },
+    {
+      "timeSec": 10.167,
+      "energy": 0.01277
+    },
+    {
+      "timeSec": 10.25,
+      "energy": 0.01007
+    },
+    {
+      "timeSec": 10.333,
+      "energy": 0.05228
+    },
+    {
+      "timeSec": 10.417,
+      "energy": 0.03184
+    },
+    {
+      "timeSec": 10.5,
+      "energy": 0.00832
+    },
+    {
+      "timeSec": 10.583,
+      "energy": 0.00902
+    },
+    {
+      "timeSec": 10.667,
+      "energy": 0.01555
+    },
+    {
+      "timeSec": 10.75,
+      "energy": 0.03112
+    },
+    {
+      "timeSec": 10.833,
+      "energy": 0.06251
+    },
+    {
+      "timeSec": 10.917,
+      "energy": 0.03681
+    },
+    {
+      "timeSec": 11,
+      "energy": 0.05922
+    },
+    {
+      "timeSec": 11.083,
+      "energy": 0.11489
+    },
+    {
+      "timeSec": 11.167,
+      "energy": 0.15488
+    },
+    {
+      "timeSec": 11.25,
+      "energy": 0.0234
+    },
+    {
+      "timeSec": 11.333,
+      "energy": 0.01348
+    },
+    {
+      "timeSec": 11.417,
+      "energy": 0.01162
+    },
+    {
+      "timeSec": 11.5,
+      "energy": 0.0076
+    },
+    {
+      "timeSec": 11.583,
+      "energy": 0.00584
+    },
+    {
+      "timeSec": 11.667,
+      "energy": 0.00568
+    },
+    {
+      "timeSec": 11.75,
+      "energy": 0.00695
+    },
+    {
+      "timeSec": 11.833,
+      "energy": 0.00155
+    },
+    {
+      "timeSec": 11.917,
+      "energy": 0.00096
+    },
+    {
+      "timeSec": 12,
+      "energy": 0.00145
+    },
+    {
+      "timeSec": 12.083,
+      "energy": 0.0008
+    },
+    {
+      "timeSec": 12.167,
+      "energy": 0.00085
+    },
+    {
+      "timeSec": 12.25,
+      "energy": 0.00086
+    },
+    {
+      "timeSec": 12.333,
+      "energy": 0.00116
+    },
+    {
+      "timeSec": 12.417,
+      "energy": 0.0017
+    },
+    {
+      "timeSec": 12.5,
+      "energy": 0.00154
+    },
+    {
+      "timeSec": 12.583,
+      "energy": 0.00119
+    },
+    {
+      "timeSec": 12.667,
+      "energy": 0.0011
+    },
+    {
+      "timeSec": 12.75,
+      "energy": 0.00089
+    },
+    {
+      "timeSec": 12.833,
+      "energy": 0.00087
+    },
+    {
+      "timeSec": 12.917,
+      "energy": 0.00107
+    },
+    {
+      "timeSec": 13,
+      "energy": 0.0012
+    },
+    {
+      "timeSec": 13.083,
+      "energy": 0.0011
+    },
+    {
+      "timeSec": 13.167,
+      "energy": 0.00117
+    },
+    {
+      "timeSec": 13.25,
+      "energy": 0.00128
+    },
+    {
+      "timeSec": 13.333,
+      "energy": 0.00194
+    },
+    {
+      "timeSec": 13.417,
+      "energy": 0.00158
+    },
+    {
+      "timeSec": 13.5,
+      "energy": 0.00124
+    },
+    {
+      "timeSec": 13.583,
+      "energy": 0.00441
+    },
+    {
+      "timeSec": 13.667,
+      "energy": 0.03826
+    },
+    {
+      "timeSec": 13.75,
+      "energy": 0.11555
+    },
+    {
+      "timeSec": 13.833,
+      "energy": 0.1848
+    },
+    {
+      "timeSec": 13.917,
+      "energy": 0.35569
+    },
+    {
+      "timeSec": 14,
+      "energy": 0.38562
+    },
+    {
+      "timeSec": 14.083,
+      "energy": 0.37402
+    },
+    {
+      "timeSec": 14.167,
+      "energy": 0.49632
+    },
+    {
+      "timeSec": 14.25,
+      "energy": 0.63015
+    },
+    {
+      "timeSec": 14.333,
+      "energy": 0.20701
+    },
+    {
+      "timeSec": 14.417,
+      "energy": 0.24789
+    },
+    {
+      "timeSec": 14.5,
+      "energy": 0.20136
+    },
+    {
+      "timeSec": 14.583,
+      "energy": 0.06406
+    },
+    {
+      "timeSec": 14.667,
+      "energy": 0.03572
+    },
+    {
+      "timeSec": 14.75,
+      "energy": 0.02249
+    },
+    {
+      "timeSec": 14.833,
+      "energy": 0.02312
+    },
+    {
+      "timeSec": 14.917,
+      "energy": 0.03819
+    },
+    {
+      "timeSec": 15,
+      "energy": 0.05673
+    },
+    {
+      "timeSec": 15.083,
+      "energy": 0.08595
+    },
+    {
+      "timeSec": 15.167,
+      "energy": 0.14178
+    },
+    {
+      "timeSec": 15.25,
+      "energy": 0.23578
+    },
+    {
+      "timeSec": 15.333,
+      "energy": 0.59785
+    },
+    {
+      "timeSec": 15.417,
+      "energy": 0.03012
+    },
+    {
+      "timeSec": 15.5,
+      "energy": 0.02572
+    },
+    {
+      "timeSec": 15.583,
+      "energy": 0.03497
+    },
+    {
+      "timeSec": 15.667,
+      "energy": 0.02013
+    },
+    {
+      "timeSec": 15.75,
+      "energy": 0.02601
+    },
+    {
+      "timeSec": 15.833,
+      "energy": 0.02977
+    },
+    {
+      "timeSec": 15.917,
+      "energy": 0.0227
+    },
+    {
+      "timeSec": 16,
+      "energy": 0.02354
+    },
+    {
+      "timeSec": 16.083,
+      "energy": 0.02669
+    },
+    {
+      "timeSec": 16.167,
+      "energy": 0.03411
+    },
+    {
+      "timeSec": 16.25,
+      "energy": 0.02453
+    },
+    {
+      "timeSec": 16.333,
+      "energy": 0.02997
+    },
+    {
+      "timeSec": 16.417,
+      "energy": 0.05885
+    },
+    {
+      "timeSec": 16.5,
+      "energy": 0.06628
+    },
+    {
+      "timeSec": 16.583,
+      "energy": 0.08762
+    },
+    {
+      "timeSec": 16.667,
+      "energy": 0.29082
+    },
+    {
+      "timeSec": 16.75,
+      "energy": 0.10698
+    },
+    {
+      "timeSec": 16.833,
+      "energy": 0.06279
+    },
+    {
+      "timeSec": 16.917,
+      "energy": 0.0339
+    },
+    {
+      "timeSec": 17,
+      "energy": 0.01951
+    },
+    {
+      "timeSec": 17.083,
+      "energy": 0.00999
+    },
+    {
+      "timeSec": 17.167,
+      "energy": 0.00625
+    },
+    {
+      "timeSec": 17.25,
+      "energy": 0.00334
+    },
+    {
+      "timeSec": 17.333,
+      "energy": 0.00314
+    },
+    {
+      "timeSec": 17.417,
+      "energy": 0.01844
+    },
+    {
+      "timeSec": 17.5,
+      "energy": 0.04503
+    },
+    {
+      "timeSec": 17.583,
+      "energy": 0.06809
+    },
+    {
+      "timeSec": 17.667,
+      "energy": 0.09986
+    },
+    {
+      "timeSec": 17.75,
+      "energy": 0.09872
+    },
+    {
+      "timeSec": 17.833,
+      "energy": 0.31705
+    },
+    {
+      "timeSec": 17.917,
+      "energy": 0.19375
+    },
+    {
+      "timeSec": 18,
+      "energy": 0.10473
+    },
+    {
+      "timeSec": 18.083,
+      "energy": 0.06206
+    },
+    {
+      "timeSec": 18.167,
+      "energy": 0.04706
+    },
+    {
+      "timeSec": 18.25,
+      "energy": 0.02235
+    },
+    {
+      "timeSec": 18.333,
+      "energy": 0.00789
+    },
+    {
+      "timeSec": 18.417,
+      "energy": 0.00286
+    },
+    {
+      "timeSec": 18.5,
+      "energy": 0.00664
+    },
+    {
+      "timeSec": 18.583,
+      "energy": 0.00212
+    },
+    {
+      "timeSec": 18.667,
+      "energy": 0.00249
+    },
+    {
+      "timeSec": 18.75,
+      "energy": 0.00324
+    },
+    {
+      "timeSec": 18.833,
+      "energy": 0.0148
+    },
+    {
+      "timeSec": 18.917,
+      "energy": 0.02391
+    },
+    {
+      "timeSec": 19,
+      "energy": 0.04165
+    },
+    {
+      "timeSec": 19.083,
+      "energy": 0.08119
+    },
+    {
+      "timeSec": 19.167,
+      "energy": 0.14689
+    },
+    {
+      "timeSec": 19.25,
+      "energy": 0.34355
+    },
+    {
+      "timeSec": 19.333,
+      "energy": 0.0643
+    },
+    {
+      "timeSec": 19.417,
+      "energy": 0.07617
+    },
+    {
+      "timeSec": 19.5,
+      "energy": 0.05824
+    },
+    {
+      "timeSec": 19.583,
+      "energy": 0.09333
+    },
+    {
+      "timeSec": 19.667,
+      "energy": 0.08947
+    },
+    {
+      "timeSec": 19.75,
+      "energy": 0.1592
+    },
+    {
+      "timeSec": 19.833,
+      "energy": 0.19544
+    },
+    {
+      "timeSec": 19.917,
+      "energy": 0.19099
+    },
+    {
+      "timeSec": 20,
+      "energy": 0.14678
+    },
+    {
+      "timeSec": 20.083,
+      "energy": 0.1305
+    },
+    {
+      "timeSec": 20.167,
+      "energy": 0.09954
+    },
+    {
+      "timeSec": 20.25,
+      "energy": 0.1085
+    },
+    {
+      "timeSec": 20.333,
+      "energy": 0.09063
+    },
+    {
+      "timeSec": 20.417,
+      "energy": 0.08251
+    },
+    {
+      "timeSec": 20.5,
+      "energy": 0.06416
+    },
+    {
+      "timeSec": 20.583,
+      "energy": 0.05687
+    },
+    {
+      "timeSec": 20.667,
+      "energy": 0.04819
+    },
+    {
+      "timeSec": 20.75,
+      "energy": 0.04328
+    },
+    {
+      "timeSec": 20.833,
+      "energy": 0.04082
+    },
+    {
+      "timeSec": 20.917,
+      "energy": 0.03236
+    },
+    {
+      "timeSec": 21,
+      "energy": 0.03186
+    },
+    {
+      "timeSec": 21.083,
+      "energy": 0.02913
+    },
+    {
+      "timeSec": 21.167,
+      "energy": 0.0228
+    },
+    {
+      "timeSec": 21.25,
+      "energy": 0.02204
+    },
+    {
+      "timeSec": 21.333,
+      "energy": 0.02076
+    },
+    {
+      "timeSec": 21.417,
+      "energy": 0.03
+    },
+    {
+      "timeSec": 21.5,
+      "energy": 0.03305
+    },
+    {
+      "timeSec": 21.583,
+      "energy": 0.04962
+    },
+    {
+      "timeSec": 21.667,
+      "energy": 0.13888
+    },
+    {
+      "timeSec": 21.75,
+      "energy": 0.01602
+    },
+    {
+      "timeSec": 21.833,
+      "energy": 0.01122
+    },
+    {
+      "timeSec": 21.917,
+      "energy": 0.00843
+    },
+    {
+      "timeSec": 22,
+      "energy": 0.00811
+    },
+    {
+      "timeSec": 22.083,
+      "energy": 0.00604
+    },
+    {
+      "timeSec": 22.167,
+      "energy": 0.00824
+    },
+    {
+      "timeSec": 22.25,
+      "energy": 0.00209
+    },
+    {
+      "timeSec": 22.333,
+      "energy": 0.00161
+    },
+    {
+      "timeSec": 22.417,
+      "energy": 0.00164
+    },
+    {
+      "timeSec": 22.5,
+      "energy": 0.00172
+    },
+    {
+      "timeSec": 22.583,
+      "energy": 0.00133
+    },
+    {
+      "timeSec": 22.667,
+      "energy": 0.00106
+    },
+    {
+      "timeSec": 22.75,
+      "energy": 0.00125
+    },
+    {
+      "timeSec": 22.833,
+      "energy": 0.00174
+    },
+    {
+      "timeSec": 22.917,
+      "energy": 0.00141
+    },
+    {
+      "timeSec": 23,
+      "energy": 0.00091
+    },
+    {
+      "timeSec": 23.083,
+      "energy": 0.00085
+    },
+    {
+      "timeSec": 23.167,
+      "energy": 0.00058
+    },
+    {
+      "timeSec": 23.25,
+      "energy": 0.0006
+    },
+    {
+      "timeSec": 23.333,
+      "energy": 0.00121
+    },
+    {
+      "timeSec": 23.417,
+      "energy": 0.00155
+    },
+    {
+      "timeSec": 23.5,
+      "energy": 0.00472
+    },
+    {
+      "timeSec": 23.583,
+      "energy": 0.00816
+    },
+    {
+      "timeSec": 23.667,
+      "energy": 0.02409
+    },
+    {
+      "timeSec": 23.75,
+      "energy": 0.03257
+    },
+    {
+      "timeSec": 23.833,
+      "energy": 0.03448
+    },
+    {
+      "timeSec": 23.917,
+      "energy": 0.02636
+    },
+    {
+      "timeSec": 24,
+      "energy": 0.02167
+    },
+    {
+      "timeSec": 24.083,
+      "energy": 0.01503
+    },
+    {
+      "timeSec": 24.167,
+      "energy": 0.01328
+    },
+    {
+      "timeSec": 24.25,
+      "energy": 0.01052
+    },
+    {
+      "timeSec": 24.333,
+      "energy": 0.01196
+    },
+    {
+      "timeSec": 24.417,
+      "energy": 0.00927
+    },
+    {
+      "timeSec": 24.5,
+      "energy": 0.00904
+    },
+    {
+      "timeSec": 24.583,
+      "energy": 0.00787
+    },
+    {
+      "timeSec": 24.667,
+      "energy": 0.00811
+    },
+    {
+      "timeSec": 24.75,
+      "energy": 0.00819
+    },
+    {
+      "timeSec": 24.833,
+      "energy": 0.00633
+    },
+    {
+      "timeSec": 24.917,
+      "energy": 0.00628
+    },
+    {
+      "timeSec": 25,
+      "energy": 0.00301
+    },
+    {
+      "timeSec": 25.083,
+      "energy": 0.00296
+    },
+    {
+      "timeSec": 25.167,
+      "energy": 0.00519
+    },
+    {
+      "timeSec": 25.25,
+      "energy": 0.00928
+    },
+    {
+      "timeSec": 25.333,
+      "energy": 0.01208
+    },
+    {
+      "timeSec": 25.417,
+      "energy": 0.01899
+    },
+    {
+      "timeSec": 25.5,
+      "energy": 0.02721
+    },
+    {
+      "timeSec": 25.583,
+      "energy": 0.04303
+    },
+    {
+      "timeSec": 25.667,
+      "energy": 0.07465
+    },
+    {
+      "timeSec": 25.75,
+      "energy": 0.1759
+    },
+    {
+      "timeSec": 25.833,
+      "energy": 0.00468
+    },
+    {
+      "timeSec": 25.917,
+      "energy": 0.01137
+    },
+    {
+      "timeSec": 26,
+      "energy": 0.006
+    },
+    {
+      "timeSec": 26.083,
+      "energy": 0.01535
+    },
+    {
+      "timeSec": 26.167,
+      "energy": 0.01051
+    },
+    {
+      "timeSec": 26.25,
+      "energy": 0.00567
+    },
+    {
+      "timeSec": 26.333,
+      "energy": 0.01805
+    },
+    {
+      "timeSec": 26.417,
+      "energy": 0.00835
+    },
+    {
+      "timeSec": 26.5,
+      "energy": 0.01304
+    },
+    {
+      "timeSec": 26.583,
+      "energy": 0.01644
+    },
+    {
+      "timeSec": 26.667,
+      "energy": 0.00838
+    },
+    {
+      "timeSec": 26.75,
+      "energy": 0.00602
+    },
+    {
+      "timeSec": 26.833,
+      "energy": 0.00435
+    },
+    {
+      "timeSec": 26.917,
+      "energy": 0.00284
+    },
+    {
+      "timeSec": 27,
+      "energy": 0.00447
+    },
+    {
+      "timeSec": 27.083,
+      "energy": 0.00676
+    },
+    {
+      "timeSec": 27.167,
+      "energy": 0.00977
+    },
+    {
+      "timeSec": 27.25,
+      "energy": 0.01612
+    },
+    {
+      "timeSec": 27.333,
+      "energy": 0.03323
+    },
+    {
+      "timeSec": 27.417,
+      "energy": 0.17809
+    },
+    {
+      "timeSec": 27.5,
+      "energy": 0.01644
+    },
+    {
+      "timeSec": 27.583,
+      "energy": 0.01157
+    },
+    {
+      "timeSec": 27.667,
+      "energy": 0.008
+    },
+    {
+      "timeSec": 27.75,
+      "energy": 0.00568
+    },
+    {
+      "timeSec": 27.833,
+      "energy": 0.008
+    },
+    {
+      "timeSec": 27.917,
+      "energy": 0.00573
+    },
+    {
+      "timeSec": 28,
+      "energy": 0.00565
+    },
+    {
+      "timeSec": 28.083,
+      "energy": 0.01056
+    },
+    {
+      "timeSec": 28.167,
+      "energy": 0.00715
+    },
+    {
+      "timeSec": 28.25,
+      "energy": 0.00644
+    },
+    {
+      "timeSec": 28.333,
+      "energy": 0.00577
+    },
+    {
+      "timeSec": 28.417,
+      "energy": 0.00394
+    },
+    {
+      "timeSec": 28.5,
+      "energy": 0.0077
+    },
+    {
+      "timeSec": 28.583,
+      "energy": 0.00501
+    },
+    {
+      "timeSec": 28.667,
+      "energy": 0.00283
+    },
+    {
+      "timeSec": 28.75,
+      "energy": 0.00246
+    },
+    {
+      "timeSec": 28.833,
+      "energy": 0.00167
+    },
+    {
+      "timeSec": 28.917,
+      "energy": 0.001
+    },
+    {
+      "timeSec": 29,
+      "energy": 0.00067
+    },
+    {
+      "timeSec": 29.083,
+      "energy": 0.00075
+    },
+    {
+      "timeSec": 29.167,
+      "energy": 0.00039
+    },
+    {
+      "timeSec": 29.25,
+      "energy": 0.0005
+    },
+    {
+      "timeSec": 29.333,
+      "energy": 0.00064
+    },
+    {
+      "timeSec": 29.417,
+      "energy": 0.00031
+    },
+    {
+      "timeSec": 29.5,
+      "energy": 0.00019
+    },
+    {
+      "timeSec": 29.583,
+      "energy": 0.05438
+    },
+    {
+      "timeSec": 29.667,
+      "energy": 0.00023
+    },
+    {
+      "timeSec": 29.75,
+      "energy": 0.00011
+    },
+    {
+      "timeSec": 29.833,
+      "energy": 0.00019
+    },
+    {
+      "timeSec": 29.917,
+      "energy": 0.00028
+    },
+    {
+      "timeSec": 30,
+      "energy": 0.00052
+    },
+    {
+      "timeSec": 30.083,
+      "energy": 0.00017
+    },
+    {
+      "timeSec": 30.167,
+      "energy": 0.00014
+    },
+    {
+      "timeSec": 30.25,
+      "energy": 0.00037
+    },
+    {
+      "timeSec": 30.333,
+      "energy": 0.00031
+    },
+    {
+      "timeSec": 30.417,
+      "energy": 0.00008
+    },
+    {
+      "timeSec": 30.5,
+      "energy": 0.07159
+    },
+    {
+      "timeSec": 30.583,
+      "energy": 0.00038
+    },
+    {
+      "timeSec": 30.667,
+      "energy": 0.00047
+    },
+    {
+      "timeSec": 30.75,
+      "energy": 0.00017
+    },
+    {
+      "timeSec": 30.833,
+      "energy": 0.00026
+    },
+    {
+      "timeSec": 30.917,
+      "energy": 0.00018
+    },
+    {
+      "timeSec": 31,
+      "energy": 0.00028
+    },
+    {
+      "timeSec": 31.083,
+      "energy": 0.00021
+    },
+    {
+      "timeSec": 31.167,
+      "energy": 0.00024
+    },
+    {
+      "timeSec": 31.25,
+      "energy": 0.00036
+    },
+    {
+      "timeSec": 31.333,
+      "energy": 0.00031
+    },
+    {
+      "timeSec": 31.417,
+      "energy": 0.00029
+    },
+    {
+      "timeSec": 31.5,
+      "energy": 0.00019
+    }
+  ]
+}

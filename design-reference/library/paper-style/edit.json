@@ -1,0 +1,399 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "paper-style",
+  "rhythm": {
+    "value": "Detector: 9 shots, median 7.3 s. Corrected: 11 segments (two splits: the close-to-wide step at 1.5 s and the white flash at 23.9 s) on one continuous camera over one sheet, in 8 chapters of 4.1-9.9 s with moves between them; internal events every 0.3-1.5 s. The clock is the voice: about 130 recognised words in 60 s, and speech runs throughout. Sound was not heard. Tempo is 118.56 BPM with confidence 0.111 and downbeat confidence 0.082: do not use it. cutsOnBeat 0.5 vs chance 0.307 and cutsOnOnset 0.875 vs chance 0.733 rest on 8 boundaries that are not cuts, and show nothing. The waveform shows speech-like phrases, with no visible pulse; whether music sits under it cannot be told from these measures. Measured from the words, on five of the six slides: the slide starts after the last word of the sentence has started, and the next chapter's first word falls in the slide's final moments, 0.06-0.12 s before it settles in four cases and 0.28 s in one: time 5.31 / China 5.97 (slide 5.66-6.03); metal 15.18 / then 15.80 (slide 15.53-15.86); hour 36.76 / next word 36.92 (slide 36.86-37.2); million 40.25 / then 41.14 (slide 40.93-41.26); desk 44.95 / today 45.29 (slide 45.03-45.36). The sixth, into the map, has a misheard word near it and was left out. Word times are estimates and some words are misheard; the last ones are unreliable, since 'impression' is placed at 59.28-60.05 inside a measured silence from 59.17.",
+    "basis": "measured",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json",
+      "audio.json tempo, silence",
+      "sync.json metrics",
+      "visuals/edit-map.png",
+      "visuals/a1/s003-flash.jpg F705-F729"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Old way, slow",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/b-build.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Close then wide; scrap letters, quill, red circle, typed strip, each on its words",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/a-open.jpg",
+          "visuals/a1/b-build.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Earlier inventions",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/d-china.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Slide to a blank panel, block in from left at F186, then objects on dates",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/c-whip1.jpg",
+          "visuals/a1/d-china.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Inventor and sum of parts",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/f-mainz.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Words first, then portrait; part + part + part; flash to the product",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/f-mainz.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Spread",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/h-map.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Slide; pins from one point outward; counter; loose sheets; stamp",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/g-whip3.jpg",
+          "visuals/a1/h-map.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Machine power",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/j-steam.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Thrown newspaper; gauge with figure; rotating gears",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/i-throw.jpg",
+          "visuals/a1/j-steam.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Scale",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/l-mass.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Machine steps in, on twos and threes",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/cutout-steps-a.jpg F1116-F1122",
+          "visuals/a1/l-mass.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Shrinking machines",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/n-copy.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Device first, then its dated note and caption; then a smaller device and a third; row of units last",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/n-copy.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "New dimension",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/p-today.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Object falls from above; word prints up; three result objects",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/p-today.jpg F1380-F1500"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Reveal and sign-off",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/q-zoomout.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Long tilted pull-back; title inks in; stamp",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/q-zoomout.jpg",
+          "visuals/a1/r-end.jpg"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 50.57,
+        "endSec": 54.67,
+        "description": "The reveal. From a settled panel, the camera tilts about 5 degrees and eases out across all neighbours, starting from rest at F1517 (50.57 s), fastest at 52.6 s (diff 27.7 at F1578) and settled by F1640 (54.67 s): about 4.1 s on a symmetric in-out curve, passing panels the viewer has already seen and ending on eight panels and a faint embossed title. The tilt straightens only slowly. The title snaps from about 15% contrast to full black at F1678 (55.93 s) under a 12-frame whole-frame flicker that settles by F1690.",
+        "why": "It turns eight separate chapters into one object and a single idea. The tilt makes it feel like the viewer's hand lifting a real sheet, not a scale effect.",
+        "name": "populate-then-pull-out-reveal"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/t-pullback-0.jpg F1517-F1544",
+        "visuals/a1/t-pullback-a.jpg F1543-F1601",
+        "visuals/a1/t-pullback-b.jpg F1603-F1640",
+        "visuals/a1/t-inkin.jpg F1677-F1691"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 5.633,
+        "endSec": 6.033,
+        "description": "Slide to a blank panel. The camera moves right across the sheet, so content travels left, in 11-13 frames (19 for the map), reaching top speed by the 4th frame and decelerating for twice as long onto the empty panel (F169-F181: diff 11.8, 19.6, 22.8, 25.1, then down to 5.7). Blur is horizontal and moderate: letters stay nearly legible. The gutter and frame edge of the next panel pass through. The new panel arrives empty and stays empty 5 frames or more, then content starts. Used six times, always towards the next panel on the right.",
+        "why": "The blank page is the breath. It marks a new chapter for the eye and clears attention for the first object, which arrives just after the new sentence has begun (first word 5.97 s, first object 6.20 s).",
+        "name": "camera-slide-to-blank-panel",
+        "spans": [
+          {
+            "startSec": 5.633,
+            "endSec": 6.033
+          },
+          {
+            "startSec": 15.467,
+            "endSec": 15.867
+          },
+          {
+            "startSec": 25.267,
+            "endSec": 25.933
+          },
+          {
+            "startSec": 36.767,
+            "endSec": 37.2
+          },
+          {
+            "startSec": 40.867,
+            "endSec": 41.267
+          },
+          {
+            "startSec": 45.0,
+            "endSec": 45.367
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/t-slide1.jpg F169-F186",
+        "visuals/a1/t-slide2.jpg F464-F476",
+        "visuals/a1/t-slide3.jpg F758-F777",
+        "visuals/a1/t-slide4.jpg F1103-F1116",
+        "visuals/a1/t-slide5.jpg F1226-F1238",
+        "visuals/a1/t-slide6.jpg F1350-F1361"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 32.57,
+        "endSec": 33.1,
+        "description": "The thrown sheet. Once in the film, in place of a slide: a small rotated sheet spins out of the map, accelerating from F977 (diff 1.1 rising to 19.2 at F987), turning from about 40 degrees to square while growing to overfill the frame at F987-F990 with its top cropped, then pulls back and settles by F993, with motion blur only around the peak.",
+        "why": "It breaks a pattern at the midpoint, and the content justifies it: a newspaper arrives. It also hides the jump from the end of the top row to the start of the bottom one. That last reason is my inference.",
+        "name": "thrown-sheet-overfill"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/i-throw.jpg F973-F997",
+        "visuals/a1/t-throw.jpg F977-F993"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.13,
+        "endSec": 5.2,
+        "description": "Words made by what they describe. Each letter of 'EVERY BOOK' lands as a separate pasted scrap with a little rotation, 2-3 frames apart, starting on the spoken word. A quill then writes 'copied by hand' across 2.8-3.7 s, in step with the voice at 2.87-3.53 s. A red pen circles the last word by 4.0 s. A torn strip slides in and types the five-word closing phrase at 4.0-5.2 s, in step with the voice. An extra sheet stacks on the page while this happens.",
+        "why": "Every phrase has an action of its own, at speech rate. The method of each line of text illustrates what it says.",
+        "name": "lettering-acts-out-its-words"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/a-open.jpg F64-F68",
+        "visuals/a1/b-build.jpg F66-F165",
+        "speech-text.json words 2.15-5.31",
+        "visuals/a1/t-letters.jpg F61-F82"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 46.8,
+        "endSec": 47.9,
+        "description": "Type made by the subject. A thin orange line scans at low height (F1404) and rises at an even rate, drawing on twos (diff alternating about 1.0 and 0.3, F1407-F1435), leaving behind the finished letters with coloured misregistration. The letters complete in about 32 frames, while the voice says how it is made.",
+        "why": "Same principle as above: lettering shows the idea. The scan-line is a cheap effect that reads as the process.",
+        "name": "scan-line-print-type"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t-scan.jpg F1399-F1439",
+        "visuals/a1/p-today.jpg F1404-F1440",
+        "speech-text.json words 46.17-47.10"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s002",
+          "s003",
+          "s004",
+          "s006",
+          "s007",
+          "s008"
+        ],
+        "transition": "continuous",
+        "note": "Six camera slides across one continuous sheet, not cuts between scenes. Outgoing and incoming panels stay on screen together, with the gutter passing between them. Blur is moderate: the words stay nearly readable. About 10 frames; 15 for the map. Spans F170-F181, F466-F476, F760-F775, F1106-F1116, F1228-F1238, F1351-F1361."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/c-whip1.jpg",
+        "visuals/a1/e-whip2.jpg",
+        "visuals/a1/g-whip3.jpg",
+        "visuals/a1/k-whip4.jpg",
+        "visuals/a1/m-whip5.jpg",
+        "visuals/a1/o-whip6.jpg"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 32.5,
+        "transition": "continuous",
+        "note": "Detector says continuous 0.4 at 32.9. It is a thrown object: a newspaper grows from a small rotating piece at F973 to overfill the frame at F987, then settles by F993. It starts at 32.5, 0.4 s earlier than the mark."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-throw.jpg F973-F997"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s009"
+        ],
+        "transition": "continuous",
+        "note": "Whip 0.85 is wrong: 2.7 s pull-back with a tilt across many panels, not a whip. Motion peak fits a long ease, starting by 51.6 s and only slowing by 54.2 s."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/q-zoomout.jpg F1551-F1626",
+        "visuals/edit-map.png"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 1.5,
+        "transition": "continuous",
+        "note": "Close framing to wide framing, inside one shot. Frame differences jump at F44-F48. It might be a fast pull-back or a jump; steps visible at this spacing do not settle which."
+      },
+      "basis": "observed",
+      "confidence": 0.65,
+      "evidence": [
+        "visuals/a1/a-open.jpg F40-F48",
+        "visuals/a1/cutout-steps-c.jpg"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 23.9,
+        "transition": "bleach",
+        "note": "Inside detector shot s003, not s004: the three parts of the sum converge on the press F705-F715, the printed page replaces the press at F716, the whole frame bleaches almost to white at F717 (diff 37.6) and returns by F719; the page settles with flicker until about F729. Portrait and title hold their places, but the full-frame flash and the new object make it a picture change, so it stays a split. Retyped from fade to bleach after a step-1 strip."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s003-flash.jpg F705-F729"
+      ]
+    }
+  ]
+}

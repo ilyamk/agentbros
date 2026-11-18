@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "file": "docs/production-model-routing.md",
+      "line": "Quotes use explicitly sent output counts/duration, text characters, `image_size` dimensions and measured `context.media[audio_url].durationSec`. Missing measurements stay unknown; schema defaults do not supply a duration. Text/JSON results use the queue executor and publish an immutable manifest in `pipeline/model-results/`. Their `--output` may be any file path under the project: it pins operation identity rather than the manifest destination. Training and Kling voice retain their dedicated nonmedia workflow.",
+      "reason": "Existing provider-specific speech syntax or exact tariff/forecast/nonmedia contract fact; not a model-selection recommendation."
+    },
+    {
+      "file": "docs/production-model-routing.md",
+      "line": "Tracked exact endpoint tariffs support the four Kling V3 Turbo creation endpoints, O3 pro video reference and create-voice. Generated-second quotes require the explicitly sent output duration; absent, nullable or automatic duration stays unknown even when a public schema describes a default. A helper cannot price five seconds and submit fifteen, or borrow another model's price. Nonmedia voice/training helpers bind the exact registered endpoint, model and result kind to one physical operation; batching requires separate operation identities. Unknown training prices still need an authorised manual bound. Historical resumes reuse their original validated quote and liability, including retired endpoints, without refreshing the price.",
+      "reason": "Existing provider-specific speech syntax or exact tariff/forecast/nonmedia contract fact; not a model-selection recommendation."
+    },
+    {
+      "file": "docs/production-model-routing.md",
+      "line": "For supported fixed-duration Seedance creation/reference requests, use the optional versioned `context.videoForecast` procedure below. First dry-run without the forecast and pin the returned endpoint/schema hash and `metadata.inputHash` after imported references resolve. Record output pixels as explicit sourced planning assumptions and every passed video reference in order with its original-string hash and duration evidence; dry-run again to validate. Do not infer output dimensions from aspect ratio, resolution labels or reference frames. Auto/editing/draft/completion and unresolved tariffs remain unknown. Remote URL hashes pin strings, not remote bytes. Frozen evidence belongs to one operation; changed forecasts require a deliberate new generation revision.",
+      "reason": "Existing provider-specific speech syntax or exact tariff/forecast/nonmedia contract fact; not a model-selection recommendation."
+    },
+    {
+      "file": ".agents/agents/asset-planner.md",
+      "line": "## Genjutsu material",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": ".agents/skills/model-and-asset-production/SKILL.md",
+      "line": "Use `pnpm models:pick --use-case replace-person`, `--use-case influencer-photo` or `--use-case ad-variant` for Genjutsu character swaps, Soul / AI Influencer personas and Marketing Studio ad stills across providers. Compare labelled exact/tiered prices, floors, release dates and reasons; `pnpm models:compare` reports only evidenced equivalent savings. Scaffold with `pnpm fal:scaffold --provider higgsfield --endpoint ENDPOINT --out REQUEST.json`, retain `provider: \"higgsfield\"`, then `pnpm hf:quote --request REQUEST.json` and the usual `generate:model --dry-run` loop. Never reuse a fal payload for an identical Higgsfield ID. A schema-less candidate such as Genjutsu Light needs explicit `/estimate` validation (`hf:quote --provider-estimate`) or a schema; catalogue floors never admit a budget. Real people/third-party clips need `entity:card` consent and source-use permissions before provider processing.",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": ".agents/skills/model-and-asset-production/SKILL.md",
+      "line": "## Prepared Genjutsu: three operations",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": "playbooks/video-remix/AGENTS.md",
+      "line": "- This playbook is draft: offline fixtures verify the harness contract, not live Genjutsu output quality.",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": "playbooks/video-remix/AGENTS.md",
+      "line": "7. `model:prepare --action check`, `hf:quote`, `generate:model --dry-run`, budget review, then the existing authorised durable job. The material gate still controls spend; neither a reference approval nor a source-use receipt authorises unlimited attempts. Preserve the request and output identity on resume. Keep Genjutsu Light pending unless its separate schema/estimate path is established; never inherit this recipe's limits.",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": "playbooks/video-remix/playbook.json",
+      "line": "  \"summary\": \"Remix an authorised source clip with approved character, object or style references: local substitution, motion transfer or restyling through an immutable Genjutsu preparation.\",",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    },
+    {
+      "file": "playbooks/video-remix/playbook.json",
+      "line": "      \"genjutsu\",",
+      "reason": "Genjutsu prepared-remix workflow (model:prepare modes, markers, rights) is model-specific by design; the model itself is chosen through the video.character-swap/video.restyle slots."
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "id": "product-tutorial",
+  "title": "Product tutorial",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "Teach one task in a real web or mobile product: tutorial, how-to, walkthrough, onboarding or feature demo on the real screens, 30 s to several minutes.",
+  "triggers": {
+    "en": [
+      "tutorial",
+      "how to",
+      "how-to",
+      "walkthrough",
+      "walk-through",
+      "onboarding",
+      "step by step",
+      "feature tour",
+      "product tour",
+      "screencast",
+      "guide to using",
+      "how to use",
+      "how my app",
+      "how our app",
+      "how my product",
+      "how our product",
+      "integration",
+      "recorded a screencast",
+      "my screencast",
+      "screen recording",
+      "how the app",
+      "app works",
+      "product works"
+    ],
+    "ru": [
+      "туториал",
+      "инструкц",
+      "как пользоваться",
+      "как работать с",
+      "как работать в",
+      "обучающ",
+      "онбординг",
+      "пошагов",
+      "гайд",
+      "обзор функц",
+      "скринкаст",
+      "как настроить",
+      "интеграц",
+      "как работает наше",
+      "как работает наш",
+      "как работает приложен",
+      "записал скринкаст",
+      "запись экрана",
+      "как работает мое",
+      "покажи на видео как",
+      "как подключить"
+    ],
+    "zh": [
+      "教程",
+      "使用教程",
+      "操作教程",
+      "教学视频",
+      "怎么用",
+      "如何使用",
+      "使用方法",
+      "使用说明",
+      "操作指南",
+      "使用指南",
+      "新手引导",
+      "入门",
+      "手把手",
+      "一步一步",
+      "分步",
+      "功能演示",
+      "操作演示",
+      "产品演示",
+      "功能讲解",
+      "录屏",
+      "屏幕录制",
+      "怎么设置",
+      "如何设置",
+      "接入",
+      "演示",
+      "操作视频",
+      "教用户"
+    ],
+    "generic": [
+      "演示"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the film sells the product (launch, ad, promo) rather than teaching how to use it",
+      "use": "product-promo"
+    },
+    {
+      "when": "it teaches an idea, a process or a concept, not how to use a product's screens",
+      "use": "explainer"
+    },
+    {
+      "when": "announcing what changed in a release (what's new, changelog, a new feature) rather than teaching a task",
+      "use": "feature-update"
+    },
+    {
+      "when": "the preview video for an App Store or Google Play product page",
+      "use": "app-store-preview"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "ui-demo",
+    "secondaryFilmType": "explainer",
+    "start": "pnpm film:init --project <id> --type ui-demo --secondary explainer --playbook product-tutorial --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "the user already recorded their own screencast of the product and wants it cut and captioned (cut mechanics: footage-edit)",
+      "route": {
+        "kind": "footage",
+        "footageGoals": [
+          "recut",
+          "captions"
+        ],
+        "start": "pnpm footage:next --project <id> --playbook product-tutorial --source <file> --goal recut,captions"
+      }
+    },
+    {
+      "when": "the captures, the spoken script and its timings are already supplied and only need assembling as a chaptered lesson",
+      "route": {
+        "kind": "workflow",
+        "workflow": "education",
+        "start": "pnpm video:workflow --scenario education --action plan --request <file>"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "script-and-education",
+    "captions-and-localization",
+    "motion-library",
+    "recording-guide"
+  ],
+  "library": {
+    "categories": [
+      "ui"
+    ],
+    "blocks": [
+      "ui-camera-read",
+      "ui-touch-hotspot",
+      "ui-punch-reframe",
+      "ui-annotate",
+      "ui-check-list"
+    ]
+  },
+  "commands": [
+    "film:init",
+    "film:next",
+    "capture:app",
+    "capture:html",
+    "library:list",
+    "generate:voiceover",
+    "sfx:synth",
+    "sfx:cues",
+    "sfx:generate",
+    "motion:still",
+    "review:sheet",
+    "captions:export",
+    "delivery"
+  ],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "material": [
+      "docs/capture-app.md"
+    ],
+    "build": [
+      "docs/capture-app.md"
+    ]
+  },
+  "qa": [
+    "The finished result is on screen before step one, and the film ends on a still next-step frame",
+    "One task per film (or per chapter); every step the viewer must repeat is shown, none skipped by a cut",
+    "No loading, spinner or typing-wait frames; no lorem ipsum, placeholder names or real people's data",
+    "A screen or dialog the voice refers to holds still for its reading time before the next action",
+    "The voice names each control as or just before the cursor reaches it; never after the click"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Which one task does the film teach, from which starting screen to which finished result?",
+      "why": "One task per film or chapter; the result shot and the step list both come from it."
+    },
+    {
+      "ask": "Where can I capture the product: a local build or a test account with seed data, and which version?",
+      "why": "Screens must be the real current product with realistic, non-personal data; the version tells when the film needs a re-shoot."
+    },
+    {
+      "ask": "Who is the viewer: a new user, or someone who already knows the product?",
+      "why": "Sets which steps and terms are explained and how fast the steps run.",
+      "default": "A new user who knows the product's purpose but not this screen"
+    },
+    {
+      "ask": "Where will it live: YouTube, the help centre, inside the product, LinkedIn?",
+      "why": "Placement sets length, chapters, voice or silence and captions (profiles and variants).",
+      "default": "YouTube and the help centre, one landscape master"
+    },
+    {
+      "ask": "A voice, or silent with on-screen labels?",
+      "why": "Generated voice is paid and needs budget approval; in-product video autoplays muted and is usually silent.",
+      "default": "Voiced, generated only after the user approves its cost; silent for in-product placement"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 360
+      },
+      "captions": "clean-sentence",
+      "note": "A single feature in 30-90 s, a workflow up to 6 min; longer is chaptered: first timestamp 00:00, three or more chapters, each at least 10 s. SRT sidecar from captions:export."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape",
+        "square"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 360
+      },
+      "captions": "clean-sentence",
+      "note": "Help centre and in-product embeds (no separate platform id yet). Autoplay is muted in browsers: in-product clips are silent and short (onboarding variant), help-centre films chaptered (help-center variant)."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "landscape",
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 90
+      },
+      "captions": "clean-sentence",
+      "note": "One tip or feature as a post or in-stream ad (90 s cap); 15-30 s qualifies for every feed ad placement; SRT captions text only; LinkedIn lists less than 30 fps: verify at upload."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "ui-camera-read",
+      "scene-end-card"
+    ],
+    "note": "The reading camera over real captures, with the drawn Cursor from src/motion/ui.tsx as its child (ui-touch-hotspot dots on a mobile capture); the end card holds the next step still. No style: the product's own interface sets the look."
+  },
+  "variants": [
+    {
+      "id": "onboarding",
+      "title": "In-product onboarding clip",
+      "triggers": {
+        "en": [
+          "onboarding video",
+          "in-app video",
+          "welcome video",
+          "first-run",
+          "empty state video"
+        ],
+        "ru": [
+          "видео для онбординга",
+          "видео в приложении",
+          "приветственн видео",
+          "для пустого экрана"
+        ],
+        "zh": [
+          "新手引导视频",
+          "引导视频",
+          "欢迎视频",
+          "首次使用",
+          "空状态"
+        ]
+      },
+      "changes": "Plays inside the product, muted: no voice and no music. On-screen labels of one to three words and the drawn cursor carry one to three steps in 15-45 s (house rule). Square or landscape to fit the panel; the last frame matches the first so it loops; no subtitles because nothing is spoken; deliver a small MP4 and a poster frame."
+    },
+    {
+      "id": "help-center",
+      "title": "Help-centre video",
+      "triggers": {
+        "en": [
+          "help center",
+          "help centre",
+          "knowledge base",
+          "support article",
+          "documentation video"
+        ],
+        "ru": [
+          "справочн",
+          "база знаний",
+          "центр помощи",
+          "для поддержки",
+          "для документац"
+        ],
+        "zh": [
+          "帮助中心",
+          "知识库",
+          "帮助文档",
+          "常见问题",
+          "客服",
+          "文档视频"
+        ]
+      },
+      "changes": "Long and searchable: one task per chapter, each opening on its own result; a chapter list with 00:00 timestamps and titles in the words users search; SRT/VTT and a text transcript from captions:export to sit beside the video; the product version goes in the brief so the film is re-captured when the interface changes."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "judged",
+  "detector": {
+    "name": "fixture",
+    "params": {}
+  },
+  "shots": [
+    {
+      "id": "s001",
+      "startSec": 0,
+      "endSec": 3,
+      "transitionIn": "unknown",
+      "transitionConfidence": 0
+    },
+    {
+      "id": "s002",
+      "startSec": 3,
+      "endSec": 6,
+      "transitionIn": "cut",
+      "transitionConfidence": 1
+    },
+    {
+      "id": "s003",
+      "startSec": 6,
+      "endSec": 9,
+      "transitionIn": "cut",
+      "transitionConfidence": 1
+    },
+    {
+      "id": "s004",
+      "startSec": 9,
+      "endSec": 12,
+      "transitionIn": "cut",
+      "transitionConfidence": 1
+    }
+  ],
+  "candidates": [],
+  "summary": {
+    "count": 4,
+    "medianDurationSec": 3,
+    "cutsPerMinute": 15
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "preparedSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "candidatesSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sourceSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "weights": {
+    "hook": 1,
+    "standalone": 1,
+    "emotion": 1,
+    "payoff": 1,
+    "value": 1,
+    "relevance": 1
+  },
+  "weightsHash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "threshold": 60,
+  "thresholdSource": "default",
+  "proposals": [
+    {
+      "id": "s01",
+      "title": "Why we cut",
+      "score": 82,
+      "axes": {
+        "hook": {
+          "score": 8,
+          "sentence": 1,
+          "quote": "so"
+        },
+        "value": {
+          "score": 9,
+          "sentence": 1,
+          "quote": "cut"
+        }
+      },
+      "firstSentence": 1,
+      "lastSentence": 1,
+      "hookSentence": 1,
+      "startSec": 0.1,
+      "endSec": 0.9,
+      "durationSec": 0.8,
+      "text": "so today we cut the recording",
+      "warnings": [],
+      "rank": 1
+    }
+  ],
+  "others": [
+    {
+      "id": "s02",
+      "title": "Too short",
+      "score": 41,
+      "axes": {},
+      "firstSentence": 1,
+      "lastSentence": 1,
+      "hookSentence": 1,
+      "startSec": 0.2,
+      "endSec": 0.5,
+      "durationSec": 0.3,
+      "text": "today we",
+      "warnings": [
+        "Ends before the payoff."
+      ],
+      "reason": "below-threshold"
+    }
+  ],
+  "droppedOverlaps": [],
+  "rejected": [],
+  "timeline": null
+}

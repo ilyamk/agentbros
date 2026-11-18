@@ -1,0 +1,219 @@
+[
+  {
+    "v": 1,
+    "id": "dec-script-001",
+    "project": "promo-acme",
+    "kind": "gate",
+    "step": "script",
+    "title": "Approve script",
+    "bindTo": [
+      {
+        "path": "pipeline/script.json",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ],
+    "answer": "B, but a shorter hook.",
+    "argv": [
+      "pnpm",
+      "film:approve",
+      "--project",
+      "promo-acme",
+      "--step",
+      "script",
+      "--answer",
+      "B, but a shorter hook.",
+      "--expect",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "actor": "user",
+    "channel": "console",
+    "status": "applied",
+    "createdAt": "2026-11-17T09:10:00Z",
+    "decidedAt": "2026-11-17T09:12:00Z",
+    "result": {
+      "ok": true,
+      "outputs": [],
+      "metadata": {
+        "step": "script",
+        "approved": true
+      },
+      "elapsedMs": 640
+    }
+  },
+  {
+    "v": 1,
+    "id": "dec-script-000",
+    "project": "promo-acme",
+    "kind": "gate",
+    "step": "script",
+    "title": "Approve script",
+    "bindTo": [
+      {
+        "path": "pipeline/script.json",
+        "sha256": "9999999999999999999999999999999999999999999999999999999999999999"
+      }
+    ],
+    "answer": "Approve script A.",
+    "argv": [
+      "pnpm",
+      "film:approve",
+      "--project",
+      "promo-acme",
+      "--step",
+      "script",
+      "--answer",
+      "Approve script A.",
+      "--expect",
+      "9999999999999999999999999999999999999999999999999999999999999999"
+    ],
+    "actor": "user",
+    "channel": "console",
+    "status": "refused",
+    "createdAt": "2026-11-17T09:09:00Z",
+    "decidedAt": "2026-11-17T09:13:00Z",
+    "result": {
+      "ok": false,
+      "error": "VALIDATION",
+      "message": "The script changed since you saw it.",
+      "elapsedMs": 120,
+      "details": {
+        "expected": "9999999999999999999999999999999999999999999999999999999999999999"
+      }
+    }
+  },
+  {
+    "v": 1,
+    "id": "dec-idea-old",
+    "project": "promo-acme",
+    "kind": "choice",
+    "step": "ideas",
+    "title": "Choose an idea",
+    "bindTo": [
+      {
+        "path": "pipeline/ideas/pool.json",
+        "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+      }
+    ],
+    "options": [
+      {
+        "id": "idea-2",
+        "label": "Idea 2",
+        "argv": [
+          "pnpm",
+          "creative:pick",
+          "--project",
+          "promo-acme",
+          "--id",
+          "idea-2"
+        ]
+      }
+    ],
+    "choice": "idea-2",
+    "answer": "Idea 2.",
+    "actor": "user",
+    "channel": "console",
+    "status": "superseded",
+    "supersededBy": "dec-idea-new",
+    "createdAt": "2026-11-17T09:01:00Z",
+    "decidedAt": "2026-11-17T09:02:00Z"
+  },
+  {
+    "v": 1,
+    "id": "dec-verdict",
+    "project": "promo-acme",
+    "kind": "verdict",
+    "step": "human",
+    "title": "Final verdict",
+    "bindTo": [
+      {
+        "path": "pipeline/delivery.json",
+        "sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+      }
+    ],
+    "answer": "8/10. The hook works; the ending is a beat too long.",
+    "verdict": {
+      "score": 8,
+      "axes": {
+        "hook": 9,
+        "clarity": 8,
+        "craft": 7
+      },
+      "worked": "The hook and the type.",
+      "didNot": "The ending drags."
+    },
+    "frameComments": [
+      {
+        "media": {
+          "root": "out",
+          "path": "final/promo-acme-vertical.mp4",
+          "kind": "video"
+        },
+        "frame": 480,
+        "region": {
+          "x": 0.1,
+          "y": 0.7,
+          "w": 0.8,
+          "h": 0.2
+        },
+        "text": "Cut the end card a beat earlier."
+      }
+    ],
+    "argv": [
+      "pnpm",
+      "film:approve",
+      "--project",
+      "promo-acme",
+      "--step",
+      "human",
+      "--answer",
+      "8/10. The hook works; the ending is a beat too long."
+    ],
+    "actor": "user",
+    "channel": "console",
+    "status": "applied",
+    "createdAt": "2026-11-17T09:50:00Z",
+    "decidedAt": "2026-11-17T09:52:00Z",
+    "result": {
+      "ok": true,
+      "outputs": [],
+      "metadata": {},
+      "elapsedMs": 640
+    }
+  },
+  {
+    "v": 1,
+    "id": "dec-rating-sf",
+    "project": "promo-acme",
+    "kind": "rating",
+    "step": "look",
+    "title": "Rate styleframes",
+    "bindTo": [],
+    "ratings": {
+      "design/styleframes/sf-1.png": 4
+    },
+    "answer": "The first one feels like us.",
+    "argv": [
+      "pnpm",
+      "ref:rate",
+      "--project",
+      "promo-acme",
+      "--path",
+      "design/styleframes/sf-1.png",
+      "--score",
+      "4",
+      "--note",
+      "The first one feels like us."
+    ],
+    "actor": "user",
+    "channel": "console",
+    "status": "applied",
+    "createdAt": "2026-11-17T09:06:00Z",
+    "decidedAt": "2026-11-17T09:07:00Z",
+    "result": {
+      "ok": true,
+      "outputs": [],
+      "metadata": {},
+      "elapsedMs": 640
+    }
+  }
+]

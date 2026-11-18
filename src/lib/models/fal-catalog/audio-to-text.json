@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "category": "audio-to-text",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/silero-vad",
+      "category": "audio-to-text",
+      "displayName": "Silero VAD",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "vad",
+        "silero",
+        "voice-activity-detection"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/song/describe",
+      "category": "audio-to-text",
+      "displayName": "Mureka Song Description",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d8e3aa15128912852536269aee10c30202752471c16055520652ecbcdbbdfb2e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fsong%2Fdescribe&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "description",
+          "genres",
+          "instruments",
+          "tags"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "audio analysis",
+        "music description"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/song/recognize",
+      "category": "audio-to-text",
+      "displayName": "Mureka Lyrics Recognition",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f6de440dfe8e971ddad946a691ee4a35755c142b0644ff23dd14b49517a7c402",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fsong%2Frecognize&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": true,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "lyrics recognition",
+        "timestamps"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/song/transcribe",
+      "category": "audio-to-text",
+      "displayName": "Mureka Music Transcription",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "74d646cfa24af685a259fc55cce31b126e215b1862e5c45deba41cb4981cdfe4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fsong%2Ftranscribe&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "max": 50
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "zip_url"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "transcription",
+        "sheet music",
+        "musicxml"
+      ]
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-nano-omni/audio",
+      "category": "audio-to-text",
+      "displayName": "Nemotron 3 Nano Omni",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d18430b82879d24cf77a1a4f7af3e961d10872b0e011fede0c292efe887a72c1",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-nano-omni%2Faudio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 20000,
+          "default": 1024
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "think",
+            "no_think"
+          ],
+          "default": "no_think"
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 0.7
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.95
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "nemotron",
+        "nvidia",
+        "audio-to-text",
+        "audio-understanding",
+        "audio-reasoning",
+        "reasoning",
+        "agentic",
+        "agents",
+        "open-weights",
+        "hybrid-moe",
+        "mamba",
+        "30b-a3b"
+      ]
+    }
+  ]
+}

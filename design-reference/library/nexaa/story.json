@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "idea": {
+    "value": "A 31.5 s silent product film for an AI assistant inside a business web portal: a kinetic-type premise on two grounds names what it is and whom it serves, then two real prompts are typed and answered on screen, and a three-line benefit list and a short tagline close it. The proof is the interface answering, not a claim.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/coarse-0-19.jpg F0-F456",
+      "visuals/a1/coarse-s010.jpg F460-F748"
+    ]
+  },
+  "audience": {
+    "value": "Professional intermediaries who answer client questions about plans and coverage (the type addresses them directly as the audience at 3.4-5.6 s, and the prompts ask for plan comparisons and coverage of one item). Inferred from the on-screen copy; no voice.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json screenText 3.375-5.5",
+      "visuals/a1/t05-words-build.jpg F100-F121",
+      "visuals/a1/t14-cut-to-checklist.jpg F427-F439"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 1.625,
+      "device": "giant word pulled back to reading size, then a soft light sweeps off the product name",
+      "description": "F0 opens on a short greeting word so large it overflows both frame edges (at least 73% of frame width visible, about 2.5x its settled size); it pulls back on an expo.out ease and settles by F14 (0.58 s) at 43% of frame width, centred. A hard cut at F17 (0.708 s) puts the product name on the same white ground, half hidden under a soft blue light that slides right and off it in 9 frames (F17-F26). The viewer is introduced before being told anything, and the name is uncovered rather than shown."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/t01-open-pullout.jpg F0-F16",
+      "visuals/a1/t02-light-sweep.jpg F17-F26",
+      "motion.json s001 camera.ease expo.out, t5Sec 0.068 to t95Sec 0.496"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 1.625,
+        "purpose": "Introduce: greeting word, then the product name",
+        "retentionDevice": "scale pull-back and a light that uncovers the name",
+        "content": "Two-word greeting and product name, dark navy and brand blue on a near-white ground with a soft blue light at the edge"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t01-open-pullout.jpg F0-F16",
+        "visuals/a1/t02-light-sweep.jpg F17-F26"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 1.625,
+        "endSec": 5.604,
+        "purpose": "Define: what it is and whom it is for, one phrase at a time",
+        "retentionDevice": "ground swap to saturated blue, words added one by one, type size stepping down each phrase",
+        "content": "Category phrase in white on saturated blue (two swaps), then the audience and the place it lives in navy on white, each line smaller than the last"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t03-cut-to-blue.jpg F39-F50",
+        "visuals/a1/t04-blue-to-white.jpg F64-F83",
+        "visuals/a1/t05-words-build.jpg F100-F121"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 5.604,
+        "endSec": 15.292,
+        "purpose": "Demonstrate 1: a comparison question typed and answered with a table",
+        "retentionDevice": "punch-ins on the typing, a macro of the send button, a loading state, a shimmer placeholder that grows into the answer",
+        "content": "Assistant start screen; prompt typed in close-up; send button macro; chat with a working indicator; a two-column comparison table resolves"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t06-text-to-ui.jpg F127-F142",
+        "visuals/a1/t07-ui-reframe.jpg F157-F170",
+        "visuals/a1/t09-cut-to-send.jpg F231-F242",
+        "visuals/a1/t11-gradient-table.jpg F328-F350"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.292,
+        "endSec": 19.25,
+        "purpose": "Reset the energy and list the three benefits",
+        "retentionDevice": "music returns after a 0.7 s near-silence; new pale-blue ground; a one-frame sideways jump to the send button; cursor click; three checks fill one by one",
+        "content": "Prompt field on a sky-blue gradient, the call-to-ask line typed, a click, then a card with three benefit rows whose check circles fill in turn"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t12-silence-drop.jpg F366-F371",
+        "visuals/a1/t13-click-send.jpg F403-F422",
+        "visuals/a1/t15-checks.jpg F435-F454",
+        "visuals/a1/t23-s008-reframe.jpg F398-F399"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 19.25,
+        "endSec": 25.646,
+        "purpose": "Demonstrate 2: a yes/no coverage question answered in plain language",
+        "retentionDevice": "large typed question with the camera following the caret, then a streamed answer",
+        "content": "Question typed at headline size, the chat shows a working indicator, then a short affirmative answer streams in line by line"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t16-cut-to-typing.jpg F462-F475",
+        "visuals/a1/t17-input-to-chat.jpg F508-F525",
+        "visuals/a1/coarse-s010.jpg F520-F616"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 25.646,
+        "endSec": 29.583,
+        "purpose": "Name the pain removed, then the product and its promise",
+        "retentionDevice": "fade to a ground with a blue corner glow; words fade up one by one; wordmark revealed left to right with a two-part tagline",
+        "content": "One negative-benefit sentence, then the lower-case wordmark with a two-clause tagline beneath"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t18-chat-to-gradient.jpg F612-F626",
+        "visuals/a1/t19-wordmark.jpg F657-F671"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 29.583,
+        "endSec": 31.542,
+        "purpose": "Call to action and where to find it",
+        "retentionDevice": "two hard text swaps on a held ground",
+        "content": "Imperative two-word line, then one line naming where the assistant is built in"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t20-tagline-swap.jpg F709-F716",
+        "visuals/a1/t21-endcard.jpg F731-F739"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The comparison table at 14.2-15.3 s: after a question too long to read, a full two-plan table resolves in under a second, and the music drops out for 0.7 s while it sits on screen. The second, shorter answer (21.7-25.6 s) repeats the proof in plain language.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/t11-gradient-table.jpg F340-F350",
+      "visuals/a1/t12-silence-drop.jpg F356-F366",
+      "audio.json silence 14.75-15.21"
+    ]
+  },
+  "callToAction": {
+    "value": "A two-word imperative using the product name (29.58-30.50 s), then one line saying it is built into the portal the audience already uses (30.50-31.54 s). No URL, no button, no logo lock-up beyond the earlier wordmark.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/t20-tagline-swap.jpg F710-F716",
+      "visuals/a1/t21-endcard.jpg F732-F739",
+      "speech-text.json screenText 29.583, 30.5"
+    ]
+  },
+  "whyItWorks": [
+    "The premise is one sentence split across six lines and three grounds (1.6-5.6 s), so it reads as motion rather than a paragraph; each line is 10-30% smaller than the last, which lands the type at the interface's own text size when the UI dissolves in at 5.6 s.",
+    "The demo is real interface at reading scale: the camera cuts in (about 1.8x) while the prompt is typed and back out once it overflows, so the viewer reads the question without a zoom animation.",
+    "Waits are shown but compressed: the working indicator holds 2.5 s and the answer resolves through a shimmer placeholder in 0.9 s, so the speed of the answer is the claim.",
+    "The second half is louder (section energy 0.14 -> 0.48) and holds a little longer (median hold 1.17 s before 15.29 s, 1.46 s after, the two answers being the longest); the near-silence just before 15.29 s marks the turn.",
+    "Outgoing shots end on an accelerating drift and incoming shots continue it, so hard cuts on a white ground feel like one camera."
+  ]
+}

@@ -1,0 +1,1178 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "rhythm": {
+    "value": "57.2 s at 30 fps, 1280x720, no voice. Corrected: 43 shots, 42 picture changes (detector: 54 shots, 53 cuts; 14 boundaries rejected, 1 moved, 2 added, 1 retyped to match). Hold lengths (s, in order): 0.57 0.77 1.00 2.60 2.73 2.67 3.23 2.10 0.73 2.23 4.80 1.60 0.90 1.10 0.60 0.23 1.73 1.97 1.40 2.70 0.47 0.40 0.43 0.57 1.47 0.93 2.10 2.00 0.40 0.50 0.33 0.40 0.30 0.50 1.20 0.50 0.38 0.78 1.53 0.93 1.67 1.27 2.43; median 1.00 s, p10 0.40 s, p90 2.60 s, 44 changes a minute. Shape: long shots that build inside themselves (2-5 s: the orb, the brand board, the bento, the canvas build, the grid pull-back) alternate with runs of very short holds (0.3-0.6 s) for montage: 35.67-37.53 s (0.47, 0.40, 0.43, 0.57) and 44.03-46.47 s (0.40, 0.50, 0.33, 0.40, 0.30). Much of the motion is inside shots: typing at 1-2 characters a frame, tiles landing in 1-2 frames, counters racing. Sound, which I cannot hear (from audio.json, sync.json and RMS): tempo 103.9 BPM at confidence 0.58, beat regularity 0.96, downbeat confidence 0.09; an older reading gave 155 BPM, about 1.5x this, so even the beat level is ambiguous. Detector cuts: 0.34 on beat vs 0.266 chance (lift 1.28), 0.038 within a frame of a downbeat vs 0.029. Corrected cuts: 11 of 42 on beat (26%) vs 27% chance (lift 0.97), 1 of 42 within a frame of a downbeat vs 2.8%, signed median cut-to-beat +0.001 s; per section 6/16 vs 28% (19.5-42.0 s) and 3/16 vs 26% (42.0-55.4 s). Onsets run 4.5 a second (259 in 57 s), too dense for the onset ratio to mean anything. Loudness swells (50 ms RMS, local max over +-0.3 s, above 1.35x median): 63, mostly about 0.58 s apart; 8 of 42 cuts within 0.1 s of one vs 22% chance. No evidence that the picture is cut to the beat. One measured coincidence: the cut at 42.033 s lands 0.028 s after the section change at 42.005 s, where the waveform turns from separated bursts to a continuous bed. The film ends on the end card held through 1.07 s of silence (56.12-57.19 s).",
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "shots.json with corrections below",
+      "audio.json tempo, onsetsSec, sections, silence",
+      "sync.json metrics (detector cuts)",
+      "RMS swells computed from media/source.mp4 (50 ms windows)",
+      "visuals/edit-map.png"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook, part 1: a caret on pure white types the first word of a question in a huge grotesque ('Wh', 'Wha', 'What' about every 2-3 frames), centred, about 55% of frame width.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s002-type.jpg F9-F16"
+        ]
+      },
+      "technique": {
+        "value": "Typed question on blank ground",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s002-type.jpg F9-F16"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Hook, part 2: hard cut to an overhead lifestyle photo (hands on a keyboard) with the question continuing to type inside a white search bar laid over the photo at right (bar about 45% wide, y 0.47).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 3F-3L",
+          "visuals/a1/s002-type.jpg F17-F20"
+        ]
+      },
+      "technique": {
+        "value": "Search bar riding on a photograph",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 3F-3L",
+          "visuals/a1/s002-type.jpg F17-F20"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Hook, part 3: second overhead photo (hand-to-hand phone handover); the question continues as two outline chips either side of the phone ('to' and 'build for'), and the orb on the phone screen grows.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F60-F69"
+        ]
+      },
+      "technique": {
+        "value": "Words as chips around a photographed object",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F60-F69"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "The client named: match cut on the orb to a dark green ground; the orb sits inline between two small words, then the words fade, the orb (now carrying the mark) grows to fill the frame, the mark slides left and the wordmark wipes in.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F70-F74",
+          "visuals/a1/s007-orb.jpg F108-F131"
+        ]
+      },
+      "technique": {
+        "value": "Match cut, inline object, element grows to ground, mark to wordmark",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s005-phone.jpg F70-F74",
+          "visuals/a1/s007-orb.jpg F108-F131"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Proof of the real product: a 1-3 frame overexposed bloom cuts from the wordmark into the live site's hero illustration at full frame; headline fades in; then the whole frame pulls back onto a monitor standing on a green studio sweep.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s008-word.jpg F148-F164",
+          "visuals/a1/s008-monitor.jpg F162-F185"
+        ]
+      },
+      "technique": {
+        "value": "Bloom cut into the screen, frame shrinks to the device",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s008-word.jpg F148-F164",
+          "visuals/a1/s008-monitor.jpg F162-F185"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Chapter 1 title: on a green-to-lime gradient a white rectangle grows into a type chip, then palette dots, an arrow icon that turns from right to down, and a pill that pops in; the layout drifts left and out.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s010-chip.jpg F253-F265",
+          "visuals/a1/s011-fan.jpg F303-F309"
+        ]
+      },
+      "technique": {
+        "value": "Brand-system chips assemble",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s010-chip.jpg F253-F265",
+          "visuals/a1/s011-fan.jpg F303-F309"
+        ]
+      }
+    },
+    {
+      "shotId": "s011.1",
+      "purpose": {
+        "value": "Brand board: a glossy 3D fan of cards turns slowly; a right column slides in (photo over a type-specimen tile); the specimen label is replaced by a giant lower-case glyph growing to fill its tile.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s012-tile.jpg F322-F334",
+          "visuals/a1/s013-a.jpg F348-F359"
+        ]
+      },
+      "technique": {
+        "value": "3D render plus sliding bento tiles, giant glyph",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s012-tile.jpg F322-F334",
+          "visuals/a1/s013-a.jpg F348-F359"
+        ]
+      }
+    },
+    {
+      "shotId": "s011.2",
+      "purpose": {
+        "value": "Brand in use: a bento of a counter card racing upward, a phone-in-hand photo and dark tiles where calendar and clock icons pop in one by one.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s013-bento.jpg F407-F419"
+        ]
+      },
+      "technique": {
+        "value": "Bento with counter race",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s013-bento.jpg F407-F419"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Breath: one people photograph full frame under a pastel gradient haze that clears while the frame eases back.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F483-F491"
+        ]
+      },
+      "technique": {
+        "value": "Gradient haze over a photo",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F483-F491"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "Bento assembles around the hero photo: the same photo snaps to a card about 63% wide on black, then tiles land around it every 1-2 frames (phone photo, lime tile, colour bar, counter chip, panels sliding from both edges) while counters climb.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F492-F506",
+          "visuals/a1/s016-bento.jpg F504-F518"
+        ]
+      },
+      "technique": {
+        "value": "Snap to card, bento assembles around hero",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s015-pull.jpg F492-F506",
+          "visuals/a1/s016-bento.jpg F504-F518"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Chapter 2 title on a design canvas: caret types a three-word line in a selection box (a word every 5 frames), elements and named multiplayer cursors arrive, the line is backspaced, the real headline is retyped, then the frame punches in on it and page parts (nav, tilted button, 3D currency icons) fall into place around it.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s018-type.jpg F559-F578",
+          "visuals/a1/s018-zoom.jpg F588-F617",
+          "visuals/a1/s017-backspace.jpg F613-F637",
+          "visuals/a1/s017-headline.jpg F636-F659",
+          "visuals/a1/s017-headline2.jpg F660-F683"
+        ]
+      },
+      "technique": {
+        "value": "Canvas type becomes live page",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s018-type.jpg F559-F578",
+          "visuals/a1/s018-zoom.jpg F588-F617",
+          "visuals/a1/s017-backspace.jpg F613-F637",
+          "visuals/a1/s017-headline.jpg F636-F659",
+          "visuals/a1/s017-headline2.jpg F660-F683"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "Payoff of the build: hard cut wider, to the finished page inside a browser frame on a green gradient, pulling back slowly.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s019-pull.jpg F703-F712"
+        ]
+      },
+      "technique": {
+        "value": "Cut from canvas close-up to finished page",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s019-pull.jpg F703-F712"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "Page on a tablet held in two hands over green, the device tilting.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 20F-20L"
+        ]
+      },
+      "technique": {
+        "value": "Device in hands",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 20F-20L"
+        ]
+      }
+    },
+    {
+      "shotId": "s021",
+      "purpose": {
+        "value": "Isometric array of phones on white, each showing the app, the camera trucking right and down.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 21F-21L"
+        ]
+      },
+      "technique": {
+        "value": "Rendered repetition as scale",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 21F-21L"
+        ]
+      }
+    },
+    {
+      "shotId": "s022",
+      "purpose": {
+        "value": "Near-black ground: a caret types 'Cr', 'Crafted' in lime, large, centred.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F823-F828"
+        ]
+      },
+      "technique": {
+        "value": "Typed line on dark",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F823-F828"
+        ]
+      }
+    },
+    {
+      "shotId": "s023",
+      "purpose": {
+        "value": "Ground swaps to lime mid-word while the typing continues in dark green at the same size and place.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F828-F835"
+        ]
+      },
+      "technique": {
+        "value": "Ground swap mid-typing",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F828-F835"
+        ]
+      }
+    },
+    {
+      "shotId": "s024",
+      "purpose": {
+        "value": "Cut to white: the same typed line now small (about 31% of width) in black with the last words in green; photo and UI tiles float in around it.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F836-F841",
+          "visuals/a1/s025-collage.jpg F885-F887"
+        ]
+      },
+      "technique": {
+        "value": "Scale drop, floating tiles",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s023-ground.jpg F836-F841",
+          "visuals/a1/s025-collage.jpg F885-F887"
+        ]
+      }
+    },
+    {
+      "shotId": "s025",
+      "purpose": {
+        "value": "Scale proof: one page card on a dark ground; the grid of page cards grows in one-frame steps until about 12 cards fill the frame.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s025-collage.jpg F888-F908",
+          "visuals/a1/s027-collage.jpg F909-F932"
+        ]
+      },
+      "technique": {
+        "value": "Stepped grid pull-back",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s025-collage.jpg F888-F908",
+          "visuals/a1/s027-collage.jpg F909-F932"
+        ]
+      }
+    },
+    {
+      "shotId": "s030",
+      "purpose": {
+        "value": "Big number: on a pale mint ground with green glass bars along the bottom, a figure races from 66 to 80 in 9 frames under a small kicker, then the frame pushes in and blurs out.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s030-race.jpg F947-F968"
+        ]
+      },
+      "technique": {
+        "value": "Number race",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s030-race.jpg F947-F968"
+        ]
+      }
+    },
+    {
+      "shotId": "s031",
+      "purpose": {
+        "value": "Dark ground: a short sentence types in small, its last words in green; a row of rounded icon tiles rises in and slides left, the tile under the centre enlarged.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s032-tiles.jpg F1009-F1027",
+          "visuals/a1/s033-grow.jpg F1060-F1069"
+        ]
+      },
+      "technique": {
+        "value": "Icon marquee with focal tile",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s032-tiles.jpg F1009-F1027",
+          "visuals/a1/s033-grow.jpg F1060-F1069"
+        ]
+      }
+    },
+    {
+      "shotId": "s033",
+      "purpose": {
+        "value": "Feature 1: split frame, left green panel with a dark icon tile, right a warm photo of a person at a laptop with small UI chips popping beside them.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s033-grow.jpg F1070-F1078"
+        ]
+      },
+      "technique": {
+        "value": "Split panel: icon plus photo with UI chips",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s033-grow.jpg F1070-F1078"
+        ]
+      }
+    },
+    {
+      "shotId": "s034",
+      "purpose": {
+        "value": "Feature 2: right half cuts to a hand holding a phone; left panel holds.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-02.jpg S034"
+        ]
+      },
+      "technique": {
+        "value": "Right-half swap",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/boundaries-02.jpg S034"
+        ]
+      }
+    },
+    {
+      "shotId": "s035",
+      "purpose": {
+        "value": "Feature 3: right half becomes a chat window on dark.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-02.jpg S035"
+        ]
+      },
+      "technique": {
+        "value": "Right-half swap to UI",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/boundaries-02.jpg S035"
+        ]
+      }
+    },
+    {
+      "shotId": "s036",
+      "purpose": {
+        "value": "Feature 4: white, a chat answer with a green payment-link button.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 36F-36L"
+        ]
+      },
+      "technique": {
+        "value": "UI close-up",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 36F-36L"
+        ]
+      }
+    },
+    {
+      "shotId": "s037",
+      "purpose": {
+        "value": "Feature 5: phone in hand at left, checkout UI card at right on white.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 37F-37L"
+        ]
+      },
+      "technique": {
+        "value": "Photo plus UI",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 37F-37L"
+        ]
+      }
+    },
+    {
+      "shotId": "s038",
+      "purpose": {
+        "value": "Feature 6: dark ground, a segmented tab control switches tab and card chips below swap colour.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/boundaries-02.jpg S038, S039"
+        ]
+      },
+      "technique": {
+        "value": "UI component close-up",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/boundaries-02.jpg S038, S039"
+        ]
+      }
+    },
+    {
+      "shotId": "s039",
+      "purpose": {
+        "value": "Summary line: on white with soft green blurs, a three-line sentence at centre with photo and UI tiles drifting around it.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 39F-39L"
+        ]
+      },
+      "technique": {
+        "value": "Sentence among floating tiles",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 39F-39L"
+        ]
+      }
+    },
+    {
+      "shotId": "s040",
+      "purpose": {
+        "value": "Product on a monitor on a blue-grey sweep; a white panel slides in from the right with a phone photo and a chip.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s041-panel.jpg F1291-F1306"
+        ]
+      },
+      "technique": {
+        "value": "Device shot plus sliding panel",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s041-panel.jpg F1291-F1306"
+        ]
+      }
+    },
+    {
+      "shotId": "s042",
+      "purpose": {
+        "value": "Brand in the world 1: the site on a conference stage screen, held 0.4 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 2F-2L"
+        ]
+      },
+      "technique": {
+        "value": "Stutter montage",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 2F-2L"
+        ]
+      }
+    },
+    {
+      "shotId": "s043",
+      "purpose": {
+        "value": "Brand in the world 2: the brand illustration on a roadside billboard against blue sky, 0.5 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 3F-3L"
+        ]
+      },
+      "technique": {
+        "value": "Stutter montage",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 3F-3L"
+        ]
+      }
+    },
+    {
+      "shotId": "s044",
+      "purpose": {
+        "value": "White ground: the next photo as a rounded card about 45% wide with a small white caption word over it.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1348-F1357"
+        ]
+      },
+      "technique": {
+        "value": "Photo card with caption",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1348-F1357"
+        ]
+      }
+    },
+    {
+      "shotId": "s045",
+      "purpose": {
+        "value": "Hard cut: the same photo full bleed; the caption swaps to its second word at the same place.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1358-F1364"
+        ]
+      },
+      "technique": {
+        "value": "Card to full bleed, caption anchor",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s045-tile.jpg F1358-F1364"
+        ]
+      }
+    },
+    {
+      "shotId": "s046",
+      "purpose": {
+        "value": "Second photo under the same caption, same place.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s046-caption.jpg F1370-F1378"
+        ]
+      },
+      "technique": {
+        "value": "Caption anchor over footage",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s046-caption.jpg F1370-F1378"
+        ]
+      }
+    },
+    {
+      "shotId": "s047",
+      "purpose": {
+        "value": "Third photo under the same caption.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s046-caption.jpg F1379-F1384"
+        ]
+      },
+      "technique": {
+        "value": "Caption anchor over footage",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s046-caption.jpg F1379-F1384"
+        ]
+      }
+    },
+    {
+      "shotId": "s048",
+      "purpose": {
+        "value": "Lime ground: a tick icon pops, a dark pill with one word pops, a light chip types its word beside it, an arrow, then a cursor glides in and presses the pill.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s049-ready.jpg F1394-F1429"
+        ]
+      },
+      "technique": {
+        "value": "Chip pair with cursor press",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s049-ready.jpg F1394-F1429"
+        ]
+      }
+    },
+    {
+      "shotId": "s049",
+      "purpose": {
+        "value": "Forest green ground: two small words at left and right edges frame a centred inset showing a 3D card stack.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s049-ready.jpg F1430-F1432",
+          "visuals/a1/s050-inset.jpg F1440-F1444"
+        ]
+      },
+      "technique": {
+        "value": "Word frame with inset",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s049-ready.jpg F1430-F1432",
+          "visuals/a1/s050-inset.jpg F1440-F1444"
+        ]
+      }
+    },
+    {
+      "shotId": "s050.1",
+      "purpose": {
+        "value": "Inset cuts to a conference stage photo; words hold.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1445-F1456"
+        ]
+      },
+      "technique": {
+        "value": "Inset cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1445-F1456"
+        ]
+      }
+    },
+    {
+      "shotId": "s050.2",
+      "purpose": {
+        "value": "Inset cuts to an audience photo; words hold.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1457-F1460"
+        ]
+      },
+      "technique": {
+        "value": "Inset cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s050-inset.jpg F1457-F1460"
+        ]
+      }
+    },
+    {
+      "shotId": "s051",
+      "purpose": {
+        "value": "Lime ground: same lead word, a different noun large at top; a photo card with UI chips over it.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-11L"
+        ]
+      },
+      "technique": {
+        "value": "Word frame variant",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 11F-11L"
+        ]
+      }
+    },
+    {
+      "shotId": "s052",
+      "purpose": {
+        "value": "Pastel gradient: same lead word, third noun large, a growth chip with a racing percentage and a small bar chart.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 12F-12L"
+        ]
+      },
+      "technique": {
+        "value": "Word frame variant with stat",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 12F-12L"
+        ]
+      }
+    },
+    {
+      "shotId": "s053",
+      "purpose": {
+        "value": "Pastel gradient: a question types in small, then sits in a frosted card.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 13F-13L",
+          "visuals/a1/s054-cta.jpg F1602-F1603"
+        ]
+      },
+      "technique": {
+        "value": "Question card",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-02.jpg 13F-13L",
+          "visuals/a1/s054-cta.jpg F1602-F1603"
+        ]
+      }
+    },
+    {
+      "shotId": "s054.1",
+      "purpose": {
+        "value": "Call to action: the card collapses to a white pill on a bright green gradient with a faint globe grid; the CTA types into it about 1 character a frame and an arrow button appears.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s054-cta.jpg F1604-F1622"
+        ]
+      },
+      "technique": {
+        "value": "Card collapses to CTA pill, typed",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s054-cta.jpg F1604-F1622"
+        ]
+      }
+    },
+    {
+      "shotId": "s054.2",
+      "purpose": {
+        "value": "End card (the agency's): a 3D bolt mark flies in large from the lower left, shrinks and turns to centre; header line, URL pill and client-logo row appear; held to the end through the closing silence.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/s054-end.jpg F1642-F1655",
+          "visuals/contact-sheet-02.jpg 14M-14L"
+        ]
+      },
+      "technique": {
+        "value": "Mark fly-in end card",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/s054-end.jpg F1642-F1655",
+          "visuals/contact-sheet-02.jpg 14M-14L"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 2.2,
+        "endSec": 4.267,
+        "name": "element-grows-to-ground",
+        "description": "Match cut on an orb (F69-F70): the orb on a photographed phone screen becomes a glossy orb on dark green #054B26-#1D221E, same place and size (about 5% of width at x 0.48). Two small words type in either side of it (F72-F74), so the object reads as a word in the sentence. At F112 (3.73 s) the words fade; the orb, now showing the brand mark, grows from about 10% of frame width at F113 to past the frame edges at F121 (3.76-4.03 s, 8 frames) on an accelerating curve (motion.json s006 push_in z 0.84 starting 3.80 s, 90% in 0.10 s, circ.in), and its green fill becomes the ground. The mark slides left and the wordmark wipes in from behind it in 4 frames (F123-F127, 4.10-4.23 s), bold italic, about 53% of frame width.",
+        "why": "The eye is parked on one object for 2 s (photo, sentence, ground) and never has to search: each new state is caused by the object it is already watching. The accelerating growth makes the name arrive as an impact without a cut."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s005-phone.jpg F65-F74",
+        "visuals/a1/s007-orb.jpg F108-F131",
+        "motion.json s006 camera"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.933,
+        "endSec": 6.167,
+        "name": "frame-shrinks-to-product-object",
+        "description": "From the wordmark, 3 overexposed mint-white frames (F148-F150, 4.93-5.00 s) flash into the live site's 3D hero illustration at full frame, which resolves from a pixelated blur over F151-F160. The headline fades in over 5 frames (F163-F167). At F170 (5.66 s) the whole frame pulls back onto the screen of a monitor standing on a green studio sweep (#A7E4C0 top to #053618 floor): motion.json s008 pull_out z -0.76 (frame to about 47% scale), 90% of travel in 0.46 s from 5.59 s, power3.out (bezier 0.46, 0.76, 0.16, 0.83); diff falls from 51.8 to 3.9 by F185.",
+        "why": "The viewer reads the real page at full size first and only then learns it is on a device, so the proof is legible and the device frame adds place without shrinking the content before it has been read."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s008-word.jpg F141-F164",
+        "visuals/a1/s008-monitor.jpg F162-F185",
+        "motion.json s008 camera"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 18.633,
+        "endSec": 23.433,
+        "name": "canvas-type-becomes-live-page",
+        "description": "Hard cut from a dense bento to an empty white design canvas (F559). A caret blinks in a thin selection box for 5 frames, then a three-word line types a word at a time (F564, F570, F574) in a small grotesque (OCR box 36% wide at its later zoom). Page elements and named multiplayer cursor tags arrive around it (F590-F612). F613-F614: the 3D globe vanishes and the line is backspaced by character, 19 in 9 frames (F614-F622, about 2.1 a frame); after 6 frames of empty box the real headline types a word every 3.4 frames over two lines (F628-F652). F652-F659 (21.73-21.96 s) the frame punches in until the headline overflows both edges (OCR width 0.875); then the nav bar, a tilted call-to-action button and 3D currency icons drop into place around it while the frame drifts left (F660-F683). At 23.433 s a hard cut goes wide to the finished page in a browser frame on green, pulling back slowly (motion.json s019 pull_out z -0.32 over 1.5 s).",
+        "why": "It shows the work instead of claiming it: placeholder copy is deleted and replaced, the eye follows the caret, and the punch-in keeps the eye on the headline while the page assembles around it, so the cut to the finished page lands as a before-and-after."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s018-type.jpg F559-F578",
+        "visuals/a1/s018-zoom.jpg F588-F617",
+        "visuals/a1/s017-backspace.jpg F613-F637",
+        "visuals/a1/s017-headline.jpg F636-F659",
+        "visuals/a1/s017-headline2.jpg F660-F683",
+        "visuals/a1/s019-pull.jpg F694-F712"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.1,
+        "endSec": 18.633,
+        "name": "bento-assemble-around-hero",
+        "description": "One photograph holds full frame under a pastel haze (F483-F491). F491-F492 (16.40 s) it snaps in one frame to a card about 63% of frame width, centred, on black. Tiles then land around it, each in 1-2 frames with no motion between: phone-photo tile above-left (F496), lime tile above-right (F503), a colour-bar tile below growing segment by segment (F499-F505), an orange counter chip (F506), then tall panels slide in from both frame edges in 1 frame (F509-F510). Counters inside tiles climb every frame (149+ to 175+ over F506-F518; a percentage 62.1 to 64.9). Six to eight elements fill the frame by 17.2 s and it holds to 18.63 s. motion.json s015 pull_out z -0.19, circ.out.",
+        "why": "The hero stays still at the centre while everything else arrives around it, so the eye never leaves the face; density builds a feeling of a complete system without any single element needing to be read."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s015-pull.jpg F483-F506",
+        "visuals/a1/s016-bento.jpg F504-F518",
+        "motion.json s015 camera"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 44.033,
+        "endSec": 46.467,
+        "name": "caption-anchor-over-footage-stutter",
+        "description": "Two 0.4-0.5 s plates (stage screen, billboard) then a white ground with a rounded photo card about 45% wide carrying one small white word at its centre (F1348). At F1357-F1358 (45.27 s) the same photo cuts to full bleed with the word at the same screen position; the word swaps to a two-word caption with a small green arrow chip (F1360). Two more photos cut under the caption at 45.67 and 45.97 s (holds 0.40, 0.30, 0.50 s), the caption fixed at about x 0.47, y 0.46 of frame and about 10% of frame width.",
+        "why": "A fixed caption gives the eye an anchor, so very short holds of different people read as one statement about reach instead of a montage to decode."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s045-tile.jpg F1347-F1364",
+        "visuals/a1/s046-caption.jpg F1366-F1384",
+        "speech-text.json screenText 44.93-45.97"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s002"
+        ],
+        "note": "Typing, not a cut: 'Wha|' becomes 'What|' on the same white ground (F13-F14, 0.43-0.47 s); the detector read the glyph change as a shot."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s002-type.jpg F9-F16"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s005"
+        ],
+        "note": "In-shot change: on the held overhead photo the orb on the phone screen grows (F65-F69, 2.16-2.30 s); the photo and the caption chips do not move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s005-phone.jpg F60-F69"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s006"
+        ],
+        "transition": "match",
+        "note": "Match cut on the orb: the orb on the phone screen at F69 (about x 0.48, y 0.50 of frame, about 5% of frame width) is the hero orb at F70 in the same place and size; only the photograph drops out to the dark green ground."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/s005-phone.jpg F68-F71",
+        "visuals/boundaries-01.jpg S006"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s007"
+        ],
+        "note": "No cut: the orb with the logo mark inside grows on an accelerating curve until it fills and overflows the frame (F113-F121, 3.76-4.03 s) and its fill becomes the ground; one continuous move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s007-orb.jpg F108-F131"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s010"
+        ],
+        "note": "Element added to a held layout: the 'Refresh' pill pops in under the 'A Branding' chip with overshoot (F259-F262, 8.63-8.73 s)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s010-chip.jpg F253-F265"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s012"
+        ],
+        "note": "Collage build: a right-hand column (photo tile above, type-specimen tile below) slides in from the right edge over 4 frames (F323-F327) while the 3D fan stays."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s012-tile.jpg F322-F334"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s013"
+        ],
+        "note": "Collage build, cut moved: at 11.80 s the type-specimen tile swaps its label for a giant lower-case glyph growing over 4 frames (F352-F355) inside the same layout. The real hard cut in this stretch is at 13.567 s (split below)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s013-a.jpg F348-F359",
+        "visuals/a1/s013-bento.jpg F399-F407"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s013"
+        ],
+        "timeSec": 13.567,
+        "transition": "cut",
+        "note": "Missed hard cut inside detector shot s013: F406 (3D fan, wordmark tile, glyph tile) to F407 (new bento: counter card, phone-in-hand photo, dark tiles), frame diff 75.8. Together with the s013 reject this moves the detector's 11.80 s boundary to 13.567 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s013-bento.jpg F404-F408"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s016"
+        ],
+        "note": "Collage build, not a match cut: tiles slide in from both edges around the held photo card (F510-F518, 17.00-17.26 s) and counters climb inside them."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s016-bento.jpg F504-F518"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s018"
+        ],
+        "note": "Same design canvas: the 3D globe on the right is removed in one frame (F613-F614, 20.46 s) and the typed line starts deleting; the canvas, selection box and cursors stay."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s017-backspace.jpg F613-F622",
+        "visuals/a1/s018-zoom.jpg F588-F617"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s026",
+          "s027",
+          "s028",
+          "s029"
+        ],
+        "note": "One stepped pull-back, not four shots: on the dark ground the single page card is joined by more cards in one-frame jumps (F904-F905 30.13 s, F913-F914 30.46 s, F915-F916 30.53 s, F925-F926 30.86 s, F927-F928 30.93 s, F930-F931 31.03 s), each step showing a wider grid of the same cards. Read as one shot whose camera retreats in steps."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s025-collage.jpg F888-F908",
+        "visuals/a1/s027-collage.jpg F909-F932"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s032"
+        ],
+        "note": "Element added on a held ground: the icon-tile row rises in from below in one frame (F1015-F1016, 33.86 s) as the sentence lifts; then the row slides left (motion.json s032 move_right 0.43 frame widths, circ.out)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s032-tiles.jpg F1009-F1027"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s041"
+        ],
+        "note": "Panel slides in, no cut: a white panel enters from the right edge over 6 frames (F1292-F1298, 43.06-43.26 s) while the monitor shot drifts left; the phone photo and the chip land inside it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s041-panel.jpg F1291-F1306"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s050"
+        ],
+        "timeSec": 48.55,
+        "transition": "cut",
+        "note": "Missed inset cut: inside the held 'word [image] word' frame on forest green the inset image changes from the stage photo to an audience photo between F1456 and F1457 (48.53-48.56 s). Counted as a cut, the same rule as the detector's s050 boundary at 48.167 (3D cards to stage photo inside the same frame): an inset image change inside a held word frame counts as a shot."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s050-inset.jpg F1440-F1460"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s054"
+        ],
+        "timeSec": 54.733,
+        "transition": "cut",
+        "note": "Missed cut to the end card: the call-to-action pill vanishes and a large 3D bolt mark enters from the lower left on the same frame (F1641-F1642, 54.70-54.73 s), then shrinks to centre while the end-card header and logo row appear (F1650-F1651)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/s054-end.jpg F1632-F1655"
+      ]
+    }
+  ]
+}

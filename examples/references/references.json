@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "shots": [
+    {
+      "shotId": "s1",
+      "materialItemId": "item-s1",
+      "intent": "reference-to-video",
+      "target": { "family": "seedance-2.5", "endpoint": "bytedance/seedance-2.5/reference-to-video" },
+      "requirements": [
+        {
+          "key": "mara-front",
+          "role": "identity",
+          "modality": "image",
+          "required": true,
+          "source": { "kind": "entity", "entity": { "kind": "character", "entityId": "mara", "revision": 1 }, "viewRole": "front" },
+          "prepare": [],
+          "roleSentence": "the face, hair and build of Mara (front view). Mara wears a rust-red raincoat and a silver ear cuff.",
+          "status": "ready"
+        },
+        {
+          "key": "ivo-front",
+          "role": "identity",
+          "modality": "image",
+          "required": true,
+          "source": { "kind": "entity", "entity": { "kind": "character", "entityId": "ivo", "revision": 1 }, "viewRole": "front" },
+          "prepare": [],
+          "roleSentence": "the face, hair and build of Ivo (front view).",
+          "status": "ready"
+        },
+        {
+          "key": "market-plate-wide",
+          "role": "location",
+          "modality": "image",
+          "required": true,
+          "source": { "kind": "entity", "entity": { "kind": "location", "entityId": "market", "revision": 1 }, "viewRole": "plate-wide" },
+          "prepare": [],
+          "roleSentence": "the place and light of Night market, without its people.",
+          "status": "ready"
+        },
+        {
+          "key": "mara-voice",
+          "role": "voice",
+          "modality": "audio",
+          "required": false,
+          "source": { "kind": "derivative", "derivativeId": "voice-trim" },
+          "prepare": [],
+          "roleSentence": "the voice of Mara: timbre and delivery, not the words of the sample.",
+          "status": "ready",
+          "notes": "The 40 s card sample was trimmed to Seedance's audio window by refs:derive."
+        }
+      ],
+      "chaining": "none"
+    },
+    {
+      "shotId": "s2",
+      "materialItemId": "item-s2",
+      "intent": "motion-transfer",
+      "target": { "family": "kling-v3-motion-control", "endpoint": "fal-ai/kling-video/v3/standard/motion-control" },
+      "requirements": [
+        {
+          "key": "motion",
+          "role": "motion",
+          "modality": "video",
+          "required": true,
+          "source": { "kind": "asset", "assetId": "sha256:1111111111111111111111111111111111111111111111111111111111111111" },
+          "prepare": [{ "op": "trim", "startSec": 0, "durationSec": 30 }],
+          "roleSentence": "the movement and timing of the performer, not their look or setting",
+          "status": "planned",
+          "notes": "36 s is over the 30 s motion window: pnpm refs:derive --action run --spec derivative-motion-trim.json, then use the derivative as the source."
+        },
+        {
+          "key": "mara-front",
+          "role": "identity",
+          "modality": "image",
+          "required": true,
+          "source": { "kind": "entity", "entity": { "kind": "character", "entityId": "mara", "revision": 1 }, "viewRole": "front" },
+          "prepare": [],
+          "roleSentence": "the face, hair and build of Mara (front view). Mara wears a rust-red raincoat and a silver ear cuff.",
+          "status": "ready"
+        }
+      ],
+      "chaining": "none"
+    }
+  ]
+}

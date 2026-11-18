@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nowakdesign",
+  "format": { "width": 1280, "height": 720, "fps": 30 },
+  "durationSec": 10.267,
+  "slots": [
+    {
+      "id": "pre-roll",
+      "role": "Wake the eye before any content",
+      "startSec": 0,
+      "durationSec": 0.3,
+      "visualRecipe": "Three full-frame flat fields with nothing on them: accent-dark ground colour, black, white. 3 frames each.",
+      "motionRecipe": "Hard frame swaps, no easing. The first 3 frames use the same accent ground colour the blinks will use later, so the house accent is seen first.",
+      "soundRecipe": "Silent in the studied file. If scored: the first accent of the phrase on frame 0 (inferred).",
+      "techniqueIds": ["polarity-strobe-title", "ground-blink"]
+    },
+    {
+      "id": "claim",
+      "role": "The one sentence: what the maker does",
+      "startSec": 0.3,
+      "durationSec": 1.567,
+      "visualRecipe": "Tiny sentence-case sans, white on black, dead centre; text block about 25% of frame width, cap height about 3% of frame height. Over 95% of the frame stays empty.",
+      "motionRecipe": "Text on 2 frames into the slot. Whole frame inverts (white ground, faint tinted text) 5 frames later for 7 frames, returns with a 2-frame channel-split smear, then holds completely still for 21 frames. Exit: text turns a glowing accent colour for 2 frames and is gone; 7 frames of black.",
+      "soundRecipe": "Silent in the studied file. If scored: hits on the two inversions, nothing during the hold (inferred).",
+      "copySlot": { "purpose": "One short declarative sentence naming the maker's craft as a verb", "maxWords": 5 },
+      "techniqueIds": ["polarity-strobe-title", "still-hold-glow-exit"]
+    },
+    {
+      "id": "container-to-ground",
+      "role": "Proof 1: an element collapses to its essence and becomes the stage",
+      "startSec": 1.867,
+      "durationSec": 1.133,
+      "visualRecipe": "Wide gradient capsule about 68% of width with a small icon in the middle, on black. End state: a pale-centred violet disc filling the frame, with a square, thin circles, crosshair guides and micro coordinate tags built on top.",
+      "motionRecipe": "Capsule recolours (frame 3), shrinks (frame 5), ground blink 3 frames, only the 4%-wide icon remains; 2 frames still; a disc grows from the icon over 7 frames, accelerating (expo.in, bezier 0.562, 0.338, 0.88, -0.462) until the frame is filled; guides and circles draw on over the remaining 15 frames.",
+      "soundRecipe": "Silent in the studied file. If scored: a rising swell under the disc growth, landing as the frame fills (inferred).",
+      "techniqueIds": ["icon-swell-to-ground", "ground-blink", "hud-coordinate-tags"]
+    },
+    {
+      "id": "type-to-shape",
+      "role": "Proof 2: a word draws the shape that the word names",
+      "startSec": 3.0,
+      "durationSec": 0.933,
+      "visualRecipe": "One small lowercase word in a two-colour accent gradient, about 6% of width, centred on black. End state: a single accent stroke about 46% of frame height tilted about 35 degrees from vertical through frame centre.",
+      "motionRecipe": "Hold 5 frames; letters scatter vertically 4 frames; all but one letter fade over 3 frames; the remaining upright stroke lengthens 6 frames; rotates and extends 6 frames, decelerating (power2.out), with a ground blink under the rotation; holds still 4 frames for the cut.",
+      "soundRecipe": "Silent in the studied file (inferred: a single tone or stroke sound on the rotation if scored).",
+      "copySlot": { "purpose": "One word naming a basic design element that can turn into a drawn shape", "maxWords": 1 },
+      "techniqueIds": ["word-becomes-shape", "ground-blink"]
+    },
+    {
+      "id": "matched-object",
+      "role": "Proof 3: a new object arrives along the previous shape's angle",
+      "startSec": 3.933,
+      "durationSec": 0.6,
+      "visualRecipe": "A lit square about 22% of frame height with a full-frame diagonal light streak and bloom on the stroke's angle, centred. End state: the square shrunk to about 10% of height rendered as a halftone dot screen, dissolving to a dithered disc.",
+      "motionRecipe": "Hard cut matched on angle and position. Pull-back over 6 frames, expo.out (bezier 0.098, 1.167, 0.516, 0.926), span about 0.2 s. Ground blink with halftone render on frames 11-13; dot version holds 4 frames.",
+      "soundRecipe": "Silent in the studied file.",
+      "techniqueIds": ["angle-match-cut", "glint-square-pull-back", "ground-blink", "hud-coordinate-tags"]
+    },
+    {
+      "id": "control-resolves",
+      "role": "Proof 4: an interface control settles into a target",
+      "startSec": 4.533,
+      "durationSec": 0.6,
+      "visualRecipe": "A dark slider track with a glowing icon knob on its right end (centre about 0.6 of width from the left). End state: a warm gradient capsule centred inside two thin gradient rings about 40% of frame height.",
+      "motionRecipe": "Knob holds 7 frames; track retracts left behind the knob over 5 frames while one then two rings expand from the knob (power2.out); ground blink 3 frames with pink halftone render; one frame of the recoloured capsule before the cut.",
+      "soundRecipe": "Silent in the studied file.",
+      "techniqueIds": ["knob-ring-ripple", "ground-blink"]
+    },
+    {
+      "id": "set-isolates",
+      "role": "Proof 5: one choice out of a set is carried into real use",
+      "startSec": 5.133,
+      "durationSec": 0.634,
+      "visualRecipe": "A capsule of six small reaction icons about 62% of width, centred. Then one of them large and glowing over a blurred message card. End state: the whole message card centred, the icon sitting on its corner as a reaction.",
+      "motionRecipe": "Set holds 3 frames; ground blink 3 frames in which the other icons dim and disappear; hard cut on the remaining icon; 3 overexposed frames; pull back and down to show the card (power3.out, most travel in 1-2 frames); hold 6 frames.",
+      "soundRecipe": "Silent in the studied file.",
+      "techniqueIds": ["isolate-and-carry", "ground-blink"]
+    },
+    {
+      "id": "hero-word",
+      "role": "Turn: one big word opens the argument",
+      "startSec": 5.767,
+      "durationSec": 0.466,
+      "visualRecipe": "One lowercase word as a thin grey outline, unfilled, 70% of frame width, centred, inside two dashed concentric circles on black.",
+      "motionRecipe": "Hard cut in; no scale or position move; pink-and-cyan channel split of about 1% width on frames 7-13.",
+      "soundRecipe": "Silent in the studied file.",
+      "copySlot": { "purpose": "One pivot word that begins the phrase the caption finishes", "maxWords": 1 },
+      "techniqueIds": ["outline-hero-word"]
+    },
+    {
+      "id": "anchored-montage",
+      "role": "Lineage: history and science under one fixed caption",
+      "startSec": 6.233,
+      "durationSec": 1.767,
+      "visualRecipe": "Nine full-frame footage shots: archival portraits, a false-colour thermal shot, period computers, a hand with a small object, scientific scans. Each its own grade (scan bars, violet thermal, halftone, cold cyan) with thin tracking boxes, connector lines and coordinate tags on the subject. One small white lowercase caption about 25% of width centred in the same place throughout.",
+      "motionRecipe": "Shot lengths in frames: 3, 3, 5, 6, 4, 4, 4, 4, 20. One shot is the caption alone on near-black (5 frames). Single overexposed frames close shots 6-8. Caption changes content once, on a cut, same position. Ground blink 2 frames on the first frames of the last shot.",
+      "soundRecipe": "Silent in the studied file. If scored: a texture bed, no accent per shot (inferred).",
+      "copySlot": { "purpose": "A short two-part phrase completing the pivot word, split across the montage", "maxWords": 5 },
+      "techniqueIds": ["caption-anchor-footage-stutter", "hud-coordinate-tags", "ground-blink"]
+    },
+    {
+      "id": "mark",
+      "role": "Sign-off: the mark alone",
+      "startSec": 8.0,
+      "durationSec": 2.267,
+      "visualRecipe": "The maker's mark, small (about 4% of width) and centred, over a shallow-focus macro of a backlit surface. End state: the mark alone on black; the last frame is the accent ground blink with the mark.",
+      "motionRecipe": "Backdrop pulls back over 1.24 s with back.out (bezier 0.181, 0.512, 0.333, 1.303, overshoot 0.08); two short bloom flashes; ground blink 3 frames about 0.9 s in; backdrop dims to black by 1.43 s while the mark stays constant; ground blink 3 frames 1.53 s in; two halftone glitch frames on the mark; one-frame blink on the final frame.",
+      "soundRecipe": "Silent in the studied file. If scored: the phrase resolves on the mark, final accent on the last frame (inferred).",
+      "techniqueIds": ["backdrop-falls-away", "ground-blink"]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No tempo measured (silent file). Corrected median shot 0.30 s, 18 cuts in 10.27 s. Three speeds: design proofs 0.43-1.57 s (median 0.60 s) with all change inside the shot; montage 3-6 frames per shot under a fixed caption; one 2.27 s still ending. An accent ground blink of 3 frames on a 150-frame figure (offsets 0, 62, 110, 129, 150 frames) played twice; place blinks on the last frames before a change of state. If scored, lay the blink figure on the music's accents rather than on a free grid."
+  },
+  "style": "Black stage, all action in frame centre, small objects in large emptiness; glowing flat interface pieces that switch to halftone; one dark accent ground as the house blink; footage graded as if analysed, with tracking boxes and coordinate tags.",
+  "transferRules": {
+    "keep": [
+      "Every hero object in frame centre; small objects in mostly empty black",
+      "Claim in tiny type, then prove by transformation, never by explanation",
+      "Each proof shot is one element changing state inside the shot (collapse, swell, draw, pull back, isolate)",
+      "One accent ground blink of 3 frames as the only recurring accent, on a repeating figure, sitting on the frames before each change",
+      "Cuts matched on angle or on a carried element where possible",
+      "Montage of 3-6-frame shots under one unmoving caption",
+      "Speeds: about 0.6 s states, then about 0.13 s flicker, then one long still ending on the mark",
+      "Final frame is the accent blink with the mark, not a fade"
+    ],
+    "mustChange": [
+      "All branding, marks, names and the maker's identity",
+      "The accent blink colour and the gradients: choose from the new brand",
+      "Music and all sound (the studied file is silent)",
+      "All graphics: icons, capsules, discs, controls, reaction set, message card",
+      "All copy: the claim, the drawn word, the pivot word and the caption",
+      "All footage: archival people, computers, scans and the backlit macro, replaced with licensed or own material, no recognisable person unless cleared",
+      "Interface pieces: must be the new brand's real interface or a faithful replica of a dated reference"
+    ]
+  }
+}

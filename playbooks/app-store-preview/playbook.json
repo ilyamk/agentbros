@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "id": "app-store-preview",
+  "title": "App Store preview",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "An App Store app preview or Google Play preview video of a mobile app: 15-30 s of the app's own screens at the store's exact size, built to pass review and read muted.",
+  "triggers": {
+    "en": [
+      "app store",
+      "app preview",
+      "app previews",
+      "app store preview",
+      "preview video",
+      "google play",
+      "play store",
+      "play market",
+      "store listing",
+      "store video",
+      "app store connect",
+      "play console",
+      "for app store",
+      "for the app store",
+      "for google play",
+      "for the play store"
+    ],
+    "ru": [
+      "app store",
+      "апстор",
+      "эпстор",
+      "аппстор",
+      "google play",
+      "гугл плей",
+      "гугл плэй",
+      "плей маркет",
+      "плеймаркет",
+      "play market",
+      "превью приложен",
+      "превью для стор",
+      "видео для стор",
+      "для стора",
+      "страниц приложен",
+      "для app store",
+      "для google play",
+      "для гугл плей",
+      "для плей маркет",
+      "для апстор"
+    ],
+    "zh": [
+      "应用商店",
+      "app store",
+      "苹果商店",
+      "苹果应用商店",
+      "app预览",
+      "应用预览",
+      "预览视频",
+      "商店预览",
+      "google play",
+      "谷歌商店",
+      "谷歌应用商店",
+      "安卓应用市场",
+      "应用市场",
+      "华为应用市场",
+      "应用宝",
+      "上架视频",
+      "上架app store",
+      "商店页",
+      "商店详情页",
+      "ios上架",
+      "app store预览"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "a launch film, ad or promo for social feeds, a site or ads, with no store rules to meet",
+      "use": "product-promo"
+    },
+    {
+      "when": "the film teaches how to do a task in the app step by step",
+      "use": "product-tutorial"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "ui-demo",
+    "start": "pnpm film:init --project <id> --type ui-demo --playbook app-store-preview --profile promo --product <path>"
+  },
+  "alternatives": [],
+  "agents": [],
+  "skills": [
+    "copywriter",
+    "motion-library",
+    "recording-guide",
+    "captions-and-localization",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "ui"
+    ],
+    "blocks": [
+      "ui-camera-read",
+      "ui-touch-hotspot",
+      "scene-end-card",
+      "ui-punch-reframe"
+    ]
+  },
+  "commands": [
+    "film:init",
+    "film:next",
+    "capture:app",
+    "asset:import",
+    "library:list",
+    "plan:check",
+    "motion:still",
+    "review:sheet",
+    "sfx:synth",
+    "sfx:cues",
+    "sfx:generate",
+    "generate:voiceover",
+    "film:render",
+    "store:conform",
+    "delivery"
+  ],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "material": [
+      "docs/capture-app.md"
+    ],
+    "build": [
+      "docs/capture-app.md"
+    ]
+  },
+  "qa": [
+    "Every frame is a screen capture of the app or a copy overlay on it: no people, hands, fingers, device frame or footage from outside the app (App Store cut)",
+    "store:conform returns ok for each store file: the class's exact size, 30 fps or less, 15.0-30.0 s, one stereo AAC track (silent if the film has no sound)",
+    "The frame at 5 s is a composed still that states the reason to install; nothing transitions across it",
+    "No price, date, seasonal word, ranking or award claim, 'new' or 'best'; purchases or sign-in needed for what is shown are disclosed in the footage or the end frame",
+    "The copy alone tells the story with the sound off, and each line holds long enough to read at phone size",
+    "Captured UI shows seeded, fictional accounts in the preview's language; content suits a 4+ rating"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Which stores and device classes: iPhone, iPad, Mac or Apple TV on the App Store, and/or Google Play?",
+      "why": "Each class is its own canvas (886x1920, 1200x1600, 1920x1080) and its own capture and render.",
+      "default": "App Store iPhone 886x1920 portrait and Google Play 1080x1920 portrait"
+    },
+    {
+      "ask": "How do we get real footage of the app: a build I can run in the Simulator or on a device, a web build from the repo, or recordings you make on your phone?",
+      "why": "Apple accepts only screen captures of the app itself; there is no drawn fallback."
+    },
+    {
+      "ask": "Does anything shown need a sign-in, a subscription or an in-app purchase?",
+      "why": "App Review 2.3.2 requires disclosing it in the footage or the end frame."
+    },
+    {
+      "ask": "What is the one reason to install, and which three to five app moments prove it?",
+      "why": "It must read by the 5 s poster frame and with the sound off.",
+      "default": "The feature the store description leads with"
+    },
+    {
+      "ask": "Which languages, and how many previews per language (up to three)?",
+      "why": "Each locale needs the UI re-captured in that language; a missing one falls back to another language.",
+      "default": "One preview in the app's primary store language"
+    },
+    {
+      "ask": "Sound: music and in-app sounds only, or a narrated voice?",
+      "why": "Previews autoplay muted; a voice is optional, paid and needs every territory licensed.",
+      "default": "Licensed music and synth UI sounds, no voice"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "app-store",
+      "formats": [
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 30
+      },
+      "captions": "none",
+      "note": "Exact sizes per class: iPhone 886x1920 (1080x1920 only for 5.5\"), iPad 1200x1600, Mac/TV 1920x1080; 30 fps max, stereo 256 kbps AAC, muted autoplay, poster frame 5 s."
+    },
+    {
+      "platform": "google-play",
+      "formats": [
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 30
+      },
+      "captions": "none",
+      "note": "One public or unlisted YouTube video, ads off, no side bars; real app in the first 10 s; only the first 30 s autoplay, muted; 1024x500 feature graphic required."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "ui-camera-read",
+      "ui-touch-hotspot",
+      "scene-end-card"
+    ],
+    "note": "The capture itself is the picture: ui-camera-read for the rare gentle read of a small control, ui-touch-hotspot for a soft dot at each touch (never a finger), scene-end-card for the app name and the purchase disclosure."
+  },
+  "variants": [
+    {
+      "id": "game-preview",
+      "title": "Game preview",
+      "triggers": {
+        "en": [
+          "gameplay",
+          "game preview",
+          "mobile game"
+        ],
+        "ru": [
+          "геймплей",
+          "мобильной игры",
+          "мобильная игра"
+        ],
+        "zh": [
+          "游戏预览",
+          "手游",
+          "实机画面",
+          "实机演示",
+          "游戏玩法"
+        ]
+      },
+      "changes": "Gameplay captured on device carries the film, more gameplay than cutscenes (Apple), landscape canvases when the game is landscape (1920x886), in-game sound effects instead of synth UI sounds, no tap hotspots over action."
+    },
+    {
+      "id": "ipad-preview",
+      "title": "iPad preview",
+      "triggers": {
+        "en": [
+          "ipad preview",
+          "for ipad"
+        ],
+        "ru": [
+          "для ipad",
+          "для айпада"
+        ],
+        "zh": [
+          "ipad预览",
+          "ipad版",
+          "ipad版预览",
+          "适配ipad"
+        ]
+      },
+      "changes": "Separate capture and composition at 1200x1600 (or 1600x1200), copy sized for the larger screen; store:conform --class ipad checks it (delivery cannot)."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "footage-edit",
+  "playbook": "footage-edit",
+  "tier": "no-spend",
+  "brief": "Make a 15\u201324 second landscape recut of the synthetic test pattern with timed captions using the supplied dialogue word fixture as a timing scaffold. Run node tests/fixtures/bench/prepare.mjs to create source.mp4. It is a test pattern and tone, not spoken footage; do not invent ASR or human approval. Use the footage-edit route and local transcript conversion only; stop at any human-only approval gate and report it honestly.",
+  "material": [
+    {
+      "path": "tests/fixtures/speech/dialogue-diarisation.json",
+      "sha256": "0b9873d6ddccab9d1e6bdff5715e25f2f912648b52812f03f8347b2062c89334",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/answers/footage-edit.json",
+      "sha256": "b4f014cfae76cf0b6da453c0b227747ddbc15924b55a9f3044c54d3fef1a27ea",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "tests/fixtures/bench/prepare.mjs",
+      "sha256": "85417252a5e90f8f8e6da9538510c98e0ad5e1557feb68f1dbeadad8cecec3f8",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "landscape",
+    "durationSec": [
+      15,
+      24
+    ]
+  },
+  "answers": "bench/answers/footage-edit.json",
+  "criteria": [
+    {
+      "id": "outcome",
+      "kind": "process",
+      "check": {
+        "type": "file",
+        "path": "bench-result.json"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    },
+    {
+      "id": "delivery",
+      "kind": "technical",
+      "check": {
+        "type": "delivery"
+      }
+    },
+    {
+      "id": "task-constraints",
+      "kind": "technical",
+      "check": {
+        "type": "constraints"
+      }
+    },
+    {
+      "id": "file-sensors",
+      "kind": "technical",
+      "check": {
+        "type": "file-sensors"
+      }
+    }
+  ]
+}

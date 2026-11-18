@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "idea": {
+    "value": "An agency's case study that proves its work by showing it being made: a fintech client's brand system and website are built on screen (typed, assembled, retyped, punched in) and then shown live on devices, in the world and at scale, ending on 'want this for you?'.",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/contact-sheet-02.jpg",
+      "speech-text.json screenText 52.02-57.02"
+    ]
+  },
+  "audience": {
+    "value": "Founders and marketing leads at B2B and fintech companies who are shopping for a website or brand agency. Evidence: the closing question offers a website revamp, the end card describes a B2B website agency and carries a row of client logos; the body shows deliverables (type specimen, palette, page builds, device mockups) rather than the client's product benefits.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      "speech-text.json screenText 52.02-53.52, 55.02-57.02",
+      "visuals/a1/s054-end.jpg F1651-F1655",
+      "visuals/contact-sheet-01.jpg 9F-12L"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 4.267,
+      "device": "Unfinished typed question answered by an object",
+      "description": "A caret types a huge word on pure white (0-0.57 s), the question continues in a search bar over a lifestyle photo and then as chips around a phone (0.57-2.33 s); a match cut turns the phone's orb into a glossy orb sitting inline between two words on dark green (2.33 s), and the orb grows to become the ground and the client's mark (3.73-4.27 s). The question is never completed in words: the object completes it."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/s002-type.jpg",
+      "visuals/a1/s005-phone.jpg",
+      "visuals/a1/s007-orb.jpg"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.333,
+        "purpose": "hook: open a question",
+        "content": "typed question on white, then in a search bar and chips over two overhead lifestyle photos",
+        "retentionDevice": "unfinished sentence"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s002-type.jpg F9-F20",
+        "visuals/a1/s005-phone.jpg F60-F69"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.333,
+        "endSec": 4.933,
+        "purpose": "name the client",
+        "content": "orb match cut, orb inline between two words, orb grows to ground, mark to wordmark",
+        "retentionDevice": "object causes each next state"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s007-orb.jpg F108-F131"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.933,
+        "endSec": 7.667,
+        "purpose": "proof of a real deliverable",
+        "content": "bloom cut into the live page, page pulls back onto a monitor on a green sweep",
+        "retentionDevice": "reveal of the device after the content is read"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s008-word.jpg",
+        "visuals/a1/s008-monitor.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 7.667,
+        "endSec": 15.667,
+        "purpose": "chapter 1: the brand system",
+        "content": "chips and palette dots, 3D fan of cards, type-specimen tile, giant glyph, bento with a counter race",
+        "retentionDevice": "something lands every 2-4 frames"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s010-chip.jpg",
+        "visuals/a1/s012-tile.jpg",
+        "visuals/a1/s013-a.jpg",
+        "visuals/a1/s013-bento.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.667,
+        "endSec": 18.633,
+        "purpose": "the brand in use",
+        "content": "people photo under a haze, snaps to a card, bento assembles around it with photos, UI and climbing counters",
+        "retentionDevice": "density build around a still centre"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s015-pull.jpg",
+        "visuals/a1/s016-bento.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 18.633,
+        "endSec": 27.033,
+        "purpose": "chapter 2: the website",
+        "content": "design canvas: line typed, deleted, headline retyped, punch-in and page parts falling in; cut to the finished page in a browser, on a tablet, on an isometric phone array",
+        "retentionDevice": "before-and-after inside one shot"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s017-backspace.jpg",
+        "visuals/a1/s017-headline.jpg",
+        "visuals/a1/s019-pull.jpg",
+        "visuals/contact-sheet-01.jpg 20F-21L"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 27.033,
+        "endSec": 31.567,
+        "purpose": "chapter 3: crafted detail and breadth",
+        "content": "line typed across two ground swaps, small line among floating tiles, stepped pull-back through a grid of page designs",
+        "retentionDevice": "continuous typing through cuts; stepped count"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s023-ground.jpg",
+        "visuals/a1/s025-collage.jpg",
+        "visuals/a1/s027-collage.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 31.567,
+        "endSec": 35.667,
+        "purpose": "scale claim",
+        "content": "number race on a light card, sentence over a sliding row of icon tiles with one enlarged",
+        "retentionDevice": "number race"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s030-race.jpg",
+        "visuals/a1/s032-tiles.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 35.667,
+        "endSec": 44.033,
+        "purpose": "feature vignettes",
+        "content": "split frames (icon panel plus photo with UI chips) cutting every 0.4-0.6 s, chat and checkout UI, tab control, summary sentence among tiles, monitor with sliding phone panel",
+        "retentionDevice": "fast right-half swaps"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s033-grow.jpg",
+        "visuals/boundaries-02.jpg S034-S040",
+        "visuals/a1/s041-panel.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 44.033,
+        "endSec": 47.667,
+        "purpose": "the brand in the world",
+        "content": "stage screen, billboard, photo card to full bleed, caption anchored over three people photos, chip pair pressed by a cursor",
+        "retentionDevice": "stutter montage under a fixed caption"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s045-tile.jpg",
+        "visuals/a1/s046-caption.jpg",
+        "visuals/a1/s049-ready.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 47.667,
+        "endSec": 51.8,
+        "purpose": "outcomes triad",
+        "content": "one lead word with three different nouns, each with an inset image, photo card or growth chip",
+        "retentionDevice": "repetition with one changing word"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s050-inset.jpg",
+        "visuals/contact-sheet-02.jpg 9F-12L"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 51.8,
+        "endSec": 57.167,
+        "purpose": "call to action and sign-off",
+        "content": "question card, card collapses into a typed CTA pill on bright green, agency mark flies in, end card held through silence",
+        "retentionDevice": "question addressed to the viewer"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/s054-cta.jpg",
+        "visuals/a1/s054-end.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The client's finished site and brand shown working: on devices, on a stage, on a billboard, in people's hands, with outcome words and growth numbers.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg 19F-21L",
+      "visuals/contact-sheet-02.jpg 2F-12L"
+    ]
+  },
+  "callToAction": {
+    "value": "A small question card ('do you need this?') collapses into a white pill on bright green where a short contact line types in, followed by the agency's end card with URL and client logos.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/s054-cta.jpg F1602-F1622",
+      "visuals/a1/s054-end.jpg F1641-F1655"
+    ]
+  },
+  "whyItWorks": [
+    "Process as proof: the viewer watches placeholder copy deleted and the real headline typed and built into a page, so craft is demonstrated rather than claimed.",
+    "The eye is always handed an object: the orb, the caret, the hero photo at the centre of the bento, the first card of the grid; changes happen around or because of it.",
+    "Long build shots (2-5 s) alternate with stutter runs of 0.3-0.6 s holds, so density and pace are both present without the cut rate being uniform.",
+    "One palette (forest green, signal green, lime, white, near-black) and one geometric grotesque across photo, 3D render and UI capture make very mixed material read as one brand.",
+    "Chapter titles are typed lines on flat grounds (0.0, 18.6, 27.0 s and the closing card at 51.8-54.1 s), which gives the 57 s film a readable table of contents without a voice."
+  ]
+}

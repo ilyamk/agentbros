@@ -1,0 +1,178 @@
+[
+  {
+    "step": "build",
+    "from": {
+      "agent": "creative-critic",
+      "role": "critic"
+    },
+    "kind": "compare",
+    "title": "Two endings",
+    "body": "Which ending lands the **logo** better?",
+    "media": [
+      {
+        "root": "out",
+        "path": "endings/ending-a.mp4",
+        "kind": "video",
+        "label": "Ending A",
+        "durationSec": 3,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      },
+      {
+        "root": "out",
+        "path": "endings/ending-b.mp4",
+        "kind": "video",
+        "label": "Ending B",
+        "durationSec": 3,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      }
+    ],
+    "options": [
+      {
+        "id": "a",
+        "label": "A"
+      },
+      {
+        "id": "b",
+        "label": "B"
+      }
+    ],
+    "expectsAnswer": true
+  },
+  {
+    "step": "build",
+    "from": {
+      "agent": "asset-planner"
+    },
+    "kind": "grid",
+    "title": "Stock candidates for scene 4",
+    "media": [
+      {
+        "path": "design/styleframes/sf-1.png",
+        "kind": "image",
+        "label": "Styleframe 1",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "path": "design/styleframes/sf-2.png",
+        "kind": "image",
+        "label": "Styleframe 2",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "path": "design/styleframes/sf-3.png",
+        "kind": "image",
+        "label": "Styleframe 3",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "options": [
+      {
+        "id": "sf-1",
+        "label": "1"
+      },
+      {
+        "id": "sf-2",
+        "label": "2"
+      },
+      {
+        "id": "sf-3",
+        "label": "3"
+      }
+    ],
+    "expectsAnswer": true
+  },
+  {
+    "step": "look",
+    "from": {
+      "agent": "design-director"
+    },
+    "kind": "rating",
+    "title": "Rate the styleframes",
+    "media": [
+      {
+        "path": "design/styleframes/sf-1.png",
+        "kind": "image",
+        "label": "Styleframe 1",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "path": "design/styleframes/sf-2.png",
+        "kind": "image",
+        "label": "Styleframe 2",
+        "width": 1080,
+        "height": 1920
+      }
+    ],
+    "expectsAnswer": true
+  },
+  {
+    "step": "music",
+    "from": {
+      "agent": "sound-director"
+    },
+    "kind": "choice",
+    "title": "Music route",
+    "options": [
+      {
+        "id": "stock",
+        "label": "Licensed stock track"
+      },
+      {
+        "id": "generated",
+        "label": "Generated track"
+      }
+    ],
+    "expectsAnswer": true
+  },
+  {
+    "step": "build",
+    "from": {
+      "agent": "motion-engineer"
+    },
+    "kind": "question",
+    "title": "Should the end card show the tagline?",
+    "expectsAnswer": true
+  },
+  {
+    "step": "build",
+    "from": {
+      "agent": "motion-engineer"
+    },
+    "kind": "markdown",
+    "title": "Build notes",
+    "body": "Scene 3 uses the `kinetic-type` block.\n\n- safe zone checked\n- one warning at frame 212",
+    "expectsAnswer": false
+  },
+  {
+    "step": "build",
+    "from": {
+      "agent": "motion-engineer"
+    },
+    "kind": "media",
+    "title": "Scene 3 draft",
+    "media": [
+      {
+        "root": "out",
+        "path": "scenes/scene-3.mp4",
+        "kind": "video",
+        "label": "Scene 3",
+        "renderedAt": "2026-11-17T09:09:00Z",
+        "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "stale": true,
+        "durationSec": 4.2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      }
+    ],
+    "expectsAnswer": false
+  }
+]

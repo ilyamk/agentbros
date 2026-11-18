@@ -1,0 +1,1268 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "palmier",
+  "rhythm": {
+    "value": "Detector: 34 shots, 33 cuts, median 0.88 s, 50.7 cuts per minute. Corrected: 60 shots, 59 cuts, median 0.10 s, 90.6 cuts per minute, p10 0.08 s, p90 1.80 s, longest 3.00 s (the step-8 split at 25.80 s was withdrawn: a step-1 strip shows one continuous blurred pull-back over the same recording, F641-F663). The count is misleading alone: 34 of the cuts are in the last 2.76 s, a run of images held 2 or 3 frames each at 25 fps. Before it, 25 cuts in 33.88 s, median shot 1.12 s, a calm demonstration pace. Sound was not heard, only measured. Tempo 110.93 BPM, confidence 0.074, downbeat confidence 0.09: treat as an artefact and build no grid. sync.json cutsOnBeatRatio 0.455 vs cutsOnBeatChance 0.286, cutsOnOnsetRatio 0.697 vs cutsOnOnsetChance 0.5 for the detector's cuts: the beat figure means little at that confidence. Corrected cuts before the burst, within 0.08 s: 19 of 25 on onsets (0.76) vs 0.52 for uniform random times over 0.5-33.8 s, 13 of 25 on audio.json beats (0.52) vs 0.30; the beat figure means little at tempo confidence 0.074. Loudness (50 ms RMS, local maximum over 0.3 s each side, above 1.35 x median) shows a pulse from 14.2 to 21.9 s whose spacing tightens from 0.65 s to 0.45 s. Inside it, 9 of the 9 cuts from 14.16 to 21.40 s fall 0.01-0.06 s before a peak, against about 0.26 by chance at 0.08 s. I chose that window after seeing the peaks, so this suggests a method and does not prove one. No words were recognised: speech-text.json holds none after a rerun with --language en, and the first run dropped 73 looped words; I cannot say whether a voice is present. audio.json silence is measured at 1.17-1.75 s and from 37.03 s to the end.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json summary",
+      "sync.json metrics.cutsOnBeatRatio 0.455 vs chance 0.286",
+      "sync.json metrics.cutsOnOnsetRatio 0.697 vs chance 0.5",
+      "audio.json tempo",
+      "visuals/edit-map.png",
+      "visuals/a1/p12-split-25.8.jpg F640-F649",
+      "visuals/a1/p13-pullback-25.9.jpg F649-F667"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Claim typed over a person walking past the lens",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/a-open.jpg F0-F72"
+        ]
+      },
+      "technique": {
+        "value": "Body crosses frame and carries the screen clear; first line goes letter by letter F16-F24, second types on F52-F64",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/a-open.jpg F0-F72"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Human moment: a man drinks",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b-bottle-dock.jpg F75-F81"
+        ]
+      },
+      "technique": {
+        "value": "Low angle, 0.40 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b-bottle-dock.jpg F75-F81"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Product name on a physical prop, set on the desk in front of a monitor",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b-bottle-dock.jpg F87-F105"
+        ]
+      },
+      "technique": {
+        "value": "Hand places a printed bottle at about 30% of height then leaves it",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b-bottle-dock.jpg F87-F105"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Detector split inside one shot: bottle goes soft, then the camera pushes into the monitor until the dock fills the frame",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/j-bottle-to-screen.jpg F107-F128"
+        ]
+      },
+      "technique": {
+        "value": "Push F115-F127, no cut; split at 4.88 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/j-bottle-to-screen.jpg F107-F128"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Question on black, stacked echoes, then the wide real interface",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/c-black-editor-chat.jpg F183-F231"
+        ]
+      },
+      "technique": {
+        "value": "Line strobes between a stack of echoes and two copies every frame F176-F187, settles to one line, is erased and rebuilt word by word F189-F201, holds, dims F210-F211, black F212-F213; cut to the full editor at F214 (8.56 s).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/p03-echo-card.jpg F176-F215",
+          "visuals/a1/c-black-editor-chat.jpg F183-F231"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Real chat, cropped large, typed request, then the agent's answer",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/c-black-editor-chat.jpg F239-F311"
+        ]
+      },
+      "technique": {
+        "value": "Crop so the field fills about 60% of width; typing; scroll at 11.12 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/c-black-editor-chat.jpg F239-F311"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Result in real software: media organised",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 7F-7L"
+        ]
+      },
+      "technique": {
+        "value": "22 items collapse into 4 folders at about 13.44 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 7F-7L"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Reaction, one word",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 8F-8L"
+        ]
+      },
+      "technique": {
+        "value": "Man in profile, centred small caption",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 8F-8L"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Reaction, next request",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 9F-9L"
+        ]
+      },
+      "technique": {
+        "value": "Hands on keyboard, caption",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 9F-9L"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "Second request typed",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 10F-10L"
+        ]
+      },
+      "technique": {
+        "value": "Same crop as s006",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 10F-10L"
+        ]
+      }
+    },
+    {
+      "shotId": "s011",
+      "purpose": {
+        "value": "Agent log in real text",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F423-F439"
+        ]
+      },
+      "technique": {
+        "value": "Lines add, spinner",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F423-F439"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "Timeline appears",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F447-F455"
+        ]
+      },
+      "technique": {
+        "value": "Crop on lower window",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F447-F455"
+        ]
+      }
+    },
+    {
+      "shotId": "s013",
+      "purpose": {
+        "value": "Tighter crop on the clips, jump in scale",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F463-F479"
+        ]
+      },
+      "technique": {
+        "value": "Same content, closer",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F463-F479"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Agent log continues",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F487-F503"
+        ]
+      },
+      "technique": {
+        "value": "Text builds",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F487-F503"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "A new track appears in the timeline",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F511-F527"
+        ]
+      },
+      "technique": {
+        "value": "Purple clips arrive at about 21.0 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F511-F527"
+        ]
+      }
+    },
+    {
+      "shotId": "s016",
+      "purpose": {
+        "value": "Preview shows its own opening",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F535-F551"
+        ]
+      },
+      "technique": {
+        "value": "Small preview at top of editor",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F535-F551"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Preview plays this film's opening, large, then the camera pulls out to the real monitor in a room",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/d-pullout-monitor.jpg F557-F589"
+        ]
+      },
+      "technique": {
+        "value": "Interface flat to about 23.1 s; pull-out 23.16-23.96 s; caption in the preview",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/d-pullout-monitor.jpg F557-F589"
+        ]
+      }
+    },
+    {
+      "shotId": "s018",
+      "purpose": {
+        "value": "Monitor fades over 3 frames into a black card with the next question",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/k-cut-to-black.jpg F601-F604"
+        ]
+      },
+      "technique": {
+        "value": "Detector time wrong; real change F601-F603",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/k-cut-to-black.jpg F601-F604"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "Generation running in the real timeline, then wide editor with the new clips",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/e-generate.jpg F630-F702"
+        ]
+      },
+      "technique": {
+        "value": "Generation running in the real timeline; from F641 (25.64 s) the camera pulls back over the same recording with heavy blur, decelerating to the wide editor by F663 (26.52 s). No cut: an earlier step-8 reading split it at 25.80 s.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p12-split-25.8.jpg F640-F649",
+          "visuals/a1/p13-pullback-25.9.jpg F649-F667"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "Reaction: a very close face with a two-word caption",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/e-generate.jpg F718-F726"
+        ]
+      },
+      "technique": {
+        "value": "Close-up to the eyes, 0.68 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/e-generate.jpg F718-F726"
+        ]
+      }
+    },
+    {
+      "shotId": "s021",
+      "purpose": {
+        "value": "That face now in a small preview in the editor",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 21F-21L"
+        ]
+      },
+      "technique": {
+        "value": "Real interface, 0.24 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 21F-21L"
+        ]
+      }
+    },
+    {
+      "shotId": "s022",
+      "purpose": {
+        "value": "Third request typed",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 22M-22L"
+        ]
+      },
+      "technique": {
+        "value": "Field cropped large",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 22M-22L"
+        ]
+      }
+    },
+    {
+      "shotId": "s023",
+      "purpose": {
+        "value": "Generator panel with two reference frames, instruction typed",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 23F-23L"
+        ]
+      },
+      "technique": {
+        "value": "Cropped large",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 23F-23L"
+        ]
+      }
+    },
+    {
+      "shotId": "s024",
+      "purpose": {
+        "value": "Generated results flicker in the preview",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/f-preview-to-full.jpg F810-F824"
+        ]
+      },
+      "technique": {
+        "value": "Preview states changing at 32.60-32.84 s",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/f-preview-to-full.jpg F810-F824"
+        ]
+      }
+    },
+    {
+      "shotId": "s025",
+      "purpose": {
+        "value": "Preview grows to the full frame: the interface falls away",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/f-preview-to-full.jpg F829-F846"
+        ]
+      },
+      "technique": {
+        "value": "Detector split inside the move, F825-F834, with no cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/f-preview-to-full.jpg F829-F846"
+        ]
+      }
+    },
+    {
+      "shotId": "s026",
+      "purpose": {
+        "value": "Start of the output burst, one image with a caption",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F847-F849"
+        ]
+      },
+      "technique": {
+        "value": "3 frames",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F847-F849"
+        ]
+      }
+    },
+    {
+      "shotId": "s027",
+      "purpose": {
+        "value": "Burst: faces and eyes, 2 frames each",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F850-F869"
+        ]
+      },
+      "technique": {
+        "value": "Detector sees one shot; there are ten",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F850-F869"
+        ]
+      }
+    },
+    {
+      "shotId": "s028",
+      "purpose": {
+        "value": "Burst continues",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F870-F874"
+        ]
+      },
+      "technique": {
+        "value": "2 frames each",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F870-F874"
+        ]
+      }
+    },
+    {
+      "shotId": "s029",
+      "purpose": {
+        "value": "Burst continues",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F875-F880"
+        ]
+      },
+      "technique": {
+        "value": "2 frames each",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-a.jpg F875-F880"
+        ]
+      }
+    },
+    {
+      "shotId": "s030",
+      "purpose": {
+        "value": "Burst continues",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F882-F886"
+        ]
+      },
+      "technique": {
+        "value": "2 frames each",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F882-F886"
+        ]
+      }
+    },
+    {
+      "shotId": "s031",
+      "purpose": {
+        "value": "Burst continues",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F887-F894"
+        ]
+      },
+      "technique": {
+        "value": "2 frames each",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F887-F894"
+        ]
+      }
+    },
+    {
+      "shotId": "s032",
+      "purpose": {
+        "value": "Burst closes in on one eye",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F895-F899"
+        ]
+      },
+      "technique": {
+        "value": "2 frames each",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F895-F899"
+        ]
+      }
+    },
+    {
+      "shotId": "s033",
+      "purpose": {
+        "value": "Burst: pupil grows image by image",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F900-F913"
+        ]
+      },
+      "technique": {
+        "value": "Pupil reaches about 30% of width",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/i-eye-burst-b.jpg F900-F913"
+        ]
+      }
+    },
+    {
+      "shotId": "s034",
+      "purpose": {
+        "value": "Last image, a crater like the pupil, then black with the name",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/h-end.jpg F915-F939"
+        ]
+      },
+      "technique": {
+        "value": "Hard cut to black F916, suffix added at F933",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/h-end.jpg F915-F939"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 33.88,
+        "endSec": 36.64,
+        "name": "flash-montage-under-continuous-caption",
+        "description": "33 images (counted from the frame differences) at a 2-frame hold (0.08 s, three of them 3 frames) at 25 fps, all from the product's generator, with one fixed small caption at the centre. Eye line is held at frame centre through faces F860-F881, then closer eyes F895-F909, pupil growing to about 30% of width by F910, then a crater that rhymes with the pupil F914.",
+        "why": "Too fast to read one image, so the viewer takes in abundance, and the shared eye position makes it read as one face changing. The fixed caption is the only thing that can be read, so it is what stays."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F846-F881",
+        "visuals/a1/i-eye-burst-b.jpg F882-F917",
+        "visuals/a1/p08-burst-start.jpg F846-F862 (diff 40-69 every second frame, 0.0-0.4 between)"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.52,
+        "endSec": 5.2,
+        "name": "push-into-screen",
+        "description": "From a physical desk the camera moves past the soft bottle (F113-F118, it wipes off frame right) and pushes down into the monitor (F119-F129), blurring as it travels, until the real dock fills the frame and stops dead at F130 (5.20 s); the interface is then used by a real cursor. Mirrored at 23.12-24.04 s by a pull-out from the interface back to the monitor in a dark room (F578-F603, accelerating), cut short by a 3-frame fall to black under the next question.",
+        "why": "Binds the software to a real place and a real person. The viewer accepts the interface as real because they watched the camera arrive at it.",
+        "spans": [
+          {
+            "startSec": 4.52,
+            "endSec": 5.2
+          },
+          {
+            "startSec": 23.12,
+            "endSec": 24.04
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/p02-push-screen.jpg F110-F131",
+        "visuals/a1/j-bottle-to-screen.jpg F115-F128",
+        "visuals/a1/p06-pullout-fade.jpg F577-F604",
+        "visuals/a1/d-pullout-monitor.jpg F579-F599"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 32.88,
+        "endSec": 33.88,
+        "name": "element-grows-to-ground",
+        "description": "The generated close-up appears in the small preview at F822 (32.88 s), then the preview grows steadily (frame difference level at 15-23 a frame) until the interface has gone at F834 (33.36 s); the face keeps pushing in slowly (diff 4-8) to F846, then the burst cuts in at F847 (33.88 s).",
+        "why": "The product's output visibly leaves the product and becomes the film, with no cut to explain it."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/p07-preview-full.jpg F821-F848",
+        "visuals/a1/f-preview-to-full.jpg F825-F846"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 21.4,
+        "endSec": 23.16,
+        "name": "own-opening-as-output",
+        "description": "The result the agent has just built plays in the preview, and it is the opening the viewer saw 20 s earlier, with a new caption in the preview itself.",
+        "why": "Recognition is the proof: nothing has to be claimed, because the viewer has already watched the output."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/g-editor-timeline.jpg F535-F551",
+        "visuals/a1/d-pullout-monitor.jpg F557-F577"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 36.64,
+        "endSec": 37.56,
+        "name": "final-change-in-silence",
+        "description": "Hard cut from the loudest passage to black with the name in small white type (about 22% of width) at F916. Sound runs on until 37.03 s and then stops. The suffix is added at F933 (37.32 s), during the silence.",
+        "why": "The contrast makes the small word read loudly, and the single change in silence directs the eye to the address."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/h-end.jpg F915-F939",
+        "audio.json silence 37.0275-37.42, 37.477-39.125",
+        "visuals/a1/p09-end-silence.jpg F913-F936 (diff 93.9 at F916, 0.4 at F933)"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s004"
+        ],
+        "note": "No cut at 4.28 s. The bottle in the same shot goes soft as focus shifts."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/j-bottle-to-screen.jpg F105-F116"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "note": "Push from the desk into the monitor without a cut, F117-F125; the dock fills the frame by F127. Time is the mid-point of the move.",
+        "timeSec": 4.88,
+        "transition": "continuous"
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/j-bottle-to-screen.jpg F117-F128"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "note": "Black card to the full editor window: the card dims F210-F211, two black frames F212-F213, the editor cuts on at F214 (8.56 s). Candidate 8.6.",
+        "timeSec": 8.56,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/p03-echo-card.jpg F209-F215",
+        "visuals/a1/c-black-editor-chat.jpg F207-F215"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s006"
+        ],
+        "note": "Hard cut at F278 (11.12 s) from the still request field to the agent log already scrolling fast with heavy vertical blur; the old reading of a continuous move came from a step-8 sheet.",
+        "timeSec": 11.12,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/p04-split-11.12.jpg F272-F284 (diff 0.0 to F276, 17.8 at F278)"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s018"
+        ],
+        "note": "Detector continuous at 23.64 s falls in the monitor pull-out, not at a change of scene."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/d-pullout-monitor.jpg F585-F599"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s018"
+        ],
+        "note": "Monitor falls to black over F600-F603 with the text arriving at F601. Real end of the pull-out.",
+        "timeSec": 24.08,
+        "transition": "fade"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/k-cut-to-black.jpg F598-F604"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s025"
+        ],
+        "note": "Same shot: the preview scales up to the full frame over F825-F834, no cut. Detector time falls inside it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/f-preview-to-full.jpg F825-F834"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s034"
+        ],
+        "note": "Crater to black with the name, diff 93 at F916.",
+        "timeSec": 36.64,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F914-F917"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.08,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F851-F852"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.16,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F853-F854"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.24,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F855-F856"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.32,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F857-F858"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.4,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F859-F860"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.48,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F861-F862"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.56,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F863-F864"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.64,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F865-F866"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.72,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F867-F868"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s028"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 34.88,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F871-F872"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s029"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.08,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F876-F877"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s029"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.16,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F878-F879"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s030"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.32,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F882-F883"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s030"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.4,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F884-F885"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s031"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.56,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F888-F889"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s031"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.64,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F890-F891"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s031"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.72,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F892-F893"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s032"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 35.88,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F896-F897"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.08,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F901-F902"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.16,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F903-F904"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.24,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F905-F906"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.32,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F907-F908"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.4,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F909-F910"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s033"
+        ],
+        "note": "Image changes here: 2-frame hold in the burst, diff spike in the strip.",
+        "timeSec": 36.48,
+        "transition": "cut"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-eye-burst-b.jpg F911-F912"
+      ]
+    }
+  ]
+}

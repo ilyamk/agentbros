@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "id": "catalogue-videos",
+  "title": "Catalogue videos",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Bind each CSV, TSV or JSON row to one product, original media, supported claims and exact video.",
+  "triggers": {
+    "en": [
+      "catalogue videos",
+      "videos from csv",
+      "affiliate batch",
+      "video for each product",
+      "video for every product",
+      "one video per product",
+      "video per row",
+      "each row",
+      "product feed",
+      "product catalog",
+      "bulk video",
+      "batch video",
+      "from spreadsheet",
+      "every sku"
+    ],
+    "ru": [
+      "ролики из каталога",
+      "100 товаров",
+      "таблица товаров",
+      "каждый товар",
+      "каждого товара",
+      "всех товаров",
+      "каталог товаров",
+      "фид товаров",
+      "товарный фид",
+      "из таблицы",
+      "из csv",
+      "из гугл таблиц",
+      "массово",
+      "массовая генерация",
+      "каждой строки",
+      "товарной таблиц",
+      "всех позиций"
+    ],
+    "zh": [
+      "批量",
+      "批量生成",
+      "批量制作",
+      "批量视频",
+      "每个商品",
+      "每个产品",
+      "每款商品",
+      "每个sku",
+      "sku",
+      "商品目录",
+      "产品目录",
+      "商品库",
+      "商品表格",
+      "商品清单",
+      "商品数据",
+      "每一行",
+      "csv",
+      "表格",
+      "excel",
+      "带货"
+    ],
+    "generic": [
+      "表格",
+      "excel",
+      "带货",
+      "из таблицы"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "one independent product film",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "campaign",
+    "scenario": "catalogue-videos",
+    "start": "pnpm campaign:production --project <id> --action init --request <file>"
+  },
+  "alternatives": [],
+  "agents": [
+    "campaign-producer",
+    "creative-critic",
+    "fixer"
+  ],
+  "skills": [
+    "creative-strategy",
+    "copywriter",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "scenes",
+      "typography"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "campaign:production",
+    "campaign:next",
+    "campaign:brief",
+    "campaign:approve",
+    "campaign:execute",
+    "models:pick",
+    "asset:import",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/campaign-production.md"
+  ],
+  "qa": [
+    "Every member has independently bound source facts, exact media and current output receipts.",
+    "Changed dialogue invalidates speech, word timing and dependent cues.",
+    "No model, human approval, invoice or publication rights are inferred from fixture success."
+  ],
+  "benchmarks": [
+    "campaign-catalogue-videos"
+  ],
+  "intake": [
+    {
+      "ask": "Which exact variants or catalogue rows should be produced?",
+      "why": "Freeze the selected set before material and render work."
+    },
+    {
+      "ask": "Which materials and facts are authorised for reuse?",
+      "why": "Reuse pins bytes, rights and entity revisions rather than copying claims."
+    },
+    {
+      "ask": "What spending is authorised?",
+      "why": "No-spend is inherited by every task.",
+      "default": "No paid calls; use supplied or local assets and leave paid needs pending."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 1,
+        "max": 1200
+      },
+      "captions": "clean-sentence",
+      "note": "House production bounds; use the child playbook and requested placement for publication specifications."
+    }
+  ],
+  "variants": [],
+  "evidence": []
+}

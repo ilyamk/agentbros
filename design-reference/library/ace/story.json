@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "idea": {
+    "value": "Four separate AI-product launch films play at once in a butt-joined 2×2 grid for 11.6 s, so the viewer gets a studio's range and polish in the time of one clip: breadth is the message, and no single cell has to carry the story alone.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/keyframes.jpg F0 F240 F500 F696: four unrelated products, one per 640×360 quadrant, no gutter",
+      "visuals/a1/quad-tl.jpg, quad-tr.jpg, quad-bl.jpg, quad-br.jpg: each quadrant has its own cuts and its own story",
+      "No logo, end card or call to action anywhere in 0–11.617 s (visuals/a1/ov-09.jpg)"
+    ]
+  },
+  "audience": {
+    "value": "Founders and marketing leads of AI and SaaS start-ups scrolling a professional social feed; the clip reads as a motion studio's portfolio teaser aimed at them.",
+    "basis": "inferred",
+    "confidence": 0.55,
+    "evidence": [
+      "All four cells are AI-assistant or SaaS interfaces: prompt fields, chat, generated dashboards, email lists (visuals/a1/ov-00.jpg … ov-09.jpg)",
+      "16:9 1280×720, 11.6 s, silent-friendly: no voice (speech-text.json speech.words is empty), text carries every line",
+      "Four different brands with no shared mark: points to the maker, not to any one product"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 1.0,
+      "device": "four simultaneous openings",
+      "description": "In the first second four different motions start at once and none of them is a still: a sentence dissolves into dots word by word (TL F3–F17), coloured blocks and photos pop into a collage on twos (TR F2–F53), a cursor sits in a glass prompt card over sky and then punch-cuts in to the caret (BL F49), and one large word glides under a blue light streak on navy (BR F9–F66). The eye cannot settle on one cell, so it scans all four, which is what makes the viewer register 'four films' within a second."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/tl-text-to-dots.jpg F3-F17",
+      "visuals/a1/tr-collage-build.jpg F2-F53",
+      "visuals/a1/bl-push-in.jpg F48-F49",
+      "visuals/a1/quad-br.jpg F9-F63"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.9,
+        "purpose": "Set up four premises in type and abstraction while the sound is almost silent",
+        "retentionDevice": "Each cell is mid-motion on every frame; 3 within-cell cuts (BL 0.817, BR 1.317, BL 2.317) keep the lower row restless while the upper row morphs without cutting",
+        "content": "TL: statement line turns into a row of dots that become a rotating ring. TR: collage of photos and colour blocks with a serif headline typed word by word. BL: a prompt is typed into a glass card, with punch-in and pull-out cuts. BR: a large word under a light streak becomes a glass input pill whose line is typed, deleted and retyped."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/ov-00.jpg F0-F168", "visuals/a1/quad-bl.jpg F0-F144", "visuals/a1/quad-br.jpg F0-F153"]
+    },
+    {
+      "value": {
+        "startSec": 2.9,
+        "endSec": 5.0,
+        "purpose": "The pulse enters; each cell reaches its first character or problem",
+        "retentionDevice": "Loudness steps up about 6.5× at 2.9 s (RMS 1 000 → 6 600, measured); TL turns its dots into a face, TR sweeps to stressed people at desks, BL punches in to the action button, BR's question gets its send button and a click ripple",
+        "content": "TL: dots collapse to a blob, the blob inflates into a sphere and becomes a mint face (2.55–3.40 s). TR: collage slides out in colour blocks to photos of tired office workers (2.5–3.45 s). BL: punch-in to the action button, cursor hovers. BR: line scrolls with the caret, send button slides in, cursor clicks (3.05–4.5 s)."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/tl-dots-collapse.jpg F150-F179", "visuals/a1/tl-sphere-to-face.jpg F180-F209", "visuals/a1/tr-block-sweep-a.jpg F150-F182", "visuals/a1/br-text-scroll.jpg F183-F206", "visuals/a1/br-pill-fly-cut.jpg F264-F275"]
+    },
+    {
+      "value": {
+        "startSec": 5.0,
+        "endSec": 7.6,
+        "purpose": "First wave of product reveals: every cell leaves its opening and shows a product screen",
+        "retentionDevice": "4 boundaries in 1.07 s (5.017 BR, 5.167 TL, 5.75 BL, 6.083 TL) spread across three cells, never two at once",
+        "content": "BR flies the pill into the lens and cuts to a white chat with an avatar where the send button was. TL cuts from the face to a minimal assistant search bar, then punches in on it and starts typing a question. BL dissolves to a warm gradient placeholder that resolves cell by cell into a generated analytics screen. TR washes to white and fades in a one-line serif promise with a gradient on the key words, then holds."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/br-pill-fly-cut.jpg F300-F301", "visuals/a1/tl-face-to-bar.jpg F309-F310", "visuals/a1/bl-cut-orange.jpg F342-F349", "visuals/a1/tl-push-bar.jpg F364-F365", "visuals/a1/tr-whiteout-b.jpg F300-F329", "visuals/a1/bl-field-resolve.jpg F375-F422"]
+    },
+    {
+      "value": {
+        "startSec": 7.6,
+        "endSec": 9.7,
+        "purpose": "Second wave: the products answer",
+        "retentionDevice": "A diagonal pair of changes inside 17 ms (TR smoke wipe from 7.633, BL cut at 7.650), then two more cuts at 9.183 and 9.650",
+        "content": "TR: dark smoke swallows the white line; a small orb and a short answer line type on in the dark. BL: a finished, image-rich dashboard replaces the draft and reframes to show its sidebar. TL: the question keeps typing, the field scrolling to keep the caret fixed. BR: chat replies pile up, then a cut to a navy title card."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/tr-smoke-wipe.jpg F458-F476", "visuals/a1/bl-cut-mountain.jpg F458-F459", "visuals/a1/tl-caret-pan.jpg F480-F527", "visuals/a1/bl-pan-right.jpg F550-F567", "visuals/a1/br-cut-emails.jpg F578-F579"]
+    },
+    {
+      "value": {
+        "startSec": 9.7,
+        "endSec": 11.633,
+        "purpose": "Density climax: every cell ends on a busy, real-looking interface",
+        "retentionDevice": "Another diagonal pair (TR 10.067, BL 10.083), then TR 10.6 and BL 11.45; BR's cards arrive at shrinking intervals so the last second accelerates",
+        "content": "TR: a logo mark becomes an app tile that opens into a calendar app. BL: a change-request field, a chip is clicked, then a cut to sky with a results table. TL: the send button is pressed (turns black, refills green from the bottom) while the assistant character hops above it. BR: the title fades into the first email card and a stack of cards cascades in."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/tr-logo-swap.jpg F603-F604", "visuals/a1/tr-tile-to-ui.jpg F636-F665", "visuals/a1/bl-cut-request.jpg F604-F605", "visuals/a1/bl-cut-clouds.jpg F686-F687", "visuals/a1/tl-send-press.jpg F642-F670", "visuals/a1/br-card-stack.jpg F629-F674"]
+    }
+  ],
+  "payoff": {
+    "value": "In the last 1.5 s all four cells are full product interfaces at once (calendar app, results table, a sent question, a stack of email cards): the viewer leaves believing this studio can make any AI product look this good, which is the studio's claim without a word saying it.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": ["visuals/a1/keyframes.jpg F696", "visuals/contact-sheet-01.jpg 5F 00:11.45"]
+  },
+  "callToAction": {
+    "value": "None on screen. The film ends on a full grid at F696 and drops to one black frame (F697, mean luma 0.0), which reads as a loop point or an export tail, not a designed end card.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/bl-cut-clouds.jpg F696-F697", "mean luminance F696 176.4, F697 0.0 (computed from media/source.mp4)"]
+  },
+  "whyItWorks": [
+    "Four cells, staggered cuts: in 11.6 s there are 16 picture changes, but never more than two within 0.1 s, so something always changes and the frame never resets as a whole. The eye is always pulled to a new cell.",
+    "Changes come in diagonal pairs: TR and BL change together at 7.633/7.650 and 10.067/10.083, BR and TL 0.15 s apart at 5.017/5.167. Opposite corners keep the grid's weight balanced.",
+    "Each cell runs the same arc: an abstract opening, then a character or problem, then a real interface. Parallel arcs read as one method applied four times, which is the point of a portfolio piece.",
+    "Every line of text is typed or built in front of the viewer, never placed whole. A typing caret is the strongest attention magnet in a busy frame, and three of the four cells use one.",
+    "No voice and only one quiet-then-pulse music bed (inferred, not heard), so the clip works muted in a feed."
+  ]
+}

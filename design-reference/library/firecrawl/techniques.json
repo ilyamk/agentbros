@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "techniques": [
+    {
+      "id": "laid-out-word-reveal",
+      "name": "Sentence revealed in its final layout",
+      "function": "hook",
+      "spans": [
+        {
+          "startSec": 0.13,
+          "endSec": 2.283
+        },
+        {
+          "startSec": 2.3,
+          "endSec": 4.0
+        }
+      ],
+      "description": "The full two-line block is laid out first and never reflows (both lines centred on x 0.50; line boxes 11.9% and 15.5% of frame height); words switch on whole on single frames at F8, F16, F24 and F34 at 60 fps (every 0.133-0.167 s); inline icons stagger in about 2 frames apart with a 3-frame fade and scale; the block rises about 8% of height with an ease-out (each word's diff spike decays over 6-8 frames), then creeps upward linearly. Accent tokens (numbers) take the accent colour.",
+      "route": "remotion",
+      "routeReason": "Pure type on a flat ground, frame-driven. The library's sentence build now has a fixed-layout mode that lays the block out first, switches words on whole, rises, creeps and exits upward, which is this move.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-sentence-build",
+        "sentenceBuildFixedPreset",
+        "splitWords",
+        "stagger"
+      ],
+      "timing": {
+        "durationSec": 0.65,
+        "startOffsetFromCutSec": 0.133,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b01-hook-words.jpg F8-F47 (word spikes F8, F16, F24, F34; settled by F47)"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/b01-hook-words.jpg F8-F15 diff 2.8, 3.0, 2.1, 1.3, 0.9, 0.8, 0.7, 0.6"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The first word lands with the first of six full-band intro swells (0.140 s); the later swells (0.893, 1.532, 1.856 s) fall on icon and line events. Heard by nobody: from the analyst's band-split envelope and audiomap.json.",
+        "basis": "inferred",
+        "confidence": 0.55,
+        "evidence": [
+          "edit.json rhythm (intro swells 0.140, 0.893, 1.532, 1.856, 2.499, 3.572 s)",
+          "audiomap.json events"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": [
+        {
+          "role": "hook sentence",
+          "entry": "word by word switched on whole in its final layout, one word per 8 frames at 60 fps, inline icons as words",
+          "alignment": "centre",
+          "size": 0.119,
+          "basis": "measured",
+          "confidence": 0.8,
+          "evidence": [
+            "speech-text.json screenText 0.27 s box height 0.119, x 0.105-0.889 (centre 0.497)",
+            "visuals/a1/b01-hook-words.jpg F8-F47"
+          ]
+        },
+        {
+          "role": "stat sentence with accent numbers",
+          "entry": "same word build, numbers in the accent colour",
+          "alignment": "centre",
+          "size": 0.155,
+          "basis": "measured",
+          "confidence": 0.8,
+          "evidence": [
+            "speech-text.json screenText 2.28 s box height 0.155, x 0.104-0.897",
+            "visuals/a1/stat-words.jpg"
+          ]
+        }
+      ],
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 0.13,
+            "endSec": 2.283
+          },
+          "shots": [
+            "s001.1"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 2.3,
+            "endSec": 4.0
+          },
+          "shots": [
+            "s001.2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "one-beat-accelerating-exit",
+      "name": "One-beat accelerating exit into a cut on the beat",
+      "function": "transition",
+      "spans": [
+        {
+          "startSec": 1.883,
+          "endSec": 2.283
+        },
+        {
+          "startSec": 3.567,
+          "endSec": 4.0
+        },
+        {
+          "startSec": 7.067,
+          "endSec": 7.433
+        }
+      ],
+      "description": "Each state leaves by accelerating for about one beat (0.33-0.40 s, 20-24 frames at 60 fps) into a hard cut: upward travel of 7-8% of height on quad-in (the frame difference rises linearly, 0.3 to 5.8 over F113-F135), or growth of about 30% on an exponential-in with motion blur on the last frames (diff 0.1 to 7.7 over F424-F444). The cut lands on a beat of the corrected grid; the next shot carries the same direction and eases out.",
+      "route": "remotion",
+      "routeReason": "Interpolated transforms with an ease-in and the motion-blur block; cue frames from a beat grid anchored on the drop. The fixed sentence build already exits this way (`exit: \"rise\"`) and the hero word's scale keys cover growth; a general wrapper for any element does not exist.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:motion-blur",
+        "track",
+        "curves",
+        "beatGrid",
+        "block:accelerate-into-cut"
+      ],
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": -0.4,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b02-exit-2.30.jpg F113-F137",
+          "visuals/a1/b03-drop-4.00.jpg F214-F240",
+          "visuals/a1/b06-exit-7.43.jpg F424-F446"
+        ]
+      },
+      "ease": {
+        "name": "power2.in",
+        "source": "strip",
+        "confidence": 0.65,
+        "evidence": [
+          "visuals/a1/b02-exit-2.30.jpg F113-F135 diff rising linearly 0.3 to 5.8",
+          "visuals/a1/b06-exit-7.43.jpg F424-F444 diff 0.1 to 7.7, steepening (expo.in on the third occurrence)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Each cut lands within 24 ms of a beat on the phase-corrected 140 BPM grid (2.283 s beat -4, -3 ms; 4.000 s beat 0 = the drop; 7.433 s beat 8, +4 ms), and the 4.000 s exit starts on the swell at 3.572 s. Not from audio.json's 93 BPM grid, which is a 2:3 artefact, so onBeat is left unset.",
+        "basis": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          "audiomap.json beatsSec shifted to the kick-led phase (beat k at 4.000 + 0.42857k s; see edit.json rhythm)",
+          "edit.json rhythm",
+          "sync.json cutsOnBeatRatio 0 vs chance 0.231 (void: 93 BPM grid, 3 detector cuts)"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "layers": 2,
+      "fromShot": 0,
+      "toShot": 1,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 1.883,
+            "endSec": 2.283
+          },
+          "fromShot": 0,
+          "toShot": 1,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.4,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/b02-exit-2.30.jpg F113-F137"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 3.567,
+            "endSec": 4.0
+          },
+          "fromShot": 1,
+          "toShot": 2,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.433,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/b03-drop-4.00.jpg F214-F240"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 7.067,
+            "endSec": 7.433
+          },
+          "fromShot": 4,
+          "toShot": 5,
+          "timing": {
+            "durationSec": 0.333,
+            "startOffsetFromCutSec": -0.367,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/b06-exit-7.43.jpg F424-F446"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "drop-ground-swap-hero",
+      "name": "Ground swap to the accent on the drop with a hero number",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 4.0,
+          "endSec": 5.283
+        }
+      ],
+      "description": "Hard cut on the drop (F240, 4.000 s) to a full accent ground with a centred number at about 90% of frame width, already at size and still drifting on from the previous exit (diff decaying F243-F257). On the next beat (F265, 4.417 s) it shrinks to about 35% of width: the change peaks F270-F271 and halves about every 4 frames (expo-out, heavy motion blur), settles by F300; it then re-grows for 8 frames (F307-F314, accelerating) into a text swap at F317 (5.283 s).",
+      "route": "remotion",
+      "routeReason": "The hero-word block does the cut with no flash and now carries scale keys (shrink on a beat, settle, re-grow), a drift across the cut and a sub-frame blur shutter (`heroWordShrinkPreset`).",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-hero-word",
+        "heroWordShrinkPreset",
+        "block:ground-swap-cut",
+        "block:motion-blur"
+      ],
+      "timing": {
+        "durationSec": 0.583,
+        "startOffsetFromCutSec": 0.417,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b04-shrink.jpg F265-F300",
+          "visuals/a1/b03-drop-4.00.jpg F240"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.3
+          },
+          {
+            "part": "main",
+            "name": "expo.out",
+            "durationSec": 0.583
+          },
+          {
+            "part": "exit",
+            "name": "power2.in",
+            "durationSec": 0.133
+          }
+        ],
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/b03-drop-4.00.jpg F243-F257 drift decay",
+          "visuals/a1/b04-shrink.jpg F265-F300 diff 5.1 to 10.2 then halving every 4 frames",
+          "visuals/a1/b05-swap-5.30.jpg F307-F314 re-grow, diff rising 0.2 to 2.0"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "The ground swap is the drop (beat 0 of the corrected grid; full-band swell at 4.006 s, low band 4.021 s, audiomap surge 4.051 s). The shrink starts on beat 1 (4.429 s on the grid; the strip shows F265, 4.417 s).",
+        "basis": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          "edit.json signatureMoves[0] evidence",
+          "audiomap.json keyMoments surge 4.051",
+          "audiomap.json beatsSec shifted to the kick-led phase (beat k at 4.000 + 0.42857k s; see edit.json rhythm)"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "hero number",
+        "entry": "already at full size on the cut, then blurred shrink on the next beat",
+        "alignment": "centre",
+        "size": 0.63,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 4.00 s box height 0.63, x 0-0.987",
+          "visuals/a1/drop-cut-4.00.jpg F240"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 1,
+      "toShot": 2,
+      "shots": [
+        "s002.1"
+      ]
+    },
+    {
+      "id": "push-in-text-swaps",
+      "name": "Text swaps on a held ground, each with an ease-out push-in",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 5.283,
+          "endSec": 7.433
+        }
+      ],
+      "description": "Lines are swapped on beats 3 and 5 on the unchanged accent ground (F317, 5.283 s; F369, 6.150 s); each enters at about 80% of its rest size and eases out over about 0.45 s (diff 8.6 on the swap frame, then 1.7 decaying under 0.5 by F340); a subline at 55% opacity follows its line by about 0.13 s (OCR 6.15 then 6.28 s).",
+      "route": "remotion",
+      "routeReason": "Sequences with a scale interpolation; the hero-word block takes a caption.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-hero-word",
+        "track",
+        "curves"
+      ],
+      "timing": {
+        "durationSec": 0.45,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b05-swap-5.30.jpg F317-F344",
+          "visuals/a1/b18-swap-6.17.jpg F369-F377"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/b05-swap-5.30.jpg F318-F344 diff 1.4-1.7 decaying to 0.3"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Both swaps fall on beats 3 and 5 of the corrected grid (-3 ms and +7 ms); onsets lie 35-37 ms before each, but onsets are too dense here (about 5 a second) for that to mean much.",
+        "basis": "inferred",
+        "confidence": 0.6,
+        "evidence": [
+          "audiomap.json beatsSec shifted to the kick-led phase (beat k at 4.000 + 0.42857k s; see edit.json rhythm)",
+          "audio.json onsets 5.248, 6.130 s"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": [
+        {
+          "role": "claim line",
+          "entry": "text swap, scale-up from about 80% on expo-out",
+          "alignment": "centre",
+          "size": 0.179,
+          "basis": "measured",
+          "confidence": 0.8,
+          "evidence": [
+            "speech-text.json screenText 5.28 s box height 0.179, x 0.092-0.908"
+          ]
+        },
+        {
+          "role": "short claim line",
+          "entry": "text swap, scale-up from about 80%",
+          "alignment": "centre",
+          "size": 0.21,
+          "basis": "measured",
+          "confidence": 0.8,
+          "evidence": [
+            "speech-text.json screenText 6.15 s box height 0.21, x 0.228-0.772"
+          ]
+        },
+        {
+          "role": "subline",
+          "entry": "fades in about 0.13 s after its line at reduced opacity",
+          "alignment": "centre",
+          "size": 0.096,
+          "basis": "measured",
+          "confidence": 0.7,
+          "evidence": [
+            "speech-text.json screenText 6.28 s box height 0.096, x 0.295-0.715"
+          ]
+        }
+      ],
+      "layers": 2,
+      "shots": [
+        "s002.2",
+        "s002.3"
+      ],
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 5.283,
+            "endSec": 6.15
+          },
+          "fromShot": 2,
+          "toShot": 3
+        },
+        {
+          "span": {
+            "startSec": 6.15,
+            "endSec": 7.433
+          },
+          "fromShot": 3,
+          "toShot": 4
+        }
+      ]
+    },
+    {
+      "id": "prompt-bar-type-click-freeze",
+      "name": "Prompt bar types, cursor clicks, frame freezes, cut",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 7.433,
+          "endSec": 10.017
+        }
+      ],
+      "description": "A pill prompt bar at about 69% of width rises in on a hard cut and eases out over 0.58 s (F447-F481 at 60 fps); the request types with uneven human rhythm (7.87-9.38 s); an arrow cursor glides to send while the last words type and arrives about 9.22 s; then 35 frames (0.58 s, F566-F600) of absolute stillness before a hard cut at 10.017 s on beat 14 of the corrected grid.",
+      "route": "remotion",
+      "routeReason": "The prompt-bar block now types with human rhythm, takes an optional cursor press and has a `freeze` that holds everything still to the cut; light theme.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:ui-prompt-bar",
+        "typingSchedule",
+        "Cursor"
+      ],
+      "timing": {
+        "durationSec": 2.584,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b07-bar-entry.jpg F446-F485",
+          "visuals/a1/b13-click-approach.jpg F534-F569",
+          "visuals/a1/b08-click-freeze.jpg F566-F601"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "entry",
+            "name": "power3.out",
+            "durationSec": 0.583
+          },
+          {
+            "part": "hold",
+            "name": "none",
+            "durationSec": 0.583
+          }
+        ],
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/b07-bar-entry.jpg F447-F481 diff 0.7 decaying to 0.1",
+          "visuals/a1/b08-click-freeze.jpg F566-F600 diff 0.00"
+        ]
+      },
+      "sound": {
+        "kind": "music-bed",
+        "note": "The music runs on under the freeze; no silence is measured there. The cut out of the freeze sits on beat 14 of the corrected grid (+17 ms). What sound the click makes, if any, is not established.",
+        "basis": "inferred",
+        "confidence": 0.5,
+        "evidence": [
+          "audio.json silence (none before 22.36 s)",
+          "audiomap.json beatsSec shifted to the kick-led phase (beat k at 4.000 + 0.42857k s; see edit.json rhythm)"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "typed request",
+        "entry": "typed character by character with a caret, uneven rhythm",
+        "alignment": "left",
+        "size": 0.04,
+        "basis": "measured",
+        "confidence": 0.75,
+        "evidence": [
+          "speech-text.json screenText 7.87-9.5 s box height 0.036-0.044, x fixed at 0.169"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s004.1"
+      ]
+    },
+    {
+      "id": "real-ui-camera-scroll",
+      "name": "Camera reads a real interface, then a blurred scroll lands on the downbeat",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 10.017,
+          "endSec": 14.75
+        }
+      ],
+      "description": "A light chat window rises in; the answer streams; table rows add downward; the camera drifts up and right with acceleration and pushes in until the window fills; a fast vertical scroll with heavy vertical blur (13.0-14.0 s, blurred rows F822-F840 at 60 fps) turns sharp while still travelling (F842, 14.03 s), is legible on the downbeat at 14.286 s (OCR reads rows from 14.10 s), then decelerates and stops at F885 (14.75 s).",
+      "route": "hyperframes",
+      "routeReason": "The look depends on a real, legible interface. The AI-chat and data-table blocks now stream the answer, fill the table, push the camera and run a blurred scroll that decelerates and lands; for a real product, capture the real interface (`capture:app`) and drive the same camera over it.",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "block:ui-ai-chat",
+        "block:ui-data-table",
+        "block:motion-blur",
+        "RegionCamera",
+        "ScreenPlayback"
+      ],
+      "timing": {
+        "durationSec": 1.75,
+        "startOffsetFromCutSec": 2.983,
+        "basis": "observed",
+        "confidence": 0.65,
+        "evidence": [
+          "visuals/a1/scroll-blur.jpg",
+          "visuals/a1/b09-scroll-land.jpg F822-F866",
+          "visuals/a1/b14-scroll-settle.jpg F864-F885"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "main",
+            "name": "power2.in",
+            "durationSec": 1.0
+          },
+          {
+            "part": "settle",
+            "name": "power3.out",
+            "durationSec": 0.75
+          }
+        ],
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/a1/pan-12.4.jpg F738-F779",
+          "visuals/a1/b09-scroll-land.jpg F840-F850 diff rising 4.0 to 11.4",
+          "visuals/a1/b14-scroll-settle.jpg F865-F885 diff 6.9 halving to 0.1"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Rows turn legible on the downbeat at 14.286 s of the corrected grid; the nearest onset is 14.35 s. Whether a sound marks it is not established.",
+        "basis": "inferred",
+        "confidence": 0.5,
+        "evidence": [
+          "audiomap.json beatsSec shifted to the kick-led phase (beat k at 4.000 + 0.42857k s; see edit.json rhythm)",
+          "audio.json onsets"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "interface text at reading scale",
+        "entry": "streams in as the answer, rows add downward",
+        "alignment": "left",
+        "size": 0.036,
+        "basis": "measured",
+        "confidence": 0.7,
+        "evidence": [
+          "speech-text.json screenText 10.3-13 s box heights 0.025-0.041, columns at x 0.123, 0.275, 0.494, 0.62"
+        ]
+      },
+      "layers": 4,
+      "shots": [
+        "s004.2"
+      ]
+    },
+    {
+      "id": "source-wall-pick",
+      "name": "Wall of named chips pushes in and one is picked",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 17.45,
+          "endSec": 21.5
+        }
+      ],
+      "description": "A dense grid of small named chips dissolves in (17.25-17.52 s), creeps in slowly, then pushes in fast from F1096 (18.267 s at 60 fps): the change ramps up over 5 frames to about 18 a frame (F1101-F1105), then halves about every 15 frames (expo-out) to about 2 by 19.2 s to legible size; from 19.3 s all but one chip fade over about 1.3 s, leaving a single chip with a 'new' badge, held still from 20.63 s until it fades at 21.21 s.",
+      "route": "remotion",
+      "routeReason": "Flat chips on a grid with a camera scale and per-chip opacity. Push checked frame by frame; the isolate on a step-2 strip only.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "stagger",
+        "block:chip-wall"
+      ],
+      "timing": {
+        "durationSec": 0.95,
+        "startOffsetFromCutSec": 0.817,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b17-wall-push.jpg F1095-F1139",
+          "visuals/a1/b15-wall-push-step2.jpg F1098-F1156 (step 2)",
+          "visuals/a1/b16-wall-isolate-step2.jpg F1166-F1240 (step 2)"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/b17-wall-push.jpg F1096-F1139 diff 0.8, 6.9, 11.1, 15.0, 17.4, 18.2 (F1101) then 18.4 to 9.1 by F1119 and 4.6 by F1134"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "No measured event singles out the push (nearest onset 18.228 s, 72 ms early) or the isolate.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsets"
+        ]
+      },
+      "typography": {
+        "role": "chip labels",
+        "entry": "arrive with the wall, readable only after the push",
+        "alignment": "free",
+        "size": 0.019,
+        "basis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json screenText 17.55-17.8 s box heights 0.014-0.023 before the push"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s004.4"
+      ],
+      "techniqueCardId": "chip-wall"
+    },
+    {
+      "id": "fade-through-ground",
+      "name": "Fade through the empty ground, then build the next line",
+      "function": "transition",
+      "spans": [
+        {
+          "startSec": 15.68,
+          "endSec": 16.28
+        },
+        {
+          "startSec": 21.21,
+          "endSec": 21.633
+        }
+      ],
+      "description": "Instead of a cut, the outgoing interface or chip fades to the film's own empty light ground over about 0.28-0.33 s (F941-F957; F1273-F1292 at 60 fps), the bare ground holds 2-8 frames, then the next element arrives on it: a centred sentence fading in word by word (one word every 2-4 frames from F966), or a mark cut on (F1294). It slows the film after the fast proof and resets the eye to centre.",
+      "route": "remotion",
+      "routeReason": "Opacity on the outgoing layer over a shared ground, then the next block's own entry. No primitive missing.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "remotion:TransitionSeries",
+        "remotion:interpolate",
+        "splitWords",
+        "stagger"
+      ],
+      "timing": {
+        "durationSec": 0.6,
+        "startOffsetFromCutSec": -0.267,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b10-dissolve-15.95.jpg F941-F977",
+          "visuals/a1/b12-dissolve-21.50.jpg F1273-F1298"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "exit",
+            "name": "none",
+            "durationSec": 0.28
+          },
+          {
+            "part": "hold",
+            "name": "none",
+            "durationSec": 0.15
+          },
+          {
+            "part": "entry",
+            "name": "power1.out",
+            "durationSec": 0.18
+          }
+        ],
+        "confidence": 0.55,
+        "evidence": [
+          "visuals/a1/b10-dissolve-15.95.jpg F941-F957 diff 0.4-1.3 roughly level",
+          "visuals/a1/b10-dissolve-15.95.jpg F966-F977 word fades"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "Onsets sit within 30 ms of the 15.68 s fade start and 9 ms of the 16.09 s word entry, but at about 5 onsets a second that is near chance.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsets 15.650, 16.091"
+        ]
+      },
+      "typography": {
+        "role": "connective sentence",
+        "entry": "word-by-word fade-in on the bare ground",
+        "alignment": "centre",
+        "size": 0.087,
+        "basis": "measured",
+        "confidence": 0.75,
+        "evidence": [
+          "speech-text.json screenText 16.33 s box height 0.087, x 0.144-0.861"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 6,
+      "toShot": 7,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 15.68,
+            "endSec": 16.28
+          },
+          "fromShot": 6,
+          "toShot": 7,
+          "timing": {
+            "durationSec": 0.6,
+            "startOffsetFromCutSec": -0.267,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/b10-dissolve-15.95.jpg F941-F977"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 21.21,
+            "endSec": 21.633
+          },
+          "fromShot": 8,
+          "toShot": 9,
+          "timing": {
+            "durationSec": 0.423,
+            "startOffsetFromCutSec": -0.29,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/b12-dissolve-21.50.jpg F1273-F1298"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "flat-logo-hard-stop",
+      "name": "Flat logo with crop marks and a sound hard stop",
+      "function": "cta",
+      "spans": [
+        {
+          "startSec": 21.21,
+          "endSec": 22.9
+        }
+      ],
+      "description": "The last chip fades to the empty light ground (21.21-21.53 s); the flame mark cuts on alone at F1294 (21.557 s), the wordmark beside it at F1298 (21.633 s) with a short settle; small, centred, with faint corner crop marks. The music stops dead at 22.36 s (audio.json silence to the end) and the picture holds.",
+      "route": "remotion",
+      "routeReason": "Static vector card; the hard stop is an edit of the music. The end-card block covers the card.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:scene-end-card"
+      ],
+      "timing": {
+        "durationSec": 0.076,
+        "startOffsetFromCutSec": 0.057,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/b12-dissolve-21.50.jpg F1294-F1298"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/b12-dissolve-21.50.jpg F1294 mark on, F1298 wordmark on, each in one frame"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "audio.json measures silence from 22.357 s to the end (22.955 s), about 0.8 s after the mark lands: the music stops dead under a held picture.",
+        "basis": "measured",
+        "confidence": 0.85,
+        "evidence": [
+          "audio.json silence 22.357-22.955",
+          "audiomap.json keyMoments hard-stop 22.419"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "mark first, wordmark 4 frames later, both cut on",
+        "alignment": "centre",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/b12-dissolve-21.50.jpg F1298",
+          "visuals/a1/logo-end.jpg"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s004.5"
+      ]
+    }
+  ]
+}

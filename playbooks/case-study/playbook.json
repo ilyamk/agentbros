@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "id": "case-study",
+  "title": "Customer case study",
+  "status": "draft",
+  "reviewedAt": "2026-11-13",
+  "summary": "A customer case study or testimonial film from a recorded interview with a client: situation, problem, why this product, what changed, signed-off numbers, 60 s to 3 min plus cut-downs.",
+  "triggers": {
+    "en": [
+      "case study video",
+      "customer case study",
+      "customer story",
+      "customer testimonial",
+      "testimonial interview",
+      "testimonial video",
+      "client testimonial",
+      "client interview",
+      "interview with our client",
+      "interview with a customer",
+      "success story",
+      "customer success video",
+      "customer success",
+      "story from the interview",
+      "story from this interview",
+      "testimonial",
+      "customer success interview",
+      "interview with a client"
+    ],
+    "ru": [
+      "кейс клиента",
+      "видеокейс",
+      "видео кейс",
+      "видеоотзыв клиента",
+      "видеоотзыв",
+      "отзыв клиента",
+      "отзыв заказчика",
+      "интервью с клиентом",
+      "интервью с заказчиком",
+      "история клиента",
+      "история успеха",
+      "кейс заказчика",
+      "кейс из интервью",
+      "кейс из записи",
+      "видеокейс для",
+      "клиентский кейс",
+      "историю успеха",
+      "для кейса",
+      "сделай кейс",
+      "смонтируй кейс",
+      "смонтируй видеоотзыв",
+      "видеоотзыв из",
+      "видеокейс для сайта",
+      "история нашего клиента",
+      "ролик о клиенте"
+    ],
+    "zh": [
+      "客户案例",
+      "案例视频",
+      "案例片",
+      "客户故事",
+      "用户故事",
+      "客户见证",
+      "客户证言",
+      "用户证言",
+      "客户访谈",
+      "客户采访",
+      "采访客户",
+      "案例访谈",
+      "成功案例",
+      "成功故事",
+      "标杆案例",
+      "客户评价视频",
+      "客户心声",
+      "合作案例",
+      "访谈"
+    ],
+    "generic": [
+      "访谈"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the user wants the recording only cleaned up (silences, fillers, subtitles) in its own order, with no story built from it",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a short native vertical ad (15-60 s) where a customer or creator talks to camera for TikTok, Reels or Shorts, not a recorded customer interview built into a story",
+      "use": "ugc-ad"
+    },
+    {
+      "when": "only short vertical clips are wanted from the interview, with no case-study master",
+      "use": "shorts-from-long"
+    },
+    {
+      "when": "no customer was recorded: a launch film or ad that sells the product in its own voice",
+      "use": "product-promo"
+    },
+    {
+      "when": "the film teaches how the product works with diagrams and a voice-over, not a customer's experience",
+      "use": "explainer"
+    }
+  ],
+  "route": {
+    "kind": "footage",
+    "footageGoals": [
+      "recut",
+      "captions"
+    ],
+    "start": "pnpm footage:next --project <id> --playbook case-study --source <file> --goal recut,captions"
+  },
+  "alternatives": [
+    {
+      "when": "the approved paper edit keeps soundbites in recording order: the selects become the keep spans of a hand-made recording-edit request",
+      "route": {
+        "kind": "workflow",
+        "workflow": "recording-edit",
+        "start": "pnpm video:workflow --scenario recording-edit --action plan --request <file>"
+      }
+    },
+    {
+      "when": "the approved paper edit reorders soundbites (a footage timeline keeps source order; lower thirds and callouts work on it with timeline:edit add-overlay): a bespoke talking-head film plays each select by its source times",
+      "route": {
+        "kind": "film",
+        "filmType": "talking-head",
+        "start": "pnpm film:init --project <id> --type talking-head --playbook case-study --product <path>"
+      }
+    }
+  ],
+  "agents": [
+    "footage-editor"
+  ],
+  "skills": [
+    "recording-recut",
+    "editorial-storytelling",
+    "captions-and-localization",
+    "motion-library",
+    "sound-design-and-mix",
+    "recording-guide"
+  ],
+  "library": {
+    "categories": [
+      "captions",
+      "typography",
+      "data"
+    ],
+    "blocks": [
+      "caption-clean-sentence",
+      "caption-line-box",
+      "type-odometer-stat",
+      "type-number-race",
+      "before-after-split",
+      "scene-stat-moment",
+      "type-lower-third",
+      "doubling-counter-montage"
+    ]
+  },
+  "commands": [
+    "footage:next",
+    "project:new",
+    "speech:local",
+    "transcribe",
+    "recut:plan",
+    "video:workflow",
+    "timeline:edit",
+    "captions:place",
+    "captions:export",
+    "multicam:sync",
+    "multicam:angles",
+    "media:broll",
+    "capture:app",
+    "asset:import",
+    "film:init",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/real-ui.md",
+    "playbooks/footage-edit/AGENTS.md"
+  ],
+  "stepRead": {
+    "3-recut-plan": [
+      "docs/workflows/recording-edit.md"
+    ],
+    "4-create": [
+      "docs/workflows/recording-edit.md"
+    ]
+  },
+  "qa": [
+    "Every soundbite keeps the customer's meaning in context: no answer spliced into a claim the customer did not make",
+    "Every number on screen or spoken matches the client's signed-off list, with its period and baseline",
+    "A result the client signed off as not typical carries an on-screen statement of what customers generally achieve",
+    "Any discount, free period, payment or partnership the client received is disclosed on screen",
+    "Lower thirds name the person and role as the client approved them; product screens are the real product"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Has every person on camera signed a release that covers this film, its cut-downs, the platforms and the period of use?",
+      "why": "Without a release the film cannot be published; the licence text goes into the recording-edit request's source.rights"
+    },
+    {
+      "ask": "Who at the client approves the story cut and the numbers, and which figures, with period and baseline, are they willing to show?",
+      "why": "Every number on screen needs the client's sign-off and its substantiation; FTC 16 CFR 255.2"
+    },
+    {
+      "ask": "Did the client receive anything for taking part or as a customer that viewers would not expect: discount, free months, payment, partnership?",
+      "why": "A material connection must be disclosed clearly; FTC 16 CFR 255.5"
+    },
+    {
+      "ask": "Is the client's result typical of what customers generally achieve?",
+      "why": "If not, the film states what customers can generally expect, with substantiation; FTC 16 CFR 255.2(b)",
+      "default": "Not known to be typical: ask the user for the generally expected result before any number goes on screen"
+    },
+    {
+      "ask": "How many cameras, and what B-roll or product access exists (customer site footage, a test account for real screens)?",
+      "why": "Two cameras add multicam; B-roll and real screens cover cuts and carry the proof",
+      "default": "One camera; B-roll only from supplied footage via media:broll; real screens recorded with capture:app"
+    },
+    {
+      "ask": "Which lengths: one master and how many cut-downs, for which platforms?",
+      "why": "The master and cut-downs need separate selects and approvals",
+      "default": "One 90-120 s landscape master and 2-3 vertical cut-downs of 15-45 s through shorts-from-long"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 180
+      },
+      "captions": "clean-sentence",
+      "note": "Length band is a house rule, starting point. Upload in the recorded frame rate, MP4 fast start, AAC 48 kHz; offer a clean render plus SRT (YouTube upload settings help)."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "landscape",
+        "square"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 120
+      },
+      "captions": "clean-sentence",
+      "note": "LinkedIn allows 3 s to 15 min and 1:2.4 to 2.4:1; closed captions only as an SRT attached on desktop before posting. The length band is a house rule, starting point."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 180
+      },
+      "captions": "clean-sentence",
+      "note": "Case-study page or sales deck embed. Length band is a house rule, starting point; no source opened states one."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "type-odometer-stat",
+      "before-after-split",
+      "scene-stat-moment",
+      "caption-clean-sentence",
+      "type-lower-third"
+    ],
+    "note": "Number callouts for a signed-off figure (odometer), a before/after metric pair and a payoff stat card; clean sentence captions for interview speech. type-lower-third names each speaker."
+  },
+  "variants": [
+    {
+      "id": "case-study-multicam",
+      "title": "Two-camera interview",
+      "triggers": {
+        "en": [
+          "two-camera testimonial",
+          "testimonial from two cameras"
+        ],
+        "ru": [
+          "отзыв с двух камер",
+          "кейс с двух камер"
+        ],
+        "zh": [
+          "双机位",
+          "两个机位",
+          "两台摄像机"
+        ]
+      },
+      "changes": "Add multicam to --goal with --cameras <files>; multicam:sync then multicam:angles; a cut to the second angle hides a jump inside an answer. The paper edit still decides the order."
+    },
+    {
+      "id": "case-study-short-testimonial",
+      "title": "Short testimonial",
+      "triggers": {
+        "en": [
+          "short testimonial",
+          "short customer testimonial"
+        ],
+        "ru": [
+          "короткий видеоотзыв",
+          "короткий отзыв клиента"
+        ],
+        "zh": [
+          "短版证言",
+          "简短证言",
+          "短证言"
+        ]
+      },
+      "changes": "15-45 s cut-down of a case-study master: one problem, one change, one signed-off number. Run as shorts-from-long on the same source project, with the same release and sign-off. A short ad cut for the feed goes to ugc-ad."
+    },
+    {
+      "id": "case-study-several-voices",
+      "title": "Several people from the client",
+      "triggers": {
+        "en": [
+          "several customers",
+          "testimonials from several customers"
+        ],
+        "ru": [
+          "несколько клиентов",
+          "отзывы нескольких клиентов"
+        ],
+        "zh": [
+          "多位客户",
+          "多个客户",
+          "几位客户",
+          "多名客户"
+        ]
+      },
+      "changes": "Diarise (--speakers N); one person carries the arc, the others answer one beat each; each needs a release and a lower third. Separate recordings cannot share one reviewed recording edit: use the talking-head film route."
+    }
+  ]
+}

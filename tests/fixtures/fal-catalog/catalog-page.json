@@ -1,0 +1,1511 @@
+{
+ "has_more": false,
+ "models": [
+  {
+   "endpoint_id": "blackforestlabs/flux-3/klein/base/trainer",
+   "metadata": {
+    "category": "training",
+    "date": "2026-10-26T18:52:25.583Z",
+    "description": "Fine-tune FLUX 3 Image Klein with your own images to teach it a subject, a product or a style.",
+    "display_name": "FLUX 3 Klein LoRA Trainer",
+    "group": {
+     "key": "flux-3-klein",
+     "label": "LoRA Trainer"
+    },
+    "highlighted": false,
+    "inference_endpoint_ids": [
+     "blackforestlabs/flux-3/klein/base/text-to-image/lora"
+    ],
+    "is_favorited": null,
+    "kind": "training",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/blackforestlabs/flux-3/klein/base/trainer",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "flux",
+     "lora",
+     "fine-tuning"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaff688/9XnTdtDntV4dGEijL9iRb.jpg",
+    "updated_at": "2026-11-12T03:23:13.576Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "bria/fibo-edit/edit/structured_instruction",
+   "metadata": {
+    "category": "text-to-json",
+    "date": "2026-01-20T11:55:38.689Z",
+    "description": "Structured Instructions Generation endpoint for Fibo Edit, Bria's newest editing model.",
+    "display_name": "Fibo Edit [Structured Instruction]",
+    "group": {
+     "key": "fibo-edit",
+     "label": "Structured Instruction"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/bria/fibo-edit/edit/structured_instruction",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "structured-prompt-generation",
+     "fibo-edit",
+     "json"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a8b2483/UZdf2yfDnuLfTMdQeTNzT_328d7729251342ac8fbc5c8721feb5c5.jpg",
+    "updated_at": "2026-01-26T21:41:28.558Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "bria/fibo-lite/generate/structured_prompt",
+   "metadata": {
+    "category": "text-to-json",
+    "date": "2026-01-19T10:37:06.298Z",
+    "description": "Convert plain text into Fibo-Lite's transparent JSON-structured prompts - Bria's unique controllability layer that no closed model offers. Built for agentic and enterprise workflows.",
+    "display_name": "Fibo Lite",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/bria/fibo-lite/generate/structured_prompt",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "bria",
+     "fibo",
+     "structured-prompt"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a8b00e9/MkX4-gN9W49Ijknjs_Qzh_ef502877702747e39edfab1d2fe5a86f.jpg",
+    "updated_at": "2026-05-20T14:20:29.249Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "bytedance/seedream/v5/lite/edit",
+   "metadata": {
+    "category": "image-to-image",
+    "date": "2026-07-08T22:33:11.888Z",
+    "description": "Image editing endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent image editing with multiple inputs.",
+    "display_name": "Seedream",
+    "group": {
+     "key": "seedream-5.0",
+     "label": "Image Editing (Lite)"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/bytedance/seedream/v5/lite/edit",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "bytedance",
+     "seedream-5.0-lite",
+     "edit"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9c2fb5/PIUPm_8kBdpdBoSkOebbz_bcfdbe1021324995bf3c36b05ab59c2c.jpg",
+    "updated_at": "2026-07-17T03:48:03.287Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/ace-step/audio-outpaint",
+   "metadata": {
+    "category": "audio-to-audio",
+    "date": "2025-05-11T17:57:21.159Z",
+    "description": "Extend the beginning or end of provided audio with lyrics and/or style using ACE-Step",
+    "display_name": "ACE Step Audio Outpaint",
+    "group": {
+     "key": "ace-step",
+     "label": "Audio Outpaint (Extend)"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/ace-step/audio-outpaint",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "audio-to-audio",
+     "audio-outpaint",
+     "audio-extend"
+    ],
+    "thumbnail_url": "https://storage.googleapis.com/fal_cdn/fal/Sound-3.jpg",
+    "updated_at": "2026-10-20T21:58:41.715Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/aura-sr",
+   "metadata": {
+    "category": "image-to-image",
+    "date": "2024-04-11T00:00:00.000Z",
+    "description": "Upscale your images with AuraSR.",
+    "display_name": "AuraSR",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/aura-sr",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "upscaling",
+     "high-res"
+    ],
+    "thumbnail_animated_url": "https://storage.googleapis.com/falserverless/gallery/aurasr-animated.webp",
+    "thumbnail_url": "https://v3.fal.media/files/koala/rW7Rhmjtkjvb8gnOPUhNN_b14088de7d684d4b8489db59d53ae3f7.jpg",
+    "updated_at": "2026-05-05T23:02:23.362Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/birefnet",
+   "metadata": {
+    "category": "image-to-image",
+    "date": "2024-02-27T00:00:00.000Z",
+    "description": "bilateral reference framework (BiRefNet) for high-resolution dichotomous image segmentation (DIS)",
+    "display_name": "Birefnet Background Removal",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/birefnet",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "background removal",
+     "segmentation",
+     "high-res",
+     "utility"
+    ],
+    "thumbnail_animated_url": "https://storage.googleapis.com/falserverless/gallery/birefnet-animated.webp",
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/gallery/birefnet.webp",
+    "updated_at": "2026-05-13T20:07:10.362Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/elevenlabs/tts/turbo-v2.5",
+   "metadata": {
+    "category": "text-to-speech",
+    "date": "2025-02-27T00:00:00.000Z",
+    "description": "Generate high-speed text-to-speech audio using ElevenLabs TTS Turbo v2.5.",
+    "display_name": "ElevenLabs TTS Turbo v2.5",
+    "group": {
+     "key": "elevenlabs-audio",
+     "label": "TTS Turbo v2.5"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/elevenlabs/tts/turbo-v2.5",
+    "pinned": false,
+    "status": "active",
+    "stream_url": "https://fal.run/fal-ai/elevenlabs/tts/turbo-v2.5/stream",
+    "tags": [
+     "audio"
+    ],
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/web-examples/elevenlabs/elevenlabs_thumbnail.webp",
+    "updated_at": "2026-11-08T03:23:18.954Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/ffmpeg-api/metadata",
+   "metadata": {
+    "category": "json",
+    "date": "2025-01-22T00:00:00.000Z",
+    "description": "Get encoding metadata from video and audio files using FFmpeg API.",
+    "display_name": "FFmpeg API Metadata",
+    "highlighted": false,
+    "is_favorited": null,
+    "model_url": "https://fal.run/fal-ai/ffmpeg-api/metadata",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "ffmpeg"
+    ],
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/gallery/ffmpeg-api-metadata.webp",
+    "updated_at": "2026-04-21T17:45:39.358Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/ffmpeg-api/waveform",
+   "metadata": {
+    "category": "json",
+    "date": "2025-01-22T00:00:00.000Z",
+    "description": "Get waveform data from audio files using FFmpeg API.",
+    "display_name": "FFmpeg API Waveform",
+    "highlighted": false,
+    "is_favorited": null,
+    "model_url": "https://fal.run/fal-ai/ffmpeg-api/waveform",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "ffmpeg"
+    ],
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/gallery/ffmpeg-api-waveform.webp",
+    "updated_at": "2026-04-21T17:45:40.055Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/flux/schnell",
+   "metadata": {
+    "category": "text-to-image",
+    "date": "2024-11-25T00:00:00.000Z",
+    "description": "FLUX.1 [schnell] is a 12 billion parameter flow transformer that generates high-quality images from text in 1 to 4 steps, suitable for personal and commercial use.",
+    "display_name": "FLUX.1 [schnell]",
+    "github_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "group": {
+     "key": "flux-1",
+     "label": "Text to Image [schnell]"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/flux/schnell",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9af64d/GxvCUPd3gO-MSYcy06g0x_1641cfe028c2429b8e12e4fc320eb0a8.jpg",
+    "updated_at": "2026-06-24T23:02:10.109Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/flux/srpo",
+   "metadata": {
+    "category": "text-to-image",
+    "date": "2025-09-15T23:01:28.380Z",
+    "description": "FLUX.1 SRPO [dev] is a 12 billion parameter flow transformer that generates high-quality images from text with incredible aesthetics. It is suitable for personal and commercial use.",
+    "display_name": "FLUX.1 SRPO [dev]",
+    "group": {
+     "key": "srpo-models-og",
+     "label": "Text to Image [dev]"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/flux/srpo",
+    "pinned": false,
+    "status": "active",
+    "stream_url": "https://fal.run/fal-ai/flux/srpo/stream",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9f922c/6Vo52961ugiywy7MrAPfh_M5gEUDZC.png",
+    "updated_at": "2026-06-24T11:32:55.390Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/hunyuan-3d/v3.1/rapid/text-to-3d",
+   "metadata": {
+    "category": "text-to-3d",
+    "date": "2026-01-29T11:55:24.432Z",
+    "description": "Create detailed, fully-textured 3D models with text",
+    "display_name": "Hunyuan 3d",
+    "group": {
+     "key": "hunyuan-3d",
+     "label": "Rapid Text to 3D"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/hunyuan-3d/v3.1/rapid/text-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "3d"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a8c542a/Qd0S35nuH5GWzvOH_eHjh_6812a7e9398647bab9255951a2b64306.jpg",
+    "updated_at": "2026-10-20T22:15:15.070Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/kling-video/v2.6/pro/text-to-video",
+   "metadata": {
+    "category": "text-to-video",
+    "date": "2025-12-02T09:03:38.171Z",
+    "description": "Kling 2.6 Pro: Top-tier text-to-video with cinematic visuals, fluid motion, and native audio generation.",
+    "display_name": "Kling Video v2.6 Text to Video",
+    "group": {
+     "key": "kling-video/v2.6",
+     "label": "Text to Video"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/kling-video/v2.6/pro/text-to-video",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a84aab6/uMErfUYxq7gJBJ0-MOKS7_2640fde44b6049a59bc34adf72e38ed7.jpg",
+    "updated_at": "2026-10-20T22:32:30.535Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/kling-video/v3/pro/text-to-video",
+   "metadata": {
+    "category": "text-to-video",
+    "date": "2026-02-04T15:48:44.935Z",
+    "description": "Kling 3.0 Pro: Top-tier text-to-video with cinematic visuals, fluid motion, and native audio generation, with multi-shot support.",
+    "display_name": "Kling Video v3 Text to Video [Pro]",
+    "group": {
+     "key": "kling-v3",
+     "label": "Text to Video (pro)"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/kling-video/v3/pro/text-to-video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "text-to-video"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a8cfd13/t6TSkWzl6cFAzvO1PCdDu_f38263f637d245929f03881454951540.jpg",
+    "updated_at": "2026-04-26T22:25:17.147Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/ltx-2.3-22b/distilled/audio-to-video",
+   "metadata": {
+    "category": "audio-to-video",
+    "date": "2026-03-14T02:11:27.459Z",
+    "description": "Generate video with audio from audio, text and images using LTX-2 Distilled",
+    "display_name": "LTX-2.3 22B Distilled",
+    "group": {
+     "key": "ltx-2.3-22b-distilled",
+     "label": "Audio to Video"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/ltx-2.3-22b/distilled/audio-to-video",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a921379/PSJsS-py9Xj61wt0olw0L_5ac0e2534f9d42f8b17ba6ac1d932ef2.jpg",
+    "training_endpoint_ids": [
+     "fal-ai/ltx23-video-trainer"
+    ],
+    "updated_at": "2026-10-20T22:09:37.747Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/ltx-video-13b-distilled/image-to-video",
+   "metadata": {
+    "category": "image-to-video",
+    "date": "2025-05-17T01:59:46.017Z",
+    "description": "Generate videos from prompts and images using LTX Video-0.9.7 13B Distilled and custom LoRA",
+    "display_name": "LTX Video-0.9.7 13B Distilled",
+    "group": {
+     "key": "ltx-video-13b-distilled",
+     "label": "Image to Video"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/ltx-video-13b-distilled/image-to-video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "video",
+     "ltx-video",
+     "image-to-video"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9f922a/E8s8t2FBPrzze7IbGqvtY_h2ZGIzJR.png",
+    "training_endpoint_ids": [
+     "fal-ai/ltx-video-trainer"
+    ],
+    "updated_at": "2026-07-13T19:05:24.786Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/meshy/rigging/multi-animation",
+   "metadata": {
+    "category": "3d-to-3d",
+    "date": "2026-06-12T21:21:20.978Z",
+    "description": "Meshy auto-rigs a humanoid 3D model fitting a skeleton and binding the mesh, then applies several motion presets from its animation library",
+    "display_name": "Meshy Rigging Multi Animation",
+    "group": {
+     "key": "Meshy-rig",
+     "label": "Multi Animation"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/meshy/rigging/multi-animation",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "stylized",
+     "transform",
+     "3D"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9e0bf5/ZWAyCMj3wyAm8pM8Fr3Rz_9a891ce4df144559a8d9b169cca63531.jpg",
+    "updated_at": "2026-11-11T23:21:38.060Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/minimax/preview/speech-2.5-hd",
+   "metadata": {
+    "category": "text-to-speech",
+    "date": "2025-08-11T09:41:03.032Z",
+    "description": "Generate speech from text prompts and different voices using the MiniMax Speech-02 HD model, which leverages advanced AI techniques to create high-quality text-to-speech.",
+    "display_name": "Minimax",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/minimax/preview/speech-2.5-hd",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "speech"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9f92d1/HmXRZPRtPK9mGJUDtlnu0_59gznpUE.png",
+    "updated_at": "2026-06-24T11:42:01.057Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/moondream3-preview/detect",
+   "metadata": {
+    "category": "vision",
+    "date": "2025-10-09T20:57:37.622Z",
+    "description": "Moondream 3 is a vision language model that brings frontier-level visual reasoning with native object detection, pointing, and OCR capabilities to real-world applications requiring fast, inexpensive inference at scale.",
+    "display_name": "Moondream3 Preview [Detect]",
+    "group": {
+     "key": "moondream3-preview",
+     "label": "Detect"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/moondream3-preview/detect",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "Vision"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/penguin/Ma6NXbAm7Gi18CcciKraL_c5133f964896437ca8fdb88652c1a3b9.jpg",
+    "updated_at": "2026-10-20T22:25:20.686Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/nano-banana",
+   "metadata": {
+    "category": "text-to-image",
+    "date": "2025-08-19T22:11:04.357Z",
+    "description": "Google's famous original image generation and editing model",
+    "display_name": "Nano Banana",
+    "group": {
+     "key": "nano-banana",
+     "label": "Text to Image"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/nano-banana",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "image-generation"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9f91a7/UOFMBU7hW6hqvFYvXHH-o_MZBJlwLt.png",
+    "updated_at": "2026-10-20T21:51:11.766Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/pixverse/c1/transition",
+   "metadata": {
+    "category": "image-to-video",
+    "date": "2026-04-08T21:06:30.683Z",
+    "description": "Create seamless cinematic transitions between two images with PixVerse C1, with native audio and up to 1080p.",
+    "display_name": "PixVerse C1 Transition",
+    "group": {
+     "key": "pixverse-c1",
+     "label": "Transition"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/pixverse/c1/transition",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "video-generation",
+     "transition",
+     "pixverse",
+     "morphing",
+     "1080p",
+     "audio"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a957a29/yTOKdpiOzGEDrcl3TZri4_98c2405835e64049949b4230eb082ce1.jpg",
+    "updated_at": "2026-10-20T22:56:33.748Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/sa2va/4b/video",
+   "metadata": {
+    "category": "vision",
+    "date": "2025-01-13T00:00:00.000Z",
+    "description": "Sa2VA is an MLLM capable of question answering, visual prompt understanding, and dense object segmentation at both image and video levels",
+    "display_name": "Sa2VA 4B Video",
+    "group": {
+     "key": "sa2va",
+     "label": "4B (Video)"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/sa2va/4b/video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "multimodal",
+     "vision"
+    ],
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/gallery/sa2va.webp",
+    "updated_at": "2026-04-21T17:54:17.793Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/sam-audio/visual-separate",
+   "metadata": {
+    "category": "video-to-audio",
+    "date": "2025-12-30T16:16:20.141Z",
+    "description": "Audio separation with SAM Audio. Isolate any sound using natural language\u2014professional-grade audio editing made simple for creators, researchers, and accessibility applications.",
+    "display_name": "Sam Audio",
+    "group": {
+     "key": "sam-audio",
+     "label": "Visual-guided"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/sam-audio/visual-separate",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "video-to-audio",
+     "sam-audio"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a8865ba/oZ7GwnFaLuxD6NEEWYkcM_84e3d234884b41bea323b1bcb5a168e9.jpg",
+    "updated_at": "2026-10-20T22:00:46.414Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+   "metadata": {
+    "category": "audio-to-audio",
+    "date": "2026-05-25T09:16:57.882Z",
+    "description": "Stable Audio 3 Small Music Base audio outpainting is the foundational 459 million parameter checkpoint that extends music tracks via causal continuation guided by text prompts.",
+    "display_name": "Stable Audio 3 Small Music Base Audio Outpainting",
+    "group": {
+     "key": "SA3",
+     "label": "Audio Outpainting Small Music Base"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "music",
+     "extension",
+     "continuation"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9b9b0c/2gdxA9DEL1uyWlprJCdq8_fc0f082c9b354f6e9befbc9813d6b891.jpg",
+    "updated_at": "2026-07-01T04:56:00.169Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/sync-lipsync",
+   "metadata": {
+    "category": "video-to-video",
+    "date": "2025-01-13T00:00:00.000Z",
+    "description": "Generate realistic lipsync animations from audio using advanced algorithms for high-quality synchronization.",
+    "display_name": "sync.so -- lipsync 1.9.0-beta",
+    "group": {
+     "key": "sync-lipsync",
+     "label": "Lipsync 1.9"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/sync-lipsync",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "animation",
+     "lip sync"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a9f91b7/f46PJEg_jLY5eFroMw1C6_GDlUPgmH.png",
+    "updated_at": "2026-11-06T19:24:03.455Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/vggt-1b",
+   "metadata": {
+    "category": "image-to-json",
+    "date": "2026-08-26T18:07:18.035Z",
+    "description": "Turn images or video into a detailed 3D scene with depth, camera poses, and a colored point cloud.",
+    "display_name": "VGGT-1B",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/vggt-1b",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa7e9cc/bd4oJi9H8myTgP1vAmbFt.jpg",
+    "updated_at": "2026-08-26T18:07:18.035Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/wizper",
+   "metadata": {
+    "category": "speech-to-text",
+    "date": "2024-04-08T00:00:00.000Z",
+    "description": "[Experimental] Whisper v3 Large -- but optimized by our inference wizards. Same WER, double the performance!",
+    "display_name": "Wizper (Whisper v3 -- fal.ai edition)",
+    "github_url": "https://github.com/openai/whisper/blob/main/LICENSE",
+    "highlighted": false,
+    "is_favorited": null,
+    "model_url": "https://fal.run/fal-ai/wizper",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "transcription",
+     "speech"
+    ],
+    "thumbnail_animated_url": "https://storage.googleapis.com/falserverless/gallery/wizper-animated.webp",
+    "thumbnail_url": "https://storage.googleapis.com/falserverless/gallery/wizper.webp",
+    "updated_at": "2026-04-21T17:56:32.256Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "fal-ai/workflow-utilities/pick-image-by-index",
+   "metadata": {
+    "category": "workflow",
+    "date": "2026-04-29T18:49:30.952Z",
+    "description": "Choose the Nth image from an image URL list for workflows.\n\n",
+    "display_name": "Workflow Utilities Pick Image By Index",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/fal-ai/workflow-utilities/pick-image-by-index",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a983b72/2jJcszb7aMncZ6AKlkBM-_8378b055ba694a09a3bc9a2bea5f60e9.jpg",
+    "updated_at": "2026-04-30T17:56:42.719Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "hitem3d/hi3d/image-to-3d",
+   "metadata": {
+    "category": "image-to-3d",
+    "date": "2026-07-31T13:47:32.417Z",
+    "description": "Generate 3D models from a single image with Hi3D.",
+    "display_name": "Hi3D Image to 3D",
+    "group": {
+     "key": "hi3d",
+     "label": "Image to 3D"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/hitem3d/hi3d/image-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "image-to-3d",
+     "3d",
+     "mesh"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa4770a/bTDPfMLZ2k4kj3D02kEkS.jpg",
+    "updated_at": "2026-10-20T22:16:23.708Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "hitem3d/hi3d/v3.0/multi-view-to-3d",
+   "metadata": {
+    "category": "image-to-3d",
+    "date": "2026-08-19T15:20:08.039Z",
+    "description": "Generate 3D models from multiple view images using Hi3D V3.0.",
+    "display_name": "Hi3D Multiview to 3D",
+    "group": {
+     "key": "hi3dv3",
+     "label": "Multiview to 3D"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/hitem3d/hi3d/v3.0/multi-view-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "image-to-3d",
+     "multiview-to-3d",
+     "3d"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa6fa9d/uNCL_9mZxOOwQUZ_W1zMI.jpg",
+    "updated_at": "2026-10-20T22:16:36.101Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "hyper3d/rigging",
+   "metadata": {
+    "category": "3d-to-3d",
+    "date": "2026-11-11T09:55:53.299Z",
+    "description": "Hyper3D Rigging automatically rigs existing 3D models with a skeleton for animation.",
+    "display_name": "Hyper3D Rigging",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/hyper3d/rigging",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "3d",
+     "rigging",
+     "skeleton",
+     "character"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0ab205f0/H8Pe63yrL6taaL1aakPRd.jpg",
+    "updated_at": "2026-11-14T03:23:37.036Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "kotoba-technologies/kotoba-sts/v1/realtime_voice",
+   "metadata": {
+    "category": "speech-to-speech",
+    "date": "2026-10-14T02:44:18.898Z",
+    "description": "Speak in one language, hear it in another. Streaming speech-to-speech translation with the translated text alongside the audio.",
+    "display_name": "Kotoba Realtime Speech Translation",
+    "group": {
+     "key": "kotoba-sts",
+     "label": "Kotoba STS"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/kotoba-technologies/kotoba-sts/v1/realtime_voice",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "commercial-use",
+     "speech-to-speech",
+     "translation",
+     "japanese",
+     "realtime",
+     "streaming"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aadb23c/A2DOUOGoU_A4Vk_Av-9rZ.jpg",
+    "updated_at": "2026-10-20T22:24:12.989Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "meshy/t2.5/text-to-3d",
+   "metadata": {
+    "category": "text-to-3d",
+    "date": "2026-11-06T20:39:33.342Z",
+    "description": "Meshy T2.5 is Meshy's latest Smart Topology model. It generates a clean, triangle-only 3D mesh with natively separated parts from a text prompt, with a target polycount of up to 30,000 triangles (default 15,000). Preview mode returns the untextured mesh, and full mode textures it with Meshy 7.1; compared with Meshy T2, it produces sharper detail at the cost of longer generation times.",
+    "display_name": "Meshy T2.5 Text to 3D",
+    "group": {
+     "key": "meshy-t2.5",
+     "label": "Text to 3D"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/meshy/t2.5/text-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "3d",
+     "text-to-3d",
+     "smart-topology",
+     "low-poly",
+     "textures",
+     "pbr"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0ab16c19/jQs2tHoLUvyaL598htsIH.jpg",
+    "updated_at": "2026-11-11T03:23:39.973Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "meshy/v7/image-to-3d",
+   "metadata": {
+    "category": "image-to-3d",
+    "date": "2026-08-11T20:28:50.596Z",
+    "description": "Meshy 7 generates 3D models from a single image, with optional textures and PBR maps. Meshy 7.1 is the latest standard model from Meshy.",
+    "display_name": "V7 Image to 3D",
+    "group": {
+     "key": "meshy-v7",
+     "label": "Single Image"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/meshy/v7/image-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "stylized",
+     "transform"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa5f3c9/hFlQE2sioziA6lcKVjDQK.jpg",
+    "updated_at": "2026-11-11T03:23:40.128Z"
+   },
+   "replacement": "meshy/v7.1/image-to-3d",
+   "retires_at": "2026-12-31T08:00:00.000Z"
+  },
+  {
+   "endpoint_id": "meshy/v7/text-to-3d",
+   "metadata": {
+    "category": "text-to-3d",
+    "date": "2026-08-24T10:39:38.619Z",
+    "description": "Meshy 7 generates 3D models from text prompts, with optional textures and PBR maps. Meshy 7.1 is the latest standard model from Meshy.",
+    "display_name": "V7 Text to 3D",
+    "group": {
+     "key": "meshy-v7",
+     "label": "Text to 3D"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/meshy/v7/text-to-3d",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "stylized",
+     "transform"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa79cd0/rdebBYD61TshhQfKFKfUX.jpg",
+    "updated_at": "2026-11-11T03:23:40.117Z"
+   },
+   "replacement": "meshy/v7.1/text-to-3d",
+   "retires_at": "2026-12-31T08:00:00.000Z"
+  },
+  {
+   "endpoint_id": "mureka/api/files/upload",
+   "metadata": {
+    "category": "unknown",
+    "date": "2026-10-26T16:54:29.638Z",
+    "description": "Upload files to Mureka to use them in other endpoints",
+    "display_name": "Mureka Upload File",
+    "group": {
+     "key": "mureka-api",
+     "label": "Upload Files"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/api/files/upload",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaff3b7/6heMUaFj3_JE4vj1FhtbV.jpg",
+    "updated_at": "2026-10-30T21:03:13.949Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "mureka/api/generate/lyrics",
+   "metadata": {
+    "category": "text-to-text",
+    "date": "2026-09-15T14:06:38.386Z",
+    "description": "Writes song lyrics and a title from a text prompt describing a topic, theme, or song concept.",
+    "display_name": "Mureka Lyrics Generation",
+    "group": {
+     "key": "mureka-api",
+     "label": "Lyrics Generation"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/api/generate/lyrics",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "music",
+     "lyrics",
+     "text generation"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaa61a6/_2ZMnrW2RO3eBpuEN5Qmr.jpg",
+    "updated_at": "2026-10-30T21:10:42.417Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "mureka/api/generate/speech",
+   "metadata": {
+    "category": "text-to-audio",
+    "date": "2026-09-15T14:16:37.857Z",
+    "description": "Synthesizes speech from text using a built-in voice preset or an uploaded custom voice.",
+    "display_name": "Mureka Speech Generation",
+    "group": {
+     "key": "mureka-api",
+     "label": "Speech Generation"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/api/generate/speech",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "speech",
+     "text to speech",
+     "voice"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaa61da/W8yYhfA_YR6yVzWvoIAbh.jpg",
+    "updated_at": "2026-10-30T21:14:04.490Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "mureka/api/song/recognize",
+   "metadata": {
+    "category": "audio-to-text",
+    "date": "2026-09-15T14:24:35.207Z",
+    "description": "Analyzes an uploaded song and returns its duration and recognized lyrics with timing information when available.",
+    "display_name": "Mureka Lyrics Recognition",
+    "group": {
+     "key": "mureka-api",
+     "label": "Lyrics Recognition"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/api/song/recognize",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "music",
+     "lyrics recognition",
+     "timestamps"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaa6201/nQWCO2M-7uajMdYaDc1a6.jpg",
+    "updated_at": "2026-10-30T21:11:07.271Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "mureka/v8/generate/song",
+   "metadata": {
+    "category": "text-to-audio",
+    "date": "2026-10-23T16:24:49.308Z",
+    "description": "Generates songs from a text prompt or supplied lyrics, with musical style, vocal, reference-audio, and melody controls, plus support for multiple variations.",
+    "display_name": "Mureka 8 Song Generation",
+    "group": {
+     "key": "mureka-v8",
+     "label": "Song Generation"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/v8/generate/song",
+    "pinned": false,
+    "status": "active",
+    "stream_url": "https://fal.run/mureka/v8/generate/song/stream",
+    "tags": [
+     "music",
+     "vocals",
+     "song generation"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaf8dce/0lFfMSKWP3ocUh7XnGkO8.jpg",
+    "updated_at": "2026-10-30T21:14:41.867Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "mureka/v9.5/generate/soundtrack",
+   "metadata": {
+    "category": "video-to-audio",
+    "date": "2026-09-14T10:31:43.654Z",
+    "description": "Generates soundtracks from an uploaded image or video, with optional style and mood guidance, audio-range selection, and multiple variations.",
+    "display_name": "Mureka 9.5 Soundtrack Generation",
+    "group": {
+     "key": "mureka-v9.5",
+     "label": "Soundtrack Generation"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/mureka/v9.5/generate/soundtrack",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "music",
+     "soundtrack",
+     "image to audio",
+     "video to audio"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaa61d4/G48sHKsdgHRQHXejl6iDh.jpg",
+    "updated_at": "2026-10-30T21:16:35.510Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "nvidia/nemotron-3-5-super/video",
+   "metadata": {
+    "category": "video-to-text",
+    "date": "2026-10-15T01:11:43.143Z",
+    "description": "Ask NVIDIA Nemotron 3.5 Super about a video clip: summarize what happens, find moments and reason across frames.",
+    "display_name": "NVIDIA Nemotron 3.5 Super Video",
+    "group": {
+     "key": "nvidia/nemotron-3-5-super",
+     "label": "Video"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/nvidia/nemotron-3-5-super/video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "video-understanding",
+     "multimodal",
+     "reasoning"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aae6a6c/eHiNQu9WXSmGnQd1OdvB-.jpg",
+    "updated_at": "2026-10-18T16:14:59.295Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "nvidia/nemotron-3-5-super/vision",
+   "metadata": {
+    "category": "image-to-text",
+    "date": "2026-10-15T01:10:24.662Z",
+    "description": "Ask NVIDIA Nemotron 3.5 Super questions about an image: describe scenes, read text and charts, and reason over what it sees.",
+    "display_name": "NVIDIA Nemotron 3.5 Super Vision",
+    "group": {
+     "key": "nvidia/nemotron-3-5-super",
+     "label": "Vision"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/nvidia/nemotron-3-5-super/vision",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "vision",
+     "multimodal",
+     "reasoning"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aae6a64/kGOr2OYoleoFns6PK56xV.jpg",
+    "updated_at": "2026-10-18T16:14:59.295Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "nvidia/nemotron-3-nano-omni",
+   "metadata": {
+    "category": "llm",
+    "date": "2026-04-27T21:36:29.130Z",
+    "description": "Open, efficient reasoning model from NVIDIA. 30B A3B hybrid Transformer-Mamba MoE, built for enterprise agentic workflows.",
+    "display_name": "Nemotron 3 Nano Omni",
+    "group": {
+     "key": "nemotron-3",
+     "label": "Text"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/nvidia/nemotron-3-nano-omni",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "nemotron",
+     "nvidia",
+     "reasoning",
+     "llm",
+     "agentic",
+     "agents",
+     "instruct",
+     "open-weights",
+     "hybrid-moe",
+     "mamba",
+     "30b-a3b",
+     "long-context"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a97fbd9/If5ov--ixg3WLwZO41VX7_adc5fcfe153c4ff5b57fd501934b4a99.jpg",
+    "updated_at": "2026-04-30T23:00:40.088Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "nvidia/nemotron-3-nano-omni/video",
+   "metadata": {
+    "category": "video-to-text",
+    "date": "2026-04-27T21:44:33.078Z",
+    "description": "Video reasoning variant of NVIDIA's Nemotron 3 Nano Omni. 30B A3B hybrid Transformer-Mamba MoE - accepts video plus a prompt and returns text.",
+    "display_name": "Nemotron 3 Nano Omni",
+    "group": {
+     "key": "nemotron-3",
+     "label": "Video"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/nvidia/nemotron-3-nano-omni/video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "nemotron",
+     "nvidia",
+     "video-to-text",
+     "video-understanding",
+     "video-reasoning",
+     "reasoning",
+     "agentic",
+     "agents",
+     "open-weights",
+     "hybrid-moe",
+     "mamba",
+     "30b-a3b"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a97fc0c/IvpJSkmN4FKa3qtjq1cwG_c50977be73724e55afe22e21c722e382.jpg",
+    "updated_at": "2026-05-13T14:51:21.172Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "nvidia/nemotron-3-nano-omni/vision",
+   "metadata": {
+    "category": "image-to-text",
+    "date": "2026-04-27T21:46:49.986Z",
+    "description": "Vision reasoning variant of NVIDIA's Nemotron 3 Nano Omni. 30B A3B hybrid Transformer-Mamba MoE - accepts an image plus a prompt and returns text.",
+    "display_name": "Nemotron 3 Nano Omni",
+    "group": {
+     "key": "nemotron-3",
+     "label": "Image"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/nvidia/nemotron-3-nano-omni/vision",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "nemotron",
+     "nvidia",
+     "image-to-text",
+     "vision-language",
+     "vision-reasoning",
+     "reasoning",
+     "agentic",
+     "agents",
+     "open-weights",
+     "hybrid-moe",
+     "mamba",
+     "30b-a3b"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a97fc1a/44YyOoFOCrsAmXpvExbhN_bf489eed741849bf89170edd15436191.jpg",
+    "updated_at": "2026-04-30T23:01:03.594Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "openrouter/router/audio",
+   "metadata": {
+    "category": "unknown",
+    "date": "2025-12-22T17:15:42.947Z",
+    "description": " Run any audio capable LLM with fal. Process audio files \u2014 transcription, analysis, understanding \u2014 using Gemini (Google) models. Supports wav, mp3, aiff, aac, ogg, flac, m4a. Powered by OpenRouter.",
+    "display_name": "OpenRouter [Audio]",
+    "group": {
+     "key": "openrouter/router",
+     "label": "Any ALM"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/openrouter/router/audio",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0a87593d/pDGPXXb694Rjgst08FkUa_60fe8689185944889b162dc64de6cffc.jpg",
+    "updated_at": "2026-10-22T21:38:59.809Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "openrouter/router/decisions",
+   "metadata": {
+    "category": "text-to-text",
+    "date": "2026-09-21T22:13:11.671Z",
+    "description": "Run any decision model with fal, powered by OpenRouter.",
+    "display_name": "Router",
+    "group": {
+     "key": "openrouter/router",
+     "label": "Any Decision LM"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/openrouter/router/decisions",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     ""
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aab5dfd/ZFqJBkwm3xEp_FfpTvAYV.jpg",
+    "updated_at": "2026-11-10T03:23:46.810Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "openrouter/router/openai/v1/responses",
+   "metadata": {
+    "category": "llm",
+    "date": "2025-11-13T01:10:03.312Z",
+    "description": "The OpenRouter Responses API with fal, powered by OpenRouter, provides unified access to a wide range of large language models - including GPT, Claude, Gemini, and many others through a single API interface.",
+    "display_name": "OpenRouter Responses [OpenAI Compatible]",
+    "group": {
+     "key": "openrouter/router",
+     "label": "Responses [OpenAI Compatible]"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/openrouter/router/openai/v1/responses",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/zebra/zzqFHzVP-OnSBa7ZfwPOY_14fce1eeccb749c4bdbb74a46a169432.jpg",
+    "updated_at": "2026-05-06T21:21:33.117Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "topaz/sdr-to-hdr/video",
+   "metadata": {
+    "category": "video-to-video",
+    "date": "2026-08-11T21:02:27.760Z",
+    "description": "Professional SDR-to-HDR conversion powered by Topaz Labs. Hyperion 2.5 redistributes luminance and color while preserving detail in text, faces and motion. Best for giving flat SDR footage a true HDR look.",
+    "display_name": "Topaz Sdr To Hdr Video",
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/topaz/sdr-to-hdr/video",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "Sdr",
+     "video",
+     "hdr"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa5f408/lYPF0zAsvN4YNzqdxmndB.jpg",
+    "updated_at": "2026-09-05T01:07:15.958Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "vast/eden-live-14b-video",
+   "metadata": {
+    "category": "video-to-video",
+    "date": "2026-10-22T22:05:06.857Z",
+    "description": "Real-time generative rendering from any reference using VAST's Eden Live 14B",
+    "display_name": "Eden Live 14B Video",
+    "group": {
+     "key": "eden-live",
+     "label": "Video-to-Video 14B"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/vast/eden-live-14b-video",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaf725e/yXyVnnEY_pdIhXqP0R-In.jpg",
+    "updated_at": "2026-10-23T20:58:27.445Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "vast/eden-live-5b-game",
+   "metadata": {
+    "category": "worlds",
+    "date": "2026-10-22T22:29:26.383Z",
+    "description": "Real-time games rendered using VAST's Eden Live 5B",
+    "display_name": "Eden Live 5B Game",
+    "group": {
+     "key": "eden-live",
+     "label": "Game 5B"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/vast/eden-live-5b-game",
+    "pinned": false,
+    "status": "active",
+    "tags": [],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aaf73f7/QYuxF1s5ZapTGmWCwcKig.jpg",
+    "updated_at": "2026-10-23T20:58:10.730Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  },
+  {
+   "endpoint_id": "xai/grok-voice/realtime",
+   "metadata": {
+    "category": "speech-to-speech",
+    "date": "2026-08-28T00:06:05.321Z",
+    "description": "Build real-time voice applications powered by Grok. Stream audio and text bidirectionally via WebSocket for voice assistants, phone agents, and interactive voice systems.",
+    "display_name": "Grok Voice",
+    "group": {
+     "key": "grok-voice",
+     "label": "Realtime"
+    },
+    "highlighted": false,
+    "is_favorited": null,
+    "kind": "inference",
+    "license_type": "commercial",
+    "model_url": "https://fal.run/xai/grok-voice/realtime",
+    "pinned": false,
+    "status": "active",
+    "tags": [
+     "xai",
+     "grok",
+     "voice",
+     "agent",
+     "realtime",
+     "websocket"
+    ],
+    "thumbnail_url": "https://v3b.fal.media/files/b/0aa814dc/DGD6Y0Y2bgo7uhhhumKGd.jpg",
+    "updated_at": "2026-11-10T03:23:49.031Z"
+   },
+   "replacement": null,
+   "retires_at": null
+  }
+ ],
+ "next_cursor": null
+}

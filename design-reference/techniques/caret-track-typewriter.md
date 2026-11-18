@@ -1,0 +1,24 @@
+---
+id: caret-track-typewriter
+name: Caret-tracking typewriter with backspace and retype
+intent: "Function hook or emphasis: a query, prompt or claim types at hero scale while the frame follows the caret, so the reader reads at typing speed with no eye travel; deleting and retyping it makes the next line a correction."
+route: remotion
+timing: "1.2 frames a character at 30 fps (references 1.05 to 1.6); newest word tinted while it types and 4 frames after; caret blinks 10 on, 9 off when idle; backspace one word per 2 frames; 6 empty frames before the retype; caret held at 0.62 of the width"
+curve: steps (characters cut on); the crop follows the caret averaged over 4 frames; push glide
+primitive: caretTypingPlan, caretOn, newestWordAccent, caretFollow, evenSchedule, backspaceByChar, chipSlots
+demo: src/motion/library/typography/CaretTrack.tsx
+sources: ["design-reference/library/gojiberry/techniques.json", "design-reference/library/muse/techniques.json", "design-reference/library/ace/techniques.json", "design-reference/library/abdulah/techniques.json", "design-reference/library/cashfree/techniques.json", "design-reference/library/airform/techniques.json", "src/motion/type-track.ts", "src/motion/text-modes.ts", "src/motion/library/typography/CaretTrack.tsx"]
+status: draft
+---
+
+**What it does.** A line types at hero scale with a block or bar caret. Once the caret reaches the anchor (a share of the width), every key pushes the whole line left, so the start of the sentence runs off the left edge and the newest word is always in the same place. The word being typed is in the accent and turns to ink a few frames after it completes. The caret is solid while keys arrive and blinks on a 19-frame cycle when idle. Optionally the line deletes backwards a word at a time down to `keepWords`, the caret waits alone, and the correction types (or scrambles) in. `backspaceUnit: "char"` deletes by character instead, `backspaceRate` a frame, and `retypeFramesPerChar` sets the retype's own pace (`caretTrackCharBackspacePreset`). `chips` are square image or colour chips in the line: each appears at the end once its character count is typed, rides the caret (every new glyph pushes it), and from `park` on stays where it is with the text typing after it; `chipExitAt` slides them out right while the line greys off (`caretTrackChipPreset`). Library block `type-caret-track`.
+
+**When it fits.** A search query, a prompt or a brief that is the film's subject; a thesis the film then contradicts (type it, delete it, retype the counter-claim); a hook where the act of writing is the point.
+
+**When it does not.** More than about 60 characters before the payoff: typing is slow and the viewer waits. A product's own input field: show the real one (capture:app) and use this only as the camera idea over it. Centred lines that never overflow: use `type-sentence-build`.
+
+**Timing.** Measured by time and converted to 30 fps (gojiberry and ace are 60 fps). gojiberry 0.0-1.9 s: 10 characters in 21 frames at 60 fps, so 1.05 frames a character at 30; the red newest word lasts 6-7 frames at 60, so 3.5 at 30. muse 16.10-17.73 s: 31 characters in 49 frames, 1.58 a character. Deleting the whole line and retyping it (abdulah 0.13-4.33 s, cashfree 18.63-21.73 s) has its own card with the frame-by-frame numbers, `delete-and-retype-line`, and its own prop, `retypeLine`; `caretTrackCharBackspacePreset` keeps the earlier, averaged cashfree reading (`backspaceRate` 1.5, `retypeFramesPerChar` 0.5). abdulah 17.1-19.4 s: a square chip about 0.03 of the width just after the last glyph, pushed by each new glyph a frame at a time (steps(1)); a second chip lands at F529 and the next word types after it; F579-F581 the line fades to grey and off while the chip slides out right (3 frames; ours 6 for the slide). airform 5.67-7.33 s: caret on 10/9/9/8 frames, off 9/9, a 19-frame cycle. Ours: 46 characters in 55 frames (1.2 a character, between the two references), compared side by side with the muse span (`motion:strip --vs`, 16.0-17.87 s): both lines type at a steady rate and both overflow the left edge once the caret holds.
+
+**Read.** `src/motion/library/typography/CaretTrack.tsx`, `src/motion/type-track.ts` (`caretTypingPlan`), `tests/motion-blocks-typography-refs.test.ts`.
+
+**Pitfalls.** `typingSchedule` in kinetic-math adds pauses that lengthen the mean pace by about 40%; this block uses `evenSchedule`, whose mean is exact. Every string the line can show is measured once up front, never per frame, or frames render empty while the font is measured. motion:check reports `TEXT_OFF_STAGE` for the scrolled line; that is the technique (allow it with this reason). Reference frame numbers at 60 or 24 fps must be converted by time before use. Chips add their width to the caret position, so the follow crop counts them; a chip's `at` and `park` are character counts of the typed string, so a backspace past them removes the chip again.

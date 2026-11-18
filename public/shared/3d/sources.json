@@ -1,0 +1,54 @@
+{
+  "note": "Normalised by scripts/blender/prepare_devices.py (metres, screen named \"screen\" with 0..1 UVs, no Draco, frame/glass materials polished). Re-run it on the source files to rebuild. pnpm assets:sync --family 3d downloads each source (downloadedFrom, verified by sourceSha256) into .cache/assets/3d/inputs as sourceFile and runs that script; sha256 is the committed reference output, which Blender does not reproduce byte for byte.",
+  "models": [
+    {
+      "id": "phone",
+      "file": "phone.glb",
+      "target": "public/shared/3d/phone.glb",
+      "sha256": "84fba74f59e1c815d2db5baa7c9b339a17f41c4c510f0d97285aba83994dd14e",
+      "size": 2689860,
+      "title": "Apple iPhone 15 Pro Max Black",
+      "author": "polyman (Polyman_3D)",
+      "sourcePage": "https://sketchfab.com/3d-models/apple-iphone-15-pro-max-black-df17520841214c1792fb8a44c6783ee7",
+      "downloadedFrom": "https://raw.githubusercontent.com/adrianhajdin/iphone/main/public/models/scene.glb",
+      "sourceSha256": "a628339ba9960424b1e6285d31423be0dedf02a71b02e4e61f706a2e4bb8770e",
+      "licence": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), as recorded by https://github.com/novoluxor/website/blob/main/assets/MODEL-CREDITS.txt; not re-read on Sketchfab",
+      "attribution": "\"Apple iPhone 15 Pro Max Black\" by polyman, CC BY 4.0, modified",
+      "changes": "Scaled to 159.6 mm, centred, screen faces -Y (Blender) / +Z (three.js), screen UVs regenerated, Draco removed, frame metallic, glass roughness set",
+      "trademark": "Depicts an Apple product with its logo. Owner accepted this for this repository (2026-11-11); do not use in third-party advertising (design-reference/photoreal-3d-pipeline.md)",
+      "fetched": "2026-11-11",
+      "sourceFile": "iphone-15-pro-max.glb"
+    },
+    {
+      "id": "laptop",
+      "file": "laptop.glb",
+      "target": "public/shared/3d/laptop.glb",
+      "sha256": "18984cdc62f89a0065d58ccda8444ee38d188a6f61ef96ac9f9f8e2cc0c2a394",
+      "size": 3968052,
+      "title": "macbook pro M3 16 inch 2024",
+      "author": "jackbaeten",
+      "sourcePage": "https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b303144f78490007d91ff57c4",
+      "downloadedFrom": "https://raw.githubusercontent.com/novoluxor/website/main/assets/models/macbook.glb",
+      "sourceSha256": "6c5b9b44808f2e8b2746ee44d59345f7e31c6b3b4f284f599b1f96d648fe9f12",
+      "licence": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), as recorded by https://github.com/novoluxor/website/blob/main/assets/MODEL-CREDITS.txt; not re-read on Sketchfab",
+      "attribution": "\"macbook pro M3 16 inch 2024\" by jackbaeten, CC BY 4.0, modified",
+      "changes": "Scaled from centimetres to 355.7 mm wide, centred, screen UVs regenerated in the lid plane, Draco removed",
+      "trademark": "Depicts an Apple product. Same caveat as phone.glb",
+      "fetched": "2026-11-11",
+      "sourceFile": "macbook-pro-16.glb"
+    }
+  ],
+  "hdri": {
+    "manifest": "public/shared/hdri/sources.json"
+  },
+  "notCommitted": [
+    {
+      "what": "iPhone 18 Pro / Pro Max and iPad Pro 13 M5 bodies converted from Apple AR USDZ files (higher fidelity, screen node already named)",
+      "where": "https://github.com/arul28/ADE/tree/main/apps/desktop/src/renderer/assets/apple-device-models",
+      "why": "Its own sources.json: \"No open-source or redistribution license has been established.\" Usable locally with prepare_devices.py after adding a DEVICES entry"
+    }
+  ],
+  "plates": {
+    "manifest": "public/shared/3d/plates/sources.json"
+  }
+}

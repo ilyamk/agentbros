@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flex",
+  "rhythm": {
+    "value": "Two speeds, one film. 0–22.6 s is a slow chain of six long, motivated shots (1.97, 3.73, 7.87, 1.53, 5.67, 1.83 s; median 2.85 s) joined mostly by built transitions rather than cuts: a rising sheet, a frame that shrinks into the product object, a soft organic matte, a second rising sheet, then one hard cut into a form. 22.6–38.2 s switches to hard cuts: a 38-frame origin plate, five destination plates of 4/4/4/3/4 frames (0.10–0.13 s), a 37-frame landing plate, then an anthem run of six plates held 0.97–1.20 s each (29–36 frames). It ends on a 3.8 s hold of the wordmark on white. Judged: 22 shots, 21 cuts, 30.0 cuts/min, median shot 1.25 s. Detector: 20 shots, 19 cuts, median 1.23 s. No speech: the film is carried by on-screen type and music. I cannot hear; every sound statement below is from audio.json and sync.json numbers. Cuts land on a detected beat (±80 ms) 9 of 21 times (0.43) against 0.29 by chance; onsets run at 6.0 per second, so the onset ratio (0.95 vs 0.84 chance) is no evidence; downbeat confidence is 0.007, so no downbeat claim is made (0 of 21 cuts within ±1 frame of one). Only the anthem run hints at a grid: 5 of 7 cuts at 31.2–38.2 s land on a beat and the holds (0.97–1.20 s) sit near two beats at 111 BPM (1.08 s), n = 7.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "shots.json summary: 20 shots, median 1.233 s",
+      "sync.json metrics: cutsOnBeatRatio 0.474 vs cutsOnBeatChance 0.293; cutsOnOnsetRatio 0.947 vs 0.841; cutsOnBeatLift 1.62; cutsOnDownbeatFrameRatio 0.053 vs 0.033; signedMedianCutToBeatSec 0.019",
+      "audio.json tempo 110.99 BPM, confidence 0.571, beatRegularity 0.98, downbeatConfidence 0.007; 254 onsets in 42.03 s",
+      "recomputed with the 21 corrected cuts: beat 9/21 vs 0.29 chance; anthem 31.2–38.2 s 5/7 on beat; swells (50 ms RMS, local max ±0.3 s, >1.35× median) 56 found, 6/21 cuts within ±0.1 s vs 0.26 chance",
+      "visuals/a1/s06-city-flash.jpg F716–F735",
+      "visuals/a1/s15-tagline-cuts.jpg F972/F973, F1002/F1003"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": { "value": "Establish the old institution: low-angle columns and flags, the brand wordmark revealed centred at 0.03–0.50 s. Sets up the contrast the next line overturns.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s01-logo-in.jpg F1–F15", "visuals/contact-sheet-01.jpg 1F–1L"] },
+      "technique": { "value": "Static stock plate; wordmark revealed right-to-left with an opacity ramp over 14 frames.", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s01-logo-in.jpg F2 (last letter first), F7, F15"] }
+    },
+    {
+      "shotId": "s002",
+      "purpose": { "value": "State the thesis on the brand's dark green ground: a four-word line built word by word over a line-art ring figure, with three currency chips below.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s02-word-build.jpg F65–F77", "visuals/a1/s02-word-build-b.jpg F99–F125"] },
+      "technique": { "value": "Enters by a rising dark sheet (F50–F76); words fade and rise in about 5 frames each at 2.16, 2.46, 3.40, 3.83 s; the line slides to stay centred as it grows.", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s01-wipe-up.jpg F50–F71", "visuals/a1/s02-wipe-tail.jpg F69–F79"] }
+    },
+    {
+      "shotId": "s003.1",
+      "purpose": { "value": "Turn the idea into the product object: the whole thesis frame shrinks into a green slab, the slab becomes an action button that types its label, the button flips edge-on and opens as the metal product object, which then orbits in a fanned stack.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s02-shrink-to-card.jpg F163–F182", "visuals/a1/s03-slab-to-button.jpg F180–F190", "visuals/a1/s03-button-to-card.jpg F189–F212", "visuals/a1/s03-card-flip.jpg F241–F260", "visuals/a1/s03-card-spin.jpg F288–F311", "visuals/a1/s03-card-mid.jpg F327–F347"] },
+      "technique": { "value": "One continuous take of 232 frames: 2D layout morph handing over to a rendered 3D object (metal material, studio light, fanned duplicates).", "basis": "inferred", "confidence": 0.7, "evidence": ["visuals/a1/s03-card-flythrough.jpg F357–F380"] }
+    },
+    {
+      "shotId": "s003.2",
+      "purpose": { "value": "Promise line over a storm-cloud plate: four words arriving one by one, every 5 frames, centred.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s04-card-to-sky.jpg F407 (word 1), F409 (word 2), F414 (word 3), F419 (word 4)"] },
+      "technique": { "value": "Enters through a soft, organic matte that eats the product shot from the right in about 11 frames (F403–F413) with colour fringing on its edge.", "basis": "observed", "confidence": 0.8, "evidence": ["visuals/a1/s04-card-to-sky.jpg F403–F413"] }
+    },
+    {
+      "shotId": "s005.1",
+      "purpose": { "value": "Proof in the real interface: four product panels grow out of a vertical sliver, fill with an illustration and text, then the view pulls back to show the full dashboard with sidebar and tilts down to the fourth panel.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s05-white-to-ui.jpg F458–F485", "visuals/a1/s05-white-tail.jpg F483–F506", "visuals/a1/s05-ui-zoomout.jpg F522–F542", "visuals/a1/s05-ui-tilt.jpg F552–F575"] },
+      "technique": { "value": "Enters by a rising off-white sheet (F444–F488); camera on a real UI capture: pull-back 17.4–18.1 s, then tilt down 18.7–19.9 s fitted power1.inOut (motion.json s005, trackedShare 0.95).", "basis": "measured", "confidence": 0.8, "evidence": ["motion.json s005 camera ease gsap power1.inOut, startSec 18.728, durationSec 1.194", "visuals/a1/s04-wipe-up-white.jpg F444–F467"] }
+    },
+    {
+      "shotId": "s005.2",
+      "purpose": { "value": "Single action: a transfer form (from account, to account) assembles field by field on a warm off-white ground.", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s05-ui-to-form.jpg F623–F632"] },
+      "technique": { "value": "Hard cut at F622→F623 (DIFF 13.42), missed by the detector; panel fades and its rows fill in over 9 frames.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s05-ui-to-form.jpg F622, F623"] }
+    },
+    {
+      "shotId": "s006",
+      "purpose": { "value": "Origin plate: aerial of the departure city; the line names where money starts.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-sf-type.jpg F678–F695"] },
+      "technique": { "value": "Glyph-by-glyph soft reveal left to right, about 1.4 glyphs per frame over 17 frames, the first word plus one glyph already visible on the cut frame; line settles slightly smaller.", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s06-sf-type.jpg F678 ('first word + 1 glyph'), F695 (complete)"] }
+    },
+    {
+      "shotId": "s007",
+      "purpose": { "value": "Destination flash 1 of 5 (4 frames).", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F716–F719"] }
+    },
+    {
+      "shotId": "s008",
+      "purpose": { "value": "Destination flash 2 of 5 (4 frames).", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F720–F723"] }
+    },
+    {
+      "shotId": "s009",
+      "purpose": { "value": "Destination flash 3 of 5 (4 frames).", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F724–F727"] }
+    },
+    {
+      "shotId": "s010",
+      "purpose": { "value": "Destination flash 4 of 5 (3 frames).", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F728–F730"] }
+    },
+    {
+      "shotId": "s011",
+      "purpose": { "value": "Destination flash 5 of 5 (4 frames).", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F731–F734"] }
+    },
+    {
+      "shotId": "s012",
+      "purpose": { "value": "Landing plate: the last destination is held 37 frames so the completed line can be read.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg F735–F737", "visuals/a1/s12-to-globe.jpg F768–F771"] }
+    },
+    {
+      "shotId": "s013",
+      "purpose": { "value": "Scale stat: number then noun, centred, over a line-particle sphere on the brand's dark green.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s12-to-globe.jpg F772–F791"] },
+      "technique": { "value": "Hard cut; sphere pulls out (z −0.62) on circ.out (motion.json s013, trackedShare 0.945); number fades in at +5 frames, noun at +14 frames.", "basis": "measured", "confidence": 0.8, "evidence": ["motion.json s013 camera ease gsap circ.out, startSec 25.733, durationSec 0.829", "visuals/a1/s12-to-globe.jpg F777, F786"] }
+    },
+    {
+      "shotId": "s014",
+      "purpose": { "value": "Use in the hand: a phone rises from the bottom edge showing the product object in a wallet sheet; a two-line headline sits above; a confirmation tick replaces the prompt at 29.83 s.", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s13-dissolve-phone.jpg F842–F860", "visuals/a1/s14-phone-pay.jpg F894–F895"] },
+      "technique": { "value": "Edge-in radial bloom from dark green to off-white over 10 frames while the device rises; device pull-back fitted power4.out (motion.json s014, trackedShare 0.956).", "basis": "measured", "confidence": 0.8, "evidence": ["motion.json s014 camera ease gsap power4.out, durationSec 2.579", "visuals/a1/s13-dissolve-phone.jpg F842–F851"] }
+    },
+    {
+      "shotId": "s015",
+      "purpose": { "value": "Anthem 1: a negation line (lead word + italic value word) over a broken-fence plate.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/contact-sheet-01.jpg 15F–15L"] }
+    },
+    {
+      "shotId": "s016",
+      "purpose": { "value": "Anthem 2: the same lead word with a new italic value word, over a clock-face plate.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s15-tagline-cuts.jpg F973–F1002"] },
+      "technique": { "value": "Lead word is on screen on the cut frame; the italic value word fades up over about 8 frames (F973–F980).", "basis": "observed", "confidence": 0.8, "evidence": ["visuals/a1/s15-tagline-cuts.jpg F973–F980 DIFF"] }
+    },
+    {
+      "shotId": "s017",
+      "purpose": { "value": "Anthem 3: lead phrase switches to an affirmation ('made for' form) with an italic value word, over a night traffic light-trail plate.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s15-tagline-cuts.jpg F1003–F1007"] }
+    },
+    {
+      "shotId": "s018",
+      "purpose": { "value": "Anthem 4: same lead phrase, new value word, over a backlit golden-hour plate.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/contact-sheet-01.jpg 18F–18L"] }
+    },
+    {
+      "shotId": "s019",
+      "purpose": { "value": "Anthem 5: same lead phrase, new value word, over a sunlit skyline plate.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s19-to-white-you.jpg F1092–F1096"] }
+    },
+    {
+      "shotId": "s020.1",
+      "purpose": { "value": "Anthem 6, the turn to the viewer: same lead phrase, value word now in the brand green, on a pure white ground; held 49 frames, then faded out over 10 frames.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s19-to-white-you.jpg F1097–F1115", "visuals/a1/s20-logo-resolve.jpg F1134–F1145"] }
+    },
+    {
+      "shotId": "s020.2",
+      "purpose": { "value": "Sign-off: wordmark centred on white, revealed right-to-left as in the opening, then a small call-to-action line types in below it; held to the last frame without a fade.", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s20-logo-resolve.jpg F1148–F1160", "visuals/a1/s20-cta-sub.jpg F1166–F1187"] }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 5.433,
+        "endSec": 8.4,
+        "name": "frame-shrinks-to-product-object",
+        "description": "The full-frame thesis shot becomes the product. At F163 a 1–2 px off-white border appears and the whole frame starts to shrink with a diagonal sheen crossing it; by F174 it is a slab about 60% of frame width on a warm off-white ground (#f7f3ef), by F182 about 40%; the line of text inside fades out as it shrinks. F180–F190 the slab narrows to button proportions and a plus icon spins into its left end; F189–F212 the label types in letter by letter (about 1 letter per 2 frames). At F241–F245 the button rotates on its horizontal axis to edge-on, and from F246 it opens the other way as the full product object, which lands in perspective by F251 and settles by F260.",
+        "why": "The eye never has to find a new subject: the thing it was reading becomes the object, then the object becomes a call to action, then the product. Three ideas (thesis, action, product) are joined without a single cut, so the product feels like the answer to the line rather than a new scene."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s02-shrink-to-card.jpg F163–F182", "visuals/a1/s03-slab-to-button.jpg F180–F190", "visuals/a1/s03-button-to-card.jpg F189–F212", "visuals/a1/s03-card-flip.jpg F241–F260"]
+    },
+    {
+      "value": {
+        "startSec": 22.6,
+        "endSec": 25.733,
+        "name": "flash-montage-under-continuous-caption",
+        "description": "Origin plate held 38 frames while its line reveals glyph by glyph (F678–F695). Then five destination plates cut every 4 frames (3 for the fourth): F716, F720, F724, F728, F731. The caption sits at the same centre-left position (y ≈ 0.45 of frame height) on all of them; only the place name changes per cut, and the trailing words keep revealing left to right across the cuts, so the sentence completes on the fifth flash. The sixth plate (F735) lands and holds 37 frames with the complete line.",
+        "why": "The caption is the anchor the eye holds while the pictures flicker underneath, so 0.13 s plates still read as places. The visible speed of the cuts is the proof of the claim (speed of transfer) without stating a number."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s06-sf-type.jpg F678–F695", "visuals/a1/s06-city-flash.jpg F716–F737", "shots.json s006–s012"]
+    },
+    {
+      "value": {
+        "startSec": 1.667,
+        "endSec": 2.5,
+        "name": "rising-sheet-wipe",
+        "spans": [{ "startSec": 1.667, "endSec": 2.5 }, { "startSec": 14.8, "endSec": 16.233 }],
+        "description": "A flat sheet of the next ground rises from the bottom edge over the previous shot, which stays still. Green sheet: starts F50, about 6% of frame height at F52, 34% at F54, 55% at F56, 72% at F59, 86% at F64, and the last sliver of the old plate leaves the top at about F74 — fast first third, long tail. The same move returns at 14.80–16.23 s with an off-white sheet over the cloud plate (F444–F488), slower (about 63% by F458) and with the interface panels growing inside the sheet before it has finished.",
+        "why": "The sheet arrives as a surface on which the next idea is written, so the change of ground reads as turning a page rather than a cut. Leaving a sliver of the old picture at the top for half a second keeps the previous context in view while the new line starts."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s01-wipe-up.jpg F50–F71", "visuals/a1/s02-wipe-tail.jpg F69–F74", "visuals/a1/s04-wipe-up-white.jpg F444–F467", "visuals/a1/s05-white-tail.jpg F483–F488"]
+    },
+    {
+      "value": {
+        "startSec": 31.233,
+        "endSec": 38.2,
+        "name": "anthem-lead-plus-italic-value-word",
+        "description": "Six plates held 29–36 frames each. A centred one-line slogan in two voices: an upright light sans lead phrase (one or two words) and an italic serif value word. The lead is on screen on the cut frame; the italic word fades up over about 8 frames. The lead changes once (negation ×2, affirmation ×4); only the value word and the plate change otherwise. The last line moves to a pure white ground and its value word turns brand green (#3b7755), held 49 frames, then fades out over 10 frames to an empty white frame before the wordmark.",
+        "why": "Repeating the lead turns the run into a chant; the eye stays at frame centre and only reads the new word, so each 1 s plate is enough. Switching the last plate to white and colouring the last word makes the viewer the payoff of the list."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s15-tagline-cuts.jpg F972–F1007", "visuals/a1/s19-to-white-you.jpg F1096–F1115", "visuals/a1/s20-logo-resolve.jpg F1134–F1147"]
+    },
+    {
+      "value": {
+        "startSec": 13.4,
+        "endSec": 13.767,
+        "name": "organic-matte-reveal",
+        "description": "From F403 a soft-edged, cloud-shaped matte opens from the right over the moving product shot, revealing a dark storm-cloud plate; by F413 only a blurred strip of the product remains at the left edge. The edge carries a chromatic fringe (visible in the DIFF tiles). The first word of the next line appears at F407, inside the revealed area, before the reveal is complete.",
+        "why": "It turns a hard change of world (studio object to sky) into weather moving in; the soft edge avoids a geometric wipe that would fight the organic plate, and starting the line mid-reveal pulls the eye to the new area."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": ["visuals/a1/s04-card-to-sky.jpg F399–F422"]
+    }
+  ],
+  "corrections": [
+    {
+      "value": { "kind": "merge", "shotIds": ["s003", "s004"], "note": "No cut at 11.267 s, and the 150-frame 'fade' 8.8–13.77 s is not a transition: the product-object fan rotates continuously through F327–F347 and F357–F380. The motion spike around 10–12 s is the 3D object moving, not an edit." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s03-card-mid.jpg F327–F347", "visuals/a1/s03-card-flythrough.jpg F357–F380"]
+    },
+    {
+      "value": { "kind": "split", "shotIds": ["s004"], "timeSec": 13.567, "transition": "wipe", "note": "The real change from the 3D object to the cloud plate is a soft organic matte, F403–F413 (13.43–13.77 s); split at its middle, F407. Typed wipe because a moving front reveals the new picture; it is soft-edged, not geometric." },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": ["visuals/a1/s04-card-to-sky.jpg F403–F413"]
+    },
+    {
+      "value": { "kind": "split", "shotIds": ["s005"], "timeSec": 20.767, "transition": "cut", "note": "Missed hard cut from the zoomed dashboard panel to the transfer form, F622→F623 (DIFF 13.42); the detector logged it only as candidate 20.767 (novelty 3.84)." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s05-ui-to-form.jpg F622, F623", "shots.json candidates 20.767"]
+    },
+    {
+      "value": { "kind": "split", "shotIds": ["s020"], "timeSec": 38.2, "transition": "fade", "note": "Text swap on a flat white ground: the last slogan fades out F1135–F1145, the frame is empty white F1145–F1148, then the wordmark is revealed. A new shot by content." },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s20-logo-resolve.jpg F1134–F1153"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "repositories-pyannote-audio-and-speaker-diarization-community-1-c0193d51",
+  "section": "repositories",
+  "order": 390,
+  "source": "pyannote.audio and speaker-diarization-community-1",
+  "url": "https://github.com/pyannote/pyannote-audio, https://huggingface.co/pyannote/speaker-diarization-community-1",
+  "pinnedCommit": "PyPI `pyannote.audio==4.0.7`; model `3533c8cf`",
+  "licence": "MIT (code), CC-BY-4.0 (gated weights)",
+  "whatWeTook": "Tool use: local diarisation pipeline when `HF_TOKEN` is set; never pyannoteAI",
+  "whereItLives": "`scripts/workers/speech-local.py`",
+  "why": "Speaker labels in local transcripts",
+  "date": "2026-11-13"
+}

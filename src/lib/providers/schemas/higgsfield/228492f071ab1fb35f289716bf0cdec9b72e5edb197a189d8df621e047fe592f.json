@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "endpoint": "pixverse/v6/image-to-video",
+  "title": "PixVerse V6 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/pixverse-v6/image-to-video.md",
+  "usageNotes": [
+    "duration is a number from 1 to 15, so the schema allows fractional values. If negative_prompt is supplied, it must contain 1–2,048 characters.",
+    "Use image_url for the first frame and optional end_image_url for the last frame. This endpoint has no aspect_ratio parameter; framing comes from the input image."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "PixVerse V6 Image to Video Playground",
+    "required": [
+      "prompt",
+      "image_url"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "title": "Seed",
+        "maximum": 2147483647,
+        "minimum": 0
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "maxLength": 5000,
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "number",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 1
+      },
+      "image_url": {
+        "type": "string",
+        "title": "First frame",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "360p",
+          "540p",
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "720p"
+      },
+      "end_image_url": {
+        "type": "string",
+        "title": "Last frame",
+        "format": "uri"
+      },
+      "generate_audio": {
+        "type": "boolean",
+        "title": "Generate audio",
+        "default": true
+      },
+      "negative_prompt": {
+        "type": "string",
+        "title": "Negative prompt",
+        "maxLength": 2048,
+        "minLength": 1
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

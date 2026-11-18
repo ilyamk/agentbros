@@ -1,0 +1,991 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "status": {
+    "available": true,
+    "engine": "pyscenedetect-adaptive+spike+novelty"
+  },
+  "detector": {
+    "name": "pyscenedetect-adaptive+spike+novelty",
+    "version": "0.7.2",
+    "params": {
+      "adaptiveThreshold": 3,
+      "spikeMinChanged": 0.12,
+      "spikeRatio": 3,
+      "flashMaxReturn": 0.35,
+      "shortWindowSec": 0.33,
+      "longWindowSec": 1,
+      "noveltyMin": 4.5,
+      "noveltyMadScale": 6,
+      "prominenceRatio": 0.5,
+      "softGuardSec": 0.4,
+      "minHardShotSec": 0.1,
+      "cutWholeFrame": 0.5,
+      "matchSimilarity": 0.65,
+      "samePictureSimilarity": 0.9,
+      "layoutWeight": 0.6,
+      "cutScoreMin": 0.12,
+      "sameShotNovelty": 12,
+      "softMinFrames": 3,
+      "wipePurity": 0.88,
+      "softMergeGapSec": 0.3,
+      "candidateNoveltyMin": 1.5,
+      "softMarginSec": 0.25,
+      "prominenceReachSec": 2.5,
+      "maxTransitionSec": 3
+    }
+  },
+  "shots": [
+    {
+      "startSec": 0,
+      "endSec": 2.1,
+      "id": "s001",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0,
+      "thumbnailPath": "visuals/thumbs/s001.jpg",
+      "stripPath": "visuals/strips/s001.jpg",
+      "colour": {
+        "L": 94.5,
+        "a": 0.4,
+        "b": -1.3,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 7
+      }
+    },
+    {
+      "startSec": 2.1,
+      "endSec": 2.9,
+      "id": "s002",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.987,
+        "edgeSimilarity": 0.444,
+        "novelty": 78.67,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s002.jpg",
+      "stripPath": "visuals/strips/s002.jpg",
+      "colour": {
+        "L": 47.3,
+        "a": 38.5,
+        "b": -77.4,
+        "percentiles": {
+          "L": [
+            45.3,
+            45.3,
+            48.4
+          ],
+          "a": [
+            40,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -80
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 2.9,
+      "endSec": 3.767,
+      "id": "s003",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.992,
+        "edgeSimilarity": 0.642,
+        "novelty": 79.89,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s003.jpg",
+      "stripPath": "visuals/strips/s003.jpg",
+      "colour": {
+        "L": 90.9,
+        "a": 3.2,
+        "b": -6.8,
+        "percentiles": {
+          "L": [
+            79.7,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            -24,
+            0,
+            0
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 3.767,
+      "endSec": 4.9,
+      "id": "s004",
+      "transitionIn": "whip",
+      "transitionConfidence": 0.74,
+      "transitionStartSec": 3.7,
+      "transitionEndSec": 3.867,
+      "transitionMeasures": {
+        "frames": 6,
+        "blendResidual": 0.394,
+        "alphaMonotonic": 1,
+        "binaryPurity": 0.98,
+        "centroidSweep": 0.169,
+        "flowWidthPerSec": 0.882,
+        "flowCoherence": 0.677,
+        "blurAnisotropy": 5.744
+      },
+      "thumbnailPath": "visuals/thumbs/s004.jpg",
+      "stripPath": "visuals/strips/s004.jpg",
+      "colour": {
+        "L": 47.4,
+        "a": 37.6,
+        "b": -76.5,
+        "percentiles": {
+          "L": [
+            45.3,
+            45.3,
+            45.3
+          ],
+          "a": [
+            40,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -80
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 4.9,
+      "endSec": 6.5,
+      "id": "s005",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 1,
+        "edgeSimilarity": -0.02,
+        "novelty": 78.01,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s005.jpg",
+      "stripPath": "visuals/strips/s005.jpg",
+      "colour": {
+        "L": 2.5,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            1.6,
+            1.6,
+            1.6
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 5
+      }
+    },
+    {
+      "startSec": 6.5,
+      "endSec": 10.533,
+      "id": "s006",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.9,
+      "transitionMeasures": {
+        "changedFraction": 0.999,
+        "edgeSimilarity": 0.082,
+        "novelty": 75.76,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s006.jpg",
+      "stripPath": "visuals/strips/s006.jpg",
+      "colour": {
+        "L": 94.4,
+        "a": 0.4,
+        "b": 1.6,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 15
+      }
+    },
+    {
+      "startSec": 10.533,
+      "endSec": 13.2,
+      "id": "s007",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.999,
+        "edgeSimilarity": 0.006,
+        "novelty": 79.63,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s007.jpg",
+      "stripPath": "visuals/strips/s007.jpg",
+      "colour": {
+        "L": 6.8,
+        "a": 3.3,
+        "b": -7.4,
+        "percentiles": {
+          "L": [
+            1.6,
+            1.6,
+            26.6
+          ],
+          "a": [
+            0,
+            0,
+            16
+          ],
+          "b": [
+            -40,
+            0,
+            0
+          ]
+        },
+        "samples": 10
+      }
+    },
+    {
+      "startSec": 13.2,
+      "endSec": 14.367,
+      "id": "s008",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.997,
+        "edgeSimilarity": -0.042,
+        "novelty": 69.76,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s008.jpg",
+      "stripPath": "visuals/strips/s008.jpg",
+      "colour": {
+        "L": 92.1,
+        "a": 0.8,
+        "b": -2.8,
+        "percentiles": {
+          "L": [
+            85.9,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            -16,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 14.367,
+      "endSec": 16.367,
+      "id": "s009",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.91,
+      "transitionMeasures": {
+        "changedFraction": 0.929,
+        "edgeSimilarity": 0.199,
+        "novelty": 71.73,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s009.jpg",
+      "stripPath": "visuals/strips/s009.jpg",
+      "colour": {
+        "L": 49.8,
+        "a": 35.5,
+        "b": -72.4,
+        "percentiles": {
+          "L": [
+            45.3,
+            45.3,
+            64.1
+          ],
+          "a": [
+            16,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -40
+          ]
+        },
+        "samples": 6
+      }
+    },
+    {
+      "startSec": 16.367,
+      "endSec": 17.133,
+      "id": "s010",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.874,
+        "edgeSimilarity": 0.136,
+        "novelty": 74.13,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s010.jpg",
+      "stripPath": "visuals/strips/s010.jpg",
+      "colour": {
+        "L": 97.8,
+        "a": -1.6,
+        "b": 0.8,
+        "percentiles": {
+          "L": [
+            98.4,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 17.133,
+      "endSec": 18.567,
+      "id": "s011",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.701,
+        "edgeSimilarity": -0.025,
+        "novelty": 34.53,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s011.jpg",
+      "stripPath": "visuals/strips/s011.jpg",
+      "colour": {
+        "L": 69.9,
+        "a": 20.3,
+        "b": -39.4,
+        "percentiles": {
+          "L": [
+            42.2,
+            82.8,
+            98.4
+          ],
+          "a": [
+            0,
+            8,
+            48
+          ],
+          "b": [
+            -80,
+            -24,
+            0
+          ]
+        },
+        "samples": 5
+      }
+    },
+    {
+      "startSec": 18.567,
+      "endSec": 19.367,
+      "id": "s012",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.508,
+        "edgeSimilarity": 0.062,
+        "novelty": 25.5,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s012.jpg",
+      "stripPath": "visuals/strips/s012.jpg",
+      "colour": {
+        "L": 79.6,
+        "a": 12.7,
+        "b": -23.2,
+        "percentiles": {
+          "L": [
+            42.2,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            48
+          ],
+          "b": [
+            -80,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 19.367,
+      "endSec": 20.033,
+      "id": "s013",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.734,
+        "edgeSimilarity": 0.025,
+        "novelty": 46.95,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s013.jpg",
+      "stripPath": "visuals/strips/s013.jpg",
+      "colour": {
+        "L": 53.5,
+        "a": 31.8,
+        "b": -67,
+        "percentiles": {
+          "L": [
+            45.3,
+            48.4,
+            79.7
+          ],
+          "a": [
+            8,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -24
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 20.033,
+      "endSec": 20.833,
+      "id": "s014",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.84,
+      "transitionMeasures": {
+        "changedFraction": 0.32,
+        "edgeSimilarity": 0.167,
+        "novelty": 9.56,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s014.jpg",
+      "stripPath": "visuals/strips/s014.jpg",
+      "colour": {
+        "L": 55.6,
+        "a": 29,
+        "b": -62.9,
+        "percentiles": {
+          "L": [
+            45.3,
+            45.3,
+            85.9
+          ],
+          "a": [
+            8,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -24
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 20.833,
+      "endSec": 22,
+      "id": "s015",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.885,
+        "edgeSimilarity": 0.124,
+        "novelty": 63.96,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s015.jpg",
+      "stripPath": "visuals/strips/s015.jpg",
+      "colour": {
+        "L": 90.3,
+        "a": 1.6,
+        "b": -4.2,
+        "percentiles": {
+          "L": [
+            64.1,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 22,
+      "endSec": 23.933,
+      "id": "s016",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.927,
+        "edgeSimilarity": -0.027,
+        "novelty": 56.24,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s016.jpg",
+      "stripPath": "visuals/strips/s016.jpg",
+      "colour": {
+        "L": 26.5,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            1.6,
+            1.6,
+            89.1
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 7
+      }
+    },
+    {
+      "startSec": 23.933,
+      "endSec": 25.4,
+      "id": "s017",
+      "transitionIn": "continuous",
+      "transitionConfidence": 0.4,
+      "transitionStartSec": 23.767,
+      "transitionEndSec": 24.1,
+      "transitionMeasures": {
+        "frames": 11,
+        "blendResidual": 0.297,
+        "alphaMonotonic": 1,
+        "binaryPurity": 0.925,
+        "centroidSweep": 0.023,
+        "flowWidthPerSec": 0.532,
+        "flowCoherence": 0.241,
+        "blurAnisotropy": 1.222
+      },
+      "thumbnailPath": "visuals/thumbs/s017.jpg",
+      "stripPath": "visuals/strips/s017.jpg",
+      "colour": {
+        "L": 3,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            1.6,
+            1.6,
+            1.6
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 25.4,
+      "endSec": 27,
+      "id": "s018",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.997,
+        "edgeSimilarity": 0.347,
+        "novelty": 78.19,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s018.jpg",
+      "stripPath": "visuals/strips/s018.jpg",
+      "colour": {
+        "L": 47.8,
+        "a": 39.3,
+        "b": -74.8,
+        "percentiles": {
+          "L": [
+            42.2,
+            45.3,
+            54.7
+          ],
+          "a": [
+            24,
+            40,
+            48
+          ],
+          "b": [
+            -80,
+            -80,
+            -56
+          ]
+        },
+        "samples": 5
+      }
+    },
+    {
+      "startSec": 27,
+      "endSec": 28.167,
+      "id": "s019",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.967,
+        "edgeSimilarity": 0.222,
+        "novelty": 77.6,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s019.jpg",
+      "stripPath": "visuals/strips/s019.jpg",
+      "colour": {
+        "L": 96.5,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            95.3,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 4
+      }
+    },
+    {
+      "startSec": 28.167,
+      "endSec": 29.167,
+      "id": "s020",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.983,
+        "edgeSimilarity": 0.273,
+        "novelty": 84.03,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s020.jpg",
+      "stripPath": "visuals/strips/s020.jpg",
+      "colour": {
+        "L": 46.8,
+        "a": 38.4,
+        "b": -77.6,
+        "percentiles": {
+          "L": [
+            45.3,
+            45.3,
+            45.3
+          ],
+          "a": [
+            40,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -80
+          ]
+        },
+        "samples": 2
+      }
+    },
+    {
+      "startSec": 29.167,
+      "endSec": 30.1,
+      "id": "s021",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.985,
+        "edgeSimilarity": 0.427,
+        "novelty": 80.11,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s021.jpg",
+      "stripPath": "visuals/strips/s021.jpg",
+      "colour": {
+        "L": 90.1,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            76.6,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 3
+      }
+    },
+    {
+      "startSec": 30.1,
+      "endSec": 31.733,
+      "id": "s022",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.98,
+        "edgeSimilarity": 0.428,
+        "novelty": 76.08,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s022.jpg",
+      "stripPath": "visuals/strips/s022.jpg",
+      "colour": {
+        "L": 47.8,
+        "a": 35.6,
+        "b": -72,
+        "percentiles": {
+          "L": [
+            42.2,
+            45.3,
+            54.7
+          ],
+          "a": [
+            16,
+            40,
+            40
+          ],
+          "b": [
+            -80,
+            -80,
+            -48
+          ]
+        },
+        "samples": 5
+      }
+    },
+    {
+      "startSec": 31.733,
+      "endSec": 36.033,
+      "id": "s023",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.938,
+        "edgeSimilarity": 0.196,
+        "novelty": 71.15,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s023.jpg",
+      "stripPath": "visuals/strips/s023.jpg",
+      "colour": {
+        "L": 93.8,
+        "a": 0.7,
+        "b": -2,
+        "percentiles": {
+          "L": [
+            95.3,
+            95.3,
+            95.3
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 15
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "timeSec": 1.467,
+      "novelty": 1.91
+    },
+    {
+      "timeSec": 3.367,
+      "novelty": 14.25
+    },
+    {
+      "timeSec": 4.167,
+      "novelty": 1.71
+    },
+    {
+      "timeSec": 7.1,
+      "novelty": 7.78
+    },
+    {
+      "timeSec": 11.7,
+      "novelty": 5.15
+    },
+    {
+      "timeSec": 12.333,
+      "novelty": 2.55
+    },
+    {
+      "timeSec": 12.733,
+      "novelty": 8.73
+    },
+    {
+      "timeSec": 14.967,
+      "novelty": 4.81
+    },
+    {
+      "timeSec": 15.5,
+      "novelty": 9.33
+    },
+    {
+      "timeSec": 15.9,
+      "novelty": 1.52
+    },
+    {
+      "timeSec": 17.7,
+      "novelty": 9.28
+    },
+    {
+      "timeSec": 22.4,
+      "novelty": 2.37
+    },
+    {
+      "timeSec": 23.433,
+      "novelty": 2.02
+    },
+    {
+      "timeSec": 25.967,
+      "novelty": 4.16
+    },
+    {
+      "timeSec": 26.367,
+      "novelty": 2.78
+    },
+    {
+      "timeSec": 33.167,
+      "novelty": 4.16
+    }
+  ],
+  "summary": {
+    "count": 23,
+    "medianDurationSec": 1.167,
+    "cutsPerMinute": 36.633
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "provider": "higgsfield",
+  "category": "training",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "v1/custom-references",
+      "category": "training",
+      "displayName": "Soul ID — Create character API",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0c56b0eadfd3fb8f6da4774f03da9dfa32b9b599b106da7069d9a7b74dfb7e8c",
+        "asOf": "2026-11-15",
+        "source": "https://docs.higgsfield.ai/docs/models/soul-id/create-character.md",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "input_images",
+          "type": "array",
+          "required": true,
+          "min": 1,
+          "max": 100,
+          "array": true
+        },
+        {
+          "name": "model_version",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "v1",
+            "v2",
+            "cinema"
+          ],
+          "default": "v1"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "max": 100
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "training",
+      "price": null,
+      "tier": "discovered",
+      "tags": [],
+      "provider": "higgsfield",
+      "family": {
+        "slug": "soul-id",
+        "title": "soul-id"
+      },
+      "docsUrl": "https://docs.higgsfield.ai/docs/models/soul-id/create-character.md"
+    }
+  ]
+}

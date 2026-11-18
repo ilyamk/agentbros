@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "id": "reference-plan",
+  "playbook": "ai-film",
+  "tier": "no-spend",
+  "brief": "First create the fixture project: pnpm exec tsx tests/fixtures/bench/reference-project.ts --project bench-reference-plan --variant plan (synthetic ffmpeg media, character and location cards supplied approved as fixture data, pipeline/shot-list.json and pipeline/material.json). The project already exists: work only on its reference inputs (pipeline/references.json, derivatives and packs); do not run film:init, project:new or a render. Following the ai-film playbook and the asset-planner brief, plan the reference inputs of every generated shot with the repository's commands (refs:plan draft and check; refs:derive for a derivative the plan proposes; refs:pack prepare for every shot whose inputs are ready), so that refs:plan --action check is clean and every generated material item has a shot in pipeline/references.json or a referencePlan \"none\" with its reason. Never type reference markers by hand. Stop at the pack approval gate: record no rights or approval and generate nothing. Write bench-result.json as {\"blocked\": true, \"gate\": \"<the gate you stopped at>\"}.",
+  "material": [
+    {
+      "path": "bench/instructions/reference-plan/answers.json",
+      "sha256": "e41571accafa325e5c5fade855758f6cfdf2a89db33567e44b693d4856547319",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/instructions/reference-plan/check.mjs",
+      "sha256": "c2157dccb9a5959e8ff3ec423c8086ec54202087979fb8e2ca563bd803e14186",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "tests/fixtures/bench/reference-project.ts",
+      "sha256": "a75e1d90b615c92db695786c8360c9b2d05b762f18e2bdb7e78667377a2fb990",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      0,
+      20
+    ]
+  },
+  "answers": "bench/instructions/reference-plan/answers.json",
+  "criteria": [
+    {
+      "id": "automatic-check",
+      "kind": "process",
+      "check": {
+        "type": "script",
+        "path": "bench/instructions/reference-plan/check.mjs"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    }
+  ]
+}

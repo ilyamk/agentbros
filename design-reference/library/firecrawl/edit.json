@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "rhythm": {
+    "value": "Detector: 4 shots, median 4.0 s, 3 cuts. Corrected: 10 shots, 9 cuts (4 hard cuts, 2 text swaps on a held ground, then after 14.5 s two fades through the empty light ground and one dissolve), median 1.6 s, about 24 changes per minute; the longest hold is the interface at 5.9 s. Music-led, no voice. Sound was not heard: every sound statement comes from audio.json, audiomap.json and my own band-split envelope of the media. audio.json reads 93.27 BPM (confidence 0.61, downbeat confidence 0.03); that is a 2:3 artefact of a syncopated pattern (93.27 x 1.5 = 139.9). audiomap.json reads 139.98 BPM, grid reliable (0.72), but its beat phase sits on the off-beats: its beats (3.828, 4.255, ...) are 0.19 s before the kick-led beats. The six intro hits (0.140, 0.893, 1.532, 1.856, 2.499, 3.572 s, full-band swells) fall exactly 36, 29, 23, 20, 14 and 4 sixteenths before 4.000 s (sixteenth = 0.10714 s, error under 5 ms), so the true grid is beat k at 4.000 + 0.42857 k s. On that grid all six structural changes in 0-14.5 s land within 24 ms of a beat: 2.283 (beat -4, -3 ms), 4.000 (beat 0), 5.283 (beat 3, -3 ms), 6.150 (beat 5, +7 ms), 7.433 (beat 8, +4 ms), 10.017 (beat 14, +17 ms), each placed on its step-1 strip frame. Chance at +-0.03 s is 14% per change; one of the six fixed the phase, so five independent hits at 14% is about 5e-5. sync.json's cutsOnBeatRatio 0 against chance 0.231 is void: it uses the 93 BPM grid and only 3 detector cuts. Onsets are too dense (about 5.4 per second in 0-15 s) for cutsOnOnsetRatio 1.0 against 0.734 chance to mean anything. Holds within a state are 1-3 beats; every state ends with a one-beat accelerating exit that starts on a hit.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "audiomap.json beatsSec, events",
+      "audio.json tempo",
+      "sync.json metrics",
+      "visuals/a1/drop-cut-4.00.jpg F239-F240",
+      "visuals/a1/exit-cut-7.43.jpg F445-F446",
+      "visuals/a1/send-cut-10.03.jpg F600-F601",
+      "visuals/a1/b02-exit-2.30.jpg F137",
+      "visuals/a1/b05-swap-5.30.jpg F317",
+      "visuals/a1/b18-swap-6.17.jpg F369"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook in two sentences on white: what launched (with inline partner icons), then the scale in accent-coloured numbers. Corrected into two shots by the cut at 2.283 s.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/hook-words.jpg F8-F47",
+          "visuals/a1/exit-cut-2.30.jpg",
+          "visuals/a1/stat-words.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Two-line block laid out in its final position, left edge fixed at 11.5% width; each word appears whole on one frame every 8 source frames (0.133 s) while the block rises 8.5% of height with an ease-out over 12 frames at 30 fps; six icons fade and scale in one after another inside the second line. Exit: the whole block accelerates upward 7-8% of height over one beat (ease-in), then a hard cut.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/hook-words.jpg F8, F16, F24, F34, F42-F47",
+          "visuals/a1/exit-cut-2.30.jpg F114-F138"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "The drop: hard cut to a full orange ground with a hero percentage at about 90% of frame width.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/drop-cut-4.00.jpg F239-F254"
+        ]
+      },
+      "technique": {
+        "value": "Ground swap on the downbeat with no flash, ring or echo. The number carries on the upward drift of the previous exit (7.5% of height, ease-out, 12 frames at 30 fps), then on the next beat shrinks from 89.5% to 35% width with heavy motion blur.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/drop-cut-4.00.jpg F240-F254",
+          "visuals/a1/hero-shrink.jpg F264-F302"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Finish the claim on the same orange: the comparison line, then the qualifier with a small subline.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/swap-5.30.jpg",
+          "visuals/a1/swap-6.17.jpg",
+          "visuals/a1/exit-cut-7.43.jpg"
+        ]
+      },
+      "technique": {
+        "value": "The number re-grows for half a beat (6 frames) and is swapped on the beat for the line, which enters at 67% width and eases out to 81%. Two beats later a second swap to a shorter, bigger line at 48% growing to 60.5% width, subline 4 frames later. Exit: the line grows to 77% with motion blur over 10 frames into a hard cut to white.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-5.30.jpg",
+          "visuals/a1/swap-6.17.jpg",
+          "visuals/a1/exit-cut-7.43.jpg F426-F446"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Product in use, then proof of scale and the brand: prompt bar types a request, the chat answers with a table, the camera reads it and scrolls; a line about sources; a chip wall; one chip picked; the logo; hard stop. Corrected into 5 shots.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/bar-entry.jpg",
+          "visuals/a1/send-cut-10.03.jpg",
+          "visuals/a1/chat-answer.jpg",
+          "visuals/a1/table-fill.jpg",
+          "visuals/a1/pan-12.4.jpg",
+          "visuals/a1/scroll-blur.jpg",
+          "visuals/a1/scroll-settle.jpg",
+          "visuals/a1/fade-table.jpg",
+          "visuals/a1/chip-wall.jpg",
+          "visuals/a1/chip-pick.jpg",
+          "visuals/a1/logo-end.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Real interface at reading scale, built up in place. A cursor clicks send and the frame is perfectly still for 0.58 s (F566-F600) before the cut, so the click reads before the answer. The answer streams in, table rows add downward, the camera drifts up and right with acceleration, then a fast vertical scroll with strong blur is sharp again by the downbeat at 14.286 s and settles by 14.75 s.",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/send-cut-10.03.jpg F576-F601",
+          "visuals/a1/pan-12.4.jpg F738-F779",
+          "visuals/a1/scroll-blur.jpg",
+          "visuals/a1/b13-click-approach.jpg F534-F569",
+          "visuals/a1/b08-click-freeze.jpg F567-F601",
+          "visuals/a1/b09-scroll-land.jpg F822-F866",
+          "visuals/a1/b14-scroll-settle.jpg F864-F905"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 1.883,
+        "endSec": 2.4,
+        "name": "accelerate-into-cut",
+        "description": "One-beat accelerating exit into a ground swap on the drop. The white stat block starts rising on the hit one beat before the drop (3.572 s) and accelerates 7.8% of height over 0.4 s (24 frames at 60 fps); at exactly 4.000 s the frame becomes orange with the hero number already at 90% width, still drifting upward and decelerating. The motion continues across the cut while colour and scale jump. The same exit closes every state before 7.5 s: F113-F136 into the cut at 2.283 s (diff rising linearly 0.3 to 5.8, quad-in), F214-F238 into 4.000 s, and F424-F444 into 7.433 s (diff rising 0.1 to 7.7, steeper at the end: expo-in, with blur on the last frames). Frame numbers at the source's 60 fps.",
+        "why": "The eye is already travelling upward when the cut hits, so the cut feels like the music pulling the picture rather than a slide change; the drift continues on the far side, which hides the seam and makes the ground swap the only event.",
+        "spans": [
+          {
+            "startSec": 1.883,
+            "endSec": 2.4
+          },
+          {
+            "startSec": 3.567,
+            "endSec": 4.25
+          },
+          {
+            "startSec": 7.067,
+            "endSec": 7.6
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/drop-cut-4.00.jpg F216-F254",
+        "audiomap.json keyMoments surge 4.051",
+        "own envelope: full-band swell 4.006 s, low band 4.021 s",
+        "visuals/a1/b02-exit-2.30.jpg F113-F139",
+        "visuals/a1/b03-drop-4.00.jpg F214-F257",
+        "visuals/a1/b06-exit-7.43.jpg F424-F447"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.43,
+        "endSec": 5.283,
+        "name": "hero-word-blur-shrink",
+        "description": "Hero number shrinks with motion blur on beat 1 after the drop: 89.5% to 44% width in 8 frames at 30 fps, then eases to 35% by frame 152; re-grows for 6 frames and is swapped on beat 3. Strip at 60 fps: the shrink starts at F265 (4.417 s, diff 5.1), peaks F270-F271 (10.2) and decays by half about every 4 frames to under 1 by F284 (expo-out); the re-grow F307-F314 accelerates into the swap at F317 (5.283 s).",
+        "why": "The number lands huge on the drop, then gives room for the sentence that explains it; the shrink with blur reads as physical speed, and the re-grow builds pressure into the next swap."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/hero-shrink.jpg F264-F302",
+        "visuals/a1/swap-5.30.jpg",
+        "visuals/a1/b04-shrink.jpg F265-F305",
+        "visuals/a1/b05-swap-5.30.jpg F307-F317"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 0.13,
+        "endSec": 2.283,
+        "name": "fixed-layout-word-build",
+        "description": "Sentence revealed word by word in its final layout: the block is laid out first and never reflows (both lines centred on x 0.50 per the OCR boxes; the first line's left edge stays at 10.5% of width), words switch on whole at F8, F16, F24 and F34 (60 fps), about every 0.133-0.167 s, inline brand icons stagger in at about 2 frames apart inside the second line, and the whole block rises and settles once.",
+        "why": "Laying the full sentence out first means nothing reflows as words arrive, so the eye reads left to right without being dragged; the icons are words, which says 'works with everything' without a logo wall.",
+        "spans": [
+          {
+            "startSec": 0.13,
+            "endSec": 2.283
+          },
+          {
+            "startSec": 2.3,
+            "endSec": 4.0
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/hook-words.jpg F8-F47",
+        "visuals/a1/b01-hook-words.jpg F6-F53",
+        "speech-text.json screenText boxes 0.15-2.5 s (x 0.104-0.105, centre 0.50)"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 9.217,
+        "endSec": 10.4,
+        "name": "click-freeze-cut",
+        "description": "Click, freeze, cut. The cursor glides to the send button while the last words still type (arrives about F553, 9.22 s; typing ends about F563), then the frame is perfectly still (diff 0.00) for 35 frames, F566-F600 (0.58 s), until the hard cut at F601 (10.017 s, beat 14 on the corrected grid) to the chat window, which rises from below.",
+        "why": "Stillness before the cut lets the click register as the cause; the answer then arrives as the effect on the beat."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/b13-click-approach.jpg F534-F569",
+        "visuals/a1/b08-click-freeze.jpg F567-F617",
+        "visuals/a1/send-cut-10.03.jpg F576-F623"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 12.3,
+        "endSec": 14.75,
+        "name": "blur-scroll-landing",
+        "description": "Camera reads the real table, accelerates, and scrolls fast with heavy vertical blur (13.0-14.0 s; blurred rows F822-F840 at 60 fps). From F842 (14.03 s) the rows are sharp again while still travelling, OCR reads them from 14.10-14.27 s, so they are legible on the downbeat at 14.286 s; the travel then decelerates (diff 6.9 at F865 halving to under 1 by F883) and stops at F885 (14.75 s).",
+        "why": "Speed shows volume without a number; the rows turning sharp on the downbeat makes the landing feel deliberate, and the slow tail lets the eye catch a row before the fade."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/pan-12.4.jpg F738-F779",
+        "visuals/a1/scroll-blur.jpg",
+        "visuals/a1/b09-scroll-land.jpg F822-F866",
+        "visuals/a1/b14-scroll-settle.jpg F864-F905",
+        "speech-text.json screenText rows 14.10-14.27 s"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 2.283,
+        "transition": "cut",
+        "note": "Hard cut at F137 (60 fps) from sentence one to a blank frame, then sentence two; the ground also shifts from #ffffff to #fcfefb. Missed because both are flat light grounds with dark type."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/exit-cut-2.30.jpg F137-F138",
+        "visuals/a1/b02-exit-2.30.jpg F136-F139 (diff 12.1 at F137)"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "s003 at 4.483 s is not a boundary (was recorded as a retype to continuous, which left the cut in place; a reject removes it): it is the blurred shrink of the hero number inside the drop shot (F133-F140 at 30 fps). The real change is the text swap at 5.300 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/hero-shrink.jpg F264-F302",
+        "visuals/a1/b04-shrink.jpg F265-F305 (one continuous decaying diff, no cut)"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 5.283,
+        "transition": "cut",
+        "note": "Text swap on the held orange ground: number replaced by the comparison line, at F317 (60 fps). Counted as a cut (text swap). Candidate 5.3 in shots.json."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/b05-swap-5.30.jpg F316-F317 (diff 8.6)",
+        "visuals/a1/swap-5.30.jpg"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 6.15,
+        "transition": "cut",
+        "note": "Second text swap on orange, at F369 (60 fps). Counted as a cut (text swap). Candidate 6.17 in shots.json."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/b18-swap-6.17.jpg F368-F370 (diff 8.7 at F369)",
+        "visuals/a1/swap-6.17.jpg"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 10.017,
+        "transition": "cut",
+        "note": "Hard cut from the prompt bar on white to the chat window on #f6f9f6 (source frame 601). Candidate 10.02 in shots.json."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/send-cut-10.03.jpg F600-F601"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 15.95,
+        "transition": "fade",
+        "note": "Not a dissolve: the table fades to the empty light ground over F941-F957 (15.68-15.95 s), the ground holds empty F957-F965, then the centred sentence fades in word by word from F966 (16.10 s). A fade through the ground, cut placed where the ground is empty."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/b10-dissolve-15.95.jpg F941-F977"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 17.45,
+        "transition": "dissolve",
+        "note": "Real dissolve: the sentence fades out while the tiny wall of source chips fades in over it, F1035-F1051 (17.25-17.52 s); the wall then creeps and, from 18.30 s, pushes in to readable size."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/b11-dissolve-17.45.jpg F1035-F1051",
+        "visuals/a1/b15-wall-push-step2.jpg F1098-F1150"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 21.5,
+        "transition": "fade",
+        "note": "Not a dissolve: the picked chip fades to the empty light ground F1273-F1292 (21.21-21.53 s), the ground holds two frames, then the mark cuts on at F1294 (21.557 s) and the wordmark at F1298 (21.633 s). Sound stops dead at 22.36 s (audio.json silence)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/b12-dissolve-21.50.jpg F1273-F1298",
+        "audio.json silence 22.357-22.955"
+      ]
+    }
+  ]
+}

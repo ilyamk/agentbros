@@ -1,0 +1,339 @@
+{
+ "description": "Edit identities (review hash inputs) of the recording-edit fixtures, produced and hash-checked against the code before 5ceeacc (version 3). Machine-dependent values are placeholders; editHash and sourceSha256 are the values on the machine that recorded them.",
+ "cases": {
+  "v1": {
+   "editHash": "0efdd1e91b87c1477242cef9e2c73584c014914d8e83b9db5d76c34e4145d070",
+   "sourceSha256": "44a514dee575173cbb5112c3c46e7d4a8d88805443e7b4b65cb0e3a52af3082f",
+   "identity": {
+    "version": 1,
+    "workflow": "recording-edit",
+    "projectId": "recut",
+    "name": "Русский монтаж",
+    "profile": "recording-only",
+    "formats": [
+     "landscape"
+    ],
+    "transcript": {
+     "version": "reviewed-v1",
+     "language": "ru",
+     "words": [
+      {
+       "id": "w1",
+       "text": "Это",
+       "startFrame": 0,
+       "endFrame": 7
+      },
+      {
+       "id": "w2",
+       "text": "не",
+       "startFrame": 7,
+       "endFrame": 12
+      },
+      {
+       "id": "w3",
+       "text": "гарантия.",
+       "startFrame": 12,
+       "endFrame": 25
+      },
+      {
+       "id": "w4",
+       "text": "Повтор.",
+       "startFrame": 33,
+       "endFrame": 50
+      },
+      {
+       "id": "w5",
+       "text": "Если",
+       "startFrame": 60,
+       "endFrame": 68
+      },
+      {
+       "id": "w6",
+       "text": "проверено.",
+       "startFrame": 68,
+       "endFrame": 85
+      }
+     ]
+    },
+    "keepSpans": [
+     {
+      "id": "first",
+      "startFrame": 0,
+      "endFrame": 30,
+      "reason": "Сохраняем отрицание полностью"
+     },
+     {
+      "id": "last",
+      "startFrame": 60,
+      "endFrame": 90,
+      "reason": "Сохраняем условие полностью"
+     }
+    ],
+    "cuts": [
+     {
+      "startFrame": 30,
+      "endFrame": 60,
+      "reason": "Одобренное удаление повтора"
+     }
+    ],
+    "protectedSpans": [
+     {
+      "startFrame": 0,
+      "endFrame": 25,
+      "kind": "negation",
+      "reason": "Не означает гарантию"
+     },
+     {
+      "startFrame": 60,
+      "endFrame": 85,
+      "kind": "caveat",
+      "reason": "Обязательное условие"
+     }
+    ],
+    "revision": 1,
+    "source": {
+     "sha256": "<SOURCE_SHA256>",
+     "version": "take-1",
+     "fps": {
+      "num": 30,
+      "den": 1
+     },
+     "rights": {}
+    },
+    "sourceFrameCount": 90
+   }
+  },
+  "v2-ntsc": {
+   "editHash": "2ebfe1024492a4d257c5a620e6141adfcb75e03a32cdd23306e9999ab1ba5a02",
+   "sourceSha256": "0526b542190c7f287376446735a3dc03bdf22c6b21e35cbadff4d77028212fce",
+   "identity": {
+    "version": 2,
+    "workflow": "recording-edit",
+    "projectId": "recut-ntsc",
+    "name": "Synthetic timing acceptance ntsc",
+    "profile": "recording-only",
+    "formats": [
+     "landscape"
+    ],
+    "transcript": {
+     "version": "technical-transcript-v1",
+     "language": "ru",
+     "words": [
+      {
+       "id": "first",
+       "text": "Это",
+       "startFrame": 0,
+       "endFrame": 4
+      },
+      {
+       "id": "negation",
+       "text": "не",
+       "startFrame": 4,
+       "endFrame": 7
+      },
+      {
+       "id": "claim",
+       "text": "гарантия.",
+       "startFrame": 7,
+       "endFrame": 22
+      },
+      {
+       "id": "removed",
+       "text": "Повтор.",
+       "startFrame": 62,
+       "endFrame": 72
+      },
+      {
+       "id": "condition",
+       "text": "Если",
+       "startFrame": 120,
+       "endFrame": 127
+      },
+      {
+       "id": "tail",
+       "text": "проверено.",
+       "startFrame": 127,
+       "endFrame": 180
+      }
+     ]
+    },
+    "keepSpans": [
+     {
+      "id": "first",
+      "startFrame": 0,
+      "endFrame": 60,
+      "reason": "Preserve complete technical negation"
+     },
+     {
+      "id": "last",
+      "startFrame": 120,
+      "endFrame": 180,
+      "reason": "Preserve technical condition and final word"
+     }
+    ],
+    "cuts": [
+     {
+      "startFrame": 60,
+      "endFrame": 120,
+      "reason": "Synthetic reviewed repeated interval"
+     }
+    ],
+    "protectedSpans": [
+     {
+      "startFrame": 0,
+      "endFrame": 22,
+      "kind": "negation",
+      "reason": "Whole negative statement"
+     },
+     {
+      "startFrame": 120,
+      "endFrame": 180,
+      "kind": "caveat",
+      "reason": "Whole conditional statement"
+     }
+    ],
+    "revision": 1,
+    "source": {
+     "sha256": "<SOURCE_SHA256>",
+     "version": "technical-take-1",
+     "fps": {
+      "num": 30000,
+      "den": 1001
+     },
+     "normalization": {
+      "targetFps": {
+       "num": 30,
+       "den": 1
+      },
+      "video": "timestamp-near",
+      "keepRounding": "outward",
+      "boundaryRounding": "nearest",
+      "audio": "preserve-clock"
+     },
+     "timingHash": "<timingHash>",
+     "normalizerVersion": "<normalizerVersion>",
+     "mappingHash": "<mappingHash>",
+     "timingSummaryHash": "<timingSummaryHash>",
+     "rights": {}
+    },
+    "sourceFrameCount": 180
+   }
+  },
+  "v2-vfr": {
+   "editHash": "cded97c8efa23cfaa0eb2f6cdc60c0cf84b086f240e3b0defa0ac73a5a154995",
+   "sourceSha256": "4738aac55e8a43e86735256b422a7e6f15672fd27235ebc3e4d9e3f31342acdb",
+   "identity": {
+    "version": 2,
+    "workflow": "recording-edit",
+    "projectId": "recut-vfr",
+    "name": "Synthetic timing acceptance vfr",
+    "profile": "recording-only",
+    "formats": [
+     "landscape"
+    ],
+    "transcript": {
+     "version": "technical-transcript-v1",
+     "language": "ru",
+     "words": [
+      {
+       "id": "first",
+       "text": "Это",
+       "startFrame": 0,
+       "endFrame": 4
+      },
+      {
+       "id": "negation",
+       "text": "не",
+       "startFrame": 4,
+       "endFrame": 7
+      },
+      {
+       "id": "claim",
+       "text": "гарантия.",
+       "startFrame": 7,
+       "endFrame": 22
+      },
+      {
+       "id": "removed",
+       "text": "Повтор.",
+       "startFrame": 58,
+       "endFrame": 68
+      },
+      {
+       "id": "condition",
+       "text": "Если",
+       "startFrame": 112,
+       "endFrame": 119
+      },
+      {
+       "id": "tail",
+       "text": "проверено.",
+       "startFrame": 119,
+       "endFrame": 168
+      }
+     ]
+    },
+    "keepSpans": [
+     {
+      "id": "first",
+      "startFrame": 0,
+      "endFrame": 56,
+      "reason": "Preserve complete technical negation"
+     },
+     {
+      "id": "last",
+      "startFrame": 112,
+      "endFrame": 168,
+      "reason": "Preserve technical condition and final word"
+     }
+    ],
+    "cuts": [
+     {
+      "startFrame": 56,
+      "endFrame": 112,
+      "reason": "Synthetic reviewed repeated interval"
+     }
+    ],
+    "protectedSpans": [
+     {
+      "startFrame": 0,
+      "endFrame": 22,
+      "kind": "negation",
+      "reason": "Whole negative statement"
+     },
+     {
+      "startFrame": 112,
+      "endFrame": 168,
+      "kind": "caveat",
+      "reason": "Whole conditional statement"
+     }
+    ],
+    "revision": 1,
+    "source": {
+     "sha256": "<SOURCE_SHA256>",
+     "version": "technical-take-1",
+     "fps": {
+      "num": 30,
+      "den": 1
+     },
+     "normalization": {
+      "targetFps": {
+       "num": 30,
+       "den": 1
+      },
+      "video": "timestamp-near",
+      "keepRounding": "outward",
+      "boundaryRounding": "nearest",
+      "audio": "preserve-clock"
+     },
+     "timingHash": "<timingHash>",
+     "normalizerVersion": "<normalizerVersion>",
+     "mappingHash": "<mappingHash>",
+     "timingSummaryHash": "<timingSummaryHash>",
+     "rights": {}
+    },
+    "sourceFrameCount": 168
+   }
+  }
+ }
+}

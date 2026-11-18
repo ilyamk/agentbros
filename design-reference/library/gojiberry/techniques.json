@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gojiberry",
+  "techniques": [
+    {
+      "id": "caret-tracking-typewriter",
+      "name": "Caret-tracking typewriter with accent on the newest word",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 1.933
+        },
+        {
+          "startSec": 4.733,
+          "endSec": 6.533
+        },
+        {
+          "startSec": 14.067,
+          "endSec": 14.967
+        },
+        {
+          "startSec": 22.1,
+          "endSec": 24.6
+        },
+        {
+          "startSec": 28.1,
+          "endSec": 35.0
+        }
+      ],
+      "description": "A line types at about 2 frames a character with a solid block caret; the frame is a tight crop that follows the caret, so the start of the line exits the left edge and the caret holds near x 0.30-0.40. The word just completed is accent red for 6-7 frames, then turns to the base colour. In the interface sections a virtual camera pushes to the caret (1.4-1.8x) and the cut back to a wide shows the whole query.",
+      "route": "remotion",
+      "routeReason": "Pure type and a 2D camera over a flat field: TypedLine/typingSchedule give the characters by frame, RegionCamera follows a caret point computed from the measured text width. For the product sections the real interface must be captured (capture:app) and played under the same camera.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "typingSchedule",
+        "typedCount",
+        "RegionCamera",
+        "ui-prompt-bar",
+        "block:type-caret-track",
+        "block:type-caret-track"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 1.933,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s01-type-to-bar.jpg F93-F114 (10 characters in 21 frames)",
+          "visuals/a1/s03-black-typewriter.jpg F292-F323"
+        ]
+      },
+      "ease": {
+        "name": "power1.in",
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s001 camera: move_right x 0.912, push_in z 0.445, start 0.11 s, 1.79 s, trackedShare 0.774 (borderline); the bezier fit is unusable (negative y), use the GSAP name"
+        ]
+      },
+      "typography": {
+        "role": "typed query",
+        "entry": "typewriter about 2 frames a character, block caret, newest word accent for 6-7 frames",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText box x 0.00 at 0.42-1.72 s, 5.5-6.5 s, 23.8-24.6 s",
+          "visuals/a1/s03-black-typewriter.jpg F292-F299"
+        ]
+      },
+      "layers": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 0,
+            "endSec": 1.933
+          },
+          "shots": [
+            "s001"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 4.733,
+            "endSec": 6.533
+          },
+          "shots": [
+            "s003",
+            "s004"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 14.067,
+            "endSec": 14.967
+          },
+          "shots": [
+            "s016"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 22.1,
+            "endSec": 24.6
+          },
+          "shots": [
+            "s022.1"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 28.1,
+            "endSec": 35.0
+          },
+          "shots": [
+            "s024",
+            "s025",
+            "s026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-punch-flash",
+      "name": "Type punch-in through a polarity flash",
+      "spans": [
+        {
+          "startSec": 5.5,
+          "endSec": 5.567
+        }
+      ],
+      "description": "The same typed line jumps from a 11.6% to a 22-24% line box (about 1.7-2x) while the ground flips: F330-F331 white ground with the small line, F332-F333 white ground with the large line, F334 back to black. Afterwards a slow push of 8% (z 0.077) over 1.01 s, power4.out.",
+      "route": "remotion",
+      "routeReason": "Two scale states and a ground colour per frame; no new primitive beyond a scale track.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "curves",
+        "TypedLine",
+        "ground-swap-cut"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.067,
+        "startOffsetFromCutSec": -0.067,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s04-type-punch.jpg F330-F334"
+        ]
+      },
+      "ease": {
+        "name": "steps",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s04-type-punch.jpg F331-F332: the scale changes in one frame, no tween. The slow 8% push after it is a separate move: motion.json s004 power4.out, z 0.077 from 5.567 s over 1.012 s, trackedShare 0.984"
+        ]
+      },
+      "typography": {
+        "role": "question line",
+        "entry": "scale jump 1.7-2x on a 4-frame ground flip",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText boxes 4.73 s (height 0.116) and 5.5 s (height 0.225)"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "polarity-slice-glitch",
+      "name": "Polarity flip and slice-displacement glitch cut",
+      "spans": [
+        {
+          "startSec": 6.533,
+          "endSec": 6.933
+        },
+        {
+          "startSec": 1.917,
+          "endSec": 1.933
+        },
+        {
+          "startSec": 14.967,
+          "endSec": 15.083
+        },
+        {
+          "startSec": 13.45,
+          "endSec": 13.517
+        },
+        {
+          "startSec": 13.583,
+          "endSec": 13.667
+        }
+      ],
+      "description": "Single frames flip to the opposite ground (black to white) while horizontal bands of the image are displaced sideways by 5-30% of the width; the incoming image arrives already sliced and resolves in 10-12 frames. Lengths used: 1 frame (1.92 s), 4-7 frames (word swaps), 24 frames (6.53-6.93 s, text to first person).",
+      "route": "remotion",
+      "routeReason": "Per-frame clip-path bands with seeded offsets and a ground invert are deterministic in Remotion; SliceWord covers type, a plate-level version is needed for footage.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "SliceWord",
+        "hitDecay",
+        "random(seed)",
+        "block:grade-step-flash"
+      ],
+      "function": "transition",
+      "fromShot": 3,
+      "toShot": 4,
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": -0.2,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s05-glitch-to-desk.jpg F392-F416 (cut at F404)"
+        ]
+      },
+      "ease": {
+        "name": "steps",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s05-glitch-to-desk.jpg F392-F416: offsets jump frame to frame, no interpolation"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 1.917,
+            "endSec": 1.933
+          },
+          "fromShot": 0,
+          "toShot": 1,
+          "timing": {
+            "durationSec": 0.017,
+            "basis": "observed",
+            "evidence": [
+              "edit.json signatureMoves polarity-slice-glitch-cut: 1 frame at 1.92 s (F115)"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 6.533,
+            "endSec": 6.933
+          },
+          "fromShot": 3,
+          "toShot": 4,
+          "timing": {
+            "durationSec": 0.4,
+            "startOffsetFromCutSec": -0.2,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/s05-glitch-to-desk.jpg F392-F416 (cut at F404)"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 13.45,
+            "endSec": 13.517
+          },
+          "shots": [
+            "s008.12"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 13.583,
+            "endSec": 13.667
+          },
+          "fromShot": 17,
+          "toShot": 18
+        },
+        {
+          "span": {
+            "startSec": 14.967,
+            "endSec": 15.083
+          },
+          "fromShot": 24,
+          "toShot": 25
+        }
+      ]
+    },
+    {
+      "id": "doubling-counter-montage",
+      "name": "Accelerating subject-swap montage under a doubling counter",
+      "spans": [
+        {
+          "startSec": 6.733,
+          "endSec": 14.067
+        }
+      ],
+      "description": "Fixed layout: query strip at top, count right-aligned to x 0.38 at eye height, seated subject centred, plural label from x 0.61, name card below. Each cut swaps the subject and doubles the count (1 to 524 288, 20 shots). Holds 1.47, 1.53, 0.88, 0.62, 0.45, 0.45, 0.47, 0.25, 0.17, 0.15, 0.12, 0.13, 0.12, 0.10, 0.10, 0.07, 0.10, 0.03, 0.03, 0.10 s. The face cut lands 1-3 frames before the odometer roll, which takes 4-5 frames.",
+      "route": "footage",
+      "routeReason": "Twenty different real people in the same seat and framing cannot be faked: shoot them (or license a matched set) on one locked-off camera; the counter, label and card are Remotion overlays (type-odometer-stat logic).",
+      "difficulty": "high",
+      "requiredPrimitives": [
+        "odometerReels",
+        "type-odometer-stat",
+        "layoutSeries",
+        "Sequence",
+        "block:doubling-counter-montage"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 7.334,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s10b-montage-c.jpg F700-F708",
+          "visuals/a1/s10c-montage-d.jpg F728-F773",
+          "visuals/a1/s10-counter-run.jpg F774-F812",
+          "visuals/a1/s12-counter-glitch.jpg F812-F843"
+        ]
+      },
+      "ease": {
+        "name": "linear",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s10b-montage-c.jpg F704-F708: the roll moves about the same distance each frame"
+        ]
+      },
+      "typography": {
+        "role": "counter numeral and plural label",
+        "entry": "odometer roll down, 4-5 frames, 1-3 frames after the cut",
+        "alignment": "right",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 1024 box x 0.219-0.389, 65 536 box x 0.17-0.421",
+          "visuals/a1/s10c-montage-d.jpg F728-F734"
+        ]
+      },
+      "layers": 4,
+      "shots": [
+        "s006",
+        "s008.1",
+        "s008.2",
+        "s008.3",
+        "s008.4",
+        "s008.5",
+        "s008.6",
+        "s008.7",
+        "s008.8",
+        "s008.9",
+        "s008.10",
+        "s008.11",
+        "s008.12",
+        "s012",
+        "s013.1",
+        "s013.2",
+        "s013.3",
+        "s015.1",
+        "s015.2",
+        "s015.3"
+      ]
+    },
+    {
+      "id": "flash-frame-subject-swap",
+      "name": "Flash frames on a subject swap: dark ghost, inverted plate, x-ray",
+      "spans": [
+        {
+          "startSec": 8.2,
+          "endSec": 8.267
+        },
+        {
+          "startSec": 10.733,
+          "endSec": 10.8
+        },
+        {
+          "startSec": 11.167,
+          "endSec": 11.267
+        },
+        {
+          "startSec": 13.133,
+          "endSec": 13.2
+        },
+        {
+          "startSec": 13.767,
+          "endSec": 13.833
+        }
+      ],
+      "description": "For 2-4 frames the plate is replaced by a variant: the subject darkened on a near-black ground (F492-F495), a cyan skeleton x-ray on dark (F644-F647, F670-F673), or a photographic negative (F674-F675). Sometimes the subject changes under the flash (F790, F828), sometimes it stays (F644, F826).",
+      "route": "remotion",
+      "routeReason": "Colour-matrix and invert filters on the footage layer per frame are deterministic; the x-ray needs a pre-made matte or plate per subject. `grade-step-flash` step `matte` takes either `src` (x-ray artwork drawn in place of the plate, `gojiberryXrayExit`) or `matteSrc` (the plate subject's alpha cut-out, which masks the plate into a cyan negative, `gojiberryXrayFromCutout`); the repository has no local cut-out route, so the PNG is supplied or made with `pnpm rmbg` (paid, with approval).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Video",
+        "block:grade-step-flash"
+      ],
+      "techniqueCardId": "grade-step-flash",
+      "function": "transition",
+      "fromShot": 4,
+      "toShot": 5,
+      "timing": {
+        "durationSec": 0.067,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s08-wipe-swap.jpg F492-F496",
+          "visuals/a1/s09-xray-flash.jpg F644-F648, F670-F677",
+          "visuals/a1/s10-counter-run.jpg F788-F792"
+        ]
+      },
+      "ease": {
+        "name": "steps",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s09-xray-flash.jpg F643-F648: full switch in one frame, no blend"
+        ]
+      },
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 8.2,
+            "endSec": 8.267
+          },
+          "fromShot": 4,
+          "toShot": 5
+        },
+        {
+          "span": {
+            "startSec": 10.733,
+            "endSec": 10.8
+          },
+          "shots": [
+            "s008.3"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 11.167,
+            "endSec": 11.267
+          },
+          "fromShot": 7,
+          "toShot": 8
+        },
+        {
+          "span": {
+            "startSec": 13.133,
+            "endSec": 13.2
+          },
+          "fromShot": 13,
+          "toShot": 14
+        },
+        {
+          "span": {
+            "startSec": 13.767,
+            "endSec": 13.833
+          },
+          "fromShot": 19,
+          "toShot": 20
+        }
+      ]
+    },
+    {
+      "id": "word-case-corruption",
+      "name": "Statement word: case flip letter by letter, then glyph corruption to black",
+      "spans": [
+        {
+          "startSec": 14.067,
+          "endSec": 16.933
+        }
+      ],
+      "description": "On black, a two-word line types (second word accent for 6 frames), then glitch-swaps to a one-word answer in a slanted lower-case form. The letters flip to upright capitals one at a time, every 2-3 frames (F915-F924, 0.15 s), hold 1.2 s, then: polarity flips (F998-F1001), glyphs replaced by look-alike symbols (F1006-F1007), horizontal smear blocks (F1008-F1015), black at F1016.",
+      "route": "remotion",
+      "routeReason": "Per-glyph state per frame: Glyphs/ScrambleWord give glyph substitution, SliceWord and a ground invert give the break-up.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Glyphs",
+        "ScrambleWord",
+        "scrambleGlyphs",
+        "SliceWord",
+        "type-scramble-hero",
+        "block:type-scramble-hero"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 2.866,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s16-must-be.jpg F858-F905",
+          "visuals/a1/s17b-simple-caps.jpg F912-F941",
+          "visuals/a1/s17-simple-glitch.jpg F996-F1016"
+        ]
+      },
+      "ease": {
+        "name": "steps",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s17b-simple-caps.jpg F915-F924: one letter per 2-3 frames, no tween"
+        ]
+      },
+      "typography": {
+        "role": "statement word",
+        "entry": "glitch swap, letter-by-letter case flip, symbol corruption, smear out",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText boxes 14.4 s (x 0.259 w 0.416) and 14.97 s (x 0.218 w 0.517)"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "black-silence-breath",
+      "name": "Black frame on silence before the reveal",
+      "spans": [
+        {
+          "startSec": 16.933,
+          "endSec": 17.5
+        }
+      ],
+      "description": "0.57 s of pure black (F1016-F1049) after the corrupted word; audio.json reports silence 16.98-17.45 s. Also a 7-frame black lead at 4.73 s before the question line.",
+      "route": "remotion",
+      "routeReason": "An empty Sequence and a gap in the sound bed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Sequence",
+        "layoutSeries"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 0.567,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s17-simple-glitch.jpg F1016-F1025",
+          "visuals/a1/s20-heart-pull.jpg F1047-F1050"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "audio.json silence 16.98-17.45 s overlaps the black picture 16.93-17.5 s; RMS about -69 dB at 16.0-16.5 s under the held word. Measured level only; what plays around it is unheard.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json silence",
+          "RMS 50 ms windows computed in the analyst's scratch folder"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "extruded-mark-pullback",
+      "name": "3D brand mark glitches in at extreme close-up and pulls back with a roll",
+      "spans": [
+        {
+          "startSec": 17.5,
+          "endSec": 18.5
+        }
+      ],
+      "description": "Glossy red extruded mark: first frames are a slice glitch of its face filling the frame (F1050-F1056), then the camera pulls back about 5.8x (z -1.76) with about 39 degrees of counter-clockwise roll over 1.4 s, ending as a speck on black that is cut at 18.5 s before the move settles.",
+      "route": "remotion",
+      "routeReason": "The library's extruded-mark block renders an SVG mark extruded in three.js inside Remotion; Blender only if a hero material is needed. The pull and roll are a camera track.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "extruded-mark",
+        "ThreeCanvas",
+        "track",
+        "SliceWord"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 1.0,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s20-heart-pull.jpg F1050-F1094"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "inferred",
+        "evidence": [
+          "motion.json s020 fits power2.out (pull_out z -1.762, r -0.688, start 17.634 s, 1.409 s, trackedShare 0.915), but the fit runs to 19.04 s and the shot is cut at 18.5 s, so the curve past the cut is extrapolated; the name is kept as a guess only"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "mosaic-ring-reveal",
+      "techniqueCardId": "pixel-resolve",
+      "name": "Pixel-mosaic ring blooms from the mark, then the wordmark types on",
+      "spans": [
+        {
+          "startSec": 18.5,
+          "endSec": 20.6
+        }
+      ],
+      "description": "Hard cut from black to white (F1110). From the small mark a ring of coarse square pixels grows outward over about 0.7 s (F1110-F1151), leaving a warm peach gradient. The mark shrinks once (F1214) and the wordmark types on beside it at about 3 frames a letter (F1216-F1235).",
+      "route": "remotion",
+      "routeReason": "A grid of squares masked by a growing radius is a simple per-frame shape; the type-on is TypedLine.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "TypedLine",
+        "progress",
+        "block:pixel-resolve"
+      ],
+      "function": "reveal",
+      "fromShot": 27,
+      "toShot": 28,
+      "timing": {
+        "durationSec": 2.1,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s21-flash-logo.jpg F1110-F1151",
+          "visuals/a1/s21b-logo-type.jpg F1214-F1235"
+        ]
+      },
+      "ease": {
+        "name": "sine.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/s21-flash-logo.jpg F1110-F1151: ring grows fast then slows; motion.json s021 fits sine.out on the ring's apparent zoom, which is not a camera"
+        ]
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "type-on about 3 frames a letter after the mark",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s21b-logo-type.jpg F1216-F1235",
+          "speech-text.json screenText 20.23 s box x 0.359 w 0.30"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "interface-punch-cuts",
+      "name": "Product demo: wide and caret close-up alternated by hard cuts",
+      "spans": [
+        {
+          "startSec": 22.1,
+          "endSec": 35.0
+        }
+      ],
+      "description": "The real query field in the product. Close-ups on the caret (1.4-2x) while a clause types, hard cut to the wide when the clause completes so the result count and dot-matrix visual can update, then a hard cut back in for the next clause. Bracketed placeholders show the next clause in coral. Cuts at 24.6, 28.1, 30.47, 33.1 s; holds 2.4-3.5 s. Each close-up carries a short push (z 0.18-0.57).",
+      "route": "remotion",
+      "routeReason": "Captured product interface (capture:app) played in Remotion with RegionCamera keys; the cut grammar is layoutSeries.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ScreenPlayback",
+        "RegionCamera",
+        "regionTransform",
+        "Cursor",
+        "ui-prompt-bar",
+        "type-number-race"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 12.9,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s23b-pull-wide.jpg F1475-F1477",
+          "visuals/a1/s24-punch-cut.jpg F1685-F1686",
+          "visuals/boundaries-01.jpg S025, S026"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0,
+          0.631,
+          0,
+          0.64
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s024 camera move_right x 0.272, push_in z 0.362, start 29.083 s, 0.405 s, trackedShare 1.0",
+          "motion.json s025 power3.out z 0.185, trackedShare 1.0",
+          "motion.json s026 power2.inOut z 0.565, trackedShare 0.771"
+        ]
+      },
+      "typography": {
+        "role": "query and result count",
+        "entry": "typewriter in close-up; count races then settles",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 28.1-35.1 boxes x 0.00",
+          "speech-text.json screenText 26.27-28.0 counts"
+        ]
+      },
+      "layers": 3,
+      "shots": [
+        "s022.1",
+        "s022.2",
+        "s024",
+        "s025",
+        "s026"
+      ]
+    },
+    {
+      "id": "submit-wash-dissolve",
+      "name": "Press, colour wash and ripple, result resolves out of the wash",
+      "spans": [
+        {
+          "startSec": 35.0,
+          "endSec": 36.1
+        }
+      ],
+      "description": "The pointer presses the submit control (F2100); a pink wash (#FA9A98) rises over the interface over about 0.35 s, a ring ripples out from the pointer, and at F2122 a dot-matrix result shape appears inside the wash; the wash clears to the warm gradient by F2160 (36.0 s) with a small count that ticks down for another 0.4 s.",
+      "route": "remotion",
+      "routeReason": "Opacity of a flat colour layer, a ring scale and a crossfade between two captured states.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Cursor",
+        "ShockRing",
+        "shockRingAt",
+        "NumberRace",
+        "TransitionSeries"
+      ],
+      "function": "transition",
+      "fromShot": 33,
+      "toShot": 34,
+      "timing": {
+        "durationSec": 1.1,
+        "startOffsetFromCutSec": -0.517,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s27-click-blur.jpg F2100-F2138",
+          "visuals/a1/s27b-results-dissolve.jpg F2139-F2186"
+        ]
+      },
+      "ease": {
+        "name": "sine.inOut",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/s27b-results-dissolve.jpg F2139-F2160: the wash fades evenly with no visible snap"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "tilt-to-matched-person",
+      "name": "Camera tilts from the typed line down to the one matched person; badge counts to full match",
+      "spans": [
+        {
+          "startSec": 42.123,
+          "endSec": 44.8
+        }
+      ],
+      "description": "On white the completed line drifts up and out as the camera tilts down (y 0.512 frame heights, slight pull-out z -0.22) and the seated person rises into frame (F2554-F2585). At 44.0 s a hand enters from the left with a thumbs-up (6 frames), and at F2653 a green pill grows from a dot at top centre and counts a percentage up to a full match by F2669.",
+      "route": "footage",
+      "routeReason": "A real person and hand on a studio plate; the line and badge are Remotion overlays tracked to the tilt. If the plate is locked off, the tilt can be done in Remotion on an over-scanned frame.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "Video",
+        "RegionCamera",
+        "TypedLine",
+        "NumberRace",
+        "block:type-number-race"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 2.673,
+        "startOffsetFromCutSec": 1.256,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s28b-text-to-desk.jpg F2538-F2585",
+          "visuals/a1/s28c-badge.jpg F2643-F2669"
+        ]
+      },
+      "ease": {
+        "name": "power4.out",
+        "cubicBezier": [
+          0.196,
+          0.278,
+          0,
+          0.561
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s028 camera move_down y 0.512, pull_out z -0.224, start 42.123 s, 2.673 s, trackedShare 0.816"
+        ]
+      },
+      "typography": {
+        "role": "payoff line",
+        "entry": "typewriter word by word, then carried out of frame by the tilt",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 40.87 s box x 0.221 w 0.55",
+          "visuals/a1/s28-and-cut.jpg F2452-F2471"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "defocus-end-card",
+      "techniqueCardId": "defocus-ramp",
+      "name": "Subject walks out, plate defocuses, mark and offer type on over the blur",
+      "spans": [
+        {
+          "startSec": 47.2,
+          "endSec": 56.533
+        }
+      ],
+      "description": "The matched person stands (47.2 s) and walks out right; from about 48.3 s the whole plate defocuses. The mark pops in at F2936 (48.93), the wordmark types on at about 3 frames a letter (F2954-F2975), a black pill with the offer arrives at 50.4 s and the card holds still to the last frame (no fade).",
+      "route": "footage",
+      "routeReason": "The walk-out is live action; the defocus can be a blur ramp on the footage layer in Remotion and the card is Remotion type.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "Video",
+        "TypedLine",
+        "scene-end-card",
+        "block:focus-pull"
+      ],
+      "function": "cta",
+      "timing": {
+        "durationSec": 9.333,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/s29-walk-whip.jpg F2832-F2879",
+          "visuals/a1/s29b-walk-whip2.jpg F2880-F2927",
+          "visuals/a1/s29c-blur-to-end.jpg F2928-F2975"
+        ]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [
+          0,
+          0.405,
+          0.067,
+          0.85
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s029 camera push_in z 0.373, start 50.399 s, 0.412 s, trackedShare 0.884: a small push on the card after the type-on"
+        ]
+      },
+      "typography": {
+        "role": "wordmark and offer pill",
+        "entry": "mark pop, type-on about 3 frames a letter, pill after 1.5 s",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 49.57-56.5 boxes x 0.31-0.70 and pill x 0.269 w 0.463"
+        ]
+      },
+      "layers": 3
+    }
+  ]
+}

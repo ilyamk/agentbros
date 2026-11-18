@@ -1,0 +1,4082 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "content": "structure",
+  "speech": {
+    "available": false,
+    "engine": "whisper.cpp",
+    "unavailableReason": "Local speech recognition failed: Local worker timeout; no automatic inference retry",
+    "words": []
+  },
+  "screenText": {
+    "available": true,
+    "engine": "apple-vision",
+    "items": [
+      {
+        "startSec": 0,
+        "endSec": 0.517,
+        "textId": 0,
+        "chars": 8,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.28,
+          "y": 0.428,
+          "width": 0.453,
+          "height": 0.131
+        }
+      },
+      {
+        "startSec": 0.517,
+        "endSec": 1.017,
+        "textId": 1,
+        "chars": 10,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.243,
+          "y": 0.416,
+          "width": 0.513,
+          "height": 0.15
+        }
+      },
+      {
+        "startSec": 1.017,
+        "endSec": 1.517,
+        "textId": 2,
+        "chars": 2,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.197,
+          "y": 0.383,
+          "width": 0.191,
+          "height": 0.331
+        }
+      },
+      {
+        "startSec": 1.517,
+        "endSec": 2.517,
+        "textId": 3,
+        "chars": 6,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.126,
+          "y": 0.261,
+          "width": 0.757,
+          "height": 0.501
+        }
+      },
+      {
+        "startSec": 2.517,
+        "endSec": 3.517,
+        "textId": 4,
+        "chars": 12,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.196,
+          "y": 0.412,
+          "width": 0.653,
+          "height": 0.172
+        }
+      },
+      {
+        "startSec": 3.517,
+        "endSec": 4.517,
+        "textId": 5,
+        "chars": 11,
+        "words": 3,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.233,
+          "y": 0.422,
+          "width": 0.553,
+          "height": 0.131
+        }
+      },
+      {
+        "startSec": 5.517,
+        "endSec": 6.017,
+        "textId": 6,
+        "chars": 4,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.257,
+          "y": 0.401,
+          "width": 0.375,
+          "height": 0.212
+        }
+      },
+      {
+        "startSec": 6.017,
+        "endSec": 6.517,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.254,
+          "y": 0.373,
+          "width": 0.507,
+          "height": 0.267
+        }
+      },
+      {
+        "startSec": 6.017,
+        "endSec": 6.517,
+        "textId": 8,
+        "chars": 15,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.476,
+          "y": 0.636,
+          "width": 0.226,
+          "height": 0.059
+        }
+      },
+      {
+        "startSec": 6.517,
+        "endSec": 7.017,
+        "textId": 9,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.261,
+          "y": 0.421,
+          "width": 0.488,
+          "height": 0.199
+        }
+      },
+      {
+        "startSec": 7.017,
+        "endSec": 7.517,
+        "textId": 10,
+        "chars": 10,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.211,
+          "y": 0.436,
+          "width": 0.439,
+          "height": 0.144
+        }
+      },
+      {
+        "startSec": 7.517,
+        "endSec": 8.017,
+        "textId": 11,
+        "chars": 15,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.174,
+          "y": 0.434,
+          "width": 0.66,
+          "height": 0.151
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 9.517,
+        "textId": 12,
+        "chars": 6,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0,
+          "y": 0.13,
+          "width": 0.455,
+          "height": 0.176
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 9.017,
+        "textId": 13,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.573,
+          "y": 0.178,
+          "width": 0.109,
+          "height": 0.072
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 9.517,
+        "textId": 14,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.164,
+          "y": 0.475,
+          "width": 0.088,
+          "height": 0.067
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 9.517,
+        "textId": 15,
+        "chars": 9,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.337,
+          "y": 0.397,
+          "width": 0.558,
+          "height": 0.208
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 8.517,
+        "textId": 16,
+        "chars": 9,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0,
+          "y": 0.681,
+          "width": 0.646,
+          "height": 0.216
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 8.517,
+        "textId": 17,
+        "chars": 4,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.739,
+          "y": 0.125,
+          "width": 0.259,
+          "height": 0.164
+        }
+      },
+      {
+        "startSec": 8.017,
+        "endSec": 9.517,
+        "textId": 18,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.789,
+          "y": 0.75,
+          "width": 0.105,
+          "height": 0.072
+        }
+      },
+      {
+        "startSec": 8.517,
+        "endSec": 9.517,
+        "textId": 19,
+        "chars": 10,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0,
+          "y": 0.681,
+          "width": 0.734,
+          "height": 0.194
+        }
+      },
+      {
+        "startSec": 8.517,
+        "endSec": 9.517,
+        "textId": 20,
+        "chars": 3,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.792,
+          "y": 0.139,
+          "width": 0.206,
+          "height": 0.158
+        }
+      },
+      {
+        "startSec": 8.517,
+        "endSec": 9.017,
+        "textId": 21,
+        "chars": 1,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.962,
+          "y": 0.456,
+          "width": 0.036,
+          "height": 0.069
+        }
+      },
+      {
+        "startSec": 9.017,
+        "endSec": 9.517,
+        "textId": 13,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.6,
+          "y": 0.133,
+          "width": 0.158,
+          "height": 0.089
+        }
+      },
+      {
+        "startSec": 9.017,
+        "endSec": 9.517,
+        "textId": 21,
+        "chars": 1,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.93,
+          "y": 0.406,
+          "width": 0.069,
+          "height": 0.067
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.109,
+          "y": 0.123,
+          "width": 0.148,
+          "height": 0.087
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 12.517,
+        "textId": 22,
+        "chars": 13,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.155,
+          "y": 0.28,
+          "width": 0.125,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 23,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.162,
+          "y": 0.448,
+          "width": 0.152,
+          "height": 0.045
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 24,
+        "chars": 8,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.111,
+          "y": 0.604,
+          "width": 0.126,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 25,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.139,
+          "y": 0.711,
+          "width": 0.113,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.017,
+        "textId": 26,
+        "chars": 12,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.112,
+          "y": 0.813,
+          "width": 0.155,
+          "height": 0.045
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 12.517,
+        "textId": 27,
+        "chars": 9,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.917,
+        "box": {
+          "x": 0.147,
+          "y": 0.953,
+          "width": 0.119,
+          "height": 0.031
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 28,
+        "chars": 25,
+        "words": 5,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.429,
+          "y": 0.133,
+          "width": 0.329,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.017,
+        "textId": 29,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.445,
+          "y": 0.342,
+          "width": 0.092,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 30,
+        "chars": 14,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.431,
+          "y": 0.442,
+          "width": 0.156,
+          "height": 0.031
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 31,
+        "chars": 3,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.431,
+          "y": 0.518,
+          "width": 0.153,
+          "height": 0.088
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 32,
+        "chars": 17,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.64,
+          "y": 0.435,
+          "width": 0.188,
+          "height": 0.046
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 33,
+        "chars": 5,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.454,
+          "y": 0.71,
+          "width": 0.085,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 33,
+        "chars": 5,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.648,
+          "y": 0.692,
+          "width": 0.097,
+          "height": 0.069
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 34,
+        "chars": 6,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.825,
+          "y": 0.705,
+          "width": 0.086,
+          "height": 0.04
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 35,
+        "chars": 7,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.465,
+          "y": 0.926,
+          "width": 0.069,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 36,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.586,
+          "y": 0.928,
+          "width": 0.147,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 37,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.784,
+          "y": 0.927,
+          "width": 0.089,
+          "height": 0.043
+        }
+      },
+      {
+        "startSec": 9.517,
+        "endSec": 10.517,
+        "textId": 38,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.923,
+          "y": 0.925,
+          "width": 0.059,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 10.017,
+        "endSec": 12.517,
+        "textId": 39,
+        "chars": 15,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.9,
+        "box": {
+          "x": 0.105,
+          "y": 0.817,
+          "width": 0.183,
+          "height": 0.042
+        }
+      },
+      {
+        "startSec": 10.017,
+        "endSec": 10.517,
+        "textId": 29,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.433,
+          "y": 0.347,
+          "width": 0.088,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 10.017,
+        "endSec": 10.517,
+        "textId": 40,
+        "chars": 3,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.945,
+          "y": 0.699,
+          "width": 0.053,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 41,
+        "chars": 7,
+        "words": 2,
+        "case": "title",
+        "confidence": 0.875,
+        "box": {
+          "x": 0.683,
+          "y": 0.136,
+          "width": 0.088,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 42,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.825,
+        "box": {
+          "x": 0.073,
+          "y": 0.258,
+          "width": 0.069,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.517,
+        "textId": 43,
+        "chars": 10,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.072,
+          "y": 0.333,
+          "width": 0.103,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.017,
+        "textId": 44,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.073,
+          "y": 0.41,
+          "width": 0.137,
+          "height": 0.038
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.517,
+        "textId": 45,
+        "chars": 5,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.073,
+          "y": 0.569,
+          "width": 0.064,
+          "height": 0.035
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 46,
+        "chars": 7,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.825,
+        "box": {
+          "x": 0.073,
+          "y": 0.649,
+          "width": 0.08,
+          "height": 0.03
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.017,
+        "textId": 47,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.833,
+        "box": {
+          "x": 0.089,
+          "y": 0.729,
+          "width": 0.049,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 48,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.306,
+          "y": 0.286,
+          "width": 0.136,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.517,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.322,
+          "y": 0.392,
+          "width": 0.064,
+          "height": 0.044
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.017,
+        "textId": 50,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.622,
+          "y": 0.402,
+          "width": 0.046,
+          "height": 0.027
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.017,
+        "textId": 51,
+        "chars": 26,
+        "words": 5,
+        "case": "sentence",
+        "confidence": 0.833,
+        "box": {
+          "x": 0.606,
+          "y": 0.447,
+          "width": 0.198,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.017,
+        "textId": 18,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.833,
+        "box": {
+          "x": 0.887,
+          "y": 0.406,
+          "width": 0.063,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 11.017,
+        "textId": 52,
+        "chars": 12,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.887,
+          "y": 0.445,
+          "width": 0.111,
+          "height": 0.031
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 53,
+        "chars": 12,
+        "words": 2,
+        "case": "title",
+        "confidence": 0.875,
+        "box": {
+          "x": 0.316,
+          "y": 0.566,
+          "width": 0.086,
+          "height": 0.034
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 31,
+        "chars": 3,
+        "words": 1,
+        "case": "none",
+        "confidence": 0.875,
+        "box": {
+          "x": 0.32,
+          "y": 0.625,
+          "width": 0.045,
+          "height": 0.044
+        }
+      },
+      {
+        "startSec": 10.517,
+        "endSec": 12.517,
+        "textId": 54,
+        "chars": 15,
+        "words": 4,
+        "case": "lower",
+        "confidence": 0.875,
+        "box": {
+          "x": 0.207,
+          "y": 0.745,
+          "width": 0.684,
+          "height": 0.143
+        }
+      },
+      {
+        "startSec": 11.017,
+        "endSec": 11.517,
+        "textId": 50,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.622,
+          "y": 0.402,
+          "width": 0.044,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 11.017,
+        "endSec": 12.517,
+        "textId": 52,
+        "chars": 12,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.833,
+        "box": {
+          "x": 0.886,
+          "y": 0.444,
+          "width": 0.113,
+          "height": 0.03
+        }
+      },
+      {
+        "startSec": 11.517,
+        "endSec": 12.017,
+        "textId": 55,
+        "chars": 11,
+        "words": 2,
+        "case": "title",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.072,
+          "y": 0.333,
+          "width": 0.104,
+          "height": 0.038
+        }
+      },
+      {
+        "startSec": 11.517,
+        "endSec": 12.517,
+        "textId": 44,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.75,
+        "box": {
+          "x": 0.073,
+          "y": 0.372,
+          "width": 0.136,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 11.517,
+        "endSec": 12.517,
+        "textId": 56,
+        "chars": 5,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.65,
+        "box": {
+          "x": 0.073,
+          "y": 0.53,
+          "width": 0.064,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 11.517,
+        "endSec": 12.017,
+        "textId": 57,
+        "chars": 3,
+        "words": 1,
+        "case": "mixed",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.32,
+          "y": 0.392,
+          "width": 0.064,
+          "height": 0.042
+        }
+      },
+      {
+        "startSec": 11.517,
+        "endSec": 12.517,
+        "textId": 50,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.75,
+        "box": {
+          "x": 0.631,
+          "y": 0.358,
+          "width": 0.036,
+          "height": 0.031
+        }
+      },
+      {
+        "startSec": 12.017,
+        "endSec": 12.517,
+        "textId": 58,
+        "chars": 10,
+        "words": 2,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.07,
+          "y": 0.294,
+          "width": 0.105,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 12.017,
+        "endSec": 12.517,
+        "textId": 59,
+        "chars": 5,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.075,
+          "y": 0.688,
+          "width": 0.063,
+          "height": 0.029
+        }
+      },
+      {
+        "startSec": 12.017,
+        "endSec": 12.517,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.322,
+          "y": 0.356,
+          "width": 0.061,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 12.017,
+        "endSec": 12.517,
+        "textId": 60,
+        "chars": 27,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.6,
+          "y": 0.4,
+          "width": 0.204,
+          "height": 0.038
+        }
+      },
+      {
+        "startSec": 12.017,
+        "endSec": 12.517,
+        "textId": 18,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.884,
+          "y": 0.358,
+          "width": 0.067,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 12.517,
+        "endSec": 13.517,
+        "textId": 61,
+        "chars": 3,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.084,
+          "y": 0.371,
+          "width": 0.135,
+          "height": 0.15
+        }
+      },
+      {
+        "startSec": 12.517,
+        "endSec": 13.517,
+        "textId": 62,
+        "chars": 14,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.087,
+          "y": 0.533,
+          "width": 0.473,
+          "height": 0.129
+        }
+      },
+      {
+        "startSec": 13.517,
+        "endSec": 14.517,
+        "textId": 63,
+        "chars": 5,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.566,
+          "y": 0.371,
+          "width": 0.231,
+          "height": 0.158
+        }
+      },
+      {
+        "startSec": 13.517,
+        "endSec": 14.517,
+        "textId": 64,
+        "chars": 8,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.582,
+          "y": 0.534,
+          "width": 0.326,
+          "height": 0.12
+        }
+      },
+      {
+        "startSec": 14.517,
+        "endSec": 16.017,
+        "textId": 65,
+        "chars": 10,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.144,
+          "y": 0.439,
+          "width": 0.361,
+          "height": 0.116
+        }
+      },
+      {
+        "startSec": 15.017,
+        "endSec": 16.017,
+        "textId": 0,
+        "chars": 8,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.598,
+          "y": 0.442,
+          "width": 0.268,
+          "height": 0.102
+        }
+      },
+      {
+        "startSec": 16.017,
+        "endSec": 16.517,
+        "textId": 66,
+        "chars": 13,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.243,
+          "y": 0.45,
+          "width": 0.513,
+          "height": 0.13
+        }
+      },
+      {
+        "startSec": 16.517,
+        "endSec": 17.017,
+        "textId": 67,
+        "chars": 11,
+        "words": 3,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.15,
+          "y": 0.449,
+          "width": 0.515,
+          "height": 0.142
+        }
+      },
+      {
+        "startSec": 17.017,
+        "endSec": 17.517,
+        "textId": 68,
+        "chars": 16,
+        "words": 5,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.124,
+          "y": 0.44,
+          "width": 0.738,
+          "height": 0.166
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 22,
+        "chars": 13,
+        "words": 2,
+        "case": "title",
+        "confidence": 0.75,
+        "box": {
+          "x": 0.047,
+          "y": 0.112,
+          "width": 0.06,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 69,
+        "chars": 18,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.184,
+          "y": 0.106,
+          "width": 0.123,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 41,
+        "chars": 7,
+        "words": 2,
+        "case": "title",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.455,
+          "y": 0.1,
+          "width": 0.059,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 42,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.031,
+          "y": 0.189,
+          "width": 0.045,
+          "height": 0.02
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.017,
+        "textId": 70,
+        "chars": 11,
+        "words": 2,
+        "case": "mixed",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.031,
+          "y": 0.242,
+          "width": 0.069,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 44,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.033,
+          "y": 0.292,
+          "width": 0.091,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 71,
+        "chars": 11,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.184,
+          "y": 0.2,
+          "width": 0.109,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 72,
+        "chars": 31,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.186,
+          "y": 0.25,
+          "width": 0.177,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 73,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.75,
+        "box": {
+          "x": 0.178,
+          "y": 0.314,
+          "width": 0.07,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 74,
+        "chars": 13,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.286,
+          "y": 0.322,
+          "width": 0.067,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 27,
+        "chars": 9,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.05,
+          "y": 0.358,
+          "width": 0.058,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 75,
+        "chars": 5,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.4,
+        "box": {
+          "x": 0.03,
+          "y": 0.392,
+          "width": 0.042,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 76,
+        "chars": 20,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.195,
+          "y": 0.386,
+          "width": 0.125,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 46,
+        "chars": 7,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.033,
+          "y": 0.451,
+          "width": 0.055,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 77,
+        "chars": 11,
+        "words": 3,
+        "case": "upper",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.202,
+          "y": 0.461,
+          "width": 0.064,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 78,
+        "chars": 8,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.302,
+          "y": 0.461,
+          "width": 0.048,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 64,
+        "chars": 8,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.422,
+          "y": 0.458,
+          "width": 0.049,
+          "height": 0.023
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 79,
+        "chars": 6,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.509,
+          "y": 0.458,
+          "width": 0.042,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.517,
+        "textId": 24,
+        "chars": 8,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.052,
+          "y": 0.503,
+          "width": 0.044,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.017,
+        "textId": 80,
+        "chars": 13,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.053,
+          "y": 0.603,
+          "width": 0.069,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 81,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.117,
+          "y": 0.603,
+          "width": 0.212,
+          "height": 0.104
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 82,
+        "chars": 12,
+        "words": 2,
+        "case": "lower",
+        "confidence": 0.433,
+        "box": {
+          "x": 0.126,
+          "y": 0.72,
+          "width": 0.454,
+          "height": 0.117
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.017,
+        "textId": 83,
+        "chars": 21,
+        "words": 4,
+        "case": "lower",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.519,
+          "y": 0.728,
+          "width": 0.109,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.017,
+        "textId": 84,
+        "chars": 19,
+        "words": 5,
+        "case": "lower",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.575,
+          "y": 0.753,
+          "width": 0.089,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 85,
+        "chars": 8,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.667,
+        "box": {
+          "x": 0.837,
+          "y": 0.103,
+          "width": 0.044,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 86,
+        "chars": 1,
+        "words": 1,
+        "case": "lower",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.925,
+          "y": 0.094,
+          "width": 0.019,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 18.017,
+        "textId": 87,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.842,
+          "y": 0.219,
+          "width": 0.088,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 88,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.433,
+        "box": {
+          "x": 0.858,
+          "y": 0.389,
+          "width": 0.041,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 17.517,
+        "endSec": 19.017,
+        "textId": 89,
+        "chars": 6,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.814,
+          "y": 0.458,
+          "width": 0.036,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 18.017,
+        "endSec": 18.517,
+        "textId": 25,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.03,
+          "y": 0.242,
+          "width": 0.062,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 18.017,
+        "endSec": 18.517,
+        "textId": 90,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.045,
+          "y": 0.589,
+          "width": 0.059,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 18.017,
+        "endSec": 18.517,
+        "textId": 91,
+        "chars": 24,
+        "words": 5,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.467,
+          "y": 0.711,
+          "width": 0.134,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 18.017,
+        "endSec": 18.517,
+        "textId": 87,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.817,
+          "y": 0.192,
+          "width": 0.094,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 18.517,
+        "endSec": 19.017,
+        "textId": 87,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.705,
+          "y": 0.329,
+          "width": 0.155,
+          "height": 0.067
+        }
+      },
+      {
+        "startSec": 19.017,
+        "endSec": 21.517,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.119,
+          "y": 0.111,
+          "width": 0.072,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 19.017,
+        "endSec": 20.517,
+        "textId": 92,
+        "chars": 21,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.478,
+          "y": 0.292,
+          "width": 0.198,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 19.517,
+        "endSec": 20.517,
+        "textId": 93,
+        "chars": 49,
+        "words": 9,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.348,
+          "y": 0.336,
+          "width": 0.267,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 19.517,
+        "endSec": 20.517,
+        "textId": 94,
+        "chars": 13,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.45,
+          "width": 0.067,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 19.517,
+        "endSec": 20.517,
+        "textId": 95,
+        "chars": 48,
+        "words": 10,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.478,
+          "width": 0.212,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 19.517,
+        "endSec": 20.017,
+        "textId": 96,
+        "chars": 51,
+        "words": 10,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.355,
+          "y": 0.58,
+          "width": 0.238,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 21.517,
+        "textId": 97,
+        "chars": 21,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.345,
+          "y": 0.285,
+          "width": 0.217,
+          "height": 0.05
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 22.517,
+        "textId": 98,
+        "chars": 48,
+        "words": 11,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.348,
+          "y": 0.339,
+          "width": 0.264,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 22.517,
+        "textId": 99,
+        "chars": 11,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.453,
+          "width": 0.063,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 22.517,
+        "textId": 100,
+        "chars": 32,
+        "words": 7,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.481,
+          "width": 0.158,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 22.517,
+        "textId": 101,
+        "chars": 20,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.556,
+          "width": 0.111,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 20.517,
+        "endSec": 22.517,
+        "textId": 102,
+        "chars": 27,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.583,
+          "width": 0.141,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 22.517,
+        "textId": 64,
+        "chars": 8,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.348,
+          "y": 0.538,
+          "width": 0.046,
+          "height": 0.021
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 21.517,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.583,
+          "width": 0.042,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 22.517,
+        "textId": 79,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.442,
+          "y": 0.542,
+          "width": 0.037,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 22.517,
+        "textId": 103,
+        "chars": 3,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.448,
+          "y": 0.589,
+          "width": 0.022,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 22.517,
+        "textId": 104,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.497,
+          "y": 0.983,
+          "width": 0.03,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 21.017,
+        "endSec": 22.517,
+        "textId": 105,
+        "chars": 8,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.591,
+          "y": 0.983,
+          "width": 0.036,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 21.517,
+        "endSec": 22.017,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.358,
+          "y": 0.367,
+          "width": 0.039,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 22.017,
+        "endSec": 22.517,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.358,
+          "y": 0.358,
+          "width": 0.041,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 23.017,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.059,
+          "y": 0.05,
+          "width": 0.072,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 23.017,
+        "textId": 106,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.347,
+          "y": 0.227,
+          "width": 0.13,
+          "height": 0.041
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 23.017,
+        "textId": 107,
+        "chars": 39,
+        "words": 8,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.348,
+          "y": 0.275,
+          "width": 0.227,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 108,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.347,
+          "y": 0.372,
+          "width": 0.064,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.517,
+        "textId": 109,
+        "chars": 15,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.419,
+          "width": 0.08,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 110,
+        "chars": 11,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.347,
+          "y": 0.486,
+          "width": 0.058,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 25.017,
+        "textId": 111,
+        "chars": 42,
+        "words": 8,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.53,
+          "width": 0.231,
+          "height": 0.031
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 112,
+        "chars": 24,
+        "words": 5,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.347,
+          "y": 0.686,
+          "width": 0.13,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 113,
+        "chars": 10,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.358,
+          "y": 0.735,
+          "width": 0.053,
+          "height": 0.021
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 114,
+        "chars": 7,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.358,
+          "y": 0.802,
+          "width": 0.044,
+          "height": 0.024
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 115,
+        "chars": 5,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.358,
+          "y": 0.852,
+          "width": 0.033,
+          "height": 0.023
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 116,
+        "chars": 6,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.358,
+          "y": 0.904,
+          "width": 0.039,
+          "height": 0.024
+        }
+      },
+      {
+        "startSec": 22.517,
+        "endSec": 24.017,
+        "textId": 117,
+        "chars": 5,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.956,
+          "width": 0.03,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 23.017,
+        "endSec": 24.017,
+        "textId": 104,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.497,
+          "y": 0.781,
+          "width": 0.028,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 23.017,
+        "endSec": 24.017,
+        "textId": 105,
+        "chars": 8,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.589,
+          "y": 0.783,
+          "width": 0.037,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 118,
+        "chars": 17,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.347,
+          "y": 0.067,
+          "width": 0.167,
+          "height": 0.033
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 119,
+        "chars": 36,
+        "words": 7,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.348,
+          "y": 0.111,
+          "width": 0.188,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 120,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.364,
+          "y": 0.206,
+          "width": 0.052,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 121,
+        "chars": 13,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.38,
+          "y": 0.217,
+          "width": 0.038,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 122,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.369,
+          "y": 0.356,
+          "width": 0.059,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 123,
+        "chars": 5,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.367,
+          "y": 0.4,
+          "width": 0.097,
+          "height": 0.054
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 124,
+        "chars": 15,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.497,
+          "width": 0.083,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 125,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.537,
+          "width": 0.05,
+          "height": 0.024
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 126,
+        "chars": 8,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.497,
+          "y": 0.536,
+          "width": 0.052,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 29,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.559,
+          "y": 0.388,
+          "width": 0.06,
+          "height": 0.032
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 127,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.642,
+          "width": 0.066,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 128,
+        "chars": 19,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.359,
+          "y": 0.75,
+          "width": 0.112,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 24.517,
+        "textId": 129,
+        "chars": 3,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.367,
+          "y": 0.795,
+          "width": 0.06,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 24.017,
+        "endSec": 25.517,
+        "textId": 130,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.461,
+          "y": 0.875,
+          "width": 0.075,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 24.517,
+        "endSec": 25.017,
+        "textId": 131,
+        "chars": 4,
+        "words": 2,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.578,
+          "y": 0.111,
+          "width": 0.039,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 24.517,
+        "endSec": 25.017,
+        "textId": 132,
+        "chars": 3,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.389,
+          "y": 0.517,
+          "width": 0.037,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 24.517,
+        "endSec": 25.517,
+        "textId": 133,
+        "chars": 20,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.445,
+          "y": 0.747,
+          "width": 0.107,
+          "height": 0.02
+        }
+      },
+      {
+        "startSec": 24.517,
+        "endSec": 25.517,
+        "textId": 104,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.497,
+          "y": 0.825,
+          "width": 0.03,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 25.017,
+        "endSec": 25.517,
+        "textId": 29,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.559,
+          "y": 0.075,
+          "width": 0.059,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 25.017,
+        "endSec": 25.517,
+        "textId": 134,
+        "chars": 2,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.367,
+          "y": 0.477,
+          "width": 0.06,
+          "height": 0.027
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 26.017,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.055,
+          "y": 0.132,
+          "width": 0.072,
+          "height": 0.041
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 135,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.433,
+          "y": 0.414,
+          "width": 0.119,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 136,
+        "chars": 39,
+        "words": 8,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.377,
+          "y": 0.458,
+          "width": 0.234,
+          "height": 0.024
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 137,
+        "chars": 11,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.456,
+          "y": 0.489,
+          "width": 0.073,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 138,
+        "chars": 8,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.355,
+          "y": 0.567,
+          "width": 0.044,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 139,
+        "chars": 27,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.362,
+          "y": 0.614,
+          "width": 0.145,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 140,
+        "chars": 11,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.356,
+          "y": 0.683,
+          "width": 0.062,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 141,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.406,
+          "y": 0.836,
+          "width": 0.027,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 27.017,
+        "textId": 142,
+        "chars": 18,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.517,
+          "y": 0.836,
+          "width": 0.1,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 26.017,
+        "textId": 143,
+        "chars": 24,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.377,
+          "y": 0.908,
+          "width": 0.136,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 25.517,
+        "endSec": 26.017,
+        "textId": 144,
+        "chars": 39,
+        "words": 7,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.375,
+          "y": 0.931,
+          "width": 0.188,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 26.017,
+        "endSec": 27.017,
+        "textId": 145,
+        "chars": 17,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.323,
+          "y": 0.739,
+          "width": 0.116,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 26.017,
+        "endSec": 26.517,
+        "textId": 143,
+        "chars": 24,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.308,
+          "y": 0.967,
+          "width": 0.207,
+          "height": 0.03
+        }
+      },
+      {
+        "startSec": 26.517,
+        "endSec": 27.017,
+        "textId": 146,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.639,
+          "y": 0.758,
+          "width": 0.033,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 28.017,
+        "textId": 147,
+        "chars": 9,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.062,
+          "y": 0.479,
+          "width": 0.257,
+          "height": 0.109
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 28.017,
+        "textId": 148,
+        "chars": 4,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.487,
+          "y": 0.29,
+          "width": 0.114,
+          "height": 0.104
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 28.517,
+        "textId": 120,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.4,
+          "y": 0.564,
+          "width": 0.066,
+          "height": 0.025
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 149,
+        "chars": 13,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.402,
+          "y": 0.586,
+          "width": 0.064,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 122,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.384,
+          "y": 0.661,
+          "width": 0.066,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 123,
+        "chars": 5,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.383,
+          "y": 0.7,
+          "width": 0.081,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 49,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.581,
+          "y": 0.666,
+          "width": 0.027,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 130,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.459,
+          "y": 0.815,
+          "width": 0.085,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 27.517,
+        "textId": 150,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.491,
+          "y": 0.881,
+          "width": 0.034,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 27.017,
+        "endSec": 29.017,
+        "textId": 7,
+        "chars": 5,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.48,
+          "y": 0.897,
+          "width": 0.044,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 27.517,
+        "endSec": 29.017,
+        "textId": 150,
+        "chars": 9,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.48,
+          "y": 0.878,
+          "width": 0.044,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 27.517,
+        "endSec": 28.017,
+        "textId": 151,
+        "chars": 7,
+        "words": 2,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.684,
+          "y": 0.444,
+          "width": 0.241,
+          "height": 0.097
+        }
+      },
+      {
+        "startSec": 29.017,
+        "endSec": 29.517,
+        "textId": 152,
+        "chars": 9,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.291,
+          "y": 0.476,
+          "width": 0.334,
+          "height": 0.127
+        }
+      },
+      {
+        "startSec": 29.517,
+        "endSec": 30.017,
+        "textId": 153,
+        "chars": 11,
+        "words": 3,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.305,
+          "y": 0.456,
+          "width": 0.387,
+          "height": 0.1
+        }
+      },
+      {
+        "startSec": 30.017,
+        "endSec": 31.017,
+        "textId": 154,
+        "chars": 18,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.186,
+          "y": 0.452,
+          "width": 0.632,
+          "height": 0.129
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 155,
+        "chars": 1,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.098,
+          "y": 0.528,
+          "width": 0.18,
+          "height": 0.308
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 47,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.329,
+          "y": 0.23,
+          "width": 0.058,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 156,
+        "chars": 30,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.331,
+          "y": 0.281,
+          "width": 0.175,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 157,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.339,
+          "y": 0.388,
+          "width": 0.024,
+          "height": 0.018
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 31,
+        "chars": 3,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.339,
+          "y": 0.422,
+          "width": 0.048,
+          "height": 0.042
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 158,
+        "chars": 2,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.63,
+          "y": 0.221,
+          "width": 0.266,
+          "height": 0.22
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 159,
+        "chars": 15,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.561,
+          "y": 0.442,
+          "width": 0.092,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 31.517,
+        "textId": 160,
+        "chars": 2,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.337,
+          "y": 0.531,
+          "width": 0.014,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 31.517,
+        "textId": 161,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.5,
+        "box": {
+          "x": 0.6,
+          "y": 0.542,
+          "width": 0.044,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 162,
+        "chars": 19,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.544,
+          "y": 0.586,
+          "width": 0.109,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 163,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.339,
+          "y": 0.681,
+          "width": 0.071,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 164,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.339,
+          "y": 0.731,
+          "width": 0.077,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 165,
+        "chars": 7,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.339,
+          "y": 0.778,
+          "width": 0.037,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 31.517,
+        "textId": 166,
+        "chars": 13,
+        "words": 4,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.541,
+          "y": 0.686,
+          "width": 0.114,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 31.517,
+        "textId": 167,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.614,
+          "y": 0.733,
+          "width": 0.034,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.017,
+        "endSec": 32.017,
+        "textId": 168,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.606,
+          "y": 0.783,
+          "width": 0.047,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.517,
+        "endSec": 32.017,
+        "textId": 50,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.595,
+          "y": 0.392,
+          "width": 0.025,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.517,
+        "endSec": 32.017,
+        "textId": 169,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.592,
+          "y": 0.525,
+          "width": 0.038,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 31.517,
+        "endSec": 32.017,
+        "textId": 166,
+        "chars": 13,
+        "words": 4,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.536,
+          "y": 0.647,
+          "width": 0.105,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 31.517,
+        "endSec": 32.017,
+        "textId": 167,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.605,
+          "y": 0.692,
+          "width": 0.031,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 32.017,
+        "endSec": 32.517,
+        "textId": 170,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.338,
+          "y": 0.403,
+          "width": 0.355,
+          "height": 0.198
+        }
+      },
+      {
+        "startSec": 32.517,
+        "endSec": 33.517,
+        "textId": 171,
+        "chars": 7,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.131,
+          "y": 0.125,
+          "width": 0.488,
+          "height": 0.168
+        }
+      },
+      {
+        "startSec": 32.517,
+        "endSec": 33.517,
+        "textId": 19,
+        "chars": 10,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.244,
+          "y": 0.677,
+          "width": 0.606,
+          "height": 0.202
+        }
+      },
+      {
+        "startSec": 33.517,
+        "endSec": 34.517,
+        "textId": 168,
+        "chars": 9,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.293,
+          "y": 0.423,
+          "width": 0.413,
+          "height": 0.229
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 35.517,
+        "textId": 47,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.099,
+          "y": 0.286,
+          "width": 0.132,
+          "height": 0.117
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 35.517,
+        "textId": 172,
+        "chars": 25,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.106,
+          "y": 0.433,
+          "width": 0.397,
+          "height": 0.047
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 37.017,
+        "textId": 157,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.128,
+          "y": 0.721,
+          "width": 0.053,
+          "height": 0.035
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 35.017,
+        "textId": 173,
+        "chars": 1,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.13,
+          "y": 0.839,
+          "width": 0.031,
+          "height": 0.072
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 36.017,
+        "textId": 174,
+        "chars": 4,
+        "words": 2,
+        "case": "mixed",
+        "confidence": 0.767,
+        "box": {
+          "x": 0.797,
+          "y": 0.747,
+          "width": 0.094,
+          "height": 0.037
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 39.017,
+        "textId": 159,
+        "chars": 15,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 0.944,
+        "box": {
+          "x": 0.689,
+          "y": 0.858,
+          "width": 0.227,
+          "height": 0.047
+        }
+      },
+      {
+        "startSec": 34.517,
+        "endSec": 35.017,
+        "textId": 175,
+        "chars": 2,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.505,
+          "y": 0.961,
+          "width": 0.031,
+          "height": 0.036
+        }
+      },
+      {
+        "startSec": 35.017,
+        "endSec": 39.017,
+        "textId": 176,
+        "chars": 3,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.123,
+          "y": 0.717,
+          "width": 0.098,
+          "height": 0.075
+        }
+      },
+      {
+        "startSec": 35.517,
+        "endSec": 39.017,
+        "textId": 160,
+        "chars": 2,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 0.929,
+        "box": {
+          "x": 0.361,
+          "y": 0.542,
+          "width": 0.016,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 35.517,
+        "endSec": 36.017,
+        "textId": 177,
+        "chars": 8,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.117,
+          "y": 0.682,
+          "width": 0.263,
+          "height": 0.11
+        }
+      },
+      {
+        "startSec": 35.517,
+        "endSec": 36.017,
+        "textId": 178,
+        "chars": 2,
+        "words": 1,
+        "case": "upper",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.497,
+          "y": 0.464,
+          "width": 0.031,
+          "height": 0.053
+        }
+      },
+      {
+        "startSec": 35.517,
+        "endSec": 36.017,
+        "textId": 161,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 0.3,
+        "box": {
+          "x": 0.789,
+          "y": 0.614,
+          "width": 0.098,
+          "height": 0.042
+        }
+      },
+      {
+        "startSec": 35.517,
+        "endSec": 39.017,
+        "textId": 162,
+        "chars": 19,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.639,
+          "y": 0.728,
+          "width": 0.272,
+          "height": 0.05
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 37.017,
+        "textId": 47,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.346,
+          "y": 0.284,
+          "width": 0.052,
+          "height": 0.035
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 37.017,
+        "textId": 172,
+        "chars": 25,
+        "words": 6,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.353,
+          "y": 0.331,
+          "width": 0.141,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 37.017,
+        "textId": 179,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.594,
+          "y": 0.422,
+          "width": 0.036,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 180,
+        "chars": 8,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.572,
+          "width": 0.094,
+          "height": 0.042
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 36.517,
+        "textId": 13,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.583,
+          "y": 0.55,
+          "width": 0.047,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 163,
+        "chars": 12,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.67,
+          "width": 0.064,
+          "height": 0.02
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 164,
+        "chars": 14,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.711,
+          "width": 0.07,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 165,
+        "chars": 7,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.361,
+          "y": 0.753,
+          "width": 0.034,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 36.517,
+        "textId": 181,
+        "chars": 14,
+        "words": 5,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.537,
+          "y": 0.669,
+          "width": 0.102,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 36.517,
+        "textId": 167,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.606,
+          "y": 0.708,
+          "width": 0.028,
+          "height": 0.017
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 168,
+        "chars": 9,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.598,
+          "y": 0.753,
+          "width": 0.042,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 36.017,
+        "endSec": 39.017,
+        "textId": 182,
+        "chars": 10,
+        "words": 2,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.465,
+          "y": 0.85,
+          "width": 0.068,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 36.517,
+        "endSec": 37.017,
+        "textId": 178,
+        "chars": 2,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.484,
+          "y": 0.458,
+          "width": 0.014,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 36.517,
+        "endSec": 37.517,
+        "textId": 13,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.586,
+          "y": 0.508,
+          "width": 0.039,
+          "height": 0.019
+        }
+      },
+      {
+        "startSec": 36.517,
+        "endSec": 39.017,
+        "textId": 166,
+        "chars": 13,
+        "words": 4,
+        "case": "mixed",
+        "confidence": 1,
+        "box": {
+          "x": 0.531,
+          "y": 0.628,
+          "width": 0.103,
+          "height": 0.022
+        }
+      },
+      {
+        "startSec": 36.517,
+        "endSec": 37.017,
+        "textId": 183,
+        "chars": 5,
+        "words": 2,
+        "case": "title",
+        "confidence": 1,
+        "box": {
+          "x": 0.6,
+          "y": 0.672,
+          "width": 0.03,
+          "height": 0.014
+        }
+      },
+      {
+        "startSec": 37.017,
+        "endSec": 38.017,
+        "textId": 175,
+        "chars": 2,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.302,
+          "y": 0.111,
+          "width": 0.023,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 37.017,
+        "endSec": 39.017,
+        "textId": 167,
+        "chars": 4,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.511,
+          "y": 0.513,
+          "width": 0.053,
+          "height": 0.026
+        }
+      },
+      {
+        "startSec": 37.017,
+        "endSec": 39.017,
+        "textId": 184,
+        "chars": 6,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.632,
+          "y": 0.346,
+          "width": 0.247,
+          "height": 0.109
+        }
+      },
+      {
+        "startSec": 37.017,
+        "endSec": 39.017,
+        "textId": 185,
+        "chars": 9,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.617,
+          "y": 0.471,
+          "width": 0.303,
+          "height": 0.123
+        }
+      },
+      {
+        "startSec": 37.517,
+        "endSec": 38.017,
+        "textId": 161,
+        "chars": 4,
+        "words": 2,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.491,
+          "y": 0.214,
+          "width": 0.066,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 38.017,
+        "endSec": 39.017,
+        "textId": 178,
+        "chars": 2,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.302,
+          "y": 0.111,
+          "width": 0.023,
+          "height": 0.039
+        }
+      },
+      {
+        "startSec": 38.017,
+        "endSec": 39.017,
+        "textId": 13,
+        "chars": 3,
+        "words": 1,
+        "case": "upper",
+        "confidence": 1,
+        "box": {
+          "x": 0.489,
+          "y": 0.214,
+          "width": 0.067,
+          "height": 0.028
+        }
+      },
+      {
+        "startSec": 39.017,
+        "endSec": 40.017,
+        "textId": 186,
+        "chars": 13,
+        "words": 3,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.204,
+          "y": 0.441,
+          "width": 0.599,
+          "height": 0.163
+        }
+      },
+      {
+        "startSec": 40.017,
+        "endSec": 40.517,
+        "textId": 187,
+        "chars": 16,
+        "words": 3,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.144,
+          "y": 0.431,
+          "width": 0.723,
+          "height": 0.139
+        }
+      },
+      {
+        "startSec": 40.517,
+        "endSec": 41.517,
+        "textId": 188,
+        "chars": 8,
+        "words": 2,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.262,
+          "y": 0.425,
+          "width": 0.477,
+          "height": 0.157
+        }
+      },
+      {
+        "startSec": 41.517,
+        "endSec": 42.517,
+        "textId": 189,
+        "chars": 7,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.179,
+          "y": 0.368,
+          "width": 0.622,
+          "height": 0.285
+        }
+      },
+      {
+        "startSec": 41.517,
+        "endSec": 42.017,
+        "textId": 190,
+        "chars": 2,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.809,
+          "y": 0.781,
+          "width": 0.083,
+          "height": 0.078
+        }
+      },
+      {
+        "startSec": 41.517,
+        "endSec": 42.517,
+        "textId": 191,
+        "chars": 5,
+        "words": 1,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.812,
+          "y": 0.872,
+          "width": 0.069,
+          "height": 0.043
+        }
+      },
+      {
+        "startSec": 42.017,
+        "endSec": 42.517,
+        "textId": 192,
+        "chars": 2,
+        "words": 1,
+        "case": "none",
+        "confidence": 1,
+        "box": {
+          "x": 0.813,
+          "y": 0.797,
+          "width": 0.077,
+          "height": 0.064
+        }
+      },
+      {
+        "startSec": 42.517,
+        "endSec": 43.017,
+        "textId": 193,
+        "chars": 18,
+        "words": 3,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.136,
+          "y": 0.432,
+          "width": 0.73,
+          "height": 0.142
+        }
+      },
+      {
+        "startSec": 43.517,
+        "endSec": 44.517,
+        "textId": 194,
+        "chars": 18,
+        "words": 4,
+        "case": "sentence",
+        "confidence": 1,
+        "box": {
+          "x": 0.165,
+          "y": 0.453,
+          "width": 0.672,
+          "height": 0.11
+        }
+      },
+      {
+        "startSec": 44.517,
+        "endSec": 46.017,
+        "textId": 195,
+        "chars": 7,
+        "words": 1,
+        "case": "lower",
+        "confidence": 1,
+        "box": {
+          "x": 0.387,
+          "y": 0.448,
+          "width": 0.225,
+          "height": 0.104
+        }
+      }
+    ]
+  }
+}

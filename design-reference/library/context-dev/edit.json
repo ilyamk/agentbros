@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "context-dev",
+  "rhythm": {
+    "value": "Eight shots in 19.77 s after correction (detector: 6 shots, 5 cuts; corrected: 8 shots, 7 cuts). Corrected shot lengths 2.93, 1.43, 0.90, 1.93, 1.23, 2.63, 6.87, 1.83 s: median 1.88 s, about 21 cuts a minute. The film is built from camera moves and in-place transformations, not from cuts: two shots (s001 2.93 s and s006.1 6.87 s) hold 59% of the running time and carry five state changes between them without a cut (two stepped push-ins, a halftone-to-pale grade, a two-stage pull-out, a card-to-dot ripple, a dot stream). Cuts are kept for changes of scale on one object: crowd to one tile (2.933), label to hero size (4.367), column to column on one record (5.267, 7.2, 8.433), one record to the crowd again (11.067). Pace has three gears: a fast typed hook (0-2.9 s, the query at about one character a frame), a reading section of four reframes at 0.9-2.6 s each (4.4-11.1 s), then one long unbroken morph (11.1-17.9 s) and a quiet two-step outro on white. Holds are deliberate: 1.47 s on the finished record (9.6-11.067) and 0.47 s on the still card grid (13.66-14.13) before each transformation. Sound was not heard: every statement about it comes from audio.json, sync.json and a 50 ms RMS swell scan. Sound against cuts (unheard, numbers only): detector cuts give cutsOnBeatRatio 0.20 against chance 0.34 (lift 0.59) and cutsOnOnsetRatio 0.40 against 0.78 (lift 0.51); signedMedianCutToBeatSec -0.009. cutsOnDownbeatFrameRatio 0.20 against 0.035 (lift 5.71) rests on one cut (11.067) and a downbeat grid of confidence 0.019, so it is not evidence. The tempo itself is doubtful: 126.9 BPM at confidence 0.39, while loudness swells from 6.3 s repeat every 0.60-0.65 s (about 95 BPM), so 127 is probably a 4:3 artefact; no grid is built on either. On the 7 corrected cuts: 1/7 within 80 ms of a beat (chance 0.34), 4/7 near an onset (chance 0.78; meaningless after 4.4 s, where onsets run at 6.6 a second), 2/7 within 60 ms of a swell (2.933 and 11.067; chance about 0.2, swells every 0.63 s with a 60 ms window). Cuts sit a median 91 ms before the nearest beat. The only measured anchors are the 11.067 cut (onset 9 ms after it) and the 2.933 cut (swell 8 ms before it); in the sparse intro the second push step at 1.600 s follows an onset at 1.579 s by 21 ms. RMS is low to 5 s (0.05-0.09), dips at 5-6 s and rises from about 6.1 s when the field rows begin to fill (0.11-0.14), then falls to 0.047 in the last second with the picture's blur-out.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json shots s001-s006 and candidates 5.267, 7.2, 8.433",
+      "visuals/a1/zoom-step.jpg F47-F49",
+      "visuals/a1/grid-to-one.jpg F87-F88",
+      "visuals/a1/push-to-summary.jpg F130-F131",
+      "visuals/a1/summary-to-fields.jpg F157-F158",
+      "visuals/a1/values-jump.jpg F215-F216",
+      "visuals/a1/pullback.jpg F252-F253",
+      "visuals/a1/card-to-grid.jpg F331-F332",
+      "visuals/a1/line-out.jpg F533-F544",
+      "corrected shot list from src/lib/reference/corrected.ts",
+      "sync.json metrics",
+      "audio.json tempo (bpm 126.87, confidence 0.393, downbeatConfidence 0.019)",
+      "swell scan 50 ms RMS: 2.925, 3.875, 5.025, ..., 11.125, 12.025, 12.675 s"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook: a white frame becomes a wall of blue halftone portraits in five frames (F1-F5), the camera pushes in twice (F1-F23 and F48-F64) while a frosted search pill opens at frame centre (F10-F19) and a query types at about one character a frame (F22-F78). The crowd is the problem; the query is the method.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open-grid-zoom.jpg F0-F23",
+          "visuals/a1/zoom-step.jpg F43-F64",
+          "visuals/a1/grid-to-one.jpg F78-F87"
+        ]
+      },
+      "technique": {
+        "value": "Stepped push-in on a halftone portrait grid with a fixed-size search overlay (the pill does not scale with the grid: same width at F47 and F49).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/zoom-step.jpg F47-F49"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "The answer: one tile alone on white, centred, about 24% of frame width and 54% of height. Its name types in under it (F107-F119) and the halftone resolves into a real photo in six frames (F120-F125).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/grid-to-one.jpg F88-F101",
+          "visuals/a1/dither-resolve.jpg F102-F125"
+        ]
+      },
+      "technique": {
+        "value": "Hard cut with a one-frame ghost of the grid (F88), tile pop from about 9% to 24% of frame width in two frames (F88-F90), then near-still; per-glyph blur-in typing; halftone-to-photo cross-fade.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/grid-to-one.jpg F88-F90",
+          "visuals/a1/dither-resolve.jpg F120-F125"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.1",
+      "purpose": {
+        "value": "Emphasis: the small section label that was typing at the card's top right is cut to hero size mid-word (\"Summ\" small at F130, \"Summ\" at 57% of frame width at F131) and keeps typing; a grey body line types under it. Then the view pans right along the text (F150-F157).",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/push-to-summary.jpg F130-F143",
+          "visuals/a1/summary-to-fields.jpg F147-F157"
+        ]
+      },
+      "technique": {
+        "value": "Punch-in cut on a word that is still typing, so the typing carries the eye across the cut.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/push-to-summary.jpg F130-F132"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.2",
+      "purpose": {
+        "value": "Proof, part one: the label column of the record at about 6% cap height, rows arriving one by one (icon first, then the label typing) while the view tilts down to meet them.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/summary-to-fields.jpg F158-F170",
+          "visuals/a1/field-track.jpg F177-F200"
+        ]
+      },
+      "technique": {
+        "value": "Cut in mid-pan to an empty panel, then a downward tilt from about 5.9 s, accelerating (strip), still moving at the 7.2 cut. motion.json otherMoves[1] (power3.inOut, 6.0 s, 1.31 s, 0.46 of frame height) is fitted across that corrected cut, so its length is not trusted.",
+        "basis": "observed",
+        "confidence": 0.6,
+        "evidence": [
+          "motion.json s005 otherMoves[1]",
+          "visuals/a1/field-track.jpg F177-F200"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.3",
+      "purpose": {
+        "value": "Proof, part two: the value column (address, handles, city) typing in at the same scale, the card's right edge and soft shadow now at frame right. The record is read like a two-camera conversation: label side, then value side.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/values-jump.jpg F215-F226",
+          "visuals/a1/pullback.jpg F252"
+        ]
+      },
+      "technique": {
+        "value": "Hard cut across to the opposite column (F216) while the downward tilt continues (power3.inOut, motion.json otherMoves[2] from 7.267 s).",
+        "basis": "measured",
+        "confidence": 0.7,
+        "evidence": [
+          "visuals/a1/values-jump.jpg F215-F216",
+          "motion.json s005 otherMoves[2]"
+        ]
+      }
+    },
+    {
+      "shotId": "s005.4",
+      "purpose": {
+        "value": "Payoff: a wider reframe (both columns) then a pull-out to the whole record on white with a soft shadow, held 1.47 s (9.6-11.067) so its density can be taken in.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/pullback.jpg F253-F275",
+          "visuals/a1/card-to-grid.jpg F324-F331"
+        ]
+      },
+      "technique": {
+        "value": "Pull-out fitted as expo.inOut, cubic-bezier(0.65, 0.083, 0.046, 1.151) with a little overshoot, 1.62 s from the 8.433 cut, about 3.5x in scale (value-line width 0.444 to 0.125 of frame; motion.json z -1.38 says about 4x); strip diffs rise 2.9 to 12.7 by F268 then fall.",
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "motion.json s005 camera.ease",
+          "visuals/a1/pullback.jpg F253-F275"
+        ]
+      }
+    },
+    {
+      "shotId": "s006.1",
+      "purpose": {
+        "value": "Scale: the record becomes one tile among many (blue halftone again, the opening's texture), the view pulls out twice until it is one of about 150 cards, the cards ripple into blue dots from the centre outwards, the dots funnel into a stream that writes the two-part line.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/card-to-grid.jpg F332-F347",
+          "visuals/a1/grid-pullout.jpg F348-F371",
+          "visuals/a1/glyphs-hold.jpg F393-F413",
+          "visuals/a1/grid-to-dots.jpg F414-F437",
+          "visuals/a1/dots-scatter.jpg F438-F461",
+          "visuals/a1/dots-stream.jpg F462-F485",
+          "visuals/a1/stream-to-second-line.jpg F489-F512"
+        ]
+      },
+      "technique": {
+        "value": "One unbroken 6.87 s shot: cut-in on a halftone grid, two-stage pull-out, centre-out ripple to particles, particle stream that types a line at its trailing edge.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/card-to-grid.jpg F332",
+          "visuals/a1/grid-to-dots.jpg F424-F437",
+          "visuals/a1/dots-stream.jpg F467-F485"
+        ]
+      }
+    },
+    {
+      "shotId": "s006.2",
+      "purpose": {
+        "value": "Sign-off: an empty white beat (F539-F544), then a product label at left and the mark plus wordmark at right blur in on the same baseline the two-part line used; held about 0.9 s and blurred out to white.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/line-out.jpg F538-F548",
+          "visuals/a1/lockup-in.jpg F543-F560",
+          "visuals/a1/end-lockup.jpg F570-F592"
+        ]
+      },
+      "technique": {
+        "value": "Fade through white with blur: out over F533-F539 (0.2 s), five white frames, in over F545-F556; the final three frames are empty white.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/line-out.jpg F533-F548",
+          "visuals/a1/end-lockup.jpg F584-F592"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 0.033,
+        "endSec": 2.133,
+        "name": "stepped-push-into-crowd",
+        "description": "F0 is pure white. F1 (0.033) a grid of about 14x10 blue halftone portrait tiles appears at 18% of frame width; it scales up over four frames (F1-F5, diffs 2.5, 4.2, 5.9, 29.8) until it overfills at F5, then the push decays for 0.6 s (diff 49 at F5-F6, 11 at F23). A frosted pill opens from a magnifier dot at frame centre (F10-F19) and starts typing at F22. The push stops; at F48 (1.600) a second, smaller step jumps (diffs 25.6, 44.9) and settles over about 0.5 s (F49-F64), while the pill stays the same size because it sits on its own layer.",
+        "why": "The first step turns nothing into a crowd in a sixth of a second, so frame one already has a subject; the second step on a sparse-onset intro marks the query getting specific without a cut. Keeping the search field fixed while the world zooms behind it says the field is the instrument and the crowd is what it acts on."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/open-grid-zoom.jpg F0-F23",
+        "visuals/a1/zoom-step.jpg F47-F64",
+        "audio.json onsetsSec 0.093, 0.186, 1.579"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.867,
+        "endSec": 4.167,
+        "name": "crowd-to-one-cut",
+        "description": "The pill's outline flashes for two frames (F86-F87, 2.867-2.900) like a submit. F88 (2.933) hard-cuts to white with a one-frame ghost of the grid and the pill, and a single tile at about 9% of frame width at centre; it reaches 24% width by F90 (3.0) and then barely moves. The halftone dots on the tile flicker frame to frame (F103-F120), the name types in below it at one glyph a frame with a blur-in (F107-F119), and F120-F125 (4.0-4.167) cross-fade the halftone into the real photo.",
+        "why": "Many-to-one is the product's promise. Throwing away every other face in one frame, then making the survivor real (halftone to photo), turns a search result into a person without a word of explanation. The cut lands 8 ms from a loudness swell (2.925 s), a measured sound anchor of the intro."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/grid-to-one.jpg F86-F101",
+        "visuals/a1/dither-resolve.jpg F102-F125",
+        "swell scan 2.925 s (50 ms RMS)"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.367,
+        "endSec": 8.433,
+        "name": "ui-punch-in-reframe",
+        "description": "Four hard reframes on one record instead of a zoom. F131 (4.367): the section label typing at about 2% of frame height jumps to hero size (word 57% of frame width, OCR box height 0.23) and keeps typing at about one glyph every two frames. F158 (5.267): cut mid-pan to the empty label column, rows arrive as the view tilts down. F216 (7.2): cut across to the value column, still tilting. F253 (8.433): cut to a wider framing that becomes the pull-out. Each cut lands while something is moving (a glyph typing, a pan, a tilt) and switches side: right gutter, left shadow, right shadow.",
+        "why": "Interface text at real size is unreadable in a 1280 frame; cutting to 3-6% cap height makes each field the subject for about a second. Cutting on motion hides the jump, and alternating sides gives the eye a new entry point on each cut instead of sliding it the whole way across a slow camera move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/push-to-summary.jpg F130-F143",
+        "visuals/a1/summary-to-fields.jpg F150-F170",
+        "visuals/a1/values-jump.jpg F215-F226",
+        "visuals/a1/pullback.jpg F252-F253"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 11.067,
+        "endSec": 13.667,
+        "name": "one-becomes-crowd-pull-out",
+        "description": "F332 (11.067) hard-cuts from the whole record on white to a grid of the same cards in blue halftone, three columns visible at about 25% width each. The view pulls out at once: diffs rise to a peak at F339-F340 (24.7) and decay to 2 by F357; the halftone cross-fades to pale blue-grey cards over F341-F345 (11.36-11.50). A second pull-out starts at F365 (12.16), peaks immediately (F366, 16.8) and settles by F409 (13.63; circ.out in motion.json). It rests on a still grid of about 14 columns at 64% of frame width.",
+        "why": "It is the opening run backwards: the opening pushed from crowd to one in two steps, this pulls from one back to the crowd in two steps, with the same halftone texture as the hinge. The viewer reads that every tile in the crowd is a record as rich as the one just read. The cut is the film's one measured sync point in the loud section: an onset 9 ms before it."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/card-to-grid.jpg F331-F347",
+        "visuals/a1/grid-pullout.jpg F348-F371",
+        "visuals/a1/grid-to-glyphs.jpg F369-F392",
+        "visuals/a1/glyphs-hold.jpg F393-F413",
+        "motion.json s006 camera.ease",
+        "audio.json onsetsSec 11.076"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 14.133,
+        "endSec": 16.933,
+        "name": "particles-write-the-line",
+        "description": "After a 0.47 s hold on the card grid, F424 (14.13) a ripple from the grid centre turns cards into blue (#2B5EE5) dots of varied size; by F447 (14.9) no card is left. F450-F461 (15.0-15.37) the cloud's right side converges into a point, accelerating (diffs 0.36 to 2.54); F462-F476 (15.4-15.87) the cone flattens into a band at mid-height that streams right. The first half of the line types in at x 0.14 at the band's trailing edge (from F467, 15.57); the second half types inside the stream at x 0.67 as its tail leaves frame right (F493-F507, 16.43-16.9).",
+        "why": "The same marks change state (photo, card, dot, letter), so the line arrives as the product of everything shown rather than as a caption laid on top. The left-to-right stream also enacts the two halves of the line: input on the left, result on the right."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/grid-to-dots.jpg F414-F437",
+        "visuals/a1/dots-scatter.jpg F438-F461",
+        "visuals/a1/dots-stream.jpg F462-F485",
+        "visuals/a1/stream-to-second-line.jpg F489-F512"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s002"
+        ],
+        "note": "Not a cut. The 0.4 s boundary sits inside the opening push-in: F1-F23 is one continuous scale-up of the same grid with diffs decaying smoothly (49.4 at F5-F6 to 11 at F23). Detector: continuous at confidence 0.4. Merged into s001."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open-grid-zoom.jpg F0-F23"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "Not a cut. 1.733 s is the settle of a second push-in step that starts at F48 (1.600): same grid, same search pill at the same size and place, typing uninterrupted. Merged into s001."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/zoom-step.jpg F47-F64"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 5.267,
+        "transition": "cut",
+        "note": "Missed hard cut (shots.json candidate 5.267, novelty 2.12): F157 is the hero label panning, F158 is an empty field panel with the card's left shadow. Strip diff 10.3 on one frame."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/summary-to-fields.jpg F157-F158"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 7.2,
+        "transition": "cut",
+        "note": "Missed hard cut (candidate 7.2, novelty 3.6): label column at F215, value column with the card's right edge at F216. Diff 14.0 on one frame."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/values-jump.jpg F215-F216"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 8.433,
+        "transition": "cut",
+        "note": "Missed hard cut (candidate 8.433, novelty 2.99): F252 close on values, F253 a different crop with labels at left and values at right; diff 13.65 then 2.9. The pull-out starts from this frame."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/pullback.jpg F252-F254"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s006"
+        ],
+        "timeSec": 17.933,
+        "transition": "fade",
+        "note": "Missed text swap on a flat white ground: the two-part line blurs out F533-F539, white holds F539-F544, the sign-off blurs in from F545. Placed at F538 (17.933), where the text is all but gone."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/line-out.jpg F533-F548",
+        "visuals/a1/lockup-in.jpg F543-F556"
+      ]
+    }
+  ]
+}

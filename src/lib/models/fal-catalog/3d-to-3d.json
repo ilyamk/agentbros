@@ -1,0 +1,1458 @@
+{
+  "version": 1,
+  "category": "3d-to-3d",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/part",
+      "category": "3d-to-3d",
+      "displayName": "Hunyuan 3D Part Splitter",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "81bbb160895f0a2f038b01e34556a02ce2754120963d2a578a5a433156dd5b90",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fpart&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "input_file_url",
+          "type": "string",
+          "required": true,
+          "media": "file"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "file"
+        ],
+        "fields": [
+          "result_files"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "hunyuan",
+        "mesh"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
+      "category": "3d-to-3d",
+      "displayName": "Hunyuan 3D Smart Topology",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9c1c3a63c54d1fac8c9cedcb64dfbf195de2146f23ca87f86481aec3c1a4f726",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fsmart-topology&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "face_level",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "default": "medium"
+        },
+        {
+          "name": "input_file_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "input_file_url",
+          "type": "string",
+          "required": false,
+          "default": "https://v3b.fal.media/files/b/0a8c09c0/VYDiCTcDGK55qY2-idGbX_model.glb",
+          "media": "file"
+        },
+        {
+          "name": "polygon_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "triangle",
+            "quadrilateral"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "3d",
+        "hunyuan",
+        "topology"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/rigging",
+      "category": "3d-to-3d",
+      "displayName": "Meshy Rigging",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "03caf8b81eb247634e3421602d8d8b357809a91687c0a664c53cfb1972a23e4b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Frigging&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "media": "model3d"
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "rigged_character_fbx",
+          "rigged_character_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d-to-3d",
+        "rigging"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/rigging/multi-animation",
+      "category": "3d-to-3d",
+      "displayName": "Meshy Rigging Multi Animation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "bcb9a6f0da44aa3592a2bd3a1a2e87f6286d6541e2c62e56cb677468a58ffcd3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Frigging%2Fmulti-animation&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_ids",
+          "type": "array",
+          "required": true,
+          "array": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "media": "model3d"
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animations",
+          "basic_animations",
+          "rigged_character_fbx",
+          "rigged_character_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "3D"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-3/3d-align",
+      "category": "3d-to-3d",
+      "displayName": "Sam 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e3572c386f7d62c0ef6b3031fad6e3de35f68bbae67ec09e49db8d974f6c3c68",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-3%2F3d-align&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "body_mask_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "body_mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "focal_length",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "object_mesh_url",
+          "type": "string",
+          "required": false,
+          "media": "model3d"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "body_mesh_ply",
+          "metadata",
+          "model_glb",
+          "scene_glb",
+          "visualization"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "align",
+        "3D",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/trellis-2/retexture",
+      "category": "3d-to-3d",
+      "displayName": "Trellis 2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6f3cadaf553642258531e3b7345d635c0083afce4042f8bc3c636b0b3df9f795",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ftrellis-2%2Fretexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "resolution",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            512,
+            1024
+          ],
+          "default": 1024
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "tex_slat_guidance_interval_end",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.9
+        },
+        {
+          "name": "tex_slat_guidance_interval_start",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        },
+        {
+          "name": "tex_slat_guidance_rescale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "name": "tex_slat_guidance_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 1
+        },
+        {
+          "name": "tex_slat_rescale_t",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 6,
+          "default": 3
+        },
+        {
+          "name": "tex_slat_sampling_steps",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50,
+          "default": 12
+        },
+        {
+          "name": "texture_size",
+          "type": "integer",
+          "required": false,
+          "enum": [
+            1024,
+            2048,
+            4096
+          ],
+          "default": 2048
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d"
+        ],
+        "fields": [
+          "model_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3D-to-3D"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/multicolor",
+      "category": "3d-to-3d",
+      "displayName": "Hi3D 3D to Multicolor",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b33587bdbc641820011033db81aa033d15cf57d83d9349d3d7d1e863f19147dd",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fmulticolor&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "fbx"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "number_of_colors",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 8,
+          "default": 4
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d-to-3d",
+        "multicolor"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/split",
+      "category": "3d-to-3d",
+      "displayName": "Hi3D 3D Part Splitter",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "53e907a7c25f0c18c886750ad764b24f3509001bdcad86b88b653d7efa335e93",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Fsplit&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "joint",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "none",
+            "ball",
+            "dovetail"
+          ],
+          "default": "ball"
+        },
+        {
+          "name": "level",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "default": "medium"
+        },
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "character",
+            "general"
+          ],
+          "default": "character"
+        },
+        {
+          "name": "part",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "default": "a"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d-to-3d"
+      ]
+    },
+    {
+      "endpoint": "hitem3d/hi3d/texture",
+      "category": "3d-to-3d",
+      "displayName": "Hi3D Texture",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "65aad156c8f09498bf459f2af622e7a0d1db04982f72fb5b51c9fc939ccb68b5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hitem3d%2Fhi3d%2Ftexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "obj",
+            "stl",
+            "fbx",
+            "usdz"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "hitem3dv1.5",
+            "scene-portraitv1.5"
+          ],
+          "default": "hitem3dv1.5"
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "512",
+            "1024",
+            "1536",
+            "1536pro"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d-to-3d"
+      ]
+    },
+    {
+      "endpoint": "hyper3d/rigging",
+      "category": "3d-to-3d",
+      "displayName": "Hyper3D Rigging",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "882228c4e7e5d06dc78daa8ce2cd7db112d7a6f112f32fd0c5f2cba6a74afb11",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=hyper3d%2Frigging&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_presets",
+          "type": "array",
+          "required": false,
+          "max": 10,
+          "array": true
+        },
+        {
+          "name": "animation_urls",
+          "type": "array",
+          "required": false,
+          "max": 10,
+          "media": "file",
+          "array": true
+        },
+        {
+          "name": "bone_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "human",
+            "quadruped",
+            "bird",
+            "dragon",
+            "kaiju",
+            "custom"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "fbx",
+            "usdz"
+          ],
+          "default": "fbx"
+        },
+        {
+          "name": "hierarchy",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 256,
+          "array": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "media": "image"
+        },
+        {
+          "name": "in_place",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "media": "model3d"
+        },
+        {
+          "name": "skeleton_description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "skinning_method",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "shell",
+            "core"
+          ],
+          "default": "shell"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "additional_files",
+          "animations",
+          "fbx_file",
+          "model_mesh",
+          "rigged_character_glb",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "rigging",
+        "skeleton",
+        "character"
+      ]
+    },
+    {
+      "endpoint": "meshy/n1/retexture",
+      "category": "3d-to-3d",
+      "displayName": "Meshy N1 Retexture",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "be8d51d55391433aaa72cd42e347969ac20afb947b727ae480f993cd71c65598",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fn1%2Fretexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_original_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_style_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "multiview_image_urls",
+          "type": "array",
+          "required": false,
+          "min": 1,
+          "max": 4,
+          "media": "image",
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "3d",
+        "3d-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/rigging",
+      "category": "3d-to-3d",
+      "displayName": "Meshy Rigging",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "17b1760c766b205963f8100dfe6f33f309daf1a50e4b7d641a1e5c3694764617",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Frigging&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "media": "model3d"
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "rigged_character_fbx",
+          "rigged_character_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "3d-to-3d",
+        "rigging"
+      ]
+    },
+    {
+      "endpoint": "meshy/rigging/multi-animation",
+      "category": "3d-to-3d",
+      "displayName": "Meshy Rigging Multi Animation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "717dc5ffa12022069d544a50bbfbf6516ea97138c14c30b2b40d1260e4a6f3fe",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Frigging%2Fmulti-animation&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_ids",
+          "type": "array",
+          "required": true,
+          "array": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "media": "model3d"
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animations",
+          "basic_animations",
+          "rigged_character_fbx",
+          "rigged_character_glb"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "3D"
+      ]
+    },
+    {
+      "endpoint": "meshy/v6-lite/retexture",
+      "category": "3d-to-3d",
+      "displayName": "Meshy 6 Lite Retexture",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f0fb2a95e55940b31a5f288bde5f3e8eb61d694b27d7697e8b4b4aeedd645045",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv6-lite%2Fretexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_original_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_style_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "text_style_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "texture_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2k",
+            "4k",
+            "8k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "3d-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v6/retexture",
+      "category": "3d-to-3d",
+      "displayName": "Meshy 6 Retexture",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "698b58f9dd819a2897144e82ebbde4960cf89526ce4aea8f9045b4380b5d0ce7",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv6%2Fretexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_original_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_style_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "text_style_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "texture_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2k",
+            "4k",
+            "8k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "3d-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7/retexture",
+      "category": "3d-to-3d",
+      "displayName": "Meshy 7 Retexture",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "cdd9299813439f8eeba5ea51b9e43566d84b063aa3b89c194d47a316cf7247fb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7%2Fretexture&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_original_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_style_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "model_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "text_style_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "texture_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "2k",
+            "4k",
+            "8k"
+          ],
+          "default": "2k"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "3d-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/tripo/remesh",
+      "category": "3d-to-3d",
+      "displayName": "Tripo3D Remesh",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "880957123c19d6e6014d875ddc2113c9e9b232f32b4b5f15d10b4c9165e66be3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Ftripo%2Fremesh&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "bake",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 500,
+          "max": 20000
+        },
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        },
+        {
+          "name": "part_names",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/tripo/segment",
+      "category": "3d-to-3d",
+      "displayName": "Tripo3D Segment",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3cd421e16ec5fd3fdf5f0b582fa9f8e20b9913ca413b9e65d3af5dcf1cde9b85",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Ftripo%2Fsegment&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "mesh_url",
+          "type": "string",
+          "required": true,
+          "media": "model3d"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "part_names",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    }
+  ]
+}

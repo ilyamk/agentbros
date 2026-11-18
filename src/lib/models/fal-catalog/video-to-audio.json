@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "category": "video-to-audio",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/kling-video/video-to-audio",
+      "category": "video-to-audio",
+      "displayName": "Kling Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0135232efbcfdc787f47ea8ffabe889b565dc3da3df052de72171d15c90e2dd6",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fvideo-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "asmr_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "background_music_prompt",
+          "type": "string",
+          "required": false,
+          "max": 200,
+          "default": "intense car race"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "sound_effect_prompt",
+          "type": "string",
+          "required": false,
+          "max": 200,
+          "default": "Car tires screech as they accelerate in a drag race"
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video",
+          "audio"
+        ],
+        "fields": [
+          "audio",
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/sam-audio/visual-separate",
+      "category": "video-to-audio",
+      "displayName": "Sam Audio",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "17e57d385f6ee5ffab192c6da6bcbf49b26d1ccfa47337ff58974874a2418fde",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-audio%2Fvisual-separate&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "quality"
+          ],
+          "default": "balanced"
+        },
+        {
+          "name": "chunk_overlap",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 30,
+          "default": 5
+        },
+        {
+          "name": "mask_video_url",
+          "type": "string",
+          "required": false,
+          "media": "video"
+        },
+        {
+          "name": "max_chunk_duration",
+          "type": "number",
+          "required": false,
+          "min": 10,
+          "max": 60,
+          "default": 60
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3"
+          ],
+          "default": "wav"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "reranking_candidates",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 4,
+          "default": 1
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "residual",
+          "target"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "video-to-audio",
+        "sam-audio"
+      ]
+    },
+    {
+      "endpoint": "mirelo-ai/sfx2.0/video-to-audio",
+      "category": "video-to-audio",
+      "displayName": "Mirelo SFX2.0",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "22ff0d57ea5858c1b816e337ef89b846c74118d1e53fd42dd1495aa189578abc",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mirelo-ai%2Fsfx2.0%2Fvideo-to-audio&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 600,
+          "default": 10
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "max": 1000
+        },
+        {
+          "name": "num_samples",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 4,
+          "default": 2
+        },
+        {
+          "name": "preserve_speech",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "return_speech",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": -1,
+          "max": 18446744073709552000
+        },
+        {
+          "name": "text_prompt",
+          "type": "string",
+          "required": false,
+          "max": 2000
+        },
+        {
+          "name": "upload_audio_bitrate_kbps",
+          "type": "integer",
+          "required": false,
+          "min": 32,
+          "max": 320
+        },
+        {
+          "name": "upload_audio_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3",
+            "aac",
+            "flac"
+          ],
+          "default": "wav"
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "speech"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "video-to-audio",
+        "sound-effects",
+        "foley",
+        "speech-aware"
+      ]
+    },
+    {
+      "endpoint": "mureka/v9.5/generate/soundtrack",
+      "category": "video-to-audio",
+      "displayName": "Mureka 9.5 Soundtrack Generation",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "97e3d44c39206ad5b21d421a2df0df908438c2893fee674bf87acbc234e6dafb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fv9.5%2Fgenerate%2Fsoundtrack&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_end",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "audio_start",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "video_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "json"
+        ],
+        "fields": [
+          "audio",
+          "lyrics_sections"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "soundtrack",
+        "image to audio",
+        "video to audio"
+      ]
+    },
+    {
+      "endpoint": "sonilo/v1.1/video-to-music",
+      "category": "video-to-audio",
+      "displayName": "V1.1",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "04f7a68c8b87bc97025257526a98cad71f606f20f2009f5c31c1702527981364",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=sonilo%2Fv1.1%2Fvideo-to-music&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 600
+        },
+        {
+          "name": "num_samples",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 3,
+          "default": 1
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "prompt_influence",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "start_offset",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 600
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio"
+        ],
+        "fields": [
+          "audio",
+          "audios"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lipsync"
+      ]
+    },
+    {
+      "endpoint": "sonilo/v1.1/video-to-sound-effects",
+      "category": "video-to-audio",
+      "displayName": "V1.1 Video to Sound Effects",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8ffd70b7a51c5a21c146dc802f4b95428be52bd233841411ef53d5bc22873f9b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=sonilo%2Fv1.1%2Fvideo-to-sound-effects&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "wav",
+            "mp3",
+            "aac",
+            "flac"
+          ],
+          "default": "aac"
+        },
+        {
+          "name": "keep_speech_vocal",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "segments",
+          "type": "array",
+          "required": false,
+          "array": true
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "audio",
+          "text"
+        ],
+        "fields": [
+          "audio",
+          "audios",
+          "segments"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "sfx",
+        "audio",
+        "effects",
+        ""
+      ]
+    }
+  ]
+}

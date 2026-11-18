@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "muse",
+  "idea": {
+    "value": "A personal AI assistant is shown as a soft plush character who lives in a sky world. The film plays one delegation loop in real chat UI: ask, get a short plan, hand it over, get a result and a proactive suggestion. The character's disc carries the eye from one beat to the next.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/coarse-e.jpg F270-F414",
+      "visuals/a1/coarse-g.jpg F693-F843",
+      "speech-text.json screenText 8.517-28.517"
+    ]
+  },
+  "audience": {
+    "value": "Busy individual knowledge workers who juggle a calendar, email and tasks and would delegate admin to an assistant. The tone is consumer-friendly (plush mascot, pastel sky) rather than enterprise.",
+    "basis": "inferred",
+    "confidence": 0.6,
+    "evidence": [
+      "speech-text.json 11.517-15.017: the answer card lists calendar, emails and tasks, plus a three-item priority list with a meeting time",
+      "visuals/strips/s002.jpg F90-F144: productivity app icons orbit the dome",
+      "speech-text.json 25.017-28.017: a personal wellbeing suggestion, so the user is an individual, not a team admin"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.6,
+      "device": "promise-line build with accent words, then a descent through clouds into the world",
+      "description": "From F0 the category promise builds word by word on a pale-sky ground, a new word every 2-5 frames (F1, F3, F5, F8, then line two from F21). The defining words are in accent blue and the rest in ink, and the line re-centres as each word lands. The camera pulls back while the line builds (type shrinks from a 0.70-wide single line to a two-line block about 0.53 wide). At 1.6-2.6 s clouds rise from below and cover the type, so the first 2.6 s pose 'what is it?' and the cloud cover promises an answer underneath."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/m01-type-build.jpg F0-F23",
+      "visuals/strips/s001.jpg F0-F77",
+      "visuals/a1/m02-cloud-push.jpg F66-F89",
+      "speech-text.json screenText 0-2.517 boxes"
+    ]
+  },
+  "beats": [
+    {
+      "value": { "startSec": 0, "endSec": 2.6, "purpose": "hook: name the category and promise", "retentionDevice": "the line is incomplete until F28, so the eye waits for the noun", "content": "Promise line built word by word, accent words blue, camera pulls back, clouds rise over it" },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m01-type-build.jpg F0-F23", "visuals/strips/s001.jpg"]
+    },
+    {
+      "value": { "startSec": 2.6, "endSec": 4.933, "purpose": "world: give the product a place and a character", "retentionDevice": "reveal from under the cloud cover; icons orbit, so the frame never freezes", "content": "Floating island with a glass dome; the plush character works at a desk inside while app icons orbit; slow push-in that accelerates into the cut" },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/strips/s002.jpg F78-F144", "visuals/a1/m02-cloud-push.jpg F81-F89"]
+    },
+    {
+      "value": { "startSec": 4.933, "endSec": 6.4, "purpose": "intimacy: from the world to the character at work", "retentionDevice": "a hard cut inside a continuous push keeps the momentum", "content": "Over-the-shoulder close-up of the character at a laptop, icons drifting behind, then a bleach to the pale ground" },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m03-cut-closeup.jpg F142-F154", "visuals/a1/m04-whiteout-to-type.jpg F186-F196"]
+    },
+    {
+      "value": { "startSec": 6.4, "endSec": 8.433, "purpose": "invitation: the one action the product needs", "retentionDevice": "the gap between the two words opens and the character pops out of it", "content": "Two-word imperative, centred; the words part and the character's portrait disc grows in the gap" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m04-whiteout-to-type.jpg F196-F206", "visuals/a1/m05-words-part-avatar.jpg F219-F239"]
+    },
+    {
+      "value": { "startSec": 8.433, "endSec": 14.933, "purpose": "proof 1: the assistant reads your day and proposes a plan", "retentionDevice": "messages land one at a time; the typing indicator stretches into the answer card", "content": "Chat: user question (blue bubble, right), greeting (left), typing dots, then a white answer card with a three-item list and an offer to act" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m06-avatar-shrink.jpg F253-F262", "visuals/a1/coarse-e.jpg F270-F414", "visuals/a1/m17-reply-morph.jpg F324-F344"]
+    },
+    {
+      "value": { "startSec": 14.933, "endSec": 19.733, "purpose": "the user delegates", "retentionDevice": "hero-scale typing with the camera riding the caret; a cut to the send end of the same bar", "content": "Input field slides in with a cursor that turns to an I-beam; the request types at hero scale while the frame tracks the caret; hard reframe to the mic and send button" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m07-card-to-field.jpg F436-F454", "visuals/a1/coarse-f.jpg F480-F540", "visuals/a1/m09-field-to-send.jpg F552-F563"]
+    },
+    {
+      "value": { "startSec": 19.733, "endSec": 23.133, "purpose": "handoff line: the brand promise in two lines", "retentionDevice": "the send button becomes a window with the character in it; the headline builds around it", "content": "The send disc drains to white, the character rises into it, a two-line headline builds above and below the disc with the name in accent blue" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m10-send-to-circle.jpg F585-F605", "visuals/a1/m11-leave-it-part.jpg F610-F628", "visuals/a1/coarse-d.jpg F618-F694"]
+    },
+    {
+      "value": { "startSec": 23.133, "endSec": 28.433, "purpose": "proof 2: the task is finished, and the assistant anticipates the next need", "retentionDevice": "the portrait disc becomes the chat avatar, so the thread continues without a cut", "content": "Chat: the user's request bubble, a short 'finished' reply with a green tick, then a longer proactive suggestion with typing dots and an emoji" },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m12-to-sphere.jpg F688-F707", "visuals/a1/coarse-g.jpg F713-F843"]
+    },
+    {
+      "value": { "startSec": 28.433, "endSec": 30.167, "purpose": "spectacle and breath: the world again, from above", "retentionDevice": "an iris opens from a disc inside the chat to an overhead ocean shot", "content": "Overhead view of the character's glass dome floating on the ocean among cloud shadows, slow pull-back" },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m13-bubble-iris.jpg F838-F862", "visuals/strips/s006.jpg F853-F903"]
+    },
+    {
+      "value": { "startSec": 30.167, "endSec": 31.967, "purpose": "tagline", "retentionDevice": "giant letters sweep through the frame and settle into one calm line", "content": "Three-word tagline flies in at frame height, settles to a single centred line, re-colours from blue to ink and fades to a ghost" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m14-letter-wipe.jpg F895-F913", "visuals/strips/s007.jpg F906-F956"]
+    },
+    {
+      "value": { "startSec": 31.967, "endSec": 34.833, "purpose": "brand mark", "retentionDevice": "the mark is written by a brush stroke rather than dropped in", "content": "A blue brush stroke writes a cursive monogram, shrinks to centre and holds to the last frame on the pale ground" },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m15-logo-draw.jpg F952-F971", "visuals/a1/m16-end.jpg F1020-F1044"]
+    }
+  ],
+  "payoff": {
+    "value": "The loop closes at 24.0 s: the request comes back 'finished' with a green tick, and the assistant adds an unasked, personal suggestion. Delegation works, and the assistant thinks ahead.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["speech-text.json 24.017-28.017", "visuals/a1/coarse-g.jpg F723-F843"]
+  },
+  "callToAction": {
+    "value": "No explicit call to action: no URL, store badge or button. The film ends on the tagline and a brush-drawn monogram held for about 2.2 s; the two-word imperative at 6.4 s ('ask') is the only instruction.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/strips/s008.jpg F960-F1040", "visuals/a1/m16-end.jpg F1020-F1044"]
+  },
+  "whyItWorks": [
+    "One circle carries the story: the portrait disc pops out of the invitation (7.53 s), shrinks to the chat avatar (8.43 s), comes back as the send button, which becomes the portrait window (19.7-20.2 s), turns into a blue sphere that becomes the avatar again (23.1-23.8 s), and opens as the iris onto the world (28.2 s). The eye always has the same object to follow across a change.",
+    "The UI is the proof, and it is staged at two scales: chat at reading scale (text about 0.035 of frame height) for 'what it does', the input field at hero scale (text about 0.11 of frame height, overflowing the left edge) for 'what you do'.",
+    "Character and world are warm and tactile (plush, glass, clouds); everything else is a near-white sky ground #E4EFF7 with one accent blue. Product UI and brand world read as one place.",
+    "There are only three hard cuts in 34.8 s (4.93, 8.43, 18.63 s). Every other change is a morph, wipe or camera move, so the film feels like one continuous thought, which suits 'it just handles it'.",
+    "The music thins at the pivots. Onsets stop at 7.73-8.64 s and 14.56-15.91 s and are sparse at 25.98-28.51 s, and the scene changes sit in those gaps. This is measured co-occurrence; whether it is intent is inferred."
+  ]
+}

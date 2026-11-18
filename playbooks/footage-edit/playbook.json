@@ -1,0 +1,387 @@
+{
+  "version": 1,
+  "id": "footage-edit",
+  "title": "Edit my recording",
+  "status": "ready",
+  "reviewedAt": "2026-11-15",
+  "summary": "Cut the user's own recording: remove silences, fillers and false starts, add subtitles, sync several cameras, reframe to vertical.",
+  "triggers": {
+    "en": [
+      "cut my video",
+      "edit my video",
+      "edit my recording",
+      "subtitles",
+      "captions",
+      "remove silences",
+      "remove pauses",
+      "fillers",
+      "false starts",
+      "talking head",
+      "interview",
+      "podcast",
+      "two cameras",
+      "multicam",
+      "make it vertical",
+      "transcribe",
+      "jump cuts",
+      "tighten my talk",
+      "clean up my recording",
+      "ums",
+      "remove the um",
+      "uhs",
+      "um",
+      "uh",
+      "my talk",
+      "remove the pauses",
+      "remove the silences",
+      "reframe",
+      "landscape video"
+    ],
+    "ru": [
+      "монтаж",
+      "моё видео",
+      "мое видео",
+      "мою запись",
+      "субтитр",
+      "титры",
+      "уберите паузы",
+      "убери паузы",
+      "паразит",
+      "оговорк",
+      "интервью",
+      "подкаст",
+      "две камеры",
+      "вертикал",
+      "расшифр",
+      "транскри",
+      "вырежи паузы",
+      "почисти запись",
+      "смонтируй моё",
+      "смонтируй мое",
+      "смонтируй мою",
+      "моему видео",
+      "моего видео",
+      "мою видеозапись"
+    ],
+    "zh": [
+      "剪口播",
+      "口播",
+      "去气口",
+      "气口",
+      "去掉停顿",
+      "去停顿",
+      "删掉停顿",
+      "口头禅",
+      "语气词",
+      "说错的地方",
+      "剪掉废话",
+      "我录的视频",
+      "我的录像",
+      "加字幕",
+      "配字幕",
+      "字幕",
+      "语音转文字",
+      "转文字",
+      "采访视频",
+      "多机位",
+      "双机位",
+      "两个机位",
+      "转竖屏",
+      "改成竖屏",
+      "横屏转竖屏"
+    ],
+    "generic": [
+      "口播"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the user wants short clips cut out of a long recording",
+      "use": "shorts-from-long"
+    },
+    {
+      "when": "a new film made from stock or supplied b-roll cut to music, not the user's speech",
+      "use": "stock-montage"
+    },
+    {
+      "when": "a screencast or tutorial of a product the user recorded",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "subtitles or a voice in another language than the one spoken",
+      "use": "localise"
+    },
+    {
+      "when": "a creator-style product ad: a person on camera selling a product for TikTok, Reels or Shorts ads",
+      "use": "ugc-ad"
+    },
+    {
+      "when": "many clips of an event the user filmed, cut to music as an aftermovie or recap",
+      "use": "event-recap"
+    },
+    {
+      "when": "a recorded client interview made into a customer case study or testimonial film",
+      "use": "case-study"
+    }
+  ],
+  "route": {
+    "kind": "footage",
+    "footageGoals": [
+      "recut",
+      "captions"
+    ],
+    "start": "pnpm footage:next --project <id> --playbook footage-edit --source <file> --goal recut,captions"
+  },
+  "alternatives": [
+    {
+      "when": "the selections are already decided and only need materialising as a reviewed recording edit",
+      "route": {
+        "kind": "workflow",
+        "workflow": "recording-edit",
+        "start": "pnpm video:workflow --scenario recording-edit --action plan --request <file>"
+      }
+    }
+  ],
+  "agents": [
+    "footage-editor"
+  ],
+  "skills": [
+    "recording-recut",
+    "captions-and-localization",
+    "editorial-storytelling",
+    "sound-design-and-mix"
+  ],
+  "library": {
+    "categories": [
+      "captions",
+      "typography"
+    ],
+    "blocks": [
+      "type-lower-third",
+      "subject-occlusion"
+    ]
+  },
+  "commands": [
+    "footage:next",
+    "project:new",
+    "transcribe",
+    "speech:local",
+    "footage:shots",
+    "recut:plan",
+    "video:workflow",
+    "timeline:edit",
+    "speech:replace",
+    "captions:place",
+    "captions:export",
+    "multicam:sync",
+    "multicam:angles",
+    "reframe:track",
+    "matte",
+    "media:broll",
+    "render",
+    "delivery",
+    "local:capabilities",
+    "audio:events",
+    "media:vision",
+    "sfx:find-segment",
+    "audio:review",
+    "sfx:synth"
+  ],
+  "read": [],
+  "qa": [
+    "No cut breaks a sentence's meaning; caveats, deliberate repetitions and the beat after a point are kept",
+    "No dead air over about 0.5 s left uncut unless the user kept it; breaths before a new thought kept",
+    "Captions timed to the words, inside the platform safe zone and off faces",
+    "Audio joins have no clicks or hiss steps; loudness even across cuts",
+    "Punch-ins and vertical crops keep the whole face; source enlargement under 2x"
+  ],
+  "benchmarks": [
+    "footage-edit"
+  ],
+  "intake": [
+    {
+      "ask": "What kind of recording is it: talking head, podcast or interview, lecture, vlog?",
+      "why": "The kind sets the pause lengths, the cover for jump cuts and whether chapters are needed (see variants)",
+      "default": "talking head"
+    },
+    {
+      "ask": "Where will it be published, and in which formats (landscape, vertical, square)?",
+      "why": "Each platform profile fixes formats, length, caption style and the crop work",
+      "default": "YouTube, landscape"
+    },
+    {
+      "ask": "May we pay for Scribe transcription? Filler and 'um' removal needs it",
+      "why": "speech:local is free but not verbatim; paid transcription needs the user's go-ahead and the cost footage:next prints"
+    },
+    {
+      "ask": "How many people speak, and how many cameras or separate recordings are there?",
+      "why": "Speaker labels (--speakers), multicam:sync and the speaker map for a vertical crop depend on it",
+      "default": "one speaker, one camera"
+    },
+    {
+      "ask": "Burned subtitles, a separate SRT file, or none? In which style?",
+      "why": "A landscape YouTube upload usually takes a clean render with an SRT; vertical feeds take burned captions",
+      "default": "burned for vertical and square, SRT for landscape"
+    },
+    {
+      "ask": "Is anything off limits to cut: a joke, a pause, a reaction, a repeated phrase?",
+      "why": "Protects meaning the plan cannot see; those cuts go into --reject from the start",
+      "default": "nothing beyond the playbook's step 3 list"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 3600
+      },
+      "loudnessLufs": -14,
+      "captions": "none",
+      "note": "Clean render plus an SRT from captions:export; chapters need 3+ timestamps from 00:00, each 10 s or longer; playback turns loud audio down to about -14 LUFS, never up (measured); band is a house rule"
+    },
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 600
+      },
+      "captions": "outline-pop",
+      "note": "Only when the user wants the whole recording vertical; TikTok's ads spec page takes 9:16 up to 10 minutes (band is a house rule); longer talks become shorts-from-long"
+    },
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "outline-pop",
+      "note": "Reels upload up to 3 minutes (Instagram, January 2025); band is a house rule"
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical",
+        "square"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "outline-pop",
+      "note": "Shorts run up to 3 minutes; a Short over 1 minute with any copyright claim is blocked, so keep third-party music out or stay at 60 s; minimum is a house rule"
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 600
+      },
+      "captions": "clean-sentence",
+      "note": "LinkedIn takes 3 s to 15 min at 1:2.4 to 2.4:1; burn calm captions for a feed watched muted (band is a house rule)"
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "caption-clean-sentence",
+      "caption-outline-pop",
+      "caption-line-box"
+    ],
+    "note": "clean-sentence or line-box for long talk, lessons and two speakers; outline-pop for vertical talking heads (caption styles table in the captions-and-localization skill)"
+  },
+  "variants": [
+    {
+      "id": "podcast",
+      "title": "Video podcast or interview",
+      "triggers": {
+        "en": [
+          "video podcast",
+          "podcast episode",
+          "interview recording",
+          "my interview"
+        ],
+        "ru": [
+          "видеоподкаст",
+          "выпуск подкаста",
+          "запись интервью",
+          "моё интервью"
+        ],
+        "zh": [
+          "视频播客",
+          "播客节目",
+          "采访录像",
+          "我的访谈"
+        ]
+      },
+      "changes": "Speaker labels (--speakers N) and multicam angles per speaker; sentence pauses stay at 400 ms and a guest's thinking pause is kept; captions break at speaker changes (clean-sentence or line-box, never word-box); YouTube chapters from the recut's SRT; the vertical crop follows the speaker map; a type-lower-third overlay names each speaker on first appearance (timeline:edit add-overlay, ground transparent)"
+    },
+    {
+      "id": "lecture",
+      "title": "Lecture or course recording",
+      "triggers": {
+        "en": [
+          "lecture recording",
+          "course recording",
+          "recorded lesson",
+          "my lecture",
+          "my course"
+        ],
+        "ru": [
+          "запись лекции",
+          "запись урока",
+          "запись курса",
+          "мою лекцию",
+          "мой курс"
+        ],
+        "zh": [
+          "录课",
+          "网课",
+          "课程录像",
+          "讲课视频",
+          "我的讲座",
+          "上课录像"
+        ]
+      },
+      "changes": "Slower pace (defaults, the beat after a new idea kept); a slide recording of the same session is synced with multicam:sync and cut to by hand while a slide is explained (multicam:angles picks by speaker); calm clean-sentence captions; chapters per topic; no punch-ins"
+    },
+    {
+      "id": "vlog",
+      "title": "Vlog",
+      "triggers": {
+        "en": [
+          "my vlog",
+          "vlog",
+          "travel vlog",
+          "day in my life"
+        ],
+        "ru": [
+          "влог",
+          "мой влог",
+          "снял влог"
+        ],
+        "zh": [
+          "vlog",
+          "我的vlog",
+          "旅行vlog",
+          "日常vlog",
+          "记录生活"
+        ]
+      },
+      "changes": "Faster pace (--mid-pause-ms 250 --sentence-pause-ms 300); jump cuts left visible or covered by --punch-in 1.1; the user's own clips as B-roll over joins with media:broll; outline-pop or italic-shadow captions"
+    }
+  ]
+}

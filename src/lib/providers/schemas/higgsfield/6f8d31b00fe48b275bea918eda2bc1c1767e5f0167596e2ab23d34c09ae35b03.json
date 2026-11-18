@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "endpoint": "wan/v2.7/reference-to-video",
+  "title": "Wan 2.7 — Reference to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-7/reference-to-video.md",
+  "usageNotes": [
+    "Provide a nonempty image_urls or video_urls array. The combined number of image and video references must not exceed 5; this submission limit is not expressed in the stored JSON Schema.",
+    "Reference generation is limited to 2–10 seconds and aspect ratios 16:9 or 9:16."
+  ],
+  "schema": {
+    "if": {
+      "required": [
+        "image_urls"
+      ],
+      "properties": {
+        "image_urls": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    },
+    "else": {
+      "required": [
+        "video_urls"
+      ],
+      "properties": {
+        "video_urls": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    },
+    "type": "object",
+    "title": "Wan 2.7 References",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483646,
+        "minimum": 1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 10,
+        "minimum": 2
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Image",
+          "format": "uri"
+        }
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Video",
+          "format": "uri"
+        }
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16"
+        ],
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "16:9"
+      },
+      "prompt_extend": {
+        "type": "boolean",
+        "default": false
+      },
+      "negative_prompt": {
+        "type": "string",
+        "title": "Negative prompt",
+        "default": ""
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

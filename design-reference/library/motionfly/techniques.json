@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "motionfly",
+  "techniques": [
+    {
+      "id": "t01-word-assembly-tinted-arrival",
+      "name": "Promise line built word by word with a tinted arrival and a corner-dot frame",
+      "spans": [{ "startSec": 0, "endSec": 2.0 }],
+      "description": "On #FEFEFE, one centred line in semibold sans (OCR line box 8.8% of frame height, 77.5% of width when complete). A word appears whole about every 10 frames (F0, F9, F19, F29, F40); each enters pale lilac (#B873B3), turns raspberry (#B73A69) on the next frame, then teal (#0A7F6F), and settles to ink #030303 about 5 frames after it appeared (F9-F14). The line recentres as each word lands (box centre x 0.505, 0.494, 0.504). Four small dots hover about 4% outside the text box and spread to its new corners over about 5-8 frames after each word. At F54-F59 the gap between the two phrases opens by about 5% of frame width; hard cut at F60.",
+      "route": "remotion",
+      "routeReason": "Pure type on a flat ground, revised with the copy. The library block `type-sentence-build` builds a sentence word by word on a light ground but has no tint-settle per word or corner-dot frame; `track`, `stagger` and `intentCurves.settle` cover the timing. What is missing is the per-word tint and the selection frame.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-sentence-build",
+        "track",
+        "stagger",
+        "intentCurves",
+        "block:type-sentence-build"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 2.0,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59", "speech-text.json screenText onsets 0.30, 0.667, 1.30, 1.367 s"]
+      },
+      "ease": { "name": "power2.out", "source": "strip", "evidence": ["visuals/a1/m01a-words-1.jpg F14-F18 dot spread, diff 0.96 to 0.31"] },
+      "typography": {
+        "role": "promise line",
+        "entry": "word-by-word, whole words about every 10 frames, tint settles to ink in about 5 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m01a-words-1.jpg F9-F14", "visuals/a1/m01b-words-2.jpg F40-F44", "speech-text.json screenText box x 0.116 width 0.775 at 1.367 s"]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t02-card-collapses-to-underline",
+      "techniqueCardId": "frame-to-object",
+      "name": "Black card on the incoming plate collapses into the next element's underline",
+      "spans": [{ "startSec": 2.0, "endSec": 2.4 }],
+      "description": "Hard cut at F60 to a photographic plate covered by a soft-edged black rounded card about 92% wide and 85% high. It shrinks over 12 frames toward (0.45, 0.43), ease-out (frame difference 41, 33, 24, 16, 11, 6, 3, 1.7), flattening into a thin bar that becomes the white selection underline below the first icon of a floating dock; the icons fade in around it from F70.",
+      "route": "remotion",
+      "routeReason": "A rect animated by `track` over a plate; the plate itself is footage (a landscape: licensed stock or own shoot). No primitive morphs a full-frame matte into a target element's rect.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "track",
+        "intentCurves",
+        "morphRect",
+        "block:frame-to-object"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m02-card-shrink.jpg F60-F72"]
+      },
+      "ease": { "name": "power3.out", "source": "strip", "evidence": ["visuals/a1/m02-card-shrink.jpg F61-F72 diff 36.6, 41.6, 33.4, 24.0, 16.2, 10.8, 5.9, 3.2, 1.8"] },
+      "layers": 3,
+      "fromShot": 0,
+      "toShot": 1
+    },
+    {
+      "id": "t03-punch-in-defocus-cut",
+      "name": "Punch-in cut with the background thrown out of focus",
+      "spans": [{ "startSec": 3.1, "endSec": 3.2 }],
+      "description": "Hard cut at F94 from the wide plate to about 1.9x on the icon dock; the plate behind is now strongly defocused while the icons stay sharp and keep sliding left at the same speed across the cut.",
+      "route": "remotion",
+      "routeReason": "Two framings of one stage: `RegionCamera` for the punch and a `DepthLayer` with lens aperture for the defocus, or `snap-zoom` without its blur. The plate is footage.",
+      "difficulty": "low",
+      "requiredPrimitives": ["RegionCamera", "Camera", "DepthLayer", "snap-zoom"],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.033,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m03-push-cut.jpg F93-F95"]
+      },
+      "layers": 3,
+      "fromShot": 1,
+      "toShot": 2
+    },
+    {
+      "id": "t04-dock-selection-to-mark",
+      "name": "Tool dock slides until the selection rests on the product's mark",
+      "spans": [{ "startSec": 3.133, "endSec": 5.53 }],
+      "description": "A row of rounded app icons (about 5% of frame width, spaced about 13%) floats over the defocused plate with a white underline under the selected one. The row slides left continuously (about 2.4 s) while the selection passes along it; the last icon is the product mark, ink-black; on arrival the other icons blur (F161-F166) and the mark stays sharp.",
+      "route": "remotion",
+      "routeReason": "Icons on a `track` over a footage plate; the defocus is a per-icon blur driven by the same track. Third-party app icons are not to be reused: draw neutral tool glyphs.",
+      "difficulty": "low",
+      "requiredPrimitives": ["track", "stagger", "DepthLayer"],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 2.4,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/strips/s004.jpg F94-F164", "visuals/a1/m04-iris-close.jpg F156-F166"]
+      },
+      "ease": { "name": "none", "source": "strip", "evidence": ["visuals/a1/m03-push-cut.jpg F95-F105 diff steady 2.7 to 1.2"] },
+      "layers": 4
+    },
+    {
+      "id": "t05-iris-close-spares-mark",
+      "techniqueCardId": "shape-wipe",
+      "name": "Dark disc sweeps the frame but leaves the mark on top",
+      "spans": [{ "startSec": 5.533, "endSec": 5.867 }],
+      "description": "A soft-edged #0D0D15 disc enters from the lower-left corner and grows past the whole frame in 10 frames (F166-F176), slow-fast-slow (difference 13.8, 15.1, 20.7, 26.3, 30.0, 22.6, 22.8, 20.5, 14.6, 5.9). The mark is drawn above the disc and stays put, turning from a black icon on a light plate into a white-outlined icon on dark.",
+      "route": "remotion",
+      "routeReason": "`shapeWipe` with shape circle and origin at the lower-left corner, the mark rendered outside the TransitionSeries so it stays on top. `shapeWipe` has a hard edge; the soft edge (about 3% of width) is missing.",
+      "difficulty": "low",
+      "requiredPrimitives": ["shapeWipe", "cutTiming", "repo:shapeWipe"],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.333,
+        "startOffsetFromCutSec": -0.167,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m04-iris-close.jpg F166-F176"]
+      },
+      "ease": { "name": "sine.inOut", "source": "strip", "evidence": ["visuals/a1/m04-iris-close.jpg F166-F176 difference rises to F170 and falls"] },
+      "layers": 4,
+      "fromShot": 2,
+      "toShot": 3
+    },
+    {
+      "id": "t06-small-caps-name-typed",
+      "name": "Name typed letter by letter in small capitals under the mark",
+      "spans": [{ "startSec": 5.7, "endSec": 6.767 }],
+      "description": "On the dark ground, the name in tracked uppercase sans (about 2.5% of frame height) types under the mark, one letter every 2-3 frames (F171-F195); each new letter flickers in, then holds; the mark pulses slightly bigger at F198-F202 just before the cut.",
+      "route": "remotion",
+      "routeReason": "`TypedLine` or `typingSchedule` with a per-letter cadence of 2-3 frames.",
+      "difficulty": "low",
+      "requiredPrimitives": ["TypedLine", "typingSchedule"],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m04-iris-close.jpg F171-F179", "visuals/a1/m05-black-to-arc.jpg F180-F202"]
+      },
+      "typography": {
+        "role": "product name, secondary",
+        "entry": "typewriter, a letter every 2-3 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m05-black-to-arc.jpg F180-F195", "speech-text.json screenText box x 0.433 width 0.092 at 5.767 s"]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t07-word-on-arc-straightens",
+      "name": "Word rises on an arc and straightens",
+      "spans": [{ "startSec": 6.767, "endSec": 7.833 }],
+      "description": "Hard cut to white at F203: one word set on an upward-curving baseline enters from below (centre y about 0.76) and rises to centre (y 0.50) while its curvature flattens to a straight line in 9 frames (F203-F212), colour grey to #884295 purple. It then holds and shrinks slightly, with a two-frame snap smaller at F233-F234 before the cut.",
+      "route": "remotion",
+      "routeReason": "Text on an SVG path whose curvature is interpolated to zero (GSAP `MotionPathPlugin` or a per-glyph transform from `Glyphs`). No block bends a baseline over time.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["Glyphs", "MotionPathPlugin", "useGsapTimeline", "block:type-hero-word"],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m06-arc-unwind.jpg F203-F212"]
+      },
+      "ease": { "name": "power2.out", "source": "strip", "evidence": ["visuals/a1/m06-arc-unwind.jpg F204-F216 difference peaks F206-F207 then decays"] },
+      "typography": {
+        "role": "announcement word",
+        "entry": "rises on an arc, straightens in 9 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m06-arc-unwind.jpg F203-F212", "speech-text.json screenText box x 0.306 width 0.386 at 6.767 s"]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t08-mark-then-wordmark-lockup",
+      "name": "Mark lands large, shrinks, and the wordmark slides out from behind it",
+      "spans": [{ "startSec": 7.833, "endSec": 8.5 }],
+      "description": "Hard cut at F235 to the mark alone at about 11% of frame width, centred; it shrinks to about 6% in 3 frames while moving left, and the wordmark slides out to the right from behind it (F238-F243, 6 frames), letters slightly stretched while moving. The lockup then grows slowly (push-in) to 8.5 s.",
+      "route": "remotion",
+      "routeReason": "The library block `scene-end-card` does exactly this (mark cuts in, wordmark slides out from behind it).",
+      "difficulty": "low",
+      "requiredPrimitives": ["scene-end-card", "track"],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 0.267,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m07-word-to-mark.jpg F235-F243"]
+      },
+      "ease": { "name": "power3.out", "source": "strip", "evidence": ["visuals/a1/m07-word-to-mark.jpg F235-F251 diff 5.2 then decays to 0.3"] },
+      "typography": {
+        "role": "wordmark",
+        "entry": "slides out from behind the mark, 6 frames",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m07-word-to-mark.jpg F238-F243"]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t09-mark-carry-iris-open",
+      "name": "Mark leaves the lockup, rises, and a circle opens around it into the product screen",
+      "spans": [{ "startSec": 8.533, "endSec": 9.633 }],
+      "description": "The mark detaches (F256), tumbles about a quarter turn while rising to (0.5, 0.2) and shrinking to about 4% of frame width (11 frames); the wordmark exits right, accelerating (F261-F266). After a 16-frame hold a circle about 45% of frame width appears around the mark at F283 and opens past the frame by F289 (difference 15, 21, 12.5, 8.7, 5.7, 3.8), revealing the product screen on a pastel ground; the mark is the screen's header at the same position.",
+      "route": "remotion",
+      "routeReason": "`shapeWipe` circle with `fromSize` about 45% of frame width at the mark's position, the mark carried above both scenes (`MatchCut` carry or a persistent layer). The product screen is real UI: capture it with capture:app or rebuild it pixel-faithfully.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["shapeWipe", "cutTiming", "MatchCut", "track"],
+      "function": "transition",
+      "timing": {
+        "durationSec": 1.1,
+        "startOffsetFromCutSec": -0.9,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m08-mark-to-word.jpg F256-F275", "visuals/a1/m09-circle-open.jpg F279-F289"]
+      },
+      "ease": { "name": "expo.out", "source": "strip", "evidence": ["visuals/a1/m09-circle-open.jpg F283-F289 opens at 45% on its first frame then decelerates"] },
+      "layers": 4,
+      "fromShot": 5,
+      "toShot": 6
+    },
+    {
+      "id": "t10-request-typed-punch-in-send",
+      "name": "Prompt typed in the real field, punch-in to reading size, cursor to send",
+      "spans": [{ "startSec": 9.8, "endSec": 13.233 }],
+      "description": "The prompt types into the product's field (about 6-8 characters per 3 frames at the wide size, unreadable at 2.8% of height). Hard cut at F346 to about 2.6x on the field's right half, cropping it off the left edge so the text is about 7% of frame height; the wide frame blurs one frame before the cut (F345) and the punched frame sharpens over 2 frames. A cursor arrow enters bottom right at F353 and moves to the send button; on the press (F388) the button flips teal #07847C to coral, then a slow pull-out (F390-F396) before the cut to the chat view.",
+      "route": "remotion",
+      "routeReason": "Library block `ui-prompt-bar` types a real prompt field at reference scale; `RegionCamera` for the punch, `Cursor` for the arrow. The interface must be the real product (capture:app or a pixel-faithful rebuild).",
+      "difficulty": "medium",
+      "requiredPrimitives": ["ui-prompt-bar", "RegionCamera", "Cursor", "ScreenPlayback", "typingSchedule"],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.1,
+        "startOffsetFromCutSec": -0.033,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m10-punch-in.jpg F345-F347", "visuals/a1/m18-send-to-chat.jpg F387-F396"]
+      },
+      "typography": {
+        "role": "interface text",
+        "entry": "typed with caret, then enlarged by a punch-in",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m10-punch-in.jpg F346-F359", "speech-text.json screenText box height 0.037 at 10.533 s and 0.098 at 11.533 s"]
+      },
+      "layers": 3,
+      "fromShot": 6,
+      "toShot": 7
+    },
+    {
+      "id": "t11-checklist-rows-tick",
+      "techniqueCardId": "check-row-list",
+      "name": "Generation checklist: rows append with a tinted arrival and tick",
+      "spans": [{ "startSec": 13.233, "endSec": 16.833 }],
+      "description": "Cut at F397 to a chat view: the prompt as a right-aligned grey bubble slides up into place, a status line with a spinner appears at F402-F403, then six rows append under it, left-aligned at x 0.06-0.08, about 4.5% of frame height each, at F424, F436, F453, F459 and later; each new row arrives in the gradient tint, its spinner turns to a tick, and the list scrolls up slightly so the newest row stays in the lower middle. Last two rows stay unchecked (grey) at the cut.",
+      "route": "remotion",
+      "routeReason": "Library block `ui-ai-chat` (tool-call cards that spin and resolve one by one) is the nearest; the tinted row arrival is missing (as in t01). The interface must be the real product.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["ui-ai-chat", "stagger", "block:ui-ai-chat"],
+      "function": "proof",
+      "timing": {
+        "durationSec": 3.6,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m18-send-to-chat.jpg F397-F410", "visuals/a1/m11-list-tilt.jpg F417-F440", "visuals/a1/m19-steps-end.jpg F450-F473"]
+      },
+      "typography": {
+        "role": "status rows",
+        "entry": "row append, tinted then settling to grey or ink",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": ["visuals/strips/s013.jpg F453-F503", "speech-text.json screenText boxes x 0.059-0.08 at 15.3-15.333 s"]
+      },
+      "layers": 3,
+      "fromShot": 7,
+      "toShot": 8
+    },
+    {
+      "id": "t12-device-drift",
+      "name": "Tilted 3D phone showing the result, slow pull-out with roll",
+      "spans": [{ "startSec": 16.833, "endSec": 18.833 }],
+      "description": "Hard cut at F505 to a 3D phone tilted about 20 degrees clockwise, bezel black, screen showing the generated app, filling the frame height and cropped at the bottom. Over 1.14 s it pulls out about 29% and rolls a further 11 degrees clockwise, circ.out, then drifts.",
+      "route": "blender",
+      "routeReason": "A device hero shot: `blender-plate` for photoreal, or `studio-product-stage` / `ui-phone-hero` in three.js on a white ground for a quick editable version. The screen must be the real app.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["blender-plate", "studio-product-stage", "ui-phone-hero"],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.144,
+        "startOffsetFromCutSec": 0.018,
+        "basis": "measured",
+        "evidence": ["motion.json s014 camera startSec 16.851 durationSec 1.144", "visuals/a1/m12-to-phone.jpg F505-F518"]
+      },
+      "ease": {
+        "name": "circ.out",
+        "cubicBezier": [0.049, 0.827, 0.761, 0.748],
+        "source": "motion.json",
+        "evidence": ["motion.json s014 camera ease gsap circ.out, pick bezier", "visuals/a1/m12-to-phone.jpg F505-F518 difference decays 19 to 2.3"]
+      },
+      "layers": 2
+    },
+    {
+      "id": "t13-orbit-ring-around-line",
+      "name": "Ring of thumbnails orbiting a centred line",
+      "spans": [{ "startSec": 18.833, "endSec": 20.7 }],
+      "description": "Hard cut at F565 to white: about 30 rounded photo thumbnails (each about 7-9% of frame width, soft shadows) on a tilted elliptical ring about 70% wide and 85% high, rotating continuously around a centred line that types word by word (complete by F572). The ring arrives contracting from beyond the frame and keeps turning.",
+      "route": "remotion",
+      "routeReason": "Cards on a ring in 3D (`@remotion/three` or CSS 3D under `Camera`/`DepthLayer`); `gather-seal` moves items into a ring and `depth-card-flythrough` hangs cards in depth, but neither orbits continuously. Thumbnails must be licensed or own frames.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["gather-seal", "Camera", "DepthLayer", "block:orbit-ring"],
+      "function": "proof",
+      "timing": {
+        "durationSec": 1.867,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m13-phone-to-ring.jpg F565-F578", "visuals/a1/m14-ring-spin.jpg F588-F611"]
+      },
+      "typography": {
+        "role": "range line",
+        "entry": "word-by-word typed",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m13-phone-to-ring.jpg F565-F572", "speech-text.json screenText box x 0.336 width 0.332 at 18.833 s"]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t14-ring-flies-past-frame",
+      "name": "Ring expands off all edges, leaving the centred line, which is swapped for the headline",
+      "spans": [{ "startSec": 20.7, "endSec": 21.133 }],
+      "description": "The orbit ring expands outward past all four edges in 12 frames (F621-F633), accelerating (difference 13 to 37); the centred line never moves and is alone on white for one frame (F633); at F634 it is replaced by the larger headline.",
+      "route": "remotion",
+      "routeReason": "Scale of the ring on a `track` with an ease-in; the swap is a plain cut.",
+      "difficulty": "low",
+      "requiredPrimitives": ["track", "intentCurves", "block:orbit-ring"],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": -0.4,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m15-ring-out.jpg F621-F634"]
+      },
+      "ease": { "name": "power2.in", "source": "strip", "evidence": ["visuals/a1/m15-ring-out.jpg F622-F630 difference 13.1 to 37.1"] },
+      "layers": 3,
+      "fromShot": 10,
+      "toShot": 11
+    },
+    {
+      "id": "t15-headline-chips-typed-subline",
+      "name": "Held headline with floating chips and a typed second line",
+      "spans": [{ "startSec": 21.133, "endSec": 24.133 }],
+      "description": "Headline in medium sans, ink, about 84% of frame width at y 0.37-0.50; four small coloured pills (blue, purple, red, teal) float off its corners, drifting a few pixels. Under it a grey (#666666) second line types with a thin caret: first word by 21.2 s, a phrase by 21.8 s, complete by 23.0 s; caret then blinks off.",
+      "route": "remotion",
+      "routeReason": "`TypedLine` for the second line, `kinetic-headline-build` (chip pops, words rise) for the chips; the headline here does not animate.",
+      "difficulty": "low",
+      "requiredPrimitives": ["TypedLine", "kinetic-headline-build", "track"],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.9,
+        "startOffsetFromCutSec": 0.1,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m15-ring-out.jpg F634-F644", "speech-text.json screenText onsets 21.8, 22.167, 22.5, 23.017 s"]
+      },
+      "typography": {
+        "role": "value headline and sub-line",
+        "entry": "headline cut in whole; sub-line typewriter with caret",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m16-tilt-out.jpg F720", "speech-text.json screenText box x 0.168 width 0.665 at 23.017 s"]
+      },
+      "layers": 3
+    },
+    {
+      "id": "t16-roll-exit-to-spinning-mark",
+      "name": "Text block rolls away into a cut to the rotated mark, which unrotates",
+      "spans": [{ "startSec": 24.133, "endSec": 24.767 }],
+      "description": "The headline block begins a clockwise roll and slight scale-up at F724, accelerating to about 12 degrees and 110% by F735 (difference 0.2 to 16.5). Hard cut at F736 to the mark at about 27% of frame height, still rotated about 20 degrees clockwise; it unrotates and shrinks (ease-out) over about 1.5 s to a square mark about 7% of frame width.",
+      "route": "remotion",
+      "routeReason": "Rotation and scale on `track` either side of a cut, continuing the angular speed across it.",
+      "difficulty": "low",
+      "requiredPrimitives": ["track", "intentCurves", "MatchCut"],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.633,
+        "startOffsetFromCutSec": -0.4,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m16-tilt-out.jpg F724-F743"]
+      },
+      "ease": { "name": "power2.in", "source": "strip", "evidence": ["visuals/a1/m16-tilt-out.jpg F724-F735 difference 0.22, 1.07, 1.7, 2.6, 3.5, 4.6, 5.7, 6.9, 8.1, 9.5, 11.0, 16.5"] },
+      "layers": 2,
+      "fromShot": 11,
+      "toShot": 12
+    },
+    {
+      "id": "t17-end-card-typed-wordmark",
+      "techniqueCardId": "arrival-tint",
+      "name": "End card: mark settles, wordmark typed in tinted letters, call to action, silent hold",
+      "spans": [{ "startSec": 24.533, "endSec": 30.167 }],
+      "description": "The mark settles to about 7% of frame width by about 26.0 s. From F787 the wordmark types beside it, one letter about every 3 frames, each letter tinted and settling to ink (complete about F818, 27.27 s), the lockup recentring as it grows. At F837-F845 (27.9-28.17 s) a dark #333333 pill button (19% width) and a small grey address fade and rise in under it. Still hold to the end; the sound layer measures silence from 29.33 s.",
+      "route": "remotion",
+      "routeReason": "`scene-end-card` with `wordmarkEntry: \"type\"` (`sceneEndCardTypedPreset`): the wordmark types a letter every 3 frames beside the mark, each letter in t01's tint run settling to ink through `arrivalTint`, the lockup recentring as it grows; the address is the block's `cta`.",
+      "difficulty": "low",
+      "requiredPrimitives": ["scene-end-card", "arrivalTint", "block:scene-end-card"],
+      "function": "cta",
+      "timing": {
+        "durationSec": 5.634,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": ["visuals/a1/m17-endcard.jpg F786-F845", "visuals/strips/s019.jpg F736-F901"]
+      },
+      "ease": { "name": "expo.out", "source": "strip", "evidence": ["visuals/a1/m16-tilt-out.jpg F736-F743 difference 25.5, 4.2, 2.3, 1.5, 1.2, 1.0, 0.9, 0.7", "visuals/strips/s019.jpg F736-F781"] },
+      "sound": {
+        "kind": "silence",
+        "note": "Measured silence 29.334-30.187 s: the last 0.83 s of the held end card is silent. What the bed before it is, I cannot hear.",
+        "basis": "measured",
+        "evidence": ["audio.json silence 29.334-30.187 s", "audio.json sections 4-quiet 29.373-30.187 s energy 0.002"]
+      },
+      "typography": {
+        "role": "wordmark and call to action",
+        "entry": "letter-by-letter typewriter with tint settle; button fades and rises",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": ["visuals/a1/m17-endcard.jpg F787-F845", "speech-text.json screenText boxes x 0.343 width 0.308 at 27.517 s, x 0.405 width 0.191 at 27.933 s"]
+      },
+      "layers": 3
+    }
+  ]
+}

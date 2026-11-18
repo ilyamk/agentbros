@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "projectId": "showcase-like",
+  "fps": 30,
+  "shots": [
+    {
+      "id": "shelf",
+      "startFrame": 0,
+      "durationFrames": 333,
+      "intent": "shelf",
+      "subject": "shelf",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "centred packet on shelf",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "whip"
+    },
+    {
+      "id": "monday",
+      "startFrame": 333,
+      "durationFrames": 27,
+      "intent": "monday",
+      "subject": "monday",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "full bleed word",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "cut"
+    },
+    {
+      "id": "tuesday",
+      "startFrame": 360,
+      "durationFrames": 18,
+      "intent": "tuesday",
+      "subject": "tuesday",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "full bleed word",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "cut"
+    },
+    {
+      "id": "wednesday",
+      "startFrame": 378,
+      "durationFrames": 18,
+      "intent": "wednesday",
+      "subject": "wednesday",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "full bleed word",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "cut"
+    },
+    {
+      "id": "thursday",
+      "startFrame": 396,
+      "durationFrames": 126,
+      "intent": "thursday",
+      "subject": "thursday",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "full bleed word",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "cut"
+    },
+    {
+      "id": "order",
+      "startFrame": 522,
+      "durationFrames": 198,
+      "intent": "order",
+      "subject": "order",
+      "framing": "centred",
+      "camera": "slow push",
+      "composition": "browser page",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "wipe"
+    },
+    {
+      "id": "roast",
+      "startFrame": 720,
+      "durationFrames": 90,
+      "intent": "roast",
+      "subject": "roast",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "full bleed word",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "cut"
+    },
+    {
+      "id": "pour",
+      "startFrame": 810,
+      "durationFrames": 117,
+      "intent": "pour",
+      "subject": "pour",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "centred packet on shelf",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": [],
+      "transitionToNext": "whip"
+    },
+    {
+      "id": "ending",
+      "startFrame": 927,
+      "durationFrames": 135,
+      "intent": "ending",
+      "subject": "ending",
+      "framing": "centred",
+      "camera": "static",
+      "composition": "centred packet on shelf",
+      "entrance": "masked line up",
+      "exit": "cut",
+      "curve": "spring",
+      "route": "remotion",
+      "techniqueIds": []
+    }
+  ],
+  "onScreenCopy": [
+    {
+      "shotId": "shelf",
+      "text": "ЖАРЯТ НА СКЛАД НЕ ЗНАЮТ, СКОЛЬКО КУПЯТ",
+      "required": true
+    },
+    {
+      "shotId": "monday",
+      "text": "ПОНЕДЕЛЬНИК",
+      "required": true
+    },
+    {
+      "shotId": "tuesday",
+      "text": "ВТОРНИК",
+      "required": true
+    },
+    {
+      "shotId": "wednesday",
+      "text": "СРЕДА",
+      "required": true
+    },
+    {
+      "shotId": "thursday",
+      "text": "ЧЕТВЕРГ ПАРТИЯ НЕ ПРОДАНА",
+      "required": true
+    },
+    {
+      "shotId": "order",
+      "text": "ЗАКАЗ ДО ОБЖАРКИ",
+      "required": true
+    },
+    {
+      "shotId": "roast",
+      "text": "ОБЖАРКА",
+      "required": true
+    },
+    {
+      "shotId": "ending",
+      "text": "ЖАРИМ ПОД ЗАКАЗ СЛЕДУЮЩАЯ ПАРТИЯ",
+      "required": true
+    }
+  ],
+  "finalFrameIntent": "hold"
+}

@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "id": "product-promo",
+  "title": "Product promo",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "A launch film, promo or product ad of 15-60 s for a product or app: motion design built around the real product, its mechanism and one proposition.",
+  "triggers": {
+    "en": [
+      "our startup",
+      "something slick",
+      "launch",
+      "launch film",
+      "promo",
+      "product ad",
+      "app ad",
+      "ad for",
+      "advert",
+      "commercial",
+      "announcement video",
+      "ad for my",
+      "ad for our",
+      "reels about",
+      "reel about",
+      "tiktok about",
+      "launch video",
+      "promo video",
+      "promotional video"
+    ],
+    "ru": [
+      "стартап",
+      "промо",
+      "промо-ролик",
+      "запуск",
+      "лонч",
+      "ролик о продукте",
+      "рекламный ролик",
+      "реклам",
+      "продающее видео",
+      "рилс про",
+      "reels про",
+      "тикток про",
+      "рекламный ролик для",
+      "продающий ролик",
+      "промо-видео",
+      "промовидео",
+      "видео о запуске",
+      "ролик о запуске",
+      "ролик о приложении"
+    ],
+    "zh": [
+      "创业公司",
+      "发布视频",
+      "新产品",
+      "宣传片",
+      "宣传视频",
+      "产品宣传片",
+      "产品宣传视频",
+      "推广视频",
+      "产品推广",
+      "产品广告",
+      "app广告",
+      "应用广告",
+      "广告片",
+      "商业广告",
+      "tvc",
+      "新品发布",
+      "新品上市",
+      "产品发布视频",
+      "上线宣传",
+      "产品介绍片",
+      "营销视频",
+      "卖点视频",
+      "抖音推广",
+      "抖音宣传",
+      "广告",
+      "宣传",
+      "推广"
+    ],
+    "generic": [
+      "广告",
+      "宣传",
+      "推广"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the film teaches how to use the product step by step",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "an animated film with no product to sell: kinetic type, logo animation, music-driven motion",
+      "use": "motion-design"
+    },
+    {
+      "when": "a story or mood film made from AI-generated shots, where generation is the point",
+      "use": "ai-film"
+    },
+    {
+      "when": "a brand or event montage or sizzle reel cut to music from stock or supplied footage",
+      "use": "stock-montage"
+    },
+    {
+      "when": "a what's-new, release or feature-update video about something already shipped in an existing product",
+      "use": "feature-update"
+    },
+    {
+      "when": "the preview video for an App Store or Google Play product page",
+      "use": "app-store-preview"
+    },
+    {
+      "when": "a teaser or trailer before a launch or event that withholds the product, builds anticipation or announces a date",
+      "use": "teaser-trailer"
+    },
+    {
+      "when": "a creator, customer or UGC-style ad filmed on a phone by a person talking about the product",
+      "use": "ugc-ad"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "motion-graphics",
+    "start": "pnpm film:init --project <id> --type motion-graphics --playbook product-promo --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "the user supplies the footage, the script, the word timings and the proof, and wants it assembled into a hook-problem-demo-proof-CTA ad",
+      "route": {
+        "kind": "workflow",
+        "workflow": "product-ad",
+        "start": "pnpm video:workflow --scenario product-ad --action plan --request <file>"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "motion-library",
+    "motion-and-typography",
+    "copywriter",
+    "sound-design-and-mix",
+    "engine-selection",
+    "qa-and-delivery",
+    "reference-preparation"
+  ],
+  "library": {
+    "categories": [
+      "ui",
+      "scenes",
+      "transitions",
+      "typography",
+      "three"
+    ],
+    "blocks": [
+      "ui-camera-read",
+      "ui-phone-hero",
+      "scene-product-reveal",
+      "scene-end-card",
+      "shared-element-carry",
+      "caused-morph",
+      "before-after-split",
+      "type-hero-word",
+      "type-caret-track",
+      "word-split-insert",
+      "marquee-rows",
+      "quad-split",
+      "ticker-card",
+      "giant-word-pull-out",
+      "studio-product-stage",
+      "hierarchy-reveal",
+      "orbit-ring",
+      "caption-over-flash-montage",
+      "doubling-counter-montage",
+      "accelerate-into-cut",
+      "frame-to-object",
+      "ui-punch-reframe",
+      "populate-pull-out",
+      "pixel-resolve",
+      "symbol-disc",
+      "scatter-field",
+      "placeholder-resolve",
+      "ui-check-list",
+      "ui-annotate",
+      "ui-card-grid",
+      "chip-wall",
+      "shaded-orb",
+      "point-sphere",
+      "printing-slip",
+      "material-fill"
+    ]
+  },
+  "commands": ["blender:assets",
+    "blender:recipe",
+    "film:init",
+    "film:next",
+    "film:status",
+    "library:list",
+    "capture:app",
+    "asset:import",
+    "music:backtime",
+    "sfx:cues",
+    "sfx:generate",
+    "render",
+    "delivery",
+    "refs:profiles",
+    "refs:plan",
+    "refs:derive",
+    "refs:pack"
+  ],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "script-variants": [
+      "design-reference/craft-rules.md"
+    ],
+    "script": [
+      "design-reference/craft-rules.md"
+    ]
+  },
+  "qa": [
+    "With sound off, frame 90 (3 s) already shows the product or its effect and the proposition can be read",
+    "Every claim on screen is shown happening in the real product within the same shot or the next one",
+    "The end card lands on a downbeat, holds at least 2 s without a fade and keeps the CTA out of the platform's bottom safe zone"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Where can I see and capture the real product: URL, build, test account, device or files?",
+      "why": "Every product shot must be the real product (docs/real-ui.md); without it nothing can be built honestly."
+    },
+    {
+      "ask": "Where will it run, and is it a paid ad or an organic post?",
+      "why": "Placement sets length, formats and safe zones (profiles); a paid Reels ad cannot use licensed music and a TikTok ad with AI media needs a disclaimer.",
+      "default": "A paid vertical 9:16 ad of 30 s for TikTok, Reels and Shorts, with a 15 s cut-down"
+    },
+    {
+      "ask": "What should the viewer do at the end, and where (URL, store, handle)?",
+      "why": "The end card carries one action and one place; three CTAs is an anti-pattern.",
+      "default": "Visit the product's site, shown as its URL"
+    },
+    {
+      "ask": "What does your viewer use today instead of the product?",
+      "why": "The strategist names the strongest alternative so the proposition fails when its name is swapped in.",
+      "default": "The strategist proposes it from the category; the user confirms at the strategy step"
+    },
+    {
+      "ask": "Which proof may the film show: a measured number, a named customer, a before and after?",
+      "why": "Claims on screen must be working claims in product-truth.json; numbers and customer names need a source and permission.",
+      "default": "Only product behaviour shown on screen; no numbers or customer names"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 21,
+        "max": 34
+      },
+      "captions": "line-box",
+      "note": "In-feed ads run up to 60 s and 21-34 s performs best; hook in the first 3 s; text inside TikTok's safe-zone file; AI-generated or AI-altered media takes the mandatory disclaimer."
+    },
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 34
+      },
+      "captions": "line-box",
+      "note": "9:16; keep 14% top, 35% bottom and 6% each side free of text, logos and the CTA; no licensed music in Reels ads. Length band is a house rule (Meta allows up to 15 min)."
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 10,
+        "max": 30
+      },
+      "captions": "line-box",
+      "note": "Action ads 10-30 s, 9:16; only the first 60 s play in the feed; the CTA button appears from 3 s and the right rail holds the like and share buttons; music or voice raises conversions over 20%."
+    },
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 60
+      },
+      "captions": "clean-sentence",
+      "note": "Skippable in-stream: the skip button appears at 5 s, so the product shows before it; Google advises under 3 min. The 60 s cap for a promo is a house rule."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 30
+      },
+      "captions": "clean-sentence",
+      "note": "15-30 s qualifies for every feed placement (in-stream to 90 s); under 30 s it loops, so the end card runs into the opening; SRT captions are text only; LinkedIn lists less than 30 fps: verify at upload."
+    },
+    {
+      "platform": "x",
+      "formats": [
+        "landscape",
+        "square"
+      ],
+      "durationSec": {
+        "min": 6,
+        "max": 30
+      },
+      "captions": "clean-sentence",
+      "note": "Video ad cards take 16:9 and 1:1; promoted video may run to 10 min. The 6-30 s band is a house rule, a starting point."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 60
+      },
+      "captions": "clean-sentence",
+      "note": "A page hero autoplays muted (browsers allow sound only after a user gesture): the proposition must read without sound. 60 s is a house rule; Wistia engagement holds to about 5 min."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "ui-camera-read",
+      "shared-element-carry",
+      "before-after-split",
+      "type-number-race",
+      "scene-end-card"
+    ],
+    "style": "paper-signal",
+    "note": "Proof at reading scale, the product carrying the cut, a result as a change, a restrained close. paper-signal fits a light developer or data product; a dark SaaS starts from linear-midnight, a consumer app from pale-tint-app."
+  },
+  "variants": [
+    {
+      "id": "ai-ad",
+      "title": "AI ad",
+      "triggers": {
+        "en": [
+          "ai ad",
+          "ai commercial",
+          "ai-generated ad",
+          "generated ad"
+        ],
+        "ru": [
+          "ии реклам",
+          "нейросетев реклам",
+          "сгенерированн реклам"
+        ],
+        "zh": [
+          "ai广告",
+          "ai生成广告",
+          "ai宣传片",
+          "aigc广告"
+        ]
+      },
+      "changes": "Add --secondary ai-video with an authorised --max-cost-usd. Generated shots carry the world, people or mood; the product's screens and object stay real (capture:app, asset:import). Key frames are approved before any video spend (skill model-and-asset-production). TikTok's AI-generated disclaimer is mandatory: the brief records the disclosure for every placement."
+    },
+    {
+      "id": "b2b-launch",
+      "title": "B2B launch",
+      "triggers": {
+        "en": [
+          "b2b launch",
+          "b2b launch video",
+          "linkedin launch video",
+          "linkedin ad for our",
+          "saas launch"
+        ],
+        "ru": [
+          "b2b запуск",
+          "запуск b2b",
+          "ролик для линкедин о запуске",
+          "реклама в линкедин",
+          "реклама для линкедин"
+        ],
+        "zh": [
+          "b2b发布",
+          "b2b宣传片",
+          "saas发布",
+          "saas宣传片",
+          "领英广告",
+          "linkedin广告",
+          "企业服务宣传片"
+        ]
+      },
+      "changes": "LinkedIn profile first: square, 15-30 s for every feed placement or up to 90 s in-stream, built for sound off with burned captions and an SRT. Proofs are sourced numbers, named integrations and customer logos used with permission, each a working claim. The CTA is a demo or trial. A customer telling their own story is the case-study playbook."
+    }
+  ]
+}

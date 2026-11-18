@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "id": "voice-draft",
+  "kind": "voice",
+  "task": "Produce a local English preview voice from material/voice.json, import that exact audio into workflow-e2e and preserve draft provenance. Verify the production boundary refuses this draft. Do not approve or deliver it.",
+  "seed": 20261117,
+  "platforms": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "material": [
+    {
+      "path": "bench/workflows/v2/material/notes.txt",
+      "sha256": "deb95906e1604eea8d22996f6dfb0c6911c326939b53b3bbf7efa03f5adbe9ca",
+      "bytes": 54,
+      "licence": "Repository-authored synthetic fixture; BUSL-1.1. No real person, recording or provider response."
+    },
+    {
+      "path": "bench/workflows/v2/material/scribe.json",
+      "sha256": "58f36af65077531e3b3a8c7bf6334271b081996709136167d4f74b8fb245815d",
+      "bytes": 810,
+      "licence": "Repository-authored synthetic fixture; BUSL-1.1. No real person, recording or provider response."
+    },
+    {
+      "path": "bench/workflows/v2/material/translation.json",
+      "sha256": "f5161b2764fd3e46cb5fbc112a90d3ba97f7abd563500496d13f7ea9853b0c4f",
+      "bytes": 269,
+      "licence": "Repository-authored synthetic fixture; BUSL-1.1. No real person, recording or provider response."
+    },
+    {
+      "path": "bench/workflows/v2/material/voice.json",
+      "sha256": "bf0a8555fc5745c5d17cfcd39b6ff4eaaf07dae7917ff93f75b0bcb57a87f4a8",
+      "bytes": 211,
+      "licence": "Repository-authored synthetic fixture; BUSL-1.1. No real person, recording or provider response."
+    }
+  ],
+  "commands": [
+    "commands",
+    "local:capabilities",
+    "next",
+    "film:next",
+    "film:brief",
+    "footage:next",
+    "pipeline:check",
+    "playbook",
+    "voiceover:local",
+    "asset:import"
+  ],
+  "outcomes": [
+    "draft-refused"
+  ],
+  "requiresLeaf": false,
+  "limits": {
+    "wallTimeSec": 180,
+    "tokens": 500000,
+    "commands": 30,
+    "leaves": 0,
+    "transcriptBytes": 2097152,
+    "fileBytes": 16777216,
+    "mediaSpendUsd": 0,
+    "downloadBytes": 0
+  }
+}

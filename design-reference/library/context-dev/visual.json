@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "context-dev",
+  "palette": {
+    "value": [
+      "#FFFFFF ground (frame corners at 6.3, 15.0, 18.8 s)",
+      "#F5F5F5 card surface (mode at 6.3 s; 57% of pixels)",
+      "#2B5EE5 cobalt accent: particles and the mark (mode at 15.0 and 18.8 s)",
+      "#6081DE halftone blue as it reads on screen (mean of blue pixels at 1.0 s; tile fill near #81A2FF, dots darker)",
+      "#C5D3ED pale blue-grey cards after the halftone fades (mean at 11.5 s)",
+      "#313131 hero type ink (mode at 4.6 s)",
+      "#C0C0C0 secondary type and field labels (mode at 4.6 s)",
+      "#141415 small closing line ink (mean of dark pixels at 16.8 s)"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": ["frames sampled with ffmpeg at 1.0, 3.2, 4.6, 6.3, 9.3, 11.2, 11.5, 13.0, 15.0, 16.8, 18.8 s", "shots.json colour s002 L 74.9 b -28.8 (blue cast of the halftone wall)"]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "query in the search pill",
+        "description": "Neutral grotesque, regular weight, sentence case, dark grey on a frosted white pill; text height about 2-3% of frame height (OCR box 0.036-0.042), left-aligned inside the pill which is centred (x 0.27-0.76). Types at about one character a frame."
+      },
+      {
+        "role": "person name under the portrait",
+        "description": "Same grotesque, medium weight, dark ink, about 2.5% of frame height, left-aligned to the portrait's left edge (OCR x 0.394-0.395); a smaller light-grey role line under it. Glyphs arrive one a frame with a blur-in."
+      },
+      {
+        "role": "hero section label",
+        "description": "The one large word: same grotesque, regular to medium weight, mixed case, #313131, word width 57% of frame (OCR box 0.568 x 0.232), left-aligned at x 0.20; a body line under it in #C0C0C0 at about half the size, also left-aligned. It is the interface's own small label shown through a punch-in, not a separate title."
+      },
+      {
+        "role": "field labels and values in close-up",
+        "description": "Same grotesque, regular weight, mixed case; labels light grey #C0C0C0 with brand-coloured service icons, values dark grey, both about 6-9% of frame height in close-up (OCR box heights 0.084-0.126). Labels left-aligned at x 0.59 in their shot, values left-aligned at x 0.09-0.16 in theirs."
+      },
+      {
+        "role": "closing two-part line and sign-off",
+        "description": "Same grotesque, medium weight, sentence case, near-black #141415, small: about 4.7% of frame height (OCR box 0.047), two phrases on one baseline at y 0.50, left one at x 0.144, right one at x 0.67. The sign-off reuses the same baseline and x positions (label at x 0.142, mark at x 0.703). Font family inferred, not identified."
+      }
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json screenText boxes 2.517-3.017, 4.017-4.517, 4.517-5.017, 6.017-7.017, 16.517-19.517", "visuals/a1/push-to-summary.jpg F131-F143", "visuals/a1/stream-to-second-line.jpg F504-F512", "visuals/a1/end-lockup.jpg F570"]
+  },
+  "composition": {
+    "value": "Three compositions. (1) Full-bleed grids: about 14x10 portrait tiles with white gutters about 1/5 of a tile, tiles rounded; the search pill centred at y 0.48, about 50% of frame width. (2) One object centred on white: the portrait tile at 24% width x 54% height, then the full record at about 46% width x 90% height (x 0.28-0.74) with a soft grey shadow. (3) Close-ups that crop the record so a gutter or the card edge sits at one side of frame (a shadow band at x 0.05-0.3 on the label shots, at x 0.85-1.0 on the value shots), alternating side on each cut. The ending uses a single horizontal axis at y 0.50 with two anchors at x 0.14 and x 0.67-0.70, everything else empty: about 95% of the frame is white.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/open-grid-zoom.jpg F15-F23", "visuals/a1/grid-to-one.jpg F93", "visuals/a1/card-to-grid.jpg F324", "visuals/a1/field-track.jpg F177", "visuals/a1/values-jump.jpg F216", "visuals/a1/end-lockup.jpg F570"]
+  },
+  "materials": {
+    "value": "Flat interface material rendered large: white and #F5F5F5 surfaces, soft drop shadows, rounded corners, a frosted translucent search pill with blurred content behind it, real headshots. The house texture is a blue one-bit halftone (round dots on a fine grid, dots flickering frame to frame) applied to portraits and later to whole cards. Particles are flat cobalt discs of three or four sizes, no glow.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/dither-resolve.jpg F102-F120", "visuals/a1/card-to-grid.jpg F332-F340", "visuals/a1/dots-scatter.jpg F447"]
+  },
+  "lighting": {
+    "value": "No scene lighting: evenly lit screen material on white, depth only from soft shadows under the card and gutter shading in close-ups.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/field-track.jpg F177", "visuals/a1/card-to-grid.jpg F324"]
+  },
+  "styleSummary": "Light, quiet product film: white ground, one cobalt accent, a blue halftone texture as the brand surface, one neutral grotesque used small, and the product's real record interface shown at reading size. Motion is continuous transformation of one set of marks (crowd, person, record, crowd, dots, words) with stepped camera moves and per-glyph blur-in typing; cuts are only changes of scale on the same object."
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "endpoint": "wan/v2.6/reference-to-video",
+  "title": "Wan 2.6 — Reference to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-6/reference-to-video.md",
+  "usageNotes": [
+    "Supply 1–3 reference videos. This endpoint supports only 5 or 10 seconds, unlike the text and image endpoints that also support 15 seconds."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+      "prompt",
+      "video_urls"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "enum": [
+          5,
+          10
+        ],
+        "type": "integer",
+        "title": "Duration",
+        "default": 5
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "720p"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Video URL",
+          "format": "uri"
+        },
+        "maxItems": 3,
+        "minItems": 1
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "type": "string",
+        "default": "16:9"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

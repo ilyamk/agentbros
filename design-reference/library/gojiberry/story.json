@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gojiberry",
+  "idea": {
+    "value": "Prospecting is a search that never stops counting: a list doubles from 1 to over half a million matches in 7.3 s until the picture breaks, then the product turns one described opportunity into a single person with a full-match badge.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/contact-sheet-01.jpg", "visuals/a1/s10-counter-run.jpg F774-F812", "visuals/a1/s12-counter-glitch.jpg F807-F844", "visuals/a1/s28c-badge.jpg F2653-F2669", "speech-text.json screenText 7.33-14.0 and 44.2-47.8"]
+  },
+  "audience": {
+    "value": "B2B sellers and founders who do outbound prospecting and already know lead databases: the copy speaks in job titles, company revenue bands, headcount bands, installed software and contact counts, never explains what a lead is.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json screenText 0.27-4.5 (query naming a role, a company type and a revenue floor)", "speech-text.json screenText 6.53-14 (role-at-company-type label over the montage)", "speech-text.json screenText 24.6-36.5 (headcount band, software used, contact counts)"]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 6.733,
+      "device": "Cursor-anchored typewriter: a long, very specific query types itself into a field while the camera tracks the caret (text runs off the left edge), then the field shrinks to a strip above a person who sits waiting; a hard cut to black asks the question on its own line.",
+      "description": "0-1.93 s: query types at about 2 frames a character, framed so tight that only the last 25-35 characters show (OCR box x = 0). 1.93 s: a one-frame block glitch (F115) and a cut to a wide, near-white studio with one seated person under the query strip (13% from the top). 4.73 s: hard cut to black, 7 frames of nothing (F284-F291), then a line types on black, the newest word in accent red for 6-7 frames. 5.50 s: a 4-frame polarity flash and the line jumps to about 1.7x. The viewer is given the problem as an act (searching) before any product is named; the name arrives 20 s later."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["visuals/a1/s01-type-to-bar.jpg F93-F134", "visuals/a1/s03-black-typewriter.jpg F276-F323", "visuals/a1/s04-type-punch.jpg F327-F356"]
+  },
+  "beats": [
+    {
+      "value": { "startSec": 0, "endSec": 1.933, "purpose": "Set the task: a hyper-specific search", "retentionDevice": "Text growing at the caret, camera chasing it", "content": "A query types itself in a white field, framed tight on the caret." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s01-type-to-bar.jpg F93-F114"]
+    },
+    {
+      "value": { "startSec": 1.933, "endSec": 4.733, "purpose": "Put a human under the query: the person the search is for", "retentionDevice": "Stillness after speed; the query becomes a small strip at the top", "content": "Wide near-white studio, one person seated at a white desk, centred; the query as a pill at 13% from the top." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/contact-sheet-01.jpg 2F-2L", "visuals/a1/s01-type-to-bar.jpg F116-F134"]
+    },
+    {
+      "value": { "startSec": 4.733, "endSec": 6.733, "purpose": "Name the act as a question", "retentionDevice": "Black after white; a single line typing; red on the newest word", "content": "On black, a short line types and punches in to about 1.7x through a polarity flash." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s03-black-typewriter.jpg F284-F323", "visuals/a1/s04-type-punch.jpg F330-F356"]
+    },
+    {
+      "value": { "startSec": 6.733, "endSec": 14.067, "purpose": "Show the problem as overload: every result is a person, and the count doubles until it is meaningless", "retentionDevice": "Accelerating cuts (1.53 s down to 2 frames) synced to a doubling odometer counter; flash frames on swaps", "content": "Fixed layout: query strip top, count left of a seated person, a found-label and a name card right. Twenty subjects in 7.3 s, count 1 to 524 288." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s05-glitch-to-desk.jpg F404-F425", "visuals/a1/s08-wipe-swap.jpg F477-F506", "visuals/a1/s10b-montage-c.jpg", "visuals/a1/s10c-montage-d.jpg", "visuals/a1/s10-counter-run.jpg", "visuals/a1/s12-counter-glitch.jpg F807-F844"]
+    },
+    {
+      "value": { "startSec": 14.067, "endSec": 17.5, "purpose": "The turn: state the requirement, then break it, then reset", "retentionDevice": "Kinetic word on black, letter-by-letter case flip, corruption, then black and silence", "content": "A two-word line types, swaps to a one-word adjective through a glitch, the word flips to capitals letter by letter, corrupts into symbols and smears to black; 0.57 s of black." },
+      "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s12-counter-glitch.jpg F844-F848", "visuals/a1/s16-must-be.jpg F858-F905", "visuals/a1/s17b-simple-caps.jpg F912-F941", "visuals/a1/s17-simple-glitch.jpg F996-F1025"]
+    },
+    {
+      "value": { "startSec": 17.5, "endSec": 22.1, "purpose": "Brand reveal", "retentionDevice": "3D mark pulled out of an extreme close-up, then a pixel ring blooming on white", "content": "A glossy red extruded mark glitches in full-frame and pulls back to a speck on black; hard cut to white where a pixel-mosaic ring grows from the mark and the wordmark types on beside it over a warm peach gradient." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s20-heart-pull.jpg F1047-F1094", "visuals/a1/s21-flash-logo.jpg F1104-F1151", "visuals/a1/s21b-logo-type.jpg F1194-F1235"]
+    },
+    {
+      "value": { "startSec": 22.1, "endSec": 35.0, "purpose": "Proof: the search done in the product, in plain language", "retentionDevice": "Caret-tracking close-ups alternating with wides; result count falling with each added clause", "content": "The real interface: a natural-language query is typed and extended clause by clause (bracketed placeholders highlighted in coral); after the first clause the count races up to about 12 500 under a dot-matrix result visual, then falls to about 2 300 as each later clause is added." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s22-bar-enter.jpg F1320-F1367", "visuals/a1/s23-bar-wipe.jpg F1398-F1445", "visuals/a1/s23b-pull-wide.jpg F1452-F1499", "visuals/a1/s24-punch-cut.jpg F1677-F1706", "speech-text.json screenText 26.27-33.0"]
+    },
+    {
+      "value": { "startSec": 35.0, "endSec": 40.867, "purpose": "Submit and narrow to a short list; restate the promise as an instruction", "retentionDevice": "A colour wash after the press, a count ticking down", "content": "Pointer presses the submit control; a pink wash floods the frame, a ring ripples from the pointer, and a small result count resolves and ticks from about 211 down to 132; then a one-line instruction drifts across." },
+      "basis": "observed", "confidence": 0.8, "evidence": ["visuals/a1/s27-click-blur.jpg F2091-F2138", "visuals/a1/s27b-results-dissolve.jpg F2139-F2186", "speech-text.json screenText 35.37-40.78"]
+    },
+    {
+      "value": { "startSec": 40.867, "endSec": 48.9, "purpose": "Payoff: one exact person instead of half a million", "retentionDevice": "Line completes on white, camera tilts down from it to a person; a thumbs-up and a counting match badge", "content": "Hard cut to white, the second half of the line types; the camera tilts down from the line to a seated person; a hand enters with a thumbs-up and a green badge counts to a full match above him; he stands and walks out right." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s28-and-cut.jpg F2451-F2471", "visuals/a1/s28b-text-to-desk.jpg F2538-F2585", "visuals/a1/s28c-badge.jpg F2634-F2669", "visuals/a1/s29-walk-whip.jpg F2832-F2879"]
+    },
+    {
+      "value": { "startSec": 48.9, "endSec": 56.533, "purpose": "Brand and call to action", "retentionDevice": "The whole plate defocuses; mark and name type on over it", "content": "Over the defocused studio the mark appears, the wordmark types on at about 3 frames a letter, then a black pill with a one-line demo offer sits under it until the end." },
+      "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s29b-walk-whip2.jpg F2880-F2927", "visuals/a1/s29c-blur-to-end.jpg F2928-F2975", "visuals/contact-sheet-01.jpg 29M-29L"]
+    }
+  ],
+  "payoff": {
+    "value": "A single seated person with a thumbs-up and a badge counting up to a full match (44.2-44.5 s), set against the 524 288 faces of the montage: the product's value is told as subtraction, from a flood to one.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/s28c-badge.jpg F2643-F2669", "visuals/a1/s12-counter-glitch.jpg F837-F839", "speech-text.json screenText 44.22-47.75"]
+  },
+  "callToAction": {
+    "value": "Wordmark centred with a black pill beneath offering a free demo at the product's address, held 5.9 s (50.4-56.53) with no motion after the type-on; the final frame is the card itself, no fade.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["speech-text.json screenText 50.42-56.5", "visuals/contact-sheet-01.jpg 29M 00:52.60, 29L 00:56.51"]
+  },
+  "whyItWorks": [
+    "The problem is shown as a number the viewer can feel: a counter that doubles on every cut while cuts shrink from 1.53 s to 2 frames, so overload is experienced as speed before it is read.",
+    "Every search result is a human face in the same seat and framing, so the fixed layout makes each swap readable at 2-6 frames: only the face, the number and the name card change.",
+    "The film resets twice with black: 7 frames of black before the question (4.73 s) and 0.57 s of black with near-silence before the brand (16.93-17.5 s), so the reveal lands on a clean slate.",
+    "Typing is the through-line: the hook, the question, the requirement, the demo and the logo all arrive by caret, so the product's input (one typed description) is the film's grammar.",
+    "The payoff inverts the montage: same studio, same kind of person, but one, still, and approved, which makes the claim of precision without stating it."
+  ]
+}

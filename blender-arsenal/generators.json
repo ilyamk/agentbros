@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "generators": [
+    {
+      "id": "infinigen",
+      "kind": "generator",
+      "purpose": "Procedural outdoor worlds exported from an isolated upstream runtime.",
+      "install": {
+        "method": "external",
+        "source": "https://github.com/princeton-vl/infinigen",
+        "version": "main-2026-11-15",
+        "commit": "53033dd55c7191cbc436be6ffbb63c026935a509"
+      },
+      "licence": "BSD-3-Clause",
+      "capabilities": [
+        "nature",
+        "terrain",
+        "trees",
+        "rocks",
+        "materials"
+      ],
+      "headless": "partial",
+      "determinism": "Upstream seeds generation; no local runtime/pixel proof. Cache upstream exports by commit, seed and preset.",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "rejected",
+      "verdict": "deferred",
+      "reason": "Current upstream pins Python 3.11 and bpy 4.2.0; nature-stable pins 3.6. Neither runs inside Blender 5.3. No second Blender/runtime installed on the loaded shared machine; external .blend/USD export remains future work.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/nature.md"
+    },
+    {
+      "id": "gscatter",
+      "kind": "manual",
+      "purpose": "Interactive vegetation scattering; excluded from anonymous open-tool automation.",
+      "install": {
+        "method": "manual",
+        "source": "https://www.graswald3d.com/gscatter",
+        "version": "research-2026-11-15",
+        "commit": null
+      },
+      "licence": "Unverified",
+      "capabilities": [
+        "nature",
+        "trees",
+        "vegetation"
+      ],
+      "headless": "no",
+      "determinism": "No verified headless seed API or downloadable open-source pin.",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "rejected",
+      "verdict": "reject",
+      "reason": "Official installation requires an account; free asset access is non-commercial rather than CC0/CC-BY. No anonymous $0 download or verified code licence.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/nature.md"
+    },
+    {
+      "id": "blender-nature",
+      "kind": "builtin",
+      "purpose": "Terrain, GN tree leaves, masked planting and physical multiple-scattering sky.",
+      "install": {
+        "method": "builtin",
+        "source": "https://www.blender.org/download/releases/5-3/",
+        "version": "5.3.0",
+        "commit": null
+      },
+      "licence": "GPL-3.0-or-later",
+      "capabilities": [
+        "nature",
+        "terrain",
+        "trees",
+        "vegetation",
+        "rocks",
+        "sky",
+        "volumes"
+      ],
+      "headless": "yes",
+      "determinism": "Seeded geometry and pure keyed wind; exact CPU pixels must be checked per recipe.",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Lightweight fallback wrappers; preview-only evaluation. Professional realism and full-resolution delivery are not established.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/nature.md"
+    },
+    {
+      "id": "native-city",
+      "kind": "builtin",
+      "purpose": "Native seeded Geometry Nodes city.",
+      "install": {
+        "method": "builtin",
+        "source": "scripts/blender/recipes/procedural_city.py",
+        "version": "1.0.0",
+        "commit": null
+      },
+      "licence": "GPL-3.0-or-later",
+      "capabilities": [
+        "city",
+        "buildings",
+        "pattern"
+      ],
+      "headless": "yes",
+      "determinism": "Fixed seed; geometry keyed by parameters, code and source SHA-256. No runtime network.",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": 2.0
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Native offline fallback; visual realism limitations are recorded in evaluation. Cost: One CPU proof: render seconds/frame at 480x270, 8 samples; launch-inclusive 4.433 s/frame. Shared load; not a production quote.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/city-realism.md"
+    },
+    {
+      "id": "osm-footprints",
+      "kind": "builtin",
+      "purpose": "Cached OpenStreetMap closed building ways.",
+      "install": {
+        "method": "builtin",
+        "source": "scripts/blender/recipes/osm_city.py",
+        "version": "1.0.0",
+        "commit": null
+      },
+      "licence": "GPL-3.0-or-later; output ODbL-1.0",
+      "capabilities": [
+        "city",
+        "buildings",
+        "real-places"
+      ],
+      "headless": "yes",
+      "determinism": "Fixed seed; geometry keyed by parameters, code and source SHA-256. No runtime network.",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": 0.833
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Native offline fallback; visual realism limitations are recorded in evaluation. Cost: One cached CPU proof: render seconds/frame at 480x270, 8 samples; source acquisition took 22.881 s for 139 buildings. Shared load.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/city-realism.md"
+    },
+    {
+      "id": "buildify",
+      "kind": "manual",
+      "purpose": "Buildify 1.0.",
+      "install": {
+        "method": "manual",
+        "source": "https://paveloliva.gumroad.com/l/buildify",
+        "version": "unpinned",
+        "commit": null
+      },
+      "licence": "Unverified per-download licence; no payload acquired",
+      "capabilities": [
+        "city",
+        "buildings"
+      ],
+      "headless": "partial",
+      "determinism": "Not trialled",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "proposed",
+      "verdict": "deferred",
+      "reason": "No verified $0 no-account downloadable payload; use native-city. Do not automate checkout or infer redistribution rights. Cost: No paid acquisition authorised; no download made.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/city-realism.md"
+    },
+    {
+      "id": "mantaflow",
+      "kind": "builtin",
+      "purpose": "Mantaflow liquid and smoke solver, baked to cached mesh/VDB snapshots.",
+      "install": {
+        "method": "builtin",
+        "source": "https://www.blender.org/",
+        "version": "5.3.0",
+        "commit": null,
+        "build": "02f0899d78e3"
+      },
+      "licence": "GPL-3.0-or-later",
+      "capabilities": [
+        "fluids",
+        "liquids",
+        "volumes"
+      ],
+      "headless": "yes",
+      "determinism": "Fixed seeds and cached mesh/VDB snapshots; pure frame remap; seeded",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Scoped FX integration; sparse proof is not final-resolution or full-range acceptance. Cost: One 64-voxel/2x-mesh/32-frame splash bake, CPU; render cost varies by recipe. Shared loaded machine, not a production estimate. Bake 42.17 s.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/fx-realism.md"
+    },
+    {
+      "id": "volume-grids",
+      "kind": "builtin",
+      "purpose": "Frame-driven seeded volume density grids for smoke without a solver.",
+      "install": {
+        "method": "builtin",
+        "source": "https://www.blender.org/",
+        "version": "5.3.0",
+        "commit": null,
+        "build": "02f0899d78e3"
+      },
+      "licence": "GPL-3.0-or-later",
+      "capabilities": [
+        "volumes",
+        "smoke"
+      ],
+      "headless": "yes",
+      "determinism": "Frame-driven seeded density field; seeded",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": 2.8666666666666667
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Scoped FX integration; sparse proof is not final-resolution or full-range acceptance. Cost: One 3-frame 480x270 / 8-sample CPU proof, 32^3 voxels; no solver bake. Bake 0 s.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/fx-realism.md"
+    },
+    {
+      "id": "procedural-materials",
+      "kind": "builtin",
+      "purpose": "Repository procedural shader library (13 materials).",
+      "install": {
+        "method": "builtin",
+        "source": "scripts/blender/materials/__init__.py",
+        "version": "1.0.2",
+        "commit": null,
+        "sha256": "97f2aba12680c902f5fb427651b6e7935bf4d0ab0a90c472f5c59fe2f692e08e"
+      },
+      "licence": "GPL-3.0-or-later",
+      "capabilities": [
+        "materials"
+      ],
+      "headless": "yes",
+      "determinism": "Static procedural shader trees, object coordinates; no clock",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": 3.0307692307692307
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Scoped FX integration; sparse proof is not final-resolution or full-range acceptance. Cost: 26 shader-ball frames, 480x270 / 8-sample CPU; two-mood means 2.56\u20133.50 s/frame, render only. Bake 0 s.",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/fx-realism.md"
+    },
+    {
+      "id": "vork",
+      "kind": "generator",
+      "purpose": "Local programmable GPU 3D/VFX renderer; qualified recipes and supported Blender interchange",
+      "install": {
+        "method": "external",
+        "source": "https://github.com/voyager-so/vork/releases/tag/v0.5.1",
+        "version": "0.5.1",
+        "commit": "011e3f12e6c17696b3d854c173dca37a8159c6c4"
+      },
+      "licence": "Vork Preview License; separate Blender bridge GPL-3.0-or-later",
+      "capabilities": [
+        "gpu-compute",
+        "procedural-geometry",
+        "vfx",
+        "slang-materials",
+        "blender-interchange"
+      ],
+      "headless": "yes",
+      "determinism": "Fixed seeded clocks; same-host recipe pairs measured; no cross-device claim",
+      "typicalCost": {
+        "currency": "USD",
+        "licence": 0,
+        "secondsPerFrame": null
+      },
+      "status": "approved",
+      "verdict": "experimental",
+      "reason": "Owner authorised local integration and trials; technical evidence is separate from creative acceptance",
+      "consent": {
+        "by": "repository owner",
+        "date": "2026-11-15",
+        "note": "User: \"Implement the plan.\" Local integration, installation and trials only; no cloud."
+      },
+      "evaluation": "docs/blender-arsenal/vork.md"
+    }
+  ]
+}

@@ -1,0 +1,2200 @@
+{
+  "version": 1,
+  "category": "text-to-3d",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/pro/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Hunyuan 3D Pro Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "38fd93f9bfe93a7fc6966bc7b263280fd5336122c757b05ba174f61eef8db606",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fpro%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 40000,
+          "max": 1500000,
+          "default": 500000
+        },
+        {
+          "name": "generate_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Normal",
+            "Geometry"
+          ],
+          "default": "Normal"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "hunyuan",
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/rapid/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Hunyuan 3d",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "581dc94d1b651e78924395637a5d6b52eba88978dd6d8b777ca8fbbd8b45fef3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Frapid%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_geometry",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 200
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json",
+          "file"
+        ],
+        "fields": [
+          "material_mtl",
+          "model_obj",
+          "model_urls",
+          "texture",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-motion",
+      "category": "text-to-3d",
+      "displayName": "Hunyuan Motion [1B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "49f05995a865156506881413a9c5e947439071aca58bc67ab4b94108923b03b6",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-motion&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 0.5,
+          "max": 12,
+          "default": 5
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fbx",
+            "dict"
+          ],
+          "default": "fbx"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "file"
+        ],
+        "fields": [
+          "fbx_file",
+          "motion_json"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d",
+        "motion",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-motion/fast",
+      "category": "text-to-3d",
+      "displayName": "Hunyuan Motion [0.46B]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6ac003b475c524377b0cb55f1c9c47d5a879d72298ca49c144845d8634492bc5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-motion%2Ffast&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "min": 0.5,
+          "max": 12,
+          "default": 5
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fbx",
+            "dict"
+          ],
+          "default": "fbx"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "model3d",
+          "file"
+        ],
+        "fields": [
+          "fbx_file",
+          "motion_json"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d",
+        "motion",
+        ""
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hunyuan3d-v3/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Hunyuan3d V3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7fbee7eba5b3364bb72a9885acbc09084e10d8b49ef51c6b2d087c5e19043eb4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan3d-v3%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_count",
+          "type": "integer",
+          "required": false,
+          "min": 40000,
+          "max": 1500000,
+          "default": 500000
+        },
+        {
+          "name": "generate_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Normal",
+            "LowPoly",
+            "Geometry"
+          ],
+          "default": "Normal"
+        },
+        {
+          "name": "polygon_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "triangle",
+            "quadrilateral"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_glb",
+          "model_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin/v2.5/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Hyper3D - Rodin V2.5 - Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "861b415241273e9886ae66243eb9db0ca6098aa0b4a2481024ed8f0edc160ba4",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin%2Fv2.5%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "addons",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_creative_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "hd_texture",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_micro",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded",
+            "All",
+            "None"
+          ],
+          "default": "All"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        },
+        {
+          "name": "quality_mesh_option",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "4K Quad",
+            "8K Quad",
+            "18K Quad",
+            "50K Quad",
+            "100K Quad",
+            "200K Quad",
+            "2K Triangle",
+            "20K Triangle",
+            "50K Triangle",
+            "150K Triangle",
+            "500K Triangle",
+            "1M Triangle",
+            "2M Triangle"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "texture_delight",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "legacy",
+            "extreme-low",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Gen-2.5-Minimum",
+            "Gen-2.5-Extreme-Low",
+            "Gen-2.5-Low",
+            "Gen-2.5-Medium",
+            "Gen-2.5-High",
+            "Gen-2.5-Extreme-High"
+          ],
+          "default": "Gen-2.5-High"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_meshes",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/hyper3d/rodin/v2.5/text-to-3d/fast",
+      "category": "text-to-3d",
+      "displayName": "Hyper3D - Rodin V2.5 - Text to 3D - Fast",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "88f5f0f3cef86719b75ae4618fcdce21afd1465ef6aeb06b44c19fd5afc607d2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhyper3d%2Frodin%2Fv2.5%2Ftext-to-3d%2Ffast&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "TAPose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "bbox_condition",
+          "type": "object",
+          "required": false
+        },
+        {
+          "name": "enable_creative_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_file_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "glb",
+            "usdz",
+            "fbx",
+            "obj",
+            "stl"
+          ],
+          "default": "glb"
+        },
+        {
+          "name": "hd_texture",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_micro",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "material",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "PBR",
+            "Shaded",
+            "All",
+            "None"
+          ],
+          "default": "Shaded"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        },
+        {
+          "name": "quality_mesh_option",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Auto",
+            "1K Quad",
+            "4K Quad",
+            "8K Quad",
+            "18K Quad",
+            "20K Quad",
+            "2K Triangle",
+            "4K Triangle",
+            "8K Triangle",
+            "10K Triangle",
+            "20K Triangle"
+          ],
+          "default": "Auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false,
+          "min": 0,
+          "max": 65535
+        },
+        {
+          "name": "texture_delight",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "legacy",
+            "extreme-low",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        {
+          "name": "tier",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Gen-2.5-Minimum",
+            "Gen-2.5-Extreme-Low",
+            "Gen-2.5-Low"
+          ],
+          "default": "Gen-2.5-Extreme-Low"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_meshes",
+          "textures"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/v6-preview/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Meshy 6 Preview",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f0e44da51d1128c3e26d644d311bb1ca0d538bb99e1ae9968bb717eba34d48b7",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Fv6-preview%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/meshy/v6/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Meshy 6",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "ed2781d7cc4e87a83ae1434678bb4b087734ab0d723b0792036e75abfadf5768",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmeshy%2Fv6%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "text-to-3d"
+      ]
+    },
+    {
+      "endpoint": "meshy/t2.5/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Meshy T2.5 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "32d0e16df62c1663c033e83fa451a880e74111dea0678b85ae4372fbca7ad264",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Ft2.5%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 30000,
+          "default": 15000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7.1",
+            "meshy-n1"
+          ],
+          "default": "meshy-7.1"
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "smart-topology",
+        "low-poly",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/t2/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Meshy T2 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b44b0ab9ea88eead31bdba070256be2c5c459f59c9f120381ec752e68730a43b",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Ft2%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 15000,
+          "default": 4000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "meshy-7.1",
+            "meshy-n1"
+          ],
+          "default": "meshy-7.1"
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "smart-topology",
+        "low-poly",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7.1/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Meshy 7.1 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "25bb9b20f5df040da8769969acd47fee6d70aa6bf177933d347124b86f096eae",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k",
+            "4k"
+          ]
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "ultra_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "textures",
+        "pbr"
+      ]
+    },
+    {
+      "endpoint": "meshy/v7/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "V7 Text to 3D",
+      "status": "active",
+      "retiresAt": "2026-12-31T08:00:00.000Z",
+      "replacement": "meshy/v7.1/text-to-3d",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "02383619a80068b016bb5f8b71097b2388cf08a12c5f95efa5e6cf019b3857c7",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "animation_action_id",
+          "type": "integer",
+          "required": false,
+          "default": 92
+        },
+        {
+          "name": "enable_animation",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_pbr",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_rigging",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "geometry_resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "2k"
+          ]
+        },
+        {
+          "name": "include_fingers",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "is_a_t_pose",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "preview",
+            "full"
+          ],
+          "default": "full"
+        },
+        {
+          "name": "model_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "pose_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "a-pose",
+            "t-pose",
+            ""
+          ],
+          "default": ""
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 600
+        },
+        {
+          "name": "rigging_height_meters",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "default": 1.7
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "should_remesh",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "skeleton_template",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mixamo",
+            "ue5_mannequin",
+            "unity_humanoid",
+            "maya_human_ik",
+            "blender_rigify_basic_human",
+            "max_biped",
+            "cc5_hd_neutral_base",
+            "daz_genesis9",
+            "meshyrig"
+          ]
+        },
+        {
+          "name": "symmetry_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "off",
+            "auto",
+            "on"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "target_polycount",
+          "type": "integer",
+          "required": false,
+          "min": 100,
+          "max": 300000,
+          "default": 30000
+        },
+        {
+          "name": "texture_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "texture_model",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "texture_prompt",
+          "type": "string",
+          "required": false,
+          "max": 800
+        },
+        {
+          "name": "topology",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "quad",
+            "triangle"
+          ],
+          "default": "triangle"
+        },
+        {
+          "name": "ultra_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "animation_fbx",
+          "animation_glb",
+          "basic_animations",
+          "model_glb",
+          "model_urls",
+          "rigged_character_fbx",
+          "rigged_character_glb",
+          "texture_urls",
+          "thumbnail"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/h3.1/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Tripo H3.1 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5af9c3976375600897b916b49f807f8e3b571a98bb8c023539980f768c0f55f6",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fh3.1%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 1000,
+          "max": 2000000
+        },
+        {
+          "name": "geometry_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "image_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "max": 1024
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "texture_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "standard",
+            "detailed"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "3d-generation",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/p1/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Tripo P1 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "76f0542298526fc506212bc8fc7099bcd03bf61fd89832f52def8952fcf41005",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fp1%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 48,
+          "max": 20000
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 1024
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "3d-generation",
+        "tripo"
+      ]
+    },
+    {
+      "endpoint": "tripo3d/p2/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Tripo P2 Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0052d57edbeee34302dfaee676aac248102b75da6cb067feb5cf9f7cc01f1e99",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=tripo3d%2Fp2%2Ftext-to-3d&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "auto_size",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "delight",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "export_orientation",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "+x",
+            "-x",
+            "-y",
+            "+y"
+          ]
+        },
+        {
+          "name": "export_uv",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "face_limit",
+          "type": "integer",
+          "required": false,
+          "min": 48,
+          "max": 50000
+        },
+        {
+          "name": "image_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "model_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "max": 255
+        },
+        {
+          "name": "pbr",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 1024
+        },
+        {
+          "name": "quad",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "texture",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "texture_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "standard",
+            "detailed",
+            "extreme"
+          ],
+          "default": "standard"
+        },
+        {
+          "name": "texture_seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "texture_version",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "v3.5-20260815",
+            "v3.0-20250812",
+            "v2.5-20250123"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "model3d",
+          "json"
+        ],
+        "fields": [
+          "model_mesh",
+          "model_urls",
+          "rendered_image"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "text-to-3d",
+        "3d-generation",
+        "low-poly",
+        "pbr",
+        "tripo"
+      ]
+    }
+  ]
+}

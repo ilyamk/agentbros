@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "family": "plates",
+  "note": "Own Blender renders used as plates. sha256 is the committed reference render where one exists; a local re-render differs byte for byte. Recipes render with the production settings (scripts/blender/AGENTS.md): frames stay in .cache/assets/plates/<name>/, only the H.264 file is copied to the target (--encode-to), so Remotion bundles do not copy a thousand PNGs; they are slow and need Blender and ffmpeg.",
+  "assets": [
+    {
+      "name": "hero-turntable",
+      "target": "public/shared/3d/plates/hero-turntable.mp4",
+      "licence": "Own render of phone.glb; inherits the phone model's CC BY 4.0 attribution (public/shared/3d/sources.json)",
+      "sha256": "2c6699f62046844c9ecb75060662b80094c11c54e7a60a7e1f880ecbd29ca5f9",
+      "size": 203512,
+      "source": {
+        "kind": "manual",
+        "instructions": "Needs 3d:phone and hdri:studio, then about 17 minutes of Cycles: render scripts/blender/hero_turntable.py through scripts/blender-run.ts at 1920x1080, 16 samples, 60 frames, --encode h264 (docs/photoreal-3d.md), and copy the H.264 file to public/shared/3d/plates/hero-turntable.mp4."
+      }
+    },
+    {
+      "name": "glossy-orb",
+      "target": "public/shared/3d/plates/glossy-orb.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models; lit by a Poly Haven CC0 HDRI (public/shared/hdri/sources.json)",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/glossy_orb.py",
+          "--output",
+          ".cache/assets/plates/glossy-orb",
+          "--frames",
+          "1-96",
+          "--samples",
+          "64",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/glossy-orb.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "plush-character",
+      "target": "public/shared/3d/plates/plush-character.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models; lit by a Poly Haven CC0 HDRI (public/shared/hdri/sources.json)",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/plush_character.py",
+          "--output",
+          ".cache/assets/plates/plush-character",
+          "--frames",
+          "1-105",
+          "--samples",
+          "96",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/plush-character.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "glass-dome",
+      "target": "public/shared/3d/plates/glass-dome.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/glass_dome.py",
+          "--output",
+          ".cache/assets/plates/glass-dome",
+          "--frames",
+          "1-105",
+          "--samples",
+          "128",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/glass-dome.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "glass-dome-overhead",
+      "target": "public/shared/3d/plates/glass-dome-overhead.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/glass_dome.py",
+          "--output",
+          ".cache/assets/plates/glass-dome-overhead",
+          "--frames",
+          "1-36",
+          "--samples",
+          "128",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/glass-dome-overhead.mp4",
+          "--overwrite",
+          "--script-args",
+          "[\"{\\\"view\\\":\\\"overhead\\\",\\\"push\\\":0.3,\\\"frames\\\":36}\"]"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "printing-slip",
+      "target": "public/shared/3d/plates/printing-slip.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/printing_slip.py",
+          "--output",
+          ".cache/assets/plates/printing-slip",
+          "--frames",
+          "1-84",
+          "--samples",
+          "64",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/printing-slip.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "card-fan",
+      "target": "public/shared/3d/plates/card-fan.mp4",
+      "licence": "Own render of an original procedural scene (scripts/blender); no third-party models; lit by a Poly Haven CC0 HDRI (public/shared/hdri/sources.json)",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/card_fan.py",
+          "--output",
+          ".cache/assets/plates/card-fan",
+          "--frames",
+          "1-90",
+          "--samples",
+          "96",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/card-fan.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    },
+    {
+      "name": "device-array",
+      "target": "public/shared/3d/plates/device-array.mp4",
+      "licence": "Own render of phone.glb; inherits the phone model's CC BY 4.0 attribution and its trademark caveat: it depicts an Apple product, do not use in third-party advertising (public/shared/3d/sources.json); lit by a Poly Haven CC0 HDRI (public/shared/hdri/sources.json)",
+      "source": {
+        "kind": "recipe",
+        "command": [
+          "pnpm",
+          "exec",
+          "tsx",
+          "scripts/blender-run.ts",
+          "--script",
+          "scripts/blender/device_array.py",
+          "--output",
+          ".cache/assets/plates/device-array",
+          "--frames",
+          "1-90",
+          "--samples",
+          "64",
+          "--resolution",
+          "1920x1080",
+          "--encode",
+          "h264",
+          "--encode-to",
+          "public/shared/3d/plates/device-array.mp4",
+          "--overwrite"
+        ],
+        "requires": [
+          "blender",
+          "ffmpeg"
+        ],
+        "deterministic": false,
+        "slow": true
+      }
+    }
+  ]
+}

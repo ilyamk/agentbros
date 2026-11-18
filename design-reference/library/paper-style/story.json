@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "paper-style",
+  "idea": {
+    "value": "A sixty-second history of a medium told as a single printed sheet: each chapter is one panel of the same page, the camera slides between them, and the last move pulls back to reveal that you have been reading the finished page all along. The form is the argument.",
+    "basis": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/q-zoomout.jpg F1551-F1626",
+      "visuals/a1/r-end.jpg",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "audience": {
+    "value": "General viewers of short explainers, likely on social platforms. Nothing assumes prior knowledge, and each name or date is shown as it is said. Platform is a guess: the file is 16:9 at 1280x720.",
+    "basis": "inferred",
+    "confidence": 0.5,
+    "evidence": [
+      "speech-text.json",
+      "visuals/a1/f-mainz.jpg"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.13,
+      "device": "One person doing the slow thing, close up, with the sentence giving the scale of time.",
+      "description": "Opens on a cut-out figure writing, tight, already moving (arm rocks from F20). No title. The voice starts at 0.07 s, so there is no lead-in. At about 1.5 s the frame pulls back to show the whole figure and an illuminated page at the right, in the measured silence at 1.78-2.14 s. The first big type lands at 2.13 s with the words 'every book'. Spoken words here are measured but may be misheard."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/a-open.jpg F0-F68",
+      "visuals/a1/cutout-steps-c.jpg",
+      "audio.json silence 1.78-2.14",
+      "speech-text.json words 0.07-2.36"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 5.66,
+        "purpose": "Chapter 1: the old way, slow by hand",
+        "retentionDevice": "Every phrase becomes an object: pasted letters, a pen writing, a red circle, a typed strip",
+        "content": "Scribe; a three-part line, two capitalised words, then a three-word and a five-word phrase about copying books page by page by hand"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/a-open.jpg",
+        "visuals/a1/b-build.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 5.66,
+        "endSec": 15.53,
+        "purpose": "Chapter 2: earlier inventions in the East",
+        "retentionDevice": "Blank page fills in step with named dates; a block of clay tiles heats, then cools to metal",
+        "content": "Wood block, scroll, year stamps; clay type grid; metal type grid; old book"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/c-whip1.jpg",
+        "visuals/a1/d-china.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.53,
+        "endSec": 25.33,
+        "purpose": "Chapter 3: the inventor and his three parts",
+        "retentionDevice": "A simple sum: part + part + part; then the page flashes and the sum becomes its product",
+        "content": "Portrait, blackletter place name, type + ink + machine, then the Bible page with ink spatters"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/e-whip2.jpg",
+        "visuals/a1/f-mainz.jpg F627-F753"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 25.33,
+        "endSec": 32.5,
+        "purpose": "Chapter 4: it spreads and cannot be stopped",
+        "retentionDevice": "Pins spreading on a map, counter climbing to a large number, loose sheets flying, a stamp slams down and fails",
+        "content": "Map, 'BY 1500', pins, counter to 20,000,000+, 'BANNED'"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/g-whip3.jpg",
+        "visuals/a1/h-map.jpg",
+        "visuals/a1/i-throw.jpg F963-F969"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 32.5,
+        "endSec": 36.86,
+        "purpose": "Chapter 5: machine power",
+        "retentionDevice": "A thrown newspaper breaks the pattern of slides; a gauge needle climbs to a figure",
+        "content": "Newspaper headline, machine, gauge to 1,100, gears, steam puffs"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/i-throw.jpg F975-F997",
+        "visuals/a1/j-steam.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 36.86,
+        "endSec": 40.93,
+        "purpose": "Chapter 6: scale",
+        "retentionDevice": "A big machine, then a smaller one, then a figure shouting; heading slams last",
+        "content": "Rotary machine, linotype, newsboy, 'BY THE MILLION'"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/k-whip4.jpg",
+        "visuals/a1/l-mass.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 40.93,
+        "endSec": 45.03,
+        "purpose": "Chapter 7: to the desk",
+        "retentionDevice": "Machines shrink as the years pass: each device smaller and closer to home",
+        "content": "Copier, smaller copier, laser printer, row of desktop units"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m-whip5.jpg",
+        "visuals/a1/n-copy.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 45.03,
+        "endSec": 51.7,
+        "purpose": "Chapter 8: into three dimensions",
+        "retentionDevice": "Type itself is made by the new process: a word rises layer by layer",
+        "content": "Printer, '3D' building up, three results listed"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/o-whip6.jpg",
+        "visuals/a1/p-today.jpg F1380-F1536"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 51.7,
+        "endSec": 60,
+        "purpose": "Reveal and close",
+        "retentionDevice": "The pull-back shows all eight panels as one page; then a title inks in",
+        "content": "Whole sheet, 'Impressions', line under it, 'THE END'"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/q-zoomout.jpg",
+        "visuals/a1/r-end.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The whole sheet at 53.3-54.4 s, with a title that doubles as the closing word of the voice: the film's last word is also what it has been making. The title snaps from faint to full contrast at 55.93 s (F1678) and its flicker settles by 56.33 s, some seconds before the spoken word by the transcript's timing, though the last word timings are unreliable (see edit.json rhythm).",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/q-zoomout.jpg F1599-F1626",
+      "visuals/a1/r-end.jpg F1668-F1704",
+      "speech-text.json last words"
+    ]
+  },
+  "whyItWorks": [
+    "The structure is the idea: eight panels, one sheet, one reveal. A viewer rewards themselves for having been inside it.",
+    "Every noun gets an object at the moment it is spoken, so listening and watching are the same act.",
+    "The next panel arrives empty. Each chapter begins with a blank page for about 0.2-0.6 s, so the viewer sees the slate wiped before it fills.",
+    "Lettering follows the era: pasted scraps and hand script, blackletter, newspaper display face, condensed poster face, typewriter, misregistered colour. History is told in the type before anyone reads it.",
+    "One break in the slide pattern, the thrown newspaper at 32.5 s, comes at the midpoint and resets attention. It also hides a jump to the other row of panels, which is what a slide could not do."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "id": "tools-demucs-4-0-1-facebookresearch-demucs-code-mit-copyright-c-meta-pl-0990e8a5",
+  "section": "tools",
+  "order": 140,
+  "tool": "Demucs 4.0.1 (`facebookresearch/demucs`: code MIT, \"Copyright (c) Meta Platforms, Inc. and affiliates\", per the repository LICENSE; the README says the repository is no longer maintained) with the `htdemucs` weights (downloaded on first use; the README says they were trained on MUSDB HQ plus 800 extra songs and states no licence for them; its only licence statement, \"released under the MIT license\", names Demucs: weights licence unverified; read 2026-11-12) via torch 2.8.0",
+  "role": "Optional local stem split for `audio:stems` and `audio:map --stems`; the drums stem feeds the drum grid. Stems cached in `.cache/audio-stems/`, never committed"
+}

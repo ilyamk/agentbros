@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "rhythm": {
+    "value": "31.54 s, 20 corrected shots (detector: 10 shots, 9 cuts), 19 picture changes: 9 hard cuts to a new scene (0.708, 1.625, 3.375, 11.125, 15.292, 17.792, 19.25, 21.667, 27.375), 4 reframes on the same interface (punch-in 6.583, punch-out 8.083, macro 9.667, lateral jump 16.625), 4 text swaps on a held ground (2.792, 4.417, 29.583, 30.5) and 2 dissolves (5.604, mid of F127-F142; 25.646, mid of F612-F619). Holds: 0.71, 0.92, 1.17, 0.58, 1.04, 1.19, 0.98, 1.50, 1.58, 1.46, 4.17, 1.33, 1.17, 1.46, 2.42, 3.98, 1.73, 2.21, 0.92, 1.04 s; median 1.26 s, 36 changes per minute. Two halves: before 15.29 s the median hold is 1.17 s (type and the first demo), after it 1.46 s (louder music, longer answer holds). The two longest holds (4.17 s and 3.98 s) are the two answers being generated: the film spends its time on proof. Clock: the music and the on-screen text; Whisper found no words. I cannot hear the film. Against the beat grid (123 BPM, tempo confidence 0.55, beat regularity 0.95, downbeat confidence 0.17, so no bar grid is claimed): all corrected changes 9/19 within 80 ms of a beat vs 0.33 chance (lift 1.4), quiet half 3/10 vs 0.32 (chance), loud half 6/9 vs 0.33 (lift 2.0, n = 9, weak; the 16.625 reframe is 163 ms before a beat), 1/19 within a frame of a downbeat vs 0.04; signed median cut-to-beat +0.024 s. Onsets run 3.8/s in the quiet half and 7.0/s in the loud half, so onset ratios (10/19 within 80 ms vs 0.73 chance) mean nothing. Loudness swells (50 ms RMS, local max over +-0.3 s, > 1.35x section median, cut within 0.1 s) sit near cuts at chance (quiet 4/10 vs 0.37, loud 1/9 vs 0.22). sync.json (detector cuts, full-frame re-analysis): cutsOnBeat 0.556 vs 0.33, lift 1.68; cutsOnOnset 0.333 vs 0.727; downbeat-frame 0 vs 0.044 (lift 0); signed median -0.025 s. Detector 9 cuts, corrected 19 changes (corrections below). Crop: the earlier analysis copy was falsely cropped to x 308-1278 by the static-bands detector; source.json crop is now null and every measured layer (shots, OCR, motion, sync) was re-run on the full 1280x720 frame. Only a grey watermark sits top left. OCR boxes at x=0 at 16.5-17.0 s and 20.0-21.5 s are real: the headline-size field runs off the left edge while the camera follows the caret.",
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "shots.json with corrections below",
+      "audio.json tempo.beatsSec, downbeatsSec, onsetsSec, sections, silence",
+      "sync.json metrics",
+      "media/source.mp4 RMS at 50 ms, recomputed for the corrected cuts",
+      "source.json crop null"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook: greeting word pulled back from about 2.5x to reading size on white, a blue light drifting at the left edge.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t01-open-pullout.jpg F0-F16"
+        ]
+      },
+      "technique": {
+        "value": "giant-word-pull-out, expo.out over 0.44 s (90% span)",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t01-open-pullout.jpg F0-F16"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Product name on a hard cut; a soft blue light covering the name slides right and off it, uncovering it in 9 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t02-light-sweep.jpg F17-F38"
+        ]
+      },
+      "technique": {
+        "value": "light-blob-name-reveal",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t02-light-sweep.jpg F17-F38"
+        ]
+      }
+    },
+    {
+      "shotId": "s003.1",
+      "purpose": {
+        "value": "Category phrase builds word by word in white on saturated blue; the line drifts slightly.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t03-cut-to-blue.jpg F39-F50",
+          "visuals/a1/t04-blue-to-white.jpg F64-F66"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word line build on a ground swap",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t03-cut-to-blue.jpg F39-F50",
+          "visuals/a1/t04-blue-to-white.jpg F64-F66"
+        ]
+      }
+    },
+    {
+      "shotId": "s003.2",
+      "purpose": {
+        "value": "One noun replaces the phrase on the same blue (text swap); held 14 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t04-blue-to-white.jpg F67-F80"
+        ]
+      },
+      "technique": {
+        "value": "text swap on a held ground",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t04-blue-to-white.jpg F67-F80"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.1",
+      "purpose": {
+        "value": "Audience phrase on white, two words, the second added at F103.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t04-blue-to-white.jpg F81-F83",
+          "visuals/a1/t05-words-build.jpg F100-F105"
+        ]
+      },
+      "technique": {
+        "value": "ground swap back to white; smaller type",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t04-blue-to-white.jpg F81-F83",
+          "visuals/a1/t05-words-build.jpg F100-F105"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.2",
+      "purpose": {
+        "value": "Place phrase: five words added one by one (F106, F109, F113, F116), each pale then darkening; type at 6.7% glyph height, the size the UI will use.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t05-words-build.jpg F106-F121",
+          "visuals/a1/t06-text-to-ui.jpg F122-F126"
+        ]
+      },
+      "technique": {
+        "value": "type-steps-down-to-ui-scale",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t05-words-build.jpg F106-F121",
+          "visuals/a1/t06-text-to-ui.jpg F122-F126"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.3",
+      "purpose": {
+        "value": "Assistant start screen dissolves in where the sentence was (title over a prompt field with a monospaced placeholder).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t06-text-to-ui.jpg F135-F142",
+          "visuals/a1/t07-ui-reframe.jpg F153-F157"
+        ]
+      },
+      "technique": {
+        "value": "soft left-to-right dissolve into UI",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t06-text-to-ui.jpg F135-F142",
+          "visuals/a1/t07-ui-reframe.jpg F153-F157"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.4",
+      "purpose": {
+        "value": "Punch-in (about 1.8x: prompt line OCR box height 0.037 wide -> 0.064-0.066 close) on the prompt field; the placeholder is gone and the question is typed; slight drift.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t07-ui-reframe.jpg F158-F170",
+          "visuals/a1/t08-ui-pullback.jpg F188-F193",
+          "speech-text.json screenText 7.0-8.0 and 8.0-9.5 box heights"
+        ]
+      },
+      "technique": {
+        "value": "ui-punch-in-reframe",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t07-ui-reframe.jpg F158-F170",
+          "visuals/a1/t08-ui-pullback.jpg F188-F193"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.5",
+      "purpose": {
+        "value": "Punch back out to wide once the typed question overflows the close frame; typing continues; send button turns active.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t08-ui-pullback.jpg F194-F202",
+          "visuals/a1/t09-cut-to-send.jpg F228-F231"
+        ]
+      },
+      "technique": {
+        "value": "ui-punch-in-reframe (out)",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t08-ui-pullback.jpg F194-F202",
+          "visuals/a1/t09-cut-to-send.jpg F228-F231"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Macro of the send button (about 7x) and the field's corner; holds still, then drifts up with increasing speed into the cut.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t09-cut-to-send.jpg F232-F242",
+          "visuals/a1/t10-send-to-chat.jpg F261-F266"
+        ]
+      },
+      "technique": {
+        "value": "macro insert, accelerate-into-cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t09-cut-to-send.jpg F232-F242",
+          "visuals/a1/t10-send-to-chat.jpg F261-F266"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Chat: the sent question rises into place, a working indicator holds 2.5 s, then a shimmer placeholder grows from a dot into a full comparison table which resolves through it; the table then drifts left, accelerating into the cut. Detector's s007 merged in.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t10-send-to-chat.jpg F267-F275",
+          "visuals/a1/t11-gradient-table.jpg F328-F350",
+          "visuals/a1/t12-silence-drop.jpg F356-F366"
+        ]
+      },
+      "technique": {
+        "value": "skeleton-shimmer-to-table; accelerate-into-cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t10-send-to-chat.jpg F267-F275",
+          "visuals/a1/t11-gradient-table.jpg F328-F350",
+          "visuals/a1/t12-silence-drop.jpg F356-F366"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.1",
+      "purpose": {
+        "value": "New ground (pale sky gradient); prompt field at headline size (OCR box height 0.115 at 15.5 s, about 3x the wide shot's 0.037); the call-to-ask line is typed while the camera tracks right with the caret.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t12-silence-drop.jpg F367-F371",
+          "visuals/a1/t22-s008-drift.jpg F367-F397",
+          "speech-text.json screenText 15.5-16.5 box heights"
+        ]
+      },
+      "technique": {
+        "value": "follow-caret typing close-up",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t22-s008-drift.jpg F367-F397"
+        ]
+      }
+    },
+    {
+      "shotId": "s008.2",
+      "purpose": {
+        "value": "Jump reframe at F399 to the field's right end with the send button; the cursor arrives and clicks send at F413-F415, then everything drifts up into the cut.",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t23-s008-reframe.jpg F398-F401",
+          "visuals/a1/t13-click-send.jpg F403-F422",
+          "visuals/a1/t14-cut-to-checklist.jpg F424-F426"
+        ]
+      },
+      "technique": {
+        "value": "jump reframe on a held ground; cursor click; accelerate-into-cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t23-s008-reframe.jpg F398-F399",
+          "visuals/a1/t13-click-send.jpg F403-F422"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.1",
+      "purpose": {
+        "value": "Card with three benefit rows rises and settles; check circles fill one after another (F435, F444, F451); card pans left, accelerating into the cut.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t14-cut-to-checklist.jpg F427-F439",
+          "visuals/a1/t15-checks.jpg F439-F458",
+          "visuals/a1/t16-cut-to-typing.jpg F459-F461"
+        ]
+      },
+      "technique": {
+        "value": "sequential-check-fill; accelerate-into-cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t14-cut-to-checklist.jpg F427-F439",
+          "visuals/a1/t15-checks.jpg F439-F458",
+          "visuals/a1/t16-cut-to-typing.jpg F459-F461"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.2",
+      "purpose": {
+        "value": "Second question typed at headline size; the camera tracks right with the caret; the product name is typed in brand blue; at the end the field rises and blurs into the cut.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t16-cut-to-typing.jpg F462-F475",
+          "visuals/a1/t17-input-to-chat.jpg F508-F519"
+        ]
+      },
+      "technique": {
+        "value": "follow-caret typing close-up; accelerate-into-cut",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t16-cut-to-typing.jpg F462-F475",
+          "visuals/a1/t17-input-to-chat.jpg F508-F519"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.3",
+      "purpose": {
+        "value": "Chat: question bubble at top right, working indicator (21.9-23.7 s), then a short answer streams in line by line (23.7-25.3 s).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t17-input-to-chat.jpg F520-F525",
+          "visuals/a1/coarse-s010.jpg F520-F604",
+          "visuals/a1/t18-chat-to-gradient.jpg F607-F611"
+        ]
+      },
+      "technique": {
+        "value": "streamed answer",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t17-input-to-chat.jpg F520-F525",
+          "visuals/a1/coarse-s010.jpg F520-F604",
+          "visuals/a1/t18-chat-to-gradient.jpg F607-F611"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.4",
+      "purpose": {
+        "value": "Fade through white to a ground with a blue corner glow; a one-line negative-benefit sentence fades up word by word.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t18-chat-to-gradient.jpg F617-F626",
+          "visuals/a1/t19-wordmark.jpg F654-F656"
+        ]
+      },
+      "technique": {
+        "value": "dissolve to glow ground; word fade-up",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t18-chat-to-gradient.jpg F617-F626",
+          "visuals/a1/t19-wordmark.jpg F654-F656"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.1",
+      "purpose": {
+        "value": "Hard cut to the lower-case wordmark revealed left to right over 10 frames; a two-clause tagline appears beneath it in two steps.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t19-wordmark.jpg F657-F671",
+          "visuals/a1/t20-tagline-swap.jpg F702-F709"
+        ]
+      },
+      "technique": {
+        "value": "wordmark soft-wipe reveal",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t19-wordmark.jpg F657-F671",
+          "visuals/a1/t20-tagline-swap.jpg F702-F709"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.2",
+      "purpose": {
+        "value": "Call to action: two words, small, centred, held 22 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t20-tagline-swap.jpg F710-F716",
+          "visuals/a1/t21-endcard.jpg F724-F731"
+        ]
+      },
+      "technique": {
+        "value": "text swap on a held ground",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t20-tagline-swap.jpg F710-F716",
+          "visuals/a1/t21-endcard.jpg F724-F731"
+        ]
+      }
+    },
+    {
+      "shotId": "s010.3",
+      "purpose": {
+        "value": "Closing line: where the product lives; held to the end with no fade.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/t21-endcard.jpg F732-F739",
+          "visuals/a1/coarse-s010.jpg F736-F748"
+        ]
+      },
+      "technique": {
+        "value": "text swap on a held ground; last frame held",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/t21-endcard.jpg F732-F739",
+          "visuals/a1/coarse-s010.jpg F736-F748"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 0.708,
+        "name": "giant-word-pull-out",
+        "description": "The first word fills and overflows the frame at F0 (glyph box at least 73% of frame width and 61% of height, cropped by both edges; OCR box 0.667 x 0.342 of frame at 0-0.5 s), then pulls back on expo.out: motion.json fits a pull-out of z -0.90 (about 2.5x) starting 0.03 s, 90% of travel in 0.43 s; the diff falls from 27 at F3-F4 to under 6 by F10, and the word is settled at 43% of frame width, centred, by F14 (0.58 s). It holds 2 frames and hard-cuts at F17. A soft blue light hangs at the left edge throughout.",
+        "why": "Starting inside the word gives the eye a single shape and a direction (outward) before anything is read; the fast-out ease spends the motion in the first 6 frames, so the word is still for its last 7 frames and reads at once."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t01-open-pullout.jpg F0-F16",
+        "motion.json s001 camera: pull_out z -0.9015, t5Sec 0.068 to t95Sec 0.496, ease expo.out, cubicBezier [0.288, 0.264, 0.032, 1.108]"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 6.583,
+        "endSec": 11.125,
+        "name": "ui-punch-in-reframe",
+        "description": "Four hard reframes on the same interface instead of a zoom: F158 (6.583) cuts from the wide panel to about 1.8x on the prompt field (prompt line OCR box height 0.037 wide -> 0.064-0.066 close; title 0.044 -> 0.064-0.080, clipped by the right edge) as typing starts; F194 (8.083) cuts back to wide when the typed question is longer than the close frame; F232 (9.667) cuts to a macro of the send button at about 7x; later, in the headline-size prompt, F399 (16.625) jumps sideways at the same scale to the field's right end so the send button and cursor are in frame. Holds 1.50 s, 1.58 s, 1.46 s, then 1.17 s. Each close shot drifts slowly (camera move right/push in) and none animates the scale.",
+        "why": "The eye stays on the caret: the cut-in arrives as the first letter does, the cut-out as the line outgrows the frame, and the macro tells the viewer where the next action is. Cuts are cheaper than zooms on a white UI: nothing has to be blurred and the text is sharp on every frame.",
+        "spans": [
+          {
+            "startSec": 6.583,
+            "endSec": 8.083
+          },
+          {
+            "startSec": 8.083,
+            "endSec": 9.667
+          },
+          {
+            "startSec": 9.667,
+            "endSec": 11.125
+          },
+          {
+            "startSec": 16.625,
+            "endSec": 17.792
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t07-ui-reframe.jpg F157-F170",
+        "visuals/a1/t08-ui-pullback.jpg F193-F194",
+        "visuals/a1/t09-cut-to-send.jpg F231-F232",
+        "visuals/a1/t23-s008-reframe.jpg F398-F399",
+        "speech-text.json screenText 5.5-9.5 box heights (full frame)"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 10.875,
+        "endSec": 21.75,
+        "name": "accelerate-into-cut",
+        "description": "Five outgoing shots end on a camera drift that accelerates right up to a hard cut, and the incoming shot continues the direction and decelerates. Send-button macro drifts up F262-F266 (diff 1.4 -> 3.7) into the chat where the sent bubble rises F267-F270; the table drifts left into 15.292 (motion.json s007 circ.in, 90% of travel 14.84-15.24 s, 0.40 s, ending 0.05 s before the cut); the clicked field drifts up F418-F426 (diff 0.8 -> 2.3) and the next card rises and settles F427-F433; the benefit card pans left F454-F461 (diff 2.5 -> 4.3) into 19.25; the typed field rises and blurs F509-F519 (diff 3.1 -> 5.1) into the chat at F520.",
+        "why": "On a white-on-white interface a hard cut can read as a glitch; momentum carried across it reads as one camera, and the speed peaks exactly at the cut so the change hides in motion blur."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t10-send-to-chat.jpg F261-F270",
+        "visuals/a1/t12-silence-drop.jpg F364-F367",
+        "visuals/a1/t13-click-send.jpg F418-F422",
+        "visuals/a1/t14-cut-to-checklist.jpg F424-F433",
+        "visuals/a1/t15-checks.jpg F454-F458",
+        "visuals/a1/t17-input-to-chat.jpg F509-F520",
+        "motion.json s007 camera.ease circ.in [0.5, 0.148, 0.754, 0.245], t5Sec 14.844 to t95Sec 15.242"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 13.667,
+        "endSec": 14.583,
+        "name": "skeleton-shimmer-to-content",
+        "description": "The answer arrives as a purple-to-lilac vertical-band placeholder (#A453EC to #D1D6FD) that grows from a dot beside the reply line at F328 (about 1% of frame width) to the full table size by F340 (about 47% of width, 60% of height) while the chat scrolls up; its bands slide sideways as it grows (diff 2.3 rising to 8.2 at F336, falling to 3.0 by F350). The table's text dissolves in through the bands F344-F350 and the gradient fades to the table's pale header colour. 22 frames, 0.92 s. The detector read this as a whip (13.71-14.71); it is one shot.",
+        "why": "The eye already sits on the reply line; the placeholder grows out of that point so the eye is carried to the table's top-left corner and is there when the text resolves. The shimmer stands for work without a spinner, and its size tells the viewer how much answer is coming."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t11-gradient-table.jpg F328-F350",
+        "shots.json s007 whip 13.708-14.708 (transition span)"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 14.5,
+        "endSec": 15.583,
+        "name": "silence-gap-before-drop",
+        "description": "Once the table has resolved (F350, 14.58 s) the music falls to near silence: 50 ms RMS about 50 against a quiet-section median of 1322, from about 14.5 s; audio.json marks silence 14.75-15.21. RMS starts to climb at about 15.18 s, the picture hard-cuts to the new pale-blue ground at F367 (15.292), about 3 frames into the rise, and the level reaches the loud section (RMS about 9000 against a loud median of 5072) at about 15.55 s, 6 frames after the cut. Section energy 0.16 before, 0.48 after. Measured from the waveform; that this is a riser into a drop is inferred, as I cannot hear it.",
+        "why": "The silence gives the proof room: for 0.7 s the only thing happening is the table on screen. Cutting inside the rise, ahead of the hit, makes the new ground feel like it causes the music to return."
+      },
+      "basis": "measured",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/t12-silence-drop.jpg F356-F371",
+        "audio.json silence 14.751-15.208, sections 3-quiet 14.373-15.302 energy 0.034, 4-medium energy 0.481",
+        "media/source.mp4 RMS at 25 ms 14.6-15.8 s"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 2.792,
+        "transition": "cut",
+        "note": "Text swap on the same blue ground: the phrase is replaced by a single noun at F67. Detector merged them because the ground does not change."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t04-blue-to-white.jpg F66-F67"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 4.417,
+        "transition": "cut",
+        "note": "Text swap on white: a two-word phrase at 9.7% glyph height is replaced by a smaller sentence starting at F106."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t05-words-build.jpg F105-F106"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 5.604,
+        "transition": "dissolve",
+        "note": "The sentence fades away from left to right while the interface fades in at the same place, F127-F142 (0.63 s); boundary at the midpoint F134.5. Frame diff never exceeds 0.8, which is why the detector missed it."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t06-text-to-ui.jpg F127-F142"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 6.583,
+        "transition": "cut",
+        "note": "Punch-in cut from the wide panel to about 2x on the prompt field at F158. White ground on both sides keeps the frame diff at 3.0 (mean, 80x45 grey)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t07-ui-reframe.jpg F157-F158"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 8.083,
+        "transition": "cut",
+        "note": "Punch-out cut back to the wide panel at F194 (frame diff 4.5)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t08-ui-pullback.jpg F193-F194"
+      ]
+    },
+    {
+      "value": {
+        "kind": "move",
+        "shotId": "s005",
+        "shotIds": [
+          "s005"
+        ],
+        "toSec": 9.667,
+        "note": "The cut to the send-button macro is at F232, not F231: F231 is still the wide panel (diff 2.61), F232 is the macro (diff 12.93). Detector edge 9.625 is one frame early."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t09-cut-to-send.jpg F231-F232",
+        "visuals/boundaries-01.jpg S005 F230/F233"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s005"
+        ],
+        "transition": "cut",
+        "note": "A one-frame change from the wide panel to a 7x macro: a hard punch-in cut, not a continuous move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t09-cut-to-send.jpg F231-F232"
+      ]
+    },
+    {
+      "value": {
+        "kind": "move",
+        "shotId": "s006",
+        "shotIds": [
+          "s006"
+        ],
+        "toSec": 11.125,
+        "note": "The macro drifts up through F266 (diff 1.4 -> 3.7) and the chat appears at F267 (diff 13). Detector edge 10.958 (F263) is four frames early, inside the accelerating drift."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t10-send-to-chat.jpg F262-F267",
+        "visuals/boundaries-01.jpg S006 F263/F266/F270"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s006"
+        ],
+        "transition": "cut",
+        "note": "Macro to chat changes in one frame (F266-F267, diff 13): a hard cut hidden in the drift, not a continuous move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t10-send-to-chat.jpg F266-F267"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s006",
+          "s007"
+        ],
+        "note": "The whip at 13.708-14.708 (boundary 14.208) is a loading placeholder growing inside the same chat screen while the column scrolls up; no frame across F328-F350 changes the scene. Corrected shot keeps id s006 and runs 11.125-15.292."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t11-gradient-table.jpg F328-F350"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 16.625,
+        "transition": "cut",
+        "note": "Jump reframe on the same pale ground at F399: the field jumps about a third of the frame left in one frame (its left end leaves the frame, its right end with the send button enters) at the same scale, while the cursor keeps moving (diff 4.06 against 1.3 either side). Seen on the full-frame recheck; counted as a cut like the other reframes on the interface."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/t23-s008-reframe.jpg F398-F399",
+        "visuals/a1/t22-s008-drift.jpg F397-F399"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 19.25,
+        "transition": "cut",
+        "note": "Hard cut from the benefit card (panning left) to the second typed question at F462 (diff 11.74). The full-frame re-analysis no longer places an edge here."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t16-cut-to-typing.jpg F461-F462"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 21.667,
+        "transition": "cut",
+        "note": "Hard cut from the typed question close-up (rising and blurring) to the chat view at F520."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t17-input-to-chat.jpg F519-F520"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 25.646,
+        "transition": "dissolve",
+        "note": "Chat fades through white with a blue corner glow growing, F612-F619; boundary at the midpoint F615.5. The first word of the next line fades in at F620."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/t18-chat-to-gradient.jpg F612-F620"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s010"
+        ],
+        "transition": "cut",
+        "note": "Hard cut from the benefit sentence to the wordmark reveal at F657 (frame diff 14.5); the detector places the edge correctly but calls it continuous."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t19-wordmark.jpg F656-F657"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "timeSec": 29.583,
+        "transition": "cut",
+        "note": "Text swap on the held glow ground: wordmark and tagline replaced by the call to action at F710 (frame diff 2.3)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t20-tagline-swap.jpg F709-F710"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s010"
+        ],
+        "timeSec": 30.5,
+        "transition": "cut",
+        "note": "Text swap on the held ground: the call to action replaced by the closing line at F732 (frame diff 1.2)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/t21-endcard.jpg F731-F732"
+      ]
+    }
+  ]
+}

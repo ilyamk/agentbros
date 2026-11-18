@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "cashfree",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "durationSec": 57.167,
+  "slots": [
+    {
+      "id": "question-hook",
+      "role": "hook: an unfinished question",
+      "startSec": 0,
+      "durationSec": 2.333,
+      "visualRecipe": "Pure white ground, one hero term typing at centre, about 55% of frame width, ink #1D221E-class near-black. Then two overhead lifestyle photographs (hands with devices, warm daylight): on the first a white rounded query bar about 43% wide at y 0.47 continues the line; on the second the line continues as two outline chips either side of the photographed object. End state: the object at frame centre, about 5% wide.",
+      "motionRecipe": "Typewriter at 2-3 frames a character with a thin caret, no tween. Hard cuts at 0.57 s and 1.33 s; the line keeps typing across them. Exit: the object glows and grows slightly on its screen over the last 5 frames.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it). Opening section is the quietest; keep the first 3 s sparse.",
+      "copySlot": {
+        "purpose": "an open question about the effort the subject needed",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "typed-question-hook"
+      ]
+    },
+    {
+      "id": "object-names-subject",
+      "role": "reveal the subject through an object",
+      "startSec": 2.333,
+      "durationSec": 2.6,
+      "visualRecipe": "Match cut: the object becomes a glossy 3D sphere on a dark green ground (near-black to forest green), same place and size. Two small words either side turn it into a term in a line. The sphere then fills the frame and its colour becomes the ground; the mark sits at centre, then the name appears beside it, bold italic, about 53% of frame width.",
+      "motionRecipe": "Words type in 1-2 frames after the match cut. Hold 1.3 s. Words fade in 1-2 frames; sphere grows from 10% of width to past the edges in 8 frames on circ.in. Mark slides left as the name wipes in from beneath it over 4 frames. Hold 0.6 s.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "two-term descriptor flanking the object, then the subject's name",
+        "maxWords": 3
+      },
+      "techniqueIds": [
+        "orb-match-cut",
+        "orb-grows-to-ground"
+      ]
+    },
+    {
+      "id": "deliverable-on-device",
+      "role": "proof: the actual deliverable, then its device",
+      "startSec": 4.933,
+      "durationSec": 2.734,
+      "visualRecipe": "Three overexposed mint-white frames, then the actual deliverable (a captured page) full frame; its headline fades in; then it sits on a monitor on a lit sweep tinted in the accent colour (light mint top, deep green floor).",
+      "motionRecipe": "Bloom 3 frames; pixelated resolve 8-10 frames; headline fade 5 frames; pull-back to about 47% scale in 0.46 s on power3.out (bezier 0.46, 0.76, 0.16, 0.83). Hold to end.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "techniqueIds": [
+        "bloom-cut-into-screen",
+        "screen-pulls-back-to-device"
+      ]
+    },
+    {
+      "id": "chapter-one-system",
+      "role": "chapter title and the system itself",
+      "startSec": 7.667,
+      "durationSec": 5.9,
+      "visualRecipe": "Accent gradient (signal green top to lime bottom). White chip with the chapter label, left-placed, chip about 17% of frame height; palette dots; a round arrow icon; a dark pill with the second term. Then a slowly turning glossy 3D fan render full frame, a right column of tiles (photo over type specimen) and a large lower-case glyph filling its tile in the accent lime on near-black.",
+      "motionRecipe": "Chip grows from a white rectangle; icon turns in 1 frame; pill pops in 3 frames with overshoot; layout drifts left on power2.in. Hard cut to the fan; column slides in from the right in 4 frames; glyph grows to fill its tile in 4 frames.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "chapter label in two words",
+        "maxWords": 2
+      },
+      "techniqueIds": [
+        "brand-chips-assemble",
+        "bento-assemble-around-hero"
+      ]
+    },
+    {
+      "id": "system-in-use",
+      "role": "dense collage around a still hero",
+      "startSec": 13.567,
+      "durationSec": 5.066,
+      "visualRecipe": "Bento on black or near-black: counter tile, photo of a device in a hand, dark tiles with small icons. Then one people photo full frame under a pastel haze, snapping to a centred tile about 63% wide; 6-8 tiles fill around it with thin gutters (photos, lime tile, colour-bar tile, counter chips, tall side panels). End state: full bento, hero still at centre.",
+      "motionRecipe": "Each tile cuts on fully formed in 1-2 frames, no tween; counters step each frame for about 13 frames; side panels enter from the edges in 1 frame. Haze clears and the frame eases back (circ.out) before the snap.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "short figures on tiles, no sentences",
+        "maxWords": 4
+      },
+      "techniqueIds": [
+        "bento-assemble-around-hero",
+        "tile-counter-race"
+      ]
+    },
+    {
+      "id": "making-of-chapter",
+      "role": "chapter two shown being made",
+      "startSec": 18.633,
+      "durationSec": 4.8,
+      "visualRecipe": "White design-tool canvas: thin selection box with handles, a caret, named cursor tags in small coloured flags. A three-term line in a small grotesque at centre; page parts (header bar, 3D render at right, a sample module at lower left) arrive around it. After the retype, the frame is so tight the headline overflows both edges; header links, a tilted action button and 3D glyph renders fall in.",
+      "motionRecipe": "Type a word every 5 frames; hold 40 frames; backspace about 2.1 characters a frame; 6 empty frames; retype the actual headline a word every 3.4 frames over two lines; punch in over 8 frames (power1.inOut) until it overflows; parts fall into place over 1 s while the frame drifts left.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it). A quiet section ends near 19.5 s in the original; let the assembly start in the lull.",
+      "copySlot": {
+        "purpose": "a placeholder line, then the actual two-line headline",
+        "maxWords": 10
+      },
+      "techniqueIds": [
+        "canvas-type-becomes-actual-page"
+      ]
+    },
+    {
+      "id": "finished-on-devices",
+      "role": "payoff: finished deliverable on devices",
+      "startSec": 23.433,
+      "durationSec": 3.6,
+      "visualRecipe": "Hard cut wide: the finished capture in a browser frame on an accent gradient; then a tablet held in two hands over green; then an isometric array of phones on white, each with the actual screen.",
+      "motionRecipe": "Slow pull-back z -0.32 over 1.5 s; cuts at 1.6 s and 0.9 s; phone array trucks right and down on sine.inOut over 0.95 s.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "techniqueIds": [
+        "device-carousel"
+      ]
+    },
+    {
+      "id": "typed-emphasis",
+      "role": "one line across ground swaps",
+      "startSec": 27.033,
+      "durationSec": 2.567,
+      "visualRecipe": "Near-black ground, lime type at about half the frame width, centred; ground swaps to lime with dark green type, same size; then near-white with the line at a third of the size, its last words in accent, photo and UI tiles floating around it.",
+      "motionRecipe": "Typewriter about 2 frames a character, without ever pausing across the two swaps (0-frame swaps at 0.6 s and 0.83 s); floating tiles fade and drift in over 10 frames.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "a three-term quality claim",
+        "maxWords": 3
+      },
+      "techniqueIds": [
+        "ground-swap-mid-typing"
+      ]
+    },
+    {
+      "id": "breadth-grid",
+      "role": "breadth: a grid of many designs",
+      "startSec": 29.6,
+      "durationSec": 1.967,
+      "visualRecipe": "Dark ground with one captured design tile about 45% wide at centre; ends as a grid of about 12 tiles filling the frame.",
+      "motionRecipe": "Hold 0.5 s; then the grid retreats in one-frame steps (2, 4, 6, 9, 12 tiles at 0.56, 0.86, 0.93, 1.26, 1.43 s into the slot), gentle drift between steps.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "techniqueIds": [
+        "stepped-grid-pullback"
+      ]
+    },
+    {
+      "id": "scale-number",
+      "role": "scale claim",
+      "startSec": 31.567,
+      "durationSec": 1.4,
+      "visualRecipe": "Pale mint ground with green glass bars along the bottom; small grey kicker, a big accent-green figure about 73% of frame width, small unit line.",
+      "motionRecipe": "Figure steps about once a frame for 9 frames, holds 10 frames, then pushes in slightly and blurs out.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "kicker, figure, unit",
+        "maxWords": 4
+      },
+      "techniqueIds": [
+        "tile-counter-race"
+      ]
+    },
+    {
+      "id": "range-row",
+      "role": "range across use cases",
+      "startSec": 32.967,
+      "durationSec": 2.7,
+      "visualRecipe": "Near-black ground, small sentence at y 0.3 with its last words in accent; a row of rounded lime icon tiles below, the one under the centre about 1.3x larger.",
+      "motionRecipe": "Sentence types in two parts; row rises in 1 frame and slides left 0.43 frame widths on circ.out.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "one sentence on range",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "icon-marquee-focal-tile"
+      ]
+    },
+    {
+      "id": "feature-vignettes",
+      "role": "features in quick vignettes",
+      "startSec": 35.667,
+      "durationSec": 8.366,
+      "visualRecipe": "Split frames: left accent panel about 40% wide holding the icon from the row in a dark tile; right a warm photo of a person or a hand with a device, small interface chips popping beside them. Then interface close-ups on white or dark (a message, a purchase control, a segmented tab), a summary sentence among floating tiles, a device on a blue-grey sweep with a panel sliding in from the right.",
+      "motionRecipe": "Right half cuts each 0.4-0.6 s while the left holds; chips pop in 2-3 frames; summary hold about 2 s; panel slides in over 6 frames.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it). In the original a new, denser section begins within 0.03 s of the cut to the device shot; one coincidence, not a rule.",
+      "copySlot": {
+        "purpose": "one small line per vignette",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "icon-marquee-focal-tile"
+      ]
+    },
+    {
+      "id": "out-in-the-public",
+      "role": "the work in public, fixed caption",
+      "startSec": 44.033,
+      "durationSec": 3.634,
+      "visualRecipe": "Two plates at 0.4-0.5 s (a stage screen, a roadside board), then a photo tile about 45% wide on white with a small white term at its centre, cutting to the same photo full bleed, then two extra people photos under the same caption; then a lime ground with a tick-icon chip and a dark pill, pressed by a cursor.",
+      "motionRecipe": "Holds 0.40, 0.50, 0.33, 0.40, 0.30, 0.50 s; caption fixed at x 0.47, y 0.46 across the cuts; chip term types, cursor glides in and presses the pill over 0.3 s.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "a two-term caption, then a two-term chip pair",
+        "maxWords": 4
+      },
+      "techniqueIds": [
+        "caption-anchor-over-footage-stutter"
+      ]
+    },
+    {
+      "id": "outcome-triad",
+      "role": "three outcomes with one repeated term",
+      "startSec": 47.667,
+      "durationSec": 4.133,
+      "visualRecipe": "Forest green ground: one term at the left edge, one at the right, a centred inset about 45% wide whose image cuts twice. Then the same lead term with a new large noun on lime over a photo tile, and again on a pastel gradient with a stat chip and a small bar chart.",
+      "motionRecipe": "Inset cuts at 0.5 s and 0.88 s; each variant holds 1.5-1.7 s; stat chip steps its figure for about 10 frames.",
+      "soundRecipe": "Music bed only, no voice; do not cut to the beat grid (the original's changes sit at chance against it).",
+      "copySlot": {
+        "purpose": "a lead term repeated with three nouns",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "term-frame-inset-swaps"
+      ]
+    },
+    {
+      "id": "question-to-action",
+      "role": "call to action and closing",
+      "startSec": 51.8,
+      "durationSec": 5.367,
+      "visualRecipe": "Pastel gradient, a small question typing, then in a frosted panel; the panel becomes a white pill on a bright accent gradient with a faint globe grid; then the maker's mark large, settling at centre with a header line, a address pill and a logo row.",
+      "motionRecipe": "Question types about 2 frames a character; panel shrinks into the pill over 2 frames; action line types 1 character a frame; arrow fills; mark flies in from lower left and settles on expo.out over 9 frames; hold the last frame, no fade.",
+      "soundRecipe": "End the music before the picture ends: at least 1 s of silence under the held end frame.",
+      "copySlot": {
+        "purpose": "a question to the viewer, then a short action line",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "question-tile-to-cta-pill"
+      ]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: tempo confidence 0.58 with an ambiguous beat level and the corrected changes at chance against the beats (26% vs 27%). Alternate long assembly shots of 2-5 s, where the motion happens inside the shot (typing 1-2 characters a frame, tiles cutting on in 1-2 frames, counters stepping each frame), with stutter runs of 0.3-0.6 s holds. Target about 42 changes in 57 s, median hold 1.0 s, p10 0.4 s, p90 2.6 s. Change grounds on cuts, and keep any typed line typing across them."
+  },
+  "style": "Light and green: lime, signal green and forest green with white and near-black; one geometric grotesque in sentence case; lifestyle photos, glossy renders and actual captures, either one centred object on a flat ground or a dense tiled collage around a held centre.",
+  "transferRules": {
+    "keep": [
+      "Show the work being made: type a placeholder, delete it, type the actual line, punch in and let parts assemble, then cut wide to the finished thing.",
+      "Hand the eye one object and change everything around it or because of it: match cut on an object, grow it into the ground, assemble tiles around a still centre.",
+      "Typed chapter lines on flat grounds as the table of contents; keep the caret typing across ground swaps.",
+      "Alternate 2-5 s assembly shots with 0.3-0.6 s stutter runs under a fixed caption.",
+      "Show actual content full frame before revealing the device it sits on.",
+      "Counters step each frame for 9-13 frames; tiles cut on in 1-2 frames without tweens.",
+      "Hold the last frame through at least 1 s of silence."
+    ],
+    "mustChange": [
+      "branding: names, marks, logos, client-logo row and URL",
+      "music and sound design",
+      "graphics: renders, illustrations, icons, photographs and page captures",
+      "copy: each on-screen term and figure",
+      "palette can stay green only if it is the new subject's own colour; otherwise use the subject's palette in the same roles"
+    ]
+  }
+}

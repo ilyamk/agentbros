@@ -1,0 +1,540 @@
+{
+  "patchToolSha256": "94947ede21536bb8222bfb01c2243d02827dbf2b9253bac4816484ba70656295",
+  "sourceClosureSha256": "3fec9b5beb967a48a2762d66a91daeff40a76b5715934054a648853b00c93408",
+  "esbuild": "0.28.2",
+  "originalReceiptSha256": "1b47fb8cb6eebe5c6fc9c8b2c62a1e25090aab4dd6f0e9326b93d1b6dff25158",
+  "visualReceiptSha256": "045e0588f14393ca7faf3b60a50bb3705827ffde3f1d609fe42defd514da12c7",
+  "profile": "native-local-media-v1",
+  "originalEngineSha256": "46b743e1b0b47540875e908d0f707042ed42c77e5cb3cdd4494ab48f9c28f2ef",
+  "visualEngineSha256": "b0a6873f44d1070736f847c7950882639321c8993f59dba500c8778b6ced4dd2",
+  "engineSha256": "761ad67f4618f6245ba7a023e88483ab49c7f391e836d5ac46afcd0b20d7bec6",
+  "engineBytes": 515432,
+  "typescript": {
+    "version": "5.9.3",
+    "apiSha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+    "license": "Apache-2.0",
+    "notice": "notices/typescript-LICENSE.txt",
+    "noticeSha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+  },
+  "patches": {
+    "packages/core/src/compositionReadiness.ts": {
+      "originalSha256": "4702e6c0987275830a40b514f058f3af9a599803ddbc244f1aeeabf5a1e194b2",
+      "replacements": [
+        {
+          "start": 8322,
+          "end": 8334,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 8662,
+          "end": 8672,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 9845,
+          "end": 9869,
+          "text": "__avcClock.cancelAnimationFrame",
+          "original": "win.cancelAnimationFrame"
+        },
+        {
+          "start": 10102,
+          "end": 10127,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "win.requestAnimationFrame"
+        },
+        {
+          "start": 12803,
+          "end": 12813,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 13229,
+          "end": 13241,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/adapters/typegpu.ts": {
+      "originalSha256": "35ccf1f593d4beaaeba96df93f32c912be3f2668fc5b6882d19c9a6691746d28",
+      "replacements": [
+        {
+          "start": 2876,
+          "end": 2896,
+          "text": "__avcClock.clearInterval",
+          "original": "window.clearInterval"
+        },
+        {
+          "start": 3145,
+          "end": 3163,
+          "text": "__avcClock.setInterval",
+          "original": "window.setInterval"
+        }
+      ]
+    },
+    "packages/core/src/runtime/afterFonts.ts": {
+      "originalSha256": "bc9ede7f69e71095f4c578aed7858470f431769b7d1ed0fa47c5ec2c11e1945a",
+      "replacements": [
+        {
+          "start": 895,
+          "end": 905,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 954,
+          "end": 966,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/bridge.ts": {
+      "originalSha256": "a6c71912003d4f744c217a33224e347b522132d8aef97819f84f5f522542dd45",
+      "replacements": [
+        {
+          "start": 7959,
+          "end": 7969,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/captionOverrides.ts": {
+      "originalSha256": "9c9efca4e36de6adaa5464b929fb3fe8b28494efbb4aa230330488da9291d1aa",
+      "replacements": [
+        {
+          "start": 3924,
+          "end": 3929,
+          "text": "__avcClock.fetch",
+          "original": "fetch"
+        }
+      ]
+    },
+    "packages/core/src/runtime/colorGrading.ts": {
+      "originalSha256": "cc8c26983f6cb5064dc3574c5d2ea52e11f90db063406561b877457d65aaeced",
+      "replacements": [
+        {
+          "start": 81574,
+          "end": 81579,
+          "text": "__avcClock.fetch",
+          "original": "fetch"
+        },
+        {
+          "start": 135066,
+          "end": 135093,
+          "text": "__avcClock.cancelAnimationFrame",
+          "original": "window.cancelAnimationFrame"
+        },
+        {
+          "start": 136047,
+          "end": 136075,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "window.requestAnimationFrame"
+        },
+        {
+          "start": 138571,
+          "end": 138592,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "requestAnimationFrame"
+        }
+      ]
+    },
+    "packages/core/src/runtime/compositionLoader.ts": {
+      "originalSha256": "e9227112014a471049466b1fe2dfbf34956f967d91c2830be5d27abb46bc61c7",
+      "replacements": [
+        {
+          "start": 7344,
+          "end": 7363,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 7661,
+          "end": 7678,
+          "text": "__avcClock.setTimeout",
+          "original": "window.setTimeout"
+        },
+        {
+          "start": 31584,
+          "end": 31589,
+          "text": "__avcClock.fetch",
+          "original": "fetch"
+        }
+      ]
+    },
+    "packages/core/src/runtime/filmBridge.ts": {
+      "originalSha256": "f0da9db878ba08a0825304a7639f368de159d11cc04f2936c3d19c7b348de6a9",
+      "replacements": [
+        {
+          "start": 1255,
+          "end": 1267,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 1332,
+          "end": 1344,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 1446,
+          "end": 1456,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 1857,
+          "end": 1869,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 2752,
+          "end": 2764,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 3657,
+          "end": 3667,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/init.ts": {
+      "originalSha256": "14f882cc403568d7d12ded4f58dfe6145f16ceb430ee24cbd3845c226ecd6ba9",
+      "replacements": [
+        {
+          "start": 19917,
+          "end": 19932,
+          "text": "Promise.resolve(false)",
+          "original": "webAudio.init()"
+        },
+        {
+          "start": 95059,
+          "end": 95086,
+          "text": "__avcClock.cancelAnimationFrame",
+          "original": "window.cancelAnimationFrame"
+        },
+        {
+          "start": 95151,
+          "end": 95179,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "window.requestAnimationFrame"
+        },
+        {
+          "start": 100949,
+          "end": 100968,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 101043,
+          "end": 101060,
+          "text": "__avcClock.setTimeout",
+          "original": "window.setTimeout"
+        },
+        {
+          "start": 129748,
+          "end": 129748,
+          "text": "\n__avcClock.mediaResolver(()=>buildRuntimeMediaCache().mediaClips,sourceTimeAt,isInClipWindow);",
+          "original": ""
+        },
+        {
+          "start": 144093,
+          "end": 144124,
+          "text": "__avcClock.publish(\"__clipManifest\",payload)",
+          "original": "window.__clipManifest = payload"
+        },
+        {
+          "start": 147541,
+          "end": 147569,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 172146,
+          "end": 172163,
+          "text": "__avcClock.setTimeout",
+          "original": "window.setTimeout"
+        },
+        {
+          "start": 172521,
+          "end": 172540,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 175761,
+          "end": 175808,
+          "text": "__avcClock.publish(\"__player\",createPlayerApiCompat(player))",
+          "original": "window.__player = createPlayerApiCompat(player)"
+        },
+        {
+          "start": 175812,
+          "end": 175839,
+          "text": "__avcClock.publish(\"__playerReady\",true)",
+          "original": "window.__playerReady = true"
+        },
+        {
+          "start": 177421,
+          "end": 177477,
+          "text": "__avcClock.publish(\"__hfWaitForSeekCompletion\",waitForSeekCompletion)",
+          "original": "window.__hfWaitForSeekCompletion = waitForSeekCompletion"
+        },
+        {
+          "start": 177594,
+          "end": 177633,
+          "text": "__avcClock.publish(\"__hfWaitForSeekCompletion\",undefined)",
+          "original": "delete window.__hfWaitForSeekCompletion"
+        },
+        {
+          "start": 180788,
+          "end": 180815,
+          "text": "__avcClock.publish(\"__renderReady\",true)",
+          "original": "window.__renderReady = true"
+        },
+        {
+          "start": 180875,
+          "end": 180903,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 181739,
+          "end": 181767,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 181835,
+          "end": 181863,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 182343,
+          "end": 182371,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 182437,
+          "end": 182465,
+          "text": "__avcClock.publish(\"__renderReady\",false)",
+          "original": "window.__renderReady = false"
+        },
+        {
+          "start": 183272,
+          "end": 183282,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 197152,
+          "end": 197169,
+          "text": "__avcClock.setTimeout",
+          "original": "window.setTimeout"
+        },
+        {
+          "start": 198456,
+          "end": 198484,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "window.requestAnimationFrame"
+        },
+        {
+          "start": 199261,
+          "end": 199280,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 199408,
+          "end": 199436,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "window.requestAnimationFrame"
+        },
+        {
+          "start": 216154,
+          "end": 216182,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "window.requestAnimationFrame"
+        },
+        {
+          "start": 222009,
+          "end": 222036,
+          "text": "__avcClock.cancelAnimationFrame",
+          "original": "window.cancelAnimationFrame"
+        },
+        {
+          "start": 222147,
+          "end": 222166,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 222343,
+          "end": 222362,
+          "text": "__avcClock.clearTimeout",
+          "original": "window.clearTimeout"
+        },
+        {
+          "start": 222495,
+          "end": 222522,
+          "text": "__avcClock.cancelAnimationFrame",
+          "original": "window.cancelAnimationFrame"
+        },
+        {
+          "start": 225033,
+          "end": 225066,
+          "text": "__avcClock.publish(\"__hfRuntimeTeardown\",null)",
+          "original": "window.__hfRuntimeTeardown = null"
+        },
+        {
+          "start": 225081,
+          "end": 225118,
+          "text": "__avcClock.publish(\"__hfRuntimeTeardown\",teardown)",
+          "original": "window.__hfRuntimeTeardown = teardown"
+        }
+      ]
+    },
+    "packages/core/src/runtime/media.ts": {
+      "originalSha256": "f8c5c8793caf5e8911344718a222b20944eeeff85ba853cd860b4ca926f9ef9c",
+      "replacements": [
+        {
+          "start": 2226,
+          "end": 2238,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 2453,
+          "end": 2463,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/mediaProxy.ts": {
+      "originalSha256": "74d51db0c79ba164e5e5965555fbf9f071f85985a5473ceb432390c753cf05db",
+      "replacements": [
+        {
+          "start": 3863,
+          "end": 3873,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 14545,
+          "end": 14555,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/positionEdits.ts": {
+      "originalSha256": "e3e52820cc649b99b606c8623731eb63d4af7c511be4aaf01b7319c17d4661a5",
+      "replacements": [
+        {
+          "start": 13962,
+          "end": 13980,
+          "text": "__avcClock.setInterval",
+          "original": "target.setInterval"
+        },
+        {
+          "start": 14016,
+          "end": 14036,
+          "text": "__avcClock.clearInterval",
+          "original": "target.clearInterval"
+        },
+        {
+          "start": 14112,
+          "end": 14132,
+          "text": "__avcClock.clearInterval",
+          "original": "target.clearInterval"
+        }
+      ]
+    },
+    "packages/core/src/runtime/proxyWait.ts": {
+      "originalSha256": "f7fa3130dfe05d671a605f85c96af4a0f7c8553828d1a4c2b4939e483bdd9ea4",
+      "replacements": [
+        {
+          "start": 376,
+          "end": 381,
+          "text": "__avcClock.fetch",
+          "original": "fetch"
+        },
+        {
+          "start": 809,
+          "end": 819,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        }
+      ]
+    },
+    "packages/core/src/runtime/vfx.ts": {
+      "originalSha256": "0bdde1ef3ea785754a5f4f99da3d8d8b988dab939ac9de0aa6bcaca8d0dce4f6",
+      "replacements": [
+        {
+          "start": 50151,
+          "end": 50163,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 50476,
+          "end": 50486,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 50866,
+          "end": 50887,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "requestAnimationFrame"
+        },
+        {
+          "start": 50894,
+          "end": 50915,
+          "text": "__avcClock.requestAnimationFrame",
+          "original": "requestAnimationFrame"
+        }
+      ]
+    },
+    "packages/core/src/runtime/webAudioTransport.ts": {
+      "originalSha256": "f2c6ae033346ee5fa8114b4a5f40786eb4aa71b5a3b8ba9c9585127d8da8a18f",
+      "replacements": [
+        {
+          "start": 8641,
+          "end": 8653,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        },
+        {
+          "start": 8807,
+          "end": 8817,
+          "text": "__avcClock.setTimeout",
+          "original": "setTimeout"
+        },
+        {
+          "start": 10598,
+          "end": 10603,
+          "text": "__avcClock.fetch",
+          "original": "fetch"
+        },
+        {
+          "start": 35634,
+          "end": 35646,
+          "text": "__avcClock.clearTimeout",
+          "original": "clearTimeout"
+        }
+      ]
+    }
+  }
+}

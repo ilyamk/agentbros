@@ -1,0 +1,59 @@
+name: ai-triage
+
+on:
+  workflow_run:
+    workflows: [pr-intake]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Pull request number for maintainer-requested triage
+        required: true
+        type: number
+
+permissions: {}
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: { contents: write, actions: read, pull-requests: write }
+    # TRIAGE_ENABLED is a repository variable: environment variables are not visible to a job-level `if`.
+    # While it is unset, no job requests the `triage` environment or queues in the spend-ledger group.
+    if: vars.TRIAGE_ENABLED == 'true' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'))
+    environment: triage
+    concurrency:
+      group: triage-spend-ledger
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Judge data only with the configured caps
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRIAGE_ANTHROPIC_API_KEY: ${{ secrets.TRIAGE_ANTHROPIC_API_KEY }}
+          TRIAGE_OPENAI_API_KEY: ${{ secrets.TRIAGE_OPENAI_API_KEY }}
+          TRIAGE_OPENROUTER_API_KEY: ${{ secrets.TRIAGE_OPENROUTER_API_KEY }}
+        # Review material is rebuilt from REST facts for the current head; no intake artefact is downloaded.
+        run: |
+          mkdir -p out
+          pnpm github:triage-budget --mode pr > out/triage-result.json
+      - name: Apply advisory labels only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          PR_NUMBER: ${{ inputs.pr }}
+        run: |
+          if [ -n "$PR_NUMBER" ]; then
+            pnpm github:triage --pr "$PR_NUMBER" --artefact out/triage-result.json
+          else
+            pnpm github:triage --run "$RUN_ID" --artefact out/triage-result.json
+          fi

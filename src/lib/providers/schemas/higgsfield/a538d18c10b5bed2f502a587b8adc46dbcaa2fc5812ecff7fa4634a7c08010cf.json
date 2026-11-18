@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "endpoint": "kling-video/v3.0/4k/image-to-video",
+  "title": "Kling 3.0 — 4K · Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/kling-3/4k-image-to-video.md",
+  "usageNotes": [
+    "image_url is the first frame; last_image_url optionally sets the final frame.",
+    "Always include a non-empty top-level prompt, including when using multi_prompt. Keep it within 2,500 characters; longer prompts are truncated.",
+    "For custom shots, set multi_shots to true and provide 1–6 multi_prompt objects. Each object needs prompt (at most 512 characters) and duration (a positive integer from 1 to 15 seconds).",
+    "Custom-shot durations are summed for generation and billing; the top-level duration does not override that sum. With multi_shots enabled and no custom shots, the top-level duration is retained.",
+    "Native audio uses sound: on or off and defaults to on.",
+    "elements contains Kling element IDs as decimal strings. Each ID must belong to the account making the request; arbitrary provider IDs are rejected.",
+    "The example.com media URLs are placeholders. Replace them with public HTTPS URLs to your own media before submitting."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Kling 3.0 Playground",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "sound": {
+        "enum": [
+          "on",
+          "off"
+        ],
+        "type": "string",
+        "title": "Generate sound",
+        "default": "on"
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 3
+      },
+      "elements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "cfg_scale": {
+        "type": "number",
+        "title": "CFG Scale",
+        "default": 0.5,
+        "maximum": 1,
+        "minimum": 0,
+        "multipleOf": 0.01
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "multi_shots": {
+        "type": "boolean",
+        "default": false
+      },
+      "multi_prompt": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "prompt": {
+              "type": "string",
+              "maxLength": 512
+            },
+            "duration": {
+              "type": "integer",
+              "maximum": 15,
+              "minimum": 1
+            }
+          }
+        },
+        "maxItems": 6,
+        "minItems": 0
+      },
+      "last_image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

@@ -1,0 +1,136 @@
+{
+  "v": 1,
+  "projects": [
+    {
+      "id": "promo-acme",
+      "route": "film",
+      "title": "Acme launch promo",
+      "filmType": "promo",
+      "playbook": "product-promo",
+      "step": "build",
+      "stepTitle": "Build",
+      "stepStatus": "ready",
+      "activeAgent": {
+        "name": "motion-engineer",
+        "role": "owner",
+        "since": "2026-11-17T09:12:00Z"
+      },
+      "waiting": 1,
+      "control": "running",
+      "spentUsd": 3.1,
+      "ceilingUsd": 10,
+      "latestRender": {
+        "root": "out",
+        "path": "scenes/scene-3.mp4",
+        "kind": "video",
+        "label": "Scene 3",
+        "renderedAt": "2026-11-17T09:09:00Z",
+        "sourceHash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "stale": true,
+        "durationSec": 4.2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30
+      },
+      "updatedAt": "2026-11-17T09:18:00Z"
+    },
+    {
+      "id": "talk-recut",
+      "route": "footage",
+      "step": "4-approve",
+      "stepTitle": "Approval of the edit hash",
+      "stepStatus": "awaiting-gate",
+      "waiting": 1,
+      "control": "running",
+      "spentUsd": 0.42,
+      "ceilingUsd": 2,
+      "updatedAt": "2026-11-17T09:40:00Z"
+    },
+    {
+      "id": "empty-project",
+      "route": "film",
+      "waiting": 0,
+      "control": "running",
+      "spentUsd": 0,
+      "updatedAt": "2026-11-17T09:00:00Z"
+    }
+  ],
+  "waiting": [
+    {
+      "v": 1,
+      "id": "dec-narration-quote",
+      "project": "promo-acme",
+      "kind": "quote",
+      "step": "narration",
+      "title": "Narration quote",
+      "summary": "3 takes, 41 s total. The agent makes the takes after your yes.",
+      "recommendation": {
+        "by": "narrator-director",
+        "text": "Voice 2 matches the brief's warm, direct tone."
+      },
+      "bindTo": [
+        {
+          "path": "pipeline/narrator-direction.json",
+          "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        }
+      ],
+      "quote": {
+        "amountUsd": 1.4,
+        "provider": "elevenlabs",
+        "endpoint": "eleven_v3",
+        "maxAdmissibleUsd": 6.9,
+        "budgetAfterUsd": 4.5,
+        "ceilingUsd": 10,
+        "quoteHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "summary": "3 takes, 41 s"
+      },
+      "options": [
+        {
+          "id": "approve",
+          "label": "Approve",
+          "argv": [
+            "pnpm",
+            "film:approve",
+            "--project",
+            "promo-acme",
+            "--step",
+            "narration",
+            "--answer",
+            "<words>",
+            "--expect",
+            "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          ],
+          "consequential": true
+        },
+        {
+          "id": "change",
+          "label": "Change",
+          "argv": [
+            "pnpm",
+            "feedback",
+            "--project",
+            "promo-acme",
+            "--step",
+            "narration",
+            "--answer",
+            "<words>"
+          ]
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-17T09:08:00Z"
+    }
+  ],
+  "monthSpentUsd": 3.52,
+  "recentDeliveries": [
+    {
+      "project": "spring-sale",
+      "media": {
+        "root": "out",
+        "path": "final/spring-sale-vertical.mp4",
+        "kind": "video"
+      },
+      "checkedAt": "2026-11-16T17:00:00Z"
+    }
+  ]
+}

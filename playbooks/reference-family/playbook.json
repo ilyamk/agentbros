@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "id": "reference-family",
+  "title": "Reference family",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Use one pinned reference blueprint to adapt the method to several independently sourced products.",
+  "triggers": {
+    "en": [
+      "reference family",
+      "same format for products",
+      "five products",
+      "same reference for",
+      "apply this reference to",
+      "one reference for several products",
+      "same blueprint",
+      "same template for each product",
+      "for each of our products",
+      "for every product",
+      "several products",
+      "multiple products",
+      "same style for all products",
+      "whole product line",
+      "reference's method",
+      "one reference",
+      "reference blueprint",
+      "family of product videos"
+    ],
+    "ru": [
+      "семейство видео по референсу",
+      "для пяти продуктов",
+      "один формат для продуктов",
+      "по одному референсу",
+      "этот референс для каждого",
+      "по этому референсу для",
+      "для каждого продукта",
+      "для каждого товара",
+      "для нескольких продуктов",
+      "для нескольких товаров",
+      "один шаблон для",
+      "по одному шаблону",
+      "в одном стиле для всех",
+      "для всей линейки",
+      "серия роликов по референсу"
+    ],
+    "zh": [
+      "同一个参考",
+      "同一参考",
+      "按这个参考",
+      "照着这个参考",
+      "同一个模板",
+      "同一模板",
+      "套用模板",
+      "套这个模板",
+      "同款模板",
+      "同样的格式",
+      "同一种风格",
+      "统一风格",
+      "多个产品",
+      "几个产品",
+      "每个产品",
+      "每款产品",
+      "五个产品",
+      "几款产品",
+      "多款产品",
+      "产品线",
+      "系列产品",
+      "参考视频"
+    ],
+    "generic": [
+      "按这个参考",
+      "照着这个参考",
+      "参考视频",
+      "统一风格"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "one independent product film",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "campaign",
+    "scenario": "reference-family",
+    "start": "pnpm campaign:production --project <id> --action init --request <file>"
+  },
+  "alternatives": [],
+  "agents": [
+    "campaign-producer",
+    "creative-critic",
+    "fixer"
+  ],
+  "skills": [
+    "creative-strategy",
+    "copywriter",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "scenes",
+      "typography"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "campaign:production",
+    "campaign:next",
+    "campaign:brief",
+    "campaign:approve",
+    "campaign:execute",
+    "models:pick",
+    "asset:import",
+    "next",
+    "render",
+    "delivery"
+  ],
+  "read": [
+    "docs/campaign-production.md"
+  ],
+  "qa": [
+    "Every member has independently bound source facts, exact media and current output receipts.",
+    "Changed dialogue invalidates speech, word timing and dependent cues.",
+    "No model, human approval, invoice or publication rights are inferred from fixture success."
+  ],
+  "benchmarks": [
+    "campaign-reference-family"
+  ],
+  "intake": [
+    {
+      "ask": "Which exact variants or catalogue rows should be produced?",
+      "why": "Freeze the selected set before material and render work."
+    },
+    {
+      "ask": "Which materials and facts are authorised for reuse?",
+      "why": "Reuse pins bytes, rights and entity revisions rather than copying claims."
+    },
+    {
+      "ask": "What spending is authorised?",
+      "why": "No-spend is inherited by every task.",
+      "default": "No paid calls; use supplied or local assets and leave paid needs pending."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 1,
+        "max": 1200
+      },
+      "captions": "clean-sentence",
+      "note": "House production bounds; use the child playbook and requested placement for publication specifications."
+    }
+  ],
+  "variants": [],
+  "evidence": []
+}

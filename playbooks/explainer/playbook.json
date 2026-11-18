@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "id": "explainer",
+  "title": "Explainer",
+  "status": "ready",
+  "reviewedAt": "2026-11-16",
+  "summary": "Explain an idea, concept, process or data set with a voice, diagrams that build and a worked example: educational video, lesson, data story, 30 s to several minutes.",
+  "triggers": {
+    "en": [
+      "explainer",
+      "explain",
+      "explanation",
+      "educational video",
+      "lesson",
+      "data story",
+      "explain a concept",
+      "explained",
+      "in simple terms",
+      "how it works",
+      "why does",
+      "science video",
+      "infographic video",
+      "visualise the data",
+      "explainer video"
+    ],
+    "ru": [
+      "объясн",
+      "эксплейнер",
+      "урок",
+      "лекци",
+      "образовательн",
+      "научно-популяр",
+      "научпоп",
+      "инфографик",
+      "простыми словами",
+      "на пальцах",
+      "как работает",
+      "как устроен",
+      "дата-стори",
+      "визуализация данных"
+    ],
+    "zh": [
+      "科普",
+      "科普视频",
+      "科普动画",
+      "讲解",
+      "讲解视频",
+      "动画讲解",
+      "解释",
+      "原理",
+      "工作原理",
+      "通俗易懂",
+      "一分钟看懂",
+      "看懂",
+      "图解",
+      "信息图",
+      "数据可视化",
+      "数据故事",
+      "知识讲解",
+      "知识视频",
+      "讲清楚",
+      "讲明白",
+      "为什么",
+      "教学视频",
+      "一节"
+    ],
+    "generic": [
+      "为什么",
+      "教学视频"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the request is how to use a specific product, app or website step by step (tutorial, walkthrough, onboarding)",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "an animated film whose point is the motion and type, not teaching an idea (kinetic typography, logo, music-driven, abstract)",
+      "use": "motion-design"
+    },
+    {
+      "when": "the user recorded the lesson themselves and wants it cut, captioned or reframed",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a generated presenter, avatar or talking photo delivers the explanation to camera",
+      "use": "avatar-presenter"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "explainer",
+    "start": "pnpm film:init --project <id> --type explainer --playbook explainer --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "a source-backed lesson from supplied originals (narration, images or video, source files) with chapters and timed captions; nothing is designed or generated",
+      "route": {
+        "kind": "workflow",
+        "workflow": "education",
+        "start": "pnpm video:workflow --scenario education --action plan --request <file>"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "script-and-education",
+    "motion-and-typography",
+    "motion-library",
+    "captions-and-localization",
+    "sound-design-and-mix"
+  ],
+  "library": {
+    "categories": [
+      "data",
+      "kinetic"
+    ],
+    "blocks": [
+      "viz-scene",
+      "before-after-split",
+      "hero-stat-odometer",
+      "line-chart-glow-draw",
+      "ranked-bars-spring",
+      "donut-segment-sweep",
+      "network-light-up",
+      "ticker-card"
+    ]
+  },
+  "commands": [
+    "text:analyse",
+    "text:assist",
+    "voiceover:local",
+    "image:describe",
+    "viz:list",
+    "viz:prepare",
+    "viz:inspect",
+    "viz:preview",
+    "viz:render",
+    "viz:mount",
+    "viz:check",
+    "film:init",
+    "film:next",
+    "library:list",
+    "plan:check",
+    "motion:check",
+    "generate:voiceover",
+    "speech:local",
+    "sfx:cues",
+    "sfx:generate",
+    "captions:place",
+    "chart:inspect",
+    "video:workflow",
+    "video:longform",
+    "delivery",
+    "sfx:find-segment",
+    "audio:review",
+    "sfx:synth",
+    "voices",
+    "voices:manage",
+    "elevenlabs:capabilities",
+    "audio:transform",
+    "generate:dialogue"
+  ],
+  "read": [],
+  "stepRead": {
+    "truth": [
+      "docs/chart-evidence.md"
+    ],
+    "script": [
+      "docs/chart-evidence.md"
+    ],
+    "look": [
+      "docs/visualisations.md"
+    ],
+    "beat-sheet": [
+      "docs/visualisations.md",
+      "design-reference/techniques/layout-carry.md",
+      "design-reference/techniques/building-caption.md"
+    ],
+    "animatic": [
+      "docs/visualisations.md"
+    ],
+    "build": [
+      "docs/visualisations.md",
+      "docs/chart-evidence.md",
+      "design-reference/techniques/layout-carry.md",
+      "design-reference/techniques/building-caption.md"
+    ]
+  },
+  "qa": [
+    "A concrete worked example comes before each general rule, formula or definition",
+    "Text inside the picture is labels of one to three words beside the part they name, not the narration printed out (captions are a separate layer)",
+    "Narration pace measured from the voice with speech:local and recorded in the project",
+    "The film ends on a retrieval question or prediction the viewer answers before the answer is shown, not on a recap alone",
+    "Each segment answers one question and runs under 6 minutes; a longer film is chaptered"
+  ],
+  "benchmarks": [
+    "explainer"
+  ],
+  "intake": [
+    {
+      "ask": "Which question does the film answer, in the words your audience would ask it?",
+      "why": "The question is the proposition and each segment answers one; without it there is no structure."
+    },
+    {
+      "ask": "Which sources back it: papers, articles, notes or data files I can read?",
+      "why": "Every number and causal claim needs a status in the truth step; with no source it stops and names what it needs."
+    },
+    {
+      "ask": "What does the viewer already know, and which terms are new to them?",
+      "why": "New terms are named and shown before use (pre-training); known ones are not explained again.",
+      "default": "A curious adult with no training in the field"
+    },
+    {
+      "ask": "How long, and where will it be shown: YouTube, a course, a site, a talk or a deck?",
+      "why": "Placement sets length, chapters, captions and the ending (profiles); a film in a talk has no call to action.",
+      "default": "2-4 min, landscape, for YouTube"
+    },
+    {
+      "ask": "Is there a look or a visual metaphor to keep, such as a brand or a series style?",
+      "why": "One metaphor and one look hold through the film and a series.",
+      "default": "The design-director proposes one metaphor and proves it on the hardest diagram"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 360
+      },
+      "captions": "clean-sentence",
+      "note": "Segments under 6 min (Guo et al.); longer films are chaptered: first timestamp 00:00, three or more chapters, each at least 10 s. SRT sidecar for the upload."
+    },
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "vertical",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 90
+      },
+      "captions": "clean-sentence",
+      "note": "One idea or one chart as a post or in-stream ad (90 s cap; 15-30 s fits every feed placement); SRT captions text only; LinkedIn lists less than 30 fps: verify at upload."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 300
+      },
+      "captions": "clean-sentence",
+      "note": "Page or course embed: autoplay is muted, so captions are burned or the player's track is on; Wistia engagement holds from 1 to 5 min and falls after."
+    },
+    {
+      "platform": "presentation",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 180
+      },
+      "captions": "none",
+      "note": "Plays in a deck or behind a speaker: no burned captions unless it plays silent, no call to action, the last diagram state holds as the slide. Length band is a house rule, a starting point."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "viz-scene",
+      "before-after-split",
+      "line-chart-glow-draw",
+      "hero-stat-odometer",
+      "kinetic-split-reveal"
+    ],
+    "style": "warm-editorial",
+    "note": "A change, a trend and the one number to remember, with labels that build beside the part they name. warm-editorial suits essays and education with long holds; a brand or series look overrides it."
+  },
+  "variants": [
+    {
+      "id": "data-report",
+      "title": "Data story or report video",
+      "triggers": {
+        "en": [
+          "data report",
+          "report video",
+          "annual report video",
+          "survey results",
+          "by the numbers",
+          "year in numbers",
+          "quarterly report",
+          "sales report",
+          "with charts"
+        ],
+        "ru": [
+          "отчет в видео",
+          "видеоотчет по данным",
+          "итоги года в цифрах",
+          "результаты исследования",
+          "отчет в цифрах",
+          "отчет о продажах",
+          "за квартал",
+          "с графиками"
+        ],
+        "zh": [
+          "数据报告",
+          "年度报告",
+          "季度报告",
+          "销售报告",
+          "调研结果",
+          "用数据说话",
+          "数字回顾",
+          "图表"
+        ]
+      },
+      "changes": "A data file is a required source (--product data.json or .csv). Each on-screen number states subject, period and basis, with a source line. One chart is carried through its states (layout carry) with data blocks; chart:inspect checks charts against their records in workflow and template projects. The story is what changed and why; it ends on the one number to remember (hero-stat-odometer)."
+    },
+    {
+      "id": "course-lesson",
+      "title": "Designed course lesson",
+      "triggers": {
+        "en": [
+          "designed course lesson",
+          "animated course",
+          "e-learning module",
+          "animated lesson"
+        ],
+        "ru": [
+          "анимированный курс",
+          "модуль курса в анимации",
+          "нарисованный урок",
+          "анимированный урок"
+        ],
+        "zh": [
+          "动画课程",
+          "课程动画",
+          "动画微课",
+          "微课",
+          "在线课程",
+          "网课"
+        ]
+      },
+      "changes": "A designed, animated lesson in a series (a lesson the user filmed is footage-edit). The learning objective is stated in the first 10 s; prerequisite terms come first; 3-6 min per lesson; each lesson ends on a retrieval question, a held pause, then the answer. Chapters planned in the beat sheet (video:longform assembles them when built through the education workflow); captions plus SRT for the course platform; one look and one recap pattern across the series."
+    }
+  ]
+}

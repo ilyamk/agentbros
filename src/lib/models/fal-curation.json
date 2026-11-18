@@ -1,0 +1,572 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "endpoint": "fal-ai/bytedance/omnihuman/v1.5",
+      "category": "image-to-video",
+      "roles": ["avatar"],
+      "notes": "Audio-driven presenter from image_url and audio_url. The speech pack pins the timed take. Offline contract verification, with live quality and lip-sync still pending.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-18"
+    },
+    {
+      "endpoint": "blackforestlabs/flux-3/klein/base/trainer",
+      "category": "training",
+      "roles": [
+        "training"
+      ],
+      "notes": "Active FLUX 3 Klein is the newest indexed FLUX trainer family, with a complete schema and lora_file/config_file outputs; its training price remains unknown. Existing tracked FLUX.2 trainers remain available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bria/ad-delayer",
+      "category": "image-to-json",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Bria Ad Delayer accepts a public image URL and returns an open JSON object with a complete schema; no versioned successor is indexed. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bria/fibo-lite/generate/structured_prompt",
+      "category": "text-to-json",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Fibo Lite structured-prompt endpoint accepts text or an image URL and returns typed JSON with a complete schema; the indexed Fibo variants have no newer numbered version. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.5/draft/complete",
+      "category": "video-to-video",
+      "roles": [
+        "fast-draft"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.5/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.5/reference-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "bytedance/seedance-2.5/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "hero"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "elevenlabs/sound-effects/v3",
+      "category": "text-to-audio",
+      "roles": [
+        "sfx"
+      ],
+      "notes": "Active non-retiring successor to the retiring ElevenLabs SFX v2 family; complete cached schema. SFX only, separate from the music allow-list. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "elevenlabs/tts/eleven-v4",
+      "category": "text-to-speech",
+      "roles": [
+        "voice"
+      ],
+      "notes": "Active newest full ElevenLabs TTS version in the catalogue; complete schema and optional timing output. Timestamp descriptions disagree about granularity, so accept only explicitly labelled word timing. No price record.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/aura-sr",
+      "category": "image-to-image",
+      "roles": [
+        "upscale"
+      ],
+      "notes": "Existing upscale command endpoint; retained for compatibility. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/birefnet",
+      "category": "image-to-image",
+      "roles": [
+        "cutout"
+      ],
+      "notes": "Existing rmbg command endpoint; retained for compatibility. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/birefnet/v2",
+      "category": "image-to-image",
+      "roles": [
+        "cutout"
+      ],
+      "notes": "Newest numbered BiRefNet image endpoint (v2); adds Dynamic model and resolution controls. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/bytedance/seed/v2/mini",
+      "category": "llm",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Seed V2 Mini is the newest indexed Seed vendor version; accepts image and video URLs with a complete schema. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/deepfilternet3",
+      "category": "audio-to-audio",
+      "roles": [
+        "edit"
+      ],
+      "notes": "Active non-retiring DeepFilterNet 3 speech enhancement route, newest indexed family version; complete cached schema. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/demucs",
+      "category": "audio-to-audio",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Retains the Demucs family already used by audio:stems; active non-retiring fal route with complete cached schema. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/music",
+      "category": "text-to-audio",
+      "roles": [
+        "music"
+      ],
+      "notes": "Music allow-list; inspect its duration and input contract.",
+      "source": "src/lib/providers/fal-music.ts",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/speech-to-text/scribe-v2",
+      "category": "speech-to-text",
+      "roles": [
+        "transcript"
+      ],
+      "notes": "Active newest queued Scribe variant in the catalogue; complete schema, native words and speaker labels. No price record; explicit planning bound required.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/voice-changer",
+      "category": "audio-to-audio",
+      "roles": [
+        "voice"
+      ],
+      "notes": "Active non-retiring ElevenLabs speech-to-speech route with selectable v2 models and complete cached schema. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/caption",
+      "category": "vision",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Florence 2 Large caption endpoint with image URL input, a complete schema and a text-bearing JSON result; no newer Florence caption version is indexed. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/flux-2-pro",
+      "category": "text-to-image",
+      "roles": [
+        "hero",
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
+      "category": "3d-to-3d",
+      "roles": [
+        "mesh"
+      ],
+      "notes": "Latest numbered Hunyuan smart-topology family version (3.1), active and not retiring; covers retopology. Input and output schemas have no unsupported keywords. Output File objects describe url and nullable content_type (only url is required). No dated priced unit is available; execution needs an authorised positive bound. Partner result hosts cannot be established offline and may be non-fal; execution refuses untrusted hosts by design. Offline contract coverage only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/image-apps-v2/outpaint",
+      "category": "image-to-image",
+      "roles": [
+        "outpaint"
+      ],
+      "notes": "Newest numbered image-apps outpaint family (v2); non-FLUX directional expansion with schema-bounded margins. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/reference",
+      "category": "video-to-video",
+      "roles": [
+        "reference",
+        "edit"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/kling-video/v3/pro/image-to-video",
+      "category": "image-to-video",
+      "roles": [
+        "hero",
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/kling-video/v3/pro/text-to-video",
+      "category": "text-to-video",
+      "roles": [
+        "hero"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/latentsync",
+      "category": "video-to-video",
+      "roles": [
+        "lipsync"
+      ],
+      "notes": "Existing lipsync command alternative; retained for compatibility. The non-standard step keyword is a UI hint, not multipleOf. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/lyria2",
+      "category": "text-to-audio",
+      "roles": [
+        "music"
+      ],
+      "notes": "Music allow-list; inspect its duration and input contract.",
+      "source": "src/lib/providers/fal-music.ts",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/minimax-music/v2.6",
+      "category": "text-to-audio",
+      "roles": [
+        "music"
+      ],
+      "notes": "Music allow-list; inspect its duration and input contract.",
+      "source": "src/lib/providers/fal-music.ts",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/qwen-3-tts/text-to-speech/1.7b",
+      "category": "text-to-speech",
+      "roles": [
+        "voice"
+      ],
+      "notes": "Active Qwen3 1.7B variant with complete schema and explicit language enum; selected alongside v4 to exercise language refusal and missing alignment. No price record.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/qwen-image-edit/inpaint",
+      "category": "image-to-image",
+      "roles": [
+        "inpaint"
+      ],
+      "notes": "Latest explicit inpaint route in the Qwen Image Edit family; non-FLUX mask-based editing. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/seedvr/upscale/image",
+      "category": "image-to-image",
+      "roles": [
+        "upscale"
+      ],
+      "notes": "SeedVR2 is a newer dated image-upscale option than the retained Aura SR endpoint; latest standard image route in this family. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/seedvr/upscale/video",
+      "category": "video-to-video",
+      "roles": [
+        "upscale"
+      ],
+      "notes": "Latest standard SeedVR2 video-upscale route; video-to-video with a complete scalar video input schema. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/music/text-to-audio",
+      "category": "text-to-audio",
+      "roles": [
+        "music"
+      ],
+      "notes": "Music allow-list; inspect its duration and input contract.",
+      "source": "src/lib/providers/fal-music.ts",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/stable-audio-3/small/sfx/text-to-audio",
+      "category": "text-to-audio",
+      "roles": [
+        "sfx"
+      ],
+      "notes": "Active non-retiring Stable Audio 3 SFX-specific post-trained route, newer than 2.5; complete cached schema. Music route remains separate. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/sync-lipsync",
+      "category": "video-to-video",
+      "roles": [
+        "lipsync"
+      ],
+      "notes": "Existing lipsync command default endpoint; retained for compatibility. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/sync-lipsync/v3",
+      "category": "video-to-video",
+      "roles": [
+        "lipsync"
+      ],
+      "notes": "Newest numbered Sync lipsync family endpoint (v3). Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "fal-ai/wizper",
+      "category": "speech-to-text",
+      "roles": [
+        "transcript"
+      ],
+      "notes": "Active Whisper v3 endpoint with complete schema and segment timestamps; complements native-word Scribe without claiming word precision. No price record.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "google/nano-banana-2.1",
+      "category": "text-to-image",
+      "roles": [
+        "hero",
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "google/nano-banana-2.1/edit",
+      "category": "image-to-image",
+      "roles": [
+        "edit",
+        "reference"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "meshy/n1/retexture",
+      "category": "3d-to-3d",
+      "roles": [
+        "mesh"
+      ],
+      "notes": "Current named Meshy N1 reference-image texturing family, active and not retiring; distinct from the numbered standard texture family. Input and output schemas have no unsupported keywords. Output File objects describe url and nullable content_type (only url is required). No dated priced unit is available; execution needs an authorised positive bound. Partner result hosts cannot be established offline and may be non-fal; execution refuses untrusted hosts by design. Offline contract coverage only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "meshy/rigging",
+      "category": "3d-to-3d",
+      "roles": [
+        "mesh"
+      ],
+      "notes": "Current standalone Meshy rigging route, active and not retiring, with skeleton selection and animation controls in its schema. Input and output schemas have no unsupported keywords. Output File objects describe url and nullable content_type (only url is required). No dated priced unit is available; execution needs an authorised positive bound. Partner result hosts cannot be established offline and may be non-fal; execution refuses untrusted hosts by design. Offline contract coverage only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "meshy/v7.1/image-to-3d",
+      "category": "image-to-3d",
+      "roles": [
+        "mesh"
+      ],
+      "notes": "Latest numbered Meshy standard generation version (7.1), active and not retiring; replaces the retiring v7 candidate. No existing harness-specific 3D adapter to preserve. Input and output schemas have no unsupported keywords. Output File objects describe url and nullable content_type (only url is required). No dated priced unit is available; execution needs an authorised positive bound. Partner result hosts cannot be established offline and may be non-fal; execution refuses untrusted hosts by design. Offline contract coverage only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "meshy/v7.1/text-to-3d",
+      "category": "text-to-3d",
+      "roles": [
+        "mesh"
+      ],
+      "notes": "Latest numbered Meshy standard generation version (7.1), active and not retiring; replaces the retiring v7 candidate. No existing harness-specific 3D adapter to preserve. Input and output schemas have no unsupported keywords. Output File objects describe url and nullable content_type (only url is required). No dated priced unit is available; execution needs an authorised positive bound. Partner result hosts cannot be established offline and may be non-fal; execution refuses untrusted hosts by design. Offline contract coverage only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "minimax/music-3",
+      "category": "text-to-audio",
+      "roles": [
+        "music"
+      ],
+      "notes": "Music allow-list; inspect its duration and input contract.",
+      "source": "src/lib/providers/fal-music.ts",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "mirelo-ai/sfx2.0/video-to-audio",
+      "category": "video-to-audio",
+      "roles": [
+        "foley"
+      ],
+      "notes": "Active non-retiring SFX2.0 speech-aware foley route; explicit duration and sample count with complete cached schema. Selection uses local catalogue/schema evidence, not a quality claim; prices are reviewed at quote time.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-5-super/video",
+      "category": "video-to-text",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Nemotron 3.5 Super is the newest indexed Nemotron version; video URL to text/usage with a complete schema. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-5-super/vision",
+      "category": "image-to-text",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Nemotron 3.5 Super is the newest indexed Nemotron version; image URL to text/usage with a complete schema. No priced unit is available. Offline contract verification only; no quality or live acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "nvidia/nemotron-3-nano-omni/audio",
+      "category": "audio-to-text",
+      "roles": [
+        "analysis"
+      ],
+      "notes": "Active Nemotron 3 Nano Omni audio variant with complete schema and text/usage output. Prose only, no timed transcript; generate:model only. No price record.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "openai/gpt-image-2.5/flare/edit",
+      "category": "image-to-image",
+      "roles": [
+        "edit",
+        "text-render"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "openai/gpt-image-2.5/flare/text-to-image",
+      "category": "text-to-image",
+      "roles": [
+        "hero",
+        "text-render"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "resemble-ai/chatterboxhd/speech-to-speech",
+      "category": "speech-to-speech",
+      "roles": [
+        "voice"
+      ],
+      "notes": "Active ChatterboxHD speech-to-speech endpoint with complete schema and selectable or reference target voice; generate:model only. No price record.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "topaz/interpolate/video",
+      "category": "video-to-video",
+      "roles": [
+        "frame-interpolation"
+      ],
+      "notes": "Dated 2026-08-11, newer than the cached FILM interpolation route; explicit target FPS and slowdown schema. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "veed/avatars/audio-to-video",
+      "category": "audio-to-video",
+      "roles": [
+        "avatar"
+      ],
+      "notes": "Schema-complete audio-to-video avatar route with explicit avatar IDs; schema-less alternatives cannot be verified. Active, no retirement date, complete supported schema. No current catalogue price record; require a quote or an authorised positive planning bound. Offline contracts only; no quality or live-acceptance claim.",
+      "source": "docs/fal-catalogue.md#verified-endpoints",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "openai/gpt-image-2.6/flare/edit",
+      "category": "image-to-image",
+      "roles": [
+        "edit",
+        "text-render"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    },
+    {
+      "endpoint": "openai/gpt-image-2.6/flare/text-to-image",
+      "category": "text-to-image",
+      "roles": [
+        "hero",
+        "text-render"
+      ],
+      "notes": "Creative candidate; inspect exact capabilities. This is not a quality or price ranking.",
+      "source": "docs/production-model-routing.md",
+      "reviewedAt": "2026-11-15"
+    }
+  ]
+}

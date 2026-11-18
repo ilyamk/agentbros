@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "id": "tools-transnetv2-sou-ek-and-loko-transnet-v2-an-effective-deep-network-f9c661e0",
+  "section": "tools",
+  "order": 150,
+  "tool": "TransNetV2 (Souček and Lokoč, \"TransNet V2: An effective deep network architecture for fast shot transition detection\", arXiv 2008.04838; https://github.com/soCzech/TransNetV2, repository LICENSE MIT; the weights are distributed in that repository with no separate licence statement; read 2026-11-13) through the PyTorch port `transnetv2-pytorch` 1.0.5 (https://github.com/allenday/transnetv2_pytorch, MIT per its LICENSE and PyPI metadata; the wheel ships the converted weights) on torch 2.15.0, with PySceneDetect 0.7.2 `ThresholdDetector`",
+  "role": "Shot transition candidates for `footage:shots` (single-frame head for cuts, all-frame head for dissolves), forced to CPU because the port documents different results on MPS; weights stay in the uv cache, never committed"
+}

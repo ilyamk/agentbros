@@ -1,0 +1,12 @@
+# Formatting covers first-party TypeScript and JavaScript only (pnpm format / format:check).
+node_modules/
+vendor/
+public/
+out/
+memory/
+src/projects/
+ui-sources/
+**/fixtures/**
+bench/
+# Source text is asserted by tests/native-composition-instances-profile-routing.test.ts
+scripts/workers/html-capture.ts

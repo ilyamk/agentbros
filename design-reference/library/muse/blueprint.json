@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "muse",
+  "format": {
+    "width": 977,
+    "height": 640,
+    "fps": 30
+  },
+  "durationSec": 34.833,
+  "slots": [
+    {
+      "id": "b01",
+      "role": "hook: category promise",
+      "startSec": 0,
+      "durationSec": 2.6,
+      "visualRecipe": "Near-white tinted ground (light value, low saturation, two soft lighter radial blooms). A centred medium-weight sans line starts about 0.70 of frame width and 0.12 high and ends as a two-line block about 0.53 wide. The defining words carry the single accent colour; the others stay ink. End state: the line is complete and a full-frame soft texture from the incoming shot rises over it from below.",
+      "motionRecipe": "Words pop whole at about 0.07-0.17 s intervals (a single frame each, 2-3 frame settle); the line re-centres on every word. Pull back about 30% over 1.1 s, sine-like. From 1.6 s the covering layer rises from the bottom; the type exits up and out on power2.inOut.",
+      "soundRecipe": "Music starts at full energy on frame 0 (a steady pulse near 112 BPM in the reference). No effects; the word pops ride the pulse loosely and may fall between beats.",
+      "techniqueIds": [
+        "t01",
+        "t02"
+      ],
+      "copySlot": {
+        "purpose": "Category promise naming the product's kind, with 2-3 accent words",
+        "maxWords": 9
+      }
+    },
+    {
+      "id": "b02",
+      "role": "world: establishing",
+      "startSec": 2.6,
+      "durationSec": 2.333,
+      "visualRecipe": "The product's world as a designed 3D place: the hero character inside the world's signature set piece, subject centred about 0.55 of width, 4-6 tool icons in orbit. End state: framed tight on the character.",
+      "motionRecipe": "Revealed from under the covering layer. A slow push that accelerates (circ.in) for the last 4-5 frames into a hard cut.",
+      "soundRecipe": "Same bed. The cut lands within 1-2 frames of a beat.",
+      "techniqueIds": [
+        "t03",
+        "t04"
+      ]
+    },
+    {
+      "id": "b03",
+      "role": "intimacy: the character at work",
+      "startSec": 4.933,
+      "durationSec": 1.467,
+      "visualRecipe": "Low over-the-shoulder close-up of the hero at work, warm rim light from a single side, the orbiting icons out of focus behind.",
+      "motionRecipe": "Continues the incoming push and brakes, speed halving each frame for about 4 frames. Exit: bleach to the ground colour over 8 frames (sine.inOut), from a single side first.",
+      "soundRecipe": "Same bed.",
+      "techniqueIds": [
+        "t04",
+        "t05"
+      ]
+    },
+    {
+      "id": "b04",
+      "role": "invitation",
+      "startSec": 6.4,
+      "durationSec": 1.133,
+      "visualRecipe": "A two-word imperative centred on the near-white ground, ink only, about 0.45 wide and 0.13 high.",
+      "motionRecipe": "First word hard-in on the frame after the bleach, second word about 0.23 s later; slow push-in.",
+      "soundRecipe": "The bed thins at this point, so let the music drop its transients for about a second around the next slot.",
+      "techniqueIds": [
+        "t05"
+      ],
+      "copySlot": {
+        "purpose": "The single action the product asks of the viewer",
+        "maxWords": 2
+      }
+    },
+    {
+      "id": "b05",
+      "role": "reveal: character pops from the gap",
+      "startSec": 7.533,
+      "durationSec": 0.9,
+      "visualRecipe": "The character's portrait in a circle, 0.32 of width, centred; the two words cropped at both frame edges.",
+      "motionRecipe": "A dot appears in the word gap, then the disc pops to full size in a single frame while the words fly to the edges and drift out on expo.out over about 0.4 s. Exit: hard cut to the next layout.",
+      "soundRecipe": "Music break (few transients). No effect needed; the pop is the accent.",
+      "techniqueIds": [
+        "t06",
+        "t07"
+      ]
+    },
+    {
+      "id": "b06",
+      "role": "proof: the assistant proposes a plan",
+      "startSec": 8.433,
+      "durationSec": 6.5,
+      "visualRecipe": "The real product thread at reading scale on the near-white ground: small avatar with a name pill at y 0.28, user bubble on the right in pale accent tint, assistant bubbles and cards on the left in white with soft shadows. Text about 0.035-0.045 of frame height. End state: a card with a short list and an offer to act.",
+      "motionRecipe": "Hard cut in on the shrunken avatar (3-frame settle). Messages land whole and settle in 3 frames, 0.5-1.5 s apart. The typing indicator stretches into a bar that the answer card wipes through (0.67 s, power3.out). Slow upward drift as the column grows.",
+      "soundRecipe": "The bed resumes. Optional soft pop per message landing at 0.3-0.5 level.",
+      "techniqueIds": [
+        "t07",
+        "t08",
+        "t09"
+      ],
+      "copySlot": {
+        "purpose": "A real user question and the product's real answer with a short list",
+        "maxWords": 45
+      }
+    },
+    {
+      "id": "b07",
+      "role": "delegation: the user types",
+      "startSec": 14.933,
+      "durationSec": 3.7,
+      "visualRecipe": "The input field at hero scale: text about 0.11 of frame height, bar running off the left edge, soft accent glow behind the caret.",
+      "motionRecipe": "Camera scrolls off the previous card (power2.out, 0.5 s) as the field slides in from the right with a cursor that becomes an I-beam. Type at about 1.6 frames per character; the frame tracks the caret linearly. Newest word in accent, settling to ink. Hold about 0.9 s after the last character.",
+      "soundRecipe": "Music break for the camera move; typing starts as the pulse returns. Optional key ticks at 0.2-0.3.",
+      "techniqueIds": [
+        "t10",
+        "t11"
+      ],
+      "copySlot": {
+        "purpose": "The user's delegating request, in their own voice",
+        "maxWords": 7
+      }
+    },
+    {
+      "id": "b08",
+      "role": "send",
+      "startSec": 18.633,
+      "durationSec": 1.1,
+      "visualRecipe": "The far end of the same bar: voice icon and a circular accent send button about 0.23 of width.",
+      "motionRecipe": "Hard reframe sideways along the bar, which keeps its band and drift; hold about 1 s.",
+      "soundRecipe": "Cut on a transient or a frame after it.",
+      "techniqueIds": [
+        "t12"
+      ]
+    },
+    {
+      "id": "b09",
+      "role": "handoff line",
+      "startSec": 19.733,
+      "durationSec": 3.4,
+      "visualRecipe": "The send circle becomes a portrait window, about 0.34 of width, centred. A two-line headline sits above and below it, the first line tucked behind the disc's top edge, the product name in accent. Line boxes about 0.51-0.55 wide, 0.17 high.",
+      "motionRecipe": "Button fill drains to the ground colour top-down in 5 frames; the character rises into the circle from below in 6 frames; words appear singly about 0.13-0.7 s apart. Push in about 12% to the end. Exit: fast push with blur, the type leaves top and bottom and the portrait floods to a glossy accent sphere (power2.inOut, about 0.25 s).",
+      "soundRecipe": "A transient on the drain; the flood breaks on a beat.",
+      "techniqueIds": [
+        "t13",
+        "t14"
+      ],
+      "copySlot": {
+        "purpose": "The brand promise of handing the job over, ending on the product name",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "b10",
+      "role": "proof: result and initiative",
+      "startSec": 23.133,
+      "durationSec": 5.3,
+      "visualRecipe": "Same thread grammar: the sphere becomes the header avatar; the request bubble, a short success answer with a tick, then a longer unprompted suggestion from the assistant.",
+      "motionRecipe": "Messages land whole and settle in 3 frames; about 1 s apart; slow drift. Exit: a circle about 0.25 of width opens in the middle and grows past the corners in about 0.57 s (power2.inOut).",
+      "soundRecipe": "The bed thins for about 2.5 s before the iris; the next section starts inside the iris.",
+      "techniqueIds": [
+        "t09",
+        "t13",
+        "t15"
+      ],
+      "copySlot": {
+        "purpose": "Confirmation that the delegated work is finished, plus a single proactive suggestion",
+        "maxWords": 30
+      }
+    },
+    {
+      "id": "b11",
+      "role": "breath: the world from above",
+      "startSec": 28.433,
+      "durationSec": 1.734,
+      "visualRecipe": "Top-down view of the same set piece, subject dead centre about 0.18 of width; no UI, no type.",
+      "motionRecipe": "Slow pull-back, power1.out, cubic-bezier(0.383, 0.602, 0.522, 0.679), about 1.2 s. Exit: the tagline wipes across it.",
+      "soundRecipe": "New musical section underneath; let it breathe.",
+      "techniqueIds": [
+        "t15",
+        "t16"
+      ]
+    },
+    {
+      "id": "b12",
+      "role": "tagline",
+      "startSec": 30.167,
+      "durationSec": 1.8,
+      "visualRecipe": "A short tagline in the film's sans, accent colour at first, settling to a single centred line 0.63 wide and 0.14 high on the near-white ground, then ink.",
+      "motionRecipe": "Letters fly in from frame height (a single glyph spans the frame), sweep across in about 9 frames and settle to the line on expo.out by about 0.75 s. Re-colour accent to ink by about 0.7 s after entry; spacing opens from touching to normal. Then shrink and fade to about 25%.",
+      "soundRecipe": "Land the full-frame letters on the loudest hit of the track.",
+      "techniqueIds": [
+        "t17"
+      ],
+      "copySlot": {
+        "purpose": "Short tagline that names the benefit",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "b13",
+      "role": "brand mark",
+      "startSec": 31.967,
+      "durationSec": 2.866,
+      "visualRecipe": "A single accent-colour brush monogram centred on the near-white ground, about 0.18 wide and 0.21 high; nothing else.",
+      "motionRecipe": "Hard-in at full size with motion blur, then writes on its strokes while shrinking from about 0.35 to 0.14 of height in 0.47 s (expo.out). Holds still to the last frame; no fade.",
+      "soundRecipe": "The music ends about 0.45 s before the last frame and the mark holds over silence.",
+      "techniqueIds": [
+        "t18"
+      ]
+    }
+  ],
+  "rhythm": {
+    "bpm": 111.8,
+    "cutGrid": "No beat-locked cut grid: corrected boundaries hit beats at chance (0.25 against 0.30). Put pivots where the bed thins (about 7.7-8.6 s, 14.6-15.9 s, 26-28.5 s in the reference), land the type-spectacle wipe on the loudest hit, and give reading-scale UI 5-6.5 s holds and morphs 0.5-1.2 s. Of 12 boundaries, use only 3-4 hard cuts; the rest become morphs, wipes or camera moves."
+  },
+  "style": "High-key pastel world: near-white tinted ground, a single saturated accent, ink type, a warm tactile character in feature-animation 3D, and real product UI at reading and hero scale. A single circle carries the eye through every change. Centred medium-weight sans with the accent on the defining words.",
+  "transferRules": {
+    "keep": [
+      "A single recurring circle as the through-line: hero disc, avatar, send button, portrait window, sphere, iris",
+      "Two UI scales: the thread at reading scale for the product's work, the input at hero scale for the user's action",
+      "Only 3-4 hard cuts in 35 s; the rest become morphs, wipes and camera moves",
+      "Accelerate into a cut and brake out of it",
+      "Accent colour only on defining words; type centred; large empty ground",
+      "Pivots placed where the music thins; type spectacle on the loudest hit; the mark held still over the music's end, no fade",
+      "Words that open to reveal the thing they invoke"
+    ],
+    "mustChange": [
+      "branding",
+      "music",
+      "graphics",
+      "copy",
+      "character design",
+      "product UI (use the real product's own interface)",
+      "the world and its props",
+      "palette hue (keep the light-ground and single-accent structure)",
+      "monogram"
+    ]
+  }
+}

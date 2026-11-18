@@ -1,0 +1,120 @@
+[
+ {
+  "endpoints": [
+   "alibaba/wan-3.0-prime/reference-to-video"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per second of generated video.\n\n- Without video input: 480p: $0.0510; 720p: $0.1050; 1080p: $0.2100.\n- With video input: 480p: $0.1013; 720p: $0.2084; 1080p: $0.4341.\n\nTotal price = selected rate × output duration in seconds. Input video duration is not added to the billed duration."
+ },
+ {
+  "endpoints": [
+   "alibaba/wan-3.0/reference-to-video"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per second of generated video.\n\n- Without video input: 480p: $0.0375; 720p: $0.0750; 1080p: $0.1500.\n- With video input: 480p: $0.0747; 720p: $0.1493; 1080p: $0.3011.\n\nTotal price = selected rate × output duration in seconds. Input video duration is not added to the billed duration."
+ },
+ {
+  "endpoints": [
+   "bytedance/seedance-2.0/image-to-video",
+   "bytedance/seedance-2.0/text-to-video"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 480p: $0.0804; 720p: $0.1735; 1080p: $0.4293; 4K: $0.8907. Total price = selected rate × output duration in seconds."
+ },
+ {
+  "endpoints": [
+   "bytedance/seedance-2.0/reference-to-video"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per second of generated video.\n\n- Without video input: 480p: $0.0804; 720p: $0.1735; 1080p: $0.4293; 4K: $0.8907.\n- With video input: 480p: $0.0991; 720p: $0.2128; 1080p: $0.5183; 4K: $1.0669.\n\nTotal price = selected rate × output duration in seconds. Input video duration is not added to the billed duration. Image or audio references alone use the rate without video input."
+ },
+ {
+  "endpoints": [
+   "bytedance/seedance-2.5/video-edit"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 480p: $0.1387; 720p: $0.3264; 1080p: $0.7858. The edited video duration is determined from the primary input video and rounded up to a whole second. Total price = selected rate × that duration in seconds; input duration is not added again."
+ },
+ {
+  "endpoints": [
+   "bytedance/seedance-2.5/video-extend"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 480p: $0.1387; 720p: $0.3264; 1080p: $0.7858. Total price = selected rate × requested extension duration in seconds. The duration of the existing input video is not added to the billed duration."
+ },
+ {
+  "endpoints": [
+   "higgsfield/ads-studio/v1.0",
+   "marketing-studio/image/flare",
+   "marketing-studio/image/sunburst"
+  ],
+  "pricingDescription": "Per 1M tokens: text input $5, cached text input $1.25, text output $10; image input $8, cached image input $2, image output $30. Quality defaults to high. Final cost uses actual token usage and standard credit rounding. The initial charge is an estimate reconciled on completion."
+ },
+ {
+  "endpoints": [
+   "higgsfield/cinema-studio/4.0"
+  ],
+  "pricingDescription": "Token-metered pricing. Billable video tokens = ceil((input video seconds + generated video seconds) × output width × output height × 24 fps / 1024). Image and audio references do not count as video input. At 480p or 720p, each 1,000 video tokens cost $0.0214 without video input or $0.01284 with video input (0.6× the standard rate). With video references, both input and generated video durations are billable. Rates shown are before any applicable customer discount."
+ },
+ {
+  "endpoints": [
+   "higgsfield/genjutsu/restyle/v1.0"
+  ],
+  "pricingDescription": "Roughly costs $0.318 per second at 480p, $0.681 per second at 720p, or $1.632 per second at 1080p."
+ },
+ {
+  "endpoints": [
+   "kling-video/motion-control/pro"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 1080p: $0.0779. Billed duration is the motion-reference video duration rounded to the nearest whole second. Total price = selected rate × billed duration in seconds."
+ },
+ {
+  "endpoints": [
+   "kling-video/motion-control/std"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0523. Billed duration is the motion-reference video duration rounded to the nearest whole second. Total price = selected rate × billed duration in seconds."
+ },
+ {
+  "endpoints": [
+   "kling-video/o3/video-edit"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0945; 1080p: $0.1263. Billed duration is the source video duration rounded to the nearest whole second, capped at 15 seconds. Multi-shot requests use the sum of the specified shot durations. Total price = selected rate × billed duration in seconds; input duration is not added again."
+ },
+ {
+  "endpoints": [
+   "kling-video/o3/video-reference"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0945; 1080p: $0.1263. Total price = selected rate × output duration in seconds. Input video duration is not added to the billed duration. For explicit multi-shot requests, output duration is the sum of the shot durations."
+ },
+ {
+  "endpoints": [
+   "kling-video/omni/video-edit"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0945; 1080p: $0.1252. Billed duration is the source video duration rounded to the nearest whole second, capped at 10 seconds. Multi-shot requests use the sum of the specified shot durations. Total price = selected rate × billed duration in seconds; input duration is not added again."
+ },
+ {
+  "endpoints": [
+   "kling-video/omni/video-reference"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0945; 1080p: $0.1252. Total price = selected rate × output duration in seconds. Input video duration is not added to the billed duration. For explicit multi-shot requests, output duration is the sum of the shot durations."
+ },
+ {
+  "endpoints": [
+   "kling-video/v3.0/4k/image-to-video",
+   "kling-video/v3.0/4k/text-to-video"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 4K: $0.3151. Total price = selected rate × output duration in seconds. For explicit multi-shot requests, output duration is the sum of the shot durations."
+ },
+ {
+  "endpoints": [
+   "kling-video/v3/motion-control/pro"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 1080p: $0.1189. Billed duration is the motion-reference video duration rounded to the nearest whole second. Total price = selected rate × billed duration in seconds."
+ },
+ {
+  "endpoints": [
+   "kling-video/v3/motion-control/std"
+  ],
+  "pricingDescription": "Standard self-serve rates in USD per video second: 720p: $0.0920. Billed duration is the motion-reference video duration rounded to the nearest whole second. Total price = selected rate × billed duration in seconds."
+ },
+ {
+  "endpoints": [
+   "minimax/h3/reference-to-video"
+  ],
+  "pricingDescription": "2K output costs $0.13 per generated second. The first five reference images are included; each additional reference image costs $0.08. Rates shown are before any applicable customer discount."
+ }
+]

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "family": "lab",
+  "note": "Real captures for the Motion Lab compositions (StudioDemo, PhonePlayback, KineticLab, CollageDemo). Private, so not downloadable: place your own captures at the targets.",
+  "assets": [
+    {
+      "name": "studio",
+      "target": "public/motion-lab/studio.png",
+      "licence": "Own screen capture of Remotion Studio; private",
+      "sha256": "3124317eaeb8e622b280937997a2f8dadf485f1e461b271f2d993c2658651e09",
+      "size": 317878,
+      "source": { "kind": "none", "reason": "Private screen capture. Place any PNG screenshot of a desktop app, about 2x the frame, at the target path." }
+    },
+    {
+      "name": "studio-recording",
+      "target": "public/motion-lab/studio-recording.mp4",
+      "licence": "Own frame-stepped screen recording of Remotion Studio; private",
+      "sha256": "0c17d2ff3019e17b5db746eb255db8c2c945a6faeda680d28cfd0657fb5a368a",
+      "size": 1558187,
+      "source": { "kind": "none", "reason": "Private screen recording. Place any 2x screen recording (H.264 MP4) at the target path." }
+    },
+    {
+      "name": "poster-vertical",
+      "target": "public/motion-lab/poster-vertical.mp4",
+      "licence": "Own render; 540x960, 110 frames, which matches the PosterStackV composition at half scale",
+      "sha256": "3ccc973db52d962cdb5c8aa2f8407366967c0f6d45a32edfd971bfb09c265b33",
+      "size": 167077,
+      "source": { "kind": "manual", "instructions": "pnpm exec remotion render src/motion/lab/index.tsx PosterStackV public/motion-lab/poster-vertical.mp4 --scale 0.5 (a re-render differs byte for byte)." }
+    }
+  ]
+}

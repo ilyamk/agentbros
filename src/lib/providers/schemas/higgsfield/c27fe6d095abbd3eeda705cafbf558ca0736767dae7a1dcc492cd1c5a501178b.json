@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "endpoint": "minimax/h3/reference-to-video",
+  "title": "MiniMax H3 — Reference to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/minimax-h3/reference-to-video.md",
+  "usageNotes": [
+    "Resolution is fixed to the case-sensitive schema value \"2K\". The prompt must contain non-whitespace text; the current provider serializer uses only its first 7,000 characters.",
+    "Provide at least one image or video reference. Audio references require an image or video reference and cannot be used alone.",
+    "Reference media may be cropped, resized, transcoded and trimmed. Video duration and audio duration are each normalized to fit within the provider's 15-second total budget."
+  ],
+  "schema": {
+    "if": {
+      "required": [
+        "image_urls"
+      ]
+    },
+    "else": {
+      "required": [
+        "video_urls"
+      ]
+    },
+    "type": "object",
+    "title": "MiniMax H3 Reference to Video Playground",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "minLength": 1,
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 5
+      },
+      "audio_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference audio URLs",
+        "maxItems": 3,
+        "minItems": 0
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference image URLs",
+        "maxItems": 9,
+        "minItems": 1
+      },
+      "resolution": {
+        "enum": [
+          "2K"
+        ],
+        "type": "string",
+        "title": "Resolution",
+        "default": "2K"
+      },
+      "video_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "title": "Reference video URLs",
+        "maxItems": 3,
+        "minItems": 1
+      },
+      "aspect_ratio": {
+        "enum": [
+          "auto",
+          "adaptive",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "type": "string",
+        "title": "Aspect ratio",
+        "default": "auto"
+      },
+      "aigc_watermark": {
+        "type": "boolean",
+        "title": "AIGC watermark",
+        "default": false
+      }
+    },
+    "additionalProperties": false
+  },
+  "asOf": "2026-11-15"
+}

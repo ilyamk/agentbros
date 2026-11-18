@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "postiz",
+  "idea": {
+    "value": "Social posting across many networks stops being six separate chores and becomes one sentence typed to an AI assistant: ask in a chat, wait one beat, see the finished work.",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": ["speech-text.json screenText 3.517-9.017 s, 11.517-13.017 s, 31.517-37.017 s", "visuals/contact-sheet-01.jpg"]
+  },
+  "audience": {
+    "value": "People who already use an AI chat assistant and run social accounts for a small business or brand: the worked example is a small bakery announcing a product across six networks, the copy speaks of a whole week planned, and every action is a chat request rather than a dashboard workflow.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json bakery handle and calendar header at 13.017 s and 22.017 s",
+      "speech-text.json chat requests at 5.017-7.517 s, 17.517-19.017 s, 27.517 s",
+      "visuals/contact-sheet-01.jpg 4M 00:13.83, 7M 00:23.56"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 3.7,
+      "device": "Problem shown as a grid of failures, without words: six composer cards each collect a different warning chip while a cursor hops between them, ending with every card outlined in red or amber.",
+      "description": "0.00-0.30 s: six dark cards appear in a 3x2 grid. 0.3-3.5 s: a cursor visits card after card, draft lines fill them and a red or amber warning chip lands under each, roughly every half second, under a slow 14% push-in. 3.50-3.67 s: all six outlines glow red or amber; hard cut to a light frame. The viewer recognises the chore (each network wants something different) before any product or claim, so the first title answers a felt problem."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/s01-open.jpg F0-F23",
+      "visuals/a1/s01-error-chips.jpg F39-F62",
+      "visuals/a1/s01-cut-dark-to-title.jpg F105-F111",
+      "motion.json s001 camera push_in z 0.133"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 3.7,
+        "purpose": "Problem",
+        "retentionDevice": "recognisable frustration that escalates card by card",
+        "content": "Six channel composer cards, each failing with its own warning chip."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s01-error-chips.jpg F39-F62"]
+    },
+    {
+      "value": {
+        "startSec": 3.7,
+        "endSec": 9.233,
+        "purpose": "Category and first ask",
+        "retentionDevice": "a request typing in real time, then an instant confident reply",
+        "content": "Serif positioning line on cream; a chat bubble asks to schedule a launch everywhere at a set time; reply bubble confirms six channels, six versions."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s02-title-words.jpg F117-F140", "visuals/a1/s02-reply-in.jpg F242-F256"]
+    },
+    {
+      "value": {
+        "startSec": 9.233,
+        "endSec": 11.067,
+        "purpose": "Anticipation",
+        "retentionDevice": "one-bar dark loader with a looping mark",
+        "content": "Partner mark animates, status label says posts are being drafted."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s03-cut-loader.jpg F277-F296"]
+    },
+    {
+      "value": {
+        "startSec": 11.067,
+        "endSec": 16.6,
+        "purpose": "Proof one: one input, many tailored outputs",
+        "retentionDevice": "one card bursting into six",
+        "content": "A source post card, a two-line caption, then six channel-specific posts fan out with check chips and a scheduled toast."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s04-fanout.jpg F381-F404", "visuals/a1/s04-toast.jpg F457-F462"]
+    },
+    {
+      "value": {
+        "startSec": 16.6,
+        "endSec": 20.3,
+        "purpose": "Benefit and second ask",
+        "retentionDevice": "relatable time promise plus a bigger request",
+        "content": "Two-line serif benefit about a week planned in minutes; a chat bubble asks for the remaining days to be scheduled at the best times."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/contact-sheet-01.jpg 5M 00:18.43", "visuals/boundaries-01.jpg S005 F497-F499"]
+    },
+    {
+      "value": {
+        "startSec": 20.3,
+        "endSec": 22.167,
+        "purpose": "Anticipation (repeat)",
+        "retentionDevice": "the now-familiar loader signals another result",
+        "content": "Same loader, label about finding the best times."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/contact-sheet-01.jpg 6M 00:21.23"]
+    },
+    {
+      "value": {
+        "startSec": 22.167,
+        "endSec": 27.7,
+        "purpose": "Proof two: scale",
+        "retentionDevice": "events landing one by one, a climbing counter, then a pull-back to the whole week",
+        "content": "A week calendar fills with channel-coloured events placed by the assistant's cursor; the view pulls back to the complete board."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s07-calendar-fill.jpg F665-F686", "visuals/a1/s08-zoomout.jpg F748-F763"]
+    },
+    {
+      "value": {
+        "startSec": 27.7,
+        "endSec": 31.4,
+        "purpose": "Proof three: immediacy",
+        "retentionDevice": "no loader this time; the answer arrives within 2 s",
+        "content": "Dark chat: a request to publish one post now; the reply says it is live, with three live status chips."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/s09-cut-chat.jpg F832-F838", "visuals/a1/s09-reply.jpg F887-F893", "visuals/a1/s10-cut-title.jpg F939"]
+    },
+    {
+      "value": {
+        "startSec": 31.4,
+        "endSec": 36.933,
+        "purpose": "Summary claim",
+        "retentionDevice": "the verb of a held line is edited live, twice",
+        "content": "One line naming three verbs in turn (the three asks) and the one place they all happen."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s10-verb-swap1.jpg F984-F1007", "visuals/a1/s10-verb-swap2.jpg F1044-F1067"]
+    },
+    {
+      "value": {
+        "startSec": 36.933,
+        "endSec": 40.033,
+        "purpose": "Sign-off",
+        "retentionDevice": "logo pop with overshoot, tagline, fade to black",
+        "content": "Mark and wordmark, tagline repeating the category line, and the web address."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/s10-logo.jpg F1108-F1121", "visuals/a1/s11-end.jpg F1179-F1198"]
+    }
+  ],
+  "payoff": {
+    "value": "The full week board pulled back into view (25.0-25.5 s) and the instant 'it is live' reply (29.6 s): the chores from the hook are done by three sentences.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["visuals/a1/s08-zoomout.jpg F748-F763", "visuals/a1/s09-reply.jpg F887-F893"]
+  },
+  "callToAction": {
+    "value": "Soft: the end card shows the mark, the category tagline and the web address for 3 s; no button or spoken instruction.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/s11-end.jpg F1179-F1184", "speech-text.json item at 37.517 s"]
+  },
+  "whyItWorks": [
+    "The hook shows the pain as a picture (six cards, six different warnings) so the first title answers something the viewer already feels.",
+    "A fixed three-step loop (ask on a light card, one-bar dark loader, result on a light interface) is learned on the first pass and recognised on the second, so the second and third asks cost no attention to read.",
+    "Each proof escalates scope: one post into six, one post into a whole week, then publishing immediately with no wait at all.",
+    "Every request is a short human sentence in a chat bubble and every answer is visible work, which makes the claim (do it from the chat) demonstrated rather than stated.",
+    "The summary line edits its own verb with a named cursor, so the closing claim is acted out by the product's own gesture.",
+    "Shot lengths of 4, 8 or 12 beats and cuts placed a couple of frames ahead of the kick make a dense 40 s feel calm and metred (inferred from measured timing; the soundtrack was not heard)."
+  ]
+}

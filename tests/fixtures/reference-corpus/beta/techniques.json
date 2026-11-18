@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "beta",
+  "techniques": [
+    {
+      "id": "whip",
+      "name": "Whip to  UI",
+      "spans": [{ "startSec": 1.8, "endSec": 2.2 }],
+      "description": "Written before the typed fields existed.",
+      "route": "remotion",
+      "routeReason": "Motion blur and a translate.",
+      "difficulty": "medium",
+      "requiredPrimitives": ["MotionBlur", "missing:foo-bar, the same gap again"]
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "abdulah",
+  "idea": {
+    "value": "A 70-second manifesto promo for a recurring technical event: a voice argues that the future is made rather than awaited, the picture walks from archive heritage through present-day machine capability to the questions the audience brings, and only then shows the real event and its name.",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json words 0.11-64.0",
+      "visuals/contact-sheet-01.jpg",
+      "visuals/contact-sheet-02.jpg"
+    ]
+  },
+  "audience": {
+    "value": "Founders, engineers and researchers who might attend or speak; the copy rejects sales pitches and paid placement, which only matters to people who have sat through them, and the closing footage shows lanyards, a fireside chat and a full auditorium.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json words 47.0-56.0",
+      "visuals/contact-sheet-02.jpg 11F-15M (50.40-56.26)"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0.0,
+      "endSec": 5.433,
+      "device": "typed-thesis-with-retraction",
+      "description": "A single small serif line types itself on black, letter by letter, beside a flickering stack of archive portraits (0.13-1.26 s, a new portrait every 5-6 frames); at 3.73-4.10 s the whole line is deleted backwards in word chunks and its first word slides right and is swapped for a new one (4.20-4.33 s), so the viewer watches a claim being written and then retracted before the counter-claim lands. The cut to the paper ground at 5.43 s is the first full-frame change, 5.4 s in."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/open-type.jpg F4-F47",
+      "visuals/a1/type-reset.jpg F111-F137",
+      "speech-text.json screenText 0-7.02"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0.0,
+        "endSec": 5.433,
+        "purpose": "hook",
+        "retentionDevice": "typing and deletion withholds the first image",
+        "content": "Thesis typed on black, deleted, retyped as its counter-statement."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open-type.jpg",
+        "visuals/a1/type-reset.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 5.433,
+        "endSec": 16.567,
+        "purpose": "heritage",
+        "retentionDevice": "4-frame archive ladder resolving into a held colour hero location; every cut flashes",
+        "content": "Archive photos on paper cards, an era ladder of one building ending in its present-day colour view, then archive lecture, hangar and launch-gantry footage, each with one short caption line."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/card-build.jpg",
+        "visuals/a1/archive-match.jpg",
+        "visuals/a1/flash-blackboard.jpg",
+        "visuals/a1/green-tail.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.567,
+        "endSec": 21.333,
+        "purpose": "turn to the present",
+        "retentionDevice": "type pages with inline image chips, then a collage that builds and glitches out",
+        "content": "Off-white pages: one word, then typed lines with small image chips riding the cursor, scattered single words, a collage of colourful product-like cards, a 6-frame glitch exit."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/swap-a.jpg",
+        "visuals/a1/swap-b.jpg",
+        "visuals/a1/swap-c.jpg",
+        "visuals/a1/swap-d.jpg",
+        "visuals/a1/card-add.jpg",
+        "visuals/a1/glitch-out.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 21.333,
+        "endSec": 30.967,
+        "purpose": "capability list",
+        "retentionDevice": "one spoken verb, one full-bleed image; hold about 1 s each",
+        "content": "Two short type pages, then eye, desk at night, projector, planet each carrying its verb; a card on black typing the next word; an evolution illustration; a small card that grows into a launch."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/eye-reveal.jpg",
+        "visuals/a1/halftone-fade.jpg",
+        "visuals/a1/earth-to-card.jpg",
+        "visuals/a1/card-expand-photo.jpg",
+        "visuals/a1/sepia-whip.jpg",
+        "visuals/a1/card-grow-rocket.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 30.967,
+        "endSec": 42.8,
+        "purpose": "the real question",
+        "retentionDevice": "karaoke colour fill on a time-lapse, then words scattered over wide landscapes",
+        "content": "Lecture at a chalkboard, orbit view, moon time-lapse with a word-by-word colour fill, three landscapes with question words placed across the frame."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/halftone-blackboard.jpg",
+        "visuals/a1/moon-1.jpg",
+        "visuals/a1/moon-2.jpg",
+        "visuals/a1/moon-3.jpg",
+        "visuals/a1/scatter-a.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 42.8,
+        "endSec": 47.1,
+        "purpose": "direct address",
+        "retentionDevice": "register switch to handwriting on a flat ground",
+        "content": "Two handwritten questions to the viewer, typed letter by letter on paper grounds, with a 2-frame navy and beige flash between them."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/ground-swap.jpg F1338-F1367"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 47.1,
+        "endSec": 50.4,
+        "purpose": "rejection of the alternative",
+        "retentionDevice": "1.43 s still office hold, then a 1.87 s flurry of 23 images at 12 a second",
+        "content": "A dim empty office, then stacked and scattered banknotes cut on a 3-2 frame cadence while the voice lists what the event is not."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/money-1.jpg",
+        "visuals/a1/money-2.jpg",
+        "visuals/a1/money-3.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 50.4,
+        "endSec": 56.267,
+        "purpose": "proof",
+        "retentionDevice": "six real event shots, 0.5-1.67 s",
+        "content": "Night office tower, then networking, a speaker on stage, a fireside chat, a crowd with lanyards, an audience laughing."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/contact-sheet-02.jpg 10F-15L"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 56.267,
+        "endSec": 61.867,
+        "purpose": "payoff line",
+        "retentionDevice": "slowest pace of the film; the last line gathers a field of portraits around it",
+        "content": "Closing statement word by word on the paper ground in three clauses; on the last clause small portraits pop in around it every 4 frames."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/swap-f.jpg",
+        "visuals/a1/swap-g.jpg",
+        "visuals/a1/swap-h.jpg",
+        "visuals/a1/portrait-pop.jpg",
+        "visuals/a1/pop-b.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 61.867,
+        "endSec": 69.833,
+        "purpose": "name and sign-off",
+        "retentionDevice": "bookend: the hero location from 7.40 s returns carrying the title",
+        "content": "The same colour building view as the first colour shot, now with the event title and edition line; cut to a black end card holding 4.77 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/end-cut.jpg",
+        "visuals/a1/endcard.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The final clause lands on the paper ground and is immediately surrounded by portraits of real attendees (59.13-61.87 s): the abstract thesis from the hook is answered by the people who will do it.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/portrait-pop.jpg F1774-F1793",
+      "visuals/a1/pop-b.jpg F1806-F1829"
+    ]
+  },
+  "callToAction": {
+    "value": "Implicit: the event name, edition and organiser on a black end card (65.07-69.83 s); no date, link or button visible.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/endcard.jpg F1952-F1964",
+      "speech-text.json screenText 65.02-69.87"
+    ]
+  },
+  "whyItWorks": [
+    "The hook shows a claim being typed and then deleted (3.73-4.10 s), which makes the viewer wait for the correction; the first full-frame image is held back until 5.43 s.",
+    "Picture follows the words, not the music: each listed verb gets its own image on the same frame as its caption (23.30, 24.30 s; holds 1.0-1.33 s), so the list reads like a montage of evidence.",
+    "Grounds alternate between black, off-white paper and graded footage, and every hard change between archive plates is masked by a 1-3 frame light leak or grade flash, so a cheap stills montage feels like film.",
+    "Pace is used for meaning: the median hold outside the flurry is 1.40 s, then 23 images in 1.87 s for the thing the event rejects, then six real event shots at 0.5-1.67 s as proof, then the slowest stretch (1.03-2.73 s holds) for the closing line.",
+    "Bookend: the colour building first seen at 7.40 s returns at 61.87 s carrying the title, so the name is attached to the place the film started from."
+  ]
+}

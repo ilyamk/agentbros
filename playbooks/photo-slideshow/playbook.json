@@ -1,0 +1,389 @@
+{
+  "version": 1,
+  "id": "photo-slideshow",
+  "title": "Photo slideshow",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "A film from the user's photos and a few clips, cut to music: a memory or holiday slideshow, an anniversary or team montage, a portfolio reel, a carousel as video, a real-estate photo tour.",
+  "triggers": {
+    "en": [
+      "my photos",
+      "of photos",
+      "slideshow",
+      "slide show",
+      "photo slideshow",
+      "photo montage",
+      "photo video",
+      "photo reel",
+      "from my photos",
+      "from photos",
+      "from our photos",
+      "photos to video",
+      "photos into a video",
+      "pictures into a video",
+      "carousel to video",
+      "carousel into a video",
+      "ken burns",
+      "memory video",
+      "memorial video",
+      "tribute video",
+      "anniversary video",
+      "photo tour",
+      "property photo tour",
+      "listing video",
+      "real estate video",
+      "portfolio reel",
+      "lookbook video",
+      "wedding photos",
+      "holiday photos",
+      "vacation photos",
+      "slideshow for",
+      "slideshow of",
+      "slideshow with",
+      "my vacation photos",
+      "my holiday photos",
+      "my travel photos",
+      "carousel into a reel",
+      "photos into a reel"
+    ],
+    "ru": [
+      "портфолио",
+      "из моих работ",
+      "слайдшоу",
+      "слайд шоу",
+      "из фото",
+      "из фотографий",
+      "из фоток",
+      "из моих фото",
+      "из наших фото",
+      "фото под музыку",
+      "фотографии под музыку",
+      "фотки под музыку",
+      "фото в видео",
+      "фотографии в видео",
+      "видео из фото",
+      "ролик из фото",
+      "фото тур",
+      "фототур",
+      "тур по квартире",
+      "видео для объявления",
+      "кен бернс",
+      "памятное видео",
+      "на годовщину",
+      "на юбилей",
+      "фотоальбом",
+      "видеооткрыт",
+      "карусель в видео",
+      "свадебн фото",
+      "фото со свадьбы",
+      "фото с отпуска",
+      "фото из отпуска",
+      "портфолио в видео"
+    ],
+    "zh": [
+      "用照片",
+      "照片做",
+      "把照片",
+      "相册视频",
+      "电子相册",
+      "动态相册",
+      "照片视频",
+      "照片做成视频",
+      "照片合成视频",
+      "照片转视频",
+      "图片做成视频",
+      "照片配音乐",
+      "照片加音乐",
+      "照片卡点",
+      "卡点",
+      "照片幻灯片",
+      "纪念视频",
+      "回忆视频",
+      "周年纪念",
+      "生日视频",
+      "成长相册",
+      "旅行照片",
+      "旅游照片",
+      "婚纱照",
+      "毕业照",
+      "图文转视频",
+      "房源视频",
+      "作品集视频"
+    ],
+    "generic": [
+      "卡点"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the material is video footage of an event the user held or attended",
+      "use": "event-recap"
+    },
+    {
+      "when": "the film is cut from licensed stock or supplied b-roll, not the user's photos",
+      "use": "stock-montage"
+    },
+    {
+      "when": "an ad that sells a product or app around one proposition, product photos included",
+      "use": "product-promo"
+    },
+    {
+      "when": "an animated film of type, shapes or a mark, with photos at most as texture",
+      "use": "motion-design"
+    },
+    {
+      "when": "the user's own recording of their speech, to cut or caption",
+      "use": "footage-edit"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "footage",
+    "start": "pnpm film:init --project <id> --type footage --playbook photo-slideshow --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "a scrapbook or paper look, or a portfolio laid out as a board of photos",
+      "route": {
+        "kind": "film",
+        "filmType": "collage",
+        "start": "pnpm film:init --project <id> --type collage --playbook photo-slideshow --product <path>"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "cinematography",
+    "editorial-storytelling",
+    "harness-asset-import",
+    "motion-library"
+  ],
+  "optionalSkills": [
+    "remotion-best-practices"
+  ],
+  "library": {
+    "categories": [
+      "camera",
+      "transitions",
+      "scenes",
+      "finish"
+    ],
+    "blocks": [
+      "photo-move",
+      "clip-fill",
+      "film-finish",
+      "scene-bento-collage",
+      "paper-collage-assemble",
+      "parallax-rig",
+      "slice-panels",
+      "whip-pan",
+      "light-burn",
+      "type-hero-word",
+      "camera-breath",
+      "texture-overlay",
+      "halftone-image",
+      "caption-over-flash-montage",
+      "scatter-field",
+      "subject-occlusion"
+    ]
+  },
+  "commands": [
+    "asset:import",
+    "footage:shots",
+    "matte",
+    "rmbg",
+    "photo:focus",
+    "reframe:track",
+    "music",
+    "audio:map",
+    "edit:plan",
+    "edit:snap",
+    "music:backtime",
+    "film:targets",
+    "plan:check",
+    "motion:still",
+    "motion:strip",
+    "motion:check",
+    "delivery", "media:vision"],
+  "read": [],
+  "stepRead": {
+    "script-variants": [
+      "design-reference/craft-rules.md"
+    ],
+    "script": [
+      "design-reference/craft-rules.md"
+    ],
+    "material": [
+      "docs/multicam-reframe.md"
+    ],
+    "build": [
+      "docs/multicam-reframe.md"
+    ]
+  },
+  "qa": [
+    "Every photo move starts and ends on a subject; no face is cropped through in any format",
+    "No photo stretch measures as frozen beyond the manual --longest-still target",
+    "Mixed orientations resolved per photo: crop and move, or blur-fill; no black bars in a vertical feed",
+    "One grade across photos from different cameras and years; dates and names are the user's"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "What is it for and who watches it: a family memory, a tribute, a portfolio, a listing, a carousel for a feed?",
+      "why": "Sets the order (chronology, story, walkthrough), the pace (calm or punchy edit:plan) and the variant"
+    },
+    {
+      "ask": "Where are the photos and clips, roughly how many, and are any HEIC from an iPhone?",
+      "why": "Selection works from 1.5-3x the photos the length holds; HEIC must be converted before asset:import"
+    },
+    {
+      "ask": "In what order should they run, and which photos must be in it?",
+      "why": "Only the user knows the story and the must-keep faces; capture dates set chronology only when confirmed",
+      "default": "chronological by capture date, the user approves the selection"
+    },
+    {
+      "ask": "Which music: a track you own or licensed, or one we find for you?",
+      "why": "A Short over 1 minute with any copyright claim is blocked on YouTube; Zillow Showcase refuses unlicensed music",
+      "default": "the sound-director's shortlist of licensed tracks"
+    },
+    {
+      "ask": "Should names, dates or places appear on screen, and in which language?",
+      "why": "Captions here are the user's facts, never guessed from files",
+      "default": "no on-screen text except a title card"
+    },
+    {
+      "ask": "Is everyone in the photos happy to be in a published video?",
+      "why": "Private photos of other people, children above all, need their consent before a public upload",
+      "default": "private sharing only until the user confirms"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "none",
+      "note": "Reels up to 3 minutes are eligible for non-followers (Instagram for Creators); no speech, so only date and name captions; minimum is a house rule"
+    },
+    {
+      "platform": "youtube-shorts",
+      "formats": [
+        "vertical",
+        "square"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "none",
+      "note": "Shorts run up to 3 minutes; over 1 minute any copyright claim blocks it worldwide, so use cleared music or stay at 60 s (YouTube Help)"
+    },
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 60,
+        "max": 300
+      },
+      "loudnessLufs": -14,
+      "captions": "none",
+      "note": "A family or tribute film to share by link; length band is a house rule; playback turns loud audio down to about -14 LUFS (measured, see footage-edit)"
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 120
+      },
+      "captions": "none",
+      "note": "Listing pages: Zillow Showcase takes 120 s or less, horizontal or vertical, listing only, branding only in the introduction (Aryeo help)"
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "photo-move",
+      "film-finish",
+      "scene-bento-collage",
+      "slice-panels"
+    ],
+    "style": "warm-editorial",
+    "note": "photo-move carries every photo, with crops and fill from photo:focus; film-finish wraps the film; scene-bento-collage opens or closes a portfolio; slice-panels joins sections. warm-editorial suits memories"
+  },
+  "variants": [
+    {
+      "id": "real-estate-tour",
+      "title": "Real-estate photo tour",
+      "triggers": {
+        "en": [
+          "property tour",
+          "house tour",
+          "apartment tour",
+          "listing photos",
+          "zillow listing",
+          "home for sale"
+        ],
+        "ru": [
+          "фото квартиры",
+          "фотографии квартиры",
+          "квартиры на продажу",
+          "дом на продажу",
+          "тур квартиры",
+          "фото недвижимости",
+          "для риелтора"
+        ],
+        "zh": [
+          "房源视频",
+          "房源照片",
+          "看房视频",
+          "房产视频",
+          "二手房",
+          "租房视频"
+        ]
+      },
+      "changes": "Order is a walk from the street through the rooms to the best view; 3-4 s per room (inside the default --median-shot 2.5:5) with push-ins and pans along the room's lines; landscape and vertical; 120 s or less for Zillow; no people, no branding past the introduction, licensed music only"
+    },
+    {
+      "id": "portfolio-reel",
+      "title": "Portfolio, lookbook or carousel reel",
+      "triggers": {
+        "en": [
+          "portfolio reel",
+          "photo portfolio",
+          "lookbook",
+          "photo carousel",
+          "instagram carousel",
+          "carousel into",
+          "my photography"
+        ],
+        "ru": [
+          "портфолио в видео",
+          "фото портфолио",
+          "лукбук",
+          "карусель из фото",
+          "карусель в видео",
+          "мои работы в видео"
+        ],
+        "zh": [
+          "作品集视频",
+          "作品集",
+          "摄影作品",
+          "lookbook",
+          "穿搭合集",
+          "小红书图文"
+        ]
+      },
+      "changes": "Punchy edit:plan, 1-2 s per photo on beats, so film:targets --median-shot 1:2.5 --cuts-per-minute 24:60 (house rule); hard cuts or slice-panels; the work fills the frame, never cropped through; scene-bento-collage opens or closes; one small caption per piece; vertical first"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "agents": [
+    {
+      "tool": "Claude Code",
+      "emails": ["noreply@anthropic.com"],
+      "reason": "Claude Code's default commit trailer (Co-Authored-By: Claude <this address>; the display name varies with the model). Confirmed in this repository's history."
+    },
+    {
+      "tool": "OpenAI Codex",
+      "emails": ["noreply@openai.com", "codex@openai.com"],
+      "reason": "Codex CLI adds Co-authored-by: Codex <the noreply address> by default since early 2026 (commit_attribution in config.toml); seen in openai/codex history, not confirmed in official docs. The codex address is a published community setup for a Codex git identity; it names the same agent, and like every entry here it is matched only in Co-authored-by trailers, never as a commit author. Uncertain: OpenAI may change either address."
+    },
+    {
+      "tool": "GitHub Copilot",
+      "emails": ["copilot@github.com"],
+      "githubLogins": ["Copilot", "copilot-swe-agent[bot]"],
+      "reason": "Copilot trailers use the Copilot account's users.noreply address with a numeric id prefix that differs by feature (coding agent, Autofix), so they match by login, not id. The VS Code commit feature is reported to append the github.com address. Observed in public commits; GitHub documents the attribution model, not the exact addresses."
+    },
+    {
+      "tool": "Cursor agent",
+      "emails": ["cursoragent@cursor.com"],
+      "reason": "Cursor's agents add Co-authored-by: Cursor <this address>; Cursor staff confirm it on the Cursor forum and it appears in public pull requests."
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "idea": {
+    "value": "A business that works across borders should run its money from one place; the film says it in short typed lines on two alternating grounds and proves each line with the real product screen or a literal graphic of the claim (a symbol that keeps changing, a counter that runs to zero, a chart that climbs).",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json screenText 0.0-4.5, 6.5-12.5, 39.0-44.5",
+      "visuals/a1/coin-to-euro.jpg F401-F425",
+      "visuals/a1/countdown.jpg F1011-F1022",
+      "visuals/a1/growing-chart.jpg F1246-F1265"
+    ]
+  },
+  "audience": {
+    "value": "Owners and finance leads of small and mid-sized companies that pay suppliers and get paid in several currencies, with an emphasis on cross-border markets (Nigerian, Indian, Canadian, US, British and Pakistani flags; diverse portraits of founders and shoppers); the film assumes no prior product knowledge.",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "speech-text.json screenText 8.02-9.52 (currency codes on chips)",
+      "visuals/a1/currencies-wall.jpg F243",
+      "visuals/a1/move-gap-between.jpg F983-F995",
+      "visuals/a1/portraits-in.jpg F478-F497",
+      "visuals/a1/cards-pop.jpg F92-F101"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0.0,
+      "endSec": 2.433,
+      "device": "sentence typed into place, then its key word typed letter by letter on the opposite ground and flashed over two crowd photographs without moving",
+      "description": "0.00-1.17 s: the first clause on cream, two words, then a third at 0.52 s (silent first 0.47 s). 1.17 s hard cut to dark: the key word typed in yellow, a letter every 2 frames. 1.50 s and 1.87 s: two crowd photographs under the finished word, 10 frames each; 2.20 s back to yellow on dark for 7 frames; 2.43 s cut to cream as the sentence turns to the viewer. Five picture changes in 1.27 s against one word that never moves."
+    },
+    "basis": "observed",
+    "confidence": 0.95,
+    "evidence": [
+      "visuals/a1/hook-g-global.jpg F0-F53",
+      "visuals/a1/hook-photos.jpg F52-F77",
+      "audio.json silence 0-0.47"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0.0,
+        "endSec": 2.433,
+        "purpose": "Hook: a statement about the world, its key word made visual",
+        "retentionDevice": "letter-by-letter typing creates anticipation; image flash pays it off",
+        "content": "Clause, typed key word, two crowd flashes"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/hook-g-global.jpg F0-F53"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.433,
+        "endSec": 4.4,
+        "purpose": "Turn the statement to the viewer",
+        "retentionDevice": "people appear as the word 'your' lands: the viewer is placed in the sentence",
+        "content": "Second clause on cream with portrait cards of business owners drifting around it"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/cards-pop.jpg F73-F101",
+        "visuals/a1/logo-reveal.jpg F128-F131"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.4,
+        "endSec": 6.767,
+        "purpose": "Name the brand as the answer",
+        "retentionDevice": "a single moving shape holds the eye from a point to the full name",
+        "content": "Dot-to-wordmark build on dark, sub-line, colour settles to white"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/logo-reveal.jpg F132-F152",
+        "visuals/a1/logo-reveal-b.jpg F152-F176"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 6.767,
+        "endSec": 9.433,
+        "purpose": "State the promise",
+        "retentionDevice": "the wall's speed and density make 'many' felt before the product appears",
+        "content": "Line on cream, then a kinetic wall of the promise's last words with flag chips"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/logo-to-manage.jpg F203-F212",
+        "visuals/a1/currencies-wall.jpg F243-F260"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 9.433,
+        "endSec": 12.433,
+        "purpose": "First proof: the real dashboard",
+        "retentionDevice": "the music lifts here (inferred) and the first real interface is shown",
+        "content": "Cropped dashboard drift, then the accounts overview with a summarising caption"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/wall-to-ui.jpg F282-F296",
+        "visuals/a1/ui-pullback.jpg F312-F329"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 12.433,
+        "endSec": 15.9,
+        "purpose": "Feature 1: paying out, anywhere",
+        "retentionDevice": "symbols keep swapping inside each hold, so each shot keeps changing without a cut",
+        "content": "Symbol disc on a trail, mirrored across a cut, then a line with an inline globe chip"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/coin-swing.jpg F373-F392",
+        "visuals/a1/coin-to-euro.jpg F401-F425",
+        "visuals/a1/inline-globe.jpg F441-F461"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.9,
+        "endSec": 17.533,
+        "purpose": "Feature 2 set-up: getting paid",
+        "retentionDevice": "faces again, now customers",
+        "content": "Portrait plates converge around a line; the benefit line on cream"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/portraits-in.jpg F477-F497",
+        "visuals/a1/type-to-ui.jpg F521-F524"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 17.533,
+        "endSec": 27.233,
+        "purpose": "Feature 2 proof: a full walkthrough",
+        "retentionDevice": "every cut follows a click, so cause and effect carry the viewer through 9.7 s of interface",
+        "content": "Interface page with caption, punch-in on the button, four click cuts through the flow to a success screen, push-in on the result"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/punch-in-ui.jpg F549-F554",
+        "visuals/a1/ui-click-page.jpg F577-F593",
+        "visuals/a1/ui-scroll-a.jpg F689-F698",
+        "visuals/a1/ui-success.jpg F767-F788"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 27.233,
+        "endSec": 31.0,
+        "purpose": "Feature 2 extension: developers and checkout",
+        "retentionDevice": "snap zoom renews attention after the long walkthrough",
+        "content": "Line split around a shopper photo with an embedded checkout card that snap-zooms; then a line on cream"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/api-zoom.jpg F836-F860",
+        "visuals/a1/move-split.jpg F926-F929"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 31.0,
+        "endSec": 34.533,
+        "purpose": "Feature 3: moving money between currencies, instantly",
+        "retentionDevice": "three literal visual puns in 3.5 s, each carried from the last by where the eye already is",
+        "content": "Verb split with interface card inserted; verb opens a gap that becomes an arrow pill with swapping flags; countdown to zero behind a word"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/move-split.jpg F930-F950",
+        "visuals/a1/move-gap-between.jpg F971-F995",
+        "visuals/a1/countdown.jpg F1010-F1031"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 34.533,
+        "endSec": 38.867,
+        "purpose": "Feature 3 proof",
+        "retentionDevice": "a typed figure and a light sweep tell the eye where to read",
+        "content": "Interface builds and types an amount, reframes for a caption, highlight sweeps the rate rows"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/swap-ui.jpg F1036-F1052",
+        "visuals/a1/live-rates.jpg F1106-F1130"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 38.867,
+        "endSec": 43.3,
+        "purpose": "Payoff: the benefit in the viewer's terms",
+        "retentionDevice": "the only full-frame graphic of growth comes after the last feature, as the reward",
+        "content": "Three benefit lines swapped on cream, then one huge word over a climbing yellow chart, then the line completed small"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/spend-first-swap.jpg F1178-F1196",
+        "visuals/a1/spend-swaps.jpg F1196-F1220",
+        "visuals/a1/growing-chart.jpg F1246-F1265",
+        "visuals/a1/growing-to-end.jpg F1270-F1289"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 43.3,
+        "endSec": 46.167,
+        "purpose": "Call to action",
+        "retentionDevice": "the film ends quieter and smaller than it began; the address is the last and only thing on screen",
+        "content": "Sign-off line ending on the brand name, then the web address alone"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/cta-swap.jpg F1298-F1310",
+        "visuals/a1/endcard.jpg F1325-F1340"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "After three features the film shows growth itself: one huge word with a yellow area chart and a counter climbing behind it (41.53-42.33 s), then returns the word to the quiet cream line that completes the benefit.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/growing-chart.jpg F1246-F1269",
+      "visuals/a1/growing-to-end.jpg F1270-F1289"
+    ]
+  },
+  "callToAction": {
+    "value": "A five-word sign-off ending on the brand name, then only the web address, small and centred on cream, held 1.73 s to the end with no fade.",
+    "basis": "observed",
+    "confidence": 0.95,
+    "evidence": [
+      "visuals/a1/cta-swap.jpg F1298-F1310",
+      "visuals/a1/endcard.jpg F1333-F1340",
+      "speech-text.json screenText 43.52-46.02"
+    ]
+  },
+  "whyItWorks": [
+    "One sentence, one idea per hold: lines are 2-5 words, held 0.7-1.3 s, and the text never competes with another line.",
+    "Every claim gets a literal picture rather than a generic one: 'any' is a symbol that keeps changing, 'instantly' is a counter running to zero, 'between' is an arrow pill in the gap of a split word.",
+    "The ground flips between cream and near-black on hard cuts, so the edit has contrast and pace without a single transition effect.",
+    "The eye is parked before each cut where the next element will appear (the word gap, the held caption, the disc that becomes the full stop).",
+    "Interface walkthroughs are cut on clicks: each cut has a visible cause, so 10 s of product reads as one continuous action.",
+    "The visual reward (growth chart) is held back until after the last feature, and the close is smaller and calmer than the open."
+  ]
+}

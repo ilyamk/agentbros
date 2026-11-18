@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "palmier",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 25
+  },
+  "durationSec": 39.08,
+  "slots": [
+    {
+      "id": "claim",
+      "role": "Two-part claim over real movement",
+      "startSec": 0,
+      "durationSec": 3,
+      "visualRecipe": "Plain wall, person crosses close to lens holding the product's physical context; small centred white text.",
+      "motionRecipe": "Text removed letter by letter by the crossing, 8 frames; second part types on in 12 frames.",
+      "soundRecipe": "Measured in the source: silence 1.17-1.75 s, between the two parts.",
+      "copySlot": {
+        "purpose": "Plain statement of what was made, split in two",
+        "maxWords": 7
+      },
+      "techniqueIds": []
+    },
+    {
+      "id": "arrive",
+      "role": "Reach the product through the physical world",
+      "startSec": 3,
+      "durationSec": 4.04,
+      "visualRecipe": "Short human action, name on a real object, then a monitor; the OS launcher fills the frame with a cursor.",
+      "motionRecipe": "0.4 s and 1.3 s shots, then a 12-frame push into the screen, then a held 2 s.",
+      "soundRecipe": "Inferred: real room sound. Read from the edit-map waveform: level grows from 3 to 7 s.",
+      "techniqueIds": [
+        "physical-screen-push"
+      ]
+    },
+    {
+      "id": "first-doubt",
+      "role": "Line on black",
+      "startSec": 7.04,
+      "durationSec": 1.52,
+      "visualRecipe": "White text on pure black; stacked echoes resolve to one line.",
+      "motionRecipe": "Line on black strobes for 12 frames between a full-frame stack of echoes and two copies, settles to one centred line, is erased one word a frame from the left and rebuilt one word a frame from the right, holds 7 frames, dims, 2 black frames, cut.",
+      "soundRecipe": "Measured from the waveform in the edit map: a strong swell at 7.0-9.4 s under this card and the wide view, the most visible before 24 s.",
+      "copySlot": {
+        "purpose": "Invitation to test the tool",
+        "maxWords": 7
+      },
+      "techniqueIds": [
+        "black-question-card"
+      ]
+    },
+    {
+      "id": "first-request",
+      "role": "Easiest task and its result",
+      "startSec": 8.56,
+      "durationSec": 5.6,
+      "visualRecipe": "Full interface 0.84 s, then a field cropped large; result in the wide interface.",
+      "motionRecipe": "Typing, jump, log, jump; state change on screen at the end.",
+      "soundRecipe": "Inferred: key clicks and a soft result sound.",
+      "copySlot": {
+        "purpose": "Simple request in plain words",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "request-result-loop",
+        "interface-crop"
+      ]
+    },
+    {
+      "id": "reaction",
+      "role": "Reaction and next request",
+      "startSec": 14.16,
+      "durationSec": 2.48,
+      "visualRecipe": "Person in profile; hands; cropped field. Caption at centre.",
+      "motionRecipe": "Holds 0.68, 0.60, 1.20 s.",
+      "soundRecipe": "Measured: cuts fall 0.01-0.06 s before pulse peaks here.",
+      "copySlot": {
+        "purpose": "Short reactions and second request",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "human-reaction-punctuation"
+      ]
+    },
+    {
+      "id": "build",
+      "role": "Second task: the log and the timeline alternate",
+      "startSec": 16.64,
+      "durationSec": 4.76,
+      "visualRecipe": "Log text and timeline crops by turns.",
+      "motionRecipe": "Holds about 1 s, each cut jumps scale or view.",
+      "soundRecipe": "Measured: pulse spacing tightens from 0.65 to 0.45 s by the end; picture cuts on it.",
+      "techniqueIds": [
+        "interface-crop",
+        "request-result-loop"
+      ]
+    },
+    {
+      "id": "recognition",
+      "role": "Result plays, and is recognised",
+      "startSec": 21.4,
+      "durationSec": 2.68,
+      "visualRecipe": "Preview shows earlier material with a new caption, then pull-out to the monitor in a room.",
+      "motionRecipe": "Small preview, jump to larger, 0.8 s pull-out, 3-frame fade.",
+      "soundRecipe": "Inferred: the room comes in with the pull-out.",
+      "copySlot": {
+        "purpose": "Dry two-word verdict",
+        "maxWords": 2
+      },
+      "techniqueIds": [
+        "own-opening-as-output",
+        "physical-screen-push"
+      ]
+    },
+    {
+      "id": "second-doubt",
+      "role": "Harder doubt on black",
+      "startSec": 24.08,
+      "durationSec": 0.88,
+      "visualRecipe": "White text on black.",
+      "motionRecipe": "Still, 0.88 s.",
+      "soundRecipe": "Measured: a loudness peak at about 24.4-24.85 s.",
+      "copySlot": {
+        "purpose": "Question raising the difficulty",
+        "maxWords": 5
+      },
+      "techniqueIds": [
+        "black-question-card"
+      ]
+    },
+    {
+      "id": "hard-task",
+      "role": "Hardest task: real work running, then a reaction",
+      "startSec": 24.96,
+      "durationSec": 4.4,
+      "visualRecipe": "Tool working state, wide interface with material changing, very close face with two-word caption, that face inside the interface.",
+      "motionRecipe": "3.4 s of watching work, then 0.68 s face, 0.24 s interface.",
+      "soundRecipe": "Inferred: a rising bed under the wait.",
+      "copySlot": {
+        "purpose": "Short exclamation",
+        "maxWords": 2
+      },
+      "techniqueIds": [
+        "human-reaction-punctuation"
+      ]
+    },
+    {
+      "id": "instruction",
+      "role": "Last instruction",
+      "startSec": 29.36,
+      "durationSec": 2.48,
+      "visualRecipe": "Cropped field and a panel with reference images.",
+      "motionRecipe": "Typing, 2 holds.",
+      "soundRecipe": "Inferred: key clicks.",
+      "copySlot": {
+        "purpose": "Request for the most ambitious output",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "request-result-loop"
+      ]
+    },
+    {
+      "id": "output-grows",
+      "role": "Result fills the frame",
+      "startSec": 31.84,
+      "durationSec": 2.04,
+      "visualRecipe": "Interface with preview, states flickering, preview scales up until the interface is gone.",
+      "motionRecipe": "Flicker at 2-frame rate, 10-frame growth, hold 0.5 s.",
+      "soundRecipe": "Read from the edit-map waveform: a swell near 33-34 s.",
+      "techniqueIds": [
+        "preview-to-full"
+      ]
+    },
+    {
+      "id": "burst",
+      "role": "Payoff: abundance",
+      "startSec": 33.88,
+      "durationSec": 2.76,
+      "visualRecipe": "33 images, one aligned feature at centre, varied grades, one small fixed caption.",
+      "motionRecipe": "2-frame holds, steady closing in, last image rhymes with the feature.",
+      "soundRecipe": "Measured: the loudest section of the piece is 28.47-37.06 s (audio.json energy 0.369); sound ends at about 37 s.",
+      "copySlot": {
+        "purpose": "One sentence saying what it is",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "two-frame-burst"
+      ]
+    },
+    {
+      "id": "name",
+      "role": "Name in black and silence",
+      "startSec": 36.64,
+      "durationSec": 2.44,
+      "visualRecipe": "Small white name on black; suffix added.",
+      "motionRecipe": "Hard cut, still; one change 0.68 s in.",
+      "soundRecipe": "Measured: sound stops 0.39 s after the cut; silence to the end.",
+      "copySlot": {
+        "purpose": "Name and address",
+        "maxWords": 1
+      },
+      "techniqueIds": [
+        "end-in-silence"
+      ]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: tempo confidence 0.07. A calm median near 1 s, tied to a tightening pulse in the middle, then a burst at 2-frame holds. Measure the pulse from loudness peaks, not from a tempo."
+  },
+  "style": "Quiet demonstration with real people and real screens, small centred captions, one violent burst.",
+  "transferRules": {
+    "keep": [
+      "Three requests of rising difficulty",
+      "Each request typed, then a real result on screen",
+      "Interface cropped until one action fills the frame",
+      "Human reactions of 0.6-0.7 s between screens",
+      "Doubt stated in plain words before each proof",
+      "Result growing out of the interface to the full frame",
+      "One burst of the real output at the end",
+      "Hard cut to black, then silence, and one last change"
+    ],
+    "mustChange": [
+      "All branding and name",
+      "All copy and captions",
+      "Music and sound",
+      "All footage, people and interface",
+      "All generated images and the choice of subject in the burst",
+      "Requests and their results"
+    ]
+  }
+}

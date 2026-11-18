@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "flex",
+  "idea": {
+    "value": "A business bank that keeps the standing of an old institution but moves money at the speed of digital dollars, anywhere: shown as one object (the payment card) that grows out of the idea, then proved in the real interface, on a map of cities and in a phone wallet.",
+    "basis": "inferred",
+    "confidence": 0.75,
+    "evidence": ["speech-text.json 4.017 s thesis line; 14.017 s promise line; 22.5–25.5 s journey line", "visuals/contact-sheet-01.jpg 1F, 2L, 3L, 5M, 6M, 14M"]
+  },
+  "audience": {
+    "value": "Owners and finance leads of small and mid-size businesses that pay or get paid across borders and are curious about stablecoins.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": ["speech-text.json: card tier name 'Infinite Business' (8.5–13.5 s); account names 'AP/OPS', 'Checking' (21.0–22.5 s); sidebar items Invoices, Reimbursement, Team, Capital (18.5–19.5 s)", "speech-text.json anthem 'Built for Owners' (35.5 s)"]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 5.7,
+      "device": "establish-then-overturn",
+      "description": "0.0–1.97 s: a low-angle classical bank facade with national flags, the wordmark revealed over it — the old institution. At 1.67 s a dark green sheet rises over it and a single line builds word by word to state the twist: the old meets the new money. The viewer's first question is how the two fit, and the next shot answers with a product object grown from that very line."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/s01-logo-in.jpg F0–F23", "visuals/a1/s01-wipe-up.jpg F50–F71", "visuals/a1/s02-word-build-b.jpg F99–F125"]
+  },
+  "beats": [
+    { "value": { "startSec": 0, "endSec": 1.967, "purpose": "Establish authority and the brand", "retentionDevice": "recognisable image of old banking", "content": "Bank facade with flags; wordmark reveal." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/contact-sheet-01.jpg 1F–1L"] },
+    { "value": { "startSec": 1.967, "endSec": 5.7, "purpose": "Thesis", "retentionDevice": "line completes one word at a time", "content": "Dark green ground, ring figure, thesis line, three currency chips." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s02-word-build-b.jpg F99–F125"] },
+    { "value": { "startSec": 5.7, "endSec": 13.567, "purpose": "Product object grows out of the idea", "retentionDevice": "uncut chain of transformations: frame → slab → button → object", "content": "Frame shrinks to a slab, button types 'create' action, flips into the metal card, card fans and orbits." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s02-shrink-to-card.jpg", "visuals/a1/s03-card-flip.jpg", "visuals/a1/s03-card-mid.jpg"] },
+    { "value": { "startSec": 13.567, "endSec": 15.1, "purpose": "Promise", "retentionDevice": "line builds over a dramatic sky", "content": "Storm clouds, promise line about speed." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s04-card-to-sky.jpg F407–F422"] },
+    { "value": { "startSec": 15.1, "endSec": 22.6, "purpose": "Proof in the real interface", "retentionDevice": "panels assembling, then a camera that keeps moving", "content": "Product list panels grow, pull-back to the whole dashboard, tilt; cut to a transfer form." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s05-white-to-ui.jpg", "visuals/a1/s05-ui-tilt.jpg", "visuals/a1/s05-ui-to-form.jpg"] },
+    { "value": { "startSec": 22.6, "endSec": 25.733, "purpose": "Demonstrate speed and reach", "retentionDevice": "4-frame flash cuts under a completing sentence", "content": "Origin city aerial, five destination flashes, landing city." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s06-city-flash.jpg"] },
+    { "value": { "startSec": 25.733, "endSec": 28.2, "purpose": "Scale stat", "retentionDevice": "number then noun", "content": "Particle sphere, country-count stat." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s12-to-globe.jpg"] },
+    { "value": { "startSec": 28.2, "endSec": 31.233, "purpose": "Everyday use", "retentionDevice": "device rises into frame, confirmation tick", "content": "Phone wallet paying with the card; headline about spending digital dollars." }, "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/s13-dissolve-phone.jpg", "visuals/a1/s14-phone-pay.jpg"] },
+    { "value": { "startSec": 31.233, "endSec": 38.2, "purpose": "Anthem: values, ending on the viewer", "retentionDevice": "repeated lead phrase, one new word per 1 s plate", "content": "Two negations (borders, delays), four affirmations (speed, ambition, owners, you)." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s15-tagline-cuts.jpg", "visuals/a1/s19-to-white-you.jpg"] },
+    { "value": { "startSec": 38.2, "endSec": 42.033, "purpose": "Sign-off and call to action", "retentionDevice": "bookend wordmark move from the opening", "content": "Wordmark on white, small CTA line." }, "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/s20-logo-resolve.jpg", "visuals/a1/s20-cta-sub.jpg"] }
+  ],
+  "payoff": {
+    "value": "The anthem turns from the product to the viewer: the last value word is the second person, alone on white and in the brand green, and the wordmark from the first second returns with the same reveal.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": ["visuals/a1/s19-to-white-you.jpg F1097", "visuals/a1/s20-logo-resolve.jpg F1149–F1160"]
+  },
+  "callToAction": {
+    "value": "A small line under the wordmark inviting the viewer to go international with the brand; no URL, no button.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": ["speech-text.json 39.517 s box y 0.849", "visuals/a1/s20-cta-sub.jpg F1166–F1187"]
+  },
+  "whyItWorks": [
+    "The opening image is the category's old symbol, so the thesis line reads as a correction of it in under 6 s, without voice.",
+    "The product object is born from the thesis frame itself (frame → slab → button → object, 5.4–8.7 s, no cut), so the eye never has to search for the new subject.",
+    "Claims are followed by visible proof in the order a buyer would check: the real interface, a real transfer form, real places, a phone payment.",
+    "Speed is shown by the edit itself: five 4-frame plates under one sentence.",
+    "The film slows into long built transitions in its first half and speeds into hard cuts in the second, so energy rises toward the anthem.",
+    "Restraint holds it together: three grounds (dark green, warm off-white, white), one light sans, one italic serif, one accent green."
+  ]
+}

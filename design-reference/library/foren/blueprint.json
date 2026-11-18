@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "durationSec": 46.167,
+  "slots": [
+    {
+      "id": "hook",
+      "role": "Statement about the wider context; its key word made visual",
+      "startSec": 0.0,
+      "durationSec": 2.433,
+      "visualRecipe": "Light ground, one centred line of 2-3 words at about 0.05 frame-height caps; then the dark ground with the key word in the accent at about 0.58 frame width; two full-frame photographs of crowds under that word, the word white; back to the accent word on dark.",
+      "motionRecipe": "Line words every 2 frames with a 3-4 frame rise; hard cut; key word typed one letter per 2 frames, scaling up about 15%; hard cuts to photo 1 on the frame the word completes, photo 2 after 10 frames, accent word on dark after 10, next slot after 7. The word never moves.",
+      "soundRecipe": "Silent first 0.5 s; a low intro under the line; a transient on the cut into the typing (inferred).",
+      "techniqueIds": [
+        "type-on-photo-flash",
+        "word-by-word-line",
+        "ground-flip-cut"
+      ],
+      "copySlot": {
+        "purpose": "Opening clause naming a broad fact, with one key word",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "to-viewer",
+      "role": "Turn the statement to the viewer",
+      "startSec": 2.433,
+      "durationSec": 1.967,
+      "visualRecipe": "Light ground, centred line; four rounded photo cards of people (0.10-0.13 frame width) in the four corners.",
+      "motionRecipe": "First word lands about 1.3x then settles as the next word joins; cards fly in from the edges in about 6 frames, brake, drift outward slowly; text replacement on the held layout after about 1 s.",
+      "soundRecipe": "Low intro continues; transients near the text replacement (inferred).",
+      "techniqueIds": [
+        "portrait-cards-drift",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "The viewer's own situation, completing the opening statement",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "mark",
+      "role": "Brand reveal",
+      "startSec": 4.4,
+      "durationSec": 2.367,
+      "visualRecipe": "Dark ground, one frame empty; a pale disc at centre about 13% frame width; the mark inside it; the wordmark at about 0.5 frame width with a small sub-line; accent colour first, white at the end.",
+      "motionRecipe": "Dot grows 6 frames (power3.out); mark wipes in 12 frames, holds 6; disc travels right about 0.2 frame width over 7 frames revealing letters behind it; disc resolves into the final punctuation over 10 frames; sub-line fades in 3 frames; colour flip on one frame 17 frames later.",
+      "soundRecipe": "Transients through the build (measured onsets during it); the track still in its intro (inferred).",
+      "techniqueIds": [
+        "dot-to-wordmark"
+      ],
+      "copySlot": {
+        "purpose": "Brand name and a two-word category",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "promise",
+      "role": "The promise in one line, then made felt",
+      "startSec": 6.767,
+      "durationSec": 2.666,
+      "visualRecipe": "Light ground, centred line; then three full-width rows of the promise's last words with outlined icon chips, repeats in mid grey, bleeding off both edges.",
+      "motionRecipe": "Words every 2 frames; hard cut to the rows already moving rightwards and braking to a near hold in about 25 frames (expo.out), held about 0.5 s.",
+      "soundRecipe": "A transient on the cut to the rows (measured on the source film); intro ending (inferred).",
+      "techniqueIds": [
+        "word-by-word-line",
+        "decelerating-type-wall"
+      ],
+      "copySlot": {
+        "purpose": "What the product lets you do, ending on the plural thing it handles",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "product-first",
+      "role": "First real product screen",
+      "startSec": 9.433,
+      "durationSec": 3.0,
+      "visualRecipe": "The product's real main screen cropped about 1.4x, then its summary page arriving out of near-white with a soft warm bloom top right; a summarising line at the bottom.",
+      "motionRecipe": "Slow push on the first crop with a cursor drift; the second page fades up from white in about 4 frames; words every 2 frames.",
+      "soundRecipe": "The music lifts here: full energy from this slot on (inferred from loudness).",
+      "techniqueIds": [
+        "click-cut-walkthrough",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "One-line summary that it is all together",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "feature-one",
+      "role": "First capability, as a moving symbol",
+      "startSec": 12.433,
+      "durationSec": 3.467,
+      "visualRecipe": "Dark ground; a pastel disc carrying a symbol on a thick accent trail, text on the opposite side; mirrored on the next cut; then one small centred line with an inline icon chip.",
+      "motionRecipe": "Disc lands on its trail in 5 frames then drifts; the symbol swaps once per shot after about 17 frames; layout mirrors on the hard cut; inline chip pops in 1-2 frames after the first words.",
+      "soundRecipe": "Full-energy music; transients near the cuts but not locked (measured on the source film).",
+      "techniqueIds": [
+        "mirrored-symbol-trail",
+        "inline-chip-in-line",
+        "ground-flip-cut"
+      ],
+      "copySlot": {
+        "purpose": "Capability verb and object, then its breadth, then its reach",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "feature-two-setup",
+      "role": "Second capability, framed by people",
+      "startSec": 15.9,
+      "durationSec": 1.633,
+      "visualRecipe": "Light ground; four cut-out portraits on tinted rounded plates (about 0.25 frame height) with small round badges converge around a centred line; then a plain line.",
+      "motionRecipe": "Plates converge from the corners in about 5 frames and drift; hard cut; words every 2 frames.",
+      "soundRecipe": "Brief dip in level (inferred from loudness).",
+      "techniqueIds": [
+        "portrait-cards-drift",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "Who benefits and the easier outcome",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "walkthrough",
+      "role": "Proof: the real flow, cut on clicks",
+      "startSec": 17.533,
+      "durationSec": 9.7,
+      "visualRecipe": "The product's real screens, windows at 85-95% width on the dark ground or full-frame; two-line caption bottom left on the first page; yellow cursor about 2.5% of frame height.",
+      "motionRecipe": "Caption words rise in; cut to about 1.6x on the button with the caption held; then four steps, each ended by a press and a hard cut, the next window rising about 3% over 5-6 frames; fast 6-frame scrolls inside steps; final push-in on the result.",
+      "soundRecipe": "Cuts do not follow the music here (measured at chance on the source film); a click sound per press may be added (inferred).",
+      "techniqueIds": [
+        "click-cut-walkthrough",
+        "caption-anchored-punch-in"
+      ],
+      "copySlot": {
+        "purpose": "Caption naming the action in 3 words",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "integration",
+      "role": "Second capability, for builders",
+      "startSec": 27.233,
+      "durationSec": 3.767,
+      "visualRecipe": "Dark ground; a short line split around a photograph of an end user with a small purchase card overlaid; then a light ground with a line and its replacement.",
+      "motionRecipe": "Card snap-zooms from about 0.32 to 0.6 frame width in 3 frames, cursor presses; hard cut to light; words every 2 frames; hard text replacement.",
+      "soundRecipe": "Level dips at the start of this slot (inferred from loudness).",
+      "techniqueIds": [
+        "embedded-card-snap-zoom",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "Integration claim, then what it collects",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "feature-three",
+      "role": "Third capability as visual puns",
+      "startSec": 31.0,
+      "durationSec": 3.533,
+      "visualRecipe": "Dark ground, the verb in the accent split in two staggered halves with a product card inserted in the gap; light ground with the verb whole in dark ink; dark ground with a small word, an outlined arrow pill with two icon chips, the object word in the accent; dark ground with a white word over a giant blurred counter.",
+      "motionRecipe": "Card flies up tilted and settles flat in 5 frames; one empty light frame; verb opens a gap in 5 frames (power2.in) and the cut lands on the open gap; pill widens, right chip swaps every 10-16 frames; one empty dark frame; counter steps on frames 0, 2, 4, 7, 11 to zero and holds 13.",
+      "soundRecipe": "Cut on transients where the track has them (two cuts in this slot sat exactly on onsets in the source film).",
+      "techniqueIds": [
+        "word-split-insert",
+        "inline-chip-in-line",
+        "countdown-behind-word",
+        "ground-flip-cut"
+      ],
+      "copySlot": {
+        "purpose": "Verb with its two ends, and the speed claim",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "feature-three-proof",
+      "role": "Proof of the third capability",
+      "startSec": 34.533,
+      "durationSec": 4.334,
+      "visualRecipe": "The product's real screen on white, built top-down; then a wider view snapped about 1.5x and shifted left with a two-line caption on the right.",
+      "motionRecipe": "Elements appear in reading order; a figure types digit by digit; 4-frame snap reframe; caption words rise; a soft accent highlight sweeps left to right over the key rows over 6 frames.",
+      "soundRecipe": "Full-energy music continues (inferred).",
+      "techniqueIds": [
+        "click-cut-walkthrough"
+      ],
+      "copySlot": {
+        "purpose": "Caption naming a second benefit in 3 words",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "benefit",
+      "role": "Payoff in the viewer's terms",
+      "startSec": 38.867,
+      "durationSec": 2.666,
+      "visualRecipe": "Light ground, one centred line per shot, the third line one size larger.",
+      "motionRecipe": "Line 1 drifts up accelerating for 10 frames; line 2 rises from below with words every 2 frames; hard replacement by line 3.",
+      "soundRecipe": "Swaps on loudness swells where the track has them (inferred).",
+      "techniqueIds": [
+        "vertical-conveyor-change",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "Effort saved, then the gain it frees up",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "growth",
+      "role": "The visual reward",
+      "startSec": 41.533,
+      "durationSec": 1.767,
+      "visualRecipe": "Dark ground; one huge white word (about 0.6 frame width) over an accent-to-dark gradient area chart with a riding dot and a small counter; then the word small on light ground as the line completes.",
+      "motionRecipe": "Counter climbs over 24 frames (power3.out), dot rides the curve; hard cut to light; remaining words every 2 frames.",
+      "soundRecipe": "Peak of the track, then beginning to fall (inferred from loudness).",
+      "techniqueIds": [
+        "growth-chart-behind-word",
+        "word-by-word-line"
+      ],
+      "copySlot": {
+        "purpose": "The outcome word, then its object",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "cta",
+      "role": "Sign-off and address",
+      "startSec": 43.3,
+      "durationSec": 2.867,
+      "visualRecipe": "Light ground; one empty frame; a centred sign-off line; then the address alone, small (about 0.05 frame height), centred. Final frame holds; no fade.",
+      "motionRecipe": "Words every 2 frames; hard replacement by the address after about 1.1 s; static to the end.",
+      "soundRecipe": "Track winds down to about a quarter of its level (inferred from loudness).",
+      "techniqueIds": [
+        "address-only-end-card"
+      ],
+      "copySlot": {
+        "purpose": "Invitation ending on the brand name, then the address",
+        "maxWords": 5
+      }
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid (tempo not measured). 38 cuts in 46 s, median hold 0.97 s (0.23-3.07 s). Hook: five picture changes in 1.27 s. Type shots 0.7-1.3 s, one line each; interface steps 1.6-3.1 s with motion inside. Every change is a hard cut; four start with one bare-ground frame. Words inside a line every 2 frames. In the second half, put cuts on transients where you can (source film: 6 of 16 vs 18% chance); in the interface walkthrough cut on the cursor press instead."
+  },
+  "style": "Two flat grounds (a warm cream and a warm near-black) alternating on hard cuts; one soft accent; one sentence-case grotesk at line size, hero words at 0.2-0.5 frame height; literal small graphics for each claim; real interface alternating with type shots; calm, large margins.",
+  "transferRules": {
+    "keep": [
+      "Slot order: statement, turn to the viewer, mark, promise, first product screen, three capabilities each with a graphic pun then real interface, payoff, sign-off",
+      "Hard cuts only; ground flips from one flat ground to the other; one-frame bare-ground breath before key elements",
+      "One line per shot, words every 2 frames in final layout, 3-4 frame rise",
+      "A literal visual for each claim instead of a generic one",
+      "Interface walkthroughs cut on the click, scroll inside steps, captions held still through punch-ins",
+      "Eye parked where the next element will appear (held word, held caption, opened gap)",
+      "Visual reward held until after the last capability; end on a small, still address with no fade"
+    ],
+    "mustChange": [
+      "All branding: name, mark, wordmark, address and the disc-to-wordmark shapes",
+      "Accent colour, both grounds' exact values and the typeface",
+      "Music and all sound",
+      "All graphics, including symbols, chips, flags, charts, photographs and portraits",
+      "All copy and every number, which must be true for the new product",
+      "Interface: the new product's own real screens, captured, never a mock"
+    ]
+  }
+}

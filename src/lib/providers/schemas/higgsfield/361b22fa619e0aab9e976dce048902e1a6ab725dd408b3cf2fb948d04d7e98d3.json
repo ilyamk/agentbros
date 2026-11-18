@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/happy-horse/v1.1/text-to-video",
+  "title": "HappyHorse 1.1 — Text to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/happy-horse-1-1/text-to-video.md",
+  "usageNotes": [
+    "The prompt must contain text; an empty string is rejected during submission."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Happy Horse",
+    "required": [
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483646,
+        "minimum": 1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 3
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "1080p"
+      },
+      "aspect_ratio": {
+        "enum": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "16:9"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

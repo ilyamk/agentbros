@@ -1,0 +1,41 @@
+{
+  "status": "source-prepared-runtime-unavailable",
+  "contract": "private-owned-inert-style-v1",
+  "profile": "static-local-instances-v1",
+  "source": "packages/core/src/audioGroups.ts",
+  "originalSourceSha256": "20f9b111fb6ad52b755c5d51e093914f697a36a7d8a67024ca52cec8b077c38e",
+  "original": "  doc.head.appendChild(style);",
+  "replacement": "  if (__avcClock.instanceMode === true) __avcClock.instanceRegisterInertStyle(style);\n  doc.head.appendChild(style);",
+  "hookCount": 22,
+  "patchCounts": {
+    "packages/core/src/compiler/compositionScoping.ts": 5,
+    "packages/core/src/runtime/clipTree.ts": 1,
+    "packages/core/src/runtime/compositionLoader.ts": 5,
+    "packages/core/src/runtime/timeline.ts": 10,
+    "packages/core/src/audioGroups.ts": 1
+  },
+  "predecessors": {
+    "prepare-instances.cjs": "753a6d1b8fb0c49d4f19a4a43d9ec9d64082f62b26167341680687c0e12a3a73",
+    "instances-provenance.json": "a0424ba78fa6fd61df033fe400020ee818550badeb44be0c34259908658ca82d",
+    "prepare-tree.cjs": "998de1818c2ff1730c6500cb02bf375c0f649249632ad871d05a5e222d84ab9c",
+    "tree-provenance.json": "4e99d33491725d499879b27d7e036303d7236d4a1eedce6eefca1ca4d8632027"
+  },
+  "futureReceipt": "instances-style-provenance.json",
+  "futureRuntimePin": "unavailable until separately allocated independently reviewed build",
+  "privateClockImport": {
+    "source": "avc-private-clock",
+    "addedPrivateClockImport": true,
+    "consumedGlobal": "__avcPrivateEngineClock",
+    "noNewGlobalHook": true
+  },
+  "sheet": {
+    "tag": "STYLE",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "id": "__hf-audio-group-inert",
+    "text": "hf-audio-group{display:none!important}",
+    "selector": "hf-audio-group",
+    "property": "display",
+    "value": "none",
+    "priority": "important"
+  }
+}

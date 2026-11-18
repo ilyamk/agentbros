@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ugc-app",
+  "palette": {
+    "value": [
+      "#FFFFFF opening ground",
+      "Off-white with fine grain, from F60",
+      "#E2E2E2 greyed page ground (article)",
+      "#0A0A0A near-black ground of stats and ending",
+      "Yellow highlight about #FFD60A on phrase and pills (estimated)",
+      "Blue glow about #4C9BFF on the last words and light (estimated)",
+      "Warm red and orange inside the dim sports footage (from the footage, unforced)"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "frames sampled at 1.2, 2.15, 10.0, 16.5 s",
+      "visuals/a1/stat3.jpg",
+      "visuals/a1/end2.jpg"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Typed query",
+        "description": "Neutral grotesque regular, mixed case, dark on white: about 6% of width inside the bar, jumping to about 22% when the bar disappears at F46-F48."
+      },
+      {
+        "role": "Pages",
+        "description": "Authentic web faces at page size; a serif headline in the article. All are built or captured to look like real pages."
+      },
+      {
+        "role": "Stat sentences",
+        "description": "Grotesque medium, white, one line at about 3.5% cap height: small for a headline. It spans 40-55% of width. New word arrives yellow and cools to white in about 9 frames. The key phrase sits in a yellow pill with black text."
+      },
+      {
+        "role": "Source lines",
+        "description": "Very small, at the bottom third, about 1.5% cap height, typed left to right with a light cursor. Their job is credibility, not reading."
+      },
+      {
+        "role": "Ending words",
+        "description": "Geometric or neutral grotesque, mixed case, very large: 'What if' about 64% of width, 'better' 83% shrinking to 72%, 'way?' about 51%. Between them 'there was a' at 20% shrinking to 16%. Inferred from shapes: something like SF Pro or Inter Display."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/open.jpg",
+      "visuals/a1/search-cuts.jpg",
+      "visuals/a1/stat-hold.jpg",
+      "visuals/a1/ending.jpg",
+      "visuals/a1/end2.jpg"
+    ]
+  },
+  "composition": {
+    "value": "A fixed point at the centre of the frame across the first half: the phrase, then the person, then the stat. The stat line keeps one height and stays centred while it grows; what is behind it changes. Vertical clips are about 18% of frame width in the column, with rounded corners. In the ending, the words are off-centre, travelling through.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/search-cuts.jpg",
+      "visuals/a1/grid-in.jpg",
+      "visuals/a1/stat1.jpg"
+    ]
+  },
+  "materials": {
+    "value": "Screens as flat paper; real phone-shot video as the human texture; dim sports and road footage at about 25% brightness with a soft vignette behind the text. A soft halo surrounds the white tiles as they appear. Blue light in the end looks like a lit liquid or refraction.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/grid-in.jpg F99-F105",
+      "visuals/a1/grid-pull.jpg F136-F144",
+      "visuals/a1/end2.jpg F495-F507"
+    ]
+  },
+  "lighting": {
+    "value": "In the ending, type looks lit: soft bloom in the same colour, chromatic edge on the way in, and focus falling off towards the frame edges. Blurred words are not simply transparent; they look out of focus.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/ending.jpg F393-F420",
+      "visuals/a1/end2.jpg F453-F483"
+    ]
+  },
+  "styleSummary": "Starts as a calm web page and ends as a dark, lit title. Between the two, the kit is a yellow highlighter, real phone video, dim footage and small, confident sentences."
+}

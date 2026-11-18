@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "id": "animated-infographic",
+  "title": "Animated infographic loop",
+  "status": "draft",
+  "reviewedAt": "2026-11-17",
+  "summary": "Bring an existing still infographic, diagram or poster to life as a short seamless loop (GIF or MP4) for a README, docs page or social post: the picture's own components move along its story while every label stays exact and legible.",
+  "triggers": {
+    "en": [
+      "animate this infographic",
+      "animate the infographic",
+      "animated infographic",
+      "infographic gif",
+      "readme gif",
+      "gif for the readme",
+      "looping gif",
+      "seamless loop gif",
+      "animate this diagram",
+      "animate this poster",
+      "make this image move as a loop",
+      "readme",
+      "looping animation",
+      "architecture diagram"
+    ],
+    "ru": [
+      "оживить инфографику",
+      "анимировать инфографику",
+      "анимированная инфографика",
+      "гифка для readme",
+      "gif для readme",
+      "зацикленная гифка",
+      "зацикленная gif",
+      "анимировать схему",
+      "оживить схему",
+      "оживить картинку в цикл",
+      "анимировать постер",
+      "зацикленную гифку",
+      "гифку из схемы",
+      "гифку из инфографики",
+      "оживи инфографику",
+      "гифку для readme",
+      "зацикленн",
+      "из этой схемы",
+      "из схемы",
+      "анимацию схемы",
+      "для документации"
+    ],
+    "zh": [
+      "动态信息图",
+      "信息图动画",
+      "让信息图动起来",
+      "把信息图做成动画",
+      "信息图gif",
+      "流程图动画",
+      "让这张图动起来",
+      "把这张图做成动图",
+      "循环动图",
+      "无缝循环",
+      "动图",
+      "readme动图",
+      "海报动起来",
+      "架构图动画",
+      "图表动起来",
+      "信息图做成",
+      "做成循环",
+      "架构图动起来",
+      "图动起来"
+    ],
+    "generic": [
+      "动图"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "a photo of a person should talk or move like a presenter",
+      "use": "avatar-presenter"
+    },
+    {
+      "when": "a new explainer film with a voice-over teaches how something works, rather than animating one existing still",
+      "use": "explainer"
+    },
+    {
+      "when": "kinetic type, an ident or a motion piece designed from scratch to music, not driven by an existing picture",
+      "use": "motion-design"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "motion-graphics",
+    "start": "pnpm film:init --project <id> --type motion-graphics --playbook animated-infographic --product <path>"
+  },
+  "alternatives": [],
+  "agents": [],
+  "skills": [
+    "engine-selection",
+    "motion-library",
+    "motion-and-typography"
+  ],
+  "library": {
+    "categories": [
+      "kinetic",
+      "camera",
+      "finish",
+      "ui"
+    ],
+    "blocks": [
+      "kinetic-path-travel",
+      "parallax-rig",
+      "flare-pulse",
+      "ui-annotate",
+      "kinetic-morph-mark"
+    ]
+  },
+  "commands": [
+    "film:init",
+    "next",
+    "library:list",
+    "matte",
+    "motion:still",
+    "motion:strip",
+    "motion:check",
+    "film:measure",
+    "delivery"
+  ],
+  "read": [
+    ".agents/skills/engine-selection/SKILL.md"
+  ],
+  "qa": [
+    "Every label in every frame matches the source still letter for letter",
+    "The components named in the motion list move in the order the story says; nothing outside the list moves",
+    "The last frame equals the first: the loop seam is invisible",
+    "The GIF stays under 10 MB at the shipped width"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Which parts should move, in what order, and what story does the loop tell?",
+      "why": "The motion list is the brief: it is checked against the render, and it decides layers"
+    },
+    {
+      "ask": "Where will it be shown, and at what width and size limit?",
+      "why": "A README needs a light GIF; a site can take MP4 or WebP",
+      "default": "README: GIF, 800-960 px wide, 12-15 fps, under 10 MB"
+    },
+    {
+      "ask": "Can the components be regenerated or traced as separate layers, or only the flat still exists?",
+      "why": "Layers make the motion exact; a flat still needs masks or a regenerated plate",
+      "default": "Regenerate a clean plate and one transparent sprite per component from the still's prompt"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "website",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 4,
+        "max": 12
+      },
+      "captions": "none",
+      "note": "README or docs header; a GIF loops forever, so the last frame equals the first. Length band is a house rule, starting point."
+    }
+  ]
+}

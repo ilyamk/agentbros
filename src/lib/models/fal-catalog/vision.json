@@ -1,0 +1,1485 @@
+{
+  "version": 1,
+  "category": "vision",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "fal-ai/florence-2-large/caption",
+      "category": "vision",
+      "displayName": "Florence 2 Large Caption",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9c2f8a76c08c1945f6d6a1f4cfeeb16459b8a744abfd9cb3cc8990b375051179",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fcaption&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "captioning",
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/detailed-caption",
+      "category": "vision",
+      "displayName": "Florence 2 Large Detailed Caption",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "1a47777b56c6153adcfc1965b9ac00bd17651b659498ef8298ba0420205bfe8a",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fdetailed-caption&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "captioning",
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/more-detailed-caption",
+      "category": "vision",
+      "displayName": "Florence-2 Large",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "4d9725af0b8423c4c0297addb2900785a6cbae1e5cefd25f7b5f8abe9bb10f16",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fmore-detailed-caption&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "captioning",
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/ocr",
+      "category": "vision",
+      "displayName": "Florence 2 Large OCR",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "146ec57f1336c4d9b47a043a4fcc04e866920dbd4c6297b1676e5373d4fc03c1",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Focr&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "ocr",
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/region-to-category",
+      "category": "vision",
+      "displayName": "Florence 2 Large Region To Category",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "fecbfe2e41c87accf934dd4e16e4fc7e3e57bf657fe4c42930b94c8175d3cecb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fregion-to-category&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "region",
+          "type": "object",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/florence-2-large/region-to-description",
+      "category": "vision",
+      "displayName": "Florence-2 Large",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3a789e3f916378f3b2bde0524a68102e989d45cbe50154aa8c8f015446a0d203",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fregion-to-description&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "region",
+          "type": "object",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "results"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/imageutils/nsfw",
+      "category": "vision",
+      "displayName": "NSFW Filter",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "3a0e2c97e8130be4dcc11064055c2d2ef6d7d8b72b812f78744351261d10d8fb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fimageutils%2Fnsfw&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "nsfw_probability"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "filter",
+        "safety",
+        "utility"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/llava-next",
+      "category": "vision",
+      "displayName": "LLaVA v1.6 34B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/marlin",
+      "category": "vision",
+      "displayName": "Marlin",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "159a10f01c21343b5ee1fcfd59612a5905279be21b0d9e9cf8a0fdfd2a7ceea2",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmarlin&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "do_sample",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 64,
+          "max": 4096,
+          "default": 2048
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 2000
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "events",
+          "text"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "utility",
+        "editing"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/marlin/find",
+      "category": "vision",
+      "displayName": "Marlin Find",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d874cf36a94d60228bbb463f84b35e7129eef948cf3530281e6b1f48b343e4b3",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmarlin%2Ffind&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "do_sample",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "max": 500
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "span",
+          "text"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "utility",
+        "editing"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream-next",
+      "category": "vision",
+      "displayName": "MoonDreamNext",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7409104948a5dfceeeb369c17d8352da6e68bf7199da6f51a6cbc5c3abc1f9fe",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream-next&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 512,
+          "default": 64
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "task_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "caption",
+            "query"
+          ],
+          "default": "caption"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream-next/batch",
+      "category": "vision",
+      "displayName": "MoonDreamNext Batch",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "ba5acf852bd3973b343206b33023612fdb1b919bfdebcc168ff8beb06999bced",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream-next%2Fbatch&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "images_data_url",
+          "type": "string",
+          "required": true,
+          "media": "file"
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 512,
+          "default": 64
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json",
+          "file"
+        ],
+        "fields": [
+          "captions_file",
+          "outputs"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream2",
+      "category": "vision",
+      "displayName": "Moondream2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "7a7c733c4c29c66cb4eb63da820774a064abede6bd3222014bbb5da32b490833",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream2&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream2/object-detection",
+      "category": "vision",
+      "displayName": "Moondream2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "072657e792aa9a3771533acdfec18899655645d2bbb084d6937ba378842a2633",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream2%2Fobject-detection&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "object",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "json"
+        ],
+        "fields": [
+          "image",
+          "objects"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-image"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream2/point-object-detection",
+      "category": "vision",
+      "displayName": "Moondream2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "11fa1779bbbcec0a437945b22dd5d6ae86a350fd9809f1acd4b316475efa04bb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream2%2Fpoint-object-detection&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "object",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "json"
+        ],
+        "fields": [
+          "image",
+          "objects"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "image-to-image"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream2/visual-query",
+      "category": "vision",
+      "displayName": "Moondream2",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "81f6089bb35775e37be7c40a5c69e49fa4412b1f7be6778afb27f6132ed9a7fa",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream2%2Fvisual-query&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream3-preview/caption",
+      "category": "vision",
+      "displayName": "Moondream3 Preview [Caption]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "38de52748c5cb9e86c7a2dd179b94b0c99670100757aab2628ea62939be56e13",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream3-preview%2Fcaption&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "length",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "short",
+            "normal",
+            "long"
+          ],
+          "default": "normal"
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage_info"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream3-preview/detect",
+      "category": "vision",
+      "displayName": "Moondream3 Preview [Detect]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e813d3dae5e5662e105040a1ebb3681ceda3b1165dd87f7a1fcfca1f4f77edb9",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream3-preview%2Fdetect&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "preview",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "json"
+        ],
+        "fields": [
+          "image",
+          "objects",
+          "usage_info"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream3-preview/point",
+      "category": "vision",
+      "displayName": "Moondream3 Preview [Point]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0751db91777b1ce5c22b29b2f97b3ba9cad412d287064c52e2f2ccd9faa65397",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream3-preview%2Fpoint&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "preview",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "json"
+        ],
+        "fields": [
+          "image",
+          "points",
+          "usage_info"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/moondream3-preview/query",
+      "category": "vision",
+      "displayName": "Moondream 3 Preview [Query]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d2734cc9c55f33eb46e64860b70f97b0175021868ad1beb97a3db625e1b53480",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fmoondream3-preview%2Fquery&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1
+        },
+        {
+          "name": "reasoning",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "top_p",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "reasoning",
+          "usage_info"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "Vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sa2va/4b/image",
+      "category": "vision",
+      "displayName": "Sa2VA 4B Image",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "5e8f943aacbf7d430e1c616bdfdc33c75620454bdaf9e12bcc8eecbb666c0db5",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsa2va%2F4b%2Fimage&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "text"
+        ],
+        "fields": [
+          "masks",
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sa2va/4b/video",
+      "category": "vision",
+      "displayName": "Sa2VA 4B Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "8c87bc9003e894fbb4b7809e0fdbe4de3a3606741188af610bffc3ba5646b707",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsa2va%2F4b%2Fvideo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "num_frames_to_sample",
+          "type": "integer",
+          "required": false,
+          "min": 5,
+          "max": 100
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "text"
+        ],
+        "fields": [
+          "masks",
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sa2va/8b/image",
+      "category": "vision",
+      "displayName": "Sa2VA 8B Image",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "c54ee3de5e9e92db8de4242f413a308ab90e884eea4848887749c73293421491",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsa2va%2F8b%2Fimage&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "text"
+        ],
+        "fields": [
+          "masks",
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sa2va/8b/video",
+      "category": "vision",
+      "displayName": "Sa2VA 8B Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "053032db2687ec96f68bd04ed462c7c906859c4e57b4d518a20b77b48ec6bdef",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsa2va%2F8b%2Fvideo&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "num_frames_to_sample",
+          "type": "integer",
+          "required": false,
+          "min": 5,
+          "max": 100
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "image",
+          "text"
+        ],
+        "fields": [
+          "masks",
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/sam-3/image/embed",
+      "category": "vision",
+      "displayName": "Sam 3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b1468ac1964fa7d5a89cf8fda9167d0f53f58221ab0a29ee3584ea1a1960126d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-3%2Fimage%2Fembed&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": [
+          "embedding_b64"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "embeddings",
+        "mask",
+        "real-time"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/video-understanding",
+      "category": "vision",
+      "displayName": "Video Understanding",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "03e6a2512564d5de766927ba6c28528f7812998a2a09d98107a748ec448e23b8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvideo-understanding&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "detailed_analysis",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 5000
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": true,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text"
+        ],
+        "fields": [
+          "output"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "utility",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/x-ailab/nsfw",
+      "category": "vision",
+      "displayName": "NSFW Checker",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "b4e93d098ef5ee6b8d255fc33be9c1826f849bd50d6f7e88c381121244d77ed8",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fx-ailab%2Fnsfw&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": true,
+          "media": "image",
+          "array": true
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "filter",
+        "safety",
+        "utility"
+      ]
+    },
+    {
+      "endpoint": "openrouter/router/vision",
+      "category": "vision",
+      "displayName": "OpenRouter [Vision]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "63ccb1279140aebdc79ee5c43899319012a88ae81d14f2c9f5b98c5dff68fa3d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=openrouter%2Frouter%2Fvision&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "enable_web_search",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "image_urls",
+          "type": "array",
+          "required": false,
+          "media": "image",
+          "array": true
+        },
+        {
+          "name": "max_tokens",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "pdf_urls",
+          "type": "array",
+          "required": false,
+          "media": "file",
+          "array": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "reasoning",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "system_prompt",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "temperature",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 2,
+          "default": 1
+        },
+        {
+          "name": "web_search_options",
+          "type": "object",
+          "required": false
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "perceptron/isaac-01",
+      "category": "vision",
+      "displayName": "Isaac 0.1",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "70868d710c7fd70172f8ea0d4297becb0ded28fd0823f86c96f3773247d37f39",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=perceptron%2Fisaac-01&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "response_style",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "text",
+            "box",
+            "point",
+            "polygon"
+          ],
+          "default": "text"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "text",
+          "json"
+        ],
+        "fields": [
+          "output",
+          "usage"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    },
+    {
+      "endpoint": "perceptron/isaac-01/openai/v1/chat/completions",
+      "category": "vision",
+      "displayName": "Isaac 0.1 [OpenAI Compatible Endpoint]",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "d87f38567c88c1d7c111b6f2be08ad349003ecea57ed02eb0d1653d67b35e271",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=perceptron%2Fisaac-01%2Fopenai%2Fv1%2Fchat%2Fcompletions&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "json"
+        ],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "multimodal",
+        "vision"
+      ]
+    }
+  ]
+}

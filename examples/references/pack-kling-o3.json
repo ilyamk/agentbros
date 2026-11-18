@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "pack-s3",
+  "shotId": "s3",
+  "endpoint": "fal-ai/kling-video/o3/standard/reference-to-video",
+  "profileFamily": "kling-o3",
+  "attachments": [
+    { "requirementKey": "mara-front", "source": { "assetId": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }, "slot": "elements", "order": 1, "roleSentence": "Mara, the market trader", "element": { "index": 1, "part": "frontal" } },
+    { "requirementKey": "mara-three-quarter-left", "source": { "assetId": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" }, "slot": "element-references", "order": 1, "roleSentence": "Mara from the three-quarter left", "element": { "index": 1, "part": "reference" } },
+    { "requirementKey": "market-plate-wide", "source": { "assetId": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" }, "slot": "images", "order": 1, "roleSentence": "the place and light of the night market, without its people" }
+  ],
+  "prompt": {
+    "action": "Mara closes her stall and walks out of the market into the rain.",
+    "invariants": ["Mara wears a rust-red raincoat and a silver ear cuff."],
+    "camera": "Handheld follow from behind."
+  },
+  "params": { "duration": "5" },
+  "audioPolicy": "mute"
+}

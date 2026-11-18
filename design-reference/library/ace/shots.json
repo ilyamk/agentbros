@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "status": {
+    "available": true,
+    "engine": "pyscenedetect-adaptive+spike+novelty"
+  },
+  "detector": {
+    "name": "pyscenedetect-adaptive+spike+novelty",
+    "version": "0.7.2",
+    "params": {
+      "adaptiveThreshold": 3,
+      "spikeMinChanged": 0.12,
+      "spikeRatio": 3,
+      "flashMaxReturn": 0.35,
+      "shortWindowSec": 0.33,
+      "longWindowSec": 1,
+      "noveltyMin": 4.5,
+      "noveltyMadScale": 6,
+      "prominenceRatio": 0.5,
+      "softGuardSec": 0.4,
+      "minHardShotSec": 0.1,
+      "cutWholeFrame": 0.5,
+      "matchSimilarity": 0.65,
+      "samePictureSimilarity": 0.9,
+      "layoutWeight": 0.6,
+      "cutScoreMin": 0.12,
+      "sameShotNovelty": 12,
+      "softMinFrames": 3,
+      "wipePurity": 0.88,
+      "softMergeGapSec": 0.3,
+      "candidateNoveltyMin": 1.5,
+      "softMarginSec": 0.25,
+      "prominenceReachSec": 2.5,
+      "maxTransitionSec": 3
+    }
+  },
+  "shots": [
+    {
+      "startSec": 0,
+      "endSec": 5.017,
+      "id": "s001",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0,
+      "colour": {
+        "L": 68.7,
+        "a": -1.8,
+        "b": -9,
+        "percentiles": {
+          "L": [
+            7.8,
+            82.8,
+            98.4
+          ],
+          "a": [
+            -8,
+            0,
+            8
+          ],
+          "b": [
+            -32,
+            0,
+            0
+          ]
+        },
+        "samples": 19
+      }
+    },
+    {
+      "startSec": 5.017,
+      "endSec": 7.717,
+      "id": "s002",
+      "transitionIn": "match",
+      "transitionConfidence": 0.45,
+      "transitionMeasures": {
+        "changedFraction": 0.247,
+        "edgeSimilarity": 0.751,
+        "novelty": 20.72,
+        "engines": 2
+      },
+      "colour": {
+        "L": 91.7,
+        "a": 2.1,
+        "b": 1.2,
+        "percentiles": {
+          "L": [
+            76.6,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            0,
+            0,
+            8
+          ]
+        },
+        "samples": 10
+      }
+    },
+    {
+      "startSec": 7.717,
+      "endSec": 9.65,
+      "id": "s003",
+      "transitionIn": "whip",
+      "transitionConfidence": 0.76,
+      "transitionStartSec": 7.617,
+      "transitionEndSec": 7.817,
+      "transitionMeasures": {
+        "frames": 13,
+        "blendResidual": 0.325,
+        "alphaMonotonic": 1,
+        "binaryPurity": 0.821,
+        "centroidSweep": 0.646,
+        "flowWidthPerSec": 1.398,
+        "flowCoherence": 0.723,
+        "blurAnisotropy": 2.355
+      },
+      "colour": {
+        "L": 72.1,
+        "a": 0.3,
+        "b": -2.9,
+        "percentiles": {
+          "L": [
+            7.8,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            -8,
+            0,
+            0
+          ]
+        },
+        "samples": 7
+      }
+    },
+    {
+      "startSec": 9.65,
+      "endSec": 11.45,
+      "id": "s004",
+      "transitionIn": "match",
+      "transitionConfidence": 0.45,
+      "transitionMeasures": {
+        "changedFraction": 0.249,
+        "edgeSimilarity": 0.771,
+        "novelty": 19.68,
+        "engines": 2
+      },
+      "colour": {
+        "L": 62.5,
+        "a": 0.7,
+        "b": -6.2,
+        "percentiles": {
+          "L": [
+            7.8,
+            89.1,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            8
+          ],
+          "b": [
+            -24,
+            0,
+            0
+          ]
+        },
+        "samples": 7
+      }
+    },
+    {
+      "startSec": 11.45,
+      "endSec": 11.617,
+      "id": "s005",
+      "transitionIn": "match",
+      "transitionConfidence": 0.45,
+      "transitionMeasures": {
+        "changedFraction": 0.231,
+        "edgeSimilarity": 0.858,
+        "novelty": 13.25,
+        "engines": 2
+      },
+      "colour": {
+        "L": 73.4,
+        "a": 1.9,
+        "b": -10.5,
+        "percentiles": {
+          "L": [
+            20.3,
+            85.9,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            16
+          ],
+          "b": [
+            -56,
+            0,
+            0
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 11.617,
+      "endSec": 11.633,
+      "id": "s006",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.983,
+        "edgeSimilarity": 0,
+        "novelty": 65.31,
+        "engines": 1
+      },
+      "colour": {
+        "L": 73.4,
+        "a": 1.9,
+        "b": -10.5,
+        "percentiles": {
+          "L": [
+            20.3,
+            85.9,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            16
+          ],
+          "b": [
+            -56,
+            0,
+            0
+          ]
+        },
+        "samples": 1
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "timeSec": 0.25,
+      "novelty": 4.65
+    },
+    {
+      "timeSec": 0.817,
+      "novelty": 3.05
+    },
+    {
+      "timeSec": 1.267,
+      "novelty": 4.13
+    },
+    {
+      "timeSec": 2.317,
+      "novelty": 3.62
+    },
+    {
+      "timeSec": 3.067,
+      "novelty": 2.6
+    },
+    {
+      "timeSec": 3.55,
+      "novelty": 4.68
+    },
+    {
+      "timeSec": 4.117,
+      "novelty": 4.44
+    },
+    {
+      "timeSec": 4.517,
+      "novelty": 3.97
+    },
+    {
+      "timeSec": 5.767,
+      "novelty": 7.39
+    },
+    {
+      "timeSec": 6.183,
+      "novelty": 2.15
+    },
+    {
+      "timeSec": 6.717,
+      "novelty": 3.12
+    },
+    {
+      "timeSec": 7.117,
+      "novelty": 1.76
+    },
+    {
+      "timeSec": 9.2,
+      "novelty": 3.18
+    },
+    {
+      "timeSec": 10.083,
+      "novelty": 3.88
+    },
+    {
+      "timeSec": 10.733,
+      "novelty": 11.74
+    }
+  ],
+  "summary": {
+    "count": 6,
+    "medianDurationSec": 1.933,
+    "cutsPerMinute": 25.788
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "id": "campaign-content-series",
+  "kind": "product",
+  "task": "Plan 30 explicit content-series members with pinned inputs and zero media spending through the public campaign CLI. Consume the immutable plan through campaign:next. Preserve the exact user approval gate; never claim finished videos or live model quality.",
+  "seed": 20261116,
+  "platforms": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "material": [],
+  "commands": [
+    "commands",
+    "campaign:production",
+    "campaign:next"
+  ],
+  "outcomes": [
+    "user-action"
+  ],
+  "requiresLeaf": false,
+  "limits": {
+    "wallTimeSec": 180,
+    "tokens": 10000,
+    "commands": 10,
+    "leaves": 0,
+    "transcriptBytes": 2097152,
+    "fileBytes": 16777216,
+    "mediaSpendUsd": 0,
+    "downloadBytes": 0
+  }
+}

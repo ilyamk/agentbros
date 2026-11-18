@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "id": "motion-design",
+  "playbook": "motion-design",
+  "tier": "no-spend",
+  "brief": "Make a 9\u201315 second vertical motion-design film saying: Give every move a purpose. Use the supplied deliberately sloppy motion-plan fixture as a repair scaffold, replacing its generic imagery and timings. Start from the motion library, compute every animation from the frame, use an explicit silent soundtrack decision, and hold the last frame.",
+  "material": [
+    {
+      "path": "tests/fixtures/film/plan-sloppy.json",
+      "sha256": "32423a584c794707e6fffa10f00941282e1339d2b8fc0d4822b201aec67e6297",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/answers/motion-design.json",
+      "sha256": "b4f014cfae76cf0b6da453c0b227747ddbc15924b55a9f3044c54d3fef1a27ea",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "vertical",
+    "durationSec": [
+      9,
+      15
+    ]
+  },
+  "answers": "bench/answers/motion-design.json",
+  "criteria": [
+    {
+      "id": "outcome",
+      "kind": "process",
+      "check": {
+        "type": "file",
+        "path": "bench-result.json"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    },
+    {
+      "id": "delivery",
+      "kind": "technical",
+      "check": {
+        "type": "delivery"
+      }
+    },
+    {
+      "id": "task-constraints",
+      "kind": "technical",
+      "check": {
+        "type": "constraints"
+      }
+    },
+    {
+      "id": "file-sensors",
+      "kind": "technical",
+      "check": {
+        "type": "file-sensors"
+      }
+    }
+  ]
+}

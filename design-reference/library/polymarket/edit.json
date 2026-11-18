@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "rhythm": {
+    "value": "Detector: 23 shots, median 1.17 s. Corrected: 30 shots (7 splits, one cut moved 0.1 s earlier), median 0.95 s, 48 cuts per minute, with text swaps counted. Only two sequences hold longer than 2 s (4.03 s cards, 2.67 s interface); the end card is 2.86 s. Music-led, no voice. Sound was not heard: everything on sound is from audio.json and sync.json. Tempo is 130.06 BPM (confidence 0.71, beatRegularity 0.98), so the grid is believable. Cuts on beat 0.545 vs chance 0.346 overall, but with corrected times after 10.5 s only 9 of 21 land on a beat (local chance 0.35), which is no evidence. Against onsets 19 of 21 hit (local chance 0.70), so cuts follow transients, not the bar. Those onsets may be hits placed on the cuts rather than music the cuts follow: the data cannot separate the two. Before 10.5 s, in the quiet section, it reverses: 5 of 8 land on a beat (local chance 0.35) and 1 of 8 on an onset (chance 0.18), on too few cuts to prove it.",
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "sync.json metrics",
+      "audio.json tempo, sections",
+      "visuals/edit-map.png"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Sender and subject, word by word",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/open-word.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Hard text swaps on a static ground; words scale in fast then drift",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open-word.jpg F28-F46"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Urgency word, first colour jolt",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/islive-count.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Push-in on the word and rings expanding, decelerating to a slow reverse drift",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/islive-count.jpg F63-F85"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "The prize as a number, ending in a rising graph",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/bars-fill.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Linear counter over 7 frames; bars enter from the bottom",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/islive-count.jpg F87-F97",
+          "visuals/a1/bars-fill.jpg F103-F106"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Cadence claim",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/bars-fill.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Line rises from low in frame on the ground the graph became; expo-out",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/bars-fill.jpg F115-F122"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Two quiet product facts",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/black-lines.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Black ground with a dim pyramid; lines build by word; digit roll on the multiplier",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/black-lines.jpg F151-F175"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Range: many markets in one place",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/coin-card.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Object lands in a card, the card swaps content in place every 6-12 frames, then the layout pulls back to a sliding row",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/coin-card.jpg F195-F215",
+          "visuals/a1/card-grid.jpg",
+          "visuals/a1/card-pullout.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "The one action: place an order",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/form-in.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Interface scrolls up slowly while values change themselves, then the button grows to hide it",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/form-slider.jpg",
+          "visuals/a1/button-fill.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "What it could reach",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/gauge-start.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Radial ticks fill with the counter, power3.out over 20 frames, then the top value holds while the gauge pulls back, accelerating into the cut",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/gauge-start.jpg F396-F430",
+          "visuals/a1/t-gauge.jpg F396-F431"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Rule of entry, three words",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/start-words.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Two hard size swaps at F449 and F465 inside this shot: 56%, 35%, then 88% of frame width; an underline draws under the first word in 12 frames",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/start-words.jpg F432-F489"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "Gain climbing",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/pnl-count.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Linear counter, about 1062 per frame; slow pull-out on white",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/pnl-count.jpg F493-F511"
+        ]
+      }
+    },
+    {
+      "shotId": "s011",
+      "purpose": {
+        "value": "The viewer in a ranking",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/board-fly.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Rows stream vertically with motion blur behind one pinned wider row; settles in 0.5 s",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/board-fly.jpg F515-F555"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "Rank one, close up",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/board-row.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Hard punch-in on the same layout; a soft sheen travels along the top row",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/board-row.jpg F558-F579"
+        ]
+      }
+    },
+    {
+      "shotId": "s013",
+      "purpose": {
+        "value": "The threshold",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/top-count.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Word rises and shifts left as a digit field opens beside it; 10 to 50 in 13 frames, near-even steps slowing only at the end (power1.out)",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/top-count.jpg F581-F596",
+          "visuals/a1/t-topcount.jpg F581-F595"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Who gets paid",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/rewarded.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Words pop on by frame: two lines built in 3 frames, then a long settle",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/rewarded.jpg F601-F607"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "First prize, with a tag",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/tenk-tag.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Counter on a faint banknote; skewed tag wipes in from the left under the figure at F628-F636",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/tenk-tag.jpg F627-F639"
+        ]
+      }
+    },
+    {
+      "shotId": "s016",
+      "purpose": {
+        "value": "Prize detail as a physical slip",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/receipt.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Paper unrolls towards the camera, one new row about every 2 frames, then a slow pull-back with a sheen",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/receipt.jpg F660-F682",
+          "visuals/a1/receipt-count.jpg F708-F714"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Countdown to zero",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/receipt-count.jpg",
+          "visuals/a1/zero-cut.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Values change on every frame from F715; zero holds at least F756-F761 with a slow push-in",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/receipt-count.jpg F715-F728",
+          "visuals/a1/zero-cut.jpg F756-F761"
+        ]
+      }
+    },
+    {
+      "shotId": "s018",
+      "purpose": {
+        "value": "The event's name and dates",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/comp-starts.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Ghost of the same word at about 200% behind it, then a field of tiles lighting at random",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/comp-starts.jpg F762-F806"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "Recap of the stake",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/recap.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Small counter, barely any drift",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/recap.jpg F810-F842"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "Recap of the cadence",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/recap.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Frozen: diff falls to 0 by F866",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/recap.jpg F858-F874"
+        ]
+      }
+    },
+    {
+      "shotId": "s021",
+      "purpose": {
+        "value": "The dare",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/question-cta.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Frozen, black on paper, then a tiny push just before the cut",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/question-cta.jpg F879-F897"
+        ]
+      }
+    },
+    {
+      "shotId": "s022",
+      "purpose": {
+        "value": "Call to action",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/question-cta.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Same rings as s002, with a faint line chart rising inside the disc",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/question-cta.jpg F903-F951"
+        ]
+      }
+    },
+    {
+      "shotId": "s023",
+      "purpose": {
+        "value": "Address, logo, legal",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/endcard.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Product word, then logo mark builds into the name by F1032; still from F1041",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/endcard.jpg F960-F1041"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 3.43,
+        "endSec": 3.87,
+        "description": "The graph is the transition. Five centred bars enter from the bottom at F103; by F105 they are at 30-55% height, then they slow to a near-plateau for 6 frames (F107-F111) so the shape reads as a chart; from F111 to F114 they surge to fill the frame edge to edge. Hairline gaps between bars remain visible for a frame, then the next line rises on the now solid blue from F115, starting low and decelerating over 8 frames.",
+        "why": "A wipe that means something: money rises and becomes the next scene. The plateau is the key choice, since a linear fill would read only as a wipe.",
+        "name": "element-grows-to-ground"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/bars-fill.jpg F103-F122",
+        "visuals/a1/t-bars.jpg F103-F122"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 13.2,
+        "endSec": 14.37,
+        "description": "Radial gauge race, then hold. Hard cut in on the first value. Roughly 90-100 radial ticks (not counted exactly) fill clockwise while the value races on every frame: 2, 7, 25, 41, 52, 61, 68, 74, 78, 82, 86, 88, 91, 93, 95, 96, 97, 98, 99, 99, 100 (thousands) over F396-F416, 61% of the way by the 5th frame (power3.out). The top value then holds 0.47 s while the whole gauge pulls back on an accelerating curve (diff 1.9 at F417 to 8.6 at F429), cut at F431 on an onset (0.017 s from one).",
+        "why": "Expo-out counters feel like momentum that arrives rather than a meter being read. The 0.5 s hold is what lets $100K land before the cut takes it away.",
+        "name": "front-loaded-number-race"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/t-gauge.jpg F394-F431",
+        "sync.json"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 12.7,
+        "endSec": 13.2,
+        "description": "The button eats the interface. A light band sweeps in from both edges of the button (F381-F389), the label shrinks away as the button grows (F388-F391), and by F395 it is about 94% of the frame width. It cuts on F396, before fully covering, to a contrasting white ground, not to the blue the viewer expects.",
+        "why": "The action is enlarged until it is all there is, and the cut gives a hit of relief. Cutting before it fills avoids a dull beat of plain colour.",
+        "name": "button-swells-cut-before-fill"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/button-fill.jpg F378-F396",
+        "visuals/a1/t-button.jpg F379-F396"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.37,
+        "endSec": 19.37,
+        "description": "You are first. A profit figure runs up on white (F491-F513). Hard cut to a ranking streaming vertically under motion blur, with one wider row pinned at centre carrying that same green figure and labelled '(You)'. Rows settle in 0.5 s and the stack slides up until the pinned row is on top (F515-F555). Then a hard punch-in on the top four rows at F557, with a slow sheen travelling along the first row.",
+        "why": "Before it says what winning pays, it shows the viewer already winning, and the figure links the two shots so the row reads as the same person.",
+        "name": "pinned-row-ranking-stream"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/pnl-count.jpg",
+        "visuals/a1/board-fly.jpg F515-F557",
+        "visuals/a1/board-row.jpg F558-F579",
+        "visuals/a1/t-board.jpg F514-F557"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 19.37,
+        "endSec": 20.83,
+        "description": "Word and digit pair. The word enters low in frame at F581 and travels up and left as the number field opens beside it (F583); 10, 14, 19, 23, 27, 32, 36, 39, 43, 46, 48, 49, 50 by F595: near even steps that slow only in the last four frames (power1.out), not a strong expo-out. A hard cut to the sentence at 56% of that size follows, and the words of the second line arrive 1-3 frames apart.",
+        "why": "The size drop from number to sentence tells the viewer the headline is over and its meaning follows, so no transition is needed.",
+        "name": "word-counter-then-sentence-drop"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/t-topcount.jpg F581-F601",
+        "visuals/a1/top-count.jpg F581-F601",
+        "visuals/a1/rewarded.jpg F601-F607"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 0.97,
+        "transition": "cut",
+        "note": "Logo replaced by a word at F29-F30 on an unchanged ground; flat text swap missed by the detector."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/open-word.jpg F28-F30"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s001"
+        ],
+        "timeSec": 1.43,
+        "transition": "cut",
+        "note": "One word becomes two at F43-F44. Candidate 1.467 in shots.json."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/open-word.jpg F42-F44"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 3.77,
+        "transition": "wipe",
+        "note": "Not a whip: no streak, no lateral motion. Bars begin at F103, cover the frame at F114, and the next line rises on the blue at F115."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/bars-fill.jpg F103-F115"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 5.7,
+        "transition": "cut",
+        "note": "Line swap on black, F170-F172. No candidate at this time: too little colour moves."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/black-lines.jpg F169-F172"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 14.97,
+        "transition": "cut",
+        "note": "Text swap, candidate 14.967."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/start-words.jpg F447-F450"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 15.5,
+        "transition": "cut",
+        "note": "Text swap, candidate 15.5."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/start-words.jpg F462-F465"
+      ]
+    },
+    {
+      "value": {
+        "kind": "move",
+        "shotId": "s017",
+        "toSec": 23.833,
+        "transition": "cut",
+        "note": "The detector put a continuous boundary (0.4) at 23.933. It is a hard cut at F715 (23.833 s), 0.1 s earlier: diffMean jumps to 41.6 on that frame. Moved, and the cut stands as a cut."
+      },
+      "basis": "observed",
+      "confidence": 0.98,
+      "evidence": [
+        "visuals/a1/receipt-count.jpg F714-F715"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s017"
+        ],
+        "transition": "cut",
+        "note": "Companion to the move above: the cut at F715 is a hard cut, not continuous."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/receipt-count.jpg F714-F715"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s018"
+        ],
+        "timeSec": 26.0,
+        "transition": "cut",
+        "note": "Text swap with a changed background layer, F778-F782. Candidate 25.967."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/comp-starts.jpg F778-F782"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s023"
+        ],
+        "timeSec": 33.17,
+        "transition": "cut",
+        "note": "End card changes from product word to logo. Candidate 33.167. Legal text arrives with it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/endcard.jpg F987-F996"
+      ]
+    }
+  ]
+}

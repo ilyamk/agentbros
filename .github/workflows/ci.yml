@@ -1,0 +1,233 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  merge_group:
+
+permissions: {}
+
+jobs:
+  checks:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runtime: primary
+            versionFile: .nvmrc
+          - runtime: fallback
+            versionFile: .nvmrc.fallback
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: ${{ matrix.versionFile }}
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Prepare the pinned Python environment
+        run: |
+          uv sync --locked
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - run: pnpm runtime:check --expected "$RUNTIME"
+        env:
+          RUNTIME: ${{ matrix.runtime }}
+      - run: pnpm repo:hygiene --check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm console:test
+      - run: pnpm deps:licences --check --strict --scope repository-source
+      - name: Install workflow fixture tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      # Remotion's Chromium: the vision review tests in test:fast and the full suite render pages with it.
+      - run: pnpm exec remotion browser ensure
+      - run: pnpm test:fast
+      - run: pnpm bench:workflow --action run --suite bench/workflows/v4/suite.json --mode contract --no-spend
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: workflow-contracts-${{ matrix.runtime }}
+          path: out/bench/workflow-*/
+          retention-days: 7
+      - run: pnpm github:codeowners --check
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: read }
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+        runtime: [primary, fallback]
+        include:
+          - runtime: primary
+            versionFile: .nvmrc
+          - runtime: fallback
+            versionFile: .nvmrc.fallback
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: ${{ matrix.versionFile }}
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Prepare the pinned Python environment
+        run: |
+          uv sync --locked
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - run: pnpm runtime:check --expected "$RUNTIME"
+        env:
+          RUNTIME: ${{ matrix.runtime }}
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: pnpm exec remotion browser ensure
+      - name: Full suite shard
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: pnpm exec tsx --test --test-shard="$SHARD/4" --import ./tests/helpers/memory-root.ts tests/*.test.ts
+  browser-render:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runtime: primary
+            versionFile: .nvmrc
+          - runtime: fallback
+            versionFile: .nvmrc.fallback
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: ${{ matrix.versionFile }}
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Prepare the pinned Python environment
+        run: |
+          uv sync --locked
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - run: pnpm runtime:check --expected "$RUNTIME"
+        env:
+          RUNTIME: ${{ matrix.runtime }}
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: pnpm exec remotion browser ensure
+      - run: pnpm test:browser
+      - run: pnpm test:render
+  python:
+    name: Python
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.13.9"
+          enable-cache: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - run: pnpm python:check
+      - run: pnpm python:audit
+  python-profiles:
+    name: Python profile (${{ matrix.profile }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: { contents: read }
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { profile: cmake, paths: 'local-engines/prepare' }
+          - { profile: yt-dlp, paths: 'reference/add' }
+          - { profile: reference, paths: 'reference|footage-shots' }
+          - { profile: reference-audio, paths: 'reference' }
+          - { profile: transnet, paths: 'footage-shots' }
+          - { profile: audio-map, paths: 'audio-map|audio-structure' }
+          - { profile: stems, paths: 'audio-stems|reference/audio|audio/stems' }
+          - { profile: multicam, paths: 'multicam' }
+          - { profile: offset, paths: 'multicam' }
+          - { profile: vad, paths: 'speech-local|speech/local' }
+          - { profile: diarize, paths: 'speech-local|speech/local' }
+          - { profile: sfx-index, paths: 'sfx-index' }
+          - { profile: clap, paths: 'sfx-clap' }
+          - { profile: matte, paths: 'matte' }
+          - { profile: vork, paths: 'vork' }
+          - { profile: earshot, paths: 'earshot' }
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Select affected profiles
+        id: changed
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before }}
+          PROFILE_PATHS: ${{ matrix.paths }}
+        shell: bash
+        run: |
+          if ! git cat-file -e "$BASE^{commit}" 2>/dev/null; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            changed_files="$(git diff --name-only "$BASE" HEAD)"
+            if grep -E "(^pyproject.toml$|^uv.lock$|^\.python-version$|python-check|python.ts$|workflows/ci.yml|$PROFILE_PATHS)" <<< "$changed_files" > /dev/null; then
+              echo 'run=true' >> "$GITHUB_OUTPUT"
+            else
+              echo 'run=false' >> "$GITHUB_OUTPUT"
+            fi
+          fi
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        if: steps.changed.outputs.run == 'true'
+        with:
+          version: "0.13.9"
+          enable-cache: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        if: steps.changed.outputs.run == 'true'
+        with:
+          node-version-file: .nvmrc
+      - if: steps.changed.outputs.run == 'true'
+        run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - if: steps.changed.outputs.run == 'true'
+        run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - if: steps.changed.outputs.run == 'true'
+        env:
+          PROFILE: ${{ matrix.profile }}
+        run: pnpm python:check --mode profiles --profile "$PROFILE"
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {}
+    name: ci
+    if: always()
+    needs: [checks, tests, browser-render, python, python-profiles]
+    steps:
+      - run: test "$NEEDS_RESULT" = success
+        env:
+          NEEDS_RESULT: ${{ contains(needs.*.result, 'failure') && 'failure' || contains(needs.*.result, 'cancelled') && 'cancelled' || 'success' }}

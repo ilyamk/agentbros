@@ -1,0 +1,137 @@
+name: models-refresh
+
+# Daily refresh of the fal and Higgsfield model catalogues, schemas and prices
+# (discounts included) through `pnpm models:refresh`: free, read-only provider
+# calls and estimates only. Changes arrive as one reviewed bot PR, never on main.
+# Vendor keys live only in the `models` environment, and the job that holds them
+# has a read-only token; a second job in the no-reviewer `automation` environment
+# uses the automation App token to turn its allow-listed patch into the PR.
+
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions: { contents: read }
+    environment: models
+    # fal list (75 min) and historical (120 min) steps are time-boxed; the rest takes ~30 min.
+    timeout-minutes: 300
+    concurrency:
+      group: models-refresh
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Refresh catalogues, schemas and prices (free provider reads only)
+        env:
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+          HIGGSFIELD_API_KEY: ${{ secrets.HIGGSFIELD_API_KEY }}
+          SAMPLE_IMAGE: ${{ vars.MODELS_SAMPLE_IMAGE || 'https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/74c63b88a889cb7f0f4389b8ae945592ff66d7cbcf41b48f9132fa341803a090-thumbnail.webp' }}
+          SAMPLE_VIDEO: ${{ vars.MODELS_SAMPLE_VIDEO || 'https://d28lhcrx5qdowv.cloudfront.net/media/explore/media/413e2fe3e34610d5f950e9f081896991d1891cf16836f7dd91b72cc421d8f5d0-video.mp4' }}
+          SAMPLE_AUDIO: ${{ vars.MODELS_SAMPLE_AUDIO }}
+        run: |
+          mkdir -p out/models-refresh
+          set -- --sample-image "$SAMPLE_IMAGE" --sample-video "$SAMPLE_VIDEO"
+          if [ -n "$SAMPLE_AUDIO" ]; then set -- "$@" --sample-audio "$SAMPLE_AUDIO"; fi
+          # A partial failure keeps earlier evidence and still yields a reviewable PR.
+          pnpm -s models:refresh "$@" > out/models-refresh/result.json || true
+          jq -e 'has("ok")' out/models-refresh/result.json > /dev/null
+      - name: Package allow-listed changes as a data patch
+        run: |
+          paths='src/lib/models src/lib/providers/schemas docs/model-slots.md'
+          git add --intent-to-add -- $paths
+          git diff --binary -- $paths > out/models-refresh/changes.patch
+          jq '{ok, steps: [.metadata.steps[]? | {id, ok, status}]}' out/models-refresh/result.json > out/models-refresh/summary.json
+          mkdir -p out/models-refresh/reports
+          for report in out/qa/model-refresh/*.md out/qa/model-prices/price-gaps.md; do
+            if [ -f "$report" ]; then cp -- "$report" out/models-refresh/reports/; fi
+          done
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: models-refresh
+          path: out/models-refresh/
+          retention-days: 7
+
+  pull-request:
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions: { contents: read }
+    environment: automation
+    concurrency:
+      group: models-refresh-pr
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: models-refresh
+          path: ${{ runner.temp }}/untrusted-models
+      - name: Apply the patch as data, allow-listed paths and text files only
+        env:
+          DATA: ${{ runner.temp }}/untrusted-models
+        run: |
+          if [ ! -s "$DATA/changes.patch" ]; then echo 'No model changes.'; echo NO_CHANGES=1 >> "$GITHUB_ENV"; exit 0; fi
+          git apply --index --include='src/lib/models/*' --include='src/lib/providers/schemas/*' --include='docs/model-slots.md' "$DATA/changes.patch"
+          git diff --cached --name-only > "$RUNNER_TEMP/changed.txt"
+          if grep -vE '^(src/lib/models/[A-Za-z0-9._/-]+\.json|src/lib/providers/schemas/[A-Za-z0-9._/-]+\.json|docs/model-slots\.md)$' "$RUNNER_TEMP/changed.txt"; then
+            echo '::error::Patch touches a path outside the allow-list.'; exit 1
+          fi
+          if git diff --cached --numstat | grep -q '^-'; then echo '::error::Binary change refused.'; exit 1; fi
+          if git diff --cached --quiet; then echo NO_CHANGES=1 >> "$GITHUB_ENV"; fi
+      - name: Mint the automation App token
+        if: env.NO_CHANGES != '1'
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.AUTOMATION_APP_CLIENT_ID || vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY || secrets.RELEASE_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open or update the bot PR
+        if: env.NO_CHANGES != '1'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+          GH_REPO: ${{ github.repository }}
+          DATA: ${{ runner.temp }}/untrusted-models
+        run: |
+          OK=$(jq -r '.ok' "$DATA/summary.json")
+          TITLE="Model catalogue and price refresh $(date -u +%F)"
+          if [ "$OK" != true ]; then TITLE="$TITLE (partial)"; fi
+          {
+            echo 'Automated `pnpm models:refresh` (free provider reads and estimates only). Owner review required.'
+            echo
+            echo "Complete: \`$OK\`. Steps:"
+            echo
+            jq -r '.steps[] | "- `\(.id)`: \(.status // (if .ok then "ok" else "failed" end))"' "$DATA/summary.json"
+            echo
+            echo 'Diagnostic reports are retained for seven days in the workflow artifact. This PR contains catalogue sources and current comparison documentation.'
+          } > "$RUNNER_TEMP/body.md"
+          BOT="${APP_SLUG}[bot]"
+          BOT_ID=$(gh api "/users/${APP_SLUG}%5Bbot%5D" --jq .id)
+          git config user.name "$BOT"
+          git config user.email "${BOT_ID}+${BOT}@users.noreply.github.com"
+          git switch -c bot/models-refresh
+          git commit -qm "$TITLE"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" push --force origin HEAD:bot/models-refresh
+          if gh pr view bot/models-refresh --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit bot/models-refresh --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh pr create --base main --head bot/models-refresh --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          fi

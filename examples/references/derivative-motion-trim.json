@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "motion-trim",
+  "input": { "assetId": "sha256:1111111111111111111111111111111111111111111111111111111111111111" },
+  "steps": [
+    { "op": "trim", "startSec": 0, "durationSec": 30 },
+    { "op": "snap", "multipleOf": 16 }
+  ],
+  "purpose": "Fit the performance clip into Kling motion-control's 30 s window, with frame dimensions on a multiple of 16"
+}

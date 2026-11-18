@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "palmier",
+  "idea": {
+    "value": "A person gives a real tool three plain requests, and the film's own opening is the first result, so what you are watching is the proof.",
+    "basis": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/d-pullout-monitor.jpg F557-F577",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "audience": {
+    "value": "People who already use an AI assistant and edit video: named assistant models and an editor timeline are shown without explanation.",
+    "basis": "inferred",
+    "confidence": 0.65,
+    "evidence": [
+      "visuals/a1/c-black-editor-chat.jpg F239-F311"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 3.0,
+      "device": "A plain claim typed in two parts while a person walks across the lens",
+      "description": "The first line sits centred at about 17% of width; a passing body clears it letter by letter from 0.64 to 0.96 s. Silence at 1.17-1.75 s (measured) holds the gap, then the second half types on at 2.08-2.56 s. The ellipsis asks 'and?'."
+    },
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/a-open.jpg F0-F72",
+      "audio.json silence 1.172-1.751"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 3.0,
+        "purpose": "Claim",
+        "retentionDevice": "Sentence split by a gap",
+        "content": "Two-part line over a walker"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/a-open.jpg F0-F72"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 3.0,
+        "endSec": 7.04,
+        "purpose": "Arrive at the product through the physical world",
+        "retentionDevice": "Name on a prop, then a push into the screen",
+        "content": "Person, bottle, monitor, dock, cursor"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/j-bottle-to-screen.jpg F107-F128"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 7.04,
+        "endSec": 14.16,
+        "purpose": "First request and its result",
+        "retentionDevice": "Text echo card, then a real folder collapse",
+        "content": "Plain request, agent answer, folders"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/c-black-editor-chat.jpg F183-F311"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 14.16,
+        "endSec": 24.08,
+        "purpose": "Second request: edit, ending in recognition",
+        "retentionDevice": "Quick human reactions, tightening pulse, own opening appears",
+        "content": "Reaction, request, log, timeline, preview, monitor"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/g-editor-timeline.jpg F415-F551"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 24.08,
+        "endSec": 33.88,
+        "purpose": "Third request: make new footage",
+        "retentionDevice": "Stated doubt on black, then a shocked close-up that is itself generated material",
+        "content": "Question, generation, reaction, panel, output"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/e-generate.jpg F622-F726"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 33.88,
+        "endSec": 36.64,
+        "purpose": "Payoff: output as spectacle",
+        "retentionDevice": "2-frame images with one fixed line",
+        "content": "Many generated faces and eyes"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/i-eye-burst-a.jpg F846-F881"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 36.64,
+        "endSec": 39.08,
+        "purpose": "Name",
+        "retentionDevice": "Sudden black and silence",
+        "content": "Name, then its address"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/h-end.jpg F915-F939"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The burst at 33.88-36.64 s, built from the product's own output, after the viewer has seen the requests that produced such material.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/i-eye-burst-b.jpg F882-F917"
+    ]
+  },
+  "callToAction": {
+    "value": "An address only, on black, from 37.32 s, with no spoken or written request.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/h-end.jpg F933-F939"
+    ]
+  },
+  "whyItWorks": [
+    "Three requests in rising difficulty, each short enough to read: organise, edit, generate. Each is shown as typed text, then a real result.",
+    "Human reactions of 0.6-0.7 s separate the interface passages, so the viewer does not watch a screen for more than about 3.5 s without a person or a black card.",
+    "Real interface is cropped until one action fills the frame: fields at about 60% of width, not a window in a field.",
+    "Monitor push and pull-out make the software physically present.",
+    "Doubt is voiced by the film itself in plain words just before each proof."
+  ]
+}

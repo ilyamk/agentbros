@@ -1,0 +1,1718 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "schemaVersion": 1,
+      "family": "seedance-2.0",
+      "endpoints": [
+        "bytedance/seedance-2.0/fast/reference-to-video",
+        "bytedance/seedance-2.0/mini/reference-to-video",
+        "bytedance/seedance-2.0/us/reference-to-video"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "lighting",
+            "style",
+            "keyframe"
+          ],
+          "max": 9,
+          "alpha": "flatten",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.0/fast/reference-to-video/api",
+            "note": "maxItems in the fal schema (catalogue summary). Per-file size limits are not in the tracked summary.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "videos",
+          "modality": "video",
+          "pointer": "/video_urls",
+          "roles": [
+            "motion",
+            "performance",
+            "camera",
+            "source-video",
+            "location",
+            "style"
+          ],
+          "max": 3,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.0/fast/reference-to-video/api",
+            "note": "maxItems in the fal schema (catalogue summary). Durations: see guidance.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "audio",
+          "modality": "audio",
+          "pointer": "/audio_urls",
+          "roles": [
+            "voice",
+            "sound",
+            "music"
+          ],
+          "max": 3,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.0/fast/reference-to-video/api",
+            "note": "maxItems in the fal schema (catalogue summary).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-indexed",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}",
+          "audio": "@Audio{n}"
+        },
+        "evidence": {
+          "tier": "wrapper",
+          "note": "RFC 0003 §3.9 [3P]; house use in generate:video. The Replicate wrapper uses [Audio1].",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "rejected",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Seedance 2.x rejects real human faces in references; never send a consented real face to try.",
+          "evidence": {
+            "tier": "wrapper",
+            "note": "RFC 0003 §3.1 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Reference videos 2–30 s each; one wrapper limits their combined length to 15 s. Not encoded as slot limits until a schema states them.",
+          "evidence": {
+            "tier": "unverified",
+            "note": "RFC 0003 §3.5 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Audio references 2–30 s, WAV/MP3, at most 15 MB, and need at least one image or video reference.",
+          "evidence": {
+            "tier": "unverified",
+            "note": "RFC 0003 §3.8 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Give each asset one role and keep the set small and coherent rather than filling every slot.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://dreamina.capcut.com/ai-video/ai-video-reference-inputs-faq",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "seedance-2.5",
+      "endpoints": [
+        "bytedance/seedance-2.5/reference-to-video",
+        "bytedance/seedance-2.5/us/reference-to-video"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "lighting",
+            "style",
+            "keyframe"
+          ],
+          "max": 30,
+          "maxBytes": 31457280,
+          "formats": [
+            "image/jpeg",
+            "image/png",
+            "image/webp",
+            "image/bmp",
+            "image/tiff",
+            "image/gif",
+            "image/heic",
+            "image/heif"
+          ],
+          "alpha": "flatten",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api",
+            "note": "fal schema description; enforced by SEEDANCE_25_REFERENCE_LIMITS. No video model documents alpha in references (RFC 0003 §3.3): flatten.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "videos",
+          "modality": "video",
+          "pointer": "/video_urls",
+          "roles": [
+            "motion",
+            "performance",
+            "camera",
+            "source-video",
+            "location",
+            "style"
+          ],
+          "max": 10,
+          "durationSec": {
+            "min": 1.8,
+            "max": 30.2,
+            "combinedMax": 30.2
+          },
+          "pixels": {
+            "minEdge": 300,
+            "maxEdge": 6000,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "fps": [
+            24,
+            60
+          ],
+          "maxBytes": 209715200,
+          "formats": [
+            "video/mp4",
+            "video/quicktime"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api",
+            "note": "fal schema description; enforced by SEEDANCE_25_REFERENCE_LIMITS (RFC §3.5's 2–30 s is the rounded wrapper value).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "audio",
+          "modality": "audio",
+          "pointer": "/audio_urls",
+          "roles": [
+            "voice",
+            "sound",
+            "music"
+          ],
+          "max": 10,
+          "durationSec": {
+            "min": 1.8,
+            "max": 30.2,
+            "combinedMax": 30.2
+          },
+          "maxBytes": 15728640,
+          "formats": [
+            "audio/mpeg",
+            "audio/wav"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api",
+            "note": "fal schema description; enforced by SEEDANCE_25_REFERENCE_LIMITS.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "totals": {
+        "max": 50
+      },
+      "dialect": {
+        "kind": "at-indexed",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}",
+          "audio": "@Audio{n}"
+        },
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video/api",
+          "note": "The fal schema says to refer to references as @Image1, @Video1, @Audio1; some UIs show '@Image 1'.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "rejected",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Seedance 2.x rejects real human faces in references; never send a consented real face to try.",
+          "evidence": {
+            "tier": "wrapper",
+            "note": "RFC 0003 §3.1 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Give each asset one role and keep the set small and coherent rather than filling every slot; restrict a video reference to camera or action, or it rewrites the setting.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://dreamina.capcut.com/ai-video/ai-video-reference-inputs-faq",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Audio references need at least one image or video reference.",
+          "evidence": {
+            "tier": "wrapper",
+            "note": "RFC 0003 §3.8 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Reference media must be on public, non-expiring URLs produced by the upload path.",
+          "evidence": {
+            "tier": "wrapper",
+            "note": "RFC 0003 §3.5 and §11.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "kling-o1",
+      "endpoints": [
+        "fal-ai/kling-video/o1/reference-to-video",
+        "fal-ai/kling-video/o1/standard/reference-to-video"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "style",
+            "location",
+            "lighting",
+            "prop",
+            "product",
+            "wardrobe",
+            "identity"
+          ],
+          "max": 4,
+          "evidence": {
+            "tier": "unverified",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o1/reference-to-video/api",
+            "note": "Tracked catalogue summary only (no cached schema). The fal schema bounds images plus elements at 4 only when a video is used and states no bound otherwise; 4 is the conservative evidenced bound.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "elements",
+          "modality": "image",
+          "pointer": "/elements/{n}/frontal_image_url",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe"
+          ],
+          "max": 4,
+          "evidence": {
+            "tier": "unverified",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o1/reference-to-video/api",
+            "note": "Element sub-fields assumed from the Kling O3 element shape; not verifiable offline without the cached schema.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "element-references",
+          "modality": "image",
+          "pointer": "/elements/{n}/reference_image_urls",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe",
+            "expression"
+          ],
+          "min": 1,
+          "max": 3,
+          "evidence": {
+            "tier": "unverified",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o1/reference-to-video/api",
+            "note": "Kling O3 element shape; 2–4 images per element (RFC 0003 §3.1 [O]). The kling guard does not run on catalogue-only O1 endpoints.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-element",
+        "templates": {
+          "image": "@Image{n}"
+        },
+        "elementTemplate": "@Element{n}",
+        "evidence": {
+          "tier": "official",
+          "note": "RFC 0003 §3.9 [O]: Kling O1 / O3 / 3.0 Omni element and indexed at-markers.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Bind up to 4 images per character (front, side, back, detail); light evenly and keep facial geometry clear.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://home.kling.ai/blog/kling-3-subject-binding-character-consistency",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Refresh the schema (pnpm fal:sync --schemas fal-ai/kling-video/o1/reference-to-video) before relying on element limits.",
+          "evidence": {
+            "tier": "unverified",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "kling-o3",
+      "endpoints": [
+        "fal-ai/kling-video/o3/standard/reference-to-video",
+        "fal-ai/kling-video/o3/pro/reference-to-video",
+        "fal-ai/kling-video/o3/4k/reference-to-video"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "style",
+            "location",
+            "lighting",
+            "prop",
+            "product",
+            "wardrobe",
+            "identity"
+          ],
+          "max": 4,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "unverified",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "Pixel and byte limits from x-fal. The fal schema bounds images plus elements at 4 only when a video is used and states no bound otherwise; 4 is the conservative evidenced bound.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "elements",
+          "modality": "image",
+          "pointer": "/elements/{n}/frontal_image_url",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe"
+          ],
+          "max": 4,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "unverified",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "One frontal image per image element. The fal schema bounds images plus elements at 4 only when a video is used and states no bound otherwise; 4 is the conservative evidenced bound.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "element-references",
+          "modality": "image",
+          "pointer": "/elements/{n}/reference_image_urls",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe",
+            "expression"
+          ],
+          "min": 1,
+          "max": 3,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "Per element: 1–3 extra angles (fal schema); enforced by KLING_ELEMENT_LIMITS.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "element-video",
+          "modality": "video",
+          "pointer": "/elements/{n}/video_url",
+          "roles": [
+            "identity",
+            "performance",
+            "motion"
+          ],
+          "max": 1,
+          "durationSec": {
+            "min": 3,
+            "max": 10.05
+          },
+          "pixels": {
+            "minEdge": 720,
+            "maxEdge": 2160
+          },
+          "fps": [
+            24,
+            60
+          ],
+          "maxBytes": 209715200,
+          "formats": [
+            "video/mp4",
+            "video/quicktime"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "x-fal limits; one video element per request (KLING_ELEMENT_LIMITS). An element uses a video or an image set, never both.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "start",
+          "modality": "image",
+          "pointer": "/start_image_url",
+          "roles": [
+            "first-frame",
+            "keyframe"
+          ],
+          "max": 1,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "x-fal limits. Marker none: Kling's documented markers are @Image{n} for image_urls and @Element{n} for elements (RFC 0003 §3.9 [O]); no documented prompt marker for start_image_url, bound by position as the first frame.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "end",
+          "modality": "image",
+          "pointer": "/end_image_url",
+          "roles": [
+            "last-frame"
+          ],
+          "max": 1,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+            "note": "x-fal limits. Marker none: no documented prompt marker for end_image_url; bound by position as the last frame (RFC 0003 §3.9).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "totals": {
+        "withVideoMaxImages": 4
+      },
+      "dialect": {
+        "kind": "at-element",
+        "templates": {
+          "image": "@Image{n}"
+        },
+        "elementTemplate": "@Element{n}",
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/reference-to-video/api",
+          "note": "fal schema: 'Reference in prompt as @Element1, @Element2' and '@Image1, @Image2'. Kling documents the same markers (RFC 0003 §3.9 [O]).",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "nativeAudioWithVideoInput": false,
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Bind up to 4 images per character (front, side, back, detail) so the model does not infer unseen areas; light evenly and keep facial geometry clear.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://home.kling.ai/blog/kling-3-subject-binding-character-consistency",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Angles must differ clearly (at least 45° apart); near-duplicates cause view-dependent collapse.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://www.alphaxiv.org/overview/2603.21299",
+            "note": "Paper [P], RFC 0003 §3.1.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "No native audio when a video is input.",
+          "evidence": {
+            "tier": "official",
+            "note": "RFC 0003 §3.5 [O] (Kling O1 / 3.0 Omni).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "kling-o3-video",
+      "endpoints": [
+        "fal-ai/kling-video/o3/standard/video-to-video/reference",
+        "fal-ai/kling-video/o3/pro/video-to-video/reference",
+        "fal-ai/kling-video/o3/4k/video-to-video/reference",
+        "fal-ai/kling-video/o3/standard/video-to-video/edit",
+        "fal-ai/kling-video/o3/pro/video-to-video/edit",
+        "fal-ai/kling-video/o3/4k/video-to-video/edit"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "source",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "source-video",
+            "motion",
+            "camera",
+            "performance"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 3,
+            "max": 15.05
+          },
+          "pixels": {
+            "minEdge": 720,
+            "maxEdge": 3840
+          },
+          "fps": [
+            23,
+            60
+          ],
+          "maxBytes": 209715200,
+          "formats": [
+            "video/mp4",
+            "video/quicktime"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "note": "x-fal limits and description (.mp4/.mov). Named @Video1 in the prompt (\"Change X in @Video1 to @Element1\", RFC 0003 §3.9 [O]).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "style",
+            "location",
+            "lighting",
+            "prop",
+            "product",
+            "wardrobe",
+            "identity"
+          ],
+          "max": 4,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "note": "Images plus elements at most 4 with a video (fal schema); enforced by KLING_ELEMENT_LIMITS.videoToVideoCombinedMax.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "elements",
+          "modality": "image",
+          "pointer": "/elements/{n}/frontal_image_url",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe"
+          ],
+          "max": 4,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "note": "Images plus elements at most 4 with a video; image elements only on this route.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "element-references",
+          "modality": "image",
+          "pointer": "/elements/{n}/reference_image_urls",
+          "roles": [
+            "identity",
+            "product",
+            "prop",
+            "wardrobe",
+            "expression"
+          ],
+          "min": 1,
+          "max": 3,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "note": "Per element: 1–3 extra angles; enforced by KLING_ELEMENT_LIMITS.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "totals": {
+        "withVideoMaxImages": 4
+      },
+      "dialect": {
+        "kind": "at-element",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}"
+        },
+        "elementTemplate": "@Element{n}",
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+          "note": "fal schema: 'Reference video as @Video1', '@Image1', '@Element1'. Kling: 'Change X in @Video1 to @Element1' (RFC 0003 §3.9 [O]).",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "nativeAudioWithVideoInput": false,
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "keep_audio keeps the source video's audio; with a video input there is no native audio.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "note": "keep_audio field; RFC 0003 §3.5 [O].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "withVideoMaxImages counts image_urls plus elements; the source video and element reference images are not counted.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/o3/pro/video-to-video/reference/api",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "kling-v3-motion-control",
+      "endpoints": [
+        "fal-ai/kling-video/v3/standard/motion-control",
+        "fal-ai/kling-video/v3/pro/motion-control"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "character",
+          "modality": "image",
+          "pointer": "/image_url",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "keyframe"
+          ],
+          "min": 1,
+          "max": 1,
+          "pixels": {
+            "minEdge": 340,
+            "maxEdge": 3850,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 10485760,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "note": "x-fal limits. Characters, background and other elements come from this image. Marker none: the fal schema documents only @Element{n} (face element); no documented prompt marker for image_url, bound by position.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "motion",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "motion",
+            "performance"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 3,
+            "max": 30
+          },
+          "pixels": {
+            "minEdge": 340,
+            "maxEdge": 3850
+          },
+          "maxBytes": 104857600,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "note": "x-fal limits (3–30.05 s); the guard's KLING_ELEMENT_LIMITS.motionControlMaxDurationSec caps 30 s with video orientation, 10 s with image orientation. Marker none: no documented prompt marker for video_url; bound by position as the motion source.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "face",
+          "modality": "image",
+          "pointer": "/elements/{n}/frontal_image_url",
+          "roles": [
+            "identity",
+            "expression"
+          ],
+          "max": 1,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "carries": [
+            "face"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "note": "One facial element, only with character_orientation 'video' (KLING_ELEMENT_LIMITS.motionControlElementsMax).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "face-references",
+          "modality": "image",
+          "pointer": "/elements/{n}/reference_image_urls",
+          "roles": [
+            "identity",
+            "expression"
+          ],
+          "min": 1,
+          "max": 3,
+          "pixels": {
+            "minEdge": 300,
+            "aspect": [
+              0.4,
+              2.5
+            ]
+          },
+          "maxBytes": 52428800,
+          "carries": [
+            "face"
+          ],
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "note": "Per element: 1–3 extra angles; enforced by KLING_ELEMENT_LIMITS.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-element",
+        "elementTemplate": "@Element{n}",
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+          "note": "fal schema: 'Reference in prompt as @Element1'.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "One performer, head and body visible, single continuous shot, no cuts or camera moves, moderate speed; real humans work best.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Match the character image framing to the video (full body to full body). The face element carries the face only; clothing, hair, makeup and props come from the character image or the prompt.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Motion Control binds one element and animates the largest person; build group shots as a key frame first.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Element binding works only with character_orientation 'video'; 'image' orientation limits the motion video to 10 s.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "keep_original_sound keeps the motion video's sound in the result.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/motion-control/api",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "kling-v2.6-motion-control",
+      "endpoints": [
+        "fal-ai/kling-video/v2.6/standard/motion-control",
+        "fal-ai/kling-video/v2.6/pro/motion-control"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "character",
+          "modality": "image",
+          "pointer": "/image_url",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "keyframe"
+          ],
+          "min": 1,
+          "max": 1,
+          "pixels": {
+            "minEdge": 340,
+            "maxEdge": 3850
+          },
+          "marker": "none",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "note": "Kling Motion Control guide; the fal x-fal limits for v2.6 are not in the tracked summary. Marker none: no marker convention is documented for v2.6; image_url is bound by position.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "motion",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "motion",
+            "performance"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 3,
+            "max": 30
+          },
+          "pixels": {
+            "minEdge": 340,
+            "maxEdge": 3850
+          },
+          "marker": "none",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "note": "3–30 s; short edge at least 340 px, long edge at most 3850 px (RFC 0003 §3.5 [O]). Marker none: no marker convention is documented for v2.6; video_url is bound by position.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "natural",
+        "evidence": {
+          "tier": "unverified",
+          "url": "https://fal.ai/models/fal-ai/kling-video/v2.6/pro/motion-control/api",
+          "note": "No elements on v2.6; no marker convention documented.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "One performer, head and body visible, single continuous shot, no cuts or camera moves, moderate speed; real humans work best.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://kling.ai/quickstart/motion-control-user-guide",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "No face element on v2.6; use kling-v3-motion-control for facial identity binding.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/kling-video/v2.6/pro/motion-control/api",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "nano-banana-2.1",
+      "endpoints": [
+        "google/nano-banana-2.1/edit"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "lighting",
+            "style",
+            "keyframe"
+          ],
+          "max": 14,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/google/nano-banana-2.1/edit/api",
+            "note": "Enforced by NANO_EDIT_LIMITS.images; Nano Banana Pro documents 14 (RFC 0003 §3.1 [O]). The fal schema states no maxItems.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "video",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "source-video",
+            "motion",
+            "location",
+            "style"
+          ],
+          "max": 1,
+          "maxBytes": 15728640,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/google/nano-banana-2.1/edit/api",
+            "note": "Inline video context, at most 15 MB (fal schema; NANO_EDIT_LIMITS.inlineContextMaxBytes).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "prose-indexed",
+        "evidence": {
+          "tier": "wrapper",
+          "note": "RFC 0003 §3.9 [O/3P]: 'the subject from image 1, the style of image 2'.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Nano Banana Pro keeps resemblance for up to 5 people; unverified for 2.1.",
+          "evidence": {
+            "tier": "unverified",
+            "note": "RFC 0003 §3.1 [O] for Nano Banana Pro.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Separate style from content by role sentences: style references never contain the subject, identity references carry no strong style.",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://arxiv.org/html/2506.18851v1",
+            "note": "Phantom-Data [P], RFC 0003 §3.4.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "flux-2",
+      "endpoints": [
+        "fal-ai/flux-2/edit",
+        "fal-ai/flux-2/turbo/edit",
+        "fal-ai/flux-2/flash/edit"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "lighting",
+            "style",
+            "keyframe"
+          ],
+          "min": 1,
+          "max": 4,
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/flux-2/edit/api",
+            "note": "fal schema: 'A maximum of 4 images are allowed; only the first 4 will be used.' At least one (FLUX_EDIT_LIMITS.minImages).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "prose-indexed",
+        "evidence": {
+          "tier": "official",
+          "url": "https://docs.eu.bfl.ai/guides/prompting_guide_flux2",
+          "note": "'subject from image 1, style from image 2, background from image 3'.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Quote exact text with font and placement; there are no negative prompts and earlier words weigh more.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.eu.bfl.ai/guides/prompting_guide_flux2",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Composite approved logos and legal text in post; more angles do not reliably fix label drift.",
+          "evidence": {
+            "tier": "wrapper",
+            "note": "RFC 0003 §3.3 [3P].",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "flux-2-pro, flex and max edit endpoints state no image maximum in their schemas and are not profiled.",
+          "evidence": {
+            "tier": "unverified",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "gemini-omni",
+      "endpoints": [
+        "google/gemini-omni-flash/v1.1/reference-to-video",
+        "google/gemini-omni-flash/v1.2/reference-to-video"
+      ],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "lighting",
+            "style",
+            "keyframe"
+          ],
+          "max": 6,
+          "evidence": {
+            "tier": "official",
+            "url": "https://aistudio.google.com/docs/omni",
+            "note": "At most 3 images per character, 2 characters, 6 images total. The fal schema allows 10; the stricter official bound wins.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "videos",
+          "modality": "video",
+          "pointer": "/reference_video_urls",
+          "roles": [
+            "motion",
+            "performance",
+            "camera",
+            "style"
+          ],
+          "max": 3,
+          "durationSec": {
+            "min": 0,
+            "max": 3
+          },
+          "evidence": {
+            "tier": "official",
+            "url": "https://aistudio.google.com/docs/video",
+            "note": "Reference videos at most 3 s: up to 3 for 3–10 s outputs, 1 for 11–15 s outputs. No minimum is stated (0). fal maxItems 3.",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "natural",
+        "evidence": {
+          "tier": "official",
+          "url": "https://aistudio.google.com/docs/omni",
+          "note": "Natural language only ('the woman in the first reference image'); tags are deprecated.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "policies": {
+        "realFaces": "unknown",
+        "audioFromVideoRefs": "ignored",
+        "multiVideoReasoning": "degrades"
+      },
+      "guidance": [
+        {
+          "text": "Gemini Omni blocks some recognisable people, and minors in the EEA, UK and Switzerland.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://aistudio.google.com/docs/omni",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Only one reference video for 11–15 s outputs; reasoning across several videos is not supported and may degrade output.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://aistudio.google.com/docs/video",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "No audio references.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://aistudio.google.com/docs/omni",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "genjutsu-object-swap",
+      "endpoints": [
+        "higgsfield/genjutsu/object-swap/v1.0"
+      ],
+      "provider": "higgsfield",
+      "status": "live",
+      "slots": [
+        {
+          "id": "source",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "source-video",
+            "motion",
+            "camera",
+            "performance"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 4,
+            "max": 30
+          },
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+            "note": "At least 4 s; longer sources are trimmed to 30 s (GENJUTSU_SOURCE_LIMITS).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product"
+          ],
+          "min": 1,
+          "max": 8,
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+            "note": "1–8 image_urls (Higgsfield workflow schema; model-preparation allows 8).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-indexed",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}"
+        },
+        "evidence": {
+          "tier": "observed",
+          "note": "docs/higgsfield-prompting.md: user-tested house convention (2026-11-15), not a published provider token contract; the Genjutsu guard rejects out-of-range markers.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "promptTemplate": "genjutsu-legacy",
+      "policies": {
+        "realFaces": "consented-flow",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Character references need recorded likeness consent or a not-applicable fictional identity before preparation.",
+          "evidence": {
+            "tier": "observed",
+            "note": "model:prepare refuses a character card with unknown likeness consent (src/lib/model-preparation/prepare.ts).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "The source video needs at least 409,600 pixels per frame (width × height); a minimum on the video, not a maximum on references.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+            "note": "GENJUTSU_SOURCE_LIMITS.objectSwapMinPixels.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Object swap is the local substitution mode: name the target, the change and what must stay unchanged. There is no mask field.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "genjutsu-motion-transfer",
+      "endpoints": [
+        "higgsfield/genjutsu/motion-transfer/v1.0"
+      ],
+      "provider": "higgsfield",
+      "status": "live",
+      "slots": [
+        {
+          "id": "source",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "source-video",
+            "motion",
+            "camera",
+            "performance"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 4,
+            "max": 30
+          },
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/motion-transfer.md",
+            "note": "At least 4 s; longer sources are trimmed to 30 s (GENJUTSU_SOURCE_LIMITS).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe",
+            "expression",
+            "prop",
+            "product",
+            "location",
+            "style"
+          ],
+          "min": 1,
+          "max": 8,
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/motion-transfer.md",
+            "note": "1–8 image_urls (Higgsfield workflow schema).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-indexed",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}"
+        },
+        "evidence": {
+          "tier": "observed",
+          "note": "docs/higgsfield-prompting.md: user-tested house convention (2026-11-15), not a published provider token contract; the Genjutsu guard rejects out-of-range markers.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "promptTemplate": "genjutsu-legacy",
+      "policies": {
+        "realFaces": "consented-flow",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Character references need recorded likeness consent or a not-applicable fictional identity before preparation.",
+          "evidence": {
+            "tier": "observed",
+            "note": "model:prepare refuses a character card with unknown likeness consent (src/lib/model-preparation/prepare.ts).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Motion transfer rebuilds the scene around the source movement and camera; use object-swap to preserve the original scene.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/motion-transfer.md",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "genjutsu-restyle",
+      "endpoints": [
+        "higgsfield/genjutsu/restyle/v1.0"
+      ],
+      "provider": "higgsfield",
+      "status": "live",
+      "slots": [
+        {
+          "id": "source",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": [
+            "source-video"
+          ],
+          "min": 1,
+          "max": 1,
+          "durationSec": {
+            "min": 4,
+            "max": 30
+          },
+          "maxBytes": 209715200,
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle.md",
+            "note": "At least 4 s; longer sources are trimmed to 30 s (GENJUTSU_SOURCE_LIMITS); at most 200 MiB.",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "id": "images",
+          "modality": "image",
+          "pointer": "/image_urls",
+          "roles": [
+            "identity",
+            "wardrobe"
+          ],
+          "min": 0,
+          "max": 5,
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle.md",
+            "note": "Optional, up to five character images (Higgsfield workflow schema).",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "at-indexed",
+        "templates": {
+          "image": "@Image{n}",
+          "video": "@Video{n}"
+        },
+        "evidence": {
+          "tier": "observed",
+          "note": "docs/higgsfield-prompting.md: user-tested house convention (2026-11-15), not a published provider token contract; the Genjutsu guard rejects out-of-range markers.",
+          "checkedAt": "2026-11-17"
+        }
+      },
+      "promptTemplate": "genjutsu-legacy",
+      "policies": {
+        "realFaces": "consented-flow",
+        "audioFromVideoRefs": "unknown",
+        "multiVideoReasoning": "unknown"
+      },
+      "guidance": [
+        {
+          "text": "Character references need recorded likeness consent or a not-applicable fictional identity before preparation.",
+          "evidence": {
+            "tier": "observed",
+            "note": "model:prepare refuses a character card with unknown likeness consent (src/lib/model-preparation/prepare.ts).",
+            "checkedAt": "2026-11-17"
+          }
+        },
+        {
+          "text": "Restyle needs a current preset_id (pnpm hf:sync --presets) and keeps motion, composition and source audio.",
+          "evidence": {
+            "tier": "official",
+            "url": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle.md",
+            "checkedAt": "2026-11-17"
+          }
+        }
+      ]
+    },
+    {
+      "schemaVersion": 1,
+      "family": "omnihuman-1.5-speech",
+      "endpoints": ["fal-ai/bytedance/omnihuman/v1.5"],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "portrait",
+          "modality": "image",
+          "pointer": "/image_url",
+          "roles": ["identity", "first-frame"],
+          "min": 1,
+          "max": 1,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/bytedance/omnihuman/v1.5/api",
+            "checkedAt": "2026-11-18"
+          }
+        },
+        {
+          "id": "speech",
+          "modality": "audio",
+          "pointer": "/audio_url",
+          "roles": ["voice"],
+          "min": 1,
+          "max": 1,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/bytedance/omnihuman/v1.5/api",
+            "checkedAt": "2026-11-18"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "natural",
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/fal-ai/bytedance/omnihuman/v1.5/api",
+          "checkedAt": "2026-11-18"
+        }
+      },
+      "speechInput": "drive",
+      "policies": {
+        "realFaces": "consented-flow"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "family": "sync-v3-speech",
+      "endpoints": ["fal-ai/sync-lipsync/v3"],
+      "provider": "fal",
+      "status": "live",
+      "slots": [
+        {
+          "id": "video",
+          "modality": "video",
+          "pointer": "/video_url",
+          "roles": ["source-video"],
+          "min": 1,
+          "max": 1,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/sync-lipsync/v3/api",
+            "checkedAt": "2026-11-18"
+          }
+        },
+        {
+          "id": "speech",
+          "modality": "audio",
+          "pointer": "/audio_url",
+          "roles": ["voice"],
+          "min": 1,
+          "max": 1,
+          "marker": "none",
+          "evidence": {
+            "tier": "wrapper",
+            "url": "https://fal.ai/models/fal-ai/sync-lipsync/v3/api",
+            "checkedAt": "2026-11-18"
+          }
+        }
+      ],
+      "dialect": {
+        "kind": "none",
+        "evidence": {
+          "tier": "wrapper",
+          "url": "https://fal.ai/models/fal-ai/sync-lipsync/v3/api",
+          "checkedAt": "2026-11-18"
+        }
+      },
+      "speechInput": "drive",
+      "omitPrompt": true,
+      "policies": {
+        "realFaces": "consented-flow"
+      }
+    }
+  ]
+}

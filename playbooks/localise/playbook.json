@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "id": "localise",
+  "title": "Localise a video",
+  "status": "draft",
+  "reviewedAt": "2026-11-15",
+  "summary": "Put a finished video into another language: translated subtitles, a new voice or replaced on-screen text, from a supplied, reviewed translation.",
+  "triggers": {
+    "en": [
+      "translat",
+      "dub",
+      "dubbing",
+      "dubbed",
+      "localise",
+      "localize",
+      "another language",
+      "other languages",
+      "foreign language",
+      "subtitles in",
+      "into english",
+      "english subtitles",
+      "into spanish",
+      "into german",
+      "into french",
+      "into chinese",
+      "german subtitles",
+      "spanish subtitles",
+      "french subtitles",
+      "french version",
+      "spanish version",
+      "german version",
+      "version in",
+      "into portuguese",
+      "into japanese"
+    ],
+    "ru": [
+      "переведите",
+      "перевести",
+      "с переводом",
+      "перевод на",
+      "переозвуч",
+      "дубляжа",
+      "локализуй",
+      "на другой язык",
+      "на другие языки",
+      "на другом языке",
+      "субтитры на",
+      "на английский",
+      "на русский",
+      "английские субтитры",
+      "переведи видео",
+      "переведи моё",
+      "переведи мое",
+      "на испанский",
+      "на немецкий",
+      "на французский",
+      "на китайский",
+      "на испанском",
+      "на английском",
+      "на немецком",
+      "на французском",
+      "на китайском"
+    ],
+    "zh": [
+      "翻译成",
+      "翻成",
+      "视频翻译",
+      "翻译视频",
+      "字幕翻译",
+      "翻译字幕",
+      "英文字幕",
+      "加英文字幕",
+      "翻译成英文",
+      "双语字幕",
+      "中英字幕",
+      "英文配音",
+      "外语配音",
+      "翻译配音",
+      "译制",
+      "英文版",
+      "海外版",
+      "多语言",
+      "其他语言",
+      "别的语言",
+      "另一种语言",
+      "本地化",
+      "配音",
+      "翻译",
+      "出海",
+      "语字幕",
+      "配成",
+      "语版",
+      "西班牙语",
+      "英语版",
+      "日语版",
+      "葡萄牙语",
+      "法语",
+      "德语",
+      "韩语",
+      "俄语"
+    ],
+    "generic": [
+      "配音",
+      "翻译",
+      "出海"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "subtitles in the language spoken in the recording",
+      "use": "footage-edit"
+    },
+    {
+      "when": "a generated presenter or avatar speaking the target language instead of the original speaker",
+      "use": "avatar-presenter"
+    }
+  ],
+  "route": {
+    "kind": "footage",
+    "footageGoals": [
+      "captions"
+    ],
+    "start": "pnpm footage:next --project <id> --playbook localise --source <file> --goal captions --language <code>"
+  },
+  "alternatives": [],
+  "agents": [
+    "footage-editor"
+  ],
+  "skills": [
+    "captions-and-localization"
+  ],
+  "library": {
+    "categories": [
+      "captions"
+    ],
+    "blocks": []
+  },
+  "commands": [
+    "project:new",
+    "footage:next",
+    "speech:local",
+    "transcribe",
+    "captions:place",
+    "captions:export",
+    "timeline:edit",
+    "campaign",
+    "generate:voiceover",
+    "align:captions",
+    "delivery",
+    "local:capabilities",
+    "local:policy",
+    "local:verify",
+    "text:translate",
+    "voiceover:local",
+    "dubbing",
+    "dubbing:conform",
+    "voices",
+    "voices:manage",
+    "elevenlabs:capabilities",
+    "audio:transform",
+    "generate:dialogue"
+  ],
+  "read": [
+    "docs/campaigns-localization.md"
+  ],
+  "qa": [
+    "Every translated line keeps the source's meaning, names, numbers and units, and a fluent reviewer approved it",
+    "Translated captions are regrouped for the target language's length and still clear faces and the platform interface",
+    "A new voice has its own word timings and passed localize-review; no source timings or audio reused"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "What is the source: your own recording, a template project or campaign episode, or a bespoke film from this repository?",
+      "why": "Each source has a different route and a different gap (Start table)"
+    },
+    {
+      "ask": "Which target languages, and subtitles, a new voice, replaced on-screen text, or several of these?",
+      "why": "Subtitles are local; a new voice and its word timings are paid; replaced text needs a font with the target script"
+    },
+    {
+      "ask": "Who supplies or checks the translation, and who is fluent enough to approve it?",
+      "why": "Local translation can propose candidates; every line still needs a named fluent reviewer before production rendering"
+    },
+    {
+      "ask": "Burned into the picture, or a separate subtitle file per language?",
+      "why": "YouTube takes a subtitle track per language and plays it on demand; feeds watched muted need burned text",
+      "default": "a sidecar per language for landscape, burned for vertical"
+    },
+    {
+      "ask": "Is paid voice generation and alignment allowed, and within what budget?",
+      "why": "generate:voiceover and align:captions are paid; without a go-ahead the voice stays pending",
+      "default": "no paid steps"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "youtube",
+      "formats": [
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 30,
+        "max": 3600
+      },
+      "loudnessLufs": -14,
+      "captions": "none",
+      "note": "One subtitle track per language added in Studio; a dub goes in as a separate audio track (Advanced features); loudness reference about -14 LUFS (measured); band is a house rule"
+    },
+    {
+      "platform": "tiktok",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "clean-sentence",
+      "note": "A localised vertical cut carries burned target-language captions inside the vertical safe zone; TikTok's ads spec page takes 9:16 up to 10 minutes (band is a house rule)"
+    },
+    {
+      "platform": "instagram-reels",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 180
+      },
+      "captions": "clean-sentence",
+      "note": "Burned target-language captions; Reels upload up to 3 minutes (January 2025); band is a house rule"
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "caption-clean-sentence"
+    ],
+    "template": "caption.bilingual",
+    "note": "caption.bilingual holds the original and a supplied translation per phrase (template projects; the timeline's bilingual caption style draws it on a recut); clean-sentence for a target-language-only track"
+  }
+}

@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "muse",
+  "rhythm": {
+    "value": "The detector found 8 shots and 7 cuts (median 2.6 s). The corrected list has 13 shots and 12 boundaries in 34.83 s (median 2.33 s, 20.7 boundaries a minute). Only 3 boundaries are hard cuts (4.933, 8.433, 18.633 s), plus a hard-in after a fade at 31.967 s. The other 8 are a cloud wipe, a bleach dissolve, two shape matches, two camera moves, an iris and a type wipe, so the film reads as nearly one continuous take. Lengths run long-short-long: 2.6 / 2.33 / 1.47 / 1.13 / 0.90 then 6.5 s for the first chat, 3.7 / 1.1 / 3.4 for the delegation, 5.3 for the second chat, then 1.73 / 1.8 / 2.87 for the close. Reading-heavy UI gets the long holds (6.5 s and 5.3 s), and transitions between ideas get under 1.2 s. The source is 24 fps delivered at 30 (every fifth frame repeats), so frame counts below include those repeats. SOUND: I cannot hear; everything here is from audio.json, sync.json and a 50 ms RMS pass. Tempo is 111.8 BPM, confidence 0.571, beatRegularity 0.982. A swell detector (50 ms RMS, local maximum ±0.3 s, > 1.35x median) independently repeats every 0.50-0.55 s against a 0.537 s beat period, so the grid is real. Downbeat confidence is 0.118, so no bar grid. Detector cuts: cutsOnBeatRatio 0.429 against cutsOnBeatChance 0.294 (lift 1.46); cutsOnOnsetRatio 0.857 against 0.731 (lift 1.17); cutsOnDownbeatFrameRatio 0.143 against 0.032 (lift 4.47), but that is 1 cut of 7 on an unreliable downbeat; signedMedianCutToBeatSec -0.017. Recomputed on the 12 corrected boundaries (±80 ms): 3 on a beat (0.25) against 0.30 by chance; 9 on an onset (0.75) against 0.73 by chance; signed median -0.104 s. On the 4 hard cuts alone: 1 on a beat. Per audio.json section: 0-25.77 s has 9 boundaries (2 on a beat, 7 on an onset), 25.77-28.47 s has 1 (neither), 28.47-34.34 s has 2 (1 on a beat, 2 on an onset). n is too small per section to read anything. Onsets run at 5.4 per second (188 in 34.8 s), so onset ratios are meaningless. There is no evidence that the picture cuts on the beat. What does line up: the onset stream stops at 7.73-8.64 s (and RMS drops to about -21 dBFS against a typical -14.5) while the character pops out of the words and snaps to the chat; it stops again at 14.56-15.91 s while the camera leaves the answer card and the input field arrives, and typing starts as the onsets resume; it thins at 25.98-28.51 s before the iris at 28.2 s, and resumes at 28.51 s as the overhead shot fills. The loudest 0.5 s window (-12.5 dBFS) starts at 30.0 s, the frame where the giant tagline letters cover the screen. The track goes silent at 34.38 s over the held mark. I picked these gaps after looking at the picture, so they suggest a method (put the pivots in the music's breaths and land the type spectacle on the loudest hit) rather than prove one.",
+    "basis": "measured",
+    "confidence": 0.7,
+    "evidence": [
+      "shots.json summary count 8, median 2.6",
+      "src/lib/reference/corrected.ts correctedShots on these corrections: 13 shots, median 2.333",
+      "sync.json metrics",
+      "audio.json tempo, onsetsSec gaps (7.73-8.64, 14.56-15.09-15.91, 25.98-27.21-28.51), silence 34.376-34.837",
+      "50 ms RMS swell pass and 0.5 s RMS windows on media/source.mp4 (scratch computation)",
+      "visuals/edit-map.png"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook: promise line builds word by word on the pale ground while the camera pulls back; clouds rise over it from 1.6 s",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m01-type-build.jpg F0-F23",
+          "visuals/strips/s001.jpg F0-F77"
+        ]
+      },
+      "technique": {
+        "value": "word-build re-centring line with accent words; pull-back",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m01-type-build.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "World: floating island with the glass dome, the character at a desk, app icons orbiting; a slow push that accelerates into the cut",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/strips/s002.jpg F78-F144",
+          "visuals/a1/m02-cloud-push.jpg F81-F89"
+        ]
+      },
+      "technique": {
+        "value": "cloud-cover wipe in; accelerate-into-cut out",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m02-cloud-push.jpg",
+          "visuals/a1/m03-cut-closeup.jpg F142-F147"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Intimacy: over-the-shoulder close-up of the character at a laptop, icons drifting behind",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/strips/s003.jpg F148-F188"
+        ]
+      },
+      "technique": {
+        "value": "push continues from the previous shot and decelerates; exits by bleaching to the ground colour",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/m03-cut-closeup.jpg F148-F154",
+          "visuals/a1/m04-whiteout-to-type.jpg F188-F191"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.1",
+      "purpose": {
+        "value": "Invitation: a two-word imperative builds in the centre",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m04-whiteout-to-type.jpg F196-F206"
+        ]
+      },
+      "technique": {
+        "value": "word build, second word at F203; slow push-in on the type",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m05-words-part-avatar.jpg F219-F225"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.2",
+      "purpose": {
+        "value": "Reveal: the character's portrait disc grows out of the gap between the two words",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m05-words-part-avatar.jpg F223-F239"
+        ]
+      },
+      "technique": {
+        "value": "word-split-insert",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m05-words-part-avatar.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.3",
+      "purpose": {
+        "value": "Proof 1: chat thread; the question, a greeting, typing dots, then the answer card with a three-item plan and an offer to act",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F253-F262",
+          "visuals/a1/coarse-e.jpg F270-F414",
+          "visuals/a1/m17-reply-morph.jpg F324-F344"
+        ]
+      },
+      "technique": {
+        "value": "hard snap from the hero disc to the header avatar; messages land one by one; the typing pill stretches into the answer card; slow upward drift",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m06-avatar-shrink.jpg F252-F253",
+          "visuals/a1/m17-reply-morph.jpg F327-F344"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.4",
+      "purpose": {
+        "value": "Delegation: the input field slides in and the request types at hero scale while the frame tracks the caret",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m07-card-to-field.jpg F448-F454",
+          "visuals/a1/coarse-b.jpg F448-F484",
+          "visuals/a1/coarse-f.jpg F480-F540",
+          "visuals/a1/m08-field-reframe.jpg F496-F508"
+        ]
+      },
+      "technique": {
+        "value": "caret-tracking-typewriter",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/coarse-f.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.5",
+      "purpose": {
+        "value": "Send: the far end of the same bar, mic and gradient send button",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m09-field-to-send.jpg F559-F563",
+          "visuals/a1/coarse-c.jpg F560-F588"
+        ]
+      },
+      "technique": {
+        "value": "hard reframe along the same bar; the bar keeps its horizontal band",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m09-field-to-send.jpg F558-F559"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.6",
+      "purpose": {
+        "value": "Handoff: the send disc becomes a portrait window with the character in it; the two-line headline builds around it",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m10-send-to-circle.jpg F592-F605",
+          "visuals/a1/m11-leave-it-part.jpg F610-F628",
+          "visuals/a1/coarse-d.jpg F618-F690"
+        ]
+      },
+      "technique": {
+        "value": "circle-carry-chain; headline tucked behind the disc; slow push-in",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m11-leave-it-part.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Proof 2: same chat; the request, a 'finished' reply with a tick, then a proactive suggestion",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m12-to-sphere.jpg F701-F707",
+          "visuals/a1/coarse-g.jpg F713-F843"
+        ]
+      },
+      "technique": {
+        "value": "portrait becomes a blue sphere, then the chat avatar (shape match); messages land one by one",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m12-to-sphere.jpg F694-F707"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Spectacle and breath: overhead view of the dome on the ocean; slow pull-back",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/strips/s006.jpg F853-F898",
+          "visuals/a1/m13-bubble-iris.jpg F853-F862"
+        ]
+      },
+      "technique": {
+        "value": "disc iris opens from inside the chat; power1.out pull-out (motion.json)",
+        "basis": "measured",
+        "confidence": 0.75,
+        "evidence": [
+          "motion.json s006 camera pull_out z -0.232, power1.out, gsapRmse 0.0105",
+          "visuals/a1/m13-bubble-iris.jpg F853-F862"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Tagline: giant letters sweep in and settle to one line, re-colour to ink, fade to a ghost",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m14-letter-wipe.jpg F905-F913",
+          "visuals/strips/s007.jpg F906-F956"
+        ]
+      },
+      "technique": {
+        "value": "giant-word-pull-out used as the wipe out of the overhead shot",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m14-letter-wipe.jpg F905-F913"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Brand mark: a brush stroke writes a cursive monogram, which shrinks and holds to the last frame",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/m15-logo-draw.jpg F959-F971",
+          "visuals/a1/m16-end.jpg F1020-F1044"
+        ]
+      },
+      "technique": {
+        "value": "brush write-on with motion blur, then a static hold of about 2.2 s, no fade",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/m16-end.jpg diffs 0.02-0.34"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 4.733,
+        "endSec": 5.133,
+        "name": "accelerate-into-cut",
+        "description": "The push on the dome speeds up for the last 4 drawn frames before a hard cut, and the close-up picks up the same push and brakes. Strip diffs F143 10.1, F144 11.8, F145 24.1 (dome and icons smear), F146 13.2, F147 0.03 (a pulldown repeat). The cut at F148 (4.933 s) has a diff of 34.2. Incoming diffs are F149 34.0, F150 17.1, F151 7.7, F152 0.3 (repeat), F153 7.1, F154 5.9. Over about 4 frames the speed halves each frame. motion.json fits s002 as push_in z +0.645 from 3.61 s over 1.22 s, circ.in, gsapRmse 0.040, but its bezier [1, 0.366, 1, 0.419] is degenerate, so only the accelerating shape is trusted. The cut is 34 ms after beat 4.899.",
+        "why": "The viewer's eye is already travelling into the dome when the cut lands, so the close-up feels like arriving rather than a new shot. The cut hides inside the peak of the motion blur."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m03-cut-closeup.jpg F142-F154",
+        "motion.json s002 camera",
+        "audio.json beatsSec 4.899"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 7.3,
+        "endSec": 7.967,
+        "name": "word-split-insert",
+        "description": "A centred two-word line, the second word typed in at F203, pushes in slowly from F219. At F223 (7.43 s) the word gap widens and a tiny dot (about 1% of width) appears in it. F225 has a small disc. At F226 (7.53 s) the disc is about 0.32 of frame width (diff 17.5, a one-frame jump), and the two words are at once scaled up and thrown to the frame edges, cropped. From F227 to F239 they keep drifting outward and decelerate (diffs 7.0, 3.9, 2.7, 2.0, 1.3, 1.1, 1.0, 0.6), so they are gone by about F240. The disc holds dead centre, with the character inside. The beat is at 7.616, so the pop is 83 ms early: not on the beat, and the music is in an onset gap.",
+        "why": "The instruction (the two words) literally opens to show who answers it. The gap is the one place the eye already rests in a centred two-word line, so the pop needs no travel."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/m05-words-part-avatar.jpg F219-F239",
+        "visuals/a1/m04-whiteout-to-type.jpg F203"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 15.733,
+        "endSec": 18.7,
+        "name": "caret-tracking-typewriter",
+        "description": "The input field at hero scale: text 0.11 of frame height. The I-beam cursor clicks into the field (F451-F468), the caret appears (F476), and a soft blue glow sits behind it. The request, 31 characters, types from about 16.1 s to 17.75 s, about 1.6 frames per character. The frame tracks right to keep the caret near x 0.6-0.9, so the start of the line leaves the left edge (OCR box x 0.00, 0.81 wide at 17.5 s). The newest one or two words are accent blue and turn ink as the next word types. On a hard cut at F559 (18.633 s, diff 12.3) the frame jumps to the far end of the same bar, showing the mic and the blue send button. The bar keeps its horizontal band (y about 0.40-0.60) and keeps sliding left, so the eye stays on the line.",
+        "why": "Typing at hero scale makes the viewer read the request as their own words. Tracking the caret keeps the newest word in one place, and the cut along the bar skips the dead travel to the send button without losing the line."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/coarse-b.jpg F448-F484",
+        "visuals/a1/coarse-f.jpg F480-F540",
+        "visuals/a1/m08-field-reframe.jpg F496-F508",
+        "visuals/a1/m09-field-to-send.jpg F552-F563",
+        "speech-text.json 16.017-18.517 boxes"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 19.6,
+        "endSec": 23.8,
+        "name": "circle-carry-chain",
+        "description": "One disc changes meaning three times without a cut. (1) The blue send button (about 0.23 width) drains to white top-down over 5 frames (F590-F594, 19.66-19.80 s) while the mic fades; the white disc then drifts to centre (F594-F599). (2) The character rises into the disc from below like a window (F600-F605, 6 frames), and the disc grows to about 0.34 width. Line one of the headline appears behind the disc at F616 (20.53 s), its second word at F620, line two at 21.26 s, and the accent-blue name at 21.40 s. The camera pushes in about 12% until 23.1 s. (3) F694-F701 (23.13-23.36 s): a fast push-in with blur sends both lines off the top and bottom while the portrait floods to a glossy blue sphere about 0.22 of width, at top centre. A name pill lands under it at F703, and by F713 (23.76 s) the sphere has become the chat's header avatar. The break into (3) is 17 ms before beat 23.150.",
+        "why": "The send button, the character and the chat avatar are one object, which is the film's claim: pressing send is handing it to the character. The eye never leaves the circle, so three scene changes cost no attention."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m10-send-to-circle.jpg F585-F605",
+        "visuals/a1/m11-leave-it-part.jpg F610-F628",
+        "visuals/a1/coarse-d.jpg F618-F694",
+        "visuals/a1/m12-to-sphere.jpg F688-F707",
+        "visuals/a1/coarse-g.jpg F713"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 29.833,
+        "endSec": 30.933,
+        "name": "giant-word-pull-out",
+        "description": "The tagline enters from the left edge at about frame height: one lowercase letter spans all 640 px at F900-F902. It sweeps right across the overhead ocean shot. F896-F904 is 9 frames, a letter crossing about 60% of the width per 3 frames. At the same time it shrinks: two words are about 0.6 of frame height at F905, and the line is 0.63 wide at F913 (30.43 s). The third word arrives the same way from the right edge F908-F913. While the type shrinks, the ocean washes to the pale cloud ground. The letters re-colour from accent blue #2876EF to ink by about F926 (30.86 s), and word spacing opens from touching to normal (F905 to F921). The loudest 0.5 s window of the track (-12.5 dBFS) starts at 30.0 s, and beat 30.140 is 27 ms before the detector boundary.",
+        "why": "The type itself is the wipe, so the spectacle shot hands over to the tagline with no separate transition. Starting the words too big to read and letting them settle into a calm line gives the tagline weight before it is legible."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m14-letter-wipe.jpg F895-F913",
+        "visuals/strips/s007.jpg F906-F931",
+        "0.5 s RMS windows (scratch) 30.0 s -12.5 dBFS",
+        "audio.json beatsSec 30.140"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s002"
+        ],
+        "transition": "wipe",
+        "note": "Detector 'whip' (0.67) is a camera descent through cloud cover. The type rises out of frame top-right (F70-F77), cumulus covers the whole frame F78-F80, and the island emerges beneath the clouds F81-F86. There is no directional streak, so the cloud is a natural wipe."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m02-cloud-push.jpg F66-F89"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s004"
+        ],
+        "transition": "dissolve",
+        "note": "Detector 'continuous' (0.4) at 6.4 s is a bleach dissolve. The close-up washes to the pale ground over F188-F195 (diffs 5.1, 8.0, 11.9, 13.1, 10.5, 7.5, 5.3), and the first word lands at F196 (6.53 s)."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m04-whiteout-to-type.jpg F186-F206"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 7.533,
+        "transition": "match",
+        "note": "s004 holds seven set-ups over 16.7 s on one pale ground. At 7.533 s (F226) a dot between the two words becomes the 0.32-wide portrait disc in one frame (diff 17.5), and the words are thrown to the edges. This is detector candidate 7.533 (novelty 2.74)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/m05-words-part-avatar.jpg F223-F227",
+        "shots.json candidates 7.533"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 8.433,
+        "transition": "cut",
+        "note": "F252 to F253 (8.433 s): the hero portrait disc (about 0.32 width, centred) jumps to a small header avatar (about 0.08 width, y 0.28) with a name pill, on the same ground (diff 6.8). It settles over 3 frames (0.5, 0.38, 0.28), and the chat builds below from F258. This is detector candidate 8.433."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/m06-avatar-shrink.jpg F249-F262",
+        "shots.json candidates 8.433"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 14.933,
+        "transition": "continuous",
+        "note": "A camera move from the answer card to the input field. The card scales up and leaves through the top F438-F447 (diffs 7-8), an arrow cursor enters bottom-left F444, and the field slides in from the right at F448 (14.933 s), where the subject changes. There is no cut."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/m07-card-to-field.jpg F436-F454"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 18.633,
+        "transition": "cut",
+        "note": "A hard cut F558 to F559 (diff 12.3) from the end of the typed line to the mic and send end of the same bar, which keeps its band. This is detector candidate 18.633 (novelty 3.68)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/m09-field-to-send.jpg F552-F563",
+        "shots.json candidates 18.633"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 19.733,
+        "transition": "continuous",
+        "note": "The send button morphs. Its blue drains to white F590-F594, the mic fades, and the disc becomes a portrait window that the character rises into (F600-F605), so the UI shot becomes a title shot without a cut. The boundary is placed at F592, mid-drain."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/m10-send-to-circle.jpg F585-F605"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s005"
+        ],
+        "transition": "match",
+        "note": "Detector 'continuous' at 23.133 s is a shape match. The portrait disc floods to a blue sphere while the headline pushes off frame (F694-F701), and the sphere becomes the chat avatar by F713."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m12-to-sphere.jpg F688-F707"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s006"
+        ],
+        "transition": "wipe",
+        "note": "An iris wipe. A disc showing the overhead shot appears in the middle of the chat at F846 (28.20 s, about 0.25 width) and grows to frame height by F853, then to full frame by about F862. The detector time 28.433 lies inside the move (28.20-28.73 s), so the time is kept and only the type changes."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m13-bubble-iris.jpg F838-F862"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s007"
+        ],
+        "transition": "wipe",
+        "note": "A type wipe. Giant tagline letters sweep in from the left at about frame height (F896-F904) and cover the overhead shot, which washes to the pale ground underneath. It is not a camera continuation."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/m14-letter-wipe.jpg F895-F913"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s008"
+        ],
+        "transition": "cut",
+        "note": "The tagline fades to about 25% over F952-F957, then the brush stroke appears at full opacity and full size in one frame at F958 (diff 10.0). It is a hard-in after a fade-down, not continuous."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/m15-logo-draw.jpg F952-F961"
+      ]
+    }
+  ]
+}

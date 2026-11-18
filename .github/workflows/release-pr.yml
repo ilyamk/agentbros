@@ -1,0 +1,72 @@
+name: release-pr
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  release-pr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # GITHUB_TOKEN only reads; branch pushes and the PR use the automation App token.
+    permissions: { contents: read }
+    environment: automation
+    concurrency:
+      group: release-pr
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Mint the automation App token
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.AUTOMATION_APP_CLIENT_ID || vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY || secrets.RELEASE_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Plan and maintain the bot release branch
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          pnpm release:plan > /tmp/release-plan.json
+          if [ "$(jq -r '.metadata.ready' /tmp/release-plan.json)" != true ]; then exit 0; fi
+          VERSION=$(jq -er '.metadata.version' /tmp/release-plan.json)
+          gh auth setup-git
+          BOT="${APP_SLUG}[bot]"
+          BOT_ID=$(gh api "/users/${APP_SLUG}%5Bbot%5D" --jq .id)
+          git config user.name "$BOT"
+          git config user.email "${BOT_ID}+${BOT}@users.noreply.github.com"
+          if git show-ref --verify --quiet refs/remotes/origin/bot/release; then
+            git switch -C bot/release origin/bot/release
+            git merge --strategy=ours --no-commit --no-ff origin/main
+            git restore --source origin/main --staged --worktree -- .
+          else
+            git switch -c bot/release
+          fi
+          pnpm release:apply --version "$VERSION"
+          git add --update
+          git add CHANGELOG.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Release $VERSION"
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" push origin HEAD:bot/release
+          # Only an open PR counts: looking the branch up by name also finds the previous, merged release PR.
+          PR=$(gh pr list --head bot/release --base main --state open --json number --jq '.[0].number // empty')
+          if [ -z "$PR" ]; then
+            gh pr create --base main --head bot/release --title "Release $VERSION" --body 'Automated release plan; owner review required.' --label release:ready
+          else
+            gh pr edit "$PR" --title "Release $VERSION"
+          fi

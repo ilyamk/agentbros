@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "opportunities": [
+    {
+      "key": "critic-golden-cases",
+      "category": "agent-skill",
+      "size": "M",
+      "title": "Golden cases for the creative critic: does it catch a degraded film?",
+      "why": "The chain's tests walk fixture artefacts and do not show that any agent's judgement is good. The critic is the last line before the user; nothing measures whether it ranks a deliberately degraded cut below its source.",
+      "evidence": [".agents/agents/creative-critic.md", "docs/production-chain.md", "scripts/ref-degrade.ts", "src/lib/reference/calibrate.ts"],
+      "definitionOfDone": [
+        "Build at least six pairs of a reference and a copy degraded on one axis with ref:degrade (timing, hierarchy, sync, frozen tint), from material you may share.",
+        "Run the critic on each with your own Claude Code or Codex session (no paid provider APIs) and record its critiques as fixtures.",
+        "Add an offline scorer and a test that reports, per axis, how often the degraded copy scored lower; publish the rate in docs/craft-evaluation.md with the model and harness used."
+      ],
+      "priority": 2,
+      "value": {"metric": "critic:degraded-detection-rate", "rationale": "The critic is the last judge before the user; a measured detection rate per degradation axis shows whether its verdicts can be trusted."},
+      "requires": {"tools": ["ffmpeg"], "harnessSession": ["claude-code", "codex"], "paid": false},
+      "read": [".agents/agents/creative-critic.md", "docs/production-chain.md", "src/lib/reference/calibrate.ts", "scripts/ref-degrade.ts"],
+      "verify": ["npx tsx --test tests/reference-degrade.test.ts tests/reference-calibrate.test.ts"]
+    },
+    {
+      "key": "director-order-bias",
+      "category": "agent-skill",
+      "size": "M",
+      "title": "Measure position bias in the creative director's pairwise judging",
+      "why": "The creative director judges every pair in both orders, but nothing reports how often the winner flips with the order, so a judge that prefers whatever it sees first goes unnoticed.",
+      "evidence": [".agents/agents/creative-director.md", "src/lib/film/creative-rubric.ts", ".agents/skills/creative-studio/references/creative-rubric-v2.md"],
+      "definitionOfDone": [
+        "Add a pure function over recorded pairwise entries that reports the order-flip rate and the first-shown win rate.",
+        "Surface both numbers in the review artefact and warn above a stated threshold; test the boundary with fixtures.",
+        "Document the reading in docs/production-chain.md."
+      ],
+      "priority": 2,
+      "value": {"metric": "director:order-flip-rate", "rationale": "A judge that prefers whatever it sees first corrupts every idea and script ranking; the flip rate makes that bias visible."},
+      "requires": {"paid": false},
+      "read": [".agents/agents/creative-director.md", "src/lib/film/creative-rubric.ts"],
+      "verify": ["npx tsx --test tests/creative-rubric.test.ts"]
+    },
+    {
+      "key": "rubric-vs-preference",
+      "category": "bench",
+      "size": "L",
+      "title": "Does the creative rubric predict what people prefer?",
+      "why": "Ideas and scripts are ranked on a frozen rubric, but no evidence ties its scores to human preference; the benchmark guide says so.",
+      "evidence": ["docs/creative-benchmark.md", "src/lib/film/creative-rubric.ts", "docs/production-chain.md"],
+      "definitionOfDone": [
+        "Propose a protocol (RFC draft under docs/rfcs/): blind human preference pairs on benchmark outputs, sample size and agreement statistic with an interval.",
+        "After design approval, implement the offline analysis with fixtures and publish the first result with its uncertainty."
+      ],
+      "priority": 1,
+      "value": {"metric": "bench:rubric.preference-agreement", "rationale": "The frozen rubric ranks every idea and script; without evidence that it tracks human preference, the ranking may optimise the wrong thing."},
+      "requires": {"designApproval": true, "paid": false},
+      "read": ["docs/creative-benchmark.md", "src/lib/film/creative-rubric.ts"],
+      "verify": []
+    },
+    {
+      "key": "untrusted-input-fences",
+      "category": "security",
+      "size": "M",
+      "title": "Fence untrusted film and web text in agent briefs",
+      "why": "The category scout reads web pages and the reference analyst reads other people's films, including their on-screen and spoken words. Neither brief marks that material as data, so an injected instruction in a page or a caption reaches the agent as plain text.",
+      "evidence": ["src/lib/film/brief.ts", ".agents/agents/category-scout.md", ".agents/agents/reference-analyst.md", "SECURITY.md"],
+      "definitionOfDone": [
+        "Wrap external text that briefs pass to agents in clearly delimited, labelled blocks and state in the two agent files that such text is data, never instructions.",
+        "Add a test with an injected instruction in a reference's speech text and a scraped page, asserting it only appears inside the fence.",
+        "Report the change through the security process first if you find an exploitable path."
+      ],
+      "priority": 2,
+      "value": {"rationale": "Closes a prompt-injection path from scraped pages and other people's films into agent briefs."},
+      "requires": {"paid": false},
+      "read": ["src/lib/film/brief.ts", ".agents/agents/category-scout.md", ".agents/agents/reference-analyst.md", "SECURITY.md"],
+      "verify": ["npx tsx --test tests/film-chain.test.ts tests/film-studio.test.ts", "pnpm instructions:lint"]
+    },
+    {
+      "key": "voiceover-agent-contracts",
+      "category": "agent-skill",
+      "size": "M",
+      "title": "Contract fixtures for the voiceover agents",
+      "why": "No test names caption-editor, narrator-director or voice-producer, so a prompt edit can silently break the artefact each one must write.",
+      "evidence": [".agents/agents/narrator-director.md", ".agents/agents/voice-producer.md", ".agents/agents/caption-editor.md", "src/types/AGENTS.md"],
+      "definitionOfDone": [
+        "For each agent, add a realistic example of the artefact it writes under tests/fixtures/ and validate it with the Zod schema the next stage reads.",
+        "Assert that every artefact path and field the agent file promises exists in that schema.",
+        "Split into several S pull requests if you prefer, one agent each."
+      ],
+      "priority": 1,
+      "value": {"rationale": "Catches a prompt edit that silently breaks the artefact a voiceover agent must write, before a user's project does."},
+      "requires": {"paid": false},
+      "read": [".agents/agents/narrator-director.md", ".agents/agents/voice-producer.md", ".agents/agents/caption-editor.md", "src/types/AGENTS.md"],
+      "verify": []
+    },
+    {
+      "key": "smaller-model-runs",
+      "category": "bench",
+      "size": "M",
+      "title": "What breaks on smaller models? A measured run",
+      "why": "The README says taste depends on the model and that smaller models follow rules but judge less well; nobody has measured where they fail.",
+      "evidence": ["README.md", "bench/suite.json", "docs/benchmark.md"],
+      "definitionOfDone": [
+        "Run the benchmark suite's offline tasks with a smaller model on your own harness, without paid provider calls, and submit signed bundles.",
+        "Write which steps failed, with evidence, and propose rule or tool changes that make a smaller model safer."
+      ],
+      "priority": 1,
+      "value": {"metric": "bench:offline.completion", "rationale": "Shows where smaller models fail the studio's rules, so rules and tools can make them safer; bundles must be signed to count."},
+      "requires": {"harnessSession": ["claude-code", "codex"], "signingKey": true, "paid": false},
+      "read": ["bench/suite.json", "docs/benchmark.md"],
+      "verify": []
+    },
+    {
+      "key": "music-fit-measures",
+      "category": "audio",
+      "size": "M",
+      "title": "Measured music-fit evidence for agents that cannot hear",
+      "why": "Agents read loudness, beats and spectra but cannot judge whether a track fits; a measured comparison of the cut's structure with the music's would give the user better evidence before they listen.",
+      "evidence": ["README.md", "src/lib/audio/AGENTS.md", "design-reference/sound-and-sync.md"],
+      "definitionOfDone": [
+        "Add an offline reading that compares cut density and section changes with the track's energy and section map, using the existing audio analysis.",
+        "Report it as evidence, never as a verdict on taste; test it on synthetic fixtures with known alignment."
+      ],
+      "priority": 2,
+      "value": {"metric": "audio:music-fit", "rationale": "Agents cannot hear; measured agreement between the cut and the music's structure gives the user evidence before they listen."},
+      "requires": {"paid": false},
+      "read": ["src/lib/audio/AGENTS.md", "design-reference/sound-and-sync.md"],
+      "verify": ["npx tsx --test tests/music-fit.test.ts tests/audio-structure.test.ts tests/audio-map.test.ts"]
+    },
+    {
+      "key": "genre-lyric-video",
+      "category": "playbook",
+      "size": "M",
+      "title": "Cover lyric videos",
+      "why": "\"Lyric video for my song\" only weakly matches motion-design; timed lyrics, licensing of the user's own track and caption styling are not part of any method.",
+      "evidence": ["playbooks/motion-design/playbook.json", "pnpm playbook --match \"lyric video for my song\""],
+      "definitionOfDone": [
+        "Decide with evidence between a variant of motion-design and a new playbook; run pnpm contrib:novelty.",
+        "Add match regressions for English and Russian requests and checkable intake and QA lines."
+      ],
+      "priority": 2,
+      "value": {"metric": "playbook:match", "rationale": "A common request with no clear route today; a stated method sets its intake, rights and QA."},
+      "requires": {"paid": false},
+      "read": ["playbooks/AGENTS.md", "playbooks/motion-design/playbook.json"],
+      "verify": ["pnpm playbook --check", "npx tsx --test tests/playbooks.test.ts tests/playbooks-coverage.test.ts"]
+    },
+    {
+      "key": "genre-recipe-howto",
+      "category": "playbook",
+      "size": "M",
+      "title": "Cover recipe and cooking videos",
+      "why": "\"Recipe cooking video\" matches no playbook today, although step-by-step food content is a large short-form format.",
+      "evidence": ["playbooks/AGENTS.md", "pnpm playbook --match \"recipe cooking video\""],
+      "definitionOfDone": [
+        "Decide whether it is footage-edit, product-tutorial or a new playbook; run pnpm contrib:novelty.",
+        "Add match regressions, intake questions about the user's own footage and QA lines for readable steps and quantities."
+      ],
+      "priority": 2,
+      "value": {"metric": "playbook:match", "rationale": "A large short-form format that matches no playbook today."},
+      "requires": {"paid": false},
+      "read": ["playbooks/AGENTS.md"],
+      "verify": ["pnpm playbook --check", "npx tsx --test tests/playbooks.test.ts tests/playbooks-coverage.test.ts"]
+    },
+    {
+      "key": "genre-audiogram",
+      "category": "playbook",
+      "size": "S",
+      "title": "Route podcast audiograms",
+      "why": "\"Podcast audiogram\" falls to footage-edit, which expects video; an audio-only episode with a waveform and captions has no stated route.",
+      "evidence": ["playbooks/footage-edit/playbook.json", "playbooks/shorts-from-long/playbook.json", "pnpm playbook --match \"podcast audiogram\""],
+      "definitionOfDone": [
+        "Add the request to the right playbook's triggers or a variant, with a match regression and the blocks it would use."
+      ],
+      "priority": 2,
+      "value": {"metric": "playbook:match", "rationale": "Audio-only episodes fall to a playbook that expects video; a stated route avoids a wrong method."},
+      "requires": {"paid": false},
+      "read": ["playbooks/AGENTS.md", "playbooks/footage-edit/playbook.json", "playbooks/shorts-from-long/playbook.json"],
+      "verify": ["pnpm playbook --check", "npx tsx --test tests/playbooks.test.ts tests/playbooks-coverage.test.ts"]
+    },
+    {
+      "key": "references-uncovered-genres",
+      "category": "reference",
+      "size": "M",
+      "title": "Analyse reference films for genres with none",
+      "why": "The reference corpus has 22 analysed films, mostly product and motion films; genres such as UGC ads, event recaps and case studies have no measured reference to learn from.",
+      "evidence": ["design-reference/library/_corpus.json", "docs/contributing-references.md"],
+      "definitionOfDone": [
+        "Analyse a film you may study with ref:add and ref:analyze, then contribute its structure-only layers with ref:contribute.",
+        "Link the techniques it confirms to technique cards; never commit frames, media or verbatim text."
+      ],
+      "priority": 2,
+      "value": {"metric": "reference:corpus.genres", "rationale": "Measured references are what agents learn editing from; uncovered genres have none. Only films you have the rights to study qualify, and only structure-only layers are contributed."},
+      "requires": {"tools": ["ffmpeg"], "paid": false},
+      "read": ["docs/contributing-references.md"],
+      "verify": ["pnpm ref:contribute --all"]
+    },
+    {
+      "key": "first-showcases",
+      "category": "showcase",
+      "size": "S",
+      "title": "Make one of the first showcase films, on the free route",
+      "why": "The gallery is empty. A film rendered locally from library blocks, with no paid calls, shows newcomers what the studio does and proves the free route.",
+      "evidence": ["docs/showcases.md", "README.md"],
+      "definitionOfDone": [
+        "Make a film with your own harness without paid provider calls, keep its pipeline artefacts and submit it as a showcase entry with rights and licence declared."
+      ],
+      "priority": 1,
+      "value": {"rationale": "The empty gallery is the first thing a newcomer sees; one locally rendered film proves the free route. You must hold the rights to every material and declare them."},
+      "requires": {"tools": ["ffmpeg"], "harnessSession": ["claude-code", "codex"], "paid": false},
+      "read": ["docs/showcases.md"],
+      "verify": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "protocol": "agent-workflow",
+  "profile": {
+    "harness": "codex",
+    "model": "gpt-6.1-sol",
+    "harnessVersion": "codex-cli 0.169.0"
+  },
+  "scenarios": [
+    {
+      "id": "recording-shorts",
+      "path": "bench/workflows/v3/scenarios/recording-shorts.json",
+      "sha256": "3a5a636103ec51540301d6827838587d2305cf0d8713e9598aea0cd28530d7d4"
+    },
+    {
+      "id": "voice-draft",
+      "path": "bench/workflows/v3/scenarios/voice-draft.json",
+      "sha256": "74e5926729054bd0eb6404e1ed4c7d24a8936392d879a038227d87fb12b546ac"
+    },
+    {
+      "id": "leaf-handoff",
+      "path": "bench/workflows/v3/scenarios/leaf-handoff.json",
+      "sha256": "100f1f2bdf47882d32c2eded03ab26e42cf0ca050bddcae19632e6a6e5100237"
+    }
+  ]
+}

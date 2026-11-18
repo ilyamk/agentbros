@@ -1,0 +1,257 @@
+[
+  {
+    "name": "category:bench",
+    "color": "1d76db",
+    "description": "Benchmark tasks and calibration"
+  },
+  {
+    "name": "category:sensor",
+    "color": "1d76db",
+    "description": "Sensors and validators"
+  },
+  {
+    "name": "category:library",
+    "color": "1d76db",
+    "description": "Motion library"
+  },
+  {
+    "name": "category:playbook",
+    "color": "1d76db",
+    "description": "Task playbooks"
+  },
+  {
+    "name": "category:provider",
+    "color": "1d76db",
+    "description": "Providers and pricing"
+  },
+  {
+    "name": "category:command",
+    "color": "1d76db",
+    "description": "CLI commands"
+  },
+  {
+    "name": "category:worker",
+    "color": "1d76db",
+    "description": "Native and Blender workers"
+  },
+  {
+    "name": "category:audio",
+    "color": "1d76db",
+    "description": "Audio analysis and mixing"
+  },
+  {
+    "name": "category:reference",
+    "color": "1d76db",
+    "description": "Reference analyses"
+  },
+  {
+    "name": "category:agent-skill",
+    "color": "1d76db",
+    "description": "Agent and skill definitions"
+  },
+  {
+    "name": "category:instructions",
+    "color": "1d76db",
+    "description": "Agent instructions"
+  },
+  {
+    "name": "category:harness",
+    "color": "1d76db",
+    "description": "Harness and MCP integration"
+  },
+  {
+    "name": "category:template",
+    "color": "1d76db",
+    "description": "Reusable templates"
+  },
+  {
+    "name": "category:asset",
+    "color": "1d76db",
+    "description": "Shared asset manifests"
+  },
+  {
+    "name": "category:test-ci",
+    "color": "1d76db",
+    "description": "Tests and continuous integration"
+  },
+  {
+    "name": "category:lesson",
+    "color": "1d76db",
+    "description": "Generalised lessons"
+  },
+  {
+    "name": "category:fix",
+    "color": "1d76db",
+    "description": "Bug fixes"
+  },
+  {
+    "name": "category:docs",
+    "color": "1d76db",
+    "description": "Guides and documentation"
+  },
+  {
+    "name": "category:showcase",
+    "color": "1d76db",
+    "description": "Showcase entries"
+  },
+  {
+    "name": "category:security",
+    "color": "1d76db",
+    "description": "Security fixes"
+  },
+  {
+    "name": "size:S",
+    "color": "bfd4f2",
+    "description": "Declared/observed change size S"
+  },
+  {
+    "name": "size:M",
+    "color": "bfd4f2",
+    "description": "Declared/observed change size M"
+  },
+  {
+    "name": "size:L",
+    "color": "bfd4f2",
+    "description": "Declared/observed change size L"
+  },
+  {
+    "name": "tier:0",
+    "color": "c5def5",
+    "description": "Computed contributor trust tier 0"
+  },
+  {
+    "name": "tier:1",
+    "color": "c5def5",
+    "description": "Computed contributor trust tier 1"
+  },
+  {
+    "name": "tier:2",
+    "color": "c5def5",
+    "description": "Computed contributor trust tier 2"
+  },
+  {
+    "name": "tier:3",
+    "color": "c5def5",
+    "description": "Computed contributor trust tier 3"
+  },
+  {
+    "name": "triage:promising",
+    "color": "d4c5f9",
+    "description": "Triage verdict (OpenRouter, two model families): promising"
+  },
+  {
+    "name": "triage:needs-work",
+    "color": "d4c5f9",
+    "description": "Triage verdict (OpenRouter, two model families): needs-work"
+  },
+  {
+    "name": "triage:likely-slop",
+    "color": "d4c5f9",
+    "description": "Triage verdict: likely-slop; withholds ready-for-owner until a human removes it"
+  },
+  {
+    "name": "triage:needs-human",
+    "color": "d4c5f9",
+    "description": "Triage verdict (OpenRouter, two model families): needs-human"
+  },
+  {
+    "name": "claimed",
+    "color": "0e8a16",
+    "description": "Work claimed by a contributor"
+  },
+  {
+    "name": "needs-triage",
+    "color": "fbca04",
+    "description": "Opportunity awaiting maintainer review before the needs board"
+  },
+  {
+    "name": "agent-ready",
+    "color": "0e8a16",
+    "description": "Maintainer-reviewed task, listed on the needs board"
+  },
+  {
+    "name": "design-approved",
+    "color": "0e8a16",
+    "description": "Owner approved the proposal and protected scope"
+  },
+  {
+    "name": "ready-for-owner",
+    "color": "0e8a16",
+    "description": "All required gates passed; owner review pending"
+  },
+  {
+    "name": "needs-human",
+    "color": "b60205",
+    "description": "Automation defers to owner review"
+  },
+  {
+    "name": "context-growth-approved",
+    "color": "0e8a16",
+    "description": "Owner approved instruction context growth"
+  },
+  {
+    "name": "release:ready",
+    "color": "0e8a16",
+    "description": "Release readiness criteria met"
+  },
+  {
+    "name": "bench-lite",
+    "color": "0e8a16",
+    "description": "Trusted no-spend benchmark requested"
+  },
+  {
+    "name": "security",
+    "color": "b60205",
+    "description": "Private advisory coordination required"
+  },
+  {
+    "name": "appealed",
+    "color": "0e8a16",
+    "description": "One appeal used; human review required"
+  },
+  {
+    "name": "benchmark-bundle",
+    "color": "bfd4f2",
+    "description": "Reviewed benchmark bundle ready for deterministic verification"
+  },
+  {
+    "name": "closed:slop",
+    "color": "b60205",
+    "description": "Closed as duplicate, media/leak or by a maintainer; counts against trust tier for 90 days"
+  },
+  {
+    "name": "closed:process",
+    "color": "d4c5f9",
+    "description": "Closed for a missing step (CLA, PR limit, approval, PR block, proposal); never affects tier"
+  },
+  {
+    "name": "release",
+    "color": "bfd4f2",
+    "description": "Trusted release PR; human review required"
+  },
+  {
+    "name": "bench:submitted",
+    "color": "bfd4f2",
+    "description": "Maintainer-approved benchmark submission awaiting verification"
+  },
+  {
+    "name": "bench:verified",
+    "color": "bfd4f2",
+    "description": "Benchmark signature and deterministic verification passed"
+  },
+  {
+    "name": "bench:rejected",
+    "color": "bfd4f2",
+    "description": "Benchmark acquisition or verification failed"
+  },
+  {
+    "name": "triage:requested",
+    "color": "bfd4f2",
+    "description": "Maintainer requests advisory triage for an eligible PR"
+  },
+  {
+    "name": "models-refresh-route",
+    "color": "0E8A16",
+    "description": "Verified model refresh bot PR; human review required"
+  }
+]

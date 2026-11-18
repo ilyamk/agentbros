@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "rhythm": {
+    "value": "19 judged shots in 8.67 s (detector 11): 18 cuts, 124.6 cuts a minute, median shot 0.134 s, but the median hides the shape. Three tempos in sequence: (1) hook 0-1.133 s, a 9-frame strobe and a 25-frame plate; (2) two long breaths, 44 and 28 frames (1.133-3.533); (3) a burst of ten 4-frame plates (3.833-5.167, exactly 0.1333 s each) after a 9-frame lead-in, then a 6-frame plate; (4) an emptying ending of 6, 9, 50 and 40 frames. Shot lengths p10 0.133 s, p90 1.467 s (variety about 11x). Captions (5) carry their own clock, independent of cuts: 30, 19, 28, 54 and 34 frames on screen, each entering and leaving in one frame, and none during the two breath plates' first halves or the second half of the burst. Sound, unheard (I cannot hear the film): onsets run at 4.27 a second (1.28 per 0.3 s), so onset ratios say nothing. On the 18 judged cuts 7 land within 80 ms of a beat (0.39) against 0.314 by chance, 10 on onsets (0.56) against 0.631, 1 within a frame of a downbeat against 0.039: all chance. Tempo confidence 0.164 at 127.6 BPM while audiomap reads 163 BPM at 0.32, so there is no grid. The detector's own sync.json (0.40 vs 0.314, 0.70 vs 0.631) is also chance. What the 50 ms RMS does show (read after seeing the curve, so suggestive only, confidence about 0.5): loudness comes in bursts with troughs near -30 dB at 1.20-2.10, 2.80-3.55 and 4.40-4.90 s, and the bursts match the captions' on and off times (on 0.133/2.067/3.533 against rises at 0.35/2.15/3.60; off 1.133/2.700/4.467 against falls at 1.15/2.75/4.40). The bursts are most likely the voiceover, and each caption arrives about 2 frames (once 6) before its spoken line. The two long holds sit between lines. From 4.95 s the level climbs to -5 dB at 7.9 s while the picture empties, and the film ends on black under loud sound, not silence.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json plus corrections (src/lib/reference/corrected.ts) ",
+      "visuals/a1/w-a.jpg to w-k.jpg (whole film at step 1)",
+      "speech-text.json screenText onsets"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001.1",
+      "purpose": {
+        "value": "Hook opener: a dot-matrix ring strobes against black frame by frame (9 frames, 0-0.300 s) while the first caption arrives at F4 (0.133).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-a.jpg F0-F8"
+        ]
+      },
+      "technique": {
+        "value": "Frame strobe: ring, black, ring, black with a blue bar, ring, black, then two ultramarine frames (F7-F8).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-a.jpg F0-F8"
+        ]
+      }
+    },
+    {
+      "shotId": "s001.2",
+      "purpose": {
+        "value": "First image: a macro eye under HUD measurement boxes, the caption held over it (25 frames, 0.300-1.133).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-a.jpg F9-F23",
+          "visuals/a1/w-b.jpg F24-F33"
+        ]
+      },
+      "technique": {
+        "value": "Grade-in from white: F9 white, F10-F13 HUD boxes draw on over the white-out, F14-F15 magenta, F16 onward teal; slight pull-out 3.3% (motion.json s003 expo.out, 0.137 s).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-a.jpg F9-F23",
+          "visuals/a1/w-b.jpg F24-F33"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Breath: light crescent on a dark sphere, no caption for 28 frames, then the second caption at F62 (2.067); 44 frames in all (1.133-2.600).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-c.jpg F34-F71",
+          "visuals/a1/w-d.jpg F69-F77"
+        ]
+      },
+      "technique": {
+        "value": "Slow push 7.2% (motion.json s004, linear, span90 1.03 s, cut off); exits through three grade steps F71 mono, F74-F75 negative, F76-F77 cream.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-c.jpg F34-F71",
+          "visuals/a1/w-d.jpg F69-F77"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Breath: pen nib drawing a curve on paper, 28 frames (2.600-3.533); caption only until F80, then none.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-d.jpg F78-F92",
+          "visuals/a1/w-e.jpg F93-F105"
+        ]
+      },
+      "technique": {
+        "value": "Negative first frame F78, sepia-cream F79-F99, bright neutral grade F100-F105; 2.8 degree clockwise roll with 2% push (motion.json s007 power2.in, span90 0.59 s).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-d.jpg F78-F92",
+          "visuals/a1/w-e.jpg F93-F105"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.1",
+      "purpose": {
+        "value": "Surge starts: a dark object with two highlights under the third caption, 9 frames (3.533-3.833).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-e.jpg F106-F114"
+        ]
+      },
+      "technique": {
+        "value": "Grey grade F106-F110, teal F111-F114.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-e.jpg F106-F114"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.2",
+      "purpose": {
+        "value": "Breath inside the burst: black frame with only the caption, 4 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-e.jpg F115-F118"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.3",
+      "purpose": {
+        "value": "Burst plate: perforated dome arc, 4 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F119-F122"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.4",
+      "purpose": {
+        "value": "Burst plate: a lit object throwing sparks and bokeh, 4 frames.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F123-F126"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.5",
+      "purpose": {
+        "value": "Burst plate: the eye from the hook returns, 4 frames; the last one in monochrome (F130).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F127-F130"
+        ]
+      },
+      "technique": {
+        "value": "Callback to the hook plate, re-graded on its last frame.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F127-F130"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.6",
+      "purpose": {
+        "value": "Burst plate: line-art circle in a diamond around the caption; on F134 the ring scales past the frame.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F131-F134"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.7",
+      "purpose": {
+        "value": "Burst plate: glass dome on a plate, monochrome, caption gone from this frame on (F135).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F135-F138"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.8",
+      "purpose": {
+        "value": "Burst plate: falling streak particles on a dark green field.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-f.jpg F139-F142"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.9",
+      "purpose": {
+        "value": "Burst plate: a hand on a keyboard.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-g.jpg F143-F146"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.10",
+      "purpose": {
+        "value": "Burst plate: a droplet over a teal glow; scattered digits enter on its last frame (F150).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-g.jpg F147-F150"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.11",
+      "purpose": {
+        "value": "Burst plate: scattered digits fly across black around a vertical light line; the fourth caption appears on F154.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-g.jpg F151-F154"
+        ]
+      }
+    },
+    {
+      "shotId": "s009.12",
+      "purpose": {
+        "value": "Measurement: a line-art drawing (crosshair, quarter arc, two readouts counting 170.4 to 172.1) around the fourth caption, 6 frames (5.167-5.367).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-g.jpg F155-F160",
+          "visuals/a1/w-h.jpg F159-F160"
+        ]
+      },
+      "technique": {
+        "value": "The readout counts up a tenth or two a frame while the arc grows: the drawing measures itself.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-g.jpg F155-F160",
+          "visuals/a1/w-h.jpg F159-F160"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "Ground swap: the caption on an ultramarine card with a soft lighter rectangle (F161-F164), graded to navy at F165, 9 frames (5.367-5.667).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-h.jpg F161-F169"
+        ]
+      }
+    },
+    {
+      "shotId": "s011.1",
+      "purpose": {
+        "value": "Caret hold: black ground with the same soft card and caption; a glowing caret through the middle of the line blinks on a 19-frame cycle; the line is deleted at F208 and the caret goes at F216 (5.667-7.333, 50 frames).",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-h.jpg F170-F182",
+          "visuals/a1/w-i.jpg F183-F206",
+          "visuals/a1/w-j.jpg F207-F219"
+        ]
+      },
+      "technique": {
+        "value": "Caret on F170-F179, off F180-F188, on F189-F197, 1-frame break-up F198, off F199-F207, on F208-F215 without the line, off from F216.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-h.jpg F170-F182",
+          "visuals/a1/w-i.jpg F183-F206",
+          "visuals/a1/w-j.jpg F207-F219"
+        ]
+      }
+    },
+    {
+      "shotId": "s011.2",
+      "purpose": {
+        "value": "Payoff: the closing line alone on black for 34 frames (7.333-8.467), then 6 black frames to the end.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/w-j.jpg F220-F230",
+          "visuals/a1/w-k.jpg F231-F259"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "name": "flash-montage-under-continuous-caption",
+        "startSec": 3.533,
+        "endSec": 5.367,
+        "description": "One caption holds frame-centre while plates change under it: 9-frame lead plate (F106-F114), then eleven cuts on exact 4-frame steps at F115, F119, F123, F127, F131, F135, F139, F143, F147, F151, F155 (3.833-5.167 s): ten 4-frame plates, then a last plate held 6 frames. The caption stays on the lead plate and the next five (to F134), is absent for five (F135-F153), and the next line appears on F154 and holds over the 6-frame plate. Plates alternate subject and grade (black, dome, sparks, eye callback, wireframe, glass, particles, hand, droplet, digits, drawing); the eye plate is the hook's eye, a callback. Same move in short at the hook: the first caption holds F4-F33 across the ring strobe, the white-out and the eye.",
+        "why": "The caption is the fixed point the eye holds, so 0.13 s plates are read as a list of possibilities rather than as noise; exact 4-frame steps make the burst feel mechanical and deliberate, and the callback plate ties the surge back to the opening image."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-e.jpg F106-F118",
+        "visuals/a1/w-f.jpg F117-F142",
+        "visuals/a1/w-g.jpg F141-F160"
+      ]
+    },
+    {
+      "value": {
+        "name": "grade-step-on-held-plate",
+        "startSec": 2.333,
+        "endSec": 2.633,
+        "description": "A held plate exits through hard grade steps rather than a cut effect: crescent teal (F70), monochrome high-contrast (F71-F73, 3 frames), negative black-on-white (F74-F75, 2 frames), cream with a brown crescent and RGB fringing (F76-F77, 2 frames), then the next plate enters in negative for 1 frame (F78) before its own sepia grade (F79). Other instances: the eye grades in from white (F9) through magenta (F14-F15) to teal (F16); the pen jumps to a bright neutral grade at F100; the burst's eye goes monochrome on F130; the caption card goes ultramarine to navy at F165.",
+        "why": "Each step is a full-frame change of luminance or polarity, which the eye reads as a hit without any movement; using 1-3 frame grades as the transition keeps the subject in place so the change is felt, not followed, and it makes footage look authored."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-d.jpg F69-F79",
+        "visuals/a1/w-a.jpg F9-F16",
+        "visuals/a1/w-e.jpg F99-F100",
+        "visuals/a1/w-h.jpg F164-F165"
+      ]
+    },
+    {
+      "value": {
+        "name": "blinking-caret-line-swap",
+        "startSec": 5.667,
+        "endSec": 7.333,
+        "description": "On a black ground with a faint soft card (#0C0F0C), a thin vertical caret with a green-white bloom stands through the middle of the centred line. It blinks on a 19-frame cycle: on F170-F179 (10), off F180-F188 (9), on F189-F197 (9), a 1-frame break-up into fragments at F198, off F199-F207, on F208-F215 (8). On F208 the whole line is removed in one frame, leaving the caret alone; the caret goes at F216; four empty frames (F216-F219); the next line appears whole at F220 (7.333).",
+        "why": "A caret is the universal sign for 'being written', so the line reads as a draft; deleting it whole and replacing it after four empty frames makes the last line land as a correction of the previous one, which is the film's argument."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-h.jpg F169-F182",
+        "visuals/a1/w-i.jpg F183-F206",
+        "visuals/a1/w-j.jpg F207-F221"
+      ]
+    },
+    {
+      "value": {
+        "name": "frame-strobe-graphic-open",
+        "startSec": 0.0,
+        "endSec": 0.3,
+        "description": "The film opens on a dot-matrix ring (about 0.55 of frame height, centred) alternating with black on single frames: ring F0, black F1-F2, ring with a blue vertical bar F3, black with bar and caption F4, dim ring F5, black F6, ring on ultramarine #062477 F7-F8, then a full white frame F9 that becomes the first plate. The caption is on from F4 and does not flicker.",
+        "why": "Single-frame alternation is the strongest attention signal available in the first 0.3 s; holding the caption steady through it makes the words the stable thing to read."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/w-a.jpg F0-F9"
+      ]
+    },
+    {
+      "value": {
+        "name": "slow-push-macro-hold",
+        "startSec": 1.133,
+        "endSec": 3.533,
+        "description": "Two long, near-still macro plates after the hook: the crescent holds 44 frames with a 7.2% linear push (motion.json s004: z 0.0696, span90 1.03 s, fit 'none', cut off by the grade exit) and the caption arrives only after 28 frames (F62); the pen nib holds 28 frames with a 2.8 degree clockwise roll and 2% push (s007: power2.in, span90 0.59 s). Both sit in the quietest stretches of the soundtrack (50 ms RMS about -30 dB at 1.20-2.10 s and 2.80-3.55 s against -10 to -15 dB in the bursts), which are most likely the gaps between spoken lines (inferred).",
+        "why": "After a 1.1 s hook of strobe and annotation, the viewer needs a rest; long holds with almost no motion and almost no sound make the following 4-frame burst feel faster than it is."
+      },
+      "basis": "measured",
+      "confidence": 0.8,
+      "evidence": [
+        "motion.json s004 s007 camera",
+        "visuals/a1/w-c.jpg F34-F71",
+        "visuals/a1/w-d.jpg F78-F92",
+        "RMS 50 ms of media/source.mp4 (computed in scratch)"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s002"
+        ],
+        "note": "0.233 s (F7) is not a new shot: the same ASCII dot ring, same size and centre, flips from white-on-black to white-on-ultramarine. F0-F8 are one ring strobing frame by frame (ring, black, ring, black with a blue bar, ring, black, ultramarine ring x2). Grade or polarity steps on one held element are counted inside the shot throughout this analysis."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/w-a.jpg F0-F8",
+        "visuals/boundaries-01.jpg S002"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s002"
+        ],
+        "timeSec": 0.3,
+        "transition": "cut",
+        "note": "The real cut is at F9 (0.300): a full white frame that is the macro eye plate over-exposed. Contrast-boosted F12-F13 show lash and iris structure under the white, and the HUD boxes drawing on F10-F13 sit at exactly the positions they hold over the visible eye from F14."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/w-a.jpg F9-F16"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s003"
+        ],
+        "note": "0.467 s (F14, detector 'match' 0.45) is the same eye plate graded down from white to magenta (F14-F15), then to teal at F16 (0.533). HUD layer unchanged across F13/F14. Merged into the eye shot that starts at 0.300."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/w-a.jpg F13-F16"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s004",
+          "s005",
+          "s006"
+        ],
+        "note": "2.367 s (F71, teal to monochrome white) and 2.467 s (F74, polarity inverted: black crescent on white, 2 frames) are grade steps on the same light-crescent plate; a third step to cream with a brown crescent and RGB fringing follows at F76 (2.533). Same framing throughout; the crescent never moves between grades."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-d.jpg F69-F78",
+        "visuals/boundaries-01.jpg S005 S006"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s007",
+          "s008"
+        ],
+        "note": "3.333 s (F100, detector 'match') is an exposure/grade step on the same pen-nib plate: sepia-cream to bright neutral grey, nib and line unchanged."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-e.jpg F98-F105"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 3.833,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 3.833 s, black frame carrying only the caption (F115-F118). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-e.jpg F115-F118"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 3.967,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 3.967 s, perforated dome arc (F119-F122). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F119-F122"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.1,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.100 s, lit object throwing sparks and bokeh (F123-F126). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F123-F126"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.233,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.233 s, macro eye again, teal, monochrome on its 4th frame F130 (F127-F130). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F127-F130"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.367,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.367 s, line drawing: circle in a diamond, the ring scaling past frame on F134 (F131-F134). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F131-F134"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.5,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.500 s, glass dome on a plate, monochrome (F135-F138). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F135-F138"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.633,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.633 s, falling streak particles on dark green (F139-F142). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-f.jpg F139-F142"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.767,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.767 s, hand on keyboard (F143-F146). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-g.jpg F143-F146"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 4.9,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 4.900 s, liquid droplet over a teal glow; scattered digits begin on F150 (F147-F150). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-g.jpg F147-F150"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 5.033,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 5.033 s, scattered digits and a vertical light line on black (F151-F154). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-g.jpg F151-F154"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 5.167,
+        "transition": "cut",
+        "note": "Missed hard cut inside s009 (3.533-5.367, which the detector read as one 1.83 s shot with a moving camera): new plate at 5.167 s, technical drawing: crosshair, arc and a degree readout counting 170.4 to 172.1 (F155-F160). The plates cut every 4 frames from 3.833 to 5.167; dark grounds kept the colour change under the threshold."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-g.jpg F155-F160"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s011"
+        ],
+        "timeSec": 7.333,
+        "transition": "cut",
+        "note": "Text swap on a flat near-black ground that the detector cannot see: the first line is removed in one frame at F208 (6.933), the caret blinks off at F216 (7.200), four empty frames, then the closing line appears whole at F220 (7.333)."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-j.jpg F207-F221"
+      ]
+    }
+  ]
+}

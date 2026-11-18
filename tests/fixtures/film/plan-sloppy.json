@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "projectId": "sloppy-fixture",
+  "fps": 30,
+  "shots": [
+    { "id": "title", "startFrame": 0, "durationFrames": 150, "intent": "Introduce the product", "subject": "logo and tagline", "framing": "centred", "camera": "slow push", "composition": "centred stack", "entrance": "slide up and fade", "exit": "fade", "curve": "linear", "carry": "the tagline's underline", "layers": ["gradient", "logo", "tagline", "badge"], "readingHoldSec": 4.5, "route": "remotion" },
+    { "id": "features", "startFrame": 150, "durationFrames": 60, "intent": "List three features", "subject": "three cards", "framing": "wide", "camera": "drift", "composition": "three cards in a row", "entrance": "scale in with fade", "exit": "fade", "curve": "linear ease", "carry": "the middle card", "layers": ["glass card one", "glass card two", "glass card three"], "route": "remotion" },
+    { "id": "cta", "startFrame": 210, "durationFrames": 60, "intent": "Ask for the click", "subject": "button", "framing": "centred", "camera": "static", "composition": "button on gradient", "entrance": "pop in", "exit": "hold", "curve": "expo-out", "layers": ["gradient", "button"], "route": "remotion" }
+  ],
+  "onScreenCopy": [
+    { "shotId": "title", "text": "Meet Nova", "required": true },
+    { "shotId": "features", "text": "Fast. Smart. Secure.", "required": true },
+    { "shotId": "cta", "text": "Try it free", "required": true }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Plant Care App — Уход за растениями",
+  "formats": ["vertical", "square"],
+  "productName": "ЗелёныйУгол",
+  "tagline": "Простой уход за домашними растениями",
+  "colors": {
+    "accent": "#2D7DD2",
+    "background": "#0A0A0F",
+    "text": "#FFFFFF"
+  },
+  "voice": "adam",
+  "musicPrompt": "Cinematic dramatic orchestral, building tension then resolving to hopeful uplifting, 30 seconds",
+  "musicVolume": 0.25,
+  "scenes": [
+    {
+      "id": "hook",
+      "text": "Растения вянут? Забываете поливать? Есть простой выход.",
+      "visualType": "photo",
+      "headline": "РАСТЕНИЯ\nВЯНУТ?",
+      "subtext": "ЕСТЬ ПРОСТОЙ ВЫХОД",
+      "imageUrl": "projects/plant-care/assets/images/hook-plant.jpg",
+      "durationInFrames": 105
+    },
+    {
+      "id": "pain",
+      "text": "Листья желтеют. Земля пересыхает. Горшки стоят не на месте. Каждый день — догадки.",
+      "visualType": "photo",
+      "headline": "Листья.\nПолив.\nСвет.",
+      "subtext": "КАЖДЫЙ ДЕНЬ — ДОГАДКИ И СОМНЕНИЯ",
+      "imageUrl": "projects/plant-care/assets/images/pain-wilted.jpg",
+      "durationInFrames": 135
+    },
+    {
+      "id": "solution",
+      "text": "Уход за растениями — это не талант. Это простые привычки, которым может научиться каждый.",
+      "visualType": "photo",
+      "headline": "Уход —\nэто привычка",
+      "subtext": "ПРОСТЫЕ ПРАВИЛА НА КАЖДЫЙ ДЕНЬ",
+      "imageUrl": "projects/plant-care/assets/images/solution-habit.jpg",
+      "durationInFrames": 135
+    },
+    {
+      "id": "feature1",
+      "text": "Мы берём расписание на себя. Напоминания о поливе, подсказки по свету, советы до первого цветения.",
+      "visualType": "photo",
+      "headline": "Всё помним\nза вас",
+      "subtext": "ПОЛИВ · СВЕТ · ПЕРЕСАДКА",
+      "imageUrl": "projects/plant-care/assets/images/feature-gardener.jpg",
+      "durationInFrames": 135
+    },
+    {
+      "id": "proof",
+      "text": "Более трёх тысяч растений уже ожили. В среднем — два новых листа в месяц на каждое.",
+      "visualType": "photo",
+      "headline": "3 000+\nрастений",
+      "subtext": "В СРЕДНЕМ 2 НОВЫХ ЛИСТА В МЕСЯЦ",
+      "imageUrl": "projects/plant-care/assets/images/proof-success.jpg",
+      "durationInFrames": 120
+    },
+    {
+      "id": "cta",
+      "text": "Начните с бесплатной недели. Узнайте, что нужно именно вашему растению.",
+      "visualType": "photo",
+      "headline": "Бесплатная\nнеделя",
+      "subtext": "УЗНАЙТЕ, ЧТО НУЖНО ВАШЕМУ РАСТЕНИЮ",
+      "imageUrl": "projects/plant-care/assets/images/cta-start.jpg",
+      "durationInFrames": 135
+    }
+  ]
+}

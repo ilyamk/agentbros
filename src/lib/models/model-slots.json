@@ -1,0 +1,3521 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-15",
+  "catalogueOnlyConcepts": [
+    "world",
+    "structured-data",
+    "text-json",
+    "image-json",
+    "rewrite",
+    "llm",
+    "workflow"
+  ],
+  "slots": [
+    {
+      "id": "image.generate",
+      "title": "Generate images",
+      "description": "Create images from a text prompt.",
+      "concepts": [
+        "text-to-image"
+      ],
+      "categories": [
+        "text-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/text-to-image",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for generate images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Ftext-to-image&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.5/flare/text-to-image",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for generate images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. Previous verified family version retained; owner prefers its successor. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.5%2Fflare%2Ftext-to-image&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-pro",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for generate images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.03/processed megapixels in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-pro&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for generate images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.005/megapixels in src/lib/models/fal-prices.json; approximately $0.005 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.005,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/flash",
+          "class": "draft",
+          "order": 5,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for generate images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class draft: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.005/megapixels in src/lib/models/fal-prices.json; approximately $0.005 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fflash&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.005,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
+            "observedAsOf": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.edit",
+      "title": "Edit images",
+      "description": "Modify an existing image.",
+      "concepts": [
+        "image-edit",
+        "inpaint"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for edit images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/sunburst/edit",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for edit images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fsunburst%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-pro/edit",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for edit images. Schema capabilities: image_size=auto,square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9; image_urls (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.03/processed megapixels in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-pro%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b/edit",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for edit images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9; image_urls (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/megapixels in src/lib/models/fal-prices.json; approximately $0.01 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.01,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/flash/edit",
+          "class": "draft",
+          "order": 5,
+          "status": "active",
+          "why": "Lower-cost draft option for edit images: same category (image-to-image) as the slot hero, tier verified. Schema capabilities: inputs image; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class draft by price: price unknown at the reference setting. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fflash%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.text-render",
+      "title": "Render image text",
+      "description": "Create legible typography in images.",
+      "concepts": [
+        "text-render"
+      ],
+      "categories": [
+        "text-to-image",
+        "image-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/text-to-image",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for render image text. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Ftext-to-image&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for render image text. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.5/flare/text-to-image",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for render image text. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. Previous verified family version retained; owner prefers its successor. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.5%2Fflare%2Ftext-to-image&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for render image text. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.005/megapixels in src/lib/models/fal-prices.json; approximately $0.005 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.005,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/flash",
+          "class": "draft",
+          "order": 5,
+          "status": "active",
+          "why": "Lower-cost draft option for render image text: same category (text-to-image) as the slot hero, tier verified. Schema capabilities: inputs text only; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class draft by price: 1-image-1mp approximate $0.005; 1-image-2mp approximate $0.01; typical per call $0.02 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fflash&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.product",
+      "title": "Product images",
+      "description": "Create product and advertising images.",
+      "concepts": [
+        "ad-image"
+      ],
+      "categories": [
+        "text-to-image",
+        "image-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/text-to-image",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for product images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Ftext-to-image&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for product images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best image generation and editing model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-pro",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for product images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.03/processed megapixels in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-pro&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for product images. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.005/megapixels in src/lib/models/fal-prices.json; approximately $0.005 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.005,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/flash",
+          "class": "draft",
+          "order": 5,
+          "status": "active",
+          "why": "Lower-cost draft option for product images: same category (text-to-image) as the slot hero, tier verified. Schema capabilities: inputs text only; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class draft by price: 1-image-1mp approximate $0.005; 1-image-2mp approximate $0.01; typical per call $0.02 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fflash&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.character",
+      "title": "Consistent characters",
+      "description": "Create consistent characters and personas.",
+      "concepts": [
+        "influencer",
+        "character-consistency"
+      ],
+      "categories": [
+        "text-to-image",
+        "image-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield-ai/soul/v2/standard",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for consistent characters. Schema capabilities: aspect_ratio=9:16,16:9,4:3,3:4,1:1,2:3,3:2; custom_reference_id; custom_reference_strength min 0 max 1; resolution=720p,1080p. Recency: latest owner-reviewed family version; provider release 2026-02-01; trust verified (offline contract; live acceptance not run). Class hero: from $0.0032 (floor) at 5 s, 720p, 16:9 (where those controls exist). Soul is a provider-exclusive character/portrait workflow; no measured cross-model quality claim. Pin approved references across scenes.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/text-to-image.json",
+              "url": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield-ai/soul/cinema",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for consistent characters. Schema capabilities: aspect_ratio=9:16,16:9,4:3,3:4,1:1,2:3,3:2; custom_reference_id; custom_reference_strength min 0 max 1; resolution=720p,1080p. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist). Soul is a provider-exclusive character/portrait workflow; no measured cross-model quality claim. Pin approved references across scenes.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/text-to-image.json",
+              "url": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield-ai/soul/standard",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-image → image for consistent characters. Schema capabilities: aspect_ratio=9:16,16:9,4:3,3:4,1:1,2:3,3:2; custom_reference_id; custom_reference_strength min 0 max 1; image_reference_url min 1 max 2083 (image); resolution=720p,1080p. Recency: version retained as a capability/price alternative; provider release 2025-06-01; trust verified (offline contract; live acceptance not run). Class balanced: from $0.0938 (floor) at 5 s, 720p, 16:9 (where those controls exist). Soul is a provider-exclusive character/portrait workflow; no measured cross-model quality claim. Pin approved references across scenes.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/text-to-image.json",
+              "url": "https://docs.higgsfield.ai/docs/models/soul-standard/generate.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for consistent characters. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. Soul is a provider-exclusive character/portrait workflow; no measured cross-model quality claim. Pin approved references across scenes.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b/edit",
+          "class": "budget",
+          "order": 5,
+          "status": "active",
+          "why": "Lower-cost budget option for consistent characters: same category (image-to-image) as the slot hero, tier verified. Schema capabilities: inputs image; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class budget by price: 1-image-1mp approximate $0.01; 1-image-2mp approximate $0.02; typical per call $0.01 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/klein/4b",
+          "class": "draft",
+          "order": 6,
+          "status": "active",
+          "why": "Lower-cost draft option for consistent characters: same category (text-to-image) as the slot hero, tier verified. Schema capabilities: inputs text only; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class draft by price: 1-image-1mp approximate $0.005; 1-image-2mp approximate $0.01; typical per call $0.005 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fklein%2F4b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.upscale",
+      "title": "Upscale images",
+      "description": "Increase image resolution.",
+      "concepts": [
+        "upscale"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/seedvr/upscale/image",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for upscale images. Schema capabilities: image_url (image); noise_scale min 0 max 1; target_resolution=720p,1080p,1440p,2160p; upscale_factor min 1 max 10; upscale_mode=target,factor. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.001/megapixels in src/lib/models/fal-prices.json; approximately $0.001 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fseedvr%2Fupscale%2Fimage&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.001,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/seedvr/upscale/image",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/aura-sr",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for upscale images. Schema capabilities: image_url (image); upscale_factor. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.001111111/compute seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Faura-sr&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/clarity-upscaler",
+          "class": "budget",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-image → image for upscale images. Schema capabilities: image_url (image); upscale_factor min 1 max 4. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.03/megapixels in src/lib/models/fal-prices.json; approximately $0.03 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fclarity-upscaler&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.03,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/clarity-upscaler",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/recraft/upscale/crisp",
+          "class": "draft",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost draft option for upscale images: same category (image-to-image) as the slot hero, tier discovered. Schema capabilities: inputs image; outputs image. Class draft by price: 1-image-1mp exact $0.004; 1-image-2mp exact $0.004; typical per call $0.004 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Frecraft%2Fupscale%2Fcrisp&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.cutout",
+      "title": "Image cut-outs",
+      "description": "Remove image backgrounds.",
+      "concepts": [
+        "cutout"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/birefnet/v2",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for image cut-outs. Schema capabilities: image_url (image); operating_resolution=1024x1024,2048x2048,2304x2304. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.000575/compute seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fbirefnet%2Fv2&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/birefnet",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for image cut-outs. Schema capabilities: image_url (image); operating_resolution=1024x1024,2048x2048. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.000575/compute seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fbirefnet&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/imageutils/rembg",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-image → image for image cut-outs. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.000575/compute seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fimageutils%2Frembg&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "pixelcut/background-removal",
+          "class": "draft",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost draft option for image cut-outs: same category (image-to-image) as the slot hero, tier discovered. Schema capabilities: inputs image; outputs image, file; output_format rgba/alpha/zip. Class draft by price: 1-image-1mp exact $0.016; 1-image-2mp exact $0.016. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=pixelcut%2Fbackground-removal&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.outpaint",
+      "title": "Outpaint images",
+      "description": "Extend an image beyond its frame.",
+      "concepts": [
+        "outpaint"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-pro/outpaint",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for outpaint images. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.03/processed megapixels in src/lib/models/fal-prices.json. General image editors require a supplied expanded canvas/mask; dedicated outpaint routes have canvas controls.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-pro%2Foutpaint&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/image-apps-v2/outpaint",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for outpaint images. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.035/megapixels in src/lib/models/fal-prices.json; approximately $0.035 at 1 MP for one output. General image editors require a supplied expanded canvas/mask; dedicated outpaint routes have canvas controls. Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fimage-apps-v2%2Foutpaint&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.035,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/outpaint",
+            "observedAsOf": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for outpaint images. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. General image editors require a supplied expanded canvas/mask; dedicated outpaint routes have canvas controls.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.denoise",
+      "title": "Denoise images",
+      "description": "Remove noise from images.",
+      "concepts": [
+        "denoise"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "topaz/denoise/image",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for denoise images. Schema capabilities: image_url min 1 (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/units in src/lib/models/fal-prices.json. Dedicated restoration candidates await their missing offline contracts; no generic editor is presented as a verified denoiser.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=topaz%2Fdenoise%2Fimage&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "Niche utility slot: no verified endpoint exists; the cached schema still gives strict dry-run validation. Accepted by the orchestrator on 2026-11-15 so the slot is usable; promote a verified endpoint when one exists.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/nafnet/denoise",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for denoise images. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0225/megapixels in src/lib/models/fal-prices.json; approximately $0.0225 at 1 MP for one output. Dedicated restoration candidates await their missing offline contracts; no generic editor is presented as a verified denoiser. Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fnafnet%2Fdenoise&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.0225,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/denoise",
+            "observedAsOf": "2026-11-15"
+          },
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; cached schema matches the input/output media. Accepted for planning; validate and dry-run quote before generation.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/nafnet/deblur",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-image → image for denoise images. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0225/megapixels in src/lib/models/fal-prices.json; approximately $0.0225 at 1 MP for one output. Dedicated restoration candidates await their missing offline contracts; no generic editor is presented as a verified denoiser.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fnafnet%2Fdeblur&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "referenceEstimate": {
+            "usd": 0.0225,
+            "per": "image",
+            "setting": "1 output image at 1 megapixel; input/reference processing excluded; platform list rate per MP",
+            "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/deblur",
+            "observedAsOf": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.background",
+      "title": "Replace image backgrounds",
+      "description": "Replace the background of an image.",
+      "concepts": [
+        "background-replace"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "openai/gpt-image-2.6/flare/edit",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for replace image backgrounds. Schema capabilities: frame_duration_ms min 20 max 2000; image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9,auto; image_urls max 16 (image array); markup_image_url (image); mask_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=openai%2Fgpt-image-2.6%2Fflare%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-lora-gallery/add-background",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for replace image backgrounds. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9; image_urls (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.021/processed megapixels in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fadd-background&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/bria/background/replace",
+          "class": "budget",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-image → image for replace image backgrounds. Schema capabilities: image_url (image); ref_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class budget: $0.04 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.04/generations in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fbria%2Fbackground%2Freplace&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2/flash/edit",
+          "class": "draft",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost draft option for replace image backgrounds: same category (image-to-image) as the slot hero, tier verified. Schema capabilities: inputs image; outputs image; image_size square_hd/square/portrait_4_3/portrait_16_9/landscape_4_3/landscape_16_9; output_format jpeg/png/webp. Class draft by price: price unknown at the reference setting. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2%2Fflash%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "image.try-on",
+      "title": "Virtual try-on",
+      "description": "Show clothing on a person.",
+      "concepts": [
+        "try-on"
+      ],
+      "categories": [
+        "image-to-image"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-lora-gallery/virtual-tryon",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for virtual try-on. Schema capabilities: image_size=square_hd,square,portrait_4_3,portrait_16_9,landscape_4_3,landscape_16_9; image_urls (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.021/processed megapixels in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-lora-gallery%2Fvirtual-tryon&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/fashn/tryon/v1.6",
+          "class": "draft",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-image → image for virtual try-on. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.075 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.075/generations in src/lib/models/fal-prices.json.  Fast iteration alternative with schema-matched media; review fidelity before final use. Character drafts do not guarantee identity consistency and text drafts require lettering review; see the matrix for sourced prices or unknown usage.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ffashn%2Ftryon%2Fv1.6&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified cheaper specialist alternate; cached schema and category match the operation. Accepted for planning; dry-run quote required.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/fashn/tryon/v1.5",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-image → image for virtual try-on. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.075 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.075/generations in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-image.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ffashn%2Ftryon%2Fv1.5&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/image-apps-v2/virtual-try-on",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost budget option for virtual try-on: same category (image-to-image) as the slot hero, tier discovered. Schema capabilities: inputs image; outputs image. Class budget by price: 1-image-1mp exact $0.04; 1-image-2mp exact $0.04; typical per call $0.04 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fimage-apps-v2%2Fvirtual-try-on&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "images": 1,
+        "megapixels": 1
+      }
+    },
+    {
+      "id": "video.text-to-video",
+      "title": "Text to video",
+      "description": "Generate video from a text prompt.",
+      "concepts": [
+        "text-to-video",
+        "cinematic"
+      ],
+      "categories": [
+        "text-to-video"
+      ],
+      "inputs": [],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "bytedance/seedance-2.5/text-to-video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-video → video for text to video. Schema capabilities: aspect_ratio=auto,21:9,16:9,4:3,1:1,3:4,9:16; duration=auto,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30; generate_audio; resolution=480p,720p,1080p. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Ftext-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "bytedance/seedance-2.5/text-to-video",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: text-to-video → video for text to video. Schema capabilities: aspect_ratio=16:9,4:3,1:1,3:4,9:16,21:9; duration min 4 max 30; generate_audio; resolution=480p,720p,1080p. Recency: latest owner-reviewed family version; provider release 2026-07-01; trust verified (offline contract; live acceptance not run). Class hero: $1.3235 (tiered request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/text-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/seedance-2-5/text-to-video.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/pro/text-to-video",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-video → video for text to video. Schema capabilities: aspect_ratio=16:9,9:16,1:1; duration=3,4,5,6,7,8,9,10,11,12,13,14,15; generate_audio. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.84 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Ftext-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "kling-video/v3.0/std/text-to-video",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: text-to-video → video for text to video. Schema capabilities: aspect_ratio=16:9,9:16,1:1; duration min 3 max 15. Recency: version retained as a capability/price alternative; provider release 2026-06-01; trust verified (offline contract; live acceptance not run). Class budget: $0.35700000000000004 (tiered request estimate) at 5 s, 720p, 16:9 (where those controls exist). Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/text-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/kling-3/standard-text-to-video.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/standard/text-to-video",
+          "class": "budget",
+          "order": 5,
+          "status": "active",
+          "why": "Category fit: text-to-video → video for text to video. Schema capabilities: aspect_ratio=16:9,9:16,1:1; duration=3,4,5,6,7,8,9,10,11,12,13,14,15; generate_audio. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.63 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Ftext-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/turbo/standard/text-to-video",
+          "class": "draft",
+          "order": 6,
+          "status": "active",
+          "why": "Lower-cost draft option for text to video: same category (text-to-video) as the slot hero, tier verified. Schema capabilities: inputs text only; outputs video; aspect_ratio 16:9/9:16/1:1; duration 3/4/5/6/7/8/9/10. Class draft by price: 10s-480p exact $1.12; 10s-480p-audio exact $1.12; 10s-720p exact $1.12. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fstandard%2Ftext-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.image-to-video",
+      "title": "Image to video",
+      "description": "Animate a source image.",
+      "concepts": [
+        "animate-photo",
+        "cinematic"
+      ],
+      "categories": [
+        "image-to-video"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "bytedance/seedance-2.5/image-to-video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for image to video. Schema capabilities: aspect_ratio; duration=auto,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30; end_image_url (image); generate_audio; image_url (image); resolution=480p,720p,1080p. Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Fimage-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "bytedance/seedance-2.5/image-to-video",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for image to video. Schema capabilities: duration min 4 max 30; end_image_url (image); generate_audio; image_url (image); resolution=480p,720p,1080p. Recency: latest owner-reviewed family version; provider release 2026-07-01; trust verified (offline contract; live acceptance not run). Class hero: $1.3235 (tiered request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/image-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/seedance-2-5/image-to-video.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/pro/image-to-video",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for image to video. Schema capabilities: duration=3,4,5,6,7,8,9,10,11,12,13,14,15; end_image_url (image); generate_audio; start_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.84 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Fimage-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "kling-video/v3.0/std/image-to-video",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for image to video. Schema capabilities: duration min 3 max 15; image_url (image); last_image_url (image). Recency: version retained as a capability/price alternative; provider release 2026-06-01; trust verified (offline contract; live acceptance not run). Class budget: $0.35700000000000004 (tiered request estimate) at 5 s, 720p, 16:9 (where those controls exist). Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/image-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/kling-3/standard-image-to-video.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/standard/image-to-video",
+          "class": "budget",
+          "order": 5,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for image to video. Schema capabilities: duration=3,4,5,6,7,8,9,10,11,12,13,14,15; end_image_url (image); generate_audio; start_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.63 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Fimage-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+          "class": "draft",
+          "order": 6,
+          "status": "active",
+          "why": "Lower-cost draft option for image to video: same category (image-to-video) as the slot hero, tier verified. Schema capabilities: inputs image; outputs video; duration 3/4/5/6/7/8/9/10. Class draft by price: 10s-480p exact $1.12; 10s-480p-audio exact $1.12; 10s-720p exact $1.12. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fstandard%2Fimage-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.reference-to-video",
+      "title": "Reference to video",
+      "description": "Generate video guided by reference media.",
+      "concepts": [
+        "reference-to-video"
+      ],
+      "categories": [
+        "image-to-video",
+        "video-to-video"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "bytedance/seedance-2.5/reference-to-video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for reference to video. Schema capabilities: aspect_ratio=auto,21:9,16:9,4:3,1:1,3:4,9:16; audio_urls (audio array); duration=auto,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30; generate_audio; image_urls (image array); resolution=480p,720p,1080p; video_urls (video array). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Freference-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "bytedance/seedance-2.5/reference-to-video",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for reference to video. Schema capabilities: aspect_ratio=16:9,4:3,1:1,3:4,9:16,21:9; audio_urls min 1 max 10 (audio array); duration min 4 max 30; generate_audio; image_urls min 1 max 30 (image array); resolution=480p,720p,1080p; video_urls min 1 max 10 (video array). Recency: latest owner-reviewed family version; provider release 2026-07-01; trust verified (offline contract; live acceptance not run). Class hero: $1.3235 (tiered request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0214/1000 tokens in src/lib/models/fal-prices.json. Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "owner",
+              "text": "Currently best video model.",
+              "source": "Owner verdict supplied for Stream S3, 2026-11-15",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/image-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/seedance-2-5/reference-to-video.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/pro/reference-to-video",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for reference to video. Schema capabilities: aspect_ratio=16:9,9:16,1:1; duration=3,4,5,6,7,8,9,10,11,12,13,14,15; end_image_url (image); generate_audio; image_urls (image array); start_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Freference-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/standard/reference-to-video",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for reference to video. Schema capabilities: aspect_ratio=16:9,9:16,1:1; duration=3,4,5,6,7,8,9,10,11,12,13,14,15; end_image_url (image); generate_audio; image_urls (image array); start_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Freference-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9",
+        "inputVideoDurationSec": 0
+      }
+    },
+    {
+      "id": "video.character-swap",
+      "title": "Swap video characters",
+      "description": "Transfer motion or replace a character.",
+      "concepts": [
+        "character-swap",
+        "character-in-video",
+        "motion-transfer"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video",
+        "image"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield/genjutsu/motion-transfer/v1.0",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for swap video characters. Schema capabilities: image_urls min 1 max 8 (image array); resolution=720p,480p,1080p; video_url min 1 max 2083 (video). Recency: version retained as a capability/price alternative; provider release 2026-09-17; trust verified (offline contract; live acceptance not run). Class hero: from $0.154 (floor) at 5 s, 720p, 16:9 (where those controls exist). Higgsfield-exclusive source-motion transfer/restyle/object-swap route. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/video-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/genjutsu/motion-transfer.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for swap video characters. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; provider release 2026-10-20; trust discovered (proposal pending offline contract verification). Class balanced: from $0.0739 (floor) at 5 s, 720p, 16:9 (where those controls exist). Higgsfield-exclusive source-motion transfer/restyle/object-swap route. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/video-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "notes": "Schema unavailable: proposal only; never picked. Wait for schema or separately approved provider-estimate route."
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/pro/motion-control",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for swap video characters. Schema capabilities: image_url (image); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.168/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Fmotion-control&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/v3/standard/motion-control",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for swap video characters. Schema capabilities: image_url (image); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.126/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Fmotion-control&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/wan/v2.2-14b/animate/replace",
+          "class": "draft",
+          "order": 5,
+          "status": "active",
+          "why": "Lower-cost draft option for swap video characters: same category (video-to-video) as the slot hero, tier discovered. Schema capabilities: inputs image, video; outputs image, video; resolution 480p/580p/720p. Class draft by price: 10s-480p exact $0.8; 10s-480p-audio exact $0.8; 10s-720p exact $0.8. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fwan%2Fv2.2-14b%2Fanimate%2Freplace&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.restyle",
+      "title": "Restyle video",
+      "description": "Change a source video style.",
+      "concepts": [
+        "restyle"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield/genjutsu/restyle/v1.0",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for restyle video. Schema capabilities: image_urls max 5 (image array); resolution=480p,720p,1080p; video_url min 1 (video). Recency: version retained as a capability/price alternative; provider release 2026-09-17; trust verified (offline contract; live acceptance not run). Class hero: from $0.318 (floor) at 5 s, 720p, 16:9 (where those controls exist). Higgsfield-exclusive source-motion transfer/restyle/object-swap route. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/video-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/genjutsu/restyle.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/edit",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for restyle video. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/standard/video-to-video/edit",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for restyle video. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.edit",
+      "title": "Edit video",
+      "description": "Edit video or replace objects.",
+      "concepts": [
+        "video-edit",
+        "object-swap"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/edit",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for edit video. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for edit video. Schema capabilities: image_urls min 1 max 8 (image array); resolution=720p,480p,1080p; video_url min 1 max 2083 (video). Recency: version retained as a capability/price alternative; provider release 2026-09-17; trust verified (offline contract; live acceptance not run). Class balanced: from $0.318 (floor) at 5 s, 720p, 16:9 (where those controls exist). Higgsfield-exclusive source-motion transfer/restyle/object-swap route. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/video-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/genjutsu/object-swap.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/standard/video-to-video/edit",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for edit video. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.upscale",
+      "title": "Upscale video",
+      "description": "Increase video resolution.",
+      "concepts": [
+        "upscale"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/seedvr/upscale/video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for upscale video. Schema capabilities: noise_scale min 0 max 1; target_resolution=720p,1080p,1440p,2160p; upscale_factor min 1 max 10; upscale_mode=target,factor; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.001/megapixels in src/lib/models/fal-prices.json; approximately $0.001 at 1 MP for one output. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fseedvr%2Fupscale%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "topaz/upscale/video/precision",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for upscale video. Schema capabilities: noise min 0 max 1; target_fps min 16 max 60; upscale_factor min 1 max 4; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=topaz%2Fupscale%2Fvideo%2Fprecision&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/video-upscaler",
+          "class": "draft",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for upscale video. Schema capabilities: video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class budget: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0008/megapixels in src/lib/models/fal-prices.json; approximately $0.0008 at 1 MP for one output.  Fast iteration alternative with schema-matched media; review fidelity before final use. Character drafts do not guarantee identity consistency and text drafts require lettering review; see the matrix for sourced prices or unknown usage.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fvideo-upscaler&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified cheaper specialist alternate; cached schema and category match the operation. Accepted for planning; dry-run quote required.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/bytedance-upscaler/upscale/video",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost budget option for upscale video: same category (video-to-video) as the slot hero, tier discovered. Schema capabilities: inputs video; outputs video. Class budget by price: 10s-480p exact $0.072; 10s-480p-audio exact $0.072; 10s-720p exact $0.072. Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fbytedance-upscaler%2Fupscale%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.interpolate",
+      "title": "Interpolate frames",
+      "description": "Generate intermediate video frames.",
+      "concepts": [
+        "frame-interpolation"
+      ],
+      "categories": [
+        "video-to-video",
+        "image-to-image"
+      ],
+      "inputs": [],
+      "outputs": [
+        "video",
+        "image"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "topaz/interpolate/video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for interpolate frames. Schema capabilities: target_fps min 16 max 120; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=topaz%2Finterpolate%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/film/video",
+          "class": "draft",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for interpolate frames. Schema capabilities: fps min 1 max 60; use_calculated_fps; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.0065 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0013/seconds in src/lib/models/fal-prices.json.  Fast iteration alternative with schema-matched media; review fidelity before final use. Character drafts do not guarantee identity consistency and text drafts require lettering review; see the matrix for sourced prices or unknown usage.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ffilm%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; cached schema matches the input/output media. Accepted for planning; validate and dry-run quote before generation.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/rife/video",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for interpolate frames. Schema capabilities: fps min 1 max 60; use_calculated_fps; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class budget: $0.0065 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0013/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Frife%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; cached schema matches the input/output media. Accepted for planning; validate and dry-run quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.lipsync",
+      "title": "Lip sync",
+      "description": "Synchronise lips to source audio.",
+      "concepts": [
+        "lipsync"
+      ],
+      "categories": [
+        "audio-to-video",
+        "video-to-video"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/sync-lipsync/v3",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for lip sync. Schema capabilities: audio_url (audio); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $8/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsync-lipsync%2Fv3&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/sync-lipsync",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for lip sync. Schema capabilities: audio_url (audio); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.7/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsync-lipsync&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/latentsync",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for lip sync. Schema capabilities: audio_url (audio); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class budget: $0.025 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.005/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Flatentsync&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9",
+        "inputAudioSec": 5
+      }
+    },
+    {
+      "id": "video.avatar",
+      "title": "Presenter avatars",
+      "description": "Create presenter or talking-head video.",
+      "concepts": [
+        "avatar"
+      ],
+      "categories": [
+        "audio-to-video",
+        "image-to-video",
+        "text-to-video"
+      ],
+      "inputs": [],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "veed/avatars/audio-to-video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: audio-to-video → video for presenter avatars. Schema capabilities: audio_url min 1 max 2083 (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.3/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=veed%2Favatars%2Faudio-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/ai-avatar/v2/pro",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: image-to-video → video for presenter avatars. Schema capabilities: audio_url (audio); image_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.575 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.115/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fai-avatar%2Fv2%2Fpro&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/ai-avatar/v2/standard",
+          "class": "draft",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: image-to-video → video for presenter avatars. Schema capabilities: audio_url (audio); image_url (image). Recency: latest owner-reviewed family version; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class budget: $0.281 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0562/seconds in src/lib/models/fal-prices.json.  Fast iteration alternative with schema-matched media; review fidelity before final use. Character drafts do not guarantee identity consistency and text drafts require lettering review; see the matrix for sourced prices or unknown usage.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fai-avatar%2Fv2%2Fstandard&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified cheaper specialist alternate; cached schema and category match the operation. Accepted for planning; dry-run quote required.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/wan/v2.2-14b/speech-to-video",
+          "class": "budget",
+          "order": 4,
+          "status": "active",
+          "why": "Lower-cost budget option for presenter avatars: same category (audio-to-video) as the slot hero, tier discovered. Schema capabilities: inputs audio, image; outputs video; resolution 480p/580p/720p. Class budget by price: 10s exact $2; typical per call $1.163 (fal history). Review fidelity against the hero before final use.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "Tracked catalogue category, input schema and fal pricing API snapshot; comparison prices are derived in price-matrix.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fwan%2Fv2.2-14b%2Fspeech-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; active endpoint and cached schema match the required media. Planning only; validate the request and quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9",
+        "inputAudioSec": 5
+      }
+    },
+    {
+      "id": "video.cutout",
+      "title": "Video cut-outs",
+      "description": "Remove video backgrounds.",
+      "concepts": [
+        "cutout"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "bria/video/background-removal/v3",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for video cut-outs. Schema capabilities: preserve_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class hero: $0.25 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.05/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=bria%2Fvideo%2Fbackground-removal%2Fv3&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "Niche utility slot: no verified endpoint exists; the cached schema still gives strict dry-run validation. Accepted by the orchestrator on 2026-11-15 so the slot is usable; promote a verified endpoint when one exists.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "veed/video-background-removal",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for video cut-outs. Schema capabilities: video_url min 1 max 2083 (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/30 frames in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=veed%2Fvideo-background-removal&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "veed/video-background-removal/fast",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for video cut-outs. Schema capabilities: video_url min 1 max 2083 (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.008/30 frames in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=veed%2Fvideo-background-removal%2Ffast&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "No verified alternate for this specialist operation in the tracked catalogue; cached schema matches the input/output media. Accepted for planning; validate and dry-run quote before generation.",
+            "at": "2026-11-15"
+          }
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.background",
+      "title": "Replace video backgrounds",
+      "description": "Replace a video background.",
+      "concepts": [
+        "background-replace"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/edit",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for replace video backgrounds. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/o3/standard/video-to-video/edit",
+          "class": "budget",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for replace video backgrounds. Schema capabilities: image_urls (image array); keep_audio; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.14/seconds in src/lib/models/fal-prices.json.  Lower-cost operation-fit planning alternative from the tracked catalogue; the matrix records available tariffs and explicitly unknown costs. Class is relative to this specialist slot, not an absolute price promise.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Fvideo-to-video%2Fedit&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "higgsfield",
+          "endpoint": "kling-video/o3/video-edit",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for replace video backgrounds. Schema capabilities: image_urls min 0 max 4 (image array); video_urls min 1 max 1 (video array). Recency: version retained as a capability/price alternative; provider release 2026-02-01; trust verified (offline contract; live acceptance not run). Class balanced: from $0.0683 (floor) at 5 s, 720p, 16:9 (where those controls exist). Compare against fal only for equivalent parameters/audio; use this provider when its bounded matching quote is cheaper. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/hf-catalog/video-to-video.json",
+              "url": "https://docs.higgsfield.ai/docs/models/kling-o3/video-edit.md",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "video.denoise",
+      "title": "Denoise video",
+      "description": "Remove noise from video.",
+      "concepts": [
+        "denoise"
+      ],
+      "categories": [
+        "video-to-video"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "video"
+      ],
+      "reviewBy": "2026-12-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "topaz/denoise/video",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-video → video for denoise video. Schema capabilities: noise min 0 max 1; upscale_factor min 1 max 4; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/units in src/lib/models/fal-prices.json. Dedicated denoise/deblur/decompression routes; no semantic video editor is presented as a noise-reduction contract. The only schema-backed video denoiser in the tracked catalogue also serves the budget class; this is shared availability, not evidence of a cheaper alternative. Its matrix cost remains unknown until usage is quoted.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=topaz%2Fdenoise%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "Niche utility slot: no verified endpoint exists; the cached schema still gives strict dry-run validation. Accepted by the orchestrator on 2026-11-15 so the slot is usable; promote a verified endpoint when one exists.",
+            "at": "2026-11-15"
+          },
+          "alsoClasses": [
+            "budget"
+          ]
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/ltx-2.3-quality/deblur",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for denoise video. Schema capabilities: generate_audio; resolution=480p,720p; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0024075/megapixels in src/lib/models/fal-prices.json; approximately $0.0024075 at 1 MP for one output. Dedicated denoise/deblur/decompression routes; no semantic video editor is presented as a noise-reduction contract.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-quality%2Fdeblur&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/ltx-2.3-quality/decompression",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for denoise video. Schema capabilities: generate_audio; resolution=480p,720p; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0024075/megapixels in src/lib/models/fal-prices.json; approximately $0.0024075 at 1 MP for one output. Dedicated denoise/deblur/decompression routes; no semantic video editor is presented as a noise-reduction contract.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-quality%2Fdecompression&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5,
+        "resolution": "720p",
+        "aspect": "16:9"
+      }
+    },
+    {
+      "id": "audio.voiceover",
+      "title": "Voiceover",
+      "description": "Generate spoken narration.",
+      "concepts": [
+        "voiceover"
+      ],
+      "categories": [
+        "text-to-speech"
+      ],
+      "inputs": [],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "elevenlabs/tts/eleven-v4",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-speech → audio,json for voiceover. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.08/1000 characters in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=elevenlabs%2Ftts%2Feleven-v4&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/qwen-3-tts/text-to-speech/1.7b",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: text-to-speech → audio for voiceover. Schema capabilities: reference_text; speaker_voice_embedding_file_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.09/1000 characters in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Ftext-to-speech%2F1.7b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/qwen-3-tts/text-to-speech/0.6b",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: text-to-speech → audio for voiceover. Schema capabilities: reference_text; speaker_voice_embedding_file_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.07/1000 characters in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fqwen-3-tts%2Ftext-to-speech%2F0.6b&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputCharacters": 1000
+      }
+    },
+    {
+      "id": "audio.voice-clone",
+      "title": "Clone a voice",
+      "description": "Clone a consented source voice.",
+      "concepts": [
+        "voice-clone"
+      ],
+      "categories": [
+        "audio-to-audio",
+        "text-to-speech"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/minimax/voice-clone",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-speech → audio for clone a voice. Schema capabilities: audio_url (audio); noise_reduction. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $1.5/units in src/lib/models/fal-prices.json. Clone synthesis only with consented reference audio; reusable voice-ID or embedding artefacts are separate operations.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fminimax%2Fvoice-clone&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15",
+          "unverifiedAccepted": {
+            "reason": "Niche utility slot: no verified endpoint exists; the cached schema still gives strict dry-run validation. Accepted by the orchestrator on 2026-11-15 so the slot is usable; promote a verified endpoint when one exists.",
+            "at": "2026-11-15"
+          }
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/index-tts-2/text-to-speech",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: text-to-speech → audio for clone a voice. Schema capabilities: audio_url (audio); emotional_audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.01 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.002/seconds in src/lib/models/fal-prices.json. Clone synthesis only with consented reference audio; reusable voice-ID or embedding artefacts are separate operations.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Findex-tts-2%2Ftext-to-speech&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/chatterbox/text-to-speech",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: text-to-speech → audio for clone a voice. Schema capabilities: audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.025/1000 characters in src/lib/models/fal-prices.json. Clone synthesis only with consented reference audio; reusable voice-ID or embedding artefacts are separate operations.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fchatterbox%2Ftext-to-speech&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputAudioSec": 60
+      }
+    },
+    {
+      "id": "audio.voice-change",
+      "title": "Change a voice",
+      "description": "Convert a source voice.",
+      "concepts": [
+        "voice-change"
+      ],
+      "categories": [
+        "audio-to-audio",
+        "speech-to-speech"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/elevenlabs/voice-changer",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: audio-to-audio → audio for change a voice. Schema capabilities: audio_url (audio); remove_background_noise. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.3/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Fvoice-changer&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "resemble-ai/chatterboxhd/speech-to-speech",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: speech-to-speech → audio for change a voice. Schema capabilities: high_quality_audio; source_audio_url (audio); target_voice_audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.02/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/speech-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=resemble-ai%2Fchatterboxhd%2Fspeech-to-speech&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/chatterbox/speech-to-speech",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: speech-to-speech → audio for change a voice. Schema capabilities: source_audio_url (audio); target_voice_audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/speech-to-speech.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fchatterbox%2Fspeech-to-speech&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputAudioSec": 60
+      }
+    },
+    {
+      "id": "audio.music",
+      "title": "Music",
+      "description": "Generate music and songs.",
+      "concepts": [
+        "music"
+      ],
+      "categories": [
+        "text-to-audio"
+      ],
+      "inputs": [],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "minimax/music-3",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-audio → audio for music. Schema capabilities: duration min 1 max 300. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.01 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.002/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=minimax%2Fmusic-3&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "elevenlabs/music/v2.5",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: text-to-audio → audio for music. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.6/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=elevenlabs%2Fmusic%2Fv2.5&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/stable-audio-3/small/music/text-to-audio",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-audio → audio for music. Schema capabilities: duration min 1 max 120. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.0217 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0217/audios in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fmusic%2Ftext-to-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 30
+      }
+    },
+    {
+      "id": "audio.sfx",
+      "title": "Sound effects",
+      "description": "Generate sound effects.",
+      "concepts": [
+        "sfx"
+      ],
+      "categories": [
+        "text-to-audio"
+      ],
+      "inputs": [],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "elevenlabs/sound-effects/v3",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-audio → audio for sound effects. Schema capabilities: duration_seconds min 0.5 max 30. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.01 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.002/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=elevenlabs%2Fsound-effects%2Fv3&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "mirelo-ai/sfx2.0/text-to-audio",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: text-to-audio → audio for sound effects. Schema capabilities: duration min 0.1 max 600; upload_audio_bitrate_kbps min 32 max 320; upload_audio_format=wav,mp3,aac,flac. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.05 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=mirelo-ai%2Fsfx2.0%2Ftext-to-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/stable-audio-3/small/sfx/text-to-audio",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: text-to-audio → audio for sound effects. Schema capabilities: duration min 1 max 120. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.0206 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0206/audios in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fstable-audio-3%2Fsmall%2Fsfx%2Ftext-to-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5
+      }
+    },
+    {
+      "id": "audio.foley",
+      "title": "Foley",
+      "description": "Generate sound following video action.",
+      "concepts": [
+        "sfx"
+      ],
+      "categories": [
+        "video-to-audio",
+        "video-to-video",
+        "text-to-audio"
+      ],
+      "inputs": [
+        "video"
+      ],
+      "outputs": [
+        "audio",
+        "video"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "mirelo-ai/sfx2.0/video-to-audio",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: video-to-audio → audio,json for foley. Schema capabilities: duration min 1 max 600; upload_audio_bitrate_kbps min 32 max 320; upload_audio_format=wav,mp3,aac,flac; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.05 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/seconds in src/lib/models/fal-prices.json. Video-to-video SFX returns a video container: extract its audio locally before mixing; video-to-audio returns an audio asset.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=mirelo-ai%2Fsfx2.0%2Fvideo-to-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "mirelo-ai/sfx2.0/video-to-video",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: video-to-video → video for foley. Schema capabilities: duration min 1 max 600; video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: $0.05 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/seconds in src/lib/models/fal-prices.json. Video-to-video SFX returns a video container: extract its audio locally before mixing; video-to-audio returns an audio asset.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-video.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=mirelo-ai%2Fsfx2.0%2Fvideo-to-video&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/kling-video/video-to-audio",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: video-to-audio → video,audio for foley. Schema capabilities: video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.035/videos in src/lib/models/fal-prices.json. Video-to-video SFX returns a video container: extract its audio locally before mixing; video-to-audio returns an audio asset.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fvideo-to-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "durationSec": 5
+      }
+    },
+    {
+      "id": "audio.denoise",
+      "title": "Denoise audio",
+      "description": "Clean speech and audio.",
+      "concepts": [
+        "denoise"
+      ],
+      "categories": [
+        "audio-to-audio"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/deepfilternet3",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: audio-to-audio → audio for denoise audio. Schema capabilities: audio_format=mp3,aac,m4a,ogg,opus,flac,wav; audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.001/seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdeepfilternet3&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "veed/clean-audio",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: audio-to-audio → audio for denoise audio. Schema capabilities: audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0125/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=veed%2Fclean-audio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/elevenlabs/audio-isolation",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: audio-to-audio → audio,json for denoise audio. Schema capabilities: audio_url (audio); video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.1/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Faudio-isolation&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputAudioSec": 60
+      }
+    },
+    {
+      "id": "audio.stems",
+      "title": "Separate stems",
+      "description": "Separate source audio into stems.",
+      "concepts": [
+        "stem-separation"
+      ],
+      "categories": [
+        "audio-to-audio"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "audio"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/demucs",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: audio-to-audio → audio,file for separate stems. Schema capabilities: audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0007/seconds in src/lib/models/fal-prices.json. Prompt/span separation isolates selected sources; it is not guaranteed to produce the same canonical stem set as Demucs.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdemucs&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/sam-audio/separate",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: audio-to-audio → audio for separate stems. Schema capabilities: audio_url (audio); max_chunk_duration min 10 max 60. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.05/units in src/lib/models/fal-prices.json. Prompt/span separation isolates selected sources; it is not guaranteed to produce the same canonical stem set as Demucs.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-audio%2Fseparate&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/sam-audio/span-separate",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: audio-to-audio → audio for separate stems. Schema capabilities: audio_url (audio); max_chunk_duration min 10 max 60. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.05/units in src/lib/models/fal-prices.json. Prompt/span separation isolates selected sources; it is not guaranteed to produce the same canonical stem set as Demucs.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-audio.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fsam-audio%2Fspan-separate&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputAudioSec": 60
+      }
+    },
+    {
+      "id": "text.transcribe",
+      "title": "Transcribe speech",
+      "description": "Convert speech to text.",
+      "concepts": [
+        "transcript"
+      ],
+      "categories": [
+        "speech-to-text",
+        "audio-to-text"
+      ],
+      "inputs": [
+        "audio"
+      ],
+      "outputs": [
+        "text",
+        "json"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/elevenlabs/speech-to-text/scribe-v2",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: speech-to-text → text for transcribe speech. Schema capabilities: audio_url (audio); tag_audio_events. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.0007 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.008/minutes in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/speech-to-text.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Fspeech-to-text%2Fscribe-v2&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/wizper",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: speech-to-text → text,json for transcribe speech. Schema capabilities: audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.00111/compute seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/speech-to-text.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fwizper&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "nvidia/nemotron-3-nano-omni/audio",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: audio-to-text → text,json for transcribe speech. Schema capabilities: audio_url (audio). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/audio-to-text.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-nano-omni%2Faudio&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {
+        "inputAudioSec": 60
+      }
+    },
+    {
+      "id": "vision.analyse",
+      "title": "Analyse visual media",
+      "description": "Describe or analyse image and video content.",
+      "concepts": [
+        "vision",
+        "describe-video"
+      ],
+      "categories": [
+        "vision",
+        "video-to-text",
+        "image-to-text"
+      ],
+      "inputs": [],
+      "outputs": [
+        "text",
+        "json"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "nvidia/nemotron-3-5-super/vision",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-text → text,json for analyse visual media. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-text.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-5-super%2Fvision&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "nvidia/nemotron-3-5-super/video",
+          "class": "hero",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: video-to-text → text,json for analyse visual media. Schema capabilities: video_url (video). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.01/1000 tokens in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/video-to-text.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=nvidia%2Fnemotron-3-5-super%2Fvideo&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/florence-2-large/caption",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: vision → json for analyse visual media. Schema capabilities: image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.00125/compute seconds in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/vision.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflorence-2-large%2Fcaption&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {}
+    },
+    {
+      "id": "3d.from-image",
+      "title": "Image to 3D",
+      "description": "Build a 3D model from an image.",
+      "concepts": [
+        "mesh"
+      ],
+      "categories": [
+        "image-to-3d"
+      ],
+      "inputs": [
+        "image"
+      ],
+      "outputs": [
+        "model3d"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "meshy/v7.1/image-to-3d",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: image-to-3d → image,model3d,json for image to 3d. Schema capabilities: geometry_resolution=standard,2k,4k; image_url (image); texture_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.8 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.8/generations in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Fimage-to-3d&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/hunyuan-3d/v3.1/pro/image-to-3d",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: image-to-3d → image,model3d,json for image to 3d. Schema capabilities: back_image_url (image); bottom_image_url (image); input_image_url (image); left_front_image_url (image); left_image_url (image); right_front_image_url (image); right_image_url (image); top_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fpro%2Fimage-to-3d&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/trellis-2",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: image-to-3d → model3d for image to 3d. Schema capabilities: image_url (image); resolution=512,1024,1536. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.05/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/image-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Ftrellis-2&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {}
+    },
+    {
+      "id": "3d.from-text",
+      "title": "Text to 3D",
+      "description": "Build a 3D model from text.",
+      "concepts": [
+        "mesh"
+      ],
+      "categories": [
+        "text-to-3d"
+      ],
+      "inputs": [],
+      "outputs": [
+        "model3d"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "meshy/v7.1/text-to-3d",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: text-to-3d → image,model3d,json for text to 3d. Schema capabilities: geometry_resolution=standard,2k,4k; texture_image_url (image). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: $0.8 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.8/generations in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Ftext-to-3d&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/hunyuan-3d/v3.1/pro/text-to-3d",
+          "class": "balanced",
+          "order": 2,
+          "status": "candidate",
+          "why": "Category fit: text-to-3d → image,model3d,json for text to 3d. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fpro%2Ftext-to-3d&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/hunyuan-3d/v3.1/rapid/text-to-3d",
+          "class": "balanced",
+          "order": 3,
+          "status": "candidate",
+          "why": "Category fit: text-to-3d → image,model3d,json,file for text to 3d. Schema capabilities: No resolution/duration/reference control advertised in the catalogue summary.. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust discovered (proposal pending offline contract verification). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/text-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Frapid%2Ftext-to-3d&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {}
+    },
+    {
+      "id": "3d.edit",
+      "title": "Edit 3D",
+      "description": "Retopologise, rig or retexture a model.",
+      "concepts": [
+        "3d-edit",
+        "3d-texture"
+      ],
+      "categories": [
+        "3d-to-3d"
+      ],
+      "inputs": [],
+      "outputs": [
+        "model3d"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: 3d-to-3d → model3d,json for edit 3d. Schema capabilities: input_file_url (file). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/units in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/3d-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fsmart-topology&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "meshy/n1/retexture",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: 3d-to-3d → image,model3d,json for edit 3d. Schema capabilities: image_style_url (image); model_url (model3d); multiview_image_urls min 1 max 4 (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.3/units in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/3d-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fn1%2Fretexture&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "meshy/rigging",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: 3d-to-3d → model3d,json for edit 3d. Schema capabilities: model_url min 1 (model3d). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.8 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.8/generations in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/3d-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Frigging&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {}
+    },
+    {
+      "id": "train.lora",
+      "title": "Train LoRA",
+      "description": "Train a model adaptation.",
+      "concepts": [
+        "training"
+      ],
+      "categories": [
+        "training"
+      ],
+      "inputs": [],
+      "outputs": [
+        "weights",
+        "file"
+      ],
+      "reviewBy": "2027-02-15",
+      "candidates": [
+        {
+          "provider": "fal",
+          "endpoint": "blackforestlabs/flux-3/klein/base/trainer",
+          "class": "hero",
+          "order": 1,
+          "status": "active",
+          "why": "Category fit: training → weights,file for train lora. Schema capabilities: images_data_url (file); resolution=512,768,1024. Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0043/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/training.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=blackforestlabs%2Fflux-3%2Fklein%2Fbase%2Ftrainer&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-trainer-v2",
+          "class": "balanced",
+          "order": 2,
+          "status": "active",
+          "why": "Category fit: training → weights,file for train lora. Schema capabilities: image_data_url (file). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0064/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/training.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-trainer-v2&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "fal-ai/flux-2-klein-9b-base-trainer",
+          "class": "balanced",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: training → weights,file for train lora. Schema capabilities: image_data_url (file). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.0043/units in src/lib/models/fal-prices.json. ",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/training.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fflux-2-klein-9b-base-trainer&expand=openapi-3.0",
+              "date": "2026-11-15"
+            }
+          ],
+          "addedAt": "2026-11-15"
+        }
+      ],
+      "reference": {}
+    }
+  ]
+}

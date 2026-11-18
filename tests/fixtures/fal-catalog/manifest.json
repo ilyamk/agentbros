@@ -1,0 +1,388 @@
+{
+ "recordedAt": "2026-11-15",
+ "source": "https://api.fal.ai/v1/models (read-only GET, expand=openapi-3.0) and /v1/models/pricing",
+ "endpoints": {
+  "blackforestlabs/flux-3/klein/base/trainer": {
+   "sha256": "0161894bbc428dad68fe01497394e9a2ebb025b3619543502b9e83f3aaf62b75",
+   "category": "training"
+  },
+  "bria/fibo-edit/edit/structured_instruction": {
+   "sha256": "d658816a09e6589459cc025d4581c59a32c4d0492b456dd04ae4f34128efcf04",
+   "category": "text-to-json"
+  },
+  "bria/fibo-lite/generate/structured_prompt": {
+   "sha256": "3a2852b27e4c56988021d8cd263a26f089cfd34f8c9a6670d15711260008fc8e",
+   "category": "text-to-json"
+  },
+  "bytedance/seedream/v5/lite/edit": {
+   "sha256": "3aa6525cf68499f27ed15c77d4fd5ebbba789b5514ec40429ae53c39904544fb",
+   "category": "image-to-image"
+  },
+  "fal-ai/ace-step/audio-outpaint": {
+   "sha256": "2b8e0333613fd2fdc131602de5ca8cd6f281b495d6db83a63b1bef13df9bf0c5",
+   "category": "audio-to-audio"
+  },
+  "fal-ai/aura-sr": {
+   "sha256": "57e912439cc940b83365043e4cf99d2faccc401a2da96f511657885644c573e5",
+   "category": "image-to-image"
+  },
+  "fal-ai/birefnet": {
+   "sha256": "2c696b0c8fc33fd1b76383b330d2a914ec0b9cdc25cbfb252822632ee71c9849",
+   "category": "image-to-image"
+  },
+  "fal-ai/birefnet/v2": {
+   "sha256": "943eec69b8d9bb7c29a1a337e90204d828d7a800e68e9c86ac61399218ffd9d9",
+   "category": "image-to-image"
+  },
+  "fal-ai/bytedance/omnihuman/v1.5": {
+   "sha256": "0ebce1499ae17304e843182b11cc3a30683f1c8969ee4709250549eb2b22f92c",
+   "category": "image-to-video"
+  },
+  "fal-ai/elevenlabs/tts/turbo-v2.5": {
+   "sha256": "9caa39137f363572834d433a4bb5931cd1b649a1941417e4c3b1f6cbb9314e04",
+   "category": "text-to-speech"
+  },
+  "fal-ai/ffmpeg-api/metadata": {
+   "sha256": "3f2026fae35287dc0e5ed871702e127331e904045b9e795154cd21cdbd1e66d7",
+   "category": "json"
+  },
+  "fal-ai/ffmpeg-api/waveform": {
+   "sha256": "2d3aaf5cc084904607cd62d12098a0287daf5cb6bb2a145c446ff02fa6aa2258",
+   "category": "json"
+  },
+  "fal-ai/flux/schnell": {
+   "sha256": "e9eb1ca39047d36f6597e24acb52b064ac23fe240a7d42b87c84c37f63d71b14",
+   "category": "text-to-image"
+  },
+  "fal-ai/flux/srpo": {
+   "sha256": "579faa2b94c7768efb7d2ccf2b794e2502c54a5504dc5a19a3b125d5bf56e8cf",
+   "category": "text-to-image"
+  },
+  "fal-ai/hunyuan-3d/v3.1/rapid/text-to-3d": {
+   "sha256": "754f3df84d1eb6145bd19dbda89393fa7dcfe424383389b0ebcd2521e13f6704",
+   "category": "text-to-3d"
+  },
+  "fal-ai/image-apps-v2/outpaint": {
+   "sha256": "e9e58c57df21627f5a755a65b5f8b860e997b6444e874847c73be89c7a9f74fc",
+   "category": "image-to-image"
+  },
+  "fal-ai/kling-video/v2.6/pro/text-to-video": {
+   "sha256": "fe05a7288eeaf39aead7eff4fd034f4bddcc958a8356069774483b1d5918818c",
+   "category": "text-to-video"
+  },
+  "fal-ai/kling-video/v3/pro/text-to-video": {
+   "sha256": "94b07866a6f9e0b7ca833e03160c8e6b2a6169e526e53147f81b8a493cc6b7ab",
+   "category": "text-to-video"
+  },
+  "fal-ai/latentsync": {
+   "sha256": "43d9b3f5152ffc8245dbbf4ac6cabb3685de58083dbbf0eaeabe9c03aca45e78",
+   "category": "video-to-video"
+  },
+  "fal-ai/ltx-2.3-22b/distilled/audio-to-video": {
+   "sha256": "1665ab48d8d8e161037277e2cda90494de01e7c13a0185e6afdfeb99bf3305d9",
+   "category": "audio-to-video"
+  },
+  "fal-ai/ltx-video-13b-distilled/image-to-video": {
+   "sha256": "673133fa69627d512fd1e450f69b0bf9e8b5c9dbdd2a73228993f53a08e482e7",
+   "category": "image-to-video"
+  },
+  "fal-ai/meshy/rigging/multi-animation": {
+   "sha256": "4e94d3e4ce51922ff102fc3f39d75a6673b30722805a05c6800e03b65cfea89f",
+   "category": "3d-to-3d"
+  },
+  "fal-ai/minimax/preview/speech-2.5-hd": {
+   "sha256": "adeb1df869d557e0548088b7324b7a59f8fb46828555c80cd7b3f26632f5ce30",
+   "category": "text-to-speech"
+  },
+  "fal-ai/moondream3-preview/detect": {
+   "sha256": "f10168be314904f1f5c4c7faac0f624b65e745ad38c66851b63882ea3b88b8b6",
+   "category": "vision"
+  },
+  "fal-ai/nano-banana": {
+   "sha256": "eb1bea81c05a0f55b2af5e9e4096cb4157b754ab0358aed41b89a675217b3053",
+   "category": "text-to-image"
+  },
+  "fal-ai/pixverse/c1/transition": {
+   "sha256": "a93e7a1a3ba60805d9d9be3008535efecbb86dcf2dfab448ebc6d7f328f772bf",
+   "category": "image-to-video"
+  },
+  "fal-ai/qwen-image-edit/inpaint": {
+   "sha256": "04eda7b6485b7930d1f16acd1a8bf5c393cc28cb5a560cf4ebda9f8467d4a8b2",
+   "category": "image-to-image"
+  },
+  "fal-ai/sa2va/4b/video": {
+   "sha256": "61df0c9e8df1b6f2218cb76121d9f54ba7c127f8f88ceb1d1e9e2ebbe820914c",
+   "category": "vision"
+  },
+  "fal-ai/sam-audio/visual-separate": {
+   "sha256": "4b51e2f21cc050e8852c39f3ba0e1434d18c9b9e182ad9ac11417539f3bcb045",
+   "category": "video-to-audio"
+  },
+  "fal-ai/seedvr/upscale/image": {
+   "sha256": "1068d54a58c29162bf6ebd224fdd74046439e498c452ec7b9e16fa71a8584394",
+   "category": "image-to-image"
+  },
+  "fal-ai/seedvr/upscale/video": {
+   "sha256": "229304a92cd3416fe588a0b9755284c550b96130a8fd545667d324b2a0e8a0eb",
+   "category": "video-to-video"
+  },
+  "fal-ai/stable-audio-3/small/music/base/audio-outpainting": {
+   "sha256": "82fcb45ad5d92f2186d7126f4334750e427d77db75eb60aa8016e03103141c56",
+   "category": "audio-to-audio"
+  },
+  "fal-ai/sync-lipsync": {
+   "sha256": "da3a3d97199eaf89810554fb0a4fff1042a8219db350b541dbfdf046e6a86398",
+   "category": "video-to-video"
+  },
+  "fal-ai/sync-lipsync/v3": {
+   "sha256": "2931d65bd5dae8b3938dfa9bcf4d26ed8ff65e2c451e04f1a84611ff5f10f7d8",
+   "category": "video-to-video"
+  },
+  "fal-ai/vggt-1b": {
+   "sha256": "c5538f0f5a87aa7ee1695cc3c99827840f6616db624fdfd5d3d4c6bdb49c23e3",
+   "category": "image-to-json"
+  },
+  "fal-ai/wizper": {
+   "sha256": "1305fe3e4d2ce630293e2af1e209ffedc3957ee614bb000fb99e9f878e2509d4",
+   "category": "speech-to-text"
+  },
+  "fal-ai/workflow-utilities/pick-image-by-index": {
+   "sha256": "941e64931ac0af9d8476f5f73a8fb3e80eeb1179408ef15055b1a1ff36f52f1f",
+   "category": "workflow"
+  },
+  "hitem3d/hi3d/image-to-3d": {
+   "sha256": "cb70bb17eb9fd289c882fe682437df3f5ae07b65deb294873c9587067e98dce0",
+   "category": "image-to-3d"
+  },
+  "hitem3d/hi3d/v3.0/multi-view-to-3d": {
+   "sha256": "57779c2948c706afc4ff88c80d7a82b218d68068616d1f9639c866c728ad1b77",
+   "category": "image-to-3d"
+  },
+  "hyper3d/rigging": {
+   "sha256": "bd0eb6f518fbef1abcf2ea1b6e71f00abe88d012f353ca9ec7bf53045bfa0e64",
+   "category": "3d-to-3d"
+  },
+  "kotoba-technologies/kotoba-sts/v1/realtime_voice": {
+   "sha256": "bc757848ac9d4ceaf355eba8197244f5ee9fe59aae33c9f5cc6031979ed1aa22",
+   "category": "speech-to-speech"
+  },
+  "meshy/t2.5/text-to-3d": {
+   "sha256": "f957920d7e0957e9ae9fe6c0c32e34a5dc6f9ca97fa5c5c61594f49384b69d95",
+   "category": "text-to-3d"
+  },
+  "meshy/v7/image-to-3d": {
+   "sha256": "b9c034016d843c6a5e1945a1d4d7a1533a92211b312fbe4e763622ea4ebc9bdd",
+   "category": "image-to-3d"
+  },
+  "meshy/v7/text-to-3d": {
+   "sha256": "babe4b04f715944bc6cda747e119878dab31d5e9d70538f0c1de052361f4d861",
+   "category": "text-to-3d"
+  },
+  "mureka/api/files/upload": {
+   "sha256": "adc1c65214b65c8439006de9903ebf6b24853f07efacce52a8bd254b26bef085",
+   "category": "unknown"
+  },
+  "mureka/api/generate/lyrics": {
+   "sha256": "fbca991cab0ffbd682f7e9eb54f536cc33ff298d54b286fc0622304cfc30da1f",
+   "category": "text-to-text"
+  },
+  "mureka/api/generate/speech": {
+   "sha256": "9b3cf0ce40d83a952a89dbb39245e08a6da2f1a6b6c42f29b77f9bad005a6b7a",
+   "category": "text-to-audio"
+  },
+  "mureka/api/song/recognize": {
+   "sha256": "cb82ca9f41a3f663fc04fd985df6b99ecfec8177acd54480a1ce69e0efc5e267",
+   "category": "audio-to-text"
+  },
+  "mureka/v8/generate/song": {
+   "sha256": "8adfa68c97a5aa985fcfb1eabaae36975352fd60db4b58dbc2cd3397e9a8a6f1",
+   "category": "text-to-audio"
+  },
+  "mureka/v9.5/generate/soundtrack": {
+   "sha256": "94eb2e0bc2311950c27a12063f40c1675ca4cb2890ca84dafdf819fc77a1061e",
+   "category": "video-to-audio"
+  },
+  "nvidia/nemotron-3-5-super/video": {
+   "sha256": "48f15fc8afbd86eeb734918c09a29d006037a445f7e71cded3b379327102b517",
+   "category": "video-to-text"
+  },
+  "nvidia/nemotron-3-5-super/vision": {
+   "sha256": "0fc39415e0aec85d8c8750c34fa9e44eafbb39a862468159e073521ce5a84510",
+   "category": "image-to-text"
+  },
+  "nvidia/nemotron-3-nano-omni": {
+   "sha256": "98f36e232b70e998e74e2955ef7a6f9c85ea288de0bcdfa7e5f7b7a09a7ad972",
+   "category": "llm"
+  },
+  "nvidia/nemotron-3-nano-omni/video": {
+   "sha256": "739acca778e3c5c5378fff9adaa25ebee34e15eee18596bd2f2ffb890896a6b0",
+   "category": "video-to-text"
+  },
+  "nvidia/nemotron-3-nano-omni/vision": {
+   "sha256": "fea8754c7116208375174dfe7aa69b9f01067c15a977d7d2c6133a6baa442a89",
+   "category": "image-to-text"
+  },
+  "openrouter/router/audio": {
+   "sha256": "f4b6343790ada38ca27e859e3570bd9838fd25ee452f856b2ecbfb42d572898e",
+   "category": "unknown"
+  },
+  "openrouter/router/decisions": {
+   "sha256": "fd380fb7b94c82cebdee35fe223649e00fa780a4aed419c7b9df741ee97c9ae2",
+   "category": "text-to-text"
+  },
+  "openrouter/router/openai/v1/responses": {
+   "sha256": "22f49b7db9f42c099a1cd5672a5ae3b4e51fc15459845f039f46f34541117403",
+   "category": "llm"
+  },
+  "topaz/interpolate/video": {
+   "sha256": "124df9cbb05cfbc83ea6edf00cbd3535bc5747dc2030d2c825ec2d291f149228",
+   "category": "video-to-video"
+  },
+  "topaz/sdr-to-hdr/video": {
+   "sha256": "cda24697c4d39c61a69231bbb0b56697364ecae0b1ec1a60511331f53194f104",
+   "category": "video-to-video"
+  },
+  "vast/eden-live-14b-video": {
+   "sha256": "07d6376b0ff526fb25a983fb1adff31ad2bdb113341f6fbe468393156de1422c",
+   "category": "video-to-video"
+  },
+  "vast/eden-live-5b-game": {
+   "sha256": "b3c7800a58b46ffe263bb3710d4d3f9272025ccb9be8431aa1de0ed8aa4e1a0e",
+   "category": "worlds"
+  },
+  "veed/avatars/audio-to-video": {
+   "sha256": "e45565b64ce5c552d90a0868f44afa61ca15127d4ed0e376ee785fd0e96c2678",
+   "category": "audio-to-video"
+  },
+  "xai/grok-voice/realtime": {
+   "sha256": "4ca1e9200e3e1e50fa41cf5f45df35e58e036a61b321ec7257d784157e1ea6f4",
+   "category": "speech-to-speech"
+  },
+  "elevenlabs/tts/eleven-v4": {
+   "sha256": "09c2efa46a23697a328e439572ab3087c6dc9d09c0c5ca763ef0332b63566c6d",
+   "category": "text-to-speech"
+  },
+  "fal-ai/elevenlabs/speech-to-text/scribe-v2": {
+   "sha256": "add09b235503df94f1a14f7be059edeac9790ed9fd7fe21be947d0178b991036",
+   "category": "speech-to-text"
+  },
+  "fal-ai/qwen-3-tts/text-to-speech/1.7b": {
+   "sha256": "a0baad42841f6e3de5063dffe75cb2feb599e642939d3060a4d88488b3e7af9f",
+   "category": "text-to-speech"
+  },
+  "nvidia/nemotron-3-nano-omni/audio": {
+   "sha256": "d18430b82879d24cf77a1a4f7af3e961d10872b0e011fede0c292efe887a72c1",
+   "category": "audio-to-text"
+  },
+  "resemble-ai/chatterboxhd/speech-to-speech": {
+   "sha256": "908cbece35ac00c30ce392a9650ab7d88d528218dbcc7fd75c444d646a0efa5c",
+   "category": "speech-to-speech"
+  },
+  "alibaba/abot-world-0": {
+   "sha256": "5641cab8ba8671ebb16233d254c69b76c50efeb9ec93e3ff119c38de0c89434c",
+   "category": "worlds"
+  },
+  "fal-ai/hunyuan-3d/v3.1/smart-topology": {
+   "sha256": "9c1c3a63c54d1fac8c9cedcb64dfbf195de2146f23ca87f86481aec3c1a4f726",
+   "category": "3d-to-3d"
+  },
+  "meshy/n1/retexture": {
+   "sha256": "be8d51d55391433aaa72cd42e347969ac20afb947b727ae480f993cd71c65598",
+   "category": "3d-to-3d"
+  },
+  "meshy/rigging": {
+   "sha256": "17b1760c766b205963f8100dfe6f33f309daf1a50e4b7d641a1e5c3694764617",
+   "category": "3d-to-3d"
+  },
+  "meshy/v7.1/image-to-3d": {
+   "sha256": "66aa70b5552b26d78fbe28532d9917129b70771122c3a3c14a66bab5991f2696",
+   "category": "image-to-3d"
+  },
+  "meshy/v7.1/text-to-3d": {
+   "sha256": "25bb9b20f5df040da8769969acd47fee6d70aa6bf177933d347124b86f096eae",
+   "category": "text-to-3d"
+  },
+  "robbyant/lingbot-world-2": {
+   "sha256": "756767d2548f6583b2a7ef085a1e33ffd78ddd5540e763d219ff7a0e7831973d",
+   "category": "worlds"
+  },
+  "vast/eden-live-14b-game": {
+   "sha256": "61849b46a2fa05e3e3aef17549da0cb401b9cc775228030f3340916294f2fc36",
+   "category": "worlds"
+  },
+  "bria/ad-delayer": {
+   "sha256": "e83c9ca30b3b7e4b554f0e36e40b33e74e1b10dd255b17b831d3488706fb8278",
+   "category": "image-to-json"
+  },
+  "fal-ai/bytedance/seed/v2/mini": {
+   "sha256": "d384c6e4c85c4d2132a0cfc0c44d17d096473125eb53ae87dfbb94ed745618a8",
+   "category": "llm"
+  },
+  "fal-ai/florence-2-large/caption": {
+   "sha256": "9c2f8a76c08c1945f6d6a1f4cfeeb16459b8a744abfd9cb3cc8990b375051179",
+   "category": "vision"
+  },
+  "elevenlabs/sound-effects/v3": {
+   "sha256": "b12ff32fe81b5cb5aa209abc466199504a4450b95aedf42c93d547754ce7b434",
+   "category": "text-to-audio"
+  },
+  "fal-ai/deepfilternet3": {
+   "sha256": "94936c3ade9dc5010618fe1cd64f0c7dc17e0d3a02ab87587f777d63b8b90c0f",
+   "category": "audio-to-audio"
+  },
+  "fal-ai/demucs": {
+   "sha256": "fad692db258db2933cc41419ec29bce70badda5d063f0a2ebcb0c5ba2cfea19a",
+   "category": "audio-to-audio"
+  },
+  "fal-ai/elevenlabs/music": {
+   "sha256": "2375cd0b48f9d35819955ca4a5162cf9d28fa186a2f20caff95ac5e28aff0107",
+   "category": "text-to-audio"
+  },
+  "fal-ai/elevenlabs/voice-changer": {
+   "sha256": "003e8aec0bd395f5bccad18f915c4d4ceb429b355baed42945c6bd9034bc418d",
+   "category": "audio-to-audio"
+  },
+  "fal-ai/lyria2": {
+   "sha256": "93f5ffef6d0d93b02bc529e276bb5f1853f43e408cf84d145740d56ff9d81c19",
+   "category": "text-to-audio"
+  },
+  "fal-ai/minimax-music/v2.6": {
+   "sha256": "4cc2155a121a69f1e27f67e29cb582bfe4a960c13aea2c226ddfb198954e03a9",
+   "category": "text-to-audio"
+  },
+  "fal-ai/stable-audio-3/small/music/text-to-audio": {
+   "sha256": "7036e275b539c6de91611d023eb628f62564dc608b587036473a42d5e63436f5",
+   "category": "text-to-audio"
+  },
+  "fal-ai/stable-audio-3/small/sfx/text-to-audio": {
+   "sha256": "ce8fab122c019d3ae180cf07cad74764f5a4d4b67c75f2c2275580dc82221fcb",
+   "category": "text-to-audio"
+  },
+  "minimax/music-3": {
+   "sha256": "2b90ba6bfc565146a73fe32ac8a4ff6ab0be9d5081228d9c125896efd3b34e8e",
+   "category": "text-to-audio"
+  },
+  "mirelo-ai/sfx2.0/video-to-audio": {
+   "sha256": "22ff0d57ea5858c1b816e337ef89b846c74118d1e53fd42dd1495aa189578abc",
+   "category": "video-to-audio"
+  }
+ },
+ "verifiedSnapshots": {
+  "blackforestlabs/flux-3/klein/base/trainer": {
+   "sha256": "5a309872648cbdc1a33bae7905f8a62fba9f961635074806af1e35de5e8d7135",
+   "category": "training"
+  },
+  "bria/fibo-lite/generate/structured_prompt": {
+   "sha256": "d6c7e18653027597c5c8682e53812724ecffe0f4a2dcf7bfdf0783861669f2d2",
+   "category": "text-to-json"
+  },
+  "nvidia/nemotron-3-5-super/video": {
+   "sha256": "5a6dcf7506343c8a38d4a836093eacc826c0556fa8b5adcf499f0a57776ffdde",
+   "category": "video-to-text"
+  },
+  "nvidia/nemotron-3-5-super/vision": {
+   "sha256": "28dee6c3f9919f5afae4e142a326db4a45b1be35338973a16481c70e0d239544",
+   "category": "image-to-text"
+  }
+ }
+}

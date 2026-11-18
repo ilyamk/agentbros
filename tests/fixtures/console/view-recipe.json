@@ -1,0 +1,129 @@
+{
+  "v": 1,
+  "revision": 0,
+  "generatedAt": "2026-11-17T09:00:00Z",
+  "project": {
+    "id": "recipe-launch",
+    "route": "recipe",
+    "title": "[ANIMATIC] Launch week",
+    "formats": [
+      "vertical",
+      "square"
+    ],
+    "createdAt": "2026-11-16T08:00:00Z"
+  },
+  "control": {
+    "state": "running"
+  },
+  "autonomy": {
+    "mode": "interactive",
+    "source": "none"
+  },
+  "steps": [
+    {
+      "id": "render",
+      "title": "Render",
+      "status": "running",
+      "reasons": [
+        "Render the project as it stands."
+      ]
+    },
+    {
+      "id": "qa",
+      "title": "QA",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery",
+      "status": "pending",
+      "reasons": []
+    }
+  ],
+  "waiting": [],
+  "agents": {
+    "today": []
+  },
+  "money": {
+    "reservedUsd": 0,
+    "spentUsd": 0,
+    "unknownPriced": 0,
+    "byProvider": [],
+    "jobs": []
+  },
+  "media": {},
+  "assets": [],
+  "qa": {
+    "findings": []
+  },
+  "cards": [],
+  "advisories": [],
+  "current": {
+    "step": "render",
+    "next": {
+      "argv": [
+        "pnpm",
+        "render",
+        "--project",
+        "recipe-launch"
+      ],
+      "why": "Render the project as it stands."
+    }
+  },
+  "recipe": {
+    "recipeId": "social-hook",
+    "topic": "Launch week",
+    "formats": [
+      "vertical",
+      "square"
+    ],
+    "durationInFrames": 450,
+    "productionReady": false,
+    "findings": [
+      "Draft: no generated/recorded voiceover",
+      "Draft: no approved music/mix",
+      "Supply at least two approved visual assets for production"
+    ],
+    "nextAction": "Replace placeholders, supply/approve script and audio, then production QA",
+    "beats": [
+      {
+        "id": "hook",
+        "purpose": "Stop the scroll in the first second",
+        "headline": "Launch week — hook",
+        "durationInFrames": 120,
+        "transitionToNext": "fade",
+        "visual": {
+          "path": "assets/animatic/hook.svg",
+          "kind": "image"
+        },
+        "placeholder": true
+      },
+      {
+        "id": "proof",
+        "purpose": "Show one proof point",
+        "headline": "Launch week — proof",
+        "text": "Three teams shipped in a day.",
+        "durationInFrames": 180,
+        "transitionToNext": "fade"
+      },
+      {
+        "id": "cta",
+        "purpose": "Ask for one action",
+        "headline": "Launch week — cta",
+        "durationInFrames": 150,
+        "transitionToNext": "fade",
+        "visual": {
+          "path": "assets/animatic/cta.svg",
+          "kind": "image"
+        },
+        "placeholder": true
+      }
+    ],
+    "animatic": {
+      "path": "animatic.html",
+      "kind": "document",
+      "label": "animatic.html"
+    }
+  }
+}

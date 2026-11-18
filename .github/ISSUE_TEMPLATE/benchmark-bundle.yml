@@ -1,0 +1,32 @@
+name: Benchmark bundle
+description: Submit signed cells for deterministic verification.
+title: "[Benchmark] "
+body:
+  - type: input
+    id: bundle
+    attributes:
+      label: Bundle URL
+      description: Link the immutable bundle and hash manifest; keep large artefacts outside git.
+    validations:
+      required: true
+  - type: textarea
+    id: signature
+    attributes:
+      label: Signature and signer
+      description: Link the detached signature; identify the submitting GitHub account and its registered SSH public key.
+    validations:
+      required: true
+  - type: textarea
+    id: cells
+    attributes:
+      label: Cells and protocol identity
+      description: List task, harness, model, harness commit, repeats, suite/protocol versions and hashes for each cell.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproduction and rights
+      description: Include environment, constraints, declared spend, process/technical results and material rights; disclose missing or restricted files.
+    validations:
+      required: true

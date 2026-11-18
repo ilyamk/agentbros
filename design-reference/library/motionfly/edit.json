@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "motionfly",
+  "rhythm": {
+    "value": "Corrected: 13 shots, 12 boundaries (10 hard cuts, 2 circle wipes), median shot 2.0 s, 23.9 boundaries a minute, shortest 1.07 s, longest 5.63 s (end card). The detector read 19 shots, 18 boundaries, median 1.3 s, 35.8 a minute: 7 of its boundaries were text or rows added on a held layout, and it missed one real cut (13.233 s). Rule used: a boundary counts when the subject or the ground changes; an element added to a held layout (a word, a checklist row, a typed line) does not, whatever its score. That keeps 7.833 s (word replaced by the mark, sceneScore 0.04) and rejects 1.3, 10.033, 14.133, 14.533, 15.1, 19.833 and 22.5 s. The 21.1 s boundary is one frame early: the new headline first shows at F634 (21.133 s); times here keep 21.1. Shape: a 2.0 s hook, three 1.07-1.6 s shots for the name reveal (fastest stretch, 5.53-9.43 s), then longer demo and proof shots (1.7-3.6 s) and a 5.63 s end card. Inside shots the clock is the animation, not the cut: a new word every 10 frames in the hook, a letter every 2-3 frames in typed names, checklist rows at F424, F436, F453, F459. Sound: I cannot hear. Tempo 125.8 BPM at confidence 0.127 (beat regularity 0.94), so no beat grid is claimed. On the corrected cuts 5 of 12 land within 80 ms of a beat against 0.33 by chance (lift 1.27; 2 of 6 before 9.94 s and 3 of 6 after, the two loudness sections), 0 of 12 within a frame of a downbeat against 0.036, signed median cut-to-beat -0.023 s; onsets run 4.9 a second, so the onset ratio (7 of 12 against 0.71 by chance) says nothing; loudness swells (50 ms RMS, local maximum over 0.3 s each side, above 1.35x median, 29 found) meet 2 of 12 cuts against 0.16 by chance. No evidence that cuts follow the music. The detector's sync.json (18 cuts) says the same: 0.333 on beat against 0.313, onsets 0.667 against 0.692. No speech was transcribed (speech layer unavailable), and the screen carries all the words.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "shots.json summary (19 shots, median 1.3 s, 35.801 a minute)",
+      "audio.json tempo bpm 125.82, confidence 0.127, beatRegularity 0.94; sections 0-9.938 and 9.938-28.003 s",
+      "sync.json metrics cutsOnBeatRatio 0.333 vs 0.313, cutsOnOnsetRatio 0.667 vs 0.692",
+      "recomputed from audio.json beats, downbeats and onsets on the 12 corrected boundaries, chance from 20 000 random times",
+      "50 ms RMS swells computed from media/source.mp4",
+      "speech-text.json speech.available false",
+      "visuals/a1/m01a-words-1.jpg F0-F29 and visuals/a1/m01b-words-2.jpg F30-F40 (word about every 10 frames)",
+      "visuals/a1/m11-list-tilt.jpg F424, F436; visuals/a1/m19-steps-end.jpg F453, F459"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": { "value": "Hook: the promise typed word by word in a corner-dot frame", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59"] },
+      "technique": { "value": "t01 word build with arrival tint; line splits into two phrases F54-F59", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m01b-words-2.jpg F54-F59"] }
+    },
+    {
+      "shotId": "s003",
+      "purpose": { "value": "Context: a scenic plate where a black card collapses into the selection underline of a tool dock", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m02-card-shrink.jpg F60-F81"] },
+      "technique": { "value": "t02 card collapses to underline, 12 frames", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m02-card-shrink.jpg F60-F72"] }
+    },
+    {
+      "shotId": "s004",
+      "purpose": { "value": "The selection travels along the dock to the product mark; the other icons defocus", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m03-push-cut.jpg F94-F105", "visuals/strips/s004.jpg F94-F164"] },
+      "technique": { "value": "t03 punch-in cut about 1.9x with background defocus, then t04 dock slide", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m03-push-cut.jpg F94-F95"] }
+    },
+    {
+      "shotId": "s005",
+      "purpose": { "value": "Name reveal on the one dark ground: the mark survives the iris and the name types under it", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m04-iris-close.jpg F176-F179", "visuals/a1/m05-black-to-arc.jpg F180-F202"] },
+      "technique": { "value": "t05 iris close that spares the mark; t06 small-capital name typed", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m04-iris-close.jpg F166-F176", "visuals/a1/m05-black-to-arc.jpg F180-F195"] }
+    },
+    {
+      "shotId": "s006",
+      "purpose": { "value": "Announcement word on white", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m06-arc-unwind.jpg F203-F224"] },
+      "technique": { "value": "t07 word rises on an arc and straightens in 9 frames", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m06-arc-unwind.jpg F203-F212"] }
+    },
+    {
+      "shotId": "s007",
+      "purpose": { "value": "Lockup: mark lands, wordmark slides out from behind it, then the mark detaches and rises", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m07-word-to-mark.jpg F235-F251", "visuals/a1/m08-mark-to-word.jpg F256-F275"] },
+      "technique": { "value": "t08 mark-then-wordmark lockup; t09 mark carry (first half)", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m07-word-to-mark.jpg F235-F243", "visuals/a1/m08-mark-to-word.jpg F256-F267"] }
+    },
+    {
+      "shotId": "s008",
+      "purpose": { "value": "Product screen: circle opens around the mark, which becomes the screen's header; prompt types", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m09-circle-open.jpg F283-F302"] },
+      "technique": { "value": "t09 mark carry into a circle opening, 6 frames; t10 prompt typing", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m09-circle-open.jpg F283-F289"] }
+    },
+    {
+      "shotId": "s010.1",
+      "purpose": { "value": "Punch-in so the prompt reads; cursor travels to send and clicks", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m10-punch-in.jpg F346-F359", "visuals/a1/m18-send-to-chat.jpg F387-F396"] },
+      "technique": { "value": "t10 punch-in cut about 2.6x with a 2-frame blur settle; button flips teal to coral on the press at F388", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m10-punch-in.jpg F345-F347", "visuals/a1/m18-send-to-chat.jpg F387-F388"] }
+    },
+    {
+      "shotId": "s010.2",
+      "purpose": { "value": "Generation in progress: prompt bubble, then a six-row checklist ticking", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m18-send-to-chat.jpg F397-F410", "visuals/a1/m11-list-tilt.jpg F417-F440", "visuals/strips/s013.jpg F453-F503"] },
+      "technique": { "value": "t11 checklist rows appended with arrival tint", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m11-list-tilt.jpg F424, F436", "visuals/a1/m19-steps-end.jpg F453, F459"] }
+    },
+    {
+      "shotId": "s014",
+      "purpose": { "value": "Result: the generated app in a tilted 3D phone", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m12-to-phone.jpg F505-F518"] },
+      "technique": { "value": "t12 3D device drift: pull out about 29% with an 11 degree clockwise roll, circ.out", "basis": "measured", "confidence": 0.7, "evidence": ["motion.json s014 camera amount z -0.347, r 0.196, ease circ.out"] }
+    },
+    {
+      "shotId": "s015",
+      "purpose": { "value": "Range: a ring of thumbnails orbits a centred line, then flies out past the frame", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m13-phone-to-ring.jpg F565-F578", "visuals/a1/m14-ring-spin.jpg F588-F611", "visuals/a1/m15-ring-out.jpg F621-F633"] },
+      "technique": { "value": "t13 orbit ring, then t14 exit by expansion past the frame edge", "basis": "observed", "confidence": 0.85, "evidence": ["visuals/a1/m15-ring-out.jpg F621-F633"] }
+    },
+    {
+      "shotId": "s017",
+      "purpose": { "value": "Value claim: headline with floating chips, second line typed", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m15-ring-out.jpg F634-F644", "visuals/a1/m16-tilt-out.jpg F720-F724"] },
+      "technique": { "value": "t15 held headline, typed sub-line with caret", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m15-ring-out.jpg F635-F644"] }
+    },
+    {
+      "shotId": "s019",
+      "purpose": { "value": "End card: spinning mark settles, wordmark types, call to action, silent hold", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m16-tilt-out.jpg F736-F743", "visuals/a1/m17-endcard.jpg F786-F845", "visuals/strips/s019.jpg F736-F901"] },
+      "technique": { "value": "t16 roll exit into the spinning mark; t17 end-card build", "basis": "observed", "confidence": 0.9, "evidence": ["visuals/a1/m16-tilt-out.jpg F724-F743"] }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.0,
+        "name": "word-build-tinted-arrival",
+        "description": "Promise line built on #FEFEFE, a new word about every 10 frames (F0, F9, F19, F29, F40). Each new word appears whole and enters pale lilac (#B873B3), turns raspberry (#B73A69) on the next frame, then teal (#0A7F6F), and settles to ink #030303 about 5 frames after it appeared (e.g. F9-F14). The line stays centred, so it shifts left as each word lands; at F39 the letter spacing tightens for a frame before the last word lands. Four small dots hover around the text box, about 4% outside it, and spread to the new corners over about 5-8 frames after each word (F15-F18, F23-F25). At F54-F59 the gap between the two phrases opens by about 5% of frame width, then a hard cut at F60.",
+        "why": "The eye has one target, the newest word, and the tint marks it for exactly as long as it takes to read it. The corner dots read as a selection box, saying 'this is being made' without a logo. The phrase split gives the cut a reason to happen."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59", "visuals/a1/m02-card-shrink.jpg F57-F60", "speech-text.json screenText boxes 0.30-1.37 s"]
+    },
+    {
+      "value": {
+        "startSec": 2.0,
+        "endSec": 2.4,
+        "name": "card-collapses-to-underline",
+        "description": "Hard cut at F60 to a photographic plate covered by a soft-edged black rounded card about 92% wide and 85% high. Over 12 frames (F60-F72) it shrinks toward a point near (0.45, 0.43), ease-out (frame difference 41, 33, 24, 16, 11, 6, 3, 1.7), flattening into a thin bar that becomes the white selection underline below the first icon of a floating dock; the icons fade in around it from F70.",
+        "why": "The cut lands on darkness, not on the plate, so the change from white is a single dark block the eye can follow; it shrinks to exactly where the next point of interest, the selected icon, is. The viewer is handed from the line to the dock without a search."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m02-card-shrink.jpg F60-F81"]
+    },
+    {
+      "value": {
+        "startSec": 8.53,
+        "endSec": 9.63,
+        "name": "mark-carry-iris-open",
+        "description": "The mark detaches from its wordmark (F256), tumbles about a quarter turn while rising to x 0.5, y 0.2 and shrinking to about 4% of frame width (F256-F267, 11 frames); the wordmark slides out right, accelerating (F261-F266). After a 16-frame hold, a circle about 45% of frame width appears around the mark at F283 and opens to beyond the frame by F289 (6 frames, ease-out: difference 15, 21, 12.5, 8.7, 5.7, 3.8), revealing the product screen on a pastel ground, where the same mark is the screen's header at the same position.",
+        "why": "The mark is the anchor across the boundary: the eye is already on it when the circle opens, so the new screen is read from its header downward. It also says, without words, that the brand and the interface are the same thing."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m08-mark-to-word.jpg F256-F275", "visuals/a1/m09-circle-open.jpg F279-F293"]
+    },
+    {
+      "value": {
+        "startSec": 20.7,
+        "endSec": 21.133,
+        "name": "orbit-ring-flies-past-frame",
+        "description": "A ring of about 30 rounded photo thumbnails, tilted in depth, orbits a centred line for 1.9 s. On exit the ring expands outward and off all four edges in 12 frames (F621-F633), accelerating (difference 13 to 37), so the centred line is left alone on white for one frame (F633); at F634 the line is replaced by the larger headline.",
+        "why": "The line in the centre never moves, so the eye stays put while the periphery clears; clearing the frame by expansion rather than a cut makes the headline feel like it was inside the ring all along."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/m15-ring-out.jpg F621-F644", "visuals/a1/m14-ring-spin.jpg F588-F611"]
+    },
+    {
+      "value": {
+        "startSec": 24.13,
+        "endSec": 24.77,
+        "name": "roll-exit-to-spinning-mark",
+        "description": "The held headline block (with its chips) begins a clockwise roll and slight scale-up at F724, accelerating to about 12 degrees and 110% by F735 (11 frames, ease-in: difference 0.2 to 16.5). Hard cut at F736 to the mark at about 27% of frame height, still rotated about 20 degrees clockwise, which unrotates and shrinks with an ease-out over about 1.5 s to a square mark about 7% of frame width.",
+        "why": "The rotation continues across the cut, so the eye reads one spin rather than two shots; the headline seems to turn into the brand. The fast in and slow settle give the end card weight."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/a1/m16-tilt-out.jpg F720-F743", "visuals/strips/s019.jpg F736-F781"]
+    }
+  ],
+  "corrections": [
+    {
+      "value": { "kind": "reject", "shotIds": ["s002"], "note": "1.3 s is the last word of the promise line arriving on the held layout (sceneScore 0.04); same shot as s001." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m01b-words-2.jpg F38-F44"]
+    },
+    {
+      "value": { "kind": "retype", "shotIds": ["s005"], "transition": "wipe", "note": "Not unknown: a soft-edged dark disc enters from the lower left and covers the frame in 10 frames (F166-F176), sparing the mark, which stays on top. 5.7 s is its middle." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m04-iris-close.jpg F166-F176"]
+    },
+    {
+      "value": { "kind": "retype", "shotIds": ["s008"], "transition": "wipe", "note": "Not a cut: a circle about 45% of frame width appears around the mark at F283 and opens past the frame by F289." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m09-circle-open.jpg F282-F289"]
+    },
+    {
+      "value": { "kind": "reject", "shotIds": ["s009"], "note": "10.033 s: the prompt keeps typing on the same screen (sceneScore 0.04); the pastel ground only drifts." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m09-circle-open.jpg F294-F302"]
+    },
+    {
+      "value": { "kind": "split", "shotIds": ["s010"], "timeSec": 13.233, "transition": "cut", "note": "Missed hard cut at F397: from the punched-in prompt field (after the send press at F388 and a slow pull-out F390-F396) to the chat view with the prompt as a bubble." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m18-send-to-chat.jpg F396-F398"]
+    },
+    {
+      "value": { "kind": "reject", "shotIds": ["s011", "s012", "s013"], "note": "14.133, 14.533 and 15.1 s are checklist rows appended to the held chat view (sceneScores 0.03-0.05); the list scrolls up slightly with each row." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m11-list-tilt.jpg F423-F424", "visuals/a1/m11-list-tilt.jpg F435-F436", "visuals/a1/m19-steps-end.jpg F452-F453"]
+    },
+    {
+      "value": { "kind": "reject", "shotIds": ["s016"], "note": "19.833 s is inside one continuous ring rotation (sceneScore 0.03)." },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": ["visuals/a1/m14-ring-spin.jpg F593-F597"]
+    },
+    {
+      "value": { "kind": "reject", "shotIds": ["s018"], "note": "22.5 s is the second line still being typed under the held headline (sceneScore 0.04)." },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": ["visuals/boundaries-01.jpg S018 F674-F676", "visuals/contact-sheet-01.jpg 17L-18F"]
+    }
+  ]
+}

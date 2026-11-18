@@ -1,0 +1,1062 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "rhythm": {
+    "value": "46.17 s at 30 fps. Detector: 41 shots, 40 cuts, median 0.93 s, 52 cuts a minute. Corrected (5 splits, 7 rejected boundaries): 39 shots, 38 cuts, median hold 0.97 s, mean 1.18 s, p10 0.40 s, p90 2.03 s, range 0.23-3.07 s, 49.4 cuts a minute. Three tempos inside one film: (1) 0-2.43 s hook, five changes in 1.27 s (holds 0.40, 0.30, 0.33, 0.23 s); (2) type and kinetic shots at 0.7-1.3 s each, one line or one idea per hold; (3) interface walkthroughs held longer (1.6-3.1 s) with their own internal motion (scrolls, cursor, push-ins), so the eye reads the product while the edit rests. The ground alternates on hard cuts between cream #F2F4E9 (or interface white #F6F6F6) and near-black brown #201A16: of 39 corrected shots 23 sit on a light ground, 11 on the dark one and 5 on a photograph or a window framed on dark; 18 of 38 cuts change that ground class (frame borders sampled at each shot's middle), which does the work a transition effect would otherwise do. Four cuts land on one frame of bare ground before the next element (F132, F959, F1010, F1298), a one-frame breath. No dissolves, no whips: every picture change is a hard cut; all motion is inside shots. Words inside a line arrive every 2 frames (0.067 s) with a 3-4 frame rise. Sound: I cannot hear it. audio.json has no tempo (librosa unavailable, RMS fallback), so no beat grid is built. Detector cuts on onsets 27.5% vs 21.2% chance (lift 1.3). Corrected cuts on onsets (±0.08 s): 12 of 38 = 31.6% vs 21.2% chance (lift 1.49). Per section: hook and opening 0-8.1 s 4 of 8 (50%) vs 40% chance; interface middle 8.1-27.2 s 2 of 14 (14%) vs 18% chance; closing 27.2-44.5 s 6 of 16 (38%) vs 18% chance (lift 2.1). Onset density 1.39 per second, so the ratios are readable. Loudness swells (50 ms RMS, local maximum over ±0.3 s, above 1.35x median): 54, median spacing 0.45 s, many exactly 0.40 s apart (a pulse near 150 BPM is possible but bounded below by the 0.3 s window, so not established); 11 of 38 cuts within 0.1 s of a swell vs 23% chance: no evidence. Loudness per second is 0.4-0.8x the median until 9 s, then 1.1-1.4x from the first interface shot onwards, dipping at 16 s and 27 s, and falling to 0.27x by 45 s: the track's lift coincides with the product's first appearance (inferred: the drop was placed under the dashboard). Transferable rule: the late section cuts on transients more often than chance; the interface section does not follow the sound at all.",
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "shots.json",
+      "audio.json onsetsSec, sections, loudness",
+      "sync.json metrics",
+      "corrected cut list recomputed from edit.json corrections",
+      "media/source.mp4 50 ms RMS computed by the analyst",
+      "visuals/edit-map.png"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Hook, first half: the opening clause on cream, dark ink, centred, two words then a third (0.52 s); a slow scale drift keeps it alive.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/strips/s001.jpg",
+          "visuals/a1/hook-g-global.jpg F29-F34"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word line on flat ground",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/strips/s001.jpg"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "Hook, the key word typed letter by letter in yellow on the dark ground, one letter every 2 frames, growing as it types.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F35-F44"
+        ]
+      },
+      "technique": {
+        "value": "letter type-on with scale growth",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F35-F44"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Hook flash 1: the finished word in white over a crowd photograph (motion-blurred commuters), slow push. Real cut at F45 (1.50 s), two frames before the detector's 1.567 s.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F45-F55"
+        ]
+      },
+      "technique": {
+        "value": "word over photo flash",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F45-F55"
+        ]
+      }
+    },
+    {
+      "shotId": "s003.2",
+      "purpose": {
+        "value": "Hook flash 2: same word, same position, second crowd photograph (colourful blurred people), 10 frames.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/hook-photos.jpg F56-F65"
+        ]
+      },
+      "technique": {
+        "value": "photo swap under a held word",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/hook-photos.jpg F56-F65"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Hook resolve: the word back in yellow on the dark ground, 7 frames, before the sentence turns to the viewer.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/hook-photos.jpg F66-F72"
+        ]
+      },
+      "technique": {
+        "value": "hero word hold",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/hook-photos.jpg F66-F72"
+        ]
+      }
+    },
+    {
+      "shotId": "s004.2",
+      "purpose": {
+        "value": "Turn to the viewer: second clause on cream; first word big, then the line re-sets smaller as the second word joins (F81); four portrait cards fly in from the edges at F87 and drift.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/cards-pop.jpg F73-F101"
+        ]
+      },
+      "technique": {
+        "value": "line re-layout plus portrait cards",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/cards-pop.jpg F73-F101"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Text swap on the held card layout: the clause completes word by word while the cards keep drifting outwards.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F128-F131",
+          "visuals/contact-sheet-01.jpg 6F-6L"
+        ]
+      },
+      "technique": {
+        "value": "text swap on held layout",
+        "basis": "observed",
+        "confidence": 0.7999999999999999,
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F128-F131"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Brand mark: empty dark frame, a dot grows into a pale-blue disc, the mark assembles inside it, the disc slides right while the letters wipe in and then collapses into the full stop; yellow wordmark turns white at F193.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F132-F152",
+          "visuals/a1/logo-reveal-b.jpg F152-F176",
+          "visuals/a1/logo-to-manage.jpg F191-F202"
+        ]
+      },
+      "technique": {
+        "value": "dot-to-wordmark build",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F132-F152"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "Promise line on cream: first word lands large and settles smaller in 4 frames, then two more words join.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/logo-to-manage.jpg F203-F212",
+          "visuals/a1/currencies-wall.jpg F236-F242"
+        ]
+      },
+      "technique": {
+        "value": "landing word, line build",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/logo-to-manage.jpg F203-F212"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Kinetic wall: three rows of the clause's last words, repeated, with flag chips, running off both edges and decelerating to a near hold.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/currencies-wall.jpg F243-F260",
+          "visuals/a1/wall-to-ui.jpg F272-F281"
+        ]
+      },
+      "technique": {
+        "value": "decelerating type marquee with chips",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/currencies-wall.jpg F243-F260"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "First product screen: the real dashboard cropped about 1.4x, slow push, a cursor drifting over the sidebar.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/wall-to-ui.jpg F282-F296",
+          "visuals/a1/ui-pullback.jpg F305-F311"
+        ]
+      },
+      "technique": {
+        "value": "cropped interface drift",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/wall-to-ui.jpg F282-F296"
+        ]
+      }
+    },
+    {
+      "shotId": "s011",
+      "purpose": {
+        "value": "Overview screen arrives out of near-white with a warm bloom top right; the summarising line types in at the bottom, a word every 2 frames.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ui-pullback.jpg F312-F329",
+          "visuals/a1/coin-swing.jpg F368-F372"
+        ]
+      },
+      "technique": {
+        "value": "dip from white, caption over interface",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ui-pullback.jpg F312-F329"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "Feature 1, half 1: a disc with a currency symbol rises on a thick yellow trail from lower right; text left; the symbol swaps once (F390).",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/coin-swing.jpg F373-F392",
+          "visuals/a1/coin-to-euro.jpg F401-F407"
+        ]
+      },
+      "technique": {
+        "value": "symbol disc on a trail",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/coin-swing.jpg F373-F392"
+        ]
+      }
+    },
+    {
+      "shotId": "s013",
+      "purpose": {
+        "value": "Feature 1, half 2: the same layout mirrored, disc descending from top left, text right; symbol swaps once (F424).",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/coin-to-euro.jpg F408-F425",
+          "visuals/a1/inline-globe.jpg F437-F440"
+        ]
+      },
+      "technique": {
+        "value": "mirrored layout across the cut",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/coin-to-euro.jpg F408-F425"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Feature 1, close: one small centred line with an inline globe icon chip; words appear in their final places.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/inline-globe.jpg F441-F461"
+        ]
+      },
+      "technique": {
+        "value": "inline icon chip in a line",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/inline-globe.jpg F441-F461"
+        ]
+      }
+    },
+    {
+      "shotId": "s015",
+      "purpose": {
+        "value": "Feature 2 opener: four cut-out portraits on tinted rounded plates with flag badges converge from the corners around a centred line.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/portraits-in.jpg F477-F497"
+        ]
+      },
+      "technique": {
+        "value": "portrait plates converge",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/portraits-in.jpg F477-F497"
+        ]
+      }
+    },
+    {
+      "shotId": "s016",
+      "purpose": {
+        "value": "Feature 2 line on cream, word by word.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/type-to-ui.jpg F521-F524"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word line",
+        "basis": "observed",
+        "confidence": 0.7999999999999999,
+        "evidence": [
+          "visuals/a1/type-to-ui.jpg F521-F524"
+        ]
+      }
+    },
+    {
+      "shotId": "s017",
+      "purpose": {
+        "value": "Interface page enters with a slight push; two-line caption bottom left, words rising in.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/type-to-ui.jpg F525-F545"
+        ]
+      },
+      "technique": {
+        "value": "caption over interface",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/type-to-ui.jpg F525-F545"
+        ]
+      }
+    },
+    {
+      "shotId": "s018",
+      "purpose": {
+        "value": "Punch-in: the caption stays exactly where it was, the interface behind cuts to about 1.6x on the primary button; cursor enters F552 and presses.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/punch-in-ui.jpg F549-F554",
+          "visuals/a1/ui-click-page.jpg F569-F576"
+        ]
+      },
+      "technique": {
+        "value": "caption-anchored punch-in",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/punch-in-ui.jpg F549-F554"
+        ]
+      }
+    },
+    {
+      "shotId": "s019",
+      "purpose": {
+        "value": "Walkthrough step 1: modal window on the dark ground rises into place after the click cut; cursor picks an option.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ui-click-page.jpg F577-F593"
+        ]
+      },
+      "technique": {
+        "value": "click cut, window rises",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ui-click-page.jpg F577-F593"
+        ]
+      }
+    },
+    {
+      "shotId": "s020",
+      "purpose": {
+        "value": "Walkthrough step 2: details form; at F689-F695 the form scrolls up fast to bring the continue button into view and the cursor presses it.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ui-steps.jpg F669-F689",
+          "visuals/a1/ui-scroll-a.jpg F689-F698"
+        ]
+      },
+      "technique": {
+        "value": "click cut, fast scroll to the button",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ui-steps.jpg F669-F689"
+        ]
+      }
+    },
+    {
+      "shotId": "s022",
+      "purpose": {
+        "value": "Walkthrough step 3: review screen with the amount; fast scroll F737-F741, cursor presses the create button.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ui-scroll-b.jpg F736-F746"
+        ]
+      },
+      "technique": {
+        "value": "click cut, fast scroll",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ui-scroll-b.jpg F736-F746"
+        ]
+      }
+    },
+    {
+      "shotId": "s024",
+      "purpose": {
+        "value": "Walkthrough result: success screen with a green tick; from F785 the frame pushes in on the shareable link field.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ui-success.jpg F767-F788"
+        ]
+      },
+      "technique": {
+        "value": "result, push-in on the payoff field",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/ui-success.jpg F767-F788"
+        ]
+      }
+    },
+    {
+      "shotId": "s026",
+      "purpose": {
+        "value": "Integration: three-word line split around a photo of a shopper holding a sign, with an embedded checkout card; the card snap-zooms from about 0.32 to 0.6 frame width in 3 frames (F843-F845) and the cursor presses pay.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/api-zoom.jpg F836-F860"
+        ]
+      },
+      "technique": {
+        "value": "snap zoom on an embedded card",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/api-zoom.jpg F836-F860"
+        ]
+      }
+    },
+    {
+      "shotId": "s028",
+      "purpose": {
+        "value": "Line on cream, word by word.",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 28F-28L"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word line",
+        "basis": "observed",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/contact-sheet-01.jpg 28F-28L"
+        ]
+      }
+    },
+    {
+      "shotId": "s029",
+      "purpose": {
+        "value": "Text swap: the line's object replaces it on the same ground.",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/move-split.jpg F926-F929"
+        ]
+      },
+      "technique": {
+        "value": "text swap on flat ground",
+        "basis": "observed",
+        "confidence": 0.7999999999999999,
+        "evidence": [
+          "visuals/a1/move-split.jpg F926-F929"
+        ]
+      }
+    },
+    {
+      "shotId": "s030",
+      "purpose": {
+        "value": "Feature 3 opener: a yellow verb split in two staggered halves; a tilted interface card flies up between them and settles flat while the halves level and part around it.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/move-split.jpg F930-F950"
+        ]
+      },
+      "technique": {
+        "value": "word split with interface inserted",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/move-split.jpg F930-F950"
+        ]
+      }
+    },
+    {
+      "shotId": "s031",
+      "purpose": {
+        "value": "The same verb whole in dark ink on cream after a one-frame empty ground (F959); at F976-F980 its halves part to open a gap.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/move-gap-between.jpg F971-F980"
+        ]
+      },
+      "technique": {
+        "value": "word gap opens",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/move-gap-between.jpg F971-F980"
+        ]
+      }
+    },
+    {
+      "shotId": "s032",
+      "purpose": {
+        "value": "Cut on the open gap: a small word above, an outlined pill with an arrow where the gap was; the pill widens to two flag chips and the right flag swaps every 10-16 frames; the yellow object word below.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/move-gap-between.jpg F981-F995",
+          "visuals/a1/countdown.jpg F1007-F1009"
+        ]
+      },
+      "technique": {
+        "value": "inline pill with swapping flags",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/move-gap-between.jpg F981-F995"
+        ]
+      }
+    },
+    {
+      "shotId": "s033",
+      "purpose": {
+        "value": "One empty dark frame, then a white word with a giant dim blurred counter behind it, ticking down to zero in 11 frames and holding.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/countdown.jpg F1010-F1031",
+          "visuals/a1/swap-ui.jpg F1033-F1035"
+        ]
+      },
+      "technique": {
+        "value": "countdown behind the word",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/countdown.jpg F1010-F1031"
+        ]
+      }
+    },
+    {
+      "shotId": "s035",
+      "purpose": {
+        "value": "Feature 3 demo: white interface, elements build top-down, the amount types in digit by digit.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/swap-ui.jpg F1036-F1052"
+        ]
+      },
+      "technique": {
+        "value": "interface build with typed figure",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/swap-ui.jpg F1036-F1052"
+        ]
+      }
+    },
+    {
+      "shotId": "s036",
+      "purpose": {
+        "value": "Demo continues wider; F1107-F1110 the window snap-zooms about 1.5x and shifts left in 4 frames, a two-line caption lands on the right word by word (F1110-F1111), and F1123-F1128 a soft yellow highlight sweeps left to right across the rate rows.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/live-rates.jpg F1106-F1130",
+          "visuals/boundaries-02.jpg S036"
+        ]
+      },
+      "technique": {
+        "value": "snap reframe for a caption, highlight sweep",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/live-rates.jpg F1106-F1130"
+        ]
+      }
+    },
+    {
+      "shotId": "s038",
+      "purpose": {
+        "value": "Benefit line 1 on cream; from F1183 it drifts up, accelerating.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1178-F1193"
+        ]
+      },
+      "technique": {
+        "value": "line exits upward",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1178-F1193"
+        ]
+      }
+    },
+    {
+      "shotId": "s038.2",
+      "purpose": {
+        "value": "Benefit line 2 enters from below as line 1 leaves (F1194), words joining every 2 frames.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1194-F1196",
+          "visuals/a1/spend-swaps.jpg F1196-F1218"
+        ]
+      },
+      "technique": {
+        "value": "vertical conveyor swap",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1194-F1196"
+        ]
+      }
+    },
+    {
+      "shotId": "s038.3",
+      "purpose": {
+        "value": "Benefit line 3, larger, hard swap at F1219.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/spend-swaps.jpg F1219-F1220",
+          "visuals/a1/growing-chart.jpg F1241-F1245"
+        ]
+      },
+      "technique": {
+        "value": "text swap, size step up",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/spend-swaps.jpg F1219-F1220"
+        ]
+      }
+    },
+    {
+      "shotId": "s039",
+      "purpose": {
+        "value": "Payoff: one huge white word over a yellow gradient area chart; a dot rides the curve and a small counter climbs from 6 to 63 in 24 frames.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/growing-chart.jpg F1246-F1265",
+          "visuals/a1/growing-to-end.jpg F1265-F1269"
+        ]
+      },
+      "technique": {
+        "value": "growth chart behind hero word",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/growing-chart.jpg F1246-F1265"
+        ]
+      }
+    },
+    {
+      "shotId": "s040",
+      "purpose": {
+        "value": "The same word small on cream, the line completes in its final layout.",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/growing-to-end.jpg F1270-F1289",
+          "visuals/a1/cta-swap.jpg F1289-F1297"
+        ]
+      },
+      "technique": {
+        "value": "scale drop, line completes",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/growing-to-end.jpg F1270-F1289"
+        ]
+      }
+    },
+    {
+      "shotId": "s040.2",
+      "purpose": {
+        "value": "Call to action line after one empty cream frame (F1298), word by word, ending on the brand name.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/cta-swap.jpg F1298-F1310",
+          "visuals/a1/endcard.jpg F1325-F1332"
+        ]
+      },
+      "technique": {
+        "value": "word-by-word sign-off",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/cta-swap.jpg F1298-F1310"
+        ]
+      }
+    },
+    {
+      "shotId": "s041",
+      "purpose": {
+        "value": "End card: the web address alone, small and centred on cream, held 1.73 s to the last frame without a fade.",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/endcard.jpg F1333-F1340",
+          "visuals/contact-sheet-02.jpg"
+        ]
+      },
+      "technique": {
+        "value": "address-only end card",
+        "basis": "observed",
+        "confidence": 0.8999999999999999,
+        "evidence": [
+          "visuals/a1/endcard.jpg F1333-F1340"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 1.167,
+        "endSec": 2.433,
+        "name": "type-on-photo-flash",
+        "description": "The key word of the opening sentence is typed letter by letter in yellow #F6E977 on #201A16 from F35, one letter every 2 frames (g F35, gl F37, glo F39, glob F41, globa F43), the glyphs growing about 15% as they type. On the frame the word completes (F45) the ground cuts to a crowd photograph and the word turns white at the same place and size (about 0.58 frame width); a second crowd photograph replaces it at F56; at F66 the yellow word on dark returns for 7 frames, and F73 cuts to cream for the next clause. Holds: 10, 10, 11, 7 frames.",
+        "why": "The eye never moves: the word stays in one place and size while four grounds change under it, so the viewer reads one idea while being shown its scale (many people). Typing at 2 frames a letter makes the first second about anticipation of the word; the photo flash pays it off in 0.7 s, too fast to read as stock footage."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/hook-g-global.jpg F35-F53",
+        "visuals/a1/hook-photos.jpg F52-F77"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.4,
+        "endSec": 6.767,
+        "name": "dot-to-wordmark",
+        "description": "F132 is an empty dark frame. F133-F138: a dot at frame centre grows to a pale-blue #DBECFD disc about 13% of frame width (6 frames, decelerating). F140-F152: the mark is wiped in inside the disc in stepped slices (12 frames), held to F158. F159: the mark vanishes; F160-F166 the disc travels right about 0.2 frame width while the first letters of the wordmark wipe in from the left behind it; F167-F176 the disc shrinks and breaks into the remaining letters, ending as the full stop; a small sub-line fades in under it F174-F176. The wordmark sits yellow until F192, flips to white at F193, and holds to the cut at F203.",
+        "why": "One shape carries the attention from a point to the full name: the viewer watches the disc, and the disc becomes the punctuation, so the eye ends where the name ends. The late yellow-to-white flip says 'settled' without another move."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/logo-reveal.jpg F132-F152",
+        "visuals/a1/logo-reveal-b.jpg F152-F176",
+        "visuals/a1/logo-to-manage.jpg F191-F203"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 12.433,
+        "endSec": 14.7,
+        "name": "mirrored-object-layout-cut",
+        "description": "Shot A (F373-F407): a disc carrying a currency symbol (about 0.18 frame height) rises from lower right on a thick yellow trail of the same width, settling in 5 frames (F373-F378) then drifting up slowly; text left-aligned at x 0.06 builds word by word; the symbol swaps once after 17 frames (F390). Cut at F408: the layout is mirrored, the disc descending from top left on its trail, the text right of centre; its symbol swaps after 16 frames (F424). Then F441 cuts to a single centred line.",
+        "why": "Mirroring keeps the layout familiar while reversing direction, so the second clause reads as a continuation, not a new scene. The symbol swap inside each hold says 'any' without listing anything; the trail gives the object a path, so the eye follows motion rather than searching the frame."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/coin-swing.jpg F373-F392",
+        "visuals/a1/coin-to-euro.jpg F401-F425",
+        "visuals/a1/inline-globe.jpg F437-F441"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 31.0,
+        "endSec": 33.0,
+        "name": "word-split-insert",
+        "description": "F930 cuts to dark with a yellow verb split in two staggered halves (left half low, right half high, about 0.2 frame height). F931-F936: a tilted interface card (about 0.3 frame width, rotated in depth about 8-10 degrees) flies up from the bottom between the halves and settles flat; the halves level onto one baseline and part to frame it. F959: one empty cream frame. F960: the same verb whole in dark ink, about 0.12 frame height. F976-F980: its halves part to open a gap about 0.08 frame width (5 frames, accelerating). F981 cuts on the open gap to dark: an outlined pill with an arrow sits where the gap was, a small word above it; F982-F983 the pill widens and fills with two flag chips; the right chip swaps at F993 and again by F1009.",
+        "why": "The verb is literally opened to show what it does: the product sits inside the word, then the gap becomes the connector (the arrow pill). The viewer's eye is parked in the gap before the cut, so the new element appears exactly where they are looking."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/move-split.jpg F930-F950",
+        "visuals/a1/move-gap-between.jpg F971-F995",
+        "visuals/a1/countdown.jpg F1007-F1009"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 33.667,
+        "endSec": 34.533,
+        "name": "countdown-behind-word",
+        "description": "F1010 is an empty dark frame. F1011: a white word centred (about 0.1 frame height) with, behind it, a giant counter (number plus unit, about 0.6 frame height) in dim olive-yellow at roughly 35% strength and heavily blurred. The counter ticks down on F1011, F1013, F1015, F1018, F1022 (steps of 2, 2, 3, 4 frames: decelerating), lands on zero and holds 13 frames with a soft glow, then F1036 hard-cuts to a white interface.",
+        "why": "The claim is proved by time itself: the count runs in under half a second under a word that never moves. Decelerating steps make zero land like a stop, which is the whole message."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/countdown.jpg F1010-F1031",
+        "visuals/a1/swap-ui.jpg F1033-F1036"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 1.867,
+        "transition": "cut",
+        "note": "Second crowd photograph replaces the first under the held word at F56; the word does not move, so the detector missed it."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/hook-photos.jpg F55-F56"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s004"
+        ],
+        "timeSec": 2.433,
+        "transition": "cut",
+        "note": "Dark yellow word to cream ground with the next word at F73; inside the detector's s004."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/hook-photos.jpg F72-F73"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s005"
+        ],
+        "note": "Boundary at 2.90 s is four portrait cards flying in over a held line (F87), a collage element added, not a cut. s005 belongs to s004.2."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/cards-pop.jpg F86-F91"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s021"
+        ],
+        "note": "Boundary at 23.07 s is a fast scroll of the same form to the continue button (F689-F695), not a cut. s021 belongs to s020."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/ui-scroll-a.jpg F688-F698"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s023"
+        ],
+        "note": "Boundary at 24.67 s is a fast scroll of the review screen (F737-F741), not a cut. s023 belongs to s022."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/ui-scroll-b.jpg F736-F746"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s025"
+        ],
+        "note": "Boundary at 26.27 s is a push-in on the link field starting F785, continuous. s025 belongs to s024."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/ui-success.jpg F784-F788"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s027"
+        ],
+        "note": "Boundary at 28.13 s is the embedded checkout card snap-zooming from about 0.32 to 0.6 frame width in 3 frames (F843-F845) while the surrounding words stay; a layer scale, not a cut. s027 belongs to s026."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/api-zoom.jpg F842-F846"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s034"
+        ],
+        "note": "Boundary at 34.07 s is the background counter ticking from one to zero (F1022) under a held word, not a cut. s034 belongs to s033."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/countdown.jpg F1021-F1022"
+      ]
+    },
+    {
+      "value": {
+        "kind": "reject",
+        "shotIds": [
+          "s037"
+        ],
+        "note": "Boundary at 36.87 s is the interface window snap-zooming about 1.5x and shifting left over F1107-F1110 to make room for a caption; continuous within s036."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/boundaries-02.jpg S037 F1106-F1108",
+        "visuals/a1/live-rates.jpg F1106-F1112"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s038"
+        ],
+        "timeSec": 39.8,
+        "transition": "cut",
+        "note": "Text swap on flat cream at F1194: line 1 drifts up accelerating from F1183 and is replaced by line 2 rising from below; the detector missed it."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/spend-first-swap.jpg F1183-F1196"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s038"
+        ],
+        "timeSec": 40.633,
+        "transition": "cut",
+        "note": "Hard text swap to a larger line at F1219 on the same cream ground."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/spend-swaps.jpg F1218-F1219"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s040"
+        ],
+        "timeSec": 43.3,
+        "transition": "cut",
+        "note": "Empty cream frame F1298, then the sign-off line from F1299: a text swap the detector missed."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/cta-swap.jpg F1297-F1299"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s002",
+          "s006",
+          "s010",
+          "s033"
+        ],
+        "transition": "cut",
+        "note": "Detector called these 'unknown' (ffmpeg fallback, no gradual classification): all are one-frame hard cuts or text swaps on the frame (F35, F104-F105, F282, F1010). s003's cut is at F45 (1.50 s), two frames before the detector's 1.567 s."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/hook-g-global.jpg F34-F35, F44-F45",
+        "visuals/a1/wall-to-ui.jpg F281-F282",
+        "visuals/a1/countdown.jpg F1009-F1011"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "palette": {
+    "value": [
+      "#3356F8 saturated ultramarine: main ground, also every accent on paper",
+      "#F6F6F6 paper ground",
+      "#FFFFFF ground for the running profit figure and banknote texture",
+      "#000000 ground for the quieter product lines",
+      "Green about #22C55E, profit figures only (estimated from frames)",
+      "Near-black about #111111, numerals on paper grounds"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "frames sampled at 1.5, 2.5, 5.6, 14.6, 16.7 s at x=100 y=100",
+      "visuals/a1/pnl-count.jpg"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Claim words",
+        "description": "Heavy condensed grotesque in capitals, white on blue. Tight tracking. Width share of frame by importance: 'EVERY 2 WEEKS' 61%, 'START' 56%, 'TO ENTER' 81-88%, 'START TRADING' 70%. Line-height about 1.0 when stacked. Font is inferred: something in the family of Druk or Tungsten Condensed."
+      },
+      {
+        "role": "Sender and small labels",
+        "description": "Same condensed face in mixed case, blue on paper, at 16-50% width. Starts small: 'Perps' is only 16% of the width, so it reads as a whisper."
+      },
+      {
+        "role": "Money values",
+        "description": "Neutral grotesque in semibold (Inter-like, inferred) on paper, about 28% width. Condensed heavy on banknote ground ('$10K' 35%). Proportional figures: the width jitters as digits change."
+      },
+      {
+        "role": "Product lines on black",
+        "description": "Neutral grotesque regular, white, 30% width, with a dim grey second line at about 10% cap height. Deliberately quiet."
+      },
+      {
+        "role": "Interface",
+        "description": "Real-looking interface type at true product scale: not enlarged, so it reads as the real thing rather than a slide."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/start-words.jpg",
+      "visuals/a1/tenk-tag.jpg",
+      "visuals/a1/black-lines.jpg",
+      "visuals/a1/form-in.jpg"
+    ]
+  },
+  "composition": {
+    "value": "One centred element on an empty ground; the only full-bleed composition is the interface or the ranking. Text is optically centred at about 50% height and never sits in a corner. Scale is the only hierarchy: the frame is 60-85% empty. Stacked lines are centred and the same width by size choice rather than by letter-spacing. Backgrounds carry a single faint layer at 6-12% contrast: rings, an engraved banknote, a trophy, tiles or a giant cropped ghost of the word, each drifting.",
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/comp-starts.jpg",
+      "visuals/a1/rewarded.jpg"
+    ]
+  },
+  "materials": {
+    "value": "Flat colour for the type scenes. Three physical objects interrupt it: a glossy orange coin with a thick lit rim (6.5-7.1 s), white paper with a curled bottom and a torn edge (22-23.8 s), a blue gradient chart whose bars darken at the top (3.4-3.8 s). Tickers sit on white cards with hairline-free soft shadows and a pale green gradient below the line.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/coin-card.jpg",
+      "visuals/a1/receipt.jpg",
+      "visuals/a1/bars-fill.jpg"
+    ]
+  },
+  "lighting": {
+    "value": "Only the objects are lit. The coin has a moving highlight and the slip a slow diagonal sheen (visible F708-F714). Paper sits on pure black with no floor or shadow, so it floats.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/receipt-count.jpg F708-F714",
+      "visuals/a1/coin-card.jpg F200-F207"
+    ]
+  },
+  "styleSummary": "Announcement built from a tiny, strict kit: one blue, one condensed face, one centred element, hard cuts between three grounds. The richness comes from three short object moments and from every number being animated."
+}

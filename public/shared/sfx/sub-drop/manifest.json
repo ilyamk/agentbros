@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "kind": "sub-drop",
+  "entries": [
+    {
+      "file": "elevenlabs-05-short-sub-boom.mp3",
+      "source": "elevenlabs",
+      "sourceId": "05",
+      "sourceUrl": "https://api.elevenlabs.io/v1/sound-generation",
+      "title": "Short punchy sub bass boom hit, very low, tight",
+      "author": "ElevenLabs sound generation",
+      "licence": "generated",
+      "licenceUrl": "https://elevenlabs.io/terms-of-use",
+      "notes": "1.2 s, stereo; ElevenLabs sound-generation, 12 credits, requested 1.2 s",
+      "sha256": "20069102bf8af550519095b71525f96df6d993ee57b4088f9eaac4d5ba17c782",
+      "bytes": 16527,
+      "recipe": {
+        "type": "elevenlabs",
+        "endpoint": "POST https://api.elevenlabs.io/v1/sound-generation",
+        "model": "API default (no model_id sent), 2026-11-11",
+        "prompt": "Short punchy sub bass boom hit, very low, tight",
+        "durationSeconds": 1.2,
+        "credits": 12,
+        "sha256": "94d8141cc8dc16d218e112564aa1c23c47ff55a13ac66e2f8acdb88aab426717"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-sub-drop.mp3",
+      "source": "synth",
+      "sourceId": "sub-drop",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "sub-drop.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "1.6 s, mono; pnpm sfx:synth seed 1",
+      "sha256": "4bc43e653dea96e6b0ae8197912a0e1360dae116d4f5b2663711aa2dd8f4b6ae",
+      "bytes": 7821,
+      "recipe": {
+        "type": "synth",
+        "kind": "sub-drop",
+        "seed": 1,
+        "rootHz": 55,
+        "sha256": "d8622f2c2922c4cd6ddea58150bfcf9d4237cc160d1776a28aef6f846ed240df"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-269099-boom.mp3",
+      "source": "freesound",
+      "sourceId": "269099",
+      "sourceUrl": "https://freesound.org/s/269099/",
+      "title": "Boom.wav",
+      "author": "breo2012",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "1.6 s, stereo; Freesound HQ preview; found by \"sub boom\"",
+      "sha256": "f60c2c4f3eb377326bba916be64010a2cce056d63a5c170bbe4e0a1c3db7eced",
+      "bytes": 36781,
+      "recipe": {
+        "type": "freesound",
+        "id": 269099,
+        "url": "https://cdn.freesound.org/previews/269/269099_5021819-hq.mp3",
+        "sha256": "112261aa0daaea5acf367f4e179258aba397b341fe027040a2f46da04e781011"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-sub-drop-s3-c.mp3",
+      "source": "synth",
+      "sourceId": "sub-drop-s3-c",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "sub-drop-s3-r32.7.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "1.6 s, mono; pnpm sfx:synth seed 3",
+      "sha256": "b5ffeda0f3ad640e3c97a24d7f56b58aa888dc90d4cdf492f444342ddc80c092",
+      "bytes": 7639,
+      "recipe": {
+        "type": "synth",
+        "kind": "sub-drop",
+        "seed": 3,
+        "rootHz": 32.7,
+        "sha256": "61d01b864832dfa315d9a87fe3bc8333cbc13f4df164282f8214308130dab16d"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "synth-sub-drop-s2-e.mp3",
+      "source": "synth",
+      "sourceId": "sub-drop-s2-e",
+      "sourceUrl": "src/lib/audio/sfx-synth.ts",
+      "title": "sub-drop-s2-r41.2.wav",
+      "author": "agentbros sfx-synth",
+      "licence": "generated",
+      "licenceUrl": "public/shared/sfx/synth/pack.json",
+      "notes": "1.6 s, mono; pnpm sfx:synth seed 2",
+      "sha256": "b800592093e4ed59cf83b48c60af36889e9b26e4d30bbe103645e62248ccd652",
+      "bytes": 7665,
+      "recipe": {
+        "type": "synth",
+        "kind": "sub-drop",
+        "seed": 2,
+        "rootHz": 41.2,
+        "sha256": "798f0523b0ba305a33f1123b1668adf3e2cdea766f661f911fdf458877dcaf3e"
+      },
+      "process": {
+        "trimStartDb": null,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-233800-low-thump.mp3",
+      "source": "freesound",
+      "sourceId": "233800",
+      "sourceUrl": "https://freesound.org/s/233800/",
+      "title": "low thump.wav",
+      "author": "tim.kahn",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"low thump.wav\" by tim.kahn (freesound.org/s/233800), CC BY 4.0",
+      "notes": "1.7 s, mono; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "784d6e243558546f8ac6de120292bd997ff54749340baeccf6a3df6d547ddc44",
+      "bytes": 10499,
+      "recipe": {
+        "type": "freesound",
+        "id": 233800,
+        "url": "https://cdn.freesound.org/previews/233/233800_7037-hq.mp3",
+        "sha256": "317720d2007fabb19775236dc9908422bb0d787b7be60a0e8ad7f3f256c8de6a"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-157245-boom.mp3",
+      "source": "freesound",
+      "sourceId": "157245",
+      "sourceUrl": "https://freesound.org/s/157245/",
+      "title": "boom.wav",
+      "author": "Snapper4298",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "1.7 s, stereo; Freesound HQ preview; found by \"sub boom\"",
+      "sha256": "1d782311e56e7d9cac91f482f6843e91a5bbf24cde79122758330fbeb4fcbda1",
+      "bytes": 12899,
+      "recipe": {
+        "type": "freesound",
+        "id": 157245,
+        "url": "https://cdn.freesound.org/previews/157/157245_33044-hq.mp3",
+        "sha256": "240364810f028db2a45dc37a95ad9e4ce531c1e86bf04eba7c103089306ad36e"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-63138-sub-a-2-secs.mp3",
+      "source": "freesound",
+      "sourceId": "63138",
+      "sourceUrl": "https://freesound.org/s/63138/",
+      "title": "SUB A# 2 secs.wav",
+      "author": "uzerx",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.0 s, mono; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "3330a8a5cf1bc3662cdaa6d881ae096dead204d21cc1c94e936c525a173452fb",
+      "bytes": 9667,
+      "recipe": {
+        "type": "freesound",
+        "id": 63138,
+        "url": "https://cdn.freesound.org/previews/63/63138_704648-hq.mp3",
+        "sha256": "64429ed2ad08f0a05795b77bb0461cead2e6039f7c79b73058eafb81c9f145c4"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-59540-sub-bass-4-secondsssss.mp3",
+      "source": "freesound",
+      "sourceId": "59540",
+      "sourceUrl": "https://freesound.org/s/59540/",
+      "title": "sub bass 4 secondsssss.wav",
+      "author": "uzerx",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.4 s, mono; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "83faae2d4a57c45877928e110cbba858072a45c35562ca4f1f24301c7b6a4e36",
+      "bytes": 21599,
+      "recipe": {
+        "type": "freesound",
+        "id": 59540,
+        "url": "https://cdn.freesound.org/previews/59/59540_704648-hq.mp3",
+        "sha256": "2663d340591362f0a1f5279b17bf6b04b88a87554c795b367d3e68be036e8440"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-475005-synth-bass-drop-impact.mp3",
+      "source": "freesound",
+      "sourceId": "475005",
+      "sourceUrl": "https://freesound.org/s/475005/",
+      "title": "Synth Bass Drop Impact",
+      "author": "AlexLane",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "2.8 s, stereo; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "a988863c760df1c2775bbdad35531de47a45c2af6178e2997d6ebc71c0b2a00d",
+      "bytes": 58589,
+      "recipe": {
+        "type": "freesound",
+        "id": 475005,
+        "url": "https://cdn.freesound.org/previews/475/475005_2617886-hq.mp3",
+        "sha256": "9fa1bab010e65e6c42de775841cf6700b9d256def15f61cb3e508fd90cc06617"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-210626-ahj-subdrop-maxbass.mp3",
+      "source": "freesound",
+      "sourceId": "210626",
+      "sourceUrl": "https://freesound.org/s/210626/",
+      "title": "ahj-subdrop-maxbass.wav",
+      "author": "ahjteam",
+      "licence": "CC-BY-4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "\"ahj-subdrop-maxbass.wav\" by ahjteam (freesound.org/s/210626), CC BY 4.0",
+      "notes": "3.0 s, mono; Freesound HQ preview; found by \"low boom\"",
+      "sha256": "5470ae99c2f9106e269253c7cf606a221dbee974d503b0c75327f42eb86f84e9",
+      "bytes": 15049,
+      "recipe": {
+        "type": "freesound",
+        "id": 210626,
+        "url": "https://cdn.freesound.org/previews/210/210626_1593332-hq.mp3",
+        "sha256": "f42b733b213ba967d8f9e10f44cd678b75b50e8f0af36d68a4ff4c5b51015de3"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "elevenlabs-04-deep-sub-drop.mp3",
+      "source": "elevenlabs",
+      "sourceId": "04",
+      "sourceUrl": "https://api.elevenlabs.io/v1/sound-generation",
+      "title": "Deep sub bass drop, low frequency boom falling in pitch, cinematic",
+      "author": "ElevenLabs sound generation",
+      "licence": "generated",
+      "licenceUrl": "https://elevenlabs.io/terms-of-use",
+      "notes": "3.0 s, stereo; ElevenLabs sound-generation, 30 credits, requested 3 s",
+      "sha256": "6a2749d18f7f2a1234fda57fef746068b822a28310185bc9685588abb7b3c384",
+      "bytes": 58900,
+      "recipe": {
+        "type": "elevenlabs",
+        "endpoint": "POST https://api.elevenlabs.io/v1/sound-generation",
+        "model": "API default (no model_id sent), 2026-11-11",
+        "prompt": "Deep sub bass drop, low frequency boom falling in pitch, cinematic",
+        "durationSeconds": 3,
+        "credits": 30,
+        "sha256": "518fdc8cca60d65f5ecb78a41b8760cde63527712856bbd58f71ad53b1160c4e"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-191697-muffled-boom.mp3",
+      "source": "freesound",
+      "sourceId": "191697",
+      "sourceUrl": "https://freesound.org/s/191697/",
+      "title": "Muffled Boom",
+      "author": "UnderlinedDesigns",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "3.2 s, stereo; Freesound HQ preview; found by \"low boom\"",
+      "sha256": "1d850a7efaebee72c7d5fc6b536590ca1dd6ca7005f0e40114bba299ed1c9fca",
+      "bytes": 20199,
+      "recipe": {
+        "type": "freesound",
+        "id": 191697,
+        "url": "https://cdn.freesound.org/previews/191/191697_2213158-hq.mp3",
+        "sha256": "931cc15319dc7461432f25d9f3a7cd2934bd4a4c6eaf243e461ffc4655cf5529"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-123682-808-bass-drop-d.mp3",
+      "source": "freesound",
+      "sourceId": "123682",
+      "sourceUrl": "https://freesound.org/s/123682/",
+      "title": "808 bass drop D.wav",
+      "author": "langdonrry",
+      "licence": "CC-BY-3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "\"808 bass drop D.wav\" by langdonrry (freesound.org/s/123682), CC BY 3.0",
+      "notes": "3.4 s, mono; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "83340df0f3109513d11ce357a5417e0903e90b9e9a63a0ea7b40dc975531601b",
+      "bytes": 24118,
+      "recipe": {
+        "type": "freesound",
+        "id": 123682,
+        "url": "https://cdn.freesound.org/previews/123/123682_2250067-hq.mp3",
+        "sha256": "f896b228ddfd489751c0b22f775c5eb7bc1dff797316a08cb6564205a5663ef8"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-346316-ramon-s-sexy-sub-drop.mp3",
+      "source": "freesound",
+      "sourceId": "346316",
+      "sourceUrl": "https://freesound.org/s/346316/",
+      "title": "Ramon's Sexy Sub Drop 6000",
+      "author": "IV_Studios_666",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "3.6 s, stereo; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "d1bdb8d7b0bd1823d374dac4c51a5b1c1f1b2ba2f3551508c0a64730a4ad2b0e",
+      "bytes": 18897,
+      "recipe": {
+        "type": "freesound",
+        "id": 346316,
+        "url": "https://cdn.freesound.org/previews/346/346316_5437202-hq.mp3",
+        "sha256": "88ed1f06b514f167ace86a8137d0ecb98ff6e45f664b18f6f1442513352fd607"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    },
+    {
+      "file": "freesound-428073-sub-drop-smooth.mp3",
+      "source": "freesound",
+      "sourceId": "428073",
+      "sourceUrl": "https://freesound.org/s/428073/",
+      "title": "Sub Drop Smooth.wav",
+      "author": "newagesoup",
+      "licence": "CC0-1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "3.7 s, stereo; Freesound HQ preview; found by \"sub drop\"",
+      "sha256": "8f8970e72f09b454040e734447a6e5119543239db664b1b11048687841f7eb1f",
+      "bytes": 34163,
+      "recipe": {
+        "type": "freesound",
+        "id": 428073,
+        "url": "https://cdn.freesound.org/previews/428/428073_4067257-hq.mp3",
+        "sha256": "cd886173aa0270c9adbdb04fa14eb7f4cde53bd70506a4bf8d6e14de00e6bfd9"
+      },
+      "process": {
+        "trimStartDb": -50,
+        "peakDb": -1,
+        "channels": "source, at most 2",
+        "codec": "libmp3lame -q:a 2, 44.1 kHz"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "motionfly",
+  "palette": {
+    "value": [
+      "#FEFEFE ground (93-99% of every white frame)",
+      "#030303 ink for type, mark and device body",
+      "#666666 secondary grey for second lines",
+      "#0D0D15 the one dark ground (5.7-6.77 s)",
+      "#B873B3 arrival tint, first frame (pale lilac)",
+      "#B73A69 arrival tint, second frame (raspberry)",
+      "#0A7F6F arrival tint, third frame (teal), then ink",
+      "#684FE0 violet of the first word on frame 0",
+      "#884295 settled tint of the arc word",
+      "#07847C teal accent (send button, one chip)",
+      "#B282E7 / #CC88DD / #E396CA / #E9CBE9 pastel gradient ground behind the product screen",
+      "#333333 call-to-action button"
+    ],
+    "basis": "measured",
+    "confidence": 0.85,
+    "evidence": [
+      "ffmpeg rgb24 samples of media/source.mp4 at F0, F9, F11, F12, F30, F178, F220, F290, F387, F660, F880 (24-level buckets, share of pixels)",
+      "shots.json colour: white shots L 95-98; s005 L 5; s008 L 74 a 26 b -26 (the pastel ground)"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Promise line (hook)",
+        "description": "Neo-grotesque sans (inferred, an Inter or SF-like face), semibold, sentence case, centred; OCR line box 8.8% of frame height and 77.5% of width when complete. The line recentres on every new word (box centre x 0.505 -> 0.494 -> 0.504). Each word enters pale lilac (#B873B3), turns raspberry (#B73A69) on the next frame, then teal (#0A7F6F), and settles to ink #030303 about 5 frames after it appeared."
+      },
+      {
+        "role": "Name in small capitals (dark shot)",
+        "description": "Tracked uppercase sans, about 2.5% of frame height, centred under the mark at y 0.56-0.59; typed one letter every 2-3 frames, white on #0D0D15."
+      },
+      {
+        "role": "Introductory word",
+        "description": "Same sans, regular weight, sentence case, OCR box 12.4% of frame height, centred; arrives set on an upward arc and straightens; settles to #884295 purple, then shrinks slightly before the cut."
+      },
+      {
+        "role": "Wordmark lockup",
+        "description": "Mark (rounded square, #030303, about 6% of frame width) plus wordmark in medium sans, cap height similar to the mark's inner glyph; lockup 33% of frame width at 7.83 s, 31% at the end card; centred as a unit."
+      },
+      {
+        "role": "Product interface text",
+        "description": "Real interface type at reading size only after a punch-in: prompt text about 2.8% of frame height before the punch-in and about 7% after (OCR 0.037 -> 0.098 line boxes); checklist rows about 4.5% of frame height, left-aligned at x 0.06-0.08."
+      },
+      {
+        "role": "Range line (orbit shot)",
+        "description": "Semibold sans, sentence case, about 5.6% line box, centred inside the ring; typed word by word."
+      },
+      {
+        "role": "Value headline and sub-line",
+        "description": "Headline: medium sans in #030303, sentence case, about 84% of frame width at y 0.37-0.50, centred. Sub-line: regular sans in #666666, about 64% width directly under it, typed with a visible thin caret. Four pill chips (coloured fill, white label, about 3% of height) float off the corners of the text block."
+      },
+      {
+        "role": "Call to action",
+        "description": "Dark #333333 pill button with white label, 19% of frame width, 3.3% of height, centred at y 0.64; web address in small grey at y 0.73."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": [
+      "speech-text.json screenText boxes at onsets 1.367, 6.767, 7.833, 10.533, 11.933, 15.333, 18.833, 21.133, 23.017, 27.517, 27.933 s",
+      "visuals/a1/m01a-words-1.jpg F0-F29", "visuals/a1/m01b-words-2.jpg F30-F59",
+      "visuals/a1/m05-black-to-arc.jpg F180-F197",
+      "visuals/a1/m16-tilt-out.jpg F720",
+      "visuals/a1/m17-endcard.jpg F841-F845",
+      "font family is inferred from glyph shapes only"
+    ]
+  },
+  "composition": {
+    "value": "Centre-weighted throughout: every hero element (line, mark, lockup, headline, phone, ring) has its centre within 0.45-0.55 of frame width and 0.40-0.55 of height, except the punch-in on the prompt field, which deliberately crops the field off the left edge (field at x 0.0-0.64) so the text reads at 7% of height. The hook line spans 77% of width inside four corner dots placed about 4% outside the text box. The orbit ring is an ellipse about 70% wide by 85% high around a centred line. White space dominates: on white shots the ground is 93-99% of pixels.",
+    "basis": "measured",
+    "confidence": 0.8,
+    "evidence": [
+      "speech-text.json screenText boxes (x, width) for every hero line",
+      "palette pixel shares from ffmpeg samples at F0-F880",
+      "visuals/a1/m10-punch-in.jpg F346-F359",
+      "visuals/a1/m14-ring-spin.jpg F588-F611"
+    ]
+  },
+  "materials": {
+    "value": "Mostly flat vector on white. Three material accents: a photographic coastal plate with real depth of field (background defocused after the punch-in), a pastel gradient ground with a faint square grid behind the product screen, and a 3D phone with a black bezel lit flat on white. Photo thumbnails in the ring have rounded corners and soft drop shadows.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/m03-push-cut.jpg F94", "visuals/a1/m09-circle-open.jpg F289", "visuals/a1/m12-to-phone.jpg F505", "visuals/a1/m14-ring-spin.jpg F593"]
+  },
+  "lighting": {
+    "value": "No staged light on the graphics: shadowless white, soft shadows only under thumbnails and the phone. The plate is late-afternoon natural light. The dark name shot has no gradient or vignette beyond the soft edge of the iris disc.",
+    "basis": "observed",
+    "confidence": 0.7,
+    "evidence": ["visuals/contact-sheet-01.jpg 3M, 5M, 14M, 15M"]
+  },
+  "styleSummary": "Clean white product-launch style: one neo-grotesque sans, ink #030303 on #FEFEFE, colour used only as an arrival tint (violet-to-raspberry) and a few accents (teal, a pastel product ground). It feels made rather than generic because something is always being written or carried, and one dark shot and one photographic plate break the white."
+}

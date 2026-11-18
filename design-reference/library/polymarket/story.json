@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "idea": {
+    "value": "A contest announcement told as a chain of numbers arriving: every claim is a value that counts up on screen, so the viewer watches the stake grow rather than reading about it.",
+    "basis": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/contact-sheet-01.jpg",
+      "visuals/a1/gauge-start.jpg F396-F416",
+      "visuals/a1/top-count.jpg F583-F596",
+      "visuals/a1/tenk-tag.jpg F625-F639"
+    ]
+  },
+  "audience": {
+    "value": "People who already trade on-chain or use prediction markets: the film never explains leverage, long or short, or what a perpetual is, and it expects them to read a ticker card in 0.2 s.",
+    "basis": "inferred",
+    "confidence": 0.65,
+    "evidence": [
+      "visuals/a1/card-grid.jpg F216-F252",
+      "visuals/a1/form-in.jpg F316"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 2.9,
+      "device": "Sender, then category, then the event, then one verb of urgency: four text states in 2.9 s on empty grounds, the last on a hard colour change.",
+      "description": "Logo alone on paper (0-0.97 s); one small blue word replaces it (F29); a second word joins (F43); hard cut to a saturated blue field with 'is live' pushing in from 60% scale with rings expanding behind it (F63). The first frame shows no product and no promise: the eye has nothing to read but one word in a large empty frame, so each new word is an event. The colour flip at 2.10 s is the first jolt."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/open-word.jpg F12-F64",
+      "visuals/a1/islive-count.jpg F63-F85"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 2.9,
+        "purpose": "Announce: who, what, that it is happening now",
+        "retentionDevice": "Sparse words, each replacing the last; first colour flip at 2.10 s",
+        "content": "Logo, the product-line word alone, then with the word naming the event, then a two-word all-caps launch line"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/open-word.jpg",
+        "visuals/a1/islive-count.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.9,
+        "endSec": 4.9,
+        "purpose": "Name the stake and the cadence",
+        "retentionDevice": "Counter ticks to the prize, then a bar chart climbs and swallows the frame",
+        "content": "$45,000 to $50,000; bar chart fills to blue; 'EVERY 2 WEEKS'"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/bars-fill.jpg F99-F122"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 4.9,
+        "endSec": 10.53,
+        "purpose": "Show breadth of what can be traded",
+        "retentionDevice": "Dark pause, then a coin spins in and lands in a card; the card cycles assets, then pulls back to an endless row",
+        "content": "'Up to 50x', '90 markets', coin, ticker cards"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/black-lines.jpg",
+        "visuals/a1/coin-card.jpg",
+        "visuals/a1/card-grid.jpg",
+        "visuals/a1/card-pullout.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 10.53,
+        "endSec": 14.37,
+        "purpose": "Show the single action, then what it could reach",
+        "retentionDevice": "Real-looking interface operated by itself; the button grows until it hides the interface; hard cut to a gauge racing to its maximum",
+        "content": "Order form: amount to $100, leverage to 50x, place order; gauge $2K to $100K"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/form-in.jpg",
+        "visuals/a1/form-slider.jpg",
+        "visuals/a1/button-fill.jpg",
+        "visuals/a1/gauge-start.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 14.37,
+        "endSec": 16.37,
+        "purpose": "State the rule of entry",
+        "retentionDevice": "Three hard text swaps with changing scale: big, small, biggest",
+        "content": "'START' 'TRADING' 'TO ENTER'"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/start-words.jpg F432-F489"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 16.37,
+        "endSec": 19.37,
+        "purpose": "Let the viewer imagine winning",
+        "retentionDevice": "A profit figure running up, then the same figure seen in a ranking row labelled as the viewer, at rank 1",
+        "content": "+$447k counter; ranking with '(You)' row pinned, then punch in"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/pnl-count.jpg",
+        "visuals/a1/board-fly.jpg",
+        "visuals/a1/board-row.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 19.37,
+        "endSec": 23.83,
+        "purpose": "Spell out the reward",
+        "retentionDevice": "Threshold counts up, top prize counts up with a tag wiping in, an itemised paper slip prints itself",
+        "content": "the ranking cut-off as a number, then a five-word all-caps reward line, then the first prize as a figure, prize breakdown slip"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/top-count.jpg",
+        "visuals/a1/rewarded.jpg",
+        "visuals/a1/tenk-tag.jpg",
+        "visuals/a1/receipt.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 23.83,
+        "endSec": 27.0,
+        "purpose": "Convert into urgency",
+        "retentionDevice": "Countdown collapses from 13 days to zero in 1.3 s; zero is held; the title of the first round lands on the cut",
+        "content": "Countdown to 0D 0H 0M; 'COMPETITION #1'; 'STARTS NOW', dates"
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/receipt-count.jpg F715-F728",
+        "visuals/a1/zero-cut.jpg",
+        "visuals/a1/comp-starts.jpg"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 27.0,
+        "endSec": 30.1,
+        "purpose": "Recap, and turn the offer into a dare",
+        "retentionDevice": "Motion stops: after 27 s of constant movement the frames go still, so the one question reads with weight",
+        "content": "$30K to $50K; the period as a three-word all-caps line; the closing dare, a seven-word all-caps question"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/recap.jpg F846-F874",
+        "visuals/a1/question-cta.jpg F879-F897",
+        "motion.json s019-s021 meanEnergy 0.007, 0.003, 0.005"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 30.1,
+        "endSec": 36.03,
+        "purpose": "Call to action, name, legal",
+        "retentionDevice": "The rings from the opening return, so the film closes its own loop; then quiet end card",
+        "content": "'START TRADING' over rings and a line chart; product word and address; logo with legal text"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/question-cta.jpg F903-F951",
+        "visuals/a1/endcard.jpg"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The dare at 29.17 s, a question whether the viewer can make the ranking, is the payoff: all the numbers were building to the viewer's own place on that ranking.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "visuals/a1/question-cta.jpg F879-F897",
+      "visuals/a1/board-row.jpg"
+    ]
+  },
+  "callToAction": {
+    "value": "One verb phrase on the blue ground at 30.1-31.73 s, then the address at 31.73-33.17 s. The same two words have already appeared at 14.4-15.5 s as the rule of entry, so the action is rehearsed.",
+    "basis": "observed",
+    "confidence": 0.95,
+    "evidence": [
+      "visuals/a1/question-cta.jpg F903-F951",
+      "visuals/a1/endcard.jpg F960-F987",
+      "visuals/a1/start-words.jpg"
+    ]
+  },
+  "whyItWorks": [
+    "No voice (speech-text.json holds no words) and at most one idea per frame, so it plays muted and needs no translation of anything but short words.",
+    "A number counting up is a story in under a second: it has a beginning, tension and an arrival. The film uses this at least seven times (spans in techniques.json), so its grammar is learned by the second use.",
+    "Three grounds (saturated blue, near-white, black) changed by hard cut mean a jolt of contrast every 0.95 s at the median, without any effect being applied.",
+    "The ranking row labelled for the viewer casts them as the winner before the film tells them what winning pays.",
+    "Stopping the motion at 27-30 s after constant drift makes the closing question the loudest moment visually, because nothing else is moving."
+  ]
+}

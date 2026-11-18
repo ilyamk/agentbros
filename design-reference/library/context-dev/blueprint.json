@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "context-dev",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "durationSec": 19.767,
+  "slots": [
+    {
+      "id": "b01-crowd-and-query",
+      "role": "hook: the many, and a precise question asked of them",
+      "startSec": 0,
+      "durationSec": 2.933,
+      "visualRecipe": "Frame 0 pure white. A grid of about 14x10 rounded tiles, each the same kind of item (faces, products, documents) rendered in one-colour halftone on white, gutters about a fifth of a tile. A frosted translucent input bar about 50% of frame width centred at y 0.48, on its own layer above the grid. End state: grid overfilling the frame at about 3 tiles across, the bar holding a complete query.",
+      "motionRecipe": "Grid scales from 18% of frame width to overfill in 4 frames, then decays (expo.out, about 0.77 s). Bar: dot at centre on frame 10, widens to a pill over 9 frames (power2.out); typing from frame 22 at 1 character a frame. Second push step at about 1.6 s: a smaller jump-and-settle (0.5 s). The bar never scales with the grid. Last 2 frames: bar outline brightens as a submit.",
+      "soundRecipe": "Sparse intro: a light hit on the first scale-up, a second on the push step; quiet bed. Keep the intro's onsets few so each move reads as caused.",
+      "copySlot": {
+        "purpose": "the question the audience would type, specific enough to be believable",
+        "maxWords": 9
+      },
+      "techniqueIds": [
+        "t01-stepped-push-into-crowd",
+        "t02-frosted-query-bar-typing"
+      ]
+    },
+    {
+      "id": "b02-the-one",
+      "role": "answer: one item survives and becomes real",
+      "startSec": 2.933,
+      "durationSec": 1.434,
+      "visualRecipe": "White ground, a single tile from the grid centred at 24% of frame width x 54% of height, still in halftone. Under it a name line left-aligned to the tile's edge at about 2.5% of frame height, a lighter role line below. A small grey label begins at the top right where the next detail will be. End state: the tile shows the real photo, the name complete.",
+      "motionRecipe": "Hard cut with a one-frame ghost of the grid; tile pops from 9% to 24% width in 2 frames (expo.out), then near-still. Halftone dots flicker per frame (seeded). Name types one glyph a frame with a 2-3 frame blur-in. Last 6 frames: halftone cross-fades to the photo (sine.inOut).",
+      "soundRecipe": "Place the cut on a swell or hit; nothing else needed.",
+      "copySlot": {
+        "purpose": "the identity of the single result and its role",
+        "maxWords": 6
+      },
+      "techniqueIds": [
+        "t03-crowd-to-one-cut",
+        "t04-halftone-resolves-to-photo"
+      ]
+    },
+    {
+      "id": "b03-hero-detail",
+      "role": "emphasis: the interface's own small label becomes the hero word",
+      "startSec": 4.367,
+      "durationSec": 0.9,
+      "visualRecipe": "The real record interface at about 25x scale on the label still being typed: one word at 57% of frame width, left edge at x 0.20, near-black #313131; a light grey line under it at about half the size. End state: word complete, line half typed, view drifting right.",
+      "motionRecipe": "Hard cut on the frame after the small label's fourth glyph; typing continues at about 2 frames a glyph with blur-in. From about 0.4 s in, a lateral pan right (sine.out, about 0.4 s); the next cut lands mid-pan.",
+      "soundRecipe": "The dense section can start here; no cut has to sit on a hit.",
+      "copySlot": {
+        "purpose": "the one interface label worth a hero size, and a short description line",
+        "maxWords": 10
+      },
+      "techniqueIds": [
+        "t05-punch-in-on-typing-word"
+      ]
+    },
+    {
+      "id": "b04-detail-labels",
+      "role": "proof: the record's attribute names arrive as the view travels down",
+      "startSec": 5.267,
+      "durationSec": 1.933,
+      "visualRecipe": "Close-up on the label column of the real record: shadow band of the card edge at frame left (x 0.05-0.3), labels at about 6% cap height in light grey with their real service icons, left-aligned at x 0.59.",
+      "motionRecipe": "Cut in on an empty panel. Rows arrive one by one, icon fade-scale first then label typing at 1 glyph a frame with blur-in, each just ahead of the camera. Camera tilts down about 0.46 of frame height (power3.inOut, 1.3 s); cut away before it settles.",
+      "soundRecipe": "Bed rises here; let the louder section begin as the rows start to fill.",
+      "copySlot": {
+        "purpose": "attribute names of the real interface",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "t06-alternating-column-reframes",
+        "t07-rows-fill-as-camera-tilts"
+      ]
+    },
+    {
+      "id": "b05-detail-values",
+      "role": "proof: the values, from the opposite side of the record",
+      "startSec": 7.2,
+      "durationSec": 1.233,
+      "visualRecipe": "Close-up on the value column: card edge and shadow at frame right (x 0.85-1.0), values at 6-9% of frame height in dark grey, left-aligned at x 0.09-0.16, the first row carrying a small accent icon.",
+      "motionRecipe": "Hard cut mid-tilt; the downward tilt continues (power3.inOut); values type at 1 glyph a frame with blur-in as they come into view.",
+      "soundRecipe": "Bed continues; no cut sync required.",
+      "copySlot": {
+        "purpose": "the values that prove the record is complete",
+        "maxWords": 10
+      },
+      "techniqueIds": [
+        "t06-alternating-column-reframes",
+        "t07-rows-fill-as-camera-tilts"
+      ]
+    },
+    {
+      "id": "b06-whole-record",
+      "role": "payoff: the complete record at once",
+      "startSec": 8.433,
+      "durationSec": 2.634,
+      "visualRecipe": "Hard cut to a wider crop holding both columns, then the whole record centred on white at about 46% x 90% of frame with a soft grey shadow, a small counter of hidden extra items at its foot. End state: the full record held still for about 1.5 s.",
+      "motionRecipe": "Pull-out about 3.5x in scale over 1.62 s: cubic-bezier(0.65, 0.083, 0.046, 1.151) (expo.inOut with a slight overshoot). Hold from about 9.6 s to the cut.",
+      "soundRecipe": "Nothing new; the hold is a rest before the next cut.",
+      "copySlot": {
+        "purpose": "all attributes at small size, plus a count of further items",
+        "maxWords": 60
+      },
+      "techniqueIds": [
+        "t06-alternating-column-reframes",
+        "t08-populate-then-pull-out-reveal",
+        "t09-hold-the-finished-state"
+      ]
+    },
+    {
+      "id": "b07-one-of-many",
+      "role": "scale: the single result was one of a crowd",
+      "startSec": 11.067,
+      "durationSec": 3.066,
+      "visualRecipe": "Grid of copies of the record (each with its own face) in the opening's one-colour halftone, three columns visible at about 25% width each. Halftone cross-fades to pale blue-grey #C5D3ED cards, then to white cards. End state: about 14 columns of small cards at 64% of frame width, centred, still.",
+      "motionRecipe": "Hard cut on the strongest hit of the section. Pull-out in two stages: stage one ramps for 8 frames then decays (about 1.07 s); the halftone fades over 5 frames at about 0.3 s in; stage two from about 1.1 s in, circ.out, about 1.3-1.5 s. Hold still for about 0.47 s.",
+      "soundRecipe": "Cut on a clear hit (onset or swell within 1 frame).",
+      "techniqueIds": [
+        "t10-one-becomes-crowd-pull-out",
+        "t09-hold-the-finished-state"
+      ]
+    },
+    {
+      "id": "b08-crowd-to-particles",
+      "role": "transition: the crowd turns into matter",
+      "startSec": 14.133,
+      "durationSec": 1.367,
+      "visualRecipe": "The still card grid; each card becomes a flat accent-coloured disc (#2B5EE5 class, three or four sizes, no glow) at its grid position with slight jitter. End state: a loose cloud of discs that begins to narrow towards frame right.",
+      "motionRecipe": "Radial stagger from the grid centre, 0.77 s, the ring accelerating as it widens (power1.in). Then the cloud converges towards a point at frame right, accelerating (power2.in), 0.4 s.",
+      "soundRecipe": "Continuous bed; no hit required.",
+      "techniqueIds": [
+        "t11-cards-ripple-to-dots",
+        "t12-particles-write-the-line"
+      ]
+    },
+    {
+      "id": "b09-two-part-line",
+      "role": "claim: input on the left, result on the right",
+      "startSec": 15.5,
+      "durationSec": 2.433,
+      "visualRecipe": "Discs flatten into a band at y 0.50 streaming right. Two short phrases on one baseline at y 0.50, small (about 4.7% of frame height), near-black, sentence case: the first at x 0.14, the second at x 0.67. About 95% of the frame stays white. End state: both phrases alone on white.",
+      "motionRecipe": "The first phrase types in at the stream's trailing edge from about 0.07 s in; the second types inside the stream as its tail leaves frame right, about 0.93-1.4 s in. Hold about 0.9 s, then both blur-fade out together over 6 frames.",
+      "soundRecipe": "Continuous bed; let the line read without a new hit.",
+      "copySlot": {
+        "purpose": "the method in two halves: what you give, what comes back",
+        "maxWords": 8
+      },
+      "techniqueIds": [
+        "t12-particles-write-the-line",
+        "t13-blur-fade-through-white-sign-off"
+      ]
+    },
+    {
+      "id": "b10-sign-off",
+      "role": "call to action: product label and mark on the line's baseline",
+      "startSec": 17.933,
+      "durationSec": 1.834,
+      "visualRecipe": "Five frames of empty white. A product label at the left anchor (x 0.14) and the mark with wordmark at the right anchor (x 0.70), same baseline and size class as the line before. Final three frames empty white.",
+      "motionRecipe": "Label blurs in over 4 frames, mark over about 10 frames starting 1 frame later (sine.inOut). Hold about 0.9 s. Everything blurs out over 6 frames.",
+      "soundRecipe": "Bed thins to about a third of its level in the last second.",
+      "copySlot": {
+        "purpose": "product category label and brand mark",
+        "maxWords": 4
+      },
+      "techniqueIds": [
+        "t13-blur-fade-through-white-sign-off",
+        "t09-hold-the-finished-state"
+      ]
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: tempo detection is unreliable (confidence 0.39; swells suggest a slower pulse than the detected one). Eight shots, median 1.88 s, 7 cuts. Cuts only change scale on one object and land while something moves. Place two cuts on clear hits (the crowd-to-one cut and the one-to-crowd cut); the reframes in the reading section follow the reading, not the music. Long unbroken shots carry the transformations: 2.9 s for the hook, 6.9 s from the crowd to the line."
+  },
+  "style": "Light and quiet: white ground, one accent, a one-colour halftone as the brand texture, a single neutral grotesque used small, and the real interface shown at reading size. Transformation of one set of marks instead of scene changes; stepped camera moves; per-glyph blur-in typing everywhere text appears.",
+  "transferRules": {
+    "keep": [
+      "One object carried through every state: crowd tile, single item, full record, crowd tile, particle, letter.",
+      "Bookend: two stepped push-ins from crowd to one at the start, two stepped pull-outs from one to crowd later, with the same texture as the hinge.",
+      "The input bar stays fixed while the world zooms behind it.",
+      "Real interface at reading size, read in close-ups that alternate side; each cut lands on motion.",
+      "Text always types in per glyph with a short blur-in; one hero word only, everything else small.",
+      "Holds before each transformation (about 1.5 s, 0.5 s, 5 frames).",
+      "Final line and sign-off share one baseline and two anchors; the last frames are empty ground."
+    ],
+    "mustChange": [
+      "branding: mark, wordmark, product label and the accent colour",
+      "music",
+      "graphics: the halftone screen, card layout, icons and every portrait (use licensed or own imagery)",
+      "copy: query, names, attribute labels, values and the closing line",
+      "the persons shown: no real individual's data without consent"
+    ]
+  }
+}

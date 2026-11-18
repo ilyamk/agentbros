@@ -1,0 +1,2363 @@
+{
+  "version": 1,
+  "category": "audio-to-video",
+  "syncedAt": "2026-11-15",
+  "entries": [
+    {
+      "endpoint": "argil/avatars/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "Avatars Audio to Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/echomimic-v3",
+      "category": "audio-to-video",
+      "displayName": "EchoMimic V3",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "echomimic",
+        "talking-head",
+        "audio-to-video"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/elevenlabs/dubbing",
+      "category": "audio-to-video",
+      "displayName": "ElevenLabs Dubbing",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9942346b92a9a45f8b4bb9e39bd1153ce088b46dba8f5e8329886643aa288a7e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Fdubbing&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": false,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "highest_resolution",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "num_speakers",
+          "type": "integer",
+          "required": false,
+          "min": 1,
+          "max": 50
+        },
+        {
+          "name": "source_lang",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "target_lang",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "video_url",
+          "type": "string",
+          "required": false,
+          "media": "video"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video",
+          "audio"
+        ],
+        "fields": [
+          "audio",
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "dubbing",
+        "audio-to-audio"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/longcat-single-avatar/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "Longcat Single Avatar",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/longcat-single-avatar/image-audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "Longcat Single Avatar",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video",
+        "image-to-video"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-22b/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "LTX-2.3 22B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "349abf9787d2b6b48eb990e4d312c395ec429a12afd7fd2b7a1b430ef3135d12",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-22b%2Faudio-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "none",
+            "regular",
+            "high",
+            "full"
+          ],
+          "default": "regular"
+        },
+        {
+          "name": "audio_cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 7
+        },
+        {
+          "name": "audio_modality_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "audio_rescaling_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "audio_stg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 0
+        },
+        {
+          "name": "audio_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "camera_lora",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "none"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "camera_lora_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "distill_lora_first_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.2
+        },
+        {
+          "name": "distill_lora_second_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "end_image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "end_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "gradient_estimation_gamma",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 2
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "news broadcast, 3d animation, computer graphics, pc game, console game, video game, cartoon, childish, watermark, logo, text, on screen text, subtitles, titles, signature, slowmo, static"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 8,
+          "max": 50,
+          "default": 40
+        },
+        {
+          "name": "preprocess_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ltx2",
+            "linear_quadratic",
+            "beta"
+          ],
+          "default": "ltx2"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "use_multiscale",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "use_restart_sampling",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "video_cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 3
+        },
+        {
+          "name": "video_modality_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "video_output_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "X264 (.mp4)",
+            "VP9 (.webm)",
+            "PRORES4444 (.mov)",
+            "GIF (.gif)"
+          ],
+          "default": "X264 (.mp4)"
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_rescaling_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "video_size",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "landscape_16_9"
+        },
+        {
+          "name": "video_stg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 0
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-22b/audio-to-video/lora",
+      "category": "audio-to-video",
+      "displayName": "LTX-2.3 22B",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "f99123cda161e0ca8db37401d57bf7f9356ab1605a3944014ae9d2eefbeec971",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-22b%2Faudio-to-video%2Flora&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "none",
+            "regular",
+            "high",
+            "full"
+          ],
+          "default": "regular"
+        },
+        {
+          "name": "audio_cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 7
+        },
+        {
+          "name": "audio_modality_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "audio_rescaling_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "audio_stg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 0
+        },
+        {
+          "name": "audio_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "camera_lora",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "none"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "camera_lora_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "distill_lora_first_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.2
+        },
+        {
+          "name": "distill_lora_second_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "end_image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "end_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "gradient_estimation_gamma",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 2
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "loras",
+          "type": "array",
+          "required": true,
+          "array": true
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "news broadcast, 3d animation, computer graphics, pc game, console game, video game, cartoon, childish, watermark, logo, text, on screen text, subtitles, titles, signature, slowmo, static"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 8,
+          "max": 50,
+          "default": 40
+        },
+        {
+          "name": "preprocess_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ltx2",
+            "linear_quadratic",
+            "beta"
+          ],
+          "default": "ltx2"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "use_multiscale",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "use_restart_sampling",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "video_cfg_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 3
+        },
+        {
+          "name": "video_modality_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        {
+          "name": "video_output_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "X264 (.mp4)",
+            "VP9 (.webm)",
+            "PRORES4444 (.mov)",
+            "GIF (.gif)"
+          ],
+          "default": "X264 (.mp4)"
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_rescaling_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "video_size",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "landscape_16_9"
+        },
+        {
+          "name": "video_stg_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 20,
+          "default": 0
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-22b/distilled/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "LTX-2.3 22B Distilled",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "959de7addad24cdd0b8ad2d035c61561df0c1ac279a933f57fef736570a57354",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-22b%2Fdistilled%2Faudio-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "none",
+            "regular",
+            "high",
+            "full"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "audio_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "camera_lora",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "none"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "camera_lora_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "distill_lora_second_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "end_image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "end_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "news broadcast, 3d animation, computer graphics, pc game, console game, video game, cartoon, childish, watermark, logo, text, on screen text, subtitles, titles, signature, slowmo, static"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "preprocess_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ltx2",
+            "linear_quadratic",
+            "beta"
+          ],
+          "default": "ltx2"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "use_multiscale",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "video_output_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "X264 (.mp4)",
+            "VP9 (.webm)",
+            "PRORES4444 (.mov)",
+            "GIF (.gif)"
+          ],
+          "default": "X264 (.mp4)"
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_size",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "landscape_16_9"
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-22b/distilled/audio-to-video/lora",
+      "category": "audio-to-video",
+      "displayName": "LTX-2.3 22B Distilled",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "422049fd4c9d16fc82e5acf961a3b8904bed76e6d5e74cccf6149e0af6f38957",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-22b%2Fdistilled%2Faudio-to-video%2Flora&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "acceleration",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "none",
+            "regular",
+            "high",
+            "full"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "audio_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "camera_lora",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "dolly_in",
+            "dolly_out",
+            "dolly_left",
+            "dolly_right",
+            "jib_up",
+            "jib_down",
+            "static",
+            "none"
+          ],
+          "default": "none"
+        },
+        {
+          "name": "camera_lora_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "distill_lora_second_pass_scale",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "end_image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "end_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "loras",
+          "type": "array",
+          "required": true,
+          "array": true
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "news broadcast, 3d animation, computer graphics, pc game, console game, video game, cartoon, childish, watermark, logo, text, on screen text, subtitles, titles, signature, slowmo, static"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "preprocess_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "scheduler",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "ltx2",
+            "linear_quadratic",
+            "beta"
+          ],
+          "default": "ltx2"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "use_multiscale",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "video_output_type",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "X264 (.mp4)",
+            "VP9 (.webm)",
+            "PRORES4444 (.mov)",
+            "GIF (.gif)"
+          ],
+          "default": "X264 (.mp4)"
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_size",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "landscape_16_9"
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-quality/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "Ltx 2.3 Quality",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e6d2a9a4f175833e55a8bee8a76d779cf5b55de661dc77be80667afb04142f0e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-quality%2Faudio-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "frames_per_second",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 1
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "color distortion, overexposure, static, blurry details, subtitles, style, artwork, painting, frame, still, dim overall tone, worst quality, low quality, JPEG compression artifacts, ugly, mutilated, extra fingers, poorly drawn hands, poorly drawn face, deformed, disfigured, malformed limbs, fused fingers, motionless frame, cluttered background, three legs, crowded background, walking backwards"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 8,
+          "max": 30,
+          "default": 15
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3-quality/audio-to-video/lora",
+      "category": "audio-to-video",
+      "displayName": "Ltx 2.3 Quality",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "94d20de204a22ffbfa5ca7c1bdb686893b10158156b0e297df56efd1f3b6a211",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3-quality%2Faudio-to-video%2Flora&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_prompt_expansion",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "frames_per_second",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 60,
+          "default": 24
+        },
+        {
+          "name": "generate_audio",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 20,
+          "default": 1
+        },
+        {
+          "name": "image_strength",
+          "type": "number",
+          "required": false,
+          "min": 0,
+          "max": 1,
+          "default": 0.7
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "loras",
+          "type": "array",
+          "required": true,
+          "max": 3,
+          "array": true
+        },
+        {
+          "name": "match_audio_length",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "color distortion, overexposure, static, blurry details, subtitles, style, artwork, painting, frame, still, dim overall tone, worst quality, low quality, JPEG compression artifacts, ugly, mutilated, extra fingers, poorly drawn hands, poorly drawn face, deformed, disfigured, malformed limbs, fused fingers, motionless frame, cluttered background, three legs, crowded background, walking backwards"
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 9,
+          "max": 481,
+          "default": 121
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 8,
+          "max": 30,
+          "default": 15
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "object|string",
+          "required": false,
+          "enum": [
+            "auto",
+            "square_hd",
+            "square",
+            "portrait_4_3",
+            "portrait_16_9",
+            "landscape_4_3",
+            "landscape_16_9"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "sync_mode",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video",
+        "lora"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/ltx-2.3/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "LTX 2.3 Video Pro",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "af343122befd9e1b36dc778781ae4ac17cd764d23b10dc2bca34dff51456693d",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fltx-2.3%2Faudio-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "16:9",
+            "9:16"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 50
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 5000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lipsync"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/wan/v2.2-14b/speech-to-video",
+      "category": "audio-to-video",
+      "displayName": "Wan-2.2 Speech-to-Video 14B",
+      "status": "active",
+      "retiresAt": "2027-01-04T08:00:00.000Z",
+      "replacement": "minimax/h3-max/lip-sync/image-to-video",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "901b5be4ac76009d1feace863266688cdb7ff49f31bf7dbb4613b8a6855b74cf",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fwan%2Fv2.2-14b%2Fspeech-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_output_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "frames_per_second",
+          "type": "integer",
+          "required": false,
+          "min": 4,
+          "max": 60,
+          "default": 16
+        },
+        {
+          "name": "guidance_scale",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 3.5
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": true,
+          "media": "image"
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "num_frames",
+          "type": "integer",
+          "required": false,
+          "min": 40,
+          "max": 120,
+          "default": 80
+        },
+        {
+          "name": "num_inference_steps",
+          "type": "integer",
+          "required": false,
+          "min": 2,
+          "max": 40,
+          "default": 27
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "480p",
+            "580p",
+            "720p"
+          ],
+          "default": "480p"
+        },
+        {
+          "name": "seed",
+          "type": "integer",
+          "required": false
+        },
+        {
+          "name": "shift",
+          "type": "number",
+          "required": false,
+          "min": 1,
+          "max": 10,
+          "default": 5
+        },
+        {
+          "name": "video_quality",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "maximum"
+          ],
+          "default": "high"
+        },
+        {
+          "name": "video_write_mode",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "fast",
+            "balanced",
+            "small"
+          ],
+          "default": "balanced"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video",
+        "talking-head"
+      ]
+    },
+    {
+      "endpoint": "lightricks/ltx-2.5/audio-to-video/fast",
+      "category": "audio-to-video",
+      "displayName": "Ltx 2.5 Audio to Video Fast",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "0c021c0cdcc1817e9052c677b96ac26a02df0e5f7f143994b6a907177da28695",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=lightricks%2Fltx-2.5%2Faudio-to-video%2Ffast&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "16:9",
+            "9:16"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 5000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lip-sync"
+      ]
+    },
+    {
+      "endpoint": "lightricks/ltx-2.5/audio-to-video/pro",
+      "category": "audio-to-video",
+      "displayName": "Ltx 2.5 Audio to Video Pro",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "9791fe62db093ea9a5c8e044c00c1eeff1540583e5ad6f93c6d24bfd678a2dfb",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=lightricks%2Fltx-2.5%2Faudio-to-video%2Fpro&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "auto",
+            "16:9",
+            "9:16"
+          ],
+          "default": "auto"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": false,
+          "min": 1,
+          "max": 5000
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lip-sync"
+      ]
+    },
+    {
+      "endpoint": "mureka/api/generate/lyrics-video",
+      "category": "audio-to-video",
+      "displayName": "Mureka Lyrics Video",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "6bfda9d20f1faae43ad625b3211eb0b7f36d41b3dde33280c40fac2e5aa47331",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=mureka%2Fapi%2Fgenerate%2Flyrics-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "3:4",
+            "4:3"
+          ],
+          "default": "9:16"
+        },
+        {
+          "name": "background_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "cover_url",
+          "type": "string",
+          "required": false,
+          "media": "file"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "layout",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "layout_1",
+            "layout_2",
+            "layout_3",
+            "layout_4",
+            "layout_5",
+            "layout_6",
+            "layout_7"
+          ],
+          "default": "layout_1"
+        },
+        {
+          "name": "lyrics_end_row",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "lyrics_start_row",
+          "type": "integer",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "selection_end",
+          "type": "integer",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "selection_start",
+          "type": "integer",
+          "required": false,
+          "min": 0
+        },
+        {
+          "name": "song_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "min": 1
+        },
+        {
+          "name": "upload_audio_id",
+          "type": "string",
+          "required": false,
+          "min": 1
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "music",
+        "lyrics",
+        "video"
+      ]
+    },
+    {
+      "endpoint": "pixverse/music-video/vibemv",
+      "category": "audio-to-video",
+      "displayName": "PixVerse VibeMV",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e745d4563576dda208319081528e323db4a509d230fc0baa738d68ebae920b6e",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=pixverse%2Fmusic-video%2Fvibemv&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "aspect_ratio",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4"
+          ],
+          "default": "16:9"
+        },
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "media": "audio"
+        },
+        {
+          "name": "enable_safety_checker",
+          "type": "boolean",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        },
+        {
+          "name": "lip_sync_switch",
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "lyrics",
+          "type": "string",
+          "required": false,
+          "max": 5000
+        },
+        {
+          "name": "music_style",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Pop",
+            "Rock",
+            "Hip Hop",
+            "R&B",
+            "Jazz",
+            "Reggae",
+            "Country",
+            "Folk",
+            "Electronic",
+            "Classical",
+            "Soul",
+            "Funk",
+            "Metal",
+            "Ambient",
+            "Others"
+          ]
+        },
+        {
+          "name": "resolution",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "720p",
+            "1080p"
+          ],
+          "default": "720p"
+        },
+        {
+          "name": "style",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "Custom",
+            "Cinematic",
+            "Lo-fi",
+            "Dreamscape",
+            "Woolen Felt",
+            "Candy",
+            "Golden Age",
+            "Voxel",
+            "Retro Game",
+            "Claymation",
+            "Woodland Tale",
+            "Impressionism",
+            "Decadence",
+            "Futuristic",
+            "Chromatic Clash",
+            "Holiday"
+          ],
+          "default": "Cinematic"
+        },
+        {
+          "name": "style_image_url",
+          "type": "string",
+          "required": false,
+          "media": "image"
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "audio-to-video",
+        "music-video",
+        "pixverse",
+        "vibemv"
+      ]
+    },
+    {
+      "endpoint": "veed/avatars/audio-to-video",
+      "category": "audio-to-video",
+      "displayName": "Avatars",
+      "status": "active",
+      "firstSeen": "2026-11-15",
+      "lastSeen": "2026-11-15",
+      "schema": {
+        "sha256": "e45565b64ce5c552d90a0868f44afa61ca15127d4ed0e376ee785fd0e96c2678",
+        "asOf": "2026-11-15",
+        "source": "https://api.fal.ai/v1/models?endpoint_id=veed%2Favatars%2Faudio-to-video&expand=openapi-3.0",
+        "cached": true
+      },
+      "inputs": [
+        {
+          "name": "audio_url",
+          "type": "string",
+          "required": true,
+          "min": 1,
+          "max": 2083,
+          "media": "audio"
+        },
+        {
+          "name": "avatar_id",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "emily_vertical_primary",
+            "emily_vertical_secondary",
+            "marcus_vertical_primary",
+            "marcus_vertical_secondary",
+            "mira_vertical_primary",
+            "mira_vertical_secondary",
+            "jasmine_vertical_primary",
+            "jasmine_vertical_secondary",
+            "jasmine_vertical_walking",
+            "aisha_vertical_walking",
+            "elena_vertical_primary",
+            "elena_vertical_secondary",
+            "any_male_vertical_primary",
+            "any_female_vertical_primary",
+            "any_male_vertical_secondary",
+            "any_female_vertical_secondary",
+            "any_female_vertical_walking",
+            "emily_primary",
+            "emily_side",
+            "marcus_primary",
+            "marcus_side",
+            "aisha_walking",
+            "elena_primary",
+            "elena_side",
+            "any_male_primary",
+            "any_female_primary",
+            "any_male_side",
+            "any_female_side"
+          ]
+        }
+      ],
+      "outputs": {
+        "kinds": [
+          "video"
+        ],
+        "fields": [
+          "video"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "verified",
+      "tags": [
+        "lipsync",
+        "audio-to-video"
+      ]
+    }
+  ]
+}

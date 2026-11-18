@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "idea": {
+    "value": "A teaser that never shows the product: it argues that an idea is not real until it can be seen and measured, by setting a short spoken sentence as tiny centred captions over macro footage that is constantly being annotated, measured and re-graded.",
+    "basis": "inferred",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json screenText: five sentence-case captions of two to five words at 0.133, 2.067, 3.533, 5.133 and 7.333 s, read as one argument: an obvious claim, then an idea nobody understands yet",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "audience": {
+    "value": "Design and product people who already know the maker's world (studio, tooling or hardware brand followers): no product, no logo, no call to action is shown, so it assumes the viewer will look the brand up or already follows it.",
+    "basis": "inferred",
+    "confidence": 0.45,
+    "evidence": [
+      "visuals/a1/w-k.jpg F220-F259: the film ends on the caption and black, no mark",
+      "visuals/contact-sheet-01.jpg"
+    ]
+  },
+  "hook": {
+    "value": {
+      "startSec": 0,
+      "endSec": 1.133,
+      "device": "frame strobe plus a statement caption",
+      "description": "F0-F8 a dot-matrix ring strobes against black frame by frame with stray blue bars, and the 2-word caption is already on screen at F4 (0.133 s). F9 (0.300) is a full white frame that grades down into a macro eye with measurement boxes drawing on (F10-F13). The eye reads before the brain parses the caption, and the HUD says 'this is being measured' before anything is explained."
+    },
+    "basis": "observed",
+    "confidence": 0.9,
+    "evidence": [
+      "visuals/a1/w-a.jpg F0-F23",
+      "visuals/a1/w-b.jpg F24-F33"
+    ]
+  },
+  "beats": [
+    {
+      "value": {
+        "startSec": 0,
+        "endSec": 1.133,
+        "purpose": "Hook: a claim of certainty set against an image under analysis",
+        "retentionDevice": "frame-level strobe, then a white flash resolving into an eye",
+        "content": "dot-ring strobe, eye plate with HUD boxes, first caption held 30 frames"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-a.jpg F0-F23"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 1.133,
+        "endSec": 3.533,
+        "purpose": "Breath: two long macro holds in near-silence that set the place",
+        "retentionDevice": "slow push and slow roll, grade steps at the hand-off between plates",
+        "content": "light crescent on a dark sphere (44 frames, 7% push), pen nib drawing a line (28 frames, 2.8 degree roll); second caption on the crescent only"
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/w-c.jpg F34-F71",
+        "visuals/a1/w-d.jpg F69-F92",
+        "visuals/a1/w-e.jpg F93-F105"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 3.533,
+        "endSec": 5.367,
+        "purpose": "Turn: the montage shows what the idea could be, too fast to hold",
+        "retentionDevice": "a 9-frame lead plate, ten 4-frame plates and a 6-frame plate; one caption over the first six, then the next caption then the caption changes over a drawing that measures itself",
+        "content": "dark objects, a dome, sparks, the eye again, wireframe, glass dome, particles, a hand typing, a droplet, scattered digits, a technical drawing with a counting degree readout"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-e.jpg F106-F118",
+        "visuals/a1/w-f.jpg F117-F142",
+        "visuals/a1/w-g.jpg F141-F160"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 5.367,
+        "endSec": 8.667,
+        "purpose": "Payoff: the picture empties while the sentence completes",
+        "retentionDevice": "ground swaps on a held caption, a blinking caret, a deleted line, four empty frames, the last line held 34 frames",
+        "content": "ultramarine then navy card, black ground with a glowing caret, closing caption, 6 black frames"
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/w-h.jpg F159-F182",
+        "visuals/a1/w-i.jpg F183-F206",
+        "visuals/a1/w-j.jpg F207-F230",
+        "visuals/a1/w-k.jpg F231-F259"
+      ]
+    }
+  ],
+  "payoff": {
+    "value": "The sentence resolves on an empty black frame: the last line holds 34 frames (7.333-8.467 s) with nothing else in picture, so the line itself is the 'idea' the film has been building toward.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/w-j.jpg F220-F230",
+      "visuals/a1/w-k.jpg F231-F254"
+    ]
+  },
+  "callToAction": {
+    "value": "None on screen. The film ends on 6 frames of black (F254-F259) under loud sound; any brand mark must come from a following card or the post that carries it.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/w-k.jpg F253-F259"
+    ]
+  },
+  "whyItWorks": [
+    "The caption is the only constant: always centred, always about 3% cap height, white. The eye parks on it while plates, grades and grounds change underneath, so even 4-frame plates read as one thought.",
+    "Speed is used once. The 1.83 s burst of 4-frame plates (3.533-5.367) is framed by two long holds before (1.47 s and 0.93 s) and a 3.3 s near-empty ending after, so it reads as a surge rather than noise.",
+    "Annotation sells 'technology' without showing a product: HUD boxes with pixel dimensions on the eye, a degree readout counting 170.4 to 172.1 on the drawing.",
+    "Every plate is touched by the grade: white-out, magenta, teal, monochrome, negative, cream. The grade steps are the film's transitions, so the footage feels authored rather than stock.",
+    "The ending subtracts: the picture goes from footage to flat colour to black with a caret, and the line is deleted and replaced, which stages the sentence's own claim that the idea is unfinished."
+  ]
+}

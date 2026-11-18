@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "palmier",
+  "techniques": [
+    {
+      "id": "request-result-loop",
+      "name": "Typed request, then the real result",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 9.44,
+          "endSec": 14.16
+        },
+        {
+          "startSec": 15.44,
+          "endSec": 23.16
+        },
+        {
+          "startSec": 29.36,
+          "endSec": 33.88
+        }
+      ],
+      "description": "Plain request typed in a field cropped so it fills about half the width (line box 9.4% of frame height), then 1-2 s of the agent's real log (hard cut onto it already scrolling, e.g. F278), then the real result in the software, each pass ending on a visible state change (22 items collapse into 4 folders about 13.44 s; a new track arrives about 21.0 s; generated close-ups flicker in the preview 32.60-32.84 s). Three passes, 4.4-7.7 s each.",
+      "route": "remotion",
+      "routeReason": "Recorded interface played with ScreenPlayback, framed with RegionCamera. The recording has to be real, so it depends on a working demo.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ScreenPlayback",
+        "RegionCamera",
+        "TypedLine"
+      ],
+      "timing": {
+        "durationSec": 4.72,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.75,
+        "evidence": [
+          "visuals/a1/p11-type-request.jpg F235-F259",
+          "visuals/a1/p04-split-11.12.jpg F272-F284",
+          "visuals/a1/c-black-editor-chat.jpg"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "confidence": 0.6,
+        "evidence": [
+          "visuals/a1/p11-type-request.jpg F236-F258 diff 0.0-0.2: no camera move on the field",
+          "visuals/a1/p10-crop-jump-18.36.jpg F458-F460 one-frame reframe"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "Nothing established for the passes as a whole. audio.json holds 132 onsets in 39 s (about 3.4 a second), so an onset within 50 ms of any time is near chance (about a third); tempo confidence 0.074 rules out a beat grid.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsets",
+          "audio.json tempo"
+        ]
+      },
+      "typography": {
+        "role": "typed request",
+        "entry": "typed with a live caret in the cropped field",
+        "alignment": "left",
+        "size": 0.094,
+        "basis": "measured",
+        "confidence": 0.7,
+        "evidence": [
+          "speech-text.json screenText 10.03 s box height 0.094, left edge x 0.17",
+          "speech-text.json screenText 16.03 s box height 0.108"
+        ]
+      },
+      "layers": 1,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 9.44,
+            "endSec": 14.16
+          },
+          "shots": [
+            "s006.1",
+            "s006.2",
+            "s007"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 15.44,
+            "endSec": 23.16
+          },
+          "shots": [
+            "s010",
+            "s011",
+            "s012",
+            "s013",
+            "s014",
+            "s015",
+            "s016",
+            "s017.1"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 29.36,
+            "endSec": 33.88
+          },
+          "shots": [
+            "s022",
+            "s023",
+            "s024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interface-crop",
+      "name": "Interface cropped so one action fills the frame",
+      "function": "emphasis",
+      "spans": [
+        {
+          "startSec": 9.44,
+          "endSec": 11.12
+        },
+        {
+          "startSec": 15.44,
+          "endSec": 16.64
+        },
+        {
+          "startSec": 17.8,
+          "endSec": 19.44
+        }
+      ],
+      "description": "Hard jumps between crops of one recording, never a slow zoom: the field fills about half the width, the timeline is cut tighter in one frame (F459, 18.36 s: diff 23.5 on that frame, 0.0-0.2 either side). The eye is put on the one action that matters, at reading size.",
+      "route": "remotion",
+      "routeReason": "RegionCamera with stepped keys.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "ScreenPlayback"
+      ],
+      "timing": {
+        "durationSec": 0.04,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p10-crop-jump-18.36.jpg F458-F460"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "The crop cuts fall inside the 14.2-21.9 s stretch where loudness peaks pulse and 9 of 9 cuts land 0.01-0.06 s before a peak; that window was chosen after seeing the peaks, so it suggests and does not prove a method.",
+        "basis": "measured",
+        "confidence": 0.35,
+        "evidence": [
+          "edit.json rhythm (50 ms RMS peaks)",
+          "audio.json onsets"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 5,
+      "toShot": 6,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 9.44,
+            "endSec": 11.12
+          },
+          "fromShot": 5,
+          "toShot": 6
+        },
+        {
+          "span": {
+            "startSec": 15.44,
+            "endSec": 16.64
+          },
+          "fromShot": 10,
+          "toShot": 11
+        },
+        {
+          "span": {
+            "startSec": 17.8,
+            "endSec": 19.44
+          },
+          "fromShot": 13,
+          "toShot": 14,
+          "timing": {
+            "durationSec": 0.04,
+            "startOffsetFromCutSec": 0,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/p10-crop-jump-18.36.jpg F459"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "preview-to-full",
+      "name": "Output leaves its preview and fills the frame",
+      "function": "reveal",
+      "spans": [
+        {
+          "startSec": 32.88,
+          "endSec": 33.88
+        }
+      ],
+      "description": "The generated close-up appears in the small preview (F822, 32.88 s) and the preview grows at a steady rate (frame difference level at 15-23 a frame) until it fills the frame and the interface has gone (F834, 33.36 s, 0.48 s); the face then keeps pushing in slowly (diff 4-8) for 12 more frames before the burst cuts in at F847.",
+      "route": "remotion",
+      "routeReason": "GrowToScene (or LayoutMorph) over a screen recording; the footage inside must be swapped for the full-resolution asset as it grows.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "GrowToScene",
+        "LayoutMorph",
+        "ScreenPlayback"
+      ],
+      "timing": {
+        "durationSec": 0.48,
+        "startOffsetFromCutSec": 1.04,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p07-preview-full.jpg F822-F834"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "main",
+            "name": "none",
+            "durationSec": 0.48
+          },
+          {
+            "part": "settle",
+            "name": "none",
+            "durationSec": 0.52
+          }
+        ],
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/a1/p07-preview-full.jpg F823-F834 diff level 14.6-23.3",
+          "visuals/a1/p07-preview-full.jpg F835-F846 diff level 4.3-8.3"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "An onset at 32.879 s coincides with the preview appearing (F822); audio.json holds 132 onsets in 39 s (about 3.4 a second), so an onset within 50 ms of any time is near chance (about a third); tempo confidence 0.074 rules out a beat grid.",
+        "basis": "inferred",
+        "confidence": 0.35,
+        "evidence": [
+          "audio.json onsets 32.879"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "layers": 2,
+      "shots": [
+        "s024"
+      ]
+    },
+    {
+      "id": "physical-screen-push",
+      "name": "Camera pushes from a room into the screen",
+      "function": "transition",
+      "spans": [
+        {
+          "startSec": 4.52,
+          "endSec": 5.2
+        },
+        {
+          "startSec": 23.12,
+          "endSec": 24.04
+        }
+      ],
+      "description": "Real camera on a monitor, matched to a screen recording. In: the camera moves past the soft foreground bottle (F113-F118, 0.24 s) and pushes down into the monitor, decelerating, until the dock fills the frame and stops dead (F119-F130, 0.48 s). Out: from the flat interface the camera pulls back to the monitor in a dark room, accelerating over 1.0 s (F578-F603), cut short by a 3-frame fall to black. Quality is lost if rendered: real focus, reflections and hand-held drift.",
+      "route": "footage",
+      "routeReason": "A real desk and monitor filmed by a person. Without a camera, nearest is a Blender monitor with the recording as a texture, which needs the user's approval, or a RegionCamera pull-back that drops the room.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ScreenPlayback",
+        "RegionCamera"
+      ],
+      "timing": {
+        "durationSec": 0.68,
+        "startOffsetFromCutSec": -0.36,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p02-push-screen.jpg F113-F130"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "exit",
+            "name": "power2.in",
+            "durationSec": 0.24
+          },
+          {
+            "part": "entry",
+            "name": "power2.out",
+            "durationSec": 0.44
+          }
+        ],
+        "confidence": 0.55,
+        "evidence": [
+          "visuals/a1/p02-push-screen.jpg F113-F118 diff 11.3 to 52.5",
+          "visuals/a1/p02-push-screen.jpg F121-F130 diff 46.5 falling to 0.5"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "An onset at 4.481 s sits 39 ms before the push starts; audio.json holds 132 onsets in 39 s (about 3.4 a second), so an onset within 50 ms of any time is near chance (about a third); tempo confidence 0.074 rules out a beat grid.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsets 4.481"
+        ]
+      },
+      "layers": 2,
+      "fromShot": 2,
+      "toShot": 3,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 4.52,
+            "endSec": 5.2
+          },
+          "fromShot": 2,
+          "toShot": 3,
+          "timing": {
+            "durationSec": 0.68,
+            "startOffsetFromCutSec": -0.36,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/p02-push-screen.jpg F113-F130"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 23.12,
+            "endSec": 24.04
+          },
+          "fromShot": 18,
+          "toShot": 19,
+          "timing": {
+            "durationSec": 1.0,
+            "startOffsetFromCutSec": -0.96,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/p06-pullout-fade.jpg F578-F604"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "own-opening-as-output",
+      "name": "The film's opening is the tool's output",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 21.4,
+          "endSec": 23.16
+        }
+      ],
+      "description": "The result preview plays material the viewer has already seen (the film's opening shot, with its typed caption), small in the editor at 21.4 s and then large, with a new caption appearing in the preview (23.12 s) before the pull-out. Works only if the tool really made it, otherwise it is a false claim.",
+      "route": "unreachable",
+      "routeReason": "For a product that is not a video tool this does not transfer as such. Nearest equivalent: the product's real output, seen earlier in the film as an unexplained image, later revealed to come from it.",
+      "difficulty": "low",
+      "requiredPrimitives": [],
+      "timing": {
+        "durationSec": 1.72,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/g-editor-timeline.jpg F535-F551",
+          "visuals/a1/p06-pullout-fade.jpg F577-F578"
+        ]
+      },
+      "sound": {
+        "kind": "unknown",
+        "note": "Not established whether the preview's own sound plays.",
+        "basis": "inferred",
+        "confidence": 0.3
+      },
+      "typography": {
+        "role": "caption inside the preview",
+        "entry": "appears in one frame on the replayed footage",
+        "alignment": "centre",
+        "size": 0.1,
+        "basis": "measured",
+        "confidence": 0.6,
+        "evidence": [
+          "speech-text.json screenText 23.03 s box height 0.1, centre x 0.502",
+          "visuals/a1/p06-pullout-fade.jpg F578"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s016",
+        "s017.1"
+      ]
+    },
+    {
+      "id": "two-frame-burst",
+      "techniqueCardId": "aligned-burst",
+      "name": "Two-frame image burst with a fixed caption",
+      "function": "proof",
+      "spans": [
+        {
+          "startSec": 33.88,
+          "endSec": 36.64
+        }
+      ],
+      "description": "33 generated images held 2 frames each at 25 fps (0.08 s; three held 3 frames), each aligned so the eye sits at frame centre, closing in steadily from face to eye to pupil (pupil about 30% of width by F910) and ending on a crater that rhymes with the pupil, under one still caption at frame centre that never moves.",
+      "route": "generated",
+      "routeReason": "Needs many images: generated ones need a budget; our own interface states or licensed stills could be used. The flurry block cuts a run of stills under a locked phrase; aligning each still on one feature is not built. Quality lost with few images: the sense of plenty.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "layoutSeries",
+        "block:speed-ramp-flurry",
+        "block:caption-over-flash-montage"
+      ],
+      "timing": {
+        "durationSec": 2.76,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/p08-burst-start.jpg F847-F862 (cuts every 2 frames)",
+          "visuals/a1/i-eye-burst-a.jpg F846-F881",
+          "visuals/a1/i-eye-burst-b.jpg F882-F917"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/p08-burst-start.jpg diff 40-69 on cut frames, 0.0-0.4 between"
+        ]
+      },
+      "sound": {
+        "kind": "music-bed",
+        "note": "The burst sits on the densest, loudest stretch of the waveform (edit map 33.9-36.6 s); no single hit is tied to it and no beat grid can be trusted.",
+        "basis": "measured",
+        "confidence": 0.5,
+        "evidence": [
+          "visuals/edit-map.png wave 33.9-36.6 s",
+          "audio.json tempo confidence 0.074"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "tagline",
+        "entry": "on with the first image, held still through every cut",
+        "alignment": "centre",
+        "size": 0.062,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 34.03-36.51 s box height 0.062, centre x 0.501"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s026",
+        "s027.1",
+        "s027.2",
+        "s027.3",
+        "s027.4",
+        "s027.5",
+        "s027.6",
+        "s027.7",
+        "s027.8",
+        "s027.9",
+        "s027.10",
+        "s028.1",
+        "s028.2",
+        "s029.1",
+        "s029.2",
+        "s029.3",
+        "s030.1",
+        "s030.2",
+        "s030.3",
+        "s031.1",
+        "s031.2",
+        "s031.3",
+        "s031.4",
+        "s032.1",
+        "s032.2",
+        "s033.1",
+        "s033.2",
+        "s033.3",
+        "s033.4",
+        "s033.5",
+        "s033.6",
+        "s033.7",
+        "s034.1"
+      ]
+    },
+    {
+      "id": "human-reaction-punctuation",
+      "name": "Short human reaction with one-word caption",
+      "function": "breath",
+      "spans": [
+        {
+          "startSec": 14.16,
+          "endSec": 15.44
+        },
+        {
+          "startSec": 28.44,
+          "endSec": 29.12
+        }
+      ],
+      "description": "Real person for 0.6-0.7 s between interface passages, a one- or two-word caption cut on with the shot (F354 and F371 single-frame changes, nothing moves between: diff 0.1-0.3), small, beside or between the eyes.",
+      "route": "footage",
+      "routeReason": "A person acting. Generated would lose the credibility the passage exists to give.",
+      "difficulty": "low",
+      "requiredPrimitives": [],
+      "timing": {
+        "durationSec": 0.68,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p05-reaction.jpg F354-F371"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Both reaction cuts fall 50 ms before an onset (14.211, 28.491 s), inside the 14.2-21.9 s loudness pulse whose peaks the cuts lead by 0.01-0.06 s; that window was chosen after seeing the peaks, and onsets are dense, so this suggests and does not prove a method.",
+        "basis": "inferred",
+        "confidence": 0.35,
+        "evidence": [
+          "audio.json onsets 14.211, 28.491",
+          "edit.json rhythm"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": [
+        {
+          "role": "reaction word",
+          "entry": "cut on with the shot",
+          "alignment": "free",
+          "size": 0.082,
+          "basis": "measured",
+          "confidence": 0.7,
+          "evidence": [
+            "speech-text.json screenText 14.03 s box height 0.082, centre x 0.381 beside the face"
+          ]
+        },
+        {
+          "role": "reaction phrase",
+          "entry": "cut on with the shot",
+          "alignment": "centre",
+          "size": 0.097,
+          "basis": "measured",
+          "confidence": 0.7,
+          "evidence": [
+            "speech-text.json screenText 28.51 s box height 0.097, centre x 0.503 between the eyes"
+          ]
+        }
+      ],
+      "layers": 2,
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 14.16,
+            "endSec": 15.44
+          },
+          "fromShot": 8,
+          "toShot": 9,
+          "shots": [
+            "s008",
+            "s009"
+          ]
+        },
+        {
+          "span": {
+            "startSec": 28.44,
+            "endSec": 29.12
+          },
+          "fromShot": 20,
+          "toShot": 21,
+          "shots": [
+            "s020"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-question-card",
+      "name": "Doubt stated on black",
+      "function": "hook",
+      "spans": [
+        {
+          "startSec": 7.04,
+          "endSec": 8.56
+        },
+        {
+          "startSec": 24.04,
+          "endSec": 24.96
+        }
+      ],
+      "description": "White question on pure black, 0.9-1.5 s, before each proof. First variant (7.04-8.56 s): the line strobes for 12 frames between a full-frame stack of echoes and two copies at top and bottom (F176-F187, every frame changes), settles to one centred line (F187), is erased word by word from the left and rebuilt word by word from the right (F189-F201, a word every frame), holds 7 frames, dims and cuts to black for 2 frames before the next shot (F210-F213). Second variant: the line arrives over the monitor as it falls to black (F601-F603) and simply holds.",
+      "route": "remotion",
+      "routeReason": "Plain text; EchoWord covers the stacked echo; the word erase and rebuild is a per-word visibility schedule.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "EchoWord",
+        "splitWords",
+        "TypedLine"
+      ],
+      "timing": {
+        "durationSec": 1.52,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/p03-echo-card.jpg F176-F214"
+        ]
+      },
+      "ease": {
+        "source": "strip",
+        "phases": [
+          {
+            "part": "entry",
+            "name": "steps(12)",
+            "durationSec": 0.48
+          },
+          {
+            "part": "main",
+            "name": "steps(13)",
+            "durationSec": 0.52
+          },
+          {
+            "part": "hold",
+            "name": "none",
+            "durationSec": 0.28
+          },
+          {
+            "part": "exit",
+            "name": "steps(2)",
+            "durationSec": 0.16
+          }
+        ],
+        "confidence": 0.65,
+        "evidence": [
+          "visuals/a1/p03-echo-card.jpg F176-F187 diff 7.4-7.5 every frame",
+          "visuals/a1/p03-echo-card.jpg F189-F201 one word per frame",
+          "visuals/a1/p03-echo-card.jpg F202-F213"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "Onsets 28 ms and 16 ms from the two card cuts (7.012, 24.056 s); audio.json holds 132 onsets in 39 s (about 3.4 a second), so an onset within 50 ms of any time is near chance (about a third); tempo confidence 0.074 rules out a beat grid.",
+        "basis": "inferred",
+        "confidence": 0.35,
+        "evidence": [
+          "audio.json onsets 7.012, 24.056"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "question line",
+        "entry": "strobing stacked echoes, then erased and rebuilt word by word",
+        "alignment": "centre",
+        "size": 0.083,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 8.03 s box height 0.082, centre x 0.502",
+          "speech-text.json screenText 24.03 s box height 0.089, centre x 0.501"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s005.1"
+      ],
+      "occurrences": [
+        {
+          "span": {
+            "startSec": 7.04,
+            "endSec": 8.56
+          },
+          "fromShot": 3,
+          "toShot": 4,
+          "shots": [
+            "s005.1"
+          ],
+          "timing": {
+            "durationSec": 1.52,
+            "startOffsetFromCutSec": 0,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/p03-echo-card.jpg F176-F214"
+            ]
+          }
+        },
+        {
+          "span": {
+            "startSec": 24.04,
+            "endSec": 24.96
+          },
+          "fromShot": 18,
+          "toShot": 19,
+          "shots": [
+            "s017.2"
+          ],
+          "timing": {
+            "durationSec": 0.92,
+            "startOffsetFromCutSec": -0.04,
+            "basis": "observed",
+            "evidence": [
+              "visuals/a1/p06-pullout-fade.jpg F601-F604"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "end-in-silence",
+      "name": "Black, then sound stops, one change",
+      "function": "cta",
+      "spans": [
+        {
+          "startSec": 36.64,
+          "endSec": 39.08
+        }
+      ],
+      "description": "Hard cut from the loudest passage to the name, small and centred in white on black (F916, 36.64 s; line box 12% of height); the sound runs 0.39 s more and stops (37.03 s); the address suffix is added in one frame at F933 (37.32 s), inside the silence; then nothing moves to the end.",
+      "route": "remotion",
+      "routeReason": "Plain cut and an audio edit; the end-card block holds the name.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:scene-end-card"
+      ],
+      "timing": {
+        "durationSec": 0.68,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/p09-end-silence.jpg F916-F933"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/p09-end-silence.jpg F933 diff 0.4, all other frames 0.0"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "audio.json silence 37.03-37.42 s and 37.48 s to the end: the suffix appears 0.29 s into it.",
+        "basis": "measured",
+        "confidence": 0.9,
+        "evidence": [
+          "audio.json silence 37.0275-37.4227, 37.4773-39.1253"
+        ],
+        "timingBasis": "measured",
+        "sourceBasis": "inferred"
+      },
+      "typography": {
+        "role": "name and address",
+        "entry": "cut on with the black, suffix added in one frame in the silence",
+        "alignment": "centre",
+        "size": 0.12,
+        "basis": "measured",
+        "confidence": 0.8,
+        "evidence": [
+          "speech-text.json screenText 36.51 s box height 0.12, centre x 0.502",
+          "speech-text.json screenText 37.51 s box height 0.103"
+        ]
+      },
+      "layers": 2,
+      "shots": [
+        "s034.2"
+      ]
+    }
+  ]
+}

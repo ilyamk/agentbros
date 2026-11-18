@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "id": "feature-update",
+  "title": "Feature update",
+  "status": "ready",
+  "reviewedAt": "2026-11-13",
+  "summary": "Announce one new feature or release of a software product (what's new, changelog, release notes video), 10-45 s on the real screens: the change, before and after, and where to try it.",
+  "triggers": {
+    "en": [
+      "what's new",
+      "whats new",
+      "what's new video",
+      "changelog",
+      "changelog video",
+      "change log",
+      "release notes",
+      "release notes video",
+      "release video",
+      "new feature",
+      "new features",
+      "feature announcement",
+      "feature announcement video",
+      "announce a feature",
+      "announce the feature",
+      "announce our new",
+      "feature update",
+      "feature launch",
+      "product update",
+      "update video",
+      "new release",
+      "new version of",
+      "we shipped",
+      "just shipped",
+      "patch notes",
+      "release roundup",
+      "monthly update",
+      "updates roundup",
+      "everything new",
+      "new in version",
+      "announcing",
+      "now supports"
+    ],
+    "ru": [
+      "что нового",
+      "что изменилось в",
+      "чейнджлог",
+      "ченджлог",
+      "changelog",
+      "патч ноут",
+      "патчноут",
+      "новая функц",
+      "новую функц",
+      "новой функц",
+      "новые функц",
+      "новых функц",
+      "новая фича",
+      "новую фичу",
+      "новой фичи",
+      "новые фичи",
+      "новых фич",
+      "анонс новой",
+      "анонс обновлени",
+      "анонс функц",
+      "видео об обновлени",
+      "ролик об обновлени",
+      "обновление приложен",
+      "обновление продукт",
+      "обновление сервис",
+      "дайджест обновлени",
+      "новая версия приложен",
+      "новой версии приложен",
+      "новую версию приложен",
+      "новая версия продукт",
+      "новой версии продукт",
+      "новая версия сервис",
+      "новой версии сервис",
+      "релиз ноут",
+      "заметки к релизу",
+      "релиз приложен",
+      "релиз продукт",
+      "релиз функц",
+      "все обновления",
+      "функц нового релиз",
+      "функц новой верси",
+      "что нового в",
+      "про обновление",
+      "обновлени"
+    ],
+    "zh": [
+      "新功能",
+      "新功能介绍",
+      "新功能上线",
+      "功能上线",
+      "功能更新",
+      "功能发布",
+      "上新功能",
+      "新特性",
+      "更新说明",
+      "更新日志",
+      "更新内容",
+      "更新公告",
+      "版本更新",
+      "新版本",
+      "新版上线",
+      "版本发布",
+      "发版",
+      "产品更新",
+      "迭代更新",
+      "更新了什么",
+      "有什么新",
+      "release note",
+      "更新"
+    ],
+    "generic": [
+      "更新"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the film teaches how to do a whole task step by step (how to use the feature, onboarding, a walkthrough)",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "the film sells the whole product or launches the product itself (ad, promo, brand launch film), not one change to it",
+      "use": "product-promo"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "ui-demo",
+    "start": "pnpm film:init --project <id> --type ui-demo --playbook feature-update --profile promo --product <path>"
+  },
+  "alternatives": [
+    {
+      "when": "the user already recorded the new feature on screen themselves and wants it cut, captioned and finished (cut mechanics: footage-edit)",
+      "route": {
+        "kind": "footage",
+        "footageGoals": [
+          "recut",
+          "captions"
+        ],
+        "start": "pnpm footage:next --project <id> --playbook feature-update --source <file> --goal recut,captions"
+      }
+    }
+  ],
+  "agents": [],
+  "skills": [
+    "copywriter",
+    "motion-library",
+    "captions-and-localization",
+    "sound-design-and-mix",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "ui",
+      "transitions"
+    ],
+    "blocks": [
+      "ui-camera-read",
+      "ui-touch-hotspot",
+      "shared-element-carry",
+      "before-after-split",
+      "type-caret-track",
+      "scene-end-card",
+      "ui-punch-reframe",
+      "accelerate-into-cut",
+      "populate-pull-out",
+      "placeholder-resolve",
+      "ui-check-list",
+      "ui-annotate",
+      "chip-wall"
+    ]
+  },
+  "commands": [
+    "film:init",
+    "film:next",
+    "capture:app",
+    "capture:html",
+    "asset:import",
+    "library:list",
+    "sfx:synth",
+    "sfx:cues",
+    "sfx:generate",
+    "motion:still",
+    "render",
+    "captions:export",
+    "delivery"
+  ],
+  "read": [
+    "docs/real-ui.md"
+  ],
+  "stepRead": {
+    "material": [
+      "docs/capture-app.md"
+    ],
+    "build": [
+      "docs/capture-app.md"
+    ]
+  },
+  "qa": [
+    "The new state is on screen within the first 3 s, before any title, logo or 'before' shot",
+    "Before and after are captured at the same viewport, scale and camera stop, so only the change moves between them",
+    "The version label, date and availability on screen match the release the user confirmed",
+    "The in-app cut reads completely with sound off: every claim is on-screen text or a burned caption",
+    "One change per film; a roundup gives each change its own result shot and no change gets a claim without its screen"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "What exactly changed, in one sentence, and how did the user do this before the release?",
+      "why": "The film is the before and after of one job; without the old way there is nothing to compare."
+    },
+    {
+      "ask": "Where can the old and the new version run with seed data (staging URL, feature flag, previous build, local repo)?",
+      "why": "Before and after are two captures of the real product at the same framing.",
+      "default": "The new version from the URL given; the old state from the current production build, captured the same way"
+    },
+    {
+      "ask": "Which version label, release date and availability (plans, platforms, rollout) go on screen?",
+      "why": "A wrong version or a feature shown to users who do not have it is a false claim."
+    },
+    {
+      "ask": "Where does it ship: LinkedIn, X, the product's site or changelog, an in-app modal, an email?",
+      "why": "Each placement sets the formats, the length and whether it plays muted.",
+      "default": "LinkedIn and X in landscape and square, plus a silent in-app cut"
+    },
+    {
+      "ask": "Where should the viewer go to try it (the in-product path, a deep link, an upgrade page)?",
+      "why": "The end card names one action and one place.",
+      "default": "The in-product path to the feature, spelled as it reads in the UI"
+    },
+    {
+      "ask": "Is this one feature, or a release with several changes that should share one film?",
+      "why": "One headline change gets its own film; several small ones become a roundup with a different method.",
+      "default": "One film for the headline change; the smaller ones listed on a closing card or left to the written changelog"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "linkedin",
+      "formats": [
+        "square",
+        "landscape"
+      ],
+      "durationSec": {
+        "min": 15,
+        "max": 30
+      },
+      "captions": "clean-sentence",
+      "note": "LinkedIn recommends 15-30 s for every feed placement; under 30 s loops; captions as an SRT sidecar (captions:export)."
+    },
+    {
+      "platform": "x",
+      "formats": [
+        "landscape",
+        "square"
+      ],
+      "durationSec": {
+        "min": 10,
+        "max": 45
+      },
+      "captions": "clean-sentence",
+      "note": "X recommends 16:9 or 1:1 and plays 720p for non-Premium accounts: read UI larger. Length band is a house rule, starting point."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "landscape",
+        "square"
+      ],
+      "durationSec": {
+        "min": 5,
+        "max": 45
+      },
+      "captions": "clean-sentence",
+      "note": "Site, changelog page and in-app modal play muted (Chrome allows muted autoplay only): build it to read silent. Band is a house rule, starting point."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "ui-camera-read",
+      "shared-element-carry",
+      "before-after-split",
+      "scene-end-card"
+    ],
+    "note": "Read the real capture with ui-camera-read, carry the changed element from before to after, before-after-split only when the change is a number, a still end card with version and path."
+  },
+  "variants": [
+    {
+      "id": "roundup",
+      "title": "Release roundup",
+      "triggers": {
+        "en": [
+          "roundup",
+          "monthly update",
+          "release roundup",
+          "updates roundup",
+          "everything new"
+        ],
+        "ru": [
+          "дайджест",
+          "все обновления",
+          "итоги месяца"
+        ],
+        "zh": [
+          "月度更新",
+          "本月更新",
+          "更新汇总",
+          "更新合集",
+          "全部更新",
+          "更新月报"
+        ]
+      },
+      "changes": "One to three headline changes, each its own result shot and before-after, then the small fixes as one fast list card. Over 45 s drop --profile promo (full profile). One version label and date for the release."
+    },
+    {
+      "id": "in-app",
+      "title": "In-app cut-down",
+      "triggers": {
+        "en": [
+          "in-app",
+          "modal video",
+          "silent version",
+          "for the modal"
+        ],
+        "ru": [
+          "внутри приложения",
+          "в модалке",
+          "без звука"
+        ],
+        "zh": [
+          "应用内",
+          "app内",
+          "弹窗视频",
+          "静音版",
+          "无声版"
+        ]
+      },
+      "changes": "5-15 s (house rule), result and one before-after only, no voice, every claim as on-screen text, render with --captions on, square; the player starts it muted. Email gets a motion:still poster of the result linked to the hosted film."
+    }
+  ]
+}

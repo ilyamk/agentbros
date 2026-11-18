@@ -1,0 +1,1777 @@
+{
+  "note": "Re-queried https://extensions.blender.org/api/v1/extensions/?blender_version=5.3.0&platform=macos-arm64 on 2026-11-15 (1418 entries, empty blocklist). All 42 available pins retain their exact version/hash; Tree Clipper has no 5.3-compatible release and is rejected with its historical pin retained. Six adopts passed 5.3 runtime checks; Node To Python remains proposed but export is blocked despite its API range. Sapling is owner-approved in the realism wave; other entries retain their existing status. Realism wave: Sapling 1.0.0 owner-approved and isolated 5.3.0 tree/cache/pixel trial passed; see nature.md.",
+  "extensions": [
+    {
+      "id": "cell_fracture",
+      "name": "Cell Fracture",
+      "repo": "blender_org",
+      "version": "0.2.1",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:878bbd46e0c735da689101aeed9ebe99f18c0d8d0cbd2e9e17ed8cda6b264fb2/add-on-cell-fracture-v0.2.1.zip",
+        "sha256": "878bbd46e0c735da689101aeed9ebe99f18c0d8d0cbd2e9e17ed8cda6b264fb2",
+        "size": 9722
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. Eight shards; Python random and mathutils.noise both seeded. Different seed changes geometry. Rigid-body motion would require a separate baked simulation."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Seeds 42 and 43 differ. Only the tested operation/settings are covered.",
+      "purpose": "Seeded mesh shards for logo shatters and exploded reveals without simulation.",
+      "useWith": [
+        "avc_extensions.fracture_object(mesh, seed=42)"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/cell_fracture.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "Eight shards; Python random and mathutils.noise both seeded. Different seed changes geometry. Rigid-body motion would require a separate baked simulation. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "extra_mesh_objects",
+      "name": "Extra Mesh Objects",
+      "repo": "blender_org",
+      "version": "0.4.1",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:c85ce4bb2820d5af26b4dad66bf1a0fdeb4bfeffc668c5e4f098f1e416ed434b/add-on-extra-mesh-objects-v0.4.1.zip",
+        "sha256": "c85ce4bb2820d5af26b4dad66bf1a0fdeb4bfeffc668c5e4f098f1e416ed434b",
+        "size": 133442
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. Twelve-tooth gear: 336 vertices. Other generators, particularly rocks, need their explicit seed and separate tests."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Only the tested operation/settings are covered.",
+      "purpose": "Parametric gears, gems and rocks as supporting props for product films.",
+      "useWith": [
+        "avc_extensions.require + bpy.ops.mesh.primitive_gear(number_of_teeth=12)"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/extra_mesh_objects.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "Twelve-tooth gear: 336 vertices. Other generators, particularly rocks, need their explicit seed and separate tests. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "extra_curve_objectes",
+      "name": "Extra Curve Objects",
+      "repo": "blender_org",
+      "version": "0.2.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:4ca91ce5563d094694b2c7f1fc9acece8b5ba8f5dd017a49f080e9cfa5553909/add-on-extra-curve-objectes-v0.2.0.zip",
+        "sha256": "4ca91ce5563d094694b2c7f1fc9acece8b5ba8f5dd017a49f080e9cfa5553909",
+        "size": 52956
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "partial: `curve.spirals` OK; `torus_knot_plus` fails (needs `context.space_data`) (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "parametric; some seed props",
+      "purpose": "Add extra curve object types",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "add_camera_rigs",
+      "name": "Add Camera Rigs",
+      "repo": "blender_org",
+      "version": "1.9.2",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:548ecf6372563948f5b3cf292dd01a3209f77ef730eb38b0197cd50ffd7377cd/add-on-add-camera-rigs-v1.9.2.zip",
+        "sha256": "548ecf6372563948f5b3cf292dd01a3209f77ef730eb38b0197cd50ffd7377cd",
+        "size": 15062
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "WayneDixon",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. Dolly operator generated one armature. The loader must create an in-memory preferences entry (default_set=True); no preferences are saved."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Only the tested operation/settings are covered.",
+      "purpose": "Editable dolly, crane and 2D armature rigs for controlled product-camera moves.",
+      "useWith": [
+        "avc_extensions.require + bpy.ops.object.build_camera_rig(mode=\"DOLLY\")"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/add_camera_rigs.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "Dolly operator generated one armature. The loader must create an in-memory preferences entry (default_set=True); no preferences are saved. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "camera_shakify",
+      "name": "Camera Shakify",
+      "repo": "blender_org",
+      "version": "0.5.1",
+      "blenderMin": "4.4.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:40bb62e0960b301fe8c7b1de11ec959b8ce6c55ce03ed720c5c3b21c0c764e36/add-on-camera-shakify-v0.5.1.zip",
+        "sha256": "40bb62e0960b301fe8c7b1de11ec959b8ce6c55ce03ed720c5c3b21c0c764e36",
+        "size": 78219
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Eat the Future",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. Captured THE_CLOSEUP preset at 0.25 influence. Keep the same pinned extension enabled in every render process; the helper persists avc_required_extensions and the runner checks it. Never use its render-farm embedded-script path."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Only the tested operation/settings are covered.",
+      "purpose": "Captured handheld motion for motivated documentary or tactile product shots.",
+      "useWith": [
+        "avc_extensions.camera_shake(camera, \"THE_CLOSEUP\", 0.25)"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/camera_shakify.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "Captured THE_CLOSEUP preset at 0.25 influence. Keep the same pinned extension enabled in every render process; the helper persists avc_required_extensions and the runner checks it. Never use its render-farm embedded-script path. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "commotion",
+      "name": "Commotion",
+      "repo": "blender_org",
+      "version": "2.5.0",
+      "blenderMin": "4.4.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:9554d7ccc6211c666991b03cd72b354173495dc8977320a70874694bf25179eb/add-on-commotion-v2.5.0.zip",
+        "sha256": "9554d7ccc6211c666991b03cd72b354173495dc8977320a70874694bf25179eb",
+        "size": 27868
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "MikhailRachinskiy",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; offset op needs `INVOKE_DEFAULT` (reads scene props in invoke); my run returned FINISHED but keys did not move (unresolved); research evidence, see evaluation before approval"
+      },
+      "deterministic": "RANDOM sort uses `random.Random(seed)`",
+      "purpose": "Animation offset tools for motion graphics",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE (own 20-line stagger wrapper preferred); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "animall",
+      "name": "AnimAll",
+      "repo": "blender_org",
+      "version": "0.14.0",
+      "blenderMin": "5.0.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:85fcb80112f25a194891242708eb3bc8fdd02890b9a6d9fc83502e059e0d1f86/add-on-animall-v0.14.0.zip",
+        "sha256": "85fcb80112f25a194891242708eb3bc8fdd02890b9a6d9fc83502e059e0d1f86",
+        "size": 8635
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "AnimAll",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; keyframing is UI-oriented (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Animate mesh, lattice, curve and surface data",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "loop_noise",
+      "name": "Loop Noise",
+      "repo": "blender_org",
+      "version": "1.0.0",
+      "blenderMin": "4.5.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:f6fb670ffdcea589e42cd28149b2fb876eae4a4d3af55825e9cdc575a20740fe/add-on-loop-noise-v1.0.0.zip",
+        "sha256": "f6fb670ffdcea589e42cd28149b2fb876eae4a4d3af55825e9cdc575a20740fe",
+        "size": 14569
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Alex-D-Green",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "`graph.*` op needs Graph Editor; property op CANCELLED headless (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "builds NOISE+ENVELOPE F-modifiers (static), so it is reproducible built-in",
+      "purpose": "Noise for F-Curves that loops seamlessly over a frame range",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (do it with F-modifiers); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "do it with F-modifiers"
+    },
+    {
+      "id": "easeit",
+      "name": "Easeit",
+      "repo": "blender_org",
+      "version": "2.0.3",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:9beae6f595258fca61bf82e9764baabfe4355603c14a182169f9618798a0c67c/add-on-easeit-v2.0.3.zip",
+        "sha256": "9beae6f595258fca61bf82e9764baabfe4355603c14a182169f9618798a0c67c",
+        "size": 66960
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "AndyCuccaro",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "graph ops CANCELLED headless (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Quickly apply easing presets to animation keyframes",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "blender_speed_curve",
+      "name": "Motion Style",
+      "repo": "blender_org",
+      "version": "1.0.2",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:4ae9d54a4e0f98159c979fba471646406574baa2b0809eef4db3e45d799d8d61/add-on-blender-speed-curve-v1.0.2.zip",
+        "sha256": "4ae9d54a4e0f98159c979fba471646406574baa2b0809eef4db3e45d799d8d61",
+        "size": 6406
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Willy_Work",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "graph editor UI (static, ctxUI=11); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "AE-style easing sliders and F-Curve speed visualization",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "simple_bounce_curve",
+      "name": "Simple Bounce Curve",
+      "repo": "blender_org",
+      "version": "1.1.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:d9600617c81ca045b5aeffc5e393a1d09e589d7aca4d6ab15a0845720a93b47b/add-on-simple-bounce-curve-v1.1.0.zip",
+        "sha256": "d9600617c81ca045b5aeffc5e393a1d09e589d7aca4d6ab15a0845720a93b47b",
+        "size": 2102
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Polyfjord",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables (verified-local); op not exercised; research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Creates a simple bounce curve between selected objects",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (niche); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "niche"
+    },
+    {
+      "id": "momentum",
+      "name": "Momentum",
+      "repo": "blender_org",
+      "version": "1.0.1",
+      "blenderMin": "5.0.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:1d8f3e962baabeb2f028ae92952bc9f3fbffc0c390c2889859534dab616f7383/add-on-momentum-v1.0.1.zip",
+        "sha256": "1d8f3e962baabeb2f028ae92952bc9f3fbffc0c390c2889859534dab616f7383",
+        "size": 16133
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Isaac-Burke",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "graph-editor op (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "quickly add configurable follow-through to animations",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "sapling_tree_gen",
+      "name": "Sapling Tree Gen",
+      "repo": "blender_org",
+      "version": "1.0.0",
+      "blenderMin": "5.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:65a1ae7ab3a73a675a2de7370e27a6186e889f2e396fd27af0a44666bc3b9a9a/add-on-sapling-tree-gen-v1.0.0.zip",
+        "sha256": "65a1ae7ab3a73a675a2de7370e27a6186e889f2e396fd27af0a44666bc3b9a9a",
+        "size": 165121
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Brad-Chamberlain",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 isolated install, enable and curve.tree_add birch preset render passed; 160x90 CPU frame 32 alone equals range pixels. Cached .blend reuse passed."
+      },
+      "deterministic": "Fixed positive seed 41, upstream wind/rig disabled; harness keyed sway. Frame 32 alone/range exact RGB equality on CPU; cached geometry reuse verified. Other species not visually evaluated.",
+      "purpose": "Adds a parametric tree with leaves, armature and wind",
+      "useWith": [
+        "tree recipe engine=sapling; blender:recipe render --extensions sapling_tree_gen"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/nature.md",
+      "capabilities": [
+        "nature",
+        "trees",
+        "vegetation"
+      ],
+      "recommendation": "adopt",
+      "notes": "Realism wave owner authorised integration. Isolated 5.3.0 install/enable passed; operator/render evaluation below.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "ivygen",
+      "name": "IvyGen",
+      "repo": "blender_org",
+      "version": "0.1.5",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:7e60967a11cabacb9bca0128e65dcfb96cec8794a934bc7dc2e353ae720cff98/add-on-ivygen-v0.1.5.zip",
+        "sha256": "7e60967a11cabacb9bca0128e65dcfb96cec8794a934bc7dc2e353ae720cff98",
+        "size": 7172
+      },
+      "licence": "GPL-2.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "op returned PASS_THROUGH headless (needs a target/3D cursor; verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "seed prop",
+      "purpose": "Adds generated ivy to a mesh object starting at the 3D cursor",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "dynamic_sky",
+      "name": "Dynamic Sky",
+      "repo": "blender_org",
+      "version": "1.1.0",
+      "blenderMin": "5.0.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:49793b3c6ca8363c6b40e8e6d6024b048b6f0816bca3e6d19733ec74f70a45ef/add-on-dynamic-sky-v1.1.0.zip",
+        "sha256": "49793b3c6ca8363c6b40e8e6d6024b048b6f0816bca3e6d19733ec74f70a45ef",
+        "size": 193147
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Dynamic Sky",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "`dynsky.use_world` CANCELLED headless (verified-local); nodes may still be scriptable; research evidence, see evaluation before approval"
+      },
+      "deterministic": "procedural",
+      "purpose": "Procedural sky for Cycles and Eevee: presets, HDRI, night mode",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "light_it_up",
+      "name": "Light It Up",
+      "repo": "blender_org",
+      "version": "4.0.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:773e46efe54b1048030ed49d06d61c6b05242c14cfe7ba3c18afb3481b9900f9/add-on-light-it-up-v4.0.0.zip",
+        "sha256": "773e46efe54b1048030ed49d06d61c6b05242c14cfe7ba3c18afb3481b9900f9",
+        "size": 128122
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Rasheed-Shaikh",
+      "permissions": {
+        "files": "Save your custom lighting presets across Blender versions"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. High Key created four preset lights plus the test area light (five total). This proves headless construction, not artistic acceptance of the lighting."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Only the tested operation/settings are covered.",
+      "purpose": "Editable studio light presets for a fast directed starting point.",
+      "useWith": [
+        "avc_extensions.require + bpy.ops.light_it_up.high_key()"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/light_it_up.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "High Key created four preset lights plus the test area light (five total). This proves headless construction, not artistic acceptance of the lighting. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "quick_lighting_environment",
+      "name": "QLE (Quick Lighting Environment)",
+      "repo": "blender_org",
+      "version": "1.8.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:561863f28ac7d0df9e815a800796efaca126ad78cd23741ac28807f262031883/add-on-quick-lighting-environment-v1.8.0.zip",
+        "sha256": "561863f28ac7d0df9e815a800796efaca126ad78cd23741ac28807f262031883",
+        "size": 105787
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "don1138",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "yes: `qle.add_lights` ran (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "no RNG",
+      "purpose": "Adds a Basic Lighting Setup to Your Blender Scene",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "ambientcg_material_importer",
+      "name": "AmbientCG Material Importer",
+      "repo": "blender_org",
+      "version": "1.5.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:e6c8d6243c731ce2be49de5213c5ae2bb7641d27abd85dbd250ef54e92023575/add-on-ambientcg-material-importer-v1.5.0.zip",
+        "sha256": "e6c8d6243c731ce2be49de5213c5ae2bb7641d27abd85dbd250ef54e92023575",
+        "size": 4572
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Nino-Filiu",
+      "permissions": {
+        "files": "Import and cache textures to disk",
+        "network": "Makes calls to AmbientCG"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static: single op `material.fetch_and_create`, uses urllib; research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "One-click material creation from AmbientCG",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (network at runtime; fetch ambientCG yourself); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "network at runtime; fetch ambientCG yourself"
+    },
+    {
+      "id": "bool_tool",
+      "name": "Bool Tool",
+      "repo": "blender_org",
+      "version": "2.1.0",
+      "blenderMin": "4.5.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:d3a282db25925d115dd1a7638aa28116f2f9198423b0afb6179e8127d59c06e1/add-on-bool-tool-v2.1.0.zip",
+        "sha256": "d3a282db25925d115dd1a7638aa28116f2f9198423b0afb6179e8127d59c06e1",
+        "size": 173035
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "nickberckley",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; most ops are interactive brush/modal (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Quick Boolean operators and tools for hard surface modeling",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (Boolean modifier from Python); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "Boolean modifier from Python"
+    },
+    {
+      "id": "looptools",
+      "name": "LoopTools",
+      "repo": "blender_org",
+      "version": "4.7.7",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:ff1ca3b3fff73094379da8b1fa2c1acbc9d88d26b7dfc73bb9de5941a6b50108/add-on-looptools-v4.7.7.zip",
+        "sha256": "ff1ca3b3fff73094379da8b1fa2c1acbc9d88d26b7dfc73bb9de5941a6b50108",
+        "size": 30534
+      },
+      "licence": "GPL-2.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; edit-mode ops need a mesh in edit mode (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Mesh modelling toolkit. Several tools to aid modelling",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (modelling UI aid); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "modelling UI aid"
+    },
+    {
+      "id": "tissue",
+      "name": "Tissue",
+      "repo": "blender_org",
+      "version": "0.3.76",
+      "blenderMin": "4.5.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:997e91148732becfd338c58abd605dbbfed4b4125c6d7f0a77951846d67a82fd/add-on-tissue-v0.3.76.zip",
+        "sha256": "997e91148732becfd338c58abd605dbbfed4b4125c6d7f0a77951846d67a82fd",
+        "size": 128351
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "AlessandroZomparelli",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables (46 ops); some ops have temp_override and subprocess (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "seeded props",
+      "purpose": "Tools for Computational Design",
+      "useWith": [
+        "pattern-surface"
+      ],
+      "status": "approved",
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/tissue.md",
+      "recommendation": "adopt",
+      "notes": "Isolated Blender 5.3.0 trial passed. Scoped wrapper remains experimental until visual/determinism evidence; see evaluation.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "capabilities": [
+        "pattern",
+        "tessellation"
+      ],
+      "usage": "render",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      }
+    },
+    {
+      "id": "Bagapie",
+      "name": "Bagapie",
+      "repo": "blender_org",
+      "version": "11.0.12",
+      "blenderMin": "5.0.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:1d26113259e9c7c900b98fafa779232ed8a5dd16c10c50835c51e191b7aeb6f3/add-on-bagapie-v11.0.12.zip",
+        "sha256": "1d26113259e9c7c900b98fafa779232ed8a5dd16c10c50835c51e191b7aeb6f3",
+        "size": 10831349
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Kiara_Bagattini",
+      "permissions": {
+        "files": "Create, setup and add assets libraries",
+        "network": "Open web browser for documentation and tutorials"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "heavy UI (ctxUI=29, invoke=20) (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "mixed",
+      "purpose": "50+ tools : Scattering, Ivy Gen, Random Array, Architecture",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (10.8 MB, files+network perms); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "10.8 MB, files+network perms"
+    },
+    {
+      "id": "scatter_objects",
+      "name": "Scatter Objects",
+      "repo": "blender_org",
+      "version": "0.2.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:3fda488f56523b799e3937c802119f1da986391e193cb4d443177e6e132c764b/add-on-scatter-objects-v0.2.0.zip",
+        "sha256": "3fda488f56523b799e3937c802119f1da986391e193cb4d443177e6e132c764b",
+        "size": 6876
+      },
+      "licence": "GPL-2.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "modal op (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "seeded",
+      "purpose": "Distribute object instances on another object",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (Essentials \"Scatter on Surface\"); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "Essentials \"Scatter on Surface\""
+    },
+    {
+      "id": "t3d_gn_presets",
+      "name": "T3D GN Presets",
+      "repo": "blender_org",
+      "version": "1.6.0",
+      "blenderMin": "4.3.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:1b5e343d3b335b85caa7be2b9410b8218b777546638cdc5bce6e9f6e774e71cd/add-on-t3d-gn-presets-v1.6.0.zip",
+        "sha256": "1b5e343d3b335b85caa7be2b9410b8218b777546638cdc5bce6e9f6e774e71cd",
+        "size": 835788
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Tams_3d",
+      "permissions": {
+        "files": "Append node-groups from source file"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; node groups in a bundled .blend can be appended directly (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "GN",
+      "purpose": "A versatile collection of useful node groups for Geometry Nodes",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "enhanced_svg",
+      "name": "Enhanced SVG",
+      "repo": "blender_org",
+      "version": "0.2.6",
+      "blenderMin": "5.1.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:625dda797755a4ff873b06fd0d187ba7c1d54d953b60adcf0a99b6526083082c/add-on-enhanced-svg-v0.2.6-macos-arm64.zip",
+        "sha256": "625dda797755a4ff873b06fd0d187ba7c1d54d953b60adcf0a99b6526083082c",
+        "size": 8635655
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Jan-Hendrik-Müller",
+      "permissions": {
+        "files": "Importing data files from disk"
+      },
+      "platforms": [
+        "macos-arm64"
+      ],
+      "wheels": [
+        "./wheels/lxml-6.1.3-cp313-cp313-macosx_10_13_universal2.whl",
+        "./wheels/lxml-6.1.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "./wheels/lxml-6.1.3-cp313-cp313-win_amd64.whl",
+        "./wheels/svg_path-7.1-py2.py3-none-any.whl"
+      ],
+      "nativeCode": true,
+      "needsAccount": false,
+      "headless": {
+        "status": "yes",
+        "note": "Blender 5.3.0 macOS arm64: isolated install, enable, typical operator and CPU frame-alone/range pixel comparison passed. Imported two coloured curves; lxml 6.1.3 loaded from the isolated wheel store. No external image references used. Platform/native wheel pin must be re-tested after a Blender/Python upgrade."
+      },
+      "deterministic": "Blender 5.3.0: frame 20 alone equals frame 20 after frame 19: 0 differing RGBA pixels / 4096; fresh-process geometry hashes match. Only the tested operation/settings are covered.",
+      "purpose": "Colour-aware SVG logo import when bundled io_curve_svg is insufficient.",
+      "useWith": [
+        "avc_extensions.require + bpy.ops.import_scene.import_svg(filepath=..., allow_external_images=False)"
+      ],
+      "status": "approved",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "repo owner, 2026-11-15: approved after 5.3.0 trial (evaluation docs in docs/blender-arsenal/)"
+      },
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/enhanced_svg.md",
+      "usage": "render",
+      "recommendation": "adopt",
+      "notes": "Imported two coloured curves; lxml 6.1.3 loaded from the isolated wheel store. No external image references used. Platform/native wheel pin must be re-tested after a Blender/Python upgrade. Status remains proposed; download/trial consent is not production approval.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "io_lottie_export",
+      "name": "Lottie Export",
+      "repo": "blender_org",
+      "version": "0.1.3",
+      "blenderMin": "5.1.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:79a424817d6e190bf720c7d76b472d863943689a18899bcaf3b68a0da12c3cd2/add-on-io-lottie-export-v0.1.3.zip",
+        "sha256": "79a424817d6e190bf720c7d76b472d863943689a18899bcaf3b68a0da12c3cd2",
+        "size": 31309
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "MultLabs",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; exports Grease Pencil to Lottie (not exercised); research evidence, see evaluation before approval"
+      },
+      "deterministic": "deterministic",
+      "purpose": "Export Grease Pencil animation to Lottie JSON / dotLottie / TGS",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "TextHelper",
+      "name": "Text Helper",
+      "repo": "blender_org",
+      "version": "2.4.0",
+      "blenderMin": "5.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:7017072ab80aadc1ed0239e0ab724896f8811886c85f9f49470ee32d9bddd9d0/add-on-texthelper-v2.4.0.zip",
+        "sha256": "7017072ab80aadc1ed0239e0ab724896f8811886c85f9f49470ee32d9bddd9d0",
+        "size": 273378
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "ACGGIT_LJ",
+      "permissions": {
+        "files": "Load fonts from disk and cache font previews and search metadata",
+        "clipboard": "Paste text into the active text object"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "UI-heavy (ctxUI=64, timers=25) (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Easy text input & font management",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (bpy text API suffices); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "bpy text API suffices"
+    },
+    {
+      "id": "latex_text_generator",
+      "name": "LaTeX Text Generator",
+      "repo": "blender_org",
+      "version": "1.1.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:29b57fc18ffb92c2761f2cd697edbd20c2ac1fac2db0d2ac8fa20c5c9f6ff651/add-on-latex-text-generator-v1.1.0.zip",
+        "sha256": "29b57fc18ffb92c2761f2cd697edbd20c2ac1fac2db0d2ac8fa20c5c9f6ff651",
+        "size": 862848
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "katterkie",
+      "permissions": {
+        "files": "Import custom font files from disk"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "UI ops (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Generate customizable 3D text from LaTeX notation",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE (maths explainers); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "h_style_rbd_nodes",
+      "name": "H-Style RBD Nodes",
+      "repo": "blender_org",
+      "version": "1.0.2",
+      "blenderMin": "5.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:c3531dddde2f114a460d7326db49f1ed2b21a366711d75e4995f0ee5f2df0e88/add-on-h-style-rbd-nodes-v1.0.2.zip",
+        "sha256": "c3531dddde2f114a460d7326db49f1ed2b21a366711d75e4995f0ee5f2df0e88",
+        "size": 91073
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Excifroge",
+      "permissions": {
+        "files": "Export FBX, Alembic and VAT files to a folder you choose"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "yes: `hrbd.setup` ran (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "seeded GN plus a bake",
+      "purpose": "Fracture, bake and export rigid body destruction for game VFX",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "tree_clipper",
+      "name": "Tree Clipper",
+      "repo": "blender_org",
+      "version": "0.1.12",
+      "blenderMin": "5.0.0",
+      "blenderMax": "5.3.0",
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:abc43b5096d23004ff607a92f429b52b128f8a4cd32dd1330e0986ffc5937dba/add-on-tree-clipper-v0.1.12.zip",
+        "sha256": "abc43b5096d23004ff607a92f429b52b128f8a4cd32dd1330e0986ffc5937dba",
+        "size": 58003
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Lars-Helge-Scheel",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "no",
+        "note": "Not compatible with Blender 5.3.0; historical 5.2.3 pin retained."
+      },
+      "deterministic": "deterministic JSON",
+      "purpose": "Export and import Blender node trees as JSON",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "Historical Blender 5.2.3 pin retained unchanged for audit; no compatible replacement returned by the 5.3.0 API on 2026-11-15.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "No compatible release in the Blender 5.3.0 API: 0.1.12 has exclusive blenderMax 5.3.0."
+    },
+    {
+      "id": "node_to_python",
+      "name": "Node To Python",
+      "repo": "blender_org",
+      "version": "4.2.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:a23d847def65873bf284ab0c80108bd45db61104f7a45fe44f7ec38d849f75e4/add-on-node-to-python-v4.2.0.zip",
+        "sha256": "a23d847def65873bf284ab0c80108bd45db61104f7a45fe44f7ec38d849f75e4",
+        "size": 82229
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Brendan-Parmer",
+      "permissions": {
+        "files": "Creates and writes to files in a user-specified directory"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "Blender 5.3.0: installation and enabling passed; ntp.export explicitly returns CANCELLED because upstream code rejects versions >= 5.3.0, despite the API range."
+      },
+      "deterministic": "Verified on Blender 5.2.3 only; authoring export is blocked on 5.3.0, so no 5.3 render or determinism claim.",
+      "purpose": "Authoring-time conversion of node groups into reviewable bpy source.",
+      "useWith": [
+        "avc_extensions.require + bpy.ops.ntp.export() in ADDON mode with an isolated output directory"
+      ],
+      "status": "proposed",
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "asked the orchestrator to select and set up useful Blender extensions and asset libraries; trial/sample download"
+      },
+      "evaluation": "docs/blender-arsenal/node_to_python.md",
+      "usage": "authoring",
+      "recommendation": "maybe",
+      "notes": "Blender 5.3.0 compatibility blocker: Node To Python 4.2.0 enables but refuses export at its internal MAX_BLENDER_VERSION=(5,3,0). Keep proposed; approval pending upstream support. API pin unchanged; 5.2.3 evidence is retained in the evaluation.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "bake_instance_animation",
+      "name": "Bake Instance Animation (烘焙几何节点实例动画)",
+      "repo": "blender_org",
+      "version": "1.0.3",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:eea61c5dfe87559ead85806327ea8dcf1c3c9a8e650d35650a6b624f82a94ad4/add-on-bake-instance-animation-v1.0.3.zip",
+        "sha256": "eea61c5dfe87559ead85806327ea8dcf1c3c9a8e650d35650a6b624f82a94ad4",
+        "size": 8497
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "ChyiZ_",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static: one op; research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Bake geometry nodes instance animation to keyframe animation",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "layer_comp",
+      "name": "LayerComp",
+      "repo": "blender_org",
+      "version": "1.1.9",
+      "blenderMin": "5.0.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:08a66a76ed4d82825968d5b8c7a5276ca37e51929d801ad666ea78f9d9a0c0f1/add-on-layer-comp-v1.1.9.zip",
+        "sha256": "08a66a76ed4d82825968d5b8c7a5276ca37e51929d801ad666ea78f9d9a0c0f1",
+        "size": 554503
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "KENKEN",
+      "permissions": {
+        "files": "Import/Export Blend file from/to disk"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "UI-heavy compositor (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Layer-based compositing tool, similar to After Effects",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "formula_to_nodes",
+      "name": "Formula to Nodes",
+      "repo": "blender_org",
+      "version": "3.2.1",
+      "blenderMin": "5.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:e451aa01ca74f4affe5d13810d6c12d199e5920ba9eb77874b7901d837b1267f/add-on-formula-to-nodes-v3.2.1.zip",
+        "sha256": "e451aa01ca74f4affe5d13810d6c12d199e5920ba9eb77874b7901d837b1267f",
+        "size": 220161
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Prince_Eagle",
+      "permissions": {
+        "files": "Add this add-on to the Claude Desktop MCP config on request",
+        "network": "Send prompts to the AI provider you configure",
+        "clipboard": "Copy and paste scripts and AI prompts"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "UI plus an AI back end (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Type VEX-style formulas or describe an effect, get node groups",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (network AI calls); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "network AI calls"
+    },
+    {
+      "id": "molecularnodes",
+      "name": "Molecular Nodes",
+      "repo": "blender_org",
+      "version": "520.2.0",
+      "blenderMin": "5.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:1957bad78036dc7a4e19c4f0d09162436f719e10ee73c348c55b2e0290b0c64b/add-on-molecularnodes-v520.2.0-macos-arm64.zip",
+        "sha256": "1957bad78036dc7a4e19c4f0d09162436f719e10ee73c348c55b2e0290b0c64b",
+        "size": 124045041
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "bradyajohnston",
+      "permissions": {
+        "files": "Importing data files from disk and caching downloads",
+        "network": "Downloading structural data from the PDB and AFPDB"
+      },
+      "platforms": [
+        "macos-arm64"
+      ],
+      "wheels": [
+        "./wheels/biotite-1.7.1-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/biotite-1.7.1-cp313-cp313-manylinux_2_28_x86_64.whl",
+        "./wheels/biotite-1.7.1-cp313-cp313-win_amd64.whl",
+        "./wheels/biotraj-1.2.2-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/biotraj-1.2.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "./wheels/biotraj-1.2.2-cp313-cp313-win_amd64.whl",
+        "./wheels/cloudpickle-3.1.2-py3-none-any.whl",
+        "./wheels/colorama-0.4.6-py2.py3-none-any.whl",
+        "./wheels/contourpy-1.3.3-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/contourpy-1.3.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/contourpy-1.3.3-cp313-cp313-win_amd64.whl",
+        "./wheels/cycler-0.12.1-py3-none-any.whl",
+        "./wheels/databpy-0.9.0-py3-none-any.whl",
+        "./wheels/filelock-3.32.6-py3-none-any.whl",
+        "./wheels/fonttools-4.64.0-cp313-cp313-macosx_10_13_universal2.whl",
+        "./wheels/fonttools-4.64.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "./wheels/fonttools-4.64.0-cp313-cp313-win_amd64.whl",
+        "./wheels/griddataformats-1.2.0-py3-none-any.whl",
+        "./wheels/imdclient-0.2.4-py3-none-any.whl",
+        "./wheels/joblib-1.6.0-py3-none-any.whl",
+        "./wheels/kiwisolver-1.5.1-cp313-cp313-macosx_10_13_universal2.whl",
+        "./wheels/kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "./wheels/kiwisolver-1.5.1-cp313-cp313-win_amd64.whl",
+        "./wheels/matplotlib-3.11.1-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/matplotlib-3.11.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "./wheels/matplotlib-3.11.1-cp313-cp313-win_amd64.whl",
+        "./wheels/mda_xdrlib-0.2.0-py3-none-any.whl",
+        "./wheels/mdanalysis-2.10.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/mdanalysis-2.10.0-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/mdanalysis-2.10.0-cp313-cp313-win_amd64.whl",
+        "./wheels/mmtf_python-1.1.3-py2.py3-none-any.whl",
+        "./wheels/mrcfile-1.5.4-py2.py3-none-any.whl",
+        "./wheels/msgpack-1.2.2-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/msgpack-1.2.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/msgpack-1.2.2-cp313-cp313-win_amd64.whl",
+        "./wheels/networkx-3.6.1-py3-none-any.whl",
+        "./wheels/nodebpy-520.27.0-py3-none-any.whl",
+        "./wheels/packaging-26.3-py3-none-any.whl",
+        "./wheels/pandas-2.3.3-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/pandas-2.3.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/pandas-2.3.3-cp313-cp313-win_amd64.whl",
+        "./wheels/pillow-12.3.0-cp313-cp313-macosx_11_0_arm64.whl",
+        "./wheels/pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/pillow-12.3.0-cp313-cp313-win_amd64.whl",
+        "./wheels/pyparsing-3.3.2-py3-none-any.whl",
+        "./wheels/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+        "./wheels/pytz-2026.3.post1-py2.py3-none-any.whl",
+        "./wheels/scipy-1.18.1-cp313-cp313-macosx_12_0_arm64.whl",
+        "./wheels/scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "./wheels/scipy-1.18.1-cp313-cp313-win_amd64.whl",
+        "./wheels/six-1.17.0-py2.py3-none-any.whl",
+        "./wheels/starfile-0.5.13-py3-none-any.whl",
+        "./wheels/threadpoolctl-3.6.0-py3-none-any.whl",
+        "./wheels/tqdm-4.70.0-py3-none-any.whl",
+        "./wheels/typing_extensions-4.16.0-py3-none-any.whl",
+        "./wheels/tzdata-2026.3-py2.py3-none-any.whl"
+      ],
+      "nativeCode": true,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "not downloaded (124–160 MB); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "A toolbox for molecular import and animation in Blender",
+      "useWith": [
+        "molecule"
+      ],
+      "status": "approved",
+      "evaluation": "docs/blender-arsenal/molecularnodes.md",
+      "recommendation": "adopt",
+      "notes": "Isolated Blender 5.3.0 trial passed. Scoped wrapper remains experimental until visual/determinism evidence; see evaluation.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "capabilities": [
+        "science",
+        "molecules"
+      ],
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "usage": "render",
+      "consent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration",
+        "allowNetworkAccount": true
+      }
+    },
+    {
+      "id": "noise_nodes",
+      "name": "Noise Nodes",
+      "repo": "blender_org",
+      "version": "0.8.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:1743181e8846b2f95c9c24afe8e64fab1fe64933cb7c48855db518cddba7ec42/add-on-noise-nodes-v0.8.0.zip",
+        "sha256": "1743181e8846b2f95c9c24afe8e64fab1fe64933cb7c48855db518cddba7ec42",
+        "size": 1966153
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Haseeb-Ahmed-3",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables; 0 ops (node groups only) (verified-local); research evidence, see evaluation before approval"
+      },
+      "deterministic": "procedural",
+      "purpose": "Advance Noise Nodes For blender",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "turntable_camera",
+      "name": "Turntable Camera",
+      "repo": "blender_org",
+      "version": "0.1.2",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:fa20577f3c12d4b6dd05802b7aacf3dd8d433753fc19b3bb8da3adb23ac2b3c5/add-on-turntable-camera-v0.1.2.zip",
+        "sha256": "fa20577f3c12d4b6dd05802b7aacf3dd8d433753fc19b3bb8da3adb23ac2b3c5",
+        "size": 17413
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "The_Missing_Field",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "0 operators; property-driven panel (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "deterministic",
+      "purpose": "Camera Turntable Setup",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (a 5-line rig); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "a 5-line rig"
+    },
+    {
+      "id": "modern_primitive",
+      "name": "Modern Primitive",
+      "repo": "blender_org",
+      "version": "0.0.58",
+      "blenderMin": "4.3.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:6fa57566b2fa8dbc0055ff98e75873a75102a7ba82a11ca6a069b9971532da6a/add-on-modern-primitive-v0.0.58.zip",
+        "sha256": "6fa57566b2fa8dbc0055ff98e75873a75102a7ba82a11ca6a069b9971532da6a",
+        "size": 3407917
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Degarashi",
+      "permissions": {
+        "files": "Import Geometry-Node from Add-on Directory"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables (34 ops), modal edit (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Modern Primitive for Non-Destructive Modeling",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT; API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "UI-only, redundant with built-ins or unsuitable for headless motion-design films."
+    },
+    {
+      "id": "motion_sounds",
+      "name": "Motion Sounds",
+      "repo": "blender_org",
+      "version": "0.9.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:62f25e1acafc6b4af5389f1b9d4e685ef0cb44062b74bff00ff70e08109d90e0/add-on-motion-sounds-v0.9.0.zip",
+        "sha256": "62f25e1acafc6b4af5389f1b9d4e685ef0cb44062b74bff00ff70e08109d90e0",
+        "size": 187022
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Jan-Hendrik-Müller",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static: VSE op; research evidence, see evaluation before approval"
+      },
+      "deterministic": "random",
+      "purpose": "Add sounds to your animation based on motion events",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (audio lives in Remotion); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "audio lives in Remotion"
+    },
+    {
+      "id": "btracer",
+      "name": "BTracer",
+      "repo": "blender_org",
+      "version": "1.2.4",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:5a29e1daf2b2a0d8e652c84c9b56c25b1f950d92c8a24b03de5b3aa9bdb98064/add-on-btracer-v1.2.4.zip",
+        "sha256": "5a29e1daf2b2a0d8e652c84c9b56c25b1f950d92c8a24b03de5b3aa9bdb98064",
+        "size": 17367
+      },
+      "licence": "GPL-2.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "enables (12 ops), some modal (static); research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Tools for converting/animating objects/particles into curves",
+      "useWith": [],
+      "status": "proposed",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "maybe",
+      "notes": "MAYBE (curve growth or handwriting); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15"
+    },
+    {
+      "id": "splashsurf_studio",
+      "name": "Splashsurf Studio",
+      "repo": "blender_org",
+      "version": "1.0.1",
+      "blenderMin": "4.5.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:2de857e794f459454579b183e81d874e47f4ec45750559b872826535e69c0593/add-on-splashsurf-studio-v1.0.1-macos-arm64.zip",
+        "sha256": "2de857e794f459454579b183e81d874e47f4ec45750559b872826535e69c0593",
+        "size": 2627766
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "Fabian-Löschner",
+      "permissions": {},
+      "platforms": [
+        "macos-arm64"
+      ],
+      "wheels": [],
+      "nativeCode": true,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static; native wheel; research evidence, see evaluation before approval"
+      },
+      "deterministic": "n/a",
+      "purpose": "Surface reconstruction for particle-based fluid simulations",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (niche, native binary); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "niche, native binary"
+    },
+    {
+      "id": "antlandscape",
+      "name": "A.N.T.Landscape",
+      "repo": "blender_org",
+      "version": "0.2.0",
+      "blenderMin": "4.2.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:230571bc14c50952f3af99b70fdb365cf0cee503382975dc38149407a5a4c8c0/add-on-antlandscape-v0.2.0.zip",
+        "sha256": "230571bc14c50952f3af99b70fdb365cf0cee503382975dc38149407a5a4c8c0",
+        "size": 60899
+      },
+      "licence": "GPL-2.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-2.0.html",
+      "maintainer": "Community",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static: mesh ops with seed; research evidence, see evaluation before approval"
+      },
+      "deterministic": "seeded",
+      "purpose": "Another Noise Tool: Landscape and Displace",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (not product promo); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "not product promo"
+    },
+    {
+      "id": "custom_sky_texture",
+      "name": "Custom Sky Texture",
+      "repo": "blender_org",
+      "version": "0.9.2",
+      "blenderMin": "5.1.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://extensions.blender.org/download/sha256:ef490894c0fe8aca30878731bbfe9df662c70a636abf1d0b20f18c95e0c7746f/add-on-custom-sky-texture-v0.9.2.zip",
+        "sha256": "ef490894c0fe8aca30878731bbfe9df662c70a636abf1d0b20f18c95e0c7746f",
+        "size": 5769
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "maintainer": "03ff",
+      "permissions": {},
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "static: node-based; research evidence, see evaluation before approval"
+      },
+      "deterministic": "procedural",
+      "purpose": "A custom sky texture with improved daytime appearance",
+      "useWith": [],
+      "status": "rejected",
+      "evaluation": "docs/blender-arsenal/research-shortlist.md",
+      "recommendation": "reject",
+      "notes": "REJECT (built-in Sky Texture); API metadata pinned for Blender 5.3.0 / macos-arm64 on 2026-11-15. Archive inspection pending unless trialled.",
+      "addedBy": "Agent Bros. Pictures research",
+      "verified": "2026-11-15",
+      "reason": "built-in Sky Texture"
+    },
+    {
+      "id": "BlenderGIS",
+      "name": "BlenderGIS",
+      "repo": "github",
+      "version": "2.2.14",
+      "blenderMin": "2.83.0",
+      "blenderMax": null,
+      "archive": {
+        "url": "https://codeload.github.com/domlysz/BlenderGIS/zip/2add45ffec547f419cc77563a7fe976fd6c8f0c4",
+        "sha256": "b2780c28283c56f7d0d531a98eb1c91a22fc5f9482dc9273fb25db7f5ab19dee",
+        "size": 433486
+      },
+      "licence": "GPL-3.0-or-later",
+      "licenceUrl": "https://github.com/domlysz/BlenderGIS/blob/2add45ffec547f419cc77563a7fe976fd6c8f0c4/LICENSE",
+      "maintainer": "domlysz",
+      "permissions": {
+        "network": "OSM/terrain acquisition; use only consented fetch-time access",
+        "files": "Read/write geodata and cache under isolated arsenal local store"
+      },
+      "platforms": [],
+      "wheels": [],
+      "nativeCode": false,
+      "needsAccount": false,
+      "headless": {
+        "status": "partial",
+        "note": "Legacy add-on; modern extension installer requires blender_manifest.toml. Native cached OSM wrapper works without add-on."
+      },
+      "deterministic": "Snapshot fetched geodata before render; network responses are not deterministic.",
+      "capabilities": [
+        "city",
+        "buildings",
+        "terrain",
+        "real-places"
+      ],
+      "purpose": "Fetch OSM footprints and SRTM terrain for real places",
+      "useWith": [
+        "osm-city"
+      ],
+      "status": "proposed",
+      "downloadConsent": {
+        "by": "repo owner",
+        "date": "2026-11-15",
+        "note": "realism wave: free generators/plugins approved for trial and integration"
+      },
+      "evaluation": "docs/blender-arsenal/city-realism.md",
+      "usage": "authoring",
+      "recommendation": "maybe",
+      "notes": "Pinned commit 2add45ffec547f419cc77563a7fe976fd6c8f0c4. SRTM OpenTopography needs a user API key; no key or account created. Legacy archive not installable with blender:ext. Legacy enable passed on Blender 5.3.0 (2.528 s), but import downloaded an unpinned 6,083,008-byte native FreeImage library. Do not auto-enable for rendering.",
+      "addedBy": "Codex",
+      "verified": "2026-11-15"
+    }
+  ]
+}

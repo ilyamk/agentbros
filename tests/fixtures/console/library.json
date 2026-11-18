@@ -1,0 +1,380 @@
+{
+  "v": 1,
+  "version": 1,
+  "items": [
+    {
+      "id": "type-hero-word",
+      "category": "typography",
+      "title": "Hero word on a hard cut",
+      "description": "One word or number fills half to nearly all of the frame width (`frameWidth` up to 0.95) on a hard cut, the ground swapping on the same frame; an optional caption joins beside it. Optional scale keyframes (shrink on a beat, settle, re-grow), a drift carried across the cut and a true sub-frame blur shutter (`scaleKeys`, `driftFrom`, `blurWindows`; off by default, all on in `heroWordShrinkPreset`); `entry: \"arc\"` rises in on a baseline whose bend eases to straight in 9 frames (`heroWordArcPreset`). No flash, ring or glow: size and the cut are the event. For the stat, the turn or the drop.",
+      "tags": [
+        "hero word",
+        "big type",
+        "hard cut",
+        "ground swap",
+        "stat",
+        "number",
+        "drop",
+        "shrink",
+        "motion blur",
+        "drift",
+        "flat",
+        "light",
+        "firecrawl",
+        "arc",
+        "curved baseline",
+        "straighten",
+        "announcement",
+        "motionfly"
+      ],
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationInFrames": 108,
+      "importPath": "src/motion/library/typography/HeroWord",
+      "inspiredBy": [
+        "firecrawl 4.00 s: '80%' on a hard cut to orange, caption joining",
+        "polymarket 2.10 s: 'IS LIVE' on a cut to ultramarine",
+        "motionfly 6.77-7.07 s: a word on an upward-curving baseline rises from y 0.76 to 0.50 while the bend flattens in 9 frames, power2.out, grey to purple"
+      ],
+      "preview": true
+    },
+    {
+      "id": "type-word-pulse",
+      "category": "typography",
+      "title": "Word per pulse",
+      "description": "A word per beat, each on a hard cut and its own ground (black, paper, signal red), alternating big and small, the awaited word landing last in the accent; optional acceleration makes the last repeats rush. Takes beat frames from audio:map or a BPM. For openers and drops.",
+      "tags": [
+        "word per beat",
+        "pulse",
+        "sequencer",
+        "ground swap",
+        "hard cut",
+        "rhythm",
+        "accelerate",
+        "big type",
+        "music sync",
+        "opener"
+      ],
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationInFrames": 84,
+      "importPath": "src/motion/library/typography/WordPulse",
+      "inspiredBy": [
+        "ref-service-explainer 0–2.9 s and 24.5 s: one word per 0.345 s pulse on swapped grounds, accelerating repeats",
+        "polymarket: single words on paper, then a cut to blue"
+      ],
+      "preview": true
+    },
+    {
+      "id": "ground-swap-cut",
+      "category": "transitions",
+      "title": "Ground-swap cut",
+      "description": "Hard cuts that swap the whole ground (paper, accent, ink) with a hero word or a new shot on each, no flash, ring or fade: the references' main cut device. Use `<GroundSwap cuts grounds>{(shot) => ...}</GroundSwap>` for a run of shots, or `groundSwap()` with `cutTiming(4..6)` inside a TransitionSeries; put the cuts on downbeats.",
+      "tags": [
+        "hard cut",
+        "ground swap",
+        "colour",
+        "hero word",
+        "beat",
+        "rhythm",
+        "light ground",
+        "default"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 90,
+      "importPath": "src/motion/library/transitions/GroundSwap",
+      "inspiredBy": [
+        "design-reference/reference-gap-matrix.md: firecrawl 4.00 s ground swap, ref-service-explainer black/red/white"
+      ],
+      "usage": "import { GroundSwap, groundSwap, groundSwapCues, HeroWord, AccentLine, GROUND_SWAP_PEAK } from \"src/motion/library/transitions/GroundSwap\"",
+      "preview": true
+    },
+    {
+      "id": "caused-morph",
+      "category": "transitions",
+      "title": "Caused morph",
+      "description": "An element of the outgoing shot becomes the next shot's ground: a card or key grows into the frame (`rect`), chart bars level, widen and flood upwards (`bars`), a small orb grows past the corners on circ.in (`orb`, about 8 frames), or a button grows slow-then-fast on sine.in until its sheen is the new frame's top edge (`pill`, about 24 frames); the cut lands before it fills, on the new ground. Import `causedMorph({ mode, source | bars, fill, colour, curve, sheen })` from src/motion/library/transitions/CausedMorph with `cutTiming(8..24)`; `colour` is the next shot's ground, and `<GroundRim sheen>` on the next shot carries the pill's top highlight. `sheenFrom: \"edges\"` (`edgeSheenPreset`, power2.in) lights the growing button with a band from each side while its label shrinks. `mode: \"window\"` (`windowPreset`, `cutTiming(15)`): the button's fill drains top-down to white, the disc drifts to its place, and the next scene's own disc (a portrait) rises into it as into a window; author the next scene with that disc at `windowX`, `windowY`, `windowSize`.",
+      "tags": [
+        "morph",
+        "caused",
+        "element to ground",
+        "bars",
+        "flood",
+        "card",
+        "continuity",
+        "light ground",
+        "orb",
+        "pill",
+        "button",
+        "cta",
+        "end card",
+        "window",
+        "portrait",
+        "drain",
+        "sheen"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 90,
+      "importPath": "src/motion/library/transitions/CausedMorph",
+      "inspiredBy": [
+        "design-reference/reference-gap-matrix.md: polymarket 3.4 s bars to flood, muse 19.8 s button to ground",
+        "design-reference/library/flame: element-grows-to-ground 17.1-18.35 s, button 48% to full bleed on sine.in, its top sheen the end card's rim (pill mode)",
+        "design-reference/library/cashfree: element-grows-to-ground 3.7-4.3 s, orb 10% to past the edges in 8 frames on circ.in (orb mode)",
+        "design-reference/library/muse: t13 circle-carry-chain 19.63-20.17 s (the send button's blue drains to white top-down in 5 frames, the disc drifts to centre in 5, the character rises into it as into a window in 5, about 0.34 wide; power2.inOut) (window mode)",
+        "design-reference/library/polymarket: button-swallow 12.63-13.20 s (the button grows on power2.in for 0.57 s, lightened by a band from each edge, its label scaling down; hard cut before it fills) (sheenFrom edges)"
+      ],
+      "usage": "import { causedMorph, CAUSED_MORPH_PEAK } from \"src/motion/library/transitions/CausedMorph\"; <TransitionSeries.Transition presentation={causedMorph({ mode: \"rect\", source, fill: \"#fff\", colour: nextGround })} timing={cutTiming(20)} />",
+      "preview": true
+    },
+    {
+      "id": "mesh-gradient",
+      "category": "backgrounds",
+      "title": "Mesh gradient",
+      "description": "Soft colour fields drifting and overlapping on noise, Stripe-style. Use behind headlines and product cards; blend 'normal' on light grounds, 'screen' on dark. Craft rules ban purple or blue mesh on a dark ground unless the brand owns it; prefer a flat ground or a real medium (paper-fibre).",
+      "tags": [
+        "gradient",
+        "mesh",
+        "stripe",
+        "blobs",
+        "colourful",
+        "soft",
+        "drift",
+        "ground"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 120,
+      "importPath": "src/motion/library/backgrounds/MeshGradient",
+      "inspiredBy": [
+        "stripe.com hero mesh gradient (look only)",
+        "magicuidesign/magicui backgrounds (idea only)",
+        "src/motion/kinetic-math lightBlobs"
+      ],
+      "preview": true
+    },
+    {
+      "id": "light-rays",
+      "category": "backgrounds",
+      "title": "Volumetric light rays",
+      "description": "God rays fanning from a source above the frame, shimmering. A reveal ground for a keynote title or a product entrance. Dust is off by default (decorative particles are banned); turn it on only for a physical, dusty space.",
+      "tags": [
+        "light rays",
+        "god rays",
+        "volumetric",
+        "beams",
+        "dust",
+        "keynote",
+        "reveal",
+        "dark"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 120,
+      "importPath": "src/motion/library/backgrounds/LightRays",
+      "inspiredBy": [
+        "crepuscular rays through a high window or forest canopy (observed, look only)",
+        "theatre follow-spot haze (look only)"
+      ],
+      "preview": true
+    },
+    {
+      "id": "viz-scene",
+      "category": "data",
+      "title": "Prepared visualisation",
+      "description": "A pinned, format-specific data chart or diagram prepared by viz:prepare. Transparent overlay or full scene; revise through commands.",
+      "tags": [
+        "chart",
+        "diagram",
+        "nodes",
+        "visualisation"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 150,
+      "importPath": "src/motion/library/data/VizScene",
+      "inspiredBy": [],
+      "preview": true
+    },
+    {
+      "id": "icon-visual",
+      "category": "data",
+      "title": "Local icon or brand visual",
+      "description": "A locally acquired icon or brand SVG/PNG/WebP with an optional label. Acquire and export through resources:icons or resources:logos, then pass the returned usage fields; no network during render.",
+      "tags": [
+        "icon",
+        "logo",
+        "brand",
+        "metaphor",
+        "diagram",
+        "local",
+        "svg"
+      ],
+      "formats": [
+        "vertical",
+        "square",
+        "landscape"
+      ],
+      "durationInFrames": 90,
+      "importPath": "src/motion/library/data/IconVisual",
+      "inspiredBy": [
+        "Original project implementation; no external artwork in the preview"
+      ],
+      "preview": true
+    },
+    {
+      "id": "ui-dashboard-assemble",
+      "category": "ui",
+      "title": "Dashboard assembles",
+      "description": "The product screen fills the frame: sidebar, header, KPI cards, revenue chart and table rows assemble in a 0.6 s stagger, then one push crops the KPIs and chart at about 2.2x so 15 px labels read at 33 px. shadcn neutral tokens, light or dark, accent on the chart. Use to recreate a real product screen's structure.",
+      "tags": [
+        "dashboard",
+        "saas",
+        "app",
+        "reveal",
+        "stagger",
+        "analytics",
+        "product",
+        "window"
+      ],
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationInFrames": 150,
+      "importPath": "src/motion/library/ui/DashboardAssemble",
+      "inspiredBy": [
+        "Linear and Stripe launch films: app window rising with staggered panels"
+      ],
+      "preview": true
+    },
+    {
+      "id": "ui-phone-hero",
+      "category": "ui",
+      "title": "Phone hero in perspective",
+      "description": "A phone with real edge thickness turns in once and lands dead still while its app screen builds; a light band crosses the glass and a contact shadow grounds it; optional headline beside it. Use for a mobile hardware-and-app reveal or a hero shot with a screenshot.",
+      "tags": [
+        "phone",
+        "device",
+        "mockup",
+        "3d",
+        "tilt",
+        "glare",
+        "hero",
+        "mobile",
+        "app",
+        "screenshot"
+      ],
+      "formats": [
+        "landscape",
+        "vertical"
+      ],
+      "durationInFrames": 150,
+      "importPath": "src/motion/library/ui/PhoneHero",
+      "inspiredBy": [
+        "magicui: iphone (MIT, proportions only)",
+        "Apple product films: device turn with specular sweep and floor shadow"
+      ],
+      "preview": true
+    },
+    {
+      "id": "blender-plate",
+      "category": "three",
+      "title": "Blender photoreal plate",
+      "description": "Plays a photoreal Blender render (alpha PNG sequence or video) of a real device on a studio sweep, with the headline composited beside it and, optionally, live UI pinned to the screen corners from camera.json. Use for hero product beats; render the plate first with scripts/blender shot templates (docs/photoreal-3d.md). Also plays the non-device shots: the glass dome world and the plush character (`assets:sync --id plates:glass-dome`, `plates:plush-character`).",
+      "tags": [
+        "product",
+        "hero",
+        "phone",
+        "laptop",
+        "photoreal",
+        "blender",
+        "turntable",
+        "screen",
+        "device",
+        "launch"
+      ],
+      "formats": [
+        "landscape",
+        "vertical",
+        "square"
+      ],
+      "durationInFrames": 90,
+      "importPath": "src/motion/library/three/BlenderPlate",
+      "inspiredBy": [
+        "Apple product films: device turntables on a black sweep",
+        "design-reference/photoreal-3d-pipeline.md"
+      ],
+      "preview": true
+    },
+    {
+      "id": "render-plate",
+      "category": "three",
+      "title": "External render plate",
+      "description": "A full-frame external Vork or Blender render, keeping RGBA and source-frame timing. The default is an offline vector preview, not a rendered product.",
+      "tags": [
+        "vork",
+        "render",
+        "plate",
+        "alpha",
+        "external",
+        "3d"
+      ],
+      "formats": [
+        "landscape",
+        "square",
+        "vertical"
+      ],
+      "durationInFrames": 90,
+      "importPath": "src/motion/library/three/RenderPlate",
+      "inspiredBy": [],
+      "preview": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "typography",
+      "count": 2
+    },
+    {
+      "id": "transitions",
+      "count": 2
+    },
+    {
+      "id": "backgrounds",
+      "count": 2
+    },
+    {
+      "id": "data",
+      "count": 2
+    },
+    {
+      "id": "ui",
+      "count": 2
+    },
+    {
+      "id": "three",
+      "count": 2
+    }
+  ]
+}

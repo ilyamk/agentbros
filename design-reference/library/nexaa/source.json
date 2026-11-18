@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "origin": {
+    "kind": "file",
+    "originalFilename": "nexaa.mp4",
+    "acquiredAt": "2026-11-14T16:01:03.586Z"
+  },
+  "sha256": "f9d9fc6a20b6beb592ac5b51acbb1c70de53f5ec32d820c80801e48c63254227",
+  "mediaPath": "media/source.mp4",
+  "probe": {
+    "durationSec": 31.541667,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "codec": "h264",
+    "hasAudio": true
+  },
+  "rights": {
+    "status": "study-only"
+  },
+  "crop": null,
+  "cropHistory": [
+    {
+      "crop": {
+        "x": 308,
+        "y": 0,
+        "width": 970,
+        "height": 720,
+        "method": "static-bands",
+        "note": "Moving picture between still bands: a phone screen recording or a frame with a fixed UI."
+      },
+      "replacedAt": "2026-11-14T17:44:39.043Z",
+      "request": "auto",
+      "note": "corner watermark read as a band"
+    }
+  ]
+}

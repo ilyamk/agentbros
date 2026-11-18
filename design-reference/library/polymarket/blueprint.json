@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "polymarket",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "durationSec": 36.033,
+  "slots": [
+    {
+      "id": "announce",
+      "role": "Sender, subject, event: word by word",
+      "startSec": 0,
+      "durationSec": 2.1,
+      "visualRecipe": "Near-white ground, one small accent-coloured element dead centre at 8-30% width. Three versions: mark with name, one word, two words.",
+      "motionRecipe": "Hard swaps at 0.97 s and 1.43 s. Each version scales from 60% with expo-out over 8 frames, then drifts about 5% over the rest.",
+      "soundRecipe": "Inferred: low level, sparse, no impacts. Energy about a quarter of what comes later.",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "Mark, then what this is, then the event's name",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "urgency",
+      "role": "One word saying it is happening now",
+      "startSec": 2.1,
+      "durationSec": 0.8,
+      "visualRecipe": "Saturated accent ground. White condensed capitals, 29% width. Concentric rings at 8% contrast.",
+      "motionRecipe": "Hard cut in. Word and rings push from 60% to 100% in 10 frames, expo-out, then reverse drift.",
+      "soundRecipe": "Inferred: first soft accent on the cut.",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "Urgency claim",
+        "maxWords": 2
+      }
+    },
+    {
+      "id": "stake",
+      "role": "The headline value, ending in a rising chart",
+      "startSec": 2.9,
+      "durationSec": 0.97,
+      "visualRecipe": "Paper ground. Number in accent colour, 18% width, then five centred bars with a slight dark-to-light gradient.",
+      "motionRecipe": "Linear rollup over 7 frames, hold, bars rise in at 3.43 s with stagger, plateau 6 frames, surge to full in 3 frames. Bars finish exactly as the next ground.",
+      "soundRecipe": "Inferred: riser into the fill.",
+      "techniqueIds": [
+        "eased-rollup",
+        "chart-as-wipe"
+      ],
+      "copySlot": {
+        "purpose": "The headline value as one number",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "cadence",
+      "role": "How often or how it repeats",
+      "startSec": 3.87,
+      "durationSec": 1.03,
+      "visualRecipe": "Same ground the chart became. White capitals, 61% width.",
+      "motionRecipe": "Rises from 75% of frame height to centre, expo-out over 8 frames, then slow drift upward.",
+      "soundRecipe": "Inferred: no hit, carried by the riser's tail.",
+      "techniqueIds": [],
+      "copySlot": {
+        "purpose": "Cadence claim",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "quiet-facts",
+      "role": "Two product facts on dark",
+      "startSec": 4.9,
+      "durationSec": 1.6,
+      "visualRecipe": "Black ground with one barely visible shape. White neutral grotesque at 30% width, grey second line under it.",
+      "motionRecipe": "First line builds word by word from 5.03 s; its figure rolls for 10 frames. Swap to the second fact at 5.7 s.",
+      "soundRecipe": "Inferred: section stays quiet. Do not impact here; this is the rest.",
+      "techniqueIds": [
+        "eased-rollup"
+      ],
+      "copySlot": {
+        "purpose": "Fact with a number; fact with a number",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "object-to-range",
+      "role": "A symbol of the category lands in a card, which shows the range",
+      "startSec": 6.5,
+      "durationSec": 4.03,
+      "visualRecipe": "Paper ground. Glossy object arrives oversized at right; one data card at 25% width; later a row of cards with depth of field.",
+      "motionRecipe": "Object spins past edge-on, decelerates and lands in the card's icon slot by 7.2 s. Card swaps content every 6-12 frames. From 8.46 s scale down with blur, reveal neighbours. Row slides left until the cut.",
+      "soundRecipe": "Inferred: section lifts around 9.7 s (measured energy 0.18 to 0.46), so build the card row into that rise.",
+      "techniqueIds": [
+        "object-into-slot",
+        "card-rotator"
+      ]
+    },
+    {
+      "id": "the-action",
+      "role": "Our own interface doing the one action",
+      "startSec": 10.53,
+      "durationSec": 2.67,
+      "visualRecipe": "Dark ground, real interface at natural size, 60% of the width, slightly soft at the edges.",
+      "motionRecipe": "Hard cut in on the first frame of the raised energy. Values change by themselves while the view scrolls up (rollup, then slider). From 12.7 s the primary button brightens from both edges and grows; label shrinks.",
+      "soundRecipe": "Inferred: small ticks for each value change. Lands on a transient at the cut.",
+      "techniqueIds": [
+        "button-swallow",
+        "eased-rollup"
+      ],
+      "copySlot": {
+        "purpose": "One short control label, from our real interface",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "potential",
+      "role": "What the action could reach",
+      "startSec": 13.2,
+      "durationSec": 1.17,
+      "visualRecipe": "Paper ground, number at 28% width, half-circle of roughly 90-100 radial ticks running off the frame.",
+      "motionRecipe": "Hard cut before the button fills. Expo-out in 20 frames with ticks tied to the value; hold 0.5 s with slow pull-out.",
+      "soundRecipe": "Inferred: rising tick, then cut on a transient.",
+      "techniqueIds": [
+        "eased-rollup",
+        "radial-tick-gauge"
+      ],
+      "copySlot": {
+        "purpose": "The top value",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "rule",
+      "role": "Three-beat imperative",
+      "startSec": 14.37,
+      "durationSec": 2.0,
+      "visualRecipe": "Accent ground. Word 1 at 56% width with a growing underline, word 2 at 35%, word 3 at 88%.",
+      "motionRecipe": "Two hard swaps at 14.97 s and 15.5 s. Word 3 grows slowly through its hold.",
+      "soundRecipe": "Inferred: each swap on a transient. Keep them uneven: 0.6, 0.53, 0.87 s.",
+      "techniqueIds": [
+        "cut-on-transient"
+      ],
+      "copySlot": {
+        "purpose": "How to join, in three words or groups",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "running-gain",
+      "role": "A gain running up",
+      "startSec": 16.37,
+      "durationSec": 0.76,
+      "visualRecipe": "White ground, green number at 45% width.",
+      "motionRecipe": "Linear rollup all the way through, slow pull-out. Never settles: the cut takes it.",
+      "soundRecipe": "Inferred: quiet continuous tick.",
+      "techniqueIds": [
+        "eased-rollup"
+      ],
+      "copySlot": {
+        "purpose": "A running gain",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "you-win",
+      "role": "The viewer shown at the desired outcome, among others",
+      "startSec": 17.13,
+      "durationSec": 2.24,
+      "visualRecipe": "Accent ground, long list in a card, one wider row pinned at centre with the gain from the previous slot and a label for the viewer.",
+      "motionRecipe": "List streams with motion blur; settles in 0.5 s; slides until the pinned row is on top. Hard punch-in at 18.57 s to the top four rows; sheen crosses the first row.",
+      "soundRecipe": "Inferred: hit on the cut in, hit on the punch-in.",
+      "techniqueIds": [
+        "pinned-row-ranking"
+      ],
+      "copySlot": {
+        "purpose": "Label that means the viewer",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "threshold",
+      "role": "A threshold number, then what it means",
+      "startSec": 19.37,
+      "durationSec": 1.46,
+      "visualRecipe": "Accent ground with one faint related picture. Word and number, 70% width, heavy. Then a two-line sentence at 56% of that size.",
+      "motionRecipe": "Word arrives low and shifts as digits open; 13-frame power1.out (near-even steps slowing at the end) rollup; hard cut at 20.03 s; second line arrives word by word within 3 frames.",
+      "soundRecipe": "Inferred: on transients.",
+      "techniqueIds": [
+        "eased-rollup",
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "Threshold, then what it unlocks",
+        "maxWords": 5
+      }
+    },
+    {
+      "id": "peak-value",
+      "role": "The largest single value, with a tag",
+      "startSec": 20.83,
+      "durationSec": 1.17,
+      "visualRecipe": "White ground with a faint engraving. Black heavy number at 35% width; skewed accent tag under it overlapping the figure.",
+      "motionRecipe": "Linear rollup over 14 frames; tag wipes in from the left at 21.0 s; drift.",
+      "soundRecipe": "Inferred: hit as the tag lands.",
+      "techniqueIds": [
+        "eased-rollup",
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "The value and what it is for",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "itemised-object",
+      "role": "Full details on a physical object",
+      "startSec": 22.0,
+      "durationSec": 1.83,
+      "visualRecipe": "Black ground. One curled paper sheet tilted 10 degrees, soft sheen.",
+      "motionRecipe": "Unrolls towards the camera with a new row about every 2 frames for 0.5 s; slow pull-back.",
+      "soundRecipe": "Inferred: dry mechanical ticks would suit; check against our own mix.",
+      "techniqueIds": [
+        "printing-slip"
+      ],
+      "copySlot": {
+        "purpose": "Title and short list of real values",
+        "maxWords": 20
+      }
+    },
+    {
+      "id": "countdown",
+      "role": "Time collapses to zero",
+      "startSec": 23.83,
+      "durationSec": 1.57,
+      "visualRecipe": "Black ground, three white figures with dim suffix letters, 45% width.",
+      "motionRecipe": "Hard cut in. Figures change every frame for 1.3 s. Hold on zero 0.2 s.",
+      "soundRecipe": "Inferred: accelerating ticks into a cut.",
+      "techniqueIds": [
+        "eased-rollup"
+      ]
+    },
+    {
+      "id": "event-name",
+      "role": "Name the event and its dates",
+      "startSec": 25.4,
+      "durationSec": 1.6,
+      "visualRecipe": "Accent ground. White capitals at 70% width, ghost of the same word 200% size behind it at 8% contrast; then the tile field with a date line.",
+      "motionRecipe": "Ghost drifts sideways; swap at 26.0 s; tiles light at random.",
+      "soundRecipe": "Inferred: strongest cut of the second half; let it hit.",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "Event name; starts when, dates",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "still-recap",
+      "role": "Recap with motion stopped",
+      "startSec": 27.0,
+      "durationSec": 2.17,
+      "visualRecipe": "White ground with a faint engraving, small black number at 18% width. Accent ground, same size line.",
+      "motionRecipe": "Rollup is the only thing moving. Everything else frozen by 28.8 s.",
+      "soundRecipe": "Inferred: music carries; keep cuts on transients.",
+      "techniqueIds": [
+        "eased-rollup",
+        "stillness-before-the-ask"
+      ],
+      "copySlot": {
+        "purpose": "Headline value; cadence",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "dare",
+      "role": "A direct question",
+      "startSec": 29.17,
+      "durationSec": 0.93,
+      "visualRecipe": "Paper ground. Heavy black two-line capitals, 50% width, centred.",
+      "motionRecipe": "No animation until the last 3 frames.",
+      "soundRecipe": "Inferred: could thin the mix for this moment; not established from the data.",
+      "techniqueIds": [
+        "stillness-before-the-ask"
+      ],
+      "copySlot": {
+        "purpose": "Question that dares the viewer",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "call-to-action",
+      "role": "Call to action",
+      "startSec": 30.1,
+      "durationSec": 1.63,
+      "visualRecipe": "Accent ground, rings from slot 2 again, a faint chart inside. White capitals at 70% width. Same words as the first part of the rule.",
+      "motionRecipe": "Push-in with rings, expo-out, chart draws.",
+      "soundRecipe": "Inferred: resolves.",
+      "techniqueIds": [
+        "field-backdrops"
+      ],
+      "copySlot": {
+        "purpose": "The action",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "end-card",
+      "role": "Product, address, mark, legal",
+      "startSec": 31.73,
+      "durationSec": 4.303,
+      "visualRecipe": "Paper ground. Accent word at 40% width with address line; then mark, building into the name, with small legal lines at the bottom.",
+      "motionRecipe": "Hard swap at 33.17 s. Mark builds out by 34.4 s, then frozen.",
+      "soundRecipe": "Inferred: tail decays; measured energy falls at 34.9 s.",
+      "techniqueIds": [],
+      "copySlot": {
+        "purpose": "Product word, address, legal as required",
+        "maxWords": 30
+      }
+    }
+  ],
+  "rhythm": {
+    "bpm": 130,
+    "cutGrid": "Not a bar grid. Median shot 0.95 s, range 0.46-4.03 s. Under about 10 s cut freely on the beat where you can; after the music rises, put every cut on a transient within 0.08 s. Vary hold lengths: 0.6, 0.53, 0.87 s beats three equal ones. Only two sequences above 2 s."
+  },
+  "style": "One accent colour, near-white and black grounds changed by hard cuts; one heavy condensed face in capitals; one centred element; one faint moving layer at most; numbers animated rather than stated; three small object moments.",
+  "transferRules": {
+    "keep": [
+      "Value-rollup grammar",
+      "Chart-as-wipe logic",
+      "Viewer cast into the outcome before the benefit is named",
+      "Size-only hierarchy with three grounds",
+      "Motion stopping before the closing question",
+      "Slot sequence and timings",
+      "Cuts locked to transients"
+    ],
+    "mustChange": [
+      "All branding, marks, names and addresses",
+      "Accent colour and fonts",
+      "Music and all sound",
+      "All graphics: object, sheet, engraving, background pictures and cards",
+      "All copy and all numbers, which must be true for the new product",
+      "Interface: must be the new product's real one",
+      "Legal wording: from the new product's own counsel"
+    ]
+  }
+}

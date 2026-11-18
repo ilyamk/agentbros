@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "id": "explainer",
+  "playbook": "explainer",
+  "tier": "no-spend",
+  "brief": "Make a 12\u201320 second square explainer of why editing removes pauses while preserving meaning. Use the supplied legacy demo fixture only as a template/workflow schema scaffold; replace its copy, colours and product. Use a local template or video:workflow route with library visuals, captions, an explicit silent soundtrack decision and no generated media or voice.",
+  "material": [
+    {
+      "path": "tests/fixtures/legacy/demo/project.json",
+      "sha256": "7320b9ed4748e2fdf5869eabf5ddccbfeb720c8cbad41e128edf20f632a459fa",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    },
+    {
+      "path": "bench/answers/explainer.json",
+      "sha256": "b4f014cfae76cf0b6da453c0b227747ddbc15924b55a9f3044c54d3fef1a27ea",
+      "licence": "Repository-authored test fixture; BUSL-1.1. Synthetic test media is not a real person or speech."
+    }
+  ],
+  "constraints": {
+    "format": "square",
+    "durationSec": [
+      12,
+      20
+    ]
+  },
+  "answers": "bench/answers/explainer.json",
+  "criteria": [
+    {
+      "id": "outcome",
+      "kind": "process",
+      "check": {
+        "type": "file",
+        "path": "bench-result.json"
+      }
+    },
+    {
+      "id": "no-spend",
+      "kind": "process",
+      "check": {
+        "type": "no-spend"
+      }
+    },
+    {
+      "id": "delivery",
+      "kind": "technical",
+      "check": {
+        "type": "delivery"
+      }
+    },
+    {
+      "id": "task-constraints",
+      "kind": "technical",
+      "check": {
+        "type": "constraints"
+      }
+    },
+    {
+      "id": "file-sensors",
+      "kind": "technical",
+      "check": {
+        "type": "file-sensors"
+      }
+    }
+  ]
+}

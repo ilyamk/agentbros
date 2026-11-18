@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "projectId": "good",
+  "fps": 30,
+  "blueprintReferenceId": "good-ref",
+  "shots": [
+    {
+      "id": "hook",
+      "beatId": "hook",
+      "startFrame": 0,
+      "durationFrames": 150,
+      "intent": "i",
+      "subject": "poster type",
+      "framing": "f",
+      "camera": "c",
+      "composition": "c",
+      "entrance": "e",
+      "exit": "e",
+      "curve": "expoOut",
+      "route": "remotion"
+    },
+    {
+      "id": "cta",
+      "beatId": "cta",
+      "startFrame": 150,
+      "durationFrames": 150,
+      "intent": "i",
+      "subject": "the app in use",
+      "framing": "f",
+      "camera": "c",
+      "composition": "c",
+      "entrance": "e",
+      "exit": "e",
+      "curve": "expoOut",
+      "route": "footage"
+    }
+  ],
+  "onScreenCopy": [
+    {
+      "shotId": "hook",
+      "text": "Меньше шума.",
+      "required": true
+    },
+    {
+      "shotId": "hook",
+      "text": "Больше ясности."
+    },
+    {
+      "shotId": "cta",
+      "text": "Начни с Ясно",
+      "required": true
+    }
+  ],
+  "finalFrameIntent": "hold"
+}

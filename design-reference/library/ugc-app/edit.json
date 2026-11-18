@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ugc-app",
+  "rhythm": {
+    "value": "Detector: 14 shots, median 1.1 s. Corrected: the film has three speeds. 0-2.1 s is one slow shot. 2.1-2.9 s is eight hard cuts at 2-4 frames (0.1 s median). 2.9-6.9 s is one continuous move of 4 s. Stats hold one line of text for 6.17 s over background cuts, quick at first (every 2-3 frames to 7.4 s), then 30-60 frames apart. The end is four word-shots of 0.9-1.6 s. Sound was not heard. No speech was detected. Tempo reads 128.38 BPM with confidence only 0.456 (beatRegularity 0.96), so treat it as doubtful. Level jumps at about 4.2 s (section 1 energy 0.21, section 2 energy 0.50). audio.json onsets are too dense to show structure, so I measured 50 ms RMS peaks from the media: 4.0, 4.7, 5.6, 7.0, 7.7, 8.45, 9.35, (10.05), 10.75, 11.45, 12.1, 13.05, 14.45, 15.15, 15.85, 16.75. That is one uneven figure repeating about every 3.7 s (+0, +0.7, +1.6, +3.0 s; 10.05 is an extra), which is 8 beats at the measured tempo, so the tempo may be right despite its low confidence. Four of the five main picture changes fall within 0.1 s of a swell: 6.9 (7.0), 11.4 (11.45), 13.07 (13.05), 15.07 (15.15); 16.17 does not. With 16 peaks in 13.5 s, a random time lands within 0.1 s about 24% of the time. I chose those five main changes after seeing the peaks, so this is suggestive rather than proved. What makes the swells cannot be told without hearing. cutsOnBeat 0.462 vs chance 0.338: weak. cutsOnOnset 0.923 vs chance 0.706, on 13 cuts: suggestive only, because onsets are dense. The 0.1 s page cuts cannot each be on an onset, so they are not cut to sound one by one.",
+    "basis": "measured",
+    "confidence": 0.6,
+    "evidence": [
+      "audio.json tempo",
+      "sync.json metrics",
+      "visuals/edit-map.png",
+      "50 ms RMS peaks of media/source.mp4, computed for this analysis, not in a measured layer"
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "s001",
+      "purpose": {
+        "value": "Plant the topic",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/open.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Bar grows, text typed, then jumps to a large size at F46-F48; grain appears at F60 before the cut",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/open.jpg F0-F60"
+        ]
+      }
+    },
+    {
+      "shotId": "s002",
+      "purpose": {
+        "value": "First proof page",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg"
+        ]
+      },
+      "technique": {
+        "value": "4 frames; greyed page, phrase highlighted",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg F63-F66"
+        ]
+      }
+    },
+    {
+      "shotId": "s003",
+      "purpose": {
+        "value": "Four more pages",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg"
+        ]
+      },
+      "technique": {
+        "value": "2, 3, 3 and 3 frames; phrase held at the same place",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg F67-F77"
+        ]
+      }
+    },
+    {
+      "shotId": "s004",
+      "purpose": {
+        "value": "Another page",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg"
+        ]
+      },
+      "technique": {
+        "value": "4 frames",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg F78-F81"
+        ]
+      }
+    },
+    {
+      "shotId": "s005",
+      "purpose": {
+        "value": "Two more pages",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg"
+        ]
+      },
+      "technique": {
+        "value": "2 and 3 frames",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg F82-F86"
+        ]
+      }
+    },
+    {
+      "shotId": "s006",
+      "purpose": {
+        "value": "Page, then one person",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/grid-in.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Starts on a crop of lips; card opens to its full size in 6 frames; the column scrolls up",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/search-cuts.jpg F87-F89",
+          "visuals/a1/grid-in.jpg F87-F132"
+        ]
+      }
+    },
+    {
+      "shotId": "s007",
+      "purpose": {
+        "value": "Many people",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/grid-pull.jpg"
+        ]
+      },
+      "technique": {
+        "value": "White soft tiles fade to video from the centre outward; continuous pull-back",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/grid-pull.jpg F136-F204"
+        ]
+      }
+    },
+    {
+      "shotId": "s008",
+      "purpose": {
+        "value": "First stat opening",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/stat1.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Wall dims one frame; first word on it; background then cuts every 2-3 frames",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/stat1.jpg F207-F217"
+        ]
+      }
+    },
+    {
+      "shotId": "s009",
+      "purpose": {
+        "value": "Stats one and two",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/stat-hold.jpg",
+          "visuals/a1/stat2.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Line at one height; background swaps; pill moves to the figure at F309",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/stat2.jpg F306-F309"
+        ]
+      }
+    },
+    {
+      "shotId": "s010",
+      "purpose": {
+        "value": "Black beat between sentences",
+        "basis": "observed",
+        "confidence": 0.8,
+        "evidence": [
+          "visuals/a1/stat2.jpg F339"
+        ]
+      },
+      "technique": {
+        "value": "4 frames of black as words delete from the middle",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/stat2.jpg F336-F339",
+          "visuals/a1/stat3.jpg F339-F342"
+        ]
+      }
+    },
+    {
+      "shotId": "s011",
+      "purpose": {
+        "value": "The largest figure over the largest picture",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/stat3.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Pill arrives first with the figure, the rest fills around it",
+        "basis": "observed",
+        "confidence": 0.85,
+        "evidence": [
+          "visuals/a1/stat3.jpg F342-F360"
+        ]
+      }
+    },
+    {
+      "shotId": "s012",
+      "purpose": {
+        "value": "Question begins",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/ending.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Large words track from right to left with focus falling off to the edges; then a small phrase holds",
+        "basis": "observed",
+        "confidence": 0.9,
+        "evidence": [
+          "visuals/a1/ending.jpg F393-F450"
+        ]
+      }
+    },
+    {
+      "shotId": "s013",
+      "purpose": {
+        "value": "The key word",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/end2.jpg"
+        ]
+      },
+      "technique": {
+        "value": "Blue, biggest, bloom; pushes and exits left",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/end2.jpg F453-F483"
+        ]
+      }
+    },
+    {
+      "shotId": "s014",
+      "purpose": {
+        "value": "Open ending",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/end2.jpg"
+        ]
+      },
+      "technique": {
+        "value": "White word with blue question mark; blue light grows from the bottom right",
+        "basis": "observed",
+        "confidence": 0.95,
+        "evidence": [
+          "visuals/a1/end2.jpg F486-F507"
+        ]
+      }
+    }
+  ],
+  "signatureMoves": [
+    {
+      "value": {
+        "startSec": 2.1,
+        "endSec": 2.9,
+        "name": "highlight-locked-smash-cut",
+        "description": "Highlight-locked smash cut. Eight different pages (F63, F67, F69, F72, F75, F78, F82, F84) held 2-4 frames each. In each, a yellow highlight on the same phrase sits within a few percent of frame centre. Page scale changes, but the marked phrase stays the same size to the eye, so it reads as a single object with worlds changing round it.",
+        "why": "A human eye settles on the stable bright point, so a run this fast still reads. The film saves cost as well: the pages need only be credible for 3 frames.",
+        "spans": [
+          {
+            "startSec": 2.1,
+            "endSec": 2.9
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F63-F86"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 2.9,
+        "endSec": 6.9,
+        "name": "one-becomes-crowd-pull-out",
+        "description": "From lips to a crowd in one move. Card begins as a crop of lips (F87) and opens to a person in 6 frames. The column scrolls with a soft white halo at each card's edge. At 4.5 s, white blurred tiles appear left and right, resolving to video outward from the centre by F148. The wall continues to shrink, from about 6 to about 16 columns, until 6.9 s.",
+        "why": "The move turns one person into a statistic physically. The white blank tiles look like content loading, which supports the idea that there's more and more.",
+        "spans": [
+          {
+            "startSec": 2.9,
+            "endSec": 6.9
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F87-F89",
+        "visuals/a1/grid-in.jpg F87-F135",
+        "visuals/a1/grid-pull.jpg F132-F204"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 6.9,
+        "endSec": 13.07,
+        "name": "caption-anchor-over-footage-stutter",
+        "description": "A centred sentence over dim hard cuts. The line keeps one height and stays centred as it builds: each new word arrives yellow and cools to white in about 9 frames, and earlier words slide left to make room. A yellow pill opens empty (F215-F216) and fills with its words (F217), and later jumps to the figure (F309). A source line types itself at the bottom. Footage at about 25% brightness cuts every 2-3 frames to 7.4 s, then every 30-60 frames. One grey frame at F219. Words delete in groups to end a sentence, and those left do not move, so gaps stay open (F264, F339).",
+        "why": "The picture keeps changing while the eye stays on one short line, so the film can hold a reading pace while its energy stays up.",
+        "spans": [
+          {
+            "startSec": 6.9,
+            "endSec": 13.07
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/stat1.jpg F207-F227",
+        "visuals/a1/stat-hold.jpg F225-F276",
+        "visuals/a1/stat2.jpg F300-F339"
+      ]
+    },
+    {
+      "value": {
+        "startSec": 13.07,
+        "endSec": 17.0,
+        "name": "lens-pass-word-track",
+        "description": "Size as emphasis, words as a passing camera. 'What' enters at the right edge, soft and bluish, focuses as it nears the centre (F396), 'if' follows, and both drift out soft at the left. Then 'there was a', tiny and nearly still, in black for 0.8 s. Hard cut to 'better' at 83% of width, blue, with a bloom. Hard cut to 'way?', with light rising from the corner. File ends mid-motion.",
+        "why": "The smallest words get the longest pause, so the viewer waits; then the biggest word arrives.",
+        "spans": [
+          {
+            "startSec": 13.07,
+            "endSec": 17.0
+          }
+        ]
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/ending.jpg F393-F450",
+        "visuals/a1/end2.jpg F453-F507"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 2.3,
+        "transition": "cut",
+        "note": "Page change at F69. The detector kept F67-F77 as one shot, although they are four pages: edges barely change because the phrase and layout align."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F68-F69"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 2.4,
+        "transition": "cut",
+        "note": "Page change at F72."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F71-F72"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s003"
+        ],
+        "timeSec": 2.5,
+        "transition": "cut",
+        "note": "Page change at F75."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F74-F75"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s005"
+        ],
+        "timeSec": 2.8,
+        "transition": "cut",
+        "note": "Page change at F84."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/search-cuts.jpg F83-F84"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s007"
+        ],
+        "timeSec": 4.47,
+        "transition": "continuous",
+        "note": "Cut 0.63 is wrong: same column continues; neighbouring tiles appear as white blurs from F135. One continuous shot from 2.9 to 6.9 s."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/grid-in.jpg F132-F135",
+        "visuals/a1/grid-pull.jpg F132-F148"
+      ]
+    },
+    {
+      "value": {
+        "kind": "merge",
+        "shotIds": [
+          "s006",
+          "s007"
+        ],
+        "note": "Same as above: the column widening into the wall is one move."
+      },
+      "basis": "observed",
+      "confidence": 0.9,
+      "evidence": [
+        "visuals/a1/grid-pull.jpg"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 6.9,
+        "transition": "cut",
+        "note": "match 0.45 is wrong as a term: the wall drops to about 25% brightness in one frame as text starts. It keeps the layout because it is the same picture, dimmed."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F206-F207"
+      ]
+    },
+    {
+      "value": {
+        "kind": "retype",
+        "shotIds": [
+          "s009",
+          "s010",
+          "s011"
+        ],
+        "transition": "cut",
+        "note": "Background cuts under a held line. 'match' fires because the bright text stays put. These are not picture matches."
+      },
+      "basis": "observed",
+      "confidence": 0.85,
+      "evidence": [
+        "visuals/a1/stat1.jpg F217-F220",
+        "visuals/a1/stat2.jpg F336-F339",
+        "visuals/a1/stat3.jpg F339-F342"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 6.97,
+        "transition": "cut",
+        "note": "Background cut under the held line (F209). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F208-F209"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 7.07,
+        "transition": "cut",
+        "note": "Background cut under the held line (F212). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F211-F212"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 7.13,
+        "transition": "cut",
+        "note": "Background cut under the held line (F214). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F213-F214"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s008"
+        ],
+        "timeSec": 7.23,
+        "transition": "cut",
+        "note": "Background cut under the held line (F217). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F216-F217"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 7.33,
+        "transition": "cut",
+        "note": "Background cut under the held line (F220). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F219-F220"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 7.4,
+        "transition": "cut",
+        "note": "Background cut under the held line (F222). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.95,
+      "evidence": [
+        "visuals/a1/stat1.jpg F221-F222"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 8.45,
+        "transition": "cut",
+        "note": "Background cut under the held line (within F253-F255). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/stat-hold.jpg F252-F255"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 8.97,
+        "transition": "cut",
+        "note": "Background cut under the held line (within F268-F270). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.8,
+      "evidence": [
+        "visuals/a1/stat-hold.jpg F267-F270"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 10.97,
+        "transition": "cut",
+        "note": "Background cut under the held line (within F328-F330). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/stat2.jpg F327-F330"
+      ]
+    },
+    {
+      "value": {
+        "kind": "split",
+        "shotIds": [
+          "s009"
+        ],
+        "timeSec": 11.07,
+        "transition": "cut",
+        "note": "Background cut under the held line (within F331-F333). The dim layer moves too little colour to count."
+      },
+      "basis": "observed",
+      "confidence": 0.75,
+      "evidence": [
+        "visuals/a1/stat2.jpg F330-F333"
+      ]
+    }
+  ]
+}

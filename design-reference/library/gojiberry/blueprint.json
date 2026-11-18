@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "gojiberry",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 60
+  },
+  "durationSec": 56.533,
+  "slots": [
+    {
+      "id": "query-hook",
+      "role": "Hook: a long, very specific request typed into a field",
+      "startSec": 0,
+      "durationSec": 1.933,
+      "visualRecipe": "Near-white field filling the frame, a rounded input with a dark round button at its right end. Crop so tight that only the last 25-35 characters show; regular sans, sentence case, line box about 8% of frame height, block caret.",
+      "motionRecipe": "Typewriter at 2 frames a character. Camera follows the caret right and pushes about 1.5x over 1.8 s (power1.in). Exit: 1-frame block glitch, then hard cut.",
+      "soundRecipe": "Unheard in the reference; level was steady (about -11 to -13 dB RMS). Suggest a soft key-click bed under the typing.",
+      "techniqueIds": [
+        "caret-tracking-typewriter",
+        "polarity-slice-glitch"
+      ],
+      "copySlot": {
+        "purpose": "The exact request the audience would make, with a role, an organisation type and a threshold",
+        "maxWords": 22
+      }
+    },
+    {
+      "id": "subject-under-query",
+      "role": "The person the request is about, waiting",
+      "startSec": 1.933,
+      "durationSec": 2.8,
+      "visualRecipe": "Seamless near-white studio, one person seated centred at a white desk, head at y 0.30-0.40. The typed request sits as a small pill across x 0.17-0.74 at the top 13-19% of the frame.",
+      "motionRecipe": "Locked-off, near still for 2.8 s. Exit: hard cut to black.",
+      "soundRecipe": "Measured drop: loudness falls to about -27 to -34 dB RMS over the last second before the cut to black. Let the bed thin out here.",
+      "techniqueIds": []
+    },
+    {
+      "id": "question-on-black",
+      "role": "Name the act as a question",
+      "startSec": 4.733,
+      "durationSec": 2.0,
+      "visualRecipe": "Pure black. One line of white type, caret-anchored, starting about 11-12% of frame height; the newest word in the accent colour for 6-7 frames.",
+      "motionRecipe": "7 frames of empty black first. Typewriter by word; at about 0.77 s a 4-frame ground flip (white) with a scale jump to about 1.7-2x, then a slow 8% push (power4.out, 1 s). Exit: 24-frame polarity-and-slice glitch into the next slot.",
+      "soundRecipe": "Unheard; the bed returns at the first typed word (RMS back to about -14 dB).",
+      "techniqueIds": [
+        "caret-tracking-typewriter",
+        "type-punch-flash",
+        "polarity-slice-glitch"
+      ],
+      "copySlot": {
+        "purpose": "A short question that names the hunt",
+        "maxWords": 4
+      }
+    },
+    {
+      "id": "result-build",
+      "role": "First results: people, one by one, counted",
+      "startSec": 6.733,
+      "durationSec": 5.867,
+      "visualRecipe": "Locked studio layout: request pill at top, count right-aligned to x 0.38 at eye height (box 10-13% high), seated subject centred, a one-word result label from x 0.61, a small white name card below it. Only face, count and card change.",
+      "motionRecipe": "Seven subject cuts with holds 1.47, 1.53, 0.88, 0.62, 0.45, 0.45, 0.47 s. Count doubles each cut with an odometer roll of 4-5 frames starting 1-3 frames after the cut. Some cuts pass through 2-4 flash frames (dark ghost, negative, tinted skeleton).",
+      "soundRecipe": "Unheard; onsets dense (about 5 a second). No evidence cuts follow the beat; cut on the picture's own clock.",
+      "techniqueIds": [
+        "doubling-counter-montage",
+        "flash-frame-subject-swap",
+        "polarity-slice-glitch"
+      ],
+      "copySlot": {
+        "purpose": "One result label and, per subject, a name line and a short credential",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "result-flood",
+      "role": "Overload: the count runs away until the picture tears",
+      "startSec": 12.6,
+      "durationSec": 1.467,
+      "visualRecipe": "Same layout as the previous slot; the count reaches six digits and grows leftward.",
+      "motionRecipe": "Thirteen cuts in 1.47 s: 0.25, 0.17, 0.15, 0.12, 0.13, 0.12, 0.10, 0.10, 0.07, 0.10, 0.03, 0.03, 0.10 s. Slice glitches on two subjects; the last frames tear into slices, then two white frames with a single accent bar.",
+      "soundRecipe": "Unheard; same dense bed. Inferred: a rising build would sit naturally here.",
+      "techniqueIds": [
+        "doubling-counter-montage",
+        "polarity-slice-glitch"
+      ]
+    },
+    {
+      "id": "requirement-turn",
+      "role": "State the requirement, then break it",
+      "startSec": 14.067,
+      "durationSec": 2.866,
+      "visualRecipe": "Pure black. A two-word line typed white, centred at 18-19% height; then a single adjective centred at 27% height, first slanted lower case, then upright capitals.",
+      "motionRecipe": "Typewriter, accent on the second word for 6 frames. Glitch swap (7 frames) to the adjective; letters flip case one at a time every 2-3 frames; hold 1.2 s; then polarity flips, glyphs swapped for look-alike symbols, horizontal smear, black.",
+      "soundRecipe": "Measured: very low level (about -69 dB RMS) during the held word at 16.0-16.5 s. Keep this slot nearly silent.",
+      "techniqueIds": [
+        "word-case-corruption",
+        "polarity-slice-glitch"
+      ],
+      "copySlot": {
+        "purpose": "The single quality the audience wants, set up by two words",
+        "maxWords": 3
+      }
+    },
+    {
+      "id": "reset",
+      "role": "Black and silence",
+      "startSec": 16.933,
+      "durationSec": 0.567,
+      "visualRecipe": "Pure black, nothing else.",
+      "motionRecipe": "Hold 0.57 s. Exit: hard cut into a glitching close-up.",
+      "soundRecipe": "Measured silence 16.98-17.45 s in the reference. Silence.",
+      "techniqueIds": [
+        "black-silence-breath"
+      ]
+    },
+    {
+      "id": "mark-pullback",
+      "role": "Brand mark arrives from extreme close-up",
+      "startSec": 17.5,
+      "durationSec": 1.0,
+      "visualRecipe": "A glossy extruded version of the new brand's mark in its own colour, filling the frame at first, ending as a speck on black.",
+      "motionRecipe": "Six frames of slice glitch on the close-up, then camera pulls back about 5.8x with about 39 degrees roll, power2.out over 1.4 s, cut before it settles.",
+      "soundRecipe": "Unheard; the bed restarts here (RMS about -14 dB). Inferred: a hit on the first frame.",
+      "techniqueIds": [
+        "extruded-mark-pullback"
+      ]
+    },
+    {
+      "id": "mark-bloom",
+      "role": "Brand name revealed",
+      "startSec": 18.5,
+      "durationSec": 3.6,
+      "visualRecipe": "Hard cut to white; a ring of coarse square pixels grows from the small flat mark at centre and leaves a warm pastel diagonal gradient. The lower-case wordmark sits beside the mark, 11% height, centred.",
+      "motionRecipe": "Ring grows over about 0.7 s, fast then slow (sine.out). At 1.7 s the mark gives a small scale pop, then the name types on at about 3 frames a letter.",
+      "soundRecipe": "Unheard; steady bed.",
+      "techniqueIds": [
+        "mosaic-ring-reveal"
+      ],
+      "copySlot": {
+        "purpose": "Brand name only",
+        "maxWords": 1
+      }
+    },
+    {
+      "id": "proof-first-clause",
+      "role": "The request made in the product",
+      "startSec": 22.1,
+      "durationSec": 6.0,
+      "visualRecipe": "The new product's real query field on its own ground, filmed close (about 2x) on the caret; then wide with the field across the upper third, a result count centred under it and a result visual below.",
+      "motionRecipe": "Field slides in from the right in 1 frame, an icon draws over 0.3 s, the request types at about 2.4 frames a character with the camera tracking the caret; hard cut wide at 2.5 s; the count races up over 1.7 s and settles.",
+      "soundRecipe": "Unheard; bed continues. Inferred: a soft tick per counter step if anything.",
+      "techniqueIds": [
+        "caret-tracking-typewriter",
+        "interface-punch-cuts"
+      ],
+      "copySlot": {
+        "purpose": "The first clause of a plain-language request, and a result count",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "proof-refine",
+      "role": "Each added clause narrows the result",
+      "startSec": 28.1,
+      "durationSec": 6.9,
+      "visualRecipe": "Alternate caret close-ups (1.4-1.8x) and wides. A bracketed placeholder shows the next clause in the accent colour before it is filled. Count falls between wides.",
+      "motionRecipe": "Hard cuts at 0, 2.37 and 5.0 s into the slot; each close-up has a short push (circ.out or power3.out, 0.4-0.8 s). The last close-up pushes to the submit control (power2.inOut, 0.74 s).",
+      "soundRecipe": "Unheard.",
+      "techniqueIds": [
+        "caret-tracking-typewriter",
+        "interface-punch-cuts"
+      ],
+      "copySlot": {
+        "purpose": "Two narrowing clauses, each a property a buyer would sort or narrow by",
+        "maxWords": 10
+      }
+    },
+    {
+      "id": "submit-result",
+      "role": "Press and the short list",
+      "startSec": 35.0,
+      "durationSec": 5.867,
+      "visualRecipe": "Pointer on the submit control; a flat pink wash over the whole frame; a dot-matrix result shape and a small count resolve out of it on the warm gradient; then a single instruction line drifts across at mid height.",
+      "motionRecipe": "Press, wash rises over 0.35 s, a ring ripples out from the pointer, the result appears at 0.36 s, the wash clears by 1.0 s, the count ticks down for 0.4 s. The instruction line slides slowly left (circ.out).",
+      "soundRecipe": "Unheard. Inferred: a click on the press frame.",
+      "techniqueIds": [
+        "submit-wash-dissolve"
+      ],
+      "copySlot": {
+        "purpose": "A small result count, then a one-line instruction to the viewer",
+        "maxWords": 8
+      }
+    },
+    {
+      "id": "payoff",
+      "role": "One right person",
+      "startSec": 40.867,
+      "durationSec": 7.433,
+      "visualRecipe": "Hard cut to near-white studio. The second half of the instruction types centred, small (7% height); the camera tilts down from it to one seated person centred. A hand enters left with a positive gesture; a small pale pill at top centre counts a percentage to a full score.",
+      "motionRecipe": "Typewriter by word, then tilt down 0.5 frame heights with a slight pull-out, power4.out over 2.7 s. Hand enters in 6 frames; pill grows from a dot and counts over 12 frames. Person stands and walks out right from 6.3 s.",
+      "soundRecipe": "Measured: quieter passage (about -22 to -30 dB RMS) from 45.5 to 48.5 s while the person stands and leaves.",
+      "techniqueIds": [
+        "tilt-to-matched-person"
+      ],
+      "copySlot": {
+        "purpose": "Completion of the instruction, and the score label",
+        "maxWords": 6
+      }
+    },
+    {
+      "id": "end-card",
+      "role": "Brand and offer",
+      "startSec": 48.3,
+      "durationSec": 8.233,
+      "visualRecipe": "The same plate fully defocused; the flat mark and lower-case wordmark centred at 14-17% height; a black pill below at y 0.58 with white text and the address in the accent colour. Last frame is the card, no fade.",
+      "motionRecipe": "Defocus ramps over about 0.6 s; mark pops at 0.63 s, name types on at about 3 frames a letter, pill arrives at 2.1 s, small push (circ.out, 0.4 s), then hold to the end.",
+      "soundRecipe": "Measured: level returns (about -9 dB RMS) as the mark appears and drops to near silence in the last 1.8 s.",
+      "techniqueIds": [
+        "defocus-end-card"
+      ],
+      "copySlot": {
+        "purpose": "Brand name, then one offer line with the address",
+        "maxWords": 9
+      }
+    }
+  ],
+  "rhythm": {
+    "cutGrid": "No beat grid: tempo confidence 0.15 and cuts land on beats below chance. Two tempos. Calm sections hold 2-6 s per shot (median 2.4 s) and move by typing and camera, not cutting. One accelerando of 20 shots in 7.3 s: holds fall roughly geometrically from 1.5 s to 2 frames, each cut doubling an on-screen count, the number rolling 1-3 frames after the face. Black frames bracket the accelerando: 7 frames before the question, 0.57 s on silence before the brand. Cut on the picture's own clock (typed clause complete, count settled), not on the music."
+  },
+  "style": "High-key white studio and pure black alternated by polarity flips and slice glitches; one regular sans throughout, set at the caret; a single warm accent; then a calm warm-gradient interface and a still end card.",
+  "transferRules": {
+    "keep": [
+      "The order: request, person, question, accelerating flood, requirement, black reset, brand, product proof, one right person, card",
+      "Caret-anchored typing as the film's grammar: the frame follows the caret, the newest word in the accent for 6-7 frames",
+      "The accelerando: same seat and framing for every subject, count doubling per cut, holds shrinking from 1.5 s to 2 frames, the face 1-3 frames before the number",
+      "Polarity flips and slice glitches for every section change; none inside calm sections",
+      "A 0.5-0.6 s black hold on near-silence before the brand",
+      "Product proof as wide/close alternation where each clause typed changes a result count",
+      "The payoff as one still person with a score, set against the flood",
+      "No fade on the last frame"
+    ],
+    "mustChange": [
+      "All branding: mark, name, wordmark, address, accent colour and fonts",
+      "Music and all sound",
+      "All graphics, including the extruded mark, the pixel ring, the badge, the result visual and the gradient",
+      "All copy and all numbers, true for the new product",
+      "All people, names, credentials and figures on the cards",
+      "The interface: the new product's real one, captured"
+    ]
+  }
+}

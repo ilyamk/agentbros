@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "nexaa",
+  "palette": {
+    "value": [
+      "#F7FEFE",
+      "#FEFEFE",
+      "#0966F6",
+      "#101F3C",
+      "#0C5AC4",
+      "#1170EE",
+      "#3599F5",
+      "#3E90F9",
+      "#A7D7FD",
+      "#43C2FE",
+      "#2FBAFA",
+      "#A453EC",
+      "#D1D6FD",
+      "#141414",
+      "#B5B5B5"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "source frames sampled: 0.5 s ground #F7FEFE and light #3599F5; 2.0 s blue ground #0966F6; 4.0 s navy type #101F3C; 0.4 s opening-word blue #1170EE; 1.26 s name line: first word darkest #000000 (navy-black), product name most saturated #0C5AC4; 6.2 s UI ground #FEFEFE; 10.2 s send button #43C2FE; 14.1 s shimmer #A453EC and #D1D6FD; 16.0 s sky ground #A7D7FD; 28.5 s wordmark #2FBAFA, corner glow #3E90F9; UI text #141414; watermark #B5B5B5"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "hero word / name line",
+        "description": "Geometric sans, semibold-bold, mixed case, centred (bbox centre x 0.49-0.51). Greeting word settles at 43% of frame width (F14); name line 52% wide, glyph height 16% of frame height (F30). Two-colour: first word navy-black (darkest pixel #000000 at F30), product name brand blue #0C5AC4; the opening word runs navy to #1170EE. Face looks like Plus Jakarta Sans or similar (inferred)."
+      },
+      {
+        "role": "premise line on blue",
+        "description": "Same sans, regular-medium, white on #0966F6, centred; glyph height 13.6% (F60), then a single word at 12.2% (F75). Words are added on a cut, one every 4-6 frames."
+      },
+      {
+        "role": "premise line on white",
+        "description": "Same sans, regular, navy with the last words in a lighter blue, centred; 9.7% glyph height (F100), then a full sentence at 6.7% (F121, 57% of frame width). Each new word arrives pale and darkens over 3-4 frames."
+      },
+      {
+        "role": "interface",
+        "description": "The product's own UI text: grey-black #141414 sans at 3-4% of frame height in wide shots; placeholder prompt in a monospaced face; product name inside typed prompts in brand blue; answers in small body text (about 2% of frame height)."
+      },
+      {
+        "role": "typed question at headline size",
+        "description": "In the two prompt close-ups (15.3-17.8 s, 19.25-21.67 s) the field is shot at about 6% glyph height so typing reads like a headline; the camera follows the caret."
+      },
+      {
+        "role": "closing lines",
+        "description": "Benefit sentence 6.4% glyph height, centred, navy, words fade up one by one; wordmark lower case, bold, cyan #2FBAFA, about 40% of width with a small navy tagline under it; call to action 3.6% and closing line 5% glyph height, centred, held still."
+      }
+    ],
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": [
+      "visuals/a1/t01-open-pullout.jpg F14",
+      "visuals/a1/t02-light-sweep.jpg F24",
+      "visuals/a1/t03-cut-to-blue.jpg F45-F50",
+      "visuals/a1/t05-words-build.jpg F106-F121",
+      "visuals/a1/t16-cut-to-typing.jpg F462-F475",
+      "visuals/a1/t19-wordmark.jpg F657-F671",
+      "visuals/a1/t21-endcard.jpg F732",
+      "full-frame text bounding boxes measured at F14, F30, F60, F75, F100, F121, F650, F700, F720, F745; cross-checked against speech-text.json screenText boxes (full frame; box heights run 5-10% above glyph height: name 0.172, blue line 0.151, single word 0.148, audience 0.106, sentence 0.069-0.072, closing sentence 0.079, call to action 0.048, last line 0.053)"
+    ]
+  },
+  "composition": {
+    "value": "Everything is centred on the frame's vertical axis; type sits on the horizontal centre line (OCR boxes of the kinetic lines span y 0.42-0.59, box centres x 0.50-0.51). Kinetic type uses 37-57% of frame width; the hero word starts at well over 100% and settles at 43%. Wide UI shots show the assistant panel at about 70% of frame width with large white margins; punch-ins take the prompt field to about 1.8x (prompt line OCR box height 0.037 wide -> 0.064-0.066 close; title 0.044 -> 0.064-0.080) and the send button macro to about 7x, framed off-centre so the field's rounded corner leads the eye to the button. The headline-size prompts (15.3-17.8 s, 19.25-21.67 s) have field boxes 0.09-0.15 of frame height and run off the left edge (OCR boxes at x=0) while the camera follows the caret. Light pale-blue squares (about 2% of frame width, #D1E6FB-ish) float in the margins of UI shots. Crop: the earlier analysis copy was falsely cropped to x 308-1278 by the static-bands detector; source.json crop is now null and OCR, sheets and motion.json were re-run on the full 1280x720 frame. Only a grey watermark sits top left.",
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "visuals/a1/coarse-0-19.jpg F144-F264",
+      "visuals/a1/t07-ui-reframe.jpg F157-F158",
+      "visuals/a1/t09-cut-to-send.jpg F231-F232",
+      "speech-text.json screenText 5.5-9.5 and 15.5-21.5 box heights and x (full frame)",
+      "source.json crop null"
+    ]
+  },
+  "materials": {
+    "value": "Flat digital: white and near-white grounds, one saturated blue ground, a soft out-of-focus blue light (a large blurred radial blob) at an edge or corner, a pale sky-blue linear gradient behind the prompt close-ups, and a purple-to-lilac vertical-band shimmer as the loading placeholder. UI is a light, rounded, thin-bordered interface. No texture, grain or 3D.",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/t01-open-pullout.jpg F0-F16",
+      "visuals/a1/t11-gradient-table.jpg F333-F344",
+      "visuals/a1/t12-silence-drop.jpg F367-F371",
+      "visuals/a1/t19-wordmark.jpg F659"
+    ]
+  },
+  "lighting": {
+    "value": "No lit scene. Light is a graphic element: a blurred blue blob that drifts at the left edge during the open (F0-F16), sweeps right off the product name (F17-F26), and becomes a fixed corner glow at bottom right on the closing grounds (25.7-31.5 s).",
+    "basis": "observed",
+    "confidence": 0.85,
+    "evidence": [
+      "visuals/a1/t02-light-sweep.jpg F17-F26",
+      "visuals/a1/t18-chat-to-gradient.jpg F614-F626",
+      "visuals/a1/t21-endcard.jpg F724-F739"
+    ]
+  },
+  "styleSummary": "Clean light SaaS launch film: centred geometric sans on white and one saturated blue, a soft blue light as the only ornament, and real interface shot at reading scale with hard punch-ins. Cool palette (white, navy, two blues, cyan) with one purple accent reserved for the loading shimmer."
+}

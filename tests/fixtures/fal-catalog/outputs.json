@@ -1,0 +1,12 @@
+{
+  "note": "Synthetic provider results, one per OutputKind; never real paid outputs.",
+  "image": { "images": [{ "url": "https://v3.fal.media/files/synthetic/a.png", "width": 1024, "height": 1024, "content_type": "image/png" }], "seed": 7 },
+  "video": { "video": { "url": "https://v3.fal.media/files/synthetic/a.mp4", "content_type": "video/mp4", "file_name": "a.mp4" }, "seed": 7 },
+  "audio": { "audio": { "url": "https://v3.fal.media/files/synthetic/a.wav", "content_type": "audio/wav", "file_name": "a.wav" }, "duration": 3.2 },
+  "model3d": { "model_glb": { "url": "https://v3.fal.media/files/synthetic/a.glb", "content_type": "model/gltf-binary", "file_name": "a.glb" }, "thumbnail": { "url": "https://v3.fal.media/files/synthetic/a.png", "content_type": "image/png" } },
+  "text": { "text": "Synthetic transcript line.", "chunks": [{ "timestamp": [0, 1.4], "text": "Synthetic" }] },
+  "json": { "output": { "objects": [{ "label": "bottle", "box": [10, 20, 200, 400] }] }, "usage": { "prompt_tokens": 12, "completion_tokens": 30 } },
+  "weights": { "diffusers_lora_file": { "url": "https://v3.fal.media/files/synthetic/lora.safetensors", "content_type": "application/octet-stream", "file_name": "lora.safetensors" }, "config_file": { "url": "https://v3.fal.media/files/synthetic/config.json", "content_type": "application/json" } },
+  "file": { "file": { "url": "https://v3.fal.media/files/synthetic/a.zip", "content_type": "application/zip", "file_name": "a.zip" } },
+  "untrusted": { "images": [{ "url": "https://evil.example.com/a.png", "content_type": "image/png" }] }
+}

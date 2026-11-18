@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "airform",
+  "techniques": [
+    {
+      "id": "flash-montage-under-continuous-caption",
+      "name": "Flash montage of 4-frame plates under one fixed caption",
+      "spans": [
+        {
+          "startSec": 3.533,
+          "endSec": 5.367
+        },
+        {
+          "startSec": 0.133,
+          "endSec": 1.133
+        }
+      ],
+      "description": "A centred caption holds while plates hard-cut under it on exact 4-frame steps (ten 4-frame plates 3.833-5.167 s, after a 9-frame lead plate, then a 6-frame plate); one plate is a callback to the hook's image; the caption covers the lead and five plates, leaves for five, and the next caption lands one frame before the final 6-frame plate. Short form at the hook: the first caption holds 30 frames across the strobe, the white-out and the first plate.",
+      "route": "footage",
+      "routeReason": "The plates are macro objects and a person's hand in use, so they need filmed or licensed footage (or budgeted generated clips, 0.13 s each, so generation cost would be per plate). The assembly is plain Remotion: Sequences of 4 frames each and a caption layer above them.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "speed-ramp-flurry",
+        "layoutSeries",
+        "FilmGrain"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.833,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-e.jpg F106-F118",
+          "visuals/a1/w-f.jpg F119-F142",
+          "visuals/a1/w-g.jpg F143-F160"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "every plate change is a one-frame hard cut: visuals/a1/w-f.jpg F118/F119, F122/F123, F126/F127"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Timing measured, source inferred (confidence about 0.6): loudness rises from -27 dB to -12 dB at 3.60 s, 2 frames after the caption and the burst's first cut (3.533), and falls at about 4.40 s, 2 frames before the caption leaves (4.467). The burst edges match the caption's on and off times as they do for the two earlier captions, so the bursts are most likely the spoken line: the caption leads the voice by about 2 frames. A rising bed from 4.95 s is separate. Cuts inside the burst land on onsets only at chance.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS of media/source.mp4 (scratch computation)",
+          "audio.json onsetsSec 3.622, 4.992"
+        ]
+      },
+      "typography": {
+        "role": "caption",
+        "entry": "hard on in one frame, held across cuts, hard off",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 'it's still air.' box x 0.449 w 0.103 (centre 0.50)",
+          "visuals/a1/w-f.jpg F119-F135"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "grade-step-on-held-plate",
+      "name": "Hard grade steps on a held plate as the transition",
+      "spans": [
+        {
+          "startSec": 2.367,
+          "endSec": 2.633
+        },
+        {
+          "startSec": 0.3,
+          "endSec": 0.567
+        },
+        {
+          "startSec": 3.333,
+          "endSec": 3.367
+        },
+        {
+          "startSec": 4.333,
+          "endSec": 4.367
+        },
+        {
+          "startSec": 5.5,
+          "endSec": 5.533
+        }
+      ],
+      "description": "The plate stays framed while its whole grade jumps on single frames: teal to monochrome (3 frames), to negative (2), to a cream duotone with RGB fringing (2), and the next plate enters negative for 1 frame before its own grade. Variants: white-out resolving through magenta to teal (F9-F16); a one-step exposure jump (F100); a monochrome last frame (F130); a card going ultramarine to navy (F165).",
+      "route": "remotion",
+      "routeReason": "Per-frame CSS filters (grayscale, invert, sepia plus hue-rotate, brightness, a chromatic offset) on the plate, switched on given frames; the plate itself comes from footage. No block switches grades on frames today.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "chroma-edge",
+        "block:grade-step-flash"
+      ],
+      "function": "transition",
+      "fromShot": 2,
+      "toShot": 3,
+      "timing": {
+        "durationSec": 0.267,
+        "startOffsetFromCutSec": -0.233,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-d.jpg F71-F78 (steps start 7 frames before the cut at F78)"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-d.jpg F70/F71, F73/F74, F75/F76, F77/F78: each grade arrives whole in one frame"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "A loudness swell peaks at 2.475 s (1.45x the median 50 ms RMS) between the negative (F74) and cream (F76) steps, inside the burst 2.15-2.75 s that matches the second caption (on 2.067, off 2.700), so it is most likely the spoken line, not a hit on the grade steps (inferred).",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS of media/source.mp4 (scratch computation)"
+        ]
+      },
+      "layers": 1
+    },
+    {
+      "id": "blinking-caret-line-swap",
+      "name": "Blinking caret, line deleted whole, next line after four empty frames",
+      "spans": [
+        {
+          "startSec": 5.667,
+          "endSec": 7.333
+        }
+      ],
+      "description": "A thin vertical caret with a soft bloom stands through the centre of the held line on a near-black ground and a faint soft card, blinking on a 19-frame cycle (on 10/9/9/8 frames, off 9/9), with one frame of break-up. The line is removed in one frame (F208), the caret stays 8 frames alone, then four empty frames, then the next line appears whole (F220).",
+      "route": "remotion",
+      "routeReason": "Flat type, a rectangle with a blur and on/off frames: pure Remotion. No existing piece blinks a text caret; Cursor is a pointer and TypedLine types characters.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "block:type-caret-track"
+      ],
+      "function": "reveal",
+      "fromShot": 17,
+      "toShot": 18,
+      "timing": {
+        "durationSec": 1.667,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-h.jpg F170-F182",
+          "visuals/a1/w-i.jpg F183-F206",
+          "visuals/a1/w-j.jpg F207-F220"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-i.jpg F188/F189 caret arrives whole"
+        ]
+      },
+      "typography": {
+        "role": "caption",
+        "entry": "whole line on in 1 frame; removed whole in 1 frame; caret blink 19-frame cycle",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText box x 0.333 w 0.344 (centre 0.505)",
+          "visuals/a1/w-j.jpg F207-F208"
+        ]
+      },
+      "layers": 4
+    },
+    {
+      "id": "frame-strobe-graphic-open",
+      "name": "Single-frame strobe of a dot-matrix ring under a steady caption",
+      "spans": [
+        {
+          "startSec": 0,
+          "endSec": 0.3
+        }
+      ],
+      "description": "A ring of character-like dots (about 0.55 of frame height, centred) alternates with black on single frames, once with a blue bar, ends on two ultramarine frames, then cuts to a white frame that becomes the first plate. The caption appears on F4 and stays steady through the flicker.",
+      "route": "remotion",
+      "routeReason": "A procedural dot ring drawn per frame (seeded) and a frame list of which layer is visible. Nothing in the library draws an ASCII or dot-matrix ring.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "random",
+        "block:orbit-ring"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-a.jpg F0-F9"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-a.jpg F0-F8 alternate whole frames"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Timing measured, source inferred (confidence about 0.6): the first 0.30 s sit near -30 dB; loudness jumps to -11 dB at 0.35-0.40 s and falls at about 1.15 s, while the first caption is on 0.133-1.133 s. The burst is most likely the spoken first line; the caption arrives about 6 frames before it.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS of media/source.mp4 (scratch computation)",
+          "audio.json onsetsSec 0.395"
+        ]
+      },
+      "typography": {
+        "role": "caption",
+        "entry": "hard on at F4, no animation",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 'It's obvious.' onset 0.133, box x 0.437 w 0.127"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "hud-measure-boxes-over-plate",
+      "name": "HUD measurement boxes drawn onto a macro plate",
+      "spans": [
+        {
+          "startSec": 0.333,
+          "endSec": 1.133
+        }
+      ],
+      "description": "Thin rectangles with tiny dimension labels ('NNNxNNN') build on over 4 frames (F10-F13) on the white-out, in a cluster just below and right of centre (x 0.44-0.63, y 0.55-0.80), then sit fixed on the eye as it grades in; labels and boxes take the plate's grade (pink on magenta, teal on teal). A few boxes shift slightly frame to frame.",
+      "route": "remotion",
+      "routeReason": "SVG rectangles and labels over a footage plate; the positions can be fixed by hand per plate because the plate barely moves (pull-out 3.3%). True tracking would need a tracked plate (footage route) and a tracker we do not have.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "kinetic-line-draw",
+        "stagger",
+        "block:ui-annotate"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-a.jpg F10-F23",
+          "visuals/a1/w-b.jpg F24-F33"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-a.jpg F10-F13: boxes arrive whole, a few more per frame (a stagger of hard appearances, not a tween); the plate under them pulls out 3.3% (motion.json s003 expo.out), which is the camera, not the HUD"
+        ]
+      },
+      "typography": {
+        "role": "HUD labels",
+        "entry": "build on over 4 frames, no fade",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 0.517-1.017 s: '314x211', '6x15', '13x13' with box heights 0.021-0.024"
+        ]
+      },
+      "layers": 3,
+      "techniqueCardId": "anchored-annotations"
+    },
+    {
+      "id": "self-measuring-drawing",
+      "name": "Line drawing whose readout counts as it draws",
+      "spans": [
+        {
+          "startSec": 5.167,
+          "endSec": 5.367
+        }
+      ],
+      "description": "A crosshair, a quarter arc and two thin construction lines frame the caption; a degree readout near the arc's end climbs 170.4, 170.9, 171.3, 171.6, 171.9, 172.1 over 6 frames while the arc and a second readout grow. Scattered italic digits fly across the two plates before it (F150-F154).",
+      "route": "remotion",
+      "routeReason": "SVG line art and a counting number: kinetic-line-draw plus NumberRace or raceValue per frame.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "kinetic-line-draw",
+        "NumberRace",
+        "raceValue"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-g.jpg F155-F160",
+          "visuals/a1/w-h.jpg F159-F160"
+        ]
+      },
+      "ease": {
+        "name": "none",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-g.jpg F155-F160: readout steps 0.5, 0.4, 0.3, 0.3, 0.2 a frame, a gentle slow-down read off the numbers"
+        ]
+      },
+      "typography": {
+        "role": "technical readout",
+        "entry": "counts up per frame",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText '171.6°' box y 0.229 h 0.043"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "slow-push-macro-hold",
+      "name": "Long macro hold with a slow push or roll between spoken lines",
+      "spans": [
+        {
+          "startSec": 1.133,
+          "endSec": 2.6
+        },
+        {
+          "startSec": 2.6,
+          "endSec": 3.533
+        }
+      ],
+      "description": "A vignetted macro plate holds 44 frames with a 7.2% push (linear) or 28 frames with a 2.8 degree roll and 2% push (power2.in); the caption arrives late (after 28 frames) or leaves early, so most of the hold is image only.",
+      "route": "footage",
+      "routeReason": "The plates are real macro objects (a light on a sphere, a pen drawing on paper); the push and roll can be added in Remotion on a still or a clip, but the optical character (focus fall-off, grain) needs filmed or rendered material.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "Camera",
+        "FilmGrain"
+      ],
+      "function": "breath",
+      "timing": {
+        "durationSec": 1.467,
+        "startOffsetFromCutSec": 0,
+        "basis": "measured",
+        "evidence": [
+          "motion.json s004 startSec 1.133 span90Sec 1.025 cutOff true",
+          "motion.json s007 span90Sec 0.589"
+        ]
+      },
+      "ease": {
+        "cubicBezier": [
+          0.476,
+          0.296,
+          0.725,
+          1.437
+        ],
+        "source": "motion.json",
+        "evidence": [
+          "motion.json s004 ease pick bezier (rmse 0.018; nearest GSAP name 'none' at 0.027); s007 power2.in rmse 0.040"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "Not true silence (audio.json silence is empty), but the quietest stretches of the film: 50 ms RMS about -30 dB at 1.20-2.10 s and 2.80-3.55 s against -10 to -15 dB in the bursts. The bursts line up with the captions, so these are most likely the gaps between spoken lines (inferred).",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS of media/source.mp4 (scratch computation)"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "ground-swap-under-held-caption",
+      "name": "Ground swaps under a caption that does not move",
+      "spans": [
+        {
+          "startSec": 5.367,
+          "endSec": 5.7
+        }
+      ],
+      "description": "The drawing's lines vanish and the ground becomes an ultramarine card #2A4583 with a soft lighter rectangle behind the caption (F161), steps to navy #0F1C49 (F165), then to near-black with the same soft card and a caret (F170). The caption keeps its exact place through all three.",
+      "route": "remotion",
+      "routeReason": "Flat grounds and a blurred rectangle swapped on frames: the ground-swap-cut block with the caption as a persistent layer.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ground-swap-cut"
+      ],
+      "function": "transition",
+      "fromShot": 15,
+      "toShot": 16,
+      "timing": {
+        "durationSec": 0.3,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-h.jpg F160-F170"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-h.jpg F164/F165 and F169/F170 single-frame changes"
+        ]
+      },
+      "typography": {
+        "role": "caption",
+        "entry": "held, no change",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-h.jpg F161-F173"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "last-line-to-black-tail",
+      "name": "Last line held alone, then black under loud sound",
+      "spans": [
+        {
+          "startSec": 7.333,
+          "endSec": 8.667
+        }
+      ],
+      "description": "The closing line sits alone on #0A0708 for 34 frames, leaves in one frame (F254), and the film ends on 6 black frames; no mark or card.",
+      "route": "remotion",
+      "routeReason": "Type on a flat ground; nothing to build.",
+      "difficulty": "low",
+      "requiredPrimitives": [],
+      "function": "breath",
+      "timing": {
+        "durationSec": 1.333,
+        "startOffsetFromCutSec": 0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/w-j.jpg F220-F230",
+          "visuals/a1/w-k.jpg F231-F259"
+        ]
+      },
+      "ease": {
+        "name": "steps(1)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/w-k.jpg F253/F254"
+        ]
+      },
+      "sound": {
+        "kind": "voice",
+        "note": "Timing measured, source inferred: the closing line is spoken under a rising bed. Loudness is highest here (swells at 7.925 s, 2.47x median, and 8.425 s, 2.28x) and the last 50 ms window is still about -9 dB: the picture empties while the sound peaks, and the sound does not stop to silence. What it is, inferred.",
+        "basis": "measured",
+        "evidence": [
+          "50 ms RMS of media/source.mp4 (scratch computation)",
+          "audio.json silence: none"
+        ]
+      },
+      "typography": {
+        "role": "caption",
+        "entry": "hard on at F220, hard off at F254",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "speech-text.json screenText 'isn't an idea yet.' box x 0.417 w 0.166 (centre 0.50)"
+        ]
+      },
+      "layers": 2
+    }
+  ]
+}

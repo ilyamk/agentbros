@@ -1,0 +1,1446 @@
+[
+  {
+    "endpoint": "openai/gpt-image-2.5/flare/text-to-image",
+    "request": {
+      "family": "gpt-image-2.5",
+      "variant": "flare",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.5/flare/edit",
+    "request": {
+      "family": "gpt-image-2.5",
+      "variant": "flare",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.5/sunburst/text-to-image",
+    "request": {
+      "family": "gpt-image-2.5",
+      "variant": "sunburst",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.5/sunburst/edit",
+    "request": {
+      "family": "gpt-image-2.5",
+      "variant": "sunburst",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "google/nano-banana-2.1",
+    "request": {
+      "family": "nano-banana-2.1",
+      "variant": "default",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "google/nano-banana-2.1/edit",
+    "request": {
+      "family": "nano-banana-2.1",
+      "variant": "default",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/reference.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/text-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/image-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/reference-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "reference-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/reference.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/us/text-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "text-to-video",
+      "region": "us",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/us/image-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "image-to-video",
+      "region": "us",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/us/reference-to-video",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "default",
+      "operation": "reference-to-video",
+      "region": "us",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/reference.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "bytedance/seedance-2.5/draft/complete",
+    "request": {
+      "family": "seedance-2.5",
+      "variant": "draft",
+      "operation": "complete",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "draft_id": "Fixture creative direction: slow cinematic camera movement."
+      },
+      "context": {
+        "callerId": "fixture",
+        "draft": {
+          "id": "Fixture creative direction: slow cinematic camera movement.",
+          "createdAt": "2026-10-10T00:00:00.000Z",
+          "callerId": "fixture"
+        },
+        "now": "2026-10-11T00:00:00.000Z"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/standard/text-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "standard",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/standard/image-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "standard",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "start_image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/standard/motion-control",
+    "request": {
+      "family": "kling-v3",
+      "variant": "standard",
+      "operation": "motion-control",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "video_url": "https://example.com/fixture.png",
+        "character_orientation": "image",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/pro/text-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "pro",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/pro/image-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "pro",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "start_image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/pro/motion-control",
+    "request": {
+      "family": "kling-v3",
+      "variant": "pro",
+      "operation": "motion-control",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "video_url": "https://example.com/fixture.png",
+        "character_orientation": "image",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/turbo/standard/text-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "turbo/standard",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/turbo/standard/image-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "turbo/standard",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/turbo/pro/text-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "turbo/pro",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/turbo/pro/image-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "turbo/pro",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/4k/text-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "4k",
+      "operation": "text-to-video",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/v3/4k/image-to-video",
+    "request": {
+      "family": "kling-v3",
+      "variant": "4k",
+      "operation": "image-to-video",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "start_image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/standard/text-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "standard",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/standard/image-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "standard",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/standard/reference-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "standard",
+      "operation": "reference-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/standard/video-to-video/reference",
+    "request": {
+      "family": "kling-o3",
+      "variant": "standard",
+      "operation": "video-to-video/reference",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/standard/video-to-video/edit",
+    "request": {
+      "family": "kling-o3",
+      "variant": "standard",
+      "operation": "video-to-video/edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/pro/text-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "pro",
+      "operation": "text-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/pro/image-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "pro",
+      "operation": "image-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/pro/reference-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "pro",
+      "operation": "reference-to-video",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/reference",
+    "request": {
+      "family": "kling-o3",
+      "variant": "pro",
+      "operation": "video-to-video/reference",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/pro/video-to-video/edit",
+    "request": {
+      "family": "kling-o3",
+      "variant": "pro",
+      "operation": "video-to-video/edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/4k/text-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "4k",
+      "operation": "text-to-video",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/4k/image-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "4k",
+      "operation": "image-to-video",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/4k/reference-to-video",
+    "request": {
+      "family": "kling-o3",
+      "variant": "4k",
+      "operation": "reference-to-video",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/4k/video-to-video/reference",
+    "request": {
+      "family": "kling-o3",
+      "variant": "4k",
+      "operation": "video-to-video/reference",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/o3/4k/video-to-video/edit",
+    "request": {
+      "family": "kling-o3",
+      "variant": "4k",
+      "operation": "video-to-video/edit",
+      "region": "singapore",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "video_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/kling-video/create-voice",
+    "request": {
+      "family": "kling-voice",
+      "variant": "default",
+      "operation": "create-voice",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "voice_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-pro",
+    "request": {
+      "family": "flux-2",
+      "variant": "pro",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-pro/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "pro",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-pro/outpaint",
+    "request": {
+      "family": "flux-2",
+      "variant": "pro",
+      "operation": "outpaint",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-flex",
+    "request": {
+      "family": "flux-2",
+      "variant": "flex",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-flex/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "flex",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-max",
+    "request": {
+      "family": "flux-2",
+      "variant": "max",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-max/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "max",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/turbo",
+    "request": {
+      "family": "flux-2",
+      "variant": "turbo",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/turbo/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "turbo",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/flash",
+    "request": {
+      "family": "flux-2",
+      "variant": "flash",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/flash/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "flash",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/edit/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "edit",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/lora/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/lora/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/lora/edit/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/edit/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/base",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/base/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/base/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/4b/base/edit/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/stream",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "stream",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/edit/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/base",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/base/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/base/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base-lora",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/9b/base/edit/lora",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base-lora",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement.",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2/klein/realtime",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein",
+      "operation": "realtime",
+      "region": "global",
+      "transport": "realtime",
+      "input": {
+        "image_url": "https://example.com/fixture.png",
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-trainer",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "train",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-trainer/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev",
+      "operation": "train-edit",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-trainer-v2",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-v2",
+      "operation": "train",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-trainer-v2/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "dev-v2",
+      "operation": "train-edit",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-klein-4b-base-trainer",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base",
+      "operation": "train",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-klein-4b-base-trainer/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-4b-base",
+      "operation": "train-edit",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-klein-9b-base-trainer",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base",
+      "operation": "train",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-klein-9b-base-trainer/edit",
+    "request": {
+      "family": "flux-2",
+      "variant": "klein-9b-base",
+      "operation": "train-edit",
+      "region": "global",
+      "transport": "training",
+      "input": {
+        "image_data_url": "https://example.com/fixture.png"
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/add-background",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "add-background",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ],
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/apartment-staging",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "apartment-staging",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ],
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "ballpoint-pen-sketch",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/digital-comic-art",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "digital-comic-art",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/face-to-full-portrait",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "face-to-full-portrait",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ],
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/hdr-style",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "hdr-style",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/multiple-angles",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "multiple-angles",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/realism",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "realism",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/satellite-view-style",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "satellite-view-style",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/sepia-vintage",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "sepia-vintage",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "fal-ai/flux-2-lora-gallery/virtual-tryon",
+    "request": {
+      "family": "flux-2-gallery",
+      "variant": "virtual-tryon",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ],
+        "prompt": "Fixture creative direction: slow cinematic camera movement."
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.6/flare/edit",
+    "request": {
+      "family": "gpt-image-2.6",
+      "variant": "flare",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture product card",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.6/sunburst/edit",
+    "request": {
+      "family": "gpt-image-2.6",
+      "variant": "sunburst",
+      "operation": "edit",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture product card",
+        "image_urls": [
+          "https://example.com/fixture.png"
+        ]
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.6/flare/text-to-image",
+    "request": {
+      "family": "gpt-image-2.6",
+      "variant": "flare",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture product card"
+      }
+    }
+  },
+  {
+    "endpoint": "openai/gpt-image-2.6/sunburst/text-to-image",
+    "request": {
+      "family": "gpt-image-2.6",
+      "variant": "sunburst",
+      "operation": "text-to-image",
+      "region": "global",
+      "transport": "queue",
+      "input": {
+        "prompt": "Fixture product card"
+      }
+    }
+  }
+]

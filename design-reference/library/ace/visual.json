@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "ace",
+  "palette": {
+    "value": [
+      "#F8F8F8 TL off-white ground",
+      "#EAECF0 TR cool grey ground",
+      "#36E69A TL mint character and send button",
+      "#5BA2F3 BL sky blue behind the glass card",
+      "#CFAE3E BL action button yellow (sampled at an anti-aliased edge; reads brighter at playback)",
+      "#000125 BR deep navy ground",
+      "#4B91F7 BR blue light streak",
+      "#1799DD BR send button blue",
+      "#000001 BR glass pill body",
+      "#181818 TR dark ground after the smoke wipe",
+      "#F25A57 BL placeholder gradient, warm red end",
+      "#F49666 BL placeholder gradient, peach end",
+      "#FFFFFF UI screens (TL field, BL draft screen, BR chat)"
+    ],
+    "basis": "measured",
+    "confidence": 0.75,
+    "evidence": [
+      "Pixel medians from media/source.mp4: F240 (TL ground, TL face at 330,190, BL sky, BL button, BR send blue, BR pill), F30 (TR ground), F60 (BR navy, streak), F400 (BL gradient), F500 (TR dark, whites)",
+      "visuals/a1/keyframes.jpg"
+    ]
+  },
+  "typography": {
+    "value": [
+      {
+        "role": "Promise line (TR)",
+        "description": "High-contrast transitional serif, regular weight, sentence case. The word-by-word headline is 4.8% of frame height (9.6% of the cell). The later one-line promise is 4.2% of frame height and spans 77% of the cell width, centred. It fades in left to right with a blue-to-lilac gradient on the key words (F314–F342). Black on #EAECF0. Typeface inferred."
+      },
+      {
+        "role": "Display line (BR)",
+        "description": "Clean grotesk sans, regular, sentence case, white on navy. The box is 10.4% of frame height (about 21% of the cell) and 76% of the cell width, left-aligned at about 13% of the cell width. Inside the input pill the text drops to 5–8% of frame height, with a blinking caret. Typeface inferred."
+      },
+      {
+        "role": "Typed input (TL, BL, BR)",
+        "description": "Neutral UI sans (Inter-like), regular, sentence case, dark grey on white or on glass. In close-ups it is 5.9–7.4% of frame height (12–15% of the cell), left-aligned behind a caret. In wide shots of the same field it is about 3%. Characters arrive about every 2–4 frames at 60 fps; when the line overflows, the field scrolls so the caret stays at a fixed x."
+      },
+      {
+        "role": "Interface micro text",
+        "description": "Real-interface labels at 1.4–1.8% of frame height (10–13 px at 720). Unreadable at playback size and meant as texture that says 'real product'."
+      }
+    ],
+    "basis": "measured",
+    "confidence": 0.7,
+    "evidence": [
+      "speech-text.json boxes: 'Every meeting' h 0.104 w 0.379; promise line h 0.042 w 0.386; typed line h 0.059–0.074; micro text h 0.014–0.018",
+      "visuals/a1/tr-whiteout-b.jpg F314-F329",
+      "visuals/a1/tl-caret-pan.jpg F480-F527",
+      "visuals/a1/br-text-scroll.jpg F183-F206"
+    ]
+  },
+  "composition": {
+    "value": "A 2×2 grid of four 640×360 cells (each exactly 50% × 50% of the frame) with no gutter, border or shared background: the cell edges are made only by the colour change between grounds. Each cell is composed as its own centred 16:9 film. The hero object (face, pill, prompt card, promise line) sits on the cell's vertical centre line, 45–55% across, so the four focal points form a rectangle about 320 px in from each frame edge, and the eye's jump between cells is always the same length. At the start the top row is light (#F8F8F8, #EAECF0) and the bottom row saturated or dark (sky, navy). From 5.0 to 7.6 s all four cells are light. After 7.633 s the dark cell is top right, and from 9.65 s bottom right too. A dark cell is always diagonal to or below the lightest one, and in 9.65–11.6 the darks sit in the right column.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/keyframes.jpg F0 F240 F500 F696", "visuals/a1/ov-03.jpg", "visuals/a1/ov-06.jpg", "visuals/a1/ov-09.jpg"]
+  },
+  "materials": {
+    "value": "Each cell has its own material. TL: a matte off-white ground with a glossy, soft-shaded 3D-looking sphere character (cyan-to-mint radial gradient, specular top left) and a white pill search field. TR: a paper-flat ground with a cut-out photo collage and flat pastel rectangles (no shadows), then a smoke plate. BL: a frosted glass card (white at about 40% opacity with a white rim) over a photographic sky with clouds, then light interface screens and a warm gradient placeholder. BR: a dark glass pill with a cyan rim light on a navy-to-teal gradient, a glossy blue round button, then a white chat with blurred-glow avatars and, at the end, translucent white email cards on navy.",
+    "basis": "observed",
+    "confidence": 0.8,
+    "evidence": ["visuals/a1/tl-sphere-to-face.jpg F180-F209", "visuals/a1/tr-collage-build.jpg F2-F53", "visuals/a1/bl-push-in.jpg F42-F49", "visuals/a1/br-pill-fly-cut.jpg F264-F300", "visuals/a1/br-card-stack.jpg F651-F674"]
+  },
+  "lighting": {
+    "value": "Mostly flat interface light with no cast shadows. There are three lit moments. BR: a soft blue light streak sweeps under the display word (F9–F78), and a cyan rim light rides the pill. TR: an overexposed white light leak washes the photo collage out to white (F267–F311). BR: a click is marked by a white ring ripple round the button (F267–F275).",
+    "basis": "observed",
+    "confidence": 0.75,
+    "evidence": ["visuals/a1/br-word-to-pill.jpg F66-F78", "visuals/a1/tr-whiteout-a.jpg F267-F299", "visuals/a1/tr-whiteout-b.jpg F300-F311", "visuals/a1/br-pill-fly-cut.jpg F267-F275"]
+  },
+  "styleSummary": "A quad-split portfolio clip: four clean AI-product promos (light interface style, glass, gradients, one 3D-shaded mascot) play side by side with no frame between them. Each runs abstract opening, then character or problem, then real interface. Their cuts are staggered and paired on diagonals, so the grid never changes all at once. Most animation is drawn on twos (30 drawings a second inside a 60 fps file); every line is typed or built on screen."
+}

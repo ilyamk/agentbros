@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "endpoint": "wan/v2.7/image-to-video",
+  "title": "Wan 2.7 — Image to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/wan-2-7/image-to-video.md",
+  "usageNotes": [
+    "The prompt is optional. end_image_url supplies a last frame, and audio_url can supply driving audio."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Wan 2.6 Playground",
+    "required": [
+      "image_url"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483646,
+        "minimum": 1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 2
+      },
+      "audio_url": {
+        "type": "string",
+        "title": "Audio URL",
+        "format": "uri"
+      },
+      "image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "720p"
+      },
+      "end_image_url": {
+        "type": "string",
+        "title": "Image URL",
+        "format": "uri"
+      },
+      "prompt_extend": {
+        "type": "boolean",
+        "default": false
+      },
+      "negative_prompt": {
+        "type": "string",
+        "title": "Negative prompt",
+        "default": ""
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}

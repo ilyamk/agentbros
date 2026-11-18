@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "beta",
+  "detector": { "name": "fixture" },
+  "shots": [
+    { "id": "s001", "startSec": 0, "endSec": 2, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s002", "startSec": 2, "endSec": 4, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s003", "startSec": 4, "endSec": 6, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s004", "startSec": 6, "endSec": 8, "transitionIn": "cut", "transitionConfidence": 1 },
+    { "id": "s005", "startSec": 8, "endSec": 20, "transitionIn": "cut", "transitionConfidence": 1 }
+  ],
+  "summary": { "count": 5, "medianDurationSec": 2, "cutsPerMinute": 12 }
+}

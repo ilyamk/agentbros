@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "bench",
+      "title": "Benchmark tasks and calibration",
+      "paths": [
+        "src/lib/evaluation/**",
+        "tests/*bench*.test.ts",
+        "docs/creative-benchmark.md",
+        "tests/**",
+        "src/lib/film/bench.ts",
+        "scripts/creative-bench.ts"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Frozen task manifest",
+        "Reference run bundle"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Uncheckable tasks"
+      ]
+    },
+    {
+      "id": "sensor",
+      "title": "Sensors and validators",
+      "paths": [
+        "src/lib/sensors/**",
+        "src/lib/qa-evidence/**",
+        "src/lib/film/measure.ts",
+        "design-reference/slop-catalogue.md",
+        "tests/**",
+        "docs/qa-evidence.md"
+      ],
+      "gates": [
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Degraded-reference ranking",
+        "Threshold calibration"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Uncalibrated blocking thresholds"
+      ]
+    },
+    {
+      "id": "library",
+      "title": "Motion library",
+      "paths": [
+        "src/motion/library/**",
+        "src/lib/library/**",
+        "tests/**",
+        "playbooks/**",
+        "docs/motion-library.md"
+      ],
+      "gates": [
+        "pnpm library:catalogue",
+        "pnpm lint",
+        "pnpm contrib:novelty"
+      ],
+      "evidence": [
+        "Preview",
+        "Determinism and novelty",
+        "Playbook use"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Re-skins without a new use"
+      ]
+    },
+    {
+      "id": "playbook",
+      "title": "Task playbooks",
+      "paths": [
+        "playbooks/**",
+        "src/lib/playbooks/**",
+        "src/types/playbook.ts",
+        "tests/**",
+        "docs/playbooks.md"
+      ],
+      "gates": [
+        "pnpm typecheck",
+        "pnpm contrib:novelty"
+      ],
+      "evidence": [
+        "Match regression",
+        "Benchmarks"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Duplicate routes"
+      ]
+    },
+    {
+      "id": "provider",
+      "title": "Providers and pricing",
+      "paths": [
+        "src/lib/providers/**",
+        "src/lib/apis/**",
+        "src/lib/models/**",
+        "src/lib/pricing.ts",
+        "src/lib/budget/**",
+        "src/lib/jobs/**",
+        "tests/**",
+        "src/types/models.ts",
+        "src/types/generation.ts",
+        "docs/production-model-routing.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Mock lifecycle tests",
+        "Dated price source",
+        "Budget admission"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Unpriced endpoints"
+      ]
+    },
+    {
+      "id": "command",
+      "title": "CLI commands",
+      "paths": [
+        "scripts/**",
+        "src/lib/cli/**",
+        "package.json",
+        "tests/**",
+        "playbooks/**",
+        "docs/**"
+      ],
+      "gates": [
+        "pnpm typecheck",
+        "pnpm lint"
+      ],
+      "evidence": [
+        "JSON contract test",
+        "Registry entry",
+        "Playbook use"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Unused commands"
+      ]
+    },
+    {
+      "id": "worker",
+      "title": "Native and Blender workers",
+      "paths": [
+        "scripts/workers/**",
+        "scripts/blender/**",
+        "workers/**",
+        "tests/**",
+        "docs/optional-backends.md"
+      ],
+      "gates": [
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Pinned dependencies",
+        "Gated fixture test"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Unbounded installation"
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "Audio analysis and mixing",
+      "paths": [
+        "src/lib/audio/**",
+        "src/lib/audio-map/**",
+        "public/shared/sfx/**",
+        "tests/**",
+        "docs/local-audio-qa.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Before and after measurements"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Claims about sound without human review"
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Reference analyses",
+      "paths": [
+        "design-reference/library/**",
+        "design-reference/techniques/**",
+        "src/lib/reference/**",
+        "tests/**",
+        "docs/contributing-references.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Structure-only analysis",
+        "Rights evidence"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Third-party film frames"
+      ]
+    },
+    {
+      "id": "agent-skill",
+      "title": "Agent and skill definitions",
+      "paths": [
+        ".agents/**",
+        "skills-lock.json",
+        "tests/**",
+        "playbooks/**"
+      ],
+      "gates": [
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Behavioural bundle",
+        "Context delta"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Speculative instruction growth"
+      ]
+    },
+    {
+      "id": "instructions",
+      "title": "Agent instructions",
+      "paths": [
+        "**/AGENTS.md",
+        "CLAUDE.md",
+        "tests/**"
+      ],
+      "gates": [
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Context delta",
+        "Behavioural bundle"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Repeated rules"
+      ]
+    },
+    {
+      "id": "harness",
+      "title": "Harness and MCP integration",
+      "paths": [
+        ".claude/**",
+        ".mcp.json",
+        "src/mcp/**",
+        "tests/**",
+        "docs/mcp.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Behavioural bundle"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Unsupported harness assumptions"
+      ]
+    },
+    {
+      "id": "template",
+      "title": "Reusable templates",
+      "paths": [
+        "src/templates/**",
+        "src/lib/templates/**",
+        "tests/**",
+        "docs/template-recipes.md"
+      ],
+      "gates": [
+        "pnpm typecheck",
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Render test"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Project-specific templates"
+      ]
+    },
+    {
+      "id": "asset",
+      "title": "Shared asset manifests",
+      "paths": [
+        "public/shared/**",
+        "src/lib/shared-assets/**",
+        "tests/**",
+        "docs/assets.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Licence evidence",
+        "Manifest hashes"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Media binaries"
+      ]
+    },
+    {
+      "id": "test-ci",
+      "title": "Tests and continuous integration",
+      "paths": [
+        "tests/**",
+        
+        "package.json",
+        "pnpm-lock.yaml",
+        "docs/local-verification.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Failing-on-base proof or timings"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Tests mirroring implementation"
+      ]
+    },
+    {
+      "id": "lesson",
+      "title": "Generalised lessons",
+      "paths": [
+        "**"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Upstream proposal evidence",
+        "Leak-clean text"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Personal memory"
+      ]
+    },
+    {
+      "id": "fix",
+      "title": "Bug fixes",
+      "paths": [
+        "**"
+      ],
+      "gates": [
+        "pnpm typecheck",
+        "pnpm lint",
+        "pnpm contrib:fails-on-base"
+      ],
+      "evidence": [
+        "Reproduction",
+        "Test failing on base"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Unrelated refactoring"
+      ]
+    },
+    {
+      "id": "docs",
+      "title": "Guides and documentation",
+      "paths": [
+        "docs/**",
+        "*.md",
+        "design-reference/*.md"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Link and command checks"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Vacuous prose"
+      ]
+    },
+    {
+      "id": "showcase",
+      "title": "Showcase entries",
+      "paths": [
+        "src/motion/showcase/**",
+        "public/motion-lab/showcase/**",
+        "tests/**"
+      ],
+      "gates": [
+        "pnpm typecheck"
+      ],
+      "evidence": [
+        "Real film",
+        "Provenance"
+      ],
+      "ownerReview": false,
+      "defaultSize": "S",
+      "notWanted": [
+        "Invented examples"
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security fixes",
+      "paths": [
+        "**"
+      ],
+      "gates": [
+        "pnpm typecheck",
+        "pnpm lint"
+      ],
+      "evidence": [
+        "Private advisory first"
+      ],
+      "ownerReview": true,
+      "defaultSize": "S",
+      "notWanted": [
+        "Public disclosure before coordination"
+      ]
+    }
+  ]
+}

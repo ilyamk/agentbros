@@ -1,0 +1,48 @@
+{
+ "recordedAt": "2026-11-15",
+ "source": "GET https://api.higgsfield.ai/models/usage?start=2026-11-14T00:00:00Z&end=2026-11-16T00:00:00Z&limit=100 (live test account, no identifiers)",
+ "response": {
+  "time_series": [
+   {
+    "bucket": "2026-11-15T08:00:00",
+    "results": [
+     {
+      "model": "higgsfield-ai/soul/v2/standard",
+      "unit": "generation",
+      "quantity": "1",
+      "unit_price": "0.0031",
+      "cost": "0.0031",
+      "currency": "USD",
+      "auth_method": null
+     }
+    ]
+   },
+   {
+    "bucket": "2026-11-15T09:00:00",
+    "results": [
+     {
+      "model": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+      "unit": "generation",
+      "quantity": "1",
+      "unit_price": "0.2956",
+      "cost": "0.2956",
+      "currency": "USD",
+      "auth_method": null
+     },
+     {
+      "model": "internal/recast-mask",
+      "unit": "generation",
+      "quantity": "1",
+      "unit_price": "0.0000",
+      "cost": "0.0000",
+      "currency": "USD",
+      "auth_method": null
+     }
+    ]
+   }
+  ],
+  "total": 2,
+  "page": 1,
+  "limit": 100
+ }
+}

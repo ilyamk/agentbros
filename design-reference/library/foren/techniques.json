@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "foren",
+  "techniques": [
+    {
+      "id": "type-on-photo-flash",
+      "name": "Typed key word flashed over photographs",
+      "spans": [
+        {
+          "startSec": 1.167,
+          "endSec": 2.433
+        }
+      ],
+      "description": "A word is typed in yellow on dark at one letter per 2 frames, growing about 15% while typing. The frame it completes, the ground cuts to a full-frame photograph and the word turns white at the same position and size; a second photograph replaces the first after 10 frames; then the word returns to yellow on dark for 7 frames before a cut to the next clause on cream.",
+      "route": "remotion",
+      "routeReason": "Type, timing and hard swaps are composition work; the photographs must be licensed footage or stills (people), so the plates come from the footage route.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "typingSchedule",
+        "typedCount",
+        "TypedLine",
+        "ground-swap-cut",
+        "photo-move",
+        "track"
+      ],
+      "function": "hook",
+      "timing": {
+        "durationSec": 1.267,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F35-F53",
+          "visuals/a1/hook-photos.jpg F56-F73"
+        ]
+      },
+      "ease": {
+        "name": "none (linear letter cadence; photo push slow and linear)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F35-F45"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onsets at 1.16 s (on the cut into the typing, 7 ms early) and 1.70, 2.10, 2.24 s inside the flashes; what makes them is inferred.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 1.16, 1.70, 2.10, 2.24"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "letter type-on, 2 frames per letter, then held through ground swaps",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/hook-g-global.jpg F35-F53"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "word-by-word-line",
+      "name": "Line built word by word in final layout",
+      "spans": [
+        {
+          "startSec": 0.0,
+          "endSec": 1.167
+        },
+        {
+          "startSec": 6.767,
+          "endSec": 8.1
+        },
+        {
+          "startSec": 10.4,
+          "endSec": 12.433
+        },
+        {
+          "startSec": 14.7,
+          "endSec": 15.9
+        },
+        {
+          "startSec": 39.8,
+          "endSec": 40.633
+        },
+        {
+          "startSec": 42.333,
+          "endSec": 43.3
+        },
+        {
+          "startSec": 43.3,
+          "endSec": 44.433
+        }
+      ],
+      "description": "One sentence-case line, centred. Words appear every 2 frames (0.067 s) in the positions they will have when the line is complete, so the line never re-centres; each word rises about 2% of frame height into place over 3-4 frames. After completing, the whole line drifts very slowly (scale or position) until the cut. Sometimes the first word lands at about 1.3x and settles to line size in 4 frames as the next joins.",
+      "route": "remotion",
+      "routeReason": "Pure type; existing blocks cover it once their re-centring is switched off.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-sentence-build",
+        "BuildingCaption",
+        "splitWords",
+        "stagger",
+        "intentCurves.settle",
+        "block:type-sentence-build"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/ui-pullback.jpg F317-F323",
+          "visuals/a1/growing-to-end.jpg F1270-F1274",
+          "visuals/a1/cta-swap.jpg F1299-F1304",
+          "visuals/a1/spend-swaps.jpg F1196-F1198"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/spend-swaps.jpg F1196-F1199"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Word arrivals are not measurably on onsets (sync.json has no text-on ratio without tempo).",
+        "basis": "inferred",
+        "evidence": [
+          "sync.json metrics"
+        ]
+      },
+      "typography": {
+        "role": "line text",
+        "entry": "word-by-word, 2 frames apart, 3-4 frame rise of about 2% frame height",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/growing-to-end.jpg F1270-F1275",
+          "visuals/a1/inline-globe.jpg F441-F446"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "ground-flip-cut",
+      "name": "Hard cut that flips cream and dark grounds, with a one-frame breath",
+      "spans": [
+        {
+          "startSec": 1.1,
+          "endSec": 1.2
+        },
+        {
+          "startSec": 4.35,
+          "endSec": 4.45
+        },
+        {
+          "startSec": 6.73,
+          "endSec": 6.8
+        },
+        {
+          "startSec": 12.4,
+          "endSec": 12.47
+        },
+        {
+          "startSec": 15.87,
+          "endSec": 15.93
+        },
+        {
+          "startSec": 30.97,
+          "endSec": 31.03
+        },
+        {
+          "startSec": 31.93,
+          "endSec": 32.0
+        },
+        {
+          "startSec": 32.67,
+          "endSec": 32.73
+        },
+        {
+          "startSec": 33.63,
+          "endSec": 33.7
+        },
+        {
+          "startSec": 34.5,
+          "endSec": 34.57
+        },
+        {
+          "startSec": 41.5,
+          "endSec": 41.57
+        },
+        {
+          "startSec": 42.3,
+          "endSec": 42.37
+        },
+        {
+          "startSec": 43.25,
+          "endSec": 43.32
+        }
+      ],
+      "description": "Scenes change only by hard cuts that swap the whole ground between cream #F2F4E9 and near-black #201A16 (or interface white). 18 of 38 cuts change the ground class. On four cuts the first frame is bare ground with nothing on it (F132, F959, F1010, F1298) and the next element begins on the following frame.",
+      "route": "remotion",
+      "routeReason": "Two flat grounds and an exact frame count; the library already has the cut.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "ground-swap-cut",
+        "layoutSeries",
+        "cutTiming"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.033,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F131-F133",
+          "visuals/a1/move-split.jpg F929-F930",
+          "visuals/a1/countdown.jpg F1009-F1011",
+          "visuals/a1/cta-swap.jpg F1297-F1299"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. In the closing section (27.2-44.5 s) 6 of 16 corrected cuts land within 0.08 s of an onset vs 18% chance; in the interface middle 2 of 14 vs 18%.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec",
+          "corrected cut list in edit.json"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 26,
+      "toShot": 27
+    },
+    {
+      "id": "portrait-cards-drift",
+      "name": "Portrait cards fly in to the corners around a line",
+      "spans": [
+        {
+          "startSec": 2.9,
+          "endSec": 4.4
+        },
+        {
+          "startSec": 15.9,
+          "endSec": 16.633
+        }
+      ],
+      "description": "Four photographs of people on rounded cards (about 0.10-0.13 frame width, corner radius about 8% of card) fly in from the frame edges to the four corners in about 6 frames while the centred line stays; they then drift slowly outward. Second use: four cut-out portraits on tinted rounded plates (yellow, pink, blue, pale), about 0.25 frame height, each with a small round flag badge, converge from the corners in about 5 frames, then drift.",
+      "route": "footage",
+      "routeReason": "Real people: portraits must be licensed photographs or the user's own; the arrangement and drift are Remotion.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "parallax-rig",
+        "collageCells",
+        "track",
+        "intentCurves.brake",
+        "block:scatter-field"
+      ],
+      "techniqueCardId": "scatter-field",
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": 0.467,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/cards-pop.jpg F87-F92",
+          "visuals/a1/portraits-in.jpg F477-F482"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/cards-pop.jpg F87-F96",
+          "visuals/a1/portraits-in.jpg F478-F487"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onset at 3.48 s, 13 ms after the text swap at 3.467 s; none at the card entry (2.90 s).",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 2.52, 3.48"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "dot-to-wordmark",
+      "techniqueCardId": "dot-to-wordmark",
+      "name": "A dot grows into a disc, builds the mark, then becomes the wordmark's full stop",
+      "spans": [
+        {
+          "startSec": 4.4,
+          "endSec": 6.767
+        }
+      ],
+      "description": "Empty dark frame; a dot grows into a disc whose diameter reaches 0.266 of frame width over 18 frames on about power2.out (measured F133-F151: 0.135 W after 4 frames, 0.22 W after 9; the earlier 13% note was an early frame of that growth); from 6 frames in, while it still grows, the mark wipes in left to right inside the disc in slices over 12 frames, colour-glitched (green, lime and pink copies of the mark trailing to its right, about a quarter of its width at F146, closing in as the dark mark lands about F147-F151), and holds 6; the mark vanishes, the disc travels right about 0.2 frame width over 7 frames while letters wipe in from the left behind it; over the next 10 frames the disc shrinks and resolves into the last letters and the full stop; a sub-line fades in during the last 3 frames; 17 frames later the wordmark's colour flips from yellow to white on one frame.",
+      "route": "remotion",
+      "routeReason": "Vector shapes and masks; the closest block already does dot-to-mark morphs.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "block:kinetic-morph-mark",
+        "MorphSVGPlugin",
+        "scene-end-card",
+        "track"
+      ],
+      "function": "reveal",
+      "timing": {
+        "durationSec": 1.467,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F133-F152",
+          "visuals/a1/logo-reveal-b.jpg F152-F176"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/logo-reveal.jpg F133-F138"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onsets at 4.42 s (cut, 20 ms after), 4.70 and 4.84 s during the disc growth and mark build, 5.62 and 5.76 s during the letters.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 4.42, 4.70, 4.84, 5.62, 5.76"
+        ]
+      },
+      "typography": {
+        "role": "wordmark",
+        "entry": "letters wipe in from behind a travelling disc",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/logo-reveal-b.jpg F160-F176"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "decelerating-type-wall",
+      "name": "Kinetic wall of repeated words with chips",
+      "spans": [
+        {
+          "startSec": 8.1,
+          "endSec": 9.433
+        }
+      ],
+      "description": "Three full-width rows (about 0.17 frame height each) of the promise's last words, repeated in dark ink with the repeats in mid grey, interleaved with outlined flag chips, bleed off both edges. They enter already moving rightwards and decelerate to a near hold over about 25 frames (frame difference 42 to 7), then hold for the rest of the 1.33 s shot.",
+      "route": "remotion",
+      "routeReason": "Text rows on a track; no footage needed.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "track",
+        "intentCurves.brake",
+        "VelocityBlur",
+        "block:marquee-rows"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.833,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/currencies-wall.jpg F243-F260",
+          "visuals/a1/wall-to-ui.jpg F272-F281"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/currencies-wall.jpg F243-F260 (diffMean 34, 41, 42, 42, 41, 36, 33, 32, 25, 24, 22, 17, 16, 15, 12, 11, 10, 7)"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onset at 8.08 s, 20 ms before the cut at 8.10 s, then 8.36 and 8.50 s.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 8.08, 8.36, 8.50"
+        ]
+      },
+      "typography": {
+        "role": "kinetic wall",
+        "entry": "rows arrive moving and brake",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/currencies-wall.jpg F243"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "click-cut-walkthrough",
+      "name": "Interface walkthrough cut on each click",
+      "spans": [
+        {
+          "startSec": 17.533,
+          "endSec": 27.233
+        },
+        {
+          "startSec": 34.533,
+          "endSec": 38.867
+        }
+      ],
+      "description": "The real product flow in four steps. Each step ends with the cursor (yellow arrow, about 2.5% of frame height) pressing the primary button, and the hard cut lands 1-4 frames after the press; the next window rises about 3% of frame height into place over 5-6 frames on the dark ground. Inside a step, the page scrolls fast (about 6 frames) to bring the next button into view instead of cutting. The last step pushes in on the result field. In the second walkthrough an amount types in digit by digit and a soft yellow highlight sweeps across the key rows.",
+      "route": "footage",
+      "routeReason": "The product's real interface must be captured (capture:app or a recording); cursor, crops, rises and sweeps are composited in Remotion.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "ui-cursor-click",
+        "WindowFrame",
+        "ScreenPlayback",
+        "Cursor",
+        "RegionCamera",
+        "ui-camera-read",
+        "type-marker-highlight"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.2,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/ui-click-page.jpg F574-F583",
+          "visuals/a1/ui-success.jpg F764-F769",
+          "visuals/a1/ui-scroll-a.jpg F689-F695",
+          "visuals/a1/live-rates.jpg F1123-F1128"
+        ]
+      },
+      "ease": {
+        "name": "power2.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/ui-click-page.jpg F577-F583",
+          "visuals/a1/ui-success.jpg F767-F770"
+        ]
+      },
+      "sound": {
+        "kind": "sfx",
+        "note": "I cannot hear the film. Cuts in this section are at chance against onsets (2 of 14 vs 18%); any click sound is inferred.",
+        "basis": "inferred",
+        "evidence": [
+          "audio.json onsetsSec",
+          "corrected cut list in edit.json"
+        ]
+      },
+      "typography": {
+        "role": "interface caption",
+        "entry": "word-by-word rise, bottom left",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/type-to-ui.jpg F529-F535"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "caption-anchored-punch-in",
+      "name": "Punch-in behind a caption that does not move",
+      "spans": [
+        {
+          "startSec": 18.2,
+          "endSec": 18.5
+        }
+      ],
+      "description": "A two-line caption sits bottom left over an interface page. On the cut the caption keeps exactly its position, size and colour while the interface behind jumps from a full view to about 1.6x on the primary button; the cursor enters 2 frames later and drifts to the button.",
+      "route": "remotion",
+      "routeReason": "One persistent caption layer over a cropped capture; RegionCamera keys a cut in scale.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "RegionCamera",
+        "regionTransform",
+        "Cursor",
+        "snap-zoom"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.067,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/punch-in-ui.jpg F549-F554"
+        ]
+      },
+      "sound": {
+        "kind": "silence",
+        "note": "I cannot hear the film. Nearest onset is 0.83 s away (17.50 s); no transient at this cut.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 17.50, 20.90"
+        ]
+      },
+      "typography": {
+        "role": "interface caption",
+        "entry": "held across the cut",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/punch-in-ui.jpg F549-F550"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 17,
+      "toShot": 18
+    },
+    {
+      "id": "mirrored-symbol-trail",
+      "name": "Symbol disc on a trail, mirrored across a cut",
+      "spans": [
+        {
+          "startSec": 12.433,
+          "endSec": 14.7
+        }
+      ],
+      "description": "A disc (about 0.18 frame height, pastel fill, dark symbol) rides the end of a thick yellow trail of the same width, entering from lower right and settling in 5 frames, then drifting slowly. Text sits left at x 0.06. The symbol inside the disc swaps after 17 frames with no other motion (and the disc colour changes with it). On the cut the layout mirrors: the disc descends from top left, text right of centre, and its symbol swaps after 16 frames.",
+      "route": "remotion",
+      "routeReason": "Vector path and disc; easy in one composition.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "kinetic-path-travel",
+        "MotionPathPlugin",
+        "track",
+        "block:symbol-disc"
+      ],
+      "techniqueCardId": "symbol-disc",
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 1.133,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coin-swing.jpg F373-F392",
+          "visuals/a1/coin-to-euro.jpg F408-F425"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/coin-swing.jpg F373-F378",
+          "visuals/a1/coin-to-euro.jpg F408-F413"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onsets at 12.32 and 12.72 s around the first cut, 13.14 s (symbol swap at 13.00 s is 0.14 s away), 14.36 and 14.50 s near the second swap at 14.13 s: no clear lock.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 12.18-14.50"
+        ]
+      },
+      "typography": {
+        "role": "line text",
+        "entry": "word-by-word beside the object",
+        "alignment": "left",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/coin-swing.jpg F374-F378"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 12,
+      "toShot": 13
+    },
+    {
+      "id": "inline-chip-in-line",
+      "name": "Icon or flag chip set inline as a word",
+      "spans": [
+        {
+          "startSec": 14.7,
+          "endSec": 15.9
+        },
+        {
+          "startSec": 32.7,
+          "endSec": 33.667
+        }
+      ],
+      "description": "An icon chip sits on the text baseline between words as if it were a word: a small globe (about cap height) pops in 1-2 frames after the first words, then the rest of the line; or an outlined pill holding an arrow that widens to hold two flag chips, the right flag swapping every 10-16 frames.",
+      "route": "remotion",
+      "routeReason": "Inline elements in a text line; existing sentence-build block supports chips.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-sentence-build",
+        "BuildingCaption",
+        "track"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.1,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/inline-globe.jpg F441-F444",
+          "visuals/a1/move-gap-between.jpg F981-F995"
+        ]
+      },
+      "ease": {
+        "name": "back.out",
+        "source": "inferred",
+        "evidence": [
+          "visuals/a1/inline-globe.jpg F442-F443"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onset at 33.18 s, 0.08 s after the flag swap at 33.10 s.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 33.18"
+        ]
+      },
+      "typography": {
+        "role": "line text",
+        "entry": "inline chip pops between words",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/inline-globe.jpg F441-F446"
+        ]
+      },
+      "layers": 2
+    },
+    {
+      "id": "word-split-insert",
+      "name": "Word split open around a product card, gap becomes the next shot's connector",
+      "spans": [
+        {
+          "startSec": 31.0,
+          "endSec": 33.0
+        }
+      ],
+      "description": "A verb in two staggered halves; an interface card (about 0.3 frame width) flies up tilted in 3D and settles flat between them in 5 frames as they level and part. After a one-frame empty ground, the same verb whole on cream opens a gap of about 0.08 frame width in 5 frames, and the cut lands on the open gap: an outlined arrow pill now sits where the gap was.",
+      "route": "remotion",
+      "routeReason": "Type halves and a screenshot card; the 3D tilt must settle to 2D (see the motion traps).",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "impact-split",
+        "SliceWord",
+        "shared-element-carry",
+        "track",
+        "block:word-split-insert"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 2.0,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/move-split.jpg F930-F950",
+          "visuals/a1/move-gap-between.jpg F971-F983"
+        ]
+      },
+      "ease": {
+        "name": "power2.in (gap opening); power3.out (card settle)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/move-gap-between.jpg F976-F980 (diffMean 1.73, 2.31, 3.31, 4.77, 7.7)",
+          "visuals/a1/move-split.jpg F931-F936"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onsets exactly at the cuts 31.00 s (0 ms) and 31.96 s (7 ms early); none at 32.70 s.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 31.00, 31.82, 31.96"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "halves part, product inserted",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/move-split.jpg F930-F936"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 27,
+      "toShot": 28
+    },
+    {
+      "id": "countdown-behind-word",
+      "name": "Counter runs to zero behind a held word",
+      "spans": [
+        {
+          "startSec": 33.667,
+          "endSec": 34.533
+        }
+      ],
+      "description": "After one empty dark frame, a white word holds at centre while a giant blurred counter (about 0.6 frame height, dim olive-yellow) behind it steps down on frames 0, 2, 4, 7, 11 to zero, then glows and holds 13 frames before a hard cut to white.",
+      "route": "remotion",
+      "routeReason": "Two text layers and a blur; the step timing is a short list of cue frames.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "timeRemap",
+        "track",
+        "block:word-backdrop"
+      ],
+      "function": "proof",
+      "timing": {
+        "durationSec": 0.4,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/countdown.jpg F1010-F1022"
+        ]
+      },
+      "ease": {
+        "name": "expo.out (step spacing 2, 2, 3, 4 frames)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/countdown.jpg F1011, F1013, F1015, F1018, F1022"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. No onset between 33.18 and 34.54 s; the hard cut out at 34.53 s has one 7 ms after it.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 33.18, 34.54"
+        ]
+      },
+      "typography": {
+        "role": "line text",
+        "entry": "held, the counter moves",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/countdown.jpg F1011-F1031"
+        ]
+      },
+      "layers": 2,
+      "techniqueCardId": "word-backdrop"
+    },
+    {
+      "id": "growth-chart-behind-word",
+      "name": "Climbing area chart and counter behind a huge word",
+      "spans": [
+        {
+          "startSec": 41.533,
+          "endSec": 42.333
+        }
+      ],
+      "description": "A huge white word (box about 0.28 frame height, 0.62 frame width) over a yellow-to-dark gradient area chart filling the lower two-thirds; a white dot rides the curve left to right and a small percentage counter at bottom right climbs from 6 to 63 over 24 frames, fast then slow. Then a hard cut to the same word small on cream as the line completes.",
+      "route": "remotion",
+      "routeReason": "Area chart, dot and counter are existing data blocks.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "line-chart-glow-draw",
+        "type-number-race",
+        "NumberRace",
+        "raceValue"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.8,
+        "startOffsetFromCutSec": 0.0,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/growing-chart.jpg F1246-F1265",
+          "visuals/a1/growing-to-end.jpg F1265-F1270"
+        ]
+      },
+      "ease": {
+        "name": "power3.out",
+        "cubicBezier": [
+          0.215,
+          0.61,
+          0.355,
+          1.0
+        ],
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/growing-chart.jpg F1246-F1265 counter 6, 17, 25, 31, 35, 39, 42, 45, 47, 50, 51, 53, 55, 56, 57, 59, 60, 60, 61, 62"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. No onset within 0.08 s of the cut at 41.53 s (nearest 40.68 s); a loudness swell at 41.55 s (analyst's 50 ms RMS).",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 40.68, 43.26",
+          "media/source.mp4 RMS swell 41.55 s"
+        ]
+      },
+      "typography": {
+        "role": "hero word",
+        "entry": "hard cut in, held",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/growing-chart.jpg F1246"
+        ]
+      },
+      "layers": 3,
+      "fromShot": 34,
+      "toShot": 35
+    },
+    {
+      "id": "vertical-conveyor-change",
+      "name": "Line drifts up and the next rises in from below",
+      "spans": [
+        {
+          "startSec": 39.3,
+          "endSec": 40.0
+        }
+      ],
+      "description": "Before the swap the line begins to drift upward, accelerating over about 10 frames; on the swap frame the next line's first word is already rising from below into place, and its later words join every 2 frames.",
+      "route": "remotion",
+      "routeReason": "Two text lines on one track.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "MaskedLine",
+        "track",
+        "intentCurves.glide",
+        "type-word-rotate"
+      ],
+      "function": "transition",
+      "timing": {
+        "durationSec": 0.5,
+        "startOffsetFromCutSec": -0.367,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1183-F1196"
+        ]
+      },
+      "ease": {
+        "name": "power2.in (exit); power2.out (entry)",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1183-F1193 diffMean 0.42 rising to 5.59"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Swap at 39.80 s sits on a loudness swell at 39.75 s; nearest onset 39.32 s.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 39.32",
+          "media/source.mp4 RMS swell 39.75 s"
+        ]
+      },
+      "typography": {
+        "role": "line text",
+        "entry": "rise from below; outgoing exits upward",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/spend-first-swap.jpg F1193-F1196"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 32,
+      "toShot": 33
+    },
+    {
+      "id": "embedded-card-snap-zoom",
+      "name": "Embedded card snap-zooms out of a photo collage",
+      "spans": [
+        {
+          "startSec": 27.233,
+          "endSec": 29.233
+        }
+      ],
+      "description": "A three-word line is split around a photograph of a shopper with a small checkout card overlaid on its lower half. The card scales from about 0.32 to 0.6 frame width in 3 frames, covering the photo, while the outer words stay put; the cursor presses its button, then the card drifts slowly.",
+      "route": "footage",
+      "routeReason": "The shopper photograph is real footage or a licensed still; the card must be the real checkout; the snap is Remotion.",
+      "difficulty": "medium",
+      "requiredPrimitives": [
+        "snap-zoom",
+        "caused-morph",
+        "Cursor",
+        "track"
+      ],
+      "function": "emphasis",
+      "timing": {
+        "durationSec": 0.1,
+        "startOffsetFromCutSec": 0.867,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/api-zoom.jpg F842-F846"
+        ]
+      },
+      "ease": {
+        "name": "expo.out",
+        "source": "strip",
+        "evidence": [
+          "visuals/a1/api-zoom.jpg F843-F850 diffMean 56.5, 29.8, 12.4, 8.8, 6.5"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onset at 28.26 s, 0.13 s after the snap at 28.13 s.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 27.86, 28.26"
+        ]
+      },
+      "layers": 3
+    },
+    {
+      "id": "address-only-end-card",
+      "name": "Sign-off line, then the address alone",
+      "spans": [
+        {
+          "startSec": 43.3,
+          "endSec": 46.167
+        }
+      ],
+      "description": "One empty cream frame, then a five-word sign-off built word by word ending on the brand name (held about 1 s), then a hard swap to the web address alone, small (box about 0.05 frame height) and centred on cream, held 1.73 s to the last frame with no fade and no logo.",
+      "route": "remotion",
+      "routeReason": "Text only.",
+      "difficulty": "low",
+      "requiredPrimitives": [
+        "type-sentence-build",
+        "scene-end-card",
+        "ground-swap-cut"
+      ],
+      "function": "cta",
+      "timing": {
+        "durationSec": 2.867,
+        "startOffsetFromCutSec": 0.033,
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/cta-swap.jpg F1298-F1310",
+          "visuals/a1/endcard.jpg F1325-F1340"
+        ]
+      },
+      "sound": {
+        "kind": "music-hit",
+        "note": "I cannot hear the film. Onset at 43.26 s, 0.04 s before the sign-off; loudness falls to about a quarter of the median by 45 s (analyst's RMS), so the track appears to wind down under the address.",
+        "basis": "measured",
+        "evidence": [
+          "audio.json onsetsSec 43.26, 43.40",
+          "audio.json sections 44-46.19 energy 0.31"
+        ]
+      },
+      "typography": {
+        "role": "end card address",
+        "entry": "hard swap, held",
+        "alignment": "centre",
+        "basis": "observed",
+        "evidence": [
+          "visuals/a1/endcard.jpg F1333"
+        ]
+      },
+      "layers": 1,
+      "fromShot": 37,
+      "toShot": 38
+    }
+  ]
+}

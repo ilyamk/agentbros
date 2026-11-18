@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "referenceId": "firecrawl",
+  "status": {
+    "available": true,
+    "engine": "pyscenedetect-adaptive+spike+novelty"
+  },
+  "detector": {
+    "name": "pyscenedetect-adaptive+spike+novelty",
+    "version": "0.7.2",
+    "params": {
+      "adaptiveThreshold": 3,
+      "spikeMinChanged": 0.12,
+      "spikeRatio": 3,
+      "flashMaxReturn": 0.35,
+      "shortWindowSec": 0.33,
+      "longWindowSec": 1,
+      "noveltyMin": 4.5,
+      "noveltyMadScale": 6,
+      "prominenceRatio": 0.5,
+      "softGuardSec": 0.4,
+      "minHardShotSec": 0.1,
+      "cutWholeFrame": 0.5,
+      "matchSimilarity": 0.65,
+      "samePictureSimilarity": 0.9,
+      "layoutWeight": 0.6,
+      "cutScoreMin": 0.12,
+      "sameShotNovelty": 12,
+      "softMinFrames": 3,
+      "wipePurity": 0.88,
+      "softMergeGapSec": 0.3,
+      "candidateNoveltyMin": 1.5,
+      "softMarginSec": 0.25,
+      "prominenceReachSec": 2.5,
+      "maxTransitionSec": 3
+    }
+  },
+  "shots": [
+    {
+      "startSec": 0,
+      "endSec": 4,
+      "id": "s001",
+      "transitionIn": "unknown",
+      "transitionConfidence": 0,
+      "thumbnailPath": "visuals/thumbs/s001.jpg",
+      "stripPath": "visuals/strips/s001.jpg",
+      "colour": {
+        "L": 95.2,
+        "a": 0.4,
+        "b": 0.4,
+        "percentiles": {
+          "L": [
+            85.9,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 15
+      }
+    },
+    {
+      "startSec": 4,
+      "endSec": 4.483,
+      "id": "s002",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.837,
+        "edgeSimilarity": 0.135,
+        "novelty": 54.09,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s002.jpg",
+      "stripPath": "visuals/strips/s002.jpg",
+      "colour": {
+        "L": 63.5,
+        "a": 42.5,
+        "b": 43.5,
+        "percentiles": {
+          "L": [
+            54.7,
+            54.7,
+            95.3
+          ],
+          "a": [
+            0,
+            56,
+            56
+          ],
+          "b": [
+            8,
+            56,
+            56
+          ]
+        },
+        "samples": 1
+      }
+    },
+    {
+      "startSec": 4.483,
+      "endSec": 7.433,
+      "id": "s003",
+      "transitionIn": "continuous",
+      "transitionConfidence": 0.4,
+      "transitionStartSec": 4.45,
+      "transitionEndSec": 4.533,
+      "transitionMeasures": {
+        "frames": 6,
+        "blendResidual": 0.679,
+        "alphaMonotonic": 1,
+        "binaryPurity": 0.802,
+        "centroidSweep": 0.014,
+        "flowWidthPerSec": 0.551,
+        "flowCoherence": 0.038,
+        "blurAnisotropy": 1.225
+      },
+      "thumbnailPath": "visuals/thumbs/s003.jpg",
+      "stripPath": "visuals/strips/s003.jpg",
+      "colour": {
+        "L": 56.7,
+        "a": 52.7,
+        "b": 52.9,
+        "percentiles": {
+          "L": [
+            54.7,
+            54.7,
+            57.8
+          ],
+          "a": [
+            48,
+            56,
+            56
+          ],
+          "b": [
+            48,
+            56,
+            56
+          ]
+        },
+        "samples": 11
+      }
+    },
+    {
+      "startSec": 7.433,
+      "endSec": 22.9,
+      "id": "s004",
+      "transitionIn": "cut",
+      "transitionConfidence": 0.98,
+      "transitionMeasures": {
+        "changedFraction": 0.919,
+        "edgeSimilarity": 0.017,
+        "novelty": 70.02,
+        "engines": 2
+      },
+      "thumbnailPath": "visuals/thumbs/s004.jpg",
+      "stripPath": "visuals/strips/s004.jpg",
+      "colour": {
+        "L": 97,
+        "a": 0,
+        "b": 0,
+        "percentiles": {
+          "L": [
+            95.3,
+            98.4,
+            98.4
+          ],
+          "a": [
+            0,
+            0,
+            0
+          ],
+          "b": [
+            0,
+            0,
+            0
+          ]
+        },
+        "samples": 61
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "timeSec": 2.283,
+      "novelty": 3.39
+    },
+    {
+      "timeSec": 2.85,
+      "novelty": 1.65
+    },
+    {
+      "timeSec": 5.3,
+      "novelty": 2.56
+    },
+    {
+      "timeSec": 6.167,
+      "novelty": 3.26
+    },
+    {
+      "timeSec": 10.017,
+      "novelty": 2.03
+    },
+    {
+      "timeSec": 17.383,
+      "novelty": 1.77
+    },
+    {
+      "timeSec": 17.783,
+      "novelty": 1.67
+    }
+  ],
+  "summary": {
+    "count": 4,
+    "medianDurationSec": 4,
+    "cutsPerMinute": 7.86
+  }
+}

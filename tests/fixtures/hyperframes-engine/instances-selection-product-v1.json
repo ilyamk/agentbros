@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "activation": "instances-c23-v1",
+  "profile": "static-local-instances-v1",
+  "verificationScope": "compiled-source-reproduced",
+  "genuineRuntimeAccepted": false,
+  "runtimeSha256": "5a33249f292aa6e9192d5f93a831e425fda423e08b4087d4cf72deae28043cd1",
+  "engineBytes": 518855,
+  "sourceClosureSha256": "3fec9b5beb967a48a2762d66a91daeff40a76b5715934054a648853b00c93408",
+  "receipt": {
+    "file": "instances-selection-provenance.json",
+    "sha256": "a965b37cdc9c8adb7df96ea67656c9430ea0c3ae9558dc2d2e54d2a4f08304d2",
+    "bytes": 36690
+  },
+  "recipe": {
+    "file": "prepare-instances-selection.cjs",
+    "sha256": "2b12cc798584052c52e6a2672f8bd2020a5ecf3e31276e85f75cc13cb8cb48c1"
+  },
+  "selectionContract": {
+    "file": "instances-selection-contract.json",
+    "sha256": "5c3882a193714b74af5e0c6d95b6c47fad909aa06fe4a69b8e6d60ab7602c535"
+  },
+  "styleContract": {
+    "file": "instances-style-contract.json",
+    "sha256": "b90aaa716f4c30ed217fe009b46ce3f7750b842e531196d12f40bd1097067f6a"
+  },
+  "parentReceipt": {
+    "file": "instances-style-provenance.json",
+    "sha256": "98f25707e7f5a5e7097e3bcf082d3a3c12c95aae059c63d139f11c2f02a9f584"
+  },
+  "parentRecipe": {
+    "file": "prepare-instances-style.cjs",
+    "sha256": "9298850ccf7041d83cbf689b97bd9efceb5b4af37d62330a98eb3259b093562b"
+  },
+  "parentRuntimeSha256": "b856e7ed182437e84d9870aaac9599f73ea841f4040ca0c6e107adb7aaafbcc8",
+  "hookCount": 23
+}

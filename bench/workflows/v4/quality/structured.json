@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "task": "text.assist",
+  "language": "en",
+  "licence": "Repository-authored synthetic contract fixtures",
+  "annotations": {
+    "kind": "synthetic"
+  },
+  "cases": [
+    {
+      "id": "synthetic-1",
+      "input": {
+        "path": "bench/workflows/v4/quality/input-1.json",
+        "sha256": "68bae29082f80bbab4abd6de643f285a167c297aa1b1fc25d4bd2c228c8dbf01",
+        "bytes": 148
+      },
+      "reference": {
+        "path": "bench/workflows/v4/quality/reference-1.json",
+        "sha256": "0356408cfa6e62550b53d24c508105a7686e9da9b37e42613eb046110ad95060",
+        "bytes": 177
+      },
+      "candidate": "candidate-1.json",
+      "thresholds": {
+        "sourceIds": {
+          "min": 1
+        },
+        "nonempty": {
+          "min": 1
+        },
+        "advisory": {
+          "min": 1
+        }
+      }
+    },
+    {
+      "id": "synthetic-2",
+      "input": {
+        "path": "bench/workflows/v4/quality/input-2.json",
+        "sha256": "1be739aff5abd7eda3836eb0f6f0b117bf982e668477f89b1065490a175adbb8",
+        "bytes": 146
+      },
+      "reference": {
+        "path": "bench/workflows/v4/quality/reference-2.json",
+        "sha256": "9e2e1e4cc408eeae985027903f8501f4fc2cb61e8107e7a2e892ea945703e560",
+        "bytes": 175
+      },
+      "candidate": "candidate-2.json",
+      "thresholds": {
+        "sourceIds": {
+          "min": 1
+        },
+        "nonempty": {
+          "min": 1
+        },
+        "advisory": {
+          "min": 1
+        }
+      }
+    },
+    {
+      "id": "synthetic-3",
+      "input": {
+        "path": "bench/workflows/v4/quality/input-3.json",
+        "sha256": "e48f21d5bf02c055928a51195b691885431cb60f10bd9486e153e9b3051dcba1",
+        "bytes": 155
+      },
+      "reference": {
+        "path": "bench/workflows/v4/quality/reference-3.json",
+        "sha256": "fd5dfc0d3221b4855c3ea3cb2a7665f50ecc208431f66ab5b9d41d5561440b71",
+        "bytes": 184
+      },
+      "candidate": "candidate-3.json",
+      "thresholds": {
+        "sourceIds": {
+          "min": 1
+        },
+        "nonempty": {
+          "min": 1
+        },
+        "advisory": {
+          "min": 1
+        }
+      }
+    }
+  ]
+}

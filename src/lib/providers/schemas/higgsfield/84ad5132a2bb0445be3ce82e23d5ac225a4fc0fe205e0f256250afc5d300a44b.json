@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "endpoint": "alibaba/happy-horse/v1.1/reference-to-video",
+  "title": "HappyHorse 1.1 — Reference to video API",
+  "docsUrl": "https://docs.higgsfield.ai/docs/models/happy-horse-1-1/reference-to-video.md",
+  "usageNotes": [
+    "Provide 1–9 reference images. This limit is enforced at submission even though the stored JSON Schema does not set minItems or maxItems. Reference videos are unsupported."
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Happy horse",
+    "required": [
+      "image_urls",
+      "prompt"
+    ],
+    "properties": {
+      "seed": {
+        "type": "integer",
+        "maximum": 2147483646,
+        "minimum": 1
+      },
+      "prompt": {
+        "type": "string",
+        "title": "Prompt",
+        "description": "Write your prompt here"
+      },
+      "duration": {
+        "type": "integer",
+        "title": "Duration",
+        "default": 5,
+        "maximum": 15,
+        "minimum": 2
+      },
+      "image_urls": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Image URL",
+          "format": "uri"
+        }
+      },
+      "resolution": {
+        "enum": [
+          "720p",
+          "1080p"
+        ],
+        "type": "string",
+        "default": "1080p"
+      }
+    }
+  },
+  "asOf": "2026-11-15"
+}
