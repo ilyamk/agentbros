@@ -99,7 +99,8 @@ jobs:
       - name: Full suite shard
         env:
           SHARD: ${{ matrix.shard }}
-        run: pnpm exec tsx --test --test-shard="$SHARD/4" --import ./tests/helpers/memory-root.ts tests/*.test.ts
+        # A test without its own timeout fails by name after ten minutes instead of hanging the job until its limit.
+        run: pnpm exec tsx --test --test-timeout=600000 --test-shard="$SHARD/4" --import ./tests/helpers/memory-root.ts tests/*.test.ts
   browser-render:
     strategy:
       fail-fast: false
