@@ -159,7 +159,7 @@
 
 - Public release readiness: pnpm studio runs Remotion Studio under the loopback preload (127.0.0.1 only); CI installs Remotion's Chromium before the fast and full test suites; the console's review security tests ship in the public export; Blender examples carry their GPL-3.0-or-later headers; the triage judge no longer receives GitHub credentials; the licence documents clarify redistribution, Remotion thresholds, Python dependencies, the Vork bridge's licence evidence and the CC BY phone-model renders
 
-- Release notes no longer fail on two pending change entries filed under an unknown feature category; a test now renders every pending entry, so an unknown category fails CI before it reaches main
+- Release notes no longer fail on two pending change entries filed under an unknown feature category; a test now renders every pending entry, so an unknown category fails CI before it reaches main ([#14](https://github.com/ilyamk/agentbros/pull/14))
 
 - Scope MCP plan and request files through a scopeRoot flag (audio_mix track sources, backend export assets, viz), dispatch elevenlabs-sfx assets through budgeted SFX generation, require explicit --provider pollinations with bounded downloads, refuse non-public ref:add links, add render-determinism lint rules and a CLI JSON contract test, and rename the cache override to AGENTBROS_MODEL_CACHE (AI_VIDEO_CREATOR_MODEL_CACHE still read)
 
@@ -187,6 +187,8 @@
 - Add docs/architecture.md: layers, directory map, request flow, single sources of truth, invariants and extension paths for agents changing the harness; dated, linked from the root, kept current with every structural change and guarded by tests/agents-md.test.ts; a whiteboard cover of the two brothers drawing the system as a graph (prompt in docs/readme/PROMPTS.md, section H)
 
 - Agent Bros. Pictures is source-available under the Business Source License 1.1 (BUSL-1.1) instead of AGPL-3.0-or-later with a commercial licence. The Additional Use Grant allows free production use by individuals (including films and media for their clients), organisations with no more than three Personnel together with their Affiliates, and non-profits and accredited educational or research institutions for non-commercial activities, provided the software is not offered to third parties as a hosted, managed or embedded service, API or platform, or distributed, sold or bundled in a product or service; delivering films made with it is not distribution. Everyone may use it for evaluation, testing, development and study. Other production use needs a commercial licence (COMMERCIAL-LICENSE.md). Each version converts to AGPL-3.0-or-later on the fourth anniversary of its first public release under the BSL. Python that runs inside Blender is GPL-3.0-or-later (LICENSE-GPL-3.0) and carries an SPDX header. The CLA moves to version 2.0, effective 17 November 2026, and TRADEMARKS.md sets the policy for the Agent Bros. Pictures and agentbros names and logos.
+
+- docs/github.md records the settings applied to the public repository on 2026-11-18: no merge queue for a personal account, data-branch rules that keep GITHUB_TOKEN writes working, the allowed-actions list, the completed App split, and why GITHUB_TOKEN may not open pull requests
 
 - Translate the 19 reference breakdowns, the agent video systems survey and the chart evidence guide into English; the film's own copy stays described, not quoted
 

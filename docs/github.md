@@ -11,7 +11,9 @@ GitHub behaviour. Keep the repository private until the sandbox checks below pas
 
 1. Set `main` as the default branch. Enable Actions with read-only default token
    permissions and allow the explicitly pinned actions used by these workflows.
-   Enable workflow creation of pull requests for the release bot. Create the
+   Leave "Allow GitHub Actions to create and approve pull requests" off: the
+   release and model-refresh PRs are opened with the App's token, not
+   `GITHUB_TOKEN`. Create the
    GitHub App `agentbros-release` (contents and pull-request write, installed on
    this repository only); store its client ID as the variable
    `RELEASE_APP_CLIENT_ID` and its private key as the secret
@@ -117,17 +119,17 @@ GitHub behaviour. Keep the repository private until the sandbox checks below pas
    permission already includes creating tags and releases, so the split is
    enforced by keys, environments and rulesets together, not by App permissions
    alone:
-   - [ ] Create a second App, `agentbros-automation`, installed on this
+   - [x] Create a second App, `agentbros-automation`, installed on this
      repository only with contents and pull-request write. Store its client ID
      as the variable `AUTOMATION_APP_CLIENT_ID` and its private key as the
      secret `AUTOMATION_APP_PRIVATE_KEY`, **only** in `automation`.
-   - [ ] Keep `agentbros-release` (contents write) for tags and releases. Store
+   - [x] Keep `agentbros-release` (contents write) for tags and releases. Store
      its key and client ID **only** in `release` (required reviewer `ilyamk`)
      and delete them from `automation`.
-   - [ ] Add a tag ruleset on `refs/tags/v*` that restricts creation, update and
+   - [x] Add a tag ruleset on `refs/tags/v*` that restricts creation, update and
      deletion, with `agentbros-release` as the only bypass. The automation App
      then cannot create a version tag, and so cannot publish a version release.
-   - [ ] Move the always-bypass on the `main` ruleset from `agentbros-release`
+   - [x] Move the always-bypass on the `main` ruleset from `agentbros-release`
      to `agentbros-automation` (`post-merge-regen` and `showcase` push to
      `main`; the release job never pushes). Let the `bot/*` ruleset allow only
      `agentbros-automation` and the owner.
@@ -142,8 +144,39 @@ GitHub behaviour. Keep the repository private until the sandbox checks below pas
      fallback reads an empty secret, so no unattended job can hold it; drop the
      fallback in a later change. `showcase-media` stays creatable by the
      automation App: it is not a `v*` tag and is created with `--latest=false`.
-   - [ ] Check in Settings → Environments and Rules that the result matches,
+   - [x] Check in Settings → Environments and Rules that the result matches,
      then record it in the sandbox evidence.
+
+## Applied settings (2026-11-18)
+
+`ilyamk/agentbros` was created from a clean export, configured while private
+with Actions disabled, made public, and only then had Actions enabled. The
+settings above are applied, with these differences:
+
+- **Merge queue**: not available to repositories owned by a personal account,
+  so the `main` ruleset has no merge-queue rule. PRs merge by squash once the
+  four required checks (`pr-intake`, `ci`, `category-gates`, `context-budget`,
+  all from GitHub Actions) and CODEOWNERS review pass. Keeping those checks on
+  `merge_group` costs nothing and is ready for a move to an organisation.
+- **Data branches**: the `cla-signatures` and `automation-state` ruleset
+  forbids deletion and force pushes but does not restrict updates, because the
+  CLA and triage jobs write through `GITHUB_TOKEN`
+  (`github-actions[bot]`), which a branch-update restriction would block.
+- **Allowed actions**: GitHub-owned actions plus `astral-sh/setup-uv@*` and
+  `ossf/scorecard-action@*`. "Require actions to be pinned to a full-length
+  commit SHA" stays off: GitHub's own composite actions (for example
+  `actions/upload-pages-artifact`) call other actions by tag. Our workflows pin
+  every action by SHA, enforced by `tests/workflows.test.ts`.
+- **App split (step 8)**: done from the start. `agentbros-release` holds keys
+  only in `release` (required reviewer `ilyamk`) and is the only bypass of the
+  `v*` tag ruleset; `agentbros-automation` holds keys only in `automation`, is
+  the always-bypass of `main` and may push `bot/*` with the owner.
+- **Fork pull requests**: workflows from all outside contributors wait for
+  approval. Secret scanning, push protection, private vulnerability reporting,
+  Dependabot alerts and security updates are on; CodeQL uses the advanced
+  setup in `codeql.yml`, so default setup stays off.
+- **Sandbox**: the throwaway sandbox run was skipped; the first PR on the
+  public repository is the live check of the intake, CI and post-merge routes.
 
 All GitHub jobs use Linux; macOS/Swift and MLX checks remain local. Weekly/manual Python acceptance covers pinned Blender and public CPU models.
 
