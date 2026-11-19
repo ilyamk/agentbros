@@ -114,10 +114,14 @@ export async function failsOnBase(
       const failing = headResults.flatMap((result, index) => {
         if (result.exitCode === 0) return [];
         const names = [...tapPoints(result.stdout).failed].join("; ") || "no named test";
-        const error = result.stdout.match(/^\s+error: (.+)$/m)?.[1];
-        return [`${tests[index]}: ${names}${error ? ` (${error})` : ""}`];
+        // The first failure's TAP diagnostics (error, location, stack) say why without the full log.
+        const detail = result.stdout
+          .match(/^\s*not ok .*\n([\s\S]*?)^\s*\.\.\.$/m)?.[1]
+          ?.replace(/\s+/g, " ")
+          .trim();
+        return [`${tests[index]}: ${names}${detail ? ` (${detail.slice(0, 1200)})` : ""}`];
       });
-      return { ...proof, outcome: "fails-on-head", reason: `Fails on head: ${failing.join(" | ").slice(0, 1500)}` };
+      return { ...proof, outcome: "fails-on-head", reason: `Fails on head: ${failing.join(" | ").slice(0, 3000)}` };
     }
     if ([...baseResults, ...headResults].some((result) => !/^# tests [1-9]\d*\s*$/m.test(result.stdout)))
       throw new Error("Test runner did not report executing tests; proof is unverified.");
