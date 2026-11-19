@@ -255,7 +255,7 @@ test("actual CLI rejects scoped/recovery caller error before reading writerless 
           AGENTBROS_NO_DOTENV: "1",
           PATH: "/opt/homebrew/bin:/usr/bin:/bin",
           HOME: "/var/empty",
-          TMPDIR: "/private/tmp",
+          TMPDIR: tmpdir(), // the host temporary root; /private/tmp exists only on macOS
         },
       },
     );

@@ -202,7 +202,9 @@ export function runProcess(
     const owned = new Map<number, string>();
     const snapshot = (): Identity[] => {
       if (process.platform === "win32") return [];
-      const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart=,comm="], {
+      // Identity is pid plus start time. Not comm: Linux renames a starting Node process's main thread ("MainThread"), so a
+      // snapshot taken at spawn would no longer match the same process a moment later and it would escape cleanup.
+      const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart="], {
         encoding: "utf8",
         timeout: 5000,
         shell: false,

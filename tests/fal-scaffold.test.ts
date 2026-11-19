@@ -72,7 +72,8 @@ test("explicit output refuses overwrite, allows force, and scopes symlinks", () 
     assert.equal(readFileSync(file, "utf8"), before);
     writeFalScaffold(file, { ...request, input: { prompt: "new" } }, { force: true });
     assert.equal(JSON.parse(readFileSync(file, "utf8")).input.prompt, "new");
-    symlinkSync("/Users", path.join(dir, "outside"));
+    // An existing directory outside the workspace and the temporary root on every OS (not /Users, which is macOS-only).
+    symlinkSync(path.parse(dir).root, path.join(dir, "outside"));
     assert.throws(() => writeFalScaffold(path.join(dir, "outside", "forbidden.json"), request), /workspace|temporary/);
   } finally {
     rmSync(dir, { recursive: true, force: true });

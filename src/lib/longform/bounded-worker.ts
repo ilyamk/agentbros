@@ -3,7 +3,9 @@ import { CliErrorObject } from "../cli";
 
 type ProcessIdentity = { pid: number; ppid: number; identity: string };
 function processSnapshot(): ProcessIdentity[] {
-  const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart=,comm="], {
+  // Identity is pid plus start time. Not comm: Linux renames a starting Node process's main thread ("MainThread"), so a
+  // snapshot taken at spawn would no longer match the same process a moment later and it would escape cleanup.
+  const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart="], {
     encoding: "utf8",
     timeout: 5000,
     maxBuffer: 8 * 1024 * 1024,

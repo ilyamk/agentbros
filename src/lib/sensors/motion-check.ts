@@ -50,6 +50,32 @@ export type MotionCheckOptions = {
   codec?: string;
 };
 
+/** The thrown message without the "Uncaught " prefix or the stack, whitespace collapsed. */
+const errorHead = (key: string) =>
+  key
+    .replace(/^Uncaught\s+/, "")
+    .split(/\s+at\s/)[0]!
+    .replace(/\s+/g, " ")
+    .trim();
+
+/**
+ * Chromium on Linux also logs an uncaught exception as `console.error("Uncaught Error: …")`; on macOS it does not.
+ * That echo is the same event as the exception, so it is dropped rather than counted as a second, console finding.
+ */
+export function dropEchoedExceptions<T extends { code: string; frame: number; key: string }>(occurrences: T[]): T[] {
+  const thrown = new Set(
+    occurrences.filter((item) => item.code === "RUNTIME_ERROR").map((item) => `${item.frame}\0${errorHead(item.key)}`),
+  );
+  return occurrences.filter(
+    (item) =>
+      !(
+        item.code === "CONSOLE_ERROR" &&
+        /^Uncaught\s/.test(item.key) &&
+        thrown.has(`${item.frame}\0${errorHead(item.key)}`)
+      ),
+  );
+}
+
 /** One short line, without the bundle server's port, which changes per page and would split one error into several findings. */
 const clean = (message: string) =>
   message
@@ -362,7 +388,7 @@ export async function runMotionCheck(options: MotionCheckOptions) {
       );
 
     const { kept: undeclared, intended: intendedOverflow } = splitIntended(
-      dropTransits(occurrences, positions, { width, height }),
+      dropTransits(dropEchoedExceptions(occurrences), positions, { width, height }),
     );
     const { kept, allowed, unusedAllow } = applyAllow(undeclared, options.allow);
     const counters = tally(kept, skipped);
