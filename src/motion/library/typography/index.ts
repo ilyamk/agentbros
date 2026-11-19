@@ -53,7 +53,24 @@ import {
 
 const BASE = "src/motion/library/typography";
 
+import { WaveformWords, waveformWordCues, waveformWordsDefaults, waveformWordsSchema } from "./WaveformWords";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "type-waveform-words",
+    category: "typography",
+    title: "Waveform word hits",
+    description:
+      "Text arrives on supplied frame cues above the amplitude envelope of a sound. Use when the audible accents should guide the viewer through the words.",
+    tags: ["audio", "waveform", "words", "sync", "rhythm"],
+    component: WaveformWords,
+    schema: waveformWordsSchema,
+    defaultProps: waveformWordsDefaults,
+    durationInFrames: 115,
+    formats: ["landscape"],
+    importPath: "src/motion/library/typography/WaveformWords",
+    cues: waveformWordCues,
+  }),
   defineItem({
     id: "type-text-generate",
     category: "typography",

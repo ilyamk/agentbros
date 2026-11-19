@@ -70,6 +70,27 @@ The **Signal to Story** lab reel puts each entrance on a separate beat and leave
 pnpm motion:render --entry src/motion/lab/text-entrances-reel.tsx --composition TextEntrancesReelV --output out/text-entrances/signal-to-story.mp4
 ```
 
+## Production proof scenes
+
+Use one action on the screen and hold the part of the result the viewer needs to read.
+
+| Block | Use |
+| --- | --- |
+| `ui-inspector-geometry` | Link a control, its value and the corner geometry of the same frame. |
+| `ui-accept-revision` | Accept a proposed scale change and update a live composition. |
+| `ui-evidence-scroll` | Bring a supplied review record into view and keep its highlight attached to the row. |
+| `ui-variation-select` | Compare two or three artwork variants and expand the selected one. |
+| `ui-device-handoff` | Keep the same artwork visible while a portrait frame becomes a tablet. |
+| `bars-form-number` | Let bars rotate and slide into the segments of one sourced value. |
+| `print-registration` | Register four successive ink passes to reveal an editorial frame. |
+| `type-waveform-words` | Drive typography with word cues and an amplitude envelope supplied in frames. |
+
+The **Production Proof** lab reel uses Agent Bros. Pictures artwork throughout.
+
+```bash
+pnpm motion:render --entry src/motion/lab/production-proof-reel.tsx --composition ProductionProofReelL --output out/production-motion/production-proof.mp4
+```
+
 ## Previews
 
 ```bash

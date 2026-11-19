@@ -7,13 +7,6 @@
     "shadcn": {
       "command": "npx",
       "args": ["-y", "shadcn@4.23.0", "mcp", "--cwd", "ui-sources"]
-    },
-    "21st": {
-      "type": "http",
-      "url": "https://21st.dev/api/mcp",
-      "headers": {
-        "x-api-key": "${API_KEY_21ST:-}"
-      }
     }
   }
 }

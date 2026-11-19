@@ -26,7 +26,98 @@ import { PlaceholderResolve, placeholderResolveCues, placeholderResolveSchema } 
 import { StateMorph, stateMorphCues, stateMorphDefaults, stateMorphSchema } from "./StateMorph";
 import { SwipeDeck, swipeDeckCues, swipeDeckDefaults, swipeDeckSchema } from "./SwipeDeck";
 
+import {
+  InspectorGeometry,
+  inspectorGeometryCues,
+  inspectorGeometryDefaults,
+  inspectorGeometrySchema,
+} from "./InspectorGeometry";
+import { AcceptRevision, acceptRevisionCues, acceptRevisionDefaults, acceptRevisionSchema } from "./AcceptRevision";
+import { EvidenceScroll, evidenceScrollCues, evidenceScrollDefaults, evidenceScrollSchema } from "./EvidenceScroll";
+import {
+  VariationSelect,
+  variationSelectCues,
+  variationSelectDefaults,
+  variationSelectSchema,
+} from "./VariationSelect";
+import { DeviceHandoff, deviceHandoffCues, deviceHandoffDefaults, deviceHandoffSchema } from "./DeviceHandoff";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "ui-inspector-geometry",
+    category: "ui",
+    title: "Inspector drives geometry",
+    description:
+      "A frame property changes its readout, slider and artwork together. Use to establish the visible result of one adjustment.",
+    tags: ["geometry", "control", "inspection", "proof"],
+    component: InspectorGeometry,
+    schema: inspectorGeometrySchema,
+    defaultProps: inspectorGeometryDefaults,
+    durationInFrames: 105,
+    formats: ["landscape"],
+    importPath: "src/motion/library/ui/InspectorGeometry",
+    cues: inspectorGeometryCues,
+  }),
+  defineItem({
+    id: "ui-accept-revision",
+    category: "ui",
+    title: "Accept a revision into a preview",
+    description:
+      "A proposed change is accepted and the same artwork updates in place. Use for edit reviews, code changes and agent-assisted workflows.",
+    tags: ["diff", "revision", "product proof", "live preview"],
+    component: AcceptRevision,
+    schema: acceptRevisionSchema,
+    defaultProps: acceptRevisionDefaults,
+    durationInFrames: 105,
+    formats: ["landscape"],
+    importPath: "src/motion/library/ui/AcceptRevision",
+    cues: acceptRevisionCues,
+  }),
+  defineItem({
+    id: "ui-evidence-scroll",
+    category: "ui",
+    title: "Scroll to the evidence",
+    description:
+      "A list scrolls to a selected row, highlights it in content coordinates and holds on the supporting note. Use when the viewer needs to see the evidence.",
+    tags: ["scroll", "source", "evidence", "review"],
+    component: EvidenceScroll,
+    schema: evidenceScrollSchema,
+    defaultProps: evidenceScrollDefaults,
+    durationInFrames: 110,
+    formats: ["landscape"],
+    importPath: "src/motion/library/ui/EvidenceScroll",
+    cues: evidenceScrollCues,
+  }),
+  defineItem({
+    id: "ui-variation-select",
+    category: "ui",
+    title: "Compare variants and choose one",
+    description:
+      "A short grid of visual variations introduces the alternatives, then one selected card grows into the next view. Supply original or captured artwork to compare.",
+    tags: ["gallery", "variations", "selection", "carry"],
+    component: VariationSelect,
+    schema: variationSelectSchema,
+    defaultProps: variationSelectDefaults,
+    durationInFrames: 115,
+    formats: ["landscape"],
+    importPath: "src/motion/library/ui/VariationSelect",
+    cues: variationSelectCues,
+  }),
+  defineItem({
+    id: "ui-device-handoff",
+    category: "ui",
+    title: "Carry a screen to another device",
+    description:
+      "One screen travels from a portrait phone frame into a wider tablet frame while its artwork remains identifiable. Use to show continuity across devices.",
+    tags: ["device", "phone", "tablet", "continuity"],
+    component: DeviceHandoff,
+    schema: deviceHandoffSchema,
+    defaultProps: deviceHandoffDefaults,
+    durationInFrames: 105,
+    formats: ["landscape"],
+    importPath: "src/motion/library/ui/DeviceHandoff",
+    cues: deviceHandoffCues,
+  }),
   defineItem({
     id: "ui-state-morph",
     category: "ui",

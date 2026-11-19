@@ -40,12 +40,11 @@ Registries in `ui-sources/components.json`, each tried with one item on 2026-11-
 
 ## MCP servers
 
-`.mcp.json` at the root gives Claude Code two servers:
+`.mcp.json` at the root registers the local project bridge and component search for Claude Code.
 
 - **shadcn** (`npx shadcn@4.23.0 mcp --cwd ui-sources`): browse, search and install from every registry above in plain language ("add the animated list from magicui"). It reads `ui-sources/components.json`, so installs land in the scratch area.
-- **21st** (HTTP, `https://21st.dev/api/mcp`, the entry `npx @21st-dev/cli@latest init --client claude` prints): the 21st.dev component search. It needs a key: create one in the 21st.dev console, then `export API_KEY_21ST=...` before starting Claude Code, which expands `${API_KEY_21ST:-}` from the environment. Without the key the server is listed but its calls are refused (not tested here). Use only this MCP or the 21st CLI, never a scraper: the site terms forbid automated collection.
 
-Codex reads its own config: add the same two commands under `[mcp_servers]` in `~/.codex/config.toml` if you need them there.
+Codex reads its own config: add the component search command under `[mcp_servers]` in `~/.codex/config.toml` if you need them there.
 
 ## Port a component to frame time
 
@@ -62,7 +61,7 @@ Pulled code is a reference, never a runtime. What to keep and what to replace:
    - scroll becomes an eased offset with `VelocityBlur` along the scroll axis (`ui-data-table`).
 4. **Drop the behaviour.** Radix state, focus rings, keyboard handling and portals do nothing in a render. Draw the state the shot needs.
 5. **Expose the moments.** Every block computes `cues(props)`: one `type` cue at the first key (not one per character), `click` on the press, `reveal` when content lands, `stop`/`land` when a camera or scroll settles.
-6. **Record provenance.** Put the source, its URL and licence in `inspiredBy`, for example `shadcn/ui switch on Radix (MIT, https://ui.shadcn.com/docs/components/switch, ported)`. React Bits (MIT + Commons Clause), Magic UI Pro, Aceternity Pro and 21st marketplace items without an OSS licence may be used inside one film but not ported into this library.
+6. **Record provenance.** Put the source, its URL and licence in `inspiredBy`, for example `shadcn/ui switch on Radix (MIT, https://ui.shadcn.com/docs/components/switch, ported)`. Check the separate redistribution terms for React Bits (MIT + Commons Clause), Magic UI Pro and Aceternity Pro before using their code in a shared library.
 
 Then `pnpm -s library:preview --id <id>`, open the sheet and compare it with a real product screenshot at the same size: if the cell text cannot be read in the thumbnail, it is too small.
 
