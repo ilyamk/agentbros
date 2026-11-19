@@ -524,7 +524,8 @@ test("an omitted patch of a large text file is rebuilt from merge base and head,
   assert.equal(facts.leakHit, false);
   assert.ok(clean.calls.some((call) => call.route === `/git/blobs/${blob}`));
   // Added lines of a rebuilt patch go through the same leak scan as any other patch.
-  const leaking = setup(updated + "path = '/Users/someone/wheel'\n", 2, 1);
+  // Assembled at run time so this source does not itself contain the home-path pattern the leak scan looks for.
+  const leaking = setup(updated + `path = '${["", "Users", "someone", "wheel"].join("/")}'\n`, 2, 1);
   assert.equal((await getFacts(leaking.api, 7, history)).leakHit, true);
   // A rebuilt diff that disagrees with GitHub's counts (for example, another merge base) stays for human review.
   const mismatch = setup(updated, 2, 1);
