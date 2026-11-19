@@ -110,7 +110,15 @@ export async function failsOnBase(
     };
     const baseResults = await execute(baseTree, "base");
     const headResults = await execute(create("head", head), "head");
-    if (headResults.some((result) => result.exitCode !== 0)) return { ...proof, outcome: "fails-on-head" };
+    if (headResults.some((result) => result.exitCode !== 0)) {
+      const failing = headResults.flatMap((result, index) => {
+        if (result.exitCode === 0) return [];
+        const names = [...tapPoints(result.stdout).failed].join("; ") || "no named test";
+        const error = result.stdout.match(/^\s+error: (.+)$/m)?.[1];
+        return [`${tests[index]}: ${names}${error ? ` (${error})` : ""}`];
+      });
+      return { ...proof, outcome: "fails-on-head", reason: `Fails on head: ${failing.join(" | ").slice(0, 1500)}` };
+    }
     if ([...baseResults, ...headResults].some((result) => !/^# tests [1-9]\d*\s*$/m.test(result.stdout)))
       throw new Error("Test runner did not report executing tests; proof is unverified.");
     const failedOnBase = baseResults.some(
