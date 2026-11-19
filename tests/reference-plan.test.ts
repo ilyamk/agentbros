@@ -715,6 +715,12 @@ function cli(rootDir: string, ...args: string[]) {
     timeout: 120000,
     killSignal: "SIGKILL",
   });
+  if (result.error) {
+    const ps = spawnSync("ps", ["-eo", "pid,ppid,pgid,stat,etimes,args"], { encoding: "utf8" }).stdout;
+    console.error(
+      `[diag] refs:plan timeout status=${result.status} signal=${result.signal} pid=${result.pid}\n[diag] stdout=${result.stdout.slice(-600)}\n[diag] ps:\n${ps}`,
+    );
+  }
   assert.equal(result.error, undefined, `refs:plan ${args.join(" ")}: ${result.error}\n${result.stderr}`);
   const lines = result.stdout.trim().split("\n");
   return { status: result.status, json: JSON.parse(lines.at(-1)!) as Record<string, any>, stderr: result.stderr };
