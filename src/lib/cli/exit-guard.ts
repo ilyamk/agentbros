@@ -1,14 +1,8 @@
 import { setFlagsFromString } from "node:v8";
 
-// Node 24 (V8 13.6) can deadlock in process.exit: platform shutdown joins a background compile job that waits for a
-// garbage collection only the exiting main thread could run (seen with Sparkplug; the optimising compilers, OSR and
-// code-cache deserialisation allocate on the same background heap). Compiling on the main thread instead removes
-// those jobs; Node 26 does not hang and keeps the defaults.
-const BACKGROUND_COMPILE_FLAGS = [
-  "--no-concurrent-sparkplug",
-  "--no-concurrent-recompilation",
-  "--no-concurrent-osr",
-  "--no-concurrent-cache-deserialization",
-];
-if (Number(process.versions.node.split(".")[0]) < 26)
-  for (const flag of BACKGROUND_COMPILE_FLAGS) setFlagsFromString(flag);
+// Node 24 (V8 13.6) can deadlock in process.exit: platform shutdown joins a background compile job that allocates on
+// the heap and waits for a garbage collection only the exiting main thread could run. gdb showed it with concurrent
+// Sparkplug and with Maglev. Both flags take effect at run time (concurrent TurboFan cannot be turned off here, but it
+// allocates only on the main thread); Node 26 does not hang and keeps the defaults.
+const EXIT_SAFE_FLAGS = ["--no-concurrent-sparkplug", "--no-maglev"];
+if (Number(process.versions.node.split(".")[0]) < 26) for (const flag of EXIT_SAFE_FLAGS) setFlagsFromString(flag);
