@@ -68,7 +68,8 @@ test("every exemption names a registered script", () => {
 
 test(
   "every registered script answers --help with exactly one JSON envelope and exit 0",
-  { timeout: 300_000 },
+  // About 300 scripts, each bounded at 60 s; on Node 24 runners the run takes 180–290 s, so 300 s was routinely missed.
+  { timeout: 600_000 },
   async () => {
     const env: NodeJS.ProcessEnv = {};
     for (const [key, value] of Object.entries(process.env))
