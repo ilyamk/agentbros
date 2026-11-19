@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, mkdirSync, writeFileSync, symlinkSync, rmSync, readdirSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, rmSync, readdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -216,4 +216,12 @@ test("AGENTBROS_NO_DOTENV stops runScript loading .env; the test import sets it 
   } finally {
     rmSync(cwd, { recursive: true, force: true });
   }
+});
+
+test("the Node 24 exit guard is the CLI module's first import, so it runs before any other module", () => {
+  // ESM evaluates imports in order: as the first one, the guard turns off concurrent Sparkplug before other code runs.
+  const source = readFileSync(path.join(import.meta.dirname, "../src/lib/cli/index.ts"), "utf8");
+  assert.equal(source.match(/^import .*$/m)?.[0], 'import "./exit-guard";');
+  const guard = readFileSync(path.join(import.meta.dirname, "../src/lib/cli/exit-guard.ts"), "utf8");
+  assert.match(guard, /setFlagsFromString\("--no-concurrent-sparkplug"\)/);
 });

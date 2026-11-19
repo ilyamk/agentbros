@@ -15,6 +15,7 @@
  *   });
  */
 
+import "./exit-guard";
 import { existsSync, lstatSync, readFileSync, realpathSync, writeSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
