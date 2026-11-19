@@ -15,6 +15,7 @@
  *   });
  */
 
+import { collectBeforeExit } from "./exit-guard";
 import { existsSync, lstatSync, readFileSync, realpathSync, writeSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
@@ -102,6 +103,7 @@ export function emitResult(result: CliResult): never {
   }
   // The journal's cli.end (RFC 0004 D7): synchronous, never throws, written before exit with the outcome delivered.
   endCliRun(result);
+  collectBeforeExit();
   process.exit(result.ok ? 0 : 1);
 }
 

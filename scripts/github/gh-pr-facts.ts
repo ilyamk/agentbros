@@ -9,6 +9,7 @@ import { compileLeakPatterns, excuses, globToRegex, type AllowedHit, type LeakPa
 import { truncateDiff } from "../../src/lib/triage/artefact";
 import { TriageArtefactMetadataSchema } from "../../src/types/triage";
 import { GitHub, entry, prNumbers } from "./api";
+import { lineDiff } from "./line-diff";
 
 export type Pull = {
   number: number;
@@ -126,6 +127,30 @@ export function leakHit(files: ApiFile[]): boolean {
     );
   });
 }
+/**
+ * The patch of a text file GitHub lists without one (it omits patches of large files such as uv.lock): rebuilt from the
+ * merge base and head contents, which is what a PR's file diff compares. Accepted only when the minimal diff's counts
+ * equal GitHub's additions and deletions; otherwise, or on any read failure, undefined and the file stays uncertain.
+ */
+async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: string): Promise<string | undefined> {
+  try {
+    let before = "";
+    if (file.status !== "added") {
+      const { merge_base_commit } = await api.call<{ merge_base_commit?: { sha?: string } }>(
+        `/compare/${pr.base.sha}...${pr.head.sha}?per_page=1`,
+      );
+      const mergeBase = merge_base_commit?.sha;
+      if (!mergeBase || !/^[0-9a-f]{40}$/.test(mergeBase)) return undefined;
+      const base = await api.content(file.previous_filename ?? file.filename, mergeBase);
+      if (!base || base.text.includes("\0")) return undefined;
+      before = base.text;
+    }
+    const diff = lineDiff(before, head);
+    return diff && diff.additions === file.additions && diff.deletions === file.deletions ? diff.patch : undefined;
+  } catch {
+    return undefined;
+  }
+}
 export async function getFacts(
   api: GitHub,
   number: number,
@@ -171,7 +196,11 @@ export async function getFacts(
         if (!value) uncertainFiles.push(file.filename);
         else {
           changed.binary = value.text.includes("\0");
-          if (!changed.binary && (file.additions || file.deletions)) uncertainFiles.push(file.filename);
+          if (!changed.binary && (file.additions || file.deletions)) {
+            const patch = await reconstructedPatch(api, pr, file, value.text);
+            if (patch === undefined) uncertainFiles.push(file.filename);
+            else file.patch = changed.patch = patch;
+          }
         }
       } catch (error) {
         if (error instanceof Error && error.message === "Unsupported GitHub content encoding")

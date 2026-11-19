@@ -91,16 +91,18 @@ export function probeRecordingTiming(file: string, source: RecordingEditRequest[
   if (Math.abs(rate - source.fps.num / source.fps.den) > 1e-10)
     throw new Error("Declared source fps does not match measured nominal rate");
   if (rate > 120 || rate < 1) throw new Error("Recording nominal rate must be within 1–120fps");
-  for (const stream of [video, audio])
-    if (!Number.isFinite(Number(stream.start_time)) || Math.abs(Number(stream.start_time)) > 1 / 48000)
-      throw new Error(
-        `Recording audio/video must share a zero start (video starts at ${video.start_time}s, audio at ${audio.start_time}s); offsets remain unsupported. Re-encode from zero first: ffmpeg -i IN -vf setpts=PTS-STARTPTS -af asetpts=PTS-STARTPTS -c:v libx264 -c:a aac OUT.mp4`,
-      );
+  // The container check comes first: WebM stores no stream duration, and its Opus pre-skip start differs by FFmpeg
+  // build (0 or -0.007s), so the remux hint is the one that fixes the source on every machine.
   const durationTicks = Number(video.duration_ts);
   if (!Number.isSafeInteger(durationTicks) || durationTicks <= 0)
     throw new Error(
       "Recording needs a measured terminal video timestamp; this container (WebM/Matroska and some streams) stores no video stream duration. Remux to MP4 first: ffmpeg -i IN -c:v libx264 -c:a aac OUT.mp4, then transcribe the MP4 (a transcript is bound to its file's SHA256)",
     );
+  for (const stream of [video, audio])
+    if (!Number.isFinite(Number(stream.start_time)) || Math.abs(Number(stream.start_time)) > 1 / 48000)
+      throw new Error(
+        `Recording audio/video must share a zero start (video starts at ${video.start_time}s, audio at ${audio.start_time}s); offsets remain unsupported. Re-encode from zero first: ffmpeg -i IN -vf setpts=PTS-STARTPTS -af asetpts=PTS-STARTPTS -c:v libx264 -c:a aac OUT.mp4`,
+      );
   const durationSec = durationTicks * tick;
   if (durationSec > 1800 || !Number.isFinite(durationSec))
     throw new Error("Recording duration must be at most 30 minutes");
@@ -186,9 +188,12 @@ export function probeRecordingTiming(file: string, source: RecordingEditRequest[
       throw new Error("Authentic audio has discontinuous decoded timestamps; explicit offset/gap repair required");
     sampleCursor += count;
   }
+  // Samples past the stream's declared (trimmed) duration are encoder padding, not authentic audio: FFmpeg 8 decodes
+  // the last AAC frame in full (1024 samples) where later builds apply the end trim.
+  const decodedAudioSec = Math.min(sampleCursor / sampleRate, audioDuration);
   if (
-    Math.abs(durationSec - sampleCursor / sampleRate) > 1 / 30 + 1e-6 ||
-    Math.abs(Math.ceil(durationSec * 30 - 1e-9) / 30 - sampleCursor / sampleRate) > 2 / 30 + 1e-6
+    Math.abs(durationSec - decodedAudioSec) > 1 / 30 + 1e-6 ||
+    Math.abs(Math.ceil(durationSec * 30 - 1e-9) / 30 - decodedAudioSec) > 2 / 30 + 1e-6
   )
     throw new Error("Decoded authentic audio does not cover full recording");
   const seconds = [...ticks.map((n: number) => n * tick), durationSec];
@@ -201,8 +206,8 @@ export function probeRecordingTiming(file: string, source: RecordingEditRequest[
     height: video.height as number,
     durationSec,
     audioDurationSec: audioDuration,
-    decodedAudioDurationSec: sampleCursor / sampleRate,
-    authenticContentDurationSec: Math.min(audioDuration, sampleCursor / sampleRate),
+    decodedAudioDurationSec: decodedAudioSec,
+    authenticContentDurationSec: decodedAudioSec,
     clockToleranceSec: Math.max(Math.min(tick, 0.001), 1 / sampleRate),
     masterFrameCount: Math.ceil(durationSec * 30 - 1e-9),
     seconds,

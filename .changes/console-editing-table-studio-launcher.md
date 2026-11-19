@@ -1,5 +1,5 @@
 ---
-category: feature
+category: harness
 bump: minor
 breaking: false
 pr: 0

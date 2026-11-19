@@ -71,7 +71,10 @@ runScript(async () => {
     },
     { name: "token-forecast", description: "Optional JSON TokenUsage forecast for pricing" },
   ] as const);
-  const raw = JSON.parse(readFileSync(args.request!, "utf8"));
+  // "-" (or /dev/stdin) reads descriptor 0: on Linux a spawned child's stdin is a socket, which open("/dev/stdin") refuses (ENXIO).
+  const raw = JSON.parse(
+    readFileSync(args.request === "-" || args.request === "/dev/stdin" ? 0 : args.request!, "utf8"),
+  );
   let request: FalAnyRequest =
     raw && typeof raw === "object" && "endpoint" in raw
       ? FalEndpointRequestSchema.parse(raw)
