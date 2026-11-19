@@ -1,7 +1,7 @@
 {
   "version": 1,
   "category": "audio-to-audio",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-19",
   "entries": [
     {
       "endpoint": "fal-ai/ace-step/audio-inpaint",
@@ -9,7 +9,7 @@
       "displayName": "ACE Step Audio Inpaint",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6dcc7fb41dc66a78f56189bf1362d4969823b30582787255752cd95f94519963",
         "asOf": "2026-11-15",
@@ -200,7 +200,7 @@
       "displayName": "ACE Step Audio Outpaint",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "c6f2aa3ab94b266aeaddde9b23939e28f8d64b5d1182faea5793943e62b88614",
         "asOf": "2026-11-15",
@@ -363,7 +363,7 @@
       "displayName": "ACE Step Audio To Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "26434a3d3aba2758e87912edc542fc44534a7824ec37fd7272e4777fcd68d86c",
         "asOf": "2026-11-15",
@@ -535,7 +535,7 @@
       "displayName": "Audio Understanding",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a43ebc3adf6c7380921504ee969acf356aac424d80b027fd9fccca316f3ab5ae",
         "asOf": "2026-11-15",
@@ -585,10 +585,10 @@
       "displayName": "DeepFilterNet 3",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "94936c3ade9dc5010618fe1cd64f0c7dc17e0d3a02ab87587f777d63b8b90c0f",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdeepfilternet3&expand=openapi-3.0",
         "cached": true
       },
@@ -648,10 +648,10 @@
       "displayName": "Demucs",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "fad692db258db2933cc41419ec29bce70badda5d063f0a2ebcb0c5ba2cfea19a",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fdemucs&expand=openapi-3.0",
         "cached": true
       },
@@ -750,7 +750,7 @@
       "endpoint": "fal-ai/dia-tts/voice-clone",
       "category": "audio-to-audio",
       "displayName": "Dia Tts",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -772,7 +772,7 @@
       "displayName": "ElevenLabs Audio Isolation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "371b5f2a573433adc5c53ac5f85c81ed6b92ac75bc13a241b70d43a99d7a81b5",
         "asOf": "2026-11-15",
@@ -816,10 +816,10 @@
       "displayName": "ElevenLabs Voice Changer",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "003e8aec0bd395f5bccad18f915c4d4ceb429b355baed42945c6bd9034bc418d",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Felevenlabs%2Fvoice-changer&expand=openapi-3.0",
         "cached": true
       },
@@ -933,7 +933,7 @@
       "displayName": "FFmpeg API [Merge Audios]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3c2135e69f190775fa26eff842a051a19efa31b993ec0025a90e1965ae94ca1d",
         "asOf": "2026-11-15",
@@ -998,10 +998,10 @@
       "displayName": "Kling Video Create Voice",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d7e7d678e964f587690560835b29af3d9d13cd2f4901f153440fec9b864c3811",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fcreate-voice&expand=openapi-3.0",
         "cached": true
       },
@@ -1044,7 +1044,7 @@
       "displayName": "Qwen 3 TTS - Clone Voice [0.6B]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "919e79daf3d0550acf82c648867547db931db50f164f1834efcdac8aa0ddd15d",
         "asOf": "2026-11-15",
@@ -1092,7 +1092,7 @@
       "displayName": "Qwen 3 TTS - Clone Voice [1.7B]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "1ff98ed1e135ac8d82e54856e9c072ad631bd6d5cd8e94ce050600c5c1fdbcff",
         "asOf": "2026-11-15",
@@ -1140,7 +1140,7 @@
       "displayName": "Sam Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d7bd8b5f8dbd61a604f2e13309f6feb4ec6d01e0f4770d5492e8259895fbc9b7",
         "asOf": "2026-11-15",
@@ -1234,7 +1234,7 @@
       "displayName": "Sam Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6679ec736ff4c843cae35b76bb474718e9b7292aff5cc256a5c824f8b15d77bf",
         "asOf": "2026-11-15",
@@ -1340,7 +1340,7 @@
       "displayName": "Stable Audio 2.5",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e8686f71a60eea674be3b2a4ada63a50e775ff94cf106377efae9897562f53da",
         "asOf": "2026-11-15",
@@ -1429,7 +1429,7 @@
       "displayName": "Stable Audio 25",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "2edfbb5a93e4748d229f6108751d6e424090f2d521eff248dc8f3952547dd502",
         "asOf": "2026-11-15",
@@ -1527,7 +1527,7 @@
       "displayName": "Stable Audio 3 Medium Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a0e2879bfb4151e65ba7d361032badf7ef07e260d24e4e6d871925dc0e6adaec",
         "asOf": "2026-11-15",
@@ -1650,7 +1650,7 @@
       "displayName": "Stable Audio 3 Medium Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "45463bf53bdb91c483a131134738449939b2232a3c2a8f41bb3024070957c4fe",
         "asOf": "2026-11-15",
@@ -1775,7 +1775,7 @@
       "displayName": "Stable Audio 3 Medium Audio to Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "f650357c07c6988d224674fba3b6ad1578ab449e21ee5b9bbbde270783dbfcf1",
         "asOf": "2026-11-15",
@@ -1900,7 +1900,7 @@
       "displayName": "Stable Audio 3 Medium Base Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "40069b2e57dfe5692beaf16644d554cfedc88b5caf4fc9baae6fbb990076b8ba",
         "asOf": "2026-11-15",
@@ -2023,7 +2023,7 @@
       "displayName": "Stable Audio 3 Medium Base Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3f156041e222382bda7cac6f6dd0f79ef8315b580de8175e9039aa3f91e68708",
         "asOf": "2026-11-15",
@@ -2148,7 +2148,7 @@
       "displayName": "Stable Audio 3 Medium Base Audio to Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e0b230497cd5474d2ededd6077c54f2bf1c60a2177ed88b825d05e5cc82e3386",
         "asOf": "2026-11-15",
@@ -2273,7 +2273,7 @@
       "displayName": "Stable Audio 3 Small Music Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e39e6065a7de4e2b9e28a9fb4c025360da6377c33ea4eb63679f92e5952873ca",
         "asOf": "2026-11-15",
@@ -2396,7 +2396,7 @@
       "displayName": "Stable Audio 3 Small Music Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a2dfbce224e432904ae2043476307755ea4aada2d366e83a97f87a0aaffb10d5",
         "asOf": "2026-11-15",
@@ -2521,7 +2521,7 @@
       "displayName": "Stable Audio 3",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "f29b1780bd7f9ab056411d46b83fc2fdf07970326118ae0f660f21f39c643473",
         "asOf": "2026-11-15",
@@ -2646,7 +2646,7 @@
       "displayName": "Stable Audio 3 Small Music Base Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "15f4fc14d1dd950925b5d5e3517b9427b9445c9f7ba2fb4598134729bdc6e964",
         "asOf": "2026-11-15",
@@ -2769,7 +2769,7 @@
       "displayName": "Stable Audio 3 Small Music Base Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "9fe6c4218e19d1f5ce9527566575a1ac520e1311d3d1bcb6157c51cc5edcab54",
         "asOf": "2026-11-15",
@@ -2894,7 +2894,7 @@
       "displayName": "Stable Audio 3 Small Music Base Audio to Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "bfecf7821887647e0327293ac881a68628744eb944b54a807a4d15d2e58ce2aa",
         "asOf": "2026-11-15",
@@ -3019,7 +3019,7 @@
       "displayName": "Stable Audio 3 Small SFX Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "9438e3dbe8fd37f0b5f3ff13eaf0506a5a9523a55dc5665b8dfc91381ccd9c14",
         "asOf": "2026-11-15",
@@ -3142,7 +3142,7 @@
       "displayName": "Stable Audio 3 Small SFX Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "cf3c648db4265db2057e126e4c97e3f4e2e3be5267fed85ca61e67d2e1b05398",
         "asOf": "2026-11-15",
@@ -3267,7 +3267,7 @@
       "displayName": "Stable Audio 3",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3e72c8a4cfba887b8cafe15dc41bf5aa31115a24a23e40635cb86240cae1e020",
         "asOf": "2026-11-15",
@@ -3392,7 +3392,7 @@
       "displayName": "Stable Audio 3 Small SFX Base Audio Inpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "99627bb130e406fcc0c4db73283b9d5752f9ec87d37e70786ef72966753e4058",
         "asOf": "2026-11-15",
@@ -3515,7 +3515,7 @@
       "displayName": "Stable Audio 3 Small SFX Base Audio Outpainting",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "45d735392cf51809282d320887370ba49939ec3868e11bd6b01b3b6f92d881cb",
         "asOf": "2026-11-15",
@@ -3640,7 +3640,7 @@
       "displayName": "Stable Audio 3 Small SFX Base Audio to Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "cccf67b9430c12638a83cdaad8695499c171efb8edaaa4ee489fcaf3b9171594",
         "asOf": "2026-11-15",
@@ -3763,7 +3763,7 @@
       "endpoint": "fal-ai/tada/1b/text-to-speech",
       "category": "audio-to-audio",
       "displayName": "Tada TTS 1B",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -3781,7 +3781,7 @@
       "endpoint": "fal-ai/tada/3b/text-to-speech",
       "category": "audio-to-audio",
       "displayName": "Tada",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -3801,7 +3801,7 @@
       "displayName": "Workflow Utilities Audio Compressor",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6894db50d007cccf699cfe133022a77c8c752dab14604b6632b97b011a0ff3a4",
         "asOf": "2026-11-15",
@@ -3895,7 +3895,7 @@
       "displayName": "Workflow Utilities Impulse Response",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d52182a07ff3e032ce650c6277803a5704c65f6128bc645022fd410dcb3459c2",
         "asOf": "2026-11-15",
@@ -3987,7 +3987,7 @@
       "displayName": "Mureka Song Editing",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ea47535ab3c9dad31f8b178cd5b3cd0895bb2e71ae36c9cd329a3ca58f4d31cc",
         "asOf": "2026-11-15",
@@ -4058,7 +4058,7 @@
       "displayName": "Mureka Stem Separation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "b37c822f9a33e087b8f6781680262acd7a5f2612879479155c5168f18ded6f34",
         "asOf": "2026-11-15",
@@ -4108,7 +4108,7 @@
       "displayName": "Mureka Voice Cloning",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e9fe8c832a83f7c74ca23a89094d30fd58bafd7ed89d20406c9c1ffd42978eb5",
         "asOf": "2026-11-15",
@@ -4152,7 +4152,7 @@
       "displayName": "Mureka 8 Track Generation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a331e5101b167f3af7c67afc5ba285d11d736cfbbc9212451839bdd035c57e6a",
         "asOf": "2026-11-15",
@@ -4259,7 +4259,7 @@
       "displayName": "Mureka 8 Song Extension",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d685a0fb55e46480813dd9a283ce927e74383abb50e33078c419c4c0fbe1e122",
         "asOf": "2026-11-15",
@@ -4334,7 +4334,7 @@
       "displayName": "Mureka 8 Song Remix",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "1780cccee8dbf6ad7fd1787eec56deee2b7965e325192903cf6400a2f99a135d",
         "asOf": "2026-11-15",
@@ -4400,7 +4400,7 @@
       "displayName": "Mureka 9.5 Song Remix",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "66617405075f8163da47b4a6467b10f59426e2e77ca89d530d84fbcbb171b911",
         "asOf": "2026-11-15",
@@ -4466,7 +4466,7 @@
       "displayName": "Mureka 9 Soundtrack Generation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "01a71d4d52d51f2a6904f199240cda7cfcc988c39bdf6b45482eda3e3f0881f6",
         "asOf": "2026-11-15",
@@ -4536,7 +4536,7 @@
       "displayName": "VEED Clean Audio",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3f8cc8e2e454c23154709bed118d012461845f531cbab2157c41b778393ef575",
         "asOf": "2026-11-15",

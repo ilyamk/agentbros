@@ -82,14 +82,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -105,14 +105,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -197,14 +197,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
           "formula": "$0.01; ($0.01 first MP + max(0, ceil(1 MP) - 1) × $0.01 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.02,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
           "formula": "$0.02; ($0.01 first MP + max(0, ceil(2 MP) - 1) × $0.01 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -219,14 +219,14 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.005 USD per 'processed megapixels': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit"
         },
         "1-image-2mp": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.005 USD per 'processed megapixels': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit"
         }
       }
@@ -312,14 +312,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -335,14 +335,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -427,14 +427,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -450,14 +450,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -565,14 +565,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
           "formula": "$0.01; ($0.01 first MP + max(0, ceil(1 MP) - 1) × $0.01 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.02,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
           "formula": "$0.02; ($0.01 first MP + max(0, ceil(2 MP) - 1) × $0.01 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b/edit",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -588,14 +588,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.005; ($0.005 first MP + max(0, ceil(1 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.01,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
           "formula": "$0.01; ($0.005 first MP + max(0, ceil(2 MP) - 1) × $0.005 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/klein/4b",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -611,14 +611,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/seedvr/upscale/image",
           "formula": "$0.001; ($0.001 first MP + max(0, ceil(1 MP) - 1) × $0.001 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/seedvr/upscale/image",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.002,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/seedvr/upscale/image",
           "formula": "$0.002; ($0.001 first MP + max(0, ceil(2 MP) - 1) × $0.001 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/seedvr/upscale/image",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -657,14 +657,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/clarity-upscaler",
           "formula": "$0.03; ($0.03 first MP + max(0, ceil(1 MP) - 1) × $0.03 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/clarity-upscaler",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.06,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/clarity-upscaler",
           "formula": "$0.06; ($0.03 first MP + max(0, ceil(2 MP) - 1) × $0.03 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/clarity-upscaler",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -680,7 +680,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/recraft/upscale/crisp",
           "formula": "$0.004; 1 output × $0.004; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/recraft/upscale/crisp",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         },
         "1-image-2mp": {
@@ -688,7 +688,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/recraft/upscale/crisp",
           "formula": "$0.004; 1 output × $0.004; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/recraft/upscale/crisp",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -774,7 +774,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=pixelcut/background-removal",
           "formula": "$0.016; 1 output × $0.016; https://api.fal.ai/v1/models/pricing?endpoint_id=pixelcut/background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         },
         "1-image-2mp": {
@@ -782,7 +782,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=pixelcut/background-removal",
           "formula": "$0.016; 1 output × $0.016; https://api.fal.ai/v1/models/pricing?endpoint_id=pixelcut/background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -822,14 +822,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/outpaint",
           "formula": "$0.035; ($0.035 first MP + max(0, ceil(1 MP) - 1) × $0.035 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/outpaint",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.07,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/outpaint",
           "formula": "$0.07; ($0.035 first MP + max(0, ceil(2 MP) - 1) × $0.035 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/outpaint",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -891,14 +891,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/denoise",
           "formula": "$0.0225; ($0.0225 first MP + max(0, ceil(1 MP) - 1) × $0.0225 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/denoise",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.045,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/denoise",
           "formula": "$0.045; ($0.0225 first MP + max(0, ceil(2 MP) - 1) × $0.0225 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/denoise",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -914,14 +914,14 @@
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/deblur",
           "formula": "$0.0225; ($0.0225 first MP + max(0, ceil(1 MP) - 1) × $0.0225 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/deblur",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.045,
           "kind": "approximate",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/deblur",
           "formula": "$0.045; ($0.0225 first MP + max(0, ceil(2 MP) - 1) × $0.0225 + ceil(0 input MP) × $0) × 1 images; decimal MP upper estimate; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/nafnet/deblur",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -983,7 +983,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bria/background/replace",
           "formula": "$0.04; 1 output × $0.04; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bria/background/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         },
         "1-image-2mp": {
@@ -991,7 +991,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bria/background/replace",
           "formula": "$0.04; 1 output × $0.04; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bria/background/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -1007,14 +1007,14 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.005 USD per 'processed megapixels': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit"
         },
         "1-image-2mp": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.005 USD per 'processed megapixels': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2/flash/edit"
         }
       }
@@ -1054,14 +1054,14 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.6",
           "formula": "$0.075; 1 request × $0.075; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.6",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.075,
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.6",
           "formula": "$0.075; 1 request × $0.075; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.6",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -1077,14 +1077,14 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.5",
           "formula": "$0.075; 1 request × $0.075; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.5",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         },
         "1-image-2mp": {
           "usd": 0.075,
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.5",
           "formula": "$0.075; 1 request × $0.075; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/fashn/tryon/v1.5",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -1100,7 +1100,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/virtual-try-on",
           "formula": "$0.04; 1 output × $0.04; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/virtual-try-on",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         },
         "1-image-2mp": {
@@ -1108,7 +1108,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/virtual-try-on",
           "formula": "$0.04; 1 output × $0.04; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/image-apps-v2/virtual-try-on",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -1180,7 +1180,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-480p-audio": {
@@ -1188,7 +1188,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-720p": {
@@ -1196,7 +1196,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-720p-audio": {
@@ -1204,7 +1204,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-1080p": {
@@ -1212,7 +1212,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-1080p-audio": {
@@ -1220,7 +1220,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         }
       }
@@ -1293,14 +1293,14 @@
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
@@ -1308,7 +1308,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/kling-video/v3.0/std/text-to-video",
           "formula": "$0.714 (tiered request estimate); tracked $0.0714/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/kling-video/v3.0/std/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -1317,7 +1317,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/kling-video/v3.0/std/text-to-video",
           "formula": "$0.714 (tiered request estimate); tracked $0.0714/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/kling-video/v3.0/std/text-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -1325,14 +1325,14 @@
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -1524,7 +1524,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1533,7 +1533,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1542,7 +1542,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1551,7 +1551,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1560,7 +1560,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1569,7 +1569,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         }
@@ -1643,14 +1643,14 @@
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
@@ -1658,7 +1658,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/kling-video/v3.0/std/image-to-video",
           "formula": "$0.714 (tiered request estimate); tracked $0.0714/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/kling-video/v3.0/std/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -1667,7 +1667,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/kling-video/v3.0/std/image-to-video",
           "formula": "$0.714 (tiered request estimate); tracked $0.0714/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/kling-video/v3.0/std/image-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -1675,14 +1675,14 @@
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": 0.0714,
           "kind": "floor",
           "source": "higgsfield-list: src/lib/models/hf-prices.json",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "reason": "Catalogue floor is not a scenario total; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -1878,7 +1878,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-480p-audio": {
@@ -1886,7 +1886,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$1.177 (tiered request estimate); tracked $0.1177/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-720p": {
@@ -1894,7 +1894,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-720p-audio": {
@@ -1902,7 +1902,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$2.647 (tiered request estimate); tracked $0.2647/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-1080p": {
@@ -1910,7 +1910,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         },
         "10s-1080p-audio": {
@@ -1918,7 +1918,7 @@
           "kind": "exact",
           "source": "https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
           "formula": "$6.518 (tiered request estimate); tracked $0.6518/output-second × requested quantity, rounding none, discounts and margin per record; https://api.higgsfield.ai/estimate/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-11-16",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         }
       }
@@ -2181,7 +2181,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2190,7 +2190,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2199,7 +2199,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2208,7 +2208,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2217,7 +2217,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2226,7 +2226,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
           "formula": "$1.68; 10 generated seconds × $0.168; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/pro/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -2244,7 +2244,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2253,7 +2253,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2262,7 +2262,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2271,7 +2271,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2280,7 +2280,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2289,7 +2289,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
           "formula": "$1.26; 10 generated seconds × $0.126; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/v3/standard/motion-control",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -2307,7 +2307,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
           "formula": "$0.8; 10 generated seconds × $0.08; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Retires 2027-01-04T08:00:00.000Z; replacement: minimax/h3-max/recast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -2316,7 +2316,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
           "formula": "$0.8; 10 generated seconds × $0.08; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Retires 2027-01-04T08:00:00.000Z; replacement: minimax/h3-max/recast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -2325,7 +2325,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
           "formula": "$0.8; 10 generated seconds × $0.08; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Retires 2027-01-04T08:00:00.000Z; replacement: minimax/h3-max/recast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -2334,7 +2334,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
           "formula": "$0.8; 10 generated seconds × $0.08; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Retires 2027-01-04T08:00:00.000Z; replacement: minimax/h3-max/recast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -2342,14 +2342,14 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "unsupported resolution: 1080p"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wan/v2.2-14b/animate/replace",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "unsupported resolution: 1080p"
         }
       }
@@ -2788,42 +2788,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/upscale/video/precision; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -2839,42 +2839,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.0008 USD per 'megapixels': megapixels in category video-to-video span frames or inputs, not one output image.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/video-upscaler; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -2891,7 +2891,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2900,7 +2900,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2909,7 +2909,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2918,7 +2918,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2927,7 +2927,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -2936,7 +2936,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
           "formula": "$0.072; 10 generated seconds × $0.0072; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/bytedance-upscaler/upscale/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -2953,42 +2953,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.3, $0.6, $0.5, $1.7) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/interpolate/video; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -3005,7 +3005,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3014,7 +3014,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3023,7 +3023,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3032,7 +3032,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3041,7 +3041,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3050,7 +3050,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/film/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -3068,7 +3068,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3077,7 +3077,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3086,7 +3086,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3095,7 +3095,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3104,7 +3104,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3113,7 +3113,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
           "formula": "$0.013; 10 generated seconds × $0.0013; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/rife/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -3130,7 +3130,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sync-lipsync/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 8 USD per 'minutes': output minutes not forecastable in category video-to-video.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sync-lipsync/v3; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s"
         }
       }
@@ -3146,7 +3146,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sync-lipsync",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.7 USD per 'minutes': output minutes not forecastable in category video-to-video.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sync-lipsync; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 10 s"
         }
       }
@@ -3163,7 +3163,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/latentsync",
           "formula": "$0.05; 10 generated seconds × $0.005; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/latentsync",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s",
           "linearUnit": "durationSec"
         }
@@ -3180,7 +3180,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/avatars/audio-to-video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.3 USD per 'minutes': output minutes not forecastable in category audio-to-video.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/avatars/audio-to-video; Length follows the input; plan the script or source audio for 10 s"
         }
       }
@@ -3196,7 +3196,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/ai-avatar/v2/pro",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "unsupported duration: 10"
         }
       }
@@ -3212,7 +3212,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/ai-avatar/v2/standard",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "unsupported duration: 10"
         }
       }
@@ -3247,7 +3247,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3256,7 +3256,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3265,7 +3265,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3274,7 +3274,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3283,7 +3283,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         },
@@ -3292,7 +3292,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
           "formula": "$0.5; 10 generated seconds × $0.05; https://api.fal.ai/v1/models/pricing?endpoint_id=bria/video/background-removal/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)",
           "linearUnit": "durationSec"
         }
@@ -3309,42 +3309,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -3360,42 +3360,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.008 USD per '30 frames': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=veed/video-background-removal/fast; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -3592,42 +3592,42 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-480p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-720p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per 'units': model page tariff ($0.1, $0.2, $0.6, $0.1) does not contain the API unit price $0.01; the API unit is not the billed rate.; https://api.fal.ai/v1/models/pricing?endpoint_id=topaz/denoise/video; Length follows the input; prepare and measure the source video for 10 s; aspect follows the input; crop/prepare the source to 16:9; resolution fixed by variant (not documented in the schema)"
         }
       }
@@ -3754,7 +3754,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/tts/eleven-v4",
           "formula": "$0.08; max(1, ceil(1000 characters / 1000)) × $0.08; https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/tts/eleven-v4",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "inputCharacters"
         }
       }
@@ -3771,7 +3771,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/qwen-3-tts/text-to-speech/1.7b",
           "formula": "$0.09; max(1, ceil(1000 characters / 1000)) × $0.09; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/qwen-3-tts/text-to-speech/1.7b",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "inputCharacters"
         }
       }
@@ -3788,7 +3788,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/qwen-3-tts/text-to-speech/0.6b",
           "formula": "$0.07; max(1, ceil(1000 characters / 1000)) × $0.07; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/qwen-3-tts/text-to-speech/0.6b",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "inputCharacters"
         }
       }
@@ -3804,7 +3804,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/minimax/voice-clone",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 1.5 USD per 'units': 'units' is undefined by the API and the input schema has no output-count field.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/minimax/voice-clone; historical average per call cannot price this scaled scenario"
         }
       }
@@ -3853,7 +3853,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/elevenlabs/voice-changer",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.3 USD per 'minutes': output minutes not forecastable in category audio-to-audio.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/elevenlabs/voice-changer; historical average per call cannot price this scaled scenario"
         }
       }
@@ -3869,7 +3869,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=resemble-ai/chatterboxhd/speech-to-speech",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.02 USD per 'minutes': output minutes not forecastable in category speech-to-speech.; https://api.fal.ai/v1/models/pricing?endpoint_id=resemble-ai/chatterboxhd/speech-to-speech"
         }
       }
@@ -3885,7 +3885,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/chatterbox/speech-to-speech",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.015 USD per 'minutes': output minutes not forecastable in category speech-to-speech.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/chatterbox/speech-to-speech; historical average per call cannot price this scaled scenario"
         }
       }
@@ -3902,7 +3902,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=minimax/music-3",
           "formula": "$0.06; 30 generated seconds × $0.002; https://api.fal.ai/v1/models/pricing?endpoint_id=minimax/music-3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         }
       }
@@ -3918,7 +3918,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/music/v2.5",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.6 USD per 'minutes': output minutes not forecastable in category text-to-audio.; https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/music/v2.5; historical average per call cannot price this scaled scenario"
         }
       }
@@ -3935,7 +3935,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/stable-audio-3/small/music/text-to-audio",
           "formula": "$0.0217; 1 output × $0.0217; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/stable-audio-3/small/music/text-to-audio",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -3952,7 +3952,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/sound-effects/v3",
           "formula": "$0.01; 5 generated seconds × $0.002; https://api.fal.ai/v1/models/pricing?endpoint_id=elevenlabs/sound-effects/v3",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "durationSec"
         }
       }
@@ -3985,7 +3985,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/stable-audio-3/small/sfx/text-to-audio",
           "formula": "$0.0206; 1 output × $0.0206; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/stable-audio-3/small/sfx/text-to-audio",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "linearUnit": "images"
         }
       }
@@ -4033,7 +4033,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/video-to-audio",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.035 USD per 'videos': unrecognised unit; refusing to guess its quantity.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/kling-video/video-to-audio; historical average per call cannot price this scaled scenario; Length follows the input; prepare and measure the source video for 5 s"
         }
       }
@@ -4050,7 +4050,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/deepfilternet3",
           "formula": "$0.06; 60 input audio seconds / 1 × $0.001; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/deepfilternet3",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -4082,7 +4082,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/elevenlabs/audio-isolation",
           "formula": "$0.1; 60 input audio seconds / 60 × $0.1; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/elevenlabs/audio-isolation",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -4098,7 +4098,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/demucs",
           "formula": "$0.042; 60 input audio seconds / 1 × $0.0007; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/demucs",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -4113,7 +4113,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sam-audio/separate",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.05 USD per 'units': a count of outputs or requests does not bound the bill in category audio-to-audio.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sam-audio/separate; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4129,7 +4129,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sam-audio/span-separate",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.05 USD per 'units': a count of outputs or requests does not bound the bill in category audio-to-audio.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/sam-audio/span-separate; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4162,7 +4162,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wizper",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.00111 USD per 'compute seconds': compute time cannot be forecast from the request.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/wizper; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4178,7 +4178,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-nano-omni/audio",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per '1000 tokens': no token forecast contract exists, so usage cannot be bounded.; https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-nano-omni/audio; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4194,7 +4194,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-5-super/vision",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per '1000 tokens': no token forecast contract exists, so usage cannot be bounded.; https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-5-super/vision; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4210,7 +4210,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-5-super/video",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.01 USD per '1000 tokens': no token forecast contract exists, so usage cannot be bounded.; https://api.fal.ai/v1/models/pricing?endpoint_id=nvidia/nemotron-3-5-super/video"
         }
       }
@@ -4226,7 +4226,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/florence-2-large/caption",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "Unknown price; Priced 0.00125 USD per 'compute seconds': compute time cannot be forecast from the request.; https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/florence-2-large/caption; historical average per call cannot price this scaled scenario"
         }
       }
@@ -4243,7 +4243,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7.1/image-to-3d",
           "formula": "$0.8; 1 request × $0.8; https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7.1/image-to-3d",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -4291,7 +4291,7 @@
           "kind": "exact",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7.1/text-to-3d",
           "formula": "$0.8; 1 request × $0.8; https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7.1/text-to-3d",
-          "observedAsOf": "2026-11-15"
+          "observedAsOf": "2026-11-19"
         }
       }
     },
@@ -4335,11 +4335,11 @@
       "perCallObservedAsOf": "2026-11-15",
       "scenarioPrices": {
         "1-model": {
-          "usd": 0.75,
-          "kind": "approximate",
-          "source": "https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt",
-          "formula": "$0.75; 1 request × $0.75; Page/API price drift: page $0.75, API $0.015; higher rate used for planning; https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt; Your request will cost **$0.75** per generation.\nFor **$1.00**, you can run this model 1 time.; observed 2026-11-16",
-          "observedAsOf": "2026-11-16"
+          "usd": null,
+          "kind": "unknown",
+          "source": "none: src/lib/models/registry.ts / fal-prices.json",
+          "observedAsOf": null,
+          "reason": "status is gone"
         }
       }
     },
@@ -4379,14 +4379,14 @@
       "slot": "train.lora",
       "provider": "fal",
       "endpoint": "blackforestlabs/flux-3/klein/base/trainer",
-      "perCallTypicalUsd": null,
-      "perCallObservedAsOf": null,
+      "perCallTypicalUsd": 0.0043,
+      "perCallObservedAsOf": "2026-11-19",
       "scenarioPrices": {
         "1-call": {
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=blackforestlabs/flux-3/klein/base/trainer",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "training excluded by default"
         }
       }
@@ -4402,7 +4402,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2-trainer-v2",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "training excluded by default"
         }
       }
@@ -4418,7 +4418,7 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=fal-ai/flux-2-klein-9b-base-trainer",
-          "observedAsOf": "2026-11-15",
+          "observedAsOf": "2026-11-19",
           "reason": "training excluded by default"
         }
       }

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "category": "text-to-video",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-19",
   "entries": [
     {
       "endpoint": "alibaba/happy-horse/text-to-video",
@@ -9,7 +9,7 @@
       "displayName": "Happy Horse",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "fc5d62fc5373fa9cc57f6a3077b9fca5f036dadc003781c7a7127dbeb089f80a",
         "asOf": "2026-11-15",
@@ -101,7 +101,7 @@
       "displayName": "Happy Horse 1.1 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0a9bf1dde4833d7bcb9b5a25003a291f9644f3fb79986280e2c58ced703ed7ba",
         "asOf": "2026-11-15",
@@ -198,7 +198,7 @@
       "displayName": "Wan 3.0 Prime",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "bd399b0c03e7188069599acfa5b7d903f3dca6c399e0fe8bcf1c32e5094afa90",
         "asOf": "2026-11-15",
@@ -300,7 +300,7 @@
       "displayName": "Wan Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "50ca3d486032f2c55422863e800a405055156c26dd6e6e04c89746f99f22dafd",
         "asOf": "2026-11-15",
@@ -401,7 +401,7 @@
       "endpoint": "argil/avatars/text-to-video",
       "category": "text-to-video",
       "displayName": "Avatars Text to Video",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -421,7 +421,7 @@
       "displayName": "FLUX 3 Max Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "04be2aaaf50e40e9a48c31348d8d1fe4365b94c1083285b7e206ba85544c39ca",
         "asOf": "2026-11-15",
@@ -532,7 +532,7 @@
       "displayName": "Flux 3 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8422f8732e6ae46e6de34e91fb87e2477206012c226d4948933bc4af3b22b888",
         "asOf": "2026-11-15",
@@ -636,7 +636,7 @@
       "displayName": "Flux 3 Text To Video Draft",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0e80eba695efc2632d7786abec822399849e244055bae944049838faac6d907d",
         "asOf": "2026-11-15",
@@ -730,7 +730,7 @@
       "displayName": "Seedance 2.0 Fast Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8bd048e0c1c0c2a6fb7534b0f21706a8f4ff711851b3ba62f57fde61a3bcaae4",
         "asOf": "2026-11-15",
@@ -845,7 +845,7 @@
       "displayName": "Seedance 2.0 Mini Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a157c98ddc1851eda2f7f896ef17537ece977c4e4a6b3e2bf83121d960a16209",
         "asOf": "2026-11-15",
@@ -950,7 +950,7 @@
       "displayName": "Seedance 2.0 US Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "508c60885cf011be66235ebdb8d8d169c1609864c0c0abd7a24a2079ddf3c44f",
         "asOf": "2026-11-15",
@@ -1062,15 +1062,37 @@
       ]
     },
     {
+      "endpoint": "bytedance/seedance-2.5/flash/text-to-video",
+      "category": "text-to-video",
+      "displayName": "Seedance 2.5 Flash Text to Video",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lipsync"
+      ]
+    },
+    {
       "endpoint": "bytedance/seedance-2.5/text-to-video",
       "category": "text-to-video",
       "displayName": "Seedance 2.5 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
-        "sha256": "914bcf66b6ea3f4f650c51c81cd1e3f3c89d4f9a6f3d7137ec7e3dff11ec7493",
-        "asOf": "2026-11-15",
+        "sha256": "f94a2fe3215eb8488188dd38ff2f3f0f9acbe2ca00fc5289a603204ed1e13ed0",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -1176,7 +1198,8 @@
           "enum": [
             "480p",
             "720p",
-            "1080p"
+            "1080p",
+            "4k"
           ],
           "default": "720p"
         }
@@ -1191,7 +1214,7 @@
       },
       "transport": "queue",
       "price": null,
-      "tier": "verified",
+      "tier": "discovered",
       "routing": {
         "family": "seedance-2.5",
         "variant": "default",
@@ -1210,10 +1233,10 @@
       "displayName": "Seedance 2.5 US Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
-        "sha256": "8213777f0161a9623439c379f9d575a74b61771f52bfef449043a5527308cc6d",
-        "asOf": "2026-11-15",
+        "sha256": "09747b857944948bb7404064db730684b3625c0a3c7f69bf12ba4fe902af4950",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Fus%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -1319,7 +1342,8 @@
           "enum": [
             "480p",
             "720p",
-            "1080p"
+            "1080p",
+            "4k"
           ],
           "default": "720p"
         }
@@ -1334,7 +1358,7 @@
       },
       "transport": "queue",
       "price": null,
-      "tier": "verified",
+      "tier": "discovered",
       "routing": {
         "family": "seedance-2.5",
         "variant": "default",
@@ -1353,7 +1377,7 @@
       "displayName": "Boreal",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "2fc6767c9fe598929eefd1a66368f323775c817c29fac75160edf7f991a5130f",
         "asOf": "2026-11-15",
@@ -1460,7 +1484,7 @@
       "displayName": "Bytedance Seedance V1 Pro Fast Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0af6d730c1916ff1dc61ea68ca72be0db3ad8db5841af8c9f96a213b522a1623",
         "asOf": "2026-11-15",
@@ -1565,7 +1589,7 @@
       "displayName": "Seedance 1.0 Pro",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "deb872d301c219743f9bb2faa6288d66ca08ba003785b9fef87886faa1ebda87",
         "asOf": "2026-11-15",
@@ -1666,7 +1690,7 @@
       "displayName": "Heygen",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e7b15baf62869f471b96c9aa0936f3de0478bcd6788bab88f7cbe8dcc203202c",
         "asOf": "2026-11-15",
@@ -1744,7 +1768,7 @@
       "displayName": "Heygen",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e58c377bf2b05f13062fe2bf2ce123e0f303967abd924ba346ae3cb013518627",
         "asOf": "2026-11-15",
@@ -1823,7 +1847,7 @@
       "displayName": "Heygen v5 Digital Twin",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8f555b28370de812397e2399988b5be6d50bc02605c21cba6ce792fd41297fc9",
         "asOf": "2026-11-15",
@@ -1957,7 +1981,7 @@
       "displayName": "Heygen",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "aa0ed674804fb80d18a323682b48b1001cabe49c1ba3c639f1a2a254a62fc4a7",
         "asOf": "2026-11-15",
@@ -2003,7 +2027,7 @@
       "displayName": "Heygen Video Agent",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "97c2dff086df7ab9fab797c69ea6e65532e9f1d5eef15aaada8030e3ea773da1",
         "asOf": "2026-11-15",
@@ -2081,7 +2105,7 @@
       "endpoint": "fal-ai/hunyuan-video",
       "category": "text-to-video",
       "displayName": "Hunyuan Video",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2101,7 +2125,7 @@
       "endpoint": "fal-ai/hunyuan-video-v1.5/text-to-video",
       "category": "text-to-video",
       "displayName": "Hunyuan Video V1.5",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2122,7 +2146,7 @@
       "endpoint": "fal-ai/infinity-star/text-to-video",
       "category": "text-to-video",
       "displayName": "Infinity Star",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2142,7 +2166,7 @@
       "endpoint": "fal-ai/kandinsky5-pro/text-to-video",
       "category": "text-to-video",
       "displayName": "Kandinsky5 Pro",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2160,7 +2184,7 @@
       "endpoint": "fal-ai/kandinsky5/text-to-video",
       "category": "text-to-video",
       "displayName": "Kandinsky5",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2178,7 +2202,7 @@
       "endpoint": "fal-ai/kandinsky5/text-to-video/distill",
       "category": "text-to-video",
       "displayName": "Kandinsky5",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2196,7 +2220,7 @@
       "endpoint": "fal-ai/kandinsky6-lite/text-to-video",
       "category": "text-to-video",
       "displayName": "Kandinsky 6.0 Lite",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -2220,7 +2244,7 @@
       "displayName": "Kandinsky 6.0 Pro",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "cb598a3d4ccc87b8208e2a199d385973f23e91ef272e62051f74fdc96df96695",
         "asOf": "2026-11-15",
@@ -2325,7 +2349,7 @@
       "displayName": "Kling LipSync Audio-to-Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "655a0bba004455b09735300a37db131cbcd80a30dfd226a4ad0d12c5ee64919d",
         "asOf": "2026-11-15",
@@ -2374,7 +2398,7 @@
       "displayName": "Kling LipSync Text-to-Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "060c3874cf430ddab3b48ecf5f0b49812528e61cb90a721b25cd17b49ae035c7",
         "asOf": "2026-11-15",
@@ -2494,10 +2518,10 @@
       "displayName": "Kling Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e7063f67f67babe0b0406773cc087a60f712909968f50a0ca9cbb83fb5bf2f96",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2F4k%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -2598,10 +2622,10 @@
       "displayName": "Kling O3 Text to Video [Pro]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0aa3a0924e80cba935042aa01485a98f4aa089d978789418b016e0bc3e408891",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fpro%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -2700,10 +2724,10 @@
       "displayName": "Kling O3 Text to Video [Standard]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "1387e90ff96ba59a16cc4599e90694aab24c6a48ad1f57cb0fec5553b54f6fbf",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fo3%2Fstandard%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -2802,7 +2826,7 @@
       "displayName": "Kling 1.5",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e1310e1ce5823e8a3a0dd13dde78c22062cff81728be381c410a17d7d69fe691",
         "asOf": "2026-11-15",
@@ -2858,7 +2882,7 @@
       "displayName": "Kling 1.6",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "01c183ca02bd2f56eb00bbdfeced9981ed42370ef89409af8b9d7912d3c24e1d",
         "asOf": "2026-11-15",
@@ -2914,7 +2938,7 @@
       "displayName": "Kling 1.6",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "1bb3336e046828b4919d2f945916bda38406128f4e4252b729d29b0303be4cff",
         "asOf": "2026-11-15",
@@ -2970,7 +2994,7 @@
       "displayName": "Kling 1.0",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e5d5265a0ad0e7ddc5e8e572d33f144470acdebf885bbe286e3d40da9b875bea",
         "asOf": "2026-11-15",
@@ -3028,7 +3052,7 @@
       "displayName": "Kling v2.5 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "03d19dcfb1c5517a37615646e81ce4bd964793257b7a3fa460453158b17cb828",
         "asOf": "2026-11-15",
@@ -3107,7 +3131,7 @@
       "displayName": "Kling Video v2.6 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "5c985e0073aa5337c547f0eb8741bcd9da49282ce1c6b9967eca14ebaafdfd5e",
         "asOf": "2026-11-15",
@@ -3189,10 +3213,10 @@
       "displayName": "Kling Video V3 Text to Video 4K",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "99c91603fe8a764d23558add9b8b9526f58cd9931fdafab8b97a3beb25cd28ed",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2F4k%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -3308,10 +3332,10 @@
       "displayName": "Kling Video v3 Text to Video [Pro]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "f113f1d345e0f40497dbb0e3a448eb00eaa6a7416cf5dc4bf51b476180fe4ed8",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fpro%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -3425,10 +3449,10 @@
       "displayName": "Kling Video v3 Text to Video [Standard]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "aa0dabafcf3c4c2d2f910e34fdebe8fbb9aadd7f066d6fcc71cac07951d08cb7",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fstandard%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -3542,10 +3566,10 @@
       "displayName": "Kling Video V3 Turbo Pro Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "275514e3054795f934b5f29ba0d0ec948e45c6038af3ee3660dfda79fb0669d6",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fpro%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -3631,10 +3655,10 @@
       "displayName": "Kling Video V3 Standard Turbo Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0c4eca31b71776756db009823f31cad205327a36276d6c03976fef422daf95d2",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fkling-video%2Fv3%2Fturbo%2Fstandard%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -3720,7 +3744,7 @@
       "status": "active",
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": null,
       "inputs": [],
       "outputs": {
@@ -3741,7 +3765,7 @@
       "displayName": "LongCat Video Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "733fa739f0a56bdacd31130be72a4b2b371753cb5efde9b89674dea0e30c457f",
         "asOf": "2026-11-15",
@@ -3867,7 +3891,7 @@
       "displayName": "LongCat Video Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ff328ff455193c904abeca8b8811241b35a21018112a5e1934083305259eab15",
         "asOf": "2026-11-15",
@@ -4001,7 +4025,7 @@
       "displayName": "LongCat Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "27d57eb3a0ef31185f1a10ac29a501d04f78d8b353feed2bcd803570d29d4cc1",
         "asOf": "2026-11-15",
@@ -4151,7 +4175,7 @@
       "displayName": "LongCat Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8d9e08564d329d1a9b34fcf588127b8d1586c1ecc0a6c7b7af2bc91da2608539",
         "asOf": "2026-11-15",
@@ -4309,7 +4333,7 @@
       "displayName": "LTX-2.3 22B Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "aae28a2ada5a7aa4619c1ff08111e03ba14bf8fb90fc4b8f999873fcd9fde51c",
         "asOf": "2026-11-15",
@@ -4503,7 +4527,7 @@
       "displayName": "LTX-2.3 22B Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "be71dcd126f32c77d17d2e9f98bec5760b7d739c8960c62f6776774284662d19",
         "asOf": "2026-11-15",
@@ -4703,7 +4727,7 @@
       "displayName": "LTX-2.3 22B",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e7ead782e7009898d8bc5900b8a28b9a8a3e8cdb364a110e8d4cf79d06df4791",
         "asOf": "2026-11-15",
@@ -4991,7 +5015,7 @@
       "displayName": "LTX-2.3 22B",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "f4a162c825e8db60861dff5b726722a5a811b4dd3489b7f21b14e2983a7e9dba",
         "asOf": "2026-11-15",
@@ -5285,7 +5309,7 @@
       "displayName": "Ltx 2.3 Quality",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8b624460ac138d939f01da4d7635f3eb2db5049a27aedadb0f0a3ba277d3df89",
         "asOf": "2026-11-15",
@@ -5425,7 +5449,7 @@
       "displayName": "Ltx 2.3 Quality",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "dded686fb7c1420bf2b9ff143552757df5f53ca84045f87f49ae58c77ddcf19d",
         "asOf": "2026-11-15",
@@ -5573,7 +5597,7 @@
       "displayName": "LTX Video 2.3 Pro",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a4dff4dcedca89486bcac677a54d92638de840acbc51e85b5d7e93366a7549d9",
         "asOf": "2026-11-15",
@@ -5668,7 +5692,7 @@
       "displayName": "LTX 2.3 Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "300fff6a6ca9319c2897db85cd365be090fc00205004649858c661a62b3e01eb",
         "asOf": "2026-11-15",
@@ -5768,7 +5792,7 @@
       "displayName": "LTX Video (preview)",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "49977a77160beb5de7e4c0e25c3d4cbcf98a57dacf5ae76d06e5ee408d78b0a4",
         "asOf": "2026-11-15",
@@ -5834,7 +5858,7 @@
       "displayName": "LTX Video-0.9.7 13B Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d44166790b2ad3073fb8d6e74e7e11867d6846bef9b34b5bd56f06aad4666dee",
         "asOf": "2026-11-15",
@@ -5990,7 +6014,7 @@
       "displayName": "LTX-Video 13B 0.9.8 Distilled",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ff969aebe8e89d54ec73dcf7b04f165bc92932a20509a5575b57c06fc8d25272",
         "asOf": "2026-11-15",
@@ -6144,7 +6168,7 @@
       "endpoint": "fal-ai/magi-distilled",
       "category": "text-to-video",
       "displayName": "MAGI-1 (Distilled)",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -6166,7 +6190,7 @@
       "displayName": "MiniMax Hailuo 02 [Pro] (Text to Video)",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ea8eea16f2e3d883c003b525f2d029f96462fff62f94badf588ff7921c50496b",
         "asOf": "2026-11-15",
@@ -6213,7 +6237,7 @@
       "displayName": "MiniMax Hailuo 02 [Standard] (Text to Video)",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0d8ce8cc4fe135a4292fb61a4cdbff6acbeb95f27e2f9b429ffd3d25b5631261",
         "asOf": "2026-11-15",
@@ -6270,7 +6294,7 @@
       "displayName": "MiniMax Hailuo 2.3 [Pro] (Text to Video)",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "bddea07abb0dd4c95afc4534025b1cd3199993398ae96e910422579638a2ae9c",
         "asOf": "2026-11-15",
@@ -6319,7 +6343,7 @@
       "displayName": "MiniMax Hailuo 2.3 [Standard] (Text to Video)",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "c3c10f3c579cc73c5ef6f8f5a3fb6374ae69225fbfa578904ff1fe95937f550a",
         "asOf": "2026-11-15",
@@ -6378,7 +6402,7 @@
       "displayName": "MiniMax (Hailuo AI) Video 01",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8a450e578394f6315e21cd07c98bcae38bcfbc2514d6db004412dab325e708ef",
         "asOf": "2026-11-15",
@@ -6427,7 +6451,7 @@
       "displayName": "MiniMax (Hailuo AI) Video 01 Director",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "975953cc0e14b734c1f3ebf3e7c9321e82f65a29887f52f4b3565e498bc67f60",
         "asOf": "2026-11-15",
@@ -6477,7 +6501,7 @@
       "displayName": "MiniMax (Hailuo AI) Video 01 Live",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6703d89cbfda92d09e1d69d80e831134b549e90554707fa5d23a7bec8038c977",
         "asOf": "2026-11-15",
@@ -6526,7 +6550,7 @@
       "displayName": "Ovi Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8b709a218b280d075c862388b002cd7807e8f3af3af76a3619d69111ae4d9298",
         "asOf": "2026-11-15",
@@ -6605,7 +6629,7 @@
       "displayName": "PixVerse C1 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0eb3bbc99bb2b2eaa65c1b0cf0d4c66312cf1de8835453b3f2a6827c2824580d",
         "asOf": "2026-11-15",
@@ -6699,7 +6723,7 @@
       "displayName": "PixVerse V3.5 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a614d3290e35b89c67ee48897b718d1aa40208979f63381223cd4670c4b5c53d",
         "asOf": "2026-11-15",
@@ -6796,7 +6820,7 @@
       "displayName": "PixVerse V3.5 Text To Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "316b87064d72b1c04e17facd1b92750dce0cabaf405c2664ce2cca03c9c7a75a",
         "asOf": "2026-11-15",
@@ -6882,7 +6906,7 @@
       "displayName": "PixVerse V4.5 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "5c764bbde9da49e388b21fdc1c1ff4d92c8b996a368b31990493d737e7ed107e",
         "asOf": "2026-11-15",
@@ -6982,7 +7006,7 @@
       "displayName": "PixVerse V4.5 Text To Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "8f28b3f555e7e3e2502da838666c0fda616e3a3b54ef26f7ca5dd978f8f3da9e",
         "asOf": "2026-11-15",
@@ -7071,7 +7095,7 @@
       "displayName": "PixVerse V4 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "36403812c4d0ab888d6465b5552814a43b1b1e6b139cbd50cd825c1d95e8ca5c",
         "asOf": "2026-11-15",
@@ -7168,7 +7192,7 @@
       "displayName": "PixVerse V4 Text To Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "715ce260f747146e8da223baa2f7a6ce5fe7acf4b69f63524bc456b4b533ef0c",
         "asOf": "2026-11-15",
@@ -7254,7 +7278,7 @@
       "displayName": "PixVerse V5.5 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "41b3d1563a18ca8dc6dbc537f71c7a5d97b519b9892c03d17c6228e558b64b3f",
         "asOf": "2026-11-15",
@@ -7376,7 +7400,7 @@
       "displayName": "PixVerse V5.6 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "166c6cf59db5421398ecd5e15fbef5a915adc4ddb12ff10aa3930cf369dd5aa4",
         "asOf": "2026-11-15",
@@ -7492,7 +7516,7 @@
       "displayName": "PixVerse V5 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0533417ecd922739c21eb31210a9d0d1ebcc7bb038c775018814a773e0396264",
         "asOf": "2026-11-15",
@@ -7589,7 +7613,7 @@
       "displayName": "PixVerse V6 Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "451b84639703f536c49c94b4aa584844f9f25155775cce6570396a063dfb555d",
         "asOf": "2026-11-15",
@@ -7706,12 +7730,106 @@
       ]
     },
     {
+      "endpoint": "fal-ai/veo3",
+      "category": "text-to-video",
+      "displayName": "Veo 3",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/veo3.1",
+      "category": "text-to-video",
+      "displayName": "Veo 3.1",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/veo3.1/fast",
+      "category": "text-to-video",
+      "displayName": "Veo 3.1 Fast",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
+      "endpoint": "fal-ai/veo3.1/lite",
+      "category": "text-to-video",
+      "displayName": "Veo3.1 Lite Text to Video",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "stylized",
+        "transform",
+        "lipsync"
+      ]
+    },
+    {
+      "endpoint": "fal-ai/veo3/fast",
+      "category": "text-to-video",
+      "displayName": "Veo 3 Fast",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": []
+    },
+    {
       "endpoint": "fal-ai/vidu/q1/text-to-video",
       "category": "text-to-video",
       "displayName": "Vidu Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "2dd7bbdcf1d892d971863dd6c2e3c3a2665531f117459359f2f943140fe07a24",
         "asOf": "2026-11-15",
@@ -7792,7 +7910,7 @@
       "displayName": "Vidu",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "a22032d634d88af8ef4c7fb53e81fc5bce79861491dd843d2d2171206370e4ed",
         "asOf": "2026-11-15",
@@ -7893,7 +8011,7 @@
       "displayName": "Vidu",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "2907061a9c2b100caf20dbb99810be71bd9f9a0ac6b638540d165e53e59c3de7",
         "asOf": "2026-11-15",
@@ -7979,7 +8097,7 @@
       "displayName": "Vidu",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "52968e44047c60157d670529ba83ad423e7ecc31ac4e7a1fbfa39c73dfe06b5d",
         "asOf": "2026-11-15",
@@ -8065,7 +8183,7 @@
       "displayName": "Wan 2.5 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "824136c3d819e18c0b5fce6aa3cea9ac684f8dae6f95a88bb2ca91900e1fdb96",
         "asOf": "2026-11-15",
@@ -8161,7 +8279,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": null,
       "inputs": [],
       "outputs": {
@@ -8184,7 +8302,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": null,
       "inputs": [],
       "outputs": {
@@ -8208,7 +8326,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max-turbo/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "cb70256cbf377341375bf2402ebe263daf44af839afb1d6b6204f60b13e07776",
         "asOf": "2026-11-15",
@@ -8381,14 +8499,14 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max-turbo/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": null,
       "inputs": [],
       "outputs": {
         "kinds": [],
         "fields": []
       },
-      "transport": "realtime",
+      "transport": "queue",
       "price": null,
       "tier": "discovered",
       "tags": []
@@ -8401,7 +8519,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max-turbo/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "973f8f3e7de5f10cc74ccec4685fb009e9723ec168559b697067647620a983e0",
         "asOf": "2026-11-15",
@@ -8562,7 +8680,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "9b8bd2d403dbc7c2a1ca636099a947c45951b3a3c29dcbe44fd4ba9db5b22c7b",
         "asOf": "2026-11-15",
@@ -8757,7 +8875,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "350130bead33607d464ebce39d3eb7211408f886107fe412b939aef3fdfff62a",
         "asOf": "2026-11-15",
@@ -8962,7 +9080,7 @@
       "retiresAt": "2027-01-04T08:00:00.000Z",
       "replacement": "minimax/h3-max-turbo/text-to-video",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "da695d18e190e016d8e517922e46f6a341aab3db6175ce950992a0d77311d1db",
         "asOf": "2026-11-15",
@@ -9076,7 +9194,7 @@
       "displayName": "Wan Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "03897272e16f3c9f49949715c8884503719dd31b56e84e70a2f1785c4a3dbacd",
         "asOf": "2026-11-15",
@@ -9187,7 +9305,7 @@
       "displayName": "Gemini Omni Flash",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d4b36b247a6ba77f6bee67f3d868ecf52e8207edaa9da63a8f24e63ae7dd5962",
         "asOf": "2026-11-15",
@@ -9249,7 +9367,7 @@
       "displayName": "Gemini Omni Flash 1.1 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "30229c1745f7b1fa40a55dc019147181ae4740519dc9a46ec2776fc3f0545615",
         "asOf": "2026-11-15",
@@ -9317,7 +9435,7 @@
       "displayName": "Gemini Omni Flash 1.2 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "945229a189a467c699953145f2c22d8eff2ffe07e77c72bb6de8c3a6169f96e8",
         "asOf": "2026-11-15",
@@ -9380,12 +9498,61 @@
       ]
     },
     {
+      "endpoint": "heygen/avatar-6/identity-to-video",
+      "category": "text-to-video",
+      "displayName": "HeyGen Avatar 6 Identity to Video",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "heygen",
+        "avatar",
+        "talking-avatar",
+        "lip-sync",
+        "text-to-video"
+      ]
+    },
+    {
+      "endpoint": "heygen/avatar-6/turbo/identity-to-video",
+      "category": "text-to-video",
+      "displayName": "HeyGen Avatar 6 Turbo Identity to Video",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "heygen",
+        "avatar",
+        "talking-avatar",
+        "lip-sync",
+        "text-to-video",
+        "turbo"
+      ]
+    },
+    {
       "endpoint": "heygen/heygen-video/text-to-video",
       "category": "text-to-video",
       "displayName": "HeyGen Video Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6eb04b8b1cf7dde391551a1c550eeff579f213f77c3804857cd1a209d36396da",
         "asOf": "2026-11-15",
@@ -9484,7 +9651,7 @@
       "displayName": "Kling 4.0 Flash Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "7df237c206221420640da3563b098b4b2a0bc97f2a2497015e4f324a09937a2b",
         "asOf": "2026-11-15",
@@ -9553,7 +9720,7 @@
       "displayName": "Kling 4.0 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ad6b302ddf92f25b4ef635a6eccd1e6b1117411dacf411b6067ff729d054af66",
         "asOf": "2026-11-15",
@@ -9629,7 +9796,7 @@
       "displayName": "Ltx 2.5 Text to Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "354d03054c37dd76525321cc96e3f43bf549ea4a4ff101fc77746f71fecd82b7",
         "asOf": "2026-11-15",
@@ -9740,7 +9907,7 @@
       "displayName": "Ltx 2.5 Text to Video Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e02c7044e202121c9ecacc87036676d88ae1e7e491a40d7a117102e653851355",
         "asOf": "2026-11-15",
@@ -9843,7 +10010,7 @@
       "displayName": "Luma Ray 3.2 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "955a4a9be95253d64ff1403953a96a62d5ad1ac2379ddad49ae1abbf44ed4f48",
         "asOf": "2026-11-15",
@@ -9943,7 +10110,7 @@
       "displayName": "H3 Max Turbo Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ce6bf9a0b9490f11ad4d3bd5ae7ebfe99c268b1a59d2ba478a69540810996f2e",
         "asOf": "2026-11-15",
@@ -10043,7 +10210,7 @@
       "endpoint": "minimax/h3-max/styles/16bit-pixel",
       "category": "text-to-video",
       "displayName": "H3 Max 16-bit Pixel",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -10066,7 +10233,7 @@
       "endpoint": "minimax/h3-max/styles/hand-drawn",
       "category": "text-to-video",
       "displayName": "H3 Max Hand Drawn",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -10089,7 +10256,7 @@
       "endpoint": "minimax/h3-max/styles/low-poly",
       "category": "text-to-video",
       "displayName": "H3 Max Low Poly",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -10112,7 +10279,7 @@
       "endpoint": "minimax/h3-max/styles/retro-toon-70s",
       "category": "text-to-video",
       "displayName": "H3 Max Retro Toon 70s",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -10135,7 +10302,7 @@
       "endpoint": "minimax/h3-max/styles/vhs",
       "category": "text-to-video",
       "displayName": "H3 Max VHS",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": null,
@@ -10160,7 +10327,7 @@
       "displayName": "MiniMax H3 Max Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "89dda709b802a10a015a1c0f27a4e85a190c3d59ac5769ab486e283fb06605e8",
         "asOf": "2026-11-15",
@@ -10262,7 +10429,7 @@
       "displayName": "MiniMax H3 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ebcba23a7b02ec05ec9a079721e6af8443da51d425c355ccd1c12cf72353ed8c",
         "asOf": "2026-11-15",
@@ -10365,7 +10532,7 @@
       "displayName": "MiniMax H3 Text to Video LoRA",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "4fa9f9d27a73799378c871988ab2d33df9138c443ea24c1351f1b6ed75a3b2de",
         "asOf": "2026-11-15",
@@ -10475,7 +10642,7 @@
       "displayName": "Marey Realism V1.5",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "ada3135266eac9705776ce1b8a6de34acf506125122e48cf488ff62135284d47",
         "asOf": "2026-11-15",
@@ -10547,7 +10714,7 @@
       "displayName": "PixVerse V6 Max Text To Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "79a28a25f987210959c09b2964ab13cc0fd94c570270ccad2ab9bf8a436b00b1",
         "asOf": "2026-11-15",
@@ -10669,7 +10836,7 @@
       "displayName": "Avatars",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "92eafc99741cd8f6eb2ee5788bdf3ad856b55594c937e65f8789f806b6f4abf6",
         "asOf": "2026-11-15",
@@ -10740,7 +10907,7 @@
       "displayName": "Fabric 1.0",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "b61e7a04272a72bc7a0384018e2d06054482daac979cac75c6220a71847a961d",
         "asOf": "2026-11-15",
@@ -10801,7 +10968,7 @@
       "displayName": "Wan v2.6 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "0e63c156235c8afe8b22efe42c58d11fbdd83fdbb77ebb58d53ebff4a962dff0",
         "asOf": "2026-11-15",
@@ -10906,7 +11073,7 @@
       "displayName": "Grok Imagine Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "683e51e7d4f6c59b9c06ff1fdbd03009d4b22eece72defdd05c27cd4c8c16276",
         "asOf": "2026-11-15",
@@ -10984,7 +11151,7 @@
       "displayName": "Grok Imagine Video 1.5 Lite Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "d20fd7d03f62fcbc63dae6bdca41103332df660d5e31c9da4b3e71bb414fc18c",
         "asOf": "2026-11-15",
@@ -11060,7 +11227,7 @@
       "displayName": "Grok Imagine Video 1.5 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3c4fc69053444a09fca8c71a2a36b540715c072dc5b78545f05d7b4491aeae77",
         "asOf": "2026-11-15",

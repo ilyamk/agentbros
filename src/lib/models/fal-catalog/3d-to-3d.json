@@ -1,13 +1,13 @@
 {
   "version": 1,
   "category": "3d-to-3d",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-19",
   "entries": [
     {
       "endpoint": "fal-ai/hunyuan-3d/v3.1/part",
       "category": "3d-to-3d",
       "displayName": "Hunyuan 3D Part Splitter",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": {
@@ -45,7 +45,7 @@
       "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
       "category": "3d-to-3d",
       "displayName": "Hunyuan 3D Smart Topology",
-      "status": "active",
+      "status": "gone",
       "firstSeen": "2026-11-15",
       "lastSeen": "2026-11-15",
       "schema": {
@@ -119,7 +119,7 @@
       "displayName": "Meshy Rigging",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "03caf8b81eb247634e3421602d8d8b357809a91687c0a664c53cfb1972a23e4b",
         "asOf": "2026-11-15",
@@ -209,7 +209,7 @@
       "displayName": "Meshy Rigging Multi Animation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "bcb9a6f0da44aa3592a2bd3a1a2e87f6286d6541e2c62e56cb677468a58ffcd3",
         "asOf": "2026-11-15",
@@ -293,7 +293,7 @@
       "displayName": "Sam 3",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "e3572c386f7d62c0ef6b3031fad6e3de35f68bbae67ec09e49db8d974f6c3c68",
         "asOf": "2026-11-15",
@@ -360,7 +360,7 @@
       "displayName": "Trellis 2",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "6f3cadaf553642258531e3b7345d635c0083afce4042f8bc3c636b0b3df9f795",
         "asOf": "2026-11-15",
@@ -476,7 +476,7 @@
       "displayName": "Hi3D 3D to Multicolor",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "b33587bdbc641820011033db81aa033d15cf57d83d9349d3d7d1e863f19147dd",
         "asOf": "2026-11-15",
@@ -540,7 +540,7 @@
       "displayName": "Hi3D 3D Part Splitter",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "53e907a7c25f0c18c886750ad764b24f3509001bdcad86b88b653d7efa335e93",
         "asOf": "2026-11-15",
@@ -643,7 +643,7 @@
       "displayName": "Hi3D Texture",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "65aad156c8f09498bf459f2af622e7a0d1db04982f72fb5b51c9fc939ccb68b5",
         "asOf": "2026-11-15",
@@ -722,12 +722,35 @@
       ]
     },
     {
+      "endpoint": "hyper3d/lowpoly/mesh-to-3d",
+      "category": "3d-to-3d",
+      "displayName": "Hyper3D Low Poly Mesh to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-19",
+      "lastSeen": "2026-11-19",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "low-poly",
+        "retopology",
+        "mesh-simplification"
+      ]
+    },
+    {
       "endpoint": "hyper3d/rigging",
       "category": "3d-to-3d",
       "displayName": "Hyper3D Rigging",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "882228c4e7e5d06dc78daa8ce2cd7db112d7a6f112f32fd0c5f2cba6a74afb11",
         "asOf": "2026-11-15",
@@ -852,10 +875,10 @@
       "displayName": "Meshy N1 Retexture",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "be8d51d55391433aaa72cd42e347969ac20afb947b727ae480f993cd71c65598",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fn1%2Fretexture&expand=openapi-3.0",
         "cached": true
       },
@@ -923,10 +946,10 @@
       "displayName": "Meshy Rigging",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "17b1760c766b205963f8100dfe6f33f309daf1a50e4b7d641a1e5c3694764617",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-19",
         "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Frigging&expand=openapi-3.0",
         "cached": true
       },
@@ -1013,7 +1036,7 @@
       "displayName": "Meshy Rigging Multi Animation",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "717dc5ffa12022069d544a50bbfbf6516ea97138c14c30b2b40d1260e4a6f3fe",
         "asOf": "2026-11-15",
@@ -1097,7 +1120,7 @@
       "displayName": "Meshy 6 Lite Retexture",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "f0fb2a95e55940b31a5f288bde5f3e8eb61d694b27d7697e8b4b4aeedd645045",
         "asOf": "2026-11-15",
@@ -1182,7 +1205,7 @@
       "displayName": "Meshy 6 Retexture",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "698b58f9dd819a2897144e82ebbde4960cf89526ce4aea8f9045b4380b5d0ce7",
         "asOf": "2026-11-15",
@@ -1267,7 +1290,7 @@
       "displayName": "Meshy 7 Retexture",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "cdd9299813439f8eeba5ea51b9e43566d84b063aa3b89c194d47a316cf7247fb",
         "asOf": "2026-11-15",
@@ -1352,7 +1375,7 @@
       "displayName": "Tripo3D Remesh",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "880957123c19d6e6014d875ddc2113c9e9b232f32b4b5f15d10b4c9165e66be3",
         "asOf": "2026-11-15",
@@ -1418,7 +1441,7 @@
       "displayName": "Tripo3D Segment",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-19",
       "schema": {
         "sha256": "3cd421e16ec5fd3fdf5f0b582fa9f8e20b9913ca413b9e65d3af5dcf1cde9b85",
         "asOf": "2026-11-15",
