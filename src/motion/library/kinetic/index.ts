@@ -1,5 +1,5 @@
 import { defineItem, type LibraryItem } from "../types";
-import { Decode, decodeCues, decodeDefaults, decodeSchema } from "./Decode";
+import { binaryTextPreset, Decode, decodeCues, decodeDefaults, decodeSchema } from "./Decode";
 import { HeadlineBuild, headlineBuildCues, headlineBuildDefaults, headlineBuildSchema } from "./HeadlineBuild";
 import { LineDraw, lineDrawCues, lineDrawDefaults, lineDrawSchema } from "./LineDraw";
 import { MorphMark, morphMarkCues, morphMarkDefaults, morphMarkSchema } from "./MorphMark";
@@ -9,6 +9,23 @@ import { SplitReveal, splitRevealCues, splitRevealDefaults, splitRevealSchema } 
 const BASE = "src/motion/library/kinetic";
 
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "kinetic-binary-text",
+    category: "kinetic",
+    title: "Binary text",
+    description:
+      "Muted zeroes and ones resolve into a short word in fixed glyph slots and hold. Use when an interface decodes a signal, verifies a result or changes state.",
+    tags: ["binary", "decode", "signal", "status", "data", "kinetic typography"],
+    component: Decode,
+    schema: decodeSchema,
+    defaultProps: binaryTextPreset,
+    durationInFrames: 84,
+    formats: ["landscape", "vertical"],
+    inspiredBy: ["shadcn.io Binary Text, restrained bits and a stable baseline (method only)"],
+    importPath: `${BASE}/Decode`,
+    usage: "<Decode {...binaryTextPreset} lines={[word]} verticalLines={[]} />",
+    cues: decodeCues,
+  }),
   defineItem({
     id: "kinetic-split-reveal",
     category: "kinetic",

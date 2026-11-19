@@ -58,3 +58,5 @@ Icon block (2026-11-15): `icon-visual` uses returned local usage props and an ex
 `three/RenderPlate.tsx` (2026-11-15): generic `render-plate` reuses `PlateLayer`, maps explicit source FPS to timeline frames and holds the final source frame. Its offline vector preview is not evidence of a Vork render.
 
 Motion continuity (2026-11-19): `ui-state-morph` holds one action container through processing and result. `ui-swipe-deck` overlaps outgoing and incoming cards. `glass-lens` adds travelling local magnification, `page-turn` takes two supplied plates and a seam, and `caption-word-box` can use `active.boxMotion: "elastic"`.
+
+Text entrances (2026-11-19) use `type-text-generate` for fixed word slots with focus, `type-blur-text` for short reading-order rises and `kinetic-binary-text` for one decoded status. Keep one principal gesture per beat and hold the readable result.

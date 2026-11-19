@@ -89,6 +89,8 @@ export const sentenceBuildSchema = z.object({
   dotColour: z.string().optional(),
   /** Fixed layout: each word (or each group sharing a frame in `frames`) fades in over this many frames instead of switching on (postiz: 3). */
   fadeFrames: z.number().int().min(0).max(12).optional(),
+  /** Fixed layout: starting blur in pixels. It resolves during the word's fade. */
+  focusBlur: z.number().min(0).max(16).optional(),
   /** Slow push on the whole block over the shot, as a share of its size (postiz: 0.04-0.06). */
   push: z.number().min(0).max(0.2).optional(),
 });
@@ -375,6 +377,16 @@ export const fixedBlockOffset = (frame: number, p: SentenceBuildProps, firstFram
   return track(frame, keys);
 };
 
+const FIXED_CHIP_ARRIVAL_FRAMES = 3;
+
+const fixedFadeFrames = (p: SentenceBuildProps) => p.fadeFrames ?? ((p.focusBlur ?? 0) > 0 ? 8 : 0);
+
+export const fixedWordArrival = (frame: number, start: number, fade: number, focusBlur: number) => {
+  const opacity = progress(frame, start, fade, "linear");
+  const blur = focusBlur * (1 - progress(frame, start, fade, "expoOut"));
+  return { opacity, filter: blur > 0 ? `blur(${blur}px)` : undefined };
+};
+
 const FixedSentence: React.FC<SentenceBuildProps> = (p) => {
   const {
     text,
@@ -429,7 +441,8 @@ const FixedSentence: React.FC<SentenceBuildProps> = (p) => {
   const out = leaving ? progress(frame, exitAt, 6, EXIT) : 0;
   const y = fixedBlockOffset(frame, p, first) * height;
   const push = pushScale(frame, p, first);
-  const fade = p.fadeFrames ?? 0;
+  const focusBlur = p.focusBlur ?? 0;
+  const fade = fixedFadeFrames(p);
   let chipIndex = 0;
 
   return (
@@ -464,14 +477,14 @@ const FixedSentence: React.FC<SentenceBuildProps> = (p) => {
                         lineHeight: 1,
                         color: wordColour(frame, p, start, token.accent ? accent : ink0),
                         whiteSpace: "pre",
-                        opacity: fade > 0 ? progress(frame, start, fade, "linear") : frame >= start ? 1 : 0,
+                        ...fixedWordArrival(frame, start, fade, focusBlur),
                       }}
                     >
                       {token.text}
                     </span>
                   );
                 const colour = chipColours[chipIndex++ % chipColours.length]!;
-                const t = progress(frame, start, 3, "linear");
+                const t = progress(frame, start, FIXED_CHIP_ARRIVAL_FRAMES, "linear");
                 return (
                   <div key={index} style={{ opacity: t, transform: `scale(${0.8 + 0.2 * curves.expoOut(t)})` }}>
                     <Chip
@@ -640,6 +653,21 @@ export const sentenceBuildFadeGroupsPreset: SentenceBuildProps = {
   grain: 0,
 };
 
+export const textGeneratePreset = {
+  ...sentenceBuildDefaults,
+  text: "A signal becomes / a story.",
+  ground: "#EDF0E5",
+  ink: "#18261F",
+  layout: "fixed",
+  width: 0.84,
+  at: 5,
+  step: 3,
+  fadeFrames: 8,
+  focusBlur: 8,
+  exitAt: -1,
+  grain: 0,
+} satisfies SentenceBuildProps;
+
 export const sentenceBuildCues = (props: SentenceBuildProps): Cue[] => {
   const lines = parseSentence(props.text);
   const frames = tokenFrames(lines, props.at, props.step, props.frames);
@@ -660,7 +688,15 @@ export const sentenceBuildCues = (props: SentenceBuildProps): Cue[] => {
     }),
   );
   const last = cues.at(-1);
-  if (last) Object.assign(last, { kind: "land", weight: "hero" });
+  const focusFrames = props.layout === "fixed" && (props.focusBlur ?? 0) > 0 ? fixedFadeFrames(props) : 0;
+  if (last && focusFrames > 0) {
+    const frame = Math.max(
+      ...cues.map((cue) => cue.frame + (cue.kind === "type" ? focusFrames : FIXED_CHIP_ARRIVAL_FRAMES)),
+    );
+    cues.push({ frame, kind: "land", sfx: "none", weight: "hero", label: "Sentence in focus" });
+  } else if (last) {
+    Object.assign(last, { kind: "land", weight: "hero" });
+  }
   if (props.exitAt >= 0) cues.push({ frame: props.exitAt, kind: "exit", sfx: "none", weight: "support" });
   return cues;
 };

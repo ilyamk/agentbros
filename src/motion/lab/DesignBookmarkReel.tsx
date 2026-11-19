@@ -23,10 +23,10 @@ export const DESIGNBOOKMARK_REEL_FRAMES = 451;
 
 const state = {
   ...stateMorphDefaults,
-  title: "Импортировать листы",
-  pending: "Обработка",
-  result: "Листы готовы",
-  detail: "Свет, форма и фактура",
+  title: "Import sheets",
+  pending: "Processing",
+  result: "Sheets ready",
+  detail: "Light, form and texture",
   at: 22,
   readyAt: 53,
   ground: PAPER,
@@ -39,9 +39,9 @@ const deck = {
   step: 31,
   moveFrames: 19,
   cards: [
-    { title: "Свет", label: "АТЛАС / 01", paper: "#E1E9B6", ink: "#283928" },
-    { title: "Форма", label: "АТЛАС / 02", paper: "#CCD9EC", ink: "#243C54" },
-    { title: "Фактура", label: "АТЛАС / 03", paper: "#E9D7B8", ink: "#523920" },
+    { title: "Light", label: "ATLAS / 01", paper: "#E1E9B6", ink: "#283928" },
+    { title: "Form", label: "ATLAS / 02", paper: "#CCD9EC", ink: "#243C54" },
+    { title: "Texture", label: "ATLAS / 03", paper: "#E9D7B8", ink: "#523920" },
   ],
 };
 
@@ -125,8 +125,9 @@ const Opening: React.FC = () => {
           letterSpacing: "-0.055em",
         }}
       >
-        От файла
-        <br />к кадру
+        From file
+        <br />
+        to frame
       </div>
     </AbsoluteFill>
   );
@@ -140,7 +141,7 @@ const ImportShot: React.FC = () => {
   return (
     <AbsoluteFill>
       <StateMorph {...state} />
-      <Header title="Импорт" colour={INK} />
+      <Header title="Import" colour={INK} />
       {frame < state.at ? (
         <div
           style={{
@@ -169,7 +170,7 @@ const ImportShot: React.FC = () => {
               strokeWidth="2"
             />
           </svg>
-          3 листа
+          3 sheets
         </div>
       ) : null}
     </AbsoluteFill>
@@ -179,19 +180,19 @@ const ImportShot: React.FC = () => {
 const DeckShot: React.FC = () => (
   <AbsoluteFill>
     <SwipeDeck {...deck} />
-    <Header title="Выбор листа" colour={WHITE} />
+    <Header title="Choose a sheet" colour={WHITE} />
     <StyledCaptions
       {...elasticWordBoxPreset}
       active={{ ...elasticWordBoxPreset.active, boxText: INK, scale: 1 }}
       accent={GREEN}
       textColor={WHITE}
       entry="none"
-      language="ru"
+      language="en"
       maxWords={4}
       words={[
-        { text: "Свет", start: 0.2, end: 1.15 },
-        { text: "форма", start: 1.15, end: 2.2 },
-        { text: "фактура", start: 2.2, end: (LENS - DECK) / 30 },
+        { text: "Light", start: 0.2, end: 1.15 },
+        { text: "form", start: 1.15, end: 2.2 },
+        { text: "texture", start: 2.2, end: (LENS - DECK) / 30 },
       ]}
     />
   </AbsoluteFill>
@@ -206,7 +207,7 @@ const LensShot: React.FC = () => {
           <SwipeDeck {...deck} />
         </Freeze>
       </GlassLens>
-      <Header title="Деталь" colour={WHITE} />
+      <Header title="Detail" colour={WHITE} />
     </AbsoluteFill>
   );
 };
@@ -214,8 +215,8 @@ const LensShot: React.FC = () => {
 const PaperShot: React.FC = () => (
   <PageTurn
     {...turn}
-    from={<EditorialPage title="Фактура" label="АТЛАС / 03" paper="#E9D7B8" ink="#523920" />}
-    to={<EditorialPage title="Атлас света" label="СВЕТ / ФОРМА / ФАКТУРА" paper={PAPER} ink={INK} reverse />}
+    from={<EditorialPage title="Texture" label="ATLAS / 03" paper="#E9D7B8" ink="#523920" />}
+    to={<EditorialPage title="Atlas of Light" label="LIGHT / FORM / TEXTURE" paper={PAPER} ink={INK} reverse />}
   />
 );
 

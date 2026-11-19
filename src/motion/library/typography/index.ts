@@ -2,13 +2,25 @@ import type React from "react";
 import { defineItem, type LibraryItem } from "../types";
 import { EditorialLines, editorialLinesDefaults, editorialLinesSchema } from "./EditorialLines";
 import { HeroWord, heroWordCues, heroWordDefaults, heroWordSchema } from "./HeroWord";
-import { SentenceBuild, sentenceBuildCues, sentenceBuildDefaults, sentenceBuildSchema } from "./SentenceBuild";
+import {
+  SentenceBuild,
+  sentenceBuildCues,
+  sentenceBuildDefaults,
+  sentenceBuildSchema,
+  textGeneratePreset,
+} from "./SentenceBuild";
 import { WordPulse, wordPulseCues, wordPulseDefaults, wordPulseSchema } from "./WordPulse";
 import { NumberRace, numberRaceCues, numberRaceDefaults, numberRaceSchema } from "./NumberRace";
 import { ScrambleHero, scrambleHeroCues, scrambleHeroDefaults, scrambleHeroSchema } from "./ScrambleHero";
 import { GlyphSpring, glyphSpringCount, glyphSpringDefaults, glyphSpringSchema } from "./GlyphSpring";
 import { ImpactSlam, impactSlamDefaults, impactSlamSchema } from "./ImpactSlam";
-import { MarkerHighlight, markerHighlightDefaults, markerHighlightSchema, parseMarkerText } from "./MarkerHighlight";
+import {
+  blurTextPreset,
+  MarkerHighlight,
+  markerHighlightDefaults,
+  markerHighlightSchema,
+  parseMarkerText,
+} from "./MarkerHighlight";
 import { markedGroups } from "../../text-modes";
 import { PrintType, printTypeCues, printTypeDefaults, printTypeSchema } from "./PrintType";
 import { MarqueeRows, marqueeRowsCues, marqueeRowsDefaults, marqueeRowsSchema } from "./MarqueeRows";
@@ -42,6 +54,40 @@ import {
 const BASE = "src/motion/library/typography";
 
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "type-text-generate",
+    category: "typography",
+    title: "Text generate effect",
+    description:
+      "A sentence appears word by word and comes into focus in its final layout. Use for an assistant output or short statement that should feel composed on screen.",
+    tags: ["word by word", "focus", "generated text", "assistant", "fixed layout"],
+    component: SentenceBuild,
+    schema: sentenceBuildSchema,
+    defaultProps: textGeneratePreset,
+    durationInFrames: 84,
+    formats: ["landscape", "vertical"],
+    inspiredBy: ["shadcn.io Text Generate Effect, fixed position and progressive focus (method only)"],
+    importPath: `${BASE}/SentenceBuild`,
+    usage: "<SentenceBuild {...textGeneratePreset} text={line} />",
+    cues: sentenceBuildCues,
+  }),
+  defineItem({
+    id: "type-blur-text",
+    category: "typography",
+    title: "Blur text",
+    description:
+      "Words rise a short distance and sharpen in reading order before holding still. Use for one short chapter title or an editorial statement.",
+    tags: ["focus", "blur", "word by word", "rise", "title", "editorial"],
+    component: MarkerHighlight,
+    schema: markerHighlightSchema,
+    defaultProps: blurTextPreset,
+    durationInFrames: 90,
+    formats: ["landscape", "vertical"],
+    inspiredBy: ["shadcn.io Blur Text, staggered word entrances from soft focus (method only)"],
+    importPath: `${BASE}/MarkerHighlight`,
+    usage: "<MarkerHighlight {...blurTextPreset} text={headline} />",
+    cues: (p) => [{ frame: p.at, kind: "reveal", sfx: "none", label: "Text enters" }],
+  }),
   defineItem({
     id: "type-hero-word",
     category: "typography",

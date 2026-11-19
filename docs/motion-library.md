@@ -49,10 +49,26 @@ pnpm -s library:list --styles               # available looks
 The 15-second **Atlas of Light** lab reel connects these moves through an import, selection, detail and printed spread. Render the vertical composition locally:
 
 ```bash
-pnpm motion:render --entry src/motion/lab/designbookmark-reel.tsx --composition DesignBookmarkReelV --output out/designbookmark-motion/atlas-sveta.mp4
+pnpm motion:render --entry src/motion/lab/designbookmark-reel.tsx --composition DesignBookmarkReelV --output out/designbookmark-motion/atlas-of-light.mp4
 ```
 
 For the cue-sound mix, first run `pnpm sfx:synth --kind all --out-dir public/projects/designbookmark-motion/assets/sfx/synth`. Pass `--props` with a JSON file containing `{"sound": true}`.
+
+## Text entrances for animatics
+
+Each preset has its own catalogue entry and uses the same frame clock as the surrounding edit.
+
+| Block | Use |
+| --- | --- |
+| `type-text-generate` | Use `textGeneratePreset` with `SentenceBuild` when an idea or answer should form word by word. `fadeFrames` and `focusBlur` control the soft entrance in fixed layout. |
+| `type-blur-text` | Use `blurTextPreset` with `MarkerHighlight` for a short heading that rises into focus. Supply plain words to leave out the marker. |
+| `kinetic-binary-text` | Use `binaryTextPreset` with `Decode` for a short decoded status. Hold the settled word before the cut. |
+
+The **Signal to Story** lab reel puts each entrance on a separate beat and leaves a clear reading hold.
+
+```bash
+pnpm motion:render --entry src/motion/lab/text-entrances-reel.tsx --composition TextEntrancesReelV --output out/text-entrances/signal-to-story.mp4
+```
 
 ## Previews
 
