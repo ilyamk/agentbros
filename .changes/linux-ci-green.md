@@ -2,7 +2,7 @@
 category: fix
 bump: patch
 breaking: false
-pr: 0
+pr: 12
 authors: [ilyamk]
 harness: claude-code
 ---
