@@ -33,6 +33,13 @@ import { prepareRhythmEvidenceForTrustedTests } from "../src/lib/audio/rhythm-pr
 import { readRhythmEvidence, currentRhythmImplementations } from "../src/lib/audio/rhythm-evidence";
 import { RhythmAnalysisRequestSchema } from "../src/types/rhythm-evidence";
 import { AssetRecordSchema } from "../src/types/assets";
+
+/** Rhythm analysis runs only on macOS (tools under sandbox-exec, workspace in /private/tmp); elsewhere these skip. */
+const macOsOnly = (t: { skip(message?: string): void }) => {
+  if (process.platform === "darwin") return false;
+  t.skip("Rhythm runs only on macOS");
+  return true;
+};
 const hash = (b: Buffer) => createHash("sha256").update(b).digest("hex");
 const MiB = 1024 * 1024;
 function folder(t: test.TestContext) {
@@ -134,6 +141,7 @@ function fixture(t: test.TestContext) {
   };
 }
 test("shipped preparation awaits only private original, then preserves canonical evidence and strict readback", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     run = f.host.run;
   let finalSeen = false;
@@ -226,6 +234,7 @@ test("analysis failure plus workspace cleanup fault retains primary cause and at
   assert.equal(existsSync(path.join(f.root, ".cache/rhythm-evidence/demo/.preparation-lock")), true);
 });
 test("post-publication cleanup failure retains output and explicit immutable uncertainty", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     factory = f.host.workspace;
   f.host.workspace = (...args) => {
@@ -471,6 +480,7 @@ test("uncertain workspace retirement never claims a replaced foreign lease as ow
   );
 });
 test("installed tool bytes remain strictly guarded during awaits, and final copy cannot evade lifetime quota", async (t) => {
+  if (macOsOnly(t)) return;
   const tool = fixture(t);
   tool.host.run = async () => {
     writeFileSync(tool.host.resolve(), "changed tool DATA");
@@ -514,6 +524,7 @@ test("same-name lease replacement in first awaited call refuses before later cal
   assert.equal(readFileSync(lock, "utf8"), "FOREIGN same-name lease");
 });
 test("lease birth guard immediately before immutable link refuses a change during staged evidence write", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     fs = (await import("node:fs")).default,
     open = fs.openSync,

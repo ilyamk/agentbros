@@ -13,7 +13,10 @@ export class GitHub {
     if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) throw new Error("Expected owner/repository");
   }
   async call<T>(route: string, method = "GET", body?: unknown): Promise<T> {
-    if ((route !== "" && !route.startsWith("/")) || route.includes("..")) throw new Error("Invalid API route");
+    // A "." or ".." path segment would leave the repository route, also percent-encoded or after a backslash, which
+    // URL parsing reads as "/". Dots inside a segment, as in compare's base...head, cannot.
+    if ((route !== "" && !route.startsWith("/")) || /(?:^|[\\/])(?:\.|%2e){1,2}(?:[\\/?#]|$)/i.test(route))
+      throw new Error("Invalid API route");
     const response = await this.request(`https://api.github.com/repos/${this.repo}${route}`, {
       method,
       redirect: "error",
@@ -47,9 +50,14 @@ export class GitHub {
       const value = await this.call<{ content: string; encoding: string; sha: string }>(
         `/contents/${file.split("/").map(encodeURIComponent).join("/")}?ref=${encodeURIComponent(ref)}`,
       );
-      if (value.encoding !== "base64" || typeof value.content !== "string")
+      // Files of 1–100 MB come back with encoding "none" and no content; their blob carries the bytes.
+      const encoded =
+        value.encoding === "none" && typeof value.sha === "string" && /^[0-9a-f]{40}$/.test(value.sha)
+          ? await this.call<{ content: string; encoding: string; sha: string }>(`/git/blobs/${value.sha}`)
+          : value;
+      if (encoded.encoding !== "base64" || typeof encoded.content !== "string" || encoded.sha !== value.sha)
         throw new Error("Unsupported GitHub content encoding");
-      return { text: Buffer.from(value.content, "base64").toString("utf8"), sha: value.sha };
+      return { text: Buffer.from(encoded.content, "base64").toString("utf8"), sha: value.sha };
     } catch (error) {
       if (error instanceof CliErrorObject && error.details?.status === 404) return undefined;
       throw error;

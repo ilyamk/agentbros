@@ -152,7 +152,7 @@ test(
     const unrelated = spawn(process.execPath, ["-e", "setInterval(()=>{},100)"], { stdio: "ignore" });
     try {
       const code =
-        "const cp=require('node:child_process');const row=cp.execFileSync('ps',['-p',process.argv[1],'-o','pid=,ppid=,lstart=,comm='],{encoding:'utf8'}).trim().match(/^(\\d+)\\s+(\\d+)\\s+(.+)$/);process.send({type:'owned-processes',processes:[{pid:Number(row[1]),ppid:Number(row[2]),identity:row[3]}]});process.on('SIGTERM',()=>{});setInterval(()=>{},100);";
+        "const cp=require('node:child_process');const row=cp.execFileSync('ps',['-p',process.argv[1],'-o','pid=,ppid=,lstart='],{encoding:'utf8'}).trim().match(/^(\\d+)\\s+(\\d+)\\s+(.+)$/);process.send({type:'owned-processes',processes:[{pid:Number(row[1]),ppid:Number(row[2]),identity:row[3]}]});process.on('SIGTERM',()=>{});setInterval(()=>{},100);";
       await assert.rejects(
         runBoundedRenderWorker(process.execPath, ["-e", code, String(unrelated.pid)], directory, {
           timeoutMs: 5000,

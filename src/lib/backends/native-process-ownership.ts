@@ -1,7 +1,9 @@
 import { spawnSync } from "node:child_process";
 type Identity = { pid: number; ppid: number; start: string };
 function snapshot(): Identity[] {
-  const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart=,comm="], {
+  // Identity is pid plus start time. Not comm: Linux renames a starting Node process's main thread ("MainThread"), so a
+  // snapshot taken at spawn would no longer match the same process a moment later and it would escape cleanup.
+  const result = spawnSync("ps", ["-axo", "pid=,ppid=,lstart="], {
     encoding: "utf8",
     timeout: 2000,
     maxBuffer: 4 * 1024 * 1024,

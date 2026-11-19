@@ -682,7 +682,8 @@ export function takeOverStaleLock(file: string, judged: { ino: number; text: str
 /**
  * An exclusive per-key lock (`<key>.lock`, O_EXCL) so two quick clicks start one Studio. A lock whose pid is gone or
  * that is older than the start timeout is stale and taken over ({@link takeOverStaleLock}). Waits up to `waitMs` for a
- * live holder. The holder removes only its own lock.
+ * live holder. The lock holds `<pid> <uuid>`; the holder removes it only while both its inode and that token are its
+ * own, since Linux file systems reuse a freed inode at once for the next lock created under the same name.
  */
 export async function withStudioLock<T>(
   rootDir: string,
@@ -693,11 +694,12 @@ export async function withStudioLock<T>(
   const file = path.join(rootDir, STUDIO_DIR, `${key}.lock`);
   mkdirSync(path.dirname(file), { recursive: true, mode: 0o700 });
   const deadline = Date.now() + waitMs;
+  const token = `${process.pid} ${randomUUID()}`;
   let ownIno: number;
   for (;;) {
     try {
       const fd = openSync(file, "wx", 0o600);
-      writeFileSync(fd, String(process.pid));
+      writeFileSync(fd, token);
       ownIno = fstatSync(fd).ino;
       closeSync(fd);
       break;
@@ -709,7 +711,7 @@ export async function withStudioLock<T>(
         try {
           const stat = fstatSync(fd);
           const text = readFileSync(fd, "utf8").trim();
-          const holder = Number(text);
+          const holder = Number(text.split(/\s+/)[0]); // `<pid> <uuid>`, or a bare pid from an older lock
           const age = Date.now() - stat.mtimeMs;
           if (
             age > STUDIO_READY_TIMEOUT_MS + 60_000 ||
@@ -734,7 +736,16 @@ export async function withStudioLock<T>(
   try {
     return await fn();
   } finally {
-    if (statSync(file, { throwIfNoEntry: false })?.ino === ownIno) rmSync(file, { force: true });
+    if (statSync(file, { throwIfNoEntry: false })?.ino === ownIno && readLockText(file) === token)
+      rmSync(file, { force: true });
+  }
+}
+
+function readLockText(file: string): string | undefined {
+  try {
+    return readFileSync(file, "utf8").trim();
+  } catch {
+    return undefined;
   }
 }
 
