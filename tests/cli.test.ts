@@ -218,10 +218,11 @@ test("AGENTBROS_NO_DOTENV stops runScript loading .env; the test import sets it 
   }
 });
 
-test("the Node 24 exit guard is the CLI module's first import, so it runs before any other module", () => {
-  // ESM evaluates imports in order: as the first one, the guard turns off background compilation before other code runs.
+test("the exit guard is the CLI module's first import and collects right before process.exit", () => {
+  // ESM evaluates imports in order: as the first one, the guard stops background compiles before other code runs.
   const source = readFileSync(path.join(import.meta.dirname, "../src/lib/cli/index.ts"), "utf8");
-  assert.equal(source.match(/^import .*$/m)?.[0], 'import "./exit-guard";');
+  assert.equal(source.match(/^import .*$/m)?.[0], 'import { collectBeforeExit } from "./exit-guard";');
+  assert.match(source, /collectBeforeExit\(\);\n\s*process\.exit\(/);
   const guard = readFileSync(path.join(import.meta.dirname, "../src/lib/cli/exit-guard.ts"), "utf8");
   assert.match(guard, /"--no-concurrent-sparkplug"/);
   assert.match(guard, /"--no-maglev"/);
