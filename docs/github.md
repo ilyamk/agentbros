@@ -1,6 +1,6 @@
 # GitHub administration
 
-Last updated: 2026-11-17
+Last updated: 2026-11-19
 
 This is the deployment guide for the contribution workflows in `ilyamk/agentbros`.
 Local fixture tests establish API and workflow contracts; they do not establish live
@@ -220,9 +220,12 @@ line counts, author history, labels and CLA signatures through GitHub REST.
 Pagination or file-list truncation fails closed for that PR. Maintenance and
 advisory application isolate each PR's failure, add `needs-human` if absent and
 continue other PRs and claim expiry; a failed label request is reported as an
-unlabelled skip rather than aborting the batch. Missing text patches and
-incomplete patches defer to human review; an absent patch alone is not evidence
-of a binary. Media extensions and NUL bytes provide binary evidence. Workflow
+unlabelled skip rather than aborting the batch. When GitHub omits a text file's
+patch (a large file such as `uv.lock`), intake rebuilds it from the merge base
+and head contents (blobs for files over 1 MB) and keeps it only when its line
+counts equal GitHub's; the rebuilt patch is leak-scanned like any other. A patch
+that cannot be rebuilt or does not match, and any incomplete patch, defers to
+human review; an absent patch alone is not evidence of a binary. Media extensions and NUL bytes provide binary evidence. Workflow
 changes, including a rename out of `.github/`, cannot automatically enter the
 owner queue. Appeals retain `appealed` and `needs-human` labels; only a human can
 clear their review requirement, and autoclose still applies every rule but the
