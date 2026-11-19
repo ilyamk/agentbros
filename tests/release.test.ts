@@ -314,3 +314,9 @@ test("release CLIs use a single JSON envelope, accept paired snapshots and rejec
     /boot\/codex: -20 bytes, -5 estimated tokens/,
   );
 });
+
+test("every pending change entry in the repository renders into release notes", () => {
+  // release-pr renders the pending entries on main; an unknown category there fails only after merge.
+  const entries = readEntries(path.resolve(import.meta.dirname, ".."));
+  assert.doesNotThrow(() => releaseNotes("0.0.1", entries));
+});
