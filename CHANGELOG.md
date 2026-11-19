@@ -188,7 +188,7 @@
 
 - Agent Bros. Pictures is source-available under the Business Source License 1.1 (BUSL-1.1) instead of AGPL-3.0-or-later with a commercial licence. The Additional Use Grant allows free production use by individuals (including films and media for their clients), organisations with no more than three Personnel together with their Affiliates, and non-profits and accredited educational or research institutions for non-commercial activities, provided the software is not offered to third parties as a hosted, managed or embedded service, API or platform, or distributed, sold or bundled in a product or service; delivering films made with it is not distribution. Everyone may use it for evaluation, testing, development and study. Other production use needs a commercial licence (COMMERCIAL-LICENSE.md). Each version converts to AGPL-3.0-or-later on the fourth anniversary of its first public release under the BSL. Python that runs inside Blender is GPL-3.0-or-later (LICENSE-GPL-3.0) and carries an SPDX header. The CLA moves to version 2.0, effective 17 November 2026, and TRADEMARKS.md sets the policy for the Agent Bros. Pictures and agentbros names and logos.
 
-- docs/github.md records the settings applied to the public repository on 2026-11-18: no merge queue for a personal account, data-branch rules that keep GITHUB_TOKEN writes working, the allowed-actions list, the completed App split, and why GITHUB_TOKEN may not open pull requests
+- docs/github.md records the settings applied to the public repository on 2026-11-18: no merge queue for a personal account, data-branch rules that keep GITHUB_TOKEN writes working, the allowed-actions list, the completed App split, and why GITHUB_TOKEN may not open pull requests ([#6](https://github.com/ilyamk/agentbros/pull/6))
 
 - Translate the 19 reference breakdowns, the agent video systems survey and the chart evidence guide into English; the film's own copy stays described, not quoted
 
@@ -203,6 +203,8 @@
 ### Security fixes
 
 - CLA.md now documents the short-form signing statement the bot accepts, and coding-agent co-author trailers (Claude Code, Codex, Copilot, Cursor) listed in contrib/agent-coauthors.json count as the submitting human's Contribution.
+
+- CodeQL's init, analyze and upload-sarif actions move to v4.39.3 together (pinned to commit 33d7b85), and Dependabot now groups them, since a split bump leaves CodeQL on mismatched majors.
 
 - Launch-ready contribution automation: a tier-3 override for the maintainer (no protected-path block, never autoclosed, can `/unclaim`), a Dependabot intake route, CLA signatures by the `CLA.md` statement bound to the current `CLA.md` blob with refusals answered on the PR, releases triggered by the push to `main`, separate reviewer-gated `release` and unattended `automation` environments, a seven-day reminder before closing unapproved protected-path changes, early comment filters and per-source concurrency keys, job timeouts, read-only job tokens for App-token pushes, rebase-and-retry for bot pushes to `main` and a nightly whole-tree leak scan.
 
