@@ -711,7 +711,11 @@ function cli(rootDir: string, ...args: string[]) {
   const result = spawnSync(process.execPath, [TSX, path.join(REPO, "scripts/refs-plan.ts"), ...args], {
     cwd: rootDir,
     encoding: "utf8",
+    // spawnSync blocks the test's own timeout, so a hung CLI must end here, with its output in the failure.
+    timeout: 120000,
+    killSignal: "SIGKILL",
   });
+  assert.equal(result.error, undefined, `refs:plan ${args.join(" ")}: ${result.error}\n${result.stderr}`);
   const lines = result.stdout.trim().split("\n");
   return { status: result.status, json: JSON.parse(lines.at(-1)!) as Record<string, any>, stderr: result.stderr };
 }

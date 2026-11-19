@@ -18,6 +18,13 @@ import { RhythmPublisher } from "../src/lib/audio/rhythm-publisher";
 import { RhythmRuntimeSchema } from "../src/types/rhythm-evidence";
 import { AssetRecordSchema } from "../src/types/assets";
 import { readRhythmEvidence } from "../src/lib/audio/rhythm-evidence";
+
+/** Rhythm analysis runs only on macOS (tools under sandbox-exec, workspace in /private/tmp); elsewhere these skip. */
+const macOsOnly = (t: { skip(message?: string): void }) => {
+  if (process.platform === "darwin") return false;
+  t.skip("Rhythm runs only on macOS");
+  return true;
+};
 const hash = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
 function fixture(t: test.TestContext) {
   const base = fs.realpathSync(fs.mkdtempSync(path.join(tmpdir(), "rhythm-artifact-pure-")));
@@ -127,6 +134,7 @@ function fixture(t: test.TestContext) {
   };
 }
 test("all generated roles initialized privately and retired before first persistent capture; strict delayed readback", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     init = f.metadata.initialize,
     roles: string[] = [];
@@ -184,6 +192,7 @@ test("all generated roles initialized privately and retired before first persist
   );
 });
 test("metadata failure preserves first object, retires own private bytes and makes no persistent artifact", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     primary = Object.freeze({
       toString() {
@@ -205,6 +214,7 @@ test("metadata failure preserves first object, retires own private bytes and mak
   assert.deepEqual(fs.readdirSync(path.join(f.root, ".cache/rhythm-evidence/demo")), []);
 });
 test("metadata cancellation refuses before any PRIMARY artifact and cleans own stage", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     controller = new AbortController();
   f.metadata.initialize = async () => controller.abort();
@@ -216,6 +226,7 @@ test("metadata cancellation refuses before any PRIMARY artifact and cleans own s
   assert.equal(fs.existsSync(path.join(f.project, "pipeline/rhythm")), false);
 });
 test("lease replacement during metadata refuses all later calls/links and preserves foreign lease", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t);
   let calls = 0;
   f.metadata.initialize = async () => {
@@ -241,6 +252,7 @@ test("lease replacement during metadata refuses all later calls/links and preser
   assert.equal(f.calls, before);
 });
 test("partial initialization foreign private mutation retains lease and refuses second preparation", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t);
   f.metadata.initialize = async () => {
     fs.writeFileSync(path.join(f.stage!.directory, "clock.json"), "foreign");
@@ -255,6 +267,7 @@ test("partial initialization foreign private mutation retains lease and refuses 
   assert.equal(fs.existsSync(path.join(f.project, "pipeline/rhythm")), false);
 });
 test("no-overwrite link conflict preserves foreign target and partial cache uncertainty", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     link = fs.linkSync;
   let foreign: string | undefined;
@@ -284,6 +297,7 @@ test("no-overwrite link conflict preserves foreign target and partial cache unce
   );
 });
 test("stage retirement fault keeps owned lease and explicit durable output uncertainty", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     factory = f.host.artifactStage;
   f.host.artifactStage = (budget) => {
@@ -304,6 +318,7 @@ test("stage retirement fault keeps owned lease and explicit durable output uncer
   assert.equal(f.calls, before);
 });
 test("creation outcomes release stage directory reservation only after confirmed retirement", async (t) => {
+  if (macOsOnly(t)) return;
   for (const confirmed of [true, false]) {
     const f = fixture(t);
     f.host.artifactStage = () => {
@@ -413,6 +428,7 @@ test("installation consumer rejects unlisted ancestor alias, wrong ABI and chang
 });
 
 test("unknown generated write FD closure keeps exact accounting and lease, first write fault preserved", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t),
     factory = f.host.artifactStage,
     write = fs.writeSync,
@@ -465,6 +481,7 @@ test("unknown generated write FD closure keeps exact accounting and lease, first
   }
 });
 test("metadata shared verification and aggregate stdout/stderr reservations fail closed", async (t) => {
+  if (macOsOnly(t)) return;
   const f = fixture(t);
   f.metadata.initialize = async (input) => {
     input.budget.consumed = 256 * 1024 * 1024;
@@ -635,6 +652,7 @@ test("actual owned runner inherited FD/input/env seam uses closed stdio; fake ca
 });
 
 test("successful public link marks durable publication before linked/enroll/fsync faults", async (t) => {
+  if (macOsOnly(t)) return;
   for (const fault of ["linked", "enroll", "fsync"]) {
     const f = fixture(t),
       factory = f.host.artifactStage,

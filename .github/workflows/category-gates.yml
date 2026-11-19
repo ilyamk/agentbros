@@ -21,6 +21,10 @@ jobs:
           node-version-file: .nvmrc
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      # The failing-on-base proof runs the changed tests, which need the same tools as the CI test shards.
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: pnpm exec remotion browser ensure
       - name: Run the shared category gate plan and failing-on-base proof
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}

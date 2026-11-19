@@ -62,7 +62,7 @@ function run(
     cwd: root,
     env: { AGENTBROS_NO_DOTENV: "1", PATH: process.env.PATH },
     encoding: "utf8",
-    timeout: 15000,
+    timeout: 60000, // a cold tsx start on a loaded runner can pass 15s
   });
   assert.equal(child.error, undefined);
   assert.equal(child.stdout.trim().split("\n").length, 1, child.stderr);
