@@ -57,7 +57,7 @@ For charts, node networks and diagrams, start with `pnpm viz:list`, then prepare
 
 6. **Wrap in `FilmFinish`** (`src/motion/library/finish/FilmFinish`) at the shot level. Keep `Audio` and video layers outside it when `aberration` is above 0, because it renders its children twice.
 
-7. **Check it.** Stills at the reveal, the reading hold and the exit, then motion from a strip of a rendered clip:
+7. **Check it.** For a redesign, [try the decisive moment first](../motion-and-typography/references/motion-decisions.md#try-the-decisive-moment-first). Stills at the reveal, the reading hold and the exit, then motion from a strip of a rendered clip:
 
    ```bash
    pnpm motion:still --entry src/motion/library/index.tsx --composition Lib-<id>-L --frames 0,60,110 --output out/qa/lib/<id>

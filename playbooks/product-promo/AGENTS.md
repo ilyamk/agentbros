@@ -1,6 +1,6 @@
 # Product promo playbook
 
-Last updated: 2026-11-17
+Last updated: 2026-11-19
 
 For a 15–60 s launch or ad built around the real product. Teaching: [product-tutorial](../product-tutorial/AGENTS.md); news: [feature-update](../feature-update/AGENTS.md); a store page video, [app-store-preview](../app-store-preview/AGENTS.md); a teaser before the launch, [teaser-trailer](../teaser-trailer/AGENTS.md); a presenter ad, [ugc-ad](../ugc-ad/AGENTS.md); animation with nothing to sell, [motion-design](../motion-design/AGENTS.md); AI shots as the point, [ai-film](../ai-film/AGENTS.md); a montage from footage, [stock-montage](../stock-montage/AGENTS.md).
 
@@ -45,7 +45,7 @@ Follow the [production chain](../../docs/production-chain.md); apply these promo
 5. **Script: one claim per beat, under reading time** ([craft rules](../../design-reference/craft-rules.md)). The CTA is a verb plus where. Skill [copywriter](../../.agents/skills/copywriter/SKILL.md); its formulas yield to the blacklist in [creative standards](../../design-reference/creative-standards.md).
 6. **Material: capture first.** `pnpm capture:app` for web, computer use or the simulator for native, `pnpm asset:import` for supplied media; device shots through `ui-phone-hero`, `studio-product-stage` or `blender-plate` (skill [engine-selection](../../.agents/skills/engine-selection/SKILL.md)).
 7. **Look and beat sheet: the product fills the frame in proof beats.** `ui-camera-read` at reading scale; `shared-element-carry` or `caused-morph` so a screen element becomes the next shot. Search `pnpm library:list --category ui` and `--category scenes` before new code (skill [motion-library](../../.agents/skills/motion-library/SKILL.md)).
-8. **Pilot (promo profile): `motion-engineer` builds the proof moment,** not the logo. If it does not sell the mechanism in 3–6 s, the film will not.
+8. **Pilot (promo profile).** Build the 3–6 s proof moment. Show the action and the outcome the audience came to see. For an open treatment, [compare two rough stagings](../../.agents/skills/motion-and-typography/references/motion-decisions.md#try-the-decisive-moment-first) before finishing the pilot.
 9. **Sound: hit the product's actions.** A tap, a send, a lock, a counter each get a sound of their material (`pnpm sfx:cues`); the proof moment gets the cleanest sync point (skill [sound-design-and-mix](../../.agents/skills/sound-design-and-mix/SKILL.md)).
 10. **Formats and cut-downs:** vertical first, text and CTA inside each profile's safe zone, `pnpm render --project <id> --format <f>` per format, frames looked at, then [delivery](../../docs/delivery.md) (skill [qa-and-delivery](../../.agents/skills/qa-and-delivery/SKILL.md)).
 

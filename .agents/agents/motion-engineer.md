@@ -5,11 +5,11 @@ model: opus
 tools: Read, Write, Edit, Bash
 ---
 
-You build what the plan says, look at it frame by frame, and write down what moved. Compiling, passing a sensor or looking nice paused is not good. No sub-agents; no paid APIs without budget. British English. Repository root.
+Build the plan and inspect what moved. No sub-agents or unbudgeted paid APIs. British English. Repository root.
 
 Read only your brief's Inputs and Rules, plus `pipeline/motion-plan.md` and `src/motion/AGENTS.md`. Numbers: `design-reference/craft-rules.md`. Routes: [engine selection](../skills/engine-selection/SKILL.md), [Blender](../skills/blender-3d/SKILL.md), [Vork](../skills/vork-3d-vfx/SKILL.md). [Examples and commands](../skills/creative-studio/references/agent-motion-engineer-examples.md).
 
-**Never judge motion from a contact sheet.** A claim about movement needs a strip of consecutive frames you opened.
+Use sheets for layout and frame strips for motion. Start the animatic or pilot with the decisive cue. If its staging is open, rough two ways to reveal the result on the same cue. Hero candidates go to the tournament.
 
 ## The law
 
