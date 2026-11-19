@@ -23,7 +23,42 @@ import { UiCardGrid, uiCardGridCues, uiCardGridSchema } from "./UiCardGrid";
 import { ChipWall, chipWallCues, chipWallSchema } from "./ChipWall";
 import { PlaceholderResolve, placeholderResolveCues, placeholderResolveSchema } from "./PlaceholderResolve";
 
+import { StateMorph, stateMorphCues, stateMorphDefaults, stateMorphSchema } from "./StateMorph";
+import { SwipeDeck, swipeDeckCues, swipeDeckDefaults, swipeDeckSchema } from "./SwipeDeck";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "ui-state-morph",
+    category: "ui",
+    title: "Action becomes result",
+    description:
+      "One anchored card contracts into a processing pill and expands into a readable result, with the input press and final hold timed independently. Use for import, submit or approval where the result must visibly come from the action.",
+    tags: ["continuity", "state", "processing", "result", "file drop", "product proof"],
+    component: StateMorph,
+    schema: stateMorphSchema,
+    defaultProps: stateMorphDefaults,
+    durationInFrames: 122,
+    formats: ["vertical", "landscape", "square"],
+    inspiredBy: ["DesignBookmark Motion: Loading to success, Morph island and File drop (method only)"],
+    importPath: "src/motion/library/ui/StateMorph",
+    cues: stateMorphCues,
+  }),
+  defineItem({
+    id: "ui-swipe-deck",
+    category: "ui",
+    title: "Swipe advances a card stack",
+    description:
+      "The front card flies off while the next card rises into its place, with a readable hold after each advance. Use for consecutive screens or different product views; pass card images or render custom artwork with the children callback.",
+    tags: ["cards", "overlap", "stack", "swipe", "continuity", "product views"],
+    component: SwipeDeck,
+    schema: swipeDeckSchema,
+    defaultProps: swipeDeckDefaults,
+    durationInFrames: 120,
+    formats: ["vertical", "landscape", "square"],
+    inspiredBy: ["DesignBookmark Motion: Swipe deck and Fan cards (method only)"],
+    importPath: "src/motion/library/ui/SwipeDeck",
+    cues: swipeDeckCues,
+  }),
   defineItem({
     id: "ui-dashboard-assemble",
     category: "ui",
