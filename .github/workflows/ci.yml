@@ -94,13 +94,25 @@ jobs:
         env:
           RUNTIME: ${{ matrix.runtime }}
       - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg gdb
       - run: pnpm exec remotion browser ensure
+      - name: Hang watchdog (diag)
+        run: |
+          cat > /tmp/watch.sh <<'SH'
+          while :; do for p in $(pgrep -f "/scripts/[a-z0-9-]+\.ts"); do
+            e=$(ps -o etimes= -p $p | tr -d " "); [ -n "$e" ] && [ "$e" -gt 50 ] && [ ! -e /tmp/hung-$p ] && {
+              { echo "=== pid $p etimes $e"; tr "\0" " " < /proc/$p/cmdline | cut -c1-300; echo; ps -o pid,stat,args --ppid $p; sudo gdb -p $p -batch -ex "thread apply all bt 30" 2>&1 | grep -E "^Thread|^#"; } > /tmp/hung-$p 2>&1; }
+          done; sleep 3; done
+          SH
+          nohup bash /tmp/watch.sh >/dev/null 2>&1 &
       - name: Full suite shard
         env:
           SHARD: ${{ matrix.shard }}
         # A test without its own timeout fails by name after ten minutes instead of hanging the job until its limit.
         run: pnpm exec tsx --test --test-timeout=600000 --test-shard="$SHARD/4" --import ./tests/helpers/memory-root.ts tests/*.test.ts
+      - name: Hang stacks (diag)
+        if: always()
+        run: cat /tmp/hung-* 2>/dev/null | head -400 || true
   browser-render:
     strategy:
       fail-fast: false
