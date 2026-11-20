@@ -1,12 +1,13 @@
 /**
  * The app bar's GitHub button: the GitHub mark, "GitHub", a star and the repository's star count, linking to the
  * project. The count comes from `GET /api/github` (the server fetches and caches it; the CSP keeps the browser on
- * 'self'); while it loads, or when it is unknown, the button shows the link without a number.
+ * 'self') and is asked for only once the session is ready; while it loads, or when it is unknown, the button shows the
+ * link without a number.
  */
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { useI18n } from "@/i18n";
-import { useConsoleStore } from "@/store/context";
+import { useConsole, useConsoleStore } from "@/store/context";
 import { snapshotMode } from "@/lib/snapshot-mode";
 import { GITHUB_URL } from "../../../src/lib/console/github-schema";
 
@@ -21,17 +22,19 @@ function GithubMark({ className }: { className?: string }) {
 export function GithubButton() {
   const { d, locale } = useI18n();
   const client = useConsoleStore().client;
+  // The server refuses `/api/github` until the session has its token; asking earlier gets a 403 and no count.
+  const sessionReady = useConsole((state) => state.session.status === "ready");
   const [stars, setStars] = useState<number | null>(null);
 
   useEffect(() => {
-    if (snapshotMode() || !client.github) return;
+    if (snapshotMode() || !client.github || !sessionReady) return;
     const controller = new AbortController();
     client
       .github(controller.signal)
       .then((repo) => setStars(repo.stars))
       .catch(() => undefined);
     return () => controller.abort();
-  }, [client]);
+  }, [client, sessionReady]);
 
   const count =
     stars === null

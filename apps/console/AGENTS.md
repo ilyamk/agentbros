@@ -1,6 +1,6 @@
 # Studio console UI — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 The browser half of the studio console ([guide](../../docs/console.md), [RFC 0004](../../docs/rfcs/0004-studio-console.md)): Vite, React 19, Tailwind v4, shadcn/ui on `radix-ui`. Not Remotion code: the determinism law does not apply, but every animation is a 150–250 ms CSS transition (`starting:` for enter), off under `prefers-reduced-motion`. Never imported from `src/`.
 
@@ -32,7 +32,7 @@ The browser half of the studio console ([guide](../../docs/console.md), [RFC 000
 - 2026-11-18: collapsible blocks are `Disclosure` (`components/ui/disclosure.tsx`: native `<details>`, chevron, `card` or `plain`, `muted`); the summary text sits in a `span`. `html` has `scroll-padding-top` so anchors and focus clear the sticky app bar. Links and buttons carry no `aria-label` that hides their visible text: extra words go in `sr-only` after it (axe `label-content-name-mismatch`).
 - 2026-11-18: API key rows stack descriptions above the full-width field controls. Fields are always visible. Paired tabs show disabled fields with empty values. Edit API keys opens the editor through the OS. Reveal and copy fetch one value.
 
-- 2026-11-18: the shell's app bar (`shell/app-shell.tsx`) is sticky at every width; its right side holds `shell/github-button.tsx` (GitHub mark, "GitHub", star count) linking to `https://github.com/ilyamk/agentbros`. The browser never calls GitHub: `GET /api/github` (`src/lib/console/github.ts`) fetches the count server-side and caches it (1 h, 10 min after a failure, `stars: null`); the contract is in `src/lib/console/github-schema.ts` so no API address enters the bundle. Snapshot mode shows the link without a count.
+- 2026-11-18: the shell's app bar (`shell/app-shell.tsx`) is sticky at every width; its right side holds `shell/github-button.tsx` (GitHub mark, "GitHub", star count) linking to `https://github.com/ilyamk/agentbros`. The browser never calls GitHub: `GET /api/github` (`src/lib/console/github.ts`) fetches the count server-side and caches it (1 h, 10 min after a failure, `stars: null`); the contract is in `src/lib/console/github-schema.ts` so no API address enters the bundle. Snapshot mode shows the link without a count. 2026-11-20: the button asks only once `session.status` is `ready` (earlier the request had no token, got a 403 and was never retried).
 - 2026-11-18: the repository URL lives once in `src/lib/console/github-schema.ts` (`GITHUB_URL`, `github.com/ilyamk/agentbros`); `lib/about.ts` builds licence links from it.
 - 2026-11-18: the sidebar footer shows `© 2026 ILIA_AGI · BUSL-1.1 · v<version>`, and Settings ends with an "About and licence" card that holds the licence summary, the "as is" warranty disclaimer and links to the licence files. All constants live in `lib/about.ts`; the version is read from the root `package.json`. External links use `rel="noreferrer noopener"`, so they never copy the session token.
 - 2026-11-18: Home card settings rename a project's display title or delete it after the user types its ID. The HTTP client uses authenticated project actions. Fixtures and snapshots omit the settings button.
