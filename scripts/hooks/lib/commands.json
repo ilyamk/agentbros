@@ -27,6 +27,11 @@
       "spend": "may-spend",
       "guarded": false
     },
+    "experiment": {
+      "script": "scripts/experiment.ts",
+      "spend": "none",
+      "guarded": true
+    },
     "bench:workflow": {
       "script": "scripts/bench-workflow.ts",
       "spend": "may-spend",

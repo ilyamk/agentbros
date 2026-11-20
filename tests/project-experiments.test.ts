@@ -213,7 +213,7 @@ test(
     git(root, "init", "-q");
     writeFileSync(path.join(root, ".gitignore"), "public/projects/\nout/\n");
     git(root, "add", ".gitignore");
-    git(root, "-c", "user.email=test@example.invalid", "-c", "user.name=Test", "commit", "-qm", "Base");
+    git(root, "-c", "user.email=", "-c", "user.name=Test", "commit", "-qm", "Base");
     const fixture = path.join(project("inputs"), "brief.txt");
     json(fixture, { request: "Show export", input: "fixture" });
     for (const id of ["control", "variant"]) {
