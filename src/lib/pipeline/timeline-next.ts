@@ -37,6 +37,7 @@ export type TimelineNext = {
   read: string[];
   playbook?: PlaybookAnswer["playbook"];
   playbookHint?: string;
+  experiments?: PlaybookAnswer["experiments"];
   state: {
     formats: string[];
     timeline: boolean;

@@ -17,6 +17,8 @@ Agent Bros. Pictures is a **harness**, not an app. Coding agents (Claude Code, C
 - **A renderer**: Remotion compositions in React, where every frame is a pure function of the frame number.
 - **Contracts**: Zod schemas in `src/types/` for every artefact a step writes.
 
+Projects may opt into a versioned experiment at a named step. The selection is pinned to the project and enters the step answer and its owner brief. The same checkout can compare independently rendered control and candidate projects. [Project experiments](experiments.md)
+
 The design rule behind all four: **decisions that can be computed live in code and data; judgement lives with agents; approvals belong to the user.** An agent never works out the next step from prose. It asks `pnpm next`, which reads the project's files and answers.
 
 Speech follows this boundary from script line through provider take and timing

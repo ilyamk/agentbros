@@ -1,6 +1,6 @@
 # Product tutorial playbook
 
-Last updated: 2026-11-16
+Last updated: 2026-11-20
 
 Choose it when the film teaches one task in a real web or mobile product (tutorial, how-to, walkthrough, onboarding, help-centre video). Otherwise: selling the product is [product-promo](../product-promo/AGENTS.md); what changed in a release, [feature-update](../feature-update/AGENTS.md); a store page video, [app-store-preview](../app-store-preview/AGENTS.md); an idea rather than a product's screens, [explainer](../explainer/AGENTS.md). The user's own screencast stays here through the footage alternative; its cut mechanics are [footage-edit](../footage-edit/AGENTS.md)'s.
 
@@ -14,6 +14,8 @@ pnpm footage:next --project <id> --playbook product-tutorial --source <file> --g
 ```
 
 `ui-demo` brings the capture, ui blocks and QA lines; `explainer` adds voice-first sound and one idea per state ([film types](../../docs/film-types.md)). Alternative: supplied captures and timings through `pnpm video:workflow --scenario education`.
+
+The opt-in [camera experiment](../../docs/experiments.md#tutorial-camera) proposes the reading camera at the beat sheet. Review both formats at animatic before using it. An episode from an opted-in content series reads its pinned kit at look, build and sound.
 
 Ask the `intake` questions in `playbook.json` in one message (the task and product access block the start); `profiles` set length, chapters and captions per placement; `starter` names the blocks to begin from.
 

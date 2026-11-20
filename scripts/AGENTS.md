@@ -32,6 +32,8 @@ Higgsfield scenarios (2026-11-16): `hf:pricing --sync --scenarios` adds exact sa
 
 ## Rules by area
 
+- Project experiments (2026-11-20): `experiment` selects project-local methods and prepares a blind review pair from full render receipts. [Guide](../docs/experiments.md).
+
 - **Approvals are the user's.** `film:approve` and `film:rights` record only the user's own words; `--proxy benchmark` never counts as the user's, is refused on `human` and never authorises spending on `material`. `recut:plan` and `shorts:rank` write unapproved drafts with the hash a person approves; `shorts:request --approved-by` takes only the user's decision, verbatim; `footage:next` writes no approval; `footage:policy-apply` writes only what the user's autonomous policy pre-answered, logged and revocable (2026-11-17). None of these approvals is an MCP tool.
 - **Film chain:** `film:next` says what to do now, `film:brief` writes the subagent's prompt and returns its path and dispatch line, `film:show` digests a step's artefacts ([production chain](../docs/production-chain.md)). A route change: `film:route --write-doc`.
 - **A user's own recording:** start with `footage:next` ([footage editing](../docs/footage-editing.md)). Transcribe only with `transcribe` (paid; `--from-raw` rebuilds a transcript with no API call; keyterms and extra channels add billable minutes) or `speech:local` (free, [speech](../docs/speech.md)). `align:captions` and `edit:captions` are template-mode voiceover only.
