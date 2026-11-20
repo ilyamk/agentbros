@@ -61,7 +61,7 @@ The technical pass comes first: neutral greys (a*/b* of near-neutrals within ±1
 | Skin b* gain                            | +5                  | +9           | Yellow skin, the stark-promo v1 failure      |
 | Crushed blacks over source or reference | +1 pp               | +4 pp        | Lost shadow detail                           |
 | Clipping over source or reference       | +0.3 pp             | +1.5 pp      | Lost highlights                              |
-| P90 chroma                              | ×1.4                | ×1.8         | Garish colour, illegal chroma after encoding |
+| P90 chroma over source or reference     | ×1.4                | ×1.8         | Garish colour, illegal chroma after encoding |
 | Secondary spill off skin                | ΔE 2                | ΔE 4         | A key that recolours the set                 |
 | Skin vs reference skin                  | ΔE 6                | ΔE 10        | Did not match the reference's faces          |
 | Legal luma in the file                  | 0.5% outside 16–235 | —            | Broadcast and platform limits                |

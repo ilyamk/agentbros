@@ -273,7 +273,7 @@ Run it on the delivery file against the pixel-aligned file it was rendered from.
 | Skin b* gain (yellow drift)                                             | +5                             | +9           |
 | Crushed blacks (Y' < 2 IRE) over the source, or the reference if darker | +1 pp                          | +4 pp        |
 | Clipping over the source or reference                                   | +0.3 pp                        | +1.5 pp      |
-| P90 chroma                                                              | ×1.4                           | ×1.8         |
+| P90 chroma over source or reference                                     | ×1.4                           | ×1.8         |
 | Skin against the reference's skin (CIEDE2000)                           | 6                              | 10           |
 | Environment hue distance to the reference                               | not 10% closer than the source | —            |
 | Secondary spill off skin (match and looks)                              | ΔE 2                           | ΔE 4         |
