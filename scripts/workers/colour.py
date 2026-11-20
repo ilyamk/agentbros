@@ -692,6 +692,16 @@ def fit_match(source: np.ndarray, target: np.ndarray, method: str, paired_pairs:
     return p, None
 
 
+def soften(p: np.ndarray, curves: dict[str, Any] | None, strength: float) -> tuple[np.ndarray, dict[str, Any] | None]:
+    """Blend a solved match toward identity: strength 1 is the full match, 0 no grade."""
+    if strength >= 1:
+        return p, curves
+    blended = IDENTITY + (p - IDENTITY) * strength
+    if curves:
+        curves = {"master": [[x, round(x + (y - x) * strength, 4)] for x, y in curves["master"]]}
+    return blended, curves
+
+
 def round_grade(grade: dict[str, Any]) -> dict[str, Any]:
     """Four decimals: editable by hand, stable in diffs."""
     out = {}
@@ -740,6 +750,8 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
         ref = [cv2.resize(np.clip(f, 0, 1).astype(np.float32), (width, height), interpolation=cv2.INTER_AREA).reshape(-1, 3) for f in b.frames]
         paired_pairs = (np.concatenate(src).astype(np.float64), cm.rgb_to_lab(np.concatenate(ref).astype(np.float64)))
     p, curves = fit_match(source, target, method, paired_pairs)
+    strength = float(request.get("strength", 1.0))
+    p, curves = soften(p, curves, strength)
     grade = round_grade(params_grade(p, curves))
     metrics = match_metrics(source, target, grade)
     out_dir = Path(request["output"])
@@ -750,7 +762,7 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
         rows.append([sc.frame_tile(a.frames[index], "input"), sc.frame_tile(graded, "graded (match)"), sc.frame_tile(b.frames[index], "reference")])
     preview = out_dir / "match-preview.png"
     sc.write_png(str(preview), sc.grid(rows, (640, 300), f"Match preview  {Path(a.path).name} -> {Path(b.path).name}  zone dE2000 {metrics['zoneDeltaE2000Before']['mean']:.2f} -> {metrics['zoneDeltaE2000After']['mean']:.2f}"))
-    return {"ok": True, "grade": grade, "method": method, "metrics": metrics, "input": a.describe(), "reference": b.describe(), "files": {"preview": str(preview)}}
+    return {"ok": True, "grade": grade, "method": method, "strength": strength, "metrics": metrics, "input": a.describe(), "reference": b.describe(), "files": {"preview": str(preview)}}
 
 
 # ---------------------------------------------------------------------------------------------------------------

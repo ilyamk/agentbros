@@ -395,9 +395,15 @@ def load_luts(grade: dict[str, Any]) -> dict[str, dict[str, Any]]:
 
 
 def rank_zones(lightness: np.ndarray) -> dict[str, np.ndarray]:
-    """Shadows, mids and highlights by each image's own L* rank (bottom 25%, middle 50%, top 25%)."""
-    lo, hi = np.percentile(lightness, [25, 75])
-    return {"shadows": lightness <= lo, "mids": (lightness > lo) & (lightness < hi), "highlights": lightness >= hi}
+    """Shadows, mids and highlights by each image's own L* rank (bottom 25%, middle 50%, top 25%).
+
+    Splitting by rank rather than by percentile value keeps zones the same size when many pixels share one value.
+    """
+    order = np.argsort(lightness, kind="stable")
+    rank = np.empty(len(order), dtype=np.int64)
+    rank[order] = np.arange(len(order))
+    n = len(order)
+    return {"shadows": rank < n // 4, "mids": (rank >= n // 4) & (rank < n - n // 4), "highlights": rank >= n - n // 4}
 
 
 def zone_summary(lab: np.ndarray) -> dict[str, dict[str, float]]:
