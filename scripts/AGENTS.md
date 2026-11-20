@@ -1,6 +1,8 @@
 # Scripts — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-19
+
+Motion renders resolve the composition’s shared assets using its input props.
 
 Production CLIs: [JSON contract](../AGENTS.md). Search: `pnpm commands --query <word>`; flags: `pnpm <alias> --help`.
 

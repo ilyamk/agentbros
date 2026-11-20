@@ -179,3 +179,14 @@ test("needs tables name real assets and cover every manifest target referenced i
     needsForSource('<BlenderPlate src="shared/3d/plates/glass-dome.mp4" />', plates).includes("plates:glass-dome"),
   );
 });
+
+test("flat screen and capture reel inputs use supplied media without studio models", () => {
+  assert.deepEqual(needsForComposition("Lib-library-reel-V", { capture: { landscape: {} } }), []);
+  assert.deepEqual(
+    needsForComposition("Lib-scene-product-reveal-L", { presentation: "screen", screenImage: "capture.png" }),
+    [],
+  );
+  assert.ok(
+    needsForComposition("Lib-scene-product-reveal-L", { presentation: "screen", screenImage: "" }).includes("3d:phone"),
+  );
+});
