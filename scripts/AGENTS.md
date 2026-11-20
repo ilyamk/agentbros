@@ -2,6 +2,8 @@
 
 Last updated: 2026-11-20
 
+Motion renders resolve the composition’s shared assets using its input props.
+
 Production CLIs: [JSON contract](../AGENTS.md). Search: `pnpm commands --query <word>`; flags: `pnpm <alias> --help`.
 
 First-run setup (2026-11-16): `setup.sh` / `setup.ps1` install prerequisites by scope (user-scope with `--apply`, system with `--system`) and hand over to `bootstrap` (plan by default; `--apply` runs repo steps only; writes `out/setup/REPORT.md`). `keys` reports set/unset by goal, never values ([SETUP.md](../SETUP.md)).

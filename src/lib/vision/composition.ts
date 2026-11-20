@@ -15,6 +15,8 @@ import {
 } from "@remotion/renderer";
 import type { VideoConfig } from "remotion";
 import { enableTailwind } from "@remotion/tailwind-v4";
+import { ensureAssetsForCli } from "../shared-assets/cli";
+import { needsForComposition } from "../shared-assets/needs";
 import { CliErrorObject, emitProgress } from "../cli";
 
 export const DEFAULT_ENTRY = "src/index.ts";
@@ -28,6 +30,7 @@ export type CompositionSource = {
   publicDir: string;
   gl: string;
   propsFile?: string;
+  prepareAssets?: boolean;
 };
 type Session = {
   serveUrl: string;
@@ -58,6 +61,7 @@ export async function withComposition<T>(
   if (!existsSync(publicDir))
     throw new CliErrorObject({ code: "FILE_NOT_FOUND", message: `Public directory not found: ${publicDir}` });
   const inputProps = readProps(source.propsFile);
+  if (source.prepareAssets) await ensureAssetsForCli(needsForComposition(source.composition, inputProps));
   const chromiumOptions: ChromiumOptions = { gl: source.gl as ChromiumOptions["gl"] };
   const outDir = mkdtempSync(path.join(tmpdir(), "motion-bundle-"));
   try {
