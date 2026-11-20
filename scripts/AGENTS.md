@@ -1,6 +1,6 @@
 # Scripts — Agent Rules
 
-Last updated: 2026-11-19
+Last updated: 2026-11-20
 
 Motion renders resolve the composition’s shared assets using its input props.
 
