@@ -1,6 +1,6 @@
 # Docs — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 [README.md](../README.md) links the guides.
 
@@ -123,7 +123,7 @@ Contribution and maintenance:
 
 - [dependency licences](dependency-licences.md): generated package notices, declared integration evidence, policy validation, exact-version source-only review, public notices and unresolved ELK review
 
-- [contribution gates](contributing-gates.md): intake, categories, evidence and deterministic checks
+- [contribution gates](contributing-gates.md): intake, categories, evidence and deterministic checks; [branches](branches.md)
 - [context budgets](context-budget.md): offline measurement and instruction hygiene
 - [metrics and API surface](metrics.md): generated inventories and exported contracts
 - [triage](triage.md): PR judging (currently inactive), instruction audits and spend reservations

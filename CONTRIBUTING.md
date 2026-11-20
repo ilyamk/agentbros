@@ -28,7 +28,7 @@ Count additions plus deletions: S ≤300 lines, one category, no new dependency;
 
 ## Follow the loop
 
-1. Fork and clone [ilyamk/agentbros](https://github.com/ilyamk/agentbros); follow [installation](docs/install.md), then run `pnpm bootstrap --apply` (packages, Chromium, pinned Python; nothing outside the folder) and `pnpm preflight`. Without Chromium the render and vision tests in `pnpm check` fail.
+1. Fork and clone [ilyamk/agentbros](https://github.com/ilyamk/agentbros); follow [installation](docs/install.md), then run `pnpm bootstrap --apply` (packages, Chromium, pinned Python; nothing outside the folder) and `pnpm preflight`. Without Chromium the render and vision tests in `pnpm check` fail. Branch from the current `main` as `<category>/<slug>`, for example `fix/console-github-stars` ([branch rules](docs/branches.md)).
 2. Run `pnpm contrib:scout --json`; check existing issues, PRs and claims before choosing work.
 3. Choose S/M/L: take S directly; comment `/claim` on an M opportunity; submit an [L proposal](https://github.com/ilyamk/agentbros/issues/new?template=proposal.yml) and wait for `design-approved`.
 4. Read the area's `AGENTS.md` and one [category card](contrib/categories.json); implement one useful change with relevant tests in British English.

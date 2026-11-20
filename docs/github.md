@@ -1,6 +1,6 @@
 # GitHub administration
 
-Last updated: 2026-11-19
+Last updated: 2026-11-20
 
 This is the deployment guide for the contribution workflows in `ilyamk/agentbros`.
 Local fixture tests establish API and workflow contracts; they do not establish live
@@ -309,6 +309,14 @@ category limits, needs no `design-approved` for protected paths at intake
 (CODEOWNERS review still applies), is never closed by autoclose, and may
 `/unclaim` others' claims; `gh-commands` reads overrides from the default branch.
 The owner's PRs still carry the PR block and one change entry.
+
+The owner works on branches in this repository rather than a fork, under the
+contributor rule `<category>/<slug>` ([branch rules](branches.md));
+`diag/*` and `spike/*` are draft-only. The only long-lived branches are `main`,
+`cla-signatures` and `automation-state`; `bot/*` belongs to the App. The
+repository allows squash merges only, keeps the commit or PR title as the squash
+title (`COMMIT_OR_PR_TITLE`) and deletes head branches on merge (checked
+2026-11-20).
 
 Same-repository Dependabot PRs (`dependabot[bot]`, `dependabot/*` branch) that
 change only `package.json`, `pnpm-lock.yaml` or `.github/workflows/*.yml` take the
