@@ -20,6 +20,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import colour_craft as cc
 import colour_maths as cm
+import colour_profile as cp
 import colour_scopes as sc
 
 FFMPEG = "ffmpeg"
@@ -972,7 +973,156 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
     return {"ok": True, "perShot": True, "shots": shots, "gateStatus": worst, "cuts": bounds[1:-1], "files": {"preview": str(preview)}}
 
 
-def op_check(request: dict[str, Any]) -> dict[str, Any]:
+# ---------------------------------------------------------------------------------------------------------------
+# Target profiles: a reference (or a planned mood) as measurable numbers per shot
+
+
+def shot_bounds_of(path: str, info: dict[str, Any], *, per_shot: bool) -> list[float]:
+    """Shot boundaries in seconds: the thumbnail cuts, or the whole clip."""
+    if info["still"] or info["duration"] <= 0:
+        return [0.0, 0.0]
+    cuts = thumbnail_cuts(path, info) if per_shot else []
+    return [0.0, *cuts, info["duration"]]
+
+
+def shot_times(start: float, end: float, count: int) -> list[float | None]:
+    """`count` sample times inside a shot, 15% away from each cut."""
+    margin = (end - start) * 0.15
+    return [round(start + margin + (end - start - 2 * margin) * (i + 0.5) / count, 4) for i in range(count)]
+
+
+def palette_tile(profile: dict[str, Any], width: int = 480, height: int = 270, title: str = "palette") -> np.ndarray:
+    """Five key colours as bars sized by their share, the scheme, key hues and the mood estimate."""
+    img = sc.canvas(width, height)
+    sc.text(img, title, (10, 22), 0.5, sc.TEXT)
+    x = 10
+    bar_w = width - 20
+    for index, colour in enumerate(profile["palette"]):
+        w = bar_w - (x - 10) if index == len(profile["palette"]) - 1 else max(2, round(bar_w * colour["share"]))
+        rgb = tuple(round(v * 255) for v in colour["rgb"])
+        img[34:150, x : x + w] = rgb
+        x += w
+    c = profile["colour"]
+    lines = [
+        f"scheme {c['scheme']}: " + ", ".join(f"{k['name']} {k['angleDeg']:.0f}" for k in c["keyHues"]) if c["keyHues"] else f"scheme {c['scheme']}",
+        f"chroma P50/P90 {c['chromaP50']:.1f}/{c['chromaP90']:.1f}  cast a/b {c['castA']:+.1f}/{c['castB']:+.1f}",
+        f"mood valence {profile['mood']['valence']:+.2f}  arousal {profile['mood']['arousal']:+.2f}",
+    ]
+    for i, line in enumerate(lines):
+        sc.text(img, line, (10, 178 + 26 * i), 0.44, sc.TEXT)
+    return img
+
+
+def profile_lines(profile: dict[str, Any]) -> list[str]:
+    """Levels and skin of a profile as text-panel lines."""
+    lv = profile["levels"]
+    lines = [
+        "# Levels (IRE)",
+        f"black {lv['blackIre']:.1f}  mid {lv['midIre']:.1f}  white {lv['whiteIre']:.1f}",
+        f"contrast P10-P90 {lv['contrastIre']:.1f}",
+        f"crushed {lv['crushPct']:.2f}%  clipped {lv['clipPct']:.2f}%",
+    ]
+    if "skin" in profile:
+        sk = profile["skin"]
+        lines += ["# Skin (CIELAB)", f"L* {sk['L']:.1f}  C* {sk['C']:.1f}  h {sk['h']:.0f} deg", f"{sk['pixelsPct']:.1f}% of pixels"]
+    else:
+        lines += ["# Skin", "none found"]
+    return lines
+
+
+def wanted_mood(plan: list[dict[str, Any]], t: float) -> dict[str, float] | None:
+    """The planned mood at time t: the last plan entry starting at or before t."""
+    current = None
+    for entry in sorted(plan, key=lambda e: e["at"]):
+        if entry["at"] <= t + 1e-6:
+            current = {"valence": float(entry["valence"]), "arousal": float(entry["arousal"])}
+    return current
+
+
+def op_target(request: dict[str, Any]) -> dict[str, Any]:
+    """Measure a clip shot by shot into a target profile; with a mood plan, solve a bounded per-shot grade toward it."""
+    info = probe(request["input"])
+    bounds = shot_bounds_of(request["input"], info, per_shot=request.get("perShot", True))
+    per = max(int(request.get("frames", 4)), 1)
+    plan = request.get("mood") or []
+    shots, rows = [], []
+    for index in range(len(bounds) - 1):
+        start, end = bounds[index], bounds[index + 1]
+        if not info["still"] and end - start < 0.3:  # noqa: PLR2004 -- slivers are not shots.
+            continue
+        times = [None] if info["still"] else shot_times(start, end, per)
+        media = Media(request["input"], request, times)
+        px, skin = keyed_pixels(media, request.get("skinRegion"), 120_000)
+        measured = cp.measure(px, skin)
+        label = f"shot-{len(shots) + 1:02d}"
+        shot: dict[str, Any] = {"label": label, "start": round(start, 4), "end": round(end, 4), "profile": measured}
+        middle = media.frames[len(media.frames) // 2]
+        shown, shown_profile = middle, measured
+        wanted = wanted_mood(plan, (start + end) / 2) if plan else None
+        if wanted is not None:
+            grade = cp.mood_grade(measured["mood"], wanted, float(request.get("strength", 1.0)))
+            graded = cm.apply_grade(px, grade)
+            planned = cp.measure(graded, skin)
+            gate = cc.gate(px, graded, skin, {"chroma": 1.0, "hueAllowance": 6})
+            shot.update({"measured": measured, "profile": planned, "wantedMood": wanted, "grade": grade, "gate": gate})
+            shown, shown_profile = cm.apply_grade(middle, grade), planned
+        rows.append(
+            [
+                sc.frame_tile(shown, f"{label} {start:.1f}-{end:.1f}s" + ("  (mood plan applied)" if wanted is not None else "")),
+                palette_tile(shown_profile, title="palette and scheme"),
+                sc.vectorscope([cm.rgb_to_ycbcr(shown)[1]], [cm.rgb_to_ycbcr(shown)[2]], [shown], zoom=1.5, size=300),
+                sc.text_panel(profile_lines(shown_profile) + ([f"gate {shot['gate']['status']}"] if "gate" in shot else []), 480, 270, "Target" if wanted is None else "Planned target"),
+            ]
+        )
+        shots.append(shot)
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    sheet = out_dir / "target.png"
+    sc.write_png(str(sheet), sc.grid(rows, (480, 270), f"Colour script / target  {Path(request['input']).name}  ({len(shots)} shot{'s' if len(shots) != 1 else ''})"))
+    return {
+        "ok": True,
+        "duration": info["duration"],
+        "still": info["still"],
+        "shots": shots,
+        "tolerances": {k: list(v) for k, v in cp.TOLERANCES.items()},
+        "input": {"path": request["input"], "probe": info},
+        "files": {"sheet": str(sheet)},
+    }
+
+
+def target_checks(request: dict[str, Any]) -> tuple[list[dict[str, Any]], list[list[np.ndarray]]]:
+    """Every target shot measured on the graded file at the same relative times (skin keyed on --source when given)."""
+    target = request["target"]
+    info = probe(request["input"])
+    scale = info["duration"] / target["duration"] if target["duration"] and not info["still"] else 1.0
+    per = max(int(request.get("frames", 4)), 1)
+    results, rows = [], []
+    for shot in target["shots"]:
+        start, end = shot["start"] * scale, shot["end"] * scale
+        times = [None] if info["still"] else shot_times(start, end, per)
+        graded_media = Media(request["input"], request, times)
+        graded, skin = keyed_pixels(graded_media, None, 120_000)
+        if request.get("source"):
+            ap = graded_media.describe()["activePicture"]
+            source_media = Media(request["source"], {**request, "crop": [ap["x"], ap["y"], ap["width"], ap["height"]]}, times)
+            _, skin = keyed_pixels(source_media, request.get("skinRegion"), 120_000)
+        got = cp.measure(graded, skin)
+        checks = cp.compare(shot["profile"], got)
+        results.append({"label": shot["label"], "start": round(start, 4), "end": round(end, 4), "checks": checks, "profile": got, **cp.verdict(checks)})
+        middle = graded_media.frames[len(graded_media.frames) // 2]
+        lines = [f"[{c['status'].upper():4}] {c['text']}" for c in checks]
+        rows.append(
+            [
+                sc.frame_tile(middle, f"{shot['label']} graded"),
+                palette_tile(got, title="graded palette"),
+                palette_tile(shot["profile"], title="target palette"),
+                sc.text_panel(lines, 640, 270, f"{shot['label']}: {cp.verdict(checks)['status'].upper()}"),
+            ]
+        )
+    return results, rows
+
+
+def gate_check(request: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], float, list[list[np.ndarray]]]:
     """The validation gate on a rendered grade: graded file against its pixel-aligned source, optionally a reference."""
     graded_media = Media(request["input"], request)
     ap = graded_media.describe()["activePicture"]
@@ -994,8 +1144,6 @@ def op_check(request: dict[str, Any]) -> dict[str, Any]:
         verdict["checks"].append({"id": "levels.legal", "status": legal_status, "value": round(outside, 3), "limit": "0.5% outside Y' 16-235", "text": f"{outside:.2f}% of pixels outside legal luma"})
         if outside > 0.5 and verdict["status"] == "pass":  # noqa: PLR2004 -- as above.
             verdict["status"] = "warn"
-    out_dir = Path(request["output"])
-    out_dir.mkdir(parents=True, exist_ok=True)
     rows = []
     for index in range(min(len(graded_media.frames), 3)):
         frame_mask = np.zeros(source_media.frames[index].shape[:2], dtype=bool)
@@ -1011,40 +1159,84 @@ def op_check(request: dict[str, Any]) -> dict[str, Any]:
         if ref_media is not None:
             row.append(sc.frame_tile(ref_media.frames[min(index, len(ref_media.frames) - 1)], "reference"))
         rows.append(row)
-    lines = [f"[{c['status'].upper():4}] {c['text']}" for c in verdict["checks"]]
-    rows.append([sc.text_panel(lines, 640, 300, f"Gate: {verdict['status'].upper()}")])
+    return verdict, policy, round(float(100 * skin.mean()), 3), rows
+
+
+def op_check(request: dict[str, Any]) -> dict[str, Any]:
+    """The gate against the source (and reference), and the profile checks against a target, in one report."""
+    verdict: dict[str, Any] = {"status": "pass", "checks": [], "failed": [], "warnings": []}
+    policy: dict[str, Any] | None = None
+    skin_pct = None
+    rows: list[list[np.ndarray]] = []
+    if request.get("source"):
+        verdict, policy, skin_pct, rows = gate_check(request)
+    shots = []
+    if request.get("target"):
+        shots, target_rows = target_checks(request)
+        rows += target_rows
+        for shot in shots:
+            for check in shot["checks"]:
+                verdict["checks"].append({**check, "id": f"target.{shot['label']}.{check['id']}", "text": f"{shot['label']}: {check['text']}"})
+        merged = cp.verdict(verdict["checks"])
+        verdict.update(merged)
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    lines = [f"[{c['status'].upper():4}] {c['text']}" for c in verdict["checks"] if not c["id"].startswith("target.")]
+    if lines:
+        rows.append([sc.text_panel(lines, 640, 300, f"Gate: {verdict['status'].upper()}")])
     sheet = out_dir / "check.png"
-    sc.write_png(str(sheet), sc.grid(rows, (640, 300), f"colour:check  {Path(request['input']).name}"))
-    (out_dir / "check.json").write_text(json.dumps({"policy": policy, **verdict}, indent=2) + "\n", encoding="utf8")
-    return {"ok": True, **verdict, "policy": policy, "skinPixelsPct": round(float(100 * skin.mean()), 3), "files": {"sheet": str(sheet), "report": str(out_dir / "check.json")}}
+    sc.write_png(str(sheet), sc.grid(rows, (640, 300), f"colour:check  {Path(request['input']).name}  {verdict['status'].upper()}"))
+    report = {"policy": policy, **verdict, **({"shots": shots} if shots else {})}
+    (out_dir / "check.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf8")
+    out = {"ok": True, **verdict, "files": {"sheet": str(sheet), "report": str(out_dir / "check.json")}}
+    if policy is not None:
+        out["policy"] = policy
+    if skin_pct is not None:
+        out["skinPixelsPct"] = skin_pct
+    if shots:
+        out["shots"] = [{k: v for k, v in shot.items() if k != "profile"} for shot in shots]
+    return out
 
 
 def op_looks(request: dict[str, Any]) -> dict[str, Any]:
     """Apply each look with its skin policy held by a solved secondary, gate it, and lay the variants out in one grid."""
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    if request.get("card"):
+        card = out_dir / "test-card.png"
+        sc.write_png(str(card), (cp.synthetic_card() * 255).round().astype(np.uint8))
+        request = {**request, "input": str(card), "crop": "none"}
+        request.pop("at", None)
     media = Media(request["input"], request)
     px, skin = keyed_pixels(media, request.get("skinRegion"), 60_000)
     has_skin = skin.sum() >= cc.MIN_SKIN_PIXELS
     middle = media.frames[len(media.frames) // 2]
-    out_dir = Path(request["output"])
-    out_dir.mkdir(parents=True, exist_ok=True)
     tiles = [sc.frame_tile(middle, "0. source (ungraded)")]
     looks = []
     for index, look in enumerate(request["looks"], start=1):
         grade = look["grade"]
         policy = look.get("skin", {})
+        luts = cm.load_luts(grade)
+        # An imported LUT sits at the input: the skin secondary is solved on its output, so it can hold faces.
+        solve_grade = {k: v for k, v in grade.items() if k != "luts"}
+        lut_only = {"luts": grade["luts"]} if luts else {}
+
+        def before(x: np.ndarray, lut_only: dict[str, Any] = lut_only, luts: dict[str, Any] = luts) -> np.ndarray:
+            return cm.apply_grade(x, lut_only, luts) if luts else x
+
         secondary = None
         if has_skin and policy.get("mode", "hold") == "hold":
-            graded_skin = cm.apply_grade(px[skin], grade)
+            graded_skin = cm.apply_grade(before(px[skin]), solve_grade)
             goal = cc.skin_target(policy, cc.lab_summary(px[skin]), cc.lab_summary(graded_skin))
-            secondary = cc.solve_skin(grade, px[skin], px[~skin], goal, f"skin hold ({look['id']})")
+            secondary = cc.solve_skin(solve_grade, before(px[skin]), before(px[~skin]), goal, f"skin hold ({look['id']})")
             grade = cc.with_secondary(grade, secondary)
-        graded = cm.apply_grade(px, grade)
+        graded = cm.apply_grade(px, grade, luts)
         verdict = cc.gate(px, graded, skin, policy)
         if secondary:
-            verdict["checks"].append(cc.spill_check(cm.apply_grade(px[~skin], look["grade"]), graded[~skin]))
+            verdict["checks"].append(cc.spill_check(cm.apply_grade(px[~skin], look["grade"], luts), graded[~skin]))
             verdict["status"] = max(verdict["status"], verdict["checks"][-1]["status"], key=lambda v: cc.RANK[v])
         still = out_dir / f"{look['id']}.png"
-        image = cm.apply_grade(middle, grade)
+        image = cm.apply_grade(middle, grade, luts)
         sc.write_png(str(still), (np.clip(image, 0, 1) * 255).round().astype(np.uint8))
         tiles.append(sc.frame_tile(image, f"{index}. {look['name']}  [{verdict['status']}]"))
         looks.append({"id": look["id"], "grade": grade, "gate": verdict, "skinSecondary": secondary is not None, "still": str(still)})
@@ -1055,6 +1247,52 @@ def op_looks(request: dict[str, Any]) -> dict[str, Any]:
     grid = out_dir / "looks.png"
     sc.write_png(str(grid), sc.grid(rows, cell, f"Looks on {Path(media.path).name}" + ("  (skin held by a solved secondary)" if has_skin else "  (no skin found)")))
     return {"ok": True, "looks": looks, "skinPixelsPct": round(float(100 * skin.mean()), 3), "input": media.describe(), "files": {"grid": str(grid)}}
+
+
+def op_lut(request: dict[str, Any]) -> dict[str, Any]:
+    """Validate a .cube or convert a HaldCLUT PNG into a normalised .cube, and measure what it does on the test card."""
+    source = Path(request["input"])
+    if source.suffix.lower() == ".cube":
+        lut = cm.read_cube(source)
+        size = lut["size"]
+        values = cm.apply_cube(lut, cm.lattice(size))
+        kind = "cube"
+    else:
+        import cv2
+
+        raw = cv2.imread(str(source), cv2.IMREAD_UNCHANGED)
+        if raw is None or raw.ndim != 3:  # noqa: PLR2004 -- a colour image.
+            fail(f"{source.name}: not a readable colour image")
+        rgb = cv2.cvtColor(raw[..., :3], cv2.COLOR_BGR2RGB).astype(np.float64) / (65535.0 if raw.dtype == np.uint16 else 255.0)
+        side = rgb.shape[1]
+        level = round(side ** (1 / 3))
+        if rgb.shape[0] != side or level**3 != side:
+            fail(f"{source.name}: a HaldCLUT is square with a side of level^3 pixels (512 for level 8), got {rgb.shape[1]}x{rgb.shape[0]}")
+        size = level * level
+        values = rgb.reshape(-1, 3)  # raster order: red fastest, then green, then blue, as .cube.
+        kind = "haldclut"
+    if size > 65:  # noqa: PLR2004 -- larger tables add nothing at video bit depths.
+        fail(f"{source.name}: LUT size {size} is larger than 65")
+    out = Path(request["output"])
+    cm.write_cube(out, values, size, request.get("title", source.stem), request.get("comments", []))
+    card = cp.synthetic_card()
+    graded = cm.apply_cube(cm.read_cube(out), card)
+    lab_a, lab_b = cm.rgb_to_lab(card.reshape(-1, 3)), cm.rgb_to_lab(np.clip(graded, 0, 1).reshape(-1, 3))
+    effect = float(cm.delta_e_2000(lab_a, lab_b).mean())
+    before, after = cp.measure(card.reshape(-1, 3)), cp.measure(np.clip(graded, 0, 1).reshape(-1, 3))
+    preview = out.with_suffix(".png")
+    sc.write_png(
+        str(preview), sc.grid([[sc.frame_tile(card, "test card"), sc.frame_tile(np.clip(graded, 0, 1), f"{out.stem}  mean dE2000 {effect:.1f}")]], (640, 380), f"LUT {out.stem} ({kind}, size {size})")
+    )
+    return {
+        "ok": True,
+        "path": str(out),
+        "kind": kind,
+        "size": size,
+        "meanDeltaE2000": round(effect, 3),
+        "moodShift": {k: round(after["mood"][k] - before["mood"][k], 3) for k in ("valence", "arousal")},
+        "files": {"cube": str(out), "preview": str(preview)},
+    }
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -1395,6 +1633,8 @@ OPERATIONS = {
     "mask": op_mask,
     "check": op_check,
     "looks": op_looks,
+    "target": op_target,
+    "lut": op_lut,
     "selftest": op_selftest,
 }
 

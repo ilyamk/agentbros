@@ -171,6 +171,8 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `colour:grade` - Apply a declarative grade.json or a per-shot timeline to a video or still through a baked 3D LUT, and export the .cube for Resolve ([guide](../docs/colour-grading.md))
 - `colour:check` - Validate a rendered grade against its source (and a reference): skin chroma, hue and yellow drift, clipping, crushed blacks, saturation, legal range ([guide](../docs/colour-grading.md))
 - `colour:looks` - Try genre looks (film, commercial, music video) on a clip with skin held, as a labelled grid with a gate verdict per look and an editable grade each ([guide](../docs/colour-grading.md))
+- `colour:target` - Profile a reference per shot into target.json (levels, palette, scheme, skin, mood) for colour:check --target; with --mood, bounded per-shot grades ([guide](../docs/colour-grading.md))
+- `colour:lut` - Import a .cube or HaldCLUT with its licence on record (unknown licences refused), for colour:looks --lut ([guide](../docs/colour-grading.md))
 - `colour:track` - Track a power window over a moving subject so a grade's shape window follows it, with a preview of every lost frame ([guide](../docs/colour-grading.md))
 - `colour:shots` - Measure every shot of an edit (or several clips) against a hero shot, flag colour drift and optionally solve per-shot match grades ([guide](../docs/colour-grading.md))
 - `vork:setup`, `vork:scene`, `vork:render`, `vork:recipe`, `vork:bridge`, `vork:vfx`, `vork:eval` - Vork local 3D and VFX ([guide](../docs/vork.md)); purposes: `pnpm commands --query vork`

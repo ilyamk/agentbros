@@ -26150,13 +26150,18 @@
         },
         {
           "name": "source",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "name": "strict",
           "required": false,
           "type": "boolean"
+        },
+        {
+          "name": "target",
+          "required": false,
+          "type": "string"
         }
       ],
       "script": "scripts/colour-check.ts",
@@ -26342,6 +26347,11 @@
           "type": "number"
         },
         {
+          "name": "card",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "default": "auto",
           "name": "crop",
           "required": false,
@@ -26391,6 +26401,11 @@
           "type": "string"
         },
         {
+          "name": "lut",
+          "required": false,
+          "type": "string"
+        },
+        {
           "choices": [
             "bt709",
             "bt601",
@@ -26405,6 +26420,11 @@
           "name": "max-width",
           "required": false,
           "type": "number"
+        },
+        {
+          "name": "mood",
+          "required": false,
+          "type": "string"
         },
         {
           "name": "output",
@@ -26429,6 +26449,16 @@
           "name": "skin-region",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "target",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "write-doc",
+          "required": false,
+          "type": "boolean"
         }
       ],
       "script": "scripts/colour-looks.ts",
@@ -26437,6 +26467,78 @@
       "unknown": [
         "`Comma-separated look ids (default: ${DEFAULT_LOOKS.join(\",\")}); see --list`"
       ]
+    },
+    {
+      "alias": "colour:lut",
+      "flags": [
+        {
+          "name": "add",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "attribution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "dir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "evidence",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "force",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "help",
+          "required": false,
+          "short": "h",
+          "type": "boolean"
+        },
+        {
+          "name": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "choices": [
+            "cc0",
+            "cc-by-4.0",
+            "cc-by-sa-4.0",
+            "own",
+            "licensed"
+          ],
+          "name": "licence",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "list",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "project",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "script": "scripts/colour-lut.ts",
+      "section": "render",
+      "spend": "none",
+      "unknown": []
     },
     {
       "alias": "colour:match",
@@ -26726,6 +26828,94 @@
         }
       ],
       "script": "scripts/colour-shots.ts",
+      "section": "render",
+      "spend": "none",
+      "unknown": []
+    },
+    {
+      "alias": "colour:target",
+      "flags": [
+        {
+          "default": "auto",
+          "name": "crop",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "force",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "default": 4,
+          "name": "frames",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "help",
+          "required": false,
+          "short": "h",
+          "type": "boolean"
+        },
+        {
+          "name": "input",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "choices": [
+            "bt709",
+            "bt601",
+            "bt2020"
+          ],
+          "name": "matrix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": 960,
+          "name": "max-width",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "mood",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "output",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "choices": [
+            "limited",
+            "full"
+          ],
+          "name": "range",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "single",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "skin-region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "default": 1,
+          "name": "strength",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "script": "scripts/colour-target.ts",
       "section": "render",
       "spend": "none",
       "unknown": []
@@ -81542,6 +81732,52 @@
             "const": true,
             "type": "boolean"
           },
+          "shots": {
+            "items": {
+              "additionalProperties": {},
+              "properties": {
+                "end": {
+                  "type": "number"
+                },
+                "failed": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "number"
+                },
+                "status": {
+                  "enum": [
+                    "pass",
+                    "warn",
+                    "fail"
+                  ],
+                  "type": "string"
+                },
+                "warnings": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "label",
+                "start",
+                "end",
+                "status",
+                "failed",
+                "warnings"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
           "status": {
             "enum": [
               "pass",
@@ -81564,6 +81800,437 @@
           "warnings",
           "ok",
           "files"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "src/types/colour.ts#ColourProfileSchema",
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": {},
+        "properties": {
+          "colour": {
+            "additionalProperties": {},
+            "properties": {
+              "castA": {
+                "type": "number"
+              },
+              "castB": {
+                "type": "number"
+              },
+              "chromaP50": {
+                "type": "number"
+              },
+              "chromaP90": {
+                "type": "number"
+              },
+              "hueHistogram": {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              "keyHues": {
+                "items": {
+                  "additionalProperties": {},
+                  "properties": {
+                    "angleDeg": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "angleDeg",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "scheme": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "castA",
+              "castB",
+              "chromaP50",
+              "chromaP90",
+              "hueHistogram",
+              "scheme",
+              "keyHues"
+            ],
+            "type": "object"
+          },
+          "levels": {
+            "additionalProperties": {},
+            "properties": {
+              "blackIre": {
+                "type": "number"
+              },
+              "clipPct": {
+                "type": "number"
+              },
+              "contrastIre": {
+                "type": "number"
+              },
+              "crushPct": {
+                "type": "number"
+              },
+              "midIre": {
+                "type": "number"
+              },
+              "whiteIre": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "blackIre",
+              "midIre",
+              "whiteIre",
+              "contrastIre",
+              "crushPct",
+              "clipPct"
+            ],
+            "type": "object"
+          },
+          "mood": {
+            "additionalProperties": false,
+            "properties": {
+              "arousal": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              },
+              "valence": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "valence",
+              "arousal"
+            ],
+            "type": "object"
+          },
+          "palette": {
+            "items": {
+              "additionalProperties": {},
+              "properties": {
+                "lab": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "rgb": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "share": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "lab",
+                "rgb",
+                "share"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "skin": {
+            "additionalProperties": {},
+            "properties": {
+              "C": {
+                "type": "number"
+              },
+              "L": {
+                "type": "number"
+              },
+              "a": {
+                "type": "number"
+              },
+              "b": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "L",
+              "a",
+              "b",
+              "C",
+              "h"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "levels",
+          "colour",
+          "palette",
+          "mood"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "src/types/colour.ts#ColourTargetSchema",
+      "schema": {
+        "$defs": {
+          "__schema0": {
+            "additionalProperties": {},
+            "properties": {
+              "end": {
+                "type": "number"
+              },
+              "label": {
+                "type": "string"
+              },
+              "profile": {
+                "additionalProperties": {},
+                "properties": {
+                  "colour": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "castA": {
+                        "type": "number"
+                      },
+                      "castB": {
+                        "type": "number"
+                      },
+                      "chromaP50": {
+                        "type": "number"
+                      },
+                      "chromaP90": {
+                        "type": "number"
+                      },
+                      "hueHistogram": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
+                      },
+                      "keyHues": {
+                        "items": {
+                          "additionalProperties": {},
+                          "properties": {
+                            "angleDeg": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "angleDeg",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "scheme": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "castA",
+                      "castB",
+                      "chromaP50",
+                      "chromaP90",
+                      "hueHistogram",
+                      "scheme",
+                      "keyHues"
+                    ],
+                    "type": "object"
+                  },
+                  "levels": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "blackIre": {
+                        "type": "number"
+                      },
+                      "clipPct": {
+                        "type": "number"
+                      },
+                      "contrastIre": {
+                        "type": "number"
+                      },
+                      "crushPct": {
+                        "type": "number"
+                      },
+                      "midIre": {
+                        "type": "number"
+                      },
+                      "whiteIre": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "blackIre",
+                      "midIre",
+                      "whiteIre",
+                      "contrastIre",
+                      "crushPct",
+                      "clipPct"
+                    ],
+                    "type": "object"
+                  },
+                  "mood": {
+                    "$ref": "#/$defs/__schema1"
+                  },
+                  "palette": {
+                    "items": {
+                      "additionalProperties": {},
+                      "properties": {
+                        "lab": {
+                          "items": {
+                            "type": "number"
+                          },
+                          "type": "array"
+                        },
+                        "rgb": {
+                          "items": {
+                            "type": "number"
+                          },
+                          "type": "array"
+                        },
+                        "share": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "lab",
+                        "rgb",
+                        "share"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "skin": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "C": {
+                        "type": "number"
+                      },
+                      "L": {
+                        "type": "number"
+                      },
+                      "a": {
+                        "type": "number"
+                      },
+                      "b": {
+                        "type": "number"
+                      },
+                      "h": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "L",
+                      "a",
+                      "b",
+                      "C",
+                      "h"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "levels",
+                  "colour",
+                  "palette",
+                  "mood"
+                ],
+                "type": "object"
+              },
+              "start": {
+                "type": "number"
+              },
+              "wantedMood": {
+                "$ref": "#/$defs/__schema1"
+              }
+            },
+            "required": [
+              "label",
+              "start",
+              "end",
+              "profile"
+            ],
+            "type": "object"
+          },
+          "__schema1": {
+            "additionalProperties": false,
+            "properties": {
+              "arousal": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              },
+              "valence": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "valence",
+              "arousal"
+            ],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": {},
+        "properties": {
+          "duration": {
+            "type": "number"
+          },
+          "shots": {
+            "items": {
+              "$ref": "#/$defs/__schema0"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "source": {
+            "type": "string"
+          },
+          "tolerances": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "version": {
+            "const": 1,
+            "type": "number"
+          }
+        },
+        "required": [
+          "version",
+          "source",
+          "duration",
+          "shots",
+          "tolerances"
         ],
         "type": "object"
       }
@@ -82290,12 +82957,15 @@
             "type": "string"
           },
           "__schema2": {
-            "type": "number"
+            "type": "string"
           },
           "__schema3": {
+            "type": "number"
+          },
+          "__schema4": {
             "anyOf": [
               {
-                "$ref": "#/$defs/__schema2"
+                "$ref": "#/$defs/__schema3"
               },
               {
                 "items": false,
@@ -82303,46 +82973,46 @@
                 "minItems": 3,
                 "prefixItems": [
                   {
-                    "$ref": "#/$defs/__schema2"
+                    "$ref": "#/$defs/__schema3"
                   },
                   {
-                    "$ref": "#/$defs/__schema2"
+                    "$ref": "#/$defs/__schema3"
                   },
                   {
-                    "$ref": "#/$defs/__schema2"
+                    "$ref": "#/$defs/__schema3"
                   }
                 ],
                 "type": "array"
               }
             ]
           },
-          "__schema4": {
+          "__schema5": {
             "items": {
-              "$ref": "#/$defs/__schema5"
+              "$ref": "#/$defs/__schema6"
             },
             "maxItems": 32,
             "minItems": 2,
             "type": "array"
           },
-          "__schema5": {
+          "__schema6": {
             "items": false,
             "maxItems": 2,
             "minItems": 2,
             "prefixItems": [
               {
-                "$ref": "#/$defs/__schema2"
+                "$ref": "#/$defs/__schema3"
               },
               {
-                "$ref": "#/$defs/__schema2"
+                "$ref": "#/$defs/__schema3"
               }
             ],
             "type": "array"
           },
-          "__schema6": {
+          "__schema7": {
             "additionalProperties": false,
             "properties": {
               "hueShift": {
-                "$ref": "#/$defs/__schema2",
+                "$ref": "#/$defs/__schema3",
                 "default": 0
               },
               "hueToward": {
@@ -82354,7 +83024,7 @@
                     "type": "number"
                   },
                   "angle": {
-                    "$ref": "#/$defs/__schema2"
+                    "$ref": "#/$defs/__schema3"
                   }
                 },
                 "required": [
@@ -82381,7 +83051,7 @@
                     "additionalProperties": false,
                     "properties": {
                       "center": {
-                        "$ref": "#/$defs/__schema2"
+                        "$ref": "#/$defs/__schema3"
                       },
                       "softness": {
                         "default": 10,
@@ -82404,10 +83074,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "max": {
-                        "$ref": "#/$defs/__schema2"
+                        "$ref": "#/$defs/__schema3"
                       },
                       "min": {
-                        "$ref": "#/$defs/__schema2"
+                        "$ref": "#/$defs/__schema3"
                       },
                       "softness": {
                         "default": 0.05,
@@ -82425,10 +83095,10 @@
                     "additionalProperties": false,
                     "properties": {
                       "max": {
-                        "$ref": "#/$defs/__schema2"
+                        "$ref": "#/$defs/__schema3"
                       },
                       "min": {
-                        "$ref": "#/$defs/__schema2"
+                        "$ref": "#/$defs/__schema3"
                       },
                       "softness": {
                         "default": 0.05,
@@ -82464,7 +83134,7 @@
             ],
             "type": "object"
           },
-          "__schema7": {
+          "__schema8": {
             "additionalProperties": false,
             "properties": {
               "path": {
@@ -82505,6 +83175,15 @@
             ],
             "type": "string"
           },
+          "finish": {
+            "enum": [
+              "none",
+              "clean",
+              "filmic",
+              "tactile"
+            ],
+            "type": "string"
+          },
           "grade": {
             "additionalProperties": false,
             "properties": {
@@ -82532,35 +83211,35 @@
                 "additionalProperties": false,
                 "properties": {
                   "b": {
-                    "$ref": "#/$defs/__schema4"
+                    "$ref": "#/$defs/__schema5"
                   },
                   "g": {
-                    "$ref": "#/$defs/__schema4"
+                    "$ref": "#/$defs/__schema5"
                   },
                   "master": {
-                    "$ref": "#/$defs/__schema4"
+                    "$ref": "#/$defs/__schema5"
                   },
                   "r": {
-                    "$ref": "#/$defs/__schema4"
+                    "$ref": "#/$defs/__schema5"
                   }
                 },
                 "type": "object"
               },
               "exposure": {
-                "$ref": "#/$defs/__schema2"
+                "$ref": "#/$defs/__schema3"
               },
               "gain": {
-                "$ref": "#/$defs/__schema3"
+                "$ref": "#/$defs/__schema4"
               },
               "gamma": {
-                "$ref": "#/$defs/__schema3"
+                "$ref": "#/$defs/__schema4"
               },
               "lift": {
-                "$ref": "#/$defs/__schema3"
+                "$ref": "#/$defs/__schema4"
               },
               "luts": {
                 "items": {
-                  "$ref": "#/$defs/__schema7"
+                  "$ref": "#/$defs/__schema8"
                 },
                 "maxItems": 4,
                 "type": "array"
@@ -82599,7 +83278,7 @@
                 "type": "string"
               },
               "offset": {
-                "$ref": "#/$defs/__schema3"
+                "$ref": "#/$defs/__schema4"
               },
               "saturation": {
                 "maximum": 4,
@@ -82608,7 +83287,7 @@
               },
               "secondaries": {
                 "items": {
-                  "$ref": "#/$defs/__schema6"
+                  "$ref": "#/$defs/__schema7"
                 },
                 "maxItems": 16,
                 "type": "array"
@@ -82638,11 +83317,11 @@
                 "additionalProperties": false,
                 "properties": {
                   "temperature": {
-                    "$ref": "#/$defs/__schema2",
+                    "$ref": "#/$defs/__schema3",
                     "default": 0
                   },
                   "tint": {
-                    "$ref": "#/$defs/__schema2",
+                    "$ref": "#/$defs/__schema3",
                     "default": 0
                   }
                 },
@@ -82658,6 +83337,49 @@
           "intent": {
             "type": "string"
           },
+          "lut": {
+            "additionalProperties": false,
+            "properties": {
+              "attribution": {
+                "type": "string"
+              },
+              "licence": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "licence",
+              "source"
+            ],
+            "type": "object"
+          },
+          "mood": {
+            "additionalProperties": false,
+            "properties": {
+              "arousal": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              },
+              "valence": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "valence",
+              "arousal"
+            ],
+            "type": "object"
+          },
           "moves": {
             "items": {
               "$ref": "#/$defs/__schema0"
@@ -82667,6 +83389,34 @@
           },
           "name": {
             "type": "string"
+          },
+          "palette": {
+            "additionalProperties": false,
+            "properties": {
+              "keyHues": {
+                "items": {
+                  "$ref": "#/$defs/__schema2"
+                },
+                "maxItems": 4,
+                "type": "array"
+              },
+              "scheme": {
+                "enum": [
+                  "neutral",
+                  "monochrome",
+                  "analogous",
+                  "complementary",
+                  "split-complementary",
+                  "triadic"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "scheme",
+              "keyHues"
+            ],
+            "type": "object"
           },
           "risks": {
             "items": {
@@ -82724,6 +83474,9 @@
           "moves",
           "skin",
           "risks",
+          "mood",
+          "palette",
+          "finish",
           "grade"
         ],
         "type": "object"
@@ -83216,6 +83969,44 @@
       }
     },
     {
+      "id": "src/types/colour.ts#MoodPlanSchema",
+      "schema": {
+        "$defs": {
+          "__schema0": {
+            "additionalProperties": false,
+            "properties": {
+              "arousal": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              },
+              "at": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "valence": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "valence",
+              "arousal",
+              "at"
+            ],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "items": {
+          "$ref": "#/$defs/__schema0"
+        },
+        "minItems": 1,
+        "type": "array"
+      }
+    },
+    {
       "id": "src/types/colour.ts#QualifierSchema",
       "schema": {
         "$defs": {
@@ -83672,6 +84463,263 @@
             "type": "boolean"
           }
         },
+        "type": "object"
+      }
+    },
+    {
+      "id": "src/types/colour.ts#TargetResultSchema",
+      "schema": {
+        "$defs": {
+          "__schema0": {
+            "additionalProperties": {},
+            "properties": {
+              "end": {
+                "type": "number"
+              },
+              "label": {
+                "type": "string"
+              },
+              "profile": {
+                "additionalProperties": {},
+                "properties": {
+                  "colour": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "castA": {
+                        "type": "number"
+                      },
+                      "castB": {
+                        "type": "number"
+                      },
+                      "chromaP50": {
+                        "type": "number"
+                      },
+                      "chromaP90": {
+                        "type": "number"
+                      },
+                      "hueHistogram": {
+                        "items": {
+                          "type": "number"
+                        },
+                        "type": "array"
+                      },
+                      "keyHues": {
+                        "items": {
+                          "additionalProperties": {},
+                          "properties": {
+                            "angleDeg": {
+                              "type": "number"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "angleDeg",
+                            "name"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "scheme": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "castA",
+                      "castB",
+                      "chromaP50",
+                      "chromaP90",
+                      "hueHistogram",
+                      "scheme",
+                      "keyHues"
+                    ],
+                    "type": "object"
+                  },
+                  "levels": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "blackIre": {
+                        "type": "number"
+                      },
+                      "clipPct": {
+                        "type": "number"
+                      },
+                      "contrastIre": {
+                        "type": "number"
+                      },
+                      "crushPct": {
+                        "type": "number"
+                      },
+                      "midIre": {
+                        "type": "number"
+                      },
+                      "whiteIre": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "blackIre",
+                      "midIre",
+                      "whiteIre",
+                      "contrastIre",
+                      "crushPct",
+                      "clipPct"
+                    ],
+                    "type": "object"
+                  },
+                  "mood": {
+                    "$ref": "#/$defs/__schema1"
+                  },
+                  "palette": {
+                    "items": {
+                      "additionalProperties": {},
+                      "properties": {
+                        "lab": {
+                          "items": {
+                            "type": "number"
+                          },
+                          "type": "array"
+                        },
+                        "rgb": {
+                          "items": {
+                            "type": "number"
+                          },
+                          "type": "array"
+                        },
+                        "share": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "lab",
+                        "rgb",
+                        "share"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "skin": {
+                    "additionalProperties": {},
+                    "properties": {
+                      "C": {
+                        "type": "number"
+                      },
+                      "L": {
+                        "type": "number"
+                      },
+                      "a": {
+                        "type": "number"
+                      },
+                      "b": {
+                        "type": "number"
+                      },
+                      "h": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "L",
+                      "a",
+                      "b",
+                      "C",
+                      "h"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "levels",
+                  "colour",
+                  "palette",
+                  "mood"
+                ],
+                "type": "object"
+              },
+              "start": {
+                "type": "number"
+              },
+              "wantedMood": {
+                "$ref": "#/$defs/__schema1"
+              }
+            },
+            "required": [
+              "label",
+              "start",
+              "end",
+              "profile"
+            ],
+            "type": "object"
+          },
+          "__schema1": {
+            "additionalProperties": false,
+            "properties": {
+              "arousal": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              },
+              "valence": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "valence",
+              "arousal"
+            ],
+            "type": "object"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": {},
+        "properties": {
+          "duration": {
+            "type": "number"
+          },
+          "files": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "ok": {
+            "const": true,
+            "type": "boolean"
+          },
+          "shots": {
+            "items": {
+              "$ref": "#/$defs/__schema0"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "tolerances": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "ok",
+          "duration",
+          "shots",
+          "tolerances",
+          "files"
+        ],
         "type": "object"
       }
     },

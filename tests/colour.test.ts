@@ -1,4 +1,4 @@
-/** Colour grading: grade contracts, the worker's colour science, scopes, compare, match, grade, shots and windows. */
+/** Colour grading: grade contracts, colour science, scopes, compare, match, grade, shots, windows, targets, looks and LUTs. */
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -9,8 +9,10 @@ import { after, test } from "node:test";
 import { z } from "zod";
 import { parseCrop } from "../src/lib/colour/args";
 import { decodeTags, fillSegments, loadTimeline, normaliseGrade } from "../src/lib/colour/grade";
+import { LOOKS, looksForMood } from "../src/lib/colour/looks";
+import { formatMarkdown, looksDoc } from "../src/lib/colour/looks-doc";
 import { runColourWorker } from "../src/lib/colour/worker";
-import { GradeSchema } from "../src/types/colour";
+import { ColourTargetSchema, GradeSchema } from "../src/types/colour";
 
 const repo = path.resolve(import.meta.dirname, "..");
 const hasUv = spawnSync(process.env.COLOUR_UV ?? "uv", ["--version"]).status === 0;
@@ -437,4 +439,132 @@ test("looks: every preset applies, holds skin and reports a gate; the list expla
   const hash = sha(grid);
   run();
   assert.equal(sha(grid), hash, "the grid is deterministic");
+});
+
+test(
+  "target: a reference becomes per-shot profiles; the same clip passes, an oversaturated grade fails",
+  worker,
+  () => {
+    const dir = mkdtempSync(path.join(work, "target-"));
+    const warm = encode(path.join(dir, "warm.mp4"), "gradients=s=320x180:c0=0x2a1a10:c1=0xe8c8a0:r=25", 1.5);
+    const cool = encode(path.join(dir, "cool.mp4"), "gradients=s=320x180:c0=0x0a1a2a:c1=0x90b8e0:r=25", 1.5);
+    const reference = path.join(dir, "reference.mp4");
+    ffmpeg(
+      "-i",
+      warm,
+      "-i",
+      cool,
+      "-filter_complex",
+      "[0:v][1:v]concat=n=2:v=1[v]",
+      "-map",
+      "[v]",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "4",
+      ...TAGS,
+      reference,
+    );
+    const out = path.join(dir, "target");
+    const run = () => cli("colour-target.ts", ["--input", reference, "--output", out, "--force"]);
+    run();
+    const targetFile = path.join(out, "target.json");
+    const target = ColourTargetSchema.parse(JSON.parse(readFileSync(targetFile, "utf8")));
+    assert.equal(target.shots.length, 2, "the cut between the warm and the cool shot is found");
+    assert.ok(target.shots[0]!.profile.colour.warmth > target.shots[1]!.profile.colour.warmth);
+    assert.equal(target.shots[0]!.profile.palette.length, 5);
+    const hash = sha(targetFile);
+    run();
+    assert.equal(sha(targetFile), hash, "profiles and palettes are deterministic");
+    const same = cli("colour-check.ts", [
+      "--input",
+      reference,
+      "--target",
+      targetFile,
+      "--output",
+      path.join(dir, "same"),
+    ]);
+    assert.equal(same.metadata!.status, "pass", JSON.stringify(same.metadata!.shots));
+    const loud = path.join(dir, "loud.mp4");
+    ffmpeg("-i", reference, "-vf", "eq=saturation=2.6:contrast=1.3", "-c:v", "libx264", "-crf", "4", ...TAGS, loud);
+    const check = cli("colour-check.ts", ["--input", loud, "--target", targetFile, "--output", path.join(dir, "loud")]);
+    assert.equal(check.metadata!.status, "fail");
+    assert.ok(
+      (check.metadata!.failed as string[]).some((text) => /chroma/.test(text)),
+      String(check.metadata!.failed),
+    );
+  },
+);
+
+test("mood plan: a higher arousal raises saturation within bounds, gated, as a per-shot timeline", worker, () => {
+  const dir = mkdtempSync(path.join(work, "mood-"));
+  const clip = encode(path.join(dir, "clip.mp4"), "gradients=s=320x180:c0=0x203040:c1=0xa08060:r=25", 2);
+  const out = path.join(dir, "plan");
+  const result = cli("colour-target.ts", ["--input", clip, "--output", out, "--single", "--mood", "0:0.2,0.8"]);
+  const shots = result.metadata!.shots as { mood: { arousal: number }; gate: string }[];
+  const measured = (
+    JSON.parse(readFileSync(path.join(out, "target.json"), "utf8")) as { shots: { wantedMood: unknown }[] }
+  ).shots[0]!;
+  assert.deepEqual(measured.wantedMood, { valence: 0.2, arousal: 0.8 });
+  assert.notEqual(shots[0]!.gate, "fail");
+  const grade = GradeSchema.parse(JSON.parse(readFileSync(path.join(out, "grades", "shot-01.json"), "utf8")));
+  assert.ok(grade.saturation! > 1 && grade.saturation! <= 1.25, `bounded saturation, got ${grade.saturation}`);
+  assert.ok(existsSync(path.join(out, "timeline.json")));
+});
+
+test(
+  "looks by mood and imported LUTs: nearest looks first; a LUT needs its licence and runs as a held look",
+  worker,
+  () => {
+    const calm = looksForMood({ valence: 0.7, arousal: -0.3 }, 3).map((look) => look.id);
+    assert.ok(calm.includes("beauty-soft"), calm.join(","));
+    const dir = mkdtempSync(path.join(work, "lut-"));
+    const hald = path.join(dir, "warm.png");
+    ffmpeg("-f", "lavfi", "-i", "haldclutsrc=8", "-frames:v", "1", "-vf", "colorchannelmixer=rr=1.08:bb=0.85", hald);
+    const luts = path.join(dir, "luts");
+    const refused = spawnSync(
+      process.execPath,
+      [
+        path.join(repo, "node_modules/tsx/dist/cli.mjs"),
+        path.join(repo, "scripts/colour-lut.ts"),
+        "--dir",
+        luts,
+        "--add",
+        hald,
+      ],
+      { encoding: "utf8", cwd: repo, env: { ...process.env, AGENTBROS_EVENTS: "off" } },
+    );
+    assert.match(refused.stdout, /unknown licence is not imported/);
+    const added = cli("colour-lut.ts", [
+      "--dir",
+      luts,
+      "--add",
+      hald,
+      "--id",
+      "warm",
+      "--licence",
+      "own",
+      "--source",
+      "test",
+    ]);
+    assert.equal(added.metadata!.size, 64);
+    assert.ok((added.metadata!.moodShift as { valence: number }).valence > 0, "a warm LUT lifts valence");
+    const looks = cli("colour-looks.ts", [
+      "--card",
+      "--output",
+      path.join(dir, "card"),
+      "--lut",
+      path.join(luts, "warm.cube"),
+    ]);
+    const summary = looks.metadata!.looks as { id: string; gate: string; lut?: { licence: string } }[];
+    assert.equal(summary[0]!.id, "lut-warm");
+    assert.equal(summary[0]!.lut?.licence, "own");
+    assert.notEqual(summary[0]!.gate, "fail");
+  },
+);
+
+test("the Looks & colour library page is generated from the looks", async () => {
+  const doc = path.join(repo, "docs/library/looks.md");
+  assert.equal(readFileSync(doc, "utf8"), await formatMarkdown(looksDoc(), doc), "run pnpm colour:looks --write-doc");
+  for (const look of LOOKS) assert.ok(readFileSync(doc, "utf8").includes(`\`${look.id}\``), look.id);
 });

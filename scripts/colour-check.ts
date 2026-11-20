@@ -1,16 +1,17 @@
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { CliErrorObject, ensureFfmpeg, parseArgs, requireFile, runScript } from "../src/lib/cli";
 import { DECODE_SPECS, decodeRequest, frameCount, parseCrop, parseRegion } from "../src/lib/colour/args";
 import { runColourWorker } from "../src/lib/colour/worker";
-import { CheckResultSchema } from "../src/types/colour";
+import { CheckResultSchema, ColourTargetSchema } from "../src/types/colour";
 
 const SPECS = [
   { name: "input", required: true, description: "The graded file to validate" },
   {
     name: "source",
-    required: true,
-    description: "The ungraded file it was rendered from (same size and timing): skin is keyed here",
+    description: "The ungraded file it was rendered from (same size and timing): skin is keyed here; runs the gate",
   },
+  { name: "target", description: "target.json from colour:target: check every shot against its profile" },
   { name: "reference", description: "Also test how close the grade came to this clip or still" },
   { name: "output", required: true, description: "Directory for check.png and check.json" },
   { name: "frames", type: "number", default: 6, description: "Frames sampled across the clip" },
@@ -31,7 +32,13 @@ const SPECS = [
 void runScript(async () => {
   const args = parseArgs(SPECS);
   requireFile(args.input!);
-  requireFile(args.source!);
+  if (!args.source && !args.target)
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: "Pass --source (the gate), --target, or both" });
+  if (args.source) requireFile(args.source);
+  if (args.target) requireFile(args.target);
+  if (args.reference && !args.source)
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: "--reference needs --source" });
+  const target = args.target ? ColourTargetSchema.parse(JSON.parse(readFileSync(args.target, "utf8"))) : undefined;
   if (args.reference) requireFile(args.reference);
   ensureFfmpeg();
   const policy =
@@ -42,7 +49,8 @@ void runScript(async () => {
     "check",
     {
       input: path.resolve(args.input!),
-      source: path.resolve(args.source!),
+      ...(args.source ? { source: path.resolve(args.source) } : {}),
+      ...(target ? { target } : {}),
       ...(args.reference ? { reference: path.resolve(args.reference) } : {}),
       output: path.resolve(args.output!),
       frames: frameCount(args.frames, 6),
@@ -69,6 +77,7 @@ void runScript(async () => {
       warnings: result.warnings,
       checks: result.checks,
       sheet: result.files.sheet,
+      ...(result.shots ? { shots: result.shots } : {}),
       apiCalls: 0,
     },
   };

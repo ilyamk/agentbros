@@ -241,7 +241,77 @@ const GateSchema = z.looseObject({
 export const CheckResultSchema = GateSchema.extend({
   ok: z.literal(true),
   files: z.record(z.string(), z.string()),
+  /** With --target: each shot's profile checks and verdict. */
+  shots: z
+    .array(
+      z.looseObject({
+        label: z.string(),
+        start: z.number(),
+        end: z.number(),
+        status: z.enum(["pass", "warn", "fail"]),
+        failed: z.array(z.string()),
+        warnings: z.array(z.string()),
+      }),
+    )
+    .optional(),
 });
+
+const MoodSchema = z.strictObject({ valence: z.number().min(-1).max(1), arousal: z.number().min(-1).max(1) });
+
+/** One shot's measurable colour: levels, cast, saturation, hue distribution and scheme, palette, skin, mood. */
+export const ColourProfileSchema = z.looseObject({
+  levels: z.looseObject({
+    blackIre: z.number(),
+    midIre: z.number(),
+    whiteIre: z.number(),
+    contrastIre: z.number(),
+    crushPct: z.number(),
+    clipPct: z.number(),
+  }),
+  colour: z.looseObject({
+    castA: z.number(),
+    castB: z.number(),
+    chromaP50: z.number(),
+    chromaP90: z.number(),
+    warmth: z.number(),
+    hueHistogram: z.array(z.number()),
+    scheme: z.string(),
+    keyHues: z.array(z.looseObject({ angleDeg: z.number(), name: z.string() })),
+  }),
+  palette: z.array(z.looseObject({ lab: z.array(z.number()), rgb: z.array(z.number()), share: z.number() })),
+  mood: MoodSchema,
+  skin: z.looseObject({ L: z.number(), a: z.number(), b: z.number(), C: z.number(), h: z.number() }).optional(),
+});
+
+/** `target.json`: what colour:check --target holds a grade to, shot by shot (relative times scale to the input). */
+export const ColourTargetSchema = z.looseObject({
+  version: z.literal(1),
+  source: z.string(),
+  duration: z.number(),
+  shots: z
+    .array(
+      z.looseObject({
+        label: z.string(),
+        start: z.number(),
+        end: z.number(),
+        profile: ColourProfileSchema,
+        wantedMood: MoodSchema.optional(),
+      }),
+    )
+    .min(1),
+  tolerances: z.record(z.string(), z.array(z.number())),
+});
+export type ColourTarget = z.infer<typeof ColourTargetSchema>;
+
+export const TargetResultSchema = z.looseObject({
+  ok: z.literal(true),
+  duration: z.number(),
+  shots: ColourTargetSchema.shape.shots,
+  tolerances: z.record(z.string(), z.array(z.number())),
+  files: z.record(z.string(), z.string()),
+});
+
+export const MoodPlanSchema = z.array(MoodSchema.extend({ at: z.number().min(0) })).min(1);
 
 export const MatchShotsResultSchema = z.looseObject({
   ok: z.literal(true),
@@ -291,6 +361,19 @@ export const LookSchema = z.strictObject({
   skin: SkinPolicySchema,
   /** What goes wrong when it is pushed too far or used on the wrong material. */
   risks: z.array(z.string()).min(1),
+  /** The mood the look leans toward, by convention (valence: bright and warm up; arousal: saturated and contrasty up). */
+  mood: MoodSchema,
+  /** The palette the look builds: scheme and its key hues (vectorscope degrees). */
+  palette: z.strictObject({
+    scheme: z.enum(["neutral", "monochrome", "analogous", "complementary", "split-complementary", "triadic"]),
+    keyHues: z.array(z.string()).max(4),
+  }),
+  /** The film finish it pairs with in Remotion (FilmFinish preset), applied after the grade; none for clean video. */
+  finish: z.enum(["none", "clean", "filmic", "tactile"]),
+  /** Imported licensed LUT behind the look (colour:lut), with its licence. */
+  lut: z
+    .strictObject({ path: z.string(), licence: z.string(), source: z.string(), attribution: z.string().optional() })
+    .optional(),
   grade: BaseGradeSchema,
 });
 export type Look = z.infer<typeof LookSchema>;

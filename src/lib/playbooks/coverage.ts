@@ -99,6 +99,8 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "colour:track": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
   "colour:check": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
   "colour:looks": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:lut": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:target": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
 
   "viz:list": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
   "viz:prepare": "Prepared charts and diagrams across playbooks; docs/visualisations.md",

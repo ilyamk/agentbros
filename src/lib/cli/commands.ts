@@ -285,6 +285,34 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   g(
     "docs/colour-grading.md",
     k(
+      [...COLOUR_KEYWORDS, "target", "palette", "mood", "colour script", "палитра", "настроение", "таргет"],
+      c(
+        "colour:target",
+        "colour-target.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Profile a reference per shot into target.json (levels, palette, scheme, skin, mood) for colour:check --target; with --mood, bounded per-shot grades",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "lut", "haldclut", "licence", "import"],
+      c(
+        "colour:lut",
+        "colour-lut.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Import a .cube or HaldCLUT with its licence on record (unknown licences refused), for colour:looks --lut",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
       [...COLOUR_KEYWORDS, "power window", "tracking", "mask", "маска", "трекинг"],
       c(
         "colour:track",

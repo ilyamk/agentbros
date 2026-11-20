@@ -12,7 +12,18 @@ const WORKER = path.resolve(import.meta.dirname, "../../../scripts/workers/colou
 const TIMEOUT_MS = 1_800_000;
 
 export type ColourOperation =
-  "scopes" | "compare" | "match" | "shots" | "bake" | "track" | "mask" | "check" | "looks" | "selftest";
+  | "scopes"
+  | "compare"
+  | "match"
+  | "shots"
+  | "bake"
+  | "track"
+  | "mask"
+  | "check"
+  | "looks"
+  | "target"
+  | "lut"
+  | "selftest";
 
 /** Run one worker operation and validate its answer. `COLOUR_UV` overrides the uv executable (tests). */
 export function runColourWorker<T>(operation: ColourOperation, request: unknown, schema: z.ZodType<T>): T {
