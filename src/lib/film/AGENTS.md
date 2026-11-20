@@ -47,11 +47,9 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 - `tournament-decided` (build): each hero shot is decided and its winner is what build.json mounts (`composition`, or `shots.<id>` {composition, props}, props compared by hash now). Advisory in promo. A fresh critic judges the packets, never the maker. A decision becomes a memory `observation` (function and winning `--techniques` name), no project scope, so the same win in another film counts as a sighting.
 - plan:check `signature-element` (bespoke films but replicas; advisory in promo) and `cross-film-repetition` (hero blocks and props hashes against the last two other films in `memory/usage`, written by `library:usage` and by film:done on build) are `FILM_GATE_DIMENSIONS`: they block by failing and stay out of the risk mean.
 
-At an opted-in step, next and the owner brief include the exact experiment instruction. See [project experiments](../../../docs/experiments.md).
-
 ## Rules
 
-- The chain is data: change steps in `FILM_CHAIN` (read by `film:next`, `film:brief`), not in an agent or skill.
+- Change steps in `FILM_CHAIN`; see [project experiments](../../../docs/experiments.md) for step opt-ins.
 - Only the user's own words approve (`film:approve --answer`). Approvals are bound to the hashes of the step's outputs; a changed artefact reopens the gate.
 - Delivery of a bespoke film (no `project.json`) goes through `src/lib/delivery/bespoke.ts`: film:render publishes delivery's receipt for a full render of build.json's composition to `out/<id>/film.mp4`; delivery needs `manualApproval`, never chain approvals ([delivery](../../../docs/delivery.md), "Bespoke films").
 - `--proxy benchmark` advances a benchmark run; never the user's approval (`userApprovalEvents` drops it), refused on `human` (`PROXY_REFUSED`), never authorises spending.
