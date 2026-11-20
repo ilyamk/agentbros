@@ -58,6 +58,30 @@ export const fixtureHooks = HooksStatusSchema.parse(hooksStatus);
 /** The same recording at the render step (WP12): every footage panel with material; replaces the approval view. */
 const footageRenderView: ProjectView = ProjectViewSchema.parse(footageRender);
 
+/**
+ * The step rail concept preview (docs/console-steps.md): a `project:new` project on the timeline route, so its rail
+ * shows the template finish (render → editorial QA → delivery check → done) the user saw on a model-generation job.
+ * Open with `?fixture=view-step-rail&rail=all` (add `&railData=every` or `simulate` for every status or a run).
+ */
+const stepRailView: ProjectView = (() => {
+  const { recipe: _recipe, ...base } = routeViews.recipe;
+  return ProjectViewSchema.parse({
+    ...base,
+    project: { ...base.project, id: "step-rail-demo", route: "timeline", title: "Step rail concepts" },
+    steps: [
+      { id: "render", title: "Render", status: "running", reasons: ["Render the project as it stands."] },
+      { id: "qa", title: "Editorial QA", status: "pending", reasons: [] },
+      { id: "delivery", title: "Delivery check", status: "pending", reasons: [] },
+      { id: "done", title: "Done", status: "pending", reasons: [] },
+    ],
+    current: {
+      ...base.current!,
+      step: "render",
+      next: { ...base.current!.next, argv: ["pnpm", "render", "--project", "step-rail-demo"] },
+    },
+  });
+})();
+
 /** Fixture names for `?fixture=`: the file basenames, plus `cards` (all seven card kinds). */
 export const FIXTURES = {
   "view-film-build": fixtureViews.filmBuild,
@@ -70,6 +94,7 @@ export const FIXTURES = {
   "view-replica": routeViews.replica,
   "view-recipe": routeViews.recipe,
   "view-campaign": routeViews.campaign,
+  "view-step-rail": stepRailView,
 } as const satisfies Record<string, ProjectView>;
 export type FixtureName = keyof typeof FIXTURES | "projects-response";
 
