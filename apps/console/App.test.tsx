@@ -97,7 +97,7 @@ describe("console shell", () => {
     expect(client.control).toHaveBeenCalledWith("promo-acme", { state: "paused", answer: "Pause the project." });
     await user.click(within(dialog).getByRole("button", { name: "Pause" }));
     await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
-    expect(await screen.findByText("Paused", { selector: "span" })).toBeTruthy();
+    expect(await screen.findByText("Paused by you", { selector: "span" })).toBeTruthy();
   });
 
   it("switches the language from Settings; agent text stays as written", async () => {

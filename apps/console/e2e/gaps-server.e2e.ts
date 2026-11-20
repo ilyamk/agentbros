@@ -99,6 +99,7 @@ test("raise the ceiling, stop and cancel one paid job, install hooks: over the r
   expect(policy).toContain('"channel": "console"');
 
   // A9: stop lists both in-flight jobs; only the reserved one can be cancelled, on its own confirmation.
+  await page.locator("[data-header-more]").click();
   await page.locator('[data-control="stopped"]').click();
   const stop = page.getByRole("dialog", { name: "Stop the project" });
   await stop.getByRole("button", { name: "Stop" }).click();

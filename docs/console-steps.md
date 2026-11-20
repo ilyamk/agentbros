@@ -1,6 +1,6 @@
 # Console project page: header, step rail and agent control
 
-Status: the step rail is shipped (2026-11-20, the user's pick, concept A of three). The project header has three concepts on preview, pending the user's pick. The agent-control part is a proposal.
+Status: the step rail is shipped (2026-11-20, the user's pick, concept A of three). The project header is shipped too (2026-11-20, the user's pick, concept C of three). The agent-control part is a proposal.
 
 The project canvas's step rail had three problems the user named: too little spacing, labels wrapping onto two lines, and no way to tell how many steps there are, where they come from or what each icon means. Three concepts were shown side by side; the user chose A ("Orbit"), and the other two and the old rail were removed.
 
@@ -31,25 +31,24 @@ The header is the first thing read on every project page (Canvas, History, Timel
 
 Problems with today's two bands: everything has the same weight (status badges, settings chips and actions look alike); the consequential Stop sits beside Pause; nothing says what waits for the user; the live state is split across three elements; on a phone the controls wrap into a pile.
 
-### Rules every concept follows
+### Rules the header follows
 
 - **One fact, one element, one look.** Status is text with a dot or marker, never a button; actions are buttons; settings live behind "more".
-- **The fitting action only.** Pause while running, Resume while paused or stopped (filled, the one thing to do); Stop and "Change autonomy and budget" in the ⋯ menu, Stop in red after a separator. Both still open the existing confirm dialogs (`ControlDialog`, `AutonomyDialog`).
+- **The fitting action only.** Pause while running, Resume while paused or stopped (filled, the one thing to do); Stop in red in the ⋯ menu; autonomy is a quiet text setting beside the spend ("Change autonomy and budget"). Both still open the existing confirm dialogs (`ControlDialog`, `AutonomyDialog`).
 - **"Waits for you" is a first-class pill** (amber, with the count): it scrolls to and focuses the first decision card on the canvas, or opens the canvas from other pages. Hidden when nothing waits.
 - **Same language as the rail.** The current step uses the rail's marker (orbit, pulse, check …) and "Step n of N".
 - **Money as a proportion.** Spent, "of" the ceiling, and a thin bar that turns amber past 80 %.
 - **Responsive by priority.** On a phone: title, live state, waiting, money, the fitting action and the tabs. Studio and the editing table are desktop tools and appear from the `md` breakpoint.
 - **Micro-motion with meaning, off under reduced motion.** The live dot breathes only while an agent works; the live text and the waiting count pop or slide in when they change; the money and progress bars ease to their new width.
 
-### The three concepts (preview: `?header=current|a|b|c`)
+### The shipped header: C · Live strip
 
-| Concept             | Shape                                                                                                                                                                                                                                                           | Best for                                         |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| **A · Command bar** | Two quiet rows. Row 1: title, meta and the live line (dot, agent, time) on the left; waiting pill, spend meter, Pause and ⋯ on the right. Row 2: tabs, the current step with the rail's marker and "Step n of N", tools on the right.                           | Dense and calm; a laptop beside the chat         |
-| **B · Status hero** | A summary: meta in small caps over a large title, the current step with a progress bar and the live line, three tiles on the right (waiting, budget, autonomy) above the actions; tabs and tools below.                                                         | Checking in on a long run; explains the most     |
-| **C · Live strip**  | A thin full-width strip carries only the live state, tinted by it (violet working, grey idle, amber paused, red stopped), with the current step, waiting pill, Resume/Pause and ⋯; below, the title with meta and spend, a segmented page switch and the tools. | Reading the state at a glance; the most distinct |
+Three concepts were shown side by side: A · Command bar (two dense rows), B · Status hero (a summary with tiles) and C · Live strip. The user chose C; A, B, the old `TopBar` and the preview switcher were removed.
 
-Code: `apps/console/shell/header/` (`parts.tsx` shared facts and parts, `concepts.tsx`, `preview.tsx` the switcher, `header.test.tsx`). The switcher sits above the header; `current` shows today's `TopBar` and tab row. When the user picks, the winner replaces `shell/top-bar.tsx` and the tab row in `shell/project.tsx`, and the preview goes.
+- **The live strip** is a thin full-width band carrying only what is happening now, tinted by it (violet: an agent works, grey: idle, amber: paused, red: stopped): the live line, the current step with the rail's marker and "Step n of N" (from `md`), the waiting pill, Pause or Resume and the ⋯ menu with Stop.
+- **Below**: the title with route and playbook, the spend meter and the autonomy setting; on the right a segmented page switch whose tabs carry icons (Canvas `LayoutDashboard`, History `History`, Timeline `ChartGantt`, the current one tinted) and the desktop tools (Studio, editing table).
+
+Code: `apps/console/shell/header/` (`index.tsx` `ProjectHeader`, `parts.tsx` facts and parts, `header.test.tsx`), mounted by `shell/project.tsx`.
 
 ## How steps reach the rail today
 

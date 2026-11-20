@@ -23,10 +23,8 @@ import { CampaignView } from "@/views/campaign";
 import { PanelSection } from "./panel-section";
 import { SnapshotBanner } from "./snapshot-banner";
 import { snapshotMode } from "@/lib/snapshot-mode";
-import { TopBar } from "./top-bar";
-import { HeaderPreview } from "./header/preview";
-import { EditingBanner, EditingTableActions } from "./editing-table";
-import { StudioHeaderButton } from "@/media/studio-action";
+import { EditingBanner } from "./editing-table";
+import { ProjectHeader } from "./header";
 
 function usePanelRegistry() {
   return useSyncExternalStore(onPanelsChanged, () => registeredPanels().length);
@@ -95,37 +93,8 @@ export function ProjectPage({
   const snapshot = snapshotMode();
   return (
     <div className="flex min-w-0 flex-col">
-      <HeaderPreview view={view} page={page}>
-        <TopBar view={view} />
-        {snapshot ? (
-          <SnapshotBanner project={view.project.title ?? view.project.id} takenAt={snapshot.takenAt} />
-        ) : null}
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b px-4 lg:px-6">
-          <nav aria-label={view.project.title ?? view.project.id} className="flex gap-1">
-            {(snapshot ? (["canvas"] as const) : (["canvas", "history", "timeline"] as const)).map((name) => (
-              <a
-                key={name}
-                href={projectHref(project, name)}
-                aria-current={page === name ? "page" : undefined}
-                className={cn(
-                  "border-b-2 px-3 py-2 text-sm transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
-                  page === name
-                    ? "border-primary font-medium"
-                    : "border-transparent text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {name === "canvas" ? d.canvas.canvas : name === "history" ? d.canvas.history : d.canvas.timeline}
-              </a>
-            ))}
-          </nav>
-          {snapshot ? null : (
-            <div className="ms-auto flex flex-wrap items-center gap-2 py-1.5">
-              <StudioHeaderButton project={project} />
-              <EditingTableActions view={view} />
-            </div>
-          )}
-        </div>
-      </HeaderPreview>
+      <ProjectHeader view={view} page={page} />
+      {snapshot ? <SnapshotBanner project={view.project.title ?? view.project.id} takenAt={snapshot.takenAt} /> : null}
       <main id="main" tabIndex={-1} className="outline-none flex min-w-0 flex-col gap-5 p-4 lg:p-6">
         {snapshot ? (
           <Canvas view={view} />

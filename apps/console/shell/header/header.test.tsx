@@ -4,8 +4,7 @@ import userEvent from "@testing-library/user-event";
 import type { ProjectView } from "@contract";
 import { FIXTURES } from "@/lib/fixtures";
 import { renderWith } from "@/test/utils";
-import { HEADER_CONCEPTS } from "./concepts";
-import { HeaderPreview } from "./preview";
+import { ProjectHeader } from "./index";
 
 const film = FIXTURES["view-film-build"];
 const withControl = (state: ProjectView["control"]["state"]): ProjectView => ({
@@ -14,61 +13,58 @@ const withControl = (state: ProjectView["control"]["state"]): ProjectView => ({
 });
 const idle: ProjectView = { ...film, agents: { ...film.agents, active: undefined } };
 
-describe.each(Object.entries(HEADER_CONCEPTS))("header concept %s", (name, Header) => {
-  it("shows identity, the current step, waiting, money and the fitting action", () => {
-    const { container } = renderWith(<Header view={film} page="canvas" />);
+describe("ProjectHeader", () => {
+  it("shows identity, the current step, waiting, money, autonomy and the fitting action", () => {
+    const { container } = renderWith(<ProjectHeader view={film} page="canvas" />);
     const header = screen.getByRole("banner", { name: "Project" });
-    expect(header.getAttribute("data-header-concept")).toBe(name);
     expect(within(header).getByRole("heading", { level: 1 }).textContent).toBe(film.project.title);
     expect(container.querySelector("[data-header-step]")?.getAttribute("data-header-step")).toBe(film.current!.step);
     expect(container.querySelector("[data-header-waiting]")?.textContent).toContain("1 waits for you");
-    expect(container.querySelector("[data-header-spend]")?.textContent).toMatch(/\$3\.10.*of \$10\.00/);
+    expect(header.textContent).toContain("$3.10 of $10.00");
+    expect(within(header).getByRole("button", { name: /Change autonomy and budget/ }).textContent).toContain(
+      "Interactive",
+    );
     expect(within(header).getByRole("button", { name: "Pause" })).toBeTruthy();
     expect(within(header).queryByRole("button", { name: "Stop" })).toBeNull();
-    const tabs = within(header).getByRole("navigation", { name: film.project.title });
-    expect(within(tabs).getByRole("link", { name: "Canvas" }).getAttribute("aria-current")).toBe("page");
   });
 
-  it("says who works and breathes only while an agent works", () => {
-    const { container, unmount } = renderWith(<Header view={film} page="canvas" />);
+  it("switches pages with icons and marks the current one", () => {
+    renderWith(<ProjectHeader view={film} page="history" />);
+    const tabs = screen.getByRole("navigation", { name: film.project.title });
+    const links = within(tabs).getAllByRole("link");
+    expect(links.map((link) => link.textContent)).toEqual(["Canvas", "History", "Timeline"]);
+    for (const link of links) expect(link.querySelector("svg")).toBeTruthy();
+    expect(within(tabs).getByRole("link", { name: "History" }).getAttribute("aria-current")).toBe("page");
+  });
+
+  it("says who works, tints the strip by state and breathes only while an agent works", () => {
+    const { container, unmount } = renderWith(<ProjectHeader view={film} page="canvas" />);
+    expect(container.querySelector("[data-live-strip]")?.getAttribute("data-live-strip")).toBe("working");
     expect(container.querySelector('[data-live="working"]')?.innerHTML).toContain("motion-safe:animate-rail-pulse");
-    expect(container.textContent).toContain(film.agents.active!.name);
+    expect(container.textContent).toContain(`${film.agents.active!.name} is working`);
     unmount();
-    const quiet = renderWith(<Header view={idle} page="canvas" />);
+    const quiet = renderWith(<ProjectHeader view={idle} page="canvas" />);
+    expect(quiet.container.querySelector("[data-live-strip]")?.getAttribute("data-live-strip")).toBe("idle");
     expect(quiet.container.querySelector('[data-live="idle"]')?.innerHTML).not.toContain("animate-rail-pulse");
-    expect(quiet.container.textContent).toContain("No agent working");
+    expect(quiet.container.textContent).toContain("No agent running");
   });
 
-  it("offers resume when paused and keeps stop in the menu while running", async () => {
-    const paused = renderWith(<Header view={withControl("paused")} page="canvas" />);
-    expect(paused.container.textContent).toContain("Paused by you");
+  it("offers resume when paused or stopped and keeps stop in the menu while running", async () => {
+    const paused = renderWith(<ProjectHeader view={withControl("paused")} page="canvas" />);
+    expect(paused.container.querySelector("[data-live-strip]")?.getAttribute("data-live-strip")).toBe("paused");
     expect(screen.getByRole("button", { name: "Resume" })).toBeTruthy();
     paused.unmount();
-    renderWith(<Header view={film} page="history" />);
+    const stopped = renderWith(<ProjectHeader view={withControl("stopped")} page="canvas" />);
+    expect(screen.getByRole("button", { name: "Resume" })).toBeTruthy();
+    expect(screen.queryByRole("button", { name: "More project actions" })).toBeNull();
+    stopped.unmount();
+    renderWith(<ProjectHeader view={film} page="canvas" />);
     await userEvent.setup().click(screen.getByRole("button", { name: "More project actions" }));
     expect(await screen.findByRole("menuitem", { name: "Stop" })).toBeTruthy();
-    expect(screen.getByRole("menuitem", { name: "Change autonomy and budget" })).toBeTruthy();
   });
 
   it("hides the waiting pill when nothing waits", () => {
-    const { container } = renderWith(<Header view={{ ...film, waiting: [] }} page="canvas" />);
+    const { container } = renderWith(<ProjectHeader view={{ ...film, waiting: [] }} page="canvas" />);
     expect(container.querySelector("[data-header-waiting]")).toBeNull();
-  });
-});
-
-describe("HeaderPreview", () => {
-  it("renders the page's own header by default and a concept from the query", async () => {
-    window.history.replaceState(null, "", "/");
-    renderWith(
-      <HeaderPreview view={film} page="canvas">
-        <p>legacy header</p>
-      </HeaderPreview>,
-    );
-    expect(screen.getByText("legacy header")).toBeTruthy();
-    await userEvent.setup().click(screen.getByRole("button", { name: "C · Live strip" }));
-    expect(screen.queryByText("legacy header")).toBeNull();
-    expect(document.querySelector('[data-header-concept="c"]')).toBeTruthy();
-    expect(new URLSearchParams(window.location.search).get("header")).toBe("c");
-    window.history.replaceState(null, "", "/");
   });
 });

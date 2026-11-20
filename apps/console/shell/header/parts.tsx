@@ -1,22 +1,43 @@
 /**
- * Project header concepts (docs/console-steps.md#project-header): the facts every concept shows and the parts they
- * share. One fact, one element: identity (title, route, playbook), live state (control, agent, current step), what
- * waits for the user, money, and the project's actions (pause/resume, then stop and autonomy behind a menu).
+ * Project header parts (docs/console-steps.md#project-header). One fact, one element: identity (title, route,
+ * playbook), live state (control, agent, current step), what waits for the user, money and autonomy, and the project's
+ * actions (the fitting one in view, stop behind "more").
  */
 import { useState } from "react";
 import type { ControlState, ProjectView } from "@contract";
-import { CirclePause, CirclePlay, CircleStop, Ellipsis, Gauge, Hand, Wallet } from "lucide-react";
+import {
+  ChartGantt,
+  CirclePause,
+  CirclePlay,
+  CircleStop,
+  Coins,
+  Ellipsis,
+  Gauge,
+  Hand,
+  History,
+  LayoutDashboard,
+  Wallet,
+  type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/i18n";
 import { useNow } from "@/lib/clock";
 import { formatDuration, formatUsd } from "@/lib/format";
 import { projectHref } from "@/lib/router";
+import { snapshotMode } from "@/lib/snapshot-mode";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { runDuration } from "@/panels/generic/agents";
@@ -26,6 +47,7 @@ import { StudioHeaderButton } from "@/media/studio-action";
 import { EditingTableActions } from "../editing-table";
 import { ControlDialog } from "../control";
 import { AutonomyDialog } from "../autonomy";
+import { PaidJobs, inFlightJobs } from "../paid-jobs";
 
 export type Page = "canvas" | "history" | "timeline";
 
@@ -50,24 +72,20 @@ export function useHeaderFacts(view: ProjectView) {
     title: view.project.title ?? view.project.id,
     meta: [view.project.route, view.project.filmType, view.project.playbook].filter(Boolean) as string[],
     live,
-    agent: active ? { name: active.name, elapsed: formatDuration(runDuration(active, now), d.units) } : undefined,
     step: progress.currentStep,
     progress,
     waiting: view.waiting.length,
     spent: formatUsd(view.money.spentUsd, locale),
     ceiling: ceiling !== undefined ? formatUsd(ceiling, locale) : undefined,
     ratio: ceiling ? Math.min(1, view.money.spentUsd / ceiling) : undefined,
-    autonomy: `${view.autonomy.mode === "autonomous" ? d.autonomy.autonomous : d.autonomy.interactive}${
-      view.autonomy.finalReviewOnly ? ` · ${d.autonomy.finalReviewOnly}` : ""
-    }`,
     liveText:
       live === "working" && active
-        ? f(d.header.working, { name: active.name, elapsed: formatDuration(runDuration(active, now), d.units) })
+        ? f(d.topbar.active, { name: active.name, elapsed: formatDuration(runDuration(active, now), d.units) })
         : live === "paused"
           ? d.header.paused
           : live === "stopped"
             ? d.header.stopped
-            : d.header.idle,
+            : d.topbar.idle,
   };
 }
 export type HeaderFacts = ReturnType<typeof useHeaderFacts>;
@@ -78,7 +96,7 @@ export const LIVE_TEXT: Record<Live, string> = {
   paused: "text-status-paused",
   stopped: "text-status-blocked",
 };
-export const LIVE_BG: Record<Live, string> = {
+const LIVE_BG: Record<Live, string> = {
   working: "bg-status-current",
   idle: "bg-muted-foreground/60",
   paused: "bg-status-paused",
@@ -97,23 +115,10 @@ export function LiveDot({ live, className }: { live: Live; className?: string })
   );
 }
 
-/** Scrolls the canvas to the pinned decisions (the canvas's own section; on other pages, the canvas link). */
-export function WaitingButton({
-  view,
-  count,
-  page,
-  variant = "pill",
-  className,
-}: {
-  view: ProjectView;
-  count: number;
-  page: Page;
-  variant?: "pill" | "plain";
-  className?: string;
-}) {
+/** Scrolls the canvas to the pinned decisions and focuses the first card; on other pages, opens the canvas. */
+export function WaitingButton({ view, count, page }: { view: ProjectView; count: number; page: Page }) {
   const { d, p } = useI18n();
   if (!count) return null;
-  const label = p(d.header.waiting, count);
   const go = () => {
     if (page !== "canvas") {
       window.location.hash = projectHref(view.project.id).slice(1);
@@ -128,40 +133,26 @@ export function WaitingButton({
       type="button"
       data-header-waiting={count}
       onClick={go}
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
-        variant === "pill"
-          ? "border border-status-waiting/50 bg-status-waiting/10 px-2.5 py-1 text-foreground hover:bg-status-waiting/20"
-          : "text-status-waiting hover:underline",
-        className,
-      )}
+      className="inline-flex items-center gap-1.5 rounded-full border border-status-waiting/50 bg-status-waiting/10 px-2.5 py-1 text-xs font-medium whitespace-nowrap transition-colors duration-150 hover:bg-status-waiting/20 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none"
     >
       <Hand aria-hidden="true" className="size-3.5 text-status-waiting" />
       <span key={count} className="motion-safe:animate-rail-pop">
-        {label}
+        {p(d.header.waiting, count)}
       </span>
     </button>
   );
 }
 
 /** Spend against the ceiling: a number and, when there is a ceiling, a bar that fills (amber past 80 %). */
-export function SpendMeter({
-  facts,
-  size = "sm",
-  className,
-}: {
-  facts: HeaderFacts;
-  size?: "sm" | "lg";
-  className?: string;
-}) {
+export function SpendMeter({ facts, className }: { facts: HeaderFacts; className?: string }) {
   const { d, f } = useI18n();
   const ratio = facts.ratio;
   return (
     <span data-header-spend className={cn("inline-flex min-w-0 flex-col gap-1", className)}>
-      <span className={cn("inline-flex items-baseline gap-1 tabular-nums", size === "lg" ? "text-base" : "text-xs")}>
+      <span className="inline-flex items-baseline gap-1 text-xs tabular-nums">
         <Wallet aria-hidden="true" className="size-3.5 shrink-0 self-center text-muted-foreground" />
         <span className="sr-only">{d.topbar.spend}: </span>
-        <span className="font-semibold">{facts.spent}</span>
+        <span className="font-semibold">{facts.spent}</span>{" "}
         <span className="text-muted-foreground">
           {facts.ceiling ? f(d.header.of, { ceiling: facts.ceiling }) : d.header.noCeiling}
         </span>
@@ -181,134 +172,159 @@ export function SpendMeter({
   );
 }
 
+/** Autonomy as a quiet setting: reads as text, opens the autonomy and budget form; plain text in a snapshot. */
+export function AutonomySetting({ view }: { view: ProjectView }) {
+  const { d } = useI18n();
+  const [open, setOpen] = useState(false);
+  const autonomy = view.autonomy;
+  const label = `${autonomy.mode === "autonomous" ? d.autonomy.autonomous : d.autonomy.interactive}${
+    autonomy.finalReviewOnly ? ` · ${d.autonomy.finalReviewOnly}` : ""
+  }`;
+  const snapshot = !!snapshotMode();
+  const body = (
+    <>
+      <Gauge aria-hidden="true" className="size-3.5 shrink-0" />
+      <span className="sr-only">{snapshot ? d.autonomy.label : d.autonomy.change}: </span>
+      {label}
+    </>
+  );
+  const tone = autonomy.mode === "autonomous" ? "text-status-waiting" : "text-muted-foreground";
+  if (snapshot) return <span className={cn("inline-flex items-center gap-1 text-xs", tone)}>{body}</span>;
+  return (
+    <>
+      <button
+        type="button"
+        data-autonomy-control
+        aria-haspopup="dialog"
+        title={d.autonomy.change}
+        onClick={() => setOpen(true)}
+        className={cn(
+          "inline-flex items-center gap-1 rounded-sm text-xs underline-offset-4 transition-colors duration-150 hover:text-foreground hover:underline focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+          tone,
+        )}
+      >
+        {body}
+      </button>
+      {open ? <AutonomyDialog view={view} onClose={() => setOpen(false)} /> : null}
+    </>
+  );
+}
+
 /**
  * The project's actions: the one that fits the state (pause while running, resume while paused or stopped) stays in
- * view; stop and autonomy live behind "more", since they are rare and stop is consequential.
+ * view; stop lives behind "more", since it is rare and consequential. A stopped project with paid jobs still in flight
+ * keeps "Paid jobs" in view.
  */
-export function ProjectActions({
-  view,
-  compact,
-  primaryClassName,
-}: {
-  view: ProjectView;
-  compact?: boolean;
-  primaryClassName?: string;
-}) {
+export function ProjectActions({ view }: { view: ProjectView }) {
   const { d } = useI18n();
   const [target, setTarget] = useState<ControlState | null>(null);
-  const [autonomy, setAutonomy] = useState(false);
+  const [jobsOpen, setJobsOpen] = useState(false);
   const state = view.control.state;
   const primary: ControlState = state === "running" ? "paused" : "running";
   const PrimaryIcon = primary === "paused" ? CirclePause : CirclePlay;
-  const primaryText = primary === "paused" ? d.control.pause : d.control.resume;
+  const inFlight = state === "stopped" ? inFlightJobs(view).length : 0;
   return (
     <div role="group" aria-label={d.control.label} className="flex items-center gap-1">
+      {inFlight ? (
+        <Button variant="outline" size="sm" data-paid-jobs-open onClick={() => setJobsOpen(true)}>
+          <Coins aria-hidden="true" />
+          {`${d.control.jobs.open} (${inFlight})`}
+        </Button>
+      ) : null}
       <Button
         variant={primary === "running" ? "default" : "outline"}
-        size={compact ? "icon-sm" : "sm"}
+        size="sm"
         data-control={primary}
-        aria-label={compact ? primaryText : undefined}
-        title={primaryText}
         onClick={() => setTarget(primary)}
-        className={primaryClassName}
       >
         <PrimaryIcon aria-hidden="true" />
-        {compact ? null : primaryText}
+        {primary === "paused" ? d.control.pause : d.control.resume}
       </Button>
-      <DropdownMenu modal={false}>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon-sm" aria-label={d.header.more} title={d.header.more} data-header-more>
-            <Ellipsis aria-hidden="true" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => setAutonomy(true)}>
-            <Gauge aria-hidden="true" />
-            {d.autonomy.change}
-          </DropdownMenuItem>
-          {state !== "stopped" ? (
-            <>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem
-                data-control="stopped"
-                className="text-status-blocked focus:text-status-blocked"
-                onSelect={() => setTarget("stopped")}
-              >
-                <CircleStop aria-hidden="true" />
-                {d.control.stop}
-              </DropdownMenuItem>
-            </>
-          ) : null}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      {state !== "stopped" ? (
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon-sm" aria-label={d.header.more} title={d.header.more} data-header-more>
+              <Ellipsis aria-hidden="true" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem
+              data-control="stopped"
+              className="text-status-blocked focus:text-status-blocked"
+              onSelect={() => setTarget("stopped")}
+            >
+              <CircleStop aria-hidden="true" />
+              {d.control.stop}
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      ) : null}
       {target ? <ControlDialog view={view} target={target} onClose={() => setTarget(null)} /> : null}
-      {autonomy ? <AutonomyDialog view={view} onClose={() => setAutonomy(false)} /> : null}
+      {jobsOpen ? (
+        <Dialog open onOpenChange={(open) => (!open ? setJobsOpen(false) : undefined)}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{d.control.jobs.title}</DialogTitle>
+              <DialogDescription>{d.control.stopBody}</DialogDescription>
+            </DialogHeader>
+            <PaidJobs view={view} />
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setJobsOpen(false)}>
+                {d.app.close}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      ) : null}
     </div>
   );
 }
 
-const PAGES: Page[] = ["canvas", "history", "timeline"];
+const PAGE_ICON: Record<Page, LucideIcon> = { canvas: LayoutDashboard, history: History, timeline: ChartGantt };
 
-/** Canvas, History, Timeline: an underlined tab row or a segmented control. */
-export function ProjectTabs({
-  view,
-  page,
-  variant = "underline",
-  className,
-}: {
-  view: ProjectView;
-  page: Page;
-  variant?: "underline" | "segmented";
-  className?: string;
-}) {
+/** Canvas, History, Timeline as a segmented control, each with its icon (only Canvas in a snapshot). */
+export function ProjectTabs({ view, page, className }: { view: ProjectView; page: Page; className?: string }) {
   const { d } = useI18n();
+  const pages: Page[] = snapshotMode() ? ["canvas"] : ["canvas", "history", "timeline"];
   const name = (item: Page) =>
     item === "canvas" ? d.canvas.canvas : item === "history" ? d.canvas.history : d.canvas.timeline;
   return (
     <nav
       aria-label={view.project.title ?? view.project.id}
-      className={cn(
-        "flex min-w-0",
-        variant === "segmented" ? "w-fit gap-0.5 rounded-lg bg-muted p-[3px]" : "gap-1",
-        className,
-      )}
+      className={cn("flex w-fit min-w-0 gap-0.5 rounded-lg bg-muted p-[3px]", className)}
     >
-      {PAGES.map((item) => (
-        <a
-          key={item}
-          href={projectHref(view.project.id, item)}
-          aria-current={page === item ? "page" : undefined}
-          className={cn(
-            "text-sm whitespace-nowrap transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
-            variant === "segmented"
-              ? cn(
-                  "rounded-md px-3 py-1",
-                  page === item
-                    ? "bg-background font-medium shadow-sm dark:bg-input/30"
-                    : "text-muted-foreground hover:text-foreground",
-                )
-              : cn(
-                  "-mb-px border-b-2 px-3 py-2.5",
-                  page === item
-                    ? "border-primary font-medium"
-                    : "border-transparent text-muted-foreground hover:text-foreground",
-                ),
-          )}
-        >
-          {name(item)}
-        </a>
-      ))}
+      {pages.map((item) => {
+        const Icon = PAGE_ICON[item];
+        return (
+          <a
+            key={item}
+            href={projectHref(view.project.id, item)}
+            aria-current={page === item ? "page" : undefined}
+            data-page={item}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-md px-3 py-1 text-sm whitespace-nowrap transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
+              page === item
+                ? "bg-background font-medium shadow-sm dark:bg-input/30"
+                : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            <Icon aria-hidden="true" className={cn("size-4 shrink-0", page === item && "text-primary")} />
+            {name(item)}
+          </a>
+        );
+      })}
     </nav>
   );
 }
 
 /**
- * Tools that open something outside the console: Remotion Studio and the editing table. Desktop work, so the concepts
- * show them from the md breakpoint up and keep phones to status and decisions.
+ * Tools that open something outside the console: Remotion Studio and the editing table. Desktop work, so they show
+ * from the md breakpoint up and phones keep to status and decisions.
  */
 export function ProjectTools({ view, className }: { view: ProjectView; className?: string }) {
+  if (snapshotMode()) return null;
   return (
-    <div className={cn("flex flex-wrap items-center gap-2", className)}>
+    <div className={cn("hidden flex-wrap items-center gap-2 md:flex", className)}>
       <StudioHeaderButton project={view.project.id} />
       <EditingTableActions view={view} />
     </div>
