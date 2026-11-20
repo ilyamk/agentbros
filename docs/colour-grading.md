@@ -312,7 +312,7 @@ A reference becomes numbers the final film is held to. The clip is cut at its sh
 | Palette (share-weighted CIEDE2000)  | 8              | 14             |
 | Skin CIEDE2000, skin hue            | 6, 8°          | 10, 15°        |
 
-The cast tolerance is wider than the others because a reference rarely shows the same set. With `--source` the gate runs too, with skin keyed on the ungraded file. On stark-promo the first match (v1) failed every shot, and the skin-aware v2 failed one: its faces are lighter than the reference's (L* 53 against 29).
+The cast tolerance is wider than the others because a reference rarely shows the same set. Skin is judged only when it was keyed on a face region on both sides (`colour:target --skin-region` and `colour:check --source --skin-region`); with the chroma rule, which also keys walls and wood, the skin lines are reported as `info`. One region applies to every shot, and reference and input shots are paired by relative time, so an edit cut differently compares unlike shots. Run it with `--source` and `--reference` too: the gate then allows the skin move the reference asks for. On stark-promo, with all three, the first match (v1) fails (skin chroma ×2.27, yellow drift, and shot levels and cast against the target) and the skin-aware v2 warns.
 
 ### Mood plans
 
@@ -390,6 +390,7 @@ pnpm colour:looks --input assets/clip.mp4 --lut public/projects/stark-promo/colo
 - Scope panels in the studio console (`apps/console`).
 - MCP tools for the ten commands.
 - `colour:match --target`: solve toward a saved profile without the reference video.
+- Per-shot face regions (or a face detector) for target skin, instead of one region for every shot.
 - A mood plan read from the script's beats and the music's energy, instead of typed values.
 - A face detector or person matte as the default skin key for per-shot matching, instead of the chroma rule.
 - Temporal checks in the gate: frame-to-frame luma and hue flicker across a render.

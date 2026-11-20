@@ -109,8 +109,8 @@ def mood(lightness_p50: float, chroma_p50: float, contrast_lstar: float, warmth:
     return {"valence": round(_clip1(0.6 * b + 0.25 * w + 0.15 * s), 3), "arousal": round(_clip1(0.6 * s + 0.3 * k - 0.1 * b), 3)}
 
 
-def measure(px: np.ndarray, skin: np.ndarray | None = None) -> dict[str, Any]:
-    """The profile of one shot's pixels (N, 3); `skin` is a boolean mask keyed on these pixels."""
+def measure(px: np.ndarray, skin: np.ndarray | None = None, keyed: str = "chroma-rule") -> dict[str, Any]:
+    """The profile of one shot's pixels (N, 3); `skin` is a boolean mask, `keyed` how it was found (region or chroma-rule)."""
     clipped = np.clip(px, 0, 1)
     y = cm.luma(clipped)
     lab = cm.rgb_to_lab(clipped)
@@ -144,7 +144,7 @@ def measure(px: np.ndarray, skin: np.ndarray | None = None) -> dict[str, Any]:
     }
     if skin is not None and skin.sum() >= cc.MIN_SKIN_PIXELS:
         s = cc.lab_summary(px[skin])
-        profile["skin"] = {k: round(v, 2) for k, v in s.items()} | {"pixelsPct": round(float(100 * skin.mean()), 3)}
+        profile["skin"] = {k: round(v, 2) for k, v in s.items()} | {"pixelsPct": round(float(100 * skin.mean()), 3), "keyed": keyed}
     return profile
 
 
@@ -196,9 +196,16 @@ def compare(target: dict[str, Any], got: dict[str, Any]) -> list[dict[str, Any]]
     if "skin" in target and "skin" in got:
         ts, gs = target["skin"], got["skin"]
         de = float(cm.delta_e_2000(np.array([gs["L"], gs["a"], gs["b"]]), np.array([ts["L"], ts["a"], ts["b"]])))
-        out.append(_check("skin.deltaE", de, f"skin dE2000 {de:.1f} (L* {gs['L']:.0f}/{ts['L']:.0f}, C* {gs['C']:.0f}/{ts['C']:.0f})"))
         dh = abs(cm.angle_difference(gs["h"], ts["h"])) if min(gs["C"], ts["C"]) > 3 else 0.0  # noqa: PLR2004 -- hue is noise near grey.
-        out.append(_check("skin.hue", dh, f"skin hue {gs['h']:.0f} deg (target {ts['h']:.0f})"))
+        skin_checks = [
+            _check("skin.deltaE", de, f"skin dE2000 {de:.1f} (L* {gs['L']:.0f}/{ts['L']:.0f}, C* {gs['C']:.0f}/{ts['C']:.0f})"),
+            _check("skin.hue", dh, f"skin hue {gs['h']:.0f} deg (target {ts['h']:.0f})"),
+        ]
+        if ts.get("keyed") != "region" or gs.get("keyed") != "region":
+            # The chroma rule also keys walls and wood, and a graded frame re-keys what the grade turned skin-coloured:
+            # judged only on face regions given on both sides.
+            skin_checks = [{**c, "status": "info", "text": c["text"] + " (chroma-rule key: not judged; pass face regions)"} for c in skin_checks]
+        out += skin_checks
     tm, gm = target["mood"], got["mood"]
     out.append(
         {

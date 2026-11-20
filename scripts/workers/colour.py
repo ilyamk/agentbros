@@ -1053,7 +1053,8 @@ def op_target(request: dict[str, Any]) -> dict[str, Any]:
         times = [None] if info["still"] else shot_times(start, end, per)
         media = Media(request["input"], request, times)
         px, skin = keyed_pixels(media, request.get("skinRegion"), 120_000)
-        measured = cp.measure(px, skin)
+        keyed = "region" if request.get("skinRegion") else "chroma-rule"
+        measured = cp.measure(px, skin, keyed)
         label = f"shot-{len(shots) + 1:02d}"
         shot: dict[str, Any] = {"label": label, "start": round(start, 4), "end": round(end, 4), "profile": measured}
         middle = media.frames[len(media.frames) // 2]
@@ -1062,7 +1063,7 @@ def op_target(request: dict[str, Any]) -> dict[str, Any]:
         if wanted is not None:
             grade = cp.mood_grade(measured["mood"], wanted, float(request.get("strength", 1.0)))
             graded = cm.apply_grade(px, grade)
-            planned = cp.measure(graded, skin)
+            planned = cp.measure(graded, skin, keyed)
             gate = cc.gate(px, graded, skin, {"chroma": 1.0, "hueAllowance": 6})
             shot.update({"measured": measured, "profile": planned, "wantedMood": wanted, "grade": grade, "gate": gate})
             shown, shown_profile = cm.apply_grade(middle, grade), planned
@@ -1102,11 +1103,13 @@ def target_checks(request: dict[str, Any]) -> tuple[list[dict[str, Any]], list[l
         times = [None] if info["still"] else shot_times(start, end, per)
         graded_media = Media(request["input"], request, times)
         graded, skin = keyed_pixels(graded_media, None, 120_000)
+        keyed = "chroma-rule"
         if request.get("source"):
             ap = graded_media.describe()["activePicture"]
             source_media = Media(request["source"], {**request, "crop": [ap["x"], ap["y"], ap["width"], ap["height"]]}, times)
             _, skin = keyed_pixels(source_media, request.get("skinRegion"), 120_000)
-        got = cp.measure(graded, skin)
+            keyed = "region" if request.get("skinRegion") else "chroma-rule"
+        got = cp.measure(graded, skin, keyed)
         checks = cp.compare(shot["profile"], got)
         results.append({"label": shot["label"], "start": round(start, 4), "end": round(end, 4), "checks": checks, "profile": got, **cp.verdict(checks)})
         middle = graded_media.frames[len(graded_media.frames) // 2]
