@@ -1118,7 +1118,7 @@ How decisions work: [governance](GOVERNANCE.md). Report vulnerabilities through 
 <br><br>
 
 <sub>DEVELOPMENT</sub> <sub>(prompt to motion)</sub><br>
-<a href="https://github.com/remotion-dev/template-prompt-to-motion-graphics-saas"><b>Remotion prompt-to-motion-graphics</b></a> · <a href="https://github.com/heygen-com/hyperframes"><b>Hyperframes research</b></a>
+<a href="https://github.com/remotion-dev/template-prompt-to-motion-graphics-saas"><b>Remotion prompt-to-motion-graphics</b></a> · <a href="https://github.com/heygen-com/hyperframes"><b>Hyperframes research</b></a> · <a href="https://github.com/faviovazquez/showtime"><b>Showtime</b></a> <sub>(workflow research)</sub>
 
 <br><br>
 
