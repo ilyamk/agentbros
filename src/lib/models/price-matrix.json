@@ -4330,22 +4330,6 @@
     {
       "slot": "3d.edit",
       "provider": "fal",
-      "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
-      "perCallTypicalUsd": 0.75,
-      "perCallObservedAsOf": "2026-11-15",
-      "scenarioPrices": {
-        "1-model": {
-          "usd": 0.75,
-          "kind": "approximate",
-          "source": "https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt",
-          "formula": "$0.75; 1 request × $0.75; Page/API price drift: page $0.75, API $0.015; higher rate used for planning; https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt; Your request will cost **$0.75** per generation.\nFor **$1.00**, you can run this model 1 time.; observed 2026-11-16",
-          "observedAsOf": "2026-11-16"
-        }
-      }
-    },
-    {
-      "slot": "3d.edit",
-      "provider": "fal",
       "endpoint": "meshy/n1/retexture",
       "perCallTypicalUsd": 0.3,
       "perCallObservedAsOf": "2026-11-15",
@@ -4371,6 +4355,22 @@
           "kind": "typical",
           "source": "typical: fal historical average per call",
           "formula": "1 call × historical average; not specific to size or quality",
+          "observedAsOf": "2026-11-15"
+        }
+      }
+    },
+    {
+      "slot": "3d.edit",
+      "provider": "fal",
+      "endpoint": "meshy/v7/retexture",
+      "perCallTypicalUsd": null,
+      "perCallObservedAsOf": null,
+      "scenarioPrices": {
+        "1-model": {
+          "usd": 0.3,
+          "kind": "exact",
+          "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7/retexture",
+          "formula": "$0.3; 1 request × $0.3; https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7/retexture",
           "observedAsOf": "2026-11-15"
         }
       }

@@ -31,6 +31,9 @@ export const threeDGuard: FalGuard = {
         fail("Meshy N1 rejects texture_prompt, enable_pbr and quad topology with remeshing.");
       }
     }
+    // The 2026-11-20 text-to-3d schema states that texture_image_url "cannot be combined with texture_prompt".
+    if (endpoint === "meshy/v7.1/text-to-3d" && input.texture_image_url != null && input.texture_prompt != null)
+      fail("Meshy 7.1 text-to-3d accepts texture_image_url or texture_prompt, not both.");
     if (endpoint === "meshy/n1/retexture") {
       const single = typeof input.image_style_url === "string" && input.image_style_url.trim().length > 0;
       const multi = arrayField(input, "multiview_image_urls").length > 0;
