@@ -1,6 +1,6 @@
 # Library — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-18
 
 [CLIs](../../scripts/AGENTS.md).
 

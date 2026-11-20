@@ -407,6 +407,7 @@ export const DECISION_KINDS = [
   "quote",
   "rating",
   "frame-feedback",
+  "frame-note",
   "verdict",
   "card-answer",
   "control",
@@ -485,14 +486,71 @@ export const RegionSchema = z
   })
   .refine((r) => r.x + r.w <= 1 + 1e-9 && r.y + r.h <= 1 + 1e-9, "region inside the frame");
 
-/** A comment pinned to a frame of a render (US11). */
+/**
+ * A mark the user put on the frame (2026-11-20): with `w` and `h` a box, without them a point the arrow points at;
+ * `text` is what the user wrote at it. Normalised frame coordinates (0–1), origin top left.
+ */
+export const FrameMarkSchema = z
+  .strictObject({
+    x: z.number().min(0).max(1),
+    y: z.number().min(0).max(1),
+    w: z.number().gt(0).max(1).optional(),
+    h: z.number().gt(0).max(1).optional(),
+    text: Text(300),
+  })
+  .refine((mark) => (mark.w === undefined) === (mark.h === undefined), "a box has both w and h")
+  .refine(
+    (mark) => mark.w === undefined || (mark.x + mark.w <= 1 + 1e-9 && mark.y + (mark.h ?? 0) <= 1 + 1e-9),
+    "a box inside the frame",
+  );
+export type FrameMark = z.infer<typeof FrameMarkSchema>;
+/** Marks one frame comment may carry (each a numbered label on the annotated still). */
+export const MAX_FRAME_MARKS = 9;
+
+/** A comment pinned to a frame of a render (US11); `marks` amended 2026-11-20. */
 export const FrameCommentSchema = z.strictObject({
   media: MediaRefSchema,
   frame: Count,
   region: RegionSchema.optional(),
+  marks: z.array(FrameMarkSchema).max(MAX_FRAME_MARKS).optional(),
   text: Text(4000),
 });
 export type FrameComment = z.infer<typeof FrameCommentSchema>;
+
+/** Where `frame:note` keeps the notes and their annotated stills, relative to the project. */
+export const FRAME_NOTES_DIR = "pipeline/frame-notes";
+
+/**
+ * `pipeline/frame-notes/<id>.json` (2026-11-20): the user's note on one frame of any video of the project, written by
+ * `frame:note` (the console's `frame-note` decision). `still` is the frame as a PNG with the marks drawn on it.
+ */
+export const FrameNoteSchema = z.strictObject({
+  v: z.literal(1),
+  id: ConsoleIdSchema,
+  project: ProjectIdSchema,
+  media: z.strictObject({
+    path: RelativePathSchema,
+    root: z.enum(["project", "out"]),
+    sha256: Sha256Schema.optional(),
+  }),
+  frame: Count,
+  fps: z.number().positive().max(1000),
+  /** Start of the frame, seconds. */
+  timeSec: z.number().min(0),
+  /** `mm:ss.mmm` (or `h:mm:ss.mmm`) of the frame's start. */
+  time: Text(32),
+  /** The user's words, verbatim. */
+  words: Text(8000),
+  region: RegionSchema.optional(),
+  marks: z.array(FrameMarkSchema).max(MAX_FRAME_MARKS).optional(),
+  /** The annotated still, relative to the project. */
+  still: RelativePathSchema.optional(),
+  /** How the marks were drawn: the user's overlay as they saw it, or boxes only (no overlay given). */
+  drawn: z.enum(["overlay", "boxes", "none"]),
+  channel: z.enum(["console", "cli"]),
+  createdAt: IsoTimeSchema,
+});
+export type FrameNote = z.infer<typeof FrameNoteSchema>;
 
 export const DecisionSchema = z
   .strictObject({
@@ -1548,6 +1606,115 @@ export const CompositionInfoSchema = z.strictObject({
   height: z.number().int().positive(),
 });
 
+/**
+ * One paid model generation (a job of `generate:model` and the other provider commands, 2026-11-20): the job store's
+ * record with the provider's error, the money it holds and the result file once published. `output` is set only when
+ * the job is validated or published and the file exists; a failed or running job never points at its planned path.
+ * The prompt is the request's own `prompt` field; uploaded or signed provider URLs never enter the view.
+ */
+export const GenerationSchema = z.strictObject({
+  id: Text(128),
+  provider: Text(64),
+  endpoint: Text(256).optional(),
+  model: Text(256).optional(),
+  step: Text(64).optional(),
+  state: JobStateSchema,
+  /** The provider's or the store's error text, as written ("rejected by content moderation (nsfw)"). */
+  error: Text(2000).optional(),
+  /** Money still held for the job: a published job without a receipt is reserved, not settled (never free). */
+  reservedUsd: UsdSchema,
+  /** Settled cost (receipt less refunds), only when a receipt exists. */
+  costUsd: UsdSchema.optional(),
+  /** The provider confirmed it charged nothing (a refunded or released failure). */
+  noCharge: z.boolean().optional(),
+  priceKnown: z.boolean(),
+  /** The quote's expected price, for a job not yet billed. */
+  quotedUsd: UsdSchema.optional(),
+  createdAt: IsoTimeSchema.optional(),
+  submittedAt: IsoTimeSchema.optional(),
+  finishedAt: IsoTimeSchema.optional(),
+  prompt: z.string().max(8000).optional(),
+  resolution: Text(32).optional(),
+  /** The model preparation the request was built from (`pipeline/model-preparations/<id>/`). */
+  preparation: Text(80).optional(),
+  /** Project-relative file the job publishes to (planned while it runs). */
+  outputPath: RelativePathSchema.optional(),
+  output: MediaRefSchema.optional(),
+  references: z.array(MediaRefSchema).max(16).optional(),
+  /** The clip the job transformed (its first video reference), for "compare with source". */
+  source: MediaRefSchema.optional(),
+});
+export type Generation = z.infer<typeof GenerationSchema>;
+
+/** The latest model preparation (`model:prepare`, 2026-11-20): what the request will say and what it was approved on. */
+export const ModelPreparationViewSchema = z.strictObject({
+  id: Text(80),
+  createdAt: IsoTimeSchema.optional(),
+  endpoint: Text(256).optional(),
+  mode: Text(64).optional(),
+  prompt: z.string().max(8000).optional(),
+  resolution: Text(32).optional(),
+  /** References and board samples (images under the preparation folder or the project's assets). */
+  references: z.array(MediaRefSchema).max(16),
+  board: z.array(MediaRefSchema).max(16),
+  source: MediaRefSchema.optional(),
+  approval: z.strictObject({ at: IsoTimeSchema.optional(), userStatement: z.string().max(2000).optional() }).optional(),
+  rights: z.strictObject({ status: Text(64), userStatement: z.string().max(2000).optional() }).optional(),
+  /** Every preparation in the project (only the latest is shown). */
+  count: Count,
+});
+export type ModelPreparationView = z.infer<typeof ModelPreparationViewSchema>;
+
+export const GenerationsSchema = z.strictObject({
+  /** Newest first. */
+  jobs: z.array(GenerationSchema).max(200),
+  preparation: ModelPreparationViewSchema.optional(),
+  /**
+   * The project's route has no material of its own (a `project:new` template with no code, render, music or voice)
+   * while it has generations: the template's render is not the current step and Studio is not offered.
+   */
+  templateOnly: z.boolean().optional(),
+});
+export type Generations = z.infer<typeof GenerationsSchema>;
+
+/**
+ * Media albums of the project's Media tab (2026-11-20), grouped by how a file was made, not by folder: `sources` (the
+ * user's originals and reference photos), `preparation` (cuts, parts, prepared clips fed to a generation),
+ * `generations` (provider results with no job in the store; jobs themselves are `generations.jobs`), `builds` (joins,
+ * renders under `out/<id>/`, finals) and `unregistered` (files under `assets/` that no registry entry or job lists).
+ */
+export const MEDIA_ALBUMS = ["sources", "preparation", "generations", "builds", "unregistered"] as const;
+export const MediaAlbumSchema = z.enum(MEDIA_ALBUMS);
+export type MediaAlbum = z.infer<typeof MediaAlbumSchema>;
+
+export const MediaItemSchema = z.strictObject({
+  /** `sha256:<hash>` for a registered file, else `file:<path>` or `out:<path>`. */
+  id: Text(1100),
+  album: MediaAlbumSchema,
+  media: MediaRefSchema,
+  /** False: a file no asset registry entry or job lists (shown, never registered by the console). */
+  registered: z.boolean(),
+  origin: Text(64).optional(),
+  tool: Text(64).optional(),
+  createdAt: IsoTimeSchema.optional(),
+  /** Other project files with the same bytes. */
+  aliases: z.array(RelativePathSchema).max(8).optional(),
+  /** The file it was made from, when the lineage says so. */
+  parent: MediaRefSchema.optional(),
+  /** The paid job that produced it. */
+  generation: Text(128).optional(),
+  /** The model preparation it belongs to. */
+  preparation: Text(80).optional(),
+});
+export type MediaItem = z.infer<typeof MediaItemSchema>;
+
+export const GallerySchema = z.strictObject({
+  /** Newest first within each album. */
+  items: z.array(MediaItemSchema).max(2000),
+  truncated: z.boolean().optional(),
+});
+export type Gallery = z.infer<typeof GallerySchema>;
+
 export const ProjectViewSchema = z
   .strictObject({
     v: z.literal(1),
@@ -1625,6 +1792,10 @@ export const ProjectViewSchema = z
     campaign: CampaignMaterialSchema.optional(),
     /** Footage route only: the recording's material for the footage panels (WP12 amendment). */
     footage: FootageMaterialSchema.optional(),
+    /** Paid model generations and the latest model preparation, on every route (2026-11-20). */
+    generations: GenerationsSchema.optional(),
+    /** The Media tab's albums: every media file of the project by lineage (2026-11-20). */
+    gallery: GallerySchema.optional(),
     stepGuard: z
       .strictObject({
         violations: Count,
@@ -1660,6 +1831,8 @@ export const ProjectSummarySchema = z.strictObject({
   waiting: Count,
   control: ControlStateSchema,
   spentUsd: UsdSchema,
+  /** Money held by unsettled jobs (2026-11-20); shown beside spent, never folded into it. */
+  reservedUsd: UsdSchema.optional(),
   ceilingUsd: UsdSchema.optional(),
   latestRender: MediaRefSchema.optional(),
   updatedAt: IsoTimeSchema,
@@ -1731,6 +1904,9 @@ export const ThumbQuerySchema = z.strictObject({
  * `kind` (frame feedback, a rating, a verdict). `answer` is the user's words, verbatim (D10). `expect` is the hash the
  * user saw (FR3).
  */
+/** Largest overlay a decision request carries (base64 characters, about 1.1 MB of PNG). */
+export const FRAME_OVERLAY_MAX_BASE64 = 1_500_000;
+
 export const DecisionRequestSchema = z
   .strictObject({
     decisionId: ConsoleIdSchema.optional(),
@@ -1752,8 +1928,19 @@ export const DecisionRequestSchema = z
     requestId: ConsoleIdSchema.optional(),
     /** A `policy` request's change (amended 2026-11-17, A10). */
     policy: PolicyChangeSchema.optional(),
+    /**
+     * The marks of a frame comment drawn as the user saw them: a transparent PNG at the render's size, base64 (amended
+     * 2026-11-20). The server hands it to `frame:note`, which lays it over the frame; the inbox never stores it.
+     */
+    overlay: z
+      .string()
+      .max(FRAME_OVERLAY_MAX_BASE64)
+      .regex(/^[A-Za-z0-9+/]+={0,2}$/, "base64")
+      .optional(),
   })
   .superRefine((request, ctx) => {
+    if (request.overlay && request.kind !== "frame-note" && request.kind !== "frame-feedback")
+      ctx.addIssue({ code: "custom", path: ["overlay"], message: "only a frame comment carries an overlay" });
     if (request.kind === "policy" && !request.policy)
       ctx.addIssue({ code: "custom", path: ["policy"], message: "a policy request carries its change" });
     if (request.policy && request.kind !== "policy")

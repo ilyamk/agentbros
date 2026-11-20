@@ -8,6 +8,9 @@ updates:
     groups:
       development:
         dependency-type: development
+      # lucide-react and lucide-static release together; one PR regenerates the licence inventory once.
+      lucide:
+        patterns: ["lucide-*"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

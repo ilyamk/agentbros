@@ -70,6 +70,8 @@ export interface Attachment {
   flag: string;
   name: string;
   content: string;
+  /** `base64`: `content` is binary (a frame note's overlay PNG); else UTF-8 text. */
+  encoding?: "base64";
 }
 export interface CommandPlan {
   alias: DecisionAlias;

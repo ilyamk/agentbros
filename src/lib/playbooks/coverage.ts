@@ -89,6 +89,7 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "vork:recipe": "optional local 3D/VFX engine chosen per shot across playbooks",
   "vork:bridge": "optional local 3D/VFX engine chosen per shot across playbooks",
   "vork:vfx": "optional local 3D/VFX engine chosen per shot across playbooks",
+  "camera:solve": "matchmove for a 3D insert into a moving plate, chosen per shot across playbooks; vork-3d-vfx vfx.md",
   "vork:eval": "optional local 3D/VFX engine chosen per shot across playbooks",
 
   "viz:list": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
@@ -131,6 +132,8 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "console:wait": "waits for the user's console decision at any gate; docs/rfcs/0004-studio-console.md",
   "console:card":
     "an agent card on any project's console canvas (stub until RFC 0004 WP11); docs/rfcs/0004-studio-console.md",
+  "frame:note":
+    "the user's note on a frame of any project's video, marks drawn on the still, run by the console; docs/console.md#frame-notes",
   "console:control":
     "the user's pause, resume and stop of any project (RFC 0004 D12); docs/rfcs/0004-studio-console.md",
   "job:cancel":

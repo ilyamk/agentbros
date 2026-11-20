@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { act, fireEvent, screen, waitFor, within } from "@testing-library/react";
-import { FrameCommentSchema, type MediaRef } from "@contract";
+import { DecisionRequestSchema, FrameCommentSchema, type MediaRef } from "@contract";
 import { chooseOption, FIXTURE_NOW, fixtureStore, renderWith, selectValue, setSlider } from "@/test/utils";
 import { FixtureApiClient } from "@/api/fixture";
 import { AudioPlayer, Compare, FrameCommentProvider, MediaSlot, VideoViewer } from "./index";
@@ -87,7 +87,7 @@ describe("VideoViewer", () => {
     expect(screen.getAllByText("The composition changed since this render").length).toBeGreaterThan(0);
     expect(screen.getByText("Source cccccccc")?.getAttribute("title")).toBe("c".repeat(64));
     // inline without a handler: no comment action
-    expect(screen.queryByRole("button", { name: "Comment on this frame" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Mark the frame" })).toBeNull();
   });
 
   it("shows a lazy frame strip from /thumb and seeks on click", () => {
@@ -128,7 +128,7 @@ describe("VideoViewer", () => {
     fireEvent.keyDown(video, { key: "ArrowRight", shiftKey: true });
     expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("31");
     fireEvent.keyDown(video, { key: "ArrowLeft" });
-    expect(container.querySelector("output")?.textContent).toContain("00:01:00 · Frame 30 / 126");
+    expect(container.querySelector("output")?.textContent).toContain("00:01.000 · Frame 30 / 126");
     fireEvent.keyDown(video, { key: "End" });
     expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("125");
     setSlider(screen.getByRole("slider", { name: "Position" }), 60);
@@ -168,7 +168,7 @@ describe("VideoViewer", () => {
     const video = videoOf(container);
     fakeMedia(video);
     setSlider(screen.getByRole("slider", { name: "Position" }), 42);
-    fireEvent.click(screen.getByRole("button", { name: "Comment on this frame" }));
+    fireEvent.click(screen.getByRole("button", { name: "Mark the frame" }));
     const form = screen.getByRole("form", { name: /Comment on frame 42/ });
     expect((within(form).getByRole("spinbutton", { name: "Frame" }) as HTMLInputElement).value).toBe("42");
     fireEvent.change(within(form).getByRole("spinbutton", { name: "Left" }), { target: { value: "0.1" } });
@@ -202,7 +202,7 @@ describe("VideoViewer", () => {
       </FrameCommentProvider>,
     );
     fakeMedia(videoOf(container));
-    fireEvent.click(screen.getByRole("button", { name: "Comment on this frame" }));
+    fireEvent.click(screen.getByRole("button", { name: "Mark the frame" }));
     const overlay = container.querySelector<HTMLElement>("[data-region-overlay]")!;
     overlay.getBoundingClientRect = () => ({
       left: 0,
@@ -215,25 +215,161 @@ describe("VideoViewer", () => {
       y: 0,
       toJSON: () => ({}),
     });
+    // a drag frames an area, a click points at a spot; each mark asks for its words
     fireEvent.pointerDown(overlay, { button: 0, clientX: 50, clientY: 100, pointerId: 1 });
     fireEvent.pointerMove(overlay, { clientX: 150, clientY: 200, pointerId: 1 });
     fireEvent.pointerUp(overlay, { clientX: 150, clientY: 200, pointerId: 1 });
-    expect((screen.getByRole("spinbutton", { name: "Left" }) as HTMLInputElement).value).toBe("0.25");
-    expect((screen.getByRole("spinbutton", { name: "Height" }) as HTMLInputElement).value).toBe("0.25");
-    fireEvent.change(screen.getByRole("textbox", { name: "Comment" }), { target: { value: "here" } });
-    fireEvent.submit(screen.getByRole("form"));
-    expect(onFrameComment.mock.calls[0]![0]).toMatchObject({ frame: 0, region: { x: 0.25, y: 0.25, w: 0.5, h: 0.25 } });
+    fireEvent.pointerDown(overlay, { button: 0, clientX: 100, clientY: 300, pointerId: 1 });
+    fireEvent.pointerUp(overlay, { clientX: 100, clientY: 300, pointerId: 1 });
+    const form = screen.getByRole("form");
+    const area = within(form).getByRole("textbox", { name: "Words at area 1" });
+    expect(document.activeElement).toBe(within(form).getByRole("textbox", { name: "Words at point 2" }));
+    fireEvent.submit(form);
+    expect(within(form).getByRole("alert").textContent).toContain("Write what should change at each mark.");
+    expect(onFrameComment).not.toHaveBeenCalled();
+    fireEvent.change(area, { target: { value: "logo too small" } });
+    fireEvent.change(within(form).getByRole("textbox", { name: "Words at point 2" }), { target: { value: "noise" } });
+    fireEvent.change(within(form).getByRole("textbox", { name: "Comment" }), { target: { value: "here" } });
+    fireEvent.submit(form);
+    const comment = FrameCommentSchema.parse(onFrameComment.mock.calls[0]![0]);
+    expect(comment).toMatchObject({
+      frame: 0,
+      text: "here\n\n1. logo too small\n2. noise",
+      marks: [
+        { x: 0.25, y: 0.25, w: 0.5, h: 0.25, text: "logo too small" },
+        { x: 0.5, y: 0.75, text: "noise" },
+      ],
+    });
+    expect(comment.region).toBeUndefined();
+    // jsdom draws no canvas: no overlay, the marks still travel as numbers
+    expect(onFrameComment.mock.calls[0]![1]).toEqual({ overlay: undefined });
+    expect(within(form).queryByRole("list", { name: "Marks" })).toBeNull();
   });
 
-  it("in the large view without a handler, offers the comment as text to copy", () => {
+  it("removes a mark and keeps a mark's frame when the playhead moves", () => {
+    const onFrameComment = vi.fn();
+    const { container } = renderWith(
+      <VideoViewer project="promo-acme" media={scene} onFrameComment={onFrameComment} />,
+    );
+    const video = videoOf(container);
+    fakeMedia(video);
+    setSlider(screen.getByRole("slider", { name: "Position" }), 10);
+    fireEvent.click(screen.getByRole("button", { name: "Mark the frame" }));
+    const overlay = container.querySelector<HTMLElement>("[data-mark-overlay]")!;
+    overlay.getBoundingClientRect = () => ({
+      left: 0,
+      top: 0,
+      width: 100,
+      height: 100,
+      right: 100,
+      bottom: 100,
+      x: 0,
+      y: 0,
+      toJSON: () => ({}),
+    });
+    fireEvent.pointerDown(overlay, { button: 0, clientX: 20, clientY: 20, pointerId: 1 });
+    fireEvent.pointerUp(overlay, { clientX: 20, clientY: 20, pointerId: 1 });
+    const form = screen.getByRole("form", { name: /Comment on frame 10/ });
+    setSlider(screen.getByRole("slider", { name: "Position" }), 30);
+    // the form stays on frame 10 and offers the way back
+    expect(screen.getByRole("form", { name: /Comment on frame 10/ })).toBe(form);
+    fireEvent.click(within(form).getByRole("button", { name: "Back to frame 10" }));
+    expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("10");
+    fireEvent.click(within(form).getByRole("button", { name: "Remove mark 1" }));
+    expect(within(form).queryByRole("list", { name: "Marks" })).toBeNull();
+  });
+
+  it("in the large view sends a frame note to the agent, on any route", async () => {
+    const store = fixtureStore();
+    const decide = vi.spyOn(store, "decide").mockResolvedValue({
+      ok: true,
+      decision: {
+        v: 1,
+        id: "frame-note-1",
+        project: "promo-acme",
+        kind: "frame-note",
+        title: "Note",
+        bindTo: [],
+        status: "applied",
+        createdAt: "2026-11-20T09:00:00Z",
+        decidedAt: "2026-11-20T09:00:01Z",
+        answer: "too dark",
+      },
+    });
+    const { container } = renderWith(<VideoViewer project="promo-acme" media={scene} variant="full" />, { store });
+    const video = videoOf(container);
+    fakeMedia(video);
+    // C marks the frame in the large view
+    fireEvent.keyDown(video, { key: "c" });
+    const form = screen.getByRole("form", { name: /Comment on frame 0/ });
+    expect(within(form).getByText(/00:00\.000/)).toBeTruthy();
+    fireEvent.change(within(form).getByRole("textbox", { name: "Comment" }), { target: { value: "too dark" } });
+    fireEvent.click(within(form).getByRole("button", { name: "Send to the agent" }));
+    expect(decide).toHaveBeenCalledTimes(1);
+    const [project, request] = decide.mock.calls[0]!;
+    expect(project).toBe("promo-acme");
+    expect(request).toMatchObject({
+      kind: "frame-note",
+      answer: "too dark",
+      frameComments: [{ frame: 0, text: "too dark" }],
+    });
+    expect(DecisionRequestSchema.safeParse(request).success).toBe(true);
+    await waitFor(() => expect(screen.getByText("Comment added to frame 0.")).toBeTruthy());
+    // the frame now carries a note on the timeline
+    expect(container.querySelector("[data-noted-frame='0']")).not.toBeNull();
+  });
+
+  it("reads the frame and its time under the pointer on the timeline, and seeks there", () => {
     const { container } = renderWith(<VideoViewer project="promo-acme" media={scene} variant="full" />);
-    fakeMedia(videoOf(container));
-    fireEvent.click(screen.getByRole("button", { name: "Comment on this frame" }));
-    fireEvent.change(screen.getByRole("textbox", { name: "Comment" }), { target: { value: "too dark" } });
-    fireEvent.click(screen.getByRole("button", { name: "Add comment" }));
-    const block = container.querySelector<HTMLElement>("[data-frame-comment]")!;
-    expect(JSON.parse(block.dataset.frameComment!)).toMatchObject({ frame: 0, text: "too dark" });
-    expect(block?.textContent).toContain("out/scenes/scene-3.mp4 frame 0 (00:00:00): too dark");
+    const video = videoOf(container);
+    fakeMedia(video);
+    const layer = container.querySelector<HTMLElement>("[data-timeline-pointer]")!;
+    const track = layer.parentElement!;
+    track.getBoundingClientRect = () => ({
+      left: 0,
+      top: 0,
+      width: 250,
+      height: 40,
+      right: 250,
+      bottom: 40,
+      x: 0,
+      y: 0,
+      toJSON: () => ({}),
+    });
+    fireEvent.pointerMove(layer, { clientX: 100, pointerId: 1 });
+    // 126 frames at 30 fps: 100/250 of 125 is frame 50, which starts at 1.667 s
+    expect(container.querySelector("[data-timeline-readout]")?.textContent).toBe("00:01.667 · frame 50");
+    fireEvent.pointerDown(layer, { button: 0, clientX: 100, pointerId: 1 });
+    expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("50");
+  });
+
+  it("keeps J, K and L for the card shortcuts on the canvas and gives them to the transport in the large view", () => {
+    const { container } = renderWith(<VideoViewer project="promo-acme" media={scene} variant="full" />);
+    const video = videoOf(container);
+    fakeMedia(video);
+    fireEvent.keyDown(video, { key: "l" });
+    expect(video.play).toHaveBeenCalledTimes(1);
+    setSlider(screen.getByRole("slider", { name: "Position" }), 60);
+    fireEvent.keyDown(video, { key: "j" });
+    expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("30");
+    fireEvent.keyDown(video, { key: "." });
+    expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("31");
+  });
+
+  it("in the large view a key anywhere in the dialog drives its player, never the inline one behind it", () => {
+    const { container } = renderWith(<VideoViewer project="promo-acme" media={scene} />);
+    const inline = videoOf(container);
+    fakeMedia(inline);
+    fireEvent.click(screen.getByRole("button", { name: "Open large view" }));
+    const dialog = screen.getByRole("dialog");
+    const large = dialog.querySelector("video")!;
+    fakeMedia(large);
+    fireEvent.keyDown(dialog, { key: "ArrowRight" });
+    expect(dialog.querySelector("output")?.getAttribute("data-frame")).toBe("1");
+    expect(container.querySelector("output")?.getAttribute("data-frame")).toBe("0");
+    // C from the dialog opens the comment form there
+    fireEvent.keyDown(dialog, { key: "c" });
+    expect(dialog.querySelector("[data-mark-overlay]")).not.toBeNull();
   });
 
   it("where Studio cannot open the project, says why and copies the Studio command without network", async () => {
@@ -295,7 +431,7 @@ describe("MediaSlot", () => {
     fireEvent.click(screen.getByRole("button", { name: /Open Scene 3/ }));
     const dialog = screen.getByRole("dialog", { name: "Large view of Scene 3" });
     expect(dialog.querySelector("video")).not.toBeNull();
-    expect(within(dialog).getByRole("button", { name: "Comment on this frame" })).toBeTruthy();
+    expect(within(dialog).getByRole("button", { name: "Mark the frame" })).toBeTruthy();
   });
 
   it("image: opens the lightbox; audio and documents get their own views", () => {

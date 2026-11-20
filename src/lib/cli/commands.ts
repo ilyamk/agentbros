@@ -163,6 +163,17 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "Run authorised campaign jobs",
     ),
   ),
+  g(
+    "docs/experiments.md",
+    c(
+      "experiment",
+      "experiment.ts",
+      "dev",
+      "none",
+      { excluded: "local project selection and blind review packaging" },
+      "Choose and compare project experiments",
+    ),
+  ),
   k(
     ["e2e", "orchestrator", "subagent", "handoff", "сквозные"],
     g(
@@ -1456,6 +1467,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   ),
   g(
     "docs/console.md",
+    k(
+      ["frame", "annotation", "arrow", "comment on a frame", "still", "screenshot"],
+      c(
+        "frame:note",
+        "frame-note.ts",
+        "project",
+        "none",
+        { excluded: "carries the user's own words from the console; CLI only" },
+        "The user's note on one frame of any project video: words, points and boxes, kept as JSON beside the frame as a PNG with the marks drawn",
+      ),
+    ),
+  ),
+  g(
+    "docs/console.md",
     c(
       "console:control",
       "console-control.ts",
@@ -2493,6 +2518,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
     c("blender:assets", "blender-assets.ts", "assets", "none", TRUSTED_CODE, "Blender asset library"),
   ),
   c("blender:run", "blender-run.ts", "render", "none", TRUSTED_CODE, "Trusted Python/.blend; frames and contact sheet"),
+  k(
+    ["matchmove", "camera track", "camera solve", "3d tracking", "vfx", "insert", "match move"],
+    g(
+      ".agents/skills/vork-3d-vfx/references/vfx.md",
+      c(
+        "camera:solve",
+        "camera-solve.ts",
+        "render",
+        "none",
+        TRUSTED_CODE,
+        "Moving-camera solve: tracks, Blender libmv, metric scale; camera.json for Vork",
+      ),
+    ),
+  ),
   k(
     ["3d", "live", "interactive", "scene", "look", "iterate", "blender mcp"],
     g(

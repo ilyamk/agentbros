@@ -21,6 +21,7 @@ import filmHuman from "@fixtures/view-film-human.json";
 import footage from "@fixtures/view-footage.json";
 import footageRender from "@fixtures/view-footage-render.json";
 import empty from "@fixtures/view-empty.json";
+import generations from "@fixtures/view-generations.json";
 import projects from "@fixtures/projects-response.json";
 import cards from "@fixtures/cards.json";
 import events from "@fixtures/events.json";
@@ -35,6 +36,8 @@ export const fixtureViews = {
   filmScriptGate: ProjectViewSchema.parse(filmScriptGate),
   footage: ProjectViewSchema.parse(footage),
   empty: ProjectViewSchema.parse(empty),
+  /** A project:new template holding only paid generations: failed, running and published jobs (2026-11-20). */
+  generations: ProjectViewSchema.parse(generations),
 } satisfies Record<string, ProjectView>;
 
 export const fixtureProjects = ProjectsResponseSchema.parse(projects);
@@ -115,6 +118,7 @@ export const FIXTURES = {
   "view-footage": fixtureViews.footage,
   "view-footage-render": footageRenderView,
   "view-empty": fixtureViews.empty,
+  "view-generations": fixtureViews.generations,
   cards: allCards,
   "view-replica": routeViews.replica,
   "view-recipe": routeViews.recipe,

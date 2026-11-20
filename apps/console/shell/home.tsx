@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { MediaSlot } from "@/media";
+import { spendText } from "@/panels/generic/money";
 import { ProjectSettings } from "./project-settings";
 
 export function HomePage() {
@@ -141,7 +142,10 @@ export function HomePage() {
 function ProjectCard({ project, now, showSettings }: { project: ProjectSummary; now: number; showSettings: boolean }) {
   const { d, f, p, locale } = useI18n();
   const title = project.title ?? project.id;
-  const share = project.ceilingUsd ? Math.min(100, (project.spentUsd / project.ceilingUsd) * 100) : undefined;
+  // Reserved money counts against the ceiling as the budget meter does: a reservation is never shown as free.
+  const share = project.ceilingUsd
+    ? Math.min(100, ((project.spentUsd + (project.reservedUsd ?? 0)) / project.ceilingUsd) * 100)
+    : undefined;
   return (
     <a
       href={projectHref(project.id)}
@@ -172,14 +176,7 @@ function ProjectCard({ project, now, showSettings }: { project: ProjectSummary; 
       ) : null}
       <div className="mt-auto flex flex-col gap-1.5">
         <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span className="tabular-nums">
-            {project.ceilingUsd !== undefined
-              ? f(d.topbar.spent, {
-                  spent: formatUsd(project.spentUsd, locale),
-                  ceiling: formatUsd(project.ceilingUsd, locale),
-                })
-              : f(d.topbar.spentNoCeiling, { spent: formatUsd(project.spentUsd, locale) })}
-          </span>
+          <span className="tabular-nums">{spendText({ d, f, locale }, project)}</span>
           <span className="flex items-center gap-1">
             <CalendarClock className="size-3.5" aria-hidden="true" />
             {f(d.home.updated, { time: formatRelative(project.updatedAt, now, locale) })}

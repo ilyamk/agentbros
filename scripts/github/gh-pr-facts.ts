@@ -9,7 +9,7 @@ import { compileLeakPatterns, excuses, globToRegex, type AllowedHit, type LeakPa
 import { truncateDiff } from "../../src/lib/triage/artefact";
 import { TriageArtefactMetadataSchema } from "../../src/types/triage";
 import { GitHub, entry, prNumbers } from "./api";
-import { lineDiff } from "./line-diff";
+import { lineDiff, type LineDiff } from "./line-diff";
 
 export type Pull = {
   number: number;
@@ -132,9 +132,11 @@ export function leakHit(files: ApiFile[]): boolean {
  * merge base and head contents, which is what a PR's file diff compares. GitHub counts with Myers' heuristic diff,
  * which can pair a few more lines than the minimal diff (uv.lock: +428/-289 against +424/-285). Accepted only when
  * the minimal diff has the same net change and no more additions or deletions than GitHub's counts; otherwise, or on
- * any read failure, undefined and the file stays uncertain.
+ * any read failure, undefined and the file stays uncertain. Past its diff limits (a PR of thousands of changed lines)
+ * GitHub lists further modified files with neither a patch nor counts (0/0); there is nothing to check against, so the
+ * diff of the merge base and head contents stands on its own.
  */
-async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: string): Promise<string | undefined> {
+async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: string): Promise<LineDiff | undefined> {
   try {
     let before = "";
     if (file.status !== "added") {
@@ -148,10 +150,10 @@ async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: st
       before = base.text;
     }
     const diff = lineDiff(before, head);
-    return diff &&
-      diff.additions - diff.deletions === file.additions - file.deletions &&
-      diff.additions <= file.additions
-      ? diff.patch
+    if (!diff) return undefined;
+    if (file.status === "modified" && !file.additions && !file.deletions) return diff;
+    return diff.additions - diff.deletions === file.additions - file.deletions && diff.additions <= file.additions
+      ? diff
       : undefined;
   } catch {
     return undefined;
@@ -204,11 +206,14 @@ export async function getFacts(
         if (!value) uncertainFiles.push(file.filename);
         else {
           changed.binary = value.text.includes("\0");
-          if (!changed.binary && (file.additions || file.deletions)) {
-            const patch = await reconstructedPatch(api, pr, file, value.text);
-            if (patch === undefined) uncertainFiles.push(file.filename);
+          if (!changed.binary && (file.additions || file.deletions || status === "M")) {
+            const diff = await reconstructedPatch(api, pr, file, value.text);
+            if (diff === undefined) uncertainFiles.push(file.filename);
             else {
-              file.patch = changed.patch = patch;
+              // The rebuilt patch carries its own counts, so intake's complete-patch check holds for it.
+              file.patch = changed.patch = diff.patch;
+              changed.additions = diff.additions;
+              changed.deletions = diff.deletions;
               rebuilt = true;
             }
           }

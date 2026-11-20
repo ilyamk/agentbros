@@ -1,6 +1,7 @@
 /** Which next-step command a project follows, and what an agent reads at each step of it. */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
+import { experimentInstructions } from "../experiments/project";
 import { STEP_RULES } from "../film/chain";
 import { isConsolePipelineEntry } from "./paths";
 import { filmTypeDoc } from "../film/routes";
@@ -175,6 +176,8 @@ export type PlaybookAnswer = {
   playbookHint?: string;
   playbookSuggest?: PlaybookSuggest;
   playbookWarning?: string;
+  experiments?: ReturnType<typeof experimentInstructions>;
+  activeExperiments?: { id: string; status: string }[];
   read: string[];
 };
 
@@ -244,18 +247,25 @@ export function playbookSuggest(projectDir: string, root = rootOfProject(project
 
 /** A next-step answer's playbook fields: the bound playbook's files for `step` first in `read`, a warning for an unusable binding, or a hint to bind one with the owners of the project's kind. */
 export function withPlaybook(projectDir: string, read: string[] = [], step?: string | null): PlaybookAnswer {
+  const active = experimentInstructions(projectDir, step);
+  const experiments = !active.length
+    ? {}
+    : step
+      ? { experiments: active }
+      : { activeExperiments: active.map(({ id, status }) => ({ id, status })) };
   const bound = playbookRead(projectDir, rootOfProject(projectDir), step);
-  if (bound.warning) return { playbook: null, playbookWarning: bound.warning, read };
+  if (bound.warning) return { playbook: null, playbookWarning: bound.warning, ...experiments, read };
   if (!bound.playbook) {
     const suggest = playbookSuggest(projectDir);
     return {
       playbook: null,
+      ...experiments,
       playbookHint: playbookHint(path.basename(projectDir)),
       ...(suggest ? { playbookSuggest: suggest } : {}),
       read,
     };
   }
-  return { playbook: bound.playbook, read: [...new Set([...bound.read, ...read])] };
+  return { playbook: bound.playbook, ...experiments, read: [...new Set([...bound.read, ...read])] };
 }
 
 // --- The user's memory ---

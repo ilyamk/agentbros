@@ -4,6 +4,8 @@ import { TemplateInstanceSchema } from "../../types/templates";
 import type { StyleProfileId } from "../../types/templates";
 import { STYLE_PROFILES } from "./styles";
 import { compileTimeline } from "../timeline";
+import { findExperiment } from "../experiments/registry";
+import { TEMPLATE_REGISTRY } from "./registry";
 import { CliErrorObject } from "../cli";
 export const RECIPES = [
   {
@@ -105,6 +107,11 @@ export const RECIPES = [
     ],
   },
 ] as const;
+export const PROOF_SCENES = TEMPLATE_REGISTRY.filter(({ id }) =>
+  ["scene.product-walkthrough", "scene.worked-example", "scene.metric"].includes(id),
+);
+const proofRecipes = ["ad-direct", "product-demo", "educational-explainer", "youtube-chapter"];
+
 export function buildRecipe(input: RecipeRequest): {
   request: ReturnType<typeof RecipeRequestSchema.parse>;
   project: ProjectConfig;
@@ -112,6 +119,9 @@ export function buildRecipe(input: RecipeRequest): {
   productionReady: false;
   findings: string[];
   beatPurposes: Record<string, string>;
+  proofScenes?: typeof PROOF_SCENES;
+  proofs?: { beat: string; source: string; template: string }[];
+  proofGuidance?: string;
 } {
   const parsed = RecipeRequestSchema.safeParse(input);
   if (!parsed.success) {
@@ -122,6 +132,11 @@ export function buildRecipe(input: RecipeRequest): {
   }
   const request = parsed.data,
     recipe = RECIPES.find((r) => r.id === request.recipeId)!;
+  if (request.experiment && !proofRecipes.includes(request.recipeId))
+    throw new CliErrorObject({
+      code: "VALIDATION",
+      message: "Proof scenes apply to product or educational recipes.",
+    });
   if (
     new Set(request.beats.map((b) => b.id)).size !== request.beats.length ||
     request.beats.some((b) => !(recipe.beats as readonly string[]).includes(b.id))
@@ -130,6 +145,15 @@ export function buildRecipe(input: RecipeRequest): {
       code: "VALIDATION",
       message: "Recipe beat overrides must have unique registered IDs.",
     });
+  const proofs = request.beats.flatMap(({ id, template, proofSource }) => {
+    if (!proofSource) return [];
+    if (!request.experiment || !template || !PROOF_SCENES.some((scene) => scene.id === template.id))
+      throw new CliErrorObject({
+        code: "VALIDATION",
+        message: `Beat ${id} needs proof-scenes@1 and a supported proof template to record its source.`,
+      });
+    return [{ beat: id, source: proofSource, template: template.id }];
+  });
   const profile = STYLE_PROFILES[request.styleProfile ?? (recipe.style as StyleProfileId)];
   const fps = 30,
     count = recipe.beats.length;
@@ -191,6 +215,9 @@ export function buildRecipe(input: RecipeRequest): {
     durationInFrames: compileTimeline(project.scenes, { fps }).durationInFrames,
     productionReady: false,
     findings,
+    ...(request.experiment
+      ? { proofScenes: PROOF_SCENES, proofs, proofGuidance: findExperiment(request.experiment)!.instruction }
+      : {}),
     beatPurposes: Object.fromEntries(recipe.beats.map((id, i) => [id, recipe.purposes[i]])),
   };
 }

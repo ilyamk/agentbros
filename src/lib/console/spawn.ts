@@ -19,6 +19,7 @@ export const DECISION_ALIASES = [
   "film:rights",
   "budget",
   "feedback",
+  "frame:note",
   "memory",
   "music",
   "ref:rate",

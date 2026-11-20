@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-15",
+  "updatedAt": "2026-11-20",
   "catalogueOnlyConcepts": [
     "world",
     "structured-data",
@@ -3394,34 +3394,23 @@
       "candidates": [
         {
           "provider": "fal",
-          "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
+          "endpoint": "meshy/n1/retexture",
           "class": "hero",
           "order": 1,
           "status": "active",
-          "why": "Category fit: 3d-to-3d → model3d,json for edit 3d. Schema capabilities: input_file_url (file). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.015/units in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
-          "evidence": [
-            {
-              "kind": "docs",
-              "source": "src/lib/models/fal-catalog/3d-to-3d.json",
-              "url": "https://api.fal.ai/v1/models?endpoint_id=fal-ai%2Fhunyuan-3d%2Fv3.1%2Fsmart-topology&expand=openapi-3.0",
-              "date": "2026-11-15"
-            }
-          ],
-          "addedAt": "2026-11-15"
-        },
-        {
-          "provider": "fal",
-          "endpoint": "meshy/n1/retexture",
-          "class": "balanced",
-          "order": 2,
-          "status": "active",
-          "why": "Category fit: 3d-to-3d → image,model3d,json for edit 3d. Schema capabilities: image_style_url (image); model_url (model3d); multiview_image_urls min 1 max 4 (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.3/units in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
+          "why": "Category fit: 3d-to-3d → image,model3d,json for edit 3d. Schema capabilities: image_style_url (image); model_url (model3d); multiview_image_urls min 1 max 4 (image array). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class hero: Unknown price; needs --max-cost-usd at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.3/units in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
           "evidence": [
             {
               "kind": "docs",
               "source": "src/lib/models/fal-catalog/3d-to-3d.json",
               "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fn1%2Fretexture&expand=openapi-3.0",
               "date": "2026-11-15"
+            },
+            {
+              "kind": "owner",
+              "text": "Hero of 3d.edit since fal removed fal-ai/hunyuan-3d/v3.1/smart-topology (2026-11-20); verified retexture endpoint.",
+              "source": "owner via models:slot",
+              "date": "2026-11-20"
             }
           ],
           "addedAt": "2026-11-15"
@@ -3430,7 +3419,7 @@
           "provider": "fal",
           "endpoint": "meshy/rigging",
           "class": "balanced",
-          "order": 3,
+          "order": 2,
           "status": "active",
           "why": "Category fit: 3d-to-3d → model3d,json for edit 3d. Schema capabilities: model_url min 1 (model3d). Recency: version retained as a capability/price alternative; firstSeen is discovery, not release; trust verified (offline contract; live acceptance not run). Class balanced: $0.8 (exact request estimate) at 5 s, 720p, 16:9 (where those controls exist); tracked fal list $0.8/generations in src/lib/models/fal-prices.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
           "evidence": [
@@ -3442,6 +3431,29 @@
             }
           ],
           "addedAt": "2026-11-15"
+        },
+        {
+          "provider": "fal",
+          "endpoint": "meshy/v7/retexture",
+          "class": "budget",
+          "order": 3,
+          "status": "active",
+          "why": "Category fit: 3d-to-3d → image,model3d,json for edit 3d. Schema capabilities: model_url (model3d); text_style_prompt or image_style_url (image) texture guidance. Recency: numbered standard Meshy retexture; trust discovered (owner-accepted, offline contract not reviewed). Class budget: $0.3 (exact request estimate) in src/lib/models/price-matrix-catalog/fal-3d-to-3d.json. Topology, texture and rigging are distinct suboperations: scaffold the endpoint for the needed subtask.",
+          "evidence": [
+            {
+              "kind": "docs",
+              "source": "src/lib/models/fal-catalog/3d-to-3d.json",
+              "url": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7%2Fretexture&expand=openapi-3.0",
+              "date": "2026-11-15"
+            },
+            {
+              "kind": "owner",
+              "text": "Third 3d.edit candidate after fal removed fal-ai/hunyuan-3d/v3.1/smart-topology (2026-11-20): exact-priced standard retexture beside the verified N1 retexture hero.",
+              "source": "owner via models:slot",
+              "date": "2026-11-20"
+            }
+          ],
+          "addedAt": "2026-11-20"
         }
       ],
       "reference": {}

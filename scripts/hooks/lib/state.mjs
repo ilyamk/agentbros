@@ -15,6 +15,22 @@ export const CARDS_DIR = "pipeline/cards";
 export const SERVER_LOCK_FILE = "out/console/server.json";
 const CONTROL_STATES = ["running", "paused", "stopped"];
 const DECIDED = ["applied", "refused", "superseded"];
+const FRAME_NOTES = "/pipeline/frame-notes/";
+
+/**
+ * A frame note's files (2026-11-20): the still with the user's marks and its JSON, from the decision's command or a
+ * follow-up (`result.metadata.followUps[].outputs`), as `console:wait` gives them; the relay names the still.
+ */
+export function frameNoteFiles(result) {
+  if (!isObject(result)) return {};
+  const followUps = Array.isArray(result.metadata?.followUps) ? result.metadata.followUps : [];
+  const files = [result.outputs, ...followUps.map((item) => (isObject(item) ? item.outputs : undefined))]
+    .flatMap((outputs) => (Array.isArray(outputs) ? outputs : []))
+    .filter((file) => typeof file === "string" && file.includes(FRAME_NOTES));
+  const note = files.find((file) => file.endsWith(".json"));
+  const still = files.find((file) => file.endsWith(".png"));
+  return { ...(note ? { note } : {}), ...(still ? { still } : {}) };
+}
 
 /** `{ lease, hash }`, `{ invalid, hash }` for an unreadable or malformed lease, or undefined without one. */
 export function readLease(projectDir) {
@@ -109,6 +125,7 @@ export function decisionsSince(projectDir, sinceMs) {
       status: item.status,
       answer: item.answer,
       choice: str(item.choice),
+      ...frameNoteFiles(item.result),
     }))
     .sort((a, b) => a.at - b.at);
 }

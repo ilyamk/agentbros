@@ -1,8 +1,8 @@
 # Types — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
-Zod contracts. Workflow v3 reads v2; corpora never grant approval.
+Zod. Workflow v3 reads v2. Proof is opt-in. Corpora grant no approval.
 
 `console-credentials.ts` validates key names, values and save revisions.
 

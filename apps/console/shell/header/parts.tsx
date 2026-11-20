@@ -15,6 +15,7 @@ import {
   Gauge,
   Hand,
   History,
+  Images,
   LayoutDashboard,
   Wallet,
   type LucideIcon,
@@ -41,7 +42,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { runDuration } from "@/panels/generic/agents";
-import { ceilingOf } from "@/panels/generic/money";
+import { ceilingOf, spendText } from "@/panels/generic/money";
 import { railProgress, railInput } from "@/components/step-rail/model";
 import { StudioHeaderButton } from "@/media/studio-action";
 import { EditingTableActions } from "../editing-table";
@@ -49,7 +50,7 @@ import { ControlDialog } from "../control";
 import { AutonomyDialog } from "../autonomy";
 import { PaidJobs, inFlightJobs } from "../paid-jobs";
 
-export type Page = "canvas" | "history" | "timeline";
+export type Page = "canvas" | "media" | "history" | "timeline";
 
 /** The live state in one word: what the project is doing right now. */
 export type Live = "working" | "idle" | "paused" | "stopped";
@@ -78,6 +79,18 @@ export function useHeaderFacts(view: ProjectView) {
     spent: formatUsd(view.money.spentUsd, locale),
     ceiling: ceiling !== undefined ? formatUsd(ceiling, locale) : undefined,
     ratio: ceiling ? Math.min(1, view.money.spentUsd / ceiling) : undefined,
+    // Money held for unfinished jobs is shown beside spend, never a bare $0 (2026-11-20).
+    reservedLine:
+      view.money.reservedUsd && view.money.reservedUsd > 0
+        ? spendText(
+            { d, f, locale },
+            {
+              spentUsd: view.money.spentUsd,
+              reservedUsd: view.money.reservedUsd,
+              ...(ceiling !== undefined ? { ceilingUsd: ceiling } : {}),
+            },
+          )
+        : undefined,
     liveText:
       live === "working" && active
         ? f(d.topbar.active, { name: active.name, elapsed: formatDuration(runDuration(active, now), d.units) })
@@ -152,10 +165,16 @@ export function SpendMeter({ facts, className }: { facts: HeaderFacts; className
       <span className="inline-flex items-baseline gap-1 text-xs tabular-nums">
         <Wallet aria-hidden="true" className="size-3.5 shrink-0 self-center text-muted-foreground" />
         <span className="sr-only">{d.topbar.spend}: </span>
-        <span className="font-semibold">{facts.spent}</span>{" "}
-        <span className="text-muted-foreground">
-          {facts.ceiling ? f(d.header.of, { ceiling: facts.ceiling }) : d.header.noCeiling}
-        </span>
+        {facts.reservedLine ? (
+          <span>{facts.reservedLine}</span>
+        ) : (
+          <>
+            <span className="font-semibold">{facts.spent}</span>{" "}
+            <span className="text-muted-foreground">
+              {facts.ceiling ? f(d.header.of, { ceiling: facts.ceiling }) : d.header.noCeiling}
+            </span>
+          </>
+        )}
       </span>
       {ratio !== undefined ? (
         <span aria-hidden="true" className="h-1 w-full min-w-16 overflow-hidden rounded-full bg-muted">
@@ -280,14 +299,18 @@ export function ProjectActions({ view }: { view: ProjectView }) {
   );
 }
 
-const PAGE_ICON: Record<Page, LucideIcon> = { canvas: LayoutDashboard, history: History, timeline: ChartGantt };
+const PAGE_ICON: Record<Page, LucideIcon> = {
+  canvas: LayoutDashboard,
+  media: Images,
+  history: History,
+  timeline: ChartGantt,
+};
 
 /** Canvas, History, Timeline as a segmented control, each with its icon (only Canvas in a snapshot). */
 export function ProjectTabs({ view, page, className }: { view: ProjectView; page: Page; className?: string }) {
   const { d } = useI18n();
-  const pages: Page[] = snapshotMode() ? ["canvas"] : ["canvas", "history", "timeline"];
-  const name = (item: Page) =>
-    item === "canvas" ? d.canvas.canvas : item === "history" ? d.canvas.history : d.canvas.timeline;
+  const pages: Page[] = snapshotMode() ? ["canvas"] : ["canvas", "media", "history", "timeline"];
+  const name = (item: Page) => d.canvas[item];
   return (
     <nav
       aria-label={view.project.title ?? view.project.id}
@@ -325,7 +348,8 @@ export function ProjectTools({ view, className }: { view: ProjectView; className
   if (snapshotMode()) return null;
   return (
     <div className={cn("hidden flex-wrap items-center gap-2 md:flex", className)}>
-      <StudioHeaderButton project={view.project.id} />
+      {/* A project that only holds generations has no composition to open (2026-11-20). */}
+      {view.generations?.templateOnly ? null : <StudioHeaderButton project={view.project.id} />}
       <EditingTableActions view={view} />
     </div>
   );

@@ -20,7 +20,7 @@ describe("ProjectHeader", () => {
     expect(within(header).getByRole("heading", { level: 1 }).textContent).toBe(film.project.title);
     expect(container.querySelector("[data-header-step]")?.getAttribute("data-header-step")).toBe(film.current!.step);
     expect(container.querySelector("[data-header-waiting]")?.textContent).toContain("1 waits for you");
-    expect(header.textContent).toContain("$3.10 of $10.00");
+    expect(header.textContent).toContain("$3.10 spent · $1.40 reserved of $10.00");
     expect(within(header).getByRole("button", { name: /Change autonomy and budget/ }).textContent).toContain(
       "Interactive",
     );
@@ -32,7 +32,7 @@ describe("ProjectHeader", () => {
     renderWith(<ProjectHeader view={film} page="history" />);
     const tabs = screen.getByRole("navigation", { name: film.project.title });
     const links = within(tabs).getAllByRole("link");
-    expect(links.map((link) => link.textContent)).toEqual(["Canvas", "History", "Timeline"]);
+    expect(links.map((link) => link.textContent)).toEqual(["Canvas", "Media", "History", "Timeline"]);
     for (const link of links) expect(link.querySelector("svg")).toBeTruthy();
     expect(within(tabs).getByRole("link", { name: "History" }).getAttribute("aria-current")).toBe("page");
   });

@@ -8,7 +8,7 @@ import { FolderX, Terminal } from "lucide-react";
 import { useI18n } from "@/i18n";
 import { useConsole, useConsoleStore } from "@/store/context";
 import { commandLine, formatDuration } from "@/lib/format";
-import { projectHref } from "@/lib/router";
+import { projectHref, type ProjectPageName } from "@/lib/router";
 import { cn } from "@/lib/utils";
 import { DecisionCard } from "@/components/decision-card";
 import { EmptyState } from "@/components/empty-state";
@@ -20,6 +20,7 @@ import { onPanelsChanged, panelsFor, registeredPanels } from "@/panels/registry"
 import { HistoryPanel } from "@/panels/generic/history";
 import { TimelineView } from "@/views/timeline";
 import { CampaignView } from "@/views/campaign";
+import { MediaView } from "@/views/media/media-view";
 import { PanelSection } from "./panel-section";
 import { SnapshotBanner } from "./snapshot-banner";
 import { snapshotMode } from "@/lib/snapshot-mode";
@@ -36,7 +37,7 @@ export function ProjectPage({
   decision,
 }: {
   project: string;
-  view: "canvas" | "history" | "timeline";
+  view: ProjectPageName;
   /** A notification's click (`#/projects/<id>/decision/<id>`): focus that card once the view is there. */
   decision?: string;
 }) {
@@ -103,6 +104,8 @@ export function ProjectPage({
             <h2 className="text-lg font-semibold">{d.history.title}</h2>
             <HistoryPanel view={view} />
           </section>
+        ) : page === "media" ? (
+          <MediaView view={view} />
         ) : page === "timeline" ? (
           <>
             <EditingBanner view={view} revision={revision} />

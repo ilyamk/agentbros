@@ -49,7 +49,7 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 
 ## Rules
 
-- The chain is data: change steps in `FILM_CHAIN` (read by `film:next`, `film:brief`), not in an agent or skill.
+- Change steps in `FILM_CHAIN`; see [project experiments](../../../docs/experiments.md) for step opt-ins.
 - Only the user's own words approve (`film:approve --answer`). Approvals are bound to the hashes of the step's outputs; a changed artefact reopens the gate.
 - Delivery of a bespoke film (no `project.json`) goes through `src/lib/delivery/bespoke.ts`: film:render publishes delivery's receipt for a full render of build.json's composition to `out/<id>/film.mp4`; delivery needs `manualApproval`, never chain approvals ([delivery](../../../docs/delivery.md), "Bespoke films").
 - `--proxy benchmark` advances a benchmark run; never the user's approval (`userApprovalEvents` drops it), refused on `human` (`PROXY_REFUSED`), never authorises spending.

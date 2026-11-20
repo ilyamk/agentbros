@@ -27,6 +27,11 @@
       "spend": "may-spend",
       "guarded": false
     },
+    "experiment": {
+      "script": "scripts/experiment.ts",
+      "spend": "none",
+      "guarded": true
+    },
     "bench:workflow": {
       "script": "scripts/bench-workflow.ts",
       "spend": "may-spend",
@@ -559,6 +564,11 @@
     },
     "console:card": {
       "script": "scripts/console-card.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "frame:note": {
+      "script": "scripts/frame-note.ts",
       "spend": "none",
       "guarded": true
     },
@@ -1159,6 +1169,11 @@
     },
     "blender:run": {
       "script": "scripts/blender-run.ts",
+      "spend": "none",
+      "guarded": true
+    },
+    "camera:solve": {
+      "script": "scripts/camera-solve.ts",
       "spend": "none",
       "guarded": true
     },
