@@ -529,7 +529,15 @@ test("an omitted patch of a large text file is rebuilt from merge base and head,
   assert.equal((await getFacts(leaking.api, 7, history)).leakHit, true);
   // GitHub's Myers counts may pair more lines than the minimal diff; the same net change is the same file pair.
   const heuristic = setup(updated, 3, 3);
-  assert.deepEqual((await getFacts(heuristic.api, 7, history)).uncertainFiles, []);
+  const heuristicFacts = await getFacts(heuristic.api, 7, history);
+  assert.deepEqual(heuristicFacts.uncertainFiles, []);
+  // The rebuilt patch carries its own counts, so intake's complete-patch check (models-refresh route) accepts it.
+  assert.deepEqual([heuristicFacts.changedFiles[0]?.additions, heuristicFacts.changedFiles[0]?.deletions], [1, 1]);
+  // Past GitHub's diff limits a modified file is listed with neither patch nor counts; the rebuilt diff stands alone.
+  const uncounted = await getFacts(setup(updated, 0, 0).api, 7, history);
+  assert.deepEqual(uncounted.uncertainFiles, []);
+  assert.equal(uncounted.changedFiles[0]?.patch, '@@ -4,1 +4,1 @@\n-version = "2.11.0"\n+version = "2.11.0+cpu"');
+  assert.deepEqual([uncounted.changedFiles[0]?.additions, uncounted.changedFiles[0]?.deletions], [1, 1]);
   // A rebuilt diff that disagrees with GitHub's counts (for example, another merge base) stays for human review.
   const mismatch = setup(updated, 2, 1);
   assert.deepEqual((await getFacts(mismatch.api, 7, history)).uncertainFiles, ["uv.lock"]);
