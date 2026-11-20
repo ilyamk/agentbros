@@ -8,16 +8,17 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { STEP_STATUSES } from "../src/types/console";
 
-const model = readFileSync("apps/console/components/step-rail/model.ts", "utf8");
+// Read inside each test, so a missing rail fails that test by name instead of the whole file.
+const model = (): string => readFileSync("apps/console/components/step-rail/model.ts", "utf8");
 
 const motions = (): string[] => {
-  const list = /export const MOTIONS = \[([^\]]+)\] as const;/u.exec(model)?.[1];
+  const list = /export const MOTIONS = \[([^\]]+)\] as const;/u.exec(model())?.[1];
   assert.ok(list, "model.ts declares MOTIONS");
   return [...list.matchAll(/"([^"]+)"/gu)].map((match) => match[1]!);
 };
 
 test("the step rail maps every step status to a declared motion", () => {
-  const body = /export function stepMotion\([\s\S]*?\n\}\n/u.exec(model)?.[0];
+  const body = /export function stepMotion\([\s\S]*?\n\}\n/u.exec(model())?.[0];
   assert.ok(body, "model.ts declares stepMotion");
   const cases = new Set([...body.matchAll(/case "([^"]+)":/gu)].map((match) => match[1]!));
   assert.deepEqual(
