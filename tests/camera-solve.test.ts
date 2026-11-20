@@ -4,10 +4,13 @@ import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { test } from "node:test";
-import { cameraSolve, solveParams, tracksRequest } from "../src/lib/vfx/camera-solve";
 import { pythonArgs, pythonEnvironment, pythonUv } from "../src/lib/python";
 
-test("camera:solve requests carry the worker and Blender contracts", () => {
+// Imported per test, so this file still loads where camera-solve does not exist and the contract test itself fails there.
+const camera = () => import("../src/lib/vfx/camera-solve");
+
+test("camera:solve requests carry the worker and Blender contracts", async () => {
+  const { solveParams, tracksRequest } = await camera();
   const tracks = tracksRequest("plate.mp4", "out/tracks.json", { frames: [0, 9], matteDir: "m" });
   assert.equal(tracks.matte_pattern, "frame-{:05d}.png");
   assert.deepEqual(tracks.frames, [0, 9]);
@@ -21,6 +24,7 @@ test(
   "camera:solve recovers a known synthetic camera",
   { skip: process.env.RUN_BLENDER_TESTS ? false : "Set RUN_BLENDER_TESTS=1 to run real Blender", timeout: 600_000 },
   async () => {
+    const { cameraSolve } = await camera();
     const dir = mkdtempSync(path.join(tmpdir(), "camera-solve-"));
     const fixture = path.join(import.meta.dirname, "fixtures/vfx/synthetic-plate.py");
     const made = spawnSync(pythonUv(), pythonArgs("vork", [fixture, dir]), {
