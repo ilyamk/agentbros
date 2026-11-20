@@ -82,11 +82,12 @@ export function contributionCategories(
   if (requested && declared && requested !== declared)
     throw new Error("Category flag disagrees with the change entry.");
   const category = requested ?? declared;
-  const categories = category
-    ? [category]
-    : categoriesForPaths(
-        files.map((file) => file.path),
-        config,
-      );
-  return categories;
+  if (category) return [category];
+  // Catch-all categories (fix, security: paths "**") would match every change, so they apply only when a change entry
+  // declares them. Without one (Dependabot, release and models-refresh bot routes), paths alone pick the categories.
+  const specific = { ...config, categories: config.categories.filter(({ paths }) => !paths.includes("**")) };
+  return categoriesForPaths(
+    files.map((file) => file.path),
+    specific,
+  );
 }

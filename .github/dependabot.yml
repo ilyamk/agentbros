@@ -12,3 +12,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    groups:
+      # init, analyze and upload-sarif are one release; a split bump leaves CodeQL on mismatched majors.
+      codeql-action:
+        patterns: ["github/codeql-action*"]
