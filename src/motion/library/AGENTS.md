@@ -1,6 +1,6 @@
 # Motion Library — Agent Rules
 
-Last updated: 2026-11-19
+Last updated: 2026-11-20
 
 Capture-based product demos use real before/after plates, camera stops and an optional carried control in landscape and portrait. The showcase can perform the captured ground-swap and caused-morph pair. The same frame plan schedules its local sound accents. [Reproducible example](../../../examples/workflows/product-ad/library-proof/README.md).
 

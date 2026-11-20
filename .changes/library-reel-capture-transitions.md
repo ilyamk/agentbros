@@ -2,7 +2,7 @@
 category: library
 bump: minor
 breaking: false
-pr: 0
+pr: 24
 authors: [ilyamk]
 harness: claude-code
 novelty: scene-product-reveal and scene-end-card are existing blocks that gained props (a flat screen presentation; a mark ink and action size), not new looks. Their unchanged previews sit near film-finish, frame-to-object, giant-word-pull-out, glyph-to-shape, icon-visual, material-fill, motion-blur, shaded-orb, speed-ramp-flurry, type-number-race and ui-punch-reframe only as dark, low-detail frames; the blocks still do different work
