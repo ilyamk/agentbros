@@ -31,6 +31,7 @@ const profiles: Partial<
   multicam: { modules: ["numpy", "cv2"], files: ["multicam.py"] },
   offset: { modules: ["audio_offset_finder"], files: [] },
   asr: { modules: ["mlx", "parakeet_mlx", "huggingface_hub"], files: ["speech-local.py"], platform: "darwin-arm64" },
+  "portable-voice": { modules: ["sherpa_onnx", "numpy"], files: ["portable-voice.py"] },
   vad: { modules: ["torch", "silero_vad", "numpy"], files: ["speech-local.py"] },
   diarize: { modules: ["torch", "torchaudio", "torchcodec", "pyannote"], files: ["speech-local.py"] },
   "sfx-index": { modules: ["numpy", "scipy", "pyloudnorm"], files: ["sfx-index.py"] },

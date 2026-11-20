@@ -24,6 +24,7 @@ import {
   type FramePixels,
 } from "./pixels";
 import { checkRender, probeRender } from "./render-file";
+import { ReadabilityCheck, readableText } from "./readability";
 import { slopFilmOccurrences, slopFrameOccurrences, type SampledText } from "./slop-signatures";
 import {
   checkText,
@@ -170,6 +171,9 @@ export async function runMotionCheck(options: MotionCheckOptions) {
     const raws = new Map<number, Buffer>();
     const usedFonts = new Map<string, PlatformFont[]>();
     const sampledTexts: SampledText[] = [];
+    const selectedSet = new Set(selected);
+    const readability = new ReadabilityCheck({ width, height, fps, durationInFrames });
+    let readabilityBackdropFailures = 0;
     let currentFrame = frames[0]!;
     let textNodes = 0;
     const events: PageEvents = {
@@ -212,6 +216,17 @@ export async function runMotionCheck(options: MotionCheckOptions) {
           }
         }
       const raw = decodePng(await page.capture(), width, height);
+      if (selectedSet.has(frame)) {
+        let backdrop: Buffer | undefined;
+        if (measurement.texts.some(readableText)) {
+          try {
+            backdrop = decodePng(await page.captureTextBackdrop(), width, height);
+          } catch {
+            readabilityBackdropFailures++;
+          }
+        }
+        readability.add(frame, measurement.texts, raw, backdrop);
+      }
       pixels.set(frame, measurePixels(frame, raw));
       if (flashFromCaptures && selected.includes(frame)) flashCells.set(frame, cellsFromRgb(raw, width, height));
       if (keepRaw.has(frame)) raws.set(frame, raw);
@@ -407,6 +422,10 @@ export async function runMotionCheck(options: MotionCheckOptions) {
         allowed,
         unusedAllow,
         intendedOverflow,
+        readability: {
+          ...readability.report(selected.filter((frame) => pixels.has(frame))),
+          backdropFailures: readabilityBackdropFailures,
+        },
         textNodes,
         determinismChecked,
         determinismRetried,

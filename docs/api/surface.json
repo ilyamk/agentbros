@@ -23814,6 +23814,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -23848,6 +23857,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -31055,6 +31069,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -31089,6 +31112,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -32509,6 +32537,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -32543,6 +32580,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -36531,6 +36573,11 @@
           "type": "string"
         },
         {
+          "name": "full",
+          "required": false,
+          "type": "boolean"
+        },
+        {
           "name": "help",
           "required": false,
           "short": "h",
@@ -39111,6 +39158,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -39145,6 +39201,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -39215,6 +39276,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -39249,6 +39319,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -39319,6 +39394,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -39353,6 +39437,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -40235,6 +40324,15 @@
           "type": "boolean"
         },
         {
+          "choices": [
+            "apple",
+            "portable"
+          ],
+          "name": "engine",
+          "required": false,
+          "type": "string"
+        },
+        {
           "name": "features",
           "required": false,
           "type": "string"
@@ -40269,6 +40367,11 @@
           "name": "output",
           "required": false,
           "type": "string"
+        },
+        {
+          "name": "prepare",
+          "required": false,
+          "type": "boolean"
         },
         {
           "name": "project",
@@ -50568,6 +50671,26 @@
                     },
                     "type": "array"
                   },
+                  "modelPins": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sha256": {
+                          "$ref": "#/$defs/__schema9"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "sha256"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
                   "operationId": {
                     "$ref": "#/$defs/__schema9"
                   },
@@ -50869,6 +50992,26 @@
                       },
                       "required": [
                         "file",
+                        "sha256"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "modelPins": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "sha256": {
+                          "$ref": "#/$defs/__schema12"
+                        }
+                      },
+                      "required": [
+                        "name",
                         "sha256"
                       ],
                       "type": "object"
@@ -130992,6 +131135,26 @@
             },
             "type": "array"
           },
+          "modelPins": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "sha256": {
+                  "$ref": "#/$defs/__schema0"
+                }
+              },
+              "required": [
+                "name",
+                "sha256"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
           "operationId": {
             "$ref": "#/$defs/__schema0"
           },
@@ -138770,6 +138933,33 @@
               "type": "object"
             },
             "type": "array"
+          },
+          "localVoice": {
+            "additionalProperties": false,
+            "properties": {
+              "engine": {
+                "enum": [
+                  "apple",
+                  "portable"
+                ],
+                "type": "string"
+              },
+              "purpose": {
+                "enum": [
+                  "draft",
+                  "production"
+                ],
+                "type": "string"
+              },
+              "voice": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "engine"
+            ],
+            "type": "object"
           },
           "maxCostUsd": {
             "exclusiveMinimum": 0,

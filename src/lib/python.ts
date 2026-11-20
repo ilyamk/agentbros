@@ -16,6 +16,7 @@ export type PythonProfile =
   | "multicam"
   | "offset"
   | "asr"
+  | "portable-voice"
   | "vad"
   | "diarize"
   | "sfx-index"

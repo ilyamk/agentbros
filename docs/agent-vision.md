@@ -98,6 +98,8 @@ The result is one JSON line with `metadata.counters`, `metadata.findings[]` and 
 
 An intended exception goes in `--allow`, as inline JSON or a file, with a reason. `text` matches a substring; `element` matches an `id`, `data-element` or `data-region` on the text or its ancestors. `metadata.unusedAllow` lists rules that matched nothing, so remove those.
 
+Inspect contrast, hold time and phone scale in [readability warnings](render-iteration.md#readability-warnings).
+
 A library block whose documented move takes text past the stage or safe zone declares it itself: on exactly the frames the overflow lasts, it marks the layer with `data-overflow="<block>: <reason>"` (`intendedOverflow(active, reason)` from `src/motion/library/overflow.ts`). `textOffStage` and `textOutsideSafeZone` then skip that text on those frames and list it in `metadata.intendedOverflow` (`code`, `reason`, `text`, `frame`, `lastFrame`); the same text resting there on an undeclared frame still counts, and `textOutsideRegion` is never excused. Today: giant-word-pull-out (until the word settles), ui-punch-reframe (while punched in), accelerate-into-cut (from the approach until the new shot rests). A film's own scene code uses `--allow`, never the attribute.
 
 ```json

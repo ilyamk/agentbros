@@ -17,6 +17,7 @@ type Report = {
   skipped: Record<string, string>;
   allowed: Array<{ matched: number }>;
   unusedAllow: unknown[];
+  readability: { findings: Array<{ code: string; frame: number; text: string }>; contrastSamples: number };
 };
 
 function check(root: string, composition: string, ...flags: string[]) {
@@ -61,6 +62,24 @@ const nonZero = (report: Report) =>
   Object.entries(report.counters)
     .filter(([, value]) => value)
     .map(([name]) => name);
+
+test(
+  "readability checks Chromium pixels, short holds and phone scale without failing the motion gate",
+  {
+    skip,
+    timeout: 120000,
+  },
+  (t) => {
+    const { status, result } = check(workspace(t), "ReadabilityFixture", "--frames", "2");
+    assert.equal(status, 0, JSON.stringify(result));
+    assert.ok(result.metadata.readability.contrastSamples > 0);
+    const warnings = result.metadata.readability.findings;
+    assert.ok(warnings.some(({ code, text }) => code === "LOW_CONTRAST" && text === "Низкий контраст"));
+    assert.ok(warnings.some(({ code, text }) => code === "TEXT_TOO_SMALL_ON_PHONE" && text === "Tiny label"));
+    assert.ok(warnings.some(({ code, text }) => code === "TEXT_VISIBLE_TOO_BRIEFLY" && text === "A message to read"));
+    assert.ok(!warnings.some(({ code, text }) => code === "LOW_CONTRAST" && text === "Readable fade"));
+  },
+);
 
 test(
   "a clean composition reads zero, including its crossfade, mask and layered text",

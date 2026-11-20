@@ -113,6 +113,7 @@ export const LocalResultReceiptSchema = z
     createdAt: z.string().datetime(),
     identity: hash,
     systemModelsHashPinned: z.literal(false),
+    modelPins: z.array(z.object({ name: z.string().min(1), sha256: hash }).strict()).optional(),
     requestHash: hash,
     inputs: z.array(z.object({ file: z.string(), sha256: hash }).strict()),
     outputs: z.array(z.object({ file: z.string(), sha256: hash }).strict()),

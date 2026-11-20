@@ -11,6 +11,7 @@ export type MeasuredText = {
   opacity: number;
   family: string;
   weight: string;
+  fontSize?: number;
   style: string;
   names: string[];
   label: string;
@@ -181,6 +182,7 @@ export function measureVisibleText(stage: { width: number; height: number }): Pa
       opacity: info.opacity,
       family: info.style.fontFamily,
       weight: info.style.fontWeight,
+      fontSize: parseFloat(info.style.fontSize),
       style: info.style.fontStyle,
       names,
       label: labelOf(parent),
