@@ -1,8 +1,6 @@
 # Tests — Agent Rules
 
-Last updated: 2026-11-19
-
-The motion library and shared asset tests cover the captured control cue, the performed pair and screen-only reel rendering.
+Last updated: 2026-11-18
 
 `node:test`/`tsx`; synthetic fixtures, no paid APIs.
 
