@@ -702,6 +702,18 @@ def soften(p: np.ndarray, curves: dict[str, Any] | None, strength: float) -> tup
     return blended, curves
 
 
+def clipped_pct(px: np.ndarray) -> float:
+    """Share of pixels with any channel at or above code 1021 of 1023."""
+    return float(100 * (px >= 0.998).any(axis=1).mean())  # noqa: PLR2004 -- two 10-bit codes below white.
+
+
+def guard_highlights(source: np.ndarray, grade: dict[str, Any]) -> None:
+    """Add a highlight soft clip when the solved grade drives more pixels into clipping than the source had."""
+    before = clipped_pct(source)
+    if clipped_pct(cm.apply_grade(source, grade)) - before > 0.05:  # noqa: PLR2004 -- percent of pixels.
+        grade["softClip"] = {"high": 0.9}
+
+
 def round_grade(grade: dict[str, Any]) -> dict[str, Any]:
     """Four decimals: editable by hand, stable in diffs."""
     out = {}
@@ -726,7 +738,12 @@ def match_metrics(source: np.ndarray, target: np.ndarray, grade: dict[str, Any])
         des = [float(cm.delta_e_2000(np.array([za[z]["L"], za[z]["a"], za[z]["b"]]), np.array([zb[z]["L"], zb[z]["a"], zb[z]["b"]]))) for z in ("shadows", "mids", "highlights")]
         return {"shadows": round(des[0], 3), "mids": round(des[1], 3), "highlights": round(des[2], 3), "mean": round(float(np.mean(des)), 3)}
 
-    return {"zoneDeltaE2000Before": score(source), "zoneDeltaE2000After": score(cm.apply_grade(source, grade))}
+    graded = cm.apply_grade(source, grade)
+    return {
+        "zoneDeltaE2000Before": score(source),
+        "zoneDeltaE2000After": score(graded),
+        "clippedPct": {"source": round(clipped_pct(source), 4), "graded": round(clipped_pct(graded), 4), "reference": round(clipped_pct(np.clip(target, 0, 1)), 4)},
+    }
 
 
 def op_match(request: dict[str, Any]) -> dict[str, Any]:
@@ -753,6 +770,7 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
     strength = float(request.get("strength", 1.0))
     p, curves = soften(p, curves, strength)
     grade = round_grade(params_grade(p, curves))
+    guard_highlights(source, grade)
     metrics = match_metrics(source, target, grade)
     out_dir = Path(request["output"])
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -844,6 +862,7 @@ def op_shots(request: dict[str, Any]) -> dict[str, Any]:  # noqa: PLR0914 -- one
         if request.get("solve") and not is_hero:
             p, curves = fit_match(media.pixels(40_000), hero_media.pixels(200_000), "stats", None)
             grade = round_grade(params_grade(p, curves))
+            guard_highlights(media.pixels(40_000), grade)
             entry["grade"] = grade
             entry["metrics"] = match_metrics(media.pixels(40_000), hero_media.pixels(200_000), grade)
         shots.append(entry)
