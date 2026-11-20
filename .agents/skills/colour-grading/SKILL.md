@@ -20,6 +20,14 @@ Open `sheet.png` and `compare.png` yourself. Measure skin on a fixed face box (`
 
 ## Workflows
 
+### 0. A reference as a target (any workflow with a reference)
+
+```bash
+pnpm colour:target --input footage/source.mp4 --output pipeline/colour/target
+```
+
+Open `target.png`, the colour script: per shot the palette, scheme, vectorscope, levels, skin and mood. Describe the reference in those terms before grading. The final render is held to it with `colour:check --target` (with `--source` for the skin gate).
+
 ### 1. Reference match, an edit cut the same way (generated or face-swapped vs its source)
 
 ```bash
@@ -61,18 +69,30 @@ pnpm colour:looks --input assets/clip.mp4 --at 15.5 --skin-region 300,150,130,14
 pnpm colour:looks --input assets/clip.mp4 --family film --output pipeline/colour/looks-film --render
 ```
 
+- With a reference or a mood in the brief, shortlist by mood: `--target <dir>/target.json` or `--mood valence,arousal`. `--card` shows looks on the synthetic test card; the whole library is on the [Looks & colour](../../../docs/library/looks.md) page.
+- An imported LUT is tried with `--lut` only after `pnpm colour:lut --add` recorded its licence; never download a pack without the user's yes per file.
 - `looks.png` is the grid: source first, then each look with its gate verdict. `<out>/looks.json` gives each look's intent, typical use, moves, skin policy and risks.
 - Explain the differences in the user's terms: what each look does, where it is used and how each fits the brief, and name the gate's warnings. Recommend by fit to the brief, never by taste; the user picks.
 - The chosen look's `<look>.grade.json` renders with `colour:grade`. Its skin secondary was solved on this footage, so re-run `colour:looks` for other footage.
 
-### 5. Skin protection and windows
+### 5. Mood across the film
+
+Agree a mood per section with the user (valence: dark/cold to bright/warm; arousal: calm to intense), then:
+
+```bash
+pnpm colour:target --input assets/clip.mp4 --mood "0:-0.6,0.1;12.4:-0.4,0.3" --output pipeline/colour/mood
+```
+
+Each shot gets a bounded grade toward its mood, gated, and a `<dir>/timeline.json`. The mapping is a convention; report what moved (gamma, warmth, saturation, contrast) and let the user judge the feeling.
+
+### 6. Skin protection and windows
 
 - Global: a secondary keyed on the skin hue with `hueToward` the skin line; `colour:match` and `colour:looks` solve one themselves.
 - Spatial, on a moving subject: a tracked window (`pnpm colour:track --input clip.mp4 --box x,y,w,h --at 1 --output pipeline/colour/face.track.json`) or a person matte (`pnpm matte --input clip.mp4 --kind person --out pipeline/colour/matte-person`), referenced from `windows[]`. Check the track preview and the mask first.
 
 ## Gate
 
-`colour:check` compares the delivery file with its pixel-aligned source (skin keyed on the source) and, optionally, the reference. Pass `--skin-chroma` and `--hue-allowance` for a look's policy, and `--strict` to fail the command on a failed gate. A `fail` blocks delivery until fixed or until the user accepts it in their own words. Thresholds: [colour craft](references/colour-craft.md#validation-thresholds-the-gate).
+`colour:check` compares the delivery file with its pixel-aligned source (skin keyed on the source) and, optionally, the reference; `--target` adds per-shot profile checks (levels, cast, chroma, hue, palette, skin). Pass `--skin-chroma` and `--hue-allowance` for a look's policy, and `--strict` to fail the command on a failed gate. A `fail` blocks delivery until fixed or until the user accepts it in their own words. Thresholds: [colour craft](references/colour-craft.md#validation-thresholds-the-gate).
 
 ## Report
 

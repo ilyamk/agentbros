@@ -15,11 +15,11 @@ The grade (`<name>.grade.json`, or `<dir>/timeline.json` for an edit), the rende
 
 ## Loop
 
-1. **Measure.** `pnpm colour:scopes` on input and reference. Find a fixed face region per shot for skin.
+1. **Measure.** `pnpm colour:scopes` on input and reference; `pnpm colour:target` turns a reference into per-shot targets and a colour script. Find a fixed face region per shot for skin.
 2. **Look.** Open frames and scopes yourself. Note per shot: key light colour, skin L* and chroma, environment hue, black density.
 3. **Propose.** Workflow from the skill, per-shot or single, skin mode, look candidates; expected numbers. Ask before overwriting.
 4. **Apply.** `pnpm colour:match` (`--per-shot` for an edit), `pnpm colour:looks`, or a hand-written grade; render with `pnpm colour:grade`.
-5. **Gate.** `pnpm colour:check` on the rendered file against its source (and reference). Fix every `fail`; explain every `warn`.
+5. **Gate.** `pnpm colour:check` on the rendered file against its source (and reference, or `--target`). Fix every `fail`; explain every `warn`.
 6. **Report.** Per shot: gate, skin before and after on the fixed region, environment hue distance, crush and clip. What remains and why.
 
 ## Rules
@@ -30,4 +30,5 @@ The grade (`<name>.grade.json`, or `<dir>/timeline.json` for an edit), the rende
 - **Content differs.** Different subject, wardrobe or light: `--skin protect`, or windows.
 - **Windows** on moving subjects are tracked or matted, never static.
 - **Determinism.** Change one thing and re-measure; no random retries.
+- **LUTs** only through `colour:lut` with a recorded licence; downloads need the user's yes per file.
 - **Files** go in `public/projects/<id>/pipeline/colour/`, every intermediate kept.

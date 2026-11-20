@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-20
 
-Eight local commands, no API keys, no paid calls. They let an agent read a frame the way a colourist does, measure it, grade a video toward a target or a reference, and prove the result with numbers:
+Ten local commands, no API keys, no paid calls. They let an agent read a frame the way a colourist does, measure it, grade a video toward a target or a reference, and prove the result with numbers:
 
 - `colour:scopes` measures one clip.
 - `colour:compare` compares a clip with a reference.
@@ -11,17 +11,20 @@ Eight local commands, no API keys, no paid calls. They let an agent read a frame
 - `colour:shots` checks continuity across shots or clips.
 - `colour:track` makes a window follow a moving subject.
 - `colour:check` is the validation gate on a rendered grade.
-- `colour:looks` tries genre looks on a frame, skin held, as a grid.
+- `colour:looks` tries genre looks on a frame, skin held, as a grid; ranks them by mood.
+- `colour:target` profiles a reference shot by shot into a target the final film is checked against.
+- `colour:lut` imports a licensed `.cube` or HaldCLUT so it can be tried as a look.
 
 Where the pieces live:
 
-| Piece   | Location                                                                   |
-| ------- | -------------------------------------------------------------------------- |
-| Schemas | `src/types/colour.ts`                                                      |
-| Code    | `src/lib/colour/`                                                          |
-| Worker  | `scripts/workers/colour.py`, with `colour_maths.py` and `colour_scopes.py` |
-| Agent   | [colourist](../.agents/agents/colourist.md)                                |
-| Skill   | [colour-grading](../.agents/skills/colour-grading/SKILL.md)                |
+| Piece   | Location                                                                                                                                  |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Schemas | `src/types/colour.ts`                                                                                                                     |
+| Code    | `src/lib/colour/`                                                                                                                         |
+| Worker  | `scripts/workers/colour.py`, with `colour_maths.py`, `colour_scopes.py`, `colour_craft.py` (gate) and `colour_profile.py` (targets, mood) |
+| Agent   | [colourist](../.agents/agents/colourist.md)                                                                                               |
+| Skill   | [colour-grading](../.agents/skills/colour-grading/SKILL.md)                                                                               |
+| Library | [Looks & colour](library/looks.md): every look, its mood, palette and finish, on a test card                                              |
 
 Taste stays with the user. The commands report measurements and differences, never that a grade "looks good". The colourist's working knowledge (order of operations, skin as the anchor, separation, the gate's thresholds) is in [colour craft](../.agents/skills/colour-grading/references/colour-craft.md).
 
@@ -281,6 +284,47 @@ Run it on the delivery file against the pixel-aligned file it was rendered from.
 
 With a reference and no explicit policy, the skin allowance is the move the reference asks for plus 6°. `--strict` turns a `fail` into a `VALIDATION` error. A pass means nothing measurable broke; whether the grade is right is the user's call.
 
+## Targets: `colour:target`
+
+```bash
+pnpm colour:target --input footage/reference.mp4 --output pipeline/colour/target
+pnpm colour:check --input assets/graded.mp4 --source assets/ungraded.mp4 --target pipeline/colour/target/target.json --output pipeline/colour/check
+```
+
+A reference becomes numbers the final film is held to. The clip is cut at its shot changes (`--single` for one target) and each shot is measured into a profile:
+
+- levels: black (P2), mid-grey (P50), white (P98) and P10–P90 contrast in IRE, crushed and clipped share;
+- colour: the neutral cast (a*/b* of near-neutral pixels), chroma P50 and P90, warmth, the vectorscope hue distribution and its scheme (neutral, monochrome, analogous, complementary, split-complementary, triadic) with key hues;
+- a five-colour palette (k-means in CIELAB, seeded by lightness quantiles, so it is deterministic);
+- skin (CIELAB L*, C*, h) when found; give `--skin-region` on a reference whose sets are beige, since the chroma rule also keys walls;
+- a mood estimate, valence and arousal on -1..1, by convention (below).
+
+`target.png` is the colour script: per shot, the frame, its palette and scheme, a vectorscope and the numbers. `colour:check --target` measures the graded file at the same relative times (shots scale with the duration) and grades each shot against its profile:
+
+| Check                               | Warn           | Fail           |
+| ----------------------------------- | -------------- | -------------- |
+| Black, mid, white (IRE)             | 3, 5, 5        | 6, 10, 10      |
+| Contrast P10–P90 (IRE)              | 6              | 12             |
+| Crushed or clipped over the target  | +1 pp, +0.3 pp | +4 pp, +1.5 pp |
+| Neutral cast distance (a*/b*)       | 3              | 6              |
+| Chroma P50 or P90 ratio, either way | ×1.2           | ×1.45          |
+| Hue distribution distance           | 12°            | 25°            |
+| Palette (share-weighted CIEDE2000)  | 8              | 14             |
+| Skin CIEDE2000, skin hue            | 6, 8°          | 10, 15°        |
+
+The cast tolerance is wider than the others because a reference rarely shows the same set. With `--source` the gate runs too, with skin keyed on the ungraded file. On stark-promo the first match (v1) failed every shot, and the skin-aware v2 failed one: its faces are lighter than the reference's (L* 53 against 29).
+
+### Mood plans
+
+```bash
+pnpm colour:target --input assets/clip.mp4 --mood "0:-0.6,0.1;4.1:-0.8,-0.3;12.4:-0.5,0.3" --output pipeline/colour/mood
+pnpm colour:grade --timeline pipeline/colour/mood/timeline.json --input assets/clip.mp4 --output assets/clip-mood.mp4
+```
+
+`--mood` is `at:valence,arousal` per change, in seconds, or a JSON file. Each shot gets a bounded grade toward the planned mood: valence through gamma (±0.15) and warmth (gain ±3.5%), arousal through saturation (±25%) and contrast (±12%). The planned profile becomes that shot's target, each grade is gated, and `timeline.json` renders them. `--strength` scales every move.
+
+The mapping is a convention from colour-emotion studies of colour patches: brightness raises pleasure and saturation raises arousal (Valdez and Mehrabian 1994; Wilms and Oberfeld 2018). It describes tendencies, not how a film will feel; the user judges that.
+
 ## Looks: `colour:looks`
 
 ```bash
@@ -298,7 +342,7 @@ Twelve starting looks live in `src/lib/colour/looks.ts`, built from the grade mo
 | commercial  | golden hour, high-key commercial, beauty soft                                                      |
 | music video | neon music video, faded vintage                                                                    |
 
-Each look carries `intent`, `typicalUse`, `moves` and `risks`, so an agent can explain it and say which brief it fits, and a skin policy (`hold` with a chroma ratio, hue allowance, lightness offset, and `warm` for looks that warm skin on purpose).
+Each look carries `intent`, `typicalUse`, `moves` and `risks`, so an agent can explain it and say which brief it fits; a `mood` (valence, arousal), the `palette` scheme it builds with its key hues, the `finish` it pairs with in Remotion (a `FilmFinish` preset: grain, halation, bloom); and a skin policy (`hold` with a chroma ratio, hue allowance, lightness offset, and `warm` for looks that warm skin on purpose).
 
 For each look the command applies the grade, solves a skin secondary that holds skin to the policy on this footage, and gates the result. Outputs:
 
@@ -307,7 +351,31 @@ For each look the command applies the grade, solves a skin secondary that holds 
 - `looks.json`: every look's explanation and verdict;
 - `<look>.mp4` over the whole input, with `--render`.
 
+`--mood valence,arousal` or `--target target.json` (its duration-weighted mood) picks the six looks nearest that mood; `--list --mood` ranks all twelve with their distance. `--card` shows the looks on a synthetic test card instead of footage: a grey ramp, two hue sweeps, six skin tones on the skin line and four memory colours. The [Looks & colour](library/looks.md) page is generated from the looks with `--write-doc`, with card previews.
+
 The default grid shows the six that differ most: clean natural, teal and orange, warm print film, cool thriller, high-key commercial, neon music video. `--family` picks one family. A look that fails the gate on this material (neon on an already saturated blue frame, say) stays in the grid with its failures named; it is evidence, not a recommendation.
+
+## Imported LUTs: `colour:lut`
+
+```bash
+pnpm colour:lut --add downloads/look.cube --licence cc-by-4.0 --source https://example.org/pack --attribution "Author, pack" --project stark-promo
+pnpm colour:looks --input assets/clip.mp4 --lut public/projects/stark-promo/colour/luts/look.cube --output pipeline/colour/looks-lut
+```
+
+- A `.cube` is validated and rewritten on a 0..1 domain; a HaldCLUT PNG (side level³, 512 for level 8) is converted to a `.cube` of size level².
+- The licence is required: `cc0`, `cc-by-4.0` (with `--attribution`), `cc-by-sa-4.0` (flagged share-alike), `own`, or `licensed` with `--evidence`. Without one the LUT is refused.
+- LUTs live in the project (`public/projects/<id>/colour/luts/`, never git) with `luts.json`: licence, source, size, the mean CIEDE2000 it moves the test card, and its mood shift.
+- `colour:looks --lut` refuses a file that is not on record there. The LUT sits at the input, so the solved skin secondary still holds faces, and the gate judges it like any look.
+- Downloading a pack is the user's decision per file. Packs found so far and their licences are listed below.
+
+### LUT sources
+
+| Source                                 | Format   | Licence                                                   |
+| -------------------------------------- | -------- | --------------------------------------------------------- |
+| Q-DDL free LUT pack (800+)             | .cube    | CC BY 4.0, per its 2020 announcement; confirm on download |
+| cyangraphics/clut                      | HaldCLUT | CC BY-SA 4.0                                              |
+| RawTherapee Film Simulation Collection | HaldCLUT | not stated: do not import until confirmed                 |
+| G'MIC colour presets                   | .cube    | preset files' licence unclear                             |
 
 ## Determinism and tests
 
@@ -320,7 +388,9 @@ The default grid shows the six that differ most: clean natural, teal and orange,
 ## Follow-ups
 
 - Scope panels in the studio console (`apps/console`).
-- MCP tools for the eight commands.
+- MCP tools for the ten commands.
+- `colour:match --target`: solve toward a saved profile without the reference video.
+- A mood plan read from the script's beats and the music's energy, instead of typed values.
 - A face detector or person matte as the default skin key for per-shot matching, instead of the chroma rule.
 - Temporal checks in the gate: frame-to-frame luma and hue flicker across a render.
 - Windows in a `timeline.json` render (today a timeline refuses a grade with windows).

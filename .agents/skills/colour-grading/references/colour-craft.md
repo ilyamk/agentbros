@@ -43,6 +43,14 @@ Matching a frame's statistics (zone means, quantiles) to a reference is underdet
 
 The technical pass comes first: neutral greys (a*/b* of near-neutrals within ±1.5), black near 0–2 IRE, specular white under 100 IRE, mid-grey near 40 IRE, skin on the line. Then pick a look for the film's intent: what the audience should feel, the genre, the platform. `colour:looks` shows candidates on the actual frame with skin held, and each has its intent, typical use and risks. The agent explains which look fits the brief and why; the user chooses.
 
+## Reading a reference as a target
+
+A colourist describes a reference before matching it: where black, mid-grey and white sit, how much contrast, the cast of the neutrals, how saturated it is, which hues carry the frame and how they relate (one family, neighbours, opposites), the palette, and where skin sits. `colour:target` writes exactly that per shot, so the target survives without the reference and the final film can be checked against it. A colour script is the same profile laid out across the film: it shows whether colour changes with the story.
+
+## Mood
+
+Colour-emotion studies on colour patches agree on two tendencies: brighter colours read as more pleasant, more saturated ones as more arousing (Valdez and Mehrabian 1994; Wilms and Oberfeld 2018). Warmth and contrast are the practitioner's additions. Hue meanings ("blue is calm, red is danger") are convention, not settled science. Use mood as a shared vocabulary with the user and as bounded moves, never as proof of a feeling.
+
 ## Looks as families
 
 | Family            | Typical moves                                                                   | Watch for                            |

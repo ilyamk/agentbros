@@ -81852,6 +81852,9 @@
               },
               "scheme": {
                 "type": "string"
+              },
+              "warmth": {
+                "type": "number"
               }
             },
             "required": [
@@ -81859,6 +81862,7 @@
               "castB",
               "chromaP50",
               "chromaP90",
+              "warmth",
               "hueHistogram",
               "scheme",
               "keyHues"
@@ -82042,6 +82046,9 @@
                       },
                       "scheme": {
                         "type": "string"
+                      },
+                      "warmth": {
+                        "type": "number"
                       }
                     },
                     "required": [
@@ -82049,6 +82056,7 @@
                       "castB",
                       "chromaP50",
                       "chromaP90",
+                      "warmth",
                       "hueHistogram",
                       "scheme",
                       "keyHues"
@@ -84524,6 +84532,9 @@
                       },
                       "scheme": {
                         "type": "string"
+                      },
+                      "warmth": {
+                        "type": "number"
                       }
                     },
                     "required": [
@@ -84531,6 +84542,7 @@
                       "castB",
                       "chromaP50",
                       "chromaP90",
+                      "warmth",
                       "hueHistogram",
                       "scheme",
                       "keyHues"
