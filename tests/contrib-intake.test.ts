@@ -423,6 +423,9 @@ test("same-repository Dependabot manifest, lockfile and workflow updates take a 
       file("package.json", { additions: 1, deletions: 1 }),
       file("pnpm-lock.yaml", { additions: 2000, deletions: 1500 }),
       file(".github/workflows/ci.yml"),
+      // The regenerated licence inventory: CI fails a bump whose lockfile hash it does not record.
+      file("DEPENDENCY_LICENCES.json", { additions: 3, deletions: 3 }),
+      file("DEPENDENCY_LICENCES.md"),
     ],
   });
   const result = intake(update);
@@ -439,6 +442,7 @@ test("same-repository Dependabot manifest, lockfile and workflow updates take a 
     { release: { ...identity, headRepo: "fork/repo" } },
     { release: { ...identity, headBranch: "main" } },
     { changedFiles: [...update.changedFiles, file("scripts/evil.ts")] },
+    { changedFiles: [...update.changedFiles, file("contrib/licence-reviews.json")] },
     { changedFiles: [file("pnpm-lock.yaml", { binary: true })] },
     { changedFiles: [file("pnpm-lock.yaml", { status: "R", previousPath: "other.yaml" })] },
   ])
