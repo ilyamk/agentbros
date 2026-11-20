@@ -2,7 +2,7 @@
 category: fix
 bump: patch
 breaking: false
-pr: 0
+pr: 13
 authors: [ilyamk]
 harness: claude-code
 deps: undici 8.12.4 (MIT), the version Node bundles, for an Agent with long header and body timeouts on the ElevenLabs music request; already in the lockfile through jsdom

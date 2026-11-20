@@ -1,6 +1,6 @@
 # Film engine — Agent Rules
 
-Last updated: 2026-11-19
+Last updated: 2026-11-20
 
 Engine changes: routes, briefs and gates. Follow [the chain](../../../docs/production-chain.md) and `pnpm film:next`.
 
