@@ -1,5 +1,5 @@
 ---
-category: feature
+category: provider
 bump: minor
 breaking: false
 pr: 0

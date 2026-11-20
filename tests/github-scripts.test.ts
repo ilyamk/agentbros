@@ -21,6 +21,7 @@ import {
 import { labelsSync } from "../scripts/github/gh-labels";
 import { judgeEnv, reserveTriage, settleTriage, triageEligibility } from "../scripts/github/gh-triage-budget";
 import { categoryPlan } from "../scripts/github/gh-category-gates";
+import { lineDiff } from "../scripts/github/line-diff";
 import type { SpendRecord } from "../src/types/triage";
 import { readArtefact } from "../src/lib/triage/artefact";
 import { applyTriage } from "../scripts/github/gh-apply-triage";
@@ -492,6 +493,60 @@ test("omitted text patches and truncated patches defer to human review without b
   assert.equal((await closePr(api, facts)).close, false);
   data.files[0]!.patch = "@@ -1 +1 @@\n+short";
   assert.ok((await getFacts(api, 7, history)).uncertainFiles.length);
+});
+test("an omitted patch of a large text file is rebuilt from merge base and head, checked against GitHub's counts and leak-scanned", async () => {
+  const blob = "c".repeat(40),
+    mergeBase = "d".repeat(40);
+  const base = 'version = 1\n[[package]]\nname = "torch"\nversion = "2.11.0"\n';
+  const encoded = (text: string, sha: string) => ({
+    content: Buffer.from(text).toString("base64"),
+    encoding: "base64",
+    sha,
+  });
+  const setup = (head: string, additions: number, deletions: number) => {
+    const fixtureApi = fake((route) => {
+      if (route.startsWith("/contents/uv.lock?ref=" + fixture.pr.head.sha))
+        return { content: "", encoding: "none", sha: blob }; // GitHub's answer for a file over 1 MB
+      if (route === `/git/blobs/${blob}`) return encoded(head, blob);
+      if (route.startsWith(`/compare/${fixture.pr.base.sha}...${fixture.pr.head.sha}`))
+        return { merge_base_commit: { sha: mergeBase } };
+      if (route.startsWith(`/contents/uv.lock?ref=${mergeBase}`)) return encoded(base, "e".repeat(40));
+      return undefined;
+    });
+    fixtureApi.data.files[0] = { filename: "uv.lock", status: "modified", additions, deletions };
+    return fixtureApi;
+  };
+  const updated = base.replace('version = "2.11.0"', 'version = "2.11.0+cpu"');
+  const clean = setup(updated, 1, 1);
+  const facts = await getFacts(clean.api, 7, history);
+  assert.deepEqual(facts.uncertainFiles, []);
+  assert.equal(facts.changedFiles[0]?.patch, '@@ -4,1 +4,1 @@\n-version = "2.11.0"\n+version = "2.11.0+cpu"');
+  assert.equal(facts.leakHit, false);
+  assert.ok(clean.calls.some((call) => call.route === `/git/blobs/${blob}`));
+  // Added lines of a rebuilt patch go through the same leak scan as any other patch.
+  // Assembled at run time so this source does not itself contain the home-path pattern the leak scan looks for.
+  const leaking = setup(updated + `path = '${["", "Users", "someone", "wheel"].join("/")}'\n`, 2, 1);
+  assert.equal((await getFacts(leaking.api, 7, history)).leakHit, true);
+  // A rebuilt diff that disagrees with GitHub's counts (for example, another merge base) stays for human review.
+  const mismatch = setup(updated, 2, 1);
+  assert.deepEqual((await getFacts(mismatch.api, 7, history)).uncertainFiles, ["uv.lock"]);
+});
+test("API routes refuse dot path segments but allow dots inside a segment", async () => {
+  const { api } = fake((route) => (route.startsWith("/compare/") ? { ok: true } : undefined));
+  assert.deepEqual(await api.call("/compare/a...b"), { ok: true });
+  for (const route of ["/../x", "/a/..", "/a/%2E%2e/b", "/a\\..\\b", "/a/.?x", "pulls"])
+    await assert.rejects(api.call(route), /Invalid API route/, route);
+});
+test("lineDiff matches git's minimal counts, keeps line terminators and refuses oversized edit distances", () => {
+  assert.deepEqual(lineDiff("a\nb\nc\n", "a\nc\nd\n"), {
+    patch: "@@ -2,1 +2,0 @@\n-b\n@@ -4,0 +3,1 @@\n+d",
+    additions: 1,
+    deletions: 1,
+  });
+  assert.deepEqual(lineDiff("", ""), { patch: "", additions: 0, deletions: 0 });
+  // A last line without a newline differs from the same text with one, as in git.
+  assert.deepEqual(lineDiff("a\nb", "a\nb\n"), { patch: "@@ -2,1 +2,1 @@\n-b\n+b", additions: 1, deletions: 1 });
+  assert.equal(lineDiff("a\nb\nc\n", "x\ny\nz\n", 5), undefined);
 });
 test("workflow-run PR discovery ignores stale revisions and resolves fork runs via commit association", async () => {
   let head = fixture.pr.head.sha;

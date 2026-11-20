@@ -43,10 +43,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href)
         timeout: gateTimeoutMs(gate.command),
       });
       results.push({ name: gate.name, exitCode: result.status });
-      if (result.status !== 0)
-        throw new Error(
-          `${gate.name} failed: ${(result.stderr || result.error?.message || result.stdout).slice(-2000)}`,
-        );
+      if (result.status !== 0) {
+        // The gate's verdict is its one JSON line on stdout; stderr carries test output, which alone hides it.
+        const verdict = (result.stdout ?? "").trim().split("\n").at(-1)?.slice(0, 4000) ?? "";
+        const log = (result.stderr || result.error?.message || "").slice(-2000);
+        throw new Error(`${gate.name} failed: ${verdict}${verdict && log ? "\n" : ""}${log}`);
+      }
     }
     return { metadata: { categories, results } };
   });
