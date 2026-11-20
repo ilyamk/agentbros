@@ -69,7 +69,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `local:policy` - Read or set local interaction and model download policy ([guide](../docs/local-macos.md))
 - `text:analyse` - Native language, token, sentence, lemma and entity observations ([guide](../docs/local-macos.md))
 - `text:translate` - Local scene or caption-cue translation candidates; no invented word timings ([guide](../docs/local-macos.md))
-- `voiceover:local` - System voice audio with separate draft assets and provenance ([guide](../docs/local-macos.md))
+- `voiceover:local` - Apple or portable local voice draft takes with provenance and portable word timing ([guide](../docs/local-macos.md))
 - `audio:events` - Native timed sound classification observations ([guide](../docs/local-macos.md))
 - `media:vision` - Native face, person, pose, saliency, quality, tracking and optical flow observations ([guide](../docs/local-macos.md))
 - `text:assist` - Structured local Foundation Models draft notes with source IDs ([guide](../docs/local-macos.md))

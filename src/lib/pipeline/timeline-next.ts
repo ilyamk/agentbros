@@ -162,7 +162,7 @@ export function timelineNext(projectId: string, rootDir = process.cwd()): Timeli
     return answer("render", {
       action: "run",
       why: stale
-        ? `out/${projectId}/${pending}.mp4 is older than project.json or the timeline journal; rendering overwrites it (copy it first to keep it).`
+        ? `out/${projectId}/${pending}.mp4 is stale. Rendering archives the previous master and rebuilds the changed picture where supported.`
         : `No full ${pending} render of ${projectId} yet. The render writes out/${projectId}/${pending}.mp4 and its receipt, which delivery checks.`,
       commands: [renderArgs(pending)],
       optional: [

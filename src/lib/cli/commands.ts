@@ -599,7 +599,7 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "footage",
       "none",
       LOCAL_ENGINE,
-      "System voice audio with separate draft assets and provenance",
+      "Apple or portable local voice draft takes with provenance and portable word timing",
     ),
   ),
   g(

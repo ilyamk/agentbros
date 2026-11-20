@@ -189,6 +189,20 @@ const SlopPalette: React.FC = () => (
 );
 
 const small = { width: 320, height: 180, fps: 30, durationInFrames: 30 };
+const ReadabilityFixture: React.FC = () => {
+  const frame = useCurrentFrame();
+  const opacity = interpolate(frame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
+  const background = frame < 30 ? "#666" : "#999";
+  return (
+    <AbsoluteFill style={{ background }}>
+      <div style={{ position: "absolute", left: 9, top: 8, fontFamily: "sans-serif", fontSize: 22, color: "#888" }}>Низкий контраст</div>
+      <div style={{ position: "absolute", left: 9, top: 43, fontFamily: "sans-serif", fontSize: 24, color: "#fff", background: "#000", opacity }}>Readable fade</div>
+      <div style={{ position: "absolute", left: 9, top: 92, fontFamily: "sans-serif", fontSize: 5, color: "#fff" }}>Tiny label</div>
+      {frame >= 18 && frame <= 24 && <Label x={9} y={118}>A message to read</Label>}
+      <Box x={frame} />
+    </AbsoluteFill>
+  );
+};
 const fixtures: Record<string, React.FC> = { Clean, LoopGood, BrokenSeam, Overlap, OffStage, Region, Random, Fallback, FadedFinal, BlackFrame, Strobe, Throws, ConsoleError, OnlyInSequence, SlopEntry, SlopCentred, SlopEmoji, SlopPalette };
 
 const Root: React.FC = () => (
@@ -197,6 +211,7 @@ const Root: React.FC = () => (
       <Composition key={id} id={id} component={component} {...small} />
     ))}
     <Composition id="SafeZone" component={SafeZone} width={1080} height={1920} fps={30} durationInFrames={6} />
+    <Composition id="ReadabilityFixture" component={ReadabilityFixture} {...small} durationInFrames={60} />
   </>
 );
 

@@ -1,6 +1,6 @@
 # Python alongside Node
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 Node owns the public commands, validation, budgets, files and workflow state. Python is a private computation layer: TypeScript launches workers with literal argument arrays and validates their JSON responses. It is not a second application server.
 
@@ -37,6 +37,8 @@ pnpm python:check --mode models                   # public CPU model acceptance;
 ```
 
 Profile checks install the exact locked group, import its native extensions and check its worker against the installed packages. `cmake` and `yt-dlp` also execute their version commands. ASR is Apple Silicon only; an explicit unsupported profile fails, while a full run reports the platform skip. The fast environment never needs incomplete fabricated SDK stubs. Blender/Resolve API members themselves remain application-owned dynamic boundaries and require native execution.
+
+The `portable-voice` profile locks the sherpa-onnx CPU runtime for Supertonic and Parakeet. Check its worker with `pnpm python:check --mode profiles --profile portable-voice`. Model preparation and offline take synthesis use the ordinary `voiceover:local` CLI.
 
 Model acceptance exercises the owning public commands with generated temporary media: Silero on silence, a fresh Demucs split plus the reference adapter, and SHA-256-pinned BiRefNet ONNX. It checks bounded protocols, readable stems and alpha output; it makes no perceptual quality claim. It downloads public dependencies/weights, never calls paid generation, and does not accept gated model conditions. Pyannote weight inference still requires the owner's prepared access; MLX ASR inference, optional Blender extensions and live Resolve application acceptance remain separate opt-ins.
 

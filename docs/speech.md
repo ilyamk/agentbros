@@ -129,6 +129,22 @@ An end-to-end run on Creative Commons interviews (English two-speaker, Russian o
 - Scribe word starts fit speech onsets far better: 99.9% of Scribe word starts fall inside VAD speech against 96.4% for Parakeet, and the energy rise at word onsets is +3.6 dB for Scribe against −0.1 dB for Parakeet. Cut on Scribe times; with Parakeet, take edges from the speech mask.
 - Parakeet in Russian agreed with Scribe on only 77.9% of words and once emitted English inside Russian speech. Parakeet is fine for a rough local pass and silence work; use Scribe for Russian captions or word-exact cuts.
 
+## Portable narration
+
+`voiceover:local --engine portable` uses Supertonic 3 to make English and Russian draft takes and Parakeet TDT v3 int8 to recognise the resulting audio. Both run on CPU through the locked sherpa-onnx runtime. The workflow runs without network access after explicit preparation.
+
+```bash
+pnpm voiceover:local --engine portable --prepare --dry-run
+pnpm voiceover:local --engine portable --prepare
+pnpm voiceover:local --engine portable --input voice-request.json --output out/voice.json
+```
+
+Preparation pins both release archives and every loaded file by SHA-256. The archives total about 616 MB and stay outside git. Voices are `supertonic:0` to `supertonic:9`. The model terms are OpenRAIL-M for Supertonic and CC BY 4.0 for Parakeet. Inference caches each take by text, language, voice and engine identity. Results include a WAV, a readback report and a provenance receipt. When the words match, the sidecar carries estimated word times. A mismatch leaves the report and audio available for review and withholds the sidecar. The film's existing human voice gate still applies.
+
+Standalone input uses the existing local text request, for example `{"version":1,"sourceLanguage":"en","units":[{"id":"intro","text":"Hello world."}]}`. Select the engine in a film's narration direction as described in [narration](production-chain/narration.md#routes).
+
+`pnpm local:capabilities --task speech.synthesise --voice supertonic:0 --language en` reports preparation and qualification. For production, run `pnpm local:verify --task speech.synthesise --voice supertonic:0 --language en --suite quality --benchmark voice-benchmark.json` with the existing pinned input/reference/baseline contract. The qualification covers that voice, language and runtime. Then request `--purpose production` or set `"purpose":"production"` in the film's `localVoice`. Production requires fresh qualification and matching readback for each take. The human narration and final delivery decisions still apply.
+
 ## Media ingest
 
 `media:ingest --transcript` accepts a Scribe JSON, a `TranscriptSchema` file or plain segments. Speakers survive as `segments[].speaker` (from `speaker` or `speaker_id`), grouping never joins two speakers, and spacing rows and events are dropped.

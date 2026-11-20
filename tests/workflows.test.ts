@@ -172,6 +172,15 @@ test("CI has four full-suite shards, merge queue triggers and one required ci ag
   assert.deepEqual(ci.jobs.tests?.strategy?.matrix?.shard, [1, 2, 3, 4]);
   assert.ok(ci.jobs.ci);
 });
+test("CI runs the workflow contracts beside the static checks and never test:fast beside the full suite", () => {
+  const ci = workflows.find((workflow) => workflow.name === "ci.yml")!.data;
+  const runs = (job: string) => (ci.jobs[job]?.steps ?? []).map((step) => step.run ?? "").join("\n");
+  assert.match(runs("workflow-contracts"), /pnpm bench:workflow /u);
+  assert.doesNotMatch(runs("checks"), /bench:workflow|test:fast/u);
+  // The tests shards run every tests/*.test.ts file, so test:fast would only repeat a subset of them.
+  for (const job of Object.keys(ci.jobs)) assert.doesNotMatch(runs(job), /test:fast/u, job);
+  assert.ok((ci.jobs.ci?.needs ?? []).includes("workflow-contracts"));
+});
 test("Dependabot covers npm and GitHub actions", () => {
   const data = yaml.load(readFileSync(".github/dependabot.yml", "utf8")) as {
     updates: { "package-ecosystem": string }[];

@@ -1538,7 +1538,7 @@ export function decideNext(state: FootageState, playbook?: string): FootageNext 
         ...(rendered.length
           ? {
               optional: [
-                `The next render overwrites ${rendered.map((f) => recut.renders[f]!.file).join(", ")}: copy it first to keep the ${recut.captionStyle ?? "karaoke"} version.`,
+                `The next render archives the previous versions of ${rendered.map((f) => recut.renders[f]!.file).join(", ")} by checksum.`,
               ],
             }
           : {}),
@@ -1792,7 +1792,7 @@ export function decideNext(state: FootageState, playbook?: string): FootageNext 
     if (render.state === "fresh") continue;
     const why =
       render.state === "stale"
-        ? `${render.file} is older than the timeline (an edit was applied after it). Rendering overwrites it: copy it first to keep it.`
+        ? `${render.file} is older than the timeline (an edit was applied after it). Rendering archives the previous master and rebuilds the changed picture where supported.`
         : `No full ${format} render${captions === "off" ? " without captions" : ""} of ${recut.projectId} yet.`;
     return finish({
       ...step("render"),

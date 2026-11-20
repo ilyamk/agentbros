@@ -688,7 +688,7 @@ test("steps 5, 8, 9: caption style, speaker map, reframe and render", (t) => {
       recut: { ...recut, renders: { landscape: { state: "stale", file: "out/talk-recut/landscape.mp4" } } },
     }),
   );
-  assert.match(stale.why, /copy it first/);
+  assert.match(stale.why, /archives the previous master/);
   const noCaptions = decideNext(state(root, { goals: { version: 1, goals: ["recut"] } }));
   assert.deepEqual(noCaptions.argv![0]!.slice(-2), ["--captions", "off"]);
   assert.equal(

@@ -12,6 +12,8 @@ import {
 import { TranscriptSchema } from "../../types/transcript";
 import { atomicJson, boundedFile, fileHash, localRoot, objectHash } from "./runtime";
 import { appleSpeechWords, ensureApple, runAppleTask } from "./tasks";
+import { runPortableVoice } from "../speech/portable-voice";
+import { portableLanguage, portableVoiceIdentity } from "../speech/portable-voice-runtime";
 const pin = z.object({ file: z.string().min(1), sha256: z.string().regex(/^[a-f0-9]{64}$/) }).strict();
 export const LocalBenchmarkSchema = z
   .object({
@@ -78,6 +80,7 @@ export function qualityReference(task: LocalTask, input: unknown): unknown {
           durationSec: z.number().positive(),
           sampleRate: z.number().positive(),
           sourceTextHash: z.string().regex(/^[a-f0-9]{64}$/),
+          readbackMatched: z.boolean().optional(),
           audioChecks: z
             .object({ peakDb: z.number().finite(), rmsDb: z.number().finite(), clippingRisk: z.literal(false) })
             .strict(),
@@ -92,7 +95,7 @@ export function qualityReference(task: LocalTask, input: unknown): unknown {
         })
         .strict()
         .parse(input);
-      return { ...value, units: value.units.map(({ file: _file, ...rest }) => rest) };
+      return { ...value, units: value.units.map(({ file: _file, readbackMatched: _readback, ...rest }) => rest) };
     }
     case "text.assist":
     case "image.describe": {
@@ -187,8 +190,12 @@ export async function verifyLocal(options: {
 }) {
   if (options.suite === "quality" && options.task === "speech.synthesise" && !options.voice)
     throw new Error("Voice quality qualification needs an explicit installed --voice");
+  const portable = options.task === "speech.synthesise" && options.voice?.startsWith("supertonic:");
+  if (portable) options = { ...options, language: portableLanguage(options.language) };
   const root = options.root ?? localRoot(),
-    status = await ensureApple(options.task, options.language, { ...options, purpose: "draft" });
+    status = portable
+      ? { identity: portableVoiceIdentity(options.voice!) }
+      : await ensureApple(options.task, options.language, { ...options, purpose: "draft" });
   const directory = path.join(
     root,
     "verification",
@@ -205,7 +212,17 @@ export async function verifyLocal(options: {
       return await appleSpeechWords(input, options.language, root);
     }
     const output = path.join(directory, `result-${index}.json`);
-    await runAppleTask({ ...options, input, output, purpose: "draft" });
+    if (portable)
+      runPortableVoice({
+        ...options,
+        input,
+        output,
+        purpose: "draft",
+        qualificationRoot: root,
+        dryRun: false,
+        force: false,
+      });
+    else await runAppleTask({ ...options, input, output, purpose: "draft" });
     return (JSON.parse(boundedFile(output).toString()) as { result: unknown }).result;
   };
   if (options.suite === "smoke") {
@@ -266,7 +283,10 @@ export async function verifyLocal(options: {
           previous = qualityReference(options.task, (baseline as { result?: unknown })?.result ?? baseline);
         const current = referenceDistance(actual, expected),
           prior = referenceDistance(previous, expected);
-        const ok = current === 0 && current <= prior;
+        const matches =
+          !portable ||
+          (candidate as { units: { readbackMatched: boolean }[] }).units.every((unit) => unit.readbackMatched);
+        const ok = matches && current === 0 && current <= prior;
         passed &&= ok;
         metrics[`case${index}.referenceDistance`] = current;
         evidence.push({ input: item.input, current, baseline: prior, passed: ok });

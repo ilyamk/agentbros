@@ -1340,11 +1340,15 @@ export const FILM_CHAIN: readonly ChainStep[] = withFeedback([
         take: "<take>",
         "max-cost-usd": "<maxCostUsd>",
       }),
-      run("voiceover:local", "Free route: system-voice draft takes.", {
-        project: "{id}",
-        output: P("narration-local.json"),
-      }),
-      run("speech:local", "Free route: word timings for each local take.", {
+      run(
+        "voiceover:local",
+        "Free route: local draft takes. Set localVoice in the direction to select the portable engine.",
+        {
+          project: "{id}",
+          output: P("narration-local.json"),
+        },
+      ),
+      run("speech:local", "Free route: word timings for local takes without a word sidecar.", {
         input: "<take.mp3>",
         output: "<take>.transcript.json",
         language: "<language>",

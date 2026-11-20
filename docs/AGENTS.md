@@ -47,7 +47,7 @@ Bespoke film:
 - [craft evaluation](craft-evaluation.md): offline craft evaluation
 - [reference analysis](reference-analysis.md): measured and judged layers of a reference film
 - [contributing references](contributing-references.md): the local analysis workflow, what may be contributed, `ref:contribute`, private references
-- [agent vision](agent-vision.md): source-bound frames, paginated sheets and agent acceptance
+- [agent vision](agent-vision.md): frames and sheets. [Render iteration](render-iteration.md): patches and readability
 - [motion library](motion-library.md): library blocks and catalogue
 - [prepared visualisations](visualisations.md): pinned diagrams, mounting and validation
 - [chart evidence](chart-evidence.md): checking a chart's numbers and sources

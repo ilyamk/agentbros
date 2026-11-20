@@ -76,9 +76,10 @@ test("CI uses exact pnpm bootstrap without bundled Corepack and checks both runt
       assert.ok(text.includes(`npm install --global ${packageManager} --allow-scripts=pnpm`), file);
   }
   const ci = readFileSync(".github/workflows/ci.yml", "utf8");
-  assert.ok(ci.includes("versionFile: .nvmrc.fallback"));
+  assert.ok(ci.includes("'.nvmrc.fallback'"));
   assert.ok(ci.includes("runtime:check --expected"));
-  assert.ok(ci.includes("runtime: [primary, fallback]"));
+  // Pull requests run the primary role; pushes to main and the merge queue run both.
+  assert.ok(ci.includes(`github.event_name == 'pull_request' && '["primary"]' || '["primary","fallback"]'`));
 });
 test("selected Node propagates to explicit child executables", () => {
   const child = spawnSync(

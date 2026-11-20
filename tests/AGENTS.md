@@ -9,7 +9,7 @@ Last updated: 2026-11-20
 ```bash
 pnpm test                 # default suite; heavy suites skip themselves
 pnpm check                # repo:hygiene --check, python:check, format:check, lint, typecheck, test
-pnpm test:fast            # quick unit subset (~2.5 min); CI runs it
+pnpm test:fast            # quick unit subset (~2.5 min); CI runs the full suite
 pnpm test:browser         # browser, review UI, QA evidence, long-form render
 pnpm test:render          # synthetic local render
 pnpm test:integrations    # HTTP stream, realtime, Resolve, HTML capture
