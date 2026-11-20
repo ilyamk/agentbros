@@ -1,5 +1,5 @@
 ---
-category: harness
+category: lesson
 bump: minor
 breaking: false
 pr: 0
