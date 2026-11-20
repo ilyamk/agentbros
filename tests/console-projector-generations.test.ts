@@ -5,6 +5,7 @@
 import test, { type TestContext } from "node:test";
 import assert from "node:assert/strict";
 import { mkdirSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { ProjectViewSchema } from "../src/types/console";
@@ -205,8 +206,9 @@ test("one failed, one running and one published job: newest first, error, money 
   assert.equal(published!.prompt, "Replace the man's face");
   assert.equal(published!.resolution, "720p");
   assert.deepEqual(
-    published!.references?.map((ref) => ref.path),
-    [`assets/imported/${"a".repeat(64)}.jpg`],
+    published!.references?.map((ref) => [ref.path, ref.label]),
+    [[`assets/imported/${"a".repeat(64)}.jpg`, "photo.jpeg"]],
+    "a hash-named reference is labelled with the user's original filename",
   );
   assert.equal(running!.state, "running");
   assert.equal(running!.output, undefined);
@@ -276,4 +278,98 @@ test("corrupt preparation files degrade without breaking the view", (t) => {
   const v = view(root);
   assert.equal(v.generations?.preparation?.id, "broken");
   assert.deepEqual(v.generations?.preparation?.references, []);
+});
+
+function asset(dir: string, bytes: string, ext: string, kind: "video" | "image", provenance: Record<string, unknown>) {
+  const hash = createHash("sha256").update(bytes).digest("hex");
+  writeFileSync(path.join(dir, `assets/imported/${hash}.${ext}`), bytes);
+  return {
+    schemaVersion: 1,
+    id: `sha256:${hash}`,
+    hash,
+    revision: 1,
+    createdAt: "2026-11-20T10:42:52.631Z",
+    kind,
+    files: {
+      original: `projects/${PROJECT}/assets/imported/${hash}.${ext}`,
+      bytes: bytes.length,
+      mime: kind === "video" ? "video/mp4" : "image/jpeg",
+    },
+    media:
+      kind === "video"
+        ? { width: 720, height: 1280, durationSec: 5, codec: "h264", hasAlpha: false, hasAudio: true }
+        : { width: 960, height: 1280, codec: "mjpeg", hasAlpha: false, hasAudio: false },
+    provenance: {
+      tool: "unknown",
+      model: "unknown",
+      referenceAssetIds: [],
+      billing: { status: "unknown" },
+      ...provenance,
+    },
+    rights: { licence: "unknown", commercialAllowed: "unknown", attributionRequired: "unknown" },
+    entityLinks: [],
+    status: "candidate",
+  };
+}
+
+test("media albums: sources, a prepared clip with its source, job outputs only on their card, unregistered files", async (t) => {
+  const { root, dir } = workspace(t);
+  mkdirSync(path.join(dir, "footage"), { recursive: true });
+  const source = asset(dir, "source video", "mp4", "video", { origin: "manual", originalFilename: "stark.mp4" });
+  const prepared = asset(dir, "prepared video", "mp4", "video", { origin: "manual", tool: "model:prepare" });
+  const face = asset(dir, "face", "jpg", "image", { origin: "manual", originalFilename: "IMG_1.jpeg" });
+  writeFileSync(
+    path.join(dir, "pipeline/asset-registry.json"),
+    JSON.stringify({ schemaVersion: 1, revision: 1, assets: [source, prepared, face] }),
+  );
+  // The user's file the source was imported from: the same bytes, so an alias of the registered source.
+  writeFileSync(path.join(dir, "footage/stark.mp4"), "source video");
+  writeFileSync(path.join(dir, "assets/stray.mp4"), "nobody registered me");
+  const prep = path.join(dir, "pipeline/model-preparations/face-v2");
+  mkdirSync(prep, { recursive: true });
+  writeFileSync(
+    path.join(prep, "receipt.json"),
+    JSON.stringify({
+      id: "face-v2",
+      createdAt: "2026-11-20T10:46:27Z",
+      source: { assetId: source.id, original: source.files.original },
+      preparedSource: { assetId: prepared.id, original: prepared.files.original },
+    }),
+  );
+  await threeJobs(dir);
+
+  const built = view(root);
+  assert.deepEqual(
+    built.advisories.filter((advisory) => advisory.startsWith("gallery")),
+    [],
+  );
+  const items = built.gallery?.items ?? [];
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const original = byId.get(source.id);
+  assert.equal(original?.album, "sources");
+  assert.equal(original?.registered, true);
+  assert.equal(original?.media.label, "stark.mp4");
+  assert.deepEqual(original?.aliases, ["footage/stark.mp4"], "the footage copy is an alias, not a second item");
+  const clip = byId.get(prepared.id);
+  assert.equal(clip?.album, "preparation");
+  assert.equal(clip?.preparation, "face-v2");
+  assert.equal(clip?.media.label, "face-v2 · prepared");
+  assert.equal(clip?.parent?.path, source.files.original.replace(`projects/${PROJECT}/`, ""));
+  assert.equal(byId.get(face.id)?.album, "sources");
+  assert.equal(byId.get(face.id)?.media.label, "IMG_1.jpeg");
+  const stray = byId.get("file:assets/stray.mp4");
+  assert.equal(stray?.album, "unregistered");
+  assert.equal(stray?.registered, false);
+  // The published job output is on its job card in the Generations album, never a second item.
+  assert.ok(!items.some((item) => item.media.path === "assets/published.mp4"));
+  assert.deepEqual(
+    [...new Set(items.map((item) => item.album))],
+    ["sources", "preparation", "unregistered"],
+    "albums in lineage order",
+  );
+});
+
+test("a project without media files has no gallery section", (t) => {
+  const { root } = workspace(t);
+  assert.equal(view(root).gallery, undefined);
 });

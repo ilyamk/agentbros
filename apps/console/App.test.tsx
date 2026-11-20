@@ -82,6 +82,13 @@ describe("console shell", () => {
     expect(screen.getByRole("button", { name: /^9 done steps/ }).getAttribute("aria-expanded")).toBe("false");
   });
 
+  it("opens the Media tab of a project from its link", async () => {
+    await renderApp("#/projects/promo-acme/media");
+    const tab = await screen.findByRole("link", { name: "Media" });
+    expect(tab.getAttribute("aria-current")).toBe("page");
+    expect(screen.getByRole("heading", { level: 2, name: "Media" })).toBeTruthy();
+  });
+
   it("pauses through a dialog with the user's words and shows the server's refusal verbatim", async () => {
     const client = new FixtureApiClient({ fixture: "view-film-build", now: () => FIXTURE_NOW });
     vi.spyOn(client, "control").mockRejectedValueOnce(

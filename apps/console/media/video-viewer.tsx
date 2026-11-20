@@ -201,7 +201,8 @@ function LiveVideoViewer({
       ref={root}
       data-media-slot="video"
       data-variant={variant}
-      className={cn("flex min-w-0 flex-col gap-2 bg-background", className)}
+      // The figure takes its container's surface; only full screen gives it its own (2026-11-20).
+      className={cn("flex min-w-0 flex-col gap-2 [&:fullscreen]:bg-background [&:fullscreen]:p-4", className)}
       onKeyDown={onKeyDown}
     >
       <div

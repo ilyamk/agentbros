@@ -169,7 +169,12 @@
             "kind": "image",
             "label": "image"
           }
-        ]
+        ],
+        "source": {
+          "path": "footage/stark-cut.mp4",
+          "kind": "video",
+          "label": "stark-cut.mp4"
+        }
       },
       {
         "id": "higgsfield:failed",
@@ -223,5 +228,64 @@
       "count": 2
     },
     "templateOnly": true
+  },
+  "gallery": {
+    "items": [
+      {
+        "id": "asset-src",
+        "album": "sources",
+        "media": {
+          "path": "footage/stark-cut.mp4",
+          "kind": "video",
+          "label": "stark-cut.mp4"
+        },
+        "registered": true,
+        "origin": "user",
+        "createdAt": "2026-11-20T10:00:00Z"
+      },
+      {
+        "id": "asset-front",
+        "album": "sources",
+        "media": {
+          "path": "assets/imported/front.jpg",
+          "kind": "image",
+          "label": "front.jpg"
+        },
+        "registered": true,
+        "origin": "user",
+        "aliases": [
+          "assets/front-copy.jpg"
+        ]
+      },
+      {
+        "id": "asset-prepared",
+        "album": "preparation",
+        "media": {
+          "path": "assets/stark-720p.mp4",
+          "kind": "video",
+          "label": "face-v2 · prepared"
+        },
+        "registered": true,
+        "origin": "derived",
+        "tool": "model:prepare",
+        "parent": {
+          "path": "footage/stark-cut.mp4",
+          "kind": "video",
+          "label": "stark-cut.mp4"
+        },
+        "preparation": "face-v2"
+      },
+      {
+        "id": "file:assets/stray.mp4",
+        "album": "unregistered",
+        "media": {
+          "path": "assets/stray.mp4",
+          "kind": "video",
+          "label": "stray.mp4"
+        },
+        "registered": false,
+        "createdAt": "2026-11-20T12:00:00Z"
+      }
+    ]
   }
 }

@@ -50,7 +50,7 @@ function requestFields(body: unknown): { prompt?: string; resolution?: string } 
 }
 
 /** A project file as a MediaRef when it exists and the media route would serve it. */
-function mediaRef(paths: ProjectPaths, file: string, label?: string): MediaRef | undefined {
+export function mediaRef(paths: ProjectPaths, file: string, label?: string): MediaRef | undefined {
   const where = locate(paths, file);
   if (!where || where.root !== "project" || !isSafeRelativePath(where.path)) return undefined;
   const kind = mediaKind(where.path);
@@ -66,7 +66,24 @@ function errorOf(job: GenerationJob): string | undefined {
   return text(note, 2000);
 }
 
-function generationOf(job: GenerationJob, paths: ProjectPaths, assets: Map<string, AssetSummary>): Generation {
+/** Registry asset id → the user's original filename, for references stored under a hash name. */
+function originalNames(paths: ProjectPaths): Map<string, string> {
+  const names = new Map<string, string>();
+  const raw = readJsonFile(path.join(paths.projectDir, "pipeline", "asset-registry.json")) as
+    { assets?: unknown } | undefined;
+  for (const asset of Array.isArray(raw?.assets) ? raw.assets : []) {
+    const name = text(asset?.provenance?.originalFilename, 160);
+    if (typeof asset?.id === "string" && name && !name.startsWith(".")) names.set(asset.id, name);
+  }
+  return names;
+}
+
+function generationOf(
+  job: GenerationJob,
+  paths: ProjectPaths,
+  assets: Map<string, AssetSummary>,
+  names: Map<string, string> = new Map(),
+): Generation {
   const at = (states: string[]) => job.history.find((entry) => states.includes(entry.state))?.at;
   const finished = TERMINAL.has(job.state)
     ? [...job.history].reverse().find((entry) => entry.state === job.state)?.at
@@ -85,11 +102,12 @@ function generationOf(job: GenerationJob, paths: ProjectPaths, assets: Map<strin
     const ref = mediaRef(
       paths,
       path.join(paths.projectDir, asset.path),
-      /^[a-f0-9]{64}\./.test(name) ? asset.kind : name,
+      /^[a-f0-9]{64}\./.test(name) ? (names.get(id) ?? asset.kind) : name,
     );
     return ref ? [ref] : [];
   });
   const submitted = at(["submitting", "queued", "running"]);
+  const source = references.find((ref) => ref.kind === "video");
   return {
     id: job.operationId.slice(0, 128),
     provider: text(job.provider, 64) ?? "unknown",
@@ -113,6 +131,7 @@ function generationOf(job: GenerationJob, paths: ProjectPaths, assets: Map<strin
     ...(outputPath ? { outputPath } : {}),
     ...(output ? { output } : {}),
     ...(references.length ? { references: references.slice(0, 16) } : {}),
+    ...(source ? { source } : {}),
   };
 }
 
@@ -235,24 +254,28 @@ export function timelineWithoutMaterial(paths: ProjectPaths, hasRenders: boolean
   return true;
 }
 
+/** The job store's jobs, or none when there is no readable store (money already reports an unreadable one). */
+export function readStoreJobs(paths: ProjectPaths): GenerationJob[] {
+  try {
+    const opened = openStore(paths);
+    return opened ? Object.values(opened.database.jobs) : [];
+  } catch {
+    return [];
+  }
+}
+
 export function readGenerations(
   paths: ProjectPaths,
   assets: readonly AssetSummary[],
   advisories: string[],
+  jobs: readonly GenerationJob[] = readStoreJobs(paths),
 ): Generations | undefined {
-  let jobs: GenerationJob[] = [];
-  try {
-    const opened = openStore(paths);
-    jobs = opened ? Object.values(opened.database.jobs) : [];
-  } catch {
-    // money already reports an unreadable store
-    jobs = [];
-  }
   const byId = new Map(assets.map((asset) => [asset.id, asset]));
+  const names = jobs.length ? originalNames(paths) : new Map<string, string>();
   const generations = jobs
     .map((job) => {
       try {
-        return generationOf(job, paths, byId);
+        return generationOf(job, paths, byId, names);
       } catch (error) {
         advisories.push(
           `generations: job ${job.operationId.slice(0, 64)} cannot be shown (${String(error)})`.slice(0, 2000),

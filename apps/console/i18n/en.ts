@@ -251,6 +251,7 @@ export const en = {
     skippable: "Skippable",
     duration: "Took {time}",
     timeline: "Timeline",
+    media: "Media",
     panels: "Panels",
     stepDetails: "Step details",
     current: "Current step",
@@ -419,6 +420,39 @@ export const en = {
   advisories: {
     title: "Advisories",
     none: "No advisories",
+  },
+  mediaTab: {
+    title: "Media",
+    subtitle:
+      "Everything this project works with and makes, grouped by how it was made. Read from the project's files as the work goes.",
+    albums: "Albums",
+    album: {
+      sources: "Sources",
+      preparation: "Preparation",
+      generations: "Generations",
+      builds: "Builds",
+      unregistered: "Not registered",
+    },
+    albumHint: {
+      sources: "Your originals and reference photos.",
+      preparation: "Cuts, parts and prepared clips fed to a generation, and model preparations.",
+      generations: "Paid model jobs, newest first: running, published and failed.",
+      builds: "Joins, renders and finals made from the project's material.",
+      unregistered:
+        "Files under assets/ that no registry entry or job lists. Shown as found; the console registers nothing.",
+    },
+    empty: "Nothing in this album yet",
+    emptyAll: "No media in this project yet",
+    emptyAllHint: "Imported files, generations and renders appear here as soon as they are on disk.",
+    notRegistered: "not registered",
+    from: "from {label}",
+    alsoAt: "also at {paths}",
+    ofJob: "result of {job}",
+    compare: "Compare with source",
+    compareTitle: "{a} and {b}",
+    close: "Close",
+    truncated: "Only the first 2000 files are listed.",
+    openAll: "All generations in Media",
   },
   generations: {
     title: "Generations",

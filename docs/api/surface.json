@@ -92076,6 +92076,179 @@
       }
     },
     {
+      "id": "src/types/console.ts#GallerySchema",
+      "schema": {
+        "$defs": {
+          "__schema0": {
+            "additionalProperties": false,
+            "properties": {
+              "album": {
+                "enum": [
+                  "sources",
+                  "preparation",
+                  "generations",
+                  "builds",
+                  "unregistered"
+                ],
+                "type": "string"
+              },
+              "aliases": {
+                "items": {
+                  "$ref": "#/$defs/__schema2"
+                },
+                "maxItems": 8,
+                "type": "array"
+              },
+              "createdAt": {
+                "$ref": "#/$defs/__schema4"
+              },
+              "generation": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 1100,
+                "minLength": 1,
+                "type": "string"
+              },
+              "media": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "origin": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              },
+              "parent": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "preparation": {
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "registered": {
+                "type": "boolean"
+              },
+              "tool": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "album",
+              "media",
+              "registered"
+            ],
+            "type": "object"
+          },
+          "__schema1": {
+            "additionalProperties": false,
+            "properties": {
+              "composition": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "durationSec": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "fps": {
+                "exclusiveMinimum": 0,
+                "type": "number"
+              },
+              "height": {
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991,
+                "type": "integer"
+              },
+              "kind": {
+                "enum": [
+                  "video",
+                  "image",
+                  "audio",
+                  "strip",
+                  "document"
+                ],
+                "type": "string"
+              },
+              "label": {
+                "maxLength": 160,
+                "minLength": 1,
+                "type": "string"
+              },
+              "path": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "renderedAt": {
+                "$ref": "#/$defs/__schema4"
+              },
+              "root": {
+                "enum": [
+                  "project",
+                  "out"
+                ],
+                "type": "string"
+              },
+              "sha256": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "sourceHash": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "stale": {
+                "type": "boolean"
+              },
+              "width": {
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "path",
+              "kind"
+            ],
+            "type": "object"
+          },
+          "__schema2": {
+            "type": "string"
+          },
+          "__schema3": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "__schema4": {
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "type": "string"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/__schema0"
+            },
+            "maxItems": 2000,
+            "type": "array"
+          },
+          "truncated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "src/types/console.ts#GenerationSchema",
       "schema": {
         "$defs": {
@@ -92242,6 +92415,9 @@
             "minLength": 1,
             "type": "string"
           },
+          "source": {
+            "$ref": "#/$defs/__schema3"
+          },
           "state": {
             "enum": [
               "planned",
@@ -92357,6 +92533,9 @@
                 "maxLength": 32,
                 "minLength": 1,
                 "type": "string"
+              },
+              "source": {
+                "$ref": "#/$defs/__schema4"
               },
               "state": {
                 "enum": [
@@ -94220,6 +94399,174 @@
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "maxLength": 20000,
         "type": "string"
+      }
+    },
+    {
+      "id": "src/types/console.ts#MediaAlbumSchema",
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "enum": [
+          "sources",
+          "preparation",
+          "generations",
+          "builds",
+          "unregistered"
+        ],
+        "type": "string"
+      }
+    },
+    {
+      "id": "src/types/console.ts#MediaItemSchema",
+      "schema": {
+        "$defs": {
+          "__schema0": {
+            "additionalProperties": false,
+            "properties": {
+              "composition": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "durationSec": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "fps": {
+                "exclusiveMinimum": 0,
+                "type": "number"
+              },
+              "height": {
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991,
+                "type": "integer"
+              },
+              "kind": {
+                "enum": [
+                  "video",
+                  "image",
+                  "audio",
+                  "strip",
+                  "document"
+                ],
+                "type": "string"
+              },
+              "label": {
+                "maxLength": 160,
+                "minLength": 1,
+                "type": "string"
+              },
+              "path": {
+                "$ref": "#/$defs/__schema1"
+              },
+              "renderedAt": {
+                "$ref": "#/$defs/__schema3"
+              },
+              "root": {
+                "enum": [
+                  "project",
+                  "out"
+                ],
+                "type": "string"
+              },
+              "sha256": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "sourceHash": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "stale": {
+                "type": "boolean"
+              },
+              "width": {
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "path",
+              "kind"
+            ],
+            "type": "object"
+          },
+          "__schema1": {
+            "type": "string"
+          },
+          "__schema2": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "__schema3": {
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "type": "string"
+          }
+        },
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "album": {
+            "enum": [
+              "sources",
+              "preparation",
+              "generations",
+              "builds",
+              "unregistered"
+            ],
+            "type": "string"
+          },
+          "aliases": {
+            "items": {
+              "$ref": "#/$defs/__schema1"
+            },
+            "maxItems": 8,
+            "type": "array"
+          },
+          "createdAt": {
+            "$ref": "#/$defs/__schema3"
+          },
+          "generation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 1100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "media": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "origin": {
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "parent": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "preparation": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "registered": {
+            "type": "boolean"
+          },
+          "tool": {
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "album",
+          "media",
+          "registered"
+        ],
+        "type": "object"
       }
     },
     {
@@ -97381,6 +97728,9 @@
                 "minLength": 1,
                 "type": "string"
               },
+              "source": {
+                "$ref": "#/$defs/__schema29"
+              },
               "state": {
                 "$ref": "#/$defs/__schema70"
               },
@@ -97403,6 +97753,91 @@
             "type": "object"
           },
           "__schema164": {
+            "additionalProperties": false,
+            "properties": {
+              "items": {
+                "items": {
+                  "$ref": "#/$defs/__schema165"
+                },
+                "maxItems": 2000,
+                "type": "array"
+              },
+              "truncated": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "items"
+            ],
+            "type": "object"
+          },
+          "__schema165": {
+            "additionalProperties": false,
+            "properties": {
+              "album": {
+                "enum": [
+                  "sources",
+                  "preparation",
+                  "generations",
+                  "builds",
+                  "unregistered"
+                ],
+                "type": "string"
+              },
+              "aliases": {
+                "items": {
+                  "$ref": "#/$defs/__schema25"
+                },
+                "maxItems": 8,
+                "type": "array"
+              },
+              "createdAt": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "generation": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 1100,
+                "minLength": 1,
+                "type": "string"
+              },
+              "media": {
+                "$ref": "#/$defs/__schema29"
+              },
+              "origin": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              },
+              "parent": {
+                "$ref": "#/$defs/__schema29"
+              },
+              "preparation": {
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "registered": {
+                "type": "boolean"
+              },
+              "tool": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "album",
+              "media",
+              "registered"
+            ],
+            "type": "object"
+          },
+          "__schema166": {
             "additionalProperties": false,
             "properties": {
               "last": {
@@ -99282,6 +99717,9 @@
           "footage": {
             "$ref": "#/$defs/__schema145"
           },
+          "gallery": {
+            "$ref": "#/$defs/__schema164"
+          },
           "generatedAt": {
             "$ref": "#/$defs/__schema2"
           },
@@ -99310,7 +99748,7 @@
             "$ref": "#/$defs/__schema1"
           },
           "stepGuard": {
-            "$ref": "#/$defs/__schema164"
+            "$ref": "#/$defs/__schema166"
           },
           "steps": {
             "$ref": "#/$defs/__schema9"
@@ -101974,6 +102412,9 @@
                 "minLength": 1,
                 "type": "string"
               },
+              "source": {
+                "$ref": "#/$defs/__schema29"
+              },
               "state": {
                 "$ref": "#/$defs/__schema70"
               },
@@ -101996,6 +102437,91 @@
             "type": "object"
           },
           "__schema164": {
+            "additionalProperties": false,
+            "properties": {
+              "items": {
+                "items": {
+                  "$ref": "#/$defs/__schema165"
+                },
+                "maxItems": 2000,
+                "type": "array"
+              },
+              "truncated": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "items"
+            ],
+            "type": "object"
+          },
+          "__schema165": {
+            "additionalProperties": false,
+            "properties": {
+              "album": {
+                "enum": [
+                  "sources",
+                  "preparation",
+                  "generations",
+                  "builds",
+                  "unregistered"
+                ],
+                "type": "string"
+              },
+              "aliases": {
+                "items": {
+                  "$ref": "#/$defs/__schema25"
+                },
+                "maxItems": 8,
+                "type": "array"
+              },
+              "createdAt": {
+                "$ref": "#/$defs/__schema2"
+              },
+              "generation": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "id": {
+                "maxLength": 1100,
+                "minLength": 1,
+                "type": "string"
+              },
+              "media": {
+                "$ref": "#/$defs/__schema29"
+              },
+              "origin": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              },
+              "parent": {
+                "$ref": "#/$defs/__schema29"
+              },
+              "preparation": {
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "registered": {
+                "type": "boolean"
+              },
+              "tool": {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "album",
+              "media",
+              "registered"
+            ],
+            "type": "object"
+          },
+          "__schema166": {
             "additionalProperties": false,
             "properties": {
               "last": {
@@ -103875,6 +104401,9 @@
           "footage": {
             "$ref": "#/$defs/__schema145"
           },
+          "gallery": {
+            "$ref": "#/$defs/__schema164"
+          },
           "generatedAt": {
             "$ref": "#/$defs/__schema2"
           },
@@ -103903,7 +104432,7 @@
             "$ref": "#/$defs/__schema1"
           },
           "stepGuard": {
-            "$ref": "#/$defs/__schema164"
+            "$ref": "#/$defs/__schema166"
           },
           "steps": {
             "$ref": "#/$defs/__schema9"

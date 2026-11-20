@@ -8,7 +8,7 @@ import { FolderX, Terminal } from "lucide-react";
 import { useI18n } from "@/i18n";
 import { useConsole, useConsoleStore } from "@/store/context";
 import { commandLine, formatDuration } from "@/lib/format";
-import { projectHref } from "@/lib/router";
+import { projectHref, type ProjectPageName } from "@/lib/router";
 import { cn } from "@/lib/utils";
 import { DecisionCard } from "@/components/decision-card";
 import { EmptyState } from "@/components/empty-state";
@@ -20,6 +20,7 @@ import { onPanelsChanged, panelsFor, registeredPanels } from "@/panels/registry"
 import { HistoryPanel } from "@/panels/generic/history";
 import { TimelineView } from "@/views/timeline";
 import { CampaignView } from "@/views/campaign";
+import { MediaView } from "@/views/media/media-view";
 import { PanelSection } from "./panel-section";
 import { SnapshotBanner } from "./snapshot-banner";
 import { snapshotMode } from "@/lib/snapshot-mode";
@@ -37,7 +38,7 @@ export function ProjectPage({
   decision,
 }: {
   project: string;
-  view: "canvas" | "history" | "timeline";
+  view: ProjectPageName;
   /** A notification's click (`#/projects/<id>/decision/<id>`): focus that card once the view is there. */
   decision?: string;
 }) {
@@ -98,7 +99,7 @@ export function ProjectPage({
       {snapshot ? <SnapshotBanner project={view.project.title ?? view.project.id} takenAt={snapshot.takenAt} /> : null}
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b px-4 lg:px-6">
         <nav aria-label={view.project.title ?? view.project.id} className="flex gap-1">
-          {(snapshot ? (["canvas"] as const) : (["canvas", "history", "timeline"] as const)).map((name) => (
+          {(snapshot ? (["canvas"] as const) : (["canvas", "media", "history", "timeline"] as const)).map((name) => (
             <a
               key={name}
               href={projectHref(project, name)}
@@ -110,7 +111,7 @@ export function ProjectPage({
                   : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >
-              {name === "canvas" ? d.canvas.canvas : name === "history" ? d.canvas.history : d.canvas.timeline}
+              {d.canvas[name]}
             </a>
           ))}
         </nav>
@@ -130,6 +131,8 @@ export function ProjectPage({
             <h2 className="text-lg font-semibold">{d.history.title}</h2>
             <HistoryPanel view={view} />
           </section>
+        ) : page === "media" ? (
+          <MediaView view={view} />
         ) : page === "timeline" ? (
           <>
             <EditingBanner view={view} revision={revision} />

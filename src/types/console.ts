@@ -1583,6 +1583,8 @@ export const GenerationSchema = z.strictObject({
   outputPath: RelativePathSchema.optional(),
   output: MediaRefSchema.optional(),
   references: z.array(MediaRefSchema).max(16).optional(),
+  /** The clip the job transformed (its first video reference), for "compare with source". */
+  source: MediaRefSchema.optional(),
 });
 export type Generation = z.infer<typeof GenerationSchema>;
 
@@ -1616,6 +1618,44 @@ export const GenerationsSchema = z.strictObject({
   templateOnly: z.boolean().optional(),
 });
 export type Generations = z.infer<typeof GenerationsSchema>;
+
+/**
+ * Media albums of the project's Media tab (2026-11-20), grouped by how a file was made, not by folder: `sources` (the
+ * user's originals and reference photos), `preparation` (cuts, parts, prepared clips fed to a generation),
+ * `generations` (provider results with no job in the store; jobs themselves are `generations.jobs`), `builds` (joins,
+ * renders under `out/<id>/`, finals) and `unregistered` (files under `assets/` that no registry entry or job lists).
+ */
+export const MEDIA_ALBUMS = ["sources", "preparation", "generations", "builds", "unregistered"] as const;
+export const MediaAlbumSchema = z.enum(MEDIA_ALBUMS);
+export type MediaAlbum = z.infer<typeof MediaAlbumSchema>;
+
+export const MediaItemSchema = z.strictObject({
+  /** `sha256:<hash>` for a registered file, else `file:<path>` or `out:<path>`. */
+  id: Text(1100),
+  album: MediaAlbumSchema,
+  media: MediaRefSchema,
+  /** False: a file no asset registry entry or job lists (shown, never registered by the console). */
+  registered: z.boolean(),
+  origin: Text(64).optional(),
+  tool: Text(64).optional(),
+  createdAt: IsoTimeSchema.optional(),
+  /** Other project files with the same bytes. */
+  aliases: z.array(RelativePathSchema).max(8).optional(),
+  /** The file it was made from, when the lineage says so. */
+  parent: MediaRefSchema.optional(),
+  /** The paid job that produced it. */
+  generation: Text(128).optional(),
+  /** The model preparation it belongs to. */
+  preparation: Text(80).optional(),
+});
+export type MediaItem = z.infer<typeof MediaItemSchema>;
+
+export const GallerySchema = z.strictObject({
+  /** Newest first within each album. */
+  items: z.array(MediaItemSchema).max(2000),
+  truncated: z.boolean().optional(),
+});
+export type Gallery = z.infer<typeof GallerySchema>;
 
 export const ProjectViewSchema = z
   .strictObject({
@@ -1696,6 +1736,8 @@ export const ProjectViewSchema = z
     footage: FootageMaterialSchema.optional(),
     /** Paid model generations and the latest model preparation, on every route (2026-11-20). */
     generations: GenerationsSchema.optional(),
+    /** The Media tab's albums: every media file of the project by lineage (2026-11-20). */
+    gallery: GallerySchema.optional(),
     stepGuard: z
       .strictObject({
         violations: Count,

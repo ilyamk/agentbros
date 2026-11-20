@@ -12,11 +12,15 @@ import { useNow } from "@/lib/clock";
 import { formatDuration, formatTime, formatUsd } from "@/lib/format";
 import { MediaSlot } from "@/media";
 import { EmptyState } from "@/components/empty-state";
+import { Button } from "@/components/ui/button";
 import { ToneBadge } from "@/components/status";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Disclosure } from "@/components/ui/disclosure";
 import type { PanelProps } from "../registry";
 import { JOB_TONE } from "./money";
 import { PromptBlock } from "./prompt-block";
+import { CompareButton } from "@/views/media/compare-button";
+import { projectHref } from "@/lib/router";
 
 /** States the provider is still working in (the elapsed time keeps counting). */
 export const ACTIVE_STATES = new Set<Generation["state"]>([
@@ -68,7 +72,7 @@ function MoneyLine({ job }: { job: Generation }) {
   return <span className="tabular-nums">{parts.join(" · ")}</span>;
 }
 
-function GenerationCard({ job, project }: { job: Generation; project: string }) {
+export function GenerationCard({ job, project }: { job: Generation; project: string }) {
   const { d, f, locale } = useI18n();
   const now = useNow();
   const elapsed = elapsedMs(job, now);
@@ -76,13 +80,14 @@ function GenerationCard({ job, project }: { job: Generation; project: string }) 
   const published = job.state === "published" || job.state === "validated";
   return (
     <li>
-      <article
+      <Card
+        role="article"
         aria-label={f(d.generations.job, { id: job.id })}
         data-generation={job.id}
         data-state={job.state}
-        className="flex min-w-0 flex-col gap-3 rounded-xl border bg-card p-4 text-sm"
+        className="min-w-0 gap-3 text-sm"
       >
-        <header className="flex flex-wrap items-center gap-2">
+        <CardHeader className="flex flex-wrap items-center gap-2">
           <ToneBadge tone={JOB_TONE[job.state]}>{d.generations.state[job.state]}</ToneBadge>
           <span className="min-w-0 font-medium break-all">{job.endpoint ?? job.provider}</span>
           {job.resolution ? <span className="text-xs text-muted-foreground">{job.resolution}</span> : null}
@@ -94,59 +99,70 @@ function GenerationCard({ job, project }: { job: Generation; project: string }) 
                 : formatDuration(elapsed, d.units)}
             </span>
           ) : null}
-        </header>
-        <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
-          <MoneyLine job={job} />
-          {job.submittedAt ? <span>{formatTime(job.submittedAt, locale, true)}</span> : null}
-          {job.preparation ? <span>{f(d.generations.preparationOf, { id: job.preparation })}</span> : null}
-          <code className="font-mono break-all">{job.id}</code>
-        </p>
-        {job.error ? (
-          <div role="note" className="flex items-start gap-2 rounded-md border border-status-blocked/40 p-2">
-            <TriangleAlert className="mt-0.5 size-4 shrink-0 text-status-blocked" aria-hidden="true" />
-            <p className="min-w-0 break-words">
-              <span className="font-medium">{d.generations.error}: </span>
-              {job.error}
-            </p>
-          </div>
-        ) : null}
-        {job.output ? (
-          <section aria-label={d.generations.output} className="flex min-w-0 flex-col gap-1">
-            <MediaSlot project={project} media={job.output} variant="inline" />
-          </section>
-        ) : published && job.outputPath ? (
-          <p className="text-xs text-muted-foreground">{f(d.generations.outputMissing, { path: job.outputPath })}</p>
-        ) : active && job.outputPath ? (
-          <p className="text-xs text-muted-foreground">{f(d.generations.outputPending, { path: job.outputPath })}</p>
-        ) : job.state === "failed" ? (
-          <p className="text-xs text-muted-foreground">{d.generations.noOutput}</p>
-        ) : null}
-        {job.prompt ? <PromptBlock prompt={job.prompt} subject={job.id} /> : null}
-        {job.references?.length ? (
-          <Disclosure summary={`${d.generations.references} (${job.references.length})`} muted>
-            <ul className="mt-2 grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
-              {job.references.map((ref) => (
-                <li key={ref.path}>
-                  <MediaSlot project={project} media={ref} variant="thumb" />
-                </li>
-              ))}
-            </ul>
-          </Disclosure>
-        ) : null}
-      </article>
+        </CardHeader>
+        <CardContent className="flex min-w-0 flex-col gap-3">
+          <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
+            <MoneyLine job={job} />
+            {job.submittedAt ? <span>{formatTime(job.submittedAt, locale, true)}</span> : null}
+            {job.preparation ? <span>{f(d.generations.preparationOf, { id: job.preparation })}</span> : null}
+            <code className="font-mono break-all">{job.id}</code>
+          </p>
+          {job.error ? (
+            <div role="note" className="flex items-start gap-2 rounded-md border border-status-blocked/40 p-2">
+              <TriangleAlert className="mt-0.5 size-4 shrink-0 text-status-blocked" aria-hidden="true" />
+              <p className="min-w-0 break-words">
+                <span className="font-medium">{d.generations.error}: </span>
+                {job.error}
+              </p>
+            </div>
+          ) : null}
+          {job.output ? (
+            <section aria-label={d.generations.output} className="flex min-w-0 flex-col gap-2">
+              <MediaSlot project={project} media={job.output} variant="inline" />
+              {job.source ? (
+                <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                  <span className="break-all">
+                    {f(d.mediaTab.from, { label: job.source.label ?? job.source.path })}
+                  </span>
+                  <CompareButton project={project} item={job.output} source={job.source} />
+                </div>
+              ) : null}
+            </section>
+          ) : published && job.outputPath ? (
+            <p className="text-xs text-muted-foreground">{f(d.generations.outputMissing, { path: job.outputPath })}</p>
+          ) : active && job.outputPath ? (
+            <p className="text-xs text-muted-foreground">{f(d.generations.outputPending, { path: job.outputPath })}</p>
+          ) : job.state === "failed" ? (
+            <p className="text-xs text-muted-foreground">{d.generations.noOutput}</p>
+          ) : null}
+          {job.prompt ? <PromptBlock prompt={job.prompt} subject={job.id} /> : null}
+          {job.references?.length ? (
+            <Disclosure summary={`${d.generations.references} (${job.references.length})`} muted>
+              <ul className="mt-2 grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
+                {job.references.map((ref) => (
+                  <li key={ref.path}>
+                    <MediaSlot project={project} media={ref} variant="thumb" />
+                  </li>
+                ))}
+              </ul>
+            </Disclosure>
+          ) : null}
+        </CardContent>
+      </Card>
     </li>
   );
 }
 
-function PreparationCard({ preparation, project }: { preparation: ModelPreparationView; project: string }) {
+export function PreparationCard({ preparation, project }: { preparation: ModelPreparationView; project: string }) {
   const { d, f, locale } = useI18n();
   return (
-    <section
+    <Card
+      role="region"
       aria-label={d.generations.preparation}
       data-preparation={preparation.id}
-      className="flex min-w-0 flex-col gap-3 rounded-xl border bg-card p-4 text-sm"
+      className="min-w-0 gap-3 text-sm"
     >
-      <header className="flex flex-wrap items-center gap-2">
+      <CardHeader className="flex flex-wrap items-center gap-2">
         <Sparkles className="size-4 text-muted-foreground" aria-hidden="true" />
         <h3 className="font-medium">{d.generations.preparation}</h3>
         <code className="font-mono text-xs">{preparation.id}</code>
@@ -158,79 +174,89 @@ function PreparationCard({ preparation, project }: { preparation: ModelPreparati
             {plural(d.generations.preparationCount, preparation.count, locale)}
           </span>
         ) : null}
-      </header>
-      <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
-        {preparation.endpoint ? <span className="break-all">{preparation.endpoint}</span> : null}
-        {preparation.mode ? <span>{preparation.mode}</span> : null}
-        {preparation.resolution ? <span>{preparation.resolution}</span> : null}
-        {preparation.createdAt ? <span>{formatTime(preparation.createdAt, locale, true)}</span> : null}
-      </p>
-      {preparation.approval?.userStatement ? (
-        <p className="break-words">{f(d.generations.approvedWords, { words: preparation.approval.userStatement })}</p>
-      ) : null}
-      {preparation.rights ? (
-        <p className="break-words text-muted-foreground">
-          {preparation.rights.userStatement
-            ? f(d.generations.rightsWords, {
-                status: preparation.rights.status,
-                words: preparation.rights.userStatement,
-              })
-            : f(d.generations.rights, { status: preparation.rights.status })}
+      </CardHeader>
+      <CardContent className="flex min-w-0 flex-col gap-3">
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          {preparation.endpoint ? <span className="break-all">{preparation.endpoint}</span> : null}
+          {preparation.mode ? <span>{preparation.mode}</span> : null}
+          {preparation.resolution ? <span>{preparation.resolution}</span> : null}
+          {preparation.createdAt ? <span>{formatTime(preparation.createdAt, locale, true)}</span> : null}
         </p>
-      ) : null}
-      {preparation.prompt ? <PromptBlock prompt={preparation.prompt} subject={preparation.id} /> : null}
-      {preparation.references.length || preparation.source ? (
-        <div className="flex flex-col gap-1">
-          <p className="text-xs font-medium text-muted-foreground">{d.generations.references}</p>
-          <ul className="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
-            {preparation.source ? (
-              <li key={preparation.source.path}>
-                <MediaSlot project={project} media={preparation.source} variant="thumb" />
-              </li>
-            ) : null}
-            {preparation.references.map((ref) => (
-              <li key={ref.path}>
-                <MediaSlot project={project} media={ref} variant="thumb" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-      {preparation.board.length ? (
-        <Disclosure summary={`${d.generations.board} (${preparation.board.length})`} muted>
-          <ul className="mt-2 grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
-            {preparation.board.map((ref) => (
-              <li key={ref.path}>
-                <MediaSlot project={project} media={ref} variant="thumb" />
-              </li>
-            ))}
-          </ul>
-        </Disclosure>
-      ) : null}
-    </section>
+        {preparation.approval?.userStatement ? (
+          <p className="break-words">{f(d.generations.approvedWords, { words: preparation.approval.userStatement })}</p>
+        ) : null}
+        {preparation.rights ? (
+          <p className="break-words text-muted-foreground">
+            {preparation.rights.userStatement
+              ? f(d.generations.rightsWords, {
+                  status: preparation.rights.status,
+                  words: preparation.rights.userStatement,
+                })
+              : f(d.generations.rights, { status: preparation.rights.status })}
+          </p>
+        ) : null}
+        {preparation.prompt ? <PromptBlock prompt={preparation.prompt} subject={preparation.id} /> : null}
+        {preparation.references.length || preparation.source ? (
+          <div className="flex flex-col gap-1">
+            <p className="text-xs font-medium text-muted-foreground">{d.generations.references}</p>
+            <ul className="grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
+              {preparation.source ? (
+                <li key={preparation.source.path}>
+                  <MediaSlot project={project} media={preparation.source} variant="thumb" />
+                </li>
+              ) : null}
+              {preparation.references.map((ref) => (
+                <li key={ref.path}>
+                  <MediaSlot project={project} media={ref} variant="thumb" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {preparation.board.length ? (
+          <Disclosure summary={`${d.generations.board} (${preparation.board.length})`} muted>
+            <ul className="mt-2 grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
+              {preparation.board.map((ref) => (
+                <li key={ref.path}>
+                  <MediaSlot project={project} media={ref} variant="thumb" />
+                </li>
+              ))}
+            </ul>
+          </Disclosure>
+        ) : null}
+      </CardContent>
+    </Card>
   );
 }
 
+/**
+ * The canvas's view of the generations: the jobs still running and the newest finished one, with a link to the Media
+ * tab's Generations album, which holds every job and the preparations.
+ */
 export function GenerationsPanel({ view }: PanelProps) {
   const { d } = useI18n();
   const generations = view.generations;
   const project = view.project.id;
   if (!generations || (!generations.jobs.length && !generations.preparation))
     return <EmptyState compact icon={<Sparkles />} title={d.generations.empty} description={d.generations.emptyHint} />;
+  const active = generations.jobs.filter((job) => ACTIVE_STATES.has(job.state));
+  const latest = generations.jobs.find((job) => !ACTIVE_STATES.has(job.state));
+  const shown = [...active, ...(latest ? [latest] : [])];
   return (
     <div className="flex flex-col gap-4">
       {generations.templateOnly ? <p className="text-sm text-muted-foreground">{d.generations.templateOnly}</p> : null}
-      {generations.jobs.length ? (
-        <section aria-label={d.generations.jobs} className="flex flex-col gap-2">
-          <h3 className="text-sm font-medium">{d.generations.jobs}</h3>
-          <ul className="flex flex-col gap-3">
-            {generations.jobs.map((job) => (
-              <GenerationCard key={job.id} job={job} project={project} />
-            ))}
-          </ul>
-        </section>
+      {shown.length ? (
+        <ul aria-label={d.generations.jobs} className="flex flex-col gap-3">
+          {shown.map((job) => (
+            <GenerationCard key={job.id} job={job} project={project} />
+          ))}
+        </ul>
       ) : null}
-      {generations.preparation ? <PreparationCard preparation={generations.preparation} project={project} /> : null}
+      <Button asChild variant="link" size="sm" className="self-start px-0">
+        <a href={projectHref(project, "media")} data-media-link>
+          {d.mediaTab.openAll} ({generations.jobs.length})
+        </a>
+      </Button>
     </div>
   );
 }
