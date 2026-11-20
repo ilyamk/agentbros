@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { z } from "zod";
 import { buildCatalogue, CATALOGUE_PATH, type Catalogue } from "../src/lib/library/catalogue";
+import { captureTiming } from "../src/motion/library/scenes/scene-plan";
 import { loadLibrary } from "../src/lib/library/load";
 import { sourceFile } from "../src/lib/library/paths";
 import type { LibraryItem, LibraryStyle } from "../src/motion/library/types";
@@ -110,4 +111,70 @@ test("every item declares cues inside its duration", () => {
       );
     }
   }
+});
+
+test("a captured filter has a click cue at the state change in either format", () => {
+  const demo = items.find(({ id }) => id === "scene-feature-demo")!;
+  const plate = {
+    before: "before.png",
+    after: "after.png",
+    width: 960,
+    height: 600,
+    target: { x: 0.3, y: 0.4 },
+    result: { x: 0.5, y: 0.6 },
+  };
+  const capture = {
+    landscape: plate,
+    beforeValue: "12",
+    afterValue: "02",
+    beforeLabel: "blocks",
+    afterLabel: "matches",
+    title: "Library",
+    accent: "#5538cc",
+  };
+  const parsed = demo.schema.parse({ ...demo.defaultProps, capture });
+  assert.deepEqual(demo.formats, ["landscape", "vertical"]);
+  assert.deepEqual(
+    demo.cues?.(parsed)?.map(({ kind, frame }) => [kind, frame]),
+    [["click", 99]],
+  );
+  assert.equal(
+    demo.schema.safeParse({ ...parsed, capture: { ...capture, landscape: { ...plate, target: { x: 2, y: 0 } } } })
+      .success,
+    false,
+  );
+  assert.equal(demo.durationForProps?.({ ...parsed, dashboardFrames: 40, actionFrames: 60 }), 91);
+  const reel = items.find(({ id }) => id === "library-reel")!;
+  assert.equal(reel.durationForProps?.(reel.defaultProps), reel.durationInFrames);
+  assert.equal(reel.durationForProps?.({ ...reel.defaultProps, capture }), 463);
+  assert.ok(reel.schema.safeParse({ ...reel.defaultProps, capture }).success);
+  const performed = {
+    ...reel.defaultProps,
+    capture: { ...capture, performance: { blocks: ["ground-swap-cut", "caused-morph"] } },
+  };
+  assert.ok(reel.schema.safeParse(performed).success);
+  assert.equal(reel.durationForProps?.(performed), 324);
+  assert.deepEqual(
+    reel
+      .cues?.(performed)
+      ?.filter((cue) => cue.kind === "click")
+      .map((cue) => cue.frame),
+    [88],
+  );
+  assert.equal(
+    reel.schema.safeParse({
+      ...performed,
+      capture: { ...capture, performance: { blocks: ["light-burn", "caused-morph"] } },
+    }).success,
+    false,
+  );
+});
+
+test("even the shortest capture preserves a reading hold after the final camera stop", () => {
+  for (const length of [91, 231, 241])
+    for (const carries of [false, true]) {
+      const { click, landing, reframeDelay, reframeDuration } = captureTiming(length, carries);
+      assert.ok(landing > click);
+      assert.ok(length - landing - reframeDelay - reframeDuration >= Math.ceil(length * 0.16));
+    }
 });

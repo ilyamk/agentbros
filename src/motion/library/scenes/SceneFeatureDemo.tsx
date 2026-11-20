@@ -9,7 +9,10 @@ import { DashboardAssemble } from "../ui/DashboardAssemble";
 import { ToastStack } from "../ui/ToastStack";
 import { MaybeFinish, sceneBaseSchema, useLook } from "./shared";
 
+import { CaptureProof, captureProofSchema } from "./CaptureProof";
+
 export const sceneFeatureDemoSchema = sceneBaseSchema.extend({
+  capture: captureProofSchema.optional(),
   product: z.string(),
   dashboardTitle: z.string(),
   /** Frames the dashboard builds and holds before the cut to the action. */
@@ -42,6 +45,7 @@ export const featureDemoFrames = (p: Pick<SceneFeatureDemoProps, "dashboardFrame
  */
 export const SceneFeatureDemo: React.FC<SceneFeatureDemoProps> = ({
   styleId,
+  capture,
   finish,
   product,
   dashboardTitle,
@@ -59,6 +63,12 @@ export const SceneFeatureDemo: React.FC<SceneFeatureDemoProps> = ({
   const { width, height } = useVideoConfig();
   const look = useLook(styleId);
   const accent = look.palette.accent;
+  if (capture)
+    return (
+      <MaybeFinish on={finish} styleId={styleId} seed="capture-proof">
+        <CaptureProof proof={capture} styleId={styleId} length={featureDemoFrames({ dashboardFrames, actionFrames })} />
+      </MaybeFinish>
+    );
   const dashboard = (
     <DashboardAssemble
       product={product}

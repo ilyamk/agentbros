@@ -1,6 +1,6 @@
 {
  "version": 1,
- "sourceHash": "dad138297acae44ff475b8a6c9c62d4885808f57bb944e3e3617fe31f480f0fb",
+ "sourceHash": "f1656c5d131cb15eb7f1198aa5adb0e0ffd5154e6a836e5a6c2c69501bcb606c",
  "items": [
   {
    "id": "type-hero-word",
@@ -20620,6 +20620,10 @@
      "lead": {
       "type": "string"
      },
+     "accentGround": {
+      "type": "string",
+      "pattern": "^#[0-9a-f]{6}$"
+     },
      "words": {
       "minItems": 1,
       "type": "array",
@@ -20746,6 +20750,13 @@
      "finish": {
       "type": "boolean"
      },
+     "presentation": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "screen"
+      ]
+     },
      "shape": {
       "type": "string",
       "enum": [
@@ -20841,7 +20852,7 @@
    "id": "scene-feature-demo",
    "category": "scenes",
    "title": "Feature demo scene",
-   "description": "The product dashboard assembles on the light ground, a hard ground-swap cut lands on an action card, and a cursor click on `clickAt` floods the button into the accent ground. Use for the proof beat; the click causes the next cut. Vertical cuts from the dashboard to a lock screen of result notifications.",
+   "description": "The product dashboard assembles on the light ground, a hard ground-swap cut lands on an action card, and a cursor click on `clickAt` floods the button into the accent ground. Use for the proof beat; the click causes the next cut. Vertical cuts to result notifications. Pass capture for a real before/after screen pair, a tracked control and a result reading hold.",
    "tags": [
     "scene",
     "demo",
@@ -20853,7 +20864,8 @@
     "template"
    ],
    "formats": [
-    "landscape"
+    "landscape",
+    "vertical"
    ],
    "durationInFrames": 231,
    "importPath": "src/motion/library/scenes/SceneFeatureDemo",
@@ -20889,6 +20901,273 @@
      },
      "finish": {
       "type": "boolean"
+     },
+     "capture": {
+      "type": "object",
+      "properties": {
+       "landscape": {
+        "type": "object",
+        "properties": {
+         "before": {
+          "type": "string",
+          "minLength": 1
+         },
+         "after": {
+          "type": "string",
+          "minLength": 1
+         },
+         "width": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "height": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "target": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "result": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "control": {
+          "type": "object",
+          "properties": {
+           "width": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "height": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           }
+          },
+          "required": [
+           "width",
+           "height"
+          ],
+          "additionalProperties": false
+         },
+         "resultZoom": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 8
+         }
+        },
+        "required": [
+         "before",
+         "after",
+         "width",
+         "height",
+         "target",
+         "result"
+        ],
+        "additionalProperties": false
+       },
+       "portrait": {
+        "type": "object",
+        "properties": {
+         "before": {
+          "type": "string",
+          "minLength": 1
+         },
+         "after": {
+          "type": "string",
+          "minLength": 1
+         },
+         "width": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "height": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "target": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "result": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "control": {
+          "type": "object",
+          "properties": {
+           "width": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "height": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           }
+          },
+          "required": [
+           "width",
+           "height"
+          ],
+          "additionalProperties": false
+         },
+         "resultZoom": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 8
+         }
+        },
+        "required": [
+         "before",
+         "after",
+         "width",
+         "height",
+         "target",
+         "result"
+        ],
+        "additionalProperties": false
+       },
+       "beforeValue": {
+        "type": "string",
+        "pattern": "^\\d{1,4}$"
+       },
+       "afterValue": {
+        "type": "string",
+        "pattern": "^\\d{1,4}$"
+       },
+       "beforeLabel": {
+        "type": "string",
+        "minLength": 1
+       },
+       "afterLabel": {
+        "type": "string",
+        "minLength": 1
+       },
+       "performance": {
+        "type": "object",
+        "properties": {
+         "blocks": {
+          "type": "array",
+          "prefixItems": [
+           {
+            "type": "string",
+            "const": "ground-swap-cut"
+           },
+           {
+            "type": "string",
+            "const": "caused-morph"
+           }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+         },
+         "score": {
+          "type": "string",
+          "minLength": 1
+         }
+        },
+        "required": [
+         "blocks"
+        ],
+        "additionalProperties": false
+       },
+       "resultNames": {
+        "minItems": 1,
+        "maxItems": 3,
+        "type": "array",
+        "items": {
+         "type": "string",
+         "minLength": 1
+        }
+       },
+       "title": {
+        "type": "string",
+        "minLength": 1
+       },
+       "accent": {
+        "type": "string",
+        "pattern": "^#[0-9a-f]{6}$"
+       }
+      },
+      "required": [
+       "landscape",
+       "beforeValue",
+       "afterValue",
+       "beforeLabel",
+       "afterLabel",
+       "title",
+       "accent"
+      ],
+      "additionalProperties": false
      },
      "product": {
       "type": "string"
@@ -20980,7 +21259,8 @@
     "image": "docs/library/previews/scene-feature-demo.jpg",
     "entry": "src/motion/library/scenes/preview.tsx",
     "compositions": [
-     "Lib-scene-feature-demo-L"
+     "Lib-scene-feature-demo-L",
+     "Lib-scene-feature-demo-V"
     ]
    },
    "cues": [
@@ -21126,7 +21406,7 @@
      "prefix": "",
      "suffix": "%"
     },
-    "label": "less time to first cut",
+    "label": "fewer review rounds",
     "beat": 36,
     "race": 12,
     "exitAt": -1
@@ -21215,6 +21495,14 @@
      },
      "finish": {
       "type": "boolean"
+     },
+     "markInk": {
+      "type": "string"
+     },
+     "actionSize": {
+      "type": "number",
+      "minimum": 20,
+      "maximum": 72
      },
      "paths": {
       "minItems": 1,
@@ -22796,7 +23084,7 @@
    "id": "library-reel",
    "category": "scenes",
    "title": "Library showcase reel",
-   "description": "A 21 s launch film made only from library blocks: hook, product reveal, feature demo, stat and end card, joined by caused zoom-through, whip, light-burn and slice transitions, with varied shot lengths and one FilmFinish. Use as the reference for composing a whole film.",
+   "description": "A 21 s launch film made only from library blocks: hook, product reveal, feature demo, stat and end card, joined by caused zoom-through, whip, light-burn and slice transitions, with varied shot lengths and one FilmFinish. A capture with the ground-swap-cut and caused-morph performance plays both matched transitions in a 10.8 s alternative cut.",
    "tags": [
     "reel",
     "showcase",
@@ -22812,10 +23100,11 @@
    ],
    "durationInFrames": 632,
    "importPath": "src/motion/library/scenes/LibraryReel",
-   "usage": "<LibraryReel {...libraryReelDefaults} styleId=\"keynote-dark\" beats={beatFrames(bpm)} />; length REEL_FRAMES, shot starts reelStarts().",
+   "usage": "<LibraryReel {...libraryReelDefaults} styleId=\"keynote-dark\" beats={beatFrames(bpm)} />; use reelFrames(props.capture) and reelStarts(props.capture) for the selected edit.",
    "exports": [
     "REEL_SHOTS",
     "REEL_SEAMS",
+    "reelFrames",
     "REEL_FRAMES",
     "reelStarts",
     "beatFrames",
@@ -22852,6 +23141,273 @@
        "minimum": 0,
        "maximum": 9007199254740991
       }
+     },
+     "capture": {
+      "type": "object",
+      "properties": {
+       "landscape": {
+        "type": "object",
+        "properties": {
+         "before": {
+          "type": "string",
+          "minLength": 1
+         },
+         "after": {
+          "type": "string",
+          "minLength": 1
+         },
+         "width": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "height": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "target": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "result": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "control": {
+          "type": "object",
+          "properties": {
+           "width": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "height": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           }
+          },
+          "required": [
+           "width",
+           "height"
+          ],
+          "additionalProperties": false
+         },
+         "resultZoom": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 8
+         }
+        },
+        "required": [
+         "before",
+         "after",
+         "width",
+         "height",
+         "target",
+         "result"
+        ],
+        "additionalProperties": false
+       },
+       "portrait": {
+        "type": "object",
+        "properties": {
+         "before": {
+          "type": "string",
+          "minLength": 1
+         },
+         "after": {
+          "type": "string",
+          "minLength": 1
+         },
+         "width": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "height": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+         },
+         "target": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "result": {
+          "type": "object",
+          "properties": {
+           "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           },
+           "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+           }
+          },
+          "required": [
+           "x",
+           "y"
+          ],
+          "additionalProperties": false
+         },
+         "control": {
+          "type": "object",
+          "properties": {
+           "width": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           },
+           "height": {
+            "type": "number",
+            "exclusiveMinimum": 0
+           }
+          },
+          "required": [
+           "width",
+           "height"
+          ],
+          "additionalProperties": false
+         },
+         "resultZoom": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 8
+         }
+        },
+        "required": [
+         "before",
+         "after",
+         "width",
+         "height",
+         "target",
+         "result"
+        ],
+        "additionalProperties": false
+       },
+       "beforeValue": {
+        "type": "string",
+        "pattern": "^\\d{1,4}$"
+       },
+       "afterValue": {
+        "type": "string",
+        "pattern": "^\\d{1,4}$"
+       },
+       "beforeLabel": {
+        "type": "string",
+        "minLength": 1
+       },
+       "afterLabel": {
+        "type": "string",
+        "minLength": 1
+       },
+       "performance": {
+        "type": "object",
+        "properties": {
+         "blocks": {
+          "type": "array",
+          "prefixItems": [
+           {
+            "type": "string",
+            "const": "ground-swap-cut"
+           },
+           {
+            "type": "string",
+            "const": "caused-morph"
+           }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+         },
+         "score": {
+          "type": "string",
+          "minLength": 1
+         }
+        },
+        "required": [
+         "blocks"
+        ],
+        "additionalProperties": false
+       },
+       "resultNames": {
+        "minItems": 1,
+        "maxItems": 3,
+        "type": "array",
+        "items": {
+         "type": "string",
+         "minLength": 1
+        }
+       },
+       "title": {
+        "type": "string",
+        "minLength": 1
+       },
+       "accent": {
+        "type": "string",
+        "pattern": "^#[0-9a-f]{6}$"
+       }
+      },
+      "required": [
+       "landscape",
+       "beforeValue",
+       "afterValue",
+       "beforeLabel",
+       "afterLabel",
+       "title",
+       "accent"
+      ],
+      "additionalProperties": false
      },
      "brand": {
       "type": "string"
