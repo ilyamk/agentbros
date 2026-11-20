@@ -1,6 +1,6 @@
-# Console steps: the step rail and agent control
+# Console project page: header, step rail and agent control
 
-Status: the rail is shipped (2026-11-20, the user's pick, concept A of three); the agent-control part below is a proposal.
+Status: the step rail is shipped (2026-11-20, the user's pick, concept A of three). The project header has three concepts on preview, pending the user's pick. The agent-control part is a proposal.
 
 The project canvas's step rail had three problems the user named: too little spacing, labels wrapping onto two lines, and no way to tell how many steps there are, where they come from or what each icon means. Three concepts were shown side by side; the user chose A ("Orbit"), and the other two and the old rail were removed.
 
@@ -13,6 +13,43 @@ Code: `apps/console/components/step-rail/` (`index.tsx` the rail, `marker.tsx` t
 - **Truthful count and origin.** The header shows "Step n of total", "k of total closed", an overall bar and an origin badge: _Template steps_ (dashed amber), _Film chain_, _Footage chain_ or _Route steps_, with a tooltip naming the route and the playbook and saying what the origin means. The origin is derived in the browser (see the gaps below).
 - **Legible icons.** "What the icons mean" shows the eight motions live; every step has a tooltip with its title, status, first reason and owner.
 - **Keyboard.** One tab stop; arrows, Home and End move; `aria-current="step"` on the current step.
+
+## Project header
+
+### What the header is for
+
+The header is the first thing read on every project page (Canvas, History, Timeline), often in a narrow pane beside the chat. In order of how often the user needs it:
+
+| #   | The user's question        | Fact                                                                                               | Today                                                                                            |
+| --- | -------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 1   | Which project is this?     | Title; route, film type, playbook                                                                  | Title and a plain `film · promo · product-promo` line                                            |
+| 2   | Is anything happening now? | Control state, the active agent and how long it has worked                                         | "Running" badge for the step next to "No agent running": two different "running"s side by side   |
+| 3   | Where are we?              | Current step, its status, n of N                                                                   | Step title and status badge, no position                                                         |
+| 4   | Does anything wait for me? | Pending decisions                                                                                  | Not in the header at all; only further down the canvas                                           |
+| 5   | What has it cost?          | Spend against the ceiling                                                                          | A chip that looks like a button, no proportion                                                   |
+| 6   | What can I do?             | Pause or resume (often), stop and autonomy (rarely), switch page, open Studio or the editing table | Pause and Stop as equal buttons, autonomy as a button-like chip, tools squeezed onto the tab row |
+
+Problems with today's two bands: everything has the same weight (status badges, settings chips and actions look alike); the consequential Stop sits beside Pause; nothing says what waits for the user; the live state is split across three elements; on a phone the controls wrap into a pile.
+
+### Rules every concept follows
+
+- **One fact, one element, one look.** Status is text with a dot or marker, never a button; actions are buttons; settings live behind "more".
+- **The fitting action only.** Pause while running, Resume while paused or stopped (filled, the one thing to do); Stop and "Change autonomy and budget" in the ⋯ menu, Stop in red after a separator. Both still open the existing confirm dialogs (`ControlDialog`, `AutonomyDialog`).
+- **"Waits for you" is a first-class pill** (amber, with the count): it scrolls to and focuses the first decision card on the canvas, or opens the canvas from other pages. Hidden when nothing waits.
+- **Same language as the rail.** The current step uses the rail's marker (orbit, pulse, check …) and "Step n of N".
+- **Money as a proportion.** Spent, "of" the ceiling, and a thin bar that turns amber past 80 %.
+- **Responsive by priority.** On a phone: title, live state, waiting, money, the fitting action and the tabs. Studio and the editing table are desktop tools and appear from the `md` breakpoint.
+- **Micro-motion with meaning, off under reduced motion.** The live dot breathes only while an agent works; the live text and the waiting count pop or slide in when they change; the money and progress bars ease to their new width.
+
+### The three concepts (preview: `?header=current|a|b|c`)
+
+| Concept             | Shape                                                                                                                                                                                                                                                           | Best for                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| **A · Command bar** | Two quiet rows. Row 1: title, meta and the live line (dot, agent, time) on the left; waiting pill, spend meter, Pause and ⋯ on the right. Row 2: tabs, the current step with the rail's marker and "Step n of N", tools on the right.                           | Dense and calm; a laptop beside the chat         |
+| **B · Status hero** | A summary: meta in small caps over a large title, the current step with a progress bar and the live line, three tiles on the right (waiting, budget, autonomy) above the actions; tabs and tools below.                                                         | Checking in on a long run; explains the most     |
+| **C · Live strip**  | A thin full-width strip carries only the live state, tinted by it (violet working, grey idle, amber paused, red stopped), with the current step, waiting pill, Resume/Pause and ⋯; below, the title with meta and spend, a segmented page switch and the tools. | Reading the state at a glance; the most distinct |
+
+Code: `apps/console/shell/header/` (`parts.tsx` shared facts and parts, `concepts.tsx`, `preview.tsx` the switcher, `header.test.tsx`). The switcher sits above the header; `current` shows today's `TopBar` and tab row. When the user picks, the winner replaces `shell/top-bar.tsx` and the tab row in `shell/project.tsx`, and the preview goes.
 
 ## How steps reach the rail today
 

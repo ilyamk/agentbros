@@ -88,7 +88,7 @@ A user's own footage:
 - [long form](longform.md): chapters and approved shorts
 - [long-form integrity](longform-integrity.md): chapter render integrity
 - [review UI](local-review-ui.md): `review:ui`, the console's timeline review
-- [studio console](console.md): live projects, decisions, pause, cards, hooks, security (RFC 0004); [steps proposal](console-steps.md)
+- [studio console](console.md): live projects, decisions, pause, cards, hooks, security (RFC 0004); [header and steps](console-steps.md)
 
 Sound and captions:
 

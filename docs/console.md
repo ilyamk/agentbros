@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-20
 
-The studio console is a local web page that shows every project live and takes the user's decisions where they are easiest to make well. It runs on `127.0.0.1`, beside the chat: in the Claude Code desktop preview pane, the Codex in-app browser or any browser. Design and decisions: [RFC 0004](rfcs/0004-studio-console.md). The step rail and how agents should drive steps: [steps](console-steps.md). Code: `src/lib/console/` (server, projector, actions), `src/lib/local-server/` (loopback security shared with `review:ui`), `apps/console/` (the React UI, [rules](../apps/console/AGENTS.md)), `scripts/hooks/` (harness hooks, [harnesses](harnesses.md#hooks)), contract `src/types/console.ts`.
+The studio console is a local web page that shows every project live and takes the user's decisions where they are easiest to make well. It runs on `127.0.0.1`, beside the chat: in the Claude Code desktop preview pane, the Codex in-app browser or any browser. Design and decisions: [RFC 0004](rfcs/0004-studio-console.md). Project header, step rail and how agents should drive steps: [project page](console-steps.md). Code: `src/lib/console/` (server, projector, actions), `src/lib/local-server/` (loopback security shared with `review:ui`), `apps/console/` (the React UI, [rules](../apps/console/AGENTS.md)), `scripts/hooks/` (harness hooks, [harnesses](harnesses.md#hooks)), contract `src/types/console.ts`.
 
 The console is a view and a remote control, never a second source of truth. Everything it shows is read from the project's own files (chain state, job store, cost ledger, assets, renders, QA, delivery) and from the event journal. Everything it changes goes through the same CLIs an agent or the user would run, with the user's words.
 

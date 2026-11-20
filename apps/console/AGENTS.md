@@ -43,6 +43,7 @@ The browser half of the studio console ([guide](../../docs/console.md), [RFC 000
 
 - 2026-11-18: `shell/hooks-banner.tsx` shows a banner at the top of every page while either harness's hooks are `missing` or `stale` (live clients only, not in snapshot mode). Its dialog explains why hooks matter, shows the status, has Check again, Install or Update (the click is the user's yes, after the plan and command are shown) and Close. Its close button hides it for good in this browser (`agentbros.console.hooksBannerDismissed` in localStorage). The banner, its dialog and Settings read one status through `shell/hooks-state.ts`; call `refreshHooks` after an install.
 
+- 2026-11-20: project header concepts on preview (`shell/header/`, `?header=current|a|b|c`, [guide](../../docs/console-steps.md#project-header)) until the user picks.
 - 2026-11-20: the step rail is `components/step-rail/` ([guide](../../docs/console-steps.md)); fixture `view-step-rail` shows every status. Its `rail-*` keyframes in `styles.css` are the one exception to the transition-only motion rule, always behind `motion-safe:`.
 
 - Every UI string is a key in all three dictionaries (`i18n/i18n.test.ts` fails on a missing key, placeholder or plural form). User and agent text is shown as written, never translated; Markdown goes through `lib/markdown.tsx` (React elements only, no HTML).
