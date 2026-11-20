@@ -195,9 +195,9 @@ const ReadabilityFixture: React.FC = () => {
   const background = frame < 30 ? "#666" : "#999";
   return (
     <AbsoluteFill style={{ background }}>
-      <div style={{ position: "absolute", left: 9, top: 8, fontSize: 22, color: "#888" }}>Низкий контраст</div>
-      <div style={{ position: "absolute", left: 9, top: 43, fontSize: 24, color: "#fff", background: "#000", opacity }}>Readable fade</div>
-      <div style={{ position: "absolute", left: 9, top: 92, fontSize: 5, color: "#fff" }}>Tiny label</div>
+      <div style={{ position: "absolute", left: 9, top: 8, fontFamily: "sans-serif", fontSize: 22, color: "#888" }}>Низкий контраст</div>
+      <div style={{ position: "absolute", left: 9, top: 43, fontFamily: "sans-serif", fontSize: 24, color: "#fff", background: "#000", opacity }}>Readable fade</div>
+      <div style={{ position: "absolute", left: 9, top: 92, fontFamily: "sans-serif", fontSize: 5, color: "#fff" }}>Tiny label</div>
       {frame >= 18 && frame <= 24 && <Label x={9} y={118}>A message to read</Label>}
       <Box x={frame} />
     </AbsoluteFill>
