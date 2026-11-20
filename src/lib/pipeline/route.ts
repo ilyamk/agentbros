@@ -1,3 +1,4 @@
+import { filmStyleForStep } from "../film-styles/binding";
 /** Which next-step command a project follows, and what an agent reads at each step of it. */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
@@ -178,6 +179,7 @@ export type PlaybookAnswer = {
   playbookWarning?: string;
   experiments?: ReturnType<typeof experimentInstructions>;
   activeExperiments?: { id: string; status: string }[];
+  filmStyle?: ReturnType<typeof filmStyleForStep>;
   read: string[];
 };
 
@@ -253,19 +255,22 @@ export function withPlaybook(projectDir: string, read: string[] = [], step?: str
     : step
       ? { experiments: active }
       : { activeExperiments: active.map(({ id, status }) => ({ id, status })) };
+  const style = filmStyleForStep(projectDir, step);
+  const filmStyle = style ? { filmStyle: style } : {};
   const bound = playbookRead(projectDir, rootOfProject(projectDir), step);
-  if (bound.warning) return { playbook: null, playbookWarning: bound.warning, ...experiments, read };
+  if (bound.warning) return { playbook: null, playbookWarning: bound.warning, ...experiments, ...filmStyle, read };
   if (!bound.playbook) {
     const suggest = playbookSuggest(projectDir);
     return {
       playbook: null,
       ...experiments,
+      ...filmStyle,
       playbookHint: playbookHint(path.basename(projectDir)),
       ...(suggest ? { playbookSuggest: suggest } : {}),
       read,
     };
   }
-  return { playbook: bound.playbook, ...experiments, read: [...new Set([...bound.read, ...read])] };
+  return { playbook: bound.playbook, ...experiments, ...filmStyle, read: [...new Set([...bound.read, ...read])] };
 }
 
 // --- The user's memory ---

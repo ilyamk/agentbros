@@ -1,4 +1,6 @@
 import { writeExperiments } from "../experiments/project";
+import { writeFilmStyle } from "../film-styles/binding";
+import { filmStyleKey } from "../film-styles/catalogue";
 import { existsSync, mkdirSync, writeFileSync, renameSync, rmSync, openSync, closeSync, unlinkSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
@@ -51,7 +53,9 @@ export function materializeRecipe(input: RecipeRequest, rootDir = process.cwd())
   try {
     mkdirSync(path.join(staging, "pipeline"), { recursive: true });
     mkdirSync(path.join(staging, "assets/animatic"), { recursive: true });
+    const selfContained = new Set(plan.request.beats.filter(({ selfContained }) => selfContained).map(({ id }) => id));
     for (const [index, scene] of plan.project.scenes.entries()) {
+      if (selfContained.has(scene.id) || scene.template?.id === "scene.physical-data") continue;
       if (
         scene.imageUrl ||
         (scene.template &&
@@ -73,9 +77,10 @@ export function materializeRecipe(input: RecipeRequest, rootDir = process.cwd())
     }
     writeFileSync(path.join(staging, "project.json"), `${JSON.stringify(plan.project, null, 2)}\n`, { flag: "wx" });
     if (plan.request.experiment) writeExperiments(staging, [{ id: plan.request.experiment, started: true }]);
+    if (plan.filmStyle) writeFilmStyle(staging, plan.filmStyle);
     const recipeMetadata = {
       schemaVersion: 1,
-      request: plan.request,
+      request: plan.filmStyle ? { ...plan.request, styleCard: filmStyleKey(plan.filmStyle) } : plan.request,
       ...(plan.proofs ? { proofs: plan.proofs, proofGuidance: plan.proofGuidance } : {}),
       durationInFrames: plan.durationInFrames,
       productionReady: false,

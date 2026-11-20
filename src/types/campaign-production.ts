@@ -1,3 +1,4 @@
+import { FilmStyleKeySchema } from "./film-styles";
 import { z } from "zod";
 import { RecipeRequestSchema } from "./recipes";
 import { ProjectConfigSchema } from "./video";
@@ -41,6 +42,7 @@ export const CampaignAdapterSchema = z.discriminatedUnion("kind", [
       kind: z.literal("film"),
       filmType: FilmTypeSchema,
       playbook: CampaignId,
+      styleCard: FilmStyleKeySchema.clone().optional(),
       product: CampaignFileSchema.optional(),
     })
     .strict(),

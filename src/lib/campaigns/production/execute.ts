@@ -1,5 +1,7 @@
 import { assertTutorialKit, bindTutorialKit } from "../../experiments/series";
 import { readExperiments } from "../../experiments/project";
+import { filmStyleFile, readFilmStyle, writeFilmStyle } from "../../film-styles/binding";
+import { filmStyleKey, selectFilmStyle } from "../../film-styles/catalogue";
 import { copyFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -200,6 +202,8 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
     if (kit) assertTutorialKit(directory);
     if (before.allocationHash !== plan.allocationHash) refuse("Child allocation changed");
     if (before.adapterHash === digest(adapter) && before.materialsHash === materialsHash && !member.expectedProject) {
+      const stylePin = before.files.find((pin) => path.resolve(root, pin.path) === filmStyleFile(directory));
+      if (stylePin) verifyPin(root, stylePin);
       try {
         if (!["existing", "film"].includes(adapter.kind)) before.files.forEach((pin) => verifyPin(root, pin));
       } catch {
@@ -233,8 +237,12 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
   );
   const effective = replaceMaterialRefs(adapter, refs) as CampaignMember["adapter"];
   if (effective.kind === "recipe") {
-    if (updating) atomicJson(path.join(directory, "project.json"), buildRecipe(effective.request).project);
-    else materializeRecipe(effective.request, root);
+    if (updating) {
+      const selected = readFilmStyle(directory);
+      if ((selected ? filmStyleKey(selected.style) : undefined) !== effective.request.styleCard)
+        refuse("A revised recipe style needs a new campaign member project");
+      atomicJson(path.join(directory, "project.json"), buildRecipe(effective.request).project);
+    } else materializeRecipe(effective.request, root);
   } else if (effective.kind === "template") {
     if (updating) atomicJson(path.join(directory, "project.json"), effective.project);
     else {
@@ -253,6 +261,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
       ),
     });
   else if (effective.kind === "film") {
+    const style = effective.styleCard ? selectFilmStyle(effective.styleCard) : undefined;
     mkdirSync(directory);
     scaffoldFilmProject(directory, member.projectId, effective.product ? [verifyPin(root, effective.product)] : [], {
       filmType: effective.filmType,
@@ -260,6 +269,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
     const brief = path.join(directory, "pipeline/brief.json");
     atomicJson(brief, { ...(jsonFile(brief) as object), format: member.formats[0] });
     writeProjectPlaybook(directory, effective.playbook, "agent");
+    if (style) writeFilmStyle(directory, style);
   } else if (!existsSync(path.join(directory, "project.json")) && !isBespokeDelivery(root, member.projectId))
     refuse("Existing child is not a video project");
   const kitFile = kit ? bindTutorialKit(root, plan.request.id, directory) : undefined;
@@ -301,6 +311,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
   }
   const files = [
     ...(kitFile ? [pinFile(root, kitFile)] : []),
+    ...(existsSync(filmStyleFile(directory)) ? [pinFile(root, filmStyleFile(directory))] : []),
     pinFile(
       root,
       path.join(directory, isBespokeDelivery(root, member.projectId) ? "pipeline/brief.json" : "project.json"),

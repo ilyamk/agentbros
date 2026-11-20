@@ -1708,6 +1708,17 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "What the orchestrator does now: dispatch, run, ask the user or stop",
     ),
   ),
+  g(
+    "docs/film-styles.md",
+    c(
+      "film:style",
+      "film-style.ts",
+      "dev",
+      "none",
+      { excluded: "explicit local choice of a fixed creative style" },
+      "List or pin a film style for the production chain",
+    ),
+  ),
   c(
     "film:brief",
     "film-brief.ts",

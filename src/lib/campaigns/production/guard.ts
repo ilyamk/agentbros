@@ -1,3 +1,5 @@
+import { filmStyleFile, readFilmStyle } from "../../film-styles/binding";
+import { filmStyleKey } from "../../film-styles/catalogue";
 import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import {
@@ -63,6 +65,20 @@ export function assertProductionReferences(projectDir: string) {
   if (plan.planHash !== current.planHash || plan.allocationHash !== binding.manifestHash)
     refuse("Campaign plan or allocation differs");
   verifyPlan(plan, root);
+  const adapter = plan.members.find(({ projectId }) => projectId === binding.projectId)?.adapter;
+  const styleKey =
+    adapter?.kind === "film" ? adapter.styleCard : adapter?.kind === "recipe" ? adapter.request.styleCard : undefined;
+  if (styleKey) {
+    const style = readFilmStyle(projectDir);
+    if (!style || filmStyleKey(style.style) !== styleKey)
+      refuse("The campaign member's style differs from the approved plan");
+    const preparation = jsonFile(scopedFile(root, path.join(projectDir, "pipeline/campaign-preparation.json"))) as {
+      files: { path: string; sha256: string }[];
+    };
+    const pin = preparation.files.find((item) => path.resolve(root, item.path) === filmStyleFile(projectDir));
+    if (!pin) refuse("The campaign member lacks its style preparation pin");
+    verifyPin(root, pin);
+  }
   // pipeline/campaign-stage-approvals/ receipts belonged to the removed template stage approvals: ignored, as nothing can renew them.
   const assets = path.join(projectDir, "pipeline/campaign-assets");
   if (existsSync(assets))

@@ -1,3 +1,4 @@
+import { selectFilmStyle } from "../../film-styles/catalogue";
 import { csvParse, tsvParse } from "d3-dsv";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
@@ -197,6 +198,13 @@ export function buildCampaignPlan(raw: CampaignProductionRequest, root = process
     refuse("Campaign and member IDs must be distinct and unique");
   members.forEach((member) => {
     projectDirectory(root, member.projectId);
+    const adapter = member.adapter;
+    const style =
+      adapter.kind === "recipe" ? adapter.request.styleCard : adapter.kind === "film" ? adapter.styleCard : undefined;
+    if (style) {
+      if (!style.includes("@")) refuse(`Campaign member ${member.id} needs an exact film style revision`);
+      selectFilmStyle(style);
+    }
     if (
       (member.adapter.kind === "recipe" && member.adapter.request.projectId !== member.projectId) ||
       (member.adapter.kind === "workflow" && member.adapter.request.projectId !== member.projectId) ||

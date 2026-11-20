@@ -1,3 +1,5 @@
+import { filmStyleFile, writeFilmStyle } from "../src/lib/film-styles/binding";
+import { filmStyleKey, selectFilmStyle } from "../src/lib/film-styles/catalogue";
 /** Creates a bespoke project for the film chain. Its state is derived from files and hashes; it writes no pipeline-state.json. */
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -30,6 +32,7 @@ void runScript(async () => {
     [
       { name: "project", required: true, description: "Project slug" },
       { name: "title", description: "Short display name for Studio Console" },
+      { name: "style", description: "Optional film style ID or exact ID@revision" },
       { name: "product", description: "Product material: one or more paths after the flag, or the flag repeated" },
       {
         name: "profile",
@@ -60,6 +63,7 @@ void runScript(async () => {
   const id = args.project!;
   validateProjectId(id);
   const title = ProjectTitleSchema.optional().parse(args.title);
+  const style = args.style ? selectFilmStyle(args.style) : undefined;
   const directory = projectDir(id);
   // A brief means a started project; pipeline-state.json marks an old one (legacy template mode or an earlier film:init).
   const existing = ["brief.json", "pipeline-state.json"]
@@ -130,6 +134,10 @@ void runScript(async () => {
     ...(filmType ? { filmType } : {}),
     ...(secondaryFilmType ? { secondaryFilmType } : {}),
   });
+  if (style) {
+    writeFilmStyle(path.resolve(directory), style);
+    written.push(filmStyleFile(path.resolve(directory)));
+  }
   if (title) written.push(writeProjectTitle(path.resolve(directory), title));
   if (playbook) writeProjectPlaybook(path.resolve(directory), playbook.id, args.by === "user" ? "user" : "agent");
   const route = resolveRoute(filmType, secondaryFilmType);
@@ -167,6 +175,7 @@ void runScript(async () => {
       rubricVersion,
       filmType: route.type,
       typeChosen: filmType !== undefined,
+      ...(style ? { style: filmStyleKey(style) } : {}),
       ...(playbook
         ? {
             playbook: { id: playbook.id, title: playbook.title },

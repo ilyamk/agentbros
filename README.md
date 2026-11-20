@@ -888,7 +888,7 @@ Find any command with `pnpm commands --query <word>`; `pnpm next --project <id>`
 | Several cameras and reframing | `multicam:sync`, `multicam:angles`, `reframe:track`; [multicam and reframing](docs/multicam-reframe.md) |
 | Transcripts and speech masks | `transcribe` (Scribe v3, paid), `speech:local` (Parakeet, Silero VAD, pyannote; free); [speech](docs/speech.md) |
 | Reference films | `ref:add`, `ref:analyze`, `ref:validate`, `ref:compare`; [reference analysis](docs/reference-analysis.md); exact remakes: `reference-replica` skill |
-| Recipes and scenarios | `video:recipe`, `video:workflow`; [template recipes](docs/template-recipes.md), [workflows](docs/workflows.md) |
+| Recipes and scenarios | `video:recipe`, `video:workflow`; [template recipes](docs/template-recipes.md), [film style cards](docs/film-styles.md), [workflows](docs/workflows.md) |
 | Models and budgets | `generate:model`, `fal:find`, `budget`; [task slots](docs/model-slots-guide.md); [fal catalogue](docs/fal-catalogue.md), [maintainer integration](docs/fal-integration.md), [Higgsfield](docs/higgsfield.md), [prompting](docs/higgsfield-prompting.md), [reference packs](docs/reference-packs.md), [paid execution](docs/paid-execution.md), [model drafts](docs/model-nonmedia-workflows.md) |
 | Streaming and realtime | `generate:stream`, `generate:realtime`, `realtime:editor`; [HTTP streams](docs/http-stream.md), [realtime](docs/realtime-sessions.md), [editor](docs/realtime-editor.md) |
 | Harness assets and entities | `asset:import`, `entity:card`, `asset:board`; [harness assets](docs/harness-assets.md), [entities](docs/entity-workflow.md) |

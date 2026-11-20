@@ -29,6 +29,8 @@ pnpm exec tsx --test tests/motion-library.test.ts  # contract checks for every i
 
 Node-side tooling (`scripts/library-*.ts`, the test) loads the registry through `src/lib/library/load.ts`, which resolves ESM-only render packages. Load it lazily, after argument parsing: the component graph takes seconds. That is why `library:list` reads `docs/library/catalogue.json`, written by `library:catalogue` (`src/lib/library/catalogue.ts`).
 
+`data-unit-tray` uses a fixed grid and exact integer count for material-led evidence. The count and rendered objects share one frame function.
+
 ## Adding an item
 
 - One component per file in `src/motion/library/<category>/`, exporting the component and its zod schema. `importPath` is that file without extension and must start with the category directory.

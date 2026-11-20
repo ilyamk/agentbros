@@ -1,3 +1,4 @@
+import { UnitTray } from "../../motion/library/data/UnitTray";
 import { VizScene } from "../../motion/viz/VizScene";
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
@@ -79,6 +80,8 @@ export const RegisteredTemplate: React.FC<RegisteredTemplateProps> = ({
         </CanvasMoodContext.Provider>
       );
       break;
+    case "scene.physical-data":
+      return <UnitTray {...instance.props} ground={bgColor} text={textColor} accent={accentColor} />;
     case "scene.metric":
       content = (
         <div>

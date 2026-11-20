@@ -1,3 +1,4 @@
+import { FilmStyleKeySchema } from "./film-styles";
 import { z } from "zod";
 import { StyleProfileIdSchema, TemplateInstanceSchema } from "./templates";
 export const RecipeIdSchema = z.enum([
@@ -21,6 +22,7 @@ export const RecipeRequestSchema = z
       .default(["vertical", "square", "landscape"]),
     experiment: z.literal("proof-scenes@1").optional(),
     styleProfile: StyleProfileIdSchema.optional(),
+    styleCard: FilmStyleKeySchema.clone().optional(),
     durationSec: z.number().min(6).max(1200).optional(),
     media: z
       .array(
@@ -43,6 +45,7 @@ export const RecipeRequestSchema = z
             durationSec: z.number().min(1).optional(),
             template: TemplateInstanceSchema.optional(),
             proofSource: z.string().trim().min(1).optional(),
+            selfContained: z.boolean().optional(),
           })
           .strict(),
       )

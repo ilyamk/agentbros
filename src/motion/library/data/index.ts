@@ -1,3 +1,5 @@
+import { UnitTray } from "./UnitTray";
+import { unitTrayCues, unitTrayDefaults, unitTraySchema } from "./unit-tray-plan";
 import { VizScene, vizSceneSchema, vizSceneDefaults } from "./VizScene";
 import { iconVisualItem } from "./IconVisual";
 import { defineItem, type LibraryItem } from "../types";
@@ -49,6 +51,23 @@ export const items: LibraryItem[] = [
     },
   }),
   iconVisualItem,
+  defineItem({
+    id: "data-unit-tray",
+    category: "data",
+    title: "Physical unit tray",
+    description:
+      "Equal-sized objects enter or leave a fixed arrangement while the number follows the actual count. For comparisons where one object represents a declared real unit.",
+    tags: ["count", "quantity", "material", "tile", "physical data"],
+    component: UnitTray,
+    schema: unitTraySchema,
+    defaultProps: unitTrayDefaults,
+    durationInFrames: 135,
+    formats: ["landscape", "vertical", "square"],
+    cues: unitTrayCues,
+    importPath: importPath("UnitTray"),
+    usage:
+      "Use verified values in from/to and explain the unit in unitLabel. Keep the same shape and palette across a comparison.",
+  }),
   defineItem({
     id: "hero-stat-odometer",
     category: "data",

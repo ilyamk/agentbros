@@ -56,6 +56,7 @@ export const ALWAYS_ADMITTED = [
 export const CONTROL_ALIASES = [
   ...ALWAYS_ADMITTED,
   "film:route",
+  "film:style",
   "feedback",
   "memory",
   // The user's rating of a styleframe or reference (RFC 0004 WP9): their own record, like feedback.
