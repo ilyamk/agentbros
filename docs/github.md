@@ -311,7 +311,9 @@ category limits, needs no `design-approved` for protected paths at intake
 The owner's PRs still carry the PR block and one change entry.
 
 Same-repository Dependabot PRs (`dependabot[bot]`, `dependabot/*` branch) that
-change only `package.json`, `pnpm-lock.yaml` or `.github/workflows/*.yml` take the
+change only `package.json`, `pnpm-lock.yaml`, the regenerated `DEPENDENCY_LICENCES.json`
+and `.md` (`pnpm deps:licences --write`, pushed to the branch: CI fails a bump whose
+lockfile hash they do not record) or `.github/workflows/*.yml` take the
 `dependabot-route`: no CLA, PR block or change entry, pass G0/G1 with warnings,
 always get `needs-human`, never `ready-for-owner`, and autoclose skips them. The
 required `deps:check` gate still decides: a bump to a package whose exact version
