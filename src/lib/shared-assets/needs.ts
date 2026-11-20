@@ -32,9 +32,11 @@ export function needsForLibraryItems(ids: readonly string[]): string[] {
 }
 
 /** Library compositions are `Lib-<item id>-<format suffix>` (src/lib/library/paths.ts). */
-export function needsForComposition(composition: string): string[] {
+export function needsForComposition(composition: string, props: Readonly<Record<string, unknown>> = {}): string[] {
   if (COMPOSITION_NEEDS[composition]) return [...COMPOSITION_NEEDS[composition]];
   const match = /^Lib-(.+)-[^-]+$/.exec(composition);
+  if (match?.[1] === "library-reel" && props.capture && typeof props.capture === "object") return [];
+  if (match?.[1] === "scene-product-reveal" && props.presentation === "screen" && props.screenImage) return [];
   return match ? needsForLibraryItems([match[1]!]) : [];
 }
 
