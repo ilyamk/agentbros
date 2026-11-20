@@ -139,3 +139,49 @@ test("invalid provider audio cannot overwrite an existing take or trigger anothe
     rmSync(directory, { recursive: true, force: true });
   }
 });
+
+test("music: every plan section is sent with lines, and the request carries its own long-timeout dispatcher", async () => {
+  const { generateMusic, musicDispatcher, musicRequestPlan, MUSIC_REQUEST_TIMEOUT_MS } =
+    await import("../src/lib/elevenlabs-music");
+  const { directory, store } = setup();
+  const originalFetch = globalThis.fetch,
+    originalKey = process.env.ELEVENLABS_API_KEY;
+  const source = path.join(directory, "fixture.mp3");
+  assert.equal(
+    spawnSync("ffmpeg", ["-v", "error", "-f", "lavfi", "-i", "sine=frequency=440:duration=0.2", source]).status,
+    0,
+  );
+  const audioBytes = readFileSync(source);
+  let sent: { body?: string; dispatcher?: unknown } = {};
+  globalThis.fetch = async (_url, init) => {
+    sent = init as typeof sent;
+    return new Response(audioBytes, { headers: { "xi-request-id": "music-request" } });
+  };
+  process.env.ELEVENLABS_API_KEY = "fixture-never-sent";
+  try {
+    const plan = {
+      sections: [
+        { section_name: "Run", duration_ms: 3000 },
+        { section_name: "Sung", duration_ms: 3000, lines: ["la la"] },
+      ],
+    };
+    assert.deepEqual(
+      musicRequestPlan(plan).sections.map((section) => section.lines),
+      [[], ["la la"]],
+    );
+    await generateMusic({ compositionPlan: plan, outputPath: path.join(directory, "take.mp3"), paid: { store } });
+    const body = JSON.parse(sent.body!) as { composition_plan: { sections: { lines: string[] }[] } };
+    assert.deepEqual(
+      body.composition_plan.sections.map((section) => section.lines),
+      [[], ["la la"]],
+    );
+    // Node's fetch waits 300 s for headers by default; a long generation needs the music dispatcher.
+    assert.equal(sent.dispatcher, musicDispatcher());
+    assert.ok(MUSIC_REQUEST_TIMEOUT_MS > 300_000);
+  } finally {
+    globalThis.fetch = originalFetch;
+    if (originalKey === undefined) delete process.env.ELEVENLABS_API_KEY;
+    else process.env.ELEVENLABS_API_KEY = originalKey;
+    rmSync(directory, { recursive: true, force: true });
+  }
+});

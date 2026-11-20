@@ -185,6 +185,7 @@ export const COMMAND_SCRIPTS = {
   "shot:tournament": "scripts/shot-tournament.ts",
   "library:usage": "scripts/library-usage.ts",
   "generate:voiceover": "scripts/generate-voiceover.ts",
+  "generate:music": "scripts/generate-music.ts",
   "generate:dialogue": "scripts/generate-dialogue.ts",
   "speech:replace": "scripts/speech-replace.ts",
   "voiceover:local": "scripts/local-task.ts",
@@ -1031,6 +1032,17 @@ export const FILM_CHAIN: readonly ChainStep[] = withFeedback([
         project: "{id}",
         reference: "<reference-id>",
       }),
+      run(
+        "generate:music",
+        "Generated route, only after the user's yes to the quoted takes and a budget ceiling raised in their words: one take per call, within its bound.",
+        {
+          project: "{id}",
+          "composition-plan": P("music/composition-plan.json"),
+          output: "{dir}/music/take-<n>.mp3",
+          "operation-id": "{id}-music-take-<n>",
+          "max-cost-usd": "<bound per take>",
+        },
+      ),
       run("music", "Write the shortlist for the user to hear.", {
         action: "shortlist",
         project: "{id}",

@@ -108,6 +108,30 @@ test("every film step of every type leases registered aliases: control set, own 
         assert.ok(leaseAllow("material", type).includes(alias), `${type}/material lacks ${alias}`);
 });
 
+test("the music step leases generate:music and may spend once a ceiling is raised in the user's words", (t) => {
+  const { root, dir } = film(t);
+  const project = openFilmProject(dir, { rootDir: root });
+  issueBriefLease(project, { step: "music", role: "owner", agent: "sound-director" });
+  const loaded = readLease(dir);
+  assert.ok(loaded && "lease" in loaded);
+  assert.ok(loaded.lease.allow.includes("generate:music"));
+  assert.ok(loaded.lease.spending.includes("generate:music"));
+  assert.equal(loaded.lease.paidAllowed, false);
+  assert.equal(loaded.lease.paidWhen, "budget-ceiling");
+  const spend = input({
+    lease: loaded.lease,
+    aliases: ["generate:music"],
+    spend: "paid",
+    currentHash: loaded.lease.chainHash,
+  });
+  assert.equal(admit({ ...spend, budgetCeiling: false }).admitted, false);
+  assert.equal(admit({ ...spend, budgetCeiling: true }).admitted, true);
+  issueBriefLease(project, { step: "ideas", role: "owner", agent: "concept-director", lane: "a" });
+  const ideas = readLease(dir);
+  assert.ok(ideas && "lease" in ideas);
+  assert.equal(ideas.lease.paidWhen, undefined);
+});
+
 test("every brief's own commands are in its lease; the user's records never come from prose", (t) => {
   const { root, dir } = film(t);
   const briefFile = path.join(dir, "pipeline/brief.json");

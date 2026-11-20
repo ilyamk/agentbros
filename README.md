@@ -12,8 +12,7 @@
   platforms in "The source room" (pnpm media:fetch --capabilities); recheck
   both after a catalogue refresh. Name only models present in the catalogues.
   Repo slug used by the clone commands, live badges, star chart and
-  contributors image: ilyamk/agentbros (live once the public
-  repository exists under that name).
+  contributors image: ilyamk/agentbros.
   ════════════════════════════════════════════════════════════════════════
 -->
 

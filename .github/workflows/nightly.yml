@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
         run: pnpm audit --prod --json > out/dependency-audit.json
       - run: pnpm licenses list --prod --json > out/dependency-licences.json
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: nightly-reports
@@ -85,7 +85,7 @@ jobs:
           TRIAGE_OPENAI_API_KEY: ${{ secrets.TRIAGE_OPENAI_API_KEY }}
           TRIAGE_OPENROUTER_API_KEY: ${{ secrets.TRIAGE_OPENROUTER_API_KEY }}
         run: pnpm github:triage-budget --mode audit
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: instruction-audit
