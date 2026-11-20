@@ -2,7 +2,7 @@
 category: security
 bump: patch
 breaking: false
-pr: 0
+pr: 31
 authors: [ilyamk]
 harness: claude-code
 ---
