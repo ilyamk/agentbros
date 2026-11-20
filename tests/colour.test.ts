@@ -184,7 +184,7 @@ test(
   "compare, match and grade: a blue-tinted gradient is diagnosed cooler and matched back with evidence",
   worker,
   () => {
-    const gradient = "gradients=s=480x270:c0=0x302010:c1=0xe0d0b0:x0=0:y0=0:x1=480:y1=270:r=25";
+    const gradient = "gradients=s=480x270:c0=0x302010:c1=0xe0d0b0:x0=0:y0=0:x1=480:y1=270:r=25:seed=1";
     const source = encode(path.join(work, "gradient.mp4"), gradient);
     const tinted = encode(path.join(work, "gradient-cool.mp4"), `${gradient},colorchannelmixer=rr=0.88:bb=1.12`);
     const compared = cli("colour-compare.ts", [
@@ -446,8 +446,8 @@ test(
   worker,
   () => {
     const dir = mkdtempSync(path.join(work, "target-"));
-    const warm = encode(path.join(dir, "warm.mp4"), "gradients=s=320x180:c0=0x2a1a10:c1=0xe8c8a0:r=25", 1.5);
-    const cool = encode(path.join(dir, "cool.mp4"), "gradients=s=320x180:c0=0x0a1a2a:c1=0x90b8e0:r=25", 1.5);
+    const warm = encode(path.join(dir, "warm.mp4"), "gradients=s=320x180:c0=0x2a1a10:c1=0xe8c8a0:r=25:seed=1", 1.5);
+    const cool = encode(path.join(dir, "cool.mp4"), "gradients=s=320x180:c0=0x0a1a2a:c1=0x90b8e0:r=25:seed=1", 1.5);
     const reference = path.join(dir, "reference.mp4");
     ffmpeg(
       "-i",
@@ -498,7 +498,7 @@ test(
 
 test("mood plan: a higher arousal raises saturation within bounds, gated, as a per-shot timeline", worker, () => {
   const dir = mkdtempSync(path.join(work, "mood-"));
-  const clip = encode(path.join(dir, "clip.mp4"), "gradients=s=320x180:c0=0x203040:c1=0xa08060:r=25", 2);
+  const clip = encode(path.join(dir, "clip.mp4"), "gradients=s=320x180:c0=0x203040:c1=0xa08060:r=25:seed=1", 2);
   const out = path.join(dir, "plan");
   const result = cli("colour-target.ts", ["--input", clip, "--output", out, "--single", "--mood", "0:0.2,0.8"]);
   const shots = result.metadata!.shots as { mood: { arousal: number }; gate: string }[];
