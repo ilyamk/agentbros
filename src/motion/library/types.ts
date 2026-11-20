@@ -56,6 +56,7 @@ export type LibraryItem<P extends Record<string, unknown> = Record<string, unkno
   schema: z.ZodType<P>;
   defaultProps: P;
   durationInFrames: number;
+  durationForProps?: (props: P) => number;
   /** Formats the item has been checked in; the first is the preview default. */
   formats: LibraryFormat[];
   /** Where the idea came from, e.g. "hyperframes: registry/blocks/data-chart (Apache-2.0, idea only)". */

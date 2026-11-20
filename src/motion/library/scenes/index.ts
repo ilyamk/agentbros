@@ -1,5 +1,15 @@
+import { cutCues } from "./transition-cut-plan";
+import type { CaptureProofProps } from "./CaptureProof";
+import { captureTiming } from "./scene-plan";
 import { defineItem, type LibraryItem } from "../types";
-import { LibraryReel, REEL_FRAMES, libraryReelDefaults, libraryReelSchema, reelStarts } from "./LibraryReel";
+import {
+  LibraryReel,
+  REEL_FRAMES,
+  libraryReelDefaults,
+  libraryReelSchema,
+  reelFrames,
+  reelStarts,
+} from "./LibraryReel";
 import {
   SceneBentoCollage,
   sceneBentoCollageCues,
@@ -89,16 +99,28 @@ export const items: LibraryItem[] = [
     category: "scenes",
     title: "Feature demo scene",
     description:
-      "The product dashboard assembles on the light ground, a hard ground-swap cut lands on an action card, and a cursor click on `clickAt` floods the button into the accent ground. Use for the proof beat; the click causes the next cut. Vertical cuts from the dashboard to a lock screen of result notifications.",
+      "The product dashboard assembles on the light ground, a hard ground-swap cut lands on an action card, and a cursor click on `clickAt` floods the button into the accent ground. Use for the proof beat; the click causes the next cut. Vertical cuts to result notifications. Pass capture for a real before/after screen pair, a tracked control and a result reading hold.",
     tags: ["scene", "demo", "dashboard", "cursor", "click", "proof", "saas", "template"],
     component: SceneFeatureDemo,
     schema: sceneFeatureDemoSchema,
     defaultProps: sceneFeatureDemoDefaults,
     durationInFrames: featureDemoFrames(sceneFeatureDemoDefaults),
-    formats: ["landscape"],
+    durationForProps: featureDemoFrames,
+    formats: ["landscape", "vertical"],
     importPath: `${BASE}/SceneFeatureDemo`,
     usage: `<SceneFeatureDemo {...sceneFeatureDemoDefaults} styleId="paper-signal" />; length is featureDemoFrames(props). ${STYLE_NOTE}`,
     cues: (props) => {
+      const demo = props as Parameters<typeof SceneFeatureDemo>[0];
+      if (demo.capture)
+        return [
+          {
+            frame: captureTiming(featureDemoFrames(demo), Boolean(demo.capture.landscape.control)).click,
+            kind: "click",
+            sfx: "click",
+            weight: "hero",
+            label: "control changes state",
+          },
+        ] as Cue[];
       const { dashboardFrames, clickAt } = props as { dashboardFrames: number; clickAt: number };
       // The action shot starts after the dashboard minus the 9-frame seam; the ground-swap cut is its first frame.
       const action = dashboardFrames - 9;
@@ -282,19 +304,22 @@ export const items: LibraryItem[] = [
     category: "scenes",
     title: "Library showcase reel",
     description:
-      "A 21 s launch film made only from library blocks: hook, product reveal, feature demo, stat and end card, joined by caused zoom-through, whip, light-burn and slice transitions, with varied shot lengths and one FilmFinish. Use as the reference for composing a whole film.",
+      "A 21 s launch film made only from library blocks: hook, product reveal, feature demo, stat and end card, joined by caused zoom-through, whip, light-burn and slice transitions, with varied shot lengths and one FilmFinish. A capture with the ground-swap-cut and caused-morph performance plays both matched transitions in a 10.8 s alternative cut.",
     tags: ["reel", "showcase", "film", "launch", "transitions", "template", "example"],
     component: LibraryReel,
     schema: libraryReelSchema,
     defaultProps: libraryReelDefaults,
     durationInFrames: REEL_FRAMES,
+    durationForProps: (props) => reelFrames(props.capture as CaptureProofProps | undefined),
     formats: ["landscape", "vertical"],
     importPath: `${BASE}/LibraryReel`,
     usage:
-      '<LibraryReel {...libraryReelDefaults} styleId="keynote-dark" beats={beatFrames(bpm)} />; length REEL_FRAMES, shot starts reelStarts().',
-    cues: () =>
-      reelStarts()
-        .slice(1)
-        .map((frame): Cue => ({ frame, kind: "cut", sfx: "whoosh", weight: "support", label: "shot" })),
+      '<LibraryReel {...libraryReelDefaults} styleId="keynote-dark" beats={beatFrames(bpm)} />; use reelFrames(props.capture) and reelStarts(props.capture) for the selected edit.',
+    cues: (props) =>
+      (props.capture as CaptureProofProps | undefined)?.performance
+        ? cutCues
+        : reelStarts(Boolean(props.capture))
+            .slice(1)
+            .map((frame): Cue => ({ frame, kind: "cut", sfx: "whoosh", weight: "support", label: "shot" })),
   }),
 ];

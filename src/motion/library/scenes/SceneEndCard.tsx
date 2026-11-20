@@ -9,6 +9,8 @@ import { ARRIVE, groundsFor, MaybeFinish, sceneBaseSchema, useLook } from "./sha
 
 export const sceneEndCardSchema = sceneBaseSchema.extend({
   /** SVG path `d` strings of the mark, in a square viewBox, drawn flat in one colour. */
+  markInk: z.string().optional(),
+  actionSize: z.number().min(20).max(72).optional(),
   paths: z.array(z.string()).min(1),
   viewBox: z.number().positive(),
   wordmark: z.string(),
@@ -76,6 +78,8 @@ export const SceneEndCard: React.FC<SceneEndCardProps> = ({
   styleId,
   finish,
   paths,
+  markInk,
+  actionSize = 32,
   viewBox,
   wordmark,
   cta,
@@ -94,7 +98,7 @@ export const SceneEndCard: React.FC<SceneEndCardProps> = ({
   const { displayFamily, displayAxes, bodyFamily, palette } = useLook(styleId);
   const grounds = groundsFor(styleId);
   const shot = grounds[Math.min(ground, grounds.length - 1)]!;
-  const markColour = ground === 0 ? palette.accent : shot.ink;
+  const markColour = markInk ?? (ground === 0 ? palette.accent : shot.ink);
   const mark = 104 * u;
   const type = 84 * u;
   const typed = wordmarkEntry === "type";
@@ -216,7 +220,7 @@ export const SceneEndCard: React.FC<SceneEndCardProps> = ({
               textAlign: "center",
               fontFamily: bodyFamily,
               fontWeight: 500,
-              fontSize: 32 * u,
+              fontSize: actionSize * u,
               color: shot.ink,
               opacity: ctaOn ? 0.62 : 0,
             }}

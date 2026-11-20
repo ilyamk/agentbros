@@ -5,9 +5,15 @@ import { GroundSwap, HeroWord } from "../transitions/GroundSwap";
 import type { Cue } from "../types";
 import { BuildLine, exitProgress, groundRole, heroShare, MaybeFinish, sceneBaseSchema, useLook } from "./shared";
 
+import { inkOn } from "../typography/Stage";
+
 export const sceneHookTitleSchema = sceneBaseSchema.extend({
   /** A small sentence that builds first, on the first ground; `[brackets]` mark accent words. Empty skips it. */
   lead: z.string(),
+  accentGround: z
+    .string()
+    .regex(/^#[0-9a-f]{6}$/i)
+    .optional(),
   /** Hero words or short phrases, one per hard cut, each set to the hero share of the frame width. */
   words: z.array(z.string()).min(1),
   /** Frame of each hero word's cut, one per word, ascending. Put them on downbeats. */
@@ -35,13 +41,27 @@ export const sceneHookTitleCues = (props: Pick<SceneHookTitleProps, "lead" | "cu
  * The opening: a small lead sentence builds on the light ground, then hero words hit one per cut, each on a swapped
  * ground (accent, ink, light), with no flash, glow or spring. The last word can shrink out of a blur to cause the next cut.
  */
-export const SceneHookTitle: React.FC<SceneHookTitleProps> = ({ styleId, finish, lead, words, cuts, exitAt }) => {
+export const SceneHookTitle: React.FC<SceneHookTitleProps> = ({
+  styleId,
+  finish,
+  lead,
+  words,
+  cuts,
+  exitAt,
+  accentGround,
+}) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
   const vertical = height > width;
   const u = Math.min(width, height) / 1080;
   // Light for the lead, then accent and ink alternate on the hero cuts.
-  const grounds = [groundRole(styleId, "light"), groundRole(styleId, "accent"), groundRole(styleId, "ink")];
+  const grounds = [
+    groundRole(styleId, "light"),
+    accentGround
+      ? { ground: accentGround, ink: inkOn(accentGround), accent: inkOn(accentGround) }
+      : groundRole(styleId, "accent"),
+    groundRole(styleId, "ink"),
+  ];
   const { displayFamily, displayAxes, bodyFamily } = useLook(styleId);
   const out = exitProgress(frame, exitAt);
   const shots = shotCuts({ lead, cuts });
