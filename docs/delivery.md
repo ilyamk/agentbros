@@ -28,7 +28,7 @@ For automated renders, each output requires the renderer's matching `OUTPUT.mp4.
 
 An excerpt rendered with `pnpm render --frames START-END` is written as `{format}-frames-START-END.mp4` and its receipt carries `partial: {startFrame, endFrame, totalFrames}`. The check refuses it with `PARTIAL_RENDER`: an excerpt is for inspecting a stretch, never a final deliverable.
 
-On the ordinary project route, a repeat `pnpm render` can rebuild a full MP4 after a built-in scene's headline or subtext changes. It expands the affected scene and transition spans to GOP boundaries, encodes those frames and reuses the old audio. The old master needs a matching renderer receipt and dependency proof. Every decoded frame, its timestamp and the original audio stream are checked against the old master and the new excerpt before publication. The new complete receipt records the replaced range and base checksum. Incompatible changes or failed verification fall back to a full render. Pass `--full` to request a fresh full render explicitly. Previous masters and receipts are archived under `out/<project>/render-versions/` by checksum. Use the normal QA and approval flow on the new master.
+Repeat renders can reuse a verified master for local edits. [Render iteration](render-iteration.md#rebuild-a-local-picture-edit)
 
 `pnpm render` watches the renderer's progress. If the rendered-frame count does not advance for `--stall-minutes` (default 5), it kills the render's whole process tree and restarts it once from scratch; a second stall fails with `RENDER_STALLED`, whose details name the stuck frame. Render around that frame with `--frames` to inspect it.
 
