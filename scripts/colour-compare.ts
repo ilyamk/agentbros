@@ -10,8 +10,16 @@ const SPECS = [
   { name: "reference", required: true, description: "The clip or still it should look like" },
   { name: "output", required: true, description: "Directory for compare.png and comparison.json" },
   { name: "frames", type: "number", default: 8, description: "Frames per clip, sampled at the same relative times" },
-  { name: "at", type: "number", description: "Compare one frame at this input time (the reference at the same relative time)" },
-  { name: "paired", type: "boolean", description: "Force per-pixel CIEDE2000 even when the frames do not look aligned" },
+  {
+    name: "at",
+    type: "number",
+    description: "Compare one frame at this input time (the reference at the same relative time)",
+  },
+  {
+    name: "paired",
+    type: "boolean",
+    description: "Force per-pixel CIEDE2000 even when the frames do not look aligned",
+  },
   { name: "reference-crop", default: "auto", description: "Active picture of the reference: auto, none or x,y,w,h" },
   ...DECODE_SPECS,
 ] as const;

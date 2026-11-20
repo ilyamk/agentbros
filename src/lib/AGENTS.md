@@ -29,7 +29,7 @@ Last updated: 2026-11-20
 | `showcase/`, `community/` | Showcase validation, media plans, gallery and contributor statistics | [showcases](../../docs/showcases.md) |
 | `bench/` | Isolated harness runs, signed bundles, workflow outcome observers, deterministic verification and calibrated picture judging | [benchmark](../../docs/benchmark.md) |
 | `python.ts` | Locked Python/uv launch, isolated profiles and quality gates | [Python](../../docs/python-runtime.md) |
-| `cache-dir.ts` | Shared `~/.cache/agentbros` root, `AGENTBROS_MODEL_CACHE` override (deprecated `AI_VIDEO_CREATOR_MODEL_CACHE` still read when it is unset) and one-time legacy cache migration | [library reference](../../docs/library-reference.md) |
+| `cache-dir.ts` | Shared `~/.cache/agentbros` root, `AGENTBROS_MODEL_CACHE` override (legacy `AI_VIDEO_CREATOR_MODEL_CACHE` read when unset) and one-time legacy cache migration | [library reference](../../docs/library-reference.md) |
 | `leak-scan.ts` | Shared scanner and `loadLeakPatterns`: optional local-pattern merging, required for local maintainer checks, disabled in CI | [publishing](../../docs/publishing.md) |
 | `doctor/` | Environment checks behind `pnpm preflight` and `pnpm bootstrap` (`doctor/collect.ts`, probes only) | root `AGENTS.md` |
 | `setup/`, `harness/` | First-run setup: key registry (`setup/keys.ts`, matched to `.env.example`), plan scopes and user report (`setup/plan.ts`); harness wiring (`harness/`; hooks installer, `hooksStatus` in `harness/hooks.ts`, 2026-11-17) | [SETUP.md](../../SETUP.md), [harnesses](../../docs/harnesses.md) |
@@ -64,9 +64,10 @@ Last updated: 2026-11-20
 | `multicam/` | Multicam sync (offsets, drift), angle proposals and their timeline track, reframe crop paths | [multicam and reframing](../../docs/multicam-reframe.md) |
 | `photo/` | Photo moves: crops, geometric zoom, minimum speed, blur fill (`crop.ts`, shared with `photo-move`); `photo:focus` (`focus.ts`) | [photo-slideshow](../../playbooks/photo-slideshow/AGENTS.md) |
 | `matte/` | Local cut-outs for `matte`: engine choice (`engine.ts`), Vision and ONNX runs, ffmpeg I/O, temporal EMA and flicker (`temporal.ts`) | [matte](../../docs/matte.md) |
+| `colour/` | Colour worker, grade bake, windows | [colour](../../docs/colour-grading.md) |
 | `speech/` | Transcripts, local ASR and portable voice synthesis with pinned readback | [speech](../../docs/speech.md) |
 | `local-engines/` | Local engine preparation for `media:prepare` (`prepare.ts`) and local speech text | [speech](../../docs/speech.md) |
-| `local-capabilities/suggestions.ts` | Optional task hints; consume resolved footage answer state and unsaved goals, tolerate non-object optional metadata, and skip unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
+| `local-capabilities/suggestions.ts` | Optional task hints from resolved footage state; skips unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
 | `audio/` | Analysis, mixing, repair, captions, SFX and rhythm evidence | [audio QA](../../docs/local-audio-qa.md), [editorial audio](../../docs/editorial-audio.md) |
 | `audio-map/` | Music map, stems, edit plan, cue snap and leads (`analyse.ts`) for `audio:map`, `edit:plan`, `edit:snap` | [editorial audio](../../docs/editorial-audio.md) |
 | `audio-curves/` | Per-frame audio curves for `audio:curves` (`compute.ts`) | [editorial audio](../../docs/editorial-audio.md) |

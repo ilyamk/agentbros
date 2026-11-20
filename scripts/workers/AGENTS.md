@@ -13,6 +13,7 @@ Native helpers that a TypeScript caller in `src/lib/` spawns with a literal argu
 | `reference-analysis.py` (+ `reference-moves.py`) | `src/lib/reference/worker.ts` | `ref:analyze`, `ref:compare`, `film:targets`; film evidence (`film:measure`) |
 | `footage-shots.py` | `src/lib/footage/shots.ts` | `footage:shots` |
 | `multicam.py` | `src/lib/multicam/worker.ts` | `multicam:sync`, `multicam:angles`, `reframe:track` |
+| `colour.py` (+ `colour_maths.py`, `colour_scopes.py`) | `src/lib/colour/worker.ts` (locked `vork` group) | `colour:scopes`, `colour:compare`, `colour:match`, `colour:grade`, `colour:shots`, `colour:track` |
 | `speech-local.py` | `src/lib/speech/local.ts` | `speech:local` |
 | `sfx-clap.py` | `src/lib/audio/sfx-clap.ts` | `sfx:index`, `sfx:find`, `audio:describe` |
 | `sfx-index.py` | `src/lib/audio/sfx-index.ts` | `sfx:index` |

@@ -71,7 +71,7 @@ Environments live in `.cache/python/<profile>`, separate from the default develo
 | `audio-map`, `stems`, `offset`, `multicam` | Rhythm maps, Demucs, coarse offsets and refinement/detection |
 | `asr`, `vad`, `diarize` | Parakeet (Apple Silicon only), Silero, pyannote |
 | `sfx-index`, `clap`, `earshot` | SFX measurements, embeddings and explicitly prepared Earshot |
-| `matte`, `vork`, `cmake`, `yt-dlp` | ONNX matte, tracking, whisper.cpp build tool and reference downloads |
+| `matte`, `vork`, `cmake`, `yt-dlp` | ONNX matte, tracking (and the colour worker, which reuses `vork` so the shared lock does not re-resolve), whisper.cpp build tool and reference downloads |
 
 Models retain their own hashes, download policy and caches. Earshot still installs only through explicit `media:prepare` and runs its prepared environment offline; its manifest includes the Python/project/lock identity. Prepared whisper.cpp engines using the former Python version need explicit preparation again. Both Demucs callers now use the existing `stems` dependency profile instead of retaining a second Python 3.11/PyTorch environment.
 

@@ -7,13 +7,26 @@ import { takeList } from "../src/lib/multicam/args";
 import { GradeSchema, ShotsResultSchema } from "../src/types/colour";
 
 const SPECS = [
-  { name: "input", description: "One edited video: its cuts are detected and every shot measured" },
-  { name: "output", required: true, description: "Directory for shots.png, shots.json and, with --solve, grades/ and timeline.json" },
+  {
+    name: "input",
+    description:
+      "One edited video: its cuts are detected and every shot measured (or --inputs <clip> <clip> ... for separate clips)",
+  },
+  {
+    name: "output",
+    required: true,
+    description: "Directory for shots.png, shots.json and, with --solve, grades/ and timeline.json",
+  },
   { name: "hero", type: "number", default: 0, description: "Index of the hero shot or clip the others are matched to" },
   { name: "reference", description: "Match everything to this clip or still instead of a hero shot" },
   { name: "tolerance", type: "number", default: 2.5, description: "Mean zone CIEDE2000 above which a shot is flagged" },
   { name: "frames", type: "number", default: 3, description: "Frames measured per shot" },
-  { name: "cut-threshold", type: "number", default: 0.45, description: "Histogram distance (0..1) that counts as a cut" },
+  {
+    name: "cut-threshold",
+    type: "number",
+    default: 0.45,
+    description: "Histogram distance (0..1) that counts as a cut",
+  },
   { name: "solve", type: "boolean", description: "Solve a match grade per shot toward the hero and write a timeline" },
   { name: "force", type: "boolean", description: "Overwrite existing grades and timeline" },
   ...DECODE_SPECS,
@@ -25,8 +38,12 @@ void runScript(async () => {
   const clips = listed?.length === 1 ? listed[0]!.split(",") : listed;
   const args = parseArgs(SPECS, rest);
   if (!args.input && !clips?.length)
-    throw new CliErrorObject({ code: "INVALID_INPUT", message: "Pass --input <edited video> or --inputs <clip> <clip> ..." });
-  if (args.input && clips?.length) throw new CliErrorObject({ code: "INVALID_INPUT", message: "Pass --input or --inputs, not both" });
+    throw new CliErrorObject({
+      code: "INVALID_INPUT",
+      message: "Pass --input <edited video> or --inputs <clip> <clip> ...",
+    });
+  if (args.input && clips?.length)
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: "Pass --input or --inputs, not both" });
   const sources = args.input ? [args.input] : clips!;
   sources.forEach(requireFile);
   if (args.reference) requireFile(args.reference);
@@ -34,15 +51,24 @@ void runScript(async () => {
   const output = path.resolve(args.output!);
   const timelineFile = path.join(output, "timeline.json");
   if (args.solve && existsSync(timelineFile) && !args.force)
-    throw new CliErrorObject({ code: "INVALID_INPUT", message: `${timelineFile} exists; pass --force to overwrite the solved grades` });
+    throw new CliErrorObject({
+      code: "INVALID_INPUT",
+      message: `${timelineFile} exists; pass --force to overwrite the solved grades`,
+    });
   mkdirSync(output, { recursive: true });
   const hero = Math.round(args.hero ?? 0);
   if (!args.reference && !args.input && (hero < 0 || hero >= sources.length))
-    throw new CliErrorObject({ code: "INVALID_INPUT", message: `--hero must index one of the ${sources.length} clips` });
+    throw new CliErrorObject({
+      code: "INVALID_INPUT",
+      message: `--hero must index one of the ${sources.length} clips`,
+    });
   const result = runColourWorker(
     "shots",
     {
-      inputs: sources.map((source) => ({ path: path.resolve(source), label: args.input ? undefined : path.basename(source, path.extname(source)) })),
+      inputs: sources.map((source) => ({
+        path: path.resolve(source),
+        label: args.input ? undefined : path.basename(source, path.extname(source)),
+      })),
       detect: Boolean(args.input),
       hero,
       reference: args.reference ? path.resolve(args.reference) : undefined,
@@ -75,7 +101,12 @@ void runScript(async () => {
     if (args.input) {
       const segments = result.shots
         .filter((shot) => shot.grade)
-        .map((shot) => ({ label: shot.label, start: Number(shot.start), end: Number(shot.end), grade: `grades/${shot.label}.json` }));
+        .map((shot) => ({
+          label: shot.label,
+          start: Number(shot.start),
+          end: Number(shot.end),
+          grade: `grades/${shot.label}.json`,
+        }));
       if (segments.length) {
         writeFileSync(timelineFile, `${JSON.stringify({ version: 1, segments }, null, 2)}\n`);
         outputs.push(timelineFile);

@@ -7,9 +7,22 @@ import { TrackResultSchema, TrackSchema } from "../src/types/colour";
 
 const SPECS = [
   { name: "input", required: true, description: "Video whose subject the window follows" },
-  { name: "box", required: true, description: "Window at --at as x,y,w,h in source pixels (read it off frame.png from colour:scopes)" },
-  { name: "at", type: "number", default: 0, description: "Time in seconds where --box is placed; tracking runs forward and backward from it" },
-  { name: "output", required: true, description: "Where to write the track .json (a track-preview.png goes beside it)" },
+  {
+    name: "box",
+    required: true,
+    description: "Window at --at as x,y,w,h in source pixels (read it off frame.png from colour:scopes)",
+  },
+  {
+    name: "at",
+    type: "number",
+    default: 0,
+    description: "Time in seconds where --box is placed; tracking runs forward and backward from it",
+  },
+  {
+    name: "output",
+    required: true,
+    description: "Where to write the track .json (a track-preview.png goes beside it)",
+  },
   { name: "max-width", type: "number", default: 640, description: "Tracking resolution (frames are downscaled)" },
   { name: "force", type: "boolean", description: "Overwrite an existing track" },
 ] as const;
@@ -26,7 +39,13 @@ void runScript(async () => {
   mkdirSync(evidence, { recursive: true });
   const result = runColourWorker(
     "track",
-    { input: path.resolve(args.input!), box, at: args.at ?? 0, output: evidence, maxWidth: Math.round(args["max-width"] ?? 640) },
+    {
+      input: path.resolve(args.input!),
+      box,
+      at: args.at ?? 0,
+      output: evidence,
+      maxWidth: Math.round(args["max-width"] ?? 640),
+    },
     TrackResultSchema,
   );
   const track = TrackSchema.parse({

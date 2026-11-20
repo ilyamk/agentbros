@@ -7,7 +7,11 @@ export const DECODE_SPECS = [
     default: "auto",
     description: "Active picture: auto (drop letterbox/pillarbox bars), none, or x,y,w,h in source pixels",
   },
-  { name: "matrix", choices: ["bt709", "bt601", "bt2020"], description: "Override the Y'CbCr matrix of an untagged stream" },
+  {
+    name: "matrix",
+    choices: ["bt709", "bt601", "bt2020"],
+    description: "Override the Y'CbCr matrix of an untagged stream",
+  },
   { name: "range", choices: ["limited", "full"], description: "Override the code-value range of an untagged stream" },
   { name: "max-width", type: "number", default: 960, description: "Analysis width in pixels (frames are downscaled)" },
 ] as const;

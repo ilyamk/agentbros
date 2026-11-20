@@ -2,13 +2,14 @@
 
 Last updated: 2026-11-20
 
-Five local commands, no API keys, no paid calls. They let an agent read a frame the way a colourist does, measure it, grade a video toward a target or a reference, and prove the result with numbers:
+Six local commands, no API keys, no paid calls. They let an agent read a frame the way a colourist does, measure it, grade a video toward a target or a reference, and prove the result with numbers:
 
 - `colour:scopes` measures one clip.
 - `colour:compare` compares a clip with a reference.
 - `colour:match` solves an editable grade.
 - `colour:grade` renders a grade and exports the LUT.
 - `colour:shots` checks continuity across shots or clips.
+- `colour:track` makes a window follow a moving subject.
 
 Where the pieces live:
 
@@ -190,9 +191,50 @@ pnpm colour:shots --input edit.mp4 --output pipeline/colour/shots --solve
 pnpm colour:shots --inputs a.mp4 b.mp4 c.mp4 --hero 0 --output pipeline/colour/clips
 ```
 
-- **Finding shots.** With `--input`, cuts are found by colour-histogram distance at 6 fps (`--cut-threshold`). Each shot is measured on 3 frames inside its middle 80%.
+- **Finding shots.** With `--input`, cuts are found by colour-histogram distance at 6 fps (`--cut-threshold`); `--inputs a.mp4 b.mp4 …` compares separate clips instead. Each shot is measured on 3 frames inside its middle 80%.
 - **The hero.** Every shot is compared with the hero (`--hero N`) or with `--reference`. A shot is flagged when its mean zone CIEDE2000 exceeds `--tolerance` (2.5).
 - **Solving.** `--solve` writes `grades/<shot>.json`. For an edit it also writes `timeline.json`, which `colour:grade --timeline` renders shot by shot (trim, LUT, concat; audio copied).
+
+## Windows: dynamic masks
+
+A grade can carry up to eight `windows[]`. Each is a correction on top of the base grade inside a per-frame mask, the way a window works on a serial node in Resolve:
+
+```json
+{
+  "lift": [0, 0, 0.01],
+  "windows": [
+    {
+      "name": "face",
+      "mask": { "kind": "shape", "shape": "ellipse", "track": "face.track.json", "softness": 0.3 },
+      "grade": { "exposure": 0.3, "secondaries": [{ "name": "skin", "qualifier": { "hue": { "center": 123, "width": 50 } }, "hueToward": { "angle": 123, "amount": 0.5 } }] }
+    },
+    { "name": "person", "mask": { "kind": "matte", "path": "matte-person", "feather": 3 }, "grade": { "saturation": 0.92 }, "strength": 0.8 }
+  ]
+}
+```
+
+| Mask | Source | Notes |
+|---|---|---|
+| `shape` with `box` | A static ellipse or rectangle, normalised `[left, top, width, height]` | `softness` is the edge fall-off as a share of the box |
+| `shape` with `track` | A track file from `colour:track` | The window follows the subject and switches off where the track is inactive |
+| `matte` | A `pnpm matte --kind person` (or `subject`) output folder: `alpha/frame-NNNNN.png` and `matte.json` | Per-pixel subject mask (Apple Vision or BiRefNet); `feather` blurs its edge in pixels; `startFrame` and `fps` come from `matte.json` |
+
+`invert: true` grades everything outside the mask; `strength` mixes the window. Windows render only into video or still outputs: a `.cube` is a single global transform, so `--export-cube` carries the base grade and the windows stay in `grade.json`. A `timeline.json` refuses grades with windows; render such a shot with `--grade`.
+
+### Tracking: `colour:track`
+
+```bash
+pnpm colour:track --input clip.mp4 --box 630,40,160,190 --at 1 --output pipeline/colour/face.track.json
+```
+
+- Place `--box` (source pixels) on the frame at `--at` seconds; read the coordinates off `frame.png` from `colour:scopes`.
+- The tracker is OpenCV normalised cross-correlation with an adaptive template, run forward and backward from the anchor. It is deterministic, unlike OpenCV's learning trackers.
+- A track stays inside its shot: cuts are found by thumbnail difference, and frames in other shots are written with `active: false`.
+- `track-preview.png` beside the track file shows the box on sampled frames with each match confidence. Check it before rendering.
+
+### How windows render
+
+Each window's grade is baked to its own LUT. Its mask is a gray video (shape windows, written by the worker) or the matte's alpha frames. ffmpeg `maskedmerge` in 16-bit planar RGB places the window result over the base result through the mask; `negate` inverts, `gblur` feathers, `colorchannelmixer` sets strength.
 
 ## Determinism and tests
 
@@ -205,6 +247,7 @@ pnpm colour:shots --inputs a.mp4 b.mp4 c.mp4 --hero 0 --output pipeline/colour/c
 ## Follow-ups
 
 - Scope panels in the studio console (`apps/console`).
-- MCP tools for the five commands.
+- MCP tools for the six commands.
+- Windows in a `timeline.json` render (today a timeline refuses a grade with windows).
 - A face detector with pinned weights for skin regions.
 - An ACES or log input transform library.

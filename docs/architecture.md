@@ -135,6 +135,7 @@ Change the fact here. Everything else reads it or is generated from it.
 | Service keys                                                | `src/lib/setup/keys.ts`                             | doctor, `keys`, `bootstrap`                                           |
 | Credits                                                     | `credits/<id>.json`                                 | `credits:write-doc` → `CREDITS.md`                                    |
 | Agent definitions                                           | front matter in `.agents/agents/*.md`               | the index README (test-checked)                                       |
+| Colour grade evaluation order                               | `apply_grade` in `scripts/workers/colour_maths.py`  | `.cube` bake for `colour:grade`, [colour grading](colour-grading.md)  |
 | Console contract (journal, view, decisions, cards, control) | `src/types/console.ts`                              | console server, projector, CLIs, UI (`apps/console/`)                 |
 
 Studio Console API key settings use the setup provider registry and a local override file loaded by each CLI. The key reveal and batch save routes require a capability distinct from the regular console session. The in-app editor handoff passes that capability to the default browser through the operating system.

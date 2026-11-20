@@ -37,7 +37,10 @@ export function normaliseGrade(grade: Grade, gradeFile: string): Record<string, 
     out.luts = grade.luts.map((lut) => {
       const resolved = path.resolve(path.dirname(gradeFile), lut.path);
       if (!existsSync(resolved))
-        throw new CliErrorObject({ code: "FILE_NOT_FOUND", message: `LUT named by ${gradeFile} not found: ${resolved}` });
+        throw new CliErrorObject({
+          code: "FILE_NOT_FOUND",
+          message: `LUT named by ${gradeFile} not found: ${resolved}`,
+        });
       return { ...lut, path: resolved };
     });
   }
@@ -69,7 +72,10 @@ export function bakeCube(grade: Grade, gradeFile: string, output: string, size: 
 export function loadTimeline(file: string): Timeline {
   const parsed = TimelineSchema.safeParse(JSON.parse(readFileSync(file, "utf8")));
   if (!parsed.success)
-    throw new CliErrorObject({ code: "VALIDATION", message: `${file}: ${parsed.error.issues.map((i) => i.message).join("; ")}` });
+    throw new CliErrorObject({
+      code: "VALIDATION",
+      message: `${file}: ${parsed.error.issues.map((i) => i.message).join("; ")}`,
+    });
   const sorted = [...parsed.data.segments].sort((a, b) => a.start - b.start);
   for (let i = 0; i < sorted.length; i++) {
     if (sorted[i]!.end <= sorted[i]!.start)
@@ -96,16 +102,33 @@ interface VideoFacts {
 export function probeVideo(file: string): VideoFacts {
   const result = spawnSync(
     "ffprobe",
-    ["-v", "error", "-show_entries", "stream=codec_type,width,height,pix_fmt,color_space,color_range:format=duration", "-of", "json", file],
+    [
+      "-v",
+      "error",
+      "-show_entries",
+      "stream=codec_type,width,height,pix_fmt,color_space,color_range:format=duration",
+      "-of",
+      "json",
+      file,
+    ],
     { encoding: "utf8" },
   );
-  if (result.status !== 0) throw new CliErrorObject({ code: "INVALID_INPUT", message: `ffprobe failed on ${file}: ${result.stderr.trim()}` });
+  if (result.status !== 0)
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: `ffprobe failed on ${file}: ${result.stderr.trim()}` });
   const data = JSON.parse(result.stdout) as {
-    streams: { codec_type: string; width?: number; height?: number; pix_fmt?: string; color_space?: string; color_range?: string }[];
+    streams: {
+      codec_type: string;
+      width?: number;
+      height?: number;
+      pix_fmt?: string;
+      color_space?: string;
+      color_range?: string;
+    }[];
     format?: { duration?: string };
   };
   const video = data.streams.find((s) => s.codec_type === "video");
-  if (!video?.width || !video.height) throw new CliErrorObject({ code: "INVALID_INPUT", message: `${file} has no video stream` });
+  if (!video?.width || !video.height)
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: `${file} has no video stream` });
   return {
     width: video.width,
     height: video.height,
@@ -122,13 +145,20 @@ export function decodeTags(facts: VideoFacts, overrides: { matrix?: string; rang
   const assumed: string[] = [];
   const yuv = /^(yuv|nv|p01)/.test(facts.pixFmt);
   const jpeg = facts.pixFmt.startsWith("yuvj");
-  const map: Record<string, string> = { bt709: "bt709", smpte170m: "bt601", bt470bg: "bt601", bt2020nc: "bt2020", bt2020c: "bt2020" };
+  const map: Record<string, string> = {
+    bt709: "bt709",
+    smpte170m: "bt601",
+    bt470bg: "bt601",
+    bt2020nc: "bt2020",
+    bt2020c: "bt2020",
+  };
   let matrix = overrides.matrix ?? map[facts.colorSpace ?? ""];
   if (!matrix) {
     matrix = jpeg ? "bt601" : facts.width >= 1280 || facts.height > 576 ? "bt709" : "bt601";
     if (yuv) assumed.push(`matrix ${matrix} (stream untagged)`);
   }
-  let range = overrides.range ?? (facts.colorRange === "pc" ? "full" : facts.colorRange === "tv" ? "limited" : undefined);
+  let range =
+    overrides.range ?? (facts.colorRange === "pc" ? "full" : facts.colorRange === "tv" ? "limited" : undefined);
   if (!range) {
     range = jpeg ? "full" : "limited";
     if (yuv) assumed.push(`range ${range} (stream untagged)`);
@@ -154,7 +184,9 @@ export interface RenderOptions {
 export interface RenderWindow {
   cube: string;
   /** A grey matte video (shape windows), or a `pnpm matte` alpha sequence. */
-  mask: { kind: "video"; path: string } | { kind: "frames"; pattern: string; startFrame: number; fps: number; feather: number };
+  mask:
+    | { kind: "video"; path: string }
+    | { kind: "frames"; pattern: string; startFrame: number; fps: number; feather: number };
   invert: boolean;
   strength: number;
 }
@@ -186,21 +218,43 @@ export function renderGraded(options: RenderOptions) {
     const args = ["-v", "error", "-nostdin", "-y", "-i", options.input];
     const windows = options.windows ?? [];
     if (windows.length && cubes.length !== 1)
-      throw new CliErrorObject({ code: "INVALID_INPUT", message: "Windows apply to one grade, not to a per-shot timeline" });
+      throw new CliErrorObject({
+        code: "INVALID_INPUT",
+        message: "Windows apply to one grade, not to a per-shot timeline",
+      });
     if (windows.length) {
       const size = `${facts.width}:${facts.height}`;
-      const parts = [`[0:v]${toRgb},${lut(cubes[0]!)},format=gbrp16le,split=${windows.length + 1}[b0]${windows.map((_, i) => `[c${i}]`).join("")}`];
+      const parts = [
+        `[0:v]${toRgb},${lut(cubes[0]!)},format=gbrp16le,split=${windows.length + 1}[b0]${windows.map((_, i) => `[c${i}]`).join("")}`,
+      ];
       windows.forEach((window, i) => {
         const cube = path.join(work, `w${i}.cube`);
         copyFileSync(window.cube, cube);
         if (window.mask.kind === "video") args.push("-i", window.mask.path);
-        else args.push("-framerate", String(window.mask.fps), "-start_number", String(window.mask.startFrame), "-i", window.mask.pattern);
-        const pad = window.mask.kind === "frames" && window.mask.startFrame > 0 ? `,tpad=start=${window.mask.startFrame}:start_mode=add:color=black` : "";
-        const feather = window.mask.kind === "frames" && window.mask.feather > 0 ? `,gblur=sigma=${window.mask.feather}` : "";
+        else
+          args.push(
+            "-framerate",
+            String(window.mask.fps),
+            "-start_number",
+            String(window.mask.startFrame),
+            "-i",
+            window.mask.pattern,
+          );
+        const pad =
+          window.mask.kind === "frames" && window.mask.startFrame > 0
+            ? `,tpad=start=${window.mask.startFrame}:start_mode=add:color=black`
+            : "";
+        const feather =
+          window.mask.kind === "frames" && window.mask.feather > 0 ? `,gblur=sigma=${window.mask.feather}` : "";
         const invert = window.invert ? ",negate" : "";
-        const strength = window.strength < 1 ? `,colorchannelmixer=rr=${window.strength}:gg=${window.strength}:bb=${window.strength}` : "";
+        const strength =
+          window.strength < 1
+            ? `,colorchannelmixer=rr=${window.strength}:gg=${window.strength}:bb=${window.strength}`
+            : "";
         parts.push(`[c${i}]${lut(cube)},format=gbrp16le[w${i}]`);
-        parts.push(`[${i + 1}:v]format=gray${pad},scale=${size}:flags=bilinear${feather}${invert},format=gbrp16le${strength}[m${i}]`);
+        parts.push(
+          `[${i + 1}:v]format=gray${pad},scale=${size}:flags=bilinear${feather}${invert},format=gbrp16le${strength}[m${i}]`,
+        );
         parts.push(`[b${i}][w${i}][m${i}]maskedmerge[b${i + 1}]`);
       });
       parts.push(`[b${windows.length}]${back}[v]`);
@@ -211,7 +265,9 @@ export function renderGraded(options: RenderOptions) {
       const labels = cubes.map((_, i) => `[s${i}]`).join("");
       const parts = [`[0:v]${toRgb},split=${cubes.length}${labels}`];
       options.segments.forEach((segment, i) => {
-        parts.push(`[s${i}]trim=start=${segment.start}:end=${segment.end},setpts=PTS-STARTPTS,${lut(cubes[i]!)}[g${i}]`);
+        parts.push(
+          `[s${i}]trim=start=${segment.start}:end=${segment.end},setpts=PTS-STARTPTS,${lut(cubes[i]!)}[g${i}]`,
+        );
       });
       parts.push(`${cubes.map((_, i) => `[g${i}]`).join("")}concat=n=${cubes.length}:v=1:a=0,${back}[v]`);
       args.push("-filter_complex", parts.join(";"));
@@ -230,8 +286,14 @@ export function renderGraded(options: RenderOptions) {
     args.push(options.output);
     const result = spawnSync("ffmpeg", args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
     if (result.status !== 0)
-      throw new CliErrorObject({ code: "INTERNAL", message: `ffmpeg grade failed: ${result.stderr.trim().slice(-800)}` });
-    return { decode: { matrix: tags.matrix, range: tags.range, assumptions: tags.assumed }, durationSec: facts.duration };
+      throw new CliErrorObject({
+        code: "INTERNAL",
+        message: `ffmpeg grade failed: ${result.stderr.trim().slice(-800)}`,
+      });
+    return {
+      decode: { matrix: tags.matrix, range: tags.range, assumptions: tags.assumed },
+      durationSec: facts.duration,
+    };
   } finally {
     rmSync(work, { recursive: true, force: true });
   }

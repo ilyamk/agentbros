@@ -1092,7 +1092,8 @@ def box_at(keyframes: list[dict[str, float]], t: float) -> tuple[float, float, f
     i = int(np.searchsorted(times, t, side="right")) - 1
     a, b = keyframes[i], keyframes[i + 1]
     f = (t - a["t"]) / max(b["t"] - a["t"], 1e-9)
-    return tuple(a[key] + (b[key] - a[key]) * f for key in ("x", "y", "w", "h"))  # type: ignore[return-value]
+    x, y, w, h = (a[key] + (b[key] - a[key]) * f for key in ("x", "y", "w", "h"))
+    return x, y, w, h
 
 
 def shape_mask(shape: str, box: tuple[float, float, float, float], softness: float, size: tuple[int, int]) -> np.ndarray:

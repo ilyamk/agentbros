@@ -9,7 +9,12 @@ const SPECS = [
   { name: "input", required: true, description: "The clip to grade" },
   { name: "reference", required: true, description: "The clip or still to match" },
   { name: "output", required: true, description: "Where to write the editable grade.json" },
-  { name: "method", choices: ["stats", "paired"], default: "stats", description: "stats: Lab statistics per zone (any content); paired: per-pixel fit (same shot, aligned frames)" },
+  {
+    name: "method",
+    choices: ["stats", "paired"],
+    default: "stats",
+    description: "stats: Lab statistics per zone (any content); paired: per-pixel fit (same shot, aligned frames)",
+  },
   { name: "strength", type: "number", default: 1, description: "Blend the solved grade toward identity, 0..1" },
   { name: "frames", type: "number", default: 8, description: "Frames per clip used for the fit" },
   { name: "reference-crop", default: "auto", description: "Active picture of the reference: auto, none or x,y,w,h" },
@@ -24,9 +29,13 @@ void runScript(async () => {
   ensureFfmpeg();
   const output = path.resolve(args.output!);
   if (existsSync(output) && !args.force)
-    throw new CliErrorObject({ code: "INVALID_INPUT", message: `${args.output} exists; pass --force to overwrite it or choose another path` });
+    throw new CliErrorObject({
+      code: "INVALID_INPUT",
+      message: `${args.output} exists; pass --force to overwrite it or choose another path`,
+    });
   const strength = args.strength ?? 1;
-  if (!(strength >= 0 && strength <= 1)) throw new CliErrorObject({ code: "INVALID_INPUT", message: "--strength must be between 0 and 1" });
+  if (!(strength >= 0 && strength <= 1))
+    throw new CliErrorObject({ code: "INVALID_INPUT", message: "--strength must be between 0 and 1" });
   const frames = frameCount(args.frames, 8);
   const evidence = output.replace(/\.json$/i, "") + "-match";
   mkdirSync(evidence, { recursive: true });
@@ -54,7 +63,10 @@ void runScript(async () => {
   mkdirSync(path.dirname(output), { recursive: true });
   writeFileSync(output, `${JSON.stringify(grade, null, 2)}\n`);
   const report = path.join(evidence, "match.json");
-  writeFileSync(report, `${JSON.stringify({ metrics: result.metrics, input: result.input, reference: result.reference, grade }, null, 2)}\n`);
+  writeFileSync(
+    report,
+    `${JSON.stringify({ metrics: result.metrics, input: result.input, reference: result.reference, grade }, null, 2)}\n`,
+  );
   return {
     outputs: [output, result.files.preview!, report],
     metadata: {

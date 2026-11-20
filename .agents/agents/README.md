@@ -74,6 +74,12 @@ Watches one reference film frame by frame and writes its judged layers (`story`,
 
 Technical QA of a bespoke film only (no taste; taste belongs to `creative-critic`): measured checks with times, `skipped` never a pass, and the delivery verdict left to the user.
 
+#### colourist (opus)
+
+Measures and grades a clip, generated shot or edit with the local colour commands (`colour:scopes`, `colour:compare`, `colour:match`, `colour:grade`, `colour:shots`, `colour:track`): measure, look, propose, apply, re-measure, compare, report evidence. Never judges taste ([colour grading](../../docs/colour-grading.md)).
+
+**Dispatch when:** a grade drifts from its source, shots do not match, skin or white balance is off, or a look or LUT is wanted.
+
 #### fixer (sonnet)
 
 One round of a critic's or `film:measure`'s ranked list, in order, without grading the result; also a campaign repair brief (`CampaignRepairSchema`).
@@ -121,7 +127,7 @@ A user's own recording: transcript (`speech:local` free, `transcribe` paid only 
 
 | Model | Agents | Reason |
 |-------|--------|--------|
-| **Opus** | script-writer, design-director, narrator-director, reference-analyst, qa-reviewer, concept-director, strategist, creative-director, sound-director, motion-director, motion-engineer, creative-critic, campaign-producer | Creative and architectural decisions where wrong choices compound downstream; narrator-director requires performance judgement that maps emotional arc to delivery cues |
+| **Opus** | script-writer, design-director, narrator-director, reference-analyst, qa-reviewer, colourist, concept-director, strategist, creative-director, sound-director, motion-director, motion-engineer, creative-critic, campaign-producer | Creative and architectural decisions where wrong choices compound downstream; narrator-director requires performance judgement that maps emotional arc to delivery cues |
 | **Sonnet** | brief-collector, category-scout, asset-planner, caption-editor, fixer, footage-editor | Structured generation with clear contracts; deterministic mapping from inputs to outputs; caption-editor is a pure-function transform |
 | **Haiku** | voice-producer | IO-heavy batch execution with no judgement; fast and inexpensive |
 | **Inherit** | blender-critic, blender-advisor | `blender:improve` runs them as fresh Codex sessions with the model it pins itself; under Claude Code they take the session's model |

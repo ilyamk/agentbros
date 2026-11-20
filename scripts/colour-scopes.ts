@@ -9,7 +9,12 @@ const SPECS = [
   { name: "input", required: true, description: "Video or still image to measure" },
   { name: "output", required: true, description: "Directory for the scope PNGs, sheet.png and stats.json" },
   { name: "at", type: "number", description: "Measure one frame at this time in seconds" },
-  { name: "frames", type: "number", default: 6, description: "Frames sampled evenly across a video (scopes accumulate them)" },
+  {
+    name: "frames",
+    type: "number",
+    default: 6,
+    description: "Frames sampled evenly across a video (scopes accumulate them)",
+  },
   { name: "skin-region", description: "Measure skin inside x,y,w,h (source pixels) instead of the chroma mask" },
   ...DECODE_SPECS,
 ] as const;
@@ -32,7 +37,10 @@ void runScript(async () => {
     ScopesResultSchema,
   );
   const statsFile = path.join(output, "stats.json");
-  writeFileSync(statsFile, `${JSON.stringify({ media: result.media, stats: result.stats, files: result.files }, null, 2)}\n`);
+  writeFileSync(
+    statsFile,
+    `${JSON.stringify({ media: result.media, stats: result.stats, files: result.files }, null, 2)}\n`,
+  );
   const stats = result.stats as Record<string, Record<string, unknown>>;
   return {
     outputs: [result.files.sheet!, statsFile],

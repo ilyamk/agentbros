@@ -11,11 +11,16 @@ import { z } from "zod";
 const finite = z.number().finite();
 /** A per-channel value; one number means the same value on R, G and B. */
 const Triplet = z.union([finite, z.tuple([finite, finite, finite])]);
-const CurvePoints = z.array(z.tuple([finite, finite])).min(2).max(32);
+const CurvePoints = z
+  .array(z.tuple([finite, finite]))
+  .min(2)
+  .max(32);
 
 export const QualifierSchema = z.strictObject({
   /** Vectorscope hue angle in degrees (counter-clockwise from +Cb; red is about 103, skin line 123). */
-  hue: z.strictObject({ center: finite, width: z.number().positive().max(360), softness: z.number().min(0).default(10) }).optional(),
+  hue: z
+    .strictObject({ center: finite, width: z.number().positive().max(360), softness: z.number().min(0).default(10) })
+    .optional(),
   /** Chroma as a fraction of a 100% saturated colour (0..1+). */
   saturation: z.strictObject({ min: finite, max: finite, softness: z.number().min(0).default(0.05) }).optional(),
   /** Luma Y' 0..1. */
@@ -50,7 +55,12 @@ export const BaseGradeSchema = z.strictObject({
   notes: z.string().max(4000).optional(),
   /** Provenance of a solved grade: what it was matched to and how. */
   matchedTo: z
-    .strictObject({ reference: z.string(), method: z.string(), frames: z.number().int().positive(), strength: z.number().optional() })
+    .strictObject({
+      reference: z.string(),
+      method: z.string(),
+      frames: z.number().int().positive(),
+      strength: z.number().optional(),
+    })
     .optional(),
   whiteBalance: z.strictObject({ temperature: finite.default(0), tint: finite.default(0) }).optional(),
   /** Stops, in linear light. */
@@ -59,19 +69,33 @@ export const BaseGradeSchema = z.strictObject({
   lift: Triplet.optional(),
   gamma: Triplet.optional(),
   gain: Triplet.optional(),
-  contrast: z.strictObject({ amount: z.number().positive().max(4), pivot: z.number().min(0).max(1).default(0.435) }).optional(),
+  contrast: z
+    .strictObject({ amount: z.number().positive().max(4), pivot: z.number().min(0).max(1).default(0.435) })
+    .optional(),
   curves: z
-    .strictObject({ master: CurvePoints.optional(), r: CurvePoints.optional(), g: CurvePoints.optional(), b: CurvePoints.optional() })
+    .strictObject({
+      master: CurvePoints.optional(),
+      r: CurvePoints.optional(),
+      g: CurvePoints.optional(),
+      b: CurvePoints.optional(),
+    })
     .optional(),
   saturation: z.number().min(0).max(4).optional(),
   secondaries: z.array(SecondarySchema).max(16).optional(),
   luts: z.array(LutRefSchema).max(4).optional(),
   /** Highlight knee (e.g. 0.92) and shadow knee for a smooth roll-off instead of a hard clip. */
-  softClip: z.strictObject({ high: z.number().min(0.5).max(1).optional(), low: z.number().min(0).max(0.2).optional() }).optional(),
+  softClip: z
+    .strictObject({ high: z.number().min(0.5).max(1).optional(), low: z.number().min(0).max(0.2).optional() })
+    .optional(),
 });
 
 /** A box in normalised frame units (0..1): left, top, width, height. */
-const NormBox = z.tuple([z.number().min(-1).max(2), z.number().min(-1).max(2), z.number().positive().max(3), z.number().positive().max(3)]);
+const NormBox = z.tuple([
+  z.number().min(-1).max(2),
+  z.number().min(-1).max(2),
+  z.number().positive().max(3),
+  z.number().positive().max(3),
+]);
 
 export const WindowMaskSchema = z.discriminatedUnion("kind", [
   z.strictObject({
@@ -113,7 +137,19 @@ export const TrackSchema = z.strictObject({
   box: z.tuple([z.number(), z.number(), z.number(), z.number()]),
   at: z.number().min(0),
   method: z.string(),
-  keyframes: z.array(z.strictObject({ t: z.number(), x: z.number(), y: z.number(), w: z.number(), h: z.number(), confidence: z.number(), active: z.boolean().default(true) })).min(1),
+  keyframes: z
+    .array(
+      z.strictObject({
+        t: z.number(),
+        x: z.number(),
+        y: z.number(),
+        w: z.number(),
+        h: z.number(),
+        confidence: z.number(),
+        active: z.boolean().default(true),
+      }),
+    )
+    .min(1),
 });
 export type Track = z.infer<typeof TrackSchema>;
 
@@ -125,7 +161,12 @@ export const TrackResultSchema = z.looseObject({
   files: z.record(z.string(), z.string()),
 });
 
-export const MaskResultSchema = z.looseObject({ ok: z.literal(true), path: z.string(), frames: z.number(), meanCoveragePct: z.number() });
+export const MaskResultSchema = z.looseObject({
+  ok: z.literal(true),
+  path: z.string(),
+  frames: z.number(),
+  meanCoveragePct: z.number(),
+});
 
 export const TimelineSchema = z.strictObject({
   version: z.literal(1).default(1),
