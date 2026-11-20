@@ -271,7 +271,7 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   g(
     "docs/colour-grading.md",
     k(
-      [...COLOUR_KEYWORDS, "look", "preset", "LUT", "variants", "пресет", "лук", "варианты"],
+      [...COLOUR_KEYWORDS, "look", "preset", "lut", "variants", "пресет", "лук", "варианты"],
       c(
         "colour:looks",
         "colour-looks.ts",

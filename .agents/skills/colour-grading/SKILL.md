@@ -1,72 +1,79 @@
 ---
 name: colour-grading
-description: Measure, match and grade colour with local scopes, CIEDE2000 comparison, an editable grade.json, Resolve-ready .cube LUTs, shot matching and tracked or matte windows. Use when a generated shot drifts from its source, shots do not match, exposure, white balance or skin is off, or a look or LUT is wanted.
+description: Colour grading, shot matching and skin-safe looks, gated.
 ---
 
 # Colour grading
 
-Read [the colour guide](../../../docs/colour-grading.md) for the grade file, the evaluation order and every output. The [colourist](../../agents/colourist.md) agent runs this skill; an orchestrator may run it directly for a quick check. All commands are local and free. Work in `public/projects/<id>/pipeline/colour/` and keep every sheet: the process is evidence.
+Read [colour craft](references/colour-craft.md) first: order of operations, skin as the anchor, separation, and why a statistical match alone fails. The [colour guide](../../../docs/colour-grading.md) has every command and the grade file. The [colourist](../../agents/colourist.md) agent runs this skill. All commands are local and free. Work in `public/projects/<id>/pipeline/colour/` and keep every sheet: the process is evidence.
 
 ## Loop
 
-Measure → look → propose → apply → re-measure → compare → report. The numbers prove what moved; the user decides whether it looks right. Never write that a grade looks good.
+Measure → look → propose → apply → re-measure → gate → report. The gate (`colour:check`) proves nothing broke; the user decides whether it looks right. Never write that a grade looks good, and never present zone ΔE alone as proof of a match.
 
 ```bash
 pnpm colour:scopes --input footage/shot.mp4 --frames 6 --output pipeline/colour/scopes-shot
 pnpm colour:compare --input assets/generated.mp4 --reference footage/source.mp4 --output pipeline/colour/compare-before
 ```
 
-Open `sheet.png` and `compare.png` yourself, then read `stats.json` and `comparison.json`. `summary` gives the diagnosis in words, for example `shadows cooler, blacks lifted +2.7 IRE, saturation +32%, skin hue −30 deg`.
+Open `sheet.png` and `compare.png` yourself. Measure skin on a fixed face box (`--skin-region x,y,w,h`), not on the chroma rule alone: the rule re-keys after a grade and can hide what happened to the face.
 
 ## Workflows
 
-### 1. Reference or film-look match
-
-The generated clip should look like its source, or a clip like a reference film.
+### 1. Reference match, an edit cut the same way (generated or face-swapped vs its source)
 
 ```bash
-pnpm colour:match --input assets/generated.mp4 --reference footage/source.mp4 --output pipeline/colour/match.grade.json
-pnpm colour:grade --grade pipeline/colour/match.grade.json --input assets/generated.mp4 --output assets/generated-graded.mp4 --export-cube pipeline/colour/match.cube
-pnpm colour:compare --input assets/generated-graded.mp4 --reference footage/source.mp4 --output pipeline/colour/compare-after
+pnpm colour:match --input assets/generated.mp4 --reference footage/source.mp4 --per-shot --output pipeline/colour/match
+pnpm colour:grade --timeline pipeline/colour/match/timeline.json --input assets/generated.mp4 --output assets/generated-graded.mp4
+pnpm colour:check --input assets/generated-graded.mp4 --source assets/generated.mp4 --reference footage/source.mp4 --output pipeline/colour/check
 ```
 
-- `--method stats` (default) for different content; `--method paired` only for the same shot at the same times (paired ΔE is trusted at luma correlation ≥ 0.6).
-- Read `<name>-match/match-preview.png` before rendering.
-- When content differs (white logos, sky, other wardrobe), lower `--strength` or protect with a secondary or window, and say which residual comes from content.
+- `--per-shot` cuts the input, solves one grade per shot against the reference at the same times, and writes `<dir>/timeline.json`.
+- Each solve fits the primary with skin held toward the reference's skin, adds an environment secondary (the dominant non-skin hue toward the reference's) and a skin secondary, then gates the result. `stages` in the answer says what each did.
+- Read every shot's gate in the answer, then the rendered file's `colour:check`.
 
-### 2. Shot matching across an edit or clips
+### 2. Reference or film-look match, one shot or a still
+
+```bash
+pnpm colour:match --input assets/generated.mp4 --reference footage/source.mp4 --skin-region 610,100,110,90 --reference-skin-region 530,170,95,70 --output pipeline/colour/match.grade.json
+```
+
+- `--skin match` (default) matches skin to the reference's skin; `--skin protect` holds the source skin (different person, wardrobe or light); `--skin off` is the old global fit, kept only for comparison.
+- Read `<name>-match/match-preview.png` and the gate before rendering.
+
+### 3. Shot continuity inside one edit
 
 ```bash
 pnpm colour:shots --input edit.mp4 --output pipeline/colour/shots --solve
-pnpm colour:grade --timeline pipeline/colour/shots/timeline.json --input edit.mp4 --output edit-graded.mp4
 pnpm colour:shots --inputs a.mp4 b.mp4 c.mp4 --hero 0 --output pipeline/colour/clips
 ```
 
-Pick the hero with the user (`--hero N`) or match to `--reference`. Shots over `--tolerance` (mean zone ΔE2000 2.5) are flagged. Check `shots.png`; a wrong cut means adjusting `--cut-threshold`.
+Pick the hero with the user. Shots over `--tolerance` are flagged.
 
-### 3. Technical balance: exposure and white balance
+### 4. Technical balance and the look, without a reference
 
-No reference, only a target: neutral greys, black near 0 IRE, white under 100 IRE, mid-grey near 18% (false colour grey zone).
+1. Balance: neutral a*/b* within ±1.5, blacks 0–2 IRE, whites under 100 IRE, skin on the line ([colour craft](references/colour-craft.md#without-a-reference)). Write the grade file by hand, one control at a time, and re-measure.
+2. Show looks on the real frame with skin held:
 
-- Read `whiteBalance.cast`, `zones`, `luma` and `falseColourPct` in `stats.json`.
-- Write `grade.json` by hand: `whiteBalance.temperature`/`tint` for the cast, `exposure` in stops for level, `lift`/`gain` for black and white points, `contrast` around pivot 0.435.
-- Render, re-run `colour:scopes`, and repeat with one change at a time until the neutral a*/b* sit within ±1.5.
+```bash
+pnpm colour:looks --list
+pnpm colour:looks --input assets/clip.mp4 --at 15.5 --skin-region 300,150,130,140 --output pipeline/colour/looks
+pnpm colour:looks --input assets/clip.mp4 --family film --output pipeline/colour/looks-film --render
+```
 
-### 4. Skin-tone protection
+- `looks.png` is the grid: source first, then each look with its gate verdict. `<out>/looks.json` gives each look's intent, typical use, moves, skin policy and risks.
+- Explain the differences in the user's terms: what each look does, where it is used and how each fits the brief, and name the gate's warnings. Recommend by fit to the brief, never by taste; the user picks.
+- The chosen look's `<look>.grade.json` renders with `colour:grade`. Its skin secondary was solved on this footage, so re-run `colour:looks` for other footage.
 
-Skin hue sits near the 123° skin line on the vectorscope; `stats.json` `skin` reports the offset.
+### 5. Skin protection and windows
 
-- Measure a known face with `--skin-region x,y,w,h`; the default chroma mask also picks up wood and sand.
-- Global correction: a secondary keyed on hue 123 ± 20, with `hueToward: {angle: 123, amount: 0.3–0.6}`.
-- Spatial correction on a moving subject: a window. Track a face with `pnpm colour:track --input clip.mp4 --box x,y,w,h --at 1 --output pipeline/colour/face.track.json` and check `face.track-track/track-preview.png`; or make a person matte with `pnpm matte --input clip.mp4 --kind person --out pipeline/colour/matte-person`. Reference either from `windows[]` in the grade (`mask.kind: "shape"` with `track`, or `"matte"` with `path`).
-- Re-measure skin hue after rendering; report degrees before and after.
+- Global: a secondary keyed on the skin hue with `hueToward` the skin line; `colour:match` and `colour:looks` solve one themselves.
+- Spatial, on a moving subject: a tracked window (`pnpm colour:track --input clip.mp4 --box x,y,w,h --at 1 --output pipeline/colour/face.track.json`) or a person matte (`pnpm matte --input clip.mp4 --kind person --out pipeline/colour/matte-person`), referenced from `windows[]`. Check the track preview and the mask first.
 
-### 5. Creative look or LUT with legal levels
+## Gate
 
-- A look is a grade the user asked for in words ("warmer shadows, cooler highlights"); map each word to one control and show the scopes before and after. Import a vendor LUT with `luts[]` at `position: "look"` and `strength` below 1 when it overshoots.
-- Add `softClip.high` (about 0.92) when highlights clip; the render clamps to legal range by construction, but check `legal` and `clipping` in the re-measured `stats.json`.
-- Export with `--export-cube` (33³, or `--lut-size 65` for a final) so the user can carry the look into Resolve.
+`colour:check` compares the delivery file with its pixel-aligned source (skin keyed on the source) and, optionally, the reference. Pass `--skin-chroma` and `--hue-allowance` for a look's policy, and `--strict` to fail the command on a failed gate. A `fail` blocks delivery until fixed or until the user accepts it in their own words. Thresholds: [colour craft](references/colour-craft.md#validation-thresholds-the-gate).
 
 ## Report
 
-Before and after numbers (zone ΔE2000, black and white points in IRE, clipping, legal share, skin hue), the files to open first (`compare-after/compare.png`, `scopes-*/sheet.png`), the grade, the cube, the render, and what remains with its reason.
+Per shot: the gate verdict with its failed and warned checks, skin L*/chroma/b* before and after on a fixed face region, environment hue distance to the reference, crushed and clipped share. Name the files to open first (`check.png`, `looks.png`, a side-by-side), the grade, the render, and what remains with its reason.

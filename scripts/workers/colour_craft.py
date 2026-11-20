@@ -229,9 +229,12 @@ def level_checks(source: np.ndarray, graded: np.ndarray, reference: np.ndarray |
     if reference is not None:
         clip_base, crush_base = max(clip_s, clip(reference)), max(crush_s, crush(reference))
         note = f" (reference {crush(reference):.2f}%)"
-    cs = np.percentile(np.hypot(*cm.rgb_to_lab(np.clip(source, 0, 1))[:, 1:].T), 90)
-    cg = np.percentile(np.hypot(*cm.rgb_to_lab(np.clip(graded, 0, 1))[:, 1:].T), 90)
-    sat = float(cg / max(cs, 1e-6))
+
+    def p90(px: np.ndarray) -> float:
+        return float(np.percentile(np.hypot(*cm.rgb_to_lab(np.clip(px, 0, 1))[:, 1:].T), 90))
+
+    # A reference as rich as the grade is its baseline too: matching a saturated film is not oversaturation.
+    sat = p90(graded) / max(p90(source), p90(reference) if reference is not None else 0.0, 1e-6)
     return [
         _entry("levels.clipping", _grade_level(clip_g - clip_base, LIMITS["clipIncreasePct"]), clip_g - clip_base, "+0.3 pp over the baseline (fail +1.5)", f"clipped {clip_s:.2f}% -> {clip_g:.2f}%"),
         _entry(
@@ -245,12 +248,8 @@ def level_checks(source: np.ndarray, graded: np.ndarray, reference: np.ndarray |
     ]
 
 
-def reference_checks(source_other: np.ndarray, graded_other: np.ndarray, reference_other: np.ndarray, graded_skin: np.ndarray | None, reference_skin: np.ndarray | None) -> list[dict[str, Any]]:
-    """Did the grade move toward the reference: environment hue distribution and skin colour."""
-    ref_hist = hue_histogram(reference_other)
-    before, after = hue_distance(hue_histogram(source_other), ref_hist), hue_distance(hue_histogram(graded_other), ref_hist)
-    closer = after <= before * 0.9 or after < 10  # noqa: PLR2004 -- 10% closer, or within 10 deg of hue.
-    out = [_entry("reference.environmentHue", "pass" if closer else "warn", after, "10% closer than the source", f"environment hue distance to reference {before:.1f} -> {after:.1f} deg")]
+def _skin_vs_reference(graded_skin: np.ndarray | None, reference_skin: np.ndarray | None) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
     if graded_skin is not None and reference_skin is not None and len(reference_skin) >= MIN_SKIN_PIXELS:
         g, r = lab_summary(graded_skin), lab_summary(reference_skin)
         de = float(cm.delta_e_2000(np.array([g["L"], g["a"], g["b"]]), np.array([r["L"], r["a"], r["b"]])))
@@ -264,6 +263,20 @@ def reference_checks(source_other: np.ndarray, graded_other: np.ndarray, referen
             )
         )
     return out
+
+
+def reference_checks(source_other: np.ndarray, graded_other: np.ndarray, reference_other: np.ndarray, graded_skin: np.ndarray | None, reference_skin: np.ndarray | None) -> list[dict[str, Any]]:
+    """Did the grade move toward the reference: environment hue distribution and skin colour."""
+    ref_hist = hue_histogram(reference_other)
+    if not ref_hist.any() or not hue_histogram(source_other).any():
+        out = [_entry("reference.environmentHue", "info", 0.0, "chromatic pixels in both", "environment hue: too few chromatic pixels to compare")]
+        return out + _skin_vs_reference(graded_skin, reference_skin)
+    before, after = hue_distance(hue_histogram(source_other), ref_hist), hue_distance(hue_histogram(graded_other), ref_hist)
+    closer = after <= before * 0.9 or after < 10  # noqa: PLR2004 -- 10% closer, or within 10 deg of hue.
+    return [
+        _entry("reference.environmentHue", "pass" if closer else "warn", after, "10% closer than the source", f"environment hue distance to reference {before:.1f} -> {after:.1f} deg"),
+        *_skin_vs_reference(graded_skin, reference_skin),
+    ]
 
 
 def spill_check(before_other: np.ndarray, after_other: np.ndarray) -> dict[str, Any]:

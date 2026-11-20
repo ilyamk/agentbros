@@ -443,7 +443,7 @@ def stat_lines(stats: dict[str, Any]) -> tuple[list[str], list[str], list[str]]:
 # Scopes
 
 
-def scope_images(media: Media) -> dict[str, np.ndarray]:
+def scope_images(media: Media) -> dict[str, Any]:
     """Render every scope of the analysed frames."""
     rgbs = media.frames
     lumas = [cm.luma(f) for f in rgbs]
@@ -464,7 +464,7 @@ def scope_images(media: Media) -> dict[str, np.ndarray]:
         "histogram": sc.histogram(rgbs, lumas, CELL),
         "cie": sc.cie_chromaticity(rgbs, 560),
     }
-    images["_false_colour_share"] = share  # type: ignore[assignment]
+    images["_false_colour_share"] = share
     return images
 
 
