@@ -28,7 +28,7 @@ For automated renders, each output requires the renderer's matching `OUTPUT.mp4.
 
 An excerpt rendered with `pnpm render --frames START-END` is written as `{format}-frames-START-END.mp4` and its receipt carries `partial: {startFrame, endFrame, totalFrames}`. The check refuses it with `PARTIAL_RENDER`: an excerpt is for inspecting a stretch, never a final deliverable.
 
-Repeat renders can reuse a verified master for local edits. [Render iteration](render-iteration.md#rebuild-a-local-picture-edit)
+Local edits reuse a verified master ([render iteration](render-iteration.md#rebuild-a-local-picture-edit)).
 
 `pnpm render` watches the renderer's progress. If the rendered-frame count does not advance for `--stall-minutes` (default 5), it kills the render's whole process tree and restarts it once from scratch; a second stall fails with `RENDER_STALLED`, whose details name the stuck frame. Render around that frame with `--frames` to inspect it.
 
