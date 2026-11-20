@@ -39,7 +39,11 @@ export function publishRenderReceipt(
     sources: before.sources,
     evidence: "renderer",
     ...(partial ? { partial } : {}),
-    ...(patched ? { patched } : {}),
+    ...(patched
+      ? {
+          note: `Verified picture patch for frames ${patched.startFrame}–${patched.endFrame}. Base MP4 SHA-256 ${patched.baseSha256}.`,
+        }
+      : {}),
   });
   const target = `${output}.receipt.json`,
     temporary = `${target}.${randomUUID()}.tmp`;
