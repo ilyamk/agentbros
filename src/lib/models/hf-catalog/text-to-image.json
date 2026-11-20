@@ -2,7 +2,7 @@
   "version": 1,
   "provider": "higgsfield",
   "category": "text-to-image",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-20",
   "entries": [
     {
       "endpoint": "alibaba/qwen-image-3/text-to-image",
@@ -10,10 +10,10 @@
       "displayName": "Qwen Image 3 — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "352b180fcfab81852eb7977987ed7891793b40be92b1bfbd64ed546c725679d2",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/qwen-image-3/text-to-image.md",
         "cached": true
       },
@@ -110,15 +110,49 @@
       "docsUrl": "https://docs.higgsfield.ai/docs/models/qwen-image-3/text-to-image.md"
     },
     {
+      "endpoint": "bytedance/seedream/v5.0/pro/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Seedream 5.0 Pro",
+      "status": "active",
+      "firstSeen": "2026-11-20",
+      "lastSeen": "2026-11-20",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-07-08",
+      "description": "Create images from detailed prompts with Seedream 5.0 Pro. Generate product visuals, posters and illustrations at 1K, 1.5K or 2K, with control over the aspect ratio.",
+      "exclusive": false,
+      "family": {
+        "slug": "seedream-5-0-pro",
+        "title": "Seedream 5.0 Pro",
+        "company": "ByteDance"
+      }
+    },
+    {
       "endpoint": "higgsfield-ai/soul/cinema",
       "category": "text-to-image",
       "displayName": "SOUL Cinema — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "79ce3c420f054e576c61e311001d2e4179b67af040874eacd785f2d88449406e",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/soul-cinema/generate.md",
         "cached": true
       },
@@ -216,10 +250,10 @@
       "displayName": "SOUL — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "50854662b15e18916a7a990618ddf348ce7272932540d8bb057be8d7739c2867",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/soul-standard/generate.md",
         "cached": true
       },
@@ -345,10 +379,10 @@
       "displayName": "SOUL V2 — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "c06da0fda510b32e196f2c45e749df175f77556f0c102d64fd90ba74bd40757a",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/soul-2/generate.md",
         "cached": true
       },
@@ -467,10 +501,10 @@
       "displayName": "Ads Studio — Generate ads API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "82c04c1144ab2a9d1cd6c7723e150740e55ab16c2695f95c74593e56e86843de",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/ads-studio/generate.md",
         "cached": true
       },
@@ -571,7 +605,7 @@
       "displayName": "AI Influencer",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": null,
       "inputs": [],
       "outputs": {
@@ -605,10 +639,10 @@
       "displayName": "Ideogram 4.0 — Generate API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "e2e2f43b426689ba368c3e7e540a29555bc5c388ba9f07be751c27c895a77252",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/ideogram-4/generate.md",
         "cached": true
       },
@@ -700,15 +734,49 @@
       "docsUrl": "https://docs.higgsfield.ai/docs/models/ideogram-4/generate.md"
     },
     {
+      "endpoint": "kling-image/v4.0/text-to-image",
+      "category": "text-to-image",
+      "displayName": "Kling Image 4.0",
+      "status": "active",
+      "firstSeen": "2026-11-20",
+      "lastSeen": "2026-11-20",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [
+          "image"
+        ],
+        "fields": [
+          "images"
+        ]
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "featured",
+        "trending"
+      ],
+      "provider": "higgsfield",
+      "releasedOn": "2026-11-17",
+      "description": "Generate detailed images from text with Kling Image 4.0. Create realistic scenes, product visuals and text-rich designs at 2K, 4K or native 8K.",
+      "exclusive": false,
+      "family": {
+        "slug": "kling-image-4-0",
+        "title": "Kling Image 4.0",
+        "company": "Kling"
+      }
+    },
+    {
       "endpoint": "marketing-studio/image",
       "category": "text-to-image",
       "displayName": "Marketing Studio Image — 2.0 Alpha API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "72885ff5c63b68b9244901bc5fdb12bebc8d24eeb8cebdc11290d8f3e8566ff7",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/generate-and-edit.md",
         "cached": true
       },
@@ -828,10 +896,10 @@
       "displayName": "Marketing Studio Image — 2.5 Flare API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "c9d098521227ffeafdaeaf210daf5813883a52bc1089d46d579d5a2ad3bb85dc",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/flare.md",
         "cached": true
       },
@@ -947,10 +1015,10 @@
       "displayName": "Marketing Studio Image — 2.5 Sunburst API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "6256cab9f9377c594f89f5810fb639c709aeee62568ce6f513e238ba076e1465",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/marketing-studio-image/sunburst.md",
         "cached": true
       },
@@ -1066,10 +1134,10 @@
       "displayName": "Recraft V4.1 Pro — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "33ab75273e97d291ebe7da0c613a6d221ee5cd253579b426e4032cbba41b6a22",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-pro/generate.md",
         "cached": true
       },
@@ -1164,10 +1232,10 @@
       "displayName": "Recraft V4.1 — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "6c814ba561d5977fb6ed24e22a1772f085cd62ea04318f0c530c09802e209e12",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1/text-to-image.md",
         "cached": true
       },
@@ -1262,10 +1330,10 @@
       "displayName": "Recraft V4.1 Utility Pro — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "9abdb0f62e07888934decb539e5380505c2077415cad35b6c03eb700acea74a3",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility-pro/text-to-image.md",
         "cached": true
       },
@@ -1360,10 +1428,10 @@
       "displayName": "Recraft V4.1 Utility — Text to image API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "1eaaec0e35403284635ba6ce1a7b13f8feba7f526b4ed8ad073682f8c27b51f9",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/recraft-v4-1-utility/text-to-image.md",
         "cached": true
       },
@@ -1458,10 +1526,10 @@
       "displayName": "Grok Image 2.0 — Generate and edit API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "b31989e979ae9670bc39cd6a444199adc0ee03914f0b69f392ae02e2e951f3fb",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/grok-image-2/generate-and-edit.md",
         "cached": true
       },
@@ -1551,10 +1619,10 @@
       "displayName": "Z-Image Turbo — Generate API",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-20",
       "schema": {
         "sha256": "d3479337516f95c840cf1e866e232d180300ca13f2ed8128e426c6f02683e7ce",
-        "asOf": "2026-11-15",
+        "asOf": "2026-11-20",
         "source": "https://docs.higgsfield.ai/docs/models/z-image-turbo/generate.md",
         "cached": true
       },
