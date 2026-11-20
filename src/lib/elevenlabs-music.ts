@@ -39,8 +39,15 @@
  *     positive_local_styles?: string[],
  *     negative_local_styles?: string[],
  *     duration_ms?: number,             // 3000–120000 ms
- *     lines?: string[],                 // max 200 chars each
+ *     lines: string[],                  // max 200 chars each; required by the API, [] for instrumental
  *   }
+ *
+ * `lines` is required: a section without it is refused with 422 (seen 2026-11-19). `generateMusic` sends `[]`
+ * for a section that has none.
+ *
+ * The response arrives only when the whole track is made, which can take longer than five minutes. Node's
+ * fetch gives up waiting for response headers after 300 s by default, before our own abort; the request
+ * therefore carries its own dispatcher with header and body timeouts as long as that abort.
  *
  * Rate limits: not documented.
  * ────────────────────────────────────────────────────────────────────────────
@@ -49,9 +56,26 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
+import { Agent } from "undici";
+
 import { executeElevenLabsRequest, saveGeneratedAudio, type AudioPaidContext } from "./jobs/elevenlabs-boundary";
 
 export const MUSIC_API_BASE = "https://api.elevenlabs.io/v1/music";
+
+/** How long one music request may take, end to end; the dispatcher's header and body timeouts match it. */
+export const MUSIC_REQUEST_TIMEOUT_MS = 10 * 60 * 1000;
+
+let dispatcher: Agent | undefined;
+/** A dispatcher for music requests only: the process-wide default would cut a long generation at 300 s. */
+export function musicDispatcher(): Agent {
+  dispatcher ??= new Agent({ headersTimeout: MUSIC_REQUEST_TIMEOUT_MS, bodyTimeout: MUSIC_REQUEST_TIMEOUT_MS });
+  return dispatcher;
+}
+
+/** The plan as the API takes it: every section carries `lines`, `[]` where the plan has none. */
+export function musicRequestPlan(plan: CompositionPlan): CompositionPlan {
+  return { ...plan, sections: plan.sections.map((section) => ({ ...section, lines: section.lines ?? [] })) };
+}
 
 // ---------------------------------------------------------------------------
 // Types
@@ -64,7 +88,7 @@ export type SongSection = {
   negative_local_styles?: string[];
   /** Duration in milliseconds. 3000–120000. */
   duration_ms?: number;
-  /** Lyric lines. Each max 200 chars. */
+  /** Lyric lines. Each max 200 chars. Required by the API; omitted means none and is sent as []. */
   lines?: string[];
 };
 
@@ -148,7 +172,7 @@ export async function generateMusic(opts: GenerateMusicOptions): Promise<Generat
       body["music_length_ms"] = Math.round(opts.durationSec * 1000);
     }
   } else if (opts.compositionPlan) {
-    body["composition_plan"] = opts.compositionPlan;
+    body["composition_plan"] = musicRequestPlan(opts.compositionPlan);
     // music_length_ms is not used in composition-plan mode
   }
 
@@ -167,14 +191,16 @@ export async function generateMusic(opts: GenerateMusicOptions): Promise<Generat
       fetch(MUSIC_API_BASE, {
         method: "POST",
         redirect: "error",
-        signal: AbortSignal.timeout(10 * 60 * 1000),
+        signal: AbortSignal.timeout(MUSIC_REQUEST_TIMEOUT_MS),
+        // Node's fetch takes undici's `dispatcher`; the DOM RequestInit type does not name it.
+        dispatcher: musicDispatcher(),
         headers: {
           "xi-api-key": apiKey,
           "Content-Type": "application/json",
           Accept: "audio/mpeg",
         },
         body: JSON.stringify(body),
-      }),
+      } as RequestInit & { dispatcher: Agent }),
   });
 
   if (!response.ok) {

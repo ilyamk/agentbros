@@ -88,6 +88,17 @@ export function narrationApproved(project: FilmProject): boolean {
 export const spendApproved = (project: FilmProject, stepId: string): boolean =>
   (stepId === "material" && materialApproved(project)) || (stepId === "narration" && narrationApproved(project));
 
+/**
+ * Steps whose spend opens once the project has a budget ceiling raised with the user's words (`budget --answer`),
+ * as footage leases do: music, where generated takes are quoted, the user says yes to the amount, and the ceiling
+ * set from that answer is the authority. The guard still checks the ceiling at run time.
+ */
+const CEILING_SPEND_STEPS: readonly string[] = ["music"];
+
+/** `paidWhen` for a film lease: only where the step spends at all and is a ceiling-spend step. */
+const ceilingSpend = (stepId: string, spending: readonly string[]) =>
+  CEILING_SPEND_STEPS.includes(stepId) && spending.length ? { paidWhen: "budget-ceiling" as const } : {};
+
 function userApproved(project: FilmProject, stepId: string, template: string): boolean {
   const relative = fill(template, baseTokens(project));
   if (!relative) return false;
@@ -144,6 +155,7 @@ export function filmLeaseFor(project: FilmProject, next: NextAction, issuedBy: s
     allow,
     spending: spendingOf(allow),
     paidAllowed: role !== "critic" && spendApproved(project, next.step),
+    ...(role !== "critic" ? ceilingSpend(next.step, spendingOf(allow)) : {}),
     chainHash: chainHash(project.projectDir, "film"),
     ...stamp(now),
     issuedBy,
@@ -196,6 +208,7 @@ export function issueBriefLease(
       allow,
       spending: spendingOf(allow),
       paidAllowed: brief.role !== "critic" && spendApproved(project, brief.step),
+      ...(brief.role !== "critic" ? ceilingSpend(brief.step, spendingOf(allow)) : {}),
       chainHash: hash,
       ...stamp(now),
       issuedBy: "film:brief",
