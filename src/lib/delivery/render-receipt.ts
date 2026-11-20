@@ -14,6 +14,7 @@ export function publishRenderReceipt(
   rootDir = process.cwd(),
   /** An excerpt (`render --frames`): recorded so delivery refuses it as a final output. */
   partial?: { startFrame: number; endFrame: number; totalFrames: number },
+  patched?: { baseSha256: string; startFrame: number; endFrame: number },
 ) {
   if (before.sourceSnapshotHash !== after.sourceSnapshotHash || before.propsHash !== after.propsHash)
     throw new CliErrorObject({
@@ -38,6 +39,7 @@ export function publishRenderReceipt(
     sources: before.sources,
     evidence: "renderer",
     ...(partial ? { partial } : {}),
+    ...(patched ? { patched } : {}),
   });
   const target = `${output}.receipt.json`,
     temporary = `${target}.${randomUUID()}.tmp`;

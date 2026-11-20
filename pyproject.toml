@@ -51,6 +51,10 @@ asr = [
     "parakeet-mlx==0.7.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
     "mlx==0.32.4; sys_platform == 'darwin' and platform_machine == 'arm64'",
 ]
+portable-voice = [
+    "sherpa-onnx==2.0.2",
+    "numpy==2.5.5",
+]
 vad = [
     "silero-vad==6.2.3",
     "torch==2.15.0",
@@ -179,6 +183,7 @@ conflicts = [[
     { group = "multicam" },
     { group = "offset" },
     { group = "asr" },
+    { group = "portable-voice" },
     { group = "vad" },
     { group = "diarize" },
     { group = "sfx-index" },

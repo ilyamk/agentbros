@@ -41,6 +41,14 @@ export const RenderReceiptSchema = z
     evidence: z.enum(["renderer", "human-declared"]).default("renderer"),
     reviewedBy: z.string().optional(),
     note: z.string().optional(),
+    patched: z
+      .object({
+        baseSha256: hash,
+        startFrame: z.number().int().nonnegative(),
+        endFrame: z.number().int().nonnegative(),
+      })
+      .strict()
+      .optional(),
     partial: z
       .object({
         startFrame: z.number().int().nonnegative(),
@@ -52,6 +60,14 @@ export const RenderReceiptSchema = z
   })
   .strict()
   .superRefine((receipt, context) => {
+    if (
+      receipt.patched &&
+      (receipt.partial || receipt.evidence !== "renderer" || receipt.patched.endFrame < receipt.patched.startFrame)
+    )
+      context.addIssue({
+        code: "custom",
+        message: "A patched receipt must describe a complete renderer output with an ordered span",
+      });
     if (receipt.evidence === "human-declared" && (!receipt.reviewedBy?.trim() || !receipt.note?.trim()))
       context.addIssue({
         code: "custom",

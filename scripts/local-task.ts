@@ -3,12 +3,20 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { CliErrorObject, parseArgs, requireProject, runScript } from "../src/lib/cli";
 import { runAppleTask } from "../src/lib/apple/tasks";
+import { preparePortableVoice, runPortableVoice } from "../src/lib/speech/portable-voice";
 import { boundedFile, NativeUnavailable, objectHash, fileHash } from "../src/lib/apple/runtime";
 import { LocalTaskSchema } from "../src/types/local-capabilities";
 import { ScriptSchema, StoryboardSchema } from "../src/types/pipeline";
+import { NarrationDirectionSchema } from "../src/types/narration";
 runScript(async () => {
   const args = parseArgs([
     { name: "task", required: true, choices: LocalTaskSchema.options, description: "Fixed by the command alias" },
+    {
+      name: "engine",
+      choices: ["apple", "portable"],
+      description: "Voice synthesis engine (default: Apple system voice on macOS, portable on other platforms)",
+    },
+    { name: "prepare", type: "boolean", description: "Prepare the pinned portable voice runtime and models" },
     {
       name: "input",
       description:
@@ -25,7 +33,7 @@ runScript(async () => {
     { name: "target-language", description: "Translation target language" },
     {
       name: "voice",
-      description: "Installed system voice identifier; an explicit unavailable voice is never replaced",
+      description: "Installed Apple voice identifier, or supertonic:0 through supertonic:9 for the portable engine",
     },
     {
       name: "features",
@@ -59,17 +67,47 @@ runScript(async () => {
     work = mkdtempSync(path.join(tmpdir(), "avc-local-task-"));
   try {
     if (args.project) requireProject(args.project);
+    const pipeline = args.project ? path.resolve("public/projects", args.project, "pipeline") : undefined;
+    const directionFile = pipeline && path.join(pipeline, "narrator-direction.json");
+    const direction =
+      task === "speech.synthesise" && directionFile && existsSync(directionFile)
+        ? NarrationDirectionSchema.safeParse(JSON.parse(boundedFile(directionFile).toString())).data
+        : undefined;
+    const planned = direction?.route === "local" ? direction.localVoice : undefined;
+    if (
+      (args.engine && planned?.engine && args.engine !== planned.engine) ||
+      (args.voice && planned?.voice && args.voice !== planned.voice)
+    )
+      throw new CliErrorObject({
+        code: "INVALID_INPUT",
+        message: "Voice selection disagrees with pipeline/narrator-direction.json",
+      });
+    const voice = args.voice ?? planned?.voice;
+    const purpose = planned?.purpose ?? (args.purpose as "draft" | "production");
+    const engine =
+      args.engine ??
+      planned?.engine ??
+      (voice?.startsWith("supertonic:") || process.platform !== "darwin" ? "portable" : "apple");
+    if ((args.engine || args.prepare) && task !== "speech.synthesise")
+      throw new CliErrorObject({ code: "INVALID_INPUT", message: "--engine and --prepare belong to voiceover:local" });
+    if (args.prepare) {
+      if (engine !== "portable" || args.input || args.project || args.output)
+        throw new CliErrorObject({
+          code: "INVALID_INPUT",
+          message: "Use --engine portable --prepare without input, project or output",
+        });
+      return preparePortableVoice(args["dry-run"] === true);
+    }
     let input = args.input,
       language = args["source-language"] ?? args.language;
     if (!input && task === "speech.synthesise" && args.project) {
-      const pipeline = path.resolve("public/projects", args.project, "pipeline"),
-        storyboard = path.join(pipeline, "storyboard.json");
+      const storyboard = path.join(pipeline!, "storyboard.json");
       let units: { id: string; text: string }[];
-      if (existsSync(storyboard)) {
+      if (direction?.route !== "local" && existsSync(storyboard)) {
         const value = StoryboardSchema.parse(JSON.parse(boundedFile(storyboard).toString()));
         units = value.scenes.map((s) => ({ id: s.id, text: s.voiceoverText }));
       } else {
-        const value = ScriptSchema.parse(JSON.parse(boundedFile(path.join(pipeline, "script.json")).toString()));
+        const value = ScriptSchema.parse(JSON.parse(boundedFile(path.join(pipeline!, "script.json")).toString()));
         units = value.beats.map((b) => ({ id: b.id, text: b.text }));
         language ??= value.language;
       }
@@ -79,7 +117,7 @@ runScript(async () => {
       }
       if (!language) throw new Error("TTS language is required");
       // The input request is retained, so its provenance never points into a deleted temporary directory.
-      const retained = path.join(pipeline, "local-inputs", `tts-${objectHash({ language, units }).slice(0, 24)}.json`);
+      const retained = path.join(pipeline!, "local-inputs", `tts-${objectHash({ language, units }).slice(0, 24)}.json`);
       const text = JSON.stringify({ version: 1, kind: "scenes", sourceLanguage: language, units }) + "\n";
       if (!args["dry-run"]) {
         mkdirSync(path.dirname(retained), { recursive: true });
@@ -100,10 +138,20 @@ runScript(async () => {
             "public/projects",
             args.project,
             "pipeline/local-results",
-            `${task}-${objectHash({ source: fileHash(input), language, targetLanguage: args["target-language"], voice: args.voice, features: args.features, operations: args.operations, assistTask: args["assist-task"], purpose: args.purpose }).slice(0, 24)}.json`,
+            `${task}-${objectHash({ source: fileHash(input), language, targetLanguage: args["target-language"], voice, ...(task === "speech.synthesise" && engine === "portable" ? { engine } : {}), features: args.features, operations: args.operations, assistTask: args["assist-task"], purpose: args.purpose }).slice(0, 24)}.json`,
           )
         : undefined);
     if (!output) throw new Error("--output or --project is required");
+    if (task === "speech.synthesise" && engine === "portable")
+      return runPortableVoice({
+        input,
+        output,
+        language,
+        voice,
+        purpose,
+        dryRun: args["dry-run"] === true,
+        force: args.force === true,
+      });
     try {
       return await runAppleTask({
         task,
@@ -111,11 +159,11 @@ runScript(async () => {
         output,
         language,
         targetLanguage: args["target-language"],
-        voice: args.voice,
+        voice,
         features: args.features?.split(","),
         operations: args.operations?.split(","),
         assistTask: args["assist-task"] as "summarise" | "tags" | "chapters" | "shot-notes",
-        purpose: args.purpose as "draft" | "production",
+        purpose,
         dryRun: args["dry-run"],
         force: args.force,
       });
