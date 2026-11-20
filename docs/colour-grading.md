@@ -351,7 +351,7 @@ For each look the command applies the grade, solves a skin secondary that holds 
 - `looks.json`: every look's explanation and verdict;
 - `<look>.mp4` over the whole input, with `--render`.
 
-`--mood valence,arousal` or `--target target.json` (its duration-weighted mood) picks the six looks nearest that mood; `--list --mood` ranks all twelve with their distance. `--card` shows the looks on a synthetic test card instead of footage: a grey ramp, two hue sweeps, six skin tones on the skin line and four memory colours. The [Looks & colour](library/looks.md) page is generated from the looks with `--write-doc`, with card previews.
+`--mood valence,arousal` or `--target target.json` (its duration-weighted mood) picks the six looks nearest that mood; `--list --mood` ranks all twelve with their distance. `--card` shows the looks on a synthetic test card instead of footage: a grey ramp, two hue sweeps, six skin tones on the skin line and four memory colours. The [Looks & colour](library/looks.md) page is generated from the looks with `--write-doc`; `--card` renders its previews locally.
 
 The default grid shows the six that differ most: clean natural, teal and orange, warm print film, cool thriller, high-key commercial, neon music video. `--family` picks one family. A look that fails the gate on this material (neon on an already saturated blue frame, say) stays in the grid with its failures named; it is evidence, not a recommendation.
 

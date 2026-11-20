@@ -29,7 +29,7 @@ Last updated: 2026-11-20
 | `showcase/`, `community/` | Showcase validation, media plans, gallery and contributor statistics | [showcases](../../docs/showcases.md) |
 | `bench/` | Isolated harness runs, signed bundles, workflow outcome observers, deterministic verification and calibrated picture judging | [benchmark](../../docs/benchmark.md) |
 | `python.ts` | Locked Python/uv launch, isolated profiles and quality gates | [Python](../../docs/python-runtime.md) |
-| `cache-dir.ts` | Shared `~/.cache/agentbros` root, `AGENTBROS_MODEL_CACHE` override (legacy `AI_VIDEO_CREATOR_MODEL_CACHE` read when unset) and one-time legacy cache migration | [library reference](../../docs/library-reference.md) |
+| `cache-dir.ts` | Shared `~/.cache/agentbros` root, `AGENTBROS_MODEL_CACHE` override (deprecated `AI_VIDEO_CREATOR_MODEL_CACHE` still read when it is unset) and one-time legacy cache migration | [library reference](../../docs/library-reference.md) |
 | `leak-scan.ts` | Shared scanner and `loadLeakPatterns`: optional local-pattern merging, required for local maintainer checks, disabled in CI | [publishing](../../docs/publishing.md) |
 | `doctor/` | Environment checks behind `pnpm preflight` and `pnpm bootstrap` (`doctor/collect.ts`, probes only) | root `AGENTS.md` |
 | `setup/`, `harness/` | First-run setup: key registry (`setup/keys.ts`, matched to `.env.example`), plan scopes and user report (`setup/plan.ts`); harness wiring (`harness/`; hooks installer, `hooksStatus` in `harness/hooks.ts`, 2026-11-17) | [SETUP.md](../../SETUP.md), [harnesses](../../docs/harnesses.md) |

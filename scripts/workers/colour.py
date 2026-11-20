@@ -13,7 +13,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, NoReturn
 
 import numpy as np
 
@@ -30,7 +30,7 @@ MAX_STAT_PIXELS = 300_000
 YUV_PREFIXES = ("yuv", "nv", "p01", "p21", "y2", "uyvy", "yuyv", "v210")
 
 
-def fail(message: str) -> None:
+def fail(message: str) -> NoReturn:
     """Report a request error as JSON and exit non-zero."""
     sys.stdout.write(json.dumps({"ok": False, "error": message}) + "\n")
     raise SystemExit(2)

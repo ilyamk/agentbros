@@ -258,7 +258,7 @@ line-ending = "lf"
 
 [tool.ty.environment]
 python-version = "3.13"
-extra-paths = ["scripts/blender", "scripts/workers", "scripts/workers/blender", "scripts/blender/recipes"]
+extra-paths = ["scripts/blender", "scripts/workers/blender", "scripts/blender/recipes"]
 
 [tool.ty.src]
 include = ["**/*.py"]
