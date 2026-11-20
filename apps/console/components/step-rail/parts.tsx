@@ -1,5 +1,5 @@
 /**
- * Parts the concepts share: the origin badge (which route or playbook produced the steps, template or real), the
+ * Step rail parts: the origin badge (which route or playbook produced the steps, template or real), the
  * legend of the eight motions, and the step tooltip.
  */
 import type { ReactNode } from "react";
@@ -54,21 +54,6 @@ export function OriginBadge({ input, className }: { input: RailInput; className?
         </span>
       </TooltipContent>
     </Tooltip>
-  );
-}
-
-export function SourceLine({ input, className }: { input: RailInput; className?: string }) {
-  const { d, f } = useI18n();
-  return (
-    <span
-      className={cn("flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground", className)}
-    >
-      <span className="font-mono">{f(d.stepRail.route, { route: input.route })}</span>
-      <span aria-hidden="true">·</span>
-      <span className="font-mono">
-        {input.playbook ? f(d.stepRail.playbook, { playbook: input.playbook }) : d.stepRail.noPlaybook}
-      </span>
-    </span>
   );
 }
 

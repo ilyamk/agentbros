@@ -12,7 +12,7 @@ import { projectHref } from "@/lib/router";
 import { cn } from "@/lib/utils";
 import { DecisionCard } from "@/components/decision-card";
 import { EmptyState } from "@/components/empty-state";
-import { StepRailSwitch } from "@/components/step-rail-concepts/switch";
+import { StepRail } from "@/components/step-rail";
 import { StepStatusBadge } from "@/components/status";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -181,7 +181,7 @@ export function Canvas({ view }: { view: ProjectView }) {
           <h2 id="steps-heading" className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">
             {d.canvas.steps}
           </h2>
-          <StepRailSwitch view={view} selected={selected ?? current} onSelect={setSelected} label={d.canvas.steps} />
+          <StepRail view={view} selected={selected ?? current} onSelect={setSelected} label={d.canvas.steps} />
           {selectedStep ? <StepDetails step={selectedStep} view={view} /> : null}
         </section>
       ) : null}

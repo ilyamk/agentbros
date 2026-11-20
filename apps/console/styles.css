@@ -192,20 +192,18 @@
 }
 
 /*
- * Step rail concepts (2026-11-20, docs/console-steps.md): the one keyframe exception to the 150–250 ms transition rule,
- * pending the user's pick of a concept. Used only through `motion-safe:` utilities; the reduced-motion block above
- * clamps them to their end state (a drawn check, a still ring, no halo).
+ * Step rail (2026-11-20, docs/console-steps.md): the one keyframe exception to the 150–250 ms transition rule, so a
+ * step's status reads at a glance (a running ring traces itself, a gate pulses, a check draws in). Used only through
+ * `motion-safe:` utilities; the reduced-motion block above clamps them to their end state.
  */
 @theme {
   --animate-rail-trace: rail-trace 1.2s linear infinite;
   --animate-rail-crawl: rail-crawl 6s linear infinite;
   --animate-rail-draw: rail-draw 480ms cubic-bezier(0.2, 0, 0, 1) both;
   --animate-rail-pulse: rail-pulse 1.8s cubic-bezier(0.2, 0, 0, 1) infinite;
-  --animate-rail-glow: rail-glow 1.8s ease-in-out infinite;
   --animate-rail-shake: rail-shake 480ms ease-in-out 1 both;
   --animate-rail-pop: rail-pop 420ms cubic-bezier(0.2, 0, 0, 1) both;
   --animate-rail-enter: rail-enter 420ms cubic-bezier(0.2, 0, 0, 1) both;
-  --animate-rail-sweep: rail-sweep 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   @keyframes rail-trace {
     from {
@@ -242,15 +240,6 @@
       opacity: 0;
     }
   }
-  @keyframes rail-glow {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.45;
-    }
-  }
   @keyframes rail-shake {
     0%,
     100% {
@@ -284,14 +273,6 @@
     to {
       opacity: 1;
       transform: none;
-    }
-  }
-  @keyframes rail-sweep {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(250%);
     }
   }
 }

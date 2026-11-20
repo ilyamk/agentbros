@@ -1,13 +1,12 @@
 /**
- * Shared model of the step rail concepts (docs/console-steps.md): what every concept reads from a project view, the
- * one status → motion map all of them use, where the steps came from, keyboard movement and the steps that appeared
- * since the last render. Temporary until the user picks a concept; the winner replaces `components/step-rail.tsx`.
+ * Step rail model (docs/console-steps.md): what the rail reads from a project view, the status → motion map, where
+ * the steps came from, progress, keyboard movement and the steps that appeared after the rail mounted.
  */
-import { useEffect, useRef, type KeyboardEvent } from "react";
+import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import type { ProjectView, Route, StepRow, StepStatus } from "@contract";
 import { stepTone, type Tone } from "@/lib/status";
 
-/** What a concept renders: the steps, the current step and the route facts that say where the steps come from. */
+/** What the rail renders: the steps, the current step and the route facts that say where the steps come from. */
 export interface RailInput {
   steps: StepRow[];
   current?: string;
@@ -22,15 +21,7 @@ export const railInput = (view: ProjectView): RailInput => ({
   playbook: view.project.playbook,
 });
 
-export interface ConceptProps {
-  input: RailInput;
-  selected?: string;
-  onSelect?: (id: string) => void;
-  label: string;
-  className?: string;
-}
-
-/** One motion per status, the same in every concept. */
+/** One motion per status (the marker and the legend). */
 export const MOTIONS = ["orbit", "pulse", "check", "error", "stale", "skipped", "ready", "pending"] as const;
 export type Motion = (typeof MOTIONS)[number];
 
@@ -98,15 +89,13 @@ export function railProgress(input: RailInput): RailProgress {
   return { total, closed, position: index >= 0 ? index + 1 : undefined, currentStep, nextStep };
 }
 
-/** Ids that appeared since the previous render (none on the first one), so a concept can animate them in. */
+/**
+ * Ids that were not there when the rail mounted. They keep the mark, so their enter animation plays once on insertion
+ * and is never cut short by the next view update.
+ */
 export function useAddedSteps(steps: readonly StepRow[]): ReadonlySet<string> {
-  const seen = useRef<Set<string> | undefined>(undefined);
-  const previous = seen.current;
-  const added = new Set(previous ? steps.filter((step) => !previous.has(step.id)).map((step) => step.id) : []);
-  useEffect(() => {
-    seen.current = new Set(steps.map((step) => step.id));
-  });
-  return added;
+  const [initial] = useState(() => new Set(steps.map((step) => step.id)));
+  return useMemo(() => new Set(steps.filter((step) => !initial.has(step.id)).map((step) => step.id)), [steps, initial]);
 }
 
 /** Roving focus over `button[data-step]`: arrows, Home and End, one tab stop (WAI-ARIA toolbar pattern). */

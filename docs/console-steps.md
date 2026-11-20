@@ -1,31 +1,18 @@
-# Console steps: rail concepts and agent control
+# Console steps: the step rail and agent control
 
-Status: proposal (2026-11-20). Nothing here is shipped beyond the temporary concept preview; the user picks a concept first.
+Status: the rail is shipped (2026-11-20, the user's pick, concept A of three); the agent-control part below is a proposal.
 
-The project canvas's step rail (`apps/console/components/step-rail.tsx`) had three problems the user named: too little spacing, labels wrapping onto two lines, and no way to tell how many steps there are, where they come from or what each icon means. This page records the three concepts on preview and proposes how agents should drive steps so the rail stays truthful.
+The project canvas's step rail had three problems the user named: too little spacing, labels wrapping onto two lines, and no way to tell how many steps there are, where they come from or what each icon means. Three concepts were shown side by side; the user chose A ("Orbit"), and the other two and the old rail were removed.
 
-## Concept preview (temporary)
+## The rail
 
-The rail section carries a switcher (`apps/console/components/step-rail-concepts/switch.tsx`). Its choice lives in the query string, so a link reproduces it:
+Code: `apps/console/components/step-rail/` (`index.tsx` the rail, `marker.tsx` the status marker, `model.ts` motion map, origin, progress, keys; `parts.tsx` origin badge, legend, tooltip). See every status at once with `?fixture=view-step-rail`.
 
-| Query                                            | Shows                                                                                                                                                                   |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `rail=current` (default)                         | Today's rail, unchanged                                                                                                                                                 |
-| `rail=a`                                         | **A · Orbit**: horizontal track with even columns, a ring per step, connectors that fill as steps close, one-line labels with the status under them                     |
-| `rail=b`                                         | **B · Progress bar**: a large `n / total`, one segmented bar (a segment per step), a "Now → Next" line; built for 15–20-step film chains                                |
-| `rail=c`                                         | **C · Checklist**: a vertical list with status in words, owner, duration, gate and the first reason on the current row, under a source card                             |
-| `rail=all`                                       | All four, one above the other                                                                                                                                           |
-| `railData=live` (default) / `every` / `simulate` | This project's view / one step per `StepStatus` / a scripted run that advances, opens a gate, fails and recovers, marks a step stale, adds a step mid-run and skips one |
-
-Fixture mode needs no project or token: `http://127.0.0.1:<port>/?fixture=view-step-rail&rail=all&railData=simulate#/projects/step-rail-demo`. The `view-step-rail` fixture is a `project:new` project on the timeline route, showing the template finish the user saw on a model-generation job.
-
-All concepts share one model (`model.ts`):
-
-- **One motion per status.** running: an arc traces the outline like a loader; awaiting-gate: a halo pulses; done: the check draws in when the step closes; failing: one shake, then a solid red ring (blocked and invalid share the ring with their own icons); stale and unsealed: a dashed ring crawls slowly; skipped: muted with a struck-through label; ready and pending: the step number (pending dashed). The current step pops when it advances, and a step that appears after the first render animates in. Every animation is a `motion-safe:` utility on keyframes in `styles.css`, so `prefers-reduced-motion` shows the end state.
-- **Truthful count and origin.** Each concept shows "Step n of total", "k of total closed" and an origin badge: _Template steps_ (dashed amber), _Film chain_, _Footage chain_ or _Route steps_, with a tooltip naming the route and the playbook and saying what the origin means. The origin is derived in the browser (see the gaps below).
-- **Legible icons.** A "What the icons mean" legend shows the eight motions live; every step has a tooltip with its full title, status, first reason and owner. Labels never wrap: one line, truncated, full text in the tooltip.
-
-When the user picks, the winner replaces `step-rail.tsx`, the switcher, the demo data and the `view-step-rail` fixture go, and the console's motion rule (`apps/console/AGENTS.md`) is amended for the motions kept.
+- **Layout.** A horizontal track of even columns (at least 8 rem each; the track scrolls sideways when the pane is narrower and keeps the current step in view). One ring per step, connectors that fill when a step closes (a third filled out of the current step), one-line labels truncated with the full title in the tooltip, the status in words under each label, and "Gate" on a step that needs the user's approval.
+- **One motion per status.** running: an arc traces the ring like a loader; awaiting-gate: a halo pulses; done: the check draws in when the step closes; failing: one shake, then a solid red ring (blocked and invalid share the ring with their own icons); stale and unsealed: a dashed ring crawls slowly; skipped: muted with a struck-through label; ready and pending: the step number (pending dashed). The current step pops when it advances; a step that appears after the rail mounted animates in once. Every animation is a `motion-safe:` utility on the `rail-*` keyframes in `styles.css`, so `prefers-reduced-motion` shows the end state.
+- **Truthful count and origin.** The header shows "Step n of total", "k of total closed", an overall bar and an origin badge: _Template steps_ (dashed amber), _Film chain_, _Footage chain_ or _Route steps_, with a tooltip naming the route and the playbook and saying what the origin means. The origin is derived in the browser (see the gaps below).
+- **Legible icons.** "What the icons mean" shows the eight motions live; every step has a tooltip with its title, status, first reason and owner.
+- **Keyboard.** One tab stop; arrows, Home and End move; `aria-current="step"` on the current step.
 
 ## How steps reach the rail today
 
@@ -43,10 +30,10 @@ The journal already carries step facts: every event has an optional `step` (from
 ## Gaps
 
 1. **Template steps on any timeline project.** A `project:new` project whose real work is a model generation (a face swap, an image set) still shows render → editorial QA → delivery check. Nothing says these are the generic finish rather than the work.
-2. **No origin in the contract.** `StepRow` has no source, and `ProjectView` drops `RouteInfo.detectedBy`; the concepts infer the origin from the route and step ids.
+2. **No origin in the contract.** `StepRow` has no source, and `ProjectView` drops `RouteInfo.detectedBy`; the rail infers the origin from the route and step ids.
 3. **`running` is a guess on the timeline route.** It means "the next step and the action is not `ask`"; nothing confirms an agent is working on it.
 4. **Failures and staleness do not surface.** `timelineNext` action `fix` (QA errors) and stale renders map to `running`, never to `failing` or `stale`.
-5. **No close time or duration** on timeline steps, so the done list and concept C show none.
+5. **No close time or duration** on timeline steps, so the done list shows none.
 6. **No step can be added during work.** Steps are recomputed from fixed lists; a critic round, an extra format or a generation job never appears as a step, and no journal event announces one.
 
 ## Proposal: agents drive steps through events, the projector stays the source
@@ -76,4 +63,4 @@ Commands outside the film and footage chains (`render`, `qa:editorial`, `deliver
 3. `timelineNext` actions map faithfully: `fix` → `failing`, stale render → `stale`, `ask` → `awaiting-gate`, `run` → `ready` until a `cli.start` or `agent.start` for that step arrives.
 4. A step whose last `cli.start` has no `cli.end` after the process ended is `failing` with "interrupted".
 
-**Tests:** projector unit tests per route for each event, a `view-step-rail` fixture per origin, and the console tests already added for each concept's statuses (`apps/console/components/step-rail-concepts/concepts.test.tsx`).
+**Tests:** projector unit tests per route for each event, a fixture per origin, and the rail's existing status tests (`apps/console/components/step-rail/step-rail.test.tsx`).
