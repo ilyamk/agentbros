@@ -1548,6 +1548,75 @@ export const CompositionInfoSchema = z.strictObject({
   height: z.number().int().positive(),
 });
 
+/**
+ * One paid model generation (a job of `generate:model` and the other provider commands, 2026-11-20): the job store's
+ * record with the provider's error, the money it holds and the result file once published. `output` is set only when
+ * the job is validated or published and the file exists; a failed or running job never points at its planned path.
+ * The prompt is the request's own `prompt` field; uploaded or signed provider URLs never enter the view.
+ */
+export const GenerationSchema = z.strictObject({
+  id: Text(128),
+  provider: Text(64),
+  endpoint: Text(256).optional(),
+  model: Text(256).optional(),
+  step: Text(64).optional(),
+  state: JobStateSchema,
+  /** The provider's or the store's error text, as written ("rejected by content moderation (nsfw)"). */
+  error: Text(2000).optional(),
+  /** Money still held for the job: a published job without a receipt is reserved, not settled (never free). */
+  reservedUsd: UsdSchema,
+  /** Settled cost (receipt less refunds), only when a receipt exists. */
+  costUsd: UsdSchema.optional(),
+  /** The provider confirmed it charged nothing (a refunded or released failure). */
+  noCharge: z.boolean().optional(),
+  priceKnown: z.boolean(),
+  /** The quote's expected price, for a job not yet billed. */
+  quotedUsd: UsdSchema.optional(),
+  createdAt: IsoTimeSchema.optional(),
+  submittedAt: IsoTimeSchema.optional(),
+  finishedAt: IsoTimeSchema.optional(),
+  prompt: z.string().max(8000).optional(),
+  resolution: Text(32).optional(),
+  /** The model preparation the request was built from (`pipeline/model-preparations/<id>/`). */
+  preparation: Text(80).optional(),
+  /** Project-relative file the job publishes to (planned while it runs). */
+  outputPath: RelativePathSchema.optional(),
+  output: MediaRefSchema.optional(),
+  references: z.array(MediaRefSchema).max(16).optional(),
+});
+export type Generation = z.infer<typeof GenerationSchema>;
+
+/** The latest model preparation (`model:prepare`, 2026-11-20): what the request will say and what it was approved on. */
+export const ModelPreparationViewSchema = z.strictObject({
+  id: Text(80),
+  createdAt: IsoTimeSchema.optional(),
+  endpoint: Text(256).optional(),
+  mode: Text(64).optional(),
+  prompt: z.string().max(8000).optional(),
+  resolution: Text(32).optional(),
+  /** References and board samples (images under the preparation folder or the project's assets). */
+  references: z.array(MediaRefSchema).max(16),
+  board: z.array(MediaRefSchema).max(16),
+  source: MediaRefSchema.optional(),
+  approval: z.strictObject({ at: IsoTimeSchema.optional(), userStatement: z.string().max(2000).optional() }).optional(),
+  rights: z.strictObject({ status: Text(64), userStatement: z.string().max(2000).optional() }).optional(),
+  /** Every preparation in the project (only the latest is shown). */
+  count: Count,
+});
+export type ModelPreparationView = z.infer<typeof ModelPreparationViewSchema>;
+
+export const GenerationsSchema = z.strictObject({
+  /** Newest first. */
+  jobs: z.array(GenerationSchema).max(200),
+  preparation: ModelPreparationViewSchema.optional(),
+  /**
+   * The project's route has no material of its own (a `project:new` template with no code, render, music or voice)
+   * while it has generations: the template's render is not the current step and Studio is not offered.
+   */
+  templateOnly: z.boolean().optional(),
+});
+export type Generations = z.infer<typeof GenerationsSchema>;
+
 export const ProjectViewSchema = z
   .strictObject({
     v: z.literal(1),
@@ -1625,6 +1694,8 @@ export const ProjectViewSchema = z
     campaign: CampaignMaterialSchema.optional(),
     /** Footage route only: the recording's material for the footage panels (WP12 amendment). */
     footage: FootageMaterialSchema.optional(),
+    /** Paid model generations and the latest model preparation, on every route (2026-11-20). */
+    generations: GenerationsSchema.optional(),
     stepGuard: z
       .strictObject({
         violations: Count,
@@ -1660,6 +1731,8 @@ export const ProjectSummarySchema = z.strictObject({
   waiting: Count,
   control: ControlStateSchema,
   spentUsd: UsdSchema,
+  /** Money held by unsettled jobs (2026-11-20); shown beside spent, never folded into it. */
+  reservedUsd: UsdSchema.optional(),
   ceilingUsd: UsdSchema.optional(),
   latestRender: MediaRefSchema.optional(),
   updatedAt: IsoTimeSchema,

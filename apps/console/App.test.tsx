@@ -71,7 +71,7 @@ describe("console shell", () => {
     const top = await screen.findByRole("banner", { name: "Project" });
     expect(within(top).getByRole("heading", { level: 1 }).textContent).toBe("Acme launch promo");
     expect(top.textContent).toContain("motion-engineer is working · 6 min");
-    expect(top.textContent).toContain("$3.10 of $10.00");
+    expect(top.textContent).toContain("$3.10 spent · $1.40 reserved of $10.00");
     expect(top.textContent).toContain("Interactive");
     expect(screen.getByRole("heading", { name: "Waiting for you (1)" })).toBeTruthy();
     const rail = screen.getByRole("navigation", { name: "Steps" });

@@ -116,7 +116,8 @@ export function ProjectPage({
         </nav>
         {snapshot ? null : (
           <div className="ms-auto flex flex-wrap items-center gap-2 py-1.5">
-            <StudioHeaderButton project={project} />
+            {/* A project that only holds generations has no composition to open (2026-11-20). */}
+            {view.generations?.templateOnly ? null : <StudioHeaderButton project={project} />}
             <EditingTableActions view={view} />
           </div>
         )}

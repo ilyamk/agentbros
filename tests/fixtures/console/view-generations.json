@@ -1,0 +1,227 @@
+{
+  "v": 1,
+  "revision": 0,
+  "generatedAt": "2026-11-20T12:00:00Z",
+  "project": {
+    "id": "swap-demo",
+    "route": "timeline",
+    "title": "Face swap",
+    "formats": [
+      "vertical"
+    ],
+    "createdAt": "2026-11-20T10:42:37Z"
+  },
+  "control": {
+    "state": "running"
+  },
+  "autonomy": {
+    "mode": "interactive",
+    "ceilingUsd": 9,
+    "source": "budget"
+  },
+  "steps": [
+    {
+      "id": "render",
+      "title": "Render",
+      "status": "pending",
+      "reasons": [
+        "project.json is still the project:new template (no film code, render, music or voiceover); the generations below are this project's material."
+      ]
+    },
+    {
+      "id": "qa",
+      "title": "Editorial QA",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery check",
+      "status": "pending",
+      "reasons": []
+    },
+    {
+      "id": "done",
+      "title": "Done",
+      "status": "pending",
+      "reasons": []
+    }
+  ],
+  "waiting": [],
+  "agents": {
+    "today": []
+  },
+  "money": {
+    "ceilingUsd": 9,
+    "reservedUsd": 3.68,
+    "spentUsd": 0,
+    "unknownPriced": 0,
+    "byProvider": [
+      {
+        "provider": "higgsfield",
+        "spentUsd": 0,
+        "reservedUsd": 3.68,
+        "jobs": 3,
+        "unknownPriced": 0
+      }
+    ],
+    "jobs": [
+      {
+        "id": "higgsfield:running",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+        "step": "assets",
+        "state": "running",
+        "reservedUsd": 1.47,
+        "priceKnown": true,
+        "submittedAt": "2026-11-20T11:43:37Z",
+        "cancellable": true,
+        "outputs": [
+          "assets/part2-720p.mp4"
+        ]
+      },
+      {
+        "id": "higgsfield:published",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+        "step": "assets",
+        "state": "published",
+        "reservedUsd": 2.21,
+        "priceKnown": true,
+        "submittedAt": "2026-11-20T11:11:01Z",
+        "finishedAt": "2026-11-20T11:39:55Z",
+        "cancellable": false,
+        "outputs": [
+          "assets/face-720p.mp4"
+        ]
+      },
+      {
+        "id": "higgsfield:failed",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+        "step": "assets",
+        "state": "failed",
+        "reservedUsd": 0,
+        "priceKnown": true,
+        "submittedAt": "2026-11-20T10:51:24Z",
+        "finishedAt": "2026-11-20T11:00:38Z",
+        "cancellable": false,
+        "outputs": [
+          "assets/face-object-swap.mp4"
+        ]
+      }
+    ]
+  },
+  "media": {},
+  "assets": [],
+  "qa": {
+    "findings": []
+  },
+  "cards": [],
+  "advisories": [],
+  "generations": {
+    "jobs": [
+      {
+        "id": "higgsfield:running",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+        "step": "assets",
+        "state": "running",
+        "reservedUsd": 1.47,
+        "priceKnown": true,
+        "quotedUsd": 1.47,
+        "createdAt": "2026-11-20T11:43:37Z",
+        "submittedAt": "2026-11-20T11:43:37Z",
+        "prompt": "Replace the man's face with the face from the reference photos. Keep everything else in the video unchanged.",
+        "resolution": "720p",
+        "outputPath": "assets/part2-720p.mp4",
+        "references": [
+          {
+            "path": "assets/imported/front.jpg",
+            "kind": "image",
+            "label": "image"
+          }
+        ]
+      },
+      {
+        "id": "higgsfield:published",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu-light/motion-transfer/v1.0",
+        "step": "assets",
+        "state": "published",
+        "reservedUsd": 2.21,
+        "priceKnown": true,
+        "quotedUsd": 2.21,
+        "createdAt": "2026-11-20T11:11:01Z",
+        "submittedAt": "2026-11-20T11:11:01Z",
+        "finishedAt": "2026-11-20T11:39:55Z",
+        "prompt": "Replace the man's face with the face from the reference photos. Keep everything else in the video unchanged.",
+        "resolution": "720p",
+        "outputPath": "assets/face-720p.mp4",
+        "output": {
+          "path": "assets/face-720p.mp4",
+          "kind": "video",
+          "label": "face-720p.mp4"
+        },
+        "references": [
+          {
+            "path": "assets/imported/front.jpg",
+            "kind": "image",
+            "label": "image"
+          }
+        ]
+      },
+      {
+        "id": "higgsfield:failed",
+        "provider": "higgsfield",
+        "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+        "step": "assets",
+        "state": "failed",
+        "error": "rejected by content moderation (nsfw)",
+        "reservedUsd": 0,
+        "noCharge": true,
+        "priceKnown": true,
+        "quotedUsd": 7.58,
+        "createdAt": "2026-11-20T10:51:17Z",
+        "submittedAt": "2026-11-20T10:51:24Z",
+        "finishedAt": "2026-11-20T11:00:38Z",
+        "prompt": "In @Video1, change only the face and hair of the man in the teal shirt. Match the source lighting, expression, head turns and lip movement in every frame.",
+        "resolution": "720p",
+        "preparation": "face-v2",
+        "outputPath": "assets/face-object-swap.mp4"
+      }
+    ],
+    "preparation": {
+      "id": "face-v2",
+      "createdAt": "2026-11-20T10:46:27Z",
+      "endpoint": "higgsfield/genjutsu/object-swap/v1.0",
+      "mode": "object-swap",
+      "prompt": "In @Video1, change only the face and hair of the man in the teal shirt. Match the source lighting, expression, head turns and lip movement in every frame.\nReference bindings: @Image1 (me, front).",
+      "resolution": "720p",
+      "references": [
+        {
+          "path": "assets/imported/front.jpg",
+          "kind": "image",
+          "label": "me · front"
+        }
+      ],
+      "board": [
+        {
+          "path": "pipeline/model-preparations/face-v2/source-1.png",
+          "kind": "image",
+          "label": "source-1.png"
+        }
+      ],
+      "approval": {
+        "at": "2026-11-20T10:47:07Z",
+        "userStatement": "Yes, approved; for me only"
+      },
+      "rights": {
+        "status": "study-only",
+        "userStatement": "For me only"
+      },
+      "count": 2
+    },
+    "templateOnly": true
+  }
+}

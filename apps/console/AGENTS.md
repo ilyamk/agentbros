@@ -1,6 +1,6 @@
 # Studio console UI — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 The browser half of the studio console ([guide](../../docs/console.md), [RFC 0004](../../docs/rfcs/0004-studio-console.md)): Vite, React 19, Tailwind v4, shadcn/ui on `radix-ui`. Not Remotion code: the determinism law does not apply, but every animation is a 150–250 ms CSS transition (`starting:` for enter), off under `prefers-reduced-motion`. Never imported from `src/`.
 
@@ -42,6 +42,8 @@ The browser half of the studio console ([guide](../../docs/console.md), [RFC 000
 - 2026-11-18: document tiles open `media/document-dialog.tsx`. The live API decides whether the user may edit the file, and a save refreshes the pending decision.
 
 - 2026-11-18: `shell/hooks-banner.tsx` shows a banner at the top of every page while either harness's hooks are `missing` or `stale` (live clients only, not in snapshot mode). Its dialog explains why hooks matter, shows the status, has Check again, Install or Update (the click is the user's yes, after the plan and command are shown) and Close. Its close button hides it for good in this browser (`agentbros.console.hooksBannerDismissed` in localStorage). The banner, its dialog and Settings read one status through `shell/hooks-state.ts`; call `refreshHooks` after an install.
+
+- 2026-11-20: `panels/generic/generations.tsx` shows `view.generations` (paid model jobs newest first and the latest model preparation) and plays a job's `output` only, never its planned `outputPath`; it leads the canvas when `generations.templateOnly`, which also hides `StudioHeaderButton`. Spend lines go through `spendText` (`panels/generic/money.tsx`): reserved beside spent whenever above zero. History rows come from `collapseRepeatedRuns` (`panels/generic/history.tsx`), which folds consecutive identical successful runs; the journal is untouched. Fixture `?fixture=view-generations`; tests `panels/generic/generations.test.tsx`.
 
 - Every UI string is a key in all three dictionaries (`i18n/i18n.test.ts` fails on a missing key, placeholder or plural form). User and agent text is shown as written, never translated; Markdown goes through `lib/markdown.tsx` (React elements only, no HTML).
 - Status always pairs colour with an icon (`lib/status.ts`); text contrast WCAG AA in both themes.
