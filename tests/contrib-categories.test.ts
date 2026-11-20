@@ -11,6 +11,7 @@ import {
   loadCategories,
   matchesPath,
 } from "../src/lib/contrib/categories";
+import { contributionCategories } from "../src/lib/contrib/gates";
 
 const tracked = execFileSync("git", ["ls-files", "-z"], { encoding: "utf8" }).split("\0").filter(Boolean);
 test("twenty unique categories validate and every tracked path maps", () => {
@@ -67,4 +68,23 @@ test("matching includes dot paths, root instructions and specific category paths
     ".agents/skills/creative-studio/references/creative-rubric-v1.md",
   ])
     assert.ok(matchesPath(file, DEFAULT_PROTECTED.paths), file);
+});
+
+test("catch-all categories apply only when a change entry declares them", () => {
+  // Bot routes (Dependabot, release, models-refresh) carry no change entry; "**" must not turn them into a fix.
+  const file = (path: string, status = "M", content?: string) => ({
+    path,
+    status,
+    additions: 1,
+    deletions: 0,
+    binary: false,
+    ...(content === undefined ? {} : { content }),
+  });
+  const bump = contributionCategories([file(".github/workflows/ci.yml")]);
+  assert.ok(!bump.includes("fix") && !bump.includes("security"), bump.join(","));
+  assert.deepEqual(contributionCategories([file("pnpm-lock.yaml")]), ["test-ci"]);
+  const entry = "---\ncategory: fix\nbump: patch\nbreaking: false\npr: 0\nauthors: [someone]\n---\nFix it.\n";
+  assert.deepEqual(contributionCategories([file("src/lib/cli/index.ts"), file(".changes/fix-it.md", "A", entry)]), [
+    "fix",
+  ]);
 });

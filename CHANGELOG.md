@@ -124,6 +124,8 @@
 
 ### Bug fixes
 
+- category-gates no longer fails every Dependabot, release and models-refresh PR: without a change entry the catch-all fix and security categories (paths "**") matched every file, so a dependency bump needed a failing-on-base test. Catch-all categories now apply only when a change entry declares them.
+
 - Split autoclose closures into closed:slop and closed:process, count slop over 90 days, and limit appeals to bot closures and the appealed rule
 
 - Collect dependency licence notices and validate inventory freshness in CI and public exports
@@ -204,7 +206,7 @@
 
 - CLA.md now documents the short-form signing statement the bot accepts, and coding-agent co-author trailers (Claude Code, Codex, Copilot, Cursor) listed in contrib/agent-coauthors.json count as the submitting human's Contribution.
 
-- CodeQL's init, analyze and upload-sarif actions move to v4.39.3 together (pinned to commit 33d7b85), and Dependabot now groups them, since a split bump leaves CodeQL on mismatched majors.
+- CodeQL's init, analyze and upload-sarif actions move to v4.39.3 together (pinned to commit 33d7b85), and Dependabot now groups them, since a split bump leaves CodeQL on mismatched majors. ([#19](https://github.com/ilyamk/agentbros/pull/19))
 
 - Launch-ready contribution automation: a tier-3 override for the maintainer (no protected-path block, never autoclosed, can `/unclaim`), a Dependabot intake route, CLA signatures by the `CLA.md` statement bound to the current `CLA.md` blob with refusals answered on the PR, releases triggered by the push to `main`, separate reviewer-gated `release` and unattended `automation` environments, a seven-day reminder before closing unapproved protected-path changes, early comment filters and per-source concurrency keys, job timeouts, read-only job tokens for App-token pushes, rebase-and-retry for bot pushes to `main` and a nightly whole-tree leak scan.
 
