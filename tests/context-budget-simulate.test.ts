@@ -187,9 +187,11 @@ test("worst rounds multiply critic, fixer and fan-out loops by stop.maxRounds", 
  * Lower a ceiling when the run shrinks; raising one needs the context-growth review in docs/context-budget.md.
  * 2026-11-17: explainer raised for the narration step it now runs (117,961: one owner dispatch, two user asks, the
  * narration section, and the measured-takes input of four later briefs); the other routes skip it and are unchanged.
+ * 2026-11-21: product-promo raised for the boot row only (107,728): the colour-grading skill and colourist agent
+ * descriptions add 32 tokens; needs the context-growth-approved label (RFC 0001 §4.2).
  */
 const RUN_CEILINGS: Record<string, number> = {
-  "product-promo": 107_700,
+  "product-promo": 107_750,
   explainer: 118_500,
   "shorts-from-long": 81_500,
 };
