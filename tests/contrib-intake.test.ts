@@ -80,6 +80,22 @@ test("a library PR can include its required playbook, documentation and regressi
     [],
   );
 });
+test("a library PR carries the regenerated API surface without leaving its category", () => {
+  assert.deepEqual(
+    rules(
+      input({
+        prBody: body("library"),
+        changedFiles: [
+          file("src/motion/library/new-block.tsx"),
+          file("docs/library/catalogue.json"),
+          file("docs/api/surface.json"),
+          file(".changes/repair.md", { status: "A", content: entry("library") }),
+        ],
+      }),
+    ),
+    [],
+  );
+});
 test("tier zero supporting instruction edits need protected-path approval, not an instructions category", () => {
   const change = input({
     prBody: body("audio"),

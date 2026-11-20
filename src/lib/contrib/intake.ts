@@ -45,7 +45,8 @@ export const IntakeContextSchema = z
   .strict();
 export const sizeClass = (lines: number): Size => (lines <= 300 ? "S" : lines <= 1000 ? "M" : "L");
 const sizes: Size[] = ["S", "M", "L"];
-const generated = ["docs/library/catalogue.json", "docs/film-types.md", "CREDITS.md"];
+// docs/api/surface.json follows the library's block props: CI requires it fresh, so a library PR must carry it.
+const generated = ["docs/library/catalogue.json", "docs/api/surface.json", "docs/film-types.md", "CREDITS.md"];
 /** Generated files, plus the per-type pages `film:route --write-doc` writes beside docs/film-types.md. */
 const isGenerated = (file: string): boolean => generated.includes(file) || /^docs\/film-types\/[a-z-]+\.md$/.test(file);
 const media =
