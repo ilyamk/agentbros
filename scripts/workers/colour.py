@@ -18,8 +18,8 @@ from typing import Any
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import colour_maths as cm  # noqa: E402
-import colour_scopes as sc  # noqa: E402
+import colour_maths as cm
+import colour_scopes as sc
 
 FFMPEG = "ffmpeg"
 FFPROBE = "ffprobe"
@@ -48,7 +48,20 @@ def run(cmd: list[str]) -> bytes:
 
 def probe(path: str) -> dict[str, Any]:
     """Stream facts that decide decoding: size, pixel format, colour tags, duration and frame rate."""
-    raw = run([FFPROBE, "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=codec_name,width,height,pix_fmt,color_space,color_range,color_transfer,color_primaries,r_frame_rate,duration:format=duration,format_name", "-of", "json", path])
+    raw = run(
+        [
+            FFPROBE,
+            "-v",
+            "error",
+            "-select_streams",
+            "v:0",
+            "-show_entries",
+            "stream=codec_name,width,height,pix_fmt,color_space,color_range,color_transfer,color_primaries,r_frame_rate,duration:format=duration,format_name",
+            "-of",
+            "json",
+            path,
+        ]
+    )
     data = json.loads(raw)
     if not data.get("streams"):
         fail(f"{path}: no video stream")
@@ -293,7 +306,7 @@ def skin_stats(rgb: np.ndarray, region_mask: np.ndarray | None = None) -> dict[s
     return out
 
 
-def statistics(media: Media, request: dict[str, Any]) -> dict[str, Any]:  # noqa: PLR0914 -- one flat measurement record.
+def statistics(media: Media, request: dict[str, Any]) -> dict[str, Any]:
     """The numbers a colourist reads off the scopes."""
     px = media.pixels()
     y = cm.luma(px)
@@ -524,7 +537,13 @@ def zone_delta(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
         za, zb = a["zones"][zone], b["zones"][zone]
         lab_a = np.array([za["L"], za["a"], za["b"]])
         lab_b = np.array([zb["L"], zb["a"], zb["b"]])
-        out[zone] = {"dL": round(za["L"] - zb["L"], 3), "da": round(za["a"] - zb["a"], 3), "db": round(za["b"] - zb["b"], 3), "dC": round(za["C"] - zb["C"], 3), "deltaE2000": round(float(cm.delta_e_2000(lab_a, lab_b)), 3)}
+        out[zone] = {
+            "dL": round(za["L"] - zb["L"], 3),
+            "da": round(za["a"] - zb["a"], 3),
+            "db": round(za["b"] - zb["b"], 3),
+            "dC": round(za["C"] - zb["C"], 3),
+            "deltaE2000": round(float(cm.delta_e_2000(lab_a, lab_b)), 3),
+        }
     out["meanDeltaE2000"] = round(float(np.mean([out[z]["deltaE2000"] for z in ("shadows", "mids", "highlights")])), 3)
     return out
 
@@ -549,7 +568,11 @@ def paired_delta(a: Media, b: Media, *, force: bool) -> dict[str, Any]:
         corr.append(float(np.corrcoef(ya, yb)[0, 1]) if ya.std() > 1e-6 and yb.std() > 1e-6 else 0.0)  # noqa: PLR2004 -- flat frame.
     de = np.concatenate(des)
     alignment = float(np.mean(corr))
-    out = {"available": True, "lumaCorrelation": round(alignment, 4), "deltaE2000": {"mean": round(float(de.mean()), 3), "median": round(float(np.median(de)), 3), "p95": round(float(np.percentile(de, 95)), 3)}}
+    out = {
+        "available": True,
+        "lumaCorrelation": round(alignment, 4),
+        "deltaE2000": {"mean": round(float(de.mean()), 3), "median": round(float(np.median(de)), 3), "p95": round(float(np.percentile(de, 95)), 3)},
+    }
     if alignment < 0.6 and not force:  # noqa: PLR2004 -- frames do not show the same picture.
         out["reliable"] = False
         out["reason"] = "frames are not aligned (luma correlation below 0.6); trust the zone comparison"
@@ -683,7 +706,7 @@ def fit_match(source: np.ndarray, target: np.ndarray, method: str, paired_pairs:
     if np.max(np.abs(xs - ys)) < 0.01 or np.any(np.diff(xs) < 0.01):  # noqa: PLR2004 -- under ten 10-bit codes, or degenerate.
         return p, None
     points = [[0.0, 0.0], *[[round(float(x), 4), round(float(y), 4)] for x, y in zip(xs, ys, strict=True)], [1.0, 1.0]]
-    points = [pt for i, pt in enumerate(points) if i == 0 or pt[0] > points[i - 1][0] + 0.005]  # noqa: PLR2004 -- distinct x.
+    points = [pt for i, pt in enumerate(points) if i == 0 or pt[0] > points[i - 1][0] + 0.005]
     curves = {"master": points}
     before = float(np.sum(residual_stats(p) ** 2))
     refined = least_squares(lambda q: residual_stats(q, curves), p, bounds=(LOWER, UPPER), max_nfev=200)
@@ -779,7 +802,12 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
         graded = cm.apply_grade(a.frames[index], grade)
         rows.append([sc.frame_tile(a.frames[index], "input"), sc.frame_tile(graded, "graded (match)"), sc.frame_tile(b.frames[index], "reference")])
     preview = out_dir / "match-preview.png"
-    sc.write_png(str(preview), sc.grid(rows, (640, 300), f"Match preview  {Path(a.path).name} -> {Path(b.path).name}  zone dE2000 {metrics['zoneDeltaE2000Before']['mean']:.2f} -> {metrics['zoneDeltaE2000After']['mean']:.2f}"))
+    sc.write_png(
+        str(preview),
+        sc.grid(
+            rows, (640, 300), f"Match preview  {Path(a.path).name} -> {Path(b.path).name}  zone dE2000 {metrics['zoneDeltaE2000Before']['mean']:.2f} -> {metrics['zoneDeltaE2000After']['mean']:.2f}"
+        ),
+    )
     return {"ok": True, "grade": grade, "method": method, "strength": strength, "metrics": metrics, "input": a.describe(), "reference": b.describe(), "files": {"preview": str(preview)}}
 
 
@@ -811,7 +839,7 @@ def detect_cuts(path: str, info: dict[str, Any], tags: dict[str, Any], threshold
     return cuts
 
 
-def op_shots(request: dict[str, Any]) -> dict[str, Any]:  # noqa: PLR0914 -- one record per shot.
+def op_shots(request: dict[str, Any]) -> dict[str, Any]:
     """Measure every shot (or clip), compare each with the hero, and optionally solve a match grade per shot."""
     segments: list[dict[str, Any]] = []
     if request.get("detect"):
@@ -878,7 +906,11 @@ def op_shots(request: dict[str, Any]) -> dict[str, Any]:  # noqa: PLR0914 -- one
         "ok": True,
         "hero": hero_label,
         "shots": shots,
-        "consistency": {"maxDeltaE2000": round(max(values), 3) if values else 0.0, "medianDeltaE2000": round(float(np.median(values)), 3) if values else 0.0, "outOfTolerance": sum(1 for s in shots if s["outOfTolerance"])},
+        "consistency": {
+            "maxDeltaE2000": round(max(values), 3) if values else 0.0,
+            "medianDeltaE2000": round(float(np.median(values)), 3) if values else 0.0,
+            "outOfTolerance": sum(1 for s in shots if s["outOfTolerance"]),
+        },
         "files": {"sheet": str(sheet)},
     }
 
@@ -918,7 +950,195 @@ def op_selftest(_request: dict[str, Any]) -> dict[str, Any]:
     return {"ok": True, "deltaE2000": [round(float(v), 4) for v in computed], "expected": [float(v) for v in pairs[:, 6]], "redAngleDeg": round(float(cm.vectorscope_angle(red[1], red[2])), 3)}
 
 
-OPERATIONS = {"scopes": op_scopes, "compare": op_compare, "match": op_match, "shots": op_shots, "bake": op_bake, "selftest": op_selftest}
+# ---------------------------------------------------------------------------------------------------------------
+# Dynamic windows: tracking and mask rendering
+
+
+def stream_frames(path: str, width: int, height: int, fmt: str = "rgb24", start: float = 0.0) -> subprocess.Popen[bytes]:
+    """Decode every frame (scaled) as a raw pipe."""
+    seek = ["-ss", f"{start:.4f}"] if start > 0 else []
+    return subprocess.Popen(  # noqa: S603 -- literal argument list, no shell.
+        [FFMPEG, "-v", "error", "-nostdin", *seek, "-i", path, "-vf", f"scale={width}:{height}:flags=area", "-f", "rawvideo", "-pix_fmt", fmt, "-"],
+        stdout=subprocess.PIPE,
+    )
+
+
+def shot_bounds(frames: list[np.ndarray], anchor: int, threshold: float) -> tuple[int, int]:
+    """First and one-past-last frame of the shot containing `anchor`: windows are tracked inside one shot.
+
+    A cut is a jump in the mean absolute difference of 64-pixel-wide thumbnails above `threshold` and eight
+    times the clip's median frame difference (fast motion stays well below both).
+    """
+    import cv2
+
+    thumbs = [cv2.resize(f, (64, max(8, round(64 * f.shape[0] / f.shape[1]))), interpolation=cv2.INTER_AREA).astype(np.float64) for f in frames]
+    diff = np.array([0.0] + [float(np.abs(thumbs[i] - thumbs[i - 1]).mean() / 255) for i in range(1, len(thumbs))])
+    limit = max(threshold, 8 * float(np.median(diff[1:])) if len(diff) > 1 else threshold)
+    cut = diff > limit
+    first = anchor
+    while first > 0 and not cut[first]:
+        first -= 1
+    last = anchor + 1
+    while last < len(frames) and not cut[last]:
+        last += 1
+    return first, last
+
+
+def track_pass(frames: list[np.ndarray], box: tuple[int, int, int, int]) -> list[tuple[tuple[int, int, int, int], float]]:
+    """Follow a box through frames by normalised cross-correlation with a slowly adapting template."""
+    import cv2
+
+    x, y, w, h = box
+    template = frames[0][y : y + h, x : x + w].astype(np.float32)
+    out = [((x, y, w, h), 1.0)]
+    height, width = frames[0].shape[:2]
+    for frame in frames[1:]:
+        mx, my = max(w // 2, 8), max(h // 2, 8)
+        x0, y0 = max(0, x - mx), max(0, y - my)
+        x1, y1 = min(width, x + w + mx), min(height, y + h + my)
+        region = frame[y0:y1, x0:x1].astype(np.float32)
+        if region.shape[0] < h or region.shape[1] < w:
+            out.append(((x, y, w, h), 0.0))
+            continue
+        scores = cv2.matchTemplate(region, template, cv2.TM_CCOEFF_NORMED)
+        _, best, _, loc = cv2.minMaxLoc(scores)
+        if best > 0.4:  # noqa: PLR2004 -- below this the match is not the same subject; hold position.
+            x, y = x0 + loc[0], y0 + loc[1]
+            template = 0.9 * template + 0.1 * frame[y : y + h, x : x + w].astype(np.float32)
+        out.append(((x, y, w, h), round(float(best), 4)))
+    return out
+
+
+def op_track(request: dict[str, Any]) -> dict[str, Any]:
+    """Track a window from one frame forward and backward through the clip; keyframes in normalised units."""
+    import cv2
+
+    info = probe(request["input"])
+    if info["still"] or info["fps"] <= 0:
+        fail("tracking needs a video")
+    width, height = analysis_size(info, int(request.get("maxWidth", 640)))
+    proc = stream_frames(request["input"], width, height, "gray")
+    frame_bytes = width * height
+    frames = []
+    while True:
+        chunk = proc.stdout.read(frame_bytes) if proc.stdout else b""
+        if len(chunk) < frame_bytes:
+            break
+        frames.append(cv2.GaussianBlur(np.frombuffer(chunk, dtype=np.uint8).reshape(height, width), (5, 5), 0))
+    proc.wait()
+    if not frames:
+        fail("no frames decoded")
+    fps = info["fps"]
+    bx, by, bw, bh = request["box"]
+    sx, sy = width / info["width"], height / info["height"]
+    box = (round(bx * sx), round(by * sy), max(4, round(bw * sx)), max(4, round(bh * sy)))
+    anchor = min(len(frames) - 1, max(0, round(float(request.get("at", 0)) * fps)))
+    first, last = shot_bounds(frames, anchor, float(request.get("cutThreshold", 0.09)))
+    forward = track_pass(frames[anchor:last], box)
+    backward = track_pass(frames[first : anchor + 1][::-1], box)[::-1]
+    inside = backward[:-1] + forward
+    path = [(inside[0][0], 0.0)] * first + inside + [(inside[-1][0], 0.0)] * (len(frames) - last)
+    keyframes = [
+        {
+            "t": round(i / fps, 4),
+            "x": round(b[0] / width, 5),
+            "y": round(b[1] / height, 5),
+            "w": round(b[2] / width, 5),
+            "h": round(b[3] / height, 5),
+            "confidence": c,
+            "active": first <= i < last,
+        }
+        for i, (b, c) in enumerate(path)
+    ]
+    lost = [k["t"] for k in keyframes if k["active"] and k["confidence"] < 0.4]  # noqa: PLR2004 -- see track_pass.
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    tiles = []
+    for index in np.linspace(0, len(frames) - 1, 8).round().astype(int):
+        tile = cv2.cvtColor(frames[index], cv2.COLOR_GRAY2RGB)
+        (x, y, w, h), conf = path[index]
+        cv2.rectangle(tile, (x, y), (x + w, y + h), (255, 190, 40) if conf >= 0.4 else (240, 40, 40), 2)  # noqa: PLR2004 -- see track_pass.
+        tiles.append(sc.frame_tile(tile.astype(np.float64) / 255, f"t={index / fps:.2f}s  match {conf:.2f}"))
+    preview = out_dir / "track-preview.png"
+    sc.write_png(str(preview), sc.grid([tiles[:4], tiles[4:]], (480, 240), f"Window track  {Path(request['input']).name}"))
+    return {
+        "ok": True,
+        "fps": fps,
+        "frames": len(frames),
+        "keyframes": keyframes,
+        "lostTimes": lost[:50],
+        "lostPct": round(100 * len(lost) / max(1, last - first), 3),
+        "shot": {"start": round(first / fps, 4), "end": round(last / fps, 4)},
+        "files": {"preview": str(preview)},
+    }
+
+
+def active_at(keyframes: list[dict[str, Any]], t: float) -> bool:
+    """Whether the window is on at time t (a track is off outside its shot)."""
+    times = [k["t"] for k in keyframes]
+    i = max(0, int(np.searchsorted(times, t + 1e-6, side="right")) - 1)
+    return bool(keyframes[i].get("active", True))
+
+
+def box_at(keyframes: list[dict[str, float]], t: float) -> tuple[float, float, float, float]:
+    """Linear interpolation of a keyframed box (normalised) at time t."""
+    times = [k["t"] for k in keyframes]
+    if t <= times[0]:
+        k = keyframes[0]
+        return k["x"], k["y"], k["w"], k["h"]
+    if t >= times[-1]:
+        k = keyframes[-1]
+        return k["x"], k["y"], k["w"], k["h"]
+    i = int(np.searchsorted(times, t, side="right")) - 1
+    a, b = keyframes[i], keyframes[i + 1]
+    f = (t - a["t"]) / max(b["t"] - a["t"], 1e-9)
+    return tuple(a[key] + (b[key] - a[key]) * f for key in ("x", "y", "w", "h"))  # type: ignore[return-value]
+
+
+def shape_mask(shape: str, box: tuple[float, float, float, float], softness: float, size: tuple[int, int]) -> np.ndarray:
+    """A soft ellipse or rectangle window, 0..1, softness as a fraction of the box size."""
+    width, height = size
+    x, y, w, h = box
+    yy, xx = np.mgrid[0:height, 0:width].astype(np.float64)
+    u = ((xx + 0.5) / width - (x + w / 2)) / max(w / 2, 1e-6)
+    v = ((yy + 0.5) / height - (y + h / 2)) / max(h / 2, 1e-6)
+    distance = np.hypot(u, v) if shape == "ellipse" else np.maximum(np.abs(u), np.abs(v))
+    soft = max(softness, 1e-3)
+    t = np.clip((1 + soft - distance) / (2 * soft), 0, 1)
+    return t * t * (3 - 2 * t)
+
+
+def op_mask(request: dict[str, Any]) -> dict[str, Any]:
+    """Render a shape window (static or keyframed) as a lossless grey matte video matching the input's timing."""
+    info = probe(request["input"])
+    size = (info["width"], info["height"])
+    fps = info["fps"] if info["fps"] > 0 else 25.0
+    count = 1 if info["still"] else max(1, round(info["duration"] * fps))
+    keyframes = request.get("keyframes") or [{"t": 0.0, **dict(zip(("x", "y", "w", "h"), request["box"], strict=True))}]
+    output = request["output"]
+    Path(output).parent.mkdir(parents=True, exist_ok=True)
+    encoder = subprocess.Popen(  # noqa: S603 -- literal argument list, no shell.
+        [FFMPEG, "-v", "error", "-nostdin", "-y", "-f", "rawvideo", "-pix_fmt", "gray", "-s", f"{size[0]}x{size[1]}", "-r", f"{fps:.6f}", "-i", "-", "-c:v", "ffv1", "-pix_fmt", "gray", output],
+        stdin=subprocess.PIPE,
+    )
+    coverage = []
+    for index in range(count):
+        t = index / fps
+        on = active_at(keyframes, t)
+        mask = shape_mask(request.get("shape", "ellipse"), box_at(keyframes, t), float(request.get("softness", 0.2)), size) if on else np.zeros((size[1], size[0]))
+        if request.get("invert"):
+            mask = 1 - mask
+        coverage.append(float(mask.mean()))
+        if encoder.stdin:
+            encoder.stdin.write((mask * 255).round().astype(np.uint8).tobytes())
+    if encoder.stdin:
+        encoder.stdin.close()
+    if encoder.wait() != 0:
+        fail("mask encode failed")
+    return {"ok": True, "path": output, "frames": count, "fps": fps, "meanCoveragePct": round(100 * float(np.mean(coverage)), 3)}
+
+
+OPERATIONS = {"scopes": op_scopes, "compare": op_compare, "match": op_match, "shots": op_shots, "bake": op_bake, "track": op_track, "mask": op_mask, "selftest": op_selftest}
 
 
 def main() -> None:

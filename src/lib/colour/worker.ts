@@ -11,7 +11,7 @@ export const COLOUR_PROFILE = "vork" as const;
 const WORKER = path.resolve(import.meta.dirname, "../../../scripts/workers/colour.py");
 const TIMEOUT_MS = 1_800_000;
 
-export type ColourOperation = "scopes" | "compare" | "match" | "shots" | "bake" | "selftest";
+export type ColourOperation = "scopes" | "compare" | "match" | "shots" | "bake" | "track" | "mask" | "selftest";
 
 /** Run one worker operation and validate its answer. `COLOUR_UV` overrides the uv executable (tests). */
 export function runColourWorker<T>(operation: ColourOperation, request: unknown, schema: z.ZodType<T>): T {

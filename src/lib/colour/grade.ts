@@ -147,6 +147,16 @@ export interface RenderOptions {
   crf: number;
   matrix?: string;
   range?: string;
+  /** Spatial corrections over a single-segment grade: the window's cube applies on top of the base inside its mask. */
+  windows?: RenderWindow[];
+}
+
+export interface RenderWindow {
+  cube: string;
+  /** A grey matte video (shape windows), or a `pnpm matte` alpha sequence. */
+  mask: { kind: "video"; path: string } | { kind: "frames"; pattern: string; startFrame: number; fps: number; feather: number };
+  invert: boolean;
+  strength: number;
 }
 
 /**
@@ -174,7 +184,28 @@ export function renderGraded(options: RenderOptions) {
       : `scale=out_color_matrix=bt709:out_range=tv,format=${options.codec === "prores" ? "yuv422p10le" : "yuv420p"}`;
     const lut = (cube: string | null) => (cube ? `lut3d=file=${cube}:interp=tetrahedral` : "null");
     const args = ["-v", "error", "-nostdin", "-y", "-i", options.input];
-    if (cubes.length === 1) {
+    const windows = options.windows ?? [];
+    if (windows.length && cubes.length !== 1)
+      throw new CliErrorObject({ code: "INVALID_INPUT", message: "Windows apply to one grade, not to a per-shot timeline" });
+    if (windows.length) {
+      const size = `${facts.width}:${facts.height}`;
+      const parts = [`[0:v]${toRgb},${lut(cubes[0]!)},format=gbrp16le,split=${windows.length + 1}[b0]${windows.map((_, i) => `[c${i}]`).join("")}`];
+      windows.forEach((window, i) => {
+        const cube = path.join(work, `w${i}.cube`);
+        copyFileSync(window.cube, cube);
+        if (window.mask.kind === "video") args.push("-i", window.mask.path);
+        else args.push("-framerate", String(window.mask.fps), "-start_number", String(window.mask.startFrame), "-i", window.mask.pattern);
+        const pad = window.mask.kind === "frames" && window.mask.startFrame > 0 ? `,tpad=start=${window.mask.startFrame}:start_mode=add:color=black` : "";
+        const feather = window.mask.kind === "frames" && window.mask.feather > 0 ? `,gblur=sigma=${window.mask.feather}` : "";
+        const invert = window.invert ? ",negate" : "";
+        const strength = window.strength < 1 ? `,colorchannelmixer=rr=${window.strength}:gg=${window.strength}:bb=${window.strength}` : "";
+        parts.push(`[c${i}]${lut(cube)},format=gbrp16le[w${i}]`);
+        parts.push(`[${i + 1}:v]format=gray${pad},scale=${size}:flags=bilinear${feather}${invert},format=gbrp16le${strength}[m${i}]`);
+        parts.push(`[b${i}][w${i}][m${i}]maskedmerge[b${i + 1}]`);
+      });
+      parts.push(`[b${windows.length}]${back}[v]`);
+      args.push("-filter_complex", parts.join(";"));
+    } else if (cubes.length === 1) {
       args.push("-filter_complex", `[0:v]${toRgb},${lut(cubes[0]!)},${back}[v]`);
     } else {
       const labels = cubes.map((_, i) => `[s${i}]`).join("");

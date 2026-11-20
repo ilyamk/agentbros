@@ -44,7 +44,7 @@ export const LutRefSchema = z.strictObject({
   strength: z.number().min(0).max(1).default(1),
 });
 
-export const GradeSchema = z.strictObject({
+export const BaseGradeSchema = z.strictObject({
   version: z.literal(1).default(1),
   name: z.string().max(120).optional(),
   notes: z.string().max(4000).optional(),
@@ -69,7 +69,63 @@ export const GradeSchema = z.strictObject({
   /** Highlight knee (e.g. 0.92) and shadow knee for a smooth roll-off instead of a hard clip. */
   softClip: z.strictObject({ high: z.number().min(0.5).max(1).optional(), low: z.number().min(0).max(0.2).optional() }).optional(),
 });
+
+/** A box in normalised frame units (0..1): left, top, width, height. */
+const NormBox = z.tuple([z.number().min(-1).max(2), z.number().min(-1).max(2), z.number().positive().max(3), z.number().positive().max(3)]);
+
+export const WindowMaskSchema = z.discriminatedUnion("kind", [
+  z.strictObject({
+    kind: z.literal("shape"),
+    shape: z.enum(["ellipse", "rectangle"]).default("ellipse"),
+    /** Static box, normalised; ignored when `track` is given. */
+    box: NormBox.optional(),
+    /** A track file from colour:track, relative to the grade file: the window follows it. */
+    track: z.string().optional(),
+    /** Edge fall-off as a fraction of the box size. */
+    softness: z.number().min(0).max(1).default(0.2),
+  }),
+  z.strictObject({
+    kind: z.literal("matte"),
+    /** A `pnpm matte` output folder (alpha/frame-NNNNN.png and matte.json), relative to the grade file. */
+    path: z.string().min(1),
+    /** Gaussian feather of the matte edge, in pixels. */
+    feather: z.number().min(0).max(200).default(0),
+  }),
+]);
+
+/** A spatial correction: `grade` applies on top of the base grade inside the mask (Resolve's window on a serial node). */
+export const WindowSchema = z.strictObject({
+  name: z.string().min(1).max(80),
+  mask: WindowMaskSchema,
+  invert: z.boolean().default(false),
+  grade: BaseGradeSchema,
+  strength: z.number().min(0).max(1).default(1),
+});
+
+export const GradeSchema = BaseGradeSchema.extend({ windows: z.array(WindowSchema).max(8).optional() });
 export type Grade = z.infer<typeof GradeSchema>;
+export type BaseGrade = z.infer<typeof BaseGradeSchema>;
+
+export const TrackSchema = z.strictObject({
+  version: z.literal(1),
+  input: z.string(),
+  /** The box the user or agent placed, in source pixels, at `at` seconds. */
+  box: z.tuple([z.number(), z.number(), z.number(), z.number()]),
+  at: z.number().min(0),
+  method: z.string(),
+  keyframes: z.array(z.strictObject({ t: z.number(), x: z.number(), y: z.number(), w: z.number(), h: z.number(), confidence: z.number(), active: z.boolean().default(true) })).min(1),
+});
+export type Track = z.infer<typeof TrackSchema>;
+
+export const TrackResultSchema = z.looseObject({
+  ok: z.literal(true),
+  fps: z.number(),
+  keyframes: TrackSchema.shape.keyframes,
+  lostPct: z.number(),
+  files: z.record(z.string(), z.string()),
+});
+
+export const MaskResultSchema = z.looseObject({ ok: z.literal(true), path: z.string(), frames: z.number(), meanCoveragePct: z.number() });
 
 export const TimelineSchema = z.strictObject({
   version: z.literal(1).default(1),

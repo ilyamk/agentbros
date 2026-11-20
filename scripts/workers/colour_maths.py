@@ -171,7 +171,7 @@ def monotone_curve(points: list[list[float]], x: np.ndarray) -> np.ndarray:
     pts = sorted((float(p[0]), float(p[1])) for p in points)
     xs = np.array([p[0] for p in pts])
     ys = np.array([p[1] for p in pts])
-    if len(xs) < 2:  # noqa: PLR2004 -- a curve needs two points to define a segment.
+    if len(xs) < 2:
         return x + (ys[0] - xs[0] if len(xs) else 0)
     h = np.diff(xs)
     delta = np.diff(ys) / h
@@ -184,7 +184,7 @@ def monotone_curve(points: list[list[float]], x: np.ndarray) -> np.ndarray:
             continue
         alpha, beta = m[k] / d, m[k + 1] / d
         radius = alpha * alpha + beta * beta
-        if radius > 9:  # noqa: PLR2004 -- Fritsch-Carlson monotonicity bound.
+        if radius > 9:
             tau = 3 / math.sqrt(radius)
             m[k], m[k + 1] = tau * alpha * d, tau * beta * d
     idx = np.clip(np.searchsorted(xs, x, side="right") - 1, 0, len(xs) - 2)
@@ -228,7 +228,7 @@ def read_cube(path: Path) -> dict[str, Any]:
             continue
         else:
             rows.append([float(v) for v in line.split()[:3]])
-    if size < 2 or len(rows) != size**3:  # noqa: PLR2004 -- the smallest usable lattice.
+    if size < 2 or len(rows) != size**3:
         message = f"{path.name}: expected LUT_3D_SIZE and {size}^3 rows, found {len(rows)}"
         raise ValueError(message)
     table = np.array(rows).reshape(size, size, size, 3)
@@ -329,7 +329,7 @@ def white_balance_gains(temperature: float, tint: float) -> np.ndarray:
     return gains / float(RGB709_TO_XYZ[1] @ gains)
 
 
-def apply_grade(rgb: np.ndarray, grade: dict[str, Any], luts: dict[str, dict[str, Any]] | None = None) -> np.ndarray:  # noqa: C901, PLR0912 -- one branch per documented grade stage, in order.
+def apply_grade(rgb: np.ndarray, grade: dict[str, Any], luts: dict[str, dict[str, Any]] | None = None) -> np.ndarray:  # noqa: C901 -- one branch per documented grade stage, in order.
     """Apply a normalised grade (see src/types/colour.ts) to encoded R'G'B'."""
     out = np.asarray(rgb, dtype=np.float64)
     luts = luts or {}
@@ -423,8 +423,8 @@ def zone_summary(lab: np.ndarray) -> dict[str, dict[str, float]]:
 def neutral_cast(lab: np.ndarray) -> dict[str, float]:
     """Mean a*/b* of near-neutral pixels (C* below 12, L* 15..95): the white-balance cast."""
     chroma = np.hypot(lab[:, 1], lab[:, 2])
-    mask = (chroma < 12) & (lab[:, 0] > 15) & (lab[:, 0] < 95)  # noqa: PLR2004 -- neutral-pixel window.
-    sel = lab[mask] if mask.sum() > 50 else lab  # noqa: PLR2004 -- too few neutrals: fall back to all pixels.
+    mask = (chroma < 12) & (lab[:, 0] > 15) & (lab[:, 0] < 95)
+    sel = lab[mask] if mask.sum() > 50 else lab
     return {"a": float(sel[:, 1].mean()), "b": float(sel[:, 2].mean()), "pixelsPct": float(100 * mask.mean())}
 
 

@@ -70,6 +70,8 @@ const REPO_CWD = {
 const SUPERSEDED = { excluded: "legacy fetcher; use avc_resources" };
 const LEGACY = { excluded: "legacy; not for new work" };
 const NOT_YET = { excluded: "not yet exposed" };
+const COLOUR_CLI = { excluded: "reads and writes media at local paths through the colour worker; trusted CLI, MCP exposure is a follow-up" };
+const COLOUR_KEYWORDS = ["colour", "color", "grading", "colourist", "цвет", "цветокоррекция", "грейдинг", "колорист"] as const;
 
 const c = (
   alias: string | null,
@@ -184,6 +186,48 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
     "none",
     { excluded: "local test runner" },
     "Run deterministic workflow observer and producer-consumer contract tests",
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "waveform", "vectorscope", "parade", "histogram", "false colour", "скопы"],
+      c("colour:scopes", "colour-scopes.ts", "render", "none", COLOUR_CLI, "Scopes of a video or still: waveform, RGB parade, vectorscope, histogram, CIE xy, false colour, a contact sheet and exposure, cast, saturation and skin numbers"),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "delta e", "deltae", "ciede2000", "match check", "сравнить цвет"],
+      c("colour:compare", "colour-compare.ts", "render", "none", COLOUR_CLI, "Compare a clip with a reference: side-by-side scopes, zone and paired CIEDE2000, and a diagnosis such as shadows cooler, saturation +12%"),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "reference match", "shot match", "look match", "подогнать цвет"],
+      c("colour:match", "colour-match.ts", "render", "none", COLOUR_CLI, "Solve an editable grade.json (lift, gamma, gain, saturation, curve) that matches a clip to a reference, with before/after evidence"),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "lut", "cube", "lift gamma gain", "white balance", "resolve", "лут"],
+      c("colour:grade", "colour-grade.ts", "render", "none", COLOUR_CLI, "Apply a declarative grade.json or a per-shot timeline to a video or still through a baked 3D LUT, and export the .cube for Resolve"),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "power window", "tracking", "mask", "маска", "трекинг"],
+      c("colour:track", "colour-track.ts", "render", "none", COLOUR_CLI, "Track a power window over a moving subject so a grade's shape window follows it, with a preview of every lost frame"),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "continuity", "consistency", "shot matching", "непрерывность"],
+      c("colour:shots", "colour-shots.ts", "render", "none", COLOUR_CLI, "Measure every shot of an edit (or several clips) against a hero shot, flag colour drift and optionally solve per-shot match grades"),
+    ),
   ),
   f(
     "vork",

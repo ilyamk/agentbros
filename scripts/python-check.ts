@@ -37,7 +37,7 @@ const profiles: Partial<
   "sfx-index": { modules: ["numpy", "scipy", "pyloudnorm"], files: ["sfx-index.py"] },
   clap: { modules: ["torch", "transformers", "numpy"], files: ["sfx-clap.py"] },
   matte: { modules: ["onnxruntime", "numpy", "PIL"], files: ["frame-matte-onnx.py"] },
-  vork: { modules: ["numpy", "cv2", "scipy"], files: ["vork-track.py"] },
+  vork: { modules: ["numpy", "cv2", "scipy"], files: ["vork-track.py", "colour.py"] },
   earshot: { modules: ["earshot", "torch", "transformers", "numpy"], files: ["earshot.py"] },
 };
 const optionalImports = [...new Set(Object.values(profiles).flatMap((profile) => profile.modules))];

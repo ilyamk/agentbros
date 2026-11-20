@@ -1,8 +1,47 @@
-import { existsSync, mkdirSync, mkdtempSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { CliErrorObject, ensureFfmpeg, parseArgs, requireFile, runScript } from "../src/lib/cli";
-import { bakeCube, fillSegments, loadGrade, loadTimeline, probeVideo, renderGraded } from "../src/lib/colour/grade";
+import { bakeCube, fillSegments, loadGrade, loadTimeline, probeVideo, renderGraded, type RenderWindow } from "../src/lib/colour/grade";
+import { runColourWorker } from "../src/lib/colour/worker";
+import { MaskResultSchema, TrackSchema, type Grade } from "../src/types/colour";
+
+/** Bake each window's grade and build its per-frame mask (shape windows render a grey matte video). */
+function prepareWindows(grade: Grade, gradeFile: string, input: string, work: string, size: number): RenderWindow[] {
+  const dir = path.dirname(gradeFile);
+  return (grade.windows ?? []).map((window, index) => {
+    const cube = path.join(work, `window-${index}.cube`);
+    bakeCube(window.grade, gradeFile, cube, size);
+    if (window.mask.kind === "matte") {
+      const matteDir = path.resolve(dir, window.mask.path);
+      const receipt = path.join(matteDir, "matte.json");
+      if (!existsSync(receipt))
+        throw new CliErrorObject({ code: "FILE_NOT_FOUND", message: `Window "${window.name}": ${receipt} not found; run pnpm matte --input <video> --out <dir> first` });
+      const facts = JSON.parse(readFileSync(receipt, "utf8")) as { fps?: number; startFrame?: number };
+      return {
+        cube,
+        mask: { kind: "frames", pattern: path.join(matteDir, "alpha", "frame-%05d.png"), startFrame: facts.startFrame ?? 0, fps: facts.fps ?? 30, feather: window.mask.feather },
+        invert: window.invert,
+        strength: window.strength,
+      };
+    }
+    let keyframes: unknown;
+    if (window.mask.track) {
+      const trackFile = path.resolve(dir, window.mask.track);
+      requireFile(trackFile);
+      keyframes = TrackSchema.parse(JSON.parse(readFileSync(trackFile, "utf8"))).keyframes;
+    } else if (!window.mask.box) {
+      throw new CliErrorObject({ code: "VALIDATION", message: `Window "${window.name}": a shape window needs box or track` });
+    }
+    const maskFile = path.join(work, `window-${index}.mkv`);
+    runColourWorker(
+      "mask",
+      { input, output: maskFile, shape: window.mask.shape, softness: window.mask.softness, box: window.mask.box, keyframes },
+      MaskResultSchema,
+    );
+    return { cube, mask: { kind: "video", path: maskFile }, invert: window.invert, strength: window.strength };
+  });
+}
 
 const SPECS = [
   { name: "grade", description: "A grade.json (see docs/colour-grading.md); required unless --timeline is given" },
@@ -47,6 +86,7 @@ void runScript(async () => {
       return { path: baked.path, identity: baked.identity, maxDelta: baked.maxDelta };
     };
     let segments: { start: number; end: number; cube: string | null }[] = [];
+    let windows: RenderWindow[] = [];
     if (args.grade) {
       const gradeFile = path.resolve(args.grade);
       const cube = args["export-cube"] ? path.resolve(args["export-cube"]) : path.join(work, "grade.cube");
@@ -55,6 +95,13 @@ void runScript(async () => {
       metadata.cube = baked;
       if (args["export-cube"]) outputs.push(cube);
       segments = [{ start: 0, end: Number.POSITIVE_INFINITY, cube }];
+      const grade = loadGrade(gradeFile);
+      if (grade.windows?.length) {
+        if (args.input && args.output) windows = prepareWindows(grade, gradeFile, path.resolve(args.input), work, size);
+        metadata.windows = grade.windows.map((w) => ({ name: w.name, mask: w.mask.kind, invert: w.invert }));
+        if (args["export-cube"])
+          metadata.cubeNote = "Windows are spatial and not in the .cube: rebuild them in Resolve as windows or a Magic Mask on a serial node";
+      }
     } else {
       const timelineFile = path.resolve(args.timeline!);
       requireFile(timelineFile);
@@ -81,6 +128,7 @@ void runScript(async () => {
         crf: args.crf ?? 14,
         matrix: args.matrix,
         range: args.range,
+        windows,
       });
       outputs.unshift(args.output);
       metadata.render = { ...rendered, codec: args.codec, output: args.output, tags: "bt709 / bt709 / bt709, limited range" };

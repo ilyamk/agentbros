@@ -59,7 +59,7 @@ def canvas(width: int, height: int) -> np.ndarray:
     return img
 
 
-def text(img: np.ndarray, value: str, org: tuple[int, int], scale: float = 0.45, colour: Sequence[int] = TEXT, thickness: int = 1) -> None:
+def text(img: np.ndarray, value: str, org: tuple[int, int], scale: float = 0.45, colour: Sequence[int] = TEXT, thickness: int = 1) -> None:  # noqa: PLR0913, PLR0917 -- drawing call mirrors cv2.putText / one scope's options.
     """Draw anti-aliased Hershey text."""
     cv2.putText(img, value, org, FONT, scale, tuple(int(c) for c in colour), thickness, cv2.LINE_AA)
 
@@ -102,7 +102,7 @@ def _trace(img: np.ndarray, rect: tuple[int, int, int, int], frames: Sequence[np
     x, y, w, h = rect
     counts = np.zeros(h * w)
     for values in frames:
-        rows, cols = values.shape
+        _rows, cols = values.shape
         col = (np.arange(cols) * w // cols).astype(np.int64)
         row = _value_row(values + _dither(values.shape, 1 / 219), 0, h)
         counts += np.bincount((row * w + col[None, :]).ravel(), minlength=h * w)
@@ -147,7 +147,15 @@ def _bar_targets() -> list[tuple[str, float, float]]:
     return out
 
 
-def vectorscope(cb_frames: Sequence[np.ndarray], cr_frames: Sequence[np.ndarray], rgb_frames: Sequence[np.ndarray], *, zoom: float = 1.0, size: int = 640, overlay: Sequence[tuple[Sequence[np.ndarray], Sequence[np.ndarray], Sequence[int]]] = ()) -> np.ndarray:
+def vectorscope(  # noqa: PLR0913 -- one scope's inputs and display options.
+    cb_frames: Sequence[np.ndarray],
+    cr_frames: Sequence[np.ndarray],
+    rgb_frames: Sequence[np.ndarray],
+    *,
+    zoom: float = 1.0,
+    size: int = 640,
+    overlay: Sequence[tuple[Sequence[np.ndarray], Sequence[np.ndarray], Sequence[int]]] = (),
+) -> np.ndarray:
     """Vectorscope with 75% targets and the skin-tone line; trace coloured by the pixels' own colour.
 
     With `overlay`, each (cb, cr, colour) set is drawn in a flat colour instead (input against reference).
@@ -286,7 +294,7 @@ def cie_chromaticity(rgb_frames: Sequence[np.ndarray], size: int = 640) -> np.nd
     mean = colour_sum / np.maximum(counts, 1)[:, None]
     tint = 0.35 + 0.65 * mean / np.maximum(mean.max(axis=1, keepdims=True), 1e-6)
     layer = glow[..., None] * tint.reshape(size, size, 3) * 255
-    ground[: size] += layer[: size]
+    ground[:size] += layer[:size]
     img = np.clip(ground, 0, 255).astype(np.uint8)
     for primaries, colour, label in (
         (cm.REC2020_PRIMARIES_XY, (90, 90, 90), "Rec.2020"),
