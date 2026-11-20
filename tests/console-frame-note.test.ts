@@ -23,7 +23,9 @@ import {
 import { createDecisionActions } from "../src/lib/console/apply";
 import { readInbox } from "../src/lib/console/inbox";
 import type { SpawnRequest } from "../src/lib/console/spawn";
+// @ts-expect-error plain Node hook without types
 import { decisionsSince, frameNoteFiles } from "../scripts/hooks/lib/state.mjs";
+// @ts-expect-error plain Node hook without types
 import { itemSentence } from "../scripts/hooks/lib/facts.mjs";
 import { planUserInput } from "../src/lib/console/user-actions";
 import { outcomeOf } from "../src/lib/console/wait";
