@@ -20,6 +20,7 @@ Native helpers that a TypeScript caller in `src/lib/` spawns with a literal argu
 | `frame-ocr.swift`, `frame-visual.swift`, `frame-category.swift` | `src/lib/ingest/local-{ocr,visual,category}.ts` | `media:prepare` (OCR), `media:ocr`, `media:visual`, `media:category` |
 | `frame-matte.swift` | `src/lib/matte/vision.ts` | `media:prepare --engines matte`, `matte` |
 | `frame-matte-onnx.py` | `src/lib/matte/onnx.ts` | `matte` |
+| `camera-tracks.py`, `camera-scale.py` | `src/lib/vfx/camera-solve.ts`; KLT tracks outside a matte with forward-backward and epipolar rejection; metric scale from a subject's width (2026-11-20) | `camera:solve` |
 | `html-capture.ts`, `native-media-preparation.ts` | `src/lib/backends/html.ts` | `capture:html` |
 | `blender_capture.py` | `src/lib/backends/blender.ts` | `backend` |
 | `blender_scene.py` | `src/lib/backends/blender-bake.ts` | `blender:scene` |

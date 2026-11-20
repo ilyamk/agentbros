@@ -89,6 +89,7 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "vork:recipe": "optional local 3D/VFX engine chosen per shot across playbooks",
   "vork:bridge": "optional local 3D/VFX engine chosen per shot across playbooks",
   "vork:vfx": "optional local 3D/VFX engine chosen per shot across playbooks",
+  "camera:solve": "matchmove for a 3D insert into a moving plate, chosen per shot across playbooks; vork-3d-vfx vfx.md",
   "vork:eval": "optional local 3D/VFX engine chosen per shot across playbooks",
 
   "viz:list": "Prepared charts and diagrams across playbooks; docs/visualisations.md",

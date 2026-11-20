@@ -183,6 +183,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `blender:arsenal` - Arsenal audit, capability candidates, eval
 - `blender:ext` - Blender extensions, pinned
 - `blender:run` - Trusted Python/.blend; frames and contact sheet
+- `camera:solve` - Moving-camera solve: tracks, Blender libmv, metric scale; camera.json for Vork ([guide](../.agents/skills/vork-3d-vfx/references/vfx.md))
 - `blender:live` - Live Blender: arsenal, stills, replay ([guide](../.agents/skills/blender-3d/references/live-session.md)); MCP
 - `blender:recipe` - Blender VFX/nature recipes
 - `blender:scene` - Declarative Blender scene to frames
