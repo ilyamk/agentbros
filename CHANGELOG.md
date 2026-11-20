@@ -22,7 +22,7 @@
 
 ### Motion library
 
-- The library reel can show a captured product interaction: real before/after plates, camera stops and an optional carried control in landscape and portrait (CaptureProof), and it performs the matched ground-swap and caused-morph transitions (TransitionCut, TurnedRing) on one frame plan that also schedules the local sound accents
+- The library reel can show a captured product interaction: real before/after plates, camera stops and an optional carried control in landscape and portrait (CaptureProof), and it performs the matched ground-swap and caused-morph transitions (TransitionCut, TurnedRing) on one frame plan that also schedules the local sound accents ([#24](https://github.com/ilyamk/agentbros/pull/24))
 
 ### Task playbooks
 
@@ -157,6 +157,8 @@
 
 - Intake counts docs/api/surface.json as a generated file, like the library catalogue: a library PR that changes block props must carry the regenerated surface for CI, and intake no longer refuses it as outside the library category ([#26](https://github.com/ilyamk/agentbros/pull/26))
 
+- PR intake accepts a rebuilt patch of a large text file when GitHub's counts come from its heuristic diff: GitHub counted uv.lock at +428/-289 where the minimal diff is +424/-285, so every PR touching uv.lock stayed uncertain. The rebuilt diff must have the same net change and no more lines than GitHub's counts
+
 - The test suite and CI pass on Linux (Ubuntu 26.04, FFmpeg 8). Fixed for Linux users: studio:open's per-project lock no longer removes another opener's lock when the file system reuses an inode; fal:quote and fal batches hand the request to generate:model on descriptor 0 instead of opening /dev/stdin, which Linux refuses for a socket; recording checks ignore AAC end padding that FFmpeg 8 decodes past the declared duration and report the WebM remux hint before an Opus start offset; motion:check counts Chromium's console echo of an uncaught exception once. Render, native-preparation and Vork process cleanup identify a process by pid and start time, not its name: Linux renames a starting Node process ("MainThread"), which let detached children escape cleanup. The stems and diarize profiles take torchaudio and torchcodec from the PyTorch CPU index, since their PyPI Linux x64 wheels are CUDA builds. CI installs the pinned Python before python:check, and category-gates installs FFmpeg and Chromium for the failing-on-base proof, which now names the head tests that fail and why; a failing category gate reports its JSON verdict. PR intake rebuilds the patch GitHub omits for a large text file such as uv.lock from the merge base and head (blobs over 1 MB), accepts it only when its line counts equal GitHub's and leak-scans it, instead of always deferring such a PR. Rhythm tests that need macOS's sandbox-exec skip elsewhere. ([#12](https://github.com/ilyamk/agentbros/pull/12))
 
 - motion:render prepares a composition's shared assets from its input props: a flat screen product reveal with its own screen image and a library reel built from a capture no longer fetch the studio phone model and HDRIs they never show. A reproducible capture-based library proof is in examples/workflows/product-ad/library-proof ([#23](https://github.com/ilyamk/agentbros/pull/23))
@@ -213,6 +215,8 @@
 - The Pages site is redesigned as the studio's art-deco lot: a landing page, genre pages, the motion library with rendered strips, the crew and a filterable needs board with pre-filled opportunity issues, all without external requests
 
 ### Security fixes
+
+- github.com joins the instruction URL allowlist, so protected scripts and workers may name GitHub release downloads (the portable sherpa-onnx voice and speech models) without failing the instruction security scan
 
 - CLA.md now documents the short-form signing statement the bot accepts, and coding-agent co-author trailers (Claude Code, Codex, Copilot, Cursor) listed in contrib/agent-coauthors.json count as the submitting human's Contribution.
 
