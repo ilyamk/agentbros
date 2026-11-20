@@ -2494,6 +2494,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   ),
   c("blender:run", "blender-run.ts", "render", "none", TRUSTED_CODE, "Trusted Python/.blend; frames and contact sheet"),
   k(
+    ["matchmove", "camera track", "camera solve", "3d tracking", "vfx", "insert", "match move"],
+    g(
+      ".agents/skills/vork-3d-vfx/references/vfx.md",
+      c(
+        "camera:solve",
+        "camera-solve.ts",
+        "render",
+        "none",
+        TRUSTED_CODE,
+        "Moving-camera solve: tracks, Blender libmv, metric scale; camera.json for Vork",
+      ),
+    ),
+  ),
+  k(
     ["3d", "live", "interactive", "scene", "look", "iterate", "blender mcp"],
     g(
       ".agents/skills/blender-3d/references/live-session.md",

@@ -1,6 +1,6 @@
 # Blender shots — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 Studio kit and shot templates for photoreal device shots, played in a film by the library block `blender-plate`, and a toy kit whose shots are the high-quality twins of six browser blocks. When a shot needs Blender at all: the `engine-selection` and `blender-3d` skills and [photoreal 3D](../../docs/photoreal-3d.md).
 
@@ -22,6 +22,7 @@ pnpm blender:run --script scripts/blender/hero_turntable.py --output out/qa/hero
 
 | `recipes/` | Built-in VFX and scene elements; `pnpm blender:recipe` lists, renders, bakes and measures proofs ([contract](recipes/AGENTS.md)) |
 | `materials/`, `shots/` | Thirteen procedural surfaces, two-mood shader-ball proofs and a cached Mantaflow citrus-can flagship; product-ad/bespoke film material steps |
+| `vfx_camera_solve.py` | Moving-camera libmv solve from imported tracks, run by `camera:solve` through `blender:run --no-render`: cleaning rounds each exported, best geometrically sane round kept, an OpenCV camera sidecar and 3D bundles (2026-11-20) |
 | `studio_kit.py` | Shared stage: devices, HDRIs, light rigs, ground, camera, the `COMMON` keys every shot accepts |
 | `hero_turntable.py`, `screen_swap.py`, `exploded_view.py`, `macro_sweep.py`, `multi_device.py` | Shot templates, each with its own keys documented in its docstring |
 | `toy_kit.py` | Shared pieces of the stylised shots: `COMMON` (`frames`, `fps`, `seed`, `lens`, `fstop`, `width`, `height`), GSAP eases, `per_frame` keys, flat ground, sky, felt `fabric`, the original `plush` character |
