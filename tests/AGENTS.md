@@ -2,7 +2,7 @@
 
 Last updated: 2026-11-20
 
-`node:test`/`tsx`; synthetic fixtures, no paid APIs. Check both experiment arms.
+`node:test`/`tsx`; synthetic fixtures, no paid APIs. Check both A/B arms.
 
 2026-11-18: fixtures cover authority, campaign bounds, export scope, v4 speech and reversible phrase edits.
 
