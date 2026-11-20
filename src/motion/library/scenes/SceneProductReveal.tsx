@@ -1,12 +1,14 @@
 import React from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
 import { StudioProductStage } from "../three/StudioProductStage";
+import { resolveAsset } from "../three/shared";
 import { getStyle } from "../styles";
 import { HeroWord } from "../transitions/GroundSwap";
 import { ARRIVE, groundRole, MaybeFinish, sceneBaseSchema, useLook } from "./shared";
 
 export const sceneProductRevealSchema = sceneBaseSchema.extend({
+  presentation: z.enum(["studio", "screen"]).optional(),
   shape: z.enum(["phone", "card"]),
   /** Screen image (staticFile name or URL); empty draws the stage's procedural screen. */
   screenImage: z.string(),
@@ -35,6 +37,7 @@ export const SceneProductReveal: React.FC<SceneProductRevealProps> = ({
   styleId,
   finish,
   shape,
+  presentation,
   screenImage,
   screenHeadline,
   screenSubline,
@@ -59,7 +62,7 @@ export const SceneProductReveal: React.FC<SceneProductRevealProps> = ({
     easing: ARRIVE,
   });
   const caption = frame >= textAt + 8;
-  const share = vertical ? 0.84 : (getStyle(styleId).typeScale?.title ?? 0.4);
+  const share = vertical ? 0.84 : presentation === "screen" ? 0.34 : (getStyle(styleId).typeScale?.title ?? 0.4);
   return (
     <MaybeFinish on={finish} styleId={styleId} seed="scene-product">
       <AbsoluteFill style={{ backgroundColor: light.ground }}>
@@ -68,26 +71,42 @@ export const SceneProductReveal: React.FC<SceneProductRevealProps> = ({
             transform: vertical ? `translateY(${height * 0.12}px) scale(0.9)` : `translateX(${width * 0.21}px)`,
           }}
         >
-          <StudioProductStage
-            screenImage={screenImage}
-            shape={shape}
-            headline={screenHeadline}
-            subline={screenSubline}
-            bodyColour="#2a2b30"
-            accent={palette.accent}
-            background={light.ground}
-            orbitDegrees={orbitDegrees}
-            durationInFrames={durationInFrames}
-            ground={light.ground}
-            fill={vertical ? Math.min(fill, 0.72) : fill}
-          />
+          {presentation === "screen" && screenImage ? (
+            <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center" }}>
+              <Img
+                src={resolveAsset(screenImage)}
+                style={{
+                  width: width * (vertical ? 0.88 : 0.42),
+                  maxHeight: height * 0.56,
+                  objectFit: "contain",
+                  borderRadius: 12 * u,
+                  boxShadow: "0 14px 45px #211b2a20",
+                  transform: `translateY(${(1 - rise) * 32 * u}px)`,
+                }}
+              />
+            </div>
+          ) : (
+            <StudioProductStage
+              screenImage={screenImage}
+              shape={shape}
+              headline={screenHeadline}
+              subline={screenSubline}
+              bodyColour="#2a2b30"
+              accent={palette.accent}
+              background={light.ground}
+              orbitDegrees={orbitDegrees}
+              durationInFrames={durationInFrames}
+              ground={light.ground}
+              fill={vertical ? Math.min(fill, 0.72) : fill}
+            />
+          )}
         </AbsoluteFill>
         <div
           style={{
             position: "absolute",
             left: vertical ? 70 * u : width * 0.07,
             right: vertical ? 70 * u : undefined,
-            top: vertical ? 200 * u : 0,
+            top: vertical ? (presentation === "screen" ? 415 : 200) * u : 0,
             height: vertical ? undefined : height,
             width: vertical ? undefined : width * 0.42,
             display: "flex",
