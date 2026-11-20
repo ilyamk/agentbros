@@ -3,8 +3,6 @@ import { CliErrorObject, parseArgs, requireProject, runScript } from "../src/lib
 import { hashFile, importAsset } from "../src/lib/assets/registry";
 import { CODEC_CHOICES, DEFAULT_ENTRY, GL_CHOICES, parseFrameRange, renderClip } from "../src/lib/vision/composition";
 import { nextTimelineCommands } from "../src/lib/vision/timeline-next";
-import { ensureAssetsForCli } from "../src/lib/shared-assets/cli";
-import { needsForComposition } from "../src/lib/shared-assets/needs";
 
 const SPECS = [
   { name: "entry", default: DEFAULT_ENTRY, description: "Remotion entry point" },
@@ -31,7 +29,6 @@ void runScript(async () => {
   if (args.project) requireProject(args.project);
   const output = path.resolve(args.output!);
   const range = args.frames ? parseFrameRange(args.frames) : undefined;
-  if (args["public-dir"] === "public") await ensureAssetsForCli(needsForComposition(args.composition!));
   const composition = await renderClip(
     {
       entry: args.entry!,
@@ -39,6 +36,7 @@ void runScript(async () => {
       publicDir: args["public-dir"]!,
       gl: args.gl!,
       propsFile: args.props,
+      prepareAssets: args["public-dir"] === "public",
     },
     { output, range, codec: args.codec!, crf: args.crf },
   );
