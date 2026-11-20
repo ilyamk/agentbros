@@ -17,7 +17,8 @@ function prepareWindows(grade: Grade, gradeFile: string, input: string, work: st
       const receipt = path.join(matteDir, "matte.json");
       if (!existsSync(receipt))
         throw new CliErrorObject({ code: "FILE_NOT_FOUND", message: `Window "${window.name}": ${receipt} not found; run pnpm matte --input <video> --out <dir> first` });
-      const facts = JSON.parse(readFileSync(receipt, "utf8")) as { fps?: number; startFrame?: number };
+      const receiptData = JSON.parse(readFileSync(receipt, "utf8")) as { fps?: number; startFrame?: number; input?: { fps?: number; startFrame?: number } };
+      const facts = { fps: receiptData.input?.fps ?? receiptData.fps, startFrame: receiptData.input?.startFrame ?? receiptData.startFrame };
       return {
         cube,
         mask: { kind: "frames", pattern: path.join(matteDir, "alpha", "frame-%05d.png"), startFrame: facts.startFrame ?? 0, fps: facts.fps ?? 30, feather: window.mask.feather },

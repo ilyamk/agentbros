@@ -165,6 +165,11 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 
 ### Render, timeline and finishing backends
 
+- `colour:scopes` - Scopes of a video or still: waveform, RGB parade, vectorscope, histogram, CIE xy, false colour, a contact sheet and exposure, cast, saturation and skin numbers ([guide](../docs/colour-grading.md))
+- `colour:compare` - Compare a clip with a reference: side-by-side scopes, zone and paired CIEDE2000, and a diagnosis such as shadows cooler, saturation +12% ([guide](../docs/colour-grading.md))
+- `colour:match` - Solve an editable grade.json (lift, gamma, gain, saturation, curve) that matches a clip to a reference, with before/after evidence ([guide](../docs/colour-grading.md))
+- `colour:grade` - Apply a declarative grade.json or a per-shot timeline to a video or still through a baked 3D LUT, and export the .cube for Resolve ([guide](../docs/colour-grading.md))
+- `colour:shots` - Measure every shot of an edit (or several clips) against a hero shot, flag colour drift and optionally solve per-shot match grades ([guide](../docs/colour-grading.md))
 - `vork:setup`, `vork:scene`, `vork:render`, `vork:recipe`, `vork:bridge`, `vork:vfx`, `vork:eval` - Vork local 3D and VFX ([guide](../docs/vork.md)); purposes: `pnpm commands --query vork`
 - `viz:list` - Discover visualisation recipes and strict JSON requests; MCP
 - `viz:prepare` - Prepare immutable data visualisation revisions; MCP
