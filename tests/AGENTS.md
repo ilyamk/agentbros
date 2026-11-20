@@ -1,6 +1,6 @@
 # Tests — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-18
 
 `node:test`/`tsx`; synthetic fixtures, no paid APIs.
 
@@ -38,7 +38,6 @@ Aliases: `package.json`; prerequisites: [install](../docs/install.md#1-prerequis
 - `console-documents.test.ts` checks session and origin controls, conflicting saves, validation and the renewed strategy review (2026-11-18).
 - `console-hooks-present.test.ts` checks project browser handoff, repeat suppression and resume in both harnesses (2026-11-18).
 - `console-{restricted-process,reconnect}.test.ts` cover restricted process checks and same-tab stream recovery (2026-11-18).
-- `console-projector-generations.test.ts` builds failed, running and published jobs through the job runner with fake providers and checks the generations section, the latest preparation and the template-only timeline (2026-11-20).
 - `blender-ext.test.ts` checks ZIPs, schemas, downloads and isolation. `RUN_BLENDER_TESTS=1` adds install and pixel/timing trials. `blender-ext-adoption.test.ts` needs `RUN_BLENDER_EXTENSION_TRIALS=1` and consented local archives. Evidence logs Blender versions and operator failures.
 - `scripts/test-fast.ts` lists SLOW files by measured time; deadline-sensitive `bench.test.ts` stays there because its child-process timeout fixtures are unreliable under full parallel load. Split a file rather than keep a fast check out of CI.
 - Contribution suites cover PRs, categories, changes, intake/claims/checks, evidence, regeneration, trust, failing-on-base proof and novelty (`contrib-*.test.ts`); `automation-fetch.test.ts` covers offline showcase/benchmark downloads. `contrib-docs.test.ts` guards budgets, gates, commands, links, PR templates and issue forms.

@@ -4,7 +4,8 @@
  * canvas of a template project holding only generations; the top bar shows reserved beside spent; History folds
  * repeated resume runs into one row.
  */
-import { beforeAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 import { screen, within } from "@testing-library/react";
 import type { ConsoleEvent, ProjectView } from "@contract";
 import { dictionaries, LANGUAGES } from "@/i18n";
@@ -61,7 +62,9 @@ describe("generations panel", () => {
     expect(within(preparation).getByText("Approved")).toBeTruthy();
     expect(within(preparation).getByText(/Yes, approved; for me only/)).toBeTruthy();
     expect(within(preparation).getByText(/study-only/)).toBeTruthy();
-    expect(within(preparation).getByText(/Reference bindings: @Image1/)).toBeTruthy();
+    // The prompt is a compact block; its text is only in the dialog.
+    expect(within(preparation).queryByText(/Reference bindings: @Image1/)).toBeNull();
+    expect(within(preparation).getByText("Generation prompt")).toBeTruthy();
     expect(within(preparation).getByText("2 preparations")).toBeTruthy();
   });
 
@@ -87,6 +90,34 @@ describe("generations panel", () => {
       expect(screen.getAllByText(dictionaries[language].generations.state.failed).length).toBeGreaterThan(0);
       unmount();
     }
+  });
+});
+
+describe("prompt block", () => {
+  it("shows the length and opens the full prompt in a dialog with Copy and Close", async () => {
+    const user = userEvent.setup();
+    const writeText = vi.fn(() => Promise.resolve());
+    Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true });
+    renderWith(<GenerationsPanel view={view} />);
+    const prompt = view.generations!.preparation!.prompt!;
+    const block = document.querySelector<HTMLElement>('[data-preparation="face-v2"] [data-prompt]')!;
+    expect(block.textContent).toContain(`${[...prompt].length} characters`);
+    await user.click(within(block).getByRole("button", { name: /Show/ }));
+    const dialog = await screen.findByRole("dialog");
+    expect(dialog.querySelector("[data-prompt-text]")!.textContent).toBe(prompt);
+    await user.click(within(dialog).getByRole("button", { name: "Copy" }));
+    expect(writeText).toHaveBeenCalledWith(prompt);
+    expect(within(dialog).getByRole("status").textContent).toBe("Copied");
+    // The footer's Close (the dialog also has its corner close button).
+    const closes = within(dialog).getAllByRole("button", { name: "Close" });
+    await user.click(closes.find((button) => button.textContent === "Close")!);
+    expect(screen.queryByRole("dialog")).toBeNull();
+  });
+
+  it("speaks Russian", () => {
+    renderWith(<GenerationsPanel view={view} />, { language: "ru" });
+    expect(screen.getAllByRole("button", { name: /Показать/ }).length).toBe(4);
+    expect(screen.getAllByText("Промпт генерации").length).toBe(4);
   });
 });
 

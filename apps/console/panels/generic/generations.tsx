@@ -6,7 +6,7 @@
  * `view.generations` and never acts.
  */
 import type { Generation, ModelPreparationView } from "@contract";
-import { Clock, FileText, Sparkles, TriangleAlert } from "lucide-react";
+import { Clock, Sparkles, TriangleAlert } from "lucide-react";
 import { plural, useI18n } from "@/i18n";
 import { useNow } from "@/lib/clock";
 import { formatDuration, formatTime, formatUsd } from "@/lib/format";
@@ -16,6 +16,7 @@ import { ToneBadge } from "@/components/status";
 import { Disclosure } from "@/components/ui/disclosure";
 import type { PanelProps } from "../registry";
 import { JOB_TONE } from "./money";
+import { PromptBlock } from "./prompt-block";
 
 /** States the provider is still working in (the elapsed time keeps counting). */
 export const ACTIVE_STATES = new Set<Generation["state"]>([
@@ -120,11 +121,7 @@ function GenerationCard({ job, project }: { job: Generation; project: string }) 
         ) : job.state === "failed" ? (
           <p className="text-xs text-muted-foreground">{d.generations.noOutput}</p>
         ) : null}
-        {job.prompt ? (
-          <Disclosure summary={d.generations.prompt} muted>
-            <p className="mt-1 break-words whitespace-pre-wrap">{job.prompt}</p>
-          </Disclosure>
-        ) : null}
+        {job.prompt ? <PromptBlock prompt={job.prompt} subject={job.id} /> : null}
         {job.references?.length ? (
           <Disclosure summary={`${d.generations.references} (${job.references.length})`} muted>
             <ul className="mt-2 grid grid-cols-[repeat(auto-fill,minmax(7rem,1fr))] gap-2">
@@ -181,17 +178,7 @@ function PreparationCard({ preparation, project }: { preparation: ModelPreparati
             : f(d.generations.rights, { status: preparation.rights.status })}
         </p>
       ) : null}
-      {preparation.prompt ? (
-        <div className="flex flex-col gap-1">
-          <p className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
-            <FileText className="size-3.5" aria-hidden="true" />
-            {d.generations.prompt}
-          </p>
-          <p className="max-h-48 overflow-y-auto rounded-md bg-muted px-3 py-2 break-words whitespace-pre-wrap">
-            {preparation.prompt}
-          </p>
-        </div>
-      ) : null}
+      {preparation.prompt ? <PromptBlock prompt={preparation.prompt} subject={preparation.id} /> : null}
       {preparation.references.length || preparation.source ? (
         <div className="flex flex-col gap-1">
           <p className="text-xs font-medium text-muted-foreground">{d.generations.references}</p>
