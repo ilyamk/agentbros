@@ -71,7 +71,7 @@ describe("console shell", () => {
     const top = await screen.findByRole("banner", { name: "Project" });
     expect(within(top).getByRole("heading", { level: 1 }).textContent).toBe("Acme launch promo");
     expect(top.textContent).toContain("motion-engineer is working · 6 min");
-    expect(top.textContent).toContain("$3.10 of $10.00");
+    expect(top.textContent).toContain("$3.10 spent · $1.40 reserved of $10.00");
     expect(top.textContent).toContain("Interactive");
     expect(screen.getByRole("heading", { name: "Waiting for you (1)" })).toBeTruthy();
     const rail = screen.getByRole("navigation", { name: "Steps" });
@@ -80,6 +80,13 @@ describe("console shell", () => {
     for (const title of ["Agent cards", "Money", "Agents", "Assets", "Step guard", "Advisories", "History"])
       expect(screen.getByRole("button", { name: new RegExp(`^${title}`), expanded: undefined })).toBeTruthy();
     expect(screen.getByRole("button", { name: /^9 done steps/ }).getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("opens the Media tab of a project from its link", async () => {
+    await renderApp("#/projects/promo-acme/media");
+    const tab = await screen.findByRole("link", { name: "Media" });
+    expect(tab.getAttribute("aria-current")).toBe("page");
+    expect(screen.getByRole("heading", { level: 2, name: "Media" })).toBeTruthy();
   });
 
   it("pauses through a dialog with the user's words and shows the server's refusal verbatim", async () => {

@@ -17,6 +17,7 @@ import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "no
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
+  FRAME_NOTES_DIR,
   type CliEnvelope,
   type Decision,
   type DecisionRequest,
@@ -210,6 +211,16 @@ const storedFollowUps = (decided: InboxDecisionFile): FollowUp[] => {
   return Array.isArray(value) ? (value as FollowUp[]) : [];
 };
 
+/** A frame note's files (2026-11-20), from the decisive command or a follow-up: what `console:wait` hands the agent. */
+function frameNoteFiles(decided: InboxDecisionFile, followUps: readonly FollowUp[]): { note?: string; still?: string } {
+  const files = [decided.result?.outputs, ...followUps.map((item) => item.outputs)]
+    .flatMap((outputs) => (Array.isArray(outputs) ? outputs : []))
+    .filter((file): file is string => typeof file === "string" && file.includes(`/${FRAME_NOTES_DIR}/`));
+  const note = files.find((file) => file.endsWith(".json"));
+  const still = files.find((file) => file.endsWith(".png"));
+  return { ...(note ? { note } : {}), ...(still ? { still } : {}) };
+}
+
 const replyOf = (decided: InboxDecisionFile): DecisionResponse => ({
   ok: decided.status === "applied" && storedFollowUps(decided).every((item) => item.ok),
   decision: decided,
@@ -244,7 +255,11 @@ export function createDecisionActions(
       const files = (command.attachments ?? []).map((attachment) => {
         dir ??= mkdtempSync(path.join(tmpdir(), "agentbros-console-"));
         const file = path.join(dir, attachment.name);
-        writeFileSync(file, attachment.content, { mode: 0o600 });
+        writeFileSync(
+          file,
+          attachment.encoding === "base64" ? Buffer.from(attachment.content, "base64") : attachment.content,
+          { mode: 0o600 },
+        );
         return file;
       });
       const args = [...command.args, ...(command.attachments ?? []).flatMap((a, index) => [a.flag, files[index]!])];
@@ -279,6 +294,7 @@ export function createDecisionActions(
           ...(decision.choice ? { choice: decision.choice } : {}),
           ...(plan ? { action: plan.action, aliases: plan.commands.map((command) => command.alias) } : {}),
           ...(decision.verdict ? { score: decision.verdict.score } : {}),
+          ...frameNoteFiles(decision, followUps),
         },
       },
       { env: deps.env ?? process.env },

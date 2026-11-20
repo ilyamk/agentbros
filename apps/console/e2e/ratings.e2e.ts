@@ -75,7 +75,7 @@ for (const width of [1280, 390])
 
     const build = page.locator('[data-panel="film.build"]');
     await expect(build).toBeVisible();
-    await build.getByRole("button", { name: "Comment on this frame" }).first().click();
+    await build.getByRole("button", { name: "Mark the frame" }).first().click();
     const form = build.locator("[data-frame-comment-form]").first();
     await form.getByRole("textbox", { name: "Comment" }).fill("The logo is cut off here");
     await form.getByRole("button", { name: "Add comment" }).click();

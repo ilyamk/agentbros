@@ -13,7 +13,7 @@ import { StarRating } from "@/components/rating";
 import { Button } from "@/components/ui/button";
 import { Label, Textarea } from "@/components/ui/input";
 import { useI18n } from "@/i18n";
-import { FrameCommentProvider } from "@/media";
+import { FrameCommentProvider, type FrameCommentExtras } from "@/media";
 import { useConsoleStore } from "@/store/context";
 import { snapshotMode } from "@/lib/snapshot-mode";
 
@@ -36,12 +36,14 @@ export function ratingRequest(
 }
 
 /** The frame-feedback request for one comment: the comment's words are the answer. */
-export function frameFeedbackRequest(comment: FrameComment, requestId?: string): DecisionRequest {
+export function frameFeedbackRequest(comment: FrameComment, requestId?: string, overlay?: string): DecisionRequest {
   return {
     kind: "frame-feedback",
     ...(requestId ? { requestId } : {}),
     answer: comment.text,
     frameComments: [comment],
+    // the marks as drawn: the server also keeps the frame with them (`frame:note`, 2026-11-20)
+    ...(overlay ? { overlay } : {}),
   };
 }
 
@@ -191,10 +193,10 @@ function LiveFrameFeedbackProvider({ project, children }: { project: string; chi
   const t = d.film.frameFeedback;
   const store = useConsoleStore();
   const send = useCallback(
-    (comment: FrameComment) => {
+    (comment: FrameComment, extras?: FrameCommentExtras) => {
       void (async () => {
         try {
-          const reply = await store.decide(project, frameFeedbackRequest(comment, newRequestId()));
+          const reply = await store.decide(project, frameFeedbackRequest(comment, newRequestId(), extras?.overlay));
           if (reply.ok)
             store.notify({ tone: "success", title: d.notices.applied, text: f(t.sent, { frame: comment.frame }) });
           else {

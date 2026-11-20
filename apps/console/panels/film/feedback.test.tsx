@@ -136,7 +136,7 @@ describe("frame feedback", () => {
       </FrameFeedbackProvider>,
       { store },
     );
-    fireEvent.click(screen.getByRole("button", { name: "Comment on this frame" }));
+    fireEvent.click(screen.getByRole("button", { name: "Mark the frame" }));
     const form = screen.getByRole("form", { name: /Comment on frame 0/ });
     fireEvent.change(within(form).getByRole("textbox", { name: "Comment" }), {
       target: { value: "-h the logo is cut off" },

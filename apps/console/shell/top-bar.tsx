@@ -3,12 +3,12 @@ import type { ProjectView } from "@contract";
 import { Bot, Gauge, Wallet } from "lucide-react";
 import { useI18n } from "@/i18n";
 import { useNow } from "@/lib/clock";
-import { formatDuration, formatUsd } from "@/lib/format";
+import { formatDuration } from "@/lib/format";
 import { CONTROL_TONE } from "@/lib/status";
 import { ToneBadge, StepStatusBadge } from "@/components/status";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { runDuration } from "@/panels/generic/agents";
-import { ceilingOf } from "@/panels/generic/money";
+import { ceilingOf, spendText } from "@/panels/generic/money";
 import { AutonomyControl } from "./autonomy";
 import { ControlButtons } from "./control";
 import { snapshotMode } from "@/lib/snapshot-mode";
@@ -19,7 +19,6 @@ export function TopBar({ view }: { view: ProjectView }) {
   const step = view.steps.find((row) => row.id === view.current?.step);
   const active = view.agents.active;
   const ceiling = ceilingOf(view);
-  const spent = formatUsd(view.money.spentUsd, locale);
   const autonomy = view.autonomy;
   return (
     <header
@@ -92,9 +91,14 @@ export function TopBar({ view }: { view: ProjectView }) {
         <span className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs tabular-nums">
           <Wallet className="size-3.5" aria-hidden="true" />
           <span className="sr-only">{d.topbar.spend}: </span>
-          {ceiling !== undefined
-            ? f(d.topbar.spent, { spent, ceiling: formatUsd(ceiling, locale) })
-            : f(d.topbar.spentNoCeiling, { spent })}
+          {spendText(
+            { d, f, locale },
+            {
+              spentUsd: view.money.spentUsd,
+              reservedUsd: view.money.reservedUsd,
+              ...(ceiling !== undefined ? { ceilingUsd: ceiling } : {}),
+            },
+          )}
         </span>
       </div>
     </header>

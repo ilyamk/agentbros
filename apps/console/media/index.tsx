@@ -96,8 +96,10 @@ export { MediaThumb, type MediaThumbProps } from "./media-thumb";
 export {
   FrameCommentForm,
   FrameCommentProvider,
+  MarkOverlay,
   RegionOverlay,
   useFrameCommentHandler,
+  type FrameCommentExtras,
   type FrameCommentHandler,
 } from "./region-comment";
 export { buildFrameComment, clampRegion, containRect, regionFromDrag, type Region } from "./region";

@@ -70,7 +70,7 @@ const STATUS = { applied: "applied", refused: "refused by its command", supersed
 /** One console item as a sentence. */
 export function itemSentence(item, words = 300) {
   if (item.type === "decision")
-    return `Decision ${item.id} (${item.kind}${item.step ? `, step ${item.step}` : ""}${item.title ? `, "${oneLine(item.title, 80)}"` : ""}) was ${STATUS[item.status] ?? item.status} in the console${item.choice ? `, option ${item.choice}` : ""}; the user's words: ${quote(item.answer, words)}.`;
+    return `Decision ${item.id} (${item.kind}${item.step ? `, step ${item.step}` : ""}${item.title ? `, "${oneLine(item.title, 80)}"` : ""}) was ${STATUS[item.status] ?? item.status} in the console${item.choice ? `, option ${item.choice}` : ""}; the user's words: ${quote(item.answer, words)}${item.still ? `; the frame with the user's marks: ${item.still}${item.note ? ` (note ${item.note})` : ""}, read the image` : ""}.`;
   if (item.type === "card")
     return `Card ${item.id}${item.title ? ` ("${oneLine(item.title, 80)}")` : ""} was answered${item.choice ? `: ${item.choiceLabel ? `"${oneLine(item.choiceLabel, 80)}" (${item.choice})` : item.choice}` : ""}${item.text ? `; the user's words: ${quote(item.text, words)}` : ""}${item.ratings ? `; ${item.ratings} rating${item.ratings === 1 ? "" : "s"}` : ""}.`;
   if (item.type === "control")
