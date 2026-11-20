@@ -38,7 +38,7 @@ When the user picks, the winner replaces `step-rail.tsx`, the switcher, the demo
 | timeline, recipe | `timelineSteps`: `timelineNext()` (`src/lib/pipeline/timeline-next.ts`) mapped over the fixed `TIMELINE_STEPS` | Always render → qa → delivery → done                                |
 | campaign         | none                                                                                                           | The container shows no rail                                         |
 
-Start times come from the journal (`starts`); `view.current` is the next-step answer's step. `apps/console/panels/groups.ts` then groups step ids into panels (current, waiting, attention, closed).
+The journal already carries step facts: every event has an optional `step` (from the step lease), and `stepStarts` (`src/lib/console/view/activity.ts`) takes a step's start from its first `cli.start`, `agent.dispatch` or `agent.start`. `cli.end` (with `ok`, `error`, `elapsedMs`) and `job.state` carry the same `step` but are not used for step status. `view.current` is the next-step answer's step. `apps/console/panels/groups.ts` then groups step ids into panels (current, waiting, attention, closed).
 
 ## Gaps
 
@@ -58,21 +58,22 @@ The console stays a view: steps are never written by the browser. Agents and CLI
 - `StepRow.origin?: "chain" | "template" | "agent"` and `ProjectView.stepsSource?: { route, playbook?, detectedBy, kind: "chain" | "template" | "mixed" }`.
 - `StepRow.closedAt` and `durationMs` filled for every route.
 
-**Journal events (one writer, `src/lib/console` journal helpers):**
+**Journal (reuse the existing kinds, add one):**
 
-| Event                                                            | Written by                                                                          | Effect on the rail                                                     |
-| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `step.planned { step, title, after?, origin: "agent", reason }`  | a playbook's planner or the orchestrator, through a CLI such as `pnpm steps --plan` | Adds a step (it animates in); never removes a chain step               |
-| `step.started { step, owner, operationId? }`                     | `film:brief` dispatch, `generate:*` job submit, `render`, `qa:editorial`            | `running` with owner and start time; without it the step is `ready`    |
-| `step.finished { step, result: "done" \| "failing", evidence? }` | the same commands on exit (their JSON envelope `ok`)                                | `done` with close time, or `failing` with the error code as the reason |
-| `step.skipped { step, words }`                                   | `film:done --skip`, or a planner removing a planned step                            | `skipped` with the reason                                              |
-| `step.stale { step, because }`                                   | an input hash change seen by `pnpm next` (render older than `project.json`)         | `stale`                                                                |
+| Event                                                                      | Today                     | Proposed use for steps                                                                                             |
+| -------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `cli.start` / `agent.dispatch` / `agent.start` with `step`                 | Start time (`stepStarts`) | Also the only thing that makes a step `running`; without it the next step is `ready`                               |
+| `cli.end` with `step`, `ok`, `error`, `elapsedMs`                          | History only              | Closes the step: `ok` → `done` with `closedAt`, `ok: false` → `failing` with `error` as the reason                 |
+| `job.state` with `step`                                                    | Money and jobs panels     | A paid generation (`generate:*`) shows as the step's work: queued/running keeps it `running`, `failed` → `failing` |
+| `step.planned { step, title, after?, reason }` (new kind in `EVENT_KINDS`) | —                         | Adds an agent-planned step (it animates in) from the orchestrator or a playbook; never removes a chain step        |
+
+Commands outside the film and footage chains (`render`, `qa:editorial`, `delivery`, `generate:*`) hold no step lease, so their events carry no `step` today. They should set it from the timeline step they serve (`--step`, or the next-step answer's step passed through `AGENTBROS_STEP` the way `AGENTBROS_RUN_ID` already propagates). Skips keep going through `film:done --skip`, which already journals its `cli.end`; stale stays derived from file times, not from events.
 
 **Projector rules:**
 
 1. Chain routes (film, footage) keep their chain as the truth; events only add timing, owners and agent-planned steps after a chain step.
 2. The timeline route builds its steps from the bound playbook when it declares them (`playbooks/<id>/` steps, e.g. `generate → review → deliver` for a model job), else from `step.planned` events, and only falls back to `TIMELINE_STEPS` marked `origin: "template"`.
-3. `timelineNext` actions map faithfully: `fix` → `failing`, stale render → `stale`, `ask` → `awaiting-gate`, `run` → `ready` until a `step.started` arrives.
-4. A step with `step.started` but no finish after the command's process ended is `failing` with "interrupted".
+3. `timelineNext` actions map faithfully: `fix` → `failing`, stale render → `stale`, `ask` → `awaiting-gate`, `run` → `ready` until a `cli.start` or `agent.start` for that step arrives.
+4. A step whose last `cli.start` has no `cli.end` after the process ended is `failing` with "interrupted".
 
 **Tests:** projector unit tests per route for each event, a `view-step-rail` fixture per origin, and the console tests already added for each concept's statuses (`apps/console/components/step-rail-concepts/concepts.test.tsx`).
