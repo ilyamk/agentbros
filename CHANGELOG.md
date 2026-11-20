@@ -20,6 +20,10 @@
 
   Migration: Existing stores keep their ceiling. To raise one, ask the user and pass their words with `--answer`. A project whose brief has no `budgetUsd` now needs `pnpm budget --project ID --ceiling-usd N --answer "<the user's words>"` before its first paid command. Code calling `OperationStore.configure` to raise a ceiling passes a `CeilingGrant` as the second argument.
 
+### Motion library
+
+- The library reel can show a captured product interaction: real before/after plates, camera stops and an optional carried control in landscape and portrait (CaptureProof), and it performs the matched ground-swap and caused-morph transitions (TransitionCut, TurnedRing) on one frame plan that also schedules the local sound accents
+
 ### Task playbooks
 
 - Playbook matching reads Chinese: every playbook has `zh` triggers, matched as character runs, and the reference, replica, remix and project modifiers understand Chinese. One extra word may stand inside a phrase; `triggers.generic` marks broad triggers that score half and never bind on their own; a trigger shared with a variant names the variant. `pnpm playbook --eval` scores matching on a labelled corpus of 221 English, Russian and Chinese requests, and the tests hold its floors (no wrong clear match)
@@ -151,7 +155,7 @@
 
 - preflight reports stale harness wiring, repo:hygiene checks harness links, and the playbook evaluator is a protected automation module
 
-- Intake counts docs/api/surface.json as a generated file, like the library catalogue: a library PR that changes block props must carry the regenerated surface for CI, and intake no longer refuses it as outside the library category
+- Intake counts docs/api/surface.json as a generated file, like the library catalogue: a library PR that changes block props must carry the regenerated surface for CI, and intake no longer refuses it as outside the library category ([#26](https://github.com/ilyamk/agentbros/pull/26))
 
 - The test suite and CI pass on Linux (Ubuntu 26.04, FFmpeg 8). Fixed for Linux users: studio:open's per-project lock no longer removes another opener's lock when the file system reuses an inode; fal:quote and fal batches hand the request to generate:model on descriptor 0 instead of opening /dev/stdin, which Linux refuses for a socket; recording checks ignore AAC end padding that FFmpeg 8 decodes past the declared duration and report the WebM remux hint before an Opus start offset; motion:check counts Chromium's console echo of an uncaught exception once. Render, native-preparation and Vork process cleanup identify a process by pid and start time, not its name: Linux renames a starting Node process ("MainThread"), which let detached children escape cleanup. The stems and diarize profiles take torchaudio and torchcodec from the PyTorch CPU index, since their PyPI Linux x64 wheels are CUDA builds. CI installs the pinned Python before python:check, and category-gates installs FFmpeg and Chromium for the failing-on-base proof, which now names the head tests that fail and why; a failing category gate reports its JSON verdict. PR intake rebuilds the patch GitHub omits for a large text file such as uv.lock from the merge base and head (blobs over 1 MB), accepts it only when its line counts equal GitHub's and leak-scans it, instead of always deferring such a PR. Rhythm tests that need macOS's sandbox-exec skip elsewhere. ([#12](https://github.com/ilyamk/agentbros/pull/12))
 
@@ -222,6 +226,7 @@
 
 ### Contributors
 
+- Motion library: [@ilyamk](https://github.com/ilyamk)
 - Task playbooks: [@ilyamk](https://github.com/ilyamk)
 - Providers and pricing: [@ilyamk](https://github.com/ilyamk)
 - CLI commands: [@ilyamk](https://github.com/ilyamk)

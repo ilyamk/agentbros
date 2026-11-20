@@ -318,3 +318,13 @@ export const endCardTyped = (frame: number, at: number, every: number, length: n
 
 /** Frame letter `index` appears. */
 export const endCardLetterAt = (index: number, at: number, every: number): number => at + index * Math.max(1, every);
+
+/** Reserve a still reading hold after the final camera move, including in the shortest supported demo. */
+export function captureTiming(length: number, carriesControl: boolean) {
+  const click = Math.round(length * 0.43);
+  const carryAt = click + 6;
+  const landing = carryAt + (carriesControl ? 18 : 0);
+  const reframeDelay = Math.min(9, Math.round(length * 0.035));
+  const reframeDuration = Math.min(24, Math.max(1, length - landing - reframeDelay - Math.ceil(length * 0.16)));
+  return { click, carryAt, landing, reframeDelay, reframeDuration };
+}

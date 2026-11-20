@@ -19,6 +19,9 @@ export const makeLibraryRoot = (items: LibraryItem[]): React.FC => {
             schema={item.schema as never}
             defaultProps={item.defaultProps as never}
             durationInFrames={item.durationInFrames}
+            calculateMetadata={
+              item.durationForProps ? ({ props }) => ({ durationInFrames: item.durationForProps!(props) }) : undefined
+            }
             fps={FPS}
             {...FORMAT_SIZE[format]}
           />
