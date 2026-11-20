@@ -84,6 +84,21 @@ export class FramePage {
     });
     return Buffer.from(data, "base64");
   }
+
+  /** Keep layout and media in place while measuring the backdrop under the glyphs. */
+  async captureTextBackdrop(): Promise<Buffer> {
+    await this.page.evaluate(`(() => {
+      const style = document.createElement("style");
+      style.id = "__motionCheckBackdrop";
+      style.textContent = "* { -webkit-text-fill-color: transparent !important; -webkit-text-stroke-color: transparent !important; text-shadow: none !important; } svg text, svg tspan { fill: transparent !important; stroke: transparent !important; }";
+      document.head.append(style);
+    })()`);
+    try {
+      return await this.capture();
+    } finally {
+      await this.page.evaluate('document.getElementById("__motionCheckBackdrop")?.remove(); true');
+    }
+  }
 }
 
 /**

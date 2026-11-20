@@ -1,6 +1,6 @@
 # Architecture
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 ![Claude and Codex at a whiteboard showing the repository architecture](readme/architecture-cover.jpg)
 
@@ -23,6 +23,8 @@ Speech follows this boundary from script line through provider take and timing
 receipt to a reference pack or a reversible timeline edit. The voice profile
 is shared by validation and capability discovery. A listening decision binds
 the exact voice, model, language and take hashes. [Audio integrations](audio-integrations.md)
+
+Portable local draft voices use pinned CPU models and bind a take and its readback to the existing narration receipt. Project renders can use a verified previous master for local picture edits. The renderer compares the rebuilt picture and audio with its two sources before issuing a complete receipt. [Speech](speech.md#portable-narration) · [Delivery](delivery.md)
 
 ## Layers
 

@@ -1,6 +1,6 @@
 # Workers — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 Native helpers that a TypeScript caller in `src/lib/` spawns with a literal argument array. They are not public CLIs: never run one directly; use the `pnpm` alias that owns it. Blender shot scripts are in [scripts/blender](../blender/AGENTS.md).
 
@@ -42,6 +42,8 @@ Native helpers that a TypeScript caller in `src/lib/` spawns with a literal argu
 - Licence (2026-11-17): Python that runs inside Blender (`blender/**`, `blender_capture.py`, `blender_scene.py`, any file importing `bpy`) and tests that import it are GPL-3.0-or-later ([LICENSES/GPL-3.0-or-later.txt](../../LICENSES/GPL-3.0-or-later.txt)) and start with `# SPDX-License-Identifier: GPL-3.0-or-later`; every other worker is under the repository's Business Source License 1.1.
 
 ## Change checklist
+
+`portable-voice.py` runs in the pinned `portable-voice` profile. It verifies the sibling model manifest, synthesises local WAVs and reports Parakeet timing estimates only on matching words.
 
 - Changing a worker's output: update the caller's Zod parse and that domain's tests.
 - Run the caller's suite: `tests/audio-map.test.ts`, `tests/reference-measurements.test.ts`, `tests/footage-shots.test.ts`, `tests/multicam-sync.test.ts`, `tests/speech-local.test.ts`, `tests/sfx-index.test.ts`, `tests/local-inference.test.ts`, `tests/local-ocr.test.ts`, `tests/html-frame-adapter.test.ts`, `tests/blender-run.test.ts`, `tests/blender-scene.test.ts`, `tests/matte.test.ts`, `tests/matte-engines.test.ts`, `tests/blender-live.test.ts` (`RUN_MATTE_TESTS=1`). `test:fast` skips `audio-map`, `local-ocr`, `blender-run`; model, Blender and capture cases need `RUN_SHOTS_MODEL_TESTS`, `RUN_BLENDER_TESTS` or `pnpm test:integrations`.

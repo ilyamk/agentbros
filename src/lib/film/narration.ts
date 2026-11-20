@@ -16,6 +16,7 @@ import {
   type NarrationDirection,
 } from "../../types/narration";
 import { ScriptSchema, type Script } from "../../types/pipeline";
+import { LocalResultReceiptSchema } from "../../types/local-capabilities";
 import { compileSpeechCues, validateDirectedText } from "../elevenlabs/direction";
 
 /** Models whose ElevenLabs takes come back timestamped, with a take receipt and a word sidecar (generate-voiceover.ts). */
@@ -75,7 +76,16 @@ type Take = { beatId: string; file: string; receipt: string; words: string };
 
 const LocalResultSchema = z.object({
   task: z.literal("speech.synthesise"),
-  result: z.object({ units: z.array(z.object({ id: z.string(), file: z.string() })) }),
+  result: z.object({
+    units: z.array(
+      z.object({
+        id: z.string(),
+        file: z.string(),
+        voice: z.string().optional(),
+        sourceTextHash: z.string().optional(),
+      }),
+    ),
+  }),
 });
 
 /**
@@ -90,10 +100,10 @@ export function locateTakes(
   route: NarrationDirection["route"],
   localResult?: string,
   takeNumber = 1,
+  localVoice?: NarrationDirection["localVoice"],
 ): { takes: Take[]; problems: string[] } {
   const problems: string[] = [];
   const takes: Take[] = [];
-  let local: Map<string, string> | undefined;
   if (route === "local") {
     const resultFile = localResult ?? path.join(dir, "pipeline/narration-local.json");
     if (!existsSync(path.resolve(root, resultFile)))
@@ -103,18 +113,51 @@ export function locateTakes(
       };
     const parsed = LocalResultSchema.safeParse(JSON.parse(readFileSync(path.resolve(root, resultFile), "utf8")));
     if (!parsed.success) return { takes, problems: [`${rel(root, resultFile)} is not a speech.synthesise result`] };
-    local = new Map(parsed.data.result.units.map((unit) => [unit.id, rel(root, unit.file)]));
     const receipt = `${rel(root, resultFile)}.receipt.json`;
+    const local = new Map(parsed.data.result.units.map((unit) => [unit.id, unit]));
+    const receiptPath = path.resolve(root, receipt);
+    const localReceipt = existsSync(receiptPath)
+      ? LocalResultReceiptSchema.safeParse(JSON.parse(readFileSync(receiptPath, "utf8"))).data
+      : undefined;
+    const portable = localReceipt?.backend === "supertonic-3-parakeet-v3";
+    if (
+      (localVoice?.engine === "portable" && !portable) ||
+      (localVoice?.engine === "apple" && portable) ||
+      (localVoice?.purpose === "production" && localReceipt?.purpose !== "production")
+    )
+      return {
+        takes,
+        problems: ["Local take engine differs from the approved direction. Generate a new local result."],
+      };
     for (const beat of spokenBeats(script)) {
-      const file = local.get(beat.id);
-      if (!file) {
+      const unit = local.get(beat.id);
+      if (!unit) {
         problems.push(`beat ${beat.id} has no local take in ${rel(root, resultFile)}`);
         continue;
       }
+      const file = rel(root, unit.file);
       const base = file.replace(/\.[^./]+$/, "");
       const words = [`${base}.words.json`, `${base}.transcript.json`, `${file}.transcript.json`].find((candidate) =>
         existsSync(path.resolve(root, candidate)),
       );
+      if (portable) {
+        const valid = (candidate: string) => {
+          const absolute = path.resolve(root, candidate);
+          const pin = localReceipt!.outputs.find((item) => path.resolve(root, item.file) === absolute);
+          return !!pin && existsSync(absolute) && sha(absolute) === pin.sha256;
+        };
+        if (
+          unit.sourceTextHash !== createHash("sha256").update(beat.text).digest("hex") ||
+          (localVoice?.voice && unit.voice !== localVoice.voice) ||
+          !valid(file) ||
+          (words?.endsWith(".words.json") && !valid(words))
+        ) {
+          problems.push(
+            `beat ${beat.id}: portable take or timings differ from the selected voice, approved script or receipt`,
+          );
+          continue;
+        }
+      }
       takes.push({ beatId: beat.id, file, receipt, words: words ?? `${base}.transcript.json` });
     }
     return { takes, problems };
@@ -187,6 +230,7 @@ export function measureNarration(options: MeasureOptions): { narration?: Narrati
     direction.route,
     options.localResult,
     direction.take,
+    direction.localVoice,
   );
   const scriptText = new Map(script.beats.map((beat) => [beat.id, beat.text]));
   const directedText = new Map(
