@@ -60,6 +60,23 @@ export function timecode(frame: number, fps: number): string {
   return h > 0 ? `${h}:${pad(m)}:${pad(s)}:${pad(ff)}` : `${pad(m)}:${pad(s)}:${pad(ff)}`;
 }
 
+/** `mm:ss.mmm` (or `h:mm:ss.mmm`) of the start of frame `n`: what an editor's timeline reads (2026-11-20). */
+export function frameClock(frame: number, fps: number): string {
+  const ms = Math.max(0, Math.round((Math.max(0, Math.floor(frame)) / fps) * 1000));
+  const h = Math.floor(ms / 3_600_000);
+  const m = Math.floor(ms / 60_000) % 60;
+  const s = Math.floor(ms / 1000) % 60;
+  const rest = `${pad(m)}:${pad(s)}.${pad(ms % 1000, 3)}`;
+  return h > 0 ? `${h}:${rest}` : rest;
+}
+
+/** The frame under a pointer at `clientX` over a track `rect` (left edge frame 0, right edge the last). */
+export function frameAtPointer(clientX: number, rect: { left: number; width: number }, frames: number): number {
+  if (rect.width <= 0 || frames <= 1) return 0;
+  const fraction = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+  return Math.min(frames - 1, Math.round(fraction * (frames - 1)));
+}
+
 /** `m:ss` (or `h:mm:ss`) for a duration in seconds. */
 export function clock(seconds: number): string {
   const safe = Math.max(0, Math.floor(Number.isFinite(seconds) ? seconds : 0));

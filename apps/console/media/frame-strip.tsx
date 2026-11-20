@@ -42,7 +42,7 @@ export function FrameStrip({
   const slice = durationSec / times.length;
   return (
     <div className={cn("relative", className)} data-frame-strip>
-      <ul aria-label={f(d.media.strip, { label })} className="flex w-full gap-0.5 overflow-hidden rounded-md">
+      <ul aria-label={f(d.media.strip, { label })} className="flex w-full gap-0.5 overflow-hidden">
         {times.map((t, index) => {
           const src = frameSrc(project, media, t, frameWidth);
           const start = index * slice;

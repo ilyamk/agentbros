@@ -407,6 +407,7 @@ export const DECISION_KINDS = [
   "quote",
   "rating",
   "frame-feedback",
+  "frame-note",
   "verdict",
   "card-answer",
   "control",
@@ -485,14 +486,71 @@ export const RegionSchema = z
   })
   .refine((r) => r.x + r.w <= 1 + 1e-9 && r.y + r.h <= 1 + 1e-9, "region inside the frame");
 
-/** A comment pinned to a frame of a render (US11). */
+/**
+ * A mark the user put on the frame (2026-11-20): with `w` and `h` a box, without them a point the arrow points at;
+ * `text` is what the user wrote at it. Normalised frame coordinates (0–1), origin top left.
+ */
+export const FrameMarkSchema = z
+  .strictObject({
+    x: z.number().min(0).max(1),
+    y: z.number().min(0).max(1),
+    w: z.number().gt(0).max(1).optional(),
+    h: z.number().gt(0).max(1).optional(),
+    text: Text(300),
+  })
+  .refine((mark) => (mark.w === undefined) === (mark.h === undefined), "a box has both w and h")
+  .refine(
+    (mark) => mark.w === undefined || (mark.x + mark.w <= 1 + 1e-9 && mark.y + (mark.h ?? 0) <= 1 + 1e-9),
+    "a box inside the frame",
+  );
+export type FrameMark = z.infer<typeof FrameMarkSchema>;
+/** Marks one frame comment may carry (each a numbered label on the annotated still). */
+export const MAX_FRAME_MARKS = 9;
+
+/** A comment pinned to a frame of a render (US11); `marks` amended 2026-11-20. */
 export const FrameCommentSchema = z.strictObject({
   media: MediaRefSchema,
   frame: Count,
   region: RegionSchema.optional(),
+  marks: z.array(FrameMarkSchema).max(MAX_FRAME_MARKS).optional(),
   text: Text(4000),
 });
 export type FrameComment = z.infer<typeof FrameCommentSchema>;
+
+/** Where `frame:note` keeps the notes and their annotated stills, relative to the project. */
+export const FRAME_NOTES_DIR = "pipeline/frame-notes";
+
+/**
+ * `pipeline/frame-notes/<id>.json` (2026-11-20): the user's note on one frame of any video of the project, written by
+ * `frame:note` (the console's `frame-note` decision). `still` is the frame as a PNG with the marks drawn on it.
+ */
+export const FrameNoteSchema = z.strictObject({
+  v: z.literal(1),
+  id: ConsoleIdSchema,
+  project: ProjectIdSchema,
+  media: z.strictObject({
+    path: RelativePathSchema,
+    root: z.enum(["project", "out"]),
+    sha256: Sha256Schema.optional(),
+  }),
+  frame: Count,
+  fps: z.number().positive().max(1000),
+  /** Start of the frame, seconds. */
+  timeSec: z.number().min(0),
+  /** `mm:ss.mmm` (or `h:mm:ss.mmm`) of the frame's start. */
+  time: Text(32),
+  /** The user's words, verbatim. */
+  words: Text(8000),
+  region: RegionSchema.optional(),
+  marks: z.array(FrameMarkSchema).max(MAX_FRAME_MARKS).optional(),
+  /** The annotated still, relative to the project. */
+  still: RelativePathSchema.optional(),
+  /** How the marks were drawn: the user's overlay as they saw it, or boxes only (no overlay given). */
+  drawn: z.enum(["overlay", "boxes", "none"]),
+  channel: z.enum(["console", "cli"]),
+  createdAt: IsoTimeSchema,
+});
+export type FrameNote = z.infer<typeof FrameNoteSchema>;
 
 export const DecisionSchema = z
   .strictObject({
@@ -1846,6 +1904,9 @@ export const ThumbQuerySchema = z.strictObject({
  * `kind` (frame feedback, a rating, a verdict). `answer` is the user's words, verbatim (D10). `expect` is the hash the
  * user saw (FR3).
  */
+/** Largest overlay a decision request carries (base64 characters, about 1.1 MB of PNG). */
+export const FRAME_OVERLAY_MAX_BASE64 = 1_500_000;
+
 export const DecisionRequestSchema = z
   .strictObject({
     decisionId: ConsoleIdSchema.optional(),
@@ -1867,8 +1928,19 @@ export const DecisionRequestSchema = z
     requestId: ConsoleIdSchema.optional(),
     /** A `policy` request's change (amended 2026-11-17, A10). */
     policy: PolicyChangeSchema.optional(),
+    /**
+     * The marks of a frame comment drawn as the user saw them: a transparent PNG at the render's size, base64 (amended
+     * 2026-11-20). The server hands it to `frame:note`, which lays it over the frame; the inbox never stores it.
+     */
+    overlay: z
+      .string()
+      .max(FRAME_OVERLAY_MAX_BASE64)
+      .regex(/^[A-Za-z0-9+/]+={0,2}$/, "base64")
+      .optional(),
   })
   .superRefine((request, ctx) => {
+    if (request.overlay && request.kind !== "frame-note" && request.kind !== "frame-feedback")
+      ctx.addIssue({ code: "custom", path: ["overlay"], message: "only a frame comment carries an overlay" });
     if (request.kind === "policy" && !request.policy)
       ctx.addIssue({ code: "custom", path: ["policy"], message: "a policy request carries its change" });
     if (request.policy && request.kind !== "policy")

@@ -1456,6 +1456,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   ),
   g(
     "docs/console.md",
+    k(
+      ["frame", "annotation", "arrow", "comment on a frame", "still", "screenshot"],
+      c(
+        "frame:note",
+        "frame-note.ts",
+        "project",
+        "none",
+        { excluded: "carries the user's own words from the console; CLI only" },
+        "The user's note on one frame of any project video: words, points and boxes, kept as JSON beside the frame as a PNG with the marks drawn",
+      ),
+    ),
+  ),
+  g(
+    "docs/console.md",
     c(
       "console:control",
       "console-control.ts",
