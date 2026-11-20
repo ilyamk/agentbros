@@ -1,8 +1,6 @@
 # Library — Agent Rules
 
-Last updated: 2026-11-19
-
-Shared asset resolution recognises flat screen reveals and capture-based library reels.
+Last updated: 2026-11-18
 
 [CLIs](../../scripts/AGENTS.md).
 
