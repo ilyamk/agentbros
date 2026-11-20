@@ -1,6 +1,6 @@
 # Architecture
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 ![Claude and Codex at a whiteboard showing the repository architecture](readme/architecture-cover.jpg)
 
@@ -16,6 +16,8 @@ Agent Bros. Pictures is a **harness**, not an app. Coding agents (Claude Code, C
 - **Deterministic tools**: CLIs in `scripts/` over libraries in `src/lib/`. Each emits one JSON line, and the code decides state, gates and the next step.
 - **A renderer**: Remotion compositions in React, where every frame is a pure function of the frame number.
 - **Contracts**: Zod schemas in `src/types/` for every artefact a step writes.
+
+Projects may opt into a versioned experiment at a named step. The selection is pinned to the project and enters the step answer and its owner brief. The same checkout can compare independently rendered control and candidate projects. [Project experiments](experiments.md)
 
 The design rule behind all four: **decisions that can be computed live in code and data; judgement lives with agents; approvals belong to the user.** An agent never works out the next step from prose. It asks `pnpm next`, which reads the project's files and answers.
 

@@ -163,6 +163,17 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "Run authorised campaign jobs",
     ),
   ),
+  g(
+    "docs/experiments.md",
+    c(
+      "experiment",
+      "experiment.ts",
+      "dev",
+      "none",
+      { excluded: "local project selection and blind review packaging" },
+      "Choose and compare project experiments",
+    ),
+  ),
   k(
     ["e2e", "orchestrator", "subagent", "handoff", "сквозные"],
     g(

@@ -47,6 +47,8 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 - `tournament-decided` (build): each hero shot is decided and its winner is what build.json mounts (`composition`, or `shots.<id>` {composition, props}, props compared by hash now). Advisory in promo. A fresh critic judges the packets, never the maker. A decision becomes a memory `observation` (function and winning `--techniques` name), no project scope, so the same win in another film counts as a sighting.
 - plan:check `signature-element` (bespoke films but replicas; advisory in promo) and `cross-film-repetition` (hero blocks and props hashes against the last two other films in `memory/usage`, written by `library:usage` and by film:done on build) are `FILM_GATE_DIMENSIONS`: they block by failing and stay out of the risk mean.
 
+At an opted-in step, next and the owner brief include the exact experiment instruction. See [project experiments](../../../docs/experiments.md).
+
 ## Rules
 
 - The chain is data: change steps in `FILM_CHAIN` (read by `film:next`, `film:brief`), not in an agent or skill.

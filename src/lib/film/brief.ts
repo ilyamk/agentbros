@@ -1,3 +1,4 @@
+import { experimentInstructions, startExperiment } from "../experiments/project";
 import { localToolPrompt, type LocalToolHints } from "../local-capabilities/suggestions";
 import { localEvidence } from "./local-evidence";
 import { briefFileName, inspectLine } from "./brief-handoff";
@@ -783,7 +784,9 @@ function briefText(
     return { prompt: directorBrief(project, step, state, tokens), agent: step.critic!.agent! };
   if (role === "critic") return { prompt: criticBrief(project, step, state, tokens), agent: CRITIC_AGENT };
   if (role === "fixer") return { prompt: fixerBrief(project, step, state, tokens), agent: FIXER_AGENT };
-  return { prompt: ownerBrief(project, step, state, tokens, lane), agent: step.owner };
+  const experiments = experimentInstructions(project.projectDir, step.id);
+  const instructions = experiments.map(({ id, instruction }) => `\n\n## ${id}\n\n${instruction}`);
+  return { prompt: ownerBrief(project, step, state, tokens, lane) + instructions.join(""), agent: step.owner };
 }
 
 /**
@@ -887,6 +890,9 @@ export function buildBrief(
     );
   }
 
+  if (role === "owner") {
+    for (const { id } of experimentInstructions(project.projectDir, step.id)) startExperiment(project.projectDir, id);
+  }
   const built = briefText(project, step, state, tokens, role, options.lane);
   const agent = built.agent;
   let prompt = built.prompt;

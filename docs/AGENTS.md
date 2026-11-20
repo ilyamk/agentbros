@@ -1,6 +1,6 @@
 # Docs — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 [README.md](../README.md) links the guides.
 
@@ -44,6 +44,7 @@ Bespoke film:
 - [film types](film-types.md): generated index; `film-types/<type>.md` each
 - [step lease](step-lease.md): per-step allow lists checked by every CLI, the MCP bridge and an optional hook; `step:unlock` (2026-11-17)
 - [creative benchmark](creative-benchmark.md): blind benchmark of two runs
+- [project experiments](experiments.md): opt-in methods, pinned inputs, blind video review
 - [craft evaluation](craft-evaluation.md): offline craft evaluation
 - [reference analysis](reference-analysis.md): measured and judged layers of a reference film
 - [contributing references](contributing-references.md): the local analysis workflow, what may be contributed, `ref:contribute`, private references

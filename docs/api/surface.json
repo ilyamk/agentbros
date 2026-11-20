@@ -27499,6 +27499,61 @@
       ]
     },
     {
+      "alias": "experiment",
+      "flags": [
+        {
+          "choices": [
+            "list",
+            "enable",
+            "disable",
+            "camera",
+            "freeze",
+            "outcome",
+            "compare"
+          ],
+          "default": "list",
+          "name": "action",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "baseline",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "candidate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "help",
+          "required": false,
+          "short": "h",
+          "type": "boolean"
+        },
+        {
+          "name": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "input",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "project",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "script": "scripts/experiment.ts",
+      "section": "dev",
+      "spend": "none",
+      "unknown": []
+    },
+    {
       "alias": "export:public",
       "flags": [
         {
@@ -58523,6 +58578,10 @@
                         "id": {
                           "type": "string"
                         },
+                        "proofSource": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
                         "template": {
                           "$ref": "#/$defs/__schema1"
                         },
@@ -58541,6 +58600,10 @@
                     "maximum": 1200,
                     "minimum": 6,
                     "type": "number"
+                  },
+                  "experiment": {
+                    "const": "proof-scenes@1",
+                    "type": "string"
                   },
                   "formats": {
                     "default": [
@@ -63682,6 +63745,10 @@
                             "id": {
                               "type": "string"
                             },
+                            "proofSource": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
                             "template": {
                               "$ref": "#/$defs/__schema4"
                             },
@@ -63700,6 +63767,10 @@
                         "maximum": 1200,
                         "minimum": 6,
                         "type": "number"
+                      },
+                      "experiment": {
+                        "const": "proof-scenes@1",
+                        "type": "string"
                       },
                       "formats": {
                         "default": [
@@ -65018,6 +65089,10 @@
                                 "id": {
                                   "type": "string"
                                 },
+                                "proofSource": {
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
                                 "template": {
                                   "$ref": "#/$defs/__schema13"
                                 },
@@ -65036,6 +65111,10 @@
                             "maximum": 1200,
                             "minimum": 6,
                             "type": "number"
+                          },
+                          "experiment": {
+                            "const": "proof-scenes@1",
+                            "type": "string"
                           },
                           "formats": {
                             "default": [
@@ -70452,6 +70531,10 @@
                                 "id": {
                                   "type": "string"
                                 },
+                                "proofSource": {
+                                  "minLength": 1,
+                                  "type": "string"
+                                },
                                 "template": {
                                   "$ref": "#/$defs/__schema13"
                                 },
@@ -70470,6 +70553,10 @@
                             "maximum": 1200,
                             "minimum": 6,
                             "type": "number"
+                          },
+                          "experiment": {
+                            "const": "proof-scenes@1",
+                            "type": "string"
                           },
                           "formats": {
                             "default": [
@@ -76455,6 +76542,10 @@
                         "id": {
                           "type": "string"
                         },
+                        "proofSource": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
                         "template": {
                           "oneOf": [
                             {
@@ -77180,6 +77271,10 @@
                     "maximum": 1200,
                     "minimum": 6,
                     "type": "number"
+                  },
+                  "experiment": {
+                    "const": "proof-scenes@1",
+                    "type": "string"
                   },
                   "formats": {
                     "default": [
@@ -152407,6 +152502,10 @@
                 "id": {
                   "type": "string"
                 },
+                "proofSource": {
+                  "minLength": 1,
+                  "type": "string"
+                },
                 "template": {
                   "oneOf": [
                     {
@@ -153132,6 +153231,10 @@
             "maximum": 1200,
             "minimum": 6,
             "type": "number"
+          },
+          "experiment": {
+            "const": "proof-scenes@1",
+            "type": "string"
           },
           "formats": {
             "default": [

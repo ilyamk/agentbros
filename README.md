@@ -874,7 +874,7 @@ Find any command with `pnpm commands --query <word>`; `pnpm next --project <id>`
 | Commands and cleanup | [command catalogue](docs/commands.md), [cleanup](docs/cleanup.md) |
 | Contributor development | [contribution gates](docs/contributing-gates.md), [GitHub automation](docs/github.md), [triage](docs/triage.md) (currently inactive), [releases and generated CREDITS.md](docs/releases.md), [agent workflow testing](docs/agent-workflow-e2e.md) |
 | Context and inventory | [context budgets](docs/context-budget.md), [context loading](docs/context-loading.md), [metrics and API surface](docs/metrics.md) |
-| Gallery and benchmarks | [showcases](docs/showcases.md), [benchmark](docs/benchmark.md), [creative benchmark](docs/creative-benchmark.md) |
+| Gallery and benchmarks | [showcases](docs/showcases.md), [benchmark](docs/benchmark.md), [creative benchmark](docs/creative-benchmark.md), [project experiments](docs/experiments.md) |
 | Memory and lessons | `memory`; [memory](memory/AGENTS.md), [creative postmortem](.agents/skills/creative-postmortem/SKILL.md) |
 | Design and implementation | [design tokens](docs/design-tokens.md), [library reference](docs/library-reference.md), [motion examples](docs/motion-examples.md), [icons and logos](docs/icon-resources.md) |
 | Install and update | `bootstrap`, `keys`, `preflight`, `assets:sync`; [agent setup](SETUP.md), [install and update](docs/install.md), [local macOS tools](docs/local-macos.md) |
