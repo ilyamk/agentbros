@@ -91,6 +91,15 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "vork:vfx": "optional local 3D/VFX engine chosen per shot across playbooks",
   "vork:eval": "optional local 3D/VFX engine chosen per shot across playbooks",
 
+  "colour:scopes": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:compare": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:match": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:grade": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:shots": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:track": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:check": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:looks": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+
   "viz:list": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
   "viz:prepare": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
   "viz:inspect": "Prepared charts and diagrams across playbooks; docs/visualisations.md",

@@ -217,10 +217,83 @@ export const MatchResultSchema = z.looseObject({
   grade: z.record(z.string(), z.unknown()),
   method: z.string(),
   metrics: z.looseObject({ zoneDeltaE2000Before: ZoneScore, zoneDeltaE2000After: ZoneScore }),
+  gate: z.looseObject({
+    status: z.enum(["pass", "warn", "fail"]),
+    failed: z.array(z.string()),
+    warnings: z.array(z.string()),
+  }),
+  stages: z.array(z.string()),
   input: MediaSchema,
   reference: MediaSchema,
   files: z.record(z.string(), z.string()),
 });
+
+const GateSchema = z.looseObject({
+  status: z.enum(["pass", "warn", "fail"]),
+  checks: z.array(
+    z.looseObject({ id: z.string(), status: z.enum(["pass", "info", "warn", "fail"]), text: z.string() }),
+  ),
+  failed: z.array(z.string()),
+  warnings: z.array(z.string()),
+});
+
+/** colour:check, and the gate colour:match and colour:looks run on their sampled pixels. */
+export const CheckResultSchema = GateSchema.extend({
+  ok: z.literal(true),
+  files: z.record(z.string(), z.string()),
+});
+
+export const MatchShotsResultSchema = z.looseObject({
+  ok: z.literal(true),
+  perShot: z.literal(true),
+  gateStatus: z.enum(["pass", "warn", "fail"]),
+  shots: z.array(
+    z.looseObject({
+      label: z.string(),
+      start: z.number(),
+      end: z.number(),
+      grade: z.record(z.string(), z.unknown()),
+      gate: GateSchema,
+      stages: z.array(z.string()),
+    }),
+  ),
+  files: z.record(z.string(), z.string()),
+});
+
+export const LooksResultSchema = z.looseObject({
+  ok: z.literal(true),
+  looks: z.array(
+    z.looseObject({ id: z.string(), grade: z.record(z.string(), z.unknown()), gate: GateSchema, still: z.string() }),
+  ),
+  files: z.record(z.string(), z.string()),
+});
+
+/** How a look treats skin: `hold` solves a skin secondary that keeps hue near the source and chroma at `chroma` times it. */
+export const SkinPolicySchema = z.strictObject({
+  mode: z.enum(["hold", "free"]).default("hold"),
+  chroma: z.number().min(0.3).max(1.6).default(1),
+  hueAllowance: z.number().min(0).max(40).default(6),
+  lightness: z.number().min(-25).max(25).default(0),
+  /** The look warms skin on purpose (golden hour): the yellow-drift check reports instead of failing. */
+  warm: z.boolean().default(false),
+});
+
+export const LookSchema = z.strictObject({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  name: z.string(),
+  family: z.enum(["technical", "film", "commercial", "music-video"]),
+  /** What the look is for, in one sentence. */
+  intent: z.string(),
+  /** Where this treatment is commonly seen (genres, formats), never a named title's LUT. */
+  typicalUse: z.string(),
+  /** The tonal and colour moves in plain words: what a colourist would say it does. */
+  moves: z.array(z.string()).min(1),
+  skin: SkinPolicySchema,
+  /** What goes wrong when it is pushed too far or used on the wrong material. */
+  risks: z.array(z.string()).min(1),
+  grade: BaseGradeSchema,
+});
+export type Look = z.infer<typeof LookSchema>;
 
 export const ShotsResultSchema = z.looseObject({
   ok: z.literal(true),

@@ -18,6 +18,7 @@ from typing import Any
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import colour_craft as cc
 import colour_maths as cm
 import colour_scopes as sc
 
@@ -306,6 +307,30 @@ def skin_stats(rgb: np.ndarray, region_mask: np.ndarray | None = None) -> dict[s
     return out
 
 
+def region_pixels(media: Media, region: list[float]) -> np.ndarray:
+    """A source-pixel box (x, y, w, h) as a flat mask over every cropped analysis frame of `media`."""
+    rx, ry, rw, rh = region
+    sx = media.size[0] / media.info["width"]
+    sy = media.size[1] / media.info["height"]
+    x0, y0 = round(rx * sx) - media.crop[0], round(ry * sy) - media.crop[1]
+    masks = []
+    for frame in media.frames:
+        m = np.zeros(frame.shape[:2], dtype=bool)
+        m[max(y0, 0) : max(y0 + round(rh * sy), 0), max(x0, 0) : max(x0 + round(rw * sx), 0)] = True
+        masks.append(m.ravel())
+    return np.concatenate(masks)
+
+
+def keyed_pixels(media: Media, region: list[float] | None, limit: int) -> tuple[np.ndarray, np.ndarray]:
+    """Strided pixels and their skin mask, keyed on these pixels (a region box, else the skin chroma rule)."""
+    allpx = np.concatenate([f.reshape(-1, 3) for f in media.frames])
+    stride = max(1, math.ceil(len(allpx) / limit))
+    px = allpx[::stride]
+    if region:
+        return px, region_pixels(media, region)[::stride]
+    return px, cc.skin_box(px)
+
+
 def statistics(media: Media, request: dict[str, Any]) -> dict[str, Any]:
     """The numbers a colourist reads off the scopes."""
     px = media.pixels()
@@ -327,16 +352,7 @@ def statistics(media: Media, request: dict[str, Any]) -> dict[str, Any]:
     neutral = cm.neutral_cast(lab)
     region_mask = None
     if request.get("skinRegion"):
-        rx, ry, rw, rh = request["skinRegion"]
-        sx = media.size[0] / media.info["width"]
-        sy = media.size[1] / media.info["height"]
-        x0, y0 = round(rx * sx) - media.crop[0], round(ry * sy) - media.crop[1]
-        masks = []
-        for frame in media.frames:
-            m = np.zeros(frame.shape[:2], dtype=bool)
-            m[max(y0, 0) : max(y0 + round(rh * sy), 0), max(x0, 0) : max(x0 + round(rw * sx), 0)] = True
-            masks.append(m.ravel())
-        region_mask = np.concatenate(masks)[:: max(1, math.ceil(sum(f.shape[0] * f.shape[1] for f in media.frames) / MAX_STAT_PIXELS))]
+        region_mask = region_pixels(media, request["skinRegion"])[:: max(1, math.ceil(sum(f.shape[0] * f.shape[1] for f in media.frames) / MAX_STAT_PIXELS))]
     tonal = {"shadowsPct": float(100 * (y < 0.2).mean()), "midsPct": float(100 * ((y >= 0.2) & (y <= 0.8)).mean()), "highlightsPct": float(100 * (y > 0.8).mean())}  # noqa: PLR2004 -- 20/80 IRE bands.
     return {
         "luma": {
@@ -676,16 +692,42 @@ def params_grade(p: np.ndarray, curves: dict[str, Any] | None = None) -> dict[st
     return grade
 
 
-def fit_match(source: np.ndarray, target: np.ndarray, method: str, paired_pairs: tuple[np.ndarray, np.ndarray] | None) -> tuple[np.ndarray, dict[str, Any] | None]:
-    """Solve lift/gamma/gain per channel and saturation (and a master curve) toward the reference."""
+def fit_match(
+    source: np.ndarray,
+    target: np.ndarray,
+    method: str,
+    paired_pairs: tuple[np.ndarray, np.ndarray] | None,
+    skin: tuple[np.ndarray, np.ndarray] | None = None,
+) -> tuple[np.ndarray, dict[str, Any] | None]:
+    """Solve lift/gamma/gain per channel and saturation (and a master curve) toward the reference.
+
+    `skin` is (source skin pixels, target mean Lab): the primary then has to keep faces near that target while it
+    moves the frame's statistics, so it cannot buy a better zone match by turning skin yellow.
+    """
     from scipy.optimize import least_squares
 
     target_features = cm.match_features(cm.rgb_to_lab(np.clip(target, 0, 1)))
     regulariser = np.array([2, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5])
 
+    skin_px = skin[0][:: max(1, len(skin[0]) // 4000)] if skin is not None else None
+    target_y = cm.luma(np.clip(target, 0, 1))
+    floor_q = [0.5, 2, 5]
+    target_floor = np.percentile(target_y, floor_q)
+    target_crush = float(np.mean(1 / (1 + np.exp((target_y - 0.02) / 0.004))))
+
+    def floor_terms(graded: np.ndarray) -> np.ndarray:
+        """Black point in Y' (L* barely moves near black) and a smooth share of pixels crushed below 2 IRE."""
+        y = cm.luma(np.clip(graded, 0, 1))
+        crush = float(np.mean(1 / (1 + np.exp((y - 0.02) / 0.004))))
+        return np.concatenate([(np.percentile(y, floor_q) - target_floor) * 60, [max(0.0, crush - target_crush) * 300]])
+
     def residual_stats(p: np.ndarray, curves: dict[str, Any] | None = None) -> np.ndarray:
-        graded = cm.apply_grade(source, params_grade(p, curves))
-        return np.concatenate([cm.match_features(cm.rgb_to_lab(graded)) - target_features, (p - IDENTITY) * regulariser])
+        grade = params_grade(p, curves)
+        graded = cm.apply_grade(source, grade)
+        parts = [cm.match_features(cm.rgb_to_lab(graded)) - target_features, floor_terms(graded), (p - IDENTITY) * regulariser]
+        if skin_px is not None and skin is not None:
+            parts.append((cm.rgb_to_lab(cm.apply_grade(skin_px, grade)).mean(axis=0) - skin[1]) * np.array([1.0, 2.0, 2.0]))
+        return np.concatenate(parts)
 
     if method == "paired" and paired_pairs is not None:
         src_px, ref_lab = paired_pairs
@@ -769,13 +811,20 @@ def match_metrics(source: np.ndarray, target: np.ndarray, grade: dict[str, Any])
     }
 
 
-def op_match(request: dict[str, Any]) -> dict[str, Any]:
-    """Fit an editable grade that brings the input toward the reference, with before/after evidence."""
-    a = Media(request["input"], request)
-    b_request = {**request, "crop": request.get("referenceCrop", "auto")}
-    b = Media(request["reference"], b_request, paired_times(a, probe(request["reference"]), request))
-    source = a.pixels(40_000)
-    target = b.pixels(200_000)
+def match_policy(source_skin: np.ndarray, reference_skin: np.ndarray | None) -> dict[str, Any]:
+    """The gate's skin allowance for a match: the move the reference asks for, plus a small margin."""
+    if reference_skin is None or len(reference_skin) < cc.MIN_SKIN_PIXELS or len(source_skin) < cc.MIN_SKIN_PIXELS:
+        return {"chroma": 1.0, "hueAllowance": 6}
+    s, r = cc.lab_summary(source_skin), cc.lab_summary(reference_skin)
+    return {"chroma": float(np.clip(r["C"] / max(s["C"], 1e-6), 0.5, 1.5)), "hueAllowance": abs((r["h"] - s["h"] + 180) % 360 - 180) + 6}
+
+
+def solve(a: Media, b: Media, request: dict[str, Any]) -> dict[str, Any]:  # noqa: C901, PLR0915 -- the match stages in order.
+    """Fit a match grade in the order a colourist works: balance the environment, separate it, then place skin."""
+    source, skin = keyed_pixels(a, request.get("skinRegion"), 40_000)
+    target, ref_skin = keyed_pixels(b, request.get("referenceSkinRegion"), 200_000)
+    mode = request.get("skin", "match")
+    has_skin = mode != "off" and skin.sum() >= cc.MIN_SKIN_PIXELS
     method = request.get("method", "stats")
     paired_pairs = None
     if method == "paired":
@@ -789,26 +838,223 @@ def op_match(request: dict[str, Any]) -> dict[str, Any]:
         src = [cv2.resize(np.clip(f, 0, 1).astype(np.float32), (width, height), interpolation=cv2.INTER_AREA).reshape(-1, 3) for f in a.frames]
         ref = [cv2.resize(np.clip(f, 0, 1).astype(np.float32), (width, height), interpolation=cv2.INTER_AREA).reshape(-1, 3) for f in b.frames]
         paired_pairs = (np.concatenate(src).astype(np.float64), cm.rgb_to_lab(np.concatenate(ref).astype(np.float64)))
-    p, curves = fit_match(source, target, method, paired_pairs)
+    skin_goal = None
+    if has_skin:
+        use_reference = mode == "match" and ref_skin.sum() >= cc.MIN_SKIN_PIXELS
+        summary = cc.lab_summary(target[ref_skin]) if use_reference else cc.lab_summary(source[skin])
+        skin_goal = (source[skin], np.array([summary["L"], summary["a"], summary["b"]]))
+    p, curves = fit_match(source, target, method, paired_pairs, skin_goal)
     strength = float(request.get("strength", 1.0))
     p, curves = soften(p, curves, strength)
     grade = round_grade(params_grade(p, curves))
+    stages = ["primary: lift/gamma/gain and saturation fitted on the frame" + (" with skin held toward its target" if skin_goal is not None else "")]
+    if mode != "off" and request.get("environment", True):
+        skin_hue = None
+        if has_skin:
+            _, scb, scr = cm.rgb_to_ycbcr(np.clip(cm.apply_grade(source[skin], grade), 0, 1))
+            skin_hue = cm.circular_mean_deg(cm.vectorscope_angle(scb, scr), np.hypot(scb, scr))
+        env = cc.solve_environment(grade, source[~skin], target[~ref_skin], skin_hue)
+        if env:
+            env["strength"] = round(strength, 4)
+            grade = cc.with_secondary(grade, env)
+            stages.append(f"environment secondary: hue {env['hueShift']:+.0f} deg, chroma x{env['saturation']:.2f}")
+    skin_target = "none"
+    if has_skin:
+        graded_skin = cm.apply_grade(source[skin], grade)
+        if mode == "match" and ref_skin.sum() >= cc.MIN_SKIN_PIXELS:
+            goal = cc.lab_summary(target[ref_skin])
+            skin_target = "reference skin (" + ("region" if request.get("referenceSkinRegion") else "chroma rule") + ")"
+        else:
+            goal = cc.skin_target({"chroma": 1.0, "hueAllowance": 4}, cc.lab_summary(source[skin]), cc.lab_summary(graded_skin))
+            skin_target = "source skin held (no reference skin found)" if mode == "match" else "source skin held"
+        sec = cc.solve_skin(grade, source[skin], source[~skin], goal, "skin")
+        if sec:
+            sec["strength"] = round(strength, 4)
+            grade = cc.with_secondary(grade, sec)
+            stages.append(f"skin secondary toward {skin_target}: hue {sec['hueShift']:+.0f} deg, chroma x{sec['saturation']:.2f}, luma {sec['luma']:+.3f}")
     guard_highlights(source, grade)
-    metrics = match_metrics(source, target, grade)
+    graded = cm.apply_grade(source, grade)
+    policy = match_policy(source[skin], target[ref_skin]) if mode == "match" else {"chroma": 1.0, "hueAllowance": 6}
+    checks = cc.gate(source, graded, skin, policy, (target, ref_skin))
+    secondaries = [s for s in grade.get("secondaries", []) if s["name"] in ("skin", "environment toward reference")]
+    if secondaries and has_skin:
+        checks["checks"].append(cc.spill_check(cm.apply_grade(source[~skin], {**grade, "secondaries": []}), graded[~skin]))
+    return {
+        "grade": grade,
+        "metrics": match_metrics(source, target, grade),
+        "gate": checks,
+        "skinPixelsPct": round(float(100 * skin.mean()), 3),
+        "skinTarget": skin_target,
+        "stages": stages,
+        "method": method,
+        "strength": strength,
+    }
+
+
+def thumbnail_cuts(path: str, info: dict[str, Any]) -> list[float]:
+    """Hard cuts in seconds, by the same thumbnail-difference rule colour:track uses (shot_bounds)."""
+    height = max(8, round(64 * info["height"] / info["width"]) // 2 * 2)
+    proc = stream_frames(path, 64, height, "gray")
+    frames = []
+    while True:
+        chunk = proc.stdout.read(64 * height) if proc.stdout else b""
+        if len(chunk) < 64 * height:
+            break
+        frames.append(np.frombuffer(chunk, dtype=np.uint8).reshape(height, 64).astype(np.float64))
+    proc.wait()
+    if len(frames) < 3:  # noqa: PLR2004 -- nothing to cut.
+        return []
+    diff = np.array([0.0] + [float(np.abs(frames[i] - frames[i - 1]).mean() / 255) for i in range(1, len(frames))])
+    limit = max(0.09, 8 * float(np.median(diff[1:])))
+    fps = info["fps"] or 25
+    cuts: list[float] = []
+    for i in np.nonzero(diff > limit)[0]:
+        t = round(float(i) / fps, 4)
+        if not cuts or t - cuts[-1] >= 0.4:  # noqa: PLR2004 -- minimum shot length in seconds.
+            cuts.append(t)
+    return cuts
+
+
+def preview_rows(a: Media, b: Media, grade: dict[str, Any], rows: int = 4) -> list[list[np.ndarray]]:
+    """Input | graded | reference tiles for the first sampled frames."""
+    out = []
+    for index in range(min(len(a.frames), rows)):
+        graded = cm.apply_grade(a.frames[index], grade)
+        out.append([sc.frame_tile(a.frames[index], "input"), sc.frame_tile(graded, "graded (match)"), sc.frame_tile(b.frames[min(index, len(b.frames) - 1)], "reference")])
+    return out
+
+
+def op_match(request: dict[str, Any]) -> dict[str, Any]:
+    """Fit an editable grade (or one per shot) that brings the input toward the reference, with the gate's verdict."""
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    b_request = {**request, "crop": request.get("referenceCrop", "auto")}
+    if not request.get("perShot"):
+        a = Media(request["input"], request)
+        b = Media(request["reference"], b_request, paired_times(a, probe(request["reference"]), request))
+        result = solve(a, b, request)
+        preview = out_dir / "match-preview.png"
+        gate = result["gate"]
+        zones = result["metrics"]
+        title = f"Match preview  {Path(a.path).name} -> {Path(b.path).name}  gate {gate['status'].upper()}"
+        title += f"  zone dE2000 {zones['zoneDeltaE2000Before']['mean']:.2f} -> {zones['zoneDeltaE2000After']['mean']:.2f}"
+        sc.write_png(str(preview), sc.grid(preview_rows(a, b, result["grade"]), (640, 300), title))
+        return {"ok": True, **result, "input": a.describe(), "reference": b.describe(), "files": {"preview": str(preview)}}
+    info, ref_info = probe(request["input"]), probe(request["reference"])
+    if info["still"] or ref_info["still"]:
+        fail("--per-shot needs two videos cut the same way")
+    bounds = [0.0, *thumbnail_cuts(request["input"], info), info["duration"]]
+    scale = ref_info["duration"] / max(info["duration"], 1e-6)
+    shots, rows = [], []
+    per = max(int(request.get("frames", 4)), 1)
+    for index in range(len(bounds) - 1):
+        start, end = bounds[index], bounds[index + 1]
+        if end - start < 0.3:  # noqa: PLR2004 -- slivers are not shots.
+            continue
+        margin = (end - start) * 0.15
+        times: list[float | None] = [round(start + margin + (end - start - 2 * margin) * (i + 0.5) / per, 4) for i in range(per)]
+        a = Media(request["input"], request, times)
+        b = Media(request["reference"], b_request, [round(min(t * scale, ref_info["duration"] - 0.05), 4) for t in times])
+        result = solve(a, b, request)
+        label = f"shot-{len(shots) + 1:02d}"
+        shots.append({"label": label, "start": round(start, 4), "end": round(end, 4), **result})
+        graded = cm.apply_grade(a.frames[len(a.frames) // 2], result["grade"])
+        rows.append(
+            [
+                sc.frame_tile(a.frames[len(a.frames) // 2], f"{label} {start:.1f}-{end:.1f}s input"),
+                sc.frame_tile(graded, f"graded  gate {result['gate']['status']}"),
+                sc.frame_tile(b.frames[len(b.frames) // 2], "reference"),
+            ]
+        )
+    preview = out_dir / "match-preview.png"
+    sc.write_png(str(preview), sc.grid(rows, (560, 260), f"Per-shot match  {Path(request['input']).name} -> {Path(request['reference']).name}"))
+    worst = max((s["gate"]["status"] for s in shots), key=lambda v: cc.RANK[v], default="pass")
+    return {"ok": True, "perShot": True, "shots": shots, "gateStatus": worst, "cuts": bounds[1:-1], "files": {"preview": str(preview)}}
+
+
+def op_check(request: dict[str, Any]) -> dict[str, Any]:
+    """The validation gate on a rendered grade: graded file against its pixel-aligned source, optionally a reference."""
+    graded_media = Media(request["input"], request)
+    ap = graded_media.describe()["activePicture"]
+    source_media = Media(request["source"], {**request, "crop": [ap["x"], ap["y"], ap["width"], ap["height"]]}, graded_media.times)
+    if [f.shape for f in source_media.frames] != [f.shape for f in graded_media.frames]:
+        fail("--source must be the ungraded file the input was rendered from (same size and timing)")
+    source, skin = keyed_pixels(source_media, request.get("skinRegion"), 120_000)
+    graded, _ = keyed_pixels(graded_media, None, 120_000)
+    reference = None
+    ref_media = None
+    if request.get("reference"):
+        ref_media = Media(request["reference"], {**request, "crop": request.get("referenceCrop", "auto")}, paired_times(graded_media, probe(request["reference"]), request))
+        reference = keyed_pixels(ref_media, request.get("referenceSkinRegion"), 200_000)
+    policy = request.get("policy") or (match_policy(source[skin], reference[0][reference[1]]) if reference else {"chroma": 1.0, "hueAllowance": 6})
+    verdict = cc.gate(source, graded, skin, policy, reference)
+    if graded_media.legal:
+        outside = graded_media.legal["yBelowPct"] + graded_media.legal["yAbovePct"]
+        legal_status = "warn" if outside > 0.5 else "pass"  # noqa: PLR2004 -- broadcast tolerance.
+        verdict["checks"].append({"id": "levels.legal", "status": legal_status, "value": round(outside, 3), "limit": "0.5% outside Y' 16-235", "text": f"{outside:.2f}% of pixels outside legal luma"})
+        if outside > 0.5 and verdict["status"] == "pass":  # noqa: PLR2004 -- as above.
+            verdict["status"] = "warn"
     out_dir = Path(request["output"])
     out_dir.mkdir(parents=True, exist_ok=True)
     rows = []
-    for index in range(min(len(a.frames), 4)):
-        graded = cm.apply_grade(a.frames[index], grade)
-        rows.append([sc.frame_tile(a.frames[index], "input"), sc.frame_tile(graded, "graded (match)"), sc.frame_tile(b.frames[index], "reference")])
-    preview = out_dir / "match-preview.png"
-    sc.write_png(
-        str(preview),
-        sc.grid(
-            rows, (640, 300), f"Match preview  {Path(a.path).name} -> {Path(b.path).name}  zone dE2000 {metrics['zoneDeltaE2000Before']['mean']:.2f} -> {metrics['zoneDeltaE2000After']['mean']:.2f}"
-        ),
-    )
-    return {"ok": True, "grade": grade, "method": method, "strength": strength, "metrics": metrics, "input": a.describe(), "reference": b.describe(), "files": {"preview": str(preview)}}
+    for index in range(min(len(graded_media.frames), 3)):
+        frame_mask = np.zeros(source_media.frames[index].shape[:2], dtype=bool)
+        if request.get("skinRegion"):
+            sizes = [f.shape[0] * f.shape[1] for f in source_media.frames]
+            offset = sum(sizes[:index])
+            frame_mask = region_pixels(source_media, request["skinRegion"])[offset : offset + sizes[index]].reshape(frame_mask.shape)
+        else:
+            frame_mask = cc.skin_box(source_media.frames[index].reshape(-1, 3)).reshape(frame_mask.shape)
+        keyed = source_media.frames[index].copy()
+        keyed[frame_mask] = keyed[frame_mask] * 0.5 + np.array([1.0, 0.2, 0.8]) * 0.5
+        row = [sc.frame_tile(keyed, "source, skin key in magenta"), sc.frame_tile(graded_media.frames[index], "graded")]
+        if ref_media is not None:
+            row.append(sc.frame_tile(ref_media.frames[min(index, len(ref_media.frames) - 1)], "reference"))
+        rows.append(row)
+    lines = [f"[{c['status'].upper():4}] {c['text']}" for c in verdict["checks"]]
+    rows.append([sc.text_panel(lines, 640, 300, f"Gate: {verdict['status'].upper()}")])
+    sheet = out_dir / "check.png"
+    sc.write_png(str(sheet), sc.grid(rows, (640, 300), f"colour:check  {Path(request['input']).name}"))
+    (out_dir / "check.json").write_text(json.dumps({"policy": policy, **verdict}, indent=2) + "\n", encoding="utf8")
+    return {"ok": True, **verdict, "policy": policy, "skinPixelsPct": round(float(100 * skin.mean()), 3), "files": {"sheet": str(sheet), "report": str(out_dir / "check.json")}}
+
+
+def op_looks(request: dict[str, Any]) -> dict[str, Any]:
+    """Apply each look with its skin policy held by a solved secondary, gate it, and lay the variants out in one grid."""
+    media = Media(request["input"], request)
+    px, skin = keyed_pixels(media, request.get("skinRegion"), 60_000)
+    has_skin = skin.sum() >= cc.MIN_SKIN_PIXELS
+    middle = media.frames[len(media.frames) // 2]
+    out_dir = Path(request["output"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    tiles = [sc.frame_tile(middle, "0. source (ungraded)")]
+    looks = []
+    for index, look in enumerate(request["looks"], start=1):
+        grade = look["grade"]
+        policy = look.get("skin", {})
+        secondary = None
+        if has_skin and policy.get("mode", "hold") == "hold":
+            graded_skin = cm.apply_grade(px[skin], grade)
+            goal = cc.skin_target(policy, cc.lab_summary(px[skin]), cc.lab_summary(graded_skin))
+            secondary = cc.solve_skin(grade, px[skin], px[~skin], goal, f"skin hold ({look['id']})")
+            grade = cc.with_secondary(grade, secondary)
+        graded = cm.apply_grade(px, grade)
+        verdict = cc.gate(px, graded, skin, policy)
+        if secondary:
+            verdict["checks"].append(cc.spill_check(cm.apply_grade(px[~skin], look["grade"]), graded[~skin]))
+            verdict["status"] = max(verdict["status"], verdict["checks"][-1]["status"], key=lambda v: cc.RANK[v])
+        still = out_dir / f"{look['id']}.png"
+        image = cm.apply_grade(middle, grade)
+        sc.write_png(str(still), (np.clip(image, 0, 1) * 255).round().astype(np.uint8))
+        tiles.append(sc.frame_tile(image, f"{index}. {look['name']}  [{verdict['status']}]"))
+        looks.append({"id": look["id"], "grade": grade, "gate": verdict, "skinSecondary": secondary is not None, "still": str(still)})
+    columns = 3 if len(tiles) <= 9 else 4  # noqa: PLR2004 -- three across keeps each variant readable.
+    rows = [tiles[i : i + columns] for i in range(0, len(tiles), columns)]
+    h, w = middle.shape[:2]
+    cell = (640, max(200, round(640 * h / w)))
+    grid = out_dir / "looks.png"
+    sc.write_png(str(grid), sc.grid(rows, cell, f"Looks on {Path(media.path).name}" + ("  (skin held by a solved secondary)" if has_skin else "  (no skin found)")))
+    return {"ok": True, "looks": looks, "skinPixelsPct": round(float(100 * skin.mean()), 3), "input": media.describe(), "files": {"grid": str(grid)}}
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -1139,7 +1385,18 @@ def op_mask(request: dict[str, Any]) -> dict[str, Any]:
     return {"ok": True, "path": output, "frames": count, "fps": fps, "meanCoveragePct": round(100 * float(np.mean(coverage)), 3)}
 
 
-OPERATIONS = {"scopes": op_scopes, "compare": op_compare, "match": op_match, "shots": op_shots, "bake": op_bake, "track": op_track, "mask": op_mask, "selftest": op_selftest}
+OPERATIONS = {
+    "scopes": op_scopes,
+    "compare": op_compare,
+    "match": op_match,
+    "shots": op_shots,
+    "bake": op_bake,
+    "track": op_track,
+    "mask": op_mask,
+    "check": op_check,
+    "looks": op_looks,
+    "selftest": op_selftest,
+}
 
 
 def main() -> None:

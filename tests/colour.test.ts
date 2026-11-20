@@ -339,3 +339,102 @@ test("shots: a cut between a neutral and a tinted shot is found and the tinted s
   assert.equal(shots[1]!.outOfTolerance, true);
   assert.ok(existsSync(path.join(work, "shots", "timeline.json")));
 });
+
+test("gate and skin-aware match: a yellow skin push fails; matching the world spares the face", worker, () => {
+  const dir = mkdtempSync(path.join(work, "skin-"));
+  const still = (name: string, background: string, skin: string) => {
+    const file = path.join(dir, name);
+    ffmpeg(
+      "-f",
+      "lavfi",
+      "-i",
+      `color=c=${background}:s=320x180,drawbox=x=120:y=45:w=80:h=90:color=${skin}:t=fill,noise=alls=10:allf=t`,
+      "-frames:v",
+      "1",
+      file,
+    );
+    return file;
+  };
+  // A generated frame: azure-blue room, ordinary warm skin. The reference: teal room, darker and muted skin.
+  const input = still("input.png", "0x3c5f96", "0xc08a70");
+  const reference = still("reference.png", "0x1e6464", "0x7a6458");
+  const region = ["--skin-region", "125,50,70,80"];
+
+  const yellow = path.join(dir, "yellow.grade.json");
+  writeFileSync(yellow, JSON.stringify({ gain: [1.1, 1.07, 0.82], saturation: 1.45 }));
+  cli("colour-grade.ts", ["--grade", yellow, "--input", input, "--output", path.join(dir, "yellow.png")]);
+  const bad = cli("colour-check.ts", [
+    "--input",
+    path.join(dir, "yellow.png"),
+    "--source",
+    input,
+    "--output",
+    path.join(dir, "check-yellow"),
+    ...region,
+  ]);
+  assert.equal(bad.metadata!.status, "fail");
+  const failed = (bad.metadata!.failed as string[]).join(" ");
+  assert.match(failed, /skin (chroma|b\*)/);
+  assert.ok(existsSync(path.join(dir, "check-yellow", "check.png")));
+
+  const referenceSkin = (mode: string) => {
+    const out = path.join(dir, `${mode}.grade.json`);
+    const result = cli("colour-match.ts", [
+      "--input",
+      input,
+      "--reference",
+      reference,
+      "--output",
+      out,
+      "--skin",
+      mode,
+      ...region,
+      "--reference-skin-region",
+      "125,50,70,80",
+    ]);
+    const report = JSON.parse(readFileSync(path.join(dir, `${mode}.grade-match`, "match.json"), "utf8")) as {
+      gate: { status: string; checks: { id: string; value: number }[] };
+    };
+    return { result, report, skinDe: report.gate.checks.find((c) => c.id === "reference.skin")!.value };
+  };
+  const global = referenceSkin("off");
+  const aware = referenceSkin("match");
+  assert.ok(
+    aware.skinDe < global.skinDe,
+    `skin-aware match lands skin nearer the reference (${aware.skinDe} vs ${global.skinDe})`,
+  );
+  assert.ok(aware.skinDe < 6, `skin within the gate's warn limit, got ${aware.skinDe}`);
+  assert.notEqual(aware.report.gate.status, "fail");
+  assert.ok((aware.result.metadata!.stages as string[]).some((s) => s.startsWith("skin secondary")));
+});
+
+test("looks: every preset applies, holds skin and reports a gate; the list explains each one", worker, () => {
+  const listed = cli("colour-looks.ts", ["--list"]);
+  const looks = listed.metadata!.looks as { id: string; intent: string; risks: string[] }[];
+  assert.ok(looks.length >= 10);
+  for (const look of looks) assert.ok(look.intent && look.risks.length, look.id);
+  const dir = mkdtempSync(path.join(work, "looks-"));
+  const input = path.join(dir, "in.png");
+  ffmpeg(
+    "-f",
+    "lavfi",
+    "-i",
+    "color=c=0x3c5f96:s=320x180,drawbox=x=120:y=45:w=80:h=90:color=0xc08a70:t=fill,noise=alls=10:allf=t",
+    "-frames:v",
+    "1",
+    input,
+  );
+  const run = () =>
+    cli("colour-looks.ts", ["--input", input, "--output", dir, "--skin-region", "125,50,70,80", "--force"]);
+  const first = run();
+  const summary = first.metadata!.looks as { id: string; gate: string; grade: string }[];
+  assert.equal(summary.length, 6);
+  for (const look of summary) {
+    assert.notEqual(look.gate, "fail", `${look.id} keeps skin within its policy`);
+    GradeSchema.parse(JSON.parse(readFileSync(look.grade, "utf8")));
+  }
+  const grid = path.join(dir, "looks.png");
+  const hash = sha(grid);
+  run();
+  assert.equal(sha(grid), hash, "the grid is deterministic");
+});

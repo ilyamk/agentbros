@@ -257,6 +257,34 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
   g(
     "docs/colour-grading.md",
     k(
+      [...COLOUR_KEYWORDS, "validation", "gate", "skin", "кожа", "проверка", "валидация"],
+      c(
+        "colour:check",
+        "colour-check.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Validate a rendered grade against its source (and a reference): skin chroma, hue and yellow drift, clipping, crushed blacks, saturation, legal range",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "look", "preset", "LUT", "variants", "пресет", "лук", "варианты"],
+      c(
+        "colour:looks",
+        "colour-looks.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Try genre looks (film, commercial, music video) on a clip with skin held, as a labelled grid with a gate verdict per look and an editable grade each",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
       [...COLOUR_KEYWORDS, "power window", "tracking", "mask", "маска", "трекинг"],
       c(
         "colour:track",

@@ -48,7 +48,7 @@ Artefacts: `public/projects/{id}/` unless stated.
 | `fal-catalog.ts` | Provider catalogue, prices, pins, drift, discovery price/equivalents, match results/suggestions, curation and batch specs | `fal:find`, `fal:scaffold`, catalogue tools |
 | `generation.ts`, `models.ts`, `pricing-evidence.ts` | provider requests (measured media MIME, optional schema validation), model registry, sealed pricing (large Higgsfield inputs keep hashes) | `generate:*` via `src/lib/providers` |
 | `source-index.ts`, `ocr.ts`, `visual-search.ts`, `category-search.ts`, `native-word-timing.ts` | local ingest indexes and receipts | `media:*` |
-| `matte.ts`, `colour.ts` | matte receipts; `grade.json`, timelines, tracks, answers | `matte`, `colour:*` |
+| `matte.ts`, `colour.ts` | matte receipts; `*.grade.json`, timelines, tracks, answers | `matte`, `colour:*` |
 | `contrib.ts` | Contribution blocks, categories, tiers, intake facts/verdicts and `.changes/` entries with their `novelty:` justification; release-PR route (`contrib/release.json`) | contributor; `change:add`, `contrib:intake` |
 | `contrib-tools.ts` | Scout opportunities and curated opportunities (`contrib/opportunities.json`) with task-contract v1 fields (`source`, `priority`, `value`, `requires` with `paid: false`, `read`, `verify`; RFC 0002 §3.4), gate evidence and trust overrides | `contrib:scout`, `contrib:check`; maintainer |
 | `leak-scan.ts` | Optional git-ignored leak-patterns.local.json pattern config at the repository root | local maintainer |
