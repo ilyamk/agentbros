@@ -1,6 +1,6 @@
 # Tests — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 `node:test`/`tsx`; synthetic fixtures, no paid APIs. Check both A/B arms.
 
