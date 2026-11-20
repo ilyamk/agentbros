@@ -7,7 +7,7 @@
  * - model preparations (`pipeline/model-preparations/<id>/receipt.json`): the source and the prepared clip;
  * - renders under `out/<id>/` (builds);
  * - files under `footage/` and `assets/` that none of these lists: shown as not registered. Bytes equal to a registered
- *   file make an alias of it (content hash, memoised by path, size and mtime).
+ *   file make an alias of it (content hash, memoised by path, size and mtime; only files of a registered size are hashed).
  *
  * A job's own result is not repeated here: the Generations album shows `generations.jobs`.
  */
@@ -195,6 +195,14 @@ export function readGallery(
     });
   }
 
+  const knownSizes = new Set(registry.map((asset) => asset.files.bytes));
+  for (const job of jobs)
+    for (const output of [job.publication?.output])
+      if (output) {
+        const where = locate(paths, output);
+        const size = where?.root === "project" ? statOf(path.join(paths.projectDir, where.path))?.size : undefined;
+        if (size !== undefined) knownSizes.add(size);
+      }
   // Files no registry entry lists: an alias when the bytes match, else shown as not registered.
   const loose: string[] = [...footage];
   walk(paths, "assets", new Set(["assets/imported"]), loose, { left: MAX_WALK });
@@ -203,7 +211,9 @@ export function readGallery(
     const file = path.join(paths.projectDir, relative);
     const info = statOf(file);
     if (!info?.isFile()) continue;
-    const hash = info.size <= MAX_HASH_BYTES ? hashFile(file) : undefined;
+    // Only a file the size of a registered asset or a job's published file can be one of them; a large recording
+    // the registry does not know is listed without reading its bytes.
+    const hash = info.size <= MAX_HASH_BYTES && knownSizes.has(info.size) ? hashFile(file) : undefined;
     if (hash && jobHashes.has(hash)) continue;
     const known = hash ? items.get(hash) : undefined;
     if (known) {
