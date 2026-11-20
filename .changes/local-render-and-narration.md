@@ -2,7 +2,7 @@
 category: fix
 bump: minor
 breaking: false
-pr: 0
+pr: 29
 authors: [ilyamk]
 harness: codex
 deps: sherpa-onnx provides a locked CPU runtime for the explicitly prepared local speech models.
