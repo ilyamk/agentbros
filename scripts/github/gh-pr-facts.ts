@@ -129,8 +129,10 @@ export function leakHit(files: ApiFile[]): boolean {
 }
 /**
  * The patch of a text file GitHub lists without one (it omits patches of large files such as uv.lock): rebuilt from the
- * merge base and head contents, which is what a PR's file diff compares. Accepted only when the minimal diff's counts
- * equal GitHub's additions and deletions; otherwise, or on any read failure, undefined and the file stays uncertain.
+ * merge base and head contents, which is what a PR's file diff compares. GitHub counts with Myers' heuristic diff,
+ * which can pair a few more lines than the minimal diff (uv.lock: +428/-289 against +424/-285). Accepted only when
+ * the minimal diff has the same net change and no more additions or deletions than GitHub's counts; otherwise, or on
+ * any read failure, undefined and the file stays uncertain.
  */
 async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: string): Promise<string | undefined> {
   try {
@@ -146,7 +148,11 @@ async function reconstructedPatch(api: GitHub, pr: Pull, file: ApiFile, head: st
       before = base.text;
     }
     const diff = lineDiff(before, head);
-    return diff && diff.additions === file.additions && diff.deletions === file.deletions ? diff.patch : undefined;
+    return diff &&
+      diff.additions - diff.deletions === file.additions - file.deletions &&
+      diff.additions <= file.additions
+      ? diff.patch
+      : undefined;
   } catch {
     return undefined;
   }
@@ -190,6 +196,8 @@ export async function getFacts(
       if (["package.json", "README.md"].includes(file.filename) && status !== "A")
         changed.previousContent = (await api.content(file.previous_filename ?? file.filename, pr.base.sha))?.text;
     }
+    // A rebuilt patch is the minimal diff, already checked against GitHub's counts in reconstructedPatch.
+    let rebuilt = false;
     if (status !== "D" && !changed.binary && file.patch === undefined) {
       try {
         const value = await api.content(file.filename, pr.head.sha);
@@ -199,7 +207,10 @@ export async function getFacts(
           if (!changed.binary && (file.additions || file.deletions)) {
             const patch = await reconstructedPatch(api, pr, file, value.text);
             if (patch === undefined) uncertainFiles.push(file.filename);
-            else file.patch = changed.patch = patch;
+            else {
+              file.patch = changed.patch = patch;
+              rebuilt = true;
+            }
           }
         }
       } catch (error) {
@@ -208,7 +219,7 @@ export async function getFacts(
         else throw error;
       }
     }
-    if (file.patch !== undefined && !changed.binary) {
+    if (file.patch !== undefined && !changed.binary && !rebuilt) {
       const lines = file.patch.split("\n");
       if (
         lines.filter((line) => line.startsWith("+")).length !== file.additions ||
