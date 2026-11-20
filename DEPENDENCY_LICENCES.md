@@ -586,8 +586,8 @@ Includes production, development, optional/platform packages and the package man
 | lru-cache | 11.5.3 | BlueOak-1.0.0 | allowed | 1 | Automatic policy |
 | lru-cache | 5.1.1 | ISC | allowed | 1 | Automatic policy |
 | lru-cache | 6.0.0 | ISC | allowed | 1 | Automatic policy |
-| lucide-react | 1.73.0 | ISC | allowed | 1 | Automatic policy |
-| lucide-static | 1.73.0 | ISC | allowed | 1 | Automatic policy |
+| lucide-react | 1.74.0 | ISC | allowed | 1 | Automatic policy |
+| lucide-static | 1.74.0 | ISC | allowed | 1 | Automatic policy |
 | lz-string | 1.5.0 | MIT | allowed | 1 | Automatic policy |
 | maath | 0.10.8 | MIT | allowed | 0 | conditional |
 | magic-string | 0.30.21 | MIT | allowed | 1 | Automatic policy |
