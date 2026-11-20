@@ -47,6 +47,7 @@ describe("generations panel", () => {
     const failed = card("higgsfield:failed");
     expect(within(failed).getByRole("note").textContent).toContain("rejected by content moderation (nsfw)");
     expect(within(failed).getByText(/no charge/)).toBeTruthy();
+    expect(within(failed).queryByText(/quote/)).toBeNull();
     expect(within(failed).getByText(/from preparation face-v2/)).toBeTruthy();
     const running = card("higgsfield:running");
     expect(within(running).getByText(/running for/)).toBeTruthy();

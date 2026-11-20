@@ -55,7 +55,14 @@ function MoneyLine({ job }: { job: Generation }) {
     );
   if (job.noCharge) parts.push(d.generations.noCharge);
   if (!job.priceKnown && job.costUsd === undefined) parts.push(d.generations.priceUnknown);
-  else if (job.quotedUsd !== undefined && job.costUsd === undefined)
+  // The quote matters while the job can still be billed; a failed or cancelled job's quote would read as a charge.
+  else if (
+    job.quotedUsd !== undefined &&
+    job.costUsd === undefined &&
+    !job.noCharge &&
+    job.state !== "failed" &&
+    job.state !== "cancelled"
+  )
     parts.push(f(d.generations.quoted, { amount: usd(job.quotedUsd) }));
   return <span className="tabular-nums">{parts.join(" · ")}</span>;
 }
