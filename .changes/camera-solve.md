@@ -1,5 +1,5 @@
 ---
-category: command
+category: fix
 bump: minor
 breaking: false
 pr: 0
