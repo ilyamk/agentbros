@@ -1,4 +1,5 @@
 import { AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { labelFont, numberFont } from "./kit";
 import { unitTrayCount, type UnitTrayProps } from "./unit-tray-plan";
 
 export function UnitTray(props: UnitTrayProps) {
@@ -19,13 +20,14 @@ export function UnitTray(props: UnitTrayProps) {
       style={{
         backgroundColor: ground,
         color: text,
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: labelFont,
         boxSizing: "border-box",
         display: "flex",
         flexDirection: portrait ? "column" : "row",
         justifyContent: "center",
         alignItems: portrait ? "stretch" : "center",
-        padding: `${height * 0.075}px ${pad}px`,
+        // Vertical keeps the platform safe area (200 px top, 300 px bottom at 1920), as the shared template wrapper does.
+        padding: portrait ? `${height * 0.105}px ${pad}px ${height * 0.157}px` : `${height * 0.075}px ${pad}px`,
         gap: portrait ? height * 0.045 : width * 0.06,
       }}
     >
@@ -44,6 +46,7 @@ export function UnitTray(props: UnitTrayProps) {
           style={{
             marginTop: height * 0.02,
             fontSize: width * (portrait ? 0.145 : 0.092),
+            fontFamily: numberFont,
             fontWeight: 720,
             fontVariantNumeric: "tabular-nums",
             lineHeight: 1,

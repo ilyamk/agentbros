@@ -40,7 +40,8 @@ void runScript(async () => {
   }
   if (args.action === "show") return { metadata: { style: selectFilmStyle(args.style ?? invalid("Pass --style")) } };
   const project = directory ?? invalid("Pass --project");
-  if (!existsSync(project)) invalid("The project does not exist");
+  if (!existsSync(project))
+    throw new CliErrorObject({ code: "PROJECT_NOT_FOUND", message: "The project does not exist" });
   if (args.action === "status") return { metadata: { selection: readFilmStyle(project) ?? null } };
   if (!existsSync(path.join(project, "pipeline/brief.json")) || existsSync(path.join(project, "project.json")))
     invalid("Use this command for a bespoke film, or choose styleCard in the recipe request.");
