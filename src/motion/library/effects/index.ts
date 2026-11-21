@@ -50,7 +50,29 @@ import {
   subjectOcclusionSchema,
 } from "./SubjectOcclusion";
 
+import {
+  PrintRegistration,
+  printRegistrationCues,
+  printRegistrationDefaults,
+  printRegistrationSchema,
+} from "./PrintRegistration";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "print-registration",
+    category: "effects",
+    title: "Four-colour print registration",
+    description:
+      "Four offset ink passes progressively register on a sheet to reveal a print title and line art. Use when the material of the picture calls for print.",
+    tags: ["ink", "paper", "register", "print", "editorial"],
+    component: PrintRegistration,
+    schema: printRegistrationSchema,
+    defaultProps: printRegistrationDefaults,
+    durationInFrames: 85,
+    formats: ["landscape"],
+    importPath: "src/motion/library/effects/PrintRegistration",
+    cues: printRegistrationCues,
+  }),
   defineItem({
     id: "orbit-ring",
     category: "effects",

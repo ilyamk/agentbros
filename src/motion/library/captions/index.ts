@@ -71,9 +71,12 @@ const ENTRIES: Record<CaptionPresetId, Entry> = {
   "word-box": {
     title: "Sliding word box",
     description:
-      "Sentence-case heavy sans with a thin outline; a solid accent box glides behind the spoken word. Explainers and product shorts over busy footage.",
+      'Sentence-case heavy sans with a thin outline; a solid accent box glides behind the spoken word. Set `active.boxMotion: "elastic"` for independently eased edges and a fresh reveal at line wraps. Explainers and product shorts over busy footage.',
     tags: ["captions", "subtitles", "box", "pill", "highlight", "active-word", "slide", "explainer", "product"],
-    inspiredBy: ["CapCut and Submagic active-word box captions (method only)"],
+    inspiredBy: [
+      "CapCut and Submagic active-word box captions (method only)",
+      "DesignBookmark Motion: Read along and Tab pill, independent edge speeds and line-wrap reveal (method only)",
+    ],
     sample: "ru",
   },
   "line-box": {

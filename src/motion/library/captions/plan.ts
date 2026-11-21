@@ -182,6 +182,28 @@ export const typedCount = (word: CaptionWord, text: string, time: number): numbe
   return Math.min(text.length, Math.ceil(((time - word.start) / duration) * text.length));
 };
 
+type BoxRect = Pick<PlannedBox, "left" | "top" | "width" | "height">;
+
+export const elasticBoxRect = (
+  from: BoxRect | undefined,
+  to: BoxRect,
+  frame: number,
+  at: number,
+  frames: number,
+): BoxRect => {
+  const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+  if (!from) {
+    const open = mix(0.8, 1, progress(frame, at, Math.max(1, frames * 0.5), "expoOut"));
+    return { ...to, left: to.left + (to.width * (1 - open)) / 2, width: to.width * open };
+  }
+  const ahead = progress(frame + 1, at, Math.max(1, frames * 0.45), "expoOut");
+  const behind = progress(frame, at, frames, "drift");
+  const rightward = to.left + to.width / 2 >= from.left + from.width / 2;
+  const left = mix(from.left, to.left, rightward ? behind : ahead);
+  const right = mix(from.left + from.width, to.left + to.width, rightward ? ahead : behind);
+  return { ...to, left, width: Math.max(1, right - left) };
+};
+
 /**
  * Everything one frame of a caption preset draws, in frame pixels: word slots with their animation, boxes, the active
  * box, a typing cursor and an emoji. Pure: the same props, measurements and frame give the same plan.
@@ -506,12 +528,26 @@ export const planCaptionFrame = (
           height: to.height * 0.6,
         };
     const lerp = (a: number, b: number) => a + (b - a) * (previous ? t : progress(frame, at, 5, "overshoot"));
+    const box =
+      p.active.boxMotion === "elastic"
+        ? elasticBoxRect(
+            previous && lines.some((line) => line.includes(activeIndex) && line.includes(activeIndex - 1))
+              ? rect({ ...previous, scale: 1 })
+              : undefined,
+            to,
+            frame,
+            at,
+            Math.max(2, Math.round(fps * 0.2)),
+          )
+        : {
+            left: lerp(from.left, to.left),
+            top: lerp(from.top, to.top),
+            width: lerp(from.width, to.width),
+            height: lerp(from.height, to.height),
+          };
     activeBox = {
       key: "active",
-      left: lerp(from.left, to.left),
-      top: lerp(from.top, to.top),
-      width: lerp(from.width, to.width),
-      height: lerp(from.height, to.height),
+      ...box,
       radius: 0.2 * word.fontSize,
       fill: p.accent,
       opacity: 1,

@@ -22,6 +22,8 @@ export const decodeSchema = z.object({
   background: z.string(),
   /** Glyphs the scramble draws from. */
   glyphs: z.string().min(2),
+  /** Fixed-width slots for glyph pools whose characters should stay evenly spaced. */
+  monospace: z.boolean().optional(),
   /** Seed of the scramble; change it for a different but equally repeatable pattern. */
   seed: z.string(),
   at: z.number().nonnegative(),
@@ -80,8 +82,11 @@ export const Decode: React.FC<DecodeProps> = (props) => {
   const { kicker, lines, verticalLines, color, accent, muted, background, glyphs, seed } = props;
   const safe = useSafeArea();
   const set = safe.vertical && verticalLines.length > 0 ? verticalLines : lines;
+  const fontFamily = props.monospace ? monoFont : primaryFont;
+  const fontWeight = props.monospace ? 500 : 700;
+  const letterSpacing = props.monospace ? "0" : "-0.035em";
   const size = useSharedFit(
-    set.map((text) => ({ text, fontFamily: primaryFont, fontWeight: 700, letterSpacing: "-0.035em" })),
+    set.map((text) => ({ text, fontFamily, fontWeight, letterSpacing })),
     safe.width * (safe.vertical ? 0.94 : 0.8),
     safe.vertical ? safe.width * 0.2 : safe.height * 0.24,
   );
@@ -171,11 +176,11 @@ export const Decode: React.FC<DecodeProps> = (props) => {
           <div
             data-head
             style={{
-              fontFamily: primaryFont,
-              fontWeight: 700,
+              fontFamily,
+              fontWeight,
               fontSize: size,
               lineHeight: 1.02,
-              letterSpacing: "-0.035em",
+              letterSpacing,
               color,
               textAlign: safe.vertical ? "center" : "left",
             }}
@@ -209,3 +214,20 @@ export const decodeDefaults: DecodeProps = {
   scramble: 0.42,
   exitAt: 112,
 };
+
+export const binaryTextPreset = {
+  ...decodeDefaults,
+  kicker: "",
+  lines: ["SIGNAL"],
+  verticalLines: ["SIGNAL"],
+  glyphs: "01",
+  monospace: true,
+  seed: "binary-signal",
+  color: "#F2F4DE",
+  accent: "#789760",
+  background: "#18261F",
+  at: 5,
+  stagger: 1 / 30,
+  scramble: 8 / 30,
+  exitAt: -1,
+} satisfies DecodeProps;

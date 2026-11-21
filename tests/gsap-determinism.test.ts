@@ -19,7 +19,9 @@ const CHANNEL_TOLERANCE = 32;
 /** Share of a frame's pixels allowed to differ by more than CHANNEL_TOLERANCE. */
 const PIXEL_SHARE = 0.0001;
 
-const kinetic = (process.env.GSAP_COMPOSITIONS ?? "split-reveal,decode,morph-mark,line-draw,headline-build,path-travel")
+const kinetic = (
+  process.env.GSAP_COMPOSITIONS ?? "split-reveal,decode,morph-mark,line-draw,headline-build,path-travel,binary-text"
+)
   .split(",")
   .filter(Boolean)
   .map((id) => `Lib-kinetic-${id}-L`);

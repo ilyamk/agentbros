@@ -28,7 +28,25 @@ import {
 } from "./UiPunchReframe";
 import { SPEED_RAMP_FRAMES, SpeedRampPreview, speedRampCues, speedRampDefaults, speedRampSchema } from "./SpeedRamp";
 
+import { GlassLens, glassLensCues, glassLensDefaults, glassLensSchema } from "./GlassLens";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "glass-lens",
+    category: "camera",
+    title: "Glass lens follows a detail",
+    description:
+      "A travelling magnifier enlarges concentric regions of a still or visual plate while the rest stays visible. Hold a stop over a small product detail or part of a diagram so the viewer can read it in context.",
+    tags: ["magnifier", "macro", "glass", "detail", "evidence", "focus"],
+    component: GlassLens,
+    schema: glassLensSchema,
+    defaultProps: glassLensDefaults,
+    durationInFrames: 96,
+    formats: ["vertical", "landscape", "square"],
+    inspiredBy: ["DesignBookmark Motion: Glass lens, concentric magnification (method only)"],
+    importPath: "src/motion/library/camera/GlassLens",
+    cues: glassLensCues,
+  }),
   defineItem({
     id: "parallax-rig",
     category: "camera",

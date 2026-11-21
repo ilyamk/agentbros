@@ -11,7 +11,24 @@ import { LineChartReveal, lineChartRevealDefaults, lineChartRevealSchema } from 
 
 const importPath = (file: string): string => `src/motion/library/data/${file}`;
 
+import { BarsFormNumber, barsFormNumberCues, barsFormNumberDefaults, barsFormNumberSchema } from "./BarsFormNumber";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "bars-form-number",
+    category: "data",
+    title: "Bars form a number",
+    description:
+      "A set of columns rotates and slides into the segments of a value. Use for a numerical reveal with a sourced value.",
+    tags: ["numbers", "bar chart", "segments", "typography"],
+    component: BarsFormNumber,
+    schema: barsFormNumberSchema,
+    defaultProps: barsFormNumberDefaults,
+    durationInFrames: 95,
+    formats: ["landscape"],
+    importPath: "src/motion/library/data/BarsFormNumber",
+    cues: barsFormNumberCues,
+  }),
   defineItem({
     id: "viz-scene",
     category: "data",
