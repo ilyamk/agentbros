@@ -22,6 +22,8 @@ import { filmCurrent, filmSteps, filmWaiting, readFilm, type FilmRead, type Quot
 import { readFilmMaterial } from "./film-material";
 import { footageCurrent, footageSteps, footageWaiting, readFootageWithState } from "./footage";
 import { readFootageMaterial } from "./footage-material";
+import { readGallery } from "./gallery";
+import { readGenerations, readStoreJobs, timelineWithoutMaterial } from "./generations";
 import { readMedia } from "./media";
 import { emptyMoney } from "./money";
 import { readMoneyContext } from "./money-context";
@@ -218,6 +220,33 @@ export function buildProjectView(
   advisories.push(...assets.advisories);
   const qa = guard("qa", advisories, () => readQa(paths), { value: { findings: [] }, advisories: [] });
   const media = guard("media", advisories, () => readMedia(paths), {});
+  const storeJobs = guard("generations", advisories, () => readStoreJobs(paths), []);
+  let generations = guard(
+    "generations",
+    advisories,
+    () => readGenerations(paths, assets.value, advisories, storeJobs),
+    undefined,
+  );
+  const gallery = guard("gallery", advisories, () => readGallery(paths, storeJobs, media, advisories), undefined);
+  // A `project:new` template used only for generations: its render is not the current step (2026-11-20).
+  if (
+    generations &&
+    route.route === "timeline" &&
+    route.chain === "timeline" &&
+    guard("generations", advisories, () => timelineWithoutMaterial(paths, Object.keys(media).length > 0), false)
+  ) {
+    generations = { ...generations, templateOnly: true };
+    current = undefined;
+    steps = steps.map((row, index): StepRow => ({
+      ...row,
+      status: "pending",
+      reasons: index
+        ? []
+        : [
+            "project.json is still the project:new template (no film code, render, music or voiceover); the generations below are this project's material.",
+          ],
+    }));
+  }
   const runs = agentRuns(events, { now, ...(openSteps ? { openSteps } : {}) });
   const active = activeRun(runs);
   const stepGuard = readStepGuard(paths);
@@ -252,6 +281,8 @@ export function buildProjectView(
     ...(recipe ? { recipe } : {}),
     ...(campaign ? { campaign } : {}),
     ...(footage ? { footage } : {}),
+    ...(generations ? { generations } : {}),
+    ...(gallery ? { gallery } : {}),
     ...(stepGuard ? { stepGuard } : {}),
   };
   return validated(view);
@@ -278,6 +309,8 @@ function validated(view: ProjectView): ProjectView {
     recipe: undefined,
     campaign: undefined,
     footage: undefined,
+    generations: undefined,
+    gallery: undefined,
     autonomy: { mode: "interactive", source: "none" },
     control: { state: "running" },
   };

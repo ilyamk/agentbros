@@ -8,6 +8,7 @@ import { digest, immutableWrite } from "./model-artifacts";
 import { pipelineDir, projectDir } from "../pipeline/paths";
 import { assertPathWithin } from "../cli";
 import { validateFalOperationResult } from "../providers/fal-operations";
+import { SEEDANCE_25_DRAFT_TTL_MS } from "../providers/fal-guards/seedance";
 const Intent = z
   .object({
     version: z.literal(1),
@@ -80,7 +81,7 @@ export function deriveSeedanceCompletion(
   // Only the global completion endpoint is documented; US drafts are not silently rerouted.
   if ((request.region ?? "global") !== intent.region) throw new Error("Draft region mismatch");
   const age = Date.parse(now) - Date.parse(createdAt);
-  if (!Number.isFinite(age) || age < 0 || age >= 7 * 86400000)
+  if (!Number.isFinite(age) || age < 0 || age >= SEEDANCE_25_DRAFT_TTL_MS)
     throw new Error("Draft expired or creation time invalid");
   return {
     ...request,

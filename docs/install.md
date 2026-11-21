@@ -89,7 +89,7 @@ The rendered file path is in the JSON `outputs` of the last command; `pnpm proje
 
 | Command | Runs |
 |---|---|
-| `pnpm test:fast` | quick unit suite; what CI runs |
+| `pnpm test:fast` | quick unit suite for local runs; CI runs the full suite in shards |
 | `pnpm check` | repo hygiene + Python checks + format check + lint + typecheck + full default suite (slow) |
 | `pnpm test:render` | synthetic local render |
 | `pnpm test:browser` | browser, review UI and QA evidence suites |

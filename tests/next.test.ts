@@ -492,7 +492,7 @@ test("next routes a bare project.json to the timeline route: render, QA, deliver
   touch(path.join(project, "project.json"), 60);
   const stale = next("plain-a", cwd).envelope.metadata.next;
   assert.equal(stale.step, "render");
-  assert.match(stale.why, /older than project\.json/);
+  assert.match(stale.why, /archives the previous master/);
   touch(path.join(project, "project.json"), -60);
 
   const qa = next("plain-a", cwd).envelope.metadata.next;

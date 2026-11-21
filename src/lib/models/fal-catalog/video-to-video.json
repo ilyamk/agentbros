@@ -1,7 +1,7 @@
 {
   "version": 1,
   "category": "video-to-video",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-21",
   "entries": [
     {
       "endpoint": "alibaba/happy-horse/video-edit",
@@ -1512,10 +1512,10 @@
       "displayName": "Seedance 2.5",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
-        "sha256": "f5994edc0130a4a902f85921eac2b133d2f76f9b7fc6a41087655b6d53e4cd16",
-        "asOf": "2026-11-15",
+        "sha256": "c11fc4c5ef4648d2d46c4dc36bb39a622b31f0dfd5e45db451abb838eb2b1c2b",
+        "asOf": "2026-11-21",
         "source": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Fdraft%2Fcomplete&expand=openapi-3.0",
         "cached": true
       },
@@ -1539,9 +1539,23 @@
           "max": 8192
         },
         {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp4",
+            "mov"
+          ],
+          "default": "mp4"
+        },
+        {
           "name": "resolution",
           "type": "string",
           "required": false,
+          "enum": [
+            "1080p",
+            "4k"
+          ],
           "default": "1080p"
         }
       ],

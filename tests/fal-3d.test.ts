@@ -131,6 +131,13 @@ for (const item of cases)
     );
   });
 
+test("Meshy 7.1 text-to-3d takes a texture image or a texture prompt, never both", () => {
+  const build = (extra: Record<string, unknown>) =>
+    buildFalOperation({ endpoint: "meshy/v7.1/text-to-3d", input: { prompt: "A ceramic cup", ...extra } });
+  assert.throws(() => build({ texture_image_url: image, texture_prompt: "glazed" }), /not both/);
+  assert.doesNotThrow(() => build({ texture_image_url: image }));
+  assert.doesNotThrow(() => build({ texture_prompt: "glazed" }));
+});
 test("Meshy animation dependency, action bounds and N1 texture constraints", () => {
   for (const item of cases.slice(0, 2)) {
     const build = (extra: Record<string, unknown>) =>

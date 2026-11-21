@@ -8,16 +8,14 @@ on:
 
 permissions: {}
 
+# Pull requests run the primary Node only; main and the merge queue also run the fallback (.nvmrc.fallback).
+# Half the jobs on a PR keeps runner queues short.
 jobs:
   checks:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - runtime: primary
-            versionFile: .nvmrc
-          - runtime: fallback
-            versionFile: .nvmrc.fallback
+        runtime: ${{ fromJSON(github.event_name == 'pull_request' && '["primary"]' || '["primary","fallback"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions: { contents: read }
@@ -25,13 +23,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: "0.13.9"
           enable-cache: false
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version-file: ${{ matrix.versionFile }}
+          node-version-file: ${{ matrix.runtime == 'fallback' && '.nvmrc.fallback' || '.nvmrc' }}
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
       - name: Prepare the pinned Python environment
@@ -46,11 +44,40 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm console:test
       - run: pnpm deps:licences --check --strict --scope repository-source
+      - run: pnpm github:codeowners --check
+  # The bench contracts run beside the static checks instead of after them.
+  # No test:fast here: its files are a subset of tests/*.test.ts, which the tests shards already run.
+  workflow-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        runtime: ${{ fromJSON(github.event_name == 'pull_request' && '["primary"]' || '["primary","fallback"]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.9"
+          enable-cache: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: ${{ matrix.runtime == 'fallback' && '.nvmrc.fallback' || '.nvmrc' }}
+      - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
+      - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
+      - name: Prepare the pinned Python environment
+        run: |
+          uv sync --locked
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - run: pnpm runtime:check --expected "$RUNTIME"
+        env:
+          RUNTIME: ${{ matrix.runtime }}
       - name: Install workflow fixture tools
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
-      # Remotion's Chromium: the vision review tests in test:fast and the full suite render pages with it.
       - run: pnpm exec remotion browser ensure
-      - run: pnpm test:fast
       - run: pnpm bench:workflow --action run --suite bench/workflows/v4/suite.json --mode contract --no-spend
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
@@ -58,7 +85,6 @@ jobs:
           name: workflow-contracts-${{ matrix.runtime }}
           path: out/bench/workflow-*/
           retention-days: 7
-      - run: pnpm github:codeowners --check
   tests:
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -67,23 +93,18 @@ jobs:
       fail-fast: false
       matrix:
         shard: [1, 2, 3, 4]
-        runtime: [primary, fallback]
-        include:
-          - runtime: primary
-            versionFile: .nvmrc
-          - runtime: fallback
-            versionFile: .nvmrc.fallback
+        runtime: ${{ fromJSON(github.event_name == 'pull_request' && '["primary"]' || '["primary","fallback"]') }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: "0.13.9"
           enable-cache: false
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version-file: ${{ matrix.versionFile }}
+          node-version-file: ${{ matrix.runtime == 'fallback' && '.nvmrc.fallback' || '.nvmrc' }}
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
       - name: Prepare the pinned Python environment
@@ -105,11 +126,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - runtime: primary
-            versionFile: .nvmrc
-          - runtime: fallback
-            versionFile: .nvmrc.fallback
+        runtime: ${{ fromJSON(github.event_name == 'pull_request' && '["primary"]' || '["primary","fallback"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions: { contents: read }
@@ -117,13 +134,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: "0.13.9"
           enable-cache: false
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version-file: ${{ matrix.versionFile }}
+          node-version-file: ${{ matrix.runtime == 'fallback' && '.nvmrc.fallback' || '.nvmrc' }}
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts --config.ignore-pnpmfile=true
       - name: Prepare the pinned Python environment
@@ -146,11 +163,11 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: "0.13.9"
           enable-cache: true
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: .nvmrc
       - run: npm install --global pnpm@12.21.0 --allow-scripts=pnpm
@@ -206,12 +223,12 @@ jobs:
               echo 'run=false' >> "$GITHUB_OUTPUT"
             fi
           fi
-      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         if: steps.changed.outputs.run == 'true'
         with:
           version: "0.13.9"
           enable-cache: true
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: steps.changed.outputs.run == 'true'
         with:
           node-version-file: .nvmrc
@@ -229,7 +246,7 @@ jobs:
     permissions: {}
     name: ci
     if: always()
-    needs: [checks, tests, browser-render, python, python-profiles]
+    needs: [checks, workflow-contracts, tests, browser-render, python, python-profiles]
     steps:
       - run: test "$NEEDS_RESULT" = success
         env:

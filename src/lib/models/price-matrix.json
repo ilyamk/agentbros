@@ -1125,7 +1125,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-480p-audio": {
@@ -1133,7 +1133,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-720p": {
@@ -1141,7 +1141,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-720p-audio": {
@@ -1149,22 +1149,24 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-1080p": {
-          "usd": null,
-          "kind": "unknown",
+          "usd": 11.9411,
+          "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
-          "reason": "Unknown price; needs supported resolution, aspect and output seconds; https://fal.ai/models/bytedance/seedance-2.5/text-to-video; historical average per call cannot price this scaled scenario"
+          "formula": "$11.9411; 1920 × 1080 × (10 + 0 reference s) × 24 / 1024 = 486000 tokens; / 1000 × $0.0234 × 1; expected $11.3724, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
+          "observedAsOf": "2026-11-21",
+          "linearUnit": "durationSec"
         },
         "10s-1080p-audio": {
-          "usd": null,
-          "kind": "unknown",
+          "usd": 11.9411,
+          "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
-          "observedAsOf": "2026-10-11",
-          "reason": "Unknown price; needs supported resolution, aspect and output seconds; https://fal.ai/models/bytedance/seedance-2.5/text-to-video; historical average per call cannot price this scaled scenario"
+          "formula": "$11.9411; 1920 × 1080 × (10 + 0 reference s) × 24 / 1024 = 486000 tokens; / 1000 × $0.0234 × 1; expected $11.3724, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/text-to-video",
+          "observedAsOf": "2026-11-21",
+          "linearUnit": "durationSec"
         }
       }
     },
@@ -1469,7 +1471,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-480p-audio": {
@@ -1477,7 +1479,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-720p": {
@@ -1485,7 +1487,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-720p-audio": {
@@ -1493,22 +1495,24 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "linearUnit": "durationSec"
         },
         "10s-1080p": {
-          "usd": null,
-          "kind": "unknown",
+          "usd": 11.9411,
+          "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
-          "reason": "Unknown price; needs supported resolution, aspect and output seconds; https://fal.ai/models/bytedance/seedance-2.5/image-to-video; historical average per call cannot price this scaled scenario"
+          "formula": "$11.9411; 1920 × 1080 × (10 + 0 reference s) × 24 / 1024 = 486000 tokens; / 1000 × $0.0234 × 1; expected $11.3724, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
+          "observedAsOf": "2026-11-21",
+          "linearUnit": "durationSec"
         },
         "10s-1080p-audio": {
-          "usd": null,
-          "kind": "unknown",
+          "usd": 11.9411,
+          "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
-          "observedAsOf": "2026-10-11",
-          "reason": "Unknown price; needs supported resolution, aspect and output seconds; https://fal.ai/models/bytedance/seedance-2.5/image-to-video; historical average per call cannot price this scaled scenario"
+          "formula": "$11.9411; 1920 × 1080 × (10 + 0 reference s) × 24 / 1024 = 486000 tokens; / 1000 × $0.0234 × 1; expected $11.3724, +5% local margin; https://fal.ai/models/bytedance/seedance-2.5/image-to-video",
+          "observedAsOf": "2026-11-21",
+          "linearUnit": "durationSec"
         }
       }
     },
@@ -1819,7 +1823,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video)",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1828,7 +1832,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
           "formula": "$2.1589; 854 × 480 × (10 + 0 reference s) × 24 / 1024 = 96075 tokens; / 1000 × $0.0214 × 1; expected $2.0561, +5% local margin; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video)",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1837,7 +1841,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video)",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1846,7 +1850,7 @@
           "kind": "approximate",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
           "formula": "$4.8536; 1280 × 720 × (10 + 0 reference s) × 24 / 1024 = 216000 tokens; / 1000 × $0.0214 × 1; expected $4.6224, +5% local margin; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video)",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "aspect follows the input; crop/prepare the source to 16:9",
           "linearUnit": "durationSec"
         },
@@ -1854,14 +1858,14 @@
           "usd": null,
           "kind": "unknown",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "Unknown price; needs supported resolution, aspect and output seconds; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video); historical average per call cannot price this scaled scenario; aspect follows the input; crop/prepare the source to 16:9"
         },
         "10s-1080p-audio": {
           "usd": null,
           "kind": "unknown",
           "source": "https://fal.ai/models/bytedance/seedance-2.5/reference-to-video",
-          "observedAsOf": "2026-10-11",
+          "observedAsOf": "2026-11-21",
           "reason": "Unknown price; needs supported resolution, aspect and output seconds; src/lib/models/registry.ts (https://fal.ai/models/bytedance/seedance-2.5/reference-to-video); historical average per call cannot price this scaled scenario; aspect follows the input; crop/prepare the source to 16:9"
         }
       }
@@ -4330,22 +4334,6 @@
     {
       "slot": "3d.edit",
       "provider": "fal",
-      "endpoint": "fal-ai/hunyuan-3d/v3.1/smart-topology",
-      "perCallTypicalUsd": 0.75,
-      "perCallObservedAsOf": "2026-11-15",
-      "scenarioPrices": {
-        "1-model": {
-          "usd": 0.75,
-          "kind": "approximate",
-          "source": "https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt",
-          "formula": "$0.75; 1 request × $0.75; Page/API price drift: page $0.75, API $0.015; higher rate used for planning; https://fal.ai/models/fal-ai/hunyuan-3d/v3.1/smart-topology/llms.txt; Your request will cost **$0.75** per generation.\nFor **$1.00**, you can run this model 1 time.; observed 2026-11-16",
-          "observedAsOf": "2026-11-16"
-        }
-      }
-    },
-    {
-      "slot": "3d.edit",
-      "provider": "fal",
       "endpoint": "meshy/n1/retexture",
       "perCallTypicalUsd": 0.3,
       "perCallObservedAsOf": "2026-11-15",
@@ -4371,6 +4359,22 @@
           "kind": "typical",
           "source": "typical: fal historical average per call",
           "formula": "1 call × historical average; not specific to size or quality",
+          "observedAsOf": "2026-11-15"
+        }
+      }
+    },
+    {
+      "slot": "3d.edit",
+      "provider": "fal",
+      "endpoint": "meshy/v7/retexture",
+      "perCallTypicalUsd": null,
+      "perCallObservedAsOf": null,
+      "scenarioPrices": {
+        "1-model": {
+          "usd": 0.3,
+          "kind": "exact",
+          "source": "https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7/retexture",
+          "formula": "$0.3; 1 request × $0.3; https://api.fal.ai/v1/models/pricing?endpoint_id=meshy/v7/retexture",
           "observedAsOf": "2026-11-15"
         }
       }

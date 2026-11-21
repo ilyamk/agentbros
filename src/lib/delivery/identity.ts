@@ -1,3 +1,4 @@
+import { readExperiments } from "../experiments/project";
 import { captureVizDependencies } from "../viz/usage";
 import { captureLocalProvenance } from "../apple/provenance";
 import { captureVorkProvenance } from "../vork/provenance";
@@ -89,6 +90,8 @@ export function captureRenderIdentity(
       );
   };
   add(path.join(project, "project.json"), "config");
+  if (readExperiments(project).some(({ id }) => id === "proof-scenes@1"))
+    add(path.join(project, "pipeline/recipe.json"), "creative");
   captureIconResources(rootDir, projectId, job.props, add);
   captureVizDependencies(rootDir, projectId, job.props, add);
   const recording = assertRecordingEvidence(project, projectId, true);

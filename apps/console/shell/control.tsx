@@ -88,7 +88,15 @@ export function ControlButtons({ view, compact }: { view: ProjectView; compact?:
   );
 }
 
-function ControlDialog({ view, target, onClose }: { view: ProjectView; target: ControlState; onClose: () => void }) {
+export function ControlDialog({
+  view,
+  target,
+  onClose,
+}: {
+  view: ProjectView;
+  target: ControlState;
+  onClose: () => void;
+}) {
   const { d, f, p } = useI18n();
   const store = useConsoleStore();
   const id = useId();

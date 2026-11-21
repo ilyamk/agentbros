@@ -586,8 +586,8 @@ Includes production, development, optional/platform packages and the package man
 | lru-cache | 11.5.3 | BlueOak-1.0.0 | allowed | 1 | Automatic policy |
 | lru-cache | 5.1.1 | ISC | allowed | 1 | Automatic policy |
 | lru-cache | 6.0.0 | ISC | allowed | 1 | Automatic policy |
-| lucide-react | 1.73.0 | ISC | allowed | 1 | Automatic policy |
-| lucide-static | 1.73.0 | ISC | allowed | 1 | Automatic policy |
+| lucide-react | 1.74.0 | ISC | allowed | 1 | Automatic policy |
+| lucide-static | 1.74.0 | ISC | allowed | 1 | Automatic policy |
 | lz-string | 1.5.0 | MIT | allowed | 1 | Automatic policy |
 | maath | 0.10.8 | MIT | allowed | 0 | conditional |
 | magic-string | 0.30.21 | MIT | allowed | 1 | Automatic policy |
@@ -854,7 +854,9 @@ Imported from `credits/*.json`, including inspiration and assets. Model weights,
 | Remotion Skills | None granted: no licence file in the mirror or in `remotion-dev/remotion/packages/skills`; monorepo Remotion License grants no redistribution (verified 2026-11-13) | Instructions: the `remotion-best-practices` skill (not included in the public repository; install from upstream); API facts (`HtmlInCanvasMotionBlur`, `lightLeak()`), one-rule-file-per-topic idea | [Record](credits/repositories-remotion-skills-e368bef9.json) |
 | Remotion TikTok template | No LICENSE found via the GitHub API (2026-11-13): unverified, method only | Method only: a stroke twice the visible width drawn behind the fill (`paint-order: stroke`), entry from scale 0.8 and 50 px below; no code copied | [Record](credits/repositories-remotion-tiktok-template-bab9dad0.json) |
 | shadcn/ui | MIT | Code: input and button tokens ported; components pulled for study; the studio console's primitives (button, badge, card, input, dialog, sheet, tabs, tooltip, dropdown-menu, select, scroll-area, table, command, chart, progress, switch, radio-group, separator, skeleton, kbd) rewritten onto the console tokens, CSS transitions only and a CSP nonce | [Record](credits/repositories-shadcn-ui-542509cc.json) |
+| sherpa-onnx, Supertone Supertonic 3 and NVIDIA Parakeet TDT v3 | Apache-2.0 runtime; Supertonic OpenRAIL-M; Parakeet CC BY 4.0 | Installed CPU runtime and separately prepared upstream model archives | [Record](credits/repositories-sherpa-portable-voice.json) |
 | Short-form caption practice: Submagic, CapCut, Captions.ai, OpenClip, Opus Clip, Hormozi and MrBeast style write-ups, Premiere recipes (public pages and videos) | Not applicable (observed method) | Method and numbers only: treatments (outline, hard shadow, box), active-word colour, box and pop, entries, words per page, stroke and shadow ranges. No code, assets or presets copied | [Record](credits/repositories-short-form-caption-practice-submagic-capcut-captions-ai-openclip-3d4cf3e6.json) |
+| Showtime by Favio Vazquez | MIT (repository code) | Research on partial render assembly, phone readability and local voice readback | [Record](credits/repositories-showtime.json) |
 | Silero VAD | MIT | Tool use: bundled VAD model through uvx | [Record](credits/repositories-silero-vad-ca215678.json) |
 | Tissue 0.3.76 / Molecular Nodes 520.2.0 | GPL-3.0-or-later | Documented tessellation/import APIs; no add-on source vendored | [Record](credits/repositories-tissue-0-3-76-molecular-nodes-520-2-0.json) |
 | VideoAgent | unrecorded | Ideas: planner, B-roll search, rhythm | [Record](credits/repositories-videoagent-1b0ca346.json) |

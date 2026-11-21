@@ -1,3 +1,4 @@
+import { writeExperiments } from "../experiments/project";
 import { existsSync, mkdirSync, writeFileSync, renameSync, rmSync, openSync, closeSync, unlinkSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
@@ -71,9 +72,11 @@ export function materializeRecipe(input: RecipeRequest, rootDir = process.cwd())
       scene.headline = headline;
     }
     writeFileSync(path.join(staging, "project.json"), `${JSON.stringify(plan.project, null, 2)}\n`, { flag: "wx" });
+    if (plan.request.experiment) writeExperiments(staging, [{ id: plan.request.experiment, started: true }]);
     const recipeMetadata = {
       schemaVersion: 1,
       request: plan.request,
+      ...(plan.proofs ? { proofs: plan.proofs, proofGuidance: plan.proofGuidance } : {}),
       durationInFrames: plan.durationInFrames,
       productionReady: false,
       findings: plan.findings,

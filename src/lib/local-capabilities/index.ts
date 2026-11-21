@@ -29,6 +29,15 @@ import {
   macosMajor,
   MINIMUM_MACOS,
 } from "../apple/runtime";
+import {
+  PORTABLE_VOICE_BACKEND,
+  PORTABLE_VOICE_ID,
+  PORTABLE_VOICE_LANGUAGES,
+  PORTABLE_VOICE_PREPARE,
+  portableLanguage,
+  portableVoiceIdentity,
+  portableVoicePrepared,
+} from "../speech/portable-voice-runtime";
 
 export type Descriptor = {
   task: LocalTask;
@@ -153,7 +162,7 @@ export type CapabilityOptions = {
   probe?: typeof probeNative;
   legacyProbe?: (descriptor: Descriptor) => Promise<{ available: boolean; reason?: string; identity?: string }>;
 };
-function qualification(
+export function qualification(
   task: LocalTask,
   language: string | undefined,
   identity: string,
@@ -268,6 +277,59 @@ export async function inspectCapabilities(
       checkedAt: new Date(now).toISOString(),
       quality: "unverified" as const,
     };
+    if (
+      request.task === "speech.synthesise" &&
+      (request.voice?.startsWith("supertonic:") || (!request.voice && ["linux", "win32"].includes(platform)))
+    ) {
+      const voice = request.voice ?? "supertonic:0";
+      const language = portableLanguage(request.language);
+      const portable = { ...base, backend: PORTABLE_VOICE_BACKEND, languages: PORTABLE_VOICE_LANGUAGES };
+      if (!PORTABLE_VOICE_ID.test(voice) || (language && !PORTABLE_VOICE_LANGUAGES.includes(language))) {
+        results.push({
+          ...portable,
+          state: "unsupported",
+          reason: "Portable synthesis supports English, Russian and supertonic:0 through supertonic:9",
+        });
+      } else if (!portableVoicePrepared(platform)) {
+        const allow = readLocalPolicy(root).downloads === "task";
+        results.push({
+          ...portable,
+          state: "needs_prepare",
+          reason: "Prepare the pinned CPU runtime and voice models",
+          ...(allow
+            ? { prepare: PORTABLE_VOICE_PREPARE }
+            : { userAction: "Prepare portable speech explicitly under the local downloads policy." }),
+        });
+      } else {
+        const identity = portableVoiceIdentity(voice, platform);
+        const quality = qualification(request.task, language, identity, root, now);
+        const qualified = request.purpose !== "production" || (language && quality === "qualified");
+        results.push({
+          ...portable,
+          identity,
+          quality,
+          state: qualified ? "ready" : "needs_user_action",
+          reason: qualified
+            ? "Portable runtime is prepared; model checks run at synthesis"
+            : "Production requires a fresh voice and language qualification",
+          ...(qualified
+            ? {
+                command: [
+                  "pnpm",
+                  "voiceover:local",
+                  "--engine",
+                  "portable",
+                  "--voice",
+                  voice,
+                  ...(language ? ["--language", language] : []),
+                  ...(request.purpose === "production" ? ["--purpose", "production"] : []),
+                ],
+              }
+            : {}),
+        });
+      }
+      continue;
+    }
     const unavailable = (state: LocalCapability["state"], reason: string, userAction?: string): LocalCapability =>
       LocalCapabilitySchema.parse({
         ...base,

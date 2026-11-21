@@ -26,6 +26,11 @@ export function useOpenDocument() {
   return open;
 }
 
+/** The store, or null outside a StoreProvider (a media component rendered on its own). */
+export function useOptionalConsoleStore(): ConsoleStore | null {
+  return useContext(StoreContext);
+}
+
 export function useConsoleStore(): ConsoleStore {
   const store = useContext(StoreContext);
   if (!store) throw new Error("useConsoleStore outside StoreProvider");

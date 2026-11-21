@@ -139,7 +139,7 @@ export const sceneStatMomentDefaults: SceneStatMomentProps = {
   lead: "Teams cut review rounds from [5] to [1].",
   value: 80,
   format: { locale: "en-GB", decimals: 0, prefix: "", suffix: "%" },
-  label: "less time to first cut",
+  label: "fewer review rounds",
   beat: 36,
   race: 12,
   exitAt: -1,

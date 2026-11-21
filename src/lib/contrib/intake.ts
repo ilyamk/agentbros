@@ -159,8 +159,10 @@ export function isModelsRefreshRoute(input: IntakeInput): boolean {
 }
 
 export const DEPENDABOT_LOGIN = "dependabot[bot]";
-const dependabotPaths = /^(?:package\.json|pnpm-lock\.yaml|\.github\/workflows\/[A-Za-z0-9._-]+\.ya?ml)$/;
-/** Same-repository Dependabot updates to manifests, the lockfile or workflow pins: no CLA, PR block or change entry, always human review. */
+// DEPENDENCY_LICENCES.* records the lockfile hash and exact versions, so every npm bump must carry its regenerated inventory.
+const dependabotPaths =
+  /^(?:package\.json|pnpm-lock\.yaml|DEPENDENCY_LICENCES\.(?:json|md)|\.github\/workflows\/[A-Za-z0-9._-]+\.ya?ml)$/;
+/** Same-repository Dependabot updates to manifests, the lockfile, its licence inventory or workflow pins: no CLA, PR block or change entry, always human review. */
 export function isDependabotRoute(input: IntakeInput): boolean {
   const identity = input.release;
   if (

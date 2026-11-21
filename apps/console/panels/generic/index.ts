@@ -9,6 +9,7 @@ import { AdvisoriesPanel } from "./advisories";
 import { AgentsPanel } from "./agents";
 import { AssetsPanel } from "./assets";
 import { CardsPanel } from "./cards";
+import { activeGenerations, GenerationsPanel } from "./generations";
 import { HistoryPanel } from "./history";
 import { ceilingOf, MoneyPanel } from "./money";
 import { StepGuardPanel } from "./step-guard";
@@ -48,6 +49,30 @@ export const GENERIC_PANELS: PanelDef[] = [
     summary: (d, view, locale) => plural(d.agents.runs, view.agents.today.length, locale),
   },
   {
+    // Paid model generations (2026-11-20): the current content of a project that only has generations.
+    id: "generic.generations",
+    routes: ALL_ROUTES,
+    when: (view) => !!view.generations && (view.generations.jobs.length > 0 || !!view.generations.preparation),
+    weight: (view) =>
+      view.generations?.templateOnly
+        ? WEIGHT.current
+        : activeGenerations(view.generations?.jobs)
+          ? WEIGHT.attention
+          : WEIGHT.normal + 5,
+    component: GenerationsPanel,
+    title: (d) => d.generations.title,
+    summary: (d, view, locale) => {
+      const jobs = view.generations?.jobs ?? [];
+      const running = activeGenerations(jobs);
+      return [
+        plural(d.generations.summary, jobs.length, locale),
+        running ? plural(d.generations.running, running, locale) : "",
+      ]
+        .filter(Boolean)
+        .join(" · ");
+    },
+  },
+  {
     id: "generic.money",
     routes: ALL_ROUTES,
     when: () => true,
@@ -65,7 +90,8 @@ export const GENERIC_PANELS: PanelDef[] = [
     summary: (_d, view, locale) => {
       const ceiling = ceilingOf(view);
       const spent = formatUsd(view.money.spentUsd, locale);
-      return ceiling !== undefined ? `${spent} / ${formatUsd(ceiling, locale)}` : spent;
+      const reserved = view.money.reservedUsd > 0 ? ` + ${formatUsd(view.money.reservedUsd, locale)}` : "";
+      return ceiling !== undefined ? `${spent}${reserved} / ${formatUsd(ceiling, locale)}` : `${spent}${reserved}`;
     },
   },
   {

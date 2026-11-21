@@ -9,7 +9,7 @@ runScript(async () => {
       choices: LocalTaskSchema.options.filter(
         (task) => !["vision.ocr", "vision.similarity", "vision.classify", "vision.matte"].includes(task),
       ),
-      description: "New Apple-domain task to exercise on this host; legacy backends retain their existing verification",
+      description: "Local task to exercise on this host. Speech synthesis also accepts portable voices.",
     },
     { name: "language", description: "Source language" },
     { name: "target-language", description: "Translation target language" },
@@ -18,7 +18,7 @@ runScript(async () => {
       choices: ["summarise", "tags", "chapters", "shot-notes"],
       description: "Exact assistance operation under qualification",
     },
-    { name: "voice", description: "Exact installed voice under test" },
+    { name: "voice", description: "Exact installed Apple or supertonic:0 to supertonic:9 voice under test" },
     {
       name: "suite",
       choices: ["smoke", "quality"],

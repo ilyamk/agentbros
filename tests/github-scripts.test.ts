@@ -527,9 +527,23 @@ test("an omitted patch of a large text file is rebuilt from merge base and head,
   // Assembled at run time so this source does not itself contain the home-path pattern the leak scan looks for.
   const leaking = setup(updated + `path = '${["", "Users", "someone", "wheel"].join("/")}'\n`, 2, 1);
   assert.equal((await getFacts(leaking.api, 7, history)).leakHit, true);
+  // GitHub's Myers counts may pair more lines than the minimal diff; the same net change is the same file pair.
+  const heuristic = setup(updated, 3, 3);
+  const heuristicFacts = await getFacts(heuristic.api, 7, history);
+  assert.deepEqual(heuristicFacts.uncertainFiles, []);
+  // The rebuilt patch carries its own counts, so intake's complete-patch check (models-refresh route) accepts it.
+  assert.deepEqual([heuristicFacts.changedFiles[0]?.additions, heuristicFacts.changedFiles[0]?.deletions], [1, 1]);
+  // Past GitHub's diff limits a modified file is listed with neither patch nor counts; the rebuilt diff stands alone.
+  const uncounted = await getFacts(setup(updated, 0, 0).api, 7, history);
+  assert.deepEqual(uncounted.uncertainFiles, []);
+  assert.equal(uncounted.changedFiles[0]?.patch, '@@ -4,1 +4,1 @@\n-version = "2.11.0"\n+version = "2.11.0+cpu"');
+  assert.deepEqual([uncounted.changedFiles[0]?.additions, uncounted.changedFiles[0]?.deletions], [1, 1]);
   // A rebuilt diff that disagrees with GitHub's counts (for example, another merge base) stays for human review.
   const mismatch = setup(updated, 2, 1);
   assert.deepEqual((await getFacts(mismatch.api, 7, history)).uncertainFiles, ["uv.lock"]);
+  // Fewer lines than the minimal diff cannot describe the same pair of files.
+  const smaller = setup(updated + "a\nb\n", 2, 0);
+  assert.deepEqual((await getFacts(smaller.api, 7, history)).uncertainFiles, ["uv.lock"]);
 });
 test("API routes refuse dot path segments but allow dots inside a segment", async () => {
   const { api } = fake((route) => (route.startsWith("/compare/") ? { ok: true } : undefined));

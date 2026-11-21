@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { execFileSync, spawnSync } from "node:child_process";
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -112,6 +112,15 @@ test("package metadata is excluded while script additions are scanned", (t) => {
   assert.equal(lines.length, 1);
   assert.equal(lines[0]!.line, 4);
   assert.ok(scanInstructionSecurity(lines, { domains: [] }).some((item) => item.pattern === "shell-pipe"));
+});
+
+test("every URL in the tracked fal operation snapshots is allowlisted, so refreshing a snapshot is not blocked", () => {
+  // The snapshot file is one JSON line under src/lib/providers/, so any refresh re-adds every URL in it.
+  const file = "src/lib/providers/schemas/fal-operations.json";
+  const text = readFileSync(file, "utf8");
+  const allowlist = JSON.parse(readFileSync("contrib/url-allowlist.json", "utf8")) as { domains: string[] };
+  assert.ok(protectedText(file));
+  assert.deepEqual(scanInstructionSecurity([{ file, line: 1, text }], allowlist, []), []);
 });
 
 test("URL seed includes only tracked instruction domains, deduplicated", () => {

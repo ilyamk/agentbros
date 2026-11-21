@@ -25,6 +25,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `console` - Studio console: start or reuse the local server (detached, one for all projects), print its token URL; --stop stops it ([guide](../docs/console.md))
 - `console:wait` - Wait for the user's console decision, control change or card answer, then print it (run in the background at a gate) ([guide](../docs/console.md))
 - `console:card` - Post a typed agent card (compare, grid, rating, choice, question, markdown, media) to the console ([guide](../docs/console.md)); MCP
+- `frame:note` - The user's note on one frame of any project video: words, points and boxes, kept as JSON beside the frame as a PNG with the marks drawn ([guide](../docs/console.md))
 - `console:control` - Pause, resume or stop a project with the user's words; paused or stopped refuses other commands with PAUSED ([guide](../docs/console.md))
 - `studio:open` - Open a project in Remotion Studio in its current state (render props, live updates), bound to 127.0.0.1; --status, --stop ([guide](../docs/console.md))
 - `console:snapshot` - Write a self-contained, read-only HTML snapshot of a project's console view to out/<id>/console-snapshot.html ([guide](../docs/console.md))
@@ -69,7 +70,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `local:policy` - Read or set local interaction and model download policy ([guide](../docs/local-macos.md))
 - `text:analyse` - Native language, token, sentence, lemma and entity observations ([guide](../docs/local-macos.md))
 - `text:translate` - Local scene or caption-cue translation candidates; no invented word timings ([guide](../docs/local-macos.md))
-- `voiceover:local` - System voice audio with separate draft assets and provenance ([guide](../docs/local-macos.md))
+- `voiceover:local` - Apple or portable local voice draft takes with provenance and portable word timing ([guide](../docs/local-macos.md))
 - `audio:events` - Native timed sound classification observations ([guide](../docs/local-macos.md))
 - `media:vision` - Native face, person, pose, saliency, quality, tracking and optical flow observations ([guide](../docs/local-macos.md))
 - `text:assist` - Structured local Foundation Models draft notes with source IDs ([guide](../docs/local-macos.md))
@@ -165,6 +166,16 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 
 ### Render, timeline and finishing backends
 
+- `colour:scopes` - Scopes of a video or still: waveform, RGB parade, vectorscope, histogram, CIE xy, false colour, a contact sheet and exposure, cast, saturation and skin numbers ([guide](../docs/colour-grading.md))
+- `colour:compare` - Compare a clip with a reference: side-by-side scopes, zone and paired CIEDE2000, and a diagnosis such as shadows cooler, saturation +12% ([guide](../docs/colour-grading.md))
+- `colour:match` - Solve an editable grade.json (lift, gamma, gain, saturation, curve) that matches a clip to a reference, with before/after evidence ([guide](../docs/colour-grading.md))
+- `colour:grade` - Apply a declarative grade.json or a per-shot timeline to a video or still through a baked 3D LUT, and export the .cube for Resolve ([guide](../docs/colour-grading.md))
+- `colour:check` - Validate a rendered grade against its source (and a reference): skin chroma, hue and yellow drift, clipping, crushed blacks, saturation, legal range ([guide](../docs/colour-grading.md))
+- `colour:looks` - Try genre looks (film, commercial, music video) on a clip with skin held, as a labelled grid with a gate verdict per look and an editable grade each ([guide](../docs/colour-grading.md))
+- `colour:target` - Profile a reference per shot into target.json (levels, palette, scheme, skin, mood) for colour:check --target; with --mood, bounded per-shot grades ([guide](../docs/colour-grading.md))
+- `colour:lut` - Import a .cube or HaldCLUT with its licence on record (unknown licences refused), for colour:looks --lut ([guide](../docs/colour-grading.md))
+- `colour:track` - Track a power window over a moving subject so a grade's shape window follows it, with a preview of every lost frame ([guide](../docs/colour-grading.md))
+- `colour:shots` - Measure every shot of an edit (or several clips) against a hero shot, flag colour drift and optionally solve per-shot match grades ([guide](../docs/colour-grading.md))
 - `vork:setup`, `vork:scene`, `vork:render`, `vork:recipe`, `vork:bridge`, `vork:vfx`, `vork:eval` - Vork local 3D and VFX ([guide](../docs/vork.md)); purposes: `pnpm commands --query vork`
 - `viz:list` - Discover visualisation recipes and strict JSON requests; MCP
 - `viz:prepare` - Prepare immutable data visualisation revisions; MCP
@@ -183,6 +194,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `blender:arsenal` - Arsenal audit, capability candidates, eval
 - `blender:ext` - Blender extensions, pinned
 - `blender:run` - Trusted Python/.blend; frames and contact sheet
+- `camera:solve` - Moving-camera solve: tracks, Blender libmv, metric scale; camera.json for Vork ([guide](../.agents/skills/vork-3d-vfx/references/vfx.md))
 - `blender:live` - Live Blender: arsenal, stills, replay ([guide](../.agents/skills/blender-3d/references/live-session.md)); MCP
 - `blender:recipe` - Blender VFX/nature recipes
 - `blender:scene` - Declarative Blender scene to frames
@@ -264,7 +276,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 
 ### Development and repository
 
-- `bench:workflow`, `test:agent-workflow`, `test:viz:blender`, `test:viz:render`, `test:viz`, `python:check`, `python:audit`, `runtime:check`, `resources:icons:verify`, `deps:check`, `deps:licences`, `bench:export`, `showcase:fetch-media`, `bench:fetch-bundle`, `github:bench-report`, `showcase:add`, `showcase:media`, `showcase:readme`, `site:build`, `field:report`, `contrib:scout`, `contrib:check`, `contrib:fails-on-base`, `contrib:novelty`, `contrib:pr`, `regen`, `github:category-gates`, `github:triage-budget`, `github:triage`, `github:facts`, `github:intake`, `github:autoclose`, `github:commands`, `github:cla`, `github:labels`, `github:codeowners`, `triage:local`, `triage:pr`, `instructions:audit`, `release:plan`, `release:notes`, `release:apply`, `credits:write-doc`, `regen:post-merge`, `change:add`, `contrib:intake`, `context:probe`, `context:budget`, `docs:audit`, `repo:hygiene`, `instructions:lint`, `instructions:security`, `commands`, `check`, `format`, `format:check`, `lint`, `typecheck`, `console:build`, `console:test`, `console:e2e`, `test`, `test:fast`, `test:browser`, `test:integrations`, `test:workflows`, `test:recording:timing`, `test:longform:fullhd`, `test:longform:fullhd:qa`, `test:longform:dense`, `upgrade`, `mcp:stdio`, `export:public`, `leak:check`, `metrics`, `api:surface`, `bench:run`, `bench:sign`, `bench:verify`, `bench:judge`, `bench:rate`: development tools; purposes: `pnpm commands --section dev`
+- `experiment`, `bench:workflow`, `test:agent-workflow`, `test:viz:blender`, `test:viz:render`, `test:viz`, `python:check`, `python:audit`, `runtime:check`, `resources:icons:verify`, `deps:check`, `deps:licences`, `bench:export`, `showcase:fetch-media`, `bench:fetch-bundle`, `github:bench-report`, `showcase:add`, `showcase:media`, `showcase:readme`, `site:build`, `field:report`, `contrib:scout`, `contrib:check`, `contrib:fails-on-base`, `contrib:novelty`, `contrib:pr`, `regen`, `github:category-gates`, `github:triage-budget`, `github:triage`, `github:facts`, `github:intake`, `github:autoclose`, `github:commands`, `github:cla`, `github:labels`, `github:codeowners`, `triage:local`, `triage:pr`, `instructions:audit`, `release:plan`, `release:notes`, `release:apply`, `credits:write-doc`, `regen:post-merge`, `change:add`, `contrib:intake`, `context:probe`, `context:budget`, `docs:audit`, `repo:hygiene`, `instructions:lint`, `instructions:security`, `commands`, `check`, `format`, `format:check`, `lint`, `typecheck`, `console:build`, `console:test`, `console:e2e`, `test`, `test:fast`, `test:browser`, `test:integrations`, `test:workflows`, `test:recording:timing`, `test:longform:fullhd`, `test:longform:fullhd:qa`, `test:longform:dense`, `upgrade`, `mcp:stdio`, `export:public`, `leak:check`, `metrics`, `api:surface`, `bench:run`, `bench:sign`, `bench:verify`, `bench:judge`, `bench:rate`: development tools; purposes: `pnpm commands --section dev`
 
 ### Legacy
 

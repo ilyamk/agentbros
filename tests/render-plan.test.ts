@@ -125,7 +125,7 @@ test("child renderer receives literal props and both child streams stay off stdo
   const fake = path.join(binaryDir, "pnpm");
   writeFileSync(
     fake,
-    `#!/usr/bin/env node\nconst fs = require('node:fs'); const args = process.argv.slice(2); const props = JSON.parse(args.at(-1)); fs.writeFileSync('received.json', JSON.stringify({args, props})); fs.mkdirSync(require('node:path').dirname(args[4]), {recursive:true}); fs.writeFileSync(args[4], 'local mocked renderer bytes'); console.log('renderer stdout'); console.error('renderer stderr'); process.exit(process.env.RENDER_TEST_FAIL ? 7 : 0);\n`,
+    `#!/usr/bin/env node\nconst fs = require('node:fs'); const args = process.argv.slice(2); const props = JSON.parse(args.find((arg) => arg.startsWith('{'))); fs.writeFileSync('received.json', JSON.stringify({args, props})); fs.mkdirSync(require('node:path').dirname(args[4]), {recursive:true}); fs.writeFileSync(args[4], 'local mocked renderer bytes'); console.log('renderer stdout'); console.error('renderer stderr'); process.exit(process.env.RENDER_TEST_FAIL ? 7 : 0);\n`,
     { mode: 0o755 },
   );
   const runner = path.resolve("node_modules/tsx/dist/cli.mjs");

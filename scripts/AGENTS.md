@@ -1,6 +1,6 @@
 # Scripts — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 Motion renders resolve the composition’s shared assets using its input props.
 
@@ -32,13 +32,17 @@ Higgsfield scenarios (2026-11-16): `hf:pricing --sync --scenarios` adds exact sa
 
 ## Rules by area
 
+- Project experiments (2026-11-20): `experiment` selects project-local methods and prepares a blind review pair from full render receipts. [Guide](../docs/experiments.md).
+
 - **Approvals are the user's.** `film:approve` and `film:rights` record only the user's own words; `--proxy benchmark` never counts as the user's, is refused on `human` and never authorises spending on `material`. `recut:plan` and `shorts:rank` write unapproved drafts with the hash a person approves; `shorts:request --approved-by` takes only the user's decision, verbatim; `footage:next` writes no approval; `footage:policy-apply` writes only what the user's autonomous policy pre-answered, logged and revocable (2026-11-17). None of these approvals is an MCP tool.
 - **Film chain:** `film:next` says what to do now, `film:brief` writes the subagent's prompt and returns its path and dispatch line, `film:show` digests a step's artefacts ([production chain](../docs/production-chain.md)). A route change: `film:route --write-doc`.
 - **A user's own recording:** start with `footage:next` ([footage editing](../docs/footage-editing.md)). Transcribe only with `transcribe` (paid; `--from-raw` rebuilds a transcript with no API call; keyterms and extra channels add billable minutes) or `speech:local` (free, [speech](../docs/speech.md)). `align:captions` and `edit:captions` are template-mode voiceover only.
 - **Footage discovery:** pass the complete next-step answer to optional local hints, retaining resolved source identity and effective `--no-save` goals.
-- **Render and delivery:** `render` restarts a stalled render once; `--frames` writes a `partial` receipt delivery refuses. Production-ready is a passing `delivery --action check` after `--action snapshot` ([delivery](../docs/delivery.md)).
+- **Render and delivery:** `render` retries a stalled render once, verifies eligible picture patches and archives previous masters. `--full` forces a fresh render. Excerpts remain partial. Production-ready requires `delivery --action check` after `--action snapshot` ([delivery](../docs/delivery.md)).
+- **Local narration:** `voiceover:local --engine portable --prepare` prepares weights explicitly. Synthesis runs offline, caches takes and emits estimated timing only after matching readback ([speech](../docs/speech.md#portable-narration)).
 - **Sound:** no SFX audio in git, only manifests, the index and CLAP vectors; `sfx:find` and `sfx:cues` fetch missing kinds, `assets:sync` shared media ([assets](../docs/assets.md)). ElevenLabs SFX stay `needs-generation` (paid, with consent). In `music` the user decides the route; acquiring stays on the CLI.
 - **Motion library:** run `library:catalogue` after changing a block.
+- **Colour (2026-11-21):** `colour:*` is local and free; `colour:lut` refuses a LUT without a licence ([colour grading](../docs/colour-grading.md)).
 - **Discovery (2026-11-15):** `fal:find` returns match provenance; no signal returns an empty successful answer with suggestions and an optional memory gap command.
 - **Generation:** new production uses `generate:model`; `generate:image` and `generate:video` are legacy routes. `generate:music --provider fal` is a durable job: `--dry-run` quotes, the same arguments resume it. Spend: `budget`, `cost:report`; `budget --ceiling-usd` raising the ceiling (or a first one above zero) needs `--answer "<the user's words>"`, never the agent's (2026-11-16). A published `generate:model` video gets `metadata.motion` (local, free); with `context.expect: { motion: "animated"|"still" }` also `metadata.acceptance` and, on a miss, `nextAction: "review-motion"` while `ok` stays true; `film:measure --expect-motion` judges a render the same way (2026-11-17). A `context.referencePack` request must be an approved pack's `<pack>/request.json`; reference inputs on a profiled endpoint without one warn, or refuse with `AGENTBROS_REFERENCE_PACKS=enforce` (`off` silences; RFC 0003 D8, 2026-11-17).
 - **Trusted CLI only:** `speech:local`, `media:prepare` and other local-engine commands, `blender:run` (any Python) and `hyperframes:render` are not MCP tools; `blender:live` (typed ops) is.

@@ -146,7 +146,7 @@ test("closed full pricing union preserves optional categories and refuses unsupp
       usdPerThousand: 0.02,
       videoReferenceMultiplier: 0.6,
       forecastMargin: 0.05,
-      resolutionRates: { "4k": 0.02 },
+      resolutionRates: { "8k": 0.02 },
     },
     { kind: "new-price" },
   ];

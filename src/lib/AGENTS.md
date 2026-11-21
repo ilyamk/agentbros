@@ -1,6 +1,6 @@
 # Library — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-21
 
 [CLIs](../../scripts/AGENTS.md).
 
@@ -43,7 +43,7 @@ Last updated: 2026-11-18
 | `reference/` | Reference films: add, measure, compare, replica checks (`analyse.ts`, `replica.ts`); `corpus.ts`; calibration (`degrade.ts`); `speech-text.ts` (words local, structure tracked), `contribute.ts` | [reference analysis](../../docs/reference-analysis.md) |
 | `library/` | Catalogue (`catalogue.ts`, `library:list`); each film's blocks (`usage.ts`) | [motion library](../../docs/motion-library.md) |
 | `vision/` | Contact sheets, stills and frame reviews (`sheets.ts`, `composition.ts`) | [agent vision](../../docs/agent-vision.md) |
-| `sensors/` | Measured checks of renders and pages: motion, pixels, text (`motion-check.ts`), WCAG 2.3.1 flashes (`flash.ts`, also read by `film:measure`), slop (`slop-signatures.ts`), generated-clip motion (`motion-expect.ts`) | [real UI](../../docs/real-ui.md) |
+| `sensors/` | Motion, pixels, text and advisory readability; WCAG flashes; slop and generated-clip motion | [agent vision](../../docs/agent-vision.md) |
 | `capture-app/` | Frame-by-frame capture of a real web app over CDP (`index.ts`) | [app capture](../../docs/capture-app.md) |
 | `hyperframes/` | Hyperframes HTML render (`render.ts`) | [HTML capture](../../docs/html-capture.md) |
 | `apis/` | SFX (`freesound.ts`), Lottie (`lottiefiles.ts`) and the trimmed legacy fal client (`fal.ts`); import each file directly | [legacy routes](../../docs/legacy-generation.md) |
@@ -64,16 +64,17 @@ Last updated: 2026-11-18
 | `multicam/` | Multicam sync (offsets, drift), angle proposals and their timeline track, reframe crop paths | [multicam and reframing](../../docs/multicam-reframe.md) |
 | `photo/` | Photo moves: crops, geometric zoom, minimum speed, blur fill (`crop.ts`, shared with `photo-move`); `photo:focus` (`focus.ts`) | [photo-slideshow](../../playbooks/photo-slideshow/AGENTS.md) |
 | `matte/` | Local cut-outs for `matte`: engine choice (`engine.ts`), Vision and ONNX runs, ffmpeg I/O, temporal EMA and flicker (`temporal.ts`) | [matte](../../docs/matte.md) |
-| `speech/` | Transcript builder (fillers, sentences, Scribe/fal mapping) and the local speech pipeline (Silero VAD, Parakeet, pyannote) | [speech](../../docs/speech.md) |
+| `colour/` | Colour worker, grade bake, windows | [colour](../../docs/colour-grading.md) |
+| `speech/` | Transcripts, local ASR and portable voice synthesis with pinned readback | [speech](../../docs/speech.md) |
 | `local-engines/` | Local engine preparation for `media:prepare` (`prepare.ts`) and local speech text | [speech](../../docs/speech.md) |
-| `local-capabilities/suggestions.ts` | Optional task hints; consume resolved footage answer state and unsaved goals, tolerate non-object optional metadata, and skip unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
+| `local-capabilities/suggestions.ts` | Optional task hints from resolved footage state; skips unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
 | `audio/` | Analysis, mixing, repair, captions, SFX and rhythm evidence | [audio QA](../../docs/local-audio-qa.md), [editorial audio](../../docs/editorial-audio.md) |
 | `audio-map/` | Music map, stems, edit plan, cue snap and leads (`analyse.ts`) for `audio:map`, `edit:plan`, `edit:snap` | [editorial audio](../../docs/editorial-audio.md) |
 | `audio-curves/` | Per-frame audio curves for `audio:curves` (`compute.ts`) | [editorial audio](../../docs/editorial-audio.md) |
 | `blender-arsenal/` | Extensions, generators, assets, recipes, live ops; `city.ts`, `overview.ts`, `generators.ts`, `eval*.ts`, `improvements.ts` (A/B), PDB | [arsenal](../../docs/blender-arsenal/README.md) |
 | `music/` | Music search, shortlist, licence and fit for `pnpm music`; fal music runs (`shortlist.ts`) | [editorial audio](../../docs/editorial-audio.md) |
 | `captions/` | Caption delivery; burned caption pages (`pages.ts`: `createTikTokStyleCaptions` grouping, 1–6 words, two lines, `strictWords` for stacked pages), key-word heuristic (`emphasis.ts`), readability, per-treatment contrast (outline, shadow, box) and platform safe zones, organic and ad (`readability.ts`), profile selection for timeline renders (`profiles.ts`); presets in `src/motion/library/captions/` | [captions](../../docs/caption-delivery.md), [styles](../../docs/captions-styles.md) |
-| `delivery/` | Release checks and platform audio handoff | [delivery](../../docs/delivery.md) |
+| `delivery/` | Release checks, verified project render patches and platform audio handoff | [delivery](../../docs/delivery.md) |
 | `store/` | App Store and Google Play preview specs, probe checks and the conform plan for `store:conform` (`preview.ts`) | [app-store-preview](../../playbooks/app-store-preview/AGENTS.md) |
 | `qa-evidence/`, `evaluation/` | Measured render evidence, craft evaluation | [QA evidence](../../docs/qa-evidence.md), [craft](../../docs/craft-evaluation.md) |
 | `review-ui/`, `local-server/`, `console/` | Review services; loopback security; console server (2026-11-17) | [review UI](../../docs/local-review-ui.md), [console](../../docs/console.md) |

@@ -1,3 +1,4 @@
+import { assertTutorialKit } from "../experiments/series";
 import { vizHash } from "../viz/compile";
 import { captureVizDependencies } from "../viz/usage";
 import {
@@ -147,6 +148,7 @@ export function captureBespokeIdentity(
   const rootDir = path.resolve(options.rootDir ?? process.cwd());
   const project = path.join(rootDir, "public/projects", projectId);
   assertPathWithin(path.join(rootDir, "public/projects"), project);
+  assertTutorialKit(project);
   const build = readJson(path.join(project, "pipeline/build.json"));
   if (!build || typeof build.composition !== "string")
     throw new Error("A bespoke film needs pipeline/build.json naming its composition (the build step) before delivery");
@@ -215,6 +217,10 @@ export function captureBespokeIdentity(
   };
   for (const stem of BESPOKE_PIPELINE_FILES) {
     const file = path.join(project, "pipeline", `${stem}.json`);
+    if (existsSync(file)) add(file, "creative");
+  }
+  for (const name of ["tutorial-series-kit.json", "tutorial-camera-proposal.json"]) {
+    const file = path.join(project, "pipeline", name);
     if (existsSync(file)) add(file, "creative");
   }
   const buildProps = effectiveBespokeProps(rootDir, projectId, build, options.props);

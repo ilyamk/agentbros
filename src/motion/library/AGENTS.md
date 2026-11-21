@@ -1,6 +1,8 @@
 # Motion Library — Agent Rules
 
-Last updated: 2026-11-17
+Last updated: 2026-11-20
+
+Capture-based product demos use real before/after plates, camera stops and an optional carried control in landscape and portrait. The showcase can perform the captured ground-swap and caused-morph pair. The same frame plan schedules its local sound accents. [Reproducible example](../../../examples/workflows/product-ad/library-proof/README.md).
 
 Reusable, parameterised motion-design blocks that agents choose by a catalogue line and a picture. To use blocks in a film, follow the [motion-library skill](../../../.agents/skills/motion-library/SKILL.md); this file is for changing the library itself. Primitives one level down are in [src/motion/AGENTS.md](../AGENTS.md).
 

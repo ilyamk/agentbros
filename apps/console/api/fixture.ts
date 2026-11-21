@@ -66,6 +66,7 @@ function summaryOf(view: ProjectView): ProjectSummary {
     waiting: view.waiting.length,
     control: view.control.state,
     spentUsd: view.money.spentUsd,
+    ...(view.money.reservedUsd > 0 ? { reservedUsd: view.money.reservedUsd } : {}),
     ceilingUsd: view.money.ceilingUsd ?? view.autonomy.ceilingUsd,
     latestRender: view.media.latestRender,
     updatedAt: view.generatedAt,

@@ -154,10 +154,25 @@ test("reference video seconds add to output seconds and select only the tracked 
   assert.equal(price.usd, round(((1280 * 720 * 15 * 24) / 1024 / 1000) * 0.0214 * 0.6 * 1.05));
   assert.match(price.label, /× 0.6/);
   for (const parameters of [
-    { resolution: "1080p", aspect: "16:9", durationSec: 5 },
+    { resolution: "8k", aspect: "16:9", durationSec: 5 },
     { resolution: "720p", aspect: "auto", durationSec: 5 },
   ])
     assert.equal(modelChoicePrice(entry("bytedance/seedance-2.5/image-to-video"), parameters).kind, "unknown");
+  // 1080p and 4K are priced from the 2026-11-21 page rates; the US endpoints have no reviewed 4K rate.
+  const uhd = modelChoicePrice(entry("bytedance/seedance-2.5/image-to-video"), {
+    resolution: "4k",
+    aspect: "16:9",
+    durationSec: 5,
+  });
+  assert.equal(uhd.usd, round(((3840 * 2160 * 5 * 24) / 1024 / 1000) * 0.0094 * 1.05));
+  assert.equal(
+    modelChoicePrice(entry("bytedance/seedance-2.5/us/image-to-video"), {
+      resolution: "4k",
+      aspect: "16:9",
+      durationSec: 5,
+    }).kind,
+    "unknown",
+  );
   assert.equal(planningVideoDimensions("720p", "2:1"), undefined);
   // This planning feature supplies no forecast or dimensions to admission.
   assert.equal(

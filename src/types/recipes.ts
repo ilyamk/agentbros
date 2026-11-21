@@ -19,6 +19,7 @@ export const RecipeRequestSchema = z
       .array(z.enum(["vertical", "square", "landscape"]))
       .min(1)
       .default(["vertical", "square", "landscape"]),
+    experiment: z.literal("proof-scenes@1").optional(),
     styleProfile: StyleProfileIdSchema.optional(),
     durationSec: z.number().min(6).max(1200).optional(),
     media: z
@@ -41,6 +42,7 @@ export const RecipeRequestSchema = z
             text: z.string().optional(),
             durationSec: z.number().min(1).optional(),
             template: TemplateInstanceSchema.optional(),
+            proofSource: z.string().trim().min(1).optional(),
           })
           .strict(),
       )
