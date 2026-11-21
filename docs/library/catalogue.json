@@ -1,7 +1,677 @@
 {
  "version": 1,
- "sourceHash": "f1656c5d131cb15eb7f1198aa5adb0e0ffd5154e6a836e5a6c2c69501bcb606c",
+ "sourceHash": "079457e5353728c760ef277944684e95a721112d6844b8d3709e1e195c9bdc28",
  "items": [
+  {
+   "id": "type-waveform-words",
+   "category": "typography",
+   "title": "Waveform word hits",
+   "description": "Text arrives on supplied frame cues above the amplitude envelope of a sound. Use when the audible accents should guide the viewer through the words.",
+   "tags": [
+    "audio",
+    "waveform",
+    "words",
+    "sync",
+    "rhythm"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 115,
+   "importPath": "src/motion/library/typography/WaveformWords",
+   "exports": [
+    "waveformWordsSchema",
+    "waveformWordsDefaults",
+    "waveformWordCues",
+    "activeWaveformWord",
+    "WaveformWords"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "words": {
+      "minItems": 1,
+      "maxItems": 8,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "text": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 18
+        },
+        "at": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "text",
+        "at"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "levels": {
+      "minItems": 8,
+      "maxItems": 320,
+      "type": "array",
+      "items": {
+       "type": "number",
+       "minimum": 0,
+       "maximum": 1
+      }
+     },
+     "sampleEvery": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+     },
+     "ground": {
+      "type": "string"
+     },
+     "accent": {
+      "type": "string"
+     },
+     "ink": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "words",
+     "levels",
+     "sampleEvery",
+     "ground",
+     "accent",
+     "ink"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "words": [
+     {
+      "text": "Cut",
+      "at": 14
+     },
+     {
+      "text": "with",
+      "at": 33
+     },
+     {
+      "text": "intent.",
+      "at": 54
+     }
+    ],
+    "levels": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0.45077650787009443,
+     0.48094546756818307,
+     0.49509368372360224,
+     0.4969519473668282,
+     0.4895416595569531,
+     0.220673879752014,
+     0.2354428423497231,
+     0.24236898356621753,
+     0.24327868103401662,
+     0.2396510364417758,
+     0.10802905731467245,
+     0.11525907977468954,
+     0.11864971444013801,
+     0.11909504924821918,
+     0.11731916609425078,
+     0.052884723998197956,
+     0.05642412119190878,
+     0.05808397811298375,
+     0.88,
+     0.8668778997501816,
+     0.39076819239914873,
+     0.4169209968198756,
+     0.4291857727258971,
+     0.4307966604101187,
+     0.42437284567695,
+     0.19129730940915002,
+     0.20410019668734108,
+     0.21010431543846889,
+     0.2108929120687627,
+     0.20774818714360085,
+     0.09364800231693525,
+     0.09991554900222148,
+     0.10285481525982565,
+     0.10324086616294069,
+     0.10170139230422684,
+     0.04584459846842588,
+     0.048912823674091575,
+     0.05035171695571887,
+     0.050540704955503266,
+     1,
+     0.45077650787009443,
+     0.48094546756818307,
+     0.49509368372360224,
+     0.4969519473668282,
+     0.4895416595569531,
+     0.220673879752014,
+     0.2354428423497231,
+     0.24236898356621753,
+     0.24327868103401662,
+     0.2396510364417758,
+     0.10802905731467245,
+     0.11525907977468954,
+     0.11864971444013801,
+     0.11909504924821918,
+     0.11731916609425078,
+     0.052884723998197956,
+     0.05642412119190878,
+     0.05808397811298375,
+     0.05830198805399027,
+     0.05743261926761735,
+     0.025889275551289254,
+     0.027621957927329667,
+     0.02843452703909981,
+     0.028541251987420063,
+     0.028115659748972035,
+     0.01267387891810539,
+     0.013522099123957299,
+     0.013919885555437977,
+     0.013972131863754797,
+     0.013763786733050402,
+     0.006204391718593194,
+     0.006619630845835681,
+     0.006814363875651967,
+     0.006839940620131112,
+     0.006737946999085467,
+     0.0030373082184615282,
+     0.0032405850699247962,
+     0.0033359150005116142,
+     0.0033484358824499997,
+     0.003298505755939091,
+     0.0014868889058516303,
+     0.0015864013930664694,
+     0.0016330693654913896,
+     0.0016391988588146233,
+     0.0016147559818205847,
+     0.0007278940625474293,
+     0.0007766095706852217,
+     0.000799455487354276,
+     0.0008024561296879743
+    ],
+    "sampleEvery": 1,
+    "ground": "#172420",
+    "accent": "#CDEB84",
+    "ink": "#E9EDDF"
+   },
+   "preview": {
+    "image": "docs/library/previews/type-waveform-words.jpg",
+    "entry": "src/motion/library/typography/preview.tsx",
+    "compositions": [
+     "Lib-type-waveform-words-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 14,
+     "kind": "type",
+     "sfx": "none"
+    },
+    {
+     "frame": 33,
+     "kind": "type",
+     "sfx": "none"
+    },
+    {
+     "frame": 54,
+     "kind": "type",
+     "sfx": "none"
+    }
+   ]
+  },
+  {
+   "id": "type-text-generate",
+   "category": "typography",
+   "title": "Text generate effect",
+   "description": "A sentence appears word by word and comes into focus in its final layout. Use for an assistant output or short statement that should feel composed on screen.",
+   "tags": [
+    "word by word",
+    "focus",
+    "generated text",
+    "assistant",
+    "fixed layout"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 84,
+   "importPath": "src/motion/library/typography/SentenceBuild",
+   "usage": "<SentenceBuild {...textGeneratePreset} text={line} />",
+   "exports": [
+    "CHIP_GLYPHS",
+    "sentenceBuildSchema",
+    "parseSentence",
+    "tokenFrames",
+    "Chip",
+    "SentenceBuild",
+    "fixedBlockOffset",
+    "fixedWordArrival",
+    "sentenceBuildDefaults",
+    "sentenceBuildFixedPreset",
+    "sentenceBuildTintPreset",
+    "sentenceBuildCoolingPreset",
+    "sentenceBuildFadeGroupsPreset",
+    "textGeneratePreset",
+    "sentenceBuildCues"
+   ],
+   "inspiredBy": [
+    "shadcn.io Text Generate Effect, fixed position and progressive focus (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string"
+     },
+     "ink": {
+      "type": "string"
+     },
+     "accent": {
+      "type": "string"
+     },
+     "chipColours": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "ground": {
+      "type": "string"
+     },
+     "width": {
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 1
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "step": {
+      "type": "number",
+      "exclusiveMinimum": 0
+     },
+     "exitAt": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+     },
+     "grain": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.2
+     },
+     "layout": {
+      "type": "string",
+      "enum": [
+       "flow",
+       "fixed"
+      ]
+     },
+     "align": {
+      "type": "string",
+      "enum": [
+       "centre",
+       "left"
+      ]
+     },
+     "weight": {
+      "type": "integer",
+      "minimum": 300,
+      "maximum": 900
+     },
+     "size": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 0.4
+     },
+     "leading": {
+      "type": "number",
+      "minimum": 0.9,
+      "maximum": 2
+     },
+     "frames": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "minimum": -9007199254740991,
+       "maximum": 9007199254740991
+      }
+     },
+     "chipShape": {
+      "type": "string",
+      "enum": [
+       "tile",
+       "round"
+      ]
+     },
+     "chipScale": {
+      "type": "number",
+      "minimum": 0.4,
+      "maximum": 1.4
+     },
+     "riseFrom": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.5
+     },
+     "riseFrames": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+     },
+     "creep": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.05
+     },
+     "exit": {
+      "type": "string",
+      "enum": [
+       "blur",
+       "rise"
+      ]
+     },
+     "exitTravel": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "exitFrames": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+     },
+     "exitCurve": {
+      "type": "string",
+      "enum": [
+       "quadIn",
+       "expoIn",
+       "linear"
+      ]
+     },
+     "tint": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "tintFrames": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30
+     },
+     "cornerDots": {
+      "type": "boolean"
+     },
+     "dotColour": {
+      "type": "string"
+     },
+     "fadeFrames": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+     },
+     "focusBlur": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 16
+     },
+     "push": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.2
+     }
+    },
+    "required": [
+     "text",
+     "ink",
+     "accent",
+     "chipColours",
+     "ground",
+     "width",
+     "at",
+     "step",
+     "exitAt",
+     "grain"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "text": "A signal becomes / a story.",
+    "ink": "#18261F",
+    "accent": "#EE5A24",
+    "chipColours": [
+     "#111111",
+     "#FF7A45",
+     "#E9E6FF",
+     "#3D5AFE",
+     "#F2F1EC"
+    ],
+    "ground": "#EDF0E5",
+    "width": 0.84,
+    "at": 5,
+    "step": 3,
+    "exitAt": -1,
+    "grain": 0,
+    "layout": "fixed",
+    "fadeFrames": 8,
+    "focusBlur": 8
+   },
+   "preview": {
+    "image": "docs/library/previews/type-text-generate.jpg",
+    "entry": "src/motion/library/typography/preview.tsx",
+    "compositions": [
+     "Lib-type-text-generate-L",
+     "Lib-type-text-generate-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 5,
+     "kind": "type",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 8,
+     "kind": "type",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 11,
+     "kind": "type",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 14,
+     "kind": "type",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 17,
+     "kind": "type",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 25,
+     "kind": "land",
+     "sfx": "none",
+     "weight": "hero"
+    }
+   ]
+  },
+  {
+   "id": "type-blur-text",
+   "category": "typography",
+   "title": "Blur text",
+   "description": "Words rise a short distance and sharpen in reading order before holding still. Use for one short chapter title or an editorial statement.",
+   "tags": [
+    "focus",
+    "blur",
+    "word by word",
+    "rise",
+    "title",
+    "editorial"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 90,
+   "importPath": "src/motion/library/typography/MarkerHighlight",
+   "usage": "<MarkerHighlight {...blurTextPreset} text={headline} />",
+   "exports": [
+    "markerHighlightSchema",
+    "parseMarkerText",
+    "MarkerHighlight",
+    "markerHighlightDefaults",
+    "blurTextPreset",
+    "markerHighlightPillPreset"
+   ],
+   "inspiredBy": [
+    "shadcn.io Blur Text, staggered word entrances from soft focus (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "text": {
+      "type": "string"
+     },
+     "color": {
+      "type": "string"
+     },
+     "marker": {
+      "type": "string"
+     },
+     "markedColor": {
+      "type": "string"
+     },
+     "background": {
+      "type": "string"
+     },
+     "fontWeight": {
+      "type": "integer",
+      "minimum": 400,
+      "maximum": 900
+     },
+     "fontSize": {
+      "type": "number",
+      "minimum": 0
+     },
+     "align": {
+      "type": "string",
+      "enum": [
+       "left",
+       "centre"
+      ]
+     },
+     "at": {
+      "type": "number"
+     },
+     "step": {
+      "type": "number",
+      "minimum": 0
+     },
+     "markAt": {
+      "type": "number"
+     },
+     "markStep": {
+      "type": "number",
+      "minimum": 0
+     },
+     "dimRest": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "mode": {
+      "type": "string",
+      "enum": [
+       "marker",
+       "pill"
+      ]
+     }
+    },
+    "required": [
+     "text",
+     "color",
+     "marker",
+     "markedColor",
+     "background",
+     "fontWeight",
+     "fontSize",
+     "align",
+     "at",
+     "step",
+     "markAt",
+     "markStep",
+     "dimRest"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "text": "Ready to cut.",
+    "color": "#F2F4DE",
+    "marker": "#FFD84A",
+    "markedColor": "#151412",
+    "background": "#18261F",
+    "fontWeight": 700,
+    "fontSize": 0,
+    "align": "centre",
+    "at": 5,
+    "step": 4,
+    "markAt": 40,
+    "markStep": 11,
+    "dimRest": 0
+   },
+   "preview": {
+    "image": "docs/library/previews/type-blur-text.jpg",
+    "entry": "src/motion/library/typography/preview.tsx",
+    "compositions": [
+     "Lib-type-blur-text-L",
+     "Lib-type-blur-text-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 5,
+     "kind": "reveal",
+     "sfx": "none"
+    }
+   ]
+  },
   {
    "id": "type-hero-word",
    "category": "typography",
@@ -604,11 +1274,13 @@
     "Chip",
     "SentenceBuild",
     "fixedBlockOffset",
+    "fixedWordArrival",
     "sentenceBuildDefaults",
     "sentenceBuildFixedPreset",
     "sentenceBuildTintPreset",
     "sentenceBuildCoolingPreset",
     "sentenceBuildFadeGroupsPreset",
+    "textGeneratePreset",
     "sentenceBuildCues"
    ],
    "inspiredBy": [
@@ -775,6 +1447,11 @@
       "type": "integer",
       "minimum": 0,
       "maximum": 12
+     },
+     "focusBlur": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 16
      },
      "push": {
       "type": "number",
@@ -2070,6 +2747,7 @@
     "parseMarkerText",
     "MarkerHighlight",
     "markerHighlightDefaults",
+    "blurTextPreset",
     "markerHighlightPillPreset"
    ],
    "inspiredBy": [
@@ -6240,6 +6918,821 @@
      "frame": 4,
      "kind": "reveal",
      "sfx": "riser",
+     "weight": "support"
+    }
+   ]
+  },
+  {
+   "id": "ui-inspector-geometry",
+   "category": "ui",
+   "title": "Inspector drives geometry",
+   "description": "A frame property changes its readout, slider and artwork together. Use to establish the visible result of one adjustment.",
+   "tags": [
+    "geometry",
+    "control",
+    "inspection",
+    "proof"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 105,
+   "importPath": "src/motion/library/ui/InspectorGeometry",
+   "exports": [
+    "inspectorGeometrySchema",
+    "inspectorGeometryDefaults",
+    "inspectorGeometryCues",
+    "inspectorValue",
+    "InspectorGeometry"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25
+     },
+     "control": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 22
+     },
+     "from": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     },
+     "to": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 4,
+      "maximum": 9007199254740991
+     },
+     "accent": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "title",
+     "control",
+     "from",
+     "to",
+     "at",
+     "moveFrames",
+     "accent"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "title": "Atlas of Light",
+    "control": "Corner radius",
+    "from": 12,
+    "to": 76,
+    "at": 23,
+    "moveFrames": 27,
+    "accent": "#CDEB84"
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-inspector-geometry.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-inspector-geometry-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 23,
+     "kind": "click",
+     "sfx": "click"
+    },
+    {
+     "frame": 50,
+     "kind": "land",
+     "sfx": "tick"
+    }
+   ]
+  },
+  {
+   "id": "ui-accept-revision",
+   "category": "ui",
+   "title": "Accept a revision into a preview",
+   "description": "A proposed change is accepted and the same artwork updates in place. Use for edit reviews, code changes and agent-assisted workflows.",
+   "tags": [
+    "diff",
+    "revision",
+    "product proof",
+    "live preview"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 105,
+   "importPath": "src/motion/library/ui/AcceptRevision",
+   "exports": [
+    "acceptRevisionSchema",
+    "acceptRevisionDefaults",
+    "revisionPose",
+    "acceptRevisionCues",
+    "AcceptRevision"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25
+     },
+     "field": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 22
+     },
+     "before": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.2
+     },
+     "after": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1.2
+     },
+     "acceptAt": {
+      "type": "integer",
+      "minimum": 4,
+      "maximum": 9007199254740991
+     },
+     "updateFrames": {
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 9007199254740991
+     }
+    },
+    "required": [
+     "title",
+     "field",
+     "before",
+     "after",
+     "acceptAt",
+     "updateFrames"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "title": "Atlas of Light",
+    "field": "titleScale",
+    "before": 0.64,
+    "after": 1.14,
+    "acceptAt": 32,
+    "updateFrames": 20
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-accept-revision.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-accept-revision-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 32,
+     "kind": "click",
+     "sfx": "click"
+    },
+    {
+     "frame": 52,
+     "kind": "land",
+     "sfx": "chime"
+    }
+   ]
+  },
+  {
+   "id": "ui-evidence-scroll",
+   "category": "ui",
+   "title": "Scroll to the evidence",
+   "description": "A list scrolls to a selected row, highlights it in content coordinates and holds on the supporting note. Use when the viewer needs to see the evidence.",
+   "tags": [
+    "scroll",
+    "source",
+    "evidence",
+    "review"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 110,
+   "importPath": "src/motion/library/ui/EvidenceScroll",
+   "exports": [
+    "evidenceScrollSchema",
+    "evidenceScrollDefaults",
+    "evidenceScrollCues",
+    "evidenceScrollPose",
+    "EvidenceScroll"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "rows": {
+      "minItems": 4,
+      "maxItems": 12,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "label": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 40
+        },
+        "value": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 24
+        }
+       },
+       "required": [
+        "label",
+        "value"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "target": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "note": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 9007199254740991
+     }
+    },
+    "required": [
+     "rows",
+     "target",
+     "note",
+     "at",
+     "moveFrames"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "rows": [
+     {
+      "label": "Source assets",
+      "value": "Ready"
+     },
+     {
+      "label": "Frame size",
+      "value": "1920 × 1080"
+     },
+     {
+      "label": "Playback",
+      "value": "30 fps"
+     },
+     {
+      "label": "Picture codec",
+      "value": "H.264"
+     },
+     {
+      "label": "Cut timing",
+      "value": "Checked"
+     },
+     {
+      "label": "Final hold",
+      "value": "Passed"
+     },
+     {
+      "label": "Output",
+      "value": "Ready"
+     }
+    ],
+    "target": 5,
+    "note": "The last frame holds.",
+    "at": 20,
+    "moveFrames": 35
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-evidence-scroll.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-evidence-scroll-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 55,
+     "kind": "stop",
+     "sfx": "tick"
+    }
+   ]
+  },
+  {
+   "id": "ui-variation-select",
+   "category": "ui",
+   "title": "Compare variants and choose one",
+   "description": "A short grid of visual variations introduces the alternatives, then one selected card grows into the next view. Supply original or captured artwork to compare.",
+   "tags": [
+    "gallery",
+    "variations",
+    "selection",
+    "carry"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 115,
+   "importPath": "src/motion/library/ui/VariationSelect",
+   "exports": [
+    "variationSelectSchema",
+    "variationSelectDefaults",
+    "variationSelectCues",
+    "selectionProgress",
+    "VariationSelect"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "options": {
+      "minItems": 2,
+      "maxItems": 3,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 25
+        },
+        "label": {
+         "type": "string",
+         "minLength": 1,
+         "maxLength": 18
+        },
+        "paper": {
+         "type": "string"
+        },
+        "src": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "title",
+        "label",
+        "paper"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "selected": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "selectAt": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "expandFrames": {
+      "type": "integer",
+      "minimum": 8,
+      "maximum": 9007199254740991
+     }
+    },
+    "required": [
+     "options",
+     "selected",
+     "at",
+     "selectAt",
+     "expandFrames"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "options": [
+     {
+      "title": "Atlas of Light",
+      "label": "PAPER",
+      "paper": "#E8D8B0"
+     },
+     {
+      "title": "Atlas of Light",
+      "label": "FIELD",
+      "paper": "#CDEB84"
+     },
+     {
+      "title": "Atlas of Light",
+      "label": "GLASS",
+      "paper": "#C4D5EE"
+     }
+    ],
+    "selected": 1,
+    "at": 5,
+    "selectAt": 51,
+    "expandFrames": 25
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-variation-select.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-variation-select-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 51,
+     "kind": "click",
+     "sfx": "click"
+    },
+    {
+     "frame": 76,
+     "kind": "land",
+     "sfx": "none"
+    }
+   ]
+  },
+  {
+   "id": "ui-device-handoff",
+   "category": "ui",
+   "title": "Carry a screen to another device",
+   "description": "One screen travels from a portrait phone frame into a wider tablet frame while its artwork remains identifiable. Use to show continuity across devices.",
+   "tags": [
+    "device",
+    "phone",
+    "tablet",
+    "continuity"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 105,
+   "importPath": "src/motion/library/ui/DeviceHandoff",
+   "exports": [
+    "deviceHandoffSchema",
+    "deviceHandoffDefaults",
+    "deviceHandoffCues",
+    "devicePose",
+    "DeviceHandoff"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 25
+     },
+     "src": {
+      "type": "string"
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 8,
+      "maximum": 9007199254740991
+     },
+     "paper": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "title",
+     "at",
+     "moveFrames",
+     "paper"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "title": "Atlas of Light",
+    "at": 24,
+    "moveFrames": 35,
+    "paper": "#CDEB84"
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-device-handoff.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-device-handoff-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 24,
+     "kind": "reveal",
+     "sfx": "whoosh"
+    },
+    {
+     "frame": 59,
+     "kind": "land",
+     "sfx": "tick"
+    }
+   ]
+  },
+  {
+   "id": "ui-state-morph",
+   "category": "ui",
+   "title": "Action becomes result",
+   "description": "One anchored card contracts into a processing pill and expands into a readable result, with the input press and final hold timed independently. Use for import, submit or approval where the result must visibly come from the action.",
+   "tags": [
+    "continuity",
+    "state",
+    "processing",
+    "result",
+    "file drop",
+    "product proof"
+   ],
+   "formats": [
+    "vertical",
+    "landscape",
+    "square"
+   ],
+   "durationInFrames": 122,
+   "importPath": "src/motion/library/ui/StateMorph",
+   "exports": [
+    "stateMorphSchema",
+    "stateMorphDefaults",
+    "stateMorphCues",
+    "stateMorphPose",
+    "StateMorph"
+   ],
+   "inspiredBy": [
+    "DesignBookmark Motion: Loading to success, Morph island and File drop (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "minLength": 1
+     },
+     "pending": {
+      "type": "string",
+      "minLength": 1
+     },
+     "result": {
+      "type": "string",
+      "minLength": 1
+     },
+     "detail": {
+      "type": "string"
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "readyAt": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 6,
+      "maximum": 9007199254740991
+     },
+     "accent": {
+      "type": "string"
+     },
+     "ground": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "title",
+     "pending",
+     "result",
+     "at",
+     "readyAt",
+     "moveFrames",
+     "accent",
+     "ground"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "title": "Import artwork",
+    "pending": "Processing",
+    "result": "Artwork ready",
+    "detail": "Cover and three pages",
+    "at": 29,
+    "readyAt": 62,
+    "moveFrames": 15,
+    "accent": "#CFED84",
+    "ground": "#E9EDDE"
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-state-morph.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-state-morph-V",
+     "Lib-ui-state-morph-L",
+     "Lib-ui-state-morph-S"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 29,
+     "kind": "click",
+     "sfx": "click"
+    },
+    {
+     "frame": 77,
+     "kind": "land",
+     "sfx": "chime",
+     "weight": "hero"
+    }
+   ]
+  },
+  {
+   "id": "ui-swipe-deck",
+   "category": "ui",
+   "title": "Swipe advances a card stack",
+   "description": "The front card flies off while the next card rises into its place, with a readable hold after each advance. Use for consecutive screens or different product views; pass card images or render custom artwork with the children callback.",
+   "tags": [
+    "cards",
+    "overlap",
+    "stack",
+    "swipe",
+    "continuity",
+    "product views"
+   ],
+   "formats": [
+    "vertical",
+    "landscape",
+    "square"
+   ],
+   "durationInFrames": 120,
+   "importPath": "src/motion/library/ui/SwipeDeck",
+   "exports": [
+    "swipeDeckSchema",
+    "swipeDeckDefaults",
+    "swipeDeckCues",
+    "swipeDeckPose",
+    "SwipeDeck"
+   ],
+   "inspiredBy": [
+    "DesignBookmark Motion: Swipe deck and Fan cards (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "cards": {
+      "minItems": 2,
+      "maxItems": 10,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "type": "string",
+         "minLength": 1
+        },
+        "label": {
+         "type": "string"
+        },
+        "paper": {
+         "type": "string"
+        },
+        "ink": {
+         "type": "string"
+        },
+        "src": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "title",
+        "paper",
+        "ink"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "step": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 8,
+      "maximum": 9007199254740991
+     },
+     "direction": {
+      "type": "string",
+      "enum": [
+       "left",
+       "right"
+      ]
+     },
+     "ground": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cards",
+     "at",
+     "step",
+     "moveFrames",
+     "direction",
+     "ground"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "cards": [
+     {
+      "title": "Light",
+      "label": "01 / Field notes",
+      "paper": "#D7E9A5",
+      "ink": "#1E3323"
+     },
+     {
+      "title": "Form",
+      "label": "02 / Field notes",
+      "paper": "#C5D2EC",
+      "ink": "#1C2C4E"
+     },
+     {
+      "title": "Surface",
+      "label": "03 / Field notes",
+      "paper": "#F1D7AE",
+      "ink": "#513720"
+     }
+    ],
+    "at": 27,
+    "step": 32,
+    "moveFrames": 19,
+    "direction": "left",
+    "ground": "#252C24"
+   },
+   "preview": {
+    "image": "docs/library/previews/ui-swipe-deck.jpg",
+    "entry": "src/motion/library/ui/preview.tsx",
+    "compositions": [
+     "Lib-ui-swipe-deck-V",
+     "Lib-ui-swipe-deck-L",
+     "Lib-ui-swipe-deck-S"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 46,
+     "kind": "land",
+     "sfx": "tick",
+     "weight": "support"
+    },
+    {
+     "frame": 78,
+     "kind": "land",
+     "sfx": "tick",
      "weight": "support"
     }
    ]
@@ -11664,6 +13157,96 @@
    ]
   },
   {
+   "id": "page-turn",
+   "category": "transitions",
+   "title": "Paper turns into the next shot",
+   "description": "A diagonal paper fold lifts from the right edge and passes through the frame, progressively exposing the next plate. Use when a real page, catalogue or paper collage motivates the cut.",
+   "tags": [
+    "paper",
+    "editorial",
+    "fold",
+    "page",
+    "reveal",
+    "collage"
+   ],
+   "formats": [
+    "vertical",
+    "landscape",
+    "square"
+   ],
+   "durationInFrames": 96,
+   "importPath": "src/motion/library/transitions/PageTurn",
+   "usage": "<PageTurn {...pageTurnDefaults} from={<FirstPage />} to={<SecondPage />} />",
+   "exports": [
+    "pageTurnSchema",
+    "pageTurnDefaults",
+    "pageTurnCues",
+    "pageTurnPose",
+    "PageTurn",
+    "EditorialPage",
+    "PageTurnPreview"
+   ],
+   "inspiredBy": [
+    "DesignBookmark Motion: Page flip (method only)",
+    "Kokonut UI: Page Flip, paper shading and continuity (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "seamFrame": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 12,
+      "maximum": 9007199254740991
+     },
+     "paper": {
+      "type": "string"
+     },
+     "diagonal": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.22
+     }
+    },
+    "required": [
+     "seamFrame",
+     "moveFrames",
+     "paper",
+     "diagonal"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "seamFrame": 48,
+    "moveFrames": 30,
+    "paper": "#F1EAD5",
+    "diagonal": 0.11
+   },
+   "preview": {
+    "image": "docs/library/previews/page-turn.jpg",
+    "entry": "src/motion/library/transitions/preview.tsx",
+    "compositions": [
+     "Lib-page-turn-V",
+     "Lib-page-turn-L",
+     "Lib-page-turn-S"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 48,
+     "kind": "cut",
+     "sfx": "whoosh",
+     "weight": "hero"
+    }
+   ],
+   "sparing": "Use when turning a physical or graphic page is part of the idea."
+  },
+  {
    "id": "ground-swap-cut",
    "category": "transitions",
    "title": "Ground-swap cut",
@@ -13755,6 +15338,140 @@
      "kind": "reveal",
      "sfx": "pop",
      "weight": "support"
+    }
+   ]
+  },
+  {
+   "id": "glass-lens",
+   "category": "camera",
+   "title": "Glass lens follows a detail",
+   "description": "A travelling magnifier enlarges concentric regions of a still or visual plate while the rest stays visible. Hold a stop over a small product detail or part of a diagram so the viewer can read it in context.",
+   "tags": [
+    "magnifier",
+    "macro",
+    "glass",
+    "detail",
+    "evidence",
+    "focus"
+   ],
+   "formats": [
+    "vertical",
+    "landscape",
+    "square"
+   ],
+   "durationInFrames": 96,
+   "importPath": "src/motion/library/camera/GlassLens",
+   "exports": [
+    "glassLensSchema",
+    "glassLensDefaults",
+    "glassLensCues",
+    "lensPose",
+    "LensArtwork",
+    "GlassLens"
+   ],
+   "inspiredBy": [
+    "DesignBookmark Motion: Glass lens, concentric magnification (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "stops": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "at": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "x": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        },
+        "y": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        }
+       },
+       "required": [
+        "at",
+        "x",
+        "y"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "radius": {
+      "type": "number",
+      "minimum": 0.05,
+      "maximum": 0.35
+     },
+     "zoom": {
+      "type": "number",
+      "minimum": 1.08,
+      "maximum": 3
+     },
+     "src": {
+      "type": "string"
+     },
+     "ground": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "stops",
+     "radius",
+     "zoom",
+     "ground"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "stops": [
+     {
+      "at": 0,
+      "x": 0.31,
+      "y": 0.54
+     },
+     {
+      "at": 20,
+      "x": 0.31,
+      "y": 0.54
+     },
+     {
+      "at": 50,
+      "x": 0.64,
+      "y": 0.47
+     },
+     {
+      "at": 94,
+      "x": 0.64,
+      "y": 0.47
+     }
+    ],
+    "radius": 0.145,
+    "zoom": 1.64,
+    "ground": "#E7EAD8"
+   },
+   "preview": {
+    "image": "docs/library/previews/glass-lens.jpg",
+    "entry": "src/motion/library/camera/preview.tsx",
+    "compositions": [
+     "Lib-glass-lens-V",
+     "Lib-glass-lens-L",
+     "Lib-glass-lens-S"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 50,
+     "kind": "land",
+     "sfx": "glass"
     }
    ]
   },
@@ -16882,6 +18599,98 @@
      "kind": "type",
      "sfx": "tick",
      "weight": "hero"
+    }
+   ]
+  },
+  {
+   "id": "bars-form-number",
+   "category": "data",
+   "title": "Bars form a number",
+   "description": "A set of columns rotates and slides into the segments of a value. Use for a numerical reveal with a sourced value.",
+   "tags": [
+    "numbers",
+    "bar chart",
+    "segments",
+    "typography"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 95,
+   "importPath": "src/motion/library/data/BarsFormNumber",
+   "exports": [
+    "barsFormNumberSchema",
+    "barsFormNumberDefaults",
+    "barsFormNumberCues",
+    "numberSegments",
+    "barMorphProgress",
+    "BarsFormNumber"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "value": {
+      "type": "string",
+      "pattern": "^\\d{1,4}$"
+     },
+     "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "moveFrames": {
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 9007199254740991
+     },
+     "accent": {
+      "type": "string"
+     },
+     "ground": {
+      "type": "string"
+     },
+     "ink": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "value",
+     "label",
+     "at",
+     "moveFrames",
+     "accent",
+     "ground",
+     "ink"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "value": "30",
+    "label": "Frames per second",
+    "at": 24,
+    "moveFrames": 34,
+    "accent": "#CDEB84",
+    "ground": "#172420",
+    "ink": "#E9EDDF"
+   },
+   "preview": {
+    "image": "docs/library/previews/bars-form-number.jpg",
+    "entry": "src/motion/library/data/preview.tsx",
+    "compositions": [
+     "Lib-bars-form-number-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 58,
+     "kind": "land",
+     "sfx": "chime"
     }
    ]
   },
@@ -23537,6 +25346,155 @@
    ]
   },
   {
+   "id": "kinetic-binary-text",
+   "category": "kinetic",
+   "title": "Binary text",
+   "description": "Muted zeroes and ones resolve into a short word in fixed glyph slots and hold. Use when an interface decodes a signal, verifies a result or changes state.",
+   "tags": [
+    "binary",
+    "decode",
+    "signal",
+    "status",
+    "data",
+    "kinetic typography"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 84,
+   "importPath": "src/motion/library/kinetic/Decode",
+   "usage": "<Decode {...binaryTextPreset} lines={[word]} verticalLines={[]} />",
+   "exports": [
+    "decodeSchema",
+    "decodePlan",
+    "decodeCues",
+    "Decode",
+    "decodeDefaults",
+    "binaryTextPreset"
+   ],
+   "inspiredBy": [
+    "shadcn.io Binary Text, restrained bits and a stable baseline (method only)"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "kicker": {
+      "type": "string"
+     },
+     "lines": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "verticalLines": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "color": {
+      "type": "string"
+     },
+     "accent": {
+      "type": "string"
+     },
+     "muted": {
+      "type": "string"
+     },
+     "background": {
+      "type": "string"
+     },
+     "glyphs": {
+      "type": "string",
+      "minLength": 2
+     },
+     "monospace": {
+      "type": "boolean"
+     },
+     "seed": {
+      "type": "string"
+     },
+     "at": {
+      "type": "number",
+      "minimum": 0
+     },
+     "stagger": {
+      "type": "number",
+      "minimum": 0
+     },
+     "scramble": {
+      "type": "number",
+      "exclusiveMinimum": 0
+     },
+     "exitAt": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "kicker",
+     "lines",
+     "verticalLines",
+     "color",
+     "accent",
+     "muted",
+     "background",
+     "glyphs",
+     "seed",
+     "at",
+     "stagger",
+     "scramble",
+     "exitAt"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "kicker": "",
+    "lines": [
+     "SIGNAL"
+    ],
+    "verticalLines": [
+     "SIGNAL"
+    ],
+    "color": "#F2F4DE",
+    "accent": "#789760",
+    "muted": "#8a8f98",
+    "background": "#18261F",
+    "glyphs": "01",
+    "seed": "binary-signal",
+    "at": 5,
+    "stagger": 0.03333333333333333,
+    "scramble": 0.26666666666666666,
+    "exitAt": -1,
+    "monospace": true
+   },
+   "preview": {
+    "image": "docs/library/previews/kinetic-binary-text.jpg",
+    "entry": "src/motion/library/kinetic/preview.tsx",
+    "compositions": [
+     "Lib-kinetic-binary-text-L",
+     "Lib-kinetic-binary-text-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 5,
+     "kind": "type",
+     "sfx": "tick",
+     "weight": "support"
+    },
+    {
+     "frame": 18,
+     "kind": "land",
+     "sfx": "click",
+     "weight": "hero"
+    }
+   ]
+  },
+  {
    "id": "kinetic-split-reveal",
    "category": "kinetic",
    "title": "SplitText masked reveal",
@@ -23729,7 +25687,8 @@
     "decodePlan",
     "decodeCues",
     "Decode",
-    "decodeDefaults"
+    "decodeDefaults",
+    "binaryTextPreset"
    ],
    "inspiredBy": [
     "gsap ScrambleTextPlugin (idea; replaced by a seeded plugin because it calls Math.random)",
@@ -23770,6 +25729,9 @@
      "glyphs": {
       "type": "string",
       "minLength": 2
+     },
+     "monospace": {
+      "type": "boolean"
      },
      "seed": {
       "type": "string"
@@ -24690,6 +26652,128 @@
      "kind": "land",
      "sfx": "chime",
      "weight": "hero"
+    }
+   ]
+  },
+  {
+   "id": "print-registration",
+   "category": "effects",
+   "title": "Four-colour print registration",
+   "description": "Four offset ink passes progressively register on a sheet to reveal a print title and line art. Use when the material of the picture calls for print.",
+   "tags": [
+    "ink",
+    "paper",
+    "register",
+    "print",
+    "editorial"
+   ],
+   "formats": [
+    "landscape"
+   ],
+   "durationInFrames": 85,
+   "importPath": "src/motion/library/effects/PrintRegistration",
+   "exports": [
+    "printRegistrationSchema",
+    "printRegistrationDefaults",
+    "printPassState",
+    "printRegistrationCues",
+    "PrintRegistration"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 27
+     },
+     "line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+     },
+     "at": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "step": {
+      "type": "integer",
+      "minimum": 3,
+      "maximum": 9007199254740991
+     },
+     "passFrames": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 9007199254740991
+     },
+     "paper": {
+      "type": "string"
+     },
+     "inks": {
+      "type": "array",
+      "prefixItems": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "string"
+       },
+       {
+        "type": "string"
+       },
+       {
+        "type": "string"
+       }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+     }
+    },
+    "required": [
+     "title",
+     "line",
+     "at",
+     "step",
+     "passFrames",
+     "paper",
+     "inks"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "title": "Agent Bros. Pictures",
+    "line": "FROM ROUGH CUT TO RELEASE",
+    "at": 0,
+    "step": 6,
+    "passFrames": 13,
+    "paper": "#F1EDE1",
+    "inks": [
+     "#149EB4",
+     "#CB427A",
+     "#DDB74B",
+     "#182620"
+    ]
+   },
+   "preview": {
+    "image": "docs/library/previews/print-registration.jpg",
+    "entry": "src/motion/library/effects/preview.tsx",
+    "compositions": [
+     "Lib-print-registration-L"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 0,
+     "kind": "reveal",
+     "sfx": "none"
+    },
+    {
+     "frame": 31,
+     "kind": "land",
+     "sfx": "tick"
     }
    ]
   },
@@ -28137,6 +30221,13 @@
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
        },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
+       },
        "upcomingOpacity": {
         "type": "number",
         "minimum": 0,
@@ -28932,6 +31023,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -29740,6 +31838,13 @@
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
        },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
+       },
        "upcomingOpacity": {
         "type": "number",
         "minimum": 0,
@@ -30232,7 +32337,7 @@
    "id": "caption-word-box",
    "category": "captions",
    "title": "Sliding word box",
-   "description": "Sentence-case heavy sans with a thin outline; a solid accent box glides behind the spoken word. Explainers and product shorts over busy footage. Pages from TranscriptSchema words (`wordsFromTranscript`) or a words.json (`wordsFromAlignment`), never across a speaker change or sentence end, inside the platform safe zone; no blurred scrim, legibility comes from the preset's outline, shadow or box.",
+   "description": "Sentence-case heavy sans with a thin outline; a solid accent box glides behind the spoken word. Set `active.boxMotion: \"elastic\"` for independently eased edges and a fresh reveal at line wraps. Explainers and product shorts over busy footage. Pages from TranscriptSchema words (`wordsFromTranscript`) or a words.json (`wordsFromAlignment`), never across a speaker change or sentence end, inside the platform safe zone; no blurred scrim, legibility comes from the preset's outline, shadow or box.",
    "tags": [
     "captions",
     "subtitles",
@@ -30259,6 +32364,7 @@
    ],
    "inspiredBy": [
     "CapCut and Submagic active-word box captions (method only)",
+    "DesignBookmark Motion: Read along and Tab pill, independent edge speeds and line-wrap reveal (method only)",
     "remotion: @remotion/captions createTikTokStyleCaptions (MIT, used as a dependency)"
    ],
    "propsSchema": {
@@ -30556,6 +32662,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -31344,6 +33457,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -32141,6 +34261,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -32947,6 +35074,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -33757,6 +35891,13 @@
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
        },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
+       },
        "upcomingOpacity": {
         "type": "number",
         "minimum": 0,
@@ -34560,6 +36701,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
@@ -35381,6 +37529,13 @@
        "boxText": {
         "type": "string",
         "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$"
+       },
+       "boxMotion": {
+        "type": "string",
+        "enum": [
+         "slide",
+         "elastic"
+        ]
        },
        "upcomingOpacity": {
         "type": "number",
