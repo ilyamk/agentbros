@@ -1,6 +1,6 @@
 # Docs — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 [README.md](../README.md) links the guides.
 

@@ -2,7 +2,7 @@
 category: fix
 bump: minor
 breaking: false
-pr: 0
+pr: 47
 authors: [ilyamk]
 harness: claude-code
 ---
