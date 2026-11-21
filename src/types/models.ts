@@ -53,7 +53,7 @@ export type PricingDefinition = (
       usdPerThousand: number;
       videoReferenceMultiplier: number;
       forecastMargin: number;
-      resolutionRates?: Partial<Record<"480p" | "720p" | "1080p", number>>;
+      resolutionRates?: Partial<Record<"480p" | "720p" | "1080p" | "4k", number>>;
       acceptsVideoReferences?: boolean;
     }
 ) & {

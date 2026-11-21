@@ -99,7 +99,7 @@ export const ClosedPricingDefinitionSchema = z.discriminatedUnion("kind", [
       videoReferenceMultiplier: rate,
       forecastMargin: margin,
       resolutionRates: z
-        .object({ "480p": rate.optional(), "720p": rate.optional(), "1080p": rate.optional() })
+        .object({ "480p": rate.optional(), "720p": rate.optional(), "1080p": rate.optional(), "4k": rate.optional() })
         .strict()
         .optional(),
       acceptsVideoReferences: z.boolean().optional(),

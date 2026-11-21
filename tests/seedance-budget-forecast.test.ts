@@ -204,8 +204,9 @@ test("no forecast, auto/default duration, editing/draft/completion and unknown t
   editing.input.task = "editing";
   const draft = request();
   draft.input.draft = true;
-  const unpriced = request();
-  unpriced.input.resolution = "1080p";
+  // The US pages have no reviewed 4K rate, so a 4K forecast stays unpriced.
+  const unpriced = request("us");
+  unpriced.input.resolution = "4k";
   for (const value of [
     request(),
     forecast(auto),

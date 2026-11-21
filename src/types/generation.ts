@@ -16,7 +16,7 @@ export const SeedanceVideoForecastSchema = z
         source: z.string().trim().min(1).max(1000),
         width: z.number().int().positive().max(16384),
         height: z.number().int().positive().max(16384),
-        resolution: z.enum(["480p", "720p", "1080p"]),
+        resolution: z.enum(["480p", "720p", "1080p", "4k"]),
         durationSec: z.number().int().min(4).max(30),
       })
       .strict(),
