@@ -1,11 +1,12 @@
 # Design Reference — Agent Rules
 
-Last updated: 2026-11-15
+Last updated: 2026-11-20
 
 Inputs for visual decisions. Read these when analysing references or setting a project's design, before writing scene code.
 
 | Path | Use |
 |------|-----|
+| `style-cards/catalogue.json` | Original versioned film style rules with stage guidance. See [film styles](../docs/film-styles.md). |
 | `DESIGN_SYSTEM.md` | Formats, visual system and scene guidance |
 | `color-palettes.md` | Palette references |
 | `scene-storyboard.md` | Storyboard patterns |

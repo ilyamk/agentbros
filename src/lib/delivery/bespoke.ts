@@ -1,4 +1,5 @@
 import { assertTutorialKit } from "../experiments/series";
+import { readFilmStyle } from "../film-styles/binding";
 import { vizHash } from "../viz/compile";
 import { captureVizDependencies } from "../viz/usage";
 import {
@@ -36,6 +37,7 @@ export const BESPOKE_VARIANT = "captioned" as const;
 export const BESPOKE_PIPELINE_FILES = [
   "brief",
   "motion-plan",
+  "film-style",
   "cue-sheet",
   "cue-placements",
   "build",
@@ -149,6 +151,7 @@ export function captureBespokeIdentity(
   const project = path.join(rootDir, "public/projects", projectId);
   assertPathWithin(path.join(rootDir, "public/projects"), project);
   assertTutorialKit(project);
+  readFilmStyle(project);
   const build = readJson(path.join(project, "pipeline/build.json"));
   if (!build || typeof build.composition !== "string")
     throw new Error("A bespoke film needs pipeline/build.json naming its composition (the build step) before delivery");

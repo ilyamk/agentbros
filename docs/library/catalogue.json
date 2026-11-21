@@ -1,6 +1,6 @@
 {
  "version": 1,
- "sourceHash": "947b75efb9c315a7f8c5d68400b965f487f5aa41f8f24e96a1f045564da56f7e",
+ "sourceHash": "ae96320f1169e8d117543dc4a6c0bcd5c6fb203dcaab8a13c03101fe59bc04f5",
  "items": [
   {
    "id": "type-waveform-words",
@@ -22463,6 +22463,154 @@
    "cues": [
     {
      "frame": 0,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "hero"
+    }
+   ]
+  },
+  {
+   "id": "data-unit-tray",
+   "category": "data",
+   "title": "Physical unit tray",
+   "description": "Equal-sized objects enter or leave a fixed arrangement while the number follows the actual count. For comparisons where one object represents a declared real unit.",
+   "tags": [
+    "count",
+    "quantity",
+    "material",
+    "tile",
+    "physical data"
+   ],
+   "formats": [
+    "landscape",
+    "vertical",
+    "square"
+   ],
+   "durationInFrames": 135,
+   "importPath": "src/motion/library/data/UnitTray",
+   "usage": "Use verified values in from/to and explain the unit in unitLabel. Keep the same shape and palette across a comparison.",
+   "exports": [
+    "UnitTray"
+   ],
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "headline": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 72
+     },
+     "unitLabel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48
+     },
+     "from": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 64
+     },
+     "to": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 64
+     },
+     "firstFrame": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+     },
+     "stepFrames": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "shape": {
+      "type": "string",
+      "enum": [
+       "disc",
+       "tile"
+      ]
+     },
+     "ground": {
+      "type": "string"
+     },
+     "text": {
+      "type": "string"
+     },
+     "accent": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "headline",
+     "unitLabel",
+     "from",
+     "to",
+     "firstFrame",
+     "stepFrames",
+     "shape",
+     "ground",
+     "text",
+     "accent"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "headline": "Items restored",
+    "unitLabel": "One tile per repaired item",
+    "from": 6,
+    "to": 12,
+    "firstFrame": 22,
+    "stepFrames": 8,
+    "shape": "tile",
+    "ground": "#F2ECE2",
+    "text": "#241D18",
+    "accent": "#96482F"
+   },
+   "preview": {
+    "image": "docs/library/previews/data-unit-tray.jpg",
+    "entry": "src/motion/library/data/preview.tsx",
+    "compositions": [
+     "Lib-data-unit-tray-L",
+     "Lib-data-unit-tray-V",
+     "Lib-data-unit-tray-S"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 22,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 30,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 38,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 46,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 54,
+     "kind": "reveal",
+     "sfx": "none",
+     "weight": "support"
+    },
+    {
+     "frame": 62,
      "kind": "reveal",
      "sfx": "none",
      "weight": "hero"

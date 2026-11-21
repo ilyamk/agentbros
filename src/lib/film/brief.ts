@@ -1,4 +1,5 @@
 import { experimentInstructions, startExperiment } from "../experiments/project";
+import { FILM_STYLE_ARTEFACT, filmStyleForStep } from "../film-styles/binding";
 import { localToolPrompt, type LocalToolHints } from "../local-capabilities/suggestions";
 import { localEvidence } from "./local-evidence";
 import { briefFileName, inspectLine } from "./brief-handoff";
@@ -147,7 +148,7 @@ function resolveStepInputs(project: FilmProject, step: ChainStep, tokens: Tokens
   return inputs.flatMap((input) => {
     if (input.onlyFor && !input.onlyFor.includes(route.type)) return [];
     if (input.unlessSilence && silent) return [];
-    if (absent.has(input.path)) return [];
+    if (absent.has(input.path) || input.path.endsWith(`/${FILM_STYLE_ARTEFACT}`)) return [];
     const file = fill(input.path, tokens);
     if (file === undefined) return input.optional ? [] : [inputLine(input.path, input.what)];
     if (input.optional && !existsSync(path.join(project.rootDir, file))) return [];
@@ -780,13 +781,31 @@ function briefText(
   role: BriefRole,
   lane?: string,
 ): { prompt: string; agent: string } {
-  if (role === "critic" && step.critic!.review)
-    return { prompt: directorBrief(project, step, state, tokens), agent: step.critic!.agent! };
-  if (role === "critic") return { prompt: criticBrief(project, step, state, tokens), agent: CRITIC_AGENT };
-  if (role === "fixer") return { prompt: fixerBrief(project, step, state, tokens), agent: FIXER_AGENT };
-  const experiments = experimentInstructions(project.projectDir, step.id);
-  const instructions = experiments.map(({ id, instruction }) => `\n\n## ${id}\n\n${instruction}`);
-  return { prompt: ownerBrief(project, step, state, tokens, lane) + instructions.join(""), agent: step.owner };
+  const brief =
+    role === "critic"
+      ? step.critic!.review
+        ? { prompt: directorBrief(project, step, state, tokens), agent: step.critic!.agent! }
+        : { prompt: criticBrief(project, step, state, tokens), agent: CRITIC_AGENT }
+      : role === "fixer"
+        ? { prompt: fixerBrief(project, step, state, tokens), agent: FIXER_AGENT }
+        : (() => {
+            const experiments = experimentInstructions(project.projectDir, step.id);
+            const instructions = experiments.map(({ id, instruction }) => `\n\n## ${id}\n\n${instruction}`);
+            return {
+              prompt: ownerBrief(project, step, state, tokens, lane) + instructions.join(""),
+              agent: step.owner,
+            };
+          })();
+  const style = filmStyleForStep(project.projectDir, role === "critic" && step.id === "look" ? "critic" : step.id);
+  if (!style?.rules) return brief;
+  const lines = style.rules.map((line) => `- ${line}`);
+  if (role !== "critic" && style.preset)
+    lines.push(
+      `- Library preset: ${style.preset}. ${style.choices} For exact pinned values: pnpm film:style --action status --project ${project.id}.`,
+    );
+  if (role !== "critic" && style.blocks?.length) lines.push(`- Suggested blocks: ${style.blocks.join(", ")}.`);
+  if (role !== "critic" && style.engines?.length) lines.push(`- Suggested engines: ${style.engines.join(", ")}.`);
+  return { ...brief, prompt: brief.prompt + `\n\n## Film style · ${style.key}\n\n${lines.join("\n")}\n` };
 }
 
 /**

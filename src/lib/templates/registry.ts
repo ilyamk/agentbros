@@ -153,6 +153,22 @@ export const TEMPLATE_REGISTRY: readonly TemplateEntry[] = [
     { lines: ["Observe the pattern", "Explain the cause", "Test an example"] },
   ),
   entry(
+    "scene.physical-data",
+    "src/motion/library/data/UnitTray.tsx",
+    "Show an exact quantity through a fixed-size group of visible objects",
+    ["proof", "data", "quantity", "physical"],
+    {
+      headline: "Items restored",
+      unitLabel: "One tile per repaired item",
+      from: 3,
+      to: 7,
+      firstFrame: 20,
+      stepFrames: 8,
+      shape: "tile",
+    },
+    20,
+  ),
+  entry(
     "scene.metric",
     "src/templates/text/CountUp.tsx",
     "Present one sourced numeric proof",

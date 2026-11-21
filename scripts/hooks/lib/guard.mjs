@@ -35,6 +35,7 @@ export const ALWAYS_ADMITTED = [
 export const CONTROL_ALIASES = [
   ...ALWAYS_ADMITTED,
   "film:route",
+  "film:style",
   "feedback",
   "memory",
   "ref:rate",

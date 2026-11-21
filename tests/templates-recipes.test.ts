@@ -17,8 +17,8 @@ test("invalid recipe requests produce a caller validation error", () => {
 });
 
 test("registry samples and components are usable in all three formats", () => {
-  assert.equal(TEMPLATE_REGISTRY.length, 19);
-  assert.equal(new Set(TEMPLATE_REGISTRY.map((e) => e.id)).size, 19);
+  assert.equal(TEMPLATE_REGISTRY.length, 20);
+  assert.equal(new Set(TEMPLATE_REGISTRY.map((e) => e.id)).size, 20);
   for (const entry of TEMPLATE_REGISTRY) {
     TemplateInstanceSchema.parse(entry.sample);
     assert.equal(existsSync(entry.component), true);

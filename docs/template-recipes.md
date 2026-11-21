@@ -29,6 +29,8 @@ Beat IDs come from the chosen recipe. Materialization creates a new project only
 
 To reuse existing stock/imported/entity media, supply `media: [{"source":"projects/source-project/assets/imported/HASH.png","kind":"image"}]`. Read an approved entity's exact role path/version and retain its binding metadata; root render planning supports explicit entity bindings separately. Recipes never silently choose a new canonical character version.
 
+Choose an optional [film style card](film-styles.md) with `styleCard`. For counted material use the `scene.physical-data` template on the beat that needs it.
+
 ## Registry previews
 
 ```bash

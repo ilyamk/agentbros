@@ -191,9 +191,10 @@ test("worst rounds multiply critic, fixer and fan-out loops by stop.maxRounds", 
  * descriptions add 32 tokens; needs the context-growth-approved label (RFC 0001 §4.2).
  * 2026-11-21: product-promo raised for the boot row (107,763): the Drei shot techniques in the engine-selection skill; context-growth-approved.
  * 2026-11-21: product-promo raised again (107,986): five playbooks recommend the new DesignBookmark-inspired blocks; context-growth-approved.
+ * 2026-11-21: product-promo raised again (108,056): the film:style command and the style card docs the run now reads; context-growth-approved.
  */
 const RUN_CEILINGS: Record<string, number> = {
-  "product-promo": 108_000,
+  "product-promo": 108_075,
   explainer: 118_500,
   "shorts-from-long": 81_500,
 };

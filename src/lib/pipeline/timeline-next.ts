@@ -6,6 +6,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { filmStyleFile } from "../film-styles/binding";
 import { readProjectPlaybook } from "../playbooks/project";
 import type { CaptureMoment } from "./memory";
 import {
@@ -38,6 +39,7 @@ export type TimelineNext = {
   playbook?: PlaybookAnswer["playbook"];
   playbookHint?: string;
   experiments?: PlaybookAnswer["experiments"];
+  filmStyle?: PlaybookAnswer["filmStyle"];
   state: {
     formats: string[];
     timeline: boolean;
@@ -72,11 +74,12 @@ function renderState(
     { partial?: unknown; sources?: { path?: unknown; sha256?: unknown }[] } | undefined;
   if (!existsSync(file) || !receipt || receipt.partial) return { state: "missing", receiptMtime: 0 };
   const receiptMtime = mtime(receiptFile);
+  const pinnedStyle = filmStyleFile(projectDir);
   for (const input of [
     path.join(projectDir, "project.json"),
     path.join(projectDir, "pipeline", "timeline-edit.json"),
+    pinnedStyle,
   ]) {
-    if (!existsSync(input)) continue;
     const suffix = path
       .relative(path.dirname(path.dirname(projectDir)), input)
       .split(path.sep)
@@ -84,8 +87,14 @@ function renderState(
     const entry = (receipt.sources ?? []).find((source) =>
       String(source.path).split(path.sep).join("/").endsWith(suffix),
     );
+    if (!existsSync(input)) {
+      if (input === pinnedStyle && entry) return { state: "stale", receiptMtime };
+      continue;
+    }
     const fresh =
-      entry && typeof entry.sha256 === "string" ? entry.sha256 === sha256File(input) : receiptMtime >= mtime(input);
+      entry && typeof entry.sha256 === "string"
+        ? entry.sha256 === sha256File(input)
+        : input !== pinnedStyle && receiptMtime >= mtime(input);
     if (!fresh) return { state: "stale", receiptMtime };
   }
   return { state: "fresh", receiptMtime };

@@ -21,6 +21,8 @@ Projects may opt into a versioned experiment at a named step. The selection is p
 
 The design rule behind all four: **decisions that can be computed live in code and data; judgement lives with agents; approvals belong to the user.** An agent never works out the next step from prose. It asks `pnpm next`, which reads the project's files and answers.
 
+A project can pin a [film style card](film-styles.md). The film chain includes bounded guidance for each owning step, and render receipts retain the exact version.
+
 Speech follows this boundary from script line through provider take and timing
 receipt to a reference pack or a reversible timeline edit. The voice profile
 is shared by validation and capability discovery. A listening decision binds
