@@ -1,6 +1,6 @@
 # Contributing from a fork — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 **Read only:**
 - This file.
