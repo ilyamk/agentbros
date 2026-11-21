@@ -791,7 +791,10 @@ function briefText(
         : (() => {
             const experiments = experimentInstructions(project.projectDir, step.id);
             const instructions = experiments.map(({ id, instruction }) => `\n\n## ${id}\n\n${instruction}`);
-            return { prompt: ownerBrief(project, step, state, tokens, lane) + instructions.join(""), agent: step.owner };
+            return {
+              prompt: ownerBrief(project, step, state, tokens, lane) + instructions.join(""),
+              agent: step.owner,
+            };
           })();
   const style = filmStyleForStep(project.projectDir, role === "critic" && step.id === "look" ? "critic" : step.id);
   if (!style?.rules) return brief;
