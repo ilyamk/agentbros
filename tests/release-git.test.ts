@@ -18,7 +18,7 @@ test("release git reads return outputs larger than 1 MiB", () => {
     const big = `${"x".repeat(99)}\n`.repeat(30_000);
     writeFileSync(path.join(root, "big.txt"), big);
     run("add", "big.txt");
-    run("-c", "user.name=test", "-c", "user.email=test@example.invalid", "commit", "-q", "-m", "big");
+    run("-c", "user.name=test", "-c", "user.email=release-test", "commit", "-q", "-m", "big");
     assert.equal(git(root, ["show", "HEAD:big.txt"]).length, big.trimEnd().length);
   } finally {
     rmSync(root, { recursive: true, force: true });
