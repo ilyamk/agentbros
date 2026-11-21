@@ -12,7 +12,7 @@ import { dictionaries, LANGUAGES } from "@/i18n";
 import { FIXTURES } from "@/lib/fixtures";
 import { mediaHref } from "@/media";
 import { Canvas } from "@/shell/project";
-import { TopBar } from "@/shell/top-bar";
+import { ProjectHeader } from "@/shell/header";
 import { renderWith } from "@/test/utils";
 import { panelsFor } from "../registry";
 import { registerGenericPanels } from "./index";
@@ -159,16 +159,26 @@ describe("media tab", () => {
   });
 });
 
-describe("top bar", () => {
+describe("project header spend", () => {
+  const spend = (container: HTMLElement) =>
+    [...container.querySelectorAll("[data-header-spend]")].map((node) => node.textContent ?? "");
+
   it("shows reserved beside spent, never only $0", () => {
-    renderWith(<TopBar view={view} />);
-    expect(screen.getByText(/\$0\.00 spent · \$3\.68 reserved of \$9\.00/)).toBeTruthy();
+    const { container } = renderWith(<ProjectHeader view={view} page="canvas" />);
+    const lines = spend(container);
+    expect(lines.length).toBeGreaterThan(0);
+    for (const line of lines) expect(line).toMatch(/\$0\.00 spent · \$3\.68 reserved of \$9\.00/);
   });
 
   it("keeps the plain spend line when nothing is reserved", () => {
     const plain: ProjectView = { ...view, money: { ...view.money, reservedUsd: 0 } };
-    renderWith(<TopBar view={plain} />);
-    expect(screen.getByText("$0.00 of $9.00")).toBeTruthy();
+    const { container } = renderWith(<ProjectHeader view={plain} page="canvas" />);
+    const lines = spend(container);
+    expect(lines.length).toBeGreaterThan(0);
+    for (const line of lines) {
+      expect(line).toMatch(/\$0\.00 of \$9\.00/);
+      expect(line).not.toMatch(/reserved/);
+    }
   });
 });
 

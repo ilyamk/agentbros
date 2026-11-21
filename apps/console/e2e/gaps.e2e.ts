@@ -91,6 +91,7 @@ for (const theme of ["dark", "light"] as const)
       await page.setViewportSize({ width, height: 900 });
       await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto(`./?fixture=view-film-build&lang=en&theme=${theme}`);
+      await page.locator("[data-header-more]").click();
       await page.locator('[data-control="stopped"]').click();
       const dialog = page.getByRole("dialog", { name: "Stop the project" });
       await dialog.getByRole("button", { name: "Stop" }).click();
