@@ -578,6 +578,8 @@ You approve at every gate that matters: the idea, the look, the music, the final
   </tr>
 </table>
 
+[![Aperture S, its connector, frosted glass and a modular cell array](docs/readme/drei-showcase.jpg)](docs/drei-techniques.md#six-original-demonstrations)
+
 See [six original 3D animation studies](docs/drei-techniques.md#six-original-demonstrations), including a battery latch timed to the frame, a technical teardown and a frosted product reveal. Each study includes its technique and render command.
 
 ### ✂️ Your own footage
