@@ -358,6 +358,7 @@ const MATERIAL_INPUT: ChainInput = {
   optional: true,
 };
 const DESIGN = P("design.json");
+const FILM_STYLE = P("film-style.json");
 const STYLEFRAMES = P("look/styleframes.png");
 export const MOTION_PLAN = P("motion-plan.json");
 const CUE_DRAFTS = P("cue-drafts.json");
@@ -1484,6 +1485,7 @@ export const FILM_CHAIN: readonly ChainStep[] = withFeedback([
     purpose: "Prove the visual language with real code on real frames, judged by someone who did not make them.",
     owner: "design-director",
     inputs: [
+      { path: FILM_STYLE, what: "the selected style revision", optional: true },
       { path: BRIEF, what: "the approved brief" },
       { path: CONCEPT, what: "the chosen idea" },
       { path: SCRIPT, what: "the approved script" },

@@ -1,3 +1,7 @@
+import { unitTrayEndFrame } from "../../motion/library/data/unit-tray-plan";
+import { selectFilmStyle } from "../film-styles/catalogue";
+import type { FilmStyleCard } from "../../types/film-styles";
+import { getStyle } from "../../motion/library/styles";
 import { RecipeRequestSchema, type RecipeRequest } from "../../types/recipes";
 import { ProjectConfigSchema, type ProjectConfig, type Scene } from "../../types/video";
 import { TemplateInstanceSchema } from "../../types/templates";
@@ -111,6 +115,14 @@ export const PROOF_SCENES = TEMPLATE_REGISTRY.filter(({ id }) =>
   ["scene.product-walkthrough", "scene.worked-example", "scene.metric"].includes(id),
 );
 const proofRecipes = ["ad-direct", "product-demo", "educational-explainer", "youtube-chapter"];
+const SELF_CONTAINED_TEMPLATES = new Set([
+  "text.word-reveal",
+  "text.scale-emphasis",
+  "text.line-reveal",
+  "scene.hook",
+  "scene.metric",
+  "scene.physical-data",
+]);
 
 export function buildRecipe(input: RecipeRequest): {
   request: ReturnType<typeof RecipeRequestSchema.parse>;
@@ -122,6 +134,7 @@ export function buildRecipe(input: RecipeRequest): {
   proofScenes?: typeof PROOF_SCENES;
   proofs?: { beat: string; source: string; template: string }[];
   proofGuidance?: string;
+  filmStyle?: FilmStyleCard;
 } {
   const parsed = RecipeRequestSchema.safeParse(input);
   if (!parsed.success) {
@@ -155,6 +168,8 @@ export function buildRecipe(input: RecipeRequest): {
     return [{ beat: id, source: proofSource, template: template.id }];
   });
   const profile = STYLE_PROFILES[request.styleProfile ?? (recipe.style as StyleProfileId)];
+  const filmStyle = request.styleCard ? selectFilmStyle(request.styleCard) : undefined;
+  const preset = filmStyle ? getStyle(filmStyle.preset) : undefined;
   const fps = 30,
     count = recipe.beats.length;
   const targetFrames = Math.round((request.durationSec ?? recipe.durationSec) * fps);
@@ -163,12 +178,35 @@ export function buildRecipe(input: RecipeRequest): {
     remainder = sequenceFrames % count;
   const scenes: Scene[] = recipe.beats.map((id, index) => {
     const override = request.beats.find((b) => b.id === id),
-      media = request.media.length ? request.media[index % request.media.length] : undefined;
+      media =
+        !override?.selfContained && request.media.length ? request.media[index % request.media.length] : undefined;
+    if (override?.selfContained && (!override.template || !SELF_CONTAINED_TEMPLATES.has(override.template.id)))
+      throw new CliErrorObject({
+        code: "VALIDATION",
+        message: `Beat ${id} needs an explicit typography or data template when marked self-contained.`,
+      });
+    const template = override?.template;
+    if (override?.selfContained && template?.id === "text.word-reveal") {
+      const { text, accentWordIndex } = template.props;
+      if (accentWordIndex !== undefined && !text.split(/\s+/)[accentWordIndex])
+        throw new CliErrorObject({
+          code: "VALIDATION",
+          message: `Beat ${id}: accentWordIndex must identify a word in the supplied text.`,
+        });
+    }
     const headline = override?.headline ?? `${request.topic} — ${id}`;
     const durationInFrames =
       override?.durationSec === undefined
         ? baseFrames + (index < remainder ? 1 : 0)
         : Math.round(override.durationSec * fps);
+    if (
+      override?.template?.id === "scene.physical-data" &&
+      unitTrayEndFrame(override.template.props) >= durationInFrames - 12
+    )
+      throw new CliErrorObject({
+        code: "VALIDATION",
+        message: `Extend beat ${id} so the final physical count settles before the transition.`,
+      });
     return {
       id,
       text: override?.text ?? "",
@@ -198,7 +236,7 @@ export function buildRecipe(input: RecipeRequest): {
     productName: request.topic,
     tagline: recipe.title,
     formats: [...new Set(request.formats)],
-    colors: profile.colors,
+    colors: preset?.palette ?? profile.colors,
     musicVolume: 0,
     musicPrompt: "Plan music after the edit direction is approved",
     scenes,
@@ -218,6 +256,7 @@ export function buildRecipe(input: RecipeRequest): {
     ...(request.experiment
       ? { proofScenes: PROOF_SCENES, proofs, proofGuidance: findExperiment(request.experiment)!.instruction }
       : {}),
+    ...(filmStyle ? { filmStyle } : {}),
     beatPurposes: Object.fromEntries(recipe.beats.map((id, i) => [id, recipe.purposes[i]])),
   };
 }

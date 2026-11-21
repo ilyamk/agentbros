@@ -42,9 +42,9 @@ Bespoke film:
 
 - [production chain](production-chain.md): index of the film steps; `production-chain/`: sections read per step
 - [film types](film-types.md): generated index; `film-types/<type>.md` each
-- [step lease](step-lease.md): per-step allow lists checked by every CLI, the MCP bridge and an optional hook; `step:unlock` (2026-11-17)
-- [Creative A/B](creative-benchmark.md), [project experiments](experiments.md)
-- [craft evaluation](craft-evaluation.md): offline craft evaluation
+- [step lease](step-lease.md): per-step allow lists for every CLI, MCP and an optional hook; `step:unlock` (2026-11-17)
+- [Creative A/B](creative-benchmark.md), [project experiments](experiments.md), [film styles](film-styles.md)
+- [craft evaluation](craft-evaluation.md): offline
 - [reference analysis](reference-analysis.md): measured and judged layers of a reference film
 - [contributing references](contributing-references.md): the local analysis workflow, what may be contributed, `ref:contribute`, private references
 - [agent vision](agent-vision.md): frames and sheets. [Render iteration](render-iteration.md): patches and readability

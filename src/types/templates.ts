@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { unitTrayContentSchema } from "../motion/library/data/unit-tray-plan";
 import { VizPlanSchema, VizBindingSchema } from "./viz";
 const nonempty = z.string().min(1);
 export const CaptionWordsSchema = z
@@ -291,6 +292,9 @@ export const TemplateInstanceSchema = z.discriminatedUnion("id", [
       version: z.literal(1),
       props: caption,
     })
+    .strict(),
+  z
+    .object({ id: z.literal("scene.physical-data"), version: z.literal(1), props: unitTrayContentSchema.strict() })
     .strict(),
 ]);
 export type TemplateInstance = z.infer<typeof TemplateInstanceSchema>;

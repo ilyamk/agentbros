@@ -1,4 +1,5 @@
 import { readExperiments } from "../experiments/project";
+import { readFilmStyle } from "../film-styles/binding";
 import { captureVizDependencies } from "../viz/usage";
 import { captureLocalProvenance } from "../apple/provenance";
 import { captureVorkProvenance } from "../vork/provenance";
@@ -42,6 +43,7 @@ export function captureRenderIdentity(
   const rootDir = path.resolve(options.rootDir ?? process.cwd()),
     project = path.join(rootDir, "public/projects", projectId);
   assertPathWithin(path.join(rootDir, "public/projects"), project);
+  readFilmStyle(project);
   const job = planProjectRender(projectId, format, rootDir, options).jobs[0]!;
   const sources = new Map<string, RenderIdentity["sources"][number]>();
   const capturedLocal = new Set<string>();
@@ -101,6 +103,7 @@ export function captureRenderIdentity(
   }
   const creative = [
     "brief",
+    "film-style",
     "script",
     "design",
     "characters",
