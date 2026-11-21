@@ -2,7 +2,7 @@
  * Region selection for frame comments (RFC 0004 US11): a rectangle normalised to the picture (0–1, origin top left),
  * not to the element box, so a letterboxed 9:16 render in a 16:9 slot still gives picture coordinates.
  */
-import { FrameCommentSchema, type FrameComment, type MediaRef } from "@contract";
+import { FrameCommentSchema, type FrameComment, type FrameMark, type MediaRef } from "@contract";
 
 export interface Region {
   x: number;
@@ -69,13 +69,14 @@ export function regionStyle(region: Region) {
 }
 
 export type FrameCommentResult =
-  { ok: true; comment: FrameComment } | { ok: false; problem: "text" | "frame" | "region" };
+  { ok: true; comment: FrameComment } | { ok: false; problem: "text" | "frame" | "region" | "marks" };
 
 /** A contract-valid frame comment, or what is wrong with the input. */
 export function buildFrameComment(input: {
   media: MediaRef;
   frame: number;
   region?: Region;
+  marks?: FrameMark[];
   text: string;
 }): FrameCommentResult {
   const text = input.text.trim();
@@ -91,10 +92,14 @@ export function buildFrameComment(input: {
     frame: input.frame,
     text,
     ...(region ? { region } : {}),
+    ...(input.marks?.length ? { marks: input.marks } : {}),
   });
   if (!parsed.success) {
     const path = parsed.error.issues[0]?.path[0];
-    return { ok: false, problem: path === "frame" ? "frame" : path === "region" ? "region" : "text" };
+    return {
+      ok: false,
+      problem: path === "frame" ? "frame" : path === "region" ? "region" : path === "marks" ? "marks" : "text",
+    };
   }
   return { ok: true, comment: parsed.data };
 }
@@ -104,5 +109,11 @@ export function frameCommentText(comment: FrameComment, timecodeText: string): s
   const region = comment.region
     ? ` region x=${comment.region.x} y=${comment.region.y} w=${comment.region.w} h=${comment.region.h}`
     : "";
-  return `${comment.media.root === "out" ? "out/" : ""}${comment.media.path} frame ${comment.frame} (${timecodeText})${region}: ${comment.text}`;
+  const marks = (comment.marks ?? [])
+    .map(
+      (mark, index) =>
+        `\n  ${index + 1}. ${mark.w !== undefined ? `box x=${mark.x} y=${mark.y} w=${mark.w} h=${mark.h}` : `point x=${mark.x} y=${mark.y}`}: ${mark.text}`,
+    )
+    .join("");
+  return `${comment.media.root === "out" ? "out/" : ""}${comment.media.path} frame ${comment.frame} (${timecodeText})${region}: ${comment.text}${marks}`;
 }

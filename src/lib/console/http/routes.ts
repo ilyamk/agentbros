@@ -10,6 +10,7 @@ import {
   ConsoleIdSchema,
   ControlRequestSchema,
   DecisionRequestSchema,
+  FRAME_OVERLAY_MAX_BASE64,
   EventsQuerySchema,
   HOOKS_INSTALL_COMMAND,
   HooksResponseSchema,
@@ -236,7 +237,8 @@ export async function handleAction(
   if (fourth === "decisions" && fifth === undefined) {
     const project = requireProject(context.rootDir, third);
     const { dryRun } = parseQuery(query, DECIDE_QUERY);
-    const request = await parseJsonBody(req, DecisionRequestSchema);
+    // A frame comment may carry its overlay PNG (base64): room for it, the rest stays small.
+    const request = await parseJsonBody(req, DecisionRequestSchema, FRAME_OVERLAY_MAX_BASE64 + 64 * 1024);
     sendJson(res, 200, await context.actions.decide(project, request, dryRun ? { dryRun: true } : {}));
     return true;
   }

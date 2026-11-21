@@ -18,6 +18,7 @@ describe("router", () => {
     expect(parseRoute("#/projects/promo-acme/history")).toMatchObject({ name: "project", view: "history" });
     expect(parseRoute("#/nope").name).toBe("not-found");
     expect(projectHref("promo-acme", "history")).toBe("#/projects/promo-acme/history");
+    expect(parseRoute("#/projects/promo-acme/media")).toMatchObject({ name: "project", view: "media" });
     expect(parseRoute(hrefFor({ name: "project", project: "a-b2", view: "timeline" }))).toMatchObject({
       project: "a-b2",
       view: "timeline",

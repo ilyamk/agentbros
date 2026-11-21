@@ -57,6 +57,7 @@ const SINGLE: Record<string, z.ZodType> = {
   "view-footage.json": ProjectViewSchema,
   "view-footage-render.json": ProjectViewSchema,
   "view-empty.json": ProjectViewSchema,
+  "view-generations.json": ProjectViewSchema,
   "control.json": ControlFileSchema,
   "server.json": ServerLockSchema,
   "session.json": ConsoleSessionSchema,

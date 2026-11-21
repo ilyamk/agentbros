@@ -25,6 +25,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 - `console` - Studio console: start or reuse the local server (detached, one for all projects), print its token URL; --stop stops it ([guide](../docs/console.md))
 - `console:wait` - Wait for the user's console decision, control change or card answer, then print it (run in the background at a gate) ([guide](../docs/console.md))
 - `console:card` - Post a typed agent card (compare, grid, rating, choice, question, markdown, media) to the console ([guide](../docs/console.md)); MCP
+- `frame:note` - The user's note on one frame of any project video: words, points and boxes, kept as JSON beside the frame as a PNG with the marks drawn ([guide](../docs/console.md))
 - `console:control` - Pause, resume or stop a project with the user's words; paused or stopped refuses other commands with PAUSED ([guide](../docs/console.md))
 - `studio:open` - Open a project in Remotion Studio in its current state (render props, live updates), bound to 127.0.0.1; --status, --stop ([guide](../docs/console.md))
 - `console:snapshot` - Write a self-contained, read-only HTML snapshot of a project's console view to out/<id>/console-snapshot.html ([guide](../docs/console.md))

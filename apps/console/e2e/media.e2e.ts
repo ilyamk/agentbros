@@ -2,7 +2,7 @@
  * Media viewer end-to-end checks (RFC 0004 WP6, US6/US11) in fixture mode (RUN_CONSOLE_E2E=1 pnpm console:e2e).
  * Fixture mode has no server, so the test makes a tiny real H.264 clip and a JPEG frame with ffmpeg in a temp folder
  * and answers `/media/…` (with HTTP range requests, as the console server does) and `/thumb/…` through Playwright
- * routes. It plays, seeks, steps frames, draws a region and reads the emitted FrameComment, under the strict CSP, with
+ * routes. It plays, seeks, steps frames, marks a frame and sends the note, under the strict CSP, with
  * screenshots at 1280 and 390 px into out/qa/console/ and axe.
  */
 import { execFileSync } from "node:child_process";
@@ -11,7 +11,6 @@ import os from "node:os";
 import path from "node:path";
 import { expect, test, type Locator, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { FrameCommentSchema } from "../../../src/types/console";
 
 test.skip(process.env.RUN_CONSOLE_E2E !== "1", "set RUN_CONSOLE_E2E=1 to run the console end-to-end tests");
 
@@ -157,7 +156,7 @@ async function openCompare(page: Page) {
   return { compare, viewer };
 }
 
-test("plays, seeks, steps frames, draws a region and emits the comment (strict CSP)", async ({ page }) => {
+test("plays, seeks, steps frames, marks a frame and sends the note (strict CSP)", async ({ page }) => {
   const violations = await strictCsp(page);
   await serveMedia(page);
   await page.setViewportSize({ width: 1280, height: 900 });
@@ -184,7 +183,7 @@ test("plays, seeks, steps frames, draws a region and emits the comment (strict C
   await expect.poll(() => frameOf(viewer)).toBe(21);
   await expect(viewer.locator("output[data-frame]")).toContainText("00:00:21");
 
-  // large view: comment on the frame with a dragged region
+  // large view: mark the frame with a dragged box and a clicked point, then send the note to the agent
   await viewer.getByRole("button", { name: "Open large view" }).click();
   const dialog = page.getByRole("dialog", { name: "Large view of Ending A" });
   const full = dialog.locator("figure[data-media-slot='video']");
@@ -193,37 +192,29 @@ test("plays, seeks, steps frames, draws a region and emits the comment (strict C
     .toBeGreaterThanOrEqual(1);
   await full.getByRole("button", { name: /Next frame/ }).click();
   await expect.poll(() => frameOf(full)).toBe(1);
-  await full.getByRole("button", { name: "Comment on this frame" }).click();
-  const overlay = full.locator("[data-region-overlay]");
+  await full.getByRole("button", { name: "Mark the frame" }).click();
+  const overlay = full.locator("[data-mark-overlay]");
   const box = (await overlay.boundingBox())!;
   await page.mouse.move(box.x + box.width * 0.25, box.y + box.height * 0.25);
   await page.mouse.down();
   await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.4, { steps: 5 });
   await page.mouse.move(box.x + box.width * 0.75, box.y + box.height * 0.5, { steps: 5 });
   await page.mouse.up();
-  await expect(full.locator("[data-region-rect]")).toBeVisible();
-  const form = full.getByRole("form", { name: /Comment on frame 1/ });
-  expect(Number(await form.getByRole("spinbutton", { name: "Left" }).inputValue())).toBeCloseTo(0.25, 1);
-  expect(Number(await form.getByRole("spinbutton", { name: "Width" }).inputValue())).toBeCloseTo(0.5, 1);
-  await form.getByRole("textbox", { name: "Comment" }).fill("The logo is too small here");
+  await page.mouse.click(box.x + box.width * 0.8, box.y + box.height * 0.8);
+  const form = dialog.getByRole("form", { name: /Comment on frame 1/ });
+  await form.getByRole("textbox", { name: "Words at area 1" }).fill("The logo is too small here");
+  await form.getByRole("textbox", { name: "Words at point 2" }).fill("Noise in the corner");
+  // the marks are drawn over the picture by the same canvas code that makes the agent's overlay
+  await expect(full.locator("[data-marks-canvas]")).toBeVisible();
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.waitForTimeout(250); // past the dialog's enter transition
     await page.screenshot({ path: path.join(QA, `media-comment-dark-${width}.png`) });
   }
   expect(await axe(page)).toEqual([]);
-  await form.getByRole("button", { name: "Add comment" }).click();
-
-  const emitted = full.locator("[data-frame-comment]");
-  await expect(emitted).toBeVisible();
-  const comment = FrameCommentSchema.parse(JSON.parse((await emitted.getAttribute("data-frame-comment"))!));
-  expect(comment.frame).toBe(1);
-  expect(comment.text).toBe("The logo is too small here");
-  expect(comment.media).toMatchObject({ root: "out", path: "endings/ending-a.mp4" });
-  expect(comment.region!.x).toBeCloseTo(0.25, 1);
-  expect(comment.region!.y).toBeCloseTo(0.25, 1);
-  expect(comment.region!.w).toBeCloseTo(0.5, 1);
-  expect(comment.region!.h).toBeCloseTo(0.25, 1);
+  await form.getByRole("button", { name: "Send to the agent" }).click();
+  await expect(form.getByRole("status")).toContainText("Comment added to frame 1.");
+  await expect(full.locator("[data-noted-frame='1']")).toHaveCount(1);
 
   // audio: the waveform is decoded from fetch() bytes (no blob: URL) and drawn on the canvas
   await page.keyboard.press("Escape");

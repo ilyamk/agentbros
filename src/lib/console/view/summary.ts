@@ -33,6 +33,7 @@ export function projectSummary(view: ProjectView, paths: ProjectPaths): ProjectS
     waiting: view.waiting.length,
     control: view.control.state,
     spentUsd: view.money.spentUsd,
+    ...(view.money.reservedUsd > 0 ? { reservedUsd: view.money.reservedUsd } : {}),
     ...(view.money.ceilingUsd !== undefined ? { ceilingUsd: view.money.ceilingUsd } : {}),
     ...(view.media.latestRender ? { latestRender: view.media.latestRender } : {}),
     updatedAt: toIso(updated),
