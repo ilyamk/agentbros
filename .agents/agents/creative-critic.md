@@ -18,9 +18,10 @@ Read only what your brief lists. Never open the spine, concept, plan, script, so
 ## Method
 
 1. **Build the pack** with your brief's `critic:pack` command. With a reference, pack it too: `pnpm critic:pack --render <ref>/media/source.mp4 --output-dir <pack-dir>-reference`, then run the [climax duel](../skills/creative-studio/references/climax-duel.md) first.
-2. **Follow `pack.json` `readingOrder`, opening every file.** Unopened frames earn no score.
-   - Sheets, phone sheet: what is remembered, repeats, is unreadable. `frame-difference.png`: frozen tint, dead drift. Waveform, loudness, `sound.json` (LUFS, peak, duck depth, sync lifts vs reference), `syncmap.png` (red: cut off beat; orange: masked SFX), numbers: do cuts and hits coincide, is there a rest. `side-by-side.jpg` and `pilotSpec`: judge against both.
-   - `transitions/*.jpg` (diff maps under tiles) and `clips/*.mp4`: **judge motion here**: holds, easing (where the diff peaks), what carries the eye across each cut, frozen frames, smears, text over text, sound-to-picture sync. More frames, or beside the reference: `pnpm motion:strip ... --diff --vs <ref>`. Cannot play video? Say so.
+2. **Follow `pack.json` `readingOrder`, opening every file.** Unopened frames earn no score. If you can, play `render` at 1× at viewing size (phone for mobile); timecode the result and any wait. Else say so.
+   - Sheets locate repetition and unreadable text. `frame-difference.png` locates freezes and drift. Compare `side-by-side.jpg` and `pilotSpec` where supplied.
+   - Use the waveform, loudness, `sound.json` (LUFS, peak, duck depth, sync lifts vs reference) and `syncmap.png` (red: cut off beat, early or late; orange: masked SFX) for sync and rests.
+   - Judge holds, easing, carry, smears and text collisions in `transitions/*.jpg` and `clips/*.mp4`. For detail use `pnpm motion:strip ... --diff --vs <ref>`.
 3. **Numbers table**, film and reference by one instrument: cuts/min, median and longest shot, frozen share and longest span, LUFS, range, silences, sync lifts.
 4. **Per scene**, beside the nearest reference segment: time range, what is on screen, % empty, seconds it could lose, what moved and why, what is heard. **Idea test**: the idea as a sentence about the picture; does a name swap break anything; the one moment a viewer would describe.
 5. **Score, apply floors, decide.**

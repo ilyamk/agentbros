@@ -15,6 +15,14 @@ Four questions, in order. Then pick from the [motion grammar](motion-grammar.md)
 
 In a bespoke film this is the motion-director's job, written into the plan before code. In template mode it is decided per scene from the registered templates.
 
+## Try the decisive moment first
+
+Describe the change a viewer should be able to point to after one viewing. For a product film, follow the action through to its visible consequence. A click proves the control works. If the promise concerns what the control produces, show that too.
+
+When the treatment is still open, sketch two short versions of that moment with the same material, copy and time allowance. Change what the viewer follows. For a transition browser, one version stays on two filtered results (finding a tool); another takes one full screen and lets its transition make the next cut (what it does). Use the brief to decide which question matters. A prescribed shot or an exact replica already has its treatment.
+
+Inspect a strip of consecutive frames across the passage. If you can play it, play it once at normal speed at its intended viewing size, including phone size for a mobile delivery. Then describe what changed, when you understood it and where you waited or needed more reading time. Inspect the relevant frames to locate the cause. If the result still needs explaining, revisit the action before refining its easing. If playback was unavailable, say so, record what the strip shows and leave the real-time impression open.
+
 ## Worked decisions
 
 Good product example: show the actual control at readable scale and let the press produce the result, so that the state change is the cut. The button's press opens the next shot, and the benefit arrives inside that shot rather than as a caption. A device frame is secondary to the demonstrated interaction.
