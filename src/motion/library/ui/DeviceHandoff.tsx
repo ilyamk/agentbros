@@ -6,6 +6,8 @@ import type { Cue } from "../types";
 import { ProductionArt, ProductionStage, studioAccent, studioInk, studioPaper } from "./production-surface";
 
 export const deviceHandoffSchema = z.object({
+  /** "transparent" lays the block over footage (timeline:edit add-overlay); the default paints the studio ground. */
+  ground: z.enum(["studio", "transparent"]).optional(),
   title: z.string().min(1).max(25),
   src: z.string().optional(),
   at: z.number().int().nonnegative(),
@@ -33,7 +35,11 @@ export const DeviceHandoff: React.FC<DeviceHandoffProps> = (p) => {
   const u = width / 1920;
   const { t, x, width: deviceWidth, height, tilt } = devicePose(frame, p);
   return (
-    <ProductionStage title="Check the next screen" index="05">
+    <ProductionStage
+      title="Check the next screen"
+      index="05"
+      ground={p.ground === "transparent" ? "transparent" : undefined}
+    >
       <div
         style={{
           position: "absolute",
@@ -58,7 +64,8 @@ export const DeviceHandoff: React.FC<DeviceHandoffProps> = (p) => {
           background: "#0C1412",
           border: `${u * 3}px solid #829883`,
           borderRadius: u * (46 - 22 * t),
-          transform: `translate(-50%,-50%) perspective(1400px) rotateY(${tilt}deg)`,
+          // No 3D transform once the device has landed: a perspective layer can render differently by seek path.
+          transform: t >= 1 ? "translate(-50%,-50%)" : `translate(-50%,-50%) perspective(1400px) rotateY(${tilt}deg)`,
           boxShadow: "0 30px 58px #08100AC7",
         }}
       >

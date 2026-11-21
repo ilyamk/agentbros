@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Img, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
 import { useFittedFontSize } from "../../text";
 import { progress } from "../../timing";
@@ -139,7 +139,7 @@ export const SwipeDeck: React.FC<SwipeDeckProps & { children?: (index: number) =
             {p.children ? (
               p.children(index)
             ) : card.src ? (
-              <Img src={card.src} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Img src={staticFile(card.src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             ) : (
               <DeckArtwork card={card} index={index} width={cardWidth} />
             )}

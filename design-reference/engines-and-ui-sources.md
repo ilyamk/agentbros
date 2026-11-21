@@ -1,6 +1,6 @@
 # Animation engines and UI sources
 
-Research for the question "our films look like cheap AE templates: should we use GSAP or Motion, and pull UI from shadcn and similar sources?" Sources were fetched on 2026-11-11. Where a licence or a fact is quoted, the URL is inline. "Unverified" means no primary source was read.
+Research for the question "our films look like cheap AE templates: should we use GSAP or Motion, and pull UI from 21st.dev, shadcn and similar?" Sources were fetched on 2026-11-11. Where a licence or a fact is quoted, the URL is inline. "Unverified" means no primary source was read.
 
 ## Headline
 
@@ -85,6 +85,7 @@ Animation dependency evidence comes from each repo's `package.json` (GitHub API,
 | Source | Licence | Animation | Best agent route |
 |---|---|---|---|
 | **shadcn/ui** | MIT (repo) | Mostly static; uses `tw-animate-css` (`animate-in` classes, banned by our lint) and `motion` in the docs app | `pnpm dlx shadcn@latest mcp init --client claude` (https://ui.shadcn.com/docs/mcp) or `npx shadcn add @registry/item` (https://ui.shadcn.com/docs/directory). Registries are namespaced in `components.json` (https://ui.shadcn.com/docs/registry/namespace) |
+| **21st.dev** | Per component author; site terms add restrictions | Mixed (many Motion/GSAP) | The official **21st MCP** replaced Magic MCP: HTTP server `https://21st.dev/api/mcp` with an API key, or `npx @21st-dev/cli@latest init --client claude` (https://github.com/21st-dev/magic-mcp, ISC). Free accounts copy "2 components a day"; Builder is $6/mo yearly (https://21st.dev/pricing). The terms (https://21st.dev/terms) prohibit "scraping or automatically collecting data … without explicit written consent", training AI on the content, and reusing their demo media or metadata, and require "a clear and visible link back" when redistributing. **Use only the MCP or CLI, never a scraper**, and record each component's own licence |
 | **Magic UI** (free) | MIT (repo) | `motion`, `tw-animate-css`, `cobe` in the docs app: port | shadcn registry (`@magicui/...`, unverified namespace name) |
 | **Magic UI Pro** | "Commercial Use … Re-selling of code is NOT allowed" (https://pro.magicui.design/), $199 one-off | Motion: port | Manual |
 | **Aceternity UI** | Pro: [Aceternity licence](https://ui.aceternity.com/licence) allows unlimited end products, explicitly including "Videos", but forbids re-distributing source and "Template Creation … to sell on any marketplace". The licence for the free tier is **unverified** | "Built with … Framer Motion" (https://pro.aceternity.com/pricing): port | MCP access is listed for free and paid plans (same page) |
@@ -132,10 +133,10 @@ Motion stays a **reference**, not a runtime: port its curves and layout ideas to
 3. **Prove determinism** (S): one test composition using SplitText, MorphSVG and stagger. Render it twice, with `--concurrency` 1 and 8, and also render stills of frames in random order. Compare frame hashes in the style of `tests/html-capture.test.ts`. Add one library block that uses GSAP only after this passes.
 4. **Update the docs** (S): `AGENTS.md:108-110`, `engine-selection/SKILL.md` and `src/motion/AGENTS.md`. Keep HTML capture for shaders and third-party HTML only.
 5. **UI sources route** (S–M):
-   - Add the shadcn MCP to the agent environment, not to the repo.
+   - Add the shadcn MCP and the 21st MCP to the agent environment, not to the repo.
    - Install components into a scratch area, then port them into `src/motion/library/ui/` with re-timed motion.
    - Record source URL, commit and licence in each block's provenance.
-   - Deny-list for the public export: React Bits, Motion+, Magic UI Pro and Aceternity Pro.
+   - Deny-list for the public export: React Bits, Motion+, Magic UI Pro, Aceternity Pro, and anything from the 21st marketplace without an explicit OSS licence.
 6. **Real UI capture** (M): turn `capture-order.ts` into a generic `pnpm capture:app` with scripted steps and a virtual-time option. Test whether CSS transitions in a third-party app become repeatable. If they do not, use aiscreen recordings for those apps.
 7. **Rive** (S, optional): add `@remotion/rive@4.0.539` only when an authored `.riv` exists. Require a paid export so the splash screen is not shown.
 
@@ -144,4 +145,5 @@ Motion stays a **reference**, not a runtime: port its curves and layout ideas to
 - Layout plugins (SplitText, Flip) re-measure when fonts swap.
 - `useGsapTimeline` blocks plain-object tweens, so numbers still come from `interpolate`.
 - Third-party component licences differ per item.
+- 21st's terms forbid automated collection outside its MCP and CLI.
 - Virtual-time capture of real apps is unproven.

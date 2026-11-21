@@ -1,6 +1,6 @@
 {
  "version": 1,
- "sourceHash": "079457e5353728c760ef277944684e95a721112d6844b8d3709e1e195c9bdc28",
+ "sourceHash": "bce085a1cf3845d13b3c24d4795432b5545d63ee96bb072faab5a4d7f1af942c",
  "items": [
   {
    "id": "type-waveform-words",
@@ -78,6 +78,11 @@
      },
      "ink": {
       "type": "string"
+     },
+     "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
      }
     },
     "required": [
@@ -214,7 +219,8 @@
     "sampleEvery": 1,
     "ground": "#172420",
     "accent": "#CDEB84",
-    "ink": "#E9EDDF"
+    "ink": "#E9EDDF",
+    "label": "AGENT BROS. PICTURES"
    },
    "preview": {
     "image": "docs/library/previews/type-waveform-words.jpg",
@@ -6949,6 +6955,13 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+     "ground": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "transparent"
+      ]
+     },
      "title": {
       "type": "string",
       "minLength": 1,
@@ -7050,6 +7063,13 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+     "ground": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "transparent"
+      ]
+     },
      "title": {
       "type": "string",
       "minLength": 1,
@@ -7146,6 +7166,13 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+     "ground": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "transparent"
+      ]
+     },
      "rows": {
       "minItems": 4,
       "maxItems": 12,
@@ -7279,6 +7306,13 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+     "ground": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "transparent"
+      ]
+     },
      "options": {
       "minItems": 2,
       "maxItems": 3,
@@ -7411,6 +7445,13 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "type": "object",
     "properties": {
+     "ground": {
+      "type": "string",
+      "enum": [
+       "studio",
+       "transparent"
+      ]
+     },
      "title": {
       "type": "string",
       "minLength": 1,

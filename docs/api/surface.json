@@ -19544,6 +19544,7 @@
         "accent",
         "ground",
         "ink",
+        "label",
         "levels",
         "sampleEvery",
         "words"
@@ -19559,6 +19560,11 @@
             "type": "string"
           },
           "ink": {
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 40,
+            "minLength": 1,
             "type": "string"
           },
           "levels": {
@@ -19829,6 +19835,7 @@
         "after",
         "before",
         "field",
+        "ground",
         "title",
         "updateFrames"
       ],
@@ -19854,6 +19861,13 @@
           "field": {
             "maxLength": 22,
             "minLength": 1,
+            "type": "string"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
             "type": "string"
           },
           "title": {
@@ -21813,6 +21827,7 @@
       "id": "ui-device-handoff",
       "props": [
         "at",
+        "ground",
         "moveFrames",
         "paper",
         "src",
@@ -21826,6 +21841,13 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
           },
           "moveFrames": {
             "maximum": 9007199254740991,
@@ -21857,6 +21879,7 @@
       "id": "ui-evidence-scroll",
       "props": [
         "at",
+        "ground",
         "moveFrames",
         "note",
         "rows",
@@ -21870,6 +21893,13 @@
             "maximum": 9007199254740991,
             "minimum": 0,
             "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
           },
           "moveFrames": {
             "maximum": 9007199254740991,
@@ -21929,6 +21959,7 @@
         "at",
         "control",
         "from",
+        "ground",
         "moveFrames",
         "title",
         "to"
@@ -21954,6 +21985,13 @@
             "maximum": 100,
             "minimum": 0,
             "type": "number"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
           },
           "moveFrames": {
             "maximum": 9007199254740991,
@@ -22949,6 +22987,7 @@
       "props": [
         "at",
         "expandFrames",
+        "ground",
         "options",
         "selectAt",
         "selected"
@@ -22966,6 +23005,13 @@
             "maximum": 9007199254740991,
             "minimum": 8,
             "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
           },
           "options": {
             "items": {

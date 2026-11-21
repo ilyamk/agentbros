@@ -17,6 +17,8 @@ export const waveformWordsSchema = z.object({
   ground: z.string(),
   accent: z.string(),
   ink: z.string(),
+  /** The line above the waveform; leave it out for a bare rule. */
+  label: z.string().min(1).max(40).optional(),
 });
 export type WaveformWordsProps = z.infer<typeof waveformWordsSchema>;
 export const waveformWordsDefaults = {
@@ -32,6 +34,7 @@ export const waveformWordsDefaults = {
   ground: studioInk,
   accent: studioAccent,
   ink: studioPaper,
+  label: "AGENT BROS. PICTURES",
 } satisfies WaveformWordsProps;
 export const waveformWordCues = (p: WaveformWordsProps): Cue[] =>
   p.words.map(({ text, at }) => ({ frame: at, kind: "type", sfx: "none", label: text }));
@@ -59,7 +62,7 @@ export const WaveformWords: React.FC<WaveformWordsProps> = (p) => {
           letterSpacing: "0.12em",
         }}
       >
-        AGENT BROS. PICTURES
+        {p.label}
       </div>
       <div
         style={{

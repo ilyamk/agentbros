@@ -6,6 +6,8 @@ import type { Cue } from "../types";
 import { ProductionArt, ProductionStage, studioAccent, studioInk, studioPaper } from "./production-surface";
 
 export const acceptRevisionSchema = z.object({
+  /** "transparent" lays the block over footage (timeline:edit add-overlay); the default paints the studio ground. */
+  ground: z.enum(["studio", "transparent"]).optional(),
   title: z.string().min(1).max(25),
   field: z.string().min(1).max(22),
   before: z.number().min(0.5).max(1.2),
@@ -38,7 +40,11 @@ export const AcceptRevision: React.FC<AcceptRevisionProps> = (p) => {
   const press = progress(frame, p.acceptAt - 4, 4, "drift") - progress(frame, p.acceptAt, 5, "expoOut");
   const live = progress(frame, p.acceptAt + 4, p.updateFrames - 4, "drift");
   return (
-    <ProductionStage title="Approve the revision" index="02">
+    <ProductionStage
+      title="Approve the revision"
+      index="02"
+      ground={p.ground === "transparent" ? "transparent" : undefined}
+    >
       <AbsoluteFill style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr", alignItems: "center", gap: u * 56 }}>
         <div style={{ background: studioPaper, color: studioInk, borderRadius: u * 26, padding: u * 42 }}>
           <div style={{ fontSize: u * 25, letterSpacing: "0.08em", marginBottom: u * 35 }}>PROPOSED CHANGE</div>

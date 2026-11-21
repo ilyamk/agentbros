@@ -6,6 +6,8 @@ import type { Cue } from "../types";
 import { ProductionArt, ProductionStage, studioAccent, studioInk, studioPaper } from "./production-surface";
 
 export const inspectorGeometrySchema = z.object({
+  /** "transparent" lays the block over footage (timeline:edit add-overlay); the default paints the studio ground. */
+  ground: z.enum(["studio", "transparent"]).optional(),
   title: z.string().min(1).max(25),
   control: z.string().min(1).max(22),
   from: z.number().min(0).max(100),
@@ -39,7 +41,11 @@ export const InspectorGeometry: React.FC<InspectorGeometryProps> = (p) => {
   const active = frame >= p.at - 2 && frame < p.at + p.moveFrames;
   const u = width / 1920;
   return (
-    <ProductionStage title="Design the frame" index="01">
+    <ProductionStage
+      title="Design the frame"
+      index="01"
+      ground={p.ground === "transparent" ? "transparent" : undefined}
+    >
       <AbsoluteFill
         style={{
           display: "grid",

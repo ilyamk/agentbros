@@ -7,6 +7,8 @@ import { ProductionArt, ProductionStage, studioAccent, studioInk } from "./produ
 
 export const variationSelectSchema = z
   .object({
+    /** "transparent" lays the block over footage (timeline:edit add-overlay); the default paints the studio ground. */
+    ground: z.enum(["studio", "transparent"]).optional(),
     options: z
       .array(
         z.object({
@@ -55,7 +57,7 @@ export const VariationSelect: React.FC<VariationSelectProps> = (p) => {
   const gap = 2.1;
   const share = (100 - gap * (p.options.length - 1)) / p.options.length;
   return (
-    <ProductionStage title="Choose the look" index="04">
+    <ProductionStage title="Choose the look" index="04" ground={p.ground === "transparent" ? "transparent" : undefined}>
       <AbsoluteFill>
         {p.options.map((item, i) => {
           const chosen = p.selected === i;

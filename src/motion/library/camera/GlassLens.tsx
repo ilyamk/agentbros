@@ -1,5 +1,5 @@
 import type React from "react";
-import { AbsoluteFill, Img, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { z } from "zod";
 import { trackPoint } from "../../timing";
 import type { Cue } from "../types";
@@ -98,7 +98,11 @@ export const GlassLens: React.FC<GlassLensProps & { children?: React.ReactNode }
   const { x, y, radius } = lensPose(frame, width, height, p);
   const plate =
     p.children ??
-    (p.src ? <Img src={p.src} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : <LensArtwork />);
+    (p.src ? (
+      <Img src={staticFile(p.src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+    ) : (
+      <LensArtwork />
+    ));
   const origin = `${x}px ${y}px`;
   return (
     <AbsoluteFill style={{ background: p.ground, overflow: "hidden" }}>

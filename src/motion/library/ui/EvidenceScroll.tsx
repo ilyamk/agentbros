@@ -8,6 +8,8 @@ import { ProductionStage, studioAccent, studioInk, studioPaper } from "./product
 
 export const evidenceScrollSchema = z
   .object({
+    /** "transparent" lays the block over footage (timeline:edit add-overlay); the default paints the studio ground. */
+    ground: z.enum(["studio", "transparent"]).optional(),
     rows: z
       .array(z.object({ label: z.string().min(1).max(40), value: z.string().min(1).max(24) }))
       .min(4)
@@ -64,7 +66,7 @@ export const EvidenceScroll: React.FC<EvidenceScrollProps> = (p) => {
     fontFamily: "Arial, sans-serif",
   });
   return (
-    <ProductionStage title="Read the proof" index="03">
+    <ProductionStage title="Read the proof" index="03" ground={p.ground === "transparent" ? "transparent" : undefined}>
       <AbsoluteFill style={{ display: "grid", gridTemplateColumns: "1.75fr 1fr", gap: u * 70, alignItems: "center" }}>
         <div
           style={{
