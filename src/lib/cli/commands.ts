@@ -70,6 +70,19 @@ const REPO_CWD = {
 const SUPERSEDED = { excluded: "legacy fetcher; use avc_resources" };
 const LEGACY = { excluded: "legacy; not for new work" };
 const NOT_YET = { excluded: "not yet exposed" };
+const COLOUR_CLI = {
+  excluded: "reads and writes media at local paths through the colour worker; trusted CLI, MCP exposure is a follow-up",
+};
+const COLOUR_KEYWORDS = [
+  "colour",
+  "color",
+  "grading",
+  "colourist",
+  "цвет",
+  "цветокоррекция",
+  "грейдинг",
+  "колорист",
+] as const;
 
 const c = (
   alias: string | null,
@@ -163,6 +176,17 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "Run authorised campaign jobs",
     ),
   ),
+  g(
+    "docs/experiments.md",
+    c(
+      "experiment",
+      "experiment.ts",
+      "dev",
+      "none",
+      { excluded: "local project selection and blind review packaging" },
+      "Choose and compare project experiments",
+    ),
+  ),
   k(
     ["e2e", "orchestrator", "subagent", "handoff", "сквозные"],
     g(
@@ -184,6 +208,146 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
     "none",
     { excluded: "local test runner" },
     "Run deterministic workflow observer and producer-consumer contract tests",
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "waveform", "vectorscope", "parade", "histogram", "false colour", "скопы"],
+      c(
+        "colour:scopes",
+        "colour-scopes.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Scopes of a video or still: waveform, RGB parade, vectorscope, histogram, CIE xy, false colour, a contact sheet and exposure, cast, saturation and skin numbers",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "delta e", "deltae", "ciede2000", "match check", "сравнить цвет"],
+      c(
+        "colour:compare",
+        "colour-compare.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Compare a clip with a reference: side-by-side scopes, zone and paired CIEDE2000, and a diagnosis such as shadows cooler, saturation +12%",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "reference match", "shot match", "look match", "подогнать цвет"],
+      c(
+        "colour:match",
+        "colour-match.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Solve an editable grade.json (lift, gamma, gain, saturation, curve) that matches a clip to a reference, with before/after evidence",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "lut", "cube", "lift gamma gain", "white balance", "resolve", "лут"],
+      c(
+        "colour:grade",
+        "colour-grade.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Apply a declarative grade.json or a per-shot timeline to a video or still through a baked 3D LUT, and export the .cube for Resolve",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "validation", "gate", "skin", "кожа", "проверка", "валидация"],
+      c(
+        "colour:check",
+        "colour-check.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Validate a rendered grade against its source (and a reference): skin chroma, hue and yellow drift, clipping, crushed blacks, saturation, legal range",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "look", "preset", "lut", "variants", "пресет", "лук", "варианты"],
+      c(
+        "colour:looks",
+        "colour-looks.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Try genre looks (film, commercial, music video) on a clip with skin held, as a labelled grid with a gate verdict per look and an editable grade each",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "target", "palette", "mood", "colour script", "палитра", "настроение", "таргет"],
+      c(
+        "colour:target",
+        "colour-target.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Profile a reference per shot into target.json (levels, palette, scheme, skin, mood) for colour:check --target; with --mood, bounded per-shot grades",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "lut", "haldclut", "licence", "import"],
+      c(
+        "colour:lut",
+        "colour-lut.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Import a .cube or HaldCLUT with its licence on record (unknown licences refused), for colour:looks --lut",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "power window", "tracking", "mask", "маска", "трекинг"],
+      c(
+        "colour:track",
+        "colour-track.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Track a power window over a moving subject so a grade's shape window follows it, with a preview of every lost frame",
+      ),
+    ),
+  ),
+  g(
+    "docs/colour-grading.md",
+    k(
+      [...COLOUR_KEYWORDS, "continuity", "consistency", "shot matching", "непрерывность"],
+      c(
+        "colour:shots",
+        "colour-shots.ts",
+        "render",
+        "none",
+        COLOUR_CLI,
+        "Measure every shot of an edit (or several clips) against a hero shot, flag colour drift and optionally solve per-shot match grades",
+      ),
+    ),
   ),
   f(
     "vork",
@@ -588,7 +752,7 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "footage",
       "none",
       LOCAL_ENGINE,
-      "System voice audio with separate draft assets and provenance",
+      "Apple or portable local voice draft takes with provenance and portable word timing",
     ),
   ),
   g(
@@ -1452,6 +1616,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
       "none",
       "console_card",
       "Post a typed agent card (compare, grid, rating, choice, question, markdown, media) to the console",
+    ),
+  ),
+  g(
+    "docs/console.md",
+    k(
+      ["frame", "annotation", "arrow", "comment on a frame", "still", "screenshot"],
+      c(
+        "frame:note",
+        "frame-note.ts",
+        "project",
+        "none",
+        { excluded: "carries the user's own words from the console; CLI only" },
+        "The user's note on one frame of any project video: words, points and boxes, kept as JSON beside the frame as a PNG with the marks drawn",
+      ),
     ),
   ),
   g(
@@ -2493,6 +2671,20 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
     c("blender:assets", "blender-assets.ts", "assets", "none", TRUSTED_CODE, "Blender asset library"),
   ),
   c("blender:run", "blender-run.ts", "render", "none", TRUSTED_CODE, "Trusted Python/.blend; frames and contact sheet"),
+  k(
+    ["matchmove", "camera track", "camera solve", "3d tracking", "vfx", "insert", "match move"],
+    g(
+      ".agents/skills/vork-3d-vfx/references/vfx.md",
+      c(
+        "camera:solve",
+        "camera-solve.ts",
+        "render",
+        "none",
+        TRUSTED_CODE,
+        "Moving-camera solve: tracks, Blender libmv, metric scale; camera.json for Vork",
+      ),
+    ),
+  ),
   k(
     ["3d", "live", "interactive", "scene", "look", "iterate", "blender mcp"],
     g(

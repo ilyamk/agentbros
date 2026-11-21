@@ -49,7 +49,7 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 
 ## Rules
 
-- The chain is data: change steps in `FILM_CHAIN` (read by `film:next`, `film:brief`), not in an agent or skill.
+- Change steps in `FILM_CHAIN`; see [project experiments](../../../docs/experiments.md) for step opt-ins.
 - Only the user's own words approve (`film:approve --answer`). Approvals are bound to the hashes of the step's outputs; a changed artefact reopens the gate.
 - Delivery of a bespoke film (no `project.json`) goes through `src/lib/delivery/bespoke.ts`: film:render publishes delivery's receipt for a full render of build.json's composition to `out/<id>/film.mp4`; delivery needs `manualApproval`, never chain approvals ([delivery](../../../docs/delivery.md), "Bespoke films").
 - `--proxy benchmark` advances a benchmark run; never the user's approval (`userApprovalEvents` drops it), refused on `human` (`PROXY_REFUSED`), never authorises spending.
@@ -78,7 +78,7 @@ Method: [build gates](../../../docs/production-chain/build-gates.md#shot-tournam
 
 Notes:
 - Music spend (2026-11-19): generated takes spend under `paidWhen: budget-ceiling`.
-- Speech (2026-11-18): narration after script is skippable. Paid takes need direction approval (`spendApproved`); `narration:check` writes `pipeline/narration.json`. AI material binds approved character lines to packs. [Narration](../../../docs/production-chain/narration.md)
+- Speech (2026-11-20): paid takes need direction approval. Local directions can select a portable voice; `narration:check` binds its takes and words. AI material binds approved lines to packs. [Narration](../../../docs/production-chain/narration.md)
 - Visualisation: prepared shot bindings are checked by plan:check and plan-passed; `viz:mount` never overwrites custom builds. Build records declare `localAssets` for native assets (`[]` for unused drafts); delivery binds their inputs and receipts. `vork` shots bind `renderTask` and receipt-bound plates.
 - Prepared remix (2026-11-15): material briefs read Genjutsu; check `modelPreparation` pins after plan approval; `film:rights --preparation ID` records source use ([recipe](../../../docs/higgsfield-prompting.md#prepared-genjutsu-workflow)). Critic packs: source-bound `reviewPack`; missing evidence is not approval.
 - Campaigns (2026-11-16): approveStep checks expected hashes and idempotent decision IDs. `renderBrief` = `buildBrief`'s text without readiness, files or telemetry (for `--simulate`).

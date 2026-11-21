@@ -101,13 +101,31 @@ test("Seedance region and resolution use exact page rates, output counts and ref
     assert.equal(quote({ model, ...base }).expectedUsd, 4.6224);
     assert.equal(quote({ model, ...base, units: 2 }).expectedUsd, 9.2448);
     assert.equal(quote({ model, ...base, inputVideoDurationSec: 8 }).bounded, false);
-    assert.equal(quote({ model, ...base, resolution: "1080p" }).bounded, false);
+    // The 2026-11-21 pages publish 1080p ($0.0234) and 4K ($0.0094) per 1,000 tokens.
+    assert.equal(
+      quote({ model, width: 1920, height: 1080, durationSec: 10, resolution: "1080p" }).expectedUsd,
+      11.3724,
+    );
+    assert.equal(quote({ model, width: 3840, height: 2160, durationSec: 10, resolution: "4k" }).expectedUsd, 18.2736);
   }
   for (const model of ["bytedance/seedance-2.5/us/text-to-video", "bytedance/seedance-2.5/us/image-to-video"]) {
     assert.equal(quote({ model, ...base }).expectedUsd, 5.5469);
     assert.equal(quote({ model, width: 1920, height: 1080, durationSec: 5, resolution: "1080p" }).expectedUsd, 6.8235);
     assert.equal(quote({ model, ...base, inputVideoDurationSec: 8 }).bounded, false);
+    // No reviewed US 4K rate: unknown, never the base rate.
+    assert.equal(quote({ model, width: 3840, height: 2160, durationSec: 5, resolution: "4k" }).bounded, false);
   }
+  // The registry reference tariff has no 4K rate; 4K must not fall through to the 480p/720p base rate.
+  assert.equal(
+    quote({
+      model: "bytedance/seedance-2.5/reference-to-video",
+      width: 3840,
+      height: 2160,
+      durationSec: 5,
+      resolution: "4k",
+    }).bounded,
+    false,
+  );
   assert.equal(
     quote({ model: "bytedance/seedance-2.5/us/reference-to-video", ...base, inputVideoDurationSec: 8 }).expectedUsd,
     5.9907,

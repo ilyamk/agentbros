@@ -15,7 +15,7 @@ import {
 } from "@tanstack/react-table";
 import { ArrowDown, ArrowUp, ArrowUpDown, CircleDollarSign, CircleHelp, Landmark, Lock } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
-import { useI18n, type Dictionary } from "@/i18n";
+import { useI18n, type Dictionary, type I18n } from "@/i18n";
 import { formatTime, formatUsd } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { MetricCard } from "@/components/metric-card";
@@ -30,7 +30,7 @@ import type { PanelProps } from "../registry";
 const features = tableFeatures({ rowSortingFeature, sortedRowModel: createSortedRowModel(), sortFns });
 const helper = createColumnHelper<typeof features, JobSummary>();
 
-const JOB_TONE: Record<JobSummary["state"], Tone> = {
+export const JOB_TONE: Record<JobSummary["state"], Tone> = {
   planned: "upcoming",
   reserved: "paused",
   submitting: "current",
@@ -44,6 +44,25 @@ const JOB_TONE: Record<JobSummary["state"], Tone> = {
   cancelled: "skipped",
   unknown: "stale",
 };
+
+/**
+ * The spend line of the top bar and the home card: spent, and beside it the money unsettled jobs still hold, so a
+ * reservation never reads as free (2026-11-20). Reserved is shown only when above zero.
+ */
+export function spendText(
+  { d, f, locale }: Pick<I18n, "d" | "f" | "locale">,
+  money: { spentUsd: number; reservedUsd?: number; ceilingUsd?: number },
+): string {
+  const spent = formatUsd(money.spentUsd, locale);
+  const ceiling = money.ceilingUsd !== undefined ? formatUsd(money.ceilingUsd, locale) : undefined;
+  if (money.reservedUsd && money.reservedUsd > 0) {
+    const reserved = formatUsd(money.reservedUsd, locale);
+    return ceiling !== undefined
+      ? f(d.topbar.spentReserved, { spent, reserved, ceiling })
+      : f(d.topbar.spentReservedNoCeiling, { spent, reserved });
+  }
+  return ceiling !== undefined ? f(d.topbar.spent, { spent, ceiling }) : f(d.topbar.spentNoCeiling, { spent });
+}
 
 export function ceilingOf(view: ProjectView): number | undefined {
   return view.money.ceilingUsd ?? view.autonomy.ceilingUsd;

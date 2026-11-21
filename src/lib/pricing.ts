@@ -345,7 +345,7 @@ export interface QuoteInput {
   inputMegapixels?: number;
   durationSec?: number;
   inputVideoDurationSec?: number;
-  resolution?: "480p" | "720p" | "1080p";
+  resolution?: "480p" | "720p" | "1080p" | "4k";
   generateAudio?: boolean;
   voiceControl?: boolean;
   tokens?: TokenUsage;
@@ -640,6 +640,9 @@ export function quote(input: QuoteInput): PricingQuote {
         if (rate === undefined) return unknown("No verified tariff for this operation and resolution.");
         definition = { ...definition, usdPerThousand: rate };
       } else if (input.resolution === "1080p") definition = { ...definition, usdPerThousand: 0.0234 };
+      // The base rate is published for 480p/720p only; any other resolution needs its own reviewed rate.
+      else if (input.resolution !== "480p" && input.resolution !== "720p")
+        return unknown("No verified tariff for this operation and resolution.");
       const seconds = input.durationSec + (input.inputVideoDurationSec ?? 0);
       const discount = (input.inputVideoDurationSec ?? 0) > 0 ? definition.videoReferenceMultiplier : 1;
       expected = ((((input.width * input.height * seconds * 24) / 1024) * definition.usdPerThousand) / 1000) * discount;

@@ -8,7 +8,7 @@ import { FolderX, Terminal } from "lucide-react";
 import { useI18n } from "@/i18n";
 import { useConsole, useConsoleStore } from "@/store/context";
 import { commandLine, formatDuration } from "@/lib/format";
-import { projectHref } from "@/lib/router";
+import { projectHref, type ProjectPageName } from "@/lib/router";
 import { cn } from "@/lib/utils";
 import { DecisionCard } from "@/components/decision-card";
 import { EmptyState } from "@/components/empty-state";
@@ -20,12 +20,12 @@ import { onPanelsChanged, panelsFor, registeredPanels } from "@/panels/registry"
 import { HistoryPanel } from "@/panels/generic/history";
 import { TimelineView } from "@/views/timeline";
 import { CampaignView } from "@/views/campaign";
+import { MediaView } from "@/views/media/media-view";
 import { PanelSection } from "./panel-section";
 import { SnapshotBanner } from "./snapshot-banner";
 import { snapshotMode } from "@/lib/snapshot-mode";
-import { TopBar } from "./top-bar";
-import { EditingBanner, EditingTableActions } from "./editing-table";
-import { StudioHeaderButton } from "@/media/studio-action";
+import { EditingBanner } from "./editing-table";
+import { ProjectHeader } from "./header";
 
 function usePanelRegistry() {
   return useSyncExternalStore(onPanelsChanged, () => registeredPanels().length);
@@ -37,7 +37,7 @@ export function ProjectPage({
   decision,
 }: {
   project: string;
-  view: "canvas" | "history" | "timeline";
+  view: ProjectPageName;
   /** A notification's click (`#/projects/<id>/decision/<id>`): focus that card once the view is there. */
   decision?: string;
 }) {
@@ -94,33 +94,8 @@ export function ProjectPage({
   const snapshot = snapshotMode();
   return (
     <div className="flex min-w-0 flex-col">
-      <TopBar view={view} />
+      <ProjectHeader view={view} page={page} />
       {snapshot ? <SnapshotBanner project={view.project.title ?? view.project.id} takenAt={snapshot.takenAt} /> : null}
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 border-b px-4 lg:px-6">
-        <nav aria-label={view.project.title ?? view.project.id} className="flex gap-1">
-          {(snapshot ? (["canvas"] as const) : (["canvas", "history", "timeline"] as const)).map((name) => (
-            <a
-              key={name}
-              href={projectHref(project, name)}
-              aria-current={page === name ? "page" : undefined}
-              className={cn(
-                "border-b-2 px-3 py-2 text-sm transition-colors duration-150 focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-none",
-                page === name
-                  ? "border-primary font-medium"
-                  : "border-transparent text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {name === "canvas" ? d.canvas.canvas : name === "history" ? d.canvas.history : d.canvas.timeline}
-            </a>
-          ))}
-        </nav>
-        {snapshot ? null : (
-          <div className="ms-auto flex flex-wrap items-center gap-2 py-1.5">
-            <StudioHeaderButton project={project} />
-            <EditingTableActions view={view} />
-          </div>
-        )}
-      </div>
       <main id="main" tabIndex={-1} className="outline-none flex min-w-0 flex-col gap-5 p-4 lg:p-6">
         {snapshot ? (
           <Canvas view={view} />
@@ -129,6 +104,8 @@ export function ProjectPage({
             <h2 className="text-lg font-semibold">{d.history.title}</h2>
             <HistoryPanel view={view} />
           </section>
+        ) : page === "media" ? (
+          <MediaView view={view} />
         ) : page === "timeline" ? (
           <>
             <EditingBanner view={view} revision={revision} />
@@ -181,13 +158,7 @@ export function Canvas({ view }: { view: ProjectView }) {
           <h2 id="steps-heading" className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">
             {d.canvas.steps}
           </h2>
-          <StepRail
-            steps={view.steps}
-            current={current}
-            selected={selected ?? current}
-            onSelect={setSelected}
-            label={d.canvas.steps}
-          />
+          <StepRail view={view} selected={selected ?? current} onSelect={setSelected} label={d.canvas.steps} />
           {selectedStep ? <StepDetails step={selectedStep} view={view} /> : null}
         </section>
       ) : null}

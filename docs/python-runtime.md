@@ -1,6 +1,6 @@
 # Python alongside Node
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 Node owns the public commands, validation, budgets, files and workflow state. Python is a private computation layer: TypeScript launches workers with literal argument arrays and validates their JSON responses. It is not a second application server.
 
@@ -38,6 +38,8 @@ pnpm python:check --mode models                   # public CPU model acceptance;
 
 Profile checks install the exact locked group, import its native extensions and check its worker against the installed packages. `cmake` and `yt-dlp` also execute their version commands. ASR is Apple Silicon only; an explicit unsupported profile fails, while a full run reports the platform skip. The fast environment never needs incomplete fabricated SDK stubs. Blender/Resolve API members themselves remain application-owned dynamic boundaries and require native execution.
 
+The `portable-voice` profile locks the sherpa-onnx CPU runtime for Supertonic and Parakeet. Check its worker with `pnpm python:check --mode profiles --profile portable-voice`. Model preparation and offline take synthesis use the ordinary `voiceover:local` CLI.
+
 Model acceptance exercises the owning public commands with generated temporary media: Silero on silence, a fresh Demucs split plus the reference adapter, and SHA-256-pinned BiRefNet ONNX. It checks bounded protocols, readable stems and alpha output; it makes no perceptual quality claim. It downloads public dependencies/weights, never calls paid generation, and does not accept gated model conditions. Pyannote weight inference still requires the owner's prepared access; MLX ASR inference, optional Blender extensions and live Resolve application acceptance remain separate opt-ins.
 
 `pnpm python:audit` uses uv's locked audit across every dependency group, including groups mutually exclusive at installation, for Apple Silicon, Intel macOS, Linux x64 and Windows x64. Host groups use the primary pin; the offset audit uses an isolated copy of the unchanged manifest and lock with its legacy interpreter pin. Neither audit suppresses advisories. It requires network access and fails on advisory or adverse package status; there is no vulnerability ignore list. Dependency updates must pass the relevant profile and model/native checks. Torch 2.15.0, torchaudio 2.11.0 and torchcodec 0.17.0 (all from the PyTorch CPU index, so Linux x64 gets no CUDA build), Pillow 13.0.0 and pytest 9.2.0 are checked together in this migration. Both Demucs consumers use the shared `soundfile` worker: the newer torchaudio WAV writer otherwise requires an additional TorchCodec stack.
@@ -69,7 +71,7 @@ Environments live in `.cache/python/<profile>`, separate from the default develo
 | `audio-map`, `stems`, `offset`, `multicam` | Rhythm maps, Demucs, coarse offsets and refinement/detection |
 | `asr`, `vad`, `diarize` | Parakeet (Apple Silicon only), Silero, pyannote |
 | `sfx-index`, `clap`, `earshot` | SFX measurements, embeddings and explicitly prepared Earshot |
-| `matte`, `vork`, `cmake`, `yt-dlp` | ONNX matte, tracking, whisper.cpp build tool and reference downloads |
+| `matte`, `vork`, `cmake`, `yt-dlp` | ONNX matte, tracking (and the colour worker, which reuses `vork` so the shared lock does not re-resolve), whisper.cpp build tool and reference downloads |
 
 Models retain their own hashes, download policy and caches. Earshot still installs only through explicit `media:prepare` and runs its prepared environment offline; its manifest includes the Python/project/lock identity. Prepared whisper.cpp engines using the former Python version need explicit preparation again. Both Demucs callers now use the existing `stems` dependency profile instead of retaining a second Python 3.11/PyTorch environment.
 

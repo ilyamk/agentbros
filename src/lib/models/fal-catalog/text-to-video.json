@@ -1,7 +1,7 @@
 {
   "version": 1,
   "category": "text-to-video",
-  "syncedAt": "2026-11-15",
+  "syncedAt": "2026-11-21",
   "entries": [
     {
       "endpoint": "alibaba/happy-horse/text-to-video",
@@ -1067,10 +1067,10 @@
       "displayName": "Seedance 2.5 Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
-        "sha256": "914bcf66b6ea3f4f650c51c81cd1e3f3c89d4f9a6f3d7137ec7e3dff11ec7493",
-        "asOf": "2026-11-15",
+        "sha256": "fecbcc4e68249955bad524eca9c735471ad8c2dc27272f7df167843014270f18",
+        "asOf": "2026-11-21",
         "source": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -1165,6 +1165,16 @@
           "default": true
         },
         {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp4",
+            "mov"
+          ],
+          "default": "mp4"
+        },
+        {
           "name": "prompt",
           "type": "string",
           "required": true
@@ -1176,7 +1186,8 @@
           "enum": [
             "480p",
             "720p",
-            "1080p"
+            "1080p",
+            "4k"
           ],
           "default": "720p"
         }
@@ -1210,10 +1221,10 @@
       "displayName": "Seedance 2.5 US Text to Video",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
-        "sha256": "8213777f0161a9623439c379f9d575a74b61771f52bfef449043a5527308cc6d",
-        "asOf": "2026-11-15",
+        "sha256": "a2e2ef69f832fbce2238ac3bf906b08d1fa01543a840698a37d188563803a20e",
+        "asOf": "2026-11-21",
         "source": "https://api.fal.ai/v1/models?endpoint_id=bytedance%2Fseedance-2.5%2Fus%2Ftext-to-video&expand=openapi-3.0",
         "cached": true
       },
@@ -1308,6 +1319,16 @@
           "default": true
         },
         {
+          "name": "output_format",
+          "type": "string",
+          "required": false,
+          "enum": [
+            "mp4",
+            "mov"
+          ],
+          "default": "mp4"
+        },
+        {
           "name": "prompt",
           "type": "string",
           "required": true
@@ -1319,7 +1340,8 @@
           "enum": [
             "480p",
             "720p",
-            "1080p"
+            "1080p",
+            "4k"
           ],
           "default": "720p"
         }

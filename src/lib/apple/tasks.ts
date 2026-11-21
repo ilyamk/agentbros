@@ -148,7 +148,7 @@ export function installedVoice(language: string | undefined, voices: { id: strin
     .filter((v) => !language || languageEquivalent(language, v.language))
     .sort((a, b) => rank(a.id) - rank(b.id) || a.id.localeCompare(b.id))[0]?.id;
 }
-function checkVoiceAudio(file: string) {
+export function checkVoiceAudio(file: string) {
   const check = spawnSync(
     "ffmpeg",
     ["-hide_banner", "-nostdin", "-i", file, "-af", "astats=metadata=1:reset=0", "-f", "null", "-"],

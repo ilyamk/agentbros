@@ -1,8 +1,8 @@
 # Types — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-21
 
-Zod contracts. Workflow v3 reads v2; corpora never grant approval.
+Zod. Workflow v3 reads v2. Proof is opt-in. Corpora grant no approval.
 
 `console-credentials.ts` validates key names, values and save revisions.
 
@@ -25,7 +25,7 @@ Artefacts: `public/projects/{id}/` unless stated.
 
 | Schema file | Artefact | Written by |
 |---|---|---|
-| `dependency-licences.ts` | protected `contrib/licence-reviews.json`: exact-version source-only decisions, evidence hashes and conditions | user-requested technical review; `deps:licences` validates and renders |
+| `dependency-licences.ts` | protected `contrib/licence-reviews.json`: exact-version source-only decisions, hashes, conditions | user-requested technical review; `deps:licences` validates and renders |
 | `pipeline.ts`, `studio.ts`, `creative.ts`, `film.ts`, `reference-replica.ts` | bespoke chain files in `pipeline/` | the step owner; schema per path: `ARTEFACT_SCHEMAS` in [chain.ts](../lib/film/chain.ts) |
 | `pipeline.ts` | Brief, script, design, storyboard and plans; `PipelineStateSchema` only to read an old film's legacy approvals | `film:*`, `pipeline:check`, voiceover agents |
 | `video.ts` | `project.json` | `project:new`, `composer` |
@@ -46,9 +46,9 @@ Artefacts: `public/projects/{id}/` unless stated.
 | `../lib/blender-arsenal/{libraries/schemas,recipe-schema,generators,eval-schema}.ts` | Library manifests, recipe META/proofs, benchmark tasks/plans/reports (v1 history, v2 executable; strict) | Arsenal CLIs |
 | `blender-extensions.ts` | Arsenal pins (platforms, usage, optional capabilities), inspection and receipts | `blender:ext` |
 | `fal-catalog.ts` | Provider catalogue, prices, pins, drift, discovery price/equivalents, match results/suggestions, curation and batch specs | `fal:find`, `fal:scaffold`, catalogue tools |
-| `generation.ts`, `models.ts`, `pricing-evidence.ts` | provider requests (measured media MIME, optional schema validation), model registry, sealed pricing (large Higgsfield inputs retain their hash) | `generate:*` via `src/lib/providers` |
+| `generation.ts`, `models.ts`, `pricing-evidence.ts` | provider requests (measured media MIME, optional schema validation), model registry, sealed pricing (large Higgsfield inputs keep hashes) | `generate:*` via `src/lib/providers` |
 | `source-index.ts`, `ocr.ts`, `visual-search.ts`, `category-search.ts`, `native-word-timing.ts` | local ingest indexes and receipts | `media:*` |
-| `matte.ts` | `matte.json` / `<stem>.matte.json` receipts beside a cut-out | `matte` |
+| `matte.ts`, `colour.ts` | matte receipts; grades, tracks, targets, moods, looks | `matte`, `colour:*` |
 | `contrib.ts` | Contribution blocks, categories, tiers, intake facts/verdicts and `.changes/` entries with their `novelty:` justification; release-PR route (`contrib/release.json`) | contributor; `change:add`, `contrib:intake` |
 | `contrib-tools.ts` | Scout opportunities and curated opportunities (`contrib/opportunities.json`) with task-contract v1 fields (`source`, `priority`, `value`, `requires` with `paid: false`, `read`, `verify`; RFC 0002 §3.4), gate evidence and trust overrides | `contrib:scout`, `contrib:check`; maintainer |
 | `leak-scan.ts` | Optional git-ignored leak-patterns.local.json pattern config at the repository root | local maintainer |

@@ -53,7 +53,7 @@ For charts, node networks and diagrams, start with `pnpm viz:list`, then prepare
 
 4. **Import it into the scene** from `importPath` (relative to your file), following `usage` when present, and pass only the props you change; start from `defaultProps`. Keep the item's checked `formats` in mind: another aspect ratio is unverified until you look at it.
 
-5. **Compose with a style.** `pnpm library:list --styles` lists looks (palette, fonts, motion personality, finish). Feed one style's values into every block's colour, font and spring props, so a film keeps one voice.
+5. **Compose with a style.** `pnpm library:list --styles` lists looks (palette, fonts, motion personality, finish). Feed one style's values into every block's colour, font and spring props, so a film keeps one voice. Colour grades of footage are separate: the [Looks & colour](../../../docs/library/looks.md) page (mood, palette, finish per look) and the [colour-grading skill](../colour-grading/SKILL.md).
 
 6. **Wrap in `FilmFinish`** (`src/motion/library/finish/FilmFinish`) at the shot level. Keep `Audio` and video layers outside it when `aberration` is above 0, because it renders its children twice.
 

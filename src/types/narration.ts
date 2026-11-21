@@ -15,6 +15,14 @@ export const NarrationDirectionSchema = NarratorDirectionSchema.extend({
   route: NarrationRouteSchema,
   /** Why this voice for this film: the brief's audience and tone, the script's register. */
   voiceWhy: z.string().min(1),
+  localVoice: z
+    .object({
+      engine: z.enum(["apple", "portable"]),
+      voice: z.string().min(1).optional(),
+      purpose: z.enum(["draft", "production"]).optional(),
+    })
+    .strict()
+    .optional(),
   /** The planning bound per take (generate:voiceover applies it to each beat), authorised by the user's approval of this file; required on the paid route. The exposure is beats × this. */
   maxCostUsd: z.number().positive().optional(),
   /**

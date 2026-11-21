@@ -146,10 +146,7 @@ function Wipe({ project, a, b }: { project: string; a: MediaRef; b: MediaRef }) 
   const failed = state.error || stateB.error;
   return (
     <div className="flex min-w-0 flex-col gap-2" data-wipe>
-      <div
-        className="relative mx-auto overflow-hidden rounded-lg border bg-black"
-        style={pictureSize(a, "min(60vh, 32rem)")}
-      >
+      <div className="relative mx-auto overflow-hidden border bg-black" style={pictureSize(a, "min(60vh, 32rem)")}>
         {failed ? (
           <MediaUnavailable media={state.error ? a : b} />
         ) : video ? (

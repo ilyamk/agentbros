@@ -1,6 +1,6 @@
 # Docs — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 [README.md](../README.md) links the guides.
 
@@ -43,11 +43,11 @@ Bespoke film:
 - [production chain](production-chain.md): index of the film steps; `production-chain/`: sections read per step
 - [film types](film-types.md): generated index; `film-types/<type>.md` each
 - [step lease](step-lease.md): per-step allow lists checked by every CLI, the MCP bridge and an optional hook; `step:unlock` (2026-11-17)
-- [creative benchmark](creative-benchmark.md): blind benchmark of two runs
+- [Creative A/B](creative-benchmark.md), [project experiments](experiments.md)
 - [craft evaluation](craft-evaluation.md): offline craft evaluation
 - [reference analysis](reference-analysis.md): measured and judged layers of a reference film
 - [contributing references](contributing-references.md): the local analysis workflow, what may be contributed, `ref:contribute`, private references
-- [agent vision](agent-vision.md): source-bound frames, paginated sheets and agent acceptance
+- [agent vision](agent-vision.md): frames and sheets. [Render iteration](render-iteration.md): patches and readability
 - [motion library](motion-library.md): library blocks and catalogue
 - [prepared visualisations](visualisations.md): pinned diagrams, mounting and validation
 - [chart evidence](chart-evidence.md): checking a chart's numbers and sources
@@ -88,7 +88,7 @@ A user's own footage:
 - [long form](longform.md): chapters and approved shorts
 - [long-form integrity](longform-integrity.md): chapter render integrity
 - [review UI](local-review-ui.md): `review:ui`, the console's timeline review
-- [studio console](console.md): live projects, decisions, pause, cards, hooks, security (RFC 0004, 2026-11-17)
+- [studio console](console.md): projects, decisions, pause, cards, hooks, security; [steps](console-steps.md)
 
 Sound and captions:
 
@@ -118,14 +118,14 @@ Assets:
 
 - [shared media](assets.md): manifests and `assets:sync`
 - [fonts and icons](local-fonts-icons.md): exact local fonts and icons
+- [colour grading](colour-grading.md): scopes, ΔE, grades, LUTs, windows
 
 Contribution and maintenance:
 
-- [dependency licences](dependency-licences.md): generated package notices, declared integration evidence, policy validation, exact-version source-only review, public notices and unresolved ELK review
-
-- [contribution gates](contributing-gates.md): intake, categories, evidence and deterministic checks; [branches](branches.md)
-- [context budgets](context-budget.md): offline measurement and instruction hygiene
-- [metrics and API surface](metrics.md): generated inventories and exported contracts
+- [dependency licences](dependency-licences.md): package notices, integration evidence, policy, source-only review, ELK review
+- [contribution gates](contributing-gates.md): intake, categories, evidence, checks; [branches](branches.md)
+- [context budgets](context-budget.md): offline measurement, instruction hygiene
+- [metrics and API surface](metrics.md): generated inventories, exported contracts
 - [triage](triage.md): PR judging (currently inactive), instruction audits and spend reservations
 - [releases](releases.md): change entries, release plans and generated credits
 - [GitHub automation](github.md): workflow trust boundaries, CLA, claims, CI, repository security settings, Scorecard and release provenance

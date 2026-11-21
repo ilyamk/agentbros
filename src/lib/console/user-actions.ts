@@ -10,6 +10,9 @@
  * | frame-feedback | one `frameComments` entry, `expect`?       | feedback --project P --frame N [--region x,y,w,h] --watched=R    |
  * |                |                                            | (`--fps` only when the media names it: the CLI reads the render) |
  * |                |                                            | [--fps F] [--expect E] --answer=W --confirm                 |
+ * | frame-note     | one `frameComments` entry, `overlay`?      | frame:note --project P --media=F [--root out] --frame N [--fps F] |
+ * |                | (any route; 2026-11-20)                    | [--expect E] --answer=W [--marks-file] [--overlay-file]       |
+ * |                |                                            | (a frame-feedback with marks also runs it as a follow-up)     |
  * | policy (film)  | `policy` { autonomy?, ceilingUsd? }        | film:policy --project P [--autonomy M] [--ceiling-usd C] --answer=W |
  * |                |                                            | then, when C lowers the job store's ceiling: budget --project P  |
  * |                |                                            | --ceiling-usd C --answer=W (film:policy never lowers the store)  |
@@ -28,7 +31,7 @@ import { autonomyCommand, budgetCommand, flagged, type CommandPlan } from "./act
 import { readRatings } from "./ratings";
 
 /** Kinds the console applies as new decisions, without a pending one. */
-export const USER_INPUT_KINDS = ["rating", "frame-feedback", "policy"] as const;
+export const USER_INPUT_KINDS = ["rating", "frame-feedback", "frame-note", "policy"] as const;
 export type UserInputKind = (typeof USER_INPUT_KINDS)[number];
 
 export const isUserInput = (request: DecisionRequest): request is DecisionRequest & { kind: UserInputKind } =>
@@ -110,6 +113,53 @@ export function planPolicy(
   return { command: budgetCommand(project, ceilingUsd!, words), decision };
 }
 
+/** The `frame:note` command for one comment: the frame drawn with the marks (as the overlay shows them) beside the words. */
+export function frameNoteCommand(
+  project: string,
+  comment: FrameComment,
+  overlay?: string,
+  expect?: string,
+): CommandPlan {
+  const sha = expect ?? comment.media.sha256;
+  const region = comment.region;
+  const attachments: CommandPlan["attachments"] = [];
+  if (comment.marks?.length)
+    attachments.push({ flag: "--marks-file", name: "marks.json", content: `${JSON.stringify(comment.marks)}\n` });
+  if (overlay) attachments.push({ flag: "--overlay-file", name: "overlay.png", content: overlay, encoding: "base64" });
+  return {
+    alias: "frame:note",
+    args: [
+      "--project",
+      project,
+      flagged("--media", comment.media.path),
+      ...(comment.media.root === "out" ? ["--root", "out"] : []),
+      "--frame",
+      String(comment.frame),
+      ...(comment.media.fps ? ["--fps", String(comment.media.fps)] : []),
+      ...(sha ? ["--expect", sha] : []),
+      ...(region ? ["--region", [region.x, region.y, region.w, region.h].map(String).join(",")] : []),
+      flagged("--answer", comment.text),
+    ],
+    ...(attachments.length ? { attachments } : {}),
+  };
+}
+
+/** One frame comment of a frame-feedback or frame-note request, checked against its video. */
+function frameCommentOf(request: DecisionRequest): FrameComment {
+  if (request.ratings && Object.keys(request.ratings).length) throw unprocessable("Frame feedback carries no ratings.");
+  const comments = request.frameComments ?? [];
+  if (comments.length !== 1)
+    throw unprocessable("Send one frame comment at a time: `frameComments` holds exactly one.");
+  const comment = comments[0]!;
+  if (comment.media.kind !== "video") throw unprocessable("Frame feedback is on a video render.");
+  const { durationSec, fps } = comment.media;
+  if (durationSec !== undefined && fps !== undefined && comment.frame >= Math.max(1, Math.round(durationSec * fps)))
+    throw unprocessable(
+      `Frame ${comment.frame} is past the render's last frame (${Math.round(durationSec * fps)} frames at ${fps} fps).`,
+    );
+  return comment;
+}
+
 export function planUserInput(
   project: string,
   request: DecisionRequest & { kind: UserInputKind },
@@ -147,17 +197,18 @@ export function planUserInput(
       },
     };
   }
-  if (request.ratings && Object.keys(request.ratings).length) throw unprocessable("Frame feedback carries no ratings.");
-  const comments = request.frameComments ?? [];
-  if (comments.length !== 1)
-    throw unprocessable("Send one frame comment at a time: `frameComments` holds exactly one.");
-  const comment = comments[0]!;
-  if (comment.media.kind !== "video") throw unprocessable("Frame feedback is on a video render.");
-  const { durationSec, fps } = comment.media;
-  if (durationSec !== undefined && fps !== undefined && comment.frame >= Math.max(1, Math.round(durationSec * fps)))
-    throw unprocessable(
-      `Frame ${comment.frame} is past the render's last frame (${Math.round(durationSec * fps)} frames at ${fps} fps).`,
-    );
+  const comment = frameCommentOf(request);
+  if (request.kind === "frame-note")
+    return {
+      command: frameNoteCommand(project, comment, request.overlay, request.expect),
+      decision: {
+        kind: "frame-note",
+        title: `Note on frame ${comment.frame} of ${comment.media.label ?? comment.media.path}`.slice(0, 200),
+        bindTo: [],
+        media: [comment.media],
+        frameComments: [comment],
+      },
+    };
   const sha = request.expect ?? comment.media.sha256;
   const region = comment.region;
   return {
@@ -176,6 +227,10 @@ export function planUserInput(
         "--confirm",
       ],
     },
+    // The still with the marks, beside the feedback that reopens the build.
+    ...(comment.marks?.length || request.overlay
+      ? { followUps: [frameNoteCommand(project, comment, request.overlay, request.expect)] }
+      : {}),
     decision: {
       kind: "frame-feedback",
       title: `Frame feedback at frame ${comment.frame}`,

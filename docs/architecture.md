@@ -1,6 +1,6 @@
 # Architecture
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 ![Claude and Codex at a whiteboard showing the repository architecture](readme/architecture-cover.jpg)
 
@@ -17,12 +17,16 @@ Agent Bros. Pictures is a **harness**, not an app. Coding agents (Claude Code, C
 - **A renderer**: Remotion compositions in React, where every frame is a pure function of the frame number.
 - **Contracts**: Zod schemas in `src/types/` for every artefact a step writes.
 
+Projects may opt into a versioned experiment at a named step. The selection is pinned to the project and enters the step answer and its owner brief. The same checkout can compare independently rendered control and candidate projects. [Project experiments](experiments.md)
+
 The design rule behind all four: **decisions that can be computed live in code and data; judgement lives with agents; approvals belong to the user.** An agent never works out the next step from prose. It asks `pnpm next`, which reads the project's files and answers.
 
 Speech follows this boundary from script line through provider take and timing
 receipt to a reference pack or a reversible timeline edit. The voice profile
 is shared by validation and capability discovery. A listening decision binds
 the exact voice, model, language and take hashes. [Audio integrations](audio-integrations.md)
+
+Portable local draft voices use pinned CPU models and bind a take and its readback to the existing narration receipt. Project renders can use a verified previous master for local picture edits. The renderer compares the rebuilt picture and audio with its two sources before issuing a complete receipt. [Speech](speech.md#portable-narration) · [Delivery](delivery.md)
 
 ## Layers
 
@@ -133,6 +137,7 @@ Change the fact here. Everything else reads it or is generated from it.
 | Service keys                                                | `src/lib/setup/keys.ts`                             | doctor, `keys`, `bootstrap`                                           |
 | Credits                                                     | `credits/<id>.json`                                 | `credits:write-doc` → `CREDITS.md`                                    |
 | Agent definitions                                           | front matter in `.agents/agents/*.md`               | the index README (test-checked)                                       |
+| Colour grade evaluation order                               | `apply_grade` in `scripts/workers/colour_maths.py`  | `.cube` bake for `colour:grade`, [colour grading](colour-grading.md)  |
 | Console contract (journal, view, decisions, cards, control) | `src/types/console.ts`                              | console server, projector, CLIs, UI (`apps/console/`)                 |
 
 Studio Console API key settings use the setup provider registry and a local override file loaded by each CLI. The key reveal and batch save routes require a capability distinct from the regular console session. The in-app editor handoff passes that capability to the default browser through the operating system.

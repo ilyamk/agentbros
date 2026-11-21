@@ -51,6 +51,10 @@ asr = [
     "parakeet-mlx==0.7.0; sys_platform == 'darwin' and platform_machine == 'arm64'",
     "mlx==0.32.4; sys_platform == 'darwin' and platform_machine == 'arm64'",
 ]
+portable-voice = [
+    "sherpa-onnx==2.0.2",
+    "numpy==2.5.5",
+]
 vad = [
     "silero-vad==6.2.3",
     "torch==2.15.0",
@@ -179,6 +183,7 @@ conflicts = [[
     { group = "multicam" },
     { group = "offset" },
     { group = "asr" },
+    { group = "portable-voice" },
     { group = "vad" },
     { group = "diarize" },
     { group = "sfx-index" },
@@ -246,6 +251,8 @@ line-ending = "lf"
 "scripts/workers/reference-analysis.py" = ["PLC0415", "PLR2004"]
 "scripts/workers/reference-moves.py" = ["PLC0415", "PLR2004"]
 "scripts/workers/sfx-index.py" = ["PLC0415", "PLR2004"]
+# CIEDE2000 and hue-wrap constants are part of the published formulas.
+"scripts/workers/colour_maths.py" = ["PLR2004"]
 # Seeded scene variation is not a cryptographic use of randomness.
 "scripts/blender/**/*.py" = ["S311"]
 

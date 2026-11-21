@@ -1,3 +1,5 @@
+import { assertTutorialKit, bindTutorialKit } from "../../experiments/series";
+import { readExperiments } from "../../experiments/project";
 import { copyFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -181,6 +183,11 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
   const directory = projectDirectory(root, member.projectId),
     adapter = member.adapter;
   const record = path.join(directory, "pipeline/campaign-preparation.json");
+  const tutorial =
+    plan.request.scenario === "content-series" && adapter.kind === "film" && adapter.playbook === "product-tutorial";
+  const kit = tutorial
+    ? readExperiments(projectDirectory(root, plan.request.id)).find(({ id }) => id === "tutorial-series-kit@1")?.kit
+    : undefined;
   const materialsHash = digest(member.materials.map((id) => materialRecord(root, plan, id)));
   let updating = false;
   if (existsSync(record)) {
@@ -190,6 +197,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
       materialsHash?: string;
       files: { path: string; sha256: string }[];
     };
+    if (kit) assertTutorialKit(directory);
     if (before.allocationHash !== plan.allocationHash) refuse("Child allocation changed");
     if (before.adapterHash === digest(adapter) && before.materialsHash === materialsHash && !member.expectedProject) {
       try {
@@ -254,6 +262,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
     writeProjectPlaybook(directory, effective.playbook, "agent");
   } else if (!existsSync(path.join(directory, "project.json")) && !isBespokeDelivery(root, member.projectId))
     refuse("Existing child is not a video project");
+  const kitFile = kit ? bindTutorialKit(root, plan.request.id, directory) : undefined;
   bindCampaignChild(root, plan, member.projectId);
   const copies: Record<string, string> = {};
   for (const id of member.materials) {
@@ -291,6 +300,7 @@ async function prepareMember(root: string, plan: CampaignProductionPlan, member:
     atomicJson(path.join(directory, "project.json"), rewrite(jsonFile(path.join(directory, "project.json"))));
   }
   const files = [
+    ...(kitFile ? [pinFile(root, kitFile)] : []),
     pinFile(
       root,
       path.join(directory, isBespokeDelivery(root, member.projectId) ? "pipeline/brief.json" : "project.json"),
@@ -661,6 +671,7 @@ export const executeCampaignTask: CampaignExecutor = async (task, context) => {
     return { outputs: [file, snapshot.file, requestFile] };
   }
   if (task.kind === "render") {
+    assertTutorialKit(projectDirectory(root, member!.projectId));
     let output: string;
     if (isBespokeDelivery(root, member!.projectId)) {
       const film = openFilmProject(projectDirectory(root, member!.projectId), { rootDir: root }),

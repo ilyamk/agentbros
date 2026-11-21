@@ -8,11 +8,15 @@ updates:
     groups:
       development:
         dependency-type: development
+      # lucide-react and lucide-static release together; one PR regenerates the licence inventory once.
+      lucide:
+        patterns: ["lucide-*"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     groups:
-      # init, analyze and upload-sarif are one release; a split bump leaves CodeQL on mismatched majors.
-      codeql-action:
-        patterns: ["github/codeql-action*"]
+      # One PR for every action bump: each PR costs a full CI run. This also keeps
+      # CodeQL's init, analyze and upload-sarif on one release.
+      github-actions:
+        patterns: ["*"]

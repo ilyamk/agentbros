@@ -1,6 +1,6 @@
 # fal operation schemas
 
-`fal-operations.json` contains 98 public OpenAPI snapshots retrieved on 2026-10-11 via read-only GET:
+`fal-operations.json` contains 98 public OpenAPI snapshots retrieved on 2026-10-11 via read-only GET; the seven Seedance 2.5 snapshots were refreshed on 2026-11-21 (4k, `output_format`, `task: auto`, 14-day drafts):
 
 `https://fal.ai/api/openapi/queue/openapi.json?endpoint_id=<URL-encoded exact endpoint>`
 

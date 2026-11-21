@@ -57,6 +57,9 @@ export interface WaitOutcome {
   /** decision.refused: the refusing command's error code and message, when the event carries them. */
   error?: string;
   message?: string;
+  /** A frame note (2026-11-20): its JSON and the frame with the user's marks drawn, relative to the checkout. */
+  note?: string;
+  still?: string;
 }
 
 const str = (value: unknown): string | undefined => (typeof value === "string" && value ? value : undefined);
@@ -86,6 +89,8 @@ export function outcomeOf(event: ConsoleEvent, project: string): WaitOutcome | u
           choice: str(data.choice),
           error: str(event.error) ?? str(data.error),
           message: str(event.message) ?? str(data.message),
+          note: str(data.note),
+          still: str(data.still),
         }),
       };
     case "control.changed":

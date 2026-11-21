@@ -104,12 +104,14 @@ for (const [endpoint, off, on, voice] of [
     "Audio off/on and voice-control-with-audio select distinct rates. Missing audio choice preserves full published range; voice control requires audio.",
   );
 }
-for (const [endpoint, rate, highResolutionRate, reference] of [
-  ["bytedance/seedance-2.5/text-to-video", 0.0214, undefined, false],
-  ["bytedance/seedance-2.5/image-to-video", 0.0214, undefined, false],
-  ["bytedance/seedance-2.5/us/text-to-video", 0.02568, 0.02808, false],
-  ["bytedance/seedance-2.5/us/image-to-video", 0.02568, 0.02808, false],
-  ["bytedance/seedance-2.5/us/reference-to-video", 0.02568, 0.02808, true],
+// The global pages of 2026-11-21 publish 480p/720p, 1080p and 4K rates for each mode. The US rows keep their reviewed
+// rates (their pages now list the global ones; reconciling them is a separate review) and have no 4K rate yet.
+for (const [endpoint, rate, highResolutionRate, uhdRate, reference, observedAsOf] of [
+  ["bytedance/seedance-2.5/text-to-video", 0.0214, 0.0234, 0.0094, false, "2026-11-21"],
+  ["bytedance/seedance-2.5/image-to-video", 0.0214, 0.0234, 0.0094, false, "2026-11-21"],
+  ["bytedance/seedance-2.5/us/text-to-video", 0.02568, 0.02808, undefined, false, undefined],
+  ["bytedance/seedance-2.5/us/image-to-video", 0.02568, 0.02808, undefined, false, undefined],
+  ["bytedance/seedance-2.5/us/reference-to-video", 0.02568, 0.02808, undefined, true, undefined],
 ] as const) {
   register(
     endpoint,
@@ -122,11 +124,15 @@ for (const [endpoint, rate, highResolutionRate, reference] of [
       resolutionRates: {
         "480p": rate,
         "720p": rate,
-        ...(highResolutionRate === undefined ? {} : { "1080p": highResolutionRate }),
+        "1080p": highResolutionRate,
+        ...(uhdRate === undefined ? {} : { "4k": uhdRate }),
       },
     },
     "USD per thousand video tokens",
-    "Tokens = output width × height × billed seconds × 24 / 1024. Reference operation bills input plus output video seconds and applies ×0.6 with video input; other modes use output only. Global 1080p prose conflicts with page mode constraints and remains unknown. Forecast margin 5% is local, not a provider guarantee.",
+    uhdRate === undefined
+      ? "Tokens = output width × height × billed seconds × 24 / 1024. Reference operation bills input plus output video seconds and applies ×0.6 with video input; other modes use output only. 4K has no reviewed rate here and remains unknown. Forecast margin 5% is local, not a provider guarantee."
+      : "Tokens = output width × height × billed seconds × 24 / 1024, output seconds only. $0.0214 per 1,000 tokens at 480p/720p, $0.0234 at 1080p, $0.0094 at 4K (roughly $1.840 per 4K second). Forecast margin 5% is local, not a provider guarantee.",
+    observedAsOf,
   );
 }
 // These six exact public pages were independently reviewed on 2026-10-12.

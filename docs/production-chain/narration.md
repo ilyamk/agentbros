@@ -23,10 +23,12 @@ direction. See [audio integrations](../audio-integrations.md#elevenlabs).
 | `route` | Takes | Receipt | Word timings | Spend |
 |---|---|---|---|---|
 | `elevenlabs` | `voiceover/<beat>.mp3`; a pinned `voiceRef`, or `eleven_v4` / `eleven_flash_v2_5` | `<take>.mp3.take.json` | `voiceover/<beat>.words.json` | after the yes, within the bound and budget |
-| `local` | `voiceover:local --output <dir>/pipeline/narration-local.json` (draft) | the result's `.receipt.json` | `speech:local` to `<take base>.transcript.json` | none |
+| `local` | `voiceover:local --output <dir>/pipeline/narration-local.json` (draft) | the result's `.receipt.json` | Portable voice writes matched `.words.json` sidecars; Apple takes use `speech:local` | none |
 | `existing` | takes already in `voiceover/` | as `elevenlabs` | as `elevenlabs` | none |
 
 No authorised bound and no local voice: leave the step pending; never invent takes or timings.
+
+For portable narration, put `"localVoice": {"engine":"portable","voice":"supertonic:0"}` in the direction. Prepare once with `pnpm voiceover:local --engine portable --prepare`, then use the ordinary project command. It takes words from the script, checks the readback and binds each take and its word sidecar to the result receipt. Review a readback mismatch before using an independently checked transcript or making a retake. Apple remains the default on macOS for a direction with no engine selection. See [portable voice](../speech.md#portable-narration).
 
 ## narration:check
 

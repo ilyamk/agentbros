@@ -62,6 +62,10 @@ void runScript(async () => {
     codec: args.codec,
   });
   emitProgress(`\n${table}`);
+  for (const finding of metadata.readability.findings.slice(0, 8))
+    emitProgress(
+      `Readability warning ${finding.code} at frame ${finding.frame}: ${finding.text} (${finding.measured}, minimum ${finding.minimum})`,
+    );
   if (!failing) return { outputs: [], metadata };
   const problems = Object.values(metadata.counters).reduce<number>((sum, value) => sum + (value ?? 0), 0);
   const findings = metadata.findings.length + metadata.findingsOmitted;
