@@ -1,7 +1,13 @@
 import { execFileSync } from "node:child_process";
 
 export function git(root: string, args: string[]): string {
-  return execFileSync("git", args, { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trimEnd();
+  // Whole files are read out of git (docs/api/surface.json is over 1 MiB): the default 1 MiB buffer fails with ENOBUFS.
+  return execFileSync("git", args, {
+    cwd: root,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+    maxBuffer: 256 * 1024 * 1024,
+  }).trimEnd();
 }
 
 export function commit(root: string, ref: string): string {
