@@ -135,6 +135,62 @@
       }
     },
     {
+      "id": "bars-form-number",
+      "props": [
+        "accent",
+        "at",
+        "ground",
+        "ink",
+        "label",
+        "moveFrames",
+        "value"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "ink": {
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 10,
+            "type": "integer"
+          },
+          "value": {
+            "pattern": "^\\d{1,4}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "value",
+          "label",
+          "at",
+          "moveFrames",
+          "accent",
+          "ground",
+          "ink"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "before-after-split",
       "props": [
         "afterTitle",
@@ -727,6 +783,13 @@
             "properties": {
               "box": {
                 "type": "boolean"
+              },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
               },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
@@ -1394,6 +1457,13 @@
               "box": {
                 "type": "boolean"
               },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
+              },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
                 "type": "string"
@@ -2059,6 +2129,13 @@
             "properties": {
               "box": {
                 "type": "boolean"
+              },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
               },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
@@ -2726,6 +2803,13 @@
               "box": {
                 "type": "boolean"
               },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
+              },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
                 "type": "string"
@@ -3391,6 +3475,13 @@
             "properties": {
               "box": {
                 "type": "boolean"
+              },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
               },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
@@ -4058,6 +4149,13 @@
               "box": {
                 "type": "boolean"
               },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
+              },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
                 "type": "string"
@@ -4723,6 +4821,13 @@
             "properties": {
               "box": {
                 "type": "boolean"
+              },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
               },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
@@ -5657,6 +5762,13 @@
               "box": {
                 "type": "boolean"
               },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
+              },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
                 "type": "string"
@@ -6323,6 +6435,13 @@
               "box": {
                 "type": "boolean"
               },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
+              },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
                 "type": "string"
@@ -6988,6 +7107,13 @@
             "properties": {
               "box": {
                 "type": "boolean"
+              },
+              "boxMotion": {
+                "enum": [
+                  "slide",
+                  "elastic"
+                ],
+                "type": "string"
               },
               "boxText": {
                 "pattern": "^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$",
@@ -9751,6 +9877,75 @@
       }
     },
     {
+      "id": "glass-lens",
+      "props": [
+        "ground",
+        "radius",
+        "src",
+        "stops",
+        "zoom"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "ground": {
+            "type": "string"
+          },
+          "radius": {
+            "maximum": 0.35,
+            "minimum": 0.05,
+            "type": "number"
+          },
+          "src": {
+            "type": "string"
+          },
+          "stops": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "at": {
+                  "maximum": 9007199254740991,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "x": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "y": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                }
+              },
+              "required": [
+                "at",
+                "x",
+                "y"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "zoom": {
+            "maximum": 3,
+            "minimum": 1.08,
+            "type": "number"
+          }
+        },
+        "required": [
+          "stops",
+          "radius",
+          "zoom",
+          "ground"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "gltf-clip-cue",
       "props": [
         "accent",
@@ -11140,7 +11335,7 @@
       }
     },
     {
-      "id": "kinetic-decode",
+      "id": "kinetic-binary-text",
       "props": [
         "accent",
         "at",
@@ -11150,6 +11345,7 @@
         "glyphs",
         "kicker",
         "lines",
+        "monospace",
         "muted",
         "scramble",
         "seed",
@@ -11189,6 +11385,103 @@
             },
             "minItems": 1,
             "type": "array"
+          },
+          "monospace": {
+            "type": "boolean"
+          },
+          "muted": {
+            "type": "string"
+          },
+          "scramble": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "seed": {
+            "type": "string"
+          },
+          "stagger": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "verticalLines": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "kicker",
+          "lines",
+          "verticalLines",
+          "color",
+          "accent",
+          "muted",
+          "background",
+          "glyphs",
+          "seed",
+          "at",
+          "stagger",
+          "scramble",
+          "exitAt"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "kinetic-decode",
+      "props": [
+        "accent",
+        "at",
+        "background",
+        "color",
+        "exitAt",
+        "glyphs",
+        "kicker",
+        "lines",
+        "monospace",
+        "muted",
+        "scramble",
+        "seed",
+        "stagger",
+        "verticalLines"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "at": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "background": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "exitAt": {
+            "type": "number"
+          },
+          "glyphs": {
+            "minLength": 2,
+            "type": "string"
+          },
+          "kicker": {
+            "type": "string"
+          },
+          "lines": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "monospace": {
+            "type": "boolean"
           },
           "muted": {
             "type": "string"
@@ -13614,6 +13907,46 @@
       }
     },
     {
+      "id": "page-turn",
+      "props": [
+        "diagonal",
+        "moveFrames",
+        "paper",
+        "seamFrame"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "diagonal": {
+            "maximum": 0.22,
+            "minimum": 0,
+            "type": "number"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 12,
+            "type": "integer"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "seamFrame": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "seamFrame",
+          "moveFrames",
+          "paper",
+          "diagonal"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "paper-collage-assemble",
       "props": [
         "dot",
@@ -14789,6 +15122,82 @@
           "events",
           "dropFrom",
           "every"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "print-registration",
+      "props": [
+        "at",
+        "inks",
+        "line",
+        "paper",
+        "passFrames",
+        "step",
+        "title"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "inks": {
+            "items": false,
+            "maxItems": 4,
+            "minItems": 4,
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "type": "array"
+          },
+          "line": {
+            "maxLength": 40,
+            "minLength": 1,
+            "type": "string"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "passFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 5,
+            "type": "integer"
+          },
+          "step": {
+            "maximum": 9007199254740991,
+            "minimum": 3,
+            "type": "integer"
+          },
+          "title": {
+            "maxLength": 27,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "line",
+          "at",
+          "step",
+          "passFrames",
+          "paper",
+          "inks"
         ],
         "type": "object"
       }
@@ -18504,6 +18913,104 @@
       }
     },
     {
+      "id": "type-blur-text",
+      "props": [
+        "align",
+        "at",
+        "background",
+        "color",
+        "dimRest",
+        "fontSize",
+        "fontWeight",
+        "markAt",
+        "markStep",
+        "markedColor",
+        "marker",
+        "mode",
+        "step",
+        "text"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "align": {
+            "enum": [
+              "left",
+              "centre"
+            ],
+            "type": "string"
+          },
+          "at": {
+            "type": "number"
+          },
+          "background": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "dimRest": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "fontSize": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "fontWeight": {
+            "maximum": 900,
+            "minimum": 400,
+            "type": "integer"
+          },
+          "markAt": {
+            "type": "number"
+          },
+          "markStep": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "markedColor": {
+            "type": "string"
+          },
+          "marker": {
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "marker",
+              "pill"
+            ],
+            "type": "string"
+          },
+          "step": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "color",
+          "marker",
+          "markedColor",
+          "background",
+          "fontWeight",
+          "fontSize",
+          "align",
+          "at",
+          "step",
+          "markAt",
+          "markStep",
+          "dimRest"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "type-caret-track",
       "props": [
         "accent",
@@ -19972,6 +20479,7 @@
         "exitFrames",
         "exitTravel",
         "fadeFrames",
+        "focusBlur",
         "frames",
         "grain",
         "ground",
@@ -20073,6 +20581,11 @@
             "minimum": 0,
             "type": "integer"
           },
+          "focusBlur": {
+            "maximum": 16,
+            "minimum": 0,
+            "type": "number"
+          },
           "frames": {
             "items": {
               "maximum": 9007199254740991,
@@ -20164,6 +20677,307 @@
           "step",
           "exitAt",
           "grain"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "type-text-generate",
+      "props": [
+        "accent",
+        "align",
+        "at",
+        "chipColours",
+        "chipScale",
+        "chipShape",
+        "cornerDots",
+        "creep",
+        "dotColour",
+        "exit",
+        "exitAt",
+        "exitCurve",
+        "exitFrames",
+        "exitTravel",
+        "fadeFrames",
+        "focusBlur",
+        "frames",
+        "grain",
+        "ground",
+        "ink",
+        "layout",
+        "leading",
+        "push",
+        "riseFrames",
+        "riseFrom",
+        "size",
+        "step",
+        "text",
+        "tint",
+        "tintFrames",
+        "weight",
+        "width"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "align": {
+            "enum": [
+              "centre",
+              "left"
+            ],
+            "type": "string"
+          },
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "chipColours": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "chipScale": {
+            "maximum": 1.4,
+            "minimum": 0.4,
+            "type": "number"
+          },
+          "chipShape": {
+            "enum": [
+              "tile",
+              "round"
+            ],
+            "type": "string"
+          },
+          "cornerDots": {
+            "type": "boolean"
+          },
+          "creep": {
+            "maximum": 0.05,
+            "minimum": 0,
+            "type": "number"
+          },
+          "dotColour": {
+            "type": "string"
+          },
+          "exit": {
+            "enum": [
+              "blur",
+              "rise"
+            ],
+            "type": "string"
+          },
+          "exitAt": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "type": "integer"
+          },
+          "exitCurve": {
+            "enum": [
+              "quadIn",
+              "expoIn",
+              "linear"
+            ],
+            "type": "string"
+          },
+          "exitFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "exitTravel": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "fadeFrames": {
+            "maximum": 12,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "focusBlur": {
+            "maximum": 16,
+            "minimum": 0,
+            "type": "number"
+          },
+          "frames": {
+            "items": {
+              "maximum": 9007199254740991,
+              "minimum": -9007199254740991,
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "grain": {
+            "maximum": 0.2,
+            "minimum": 0,
+            "type": "number"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "ink": {
+            "type": "string"
+          },
+          "layout": {
+            "enum": [
+              "flow",
+              "fixed"
+            ],
+            "type": "string"
+          },
+          "leading": {
+            "maximum": 2,
+            "minimum": 0.9,
+            "type": "number"
+          },
+          "push": {
+            "maximum": 0.2,
+            "minimum": 0,
+            "type": "number"
+          },
+          "riseFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "riseFrom": {
+            "maximum": 0.5,
+            "minimum": 0,
+            "type": "number"
+          },
+          "size": {
+            "maximum": 0.4,
+            "minimum": 0.02,
+            "type": "number"
+          },
+          "step": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          },
+          "tint": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "tintFrames": {
+            "maximum": 30,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "weight": {
+            "maximum": 900,
+            "minimum": 300,
+            "type": "integer"
+          },
+          "width": {
+            "maximum": 1,
+            "minimum": 0.3,
+            "type": "number"
+          }
+        },
+        "required": [
+          "text",
+          "ink",
+          "accent",
+          "chipColours",
+          "ground",
+          "width",
+          "at",
+          "step",
+          "exitAt",
+          "grain"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "type-waveform-words",
+      "props": [
+        "accent",
+        "ground",
+        "ink",
+        "label",
+        "levels",
+        "sampleEvery",
+        "words"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "ink": {
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 40,
+            "minLength": 1,
+            "type": "string"
+          },
+          "levels": {
+            "items": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "maxItems": 320,
+            "minItems": 8,
+            "type": "array"
+          },
+          "sampleEvery": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          },
+          "words": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "at": {
+                  "maximum": 9007199254740991,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "text": {
+                  "maxLength": 18,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "at"
+              ],
+              "type": "object"
+            },
+            "maxItems": 8,
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "words",
+          "levels",
+          "sampleEvery",
+          "ground",
+          "accent",
+          "ink"
         ],
         "type": "object"
       }
@@ -20373,6 +21187,70 @@
           "wordFace",
           "at",
           "hold"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "ui-accept-revision",
+      "props": [
+        "acceptAt",
+        "after",
+        "before",
+        "field",
+        "ground",
+        "title",
+        "updateFrames"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "acceptAt": {
+            "maximum": 9007199254740991,
+            "minimum": 4,
+            "type": "integer"
+          },
+          "after": {
+            "maximum": 1.2,
+            "minimum": 0.5,
+            "type": "number"
+          },
+          "before": {
+            "maximum": 1.2,
+            "minimum": 0.5,
+            "type": "number"
+          },
+          "field": {
+            "maxLength": 22,
+            "minLength": 1,
+            "type": "string"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 25,
+            "minLength": 1,
+            "type": "string"
+          },
+          "updateFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 6,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "title",
+          "field",
+          "before",
+          "after",
+          "acceptAt",
+          "updateFrames"
         ],
         "type": "object"
       }
@@ -22309,6 +23187,204 @@
       }
     },
     {
+      "id": "ui-device-handoff",
+      "props": [
+        "at",
+        "ground",
+        "moveFrames",
+        "paper",
+        "src",
+        "title"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 8,
+            "type": "integer"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "src": {
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 25,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "at",
+          "moveFrames",
+          "paper"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "ui-evidence-scroll",
+      "props": [
+        "at",
+        "ground",
+        "moveFrames",
+        "note",
+        "rows",
+        "target"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "note": {
+            "maxLength": 48,
+            "minLength": 1,
+            "type": "string"
+          },
+          "rows": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "maxLength": 40,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "value": {
+                  "maxLength": 24,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "value"
+              ],
+              "type": "object"
+            },
+            "maxItems": 12,
+            "minItems": 4,
+            "type": "array"
+          },
+          "target": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "rows",
+          "target",
+          "note",
+          "at",
+          "moveFrames"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "ui-inspector-geometry",
+      "props": [
+        "accent",
+        "at",
+        "control",
+        "from",
+        "ground",
+        "moveFrames",
+        "title",
+        "to"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "control": {
+            "maxLength": 22,
+            "minLength": 1,
+            "type": "string"
+          },
+          "from": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 4,
+            "type": "integer"
+          },
+          "title": {
+            "maxLength": 25,
+            "minLength": 1,
+            "type": "string"
+          },
+          "to": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "title",
+          "control",
+          "from",
+          "to",
+          "at",
+          "moveFrames",
+          "accent"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "ui-phone-hero",
       "props": [
         "accent",
@@ -22914,6 +23990,156 @@
       }
     },
     {
+      "id": "ui-state-morph",
+      "props": [
+        "accent",
+        "at",
+        "detail",
+        "ground",
+        "moveFrames",
+        "pending",
+        "readyAt",
+        "result",
+        "title"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "accent": {
+            "type": "string"
+          },
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 6,
+            "type": "integer"
+          },
+          "pending": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "readyAt": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          },
+          "result": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "pending",
+          "result",
+          "at",
+          "readyAt",
+          "moveFrames",
+          "accent",
+          "ground"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "ui-swipe-deck",
+      "props": [
+        "at",
+        "cards",
+        "direction",
+        "ground",
+        "moveFrames",
+        "step"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "cards": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "ink": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "paper": {
+                  "type": "string"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "title": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "paper",
+                "ink"
+              ],
+              "type": "object"
+            },
+            "maxItems": 10,
+            "minItems": 2,
+            "type": "array"
+          },
+          "direction": {
+            "enum": [
+              "left",
+              "right"
+            ],
+            "type": "string"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "moveFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 8,
+            "type": "integer"
+          },
+          "step": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "cards",
+          "at",
+          "step",
+          "moveFrames",
+          "direction",
+          "ground"
+        ],
+        "type": "object"
+      }
+    },
+    {
       "id": "ui-toast-stack",
       "props": [
         "accent",
@@ -23115,6 +24341,90 @@
           "size",
           "tone",
           "backdrop"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "id": "ui-variation-select",
+      "props": [
+        "at",
+        "expandFrames",
+        "ground",
+        "options",
+        "selectAt",
+        "selected"
+      ],
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "expandFrames": {
+            "maximum": 9007199254740991,
+            "minimum": 8,
+            "type": "integer"
+          },
+          "ground": {
+            "enum": [
+              "studio",
+              "transparent"
+            ],
+            "type": "string"
+          },
+          "options": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "maxLength": 18,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "paper": {
+                  "type": "string"
+                },
+                "src": {
+                  "type": "string"
+                },
+                "title": {
+                  "maxLength": 25,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "label",
+                "paper"
+              ],
+              "type": "object"
+            },
+            "maxItems": 3,
+            "minItems": 2,
+            "type": "array"
+          },
+          "selectAt": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "selected": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "options",
+          "selected",
+          "at",
+          "selectAt",
+          "expandFrames"
         ],
         "type": "object"
       }

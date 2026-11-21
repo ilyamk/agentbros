@@ -52,7 +52,30 @@ import {
 import { WHIP_PAN_FRAMES, WHIP_PAN_PEAK, WhipPanPreview, whipPanSchema } from "./WhipPan";
 import { ZOOM_THROUGH_FRAMES, ZOOM_THROUGH_PEAK, ZoomThroughPreview, zoomThroughSchema } from "./ZoomThrough";
 
+import { PageTurnPreview, pageTurnCues, pageTurnDefaults, pageTurnSchema } from "./PageTurn";
+
 export const items: LibraryItem[] = [
+  defineItem({
+    id: "page-turn",
+    category: "transitions",
+    title: "Paper turns into the next shot",
+    description:
+      "A diagonal paper fold lifts from the right edge and passes through the frame, progressively exposing the next plate. Use when a real page, catalogue or paper collage motivates the cut.",
+    tags: ["paper", "editorial", "fold", "page", "reveal", "collage"],
+    component: PageTurnPreview,
+    schema: pageTurnSchema,
+    defaultProps: pageTurnDefaults,
+    durationInFrames: 96,
+    formats: ["vertical", "landscape", "square"],
+    inspiredBy: [
+      "DesignBookmark Motion: Page flip (method only)",
+      "Kokonut UI: Page Flip, paper shading and continuity (method only)",
+    ],
+    importPath: "src/motion/library/transitions/PageTurn",
+    usage: "<PageTurn {...pageTurnDefaults} from={<FirstPage />} to={<SecondPage />} />",
+    cues: pageTurnCues,
+    sparing: "Use when turning a physical or graphic page is part of the idea.",
+  }),
   defineItem({
     id: "ground-swap-cut",
     category: "transitions",

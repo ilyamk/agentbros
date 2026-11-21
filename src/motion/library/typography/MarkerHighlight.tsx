@@ -327,6 +327,16 @@ export const markerHighlightDefaults: MarkerHighlightProps = {
   dimRest: 0.35,
 };
 
+export const blurTextPreset = {
+  ...markerHighlightDefaults,
+  text: "Ready to cut.",
+  background: "#18261F",
+  color: "#F2F4DE",
+  dimRest: 0,
+  at: 5,
+  step: 4,
+} satisfies MarkerHighlightProps;
+
 /** ugc-app's travelling pill: a yellow pill opens empty, its words type in, then it jumps to the figure on one frame. */
 export const markerHighlightPillPreset: MarkerHighlightProps = {
   ...markerHighlightDefaults,

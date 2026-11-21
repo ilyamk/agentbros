@@ -56,3 +56,9 @@ Node-side tooling (`scripts/library-*.ts`, the test) loads the registry through 
 Icon block (2026-11-15): `icon-visual` uses returned local usage props and an explicit silent reveal cue. [Guide](../../../docs/icon-resources.md).
 
 `three/RenderPlate.tsx` (2026-11-15): generic `render-plate` reuses `PlateLayer`, maps explicit source FPS to timeline frames and holds the final source frame. Its offline vector preview is not evidence of a Vork render.
+
+Motion continuity (2026-11-19): `ui-state-morph` holds one action container through processing and result. `ui-swipe-deck` overlaps outgoing and incoming cards. `glass-lens` adds travelling local magnification, `page-turn` takes two supplied plates and a seam, and `caption-word-box` can use `active.boxMotion: "elastic"`.
+
+Text entrances (2026-11-19) use `type-text-generate` for fixed word slots with focus, `type-blur-text` for short reading-order rises and `kinetic-binary-text` for one decoded status. Keep one principal gesture per beat and hold the readable result.
+
+Production proof blocks (2026-11-19) link controls and accepted revisions to their visible result. Use the anchored evidence row, variation selection or device handoff when the edit follows the same subject. The landscape showcase assembles these with print registration, bars forming a number and waveform-timed text.

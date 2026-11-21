@@ -96,6 +96,8 @@ export const captionStyleSchema = z.object({
       /** An accent box sits behind the spoken word and slides from word to word. */
       box: z.boolean(),
       boxText: colourSchema,
+      /** Two edges move at different speeds on the same line and reopen at a line break. */
+      boxMotion: z.enum(["slide", "elastic"]).optional(),
       /** Opacity of words not yet spoken; 1 shows the whole page at once. Ignored with `reveal: "word"`. */
       upcomingOpacity: z.number().min(0).max(1),
       /**
@@ -345,6 +347,12 @@ export const CAPTION_PRESETS = {
 
 export type CaptionPresetId = keyof typeof CAPTION_PRESETS;
 export const CAPTION_PRESET_IDS = Object.keys(CAPTION_PRESETS) as CaptionPresetId[];
+export const elasticWordBoxPreset = {
+  ...CAPTION_PRESETS["word-box"],
+  active: { ...CAPTION_PRESETS["word-box"].active, boxMotion: "elastic" },
+  legibility: [],
+  positions: [],
+} satisfies Omit<CaptionStyleProps, "words">;
 
 /**
  * `clean-sentence` as a karaoke fill: the page sits in white, each word switches to the accent in one frame as it is
