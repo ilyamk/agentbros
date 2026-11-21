@@ -5,7 +5,7 @@ import { atomicJson, locked } from "../campaigns/production/files";
 import { CliErrorObject } from "../cli";
 import { readProjectPlaybook } from "../playbooks/project";
 import { TutorialKitSchema } from "./kit-schema";
-import { findExperiment, type ExperimentId } from "./registry";
+import { findExperiment, THREE_SHOT_EXPERIMENT, type ExperimentId } from "./registry";
 
 const SelectionSchema = z
   .object({
@@ -63,6 +63,9 @@ export function selectExperiment(
   if (!entry) experimentError(`Unknown experiment: ${id}`);
   const playbook = readProjectPlaybook(directory)?.id;
   const supported =
+    (id === THREE_SHOT_EXPERIMENT &&
+      entry.playbooks.some((allowed) => allowed === playbook) &&
+      existsSync(path.join(directory, "pipeline/brief.json"))) ||
     (id === "tutorial-series-kit@1" && playbook === "content-series") ||
     (id === "tutorial-camera@1" &&
       playbook === "product-tutorial" &&

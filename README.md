@@ -85,7 +85,7 @@ From a 15-second Reel to a launch film, a tutorial, a lesson or a whole campaign
 <table>
   <tr>
     <td align="center" width="20%"><h2>24</h2><sub>genres<br>(17 ready)</sub></td>
-    <td align="center" width="20%"><h2>136</h2><sub>motion-design<br>blocks (101 verified)</sub></td>
+    <td align="center" width="20%"><h2>142</h2><sub>motion-design<br>blocks (101 verified)</sub></td>
     <td align="center" width="20%"><h2>23</h2><sub>crew agents<br>on set</sub></td>
     <td align="center" width="20%"><h2>3</h2><sub>formats<br>9:16 · 1:1 · 16:9</sub></td>
     <td align="center" width="20%"><h2>0</h2><sub>API keys needed<br>to render</sub></td>
@@ -577,6 +577,8 @@ You approve at every gate that matters: the idea, the look, the music, the final
     </td>
   </tr>
 </table>
+
+See [six original 3D animation studies](docs/drei-techniques.md#six-original-demonstrations), including a battery latch timed to the frame, a technical teardown and a frosted product reveal. Each study includes its technique and render command.
 
 ### ✂️ Your own footage
 

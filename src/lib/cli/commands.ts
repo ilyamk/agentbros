@@ -2567,7 +2567,7 @@ export const COMMAND_REGISTRY: readonly CommandEntry[] = [
     "library",
     "none",
     REPO_CWD,
-    "Motion library catalogue: filter by category, query or format; --id for props and previews",
+    "Motion library catalogue; --for-shot for technique suggestions, --id for props and previews",
   ),
   c(
     "library:preview",

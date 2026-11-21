@@ -1,5 +1,7 @@
 import type React from "react";
 import type { z } from "zod";
+import type { TechniqueFunction } from "../../types/reference";
+import type { ExperimentId } from "../../lib/experiments/registry";
 
 export type LibraryFormat = "vertical" | "square" | "landscape";
 
@@ -78,6 +80,7 @@ export type LibraryItem<P extends Record<string, unknown> = Record<string, unkno
    * why and when it is still justified. Agents never pick these by default.
    */
   sparing?: string;
+  shotTechnique?: { id: string; functions: TechniqueFunction[]; experiment?: ExperimentId };
 };
 
 /** A complete look: palette, type pairing and motion personality. Scenes read it through props. */

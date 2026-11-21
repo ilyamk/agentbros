@@ -57,6 +57,10 @@ Choose `"experiment":"proof-scenes@1"` in a product or educational recipe reques
 
 The persisted recipe records the chosen proofs and sources for review. This produces a draft animatic through the normal materialisation path.
 
+### 3D shot techniques
+
+Enable `three-shot-techniques@1` for product-promo, explainer, motion-design or animated-infographic before the look step. Freeze `brief`, `concept`, `script` and `sources` for comparisons. [Search and render the examples](drei-techniques.md).
+
 ## Compare two projects
 
 Use the same clean commit, model, limits and evidence for both projects. Create and bind the projects, enable one experiment on the candidate, then freeze each side before running the affected step. For a proof recipe, freeze after materialisation and before rendering. Keep the JSON and frozen inputs in the ignored project footprint.

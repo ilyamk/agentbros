@@ -51,7 +51,7 @@ Bespoke film:
 - [motion library](motion-library.md): library blocks and catalogue
 - [prepared visualisations](visualisations.md): pinned diagrams, mounting and validation
 - [chart evidence](chart-evidence.md): checking a chart's numbers and sources
-- [photoreal 3D](photoreal-3d.md): Blender plates; [Vork](vork.md): experimental GPU scenes; visual qualification deferred
+- [Photoreal 3D](photoreal-3d.md), [Drei shots](drei-techniques.md), [Vork](vork.md) (experimental GPU)
 - [Blender arsenal](blender-arsenal/README.md): built-in recipes and proof workflow
 - [Blender MCP evaluation](blender-mcp-evaluation.md): third-party Blender MCP servers reviewed, and why `blender:live` is our own
 

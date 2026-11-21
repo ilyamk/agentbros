@@ -6,7 +6,11 @@ import { TechniqueCardSchema, type TechniqueCard } from "../src/types/creative";
 
 const directory = "design-reference/techniques";
 const compositions = new Set(
-  [...readFileSync("src/motion/lab/Root.tsx", "utf8").matchAll(/<Composition id="([^"]+)"/g)].map((match) => match[1]!),
+  ["Root.tsx", "DreiDemoCompositions.tsx"].flatMap((file) =>
+    [...readFileSync(path.join("src/motion/lab", file), "utf8").matchAll(/<Composition id="([^"]+)"/g)].map(
+      (match) => match[1]!,
+    ),
+  ),
 );
 
 /** Frontmatter is flat `key: value`. A value containing a colon is JSON-quoted and `sources` is a JSON array, both of which are valid YAML. */

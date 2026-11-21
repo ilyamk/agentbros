@@ -23,6 +23,7 @@ export type CatalogueItem = {
   usage?: string;
   exports: string[];
   inspiredBy?: string[];
+  shotTechnique?: LibraryItem["shotTechnique"];
   propsSchema: unknown;
   defaultProps: Record<string, unknown>;
   preview: { image: string; entry: string; compositions: string[] };
@@ -77,6 +78,7 @@ export function buildCatalogue(items: LibraryItem[], styles: LibraryStyle[]): Ca
       ...(item.usage ? { usage: item.usage } : {}),
       exports: exportsOf(sourceFile(item.importPath)),
       ...(item.inspiredBy ? { inspiredBy: item.inspiredBy } : {}),
+      ...(item.shotTechnique ? { shotTechnique: item.shotTechnique } : {}),
       propsSchema: z.toJSONSchema(item.schema, { unrepresentable: "any" }),
       defaultProps: item.defaultProps,
       preview: { image: previewImage(item.id), entry: previewEntry(item.category), compositions: compositionIds(item) },
