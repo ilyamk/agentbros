@@ -21,7 +21,7 @@ Describe the change a viewer should be able to point to after one viewing. For a
 
 When the treatment is still open, sketch two short versions of that moment with the same material, copy and time allowance. Change what the viewer follows. For a transition browser, one version might stay on the two filtered results so the viewer can identify them. Another might take one result full screen and let its transition make the next cut. The first answers a question about finding a tool. The second answers a question about what it does. Use the brief to decide which question matters. A prescribed shot or an exact replica already has its treatment.
 
-Play the passage once at normal speed at its intended viewing size, including phone size for a mobile delivery. Afterwards, describe what changed, when you understood it and where you waited or needed more reading time. Inspect the relevant frames to locate the cause. If the result still needs explaining, revisit the action before refining its easing. If playback was unavailable, record what the strip shows and leave the real-time impression open.
+Inspect a strip of consecutive frames across the passage. If you can play it, play it once at normal speed at its intended viewing size, including phone size for a mobile delivery. Then describe what changed, when you understood it and where you waited or needed more reading time. Inspect the relevant frames to locate the cause. If the result still needs explaining, revisit the action before refining its easing. If playback was unavailable, say so, record what the strip shows and leave the real-time impression open.
 
 ## Worked decisions
 
