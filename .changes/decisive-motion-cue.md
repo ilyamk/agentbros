@@ -2,7 +2,7 @@
 category: agent-skill
 bump: patch
 breaking: false
-pr: 0
+pr: 58
 authors: [ilyamk]
 harness: claude-code
 ---
