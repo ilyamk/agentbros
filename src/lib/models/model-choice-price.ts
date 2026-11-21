@@ -40,6 +40,14 @@ export function planningVideoDimensions(
       "3:4": [1080, 1440],
       "21:9": [2520, 1080],
     },
+    "4k": {
+      "16:9": [3840, 2160],
+      "9:16": [2160, 3840],
+      "1:1": [2160, 2160],
+      "4:3": [2880, 2160],
+      "3:4": [2160, 2880],
+      "21:9": [5040, 2160],
+    },
   };
   const size = resolution && aspect ? sizes[resolution]?.[aspect] : undefined;
   return size ? { width: size[0], height: size[1] } : undefined;
@@ -230,7 +238,7 @@ export function modelChoicePrice(
     if (definition?.kind === "video-tokens") {
       const dimensions = planningVideoDimensions(parameters.resolution, parameters.aspect);
       const rate = definition.resolutionRates
-        ? definition.resolutionRates[parameters.resolution as "480p" | "720p" | "1080p"]
+        ? definition.resolutionRates[parameters.resolution as "480p" | "720p" | "1080p" | "4k"]
         : parameters.resolution === "480p" || parameters.resolution === "720p"
           ? definition.usdPerThousand
           : undefined;
@@ -276,8 +284,8 @@ export function modelChoicePrice(
       ...(definition?.kind === "fixed" && definition.quantity === "output"
         ? { units: parameters.images ?? Number(input.num_images ?? input.num_outputs ?? input.batch_size ?? 1) }
         : {}),
-      ...(["480p", "720p", "1080p"].includes(parameters.resolution ?? "")
-        ? { resolution: parameters.resolution as "480p" | "720p" | "1080p" }
+      ...(["480p", "720p", "1080p", "4k"].includes(parameters.resolution ?? "")
+        ? { resolution: parameters.resolution as "480p" | "720p" | "1080p" | "4k" }
         : {}),
     });
     if (!result.bounded || result.highUsd === null)

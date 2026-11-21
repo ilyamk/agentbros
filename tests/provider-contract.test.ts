@@ -206,18 +206,18 @@ test("Seedance draft, US routing, reference editing and duration limits", () => 
     /duration/,
   );
   const draft = { id: "draft", createdAt: "2026-10-01T00:00:00.000Z", callerId: "caller" };
-  assert.throws(
-    () =>
-      buildFalOperation(
-        request(
-          "seedance-2.5",
-          "complete",
-          { draft_id: "draft" },
-          { variant: "draft", context: { draft, callerId: "caller", now: "2026-10-11T00:00:00.000Z" } },
-        ),
+  // Drafts live 14 days since the 2026-11-21 schemas: day 10 completes, day 15 is refused.
+  const completion = (now: string, resolution = "4k") =>
+    buildFalOperation(
+      request(
+        "seedance-2.5",
+        "complete",
+        { draft_id: "draft", resolution },
+        { variant: "draft", context: { draft, callerId: "caller", now } },
       ),
-    /seven days/,
-  );
+    );
+  assert.equal(completion("2026-10-11T00:00:00.000Z").input.resolution, "4k");
+  assert.throws(() => completion("2026-10-16T00:00:00.000Z"), /14 days/);
   assert.throws(
     () =>
       buildFalOperation(
@@ -236,6 +236,41 @@ test("Seedance draft, US routing, reference editing and duration limits", () => 
         request("seedance-2.5", "complete", { draft_id: "draft", resolution: "720p" }, { variant: "draft" }),
       ),
     /1080p/,
+  );
+});
+test("Seedance 2.5 accepts 4k but refuses MOV output, an implicit task and drafts on the US endpoints", () => {
+  const prompt = { prompt: "A lighthouse at dusk" };
+  assert.equal(
+    buildFalOperation(request("seedance-2.5", "text-to-video", { ...prompt, resolution: "4k" })).input.resolution,
+    "4k",
+  );
+  assert.equal(
+    buildFalOperation(request("seedance-2.5", "text-to-video", { ...prompt, output_format: "mp4" })).input
+      .output_format,
+    "mp4",
+  );
+  assert.throws(
+    () => buildFalOperation(request("seedance-2.5", "text-to-video", { ...prompt, output_format: "mov" })),
+    /output_format must be mp4/,
+  );
+  assert.throws(
+    () =>
+      buildFalOperation(
+        request("seedance-2.5", "reference-to-video", {
+          ...prompt,
+          task: "auto",
+          image_urls: ["https://example.com/reference.png"],
+        }),
+      ),
+    /task must be explicit/,
+  );
+  assert.equal(
+    buildFalOperation(request("seedance-2.5", "text-to-video", { ...prompt, draft: true })).input.resolution,
+    "480p",
+  );
+  assert.throws(
+    () => buildFalOperation(request("seedance-2.5", "text-to-video", { ...prompt, draft: true }, { region: "us" })),
+    /global endpoints only/,
   );
 });
 test("FLUX training and result schemas remain separate from image inference", () => {

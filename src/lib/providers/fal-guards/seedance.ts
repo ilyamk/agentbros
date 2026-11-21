@@ -20,6 +20,8 @@ export const SEEDANCE_25_REFERENCE_LIMITS = {
   videoAspect: [0.4, 2.5],
 } as const;
 const L = SEEDANCE_25_REFERENCE_LIMITS;
+/** Drafts can be completed for 14 days by their original caller (fal schemas of 2026-11-21). */
+export const SEEDANCE_25_DRAFT_TTL_MS = 14 * 24 * 60 * 60 * 1000;
 
 export const seedanceGuard: FalGuard = {
   id: "seedance-2.5",
@@ -30,12 +32,19 @@ export const seedanceGuard: FalGuard = {
       if (ctx.draft.id !== input.draft_id || ctx.draft.callerId !== ctx.callerId)
         fail("Draft completion requires its original caller and matching draft ID.");
       const age = Date.parse(ctx.now ?? new Date().toISOString()) - Date.parse(ctx.draft.createdAt);
-      if (age < 0 || age >= 7 * 24 * 60 * 60 * 1000)
-        throw new FalOperationError("DRAFT_EXPIRED", "Seedance draft completion must occur within seven days.");
+      if (age < 0 || age >= SEEDANCE_25_DRAFT_TTL_MS)
+        throw new FalOperationError("DRAFT_EXPIRED", "Seedance draft completion must occur within 14 days.");
     }
+    // Publication and inspection are proven for MP4 only; the 2026-11-21 schemas also offer MOV.
+    if (input.output_format !== undefined && input.output_format !== "mp4")
+      fail("Seedance output_format must be mp4; MOV output is not yet supported by publication.");
+    // "auto" lets the model pick reference, editing or extension, so the billed mode is unknown before submit.
+    if (input.task === "auto") fail("Seedance task must be explicit (reference, editing or extension), not auto.");
     if (input.draft === true) {
+      // US endpoints accept drafts since 2026-11-21, but only the global completion endpoint is routed here.
+      if (info.endpoint.includes("/us/")) fail("Seedance drafts are supported on the global endpoints only.");
       input.resolution = "480p";
-      warnings.push("Draft resolution normalized to 480p; completion requires its original caller within seven days.");
+      warnings.push("Draft resolution normalized to 480p; completion requires its original caller within 14 days.");
     }
     if (info.operation === "reference-to-video") {
       const images = arrayField(input, "image_urls"),
