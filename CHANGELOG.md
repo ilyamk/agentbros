@@ -44,9 +44,11 @@
 
 - Add versioned film style cards, stage guidance and paired render fixtures for Paper Signal and Physical Data. ([#67](https://github.com/ilyamk/agentbros/pull/67))
 
+- Library previews for the blocks added in #63, #66 and #67 and a refreshed overview sheet for every category they joined, so `library:list`, the console Library page and the docs show them; the README shows the Drei study again
+
 - meshy/v7.1/text-to-3d is verified again on fal's 2026-11-20 schema, and its guard refuses texture_image_url with texture_prompt, which that schema now forbids. Slot 3d.edit uses meshy/n1/retexture as its hero and meshy/v7/retexture as a budget candidate, since fal removed fal-ai/hunyuan-3d/v3.1/smart-topology
 
-- The release planner reads git output larger than 1 MiB: `docs/api/surface.json` outgrew execFileSync's default buffer, so `release:plan` failed with ENOBUFS and no release PR was opened
+- The release planner reads git output larger than 1 MiB: `docs/api/surface.json` outgrew execFileSync's default buffer, so `release:plan` failed with ENOBUFS and no release PR was opened ([#68](https://github.com/ilyamk/agentbros/pull/68))
 
 - Seedance 2.5 accepts fal's schemas of 2026-11-20: 4K output is priced from the reviewed page rate on the global text-to-video and image-to-video endpoints ($0.0094 per 1,000 tokens) and 1080p now has its published rate there; any resolution without a reviewed rate stays unknown instead of falling back to the 480p/720p base rate. Drafts can be completed within 14 days. MOV output, an automatic reference task and drafts on the US endpoints are refused until the pipeline supports them. ([#54](https://github.com/ilyamk/agentbros/pull/54))
 
