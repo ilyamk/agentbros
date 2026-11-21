@@ -1,6 +1,6 @@
 # Workers — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 Native helpers that a TypeScript caller in `src/lib/` spawns with a literal argument array. They are not public CLIs: never run one directly; use the `pnpm` alias that owns it. Blender shot scripts are in [scripts/blender](../blender/AGENTS.md).
 
