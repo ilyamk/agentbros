@@ -118,11 +118,11 @@ Assets:
 
 - [shared media](assets.md): manifests and `assets:sync`
 - [fonts and icons](local-fonts-icons.md): exact local fonts and icons
+- [colour grading](colour-grading.md): scopes, ΔE, grades, LUTs, windows
 
 Contribution and maintenance:
 
-- [dependency licences](dependency-licences.md): generated package notices, declared integration evidence, policy validation, exact-version source-only review, public notices and unresolved ELK review
-
+- [dependency licences](dependency-licences.md): package notices, integration evidence, policy, source-only review, ELK review
 - [contribution gates](contributing-gates.md): intake, categories, evidence and deterministic checks
 - [context budgets](context-budget.md): offline measurement and instruction hygiene
 - [metrics and API surface](metrics.md): generated inventories and exported contracts

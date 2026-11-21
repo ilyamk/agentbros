@@ -357,7 +357,17 @@
     "campaign:approve": "tsx scripts/campaign-approve.ts",
     "campaign:execute": "tsx scripts/campaign-execute.ts",
     "format": "prettier --write \"{src,scripts,tests,site,examples,apps}/**/*.{ts,tsx,mts,js,mjs,cjs}\" remotion.config.ts",
-    "format:check": "prettier --check \"{src,scripts,tests,site,examples,apps}/**/*.{ts,tsx,mts,js,mjs,cjs}\" remotion.config.ts"
+    "format:check": "prettier --check \"{src,scripts,tests,site,examples,apps}/**/*.{ts,tsx,mts,js,mjs,cjs}\" remotion.config.ts",
+    "colour:check": "tsx scripts/colour-check.ts",
+    "colour:compare": "tsx scripts/colour-compare.ts",
+    "colour:grade": "tsx scripts/colour-grade.ts",
+    "colour:looks": "tsx scripts/colour-looks.ts",
+    "colour:lut": "tsx scripts/colour-lut.ts",
+    "colour:match": "tsx scripts/colour-match.ts",
+    "colour:scopes": "tsx scripts/colour-scopes.ts",
+    "colour:shots": "tsx scripts/colour-shots.ts",
+    "colour:target": "tsx scripts/colour-target.ts",
+    "colour:track": "tsx scripts/colour-track.ts"
   },
   "packageManager": "pnpm@12.21.0",
   "engines": {

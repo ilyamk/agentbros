@@ -37,7 +37,7 @@ const profiles: Partial<
   "sfx-index": { modules: ["numpy", "scipy", "pyloudnorm"], files: ["sfx-index.py"] },
   clap: { modules: ["torch", "transformers", "numpy"], files: ["sfx-clap.py"] },
   matte: { modules: ["onnxruntime", "numpy", "PIL"], files: ["frame-matte-onnx.py"] },
-  vork: { modules: ["numpy", "cv2", "scipy"], files: ["vork-track.py"] },
+  vork: { modules: ["numpy", "cv2", "scipy"], files: ["vork-track.py", "colour.py"] },
   earshot: { modules: ["earshot", "torch", "transformers", "numpy"], files: ["earshot.py"] },
 };
 const optionalImports = [...new Set(Object.values(profiles).flatMap((profile) => profile.modules))];
@@ -51,6 +51,9 @@ const allowed = (required: string[] = []) => [
 ];
 const typeConfig = (required: string[] = []) =>
   `analysis.allowed-unresolved-imports=${JSON.stringify(allowed(required))}`;
+// scripts/workers is a search path only where a worker imports its siblings (colour.py and colour_*.py):
+// on every path it would let a worker named after the package it wraps (earshot.py) shadow that package.
+const WORKER_SIBLINGS = ["--extra-search-path", "scripts/workers"];
 
 const devEnvironment: NodeJS.ProcessEnv = {
   ...pythonEnvironment("stdlib"),
@@ -179,7 +182,14 @@ runScript(async () => {
       const results = await Promise.allSettled([
         execute("Ruff ALL", [...dev, "ruff", "check", ...sources]),
         execute("Ruff format", [...dev, "ruff", "format", "--check", ...sources]),
-        execute("Host and native boundary types", [...dev, "ty", "check", "--config", typeConfig()]),
+        execute("Host and native boundary types", [
+          ...dev,
+          "ty",
+          "check",
+          ...WORKER_SIBLINGS,
+          "--config",
+          typeConfig(),
+        ]),
         execute("Pure contracts and regressions", [...dev, "pytest", "-q", "-m", "not slow"]),
       ]);
       const failed = results.filter((result) => result.status === "rejected");
@@ -228,6 +238,7 @@ runScript(async () => {
             interpreter,
             "--config",
             typeConfig(profile.modules),
+            ...(profile.files.some((file) => file.startsWith("colour")) ? WORKER_SIBLINGS : []),
             ...profile.files.map((file) => `scripts/workers/${file}`),
           ]);
         }

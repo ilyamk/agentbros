@@ -64,9 +64,10 @@ Last updated: 2026-11-20
 | `multicam/` | Multicam sync (offsets, drift), angle proposals and their timeline track, reframe crop paths | [multicam and reframing](../../docs/multicam-reframe.md) |
 | `photo/` | Photo moves: crops, geometric zoom, minimum speed, blur fill (`crop.ts`, shared with `photo-move`); `photo:focus` (`focus.ts`) | [photo-slideshow](../../playbooks/photo-slideshow/AGENTS.md) |
 | `matte/` | Local cut-outs for `matte`: engine choice (`engine.ts`), Vision and ONNX runs, ffmpeg I/O, temporal EMA and flicker (`temporal.ts`) | [matte](../../docs/matte.md) |
+| `colour/` | Colour worker, grade bake, windows | [colour](../../docs/colour-grading.md) |
 | `speech/` | Transcripts, local ASR and portable voice synthesis with pinned readback | [speech](../../docs/speech.md) |
 | `local-engines/` | Local engine preparation for `media:prepare` (`prepare.ts`) and local speech text | [speech](../../docs/speech.md) |
-| `local-capabilities/suggestions.ts` | Optional task hints; consume resolved footage answer state and unsaved goals, tolerate non-object optional metadata, and skip unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
+| `local-capabilities/suggestions.ts` | Optional task hints from resolved footage state; skips unrelated stages | [workflow evaluation](../../docs/agent-workflow-e2e.md) |
 | `audio/` | Analysis, mixing, repair, captions, SFX and rhythm evidence | [audio QA](../../docs/local-audio-qa.md), [editorial audio](../../docs/editorial-audio.md) |
 | `audio-map/` | Music map, stems, edit plan, cue snap and leads (`analyse.ts`) for `audio:map`, `edit:plan`, `edit:snap` | [editorial audio](../../docs/editorial-audio.md) |
 | `audio-curves/` | Per-frame audio curves for `audio:curves` (`compute.ts`) | [editorial audio](../../docs/editorial-audio.md) |

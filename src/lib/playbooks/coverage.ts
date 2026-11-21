@@ -92,6 +92,17 @@ export const GENERAL_COMMANDS: Record<string, string> = {
   "camera:solve": "matchmove for a 3D insert into a moving plate, chosen per shot across playbooks; vork-3d-vfx vfx.md",
   "vork:eval": "optional local 3D/VFX engine chosen per shot across playbooks",
 
+  "colour:scopes": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:compare": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:match": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:grade": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:shots": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:track": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:check": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:looks": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:lut": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+  "colour:target": "colour grading of any film's footage or generated shots; docs/colour-grading.md",
+
   "viz:list": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
   "viz:prepare": "Prepared charts and diagrams across playbooks; docs/visualisations.md",
   "viz:inspect": "Prepared charts and diagrams across playbooks; docs/visualisations.md",

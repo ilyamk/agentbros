@@ -29,6 +29,7 @@ const skills = [
   "reference-replica",
   "edit-research",
   "reference-preparation",
+  "colour-grading",
 ];
 function markdownFiles(directory: string): string[] {
   return readdirSync(directory, { withFileTypes: true }).flatMap((e) =>
