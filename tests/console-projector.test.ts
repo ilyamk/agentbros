@@ -264,8 +264,14 @@ describe("film views", () => {
   test("durations and agent runs come from the journal; hooks join a dispatch and link child to parent", () => {
     const f = film();
     f.place("brief.json");
-    // After the seal's wall-clock receipt, so the approval at minute 10 is the newest close.
-    const t0 = Math.ceil(Date.now() / 60_000) * 60_000 + 60_000;
+    // After the seal's wall-clock receipt, so the approval at minute 10 is the newest close. agents.today counts the
+    // local calendar day of `now`, so an 11-minute window that would cross midnight starts just after it instead.
+    let t0 = Math.ceil(Date.now() / 60_000) * 60_000 + 60_000;
+    if (new Date(t0).toDateString() !== new Date(t0 + 11 * 60_000).toDateString()) {
+      const nextDay = new Date(t0 + 11 * 60_000);
+      nextDay.setHours(0, 1, 0, 0);
+      t0 = nextDay.getTime();
+    }
     const at = (minutes: number) => new Date(t0 + minutes * 60_000).toISOString();
     writeFileSync(
       path.join(f.pipeline, "events.jsonl"),
