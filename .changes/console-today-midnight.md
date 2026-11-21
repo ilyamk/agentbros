@@ -2,7 +2,7 @@
 category: test-ci
 bump: patch
 breaking: false
-pr: 0
+pr: 52
 authors: [ilyamk]
 harness: claude-code
 ---
