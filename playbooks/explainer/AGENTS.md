@@ -1,6 +1,6 @@
 # Explainer playbook
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 Explain an idea, process or data set: usually voiced, 30 s to several minutes. How to use a specific product, or how the user's own app works, is [product-tutorial](../product-tutorial/AGENTS.md); an animated film that teaches nothing is [motion-design](../motion-design/AGENTS.md); a lesson the user recorded is [footage-edit](../footage-edit/AGENTS.md); a generated presenter explaining to camera is [avatar-presenter](../avatar-presenter/AGENTS.md).
 

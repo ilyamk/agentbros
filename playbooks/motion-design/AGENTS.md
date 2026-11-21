@@ -1,6 +1,6 @@
 # Motion design film playbook
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 Idents, lyrics, abstract/collage. Ads: [product-promo](../product-promo/AGENTS.md); teach: [explainer](../explainer/AGENTS.md); AI: [ai-film](../ai-film/AGENTS.md).
 

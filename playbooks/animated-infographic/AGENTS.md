@@ -1,6 +1,6 @@
 # Animated infographic loop playbook
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 An existing still (infographic, diagram, poster) becomes a short seamless loop for a README, docs page or post. Draft: the method comes from one project (the CONTRIBUTING header) and has not yet delivered.
 
