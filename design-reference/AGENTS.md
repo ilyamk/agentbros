@@ -1,6 +1,6 @@
 # Design Reference — Agent Rules
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 Inputs for visual decisions. Read these when analysing references or setting a project's design, before writing scene code.
 
