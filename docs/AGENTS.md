@@ -118,7 +118,7 @@ Assets:
 
 - [shared media](assets.md): manifests and `assets:sync`
 - [fonts and icons](local-fonts-icons.md): exact local fonts and icons
-- [colour grading](colour-grading.md): scopes, ΔE, match, grades, LUTs, windows
+- [colour grading](colour-grading.md): scopes, ΔE, grades, LUTs, windows
 
 Contribution and maintenance:
 
