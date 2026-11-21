@@ -190,9 +190,10 @@ test("worst rounds multiply critic, fixer and fan-out loops by stop.maxRounds", 
  * 2026-11-21: product-promo raised for the boot row only (107,728): the colour-grading skill and colourist agent
  * descriptions add 32 tokens; needs the context-growth-approved label (RFC 0001 §4.2).
  * 2026-11-21: product-promo raised for the boot row (107,763): the Drei shot techniques in the engine-selection skill; context-growth-approved.
+ * 2026-11-21: product-promo raised again (107,986): five playbooks recommend the new DesignBookmark-inspired blocks; context-growth-approved.
  */
 const RUN_CEILINGS: Record<string, number> = {
-  "product-promo": 107_800,
+  "product-promo": 108_000,
   explainer: 118_500,
   "shorts-from-long": 81_500,
 };
