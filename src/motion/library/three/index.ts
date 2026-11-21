@@ -26,7 +26,158 @@ import { ShadedOrb, shadedOrbCues, shadedOrbSchema, type ShadedOrbProps } from "
 import { ParticleAssemble, particleAssembleSchema, type ParticleAssembleProps } from "./ParticleAssemble";
 import { StudioProductStage, studioProductStageSchema } from "./StudioProductStage";
 
+import { THREE_SHOT_EXPERIMENT } from "../../../lib/experiments/registry";
+import { ModelShot, modelShotSchema } from "./ModelShot";
+import { InstancedAssembly, assemblySchema } from "./InstancedAssembly";
+import { assemblyCues } from "./shot-plan";
+import {
+  airPath,
+  cellAssembly,
+  connectorReveal,
+  opticalWindow,
+  projectorStage,
+  releaseBattery,
+} from "./shot-techniques";
+
+const reference = "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples";
+
+const shotItems = [
+  defineItem({
+    id: "product-model-stage",
+    category: "three",
+    title: "Product model stage",
+    description:
+      "Frame a local GLB on a lit studio stage with a measured turntable, useful when the viewer needs to read the shape from more than one angle.",
+    tags: ["product", "GLB", "framing", "orbit", "hero", "studio"],
+    formats: ["landscape", "vertical"],
+    component: ModelShot,
+    schema: modelShotSchema,
+    defaultProps: projectorStage,
+    durationInFrames: projectorStage.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/ModelShot",
+    inspiredBy: [reference + "/bounds-and-makedefault (MIT, technique study)"],
+    shotTechnique: {
+      id: "product-model-stage",
+      functions: ["reveal", "proof", "hook"],
+      experiment: THREE_SHOT_EXPERIMENT,
+    },
+    cues: () => [],
+  }),
+  defineItem({
+    id: "camera-path-reveal",
+    category: "three",
+    title: "Camera path reveal",
+    description:
+      "Follow a timed 3D camera path from the full object to a part. Let the camera settle before a label or a demonstration starts.",
+    tags: ["product", "camera", "3D", "dolly", "path", "connector", "reveal"],
+    formats: ["landscape", "vertical"],
+    component: ModelShot,
+    schema: modelShotSchema,
+    defaultProps: connectorReveal,
+    durationInFrames: connectorReveal.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/ModelShot",
+    inspiredBy: [reference + "/motionpathcontrols (MIT, technique study)"],
+    shotTechnique: {
+      id: "camera-path-reveal",
+      functions: ["reveal", "emphasis", "transition"],
+      experiment: THREE_SHOT_EXPERIMENT,
+    },
+    cues: ({ camera }) => (camera ? [{ frame: camera.endFrame, kind: "stop", label: "camera settles" }] : []),
+  }),
+  defineItem({
+    id: "gltf-clip-cue",
+    category: "three",
+    title: "GLB clip on a cue",
+    description:
+      "Play an existing named GLB animation on exact shot frames. Use to show a mechanism opening, locking or assembling in time with an explanation.",
+    tags: ["mechanism", "GLB", "rig", "animation", "clip", "demonstration"],
+    formats: ["landscape", "vertical"],
+    component: ModelShot,
+    schema: modelShotSchema,
+    defaultProps: releaseBattery,
+    durationInFrames: releaseBattery.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/ModelShot",
+    inspiredBy: [reference + "/gltf-animations-re-used (MIT, technique study)"],
+    shotTechnique: { id: "gltf-clip-cue", functions: ["proof", "reveal"], experiment: THREE_SHOT_EXPERIMENT },
+    cues: ({ clip }) =>
+      clip
+        ? [
+            { frame: clip.startFrame, kind: "click", sfx: "click" },
+            { frame: clip.endFrame, kind: "stop" },
+          ]
+        : [],
+  }),
+  defineItem({
+    id: "technical-part-outline",
+    category: "three",
+    title: "Technical part outline",
+    description:
+      "Show the edges of one visible model part at a time to direct the eye through a technical explanation or teardown.",
+    tags: ["part", "GLB", "outline", "edges", "geometry", "teardown", "technical"],
+    formats: ["landscape", "vertical"],
+    component: ModelShot,
+    schema: modelShotSchema,
+    defaultProps: airPath,
+    durationInFrames: airPath.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/ModelShot",
+    inspiredBy: [reference + "/edgesgeometry (MIT, technique study)"],
+    shotTechnique: {
+      id: "technical-part-outline",
+      functions: ["emphasis", "proof"],
+      experiment: THREE_SHOT_EXPERIMENT,
+    },
+    cues: ({ highlights }) =>
+      highlights?.map(({ node, startFrame }) => ({ frame: startFrame, kind: "reveal", label: node })) ?? [],
+  }),
+  defineItem({
+    id: "frosted-product-window",
+    category: "three",
+    title: "Frosted product window",
+    description:
+      "Reveal a product behind a moving translucent slab. Use the frosted silhouette as a clue and keep labels outside of the glass.",
+    tags: ["glass", "frosted", "transmission", "material", "product", "reveal"],
+    formats: ["landscape", "vertical"],
+    component: ModelShot,
+    schema: modelShotSchema,
+    defaultProps: opticalWindow,
+    durationInFrames: opticalWindow.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/ModelShot",
+    inspiredBy: [reference + "/frosted-glass (MIT, technique study)"],
+    shotTechnique: { id: "frosted-product-window", functions: ["reveal", "hook"], experiment: THREE_SHOT_EXPERIMENT },
+    cues: ({ glass }) => (glass ? [{ frame: glass.endFrame, kind: "reveal", sfx: "glass" }] : []),
+  }),
+  defineItem({
+    id: "instanced-assembly",
+    category: "three",
+    title: "Instanced assembly",
+    description:
+      "Assemble exact counts into spatial groups. Use when layout shows what goes together or how a modular system is built.",
+    tags: ["assembly", "data", "modules", "instancing", "groups", "units", "count", "reveal"],
+    formats: ["landscape", "vertical"],
+    component: InstancedAssembly,
+    schema: assemblySchema,
+    defaultProps: cellAssembly,
+    durationInFrames: cellAssembly.durationInFrames,
+    durationForProps: (props) => props.durationInFrames,
+    importPath: "src/motion/library/three/InstancedAssembly",
+    inspiredBy: [reference + "/hi-key-bubbles (MIT, technique study)"],
+    shotTechnique: {
+      id: "instanced-assembly",
+      functions: ["proof", "reveal", "emphasis"],
+      experiment: THREE_SHOT_EXPERIMENT,
+    },
+    cues: (props) =>
+      assemblyCues(props).map((frame, index) => ({ frame, kind: "land", sfx: "click", label: `group ${index + 1}` })),
+  }),
+];
+
 export const items: LibraryItem[] = [
+  ...shotItems,
   defineItem<BlenderPlateProps>({
     id: "blender-plate",
     category: "three",

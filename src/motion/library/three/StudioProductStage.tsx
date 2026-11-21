@@ -18,46 +18,59 @@ import {
 import { plateSchema } from "./plate-plan";
 import { PlateLayer } from "./PlateLayer";
 import { isoGrid, truckOffset } from "./three-plan";
+import { ModelShot } from "./ModelShot";
+import { shotModelSchema } from "./shot-plan";
 
-export const studioProductStageSchema = z.object({
-  /** Screen image: a `staticFile` name (e.g. "images/app.png") or a URL. Empty draws a procedural screen. */
-  screenImage: z.string(),
-  /** phone and laptop are real models (public/shared/3d); card is a primitive slab. */
-  shape: z.enum(["phone", "laptop", "card"]),
-  /** Studio HDRI for reflections (public/shared/hdri). Empty uses the built-in softbox environment. */
-  hdri: z.enum(["", "studio", "softbox", "warm", "loft"]).optional(),
-  headline: z.string(),
-  subline: z.string(),
-  bodyColour: z.string(),
-  accent: z.string(),
-  background: z.string(),
-  /** Turntable sweep in degrees across the shot. */
-  orbitDegrees: z.number().min(0).max(360),
-  /** Length of the move in frames; defaults to the composition length. Set it when used inside a longer film. */
-  durationInFrames: z.number().int().positive().optional(),
-  /** Colour of the studio edge the background falls off to. */
-  ground: z.string().optional(),
-  /** Share of the frame the product fills at the end of the dolly (default 0.74; ~0.9 for a hero close-up). */
-  fill: z.number().min(0.3).max(1.2).optional(),
-  /** Accent-coloured light pool on the floor and accent back light (0..1). Off by default: it tints light grounds and the screen. */
-  glow: z.number().min(0).max(1).optional(),
-  /** `single` (default) is the hero turntable; `array` lays copies flat in an isometric grid and trucks across them (cashfree). */
-  layout: z.enum(["single", "array"]).optional(),
-  /**
-   * Array layout only: the Blender render of the array (scripts/blender/device_array.py with the same columns, rows,
-   * screens and truck), played instead of the three.js grid: real glass, metal and contact shadows on every copy.
-   */
-  plate: plateSchema.optional(),
-  /** Array: grid size, one screen per device (cycled; empty strings draw the procedural screen), spacing in device widths. */
-  array: z
-    .object({
-      columns: z.number().int().min(1).max(8),
-      rows: z.number().int().min(1).max(8),
-      screens: z.array(z.string()),
-      spacing: z.number().min(1).max(4).optional(),
-    })
-    .optional(),
-});
+export const studioProductStageSchema = z
+  .object({
+    /** Screen image: a `staticFile` name (e.g. "images/app.png") or a URL. Empty draws a procedural screen. */
+    screenImage: z.string(),
+    /** phone and laptop are real models (public/shared/3d); card is a primitive slab. */
+    shape: z.enum(["phone", "laptop", "card"]),
+    /** Optional project GLB for a single studio turntable. */
+    model: shotModelSchema.optional(),
+    /** Studio HDRI for reflections (public/shared/hdri). Empty uses the built-in softbox environment. */
+    hdri: z.enum(["", "studio", "softbox", "warm", "loft"]).optional(),
+    headline: z.string(),
+    subline: z.string(),
+    bodyColour: z.string(),
+    accent: z.string(),
+    background: z.string(),
+    /** Turntable sweep in degrees across the shot. */
+    orbitDegrees: z.number().min(0).max(360),
+    /** Length of the move in frames; defaults to the composition length. Set it when used inside a longer film. */
+    durationInFrames: z.number().int().positive().optional(),
+    /** Colour of the studio edge the background falls off to. */
+    ground: z.string().optional(),
+    /** Share of the frame the product fills at the end of the dolly (default 0.74; ~0.9 for a hero close-up). */
+    fill: z.number().min(0.3).max(1.2).optional(),
+    /** Accent-coloured light pool on the floor and accent back light (0..1). Off by default: it tints light grounds and the screen. */
+    glow: z.number().min(0).max(1).optional(),
+    /** `single` (default) is the hero turntable; `array` lays copies flat in an isometric grid and trucks across them (cashfree). */
+    layout: z.enum(["single", "array"]).optional(),
+    /**
+     * Array layout only: the Blender render of the array (scripts/blender/device_array.py with the same columns, rows,
+     * screens and truck), played instead of the three.js grid: real glass, metal and contact shadows on every copy.
+     */
+    plate: plateSchema.optional(),
+    /** Array: grid size, one screen per device (cycled; empty strings draw the procedural screen), spacing in device widths. */
+    array: z
+      .object({
+        columns: z.number().int().min(1).max(8),
+        rows: z.number().int().min(1).max(8),
+        screens: z.array(z.string()),
+        spacing: z.number().min(1).max(4).optional(),
+      })
+      .optional(),
+  })
+  .refine(({ model, layout }) => !model || layout !== "array", {
+    path: ["model"],
+    message: "A project GLB uses the single studio layout",
+  })
+  .refine(({ model, hdri, ground, glow }) => !model || (!hdri && ground === undefined && !glow), {
+    path: ["model"],
+    message: "A project GLB is lit by the model shot's own studio: hdri, ground and glow do not apply",
+  });
 
 export type StudioProductStageProps = z.infer<typeof studioProductStageSchema>;
 
@@ -322,8 +335,21 @@ const DeviceArray: React.FC<StudioProductStageProps> = (props) => {
   );
 };
 
-export const StudioProductStage: React.FC<StudioProductStageProps> = (props) =>
-  props.layout === "array" ? (
+export const StudioProductStage: React.FC<StudioProductStageProps> = (props) => {
+  const { durationInFrames } = useVideoConfig();
+  if (props.model) {
+    return (
+      <ModelShot
+        model={props.model}
+        background={props.background}
+        accent={props.accent}
+        durationInFrames={props.durationInFrames ?? durationInFrames}
+        fill={Math.min(0.9, props.fill ?? 0.74)}
+        orbitDegrees={Math.min(180, props.orbitDegrees)}
+      />
+    );
+  }
+  return props.layout === "array" ? (
     props.plate ? (
       <PlateLayer plate={props.plate} background={props.ground ?? props.background} />
     ) : (
@@ -332,6 +358,7 @@ export const StudioProductStage: React.FC<StudioProductStageProps> = (props) =>
   ) : (
     <SingleStage {...props} />
   );
+};
 
 const SingleStage: React.FC<StudioProductStageProps> = (props) => {
   const frame = useCurrentFrame();

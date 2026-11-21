@@ -160,7 +160,7 @@ Line: alias or script - purpose; spend unless none; exposed MCP tool (`MCP` mean
 ### Motion library
 
 - `library:usage` - Blocks each film used (repetition)
-- `library:list` - Motion library catalogue: filter by category, query or format; --id for props and previews
+- `library:list` - Motion library catalogue; --for-shot for technique suggestions, --id for props and previews
 - `library:preview` - Render contact sheets of library items into docs/library/previews/
 - `library:catalogue` - Regenerate docs/library/catalogue.json from the registry; run after changing a block
 

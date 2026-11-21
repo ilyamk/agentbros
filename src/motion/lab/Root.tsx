@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition } from "remotion";
+import { DreiDemoCompositions } from "./DreiDemoCompositions";
 import { AlphabetStagger } from "./AlphabetStagger";
 import { BeatLine } from "./BeatLine";
 import { CurveBook } from "./CurveBook";
@@ -41,6 +42,7 @@ const L = { width: 1920, height: 1080, fps: 30 };
 
 export const LabRoot: React.FC = () => (
   <>
+    <DreiDemoCompositions />
     <Composition id="LabReel" component={LabReel} durationInFrames={REEL_LAYOUT.totalFrames} {...L} />
     <Composition id="PosterStackV" component={PosterStack} durationInFrames={110} {...V} />
     <Composition id="PosterStackL" component={PosterStack} durationInFrames={110} {...L} />

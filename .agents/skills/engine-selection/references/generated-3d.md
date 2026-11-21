@@ -2,7 +2,7 @@
 
 Use a generated mesh for an invented prop or an approximate shape from a supplied image when no approved model or library block fits. It can save manual modelling, but still needs geometry, UV, material, scale and licence inspection. Use existing phone/laptop GLBs for devices, Blender for exact modelling, simulation or photoreal lighting, and real capture for visual evidence. A generated mesh supplies an asset; three.js or Blender still renders the shot.
 
-The existing `studio-product-stage` block loads shared phone/laptop GLBs with `useGLTF(staticFile(...))` inside `<ThreeCanvas>`. **Gap:** its `shape` prop is limited to `phone`, `laptop` or `card`, with no arbitrary project GLB path. No new library block is added. A bespoke scene can follow the same loader/canvas path:
+The existing `studio-product-stage` block loads shared phone/laptop GLBs with `useGLTF(staticFile(...))` inside `<ThreeCanvas>`. For a self-contained project GLB, pass `model.src` on the single studio stage or use the controls in [3D shot techniques](../../../../docs/drei-techniques.md). A bespoke scene can follow the same loader/canvas path:
 
 ```tsx
 import { useMemo } from 'react';

@@ -58,6 +58,8 @@ Portable local draft voices use pinned CPU models and bind a take and its readba
 
 Dependency direction is one way: `scripts/` → `src/lib/` → `src/types/`. Rendering code (`src/components`, `src/templates`, `src/motion`, `src/projects`) may use pure helpers from `src/lib` such as tokens, timeline and project props, but `src/lib` never imports a scene. Pure maths in `src/motion` (`timing`, `text-split`, `series`, `camera-math`) and the block plans stay browser-free so tests can import them.
 
+Shot-level 3D techniques are discoverable through the motion library catalogue. An opted-in film receives a short search instruction in the affected owner briefs. Selection uses the existing shot plan and the renderer samples the scene from the frame. [3D techniques](drei-techniques.md)
+
 ## Directory map
 
 | Path                                 | Responsibility                                                                                                                                                                                                                                                                              | Rules                                                        |

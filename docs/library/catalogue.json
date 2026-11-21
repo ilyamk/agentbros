@@ -1,6 +1,6 @@
 {
  "version": 1,
- "sourceHash": "f1656c5d131cb15eb7f1198aa5adb0e0ffd5154e6a836e5a6c2c69501bcb606c",
+ "sourceHash": "c31d8cdad11946bbd18ef0dcbb2fc3abe9373a2e97e0f3f7f85f21ebdacd6941",
  "items": [
   {
    "id": "type-hero-word",
@@ -15225,6 +15225,1706 @@
    ]
   },
   {
+   "id": "product-model-stage",
+   "category": "three",
+   "title": "Product model stage",
+   "description": "Frame a local GLB on a lit studio stage with a measured turntable, useful when the viewer needs to read the shape from more than one angle.",
+   "tags": [
+    "product",
+    "GLB",
+    "framing",
+    "orbit",
+    "hero",
+    "studio"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 150,
+   "importPath": "src/motion/library/three/ModelShot",
+   "exports": [
+    "ModelShot",
+    "ExhibitModelShot"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/bounds-and-makedefault (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "product-model-stage",
+    "functions": [
+     "reveal",
+     "proof",
+     "hook"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
+     },
+     "durationInFrames": {
+      "default": 150,
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#080f19",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#65edce",
+      "type": "string"
+     },
+     "fill": {
+      "default": 0.78,
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9
+     },
+     "orbitDegrees": {
+      "default": 44,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 180
+     },
+     "camera": {
+      "type": "object",
+      "properties": {
+       "points": {
+        "minItems": 2,
+        "maxItems": 8,
+        "type": "array",
+        "items": {
+         "type": "array",
+         "prefixItems": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          }
+         ],
+         "items": false,
+         "minItems": 3,
+         "maxItems": 3
+        }
+       },
+       "target": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "targetEnd": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "points",
+       "target",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string",
+        "minLength": 1
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "name",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "highlights": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "node": {
+         "type": "string",
+         "minLength": 1
+        },
+        "startFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "endFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "node",
+        "startFrame",
+        "endFrame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "glass": {
+      "type": "object",
+      "properties": {
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "roughness": {
+        "default": 0.34,
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "control": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "startFrame",
+       "endFrame",
+       "roughness",
+       "control"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "durationInFrames",
+     "background",
+     "accent",
+     "fill",
+     "orbitDegrees"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "durationInFrames": 150,
+    "background": "#142e3e",
+    "accent": "#65edce",
+    "fill": 0.8,
+    "orbitDegrees": 74
+   },
+   "preview": {
+    "image": "docs/library/previews/product-model-stage.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-product-model-stage-L",
+     "Lib-product-model-stage-V"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "id": "camera-path-reveal",
+   "category": "three",
+   "title": "Camera path reveal",
+   "description": "Follow a timed 3D camera path from the full object to a part. Let the camera settle before a label or a demonstration starts.",
+   "tags": [
+    "product",
+    "camera",
+    "3D",
+    "dolly",
+    "path",
+    "connector",
+    "reveal"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 150,
+   "importPath": "src/motion/library/three/ModelShot",
+   "exports": [
+    "ModelShot",
+    "ExhibitModelShot"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/motionpathcontrols (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "camera-path-reveal",
+    "functions": [
+     "reveal",
+     "emphasis",
+     "transition"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
+     },
+     "durationInFrames": {
+      "default": 150,
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#080f19",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#65edce",
+      "type": "string"
+     },
+     "fill": {
+      "default": 0.78,
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9
+     },
+     "orbitDegrees": {
+      "default": 44,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 180
+     },
+     "camera": {
+      "type": "object",
+      "properties": {
+       "points": {
+        "minItems": 2,
+        "maxItems": 8,
+        "type": "array",
+        "items": {
+         "type": "array",
+         "prefixItems": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          }
+         ],
+         "items": false,
+         "minItems": 3,
+         "maxItems": 3
+        }
+       },
+       "target": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "targetEnd": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "points",
+       "target",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string",
+        "minLength": 1
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "name",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "highlights": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "node": {
+         "type": "string",
+         "minLength": 1
+        },
+        "startFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "endFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "node",
+        "startFrame",
+        "endFrame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "glass": {
+      "type": "object",
+      "properties": {
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "roughness": {
+        "default": 0.34,
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "control": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "startFrame",
+       "endFrame",
+       "roughness",
+       "control"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "durationInFrames",
+     "background",
+     "accent",
+     "fill",
+     "orbitDegrees"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "durationInFrames": 150,
+    "background": "#15303b",
+    "accent": "#65edce",
+    "fill": 0.78,
+    "orbitDegrees": 44,
+    "camera": {
+     "points": [
+      [
+       -0.39,
+       0.29,
+       1.01
+      ],
+      [
+       0.03,
+       0.24,
+       0.95
+      ],
+      [
+       0.23,
+       0.1,
+       0.68
+      ]
+     ],
+     "target": [
+      0,
+      0,
+      0
+     ],
+     "targetEnd": [
+      0.76,
+      -0.19,
+      0.4
+     ],
+     "startFrame": 22,
+     "endFrame": 104
+    }
+   },
+   "preview": {
+    "image": "docs/library/previews/camera-path-reveal.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-camera-path-reveal-L",
+     "Lib-camera-path-reveal-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 104,
+     "kind": "stop"
+    }
+   ]
+  },
+  {
+   "id": "gltf-clip-cue",
+   "category": "three",
+   "title": "GLB clip on a cue",
+   "description": "Play an existing named GLB animation on exact shot frames. Use to show a mechanism opening, locking or assembling in time with an explanation.",
+   "tags": [
+    "mechanism",
+    "GLB",
+    "rig",
+    "animation",
+    "clip",
+    "demonstration"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 120,
+   "importPath": "src/motion/library/three/ModelShot",
+   "exports": [
+    "ModelShot",
+    "ExhibitModelShot"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/gltf-animations-re-used (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "gltf-clip-cue",
+    "functions": [
+     "proof",
+     "reveal"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
+     },
+     "durationInFrames": {
+      "default": 150,
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#080f19",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#65edce",
+      "type": "string"
+     },
+     "fill": {
+      "default": 0.78,
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9
+     },
+     "orbitDegrees": {
+      "default": 44,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 180
+     },
+     "camera": {
+      "type": "object",
+      "properties": {
+       "points": {
+        "minItems": 2,
+        "maxItems": 8,
+        "type": "array",
+        "items": {
+         "type": "array",
+         "prefixItems": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          }
+         ],
+         "items": false,
+         "minItems": 3,
+         "maxItems": 3
+        }
+       },
+       "target": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "targetEnd": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "points",
+       "target",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string",
+        "minLength": 1
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "name",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "highlights": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "node": {
+         "type": "string",
+         "minLength": 1
+        },
+        "startFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "endFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "node",
+        "startFrame",
+        "endFrame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "glass": {
+      "type": "object",
+      "properties": {
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "roughness": {
+        "default": 0.34,
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "control": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "startFrame",
+       "endFrame",
+       "roughness",
+       "control"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "durationInFrames",
+     "background",
+     "accent",
+     "fill",
+     "orbitDegrees"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "durationInFrames": 120,
+    "background": "#182940",
+    "accent": "#65edce",
+    "fill": 0.8,
+    "orbitDegrees": 24,
+    "clip": {
+     "name": "release-battery",
+     "startFrame": 28,
+     "endFrame": 83
+    }
+   },
+   "preview": {
+    "image": "docs/library/previews/gltf-clip-cue.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-gltf-clip-cue-L",
+     "Lib-gltf-clip-cue-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 28,
+     "kind": "click",
+     "sfx": "click"
+    },
+    {
+     "frame": 83,
+     "kind": "stop"
+    }
+   ]
+  },
+  {
+   "id": "technical-part-outline",
+   "category": "three",
+   "title": "Technical part outline",
+   "description": "Show the edges of one visible model part at a time to direct the eye through a technical explanation or teardown.",
+   "tags": [
+    "part",
+    "GLB",
+    "outline",
+    "edges",
+    "geometry",
+    "teardown",
+    "technical"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 150,
+   "importPath": "src/motion/library/three/ModelShot",
+   "exports": [
+    "ModelShot",
+    "ExhibitModelShot"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/edgesgeometry (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "technical-part-outline",
+    "functions": [
+     "emphasis",
+     "proof"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
+     },
+     "durationInFrames": {
+      "default": 150,
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#080f19",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#65edce",
+      "type": "string"
+     },
+     "fill": {
+      "default": 0.78,
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9
+     },
+     "orbitDegrees": {
+      "default": 44,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 180
+     },
+     "camera": {
+      "type": "object",
+      "properties": {
+       "points": {
+        "minItems": 2,
+        "maxItems": 8,
+        "type": "array",
+        "items": {
+         "type": "array",
+         "prefixItems": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          }
+         ],
+         "items": false,
+         "minItems": 3,
+         "maxItems": 3
+        }
+       },
+       "target": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "targetEnd": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "points",
+       "target",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string",
+        "minLength": 1
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "name",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "highlights": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "node": {
+         "type": "string",
+         "minLength": 1
+        },
+        "startFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "endFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "node",
+        "startFrame",
+        "endFrame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "glass": {
+      "type": "object",
+      "properties": {
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "roughness": {
+        "default": 0.34,
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "control": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "startFrame",
+       "endFrame",
+       "roughness",
+       "control"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "durationInFrames",
+     "background",
+     "accent",
+     "fill",
+     "orbitDegrees"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "durationInFrames": 150,
+    "background": "#162e33",
+    "accent": "#65edce",
+    "fill": 0.77,
+    "orbitDegrees": 44,
+    "camera": {
+     "points": [
+      [
+       -0.23,
+       0.24,
+       1.04
+      ],
+      [
+       0.27,
+       0.28,
+       0.98
+      ],
+      [
+       0.94,
+       0.25,
+       0.42
+      ],
+      [
+       0.59,
+       0.23,
+       -0.89
+      ],
+      [
+       -0.22,
+       0.26,
+       -1.02
+      ]
+     ],
+     "target": [
+      0,
+      0.02,
+      0
+     ],
+     "startFrame": 42,
+     "endFrame": 110
+    },
+    "highlights": [
+     {
+      "node": "Air Intake",
+      "startFrame": 15,
+      "endFrame": 62
+     },
+     {
+      "node": "Fan",
+      "startFrame": 87,
+      "endFrame": 114
+     },
+     {
+      "node": "Exhaust",
+      "startFrame": 115,
+      "endFrame": 149
+     }
+    ]
+   },
+   "preview": {
+    "image": "docs/library/previews/technical-part-outline.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-technical-part-outline-L",
+     "Lib-technical-part-outline-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 15,
+     "kind": "reveal"
+    },
+    {
+     "frame": 87,
+     "kind": "reveal"
+    },
+    {
+     "frame": 115,
+     "kind": "reveal"
+    }
+   ]
+  },
+  {
+   "id": "frosted-product-window",
+   "category": "three",
+   "title": "Frosted product window",
+   "description": "Reveal a product behind a moving translucent slab. Use the frosted silhouette as a clue and keep labels outside of the glass.",
+   "tags": [
+    "glass",
+    "frosted",
+    "transmission",
+    "material",
+    "product",
+    "reveal"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 150,
+   "importPath": "src/motion/library/three/ModelShot",
+   "exports": [
+    "ModelShot",
+    "ExhibitModelShot"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/frosted-glass (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "frosted-product-window",
+    "functions": [
+     "reveal",
+     "hook"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
+     },
+     "durationInFrames": {
+      "default": 150,
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#080f19",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#65edce",
+      "type": "string"
+     },
+     "fill": {
+      "default": 0.78,
+      "type": "number",
+      "minimum": 0.3,
+      "maximum": 0.9
+     },
+     "orbitDegrees": {
+      "default": 44,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 180
+     },
+     "camera": {
+      "type": "object",
+      "properties": {
+       "points": {
+        "minItems": 2,
+        "maxItems": 8,
+        "type": "array",
+        "items": {
+         "type": "array",
+         "prefixItems": [
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          },
+          {
+           "type": "number"
+          }
+         ],
+         "items": false,
+         "minItems": 3,
+         "maxItems": 3
+        }
+       },
+       "target": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "targetEnd": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "points",
+       "target",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "clip": {
+      "type": "object",
+      "properties": {
+       "name": {
+        "type": "string",
+        "minLength": 1
+       },
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       }
+      },
+      "required": [
+       "name",
+       "startFrame",
+       "endFrame"
+      ],
+      "additionalProperties": false
+     },
+     "highlights": {
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "node": {
+         "type": "string",
+         "minLength": 1
+        },
+        "startFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        },
+        "endFrame": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 9007199254740991
+        }
+       },
+       "required": [
+        "node",
+        "startFrame",
+        "endFrame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "glass": {
+      "type": "object",
+      "properties": {
+       "startFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "endFrame": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+       },
+       "roughness": {
+        "default": 0.34,
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "control": {
+        "default": false,
+        "type": "boolean"
+       }
+      },
+      "required": [
+       "startFrame",
+       "endFrame",
+       "roughness",
+       "control"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "durationInFrames",
+     "background",
+     "accent",
+     "fill",
+     "orbitDegrees"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "durationInFrames": 150,
+    "background": "#163547",
+    "accent": "#65edce",
+    "fill": 0.79,
+    "orbitDegrees": 32,
+    "glass": {
+     "startFrame": 59,
+     "endFrame": 113,
+     "roughness": 0.34,
+     "control": false
+    }
+   },
+   "preview": {
+    "image": "docs/library/previews/frosted-product-window.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-frosted-product-window-L",
+     "Lib-frosted-product-window-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 113,
+     "kind": "reveal",
+     "sfx": "glass"
+    }
+   ]
+  },
+  {
+   "id": "instanced-assembly",
+   "category": "three",
+   "title": "Instanced assembly",
+   "description": "Assemble exact counts into spatial groups. Use when layout shows what goes together or how a modular system is built.",
+   "tags": [
+    "assembly",
+    "data",
+    "modules",
+    "instancing",
+    "groups",
+    "units",
+    "count",
+    "reveal"
+   ],
+   "formats": [
+    "landscape",
+    "vertical"
+   ],
+   "durationInFrames": 180,
+   "importPath": "src/motion/library/three/InstancedAssembly",
+   "exports": [
+    "InstancedAssembly",
+    "ExhibitAssembly"
+   ],
+   "inspiredBy": [
+    "https://github.com/pmndrs/examples/tree/541599ac5ad913de85796403c1c6927ada3b303c/examples/hi-key-bubbles (MIT, technique study)"
+   ],
+   "shotTechnique": {
+    "id": "instanced-assembly",
+    "functions": [
+     "proof",
+     "reveal",
+     "emphasis"
+    ],
+    "experiment": "three-shot-techniques@1"
+   },
+   "propsSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "groupCount": {
+      "default": 3,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8
+     },
+     "unitsPerGroup": {
+      "default": 8,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 24
+     },
+     "seed": {
+      "default": "cell-modules",
+      "type": "string",
+      "minLength": 1
+     },
+     "durationInFrames": {
+      "default": 180,
+      "type": "integer",
+      "minimum": 72,
+      "maximum": 9007199254740991
+     },
+     "background": {
+      "default": "#0c1021",
+      "type": "string"
+     },
+     "accent": {
+      "default": "#84b3ff",
+      "type": "string"
+     }
+    },
+    "required": [
+     "groupCount",
+     "unitsPerGroup",
+     "seed",
+     "durationInFrames",
+     "background",
+     "accent"
+    ],
+    "additionalProperties": false
+   },
+   "defaultProps": {
+    "groupCount": 3,
+    "unitsPerGroup": 8,
+    "seed": "cell-modules",
+    "durationInFrames": 180,
+    "background": "#0c1021",
+    "accent": "#84b3ff"
+   },
+   "preview": {
+    "image": "docs/library/previews/instanced-assembly.jpg",
+    "entry": "src/motion/library/three/preview.tsx",
+    "compositions": [
+     "Lib-instanced-assembly-L",
+     "Lib-instanced-assembly-V"
+    ]
+   },
+   "cues": [
+    {
+     "frame": 61,
+     "kind": "land",
+     "sfx": "click"
+    },
+    {
+     "frame": 85,
+     "kind": "land",
+     "sfx": "click"
+    },
+    {
+     "frame": 109,
+     "kind": "land",
+     "sfx": "click"
+    }
+   ]
+  },
+  {
    "id": "blender-plate",
    "category": "three",
    "title": "Blender photoreal plate",
@@ -15520,6 +17220,41 @@
        "laptop",
        "card"
       ]
+     },
+     "model": {
+      "type": "object",
+      "properties": {
+       "src": {
+        "type": "string",
+        "pattern": "^projects\\/[a-z0-9][a-z0-9_-]*\\/(?:[\\w.-]+\\/)*[\\w.-]+\\.glb$"
+       },
+       "yaw": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180
+       },
+       "offset": {
+        "type": "array",
+        "prefixItems": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         },
+         {
+          "type": "number"
+         }
+        ],
+        "items": false,
+        "minItems": 3,
+        "maxItems": 3
+       }
+      },
+      "required": [
+       "src"
+      ],
+      "additionalProperties": false
      },
      "hdri": {
       "type": "string",

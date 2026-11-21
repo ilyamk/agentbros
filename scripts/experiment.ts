@@ -14,7 +14,7 @@ import {
   selectExperiment,
   startExperiment,
 } from "../src/lib/experiments/project";
-import { EXPERIMENTS } from "../src/lib/experiments/registry";
+import { EXPERIMENTS, THREE_SHOT_EXPERIMENT } from "../src/lib/experiments/registry";
 
 const readJson = (file: string): unknown => JSON.parse(readFileSync(file, "utf8"));
 
@@ -83,6 +83,13 @@ void runScript(async () => {
           )
         )
           experimentError("Change the camera experiment before the beat-sheet begins");
+        if (
+          id === THREE_SHOT_EXPERIMENT &&
+          ["design.json", "motion-plan.json", "briefs/look.md", "briefs/beat-sheet.md"].some((file) =>
+            existsSync(path.join(directory, "pipeline", file)),
+          )
+        )
+          experimentError("Change the 3D shot experiment before the look begins");
       },
       kit,
     );

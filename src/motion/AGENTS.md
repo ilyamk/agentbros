@@ -1,6 +1,6 @@
 # Motion — Agent Rules
 
-Last updated: 2026-11-15
+Last updated: 2026-11-21
 
 Deterministic motion primitives for films that should not default to centred text fading over a gradient. Every value is a pure function of the frame; randomness only through remotion `random(seed)` or `noise2D(seed, ...)`. Import from `src/motion` in compositions; pure logic (`timing`, `text-split`, `series`, `camera-math`) needs no browser, so tests import those files directly.
 
@@ -34,7 +34,7 @@ pnpm motion:render --entry src/motion/lab/index.tsx --composition LabReel --outp
 
 ## Examples
 
-Read the matching [worked primitive example](../../docs/motion-examples.md) before using timing, music, type, transitions, camera, effects, real UI or kinetic pieces.
+Read the [worked primitive examples](../../docs/motion-examples.md) and the [3D exhibition cut](../../docs/drei-techniques.md#six-original-demonstrations).
 
 ## Traps found by looking at frames
 

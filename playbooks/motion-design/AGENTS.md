@@ -1,6 +1,6 @@
 # Motion design film playbook
 
-Last updated: 2026-11-16
+Last updated: 2026-11-20
 
 Idents, lyrics, abstract/collage. Ads: [product-promo](../product-promo/AGENTS.md); teach: [explainer](../explainer/AGENTS.md); AI: [ai-film](../ai-film/AGENTS.md).
 
@@ -73,7 +73,7 @@ Across all kinds:
 
 - **By variant**: the blocks named in `variants` and `starter` (playbook.json). Abstract: `mesh-gradient`, `grain-gradient`, `particle-assemble`, `light-rays`. Collage: `paper-collage-assemble`, `effects`. Title behind a subject: `subject-occlusion`. Every shot in `film-finish`.
 - `pnpm library:list --category <c>` before any new code (motion-library skill).
-- `engine-selection`, `blender-3d`: light/material; `blender:recipe`, `blender:assets`, `blender:city`, `blender:ext`, `blender:arsenal` ([arsenal](../../blender-arsenal/AGENTS.md)).
+- Light and materials via `engine-selection`, `blender-3d`, `blender:recipe`, `blender:assets`, `blender:city`, `blender:ext` and `blender:arsenal` ([arsenal](../../blender-arsenal/AGENTS.md)). See the [3D pilot](../../docs/drei-techniques.md).
 - `plan:check`, `motion:still`, `motion:strip`, `motion:check`, `film:targets`: proof before the user sees it; `shot:tournament` per hero shot.
 
 ## Anti-patterns

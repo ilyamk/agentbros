@@ -28,7 +28,7 @@ Take the first row that fits.
 
 If two rows fit, take the one nearer Remotion. An imported clip cannot follow a later script change without being rendered again.
 
-For generated meshes, project GLB loading and the Blender handoff, read [generated 3D](references/generated-3d.md); the existing device stage has no arbitrary GLB prop.
+For generated meshes, project GLB loading and the Blender handoff, read [generated 3D](references/generated-3d.md); use the [3D shot guide](../../../docs/drei-techniques.md) for eligible project techniques.
 
 The in-repo `capture:html` route is a different thing. It is a bounded trusted capture of a pinned subset, limited to 100 frames per batch; see `pnpm capture:html --help`. The route here runs HeyGen's own external CLI.
 

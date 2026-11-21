@@ -96,7 +96,7 @@ Render a plate with `pnpm assets:sync --id plates:<name>` (production settings, 
 - A video `src` (`.mp4`) also works, without alpha.
 - Cues: `reveal` at `textAt`, `land` on the last plate frame.
 
-`studio-product-stage` loads the same GLBs with `useGLTF` (Suspense is held by `ThreeCanvas`) and a real HDRI through drei `Environment`. It has no depth of field: the deterministic-composer fix in the design-reference doc was not built, so depth of field comes from Blender.
+`studio-product-stage` loads the same GLBs with `useGLTF` (Suspense is held by `ThreeCanvas`) and a real HDRI through drei `Environment`. Its single layout also accepts a local project GLB via `model.src` ([3D shot techniques](drei-techniques.md)). It has no depth of field: the deterministic-composer fix in the design-reference doc was not built, so depth of field comes from Blender.
 
 ## Render-time budget
 

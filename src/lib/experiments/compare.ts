@@ -8,7 +8,7 @@ import { RenderReceiptSchema } from "../../types/delivery";
 import { digest, immutableJson, pinFile, projectDirectory, scopedFile, verifyPin } from "../campaigns/production/files";
 import { captureBespokeIdentity, isBespokeDelivery } from "../delivery/bespoke";
 import { captureRenderIdentity, withRenderIdentityReadCache } from "../delivery/identity";
-import { findExperiment, type ExperimentId } from "./registry";
+import { findExperiment, THREE_SHOT_EXPERIMENT, type ExperimentId } from "./registry";
 import { experimentError, readExperiments } from "./project";
 
 const key = z.string().regex(/^[a-z0-9][a-z0-9-]*$/);
@@ -69,6 +69,7 @@ function cleanCommit(root: string) {
 const requiredInputs: Record<ExperimentId, string[]> = {
   "tutorial-series-kit@1": ["brief", "episodes", "materials", "style-change"],
   "tutorial-camera@1": ["brief", "script", "capture", "narration", "words"],
+  [THREE_SHOT_EXPERIMENT]: ["brief", "concept", "script", "sources"],
   "proof-scenes@1": ["brief", "concept", "script", "sources"],
 };
 

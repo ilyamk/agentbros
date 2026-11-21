@@ -1,4 +1,14 @@
+export const THREE_SHOT_EXPERIMENT = "three-shot-techniques@1";
+
 export const EXPERIMENTS = [
+  {
+    id: THREE_SHOT_EXPERIMENT,
+    status: "experimental",
+    playbooks: ["product-promo", "explainer", "motion-design", "animated-infographic"],
+    steps: ["look", "beat-sheet", "build"],
+    instruction:
+      "For a shot that needs spatial framing, mechanism, material or grouping, use pnpm library:list --for-shot <function> --format <format> --project <id>. Read the selected card and preview. Record its techniqueIds, blocks and Remotion route in the shot plan. Choose the treatment that serves the shot.",
+  },
   {
     id: "tutorial-series-kit@1",
     status: "experimental",
