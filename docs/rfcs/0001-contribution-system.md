@@ -442,6 +442,7 @@ Each card in `contrib/categories/<id>.md` also lists what is **not** wanted. For
 | Showcase index | One folder per showcase; the gallery index is built for Pages, not tracked |
 | Two agents on the same opportunity | Claims (§5.2), scout de-duplication, the duplicate rule in §6.4 |
 | Branch protection | Merge queue required on `main`; squash merges; linear history |
+| Branch names and lifetime (2026-11-20) | One branch per PR named `<category>/<slug>` after its PR block category; `bot/*` and `dependabot/*` reserved, `diag/*` and `spike/*` draft-only; rebase on `main`; head branches deleted on merge ([branch rules](../branches.md)). Intake does not check names yet |
 
 ---
 

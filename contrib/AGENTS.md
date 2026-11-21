@@ -1,6 +1,6 @@
 # Contributing from a fork — Agent Rules
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 **Read only:**
 - This file.
@@ -13,13 +13,13 @@ Last updated: 2026-11-18
 
 ## Work autonomously within the protocol
 
-1. Fork and clone `ilyamk/agentbros`. Follow [installation](../docs/install.md); run `pnpm bootstrap --apply` (installs Chromium too; vision tests fail without it) and `pnpm preflight` from the repository root. Use a branch in your fork and keep credentials out of fixtures and PR evidence.
+1. Fork and clone `ilyamk/agentbros`. Follow [installation](../docs/install.md); run `pnpm bootstrap --apply` (installs Chromium too; vision tests fail without it) and `pnpm preflight` from the repository root. Branch as `<category>/<slug>` ([branches](../docs/branches.md)); keep credentials out of fixtures and PR evidence.
 2. Pick a job from `pnpm contrib:scout --json` (`--online` with authenticated `gh`) or the Pages needs board, and read its evidence and definition of done. Check GitHub issues, PRs and claims: offline results cannot prove it is free.
 3. Choose a size using total additions plus deletions. S: ≤300 lines, one category, no new dependency; proceed directly. M: ≤1000 lines; comment `/claim` on the opportunity issue and check assignment. Link a draft PR within 7 days or the claim expires. L: larger work, new dependencies, new categories or contract changes; open a proposal with an RFC draft under `docs/rfcs/` and wait for `design-approved`. Honour the [tier limits](../CONTRIBUTING.md#choose-work-within-your-tier). Obtain `design-approved` for every protected-path change, regardless of size.
 4. Inspect existing helpers and tests, then make the smallest complete change. Add a regression test for changed behaviour; prove a bug-fix test fails on the base. Keep fixtures under `tests/fixtures/` or temporary directories.
 5. Run `pnpm change:add --category <id> --bump patch --summary "<change>" --author <handle> --harness codex`. Declare breaking changes, justify new dependencies with `deps:`, and use `novelty:` (`--novelty`) to name overlapping ids and what is new. Match the PR category; commit the implementation, tests and entry.
 6. Run `pnpm contrib:check` on committed changes; commit fixes before rerunning. Inspect `.contrib/evidence.json` for results and [gate interpretation](#read-gate-results). Leave evidence untracked.
-7. Run `pnpm contrib:pr --out .contrib/pr.md` with the block values below, following its help. Review against [the template](pr-template.md), then open it with `gh pr create --body-file .contrib/pr.md`. Have the human owner sign the [CLA 2.0](../CLA.md) by comment; never sign for them. Rebase when needed; resolve generated-only conflicts with `pnpm regen`, then rerun checks. Follow current area rules for instruction dates; leave bot-owned generated sections to their generators.
+7. Run `pnpm contrib:pr --out .contrib/pr.md` with the block values below, following its help. Review against [the template](pr-template.md), then open it with `gh pr create --body-file .contrib/pr.md`. Have the human owner sign the [CLA 2.0](../CLA.md) by comment; never sign for them. Rebase per [branches](../docs/branches.md). Follow current area rules for instruction dates; leave bot-owned generated sections to their generators.
 8. Answer bot and human comments with a focused fix or evidence; update the PR body and verification after changes. If a bot closure is wrong, comment `/appeal <reason>` once, then await human review.
 
 ## Never do

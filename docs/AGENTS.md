@@ -123,9 +123,9 @@ Assets:
 Contribution and maintenance:
 
 - [dependency licences](dependency-licences.md): package notices, integration evidence, policy, source-only review, ELK review
-- [contribution gates](contributing-gates.md): intake, categories, evidence and deterministic checks
-- [context budgets](context-budget.md): offline measurement and instruction hygiene
-- [metrics and API surface](metrics.md): generated inventories and exported contracts
+- [contribution gates](contributing-gates.md): intake, categories, evidence, checks; [branches](branches.md)
+- [context budgets](context-budget.md): offline measurement, instruction hygiene
+- [metrics and API surface](metrics.md): generated inventories, exported contracts
 - [triage](triage.md): PR judging (currently inactive), instruction audits and spend reservations
 - [releases](releases.md): change entries, release plans and generated credits
 - [GitHub automation](github.md): workflow trust boundaries, CLA, claims, CI, repository security settings, Scorecard and release provenance
