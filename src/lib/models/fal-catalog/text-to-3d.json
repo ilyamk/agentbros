@@ -1,7 +1,7 @@
 {
   "version": 1,
   "category": "text-to-3d",
-  "syncedAt": "2026-11-20",
+  "syncedAt": "2026-11-21",
   "entries": [
     {
       "endpoint": "fal-ai/hunyuan-3d/v3.1/pro/text-to-3d",
@@ -9,7 +9,7 @@
       "displayName": "Hunyuan 3D Pro Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "38fd93f9bfe93a7fc6966bc7b263280fd5336122c757b05ba174f61eef8db606",
         "asOf": "2026-11-15",
@@ -75,7 +75,7 @@
       "displayName": "Hunyuan 3d",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "581dc94d1b651e78924395637a5d6b52eba88978dd6d8b777ca8fbbd8b45fef3",
         "asOf": "2026-11-15",
@@ -130,7 +130,7 @@
       "displayName": "Hunyuan Motion [1B]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "49f05995a865156506881413a9c5e947439071aca58bc67ab4b94108923b03b6",
         "asOf": "2026-11-15",
@@ -200,7 +200,7 @@
       "displayName": "Hunyuan Motion [0.46B]",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "6ac003b475c524377b0cb55f1c9c47d5a879d72298ca49c144845d8634492bc5",
         "asOf": "2026-11-15",
@@ -270,7 +270,7 @@
       "displayName": "Hunyuan3d V3",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "7fbee7eba5b3364bb72a9885acbc09084e10d8b49ef51c6b2d087c5e19043eb4",
         "asOf": "2026-11-15",
@@ -349,7 +349,7 @@
       "displayName": "Hyper3D - Rodin V2.5 - Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "861b415241273e9886ae66243eb9db0ca6098aa0b4a2481024ed8f0edc160ba4",
         "asOf": "2026-11-15",
@@ -514,7 +514,7 @@
       "displayName": "Hyper3D - Rodin V2.5 - Text to 3D - Fast",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "88f5f0f3cef86719b75ae4618fcdce21afd1465ef6aeb06b44c19fd5afc607d2",
         "asOf": "2026-11-15",
@@ -668,7 +668,7 @@
       "displayName": "Meshy 6 Preview",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "f0e44da51d1128c3e26d644d311bb1ca0d538bb99e1ae9968bb717eba34d48b7",
         "asOf": "2026-11-15",
@@ -872,7 +872,7 @@
       "displayName": "Meshy 6",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "ed2781d7cc4e87a83ae1434678bb4b087734ab0d723b0792036e75abfadf5768",
         "asOf": "2026-11-15",
@@ -1071,12 +1071,36 @@
       ]
     },
     {
+      "endpoint": "hyper3d/lowpoly/text-to-3d",
+      "category": "text-to-3d",
+      "displayName": "Hyper3D Low Poly Text to 3D",
+      "status": "active",
+      "firstSeen": "2026-11-21",
+      "lastSeen": "2026-11-21",
+      "schema": null,
+      "inputs": [],
+      "outputs": {
+        "kinds": [],
+        "fields": []
+      },
+      "transport": "queue",
+      "price": null,
+      "tier": "discovered",
+      "tags": [
+        "3d",
+        "low-poly",
+        "text-to-3d",
+        "topology",
+        "textures"
+      ]
+    },
+    {
       "endpoint": "meshy/t2.5/text-to-3d",
       "category": "text-to-3d",
       "displayName": "Meshy T2.5 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "32d0e16df62c1663c033e83fa451a880e74111dea0678b85ae4372fbca7ad264",
         "asOf": "2026-11-15",
@@ -1248,7 +1272,7 @@
       "displayName": "Meshy T2 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "b44b0ab9ea88eead31bdba070256be2c5c459f59c9f120381ec752e68730a43b",
         "asOf": "2026-11-15",
@@ -1420,10 +1444,10 @@
       "displayName": "Meshy 7.1 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-20",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "7131793716ce32a06637d337d2417a7b155a1ecbe7257e0a7daea6c5c6c04fca",
-        "asOf": "2026-11-20",
+        "asOf": "2026-11-21",
         "source": "https://api.fal.ai/v1/models?endpoint_id=meshy%2Fv7.1%2Ftext-to-3d&expand=openapi-3.0",
         "cached": true
       },
@@ -1645,7 +1669,7 @@
       "retiresAt": "2026-12-31T08:00:00.000Z",
       "replacement": "meshy/v7.1/text-to-3d",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "02383619a80068b016bb5f8b71097b2388cf08a12c5f95efa5e6cf019b3857c7",
         "asOf": "2026-11-15",
@@ -1865,7 +1889,7 @@
       "displayName": "Tripo H3.1 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "5af9c3976375600897b916b49f807f8e3b571a98bb8c023539980f768c0f55f6",
         "asOf": "2026-11-15",
@@ -1986,7 +2010,7 @@
       "displayName": "Tripo P1 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "76f0542298526fc506212bc8fc7099bcd03bf61fd89832f52def8952fcf41005",
         "asOf": "2026-11-15",
@@ -2053,7 +2077,7 @@
       "displayName": "Tripo P2 Text to 3D",
       "status": "active",
       "firstSeen": "2026-11-15",
-      "lastSeen": "2026-11-15",
+      "lastSeen": "2026-11-21",
       "schema": {
         "sha256": "0052d57edbeee34302dfaee676aac248102b75da6cb067feb5cf9f7cc01f1e99",
         "asOf": "2026-11-15",
