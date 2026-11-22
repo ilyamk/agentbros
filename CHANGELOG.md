@@ -44,7 +44,7 @@
 
 - Add versioned film style cards, stage guidance and paired render fixtures for Paper Signal and Physical Data. ([#67](https://github.com/ilyamk/agentbros/pull/67))
 
-- Library previews for the blocks added in #63, #66 and #67 and a refreshed overview sheet for every category they joined, so `library:list`, the console Library page and the docs show them; the README shows the Drei study again
+- Library previews for the blocks added in #63, #66 and #67 and a refreshed overview sheet for every category they joined, so `library:list`, the console Library page and the docs show them; the README shows the Drei study again ([#70](https://github.com/ilyamk/agentbros/pull/70))
 
 - meshy/v7.1/text-to-3d is verified again on fal's 2026-11-20 schema, and its guard refuses texture_image_url with texture_prompt, which that schema now forbids. Slot 3d.edit uses meshy/n1/retexture as its hero and meshy/v7/retexture as a budget candidate, since fal removed fal-ai/hunyuan-3d/v3.1/smart-topology
 
