@@ -1,5 +1,69 @@
 # Changelog
 
+## 0.2.0
+
+### Agent and skill definitions
+
+- Motion agents try the decisive moment first: the director names the turn's action and visible consequence and may mark its staging open with two stagings, the engineer roughs both for the user, and the critic plays the film at viewing size when it can ([#58](https://github.com/ilyamk/agentbros/pull/58))
+
+### Tests and continuous integration
+
+- The console projector test for journal durations and agent runs no longer fails when CI runs in the last minutes before local midnight ([#52](https://github.com/ilyamk/agentbros/pull/52))
+
+### Generalised lessons
+
+- Add project-local opt-in experiments for tutorial series, reading cameras and recipe proof scenes, with a same-commit blind comparison workflow.
+
+### Bug fixes
+
+- The instruction security scan allows the fal hosts (api.fal.ai, v3.fal.media, v3b.fal.media and fal's storage.googleapis.com examples) already present in the tracked fal operation snapshots, so refreshing a snapshot is no longer blocked ([#55](https://github.com/ilyamk/agentbros/pull/55))
+
+- Add `pnpm camera:solve`: solve a moving plate camera (KLT tracks outside a subject matte, epipolar filter, Blender libmv with outlier rounds, metric scale from the subject's width) into an OpenCV camera.json, and `vorkCamera` to render Vork inserts through it with a keyed focus pull
+
+- Pull requests run CI on the primary Node only, so a PR needs half the runner jobs and waits less in the queue; pushes to main and the merge queue still run both Node versions. Dependabot groups every GitHub Actions bump into one pull request ([#34](https://github.com/ilyamk/agentbros/pull/34))
+
+- CI's checks job no longer repeats test:fast, whose files the full-suite shards already run, and the workflow contracts run as their own parallel job, so the checks job no longer sets the length of a CI run ([#38](https://github.com/ilyamk/agentbros/pull/38))
+
+- Colour grading: colour:scopes, colour:compare (CIEDE2000 diagnosis), colour:match (editable grade.json), colour:grade (deterministic render, Resolve .cube export, tracked and matte windows), colour:shots, colour:track, colour:check (skin, levels and saturation gate) and colour:looks (twelve genre looks with skin held, mood, palette and finish, ranked by mood), colour:target (per-shot reference profiles, colour script and mood plans, checked by colour:check --target), colour:lut (licensed .cube and HaldCLUT import), the generated Looks & colour library page, a skin-aware per-shot match, the colourist agent and the colour-grading skill ([#45](https://github.com/ilyamk/agentbros/pull/45))
+
+- Studio console: a project-level Media tab and paid model generations as content. The Media tab groups every media file of the project in albums by lineage (sources, preparation, generations, builds, not registered), read from the asset registry, job store, model preparations and renders, with each item's player, the file it was made from and an A/B compare; files under footage/ and assets/ that nothing lists appear marked not registered, and copies of a registered file appear as aliases. Its Generations album shows every job of the job store newest first (endpoint, state, the provider's error as written, reserved and settled money, quote, elapsed time, prompt, references) and plays the result once the job is published; the canvas panel shows the running jobs and the newest result with a link there. The Preparation album holds the latest model preparation (prompt, references, board samples, approval in the user's words, rights). The top bar and home card show reserved money beside spent, so a reservation never reads as $0. History folds consecutive identical successful runs (an agent re-running generate:model to resume a queued job) into one row with a count; the journal is unchanged. A project:new template that only holds generations no longer presents the template render as its current step or offers Remotion Studio. Contract: optional view.generations, view.gallery and ProjectSummary.reservedUsd.
+
+  The large video view works like an editing table: no rounded frame or dark band, a timeline with a seconds ruler that shows the exact frame and its time to the millisecond under the pointer and seeks to it, a millisecond readout, J/K/L, frame and second stepping, and C to mark the frame. On the frame the user clicks a point (an arrow) or drags an area (a box) and writes words for each; Send to the agent posts a new `frame-note` decision on any route, and `pnpm frame:note` writes the exact frame from the file with the marks drawn on it as `pipeline/frame-notes/<id>.png` plus a JSON note, whose paths `console:wait` returns as `note` and `still`. Contract: decision kind `frame-note`, `FrameComment.marks`, `DecisionRequest.overlay`, `FrameNote`. ([#46](https://github.com/ilyamk/agentbros/pull/46))
+
+- The console's GitHub button shows the star count again: it asks for the count once the session is ready instead of on mount, when the server refused the request and it was never retried ([#56](https://github.com/ilyamk/agentbros/pull/56))
+
+- Studio console: a new project header (a live strip with the state, the current step, a pill that jumps to a waiting decision, spend as a proportion and the fitting action) with page-tab icons, and a new step rail (one ring per step whose motion shows its status, filling connectors, Step n of N, origin badge and legend); docs/console-steps.md records the design and proposes journal step events ([#47](https://github.com/ilyamk/agentbros/pull/47))
+
+- A Dependabot npm bump can carry its regenerated DEPENDENCY_LICENCES.json and .md and still take the Dependabot intake route; before, the inventory CI requires pushed the PR out of that route, so no npm bump could pass both. lucide-react and lucide-static now arrive in one Dependabot PR ([#48](https://github.com/ilyamk/agentbros/pull/48))
+
+- Fifteen frame-driven motion library blocks: continuity and reveal blocks (`ui-state-morph`, `ui-swipe-deck`, `glass-lens`, `page-turn`, an elastic `caption-word-box`), three English text entrances and production proof blocks (`ui-inspector-geometry`, `ui-accept-revision`, `ui-evidence-scroll`, `ui-variation-select`, `ui-device-handoff`, `kinetic-binary-text` and others), studied from DesignBookmark Motion, Kokonut UI and shadcn.io text effects (method only) ([#66](https://github.com/ilyamk/agentbros/pull/66))
+
+- Add an opt-in catalogue of six frame-driven 3D shot techniques with worked examples and project-level discovery. ([#63](https://github.com/ilyamk/agentbros/pull/63))
+
+- PR facts rebuild the patch of a modified file that GitHub lists with neither a patch nor counts (past its diff limits, as on the 153-file models refresh), so its added lines reach the leak scan, and a rebuilt patch carries its own line counts, so the models-refresh intake route accepts a bot refresh whose large files GitHub omits ([#49](https://github.com/ilyamk/agentbros/pull/49))
+
+- Add versioned film style cards, stage guidance and paired render fixtures for Paper Signal and Physical Data. ([#67](https://github.com/ilyamk/agentbros/pull/67))
+
+- Library previews for the blocks added in #63, #66 and #67 and a refreshed overview sheet for every category they joined, so `library:list`, the console Library page and the docs show them; the README shows the Drei study again ([#70](https://github.com/ilyamk/agentbros/pull/70))
+
+- meshy/v7.1/text-to-3d is verified again on fal's 2026-11-20 schema, and its guard refuses texture_image_url with texture_prompt, which that schema now forbids. Slot 3d.edit uses meshy/n1/retexture as its hero and meshy/v7/retexture as a budget candidate, since fal removed fal-ai/hunyuan-3d/v3.1/smart-topology
+
+- The release planner reads git output larger than 1 MiB: `docs/api/surface.json` outgrew execFileSync's default buffer, so `release:plan` failed with ENOBUFS and no release PR was opened ([#68](https://github.com/ilyamk/agentbros/pull/68))
+
+- Seedance 2.5 accepts fal's schemas of 2026-11-20: 4K output is priced from the reviewed page rate on the global text-to-video and image-to-video endpoints ($0.0094 per 1,000 tokens) and 1080p now has its published rate there; any resolution without a reviewed rate stays unknown instead of falling back to the 480p/720p base rate. Drafts can be completed within 14 days. MOV output, an automatic reference task and drafts on the US endpoints are refused until the pipeline supports them. ([#54](https://github.com/ilyamk/agentbros/pull/54))
+
+### Guides and documentation
+
+- Document branch naming and lifetime for contributors and the owner: one <category>/<slug> branch per PR, reserved prefixes, rebasing, PR titles and branch cleanup ([#57](https://github.com/ilyamk/agentbros/pull/57))
+
+### Contributors
+
+- Agent and skill definitions: [@ilyamk](https://github.com/ilyamk)
+- Tests and continuous integration: [@ilyamk](https://github.com/ilyamk)
+- Generalised lessons: [@ilyamk](https://github.com/ilyamk)
+- Bug fixes: [@ilyamk](https://github.com/ilyamk)
+- Guides and documentation: [@ilyamk](https://github.com/ilyamk)
+
 ## 0.1.0
 
 ### Breaking changes
