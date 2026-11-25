@@ -2,7 +2,7 @@
 category: playbook
 bump: minor
 breaking: false
-pr: 0
+pr: 75
 authors: [ilyamk]
 harness: claude-code
 novelty: New playbook product-hud-story; nearest are animated-infographic and motion-design, which cover data charts and kinetic type, not a self-assembling product system canvas reused as a camera-flight story

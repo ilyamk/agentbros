@@ -84,8 +84,8 @@ From a 15-second Reel to a launch film, a tutorial, a lesson or a whole campaign
 <!-- metrics:start -->
 <table>
   <tr>
-    <td align="center" width="20%"><h2>24</h2><sub>genres<br>(17 ready)</sub></td>
-    <td align="center" width="20%"><h2>158</h2><sub>motion-design<br>blocks (117 verified)</sub></td>
+    <td align="center" width="20%"><h2>25</h2><sub>genres<br>(17 ready)</sub></td>
+    <td align="center" width="20%"><h2>158</h2><sub>motion-design<br>blocks (119 verified)</sub></td>
     <td align="center" width="20%"><h2>23</h2><sub>crew agents<br>on set</sub></td>
     <td align="center" width="20%"><h2>3</h2><sub>formats<br>9:16 · 1:1 · 16:9</sub></td>
     <td align="center" width="20%"><h2>0</h2><sub>API keys needed<br>to render</sub></td>
