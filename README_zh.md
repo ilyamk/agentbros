@@ -573,6 +573,18 @@ flowchart LR
   </tr>
 </table>
 
+#### 示例：产品 HUD 循环 <img alt="测试版" src="https://img.shields.io/badge/beta-f59e0b?style=flat-square">
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><img alt="HUD 循环 A：身份核心" src="docs/readme/example-hud-loop-a.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD 循环 B：语义场" src="docs/readme/example-hud-loop-b.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD 循环 C：智能体桥" src="docs/readme/example-hud-loop-c.gif" width="100%"></td>
+  </tr>
+</table>
+
+为一个虚构产品制作的三段 30 秒界面循环：密集的仪表盘画布随音乐自行组装。随后，同样的画布被做成带字幕、英俄双语版本和标志片头的镜头飞越故事。此处为 3 秒片段，全部用 Remotion 代码制作，没有付费生成。方法：<a href="playbooks/product-hud-story/AGENTS.md"><code>product-hud-story</code></a>。
+
 ### ✂️ 你自己的素材
 
 <table>

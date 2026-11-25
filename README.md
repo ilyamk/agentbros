@@ -582,6 +582,18 @@ You approve at every gate that matters: the idea, the look, the music, the final
 
 See [six original 3D animation studies](docs/drei-techniques.md#six-original-demonstrations), including a battery latch timed to the frame, a technical teardown and a frosted product reveal. Each study includes its technique and render command.
 
+#### Example: product HUD loops <img alt="beta" src="https://img.shields.io/badge/beta-f59e0b?style=flat-square">
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><img alt="HUD loop A: identity core" src="docs/readme/example-hud-loop-a.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD loop B: semantic field" src="docs/readme/example-hud-loop-b.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD loop C: agent bridge" src="docs/readme/example-hud-loop-c.gif" width="100%"></td>
+  </tr>
+</table>
+
+Three 30-second interface loops for one fictional product, each a dense dashboard canvas that assembles itself to the music; the same canvases then became camera-flight stories with captions, English and Russian versions and a logo intro. Shown here as 3-second excerpts, all coded in Remotion with no paid generation. Method: <a href="playbooks/product-hud-story/AGENTS.md"><code>product-hud-story</code></a>.
+
 ### ✂️ Your own footage
 
 <table>

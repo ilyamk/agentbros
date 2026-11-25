@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "id": "product-hud-story",
+  "title": "Product HUD loop and camera story",
+  "status": "draft",
+  "reviewedAt": "2026-11-25",
+  "summary": "A dense sci-fi HUD canvas showing how a product's system works, as a seamless music loop, then camera-flight stories across it with captions, localised versions, a brand logo intro and HQ plus social deliveries.",
+  "triggers": {
+    "en": [
+      "hud animation",
+      "hud graphics",
+      "hud loop",
+      "sci-fi hud",
+      "sci-fi dashboard",
+      "sci-fi interface",
+      "futuristic dashboard",
+      "futuristic interface",
+      "interface canvas",
+      "dashboard canvas",
+      "camera flight across the canvas",
+      "camera flies across the canvas",
+      "fly across the dashboard",
+      "fly through the dashboard",
+      "fly the camera across",
+      "visualise how our system works",
+      "visualize how our system works",
+      "system visualisation",
+      "system visualization",
+      "mission control screen",
+      "micro charts",
+      "dashboard animation"
+    ],
+    "ru": [
+      "hud анимаци",
+      "hud-анимаци",
+      "hud графи",
+      "худ анимаци",
+      "sci-fi интерфейс",
+      "sci-fi дашборд",
+      "футуристичный интерфейс",
+      "футуристичный дашборд",
+      "футуристический интерфейс",
+      "футуристический дашборд",
+      "интерфейс как в фантастик",
+      "пролёт камеры",
+      "пролет камеры",
+      "камера летает по канвасу",
+      "движение камеры по канвасу",
+      "по холсту",
+      "визуализация системы",
+      "визуализацию системы",
+      "визуализацию того как работает",
+      "как работает наша система",
+      "микрографик",
+      "сложной графики",
+      "анимация дашборда"
+    ],
+    "zh": [
+      "hud动画",
+      "hud界面",
+      "科幻界面",
+      "科幻仪表盘",
+      "未来感界面",
+      "未来感仪表盘",
+      "数据大屏动画",
+      "数据大屏",
+      "镜头飞越",
+      "飞越画布",
+      "系统可视化",
+      "系统运作可视化",
+      "微型图表",
+      "仪表盘动画"
+    ],
+    "generic": [
+      "dashboard animation",
+      "как работает наша система",
+      "визуализацию того как работает",
+      "анимация дашборда",
+      "仪表盘动画"
+    ]
+  },
+  "notFor": [
+    {
+      "when": "the film shows the product's real screens, app or website, or how to use them",
+      "use": "product-tutorial"
+    },
+    {
+      "when": "a conventional product launch or ad that sells with real UI, product shots and a call to action",
+      "use": "product-promo"
+    },
+    {
+      "when": "an existing still infographic, diagram or poster should move as a loop",
+      "use": "animated-infographic"
+    },
+    {
+      "when": "an ident, kinetic type or abstract piece with no product system to depict",
+      "use": "motion-design"
+    },
+    {
+      "when": "a voice-over film that teaches how something works step by step",
+      "use": "explainer"
+    },
+    {
+      "when": "only translating or dubbing an existing finished video",
+      "use": "localise"
+    }
+  ],
+  "route": {
+    "kind": "film",
+    "filmType": "motion-graphics",
+    "start": "pnpm film:init --project <id> --type motion-graphics --playbook product-hud-story --title \"<short name>\" --product <path>"
+  },
+  "alternatives": [],
+  "agents": [],
+  "skills": [
+    "motion-library",
+    "motion-and-typography",
+    "sound-design-and-mix",
+    "captions-and-localization",
+    "engine-selection",
+    "qa-and-delivery"
+  ],
+  "library": {
+    "categories": [
+      "ui",
+      "data",
+      "camera",
+      "finish"
+    ],
+    "blocks": [
+      "ui-dashboard-assemble",
+      "network-light-up",
+      "line-chart-glow-draw",
+      "hero-stat-odometer",
+      "ticker-card",
+      "ui-code-editor",
+      "kinetic-path-travel",
+      "snap-zoom",
+      "film-finish"
+    ]
+  },
+  "commands": [
+    "film:init",
+    "film:next",
+    "next",
+    "library:list",
+    "resources:logos",
+    "audio:map",
+    "music:backtime",
+    "sfx:synth",
+    "sfx:cues",
+    "motion:still",
+    "motion:strip",
+    "motion:check",
+    "lint",
+    "film:render",
+    "flash:check",
+    "film:measure",
+    "capture:html",
+    "memory",
+    "delivery"
+  ],
+  "read": [],
+  "stepRead": {
+    "beat-sheet": [
+      ".agents/skills/motion-and-typography/references/motion-grammar.md"
+    ],
+    "build": [
+      ".agents/skills/motion-and-typography/references/motion-grammar.md"
+    ]
+  },
+  "qa": [
+    "Every element on the canvas stands for a real process of the product; every connector ends on a visible node, never in empty space",
+    "Loop: frame N renders identical to frame 0 (seam composition, cmp or difference YMAX 0); an approved render stays byte-identical after later edits",
+    "Story: first and last frames are black (Y max 16), every caption is readable at playback size before it leaves, every flight lands on a downbeat",
+    "Localised version: no overflow in any box, no translated code identifiers, numbers in the language's own format",
+    "Logo intro: the mark's last intro frame matches the canvas mark's size and position by bounding box; the soundtrack is unchanged",
+    "Master true peak at or below -0.5 dBFS and no FLASH_RISK from flash:check"
+  ],
+  "benchmarks": [],
+  "intake": [
+    {
+      "ask": "Which product, and which of its real processes should the canvas show (import, indexing, search, agents, privacy)? Is there a design system or palette to use?",
+      "why": "Every block visualises a real process; the product's own palette and type override any starter style"
+    },
+    {
+      "ask": "Which track, and is it licensed for this use?",
+      "why": "The loop length and every arrival sit on its beat map; agents cannot hear, the user chooses by ear"
+    },
+    {
+      "ask": "Which deliverables: loops only, or also camera stories; which languages; HQ and which social sizes?",
+      "why": "Story, localisation and intro each add a round of approval; the order is loop, story EN, other languages, intro",
+      "default": "30 s loops at 4:5, HQ x2 and 1080x1350 social; stories and languages offered after the loops are approved"
+    },
+    {
+      "ask": "Is there a brand logo animation (app launch, splash) to open the stories, and may its frames be used in the film?",
+      "why": "A third-party engine's licence may allow use in the end product but not redistributing its source",
+      "default": "No intro: the canvas mark builds on its own"
+    },
+    {
+      "ask": "Which names, logos and partner brands may appear publicly?",
+      "why": "Integration partners and data sources often cannot be named in public material yet",
+      "default": "Fictional people and data; partner names only with the user's yes"
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "instagram-feed",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 20,
+        "max": 60
+      },
+      "captions": "none",
+      "note": "Delivered at 4:5, 1080x1350 (closest enum value is vertical). Captions are designed plates in the picture, not speech subtitles. Bands are house rules from one project."
+    },
+    {
+      "platform": "website",
+      "formats": [
+        "vertical"
+      ],
+      "durationSec": {
+        "min": 20,
+        "max": 60
+      },
+      "captions": "none",
+      "note": "HQ master at 2160x2700 (4:5, rendered at scale 2); loops end on their first frame, stories start and end on black so they loop too. House rule."
+    }
+  ],
+  "starter": {
+    "blocks": [
+      "ui-dashboard-assemble",
+      "network-light-up",
+      "line-chart-glow-draw",
+      "hero-stat-odometer",
+      "ticker-card",
+      "film-finish"
+    ],
+    "style": "linear-midnight",
+    "note": "A dark, precise Geist look fits a HUD; the product's own palette and type tokens override it. The blocks are a starting point: a dense canvas usually needs a project kit of panels, sparks, meters and comets built on them"
+  },
+  "variants": [
+    {
+      "id": "hud-loop",
+      "title": "Seamless HUD loop",
+      "triggers": {
+        "en": [
+          "hud loop",
+          "seamless hud"
+        ],
+        "ru": [
+          "hud луп",
+          "зацикленный hud"
+        ],
+        "zh": [
+          "hud循环"
+        ]
+      },
+      "changes": "One canvas, length a whole number of bars (30 s at 160 BPM = 20 bars); all motion periodic in the loop length; a seam composition of N+1 frames proves frame N equals frame 0"
+    },
+    {
+      "id": "camera-story",
+      "title": "Camera-flight story over the canvas",
+      "triggers": {
+        "en": [
+          "camera flight across the canvas",
+          "camera flies across the canvas",
+          "fly across the dashboard",
+          "fly the camera across"
+        ],
+        "ru": [
+          "пролёт камеры",
+          "пролет камеры",
+          "камера летает по канвасу"
+        ],
+        "zh": [
+          "镜头飞越",
+          "飞越画布"
+        ]
+      },
+      "changes": "Builds on an approved loop: a storyboard table first, then a shot table with arrivals on downbeats, build windows, caption pairs and SFX cues per flight; opens from black, ends on a pull-back to the whole canvas and black"
+    }
+  ],
+  "evidence": [
+    {
+      "project": "Three 30 s HUD loops of a personal-memory product's system, then six 48 s camera stories (three canvases, EN and RU) with a captured app launch intro, HQ and 1080x1350 social",
+      "acceptedAt": "2026-11-25"
+    }
+  ]
+}

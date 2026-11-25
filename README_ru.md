@@ -573,6 +573,18 @@ flowchart LR
   </tr>
 </table>
 
+#### Пример: HUD-лупы продукта <img alt="бета" src="https://img.shields.io/badge/beta-f59e0b?style=flat-square">
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><img alt="HUD-луп A: ядро идентичности" src="docs/readme/example-hud-loop-a.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD-луп B: семантическое поле" src="docs/readme/example-hud-loop-b.gif" width="100%"></td>
+    <td width="33%" valign="top"><img alt="HUD-луп C: мост для агентов" src="docs/readme/example-hud-loop-c.gif" width="100%"></td>
+  </tr>
+</table>
+
+Три 30-секундных интерфейсных лупа для одного вымышленного продукта: плотный холст-дашборд собирается под музыку. Затем из этих холстов сделаны истории с пролётом камеры, подписями, версиями на английском и русском и заставкой с логотипом. Здесь 3-секундные фрагменты; всё написано кодом в Remotion, без платной генерации. Метод: <a href="playbooks/product-hud-story/AGENTS.md"><code>product-hud-story</code></a>.
+
 ### ✂️ Ваше собственное видео
 
 <table>
